@@ -298,6 +298,15 @@ h4 { font-size: var(--text-lg); }
     margin-top: var(--space-1);
 }
 
+.masthead__description {
+    display: block;
+    font-size: var(--text-sm);
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-sea);
+    margin-top: var(--space-2);
+}
+
 .masthead__nav {
     display: flex;
     gap: var(--space-6);
