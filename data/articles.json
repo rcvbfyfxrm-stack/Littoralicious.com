@@ -1,0 +1,128 @@
+{
+  "dispatches": [
+    {
+      "slug": "2026-01-24-ikejime-protocol",
+      "title": "Japanese Ikejime Federation Updates Bleeding Protocol for Bluefin",
+      "date": "2026-01-24T14:32:00Z",
+      "tags": ["fish", "technique", "umami", "aging"],
+      "source": "Journal of Aquatic Food Product Technology, Vol. 34"
+    },
+    {
+      "slug": "2026-01-23-salt-crystallization",
+      "title": "Salt Crystallization Study Debunks 'Finishing Salt Timing' Myth",
+      "date": "2026-01-23T09:15:00Z",
+      "tags": ["salt", "science", "technique"],
+      "source": "International Journal of Gastronomy and Food Science"
+    },
+    {
+      "slug": "2026-01-22-octopus-supply",
+      "title": "Mediterranean Octopus Supplies Hit 15-Year Low",
+      "date": "2026-01-22T16:48:00Z",
+      "tags": ["provisioning", "seafood", "market"],
+      "source": "European Fisheries Control Agency"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "maillard-at-sea-level",
+      "title": "The Maillard Reaction at Sea Level: Why Your Yacht Kitchen Produces Better Crusts Than Alpine Restaurants",
+      "date": "2026-01-25",
+      "category": "science",
+      "tags": ["maillard", "chemistry", "technique"],
+      "read_time": 8,
+      "featured": true
+    },
+    {
+      "slug": "emulsion-stability-motion",
+      "title": "Emulsion Stability Under Motion: Why Your Hollandaise Breaks at 12 Knots",
+      "date": "2026-01-20",
+      "category": "science",
+      "tags": ["emulsion", "yacht-specific", "sauce"],
+      "read_time": 12,
+      "featured": false
+    },
+    {
+      "slug": "lacto-fermentation-humidity",
+      "title": "Lacto-Fermentation in High Humidity Environments",
+      "date": "2026-01-15",
+      "category": "science",
+      "tags": ["fermentation", "preservation", "yacht-specific"],
+      "read_time": 10,
+      "featured": false
+    },
+    {
+      "slug": "reverse-sear-thickness",
+      "title": "The Reverse Sear Threshold: Below 3cm, You're Wasting Time",
+      "date": "2026-01-08",
+      "category": "science",
+      "tags": ["technique", "meat", "temperature"],
+      "read_time": 6,
+      "featured": false
+    },
+    {
+      "slug": "sous-vide-altitude-correction",
+      "title": "Sous Vide Temperature Corrections for Altitude and Atmospheric Pressure",
+      "date": "2026-01-18",
+      "category": "technique",
+      "tags": ["sous-vide", "safety", "temperature"],
+      "read_time": 8,
+      "featured": false
+    },
+    {
+      "slug": "fish-fabrication-yield",
+      "title": "Fish Fabrication: Yield Percentages for 23 Species You Actually Cook",
+      "date": "2026-01-12",
+      "category": "technique",
+      "tags": ["fish", "yield", "cost-control"],
+      "read_time": 6,
+      "featured": false
+    },
+    {
+      "slug": "provisioning-monaco",
+      "title": "Monaco Provisioning: The Honest Guide",
+      "date": "2026-01-21",
+      "category": "galley",
+      "tags": ["provisioning", "mediterranean", "suppliers"],
+      "read_time": 15,
+      "featured": false
+    },
+    {
+      "slug": "induction-yacht-galley",
+      "title": "Induction in the Yacht Galley: A Two-Year Reliability Report",
+      "date": "2026-01-10",
+      "category": "galley",
+      "tags": ["equipment", "review", "induction"],
+      "read_time": 12,
+      "featured": false
+    }
+  ],
+  "categories": {
+    "science": {
+      "name": "Science Desk",
+      "description": "Food chemistry, physics, and biology explained",
+      "slug": "science"
+    },
+    "technique": {
+      "name": "Technique Files",
+      "description": "Step-by-step protocols",
+      "slug": "techniques"
+    },
+    "galley": {
+      "name": "Galley Notes",
+      "description": "Yacht-specific intelligence",
+      "slug": "galley"
+    },
+    "dispatch": {
+      "name": "Dispatches",
+      "description": "Short, brutal news items",
+      "slug": "dispatches"
+    }
+  },
+  "tags": [
+    "maillard", "chemistry", "technique", "fish", "umami", "aging",
+    "salt", "emulsion", "sauce", "yacht-specific", "fermentation",
+    "preservation", "meat", "temperature", "sous-vide", "safety",
+    "yield", "cost-control", "provisioning", "mediterranean",
+    "suppliers", "equipment", "review", "induction", "market", "seafood"
+  ]
+}
