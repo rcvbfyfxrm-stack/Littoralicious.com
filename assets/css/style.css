@@ -591,6 +591,14 @@ h4 { font-size: var(--text-lg); }
     margin-bottom: var(--space-2);
 }
 
+.footer__description {
+    font-size: var(--text-base);
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-sea);
+    margin-bottom: var(--space-2);
+}
+
 .footer__tagline {
     font-size: var(--text-sm);
     color: var(--color-muted);
