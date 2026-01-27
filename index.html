@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -25,10 +24,10 @@
                     <span class="masthead__description">Modern Science & Regional Cooking from the Littoral</span>
                 </div>
                 <nav class="masthead__nav">
-                    <a href="#dispatches">Dispatches</a>
-                    <a href="#science">Science Desk</a>
-                    <a href="#techniques">Techniques</a>
-                    <a href="#galley">Galley Notes</a>
+                    <a href="science.html">Science</a>
+                    <a href="techniques.html">Techniques</a>
+                    <a href="recipes.html">Recipes</a>
+                    <a href="galley.html">Galley</a>
                     <a href="about.html">About</a>
                 </nav>
             </div>
@@ -36,21 +35,79 @@
     </header>
 
     <main>
-        <!-- Featured Article -->
+        <!-- This Week's Showcase -->
         <section class="container" style="padding-top: var(--space-12);">
-            <article class="article-card article-card--featured">
-                <div class="article-card__meta">
-                    <span class="article-card__category">Galley Notes</span>
-                    <span>January 26, 2026</span>
-                    <span>12 min read</span>
-                </div>
-                <h2 class="article-card__title">
-                    <a href="articles/galley-efficiency-protocol.html">Galley Efficiency Protocol: Maximizing Output in Minimal Space</a>
-                </h2>
-                <p class="article-card__excerpt">
-                    The complete system for organizing workflow, station setup, and mise en place in confined yacht galleys. Tested across 50+ vessels, from 24m sailing yachts to 90m motor yachts.
+            <div class="divider">
+                <span class="divider__text">This Week</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);">
+
+                <!-- Technique of the Week -->
+                <article class="article-card" style="border: 1px solid var(--color-border); padding: var(--space-6);">
+                    <div class="article-card__meta">
+                        <span class="article-card__category" style="background: var(--color-sea); color: white; padding: 2px 8px;">Technique</span>
+                    </div>
+                    <h3 class="article-card__title" style="font-size: var(--text-lg); margin: var(--space-3) 0;">
+                        <a href="articles/reverse-basting.html">Reverse Basting: Why You've Been Wasting Butter</a>
+                    </h3>
+                    <p class="article-card__excerpt" style="font-size: var(--text-sm);">
+                        Stop basting throughout. Baste only in the final 90 seconds. The science of milk solids, Maillard browning, and why cold butter changes everything.
+                    </p>
+                </article>
+
+                <!-- Ingredient Spotlight -->
+                <article class="article-card" style="border: 1px solid var(--color-border); padding: var(--space-6);">
+                    <div class="article-card__meta">
+                        <span class="article-card__category" style="background: var(--color-ink); color: white; padding: 2px 8px;">Ingredient</span>
+                    </div>
+                    <h3 class="article-card__title" style="font-size: var(--text-lg); margin: var(--space-3) 0;">
+                        <a href="articles/bottarga-spotlight.html">Bottarga: The Mediterranean's 3,000-Year-Old Umami Bomb</a>
+                    </h3>
+                    <p class="article-card__excerpt" style="font-size: var(--text-sm);">
+                        A 200g piece started as 700g of fresh roe. Plus: unexpected pairings with grapefruit and white chocolate, backed by volatile compound science.
+                    </p>
+                </article>
+
+                <!-- Littoral Recipe -->
+                <article class="article-card" style="border: 1px solid var(--color-border); padding: var(--space-6);">
+                    <div class="article-card__meta">
+                        <span class="article-card__category" style="background: #8b5a2b; color: white; padding: 2px 8px;">Recipe</span>
+                    </div>
+                    <h3 class="article-card__title" style="font-size: var(--text-lg); margin: var(--space-3) 0;">
+                        <a href="recipes/caldeirada.html">Caldeirada: Portuguese Fish Stew</a>
+                    </h3>
+                    <p class="article-card__excerpt" style="font-size: var(--text-sm);">
+                        Never stir—shake the pot. Three types of fish minimum. Why layering isn't tradition for tradition's sake, it's thermodynamics.
+                    </p>
+                </article>
+
+                <!-- Research Brief -->
+                <article class="article-card" style="border: 1px solid var(--color-border); padding: var(--space-6);">
+                    <div class="article-card__meta">
+                        <span class="article-card__category" style="background: var(--color-muted); color: white; padding: 2px 8px;">Research</span>
+                    </div>
+                    <h3 class="article-card__title" style="font-size: var(--text-lg); margin: var(--space-3) 0;">
+                        <a href="articles/evoo-frying-study.html">EVOO Remains Stable at Frying Temperatures</a>
+                    </h3>
+                    <p class="article-card__excerpt" style="font-size: var(--text-sm);">
+                        2024 Barcelona study: Extra virgin outperforms seed oils. The "save EVOO for finishing" advice is outdated. Here's the data.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Efficiency Hack Highlight -->
+        <section class="container" style="padding: var(--space-12) 0;">
+            <div style="background: var(--color-subtle); border-left: 4px solid var(--color-sea); padding: var(--space-6); max-width: 800px; margin: 0 auto;">
+                <span style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-sea); font-weight: 600;">Galley Hack of the Week</span>
+                <h3 style="font-size: var(--text-xl); margin: var(--space-3) 0; font-family: var(--font-serif);">The Mise Tray Reset</h3>
+                <p style="color: var(--color-muted); margin-bottom: var(--space-4);">
+                    One sheet tray per service type. Arrange all containers in plating order. Wrap and refrigerate as a unit. Pull one tray at service—your station is set in 30 seconds. <strong>Saves 30-40 minutes daily.</strong>
                 </p>
-            </article>
+                <a href="galley.html#efficiency" style="color: var(--color-sea); font-weight: 600;">Read the full protocol &rarr;</a>
+            </div>
         </section>
 
         <!-- Dispatches Section -->
@@ -61,7 +118,18 @@
 
             <div class="article-list">
                 <article class="dispatch">
-                    <time class="dispatch__date">2026-01-24 · 14:32 UTC</time>
+                    <time class="dispatch__date">2026-01-26 · 08:00 UTC</time>
+                    <h3 class="dispatch__title">Mediterranean Bluefin Season Opens with New Sustainability Quotas</h3>
+                    <div class="dispatch__body">
+                        <p>ICCAT has reduced 2026 quotas by 12% following stock assessments. Provisioning chefs should expect €85-95/kg for sashimi-grade through April. Japanese buyers are prioritizing Atlantic stock, creating supply pressure in Monaco and Antibes. Book through your chandler now.</p>
+                    </div>
+                    <div class="dispatch__source">
+                        Source: <a href="#">International Commission for the Conservation of Atlantic Tunas</a>
+                    </div>
+                </article>
+
+                <article class="dispatch">
+                    <time class="dispatch__date">2026-01-25 · 14:32 UTC</time>
                     <h3 class="dispatch__title">Japanese Ikejime Federation Updates Bleeding Protocol for Bluefin</h3>
                     <div class="dispatch__body">
                         <p>The JIF has revised its recommended bleeding time for Pacific bluefin from 45 to 62 minutes based on ATP degradation studies. The extended window allows for more complete inosine monophosphate development—the compound responsible for peak umami in aged fish. Chefs should note this applies only to fish destined for 72+ hour aging.</p>
@@ -72,10 +140,10 @@
                 </article>
 
                 <article class="dispatch">
-                    <time class="dispatch__date">2026-01-23 · 09:15 UTC</time>
+                    <time class="dispatch__date">2026-01-24 · 09:15 UTC</time>
                     <h3 class="dispatch__title">Salt Crystallization Study Debunks "Finishing Salt Timing" Myth</h3>
                     <div class="dispatch__body">
-                        <p>New research from the Culinary Institute of Barcelona demonstrates that Maldon salt crystals dissolve within 47 seconds on protein surfaces above <span class="temperature">55</span>. The practice of "finishing just before service" to preserve texture has a window of approximately 30 seconds—not the 2-3 minutes commonly cited. For preserved crunch, application must occur tableside.</p>
+                        <p>New research from the Culinary Institute of Barcelona demonstrates that Maldon salt crystals dissolve within 47 seconds on protein surfaces above 55°C. The practice of "finishing just before service" to preserve texture has a window of approximately 30 seconds—not the 2-3 minutes commonly cited. For preserved crunch, application must occur tableside.</p>
                     </div>
                     <div class="dispatch__source">
                         Source: <a href="#">International Journal of Gastronomy and Food Science</a>
@@ -83,7 +151,7 @@
                 </article>
 
                 <article class="dispatch">
-                    <time class="dispatch__date">2026-01-22 · 16:48 UTC</time>
+                    <time class="dispatch__date">2026-01-23 · 16:48 UTC</time>
                     <h3 class="dispatch__title">Mediterranean Octopus Supplies Hit 15-Year Low</h3>
                     <div class="dispatch__body">
                         <p>Spanish fishing cooperatives report catches down 34% from 2025 baseline. Provisioning chefs should expect pricing pressure through Q2. Alternative sourcing from Mauritanian waters shows 12% higher mercury levels—factor into guest advisory decisions.</p>
@@ -91,124 +159,6 @@
                     <div class="dispatch__source">
                         Source: <a href="#">European Fisheries Control Agency</a>
                     </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Science Desk -->
-        <section id="science" class="container">
-            <div class="divider">
-                <span class="divider__text">Science Desk</span>
-            </div>
-
-            <div class="article-list">
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Food Chemistry</span>
-                        <span>January 20, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/emulsion-stability-motion.html">Emulsion Stability Under Motion: Why Your Hollandaise Breaks at 12 Knots</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        Mechanical agitation from vessel movement affects lecithin's emulsifying capacity. We tested 14 stabilization methods across sea states 2-5. Only three held.
-                    </p>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Fermentation</span>
-                        <span>January 15, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/lacto-fermentation-humidity.html">Lacto-Fermentation in High Humidity Environments: Mold Prevention Without Compromising Bacterial Culture</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        Caribbean-based chefs face 85%+ humidity that accelerates surface mold. The standard 2% salt solution becomes insufficient. Here's the adjusted protocol.
-                    </p>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Protein Science</span>
-                        <span>January 8, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/reverse-sear-thickness.html">The Reverse Sear Threshold: Below 3cm, You're Wasting Time</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        Thermal gradient analysis confirms reverse sear benefits diminish rapidly below 3cm thickness. For thinner cuts, conventional high-heat methods produce superior results in less time.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Techniques -->
-        <section id="techniques" class="container">
-            <div class="divider">
-                <span class="divider__text">Technique Files</span>
-            </div>
-
-            <div class="article-list">
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Sous Vide</span>
-                        <span>January 18, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/sous-vide-altitude-correction.html">Sous Vide Temperature Corrections for Altitude and Atmospheric Pressure</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        Pasteurization tables assume sea level. At 2,000m elevation, water boils at <span class="temperature">93</span>. Your safety margins are different. Here are the adjusted hold times.
-                    </p>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Knife Work</span>
-                        <span>January 12, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/fish-fabrication-yield.html">Fish Fabrication: Yield Percentages for 23 Species You Actually Cook</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        Not the textbook numbers. Real yields from real fish, accounting for seasonal fat content, wild vs. farmed, and the cuts your guests actually want.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Galley Notes -->
-        <section id="galley" class="container">
-            <div class="divider">
-                <span class="divider__text">Galley Notes</span>
-            </div>
-
-            <div class="article-list">
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Provisioning</span>
-                        <span>January 21, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/provisioning-monaco.html">Monaco Provisioning: The Honest Guide</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        Everyone tells you to use the big chandlers. Here's what they don't tell you: the markup structure, the actually good suppliers, and what to source from Nice instead.
-                    </p>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-card__meta">
-                        <span class="article-card__category">Equipment</span>
-                        <span>January 10, 2026</span>
-                    </div>
-                    <h2 class="article-card__title">
-                        <a href="articles/induction-yacht-galley.html">Induction in the Yacht Galley: A Two-Year Reliability Report</a>
-                    </h2>
-                    <p class="article-card__excerpt">
-                        We tracked failure rates, repair costs, and actual performance of six induction brands across 47 charter yachts. The results contradict the marketing.
-                    </p>
                 </article>
             </div>
         </section>
@@ -270,7 +220,7 @@
             <div class="footer__inner">
                 <div class="footer__about">
                     <div class="footer__brand">LITTORALICIOUS</div>
-                    <p class="footer__description">Modern Science & Regional Littoral Cooking</p>
+                    <p class="footer__description">Modern Science & Regional Cooking from the Littoral</p>
                     <p class="footer__tagline">
                         For professionals who take their craft seriously.
                     </p>
@@ -279,10 +229,10 @@
                     <div class="footer__col">
                         <h4>Sections</h4>
                         <ul>
-                            <li><a href="#dispatches">Dispatches</a></li>
-                            <li><a href="#science">Science Desk</a></li>
-                            <li><a href="#techniques">Techniques</a></li>
-                            <li><a href="#galley">Galley Notes</a></li>
+                            <li><a href="science.html">Science Desk</a></li>
+                            <li><a href="techniques.html">Techniques</a></li>
+                            <li><a href="recipes.html">Littoral Recipes</a></li>
+                            <li><a href="galley.html">Galley Notes</a></li>
                         </ul>
                     </div>
                     <div class="footer__col">
