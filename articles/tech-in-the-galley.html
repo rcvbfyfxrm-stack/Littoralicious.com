@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI, apps, and tools that actually make yacht chefs better. Not gadgets. Systems.">
+    <title>Technology in the Galley — LITTORALICIOUS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Sailing Around the Plate. Littoraly Delicious.</span>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../science.html">Science</a>
+                    <a href="../techniques.html">Techniques</a>
+                    <a href="../recipes.html">Recipes</a>
+                    <a href="../galley.html">Galley</a>
+                    <a href="../industry.html">Industry</a>
+                    <a href="../about.html">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">Galley Notes</span>
+                    <time class="article__date">January 27, 2026</time>
+                    <span class="article__reading-time">7 min read</span>
+                </div>
+                <h1 class="article__title">Technology in the Galley: AI, Apps, and the Tools That Actually Matter</h1>
+                <p class="article__lede">
+                    Your phone is more powerful than the computer that landed Apollo 11. You're using it to scroll Instagram between services. Here's how to use it to become a better chef.
+                </p>
+            </header>
+
+            <div class="article__content container" style="max-width: 65ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <h2>AI Is Not Coming for Your Job</h2>
+                <p>
+                    An AI can't taste. Can't smell a fish and know it's two days past prime. Can't adjust a sauce because the humidity changed the reduction rate. Can't read a guest's face and know the course needs to land faster.
+                </p>
+                <p>
+                    But an AI can do the things you hate: menu planning, cost calculations, dietary cross-referencing, provisioning lists, recipe scaling, and generating ideas at 2am when you're staring at a preference sheet that says "no gluten, no dairy, no nightshades, loves Italian food."
+                </p>
+                <p>
+                    <strong>Use AI for the admin. Save your brain for the craft.</strong>
+                </p>
+
+                <h2>Claude & AI Assistants: Your Sous Chef That Never Sleeps</h2>
+
+                <h3>Menu Creation</h3>
+                <p>
+                    Here's a real workflow:
+                </p>
+                <ol>
+                    <li>Receive guest preference sheet: "Mediterranean-inspired, pescatarian, one guest celiac, wine pairing required"</li>
+                    <li>Open Claude (or ChatGPT, or Gemini). Prompt:
+                        <div style="background: var(--color-subtle); padding: var(--space-4); margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm);">
+                            "Create a 5-course dinner menu. Mediterranean, pescatarian. One guest is celiac — all courses must be naturally gluten-free, no substitutions that taste like substitutions. Suggest wine pairings for each course. I have access to fresh local fish, excellent olive oil, and it's January so citrus is in season."
+                        </div>
+                    </li>
+                    <li>Get 3 options in 30 seconds. Modify, combine, make it yours.</li>
+                    <li>Ask follow-up: "Scale this for 12 guests and generate a provisioning list with quantities."</li>
+                </ol>
+                <p>
+                    <strong>Time saved:</strong> 45 minutes of staring at a blank page. You still make every creative decision. The AI handles the blank-page problem.
+                </p>
+
+                <h3>Recipe Development & Adaptation</h3>
+                <p>
+                    Prompt: "I have a classic bouillabaisse recipe. Adapt it for a guest who can't eat shellfish but loves the flavor profile. Keep it authentic."
+                </p>
+                <p>
+                    The AI will suggest alternatives based on flavor compound matching. You decide what works. It's a brainstorming partner that knows food chemistry and doesn't get offended when you reject its ideas.
+                </p>
+
+                <h3>Dietary Cross-Referencing</h3>
+                <p>
+                    Guest preference sheet says: "keto, allergic to tree nuts, doesn't like cilantro, loves Asian food."
+                </p>
+                <p>
+                    You could spend 20 minutes mentally filtering recipes. Or ask the AI to cross-reference restrictions against your planned menu and flag conflicts. It catches what you miss at midnight.
+                </p>
+
+                <h3>Cost Calculation</h3>
+                <p>
+                    Paste your provision list. Ask: "Calculate per-head cost for this 7-day charter menu for 10 guests." Include your sourcing prices. Get instant cost-per-plate breakdowns. Present to management with data, not guesses.
+                </p>
+
+                <h2>Claude Code: Building Your Own Tools</h2>
+                <p>
+                    This is where it gets interesting. Claude Code (Anthropic's CLI tool) lets you build custom tools using natural language. No coding background needed.
+                </p>
+
+                <h3>What You Can Build</h3>
+                <ul>
+                    <li><strong>Personal recipe database</strong> — Describe your filing system, let Claude Code create a searchable archive with tags for dietary restrictions, season, difficulty, and guest feedback.</li>
+                    <li><strong>Provision calculator</strong> — Input guest count, duration, meal plan. Output: exact quantities with waste factored in. Build it once, use it for every charter.</li>
+                    <li><strong>Menu rotation tracker</strong> — For repeat guests. The system flags if you've served the same dish to the same guest. No repeats.</li>
+                    <li><strong>Inventory manager</strong> — Track what's on board, what's expiring, what needs reordering. Simple spreadsheet connected to your provision list.</li>
+                    <li><strong>Preference sheet parser</strong> — Paste in a guest preference sheet, get a structured summary: restrictions, likes, dislikes, allergies, organized by course.</li>
+                </ul>
+
+                <div style="background: var(--color-subtle); padding: var(--space-6); margin: var(--space-8) 0; border-left: 4px solid var(--color-sea);">
+                    <h3 style="margin-top: 0; font-size: var(--text-base);">Real Example</h3>
+                    <p style="font-family: var(--font-mono); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+                        "Build me a simple HTML page where I can input guest dietary restrictions and get a week of dinner suggestions that accommodate everyone. Include a shopping list output."
+                    </p>
+                    <p style="margin-bottom: 0; font-size: var(--text-sm);">
+                        Claude Code builds this in minutes. You now have a custom tool that lives on your laptop, works offline, and does exactly what you need. No subscription. No app. Yours.
+                    </p>
+                </div>
+
+                <h2>Apps Worth Installing</h2>
+                <p>
+                    Most chef apps are garbage designed by people who've never worked a service. These aren't:
+                </p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--text-sm);">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--color-ink);">
+                            <th style="text-align: left; padding: var(--space-2);">App</th>
+                            <th style="text-align: left; padding: var(--space-2);">Use</th>
+                            <th style="text-align: left; padding: var(--space-2);">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">Claude / ChatGPT</td>
+                            <td style="padding: var(--space-2);">Menu planning, recipe scaling, dietary problem-solving</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Free / $20/mo</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">Paprika / Mela</td>
+                            <td style="padding: var(--space-2);">Recipe management, scaling, meal planning</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">$5-10 one-time</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">Notion</td>
+                            <td style="padding: var(--space-2);">Provision lists, menu archives, guest databases</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Free / $10/mo</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">Google Sheets</td>
+                            <td style="padding: var(--space-2);">Cost tracking, inventory, shared provision lists with stew team</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Free</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">ThermoWorks app</td>
+                            <td style="padding: var(--space-2);">Bluetooth thermometer monitoring during slow cooks</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Free (with device)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">Windy</td>
+                            <td style="padding: var(--space-2);">Weather/sea state forecasting — plan your prep around conditions</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Free</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2); font-weight: bold;">XE Currency</td>
+                            <td style="padding: var(--space-2);">Real-time conversion when provisioning in foreign ports</td>
+                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Free</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Smart Hardware</h2>
+                <p>
+                    Three pieces of tech that earn their galley space:
+                </p>
+                <ol>
+                    <li><strong>Bluetooth thermometer (ThermoWorks Signals/Smoke)</strong> — Monitor proteins from the bridge deck. Get alerts on your phone. No more standing over a roast while guests wonder where you are.</li>
+                    <li><strong>Vacuum sealer with sous vide</strong> — Prep ahead, cook precisely, hold safely. The most important piece of tech in any yacht galley. If you don't have one, fight for the budget.</li>
+                    <li><strong>Tablet (waterproof case)</strong> — Mounted in the galley. Recipe reference, provision lists, timer display, preference sheets. Replace the paper chaos.</li>
+                </ol>
+
+                <h2>Using AI for Flavor Pairing</h2>
+                <p>
+                    This is where AI actually outperforms human intuition:
+                </p>
+                <div style="background: var(--color-subtle); padding: var(--space-4); margin: var(--space-4) 0; font-family: var(--font-mono); font-size: var(--text-sm);">
+                    "I have fresh red snapper, blood oranges, and fennel. What unexpected ingredient would bridge these flavors based on shared volatile compounds?"
+                </div>
+                <p>
+                    The AI draws from flavor compound databases (Foodpairing, VCF) and suggests connections you wouldn't make: saffron (shares safranal with fennel, limonene with blood orange), or black olive (oleic acid bridge, Mediterranean context).
+                </p>
+                <p>
+                    You're not outsourcing creativity. You're expanding your palette of possibilities, then applying your judgment.
+                </p>
+
+                <h2>What AI Can't Do</h2>
+                <p>
+                    Be honest about the limits:
+                </p>
+                <ul>
+                    <li><strong>Taste.</strong> An AI doesn't know your salt level is right. You do.</li>
+                    <li><strong>Read the room.</strong> The owner's mood, the guest's energy, the timing of the next course. That's human work.</li>
+                    <li><strong>Handle chaos.</strong> When the sea state changes, the guest count doubles, and the freezer dies—your experience solves that, not an algorithm.</li>
+                    <li><strong>Source quality.</strong> No AI picks a better fish than a chef who knows what to look for.</li>
+                    <li><strong>Replace relationships.</strong> Your fishmonger at Haulover knows your standards. No app replaces that.</li>
+                </ul>
+
+                <h2>The Workflow</h2>
+                <p>
+                    Here's how tech fits into a realistic charter workflow:
+                </p>
+                <table style="width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--text-sm);">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--color-ink);">
+                            <th style="text-align: left; padding: var(--space-2);">Phase</th>
+                            <th style="text-align: left; padding: var(--space-2);">Tech Tool</th>
+                            <th style="text-align: left; padding: var(--space-2);">Human Skill</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Preference sheet arrives</td>
+                            <td style="padding: var(--space-2);">AI parses restrictions & conflicts</td>
+                            <td style="padding: var(--space-2);">You read between the lines</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Menu planning</td>
+                            <td style="padding: var(--space-2);">AI generates options, scales recipes</td>
+                            <td style="padding: var(--space-2);">You choose, refine, make it yours</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Provisioning</td>
+                            <td style="padding: var(--space-2);">Spreadsheet calculates quantities & cost</td>
+                            <td style="padding: var(--space-2);">You select the quality at market</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Prep</td>
+                            <td style="padding: var(--space-2);">Tablet displays prep list & timers</td>
+                            <td style="padding: var(--space-2);">You execute the technique</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Cooking</td>
+                            <td style="padding: var(--space-2);">Bluetooth thermometer monitors</td>
+                            <td style="padding: var(--space-2);">You adjust by feel, taste, instinct</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Service</td>
+                            <td style="padding: var(--space-2);">Nothing. Put the phone away.</td>
+                            <td style="padding: var(--space-2);">Everything. This is your moment.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--color-border);">
+                            <td style="padding: var(--space-2);">Post-charter</td>
+                            <td style="padding: var(--space-2);">AI helps document what worked</td>
+                            <td style="padding: var(--space-2);">You learn, adapt, improve</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>The Hard Truth</h2>
+                <p>
+                    Most yacht chefs resist technology because they think it diminishes the craft. It doesn't. A Bluetooth thermometer doesn't make you less of a cook. It makes you a cook who never overcooks a $200 piece of wagyu because you got pulled away to deal with a captain's request.
+                </p>
+                <p>
+                    AI doesn't replace your palate. It replaces the three hours you spend on admin that contribute nothing to the plate. Use that time to prep better, rest more, or actually taste your food before service.
+                </p>
+                <p>
+                    The best chefs in the world use every advantage available. The galley isn't a monastery. It's a workplace. Use the tools.
+                </p>
+
+                <div style="margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-border); font-size: var(--text-sm); color: var(--color-muted);">
+                    <strong>Tools mentioned:</strong><br>
+                    Claude — <a href="https://claude.ai" style="color: var(--color-sea);">claude.ai</a> (Anthropic)<br>
+                    Claude Code — <a href="https://docs.anthropic.com/en/docs/claude-code" style="color: var(--color-sea);">CLI tool for building custom solutions</a><br>
+                    Notion — <a href="https://notion.so" style="color: var(--color-sea);">notion.so</a><br>
+                    ThermoWorks — <a href="https://thermoworks.com" style="color: var(--color-sea);">thermoworks.com</a><br>
+                    Windy — <a href="https://windy.com" style="color: var(--color-sea);">windy.com</a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__about">
+                    <div class="footer__brand">LITTORALICIOUS</div>
+                    <p class="footer__description">Modern Science & Regional Cooking from the Littoral</p>
+                </div>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
