@@ -318,7 +318,7 @@ What did they find → Why should you care → What should you do → What shoul
 A systems engineer who cooks. No fluff. Problem → solution → proof. If it can't be quantified, it doesn't belong here.
 
 ### The Rhythm
-Name the pain. Fix the pain. Prove you fixed it. Warn what can break. Attribute who taught you.
+Name the pain. Fix the pain. Prove you fixed it. Warn what can break.
 
 ### Template
 
@@ -364,11 +364,6 @@ Name the pain. Fix the pain. Prove you fixed it. Warn what can break. Attribute 
 
 > *Example: "Requires fridge space for full trays. On yachts under 40m, you'll need half-trays or strategic stacking."*
 > *Example: "Only works if everyone on the team follows the same system. One person freelancing breaks it for everyone."*
-
-**Who Taught Me This:**
-[A specific chef, a specific yacht, a specific disaster. Make it human. Optional — but always better with it.]
-
-> *Example: "The chef on Vava II fed 52 crew plus 12 guests. She had 9 trays in rotation. I watched her set up for a 7-course dinner in under 2 minutes. 'If you're thinking during service,' she said, 'you already lost.'"*
 
 ---
 
