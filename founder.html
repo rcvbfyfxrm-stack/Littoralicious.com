@@ -3,75 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arnaud Callier — 10+ years in superyacht galleys. Symphony, Vava II, Christina O., Cloud 9, Kismet.">
+    <meta name="description" content="Arnaud Callier — Head Chef, Superyacht. 50,000+ NM, 10+ Atlantic crossings, 40+ countries. The story behind Littoralicious.">
 
-    <title>Founder — Littoralicious</title>
+    <title>Arnaud Callier — Littoralicious</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        /* ======================================================
+           FOUNDER PAGE — Diaporama Presentation
+           All styles scoped to this page only
+           ====================================================== */
+
+        /* --- Hero --- */
         .founder-hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-12);
-            padding: var(--space-16) 0;
-            align-items: center;
-        }
-
-        .founder-hero__image {
-            aspect-ratio: 4/5;
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 500px;
             overflow: hidden;
-            filter: grayscale(100%) contrast(1.1);
         }
 
-        .founder-hero__image img {
+        .founder-hero__img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
         }
 
-        .founder-hero__content h1 {
-            font-size: var(--text-2xl);
-            margin-bottom: var(--space-2);
+        .founder-hero__caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.75);
+            padding: var(--space-6) var(--space-8);
         }
 
-        .founder-hero__subtitle {
+        .founder-hero__name {
+            font-family: var(--font-serif);
+            font-size: var(--text-3xl);
+            font-weight: 400;
+            color: #fafafa;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-1);
+        }
+
+        .founder-hero__role {
             font-size: var(--text-sm);
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: var(--color-sea);
-            margin-bottom: var(--space-6);
+            color: #94a3b8;
         }
 
-        .founder-hero__intro {
+        /* --- Opening Statement + Stats --- */
+        .founder-opening {
+            padding: var(--space-16) 0 var(--space-12);
+        }
+
+        .founder-opening__intro {
             font-family: var(--font-serif);
-            font-size: var(--text-lg);
+            font-size: var(--text-xl);
             line-height: var(--leading-relaxed);
             color: var(--color-muted);
+            max-width: var(--max-width-prose);
+            margin-bottom: var(--space-8);
         }
 
-        .yacht-list {
+        .yacht-tags {
             display: flex;
             flex-wrap: wrap;
             gap: var(--space-3);
-            margin: var(--space-8) 0;
+            margin-bottom: var(--space-8);
         }
 
-        .yacht-list__item {
+        .yacht-tags__item {
             font-family: var(--font-mono);
             font-size: var(--text-xs);
             padding: var(--space-2) var(--space-3);
             background: var(--color-subtle);
             border: 1px solid var(--color-border);
+            color: var(--color-ink);
+        }
+
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-8);
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .stat-row__item {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: var(--color-sea);
+            letter-spacing: 0.02em;
+        }
+
+        /* --- Plate Strip (Scroll-Snap Gallery) --- */
+        .plate-strip {
+            padding: var(--space-12) 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .plate-strip__track {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 0 var(--space-6);
+        }
+
+        .plate-strip__track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .plate-strip__item {
+            flex: 0 0 40vw;
+            scroll-snap-align: start;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .plate-strip__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
         }
 
         @media (max-width: 768px) {
-            .founder-hero {
+            .plate-strip__item {
+                flex: 0 0 80vw;
+            }
+        }
+
+        /* --- Bio Narrative --- */
+        .founder-story {
+            padding: var(--space-16) 0;
+        }
+
+        .founder-story .prose h2 {
+            font-size: var(--text-xl);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+        }
+
+        .founder-story .prose h2:first-child {
+            margin-top: 0;
+        }
+
+        /* --- Inline Photo Break --- */
+        .photo-break {
+            width: 100%;
+            max-height: 50vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photo-break img {
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.05);
+        }
+
+        .photo-break__caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.6);
+            padding: var(--space-3) var(--space-6);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+        }
+
+        /* --- Career Timeline --- */
+        .timeline {
+            padding: var(--space-16) 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .timeline__heading {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .timeline__subheading {
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-sea);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-6);
+        }
+
+        .timeline__list {
+            border-left: 2px solid var(--color-sea);
+            padding-left: var(--space-8);
+        }
+
+        .timeline__entry {
+            margin-bottom: var(--space-8);
+            position: relative;
+        }
+
+        .timeline__entry::before {
+            content: '';
+            position: absolute;
+            left: calc(-1 * var(--space-8) - 5px);
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            background: var(--color-sea);
+        }
+
+        .timeline__entry--flagship .timeline__title {
+            font-size: var(--text-lg);
+        }
+
+        .timeline__entry--compact .timeline__title {
+            font-size: var(--text-base);
+        }
+
+        .timeline__entry--compact {
+            margin-bottom: var(--space-6);
+        }
+
+        .timeline__entry--compact::before {
+            width: 6px;
+            height: 6px;
+            left: calc(-1 * var(--space-8) - 4px);
+            background: var(--color-salt);
+        }
+
+        .timeline__title {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin-bottom: var(--space-1);
+        }
+
+        .timeline__vessel {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-sea);
+        }
+
+        .timeline__meta {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-salt);
+            margin-bottom: var(--space-2);
+        }
+
+        .timeline__detail {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            line-height: var(--leading-normal);
+        }
+
+        /* --- Video Showcase --- */
+        .video-showcase {
+            padding: var(--space-16) 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .video-showcase__heading {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .video-showcase__pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .video-showcase__pair video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-showcase__main {
+            width: 100%;
+        }
+
+        .video-showcase__main video {
+            width: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .video-showcase__pair {
                 grid-template-columns: 1fr;
             }
+        }
 
-            .founder-hero__image {
-                order: -1;
-            }
+        /* --- Philosophy --- */
+        .philosophy {
+            padding: var(--space-16) 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .philosophy__heading {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .philosophy__principle {
+            margin-bottom: var(--space-6);
+            max-width: var(--max-width-prose);
+        }
+
+        .philosophy__principle strong {
+            font-weight: 600;
+        }
+
+        /* --- CTA Buttons --- */
+        .cta-section {
+            padding: var(--space-16) 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .cta-stack {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            align-items: center;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            padding: var(--space-4) var(--space-6);
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid var(--color-sea);
+            transition: background var(--transition-fast), color var(--transition-fast);
+        }
+
+        .cta-btn--primary {
+            background: var(--color-sea);
+            color: var(--color-paper);
+        }
+
+        .cta-btn--primary:hover {
+            background: transparent;
+            color: var(--color-sea);
+        }
+
+        .cta-btn--secondary {
+            background: transparent;
+            color: var(--color-sea);
+        }
+
+        .cta-btn--secondary:hover {
+            background: var(--color-sea);
+            color: var(--color-paper);
         }
     </style>
 </head>
@@ -82,15 +386,16 @@
         <div class="container">
             <div class="masthead__inner">
                 <div class="masthead__brand">
-                    <a href="index.html" class="masthead__logo">LITTORALICIOUS</a>
-                    <span class="masthead__tagline">Sailing Around the Plate. Littoraly Delicious.</span>
-                    <span class="masthead__description">Modern Science & Regional Cooking from the Littoral</span>
+                    <a href="/" class="masthead__logo">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">MODERN SCIENCE AND REGIONAL RECIPES FROM THE SEA</span>
+                    <span class="masthead__description">Sailing Around The Plate -- Littoraly Delicious</span>
                 </div>
                 <nav class="masthead__nav">
-                    <a href="index.html#dispatches">Dispatches</a>
-                    <a href="index.html#science">Science Desk</a>
-                    <a href="index.html#techniques">Techniques</a>
-                    <a href="index.html#galley">Galley Notes</a>
+                    <a href="shore-larder.html">Shore Larder</a>
+                    <a href="the-method.html">The Method</a>
+                    <a href="littoral-heritage.html">Heritage</a>
+                    <a href="the-evidence.html">The Evidence</a>
+                    <a href="the-bridge.html">The Bridge</a>
                     <a href="about.html">About</a>
                 </nav>
             </div>
@@ -98,53 +403,93 @@
     </header>
 
     <main>
-        <!-- Founder Hero -->
-        <section class="container">
-            <div class="founder-hero">
-                <div class="founder-hero__content">
-                    <span class="founder-hero__subtitle">Founder</span>
-                    <h1>Arnaud Callier</h1>
-                    <p class="founder-hero__intro">
-                        A decade in superyacht galleys. 50,000+ nautical miles. Kitchens that never stop moving. I built Littoralicious because nobody writes for us.
-                    </p>
 
-                    <div class="yacht-list">
-                        <span class="yacht-list__item">M/Y Symphony</span>
-                        <span class="yacht-list__item">M/Y Vava II</span>
-                        <span class="yacht-list__item">M/Y Christina O.</span>
-                        <span class="yacht-list__item">M/Y Cloud 9</span>
-                        <span class="yacht-list__item">M/Y Kismet</span>
-                    </div>
-                </div>
-                <div class="founder-hero__image">
-                    <img src="assets/images/founder-galley.jpg" alt="Arnaud Callier plating in a yacht galley">
+        <!-- ========== 1. FULL-BLEED HERO ========== -->
+        <section class="founder-hero">
+            <img class="founder-hero__img"
+                 src="assets/images/founder-galley.jpg"
+                 alt="Arnaud Callier plating in a superyacht galley">
+            <div class="founder-hero__caption">
+                <div class="container">
+                    <h1 class="founder-hero__name">Arnaud Callier</h1>
+                    <span class="founder-hero__role">Head Chef &middot; Superyacht</span>
                 </div>
             </div>
         </section>
 
-        <!-- Story -->
-        <article class="article-body">
+        <!-- ========== 2. OPENING STATEMENT + STATS ========== -->
+        <section class="founder-opening">
+            <div class="container">
+                <p class="founder-opening__intro">
+                    Six years at sea. Galleys from 52 metres to 100+. I cook while the floor moves, provision in ports where I don't speak the language, and serve plates that get photographed by guests who've eaten at the best restaurants on earth. I built Littoralicious because nobody writes for us.
+                </p>
+
+                <div class="yacht-tags">
+                    <span class="yacht-tags__item">Private 60m</span>
+                    <span class="yacht-tags__item">M/Y Lady B</span>
+                    <span class="yacht-tags__item">M/Y Kensho</span>
+                    <span class="yacht-tags__item">M/Y Cloud 9</span>
+                    <span class="yacht-tags__item">M/Y Christina O.</span>
+                    <span class="yacht-tags__item">M/Y Kismet</span>
+                    <span class="yacht-tags__item">M/Y Vava II</span>
+                    <span class="yacht-tags__item">M/Y Symphony</span>
+                </div>
+
+                <div class="stat-row">
+                    <span class="stat-row__item">50,000+ NM</span>
+                    <span class="stat-row__item">10+ Atlantic crossings</span>
+                    <span class="stat-row__item">40+ countries</span>
+                    <span class="stat-row__item">6 years at sea</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 3. PLATE STRIP — Scroll-Snap Gallery ========== -->
+        <section class="plate-strip">
+            <div class="plate-strip__track">
+                <div class="plate-strip__item">
+                    <img src="founder/plate1.jpg" alt="Plated dish" loading="lazy">
+                </div>
+                <div class="plate-strip__item">
+                    <img src="founder/06945CF6-D8F1-4C31-9794-19D1A503731E.JPG" alt="Plated dish" loading="lazy">
+                </div>
+                <div class="plate-strip__item">
+                    <img src="founder/plate3.jpg" alt="Plated dish" loading="lazy">
+                </div>
+                <div class="plate-strip__item">
+                    <img src="founder/0EC07F12-BF52-431A-B7AF-33F828433ED0.JPG" alt="Plated dish" loading="lazy">
+                </div>
+                <div class="plate-strip__item">
+                    <img src="founder/plate4.jpg" alt="Plated dish" loading="lazy">
+                </div>
+                <div class="plate-strip__item">
+                    <img src="founder/8824F622-B8B9-43B0-86CC-9984B8DEC03E.JPG" alt="Plated dish" loading="lazy">
+                </div>
+                <div class="plate-strip__item">
+                    <img src="founder/C009AB37-AA45-478E-8C22-D94576C3F96B.JPG" alt="Plated dish" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 4. THE STORY (Bio Narrative) ========== -->
+        <section class="founder-story">
             <div class="container container--prose">
                 <div class="prose">
 
-                    <h2>The Galley Shaped Everything</h2>
+                    <h2>From the Mountains</h2>
 
                     <p>
-                        I didn't set out to become a yacht chef. I set out to see the world. Cooking was the skill that opened doors—and galleys, it turned out, were everywhere.
+                        I didn't set out to become a yacht chef. I set out to see the world. Cooking was the skill that opened doors&mdash;and galleys, it turned out, were everywhere.
                     </p>
 
                     <p>
                         At 18, I traded a science degree for a one-way ticket. Australia first. Then Southeast Asia, where I learned more from street vendors than I ever did from textbooks. Bangkok grandmothers making the same pad thai for forty years. Pho broths that were three generations old. Mastery without Michelin stars.
                     </p>
 
-                    <p>
-                        Then the yachts found me.
-                    </p>
-
-                    <h2>The Vessels</h2>
+                    <h2>The Galley Found Me</h2>
 
                     <p>
-                        Ten years. Five oceans. Galleys ranging from claustrophobic to world-class.
+                        Then the yachts found me. Ten years. Five oceans. Galleys ranging from claustrophobic to world-class.
                     </p>
 
                     <p>
@@ -152,7 +497,7 @@
                     </p>
 
                     <p>
-                        <strong>Vava II.</strong> 96 meters. Crew of 52. The logistics of feeding an army that lives at sea. Provisioning in ports where you don't speak the language. Making it work anyway.
+                        <strong>Vava II.</strong> 97 metres. Crew of 34. The logistics of feeding an army that lives at sea. Provisioning in ports where you don't speak the language. Making it work anyway.
                     </p>
 
                     <p>
@@ -160,11 +505,11 @@
                     </p>
 
                     <p>
-                        <strong>Cloud 9.</strong> Charter intensity—new guests every week, new dietary requirements, new expectations. The relentless reset.
+                        <strong>Cloud 9.</strong> Charter intensity&mdash;new guests every week, new dietary requirements, new expectations. The relentless reset.
                     </p>
 
                     <p>
-                        <strong>Kismet.</strong> Where I finally understood that technique without understanding is just mimicry. That knowing *why* something works is the only way to improvise when things go wrong.
+                        <strong>Kismet.</strong> Where I finally understood that technique without understanding is just mimicry. That knowing <em>why</em> something works is the only way to improvise when things go wrong.
                     </p>
 
                     <h2>What the Sea Taught Me</h2>
@@ -182,7 +527,7 @@
                     </p>
 
                     <p>
-                        What survives: understanding. If you know *why* an emulsion holds, you know what to do when it doesn't. If you understand Maillard chemistry, altitude and humidity become variables you adjust, not mysteries that defeat you.
+                        What survives: understanding. If you know <em>why</em> an emulsion holds, you know what to do when it doesn't. If you understand Maillard chemistry, altitude and humidity become variables you adjust, not mysteries that defeat you.
                     </p>
 
                     <div class="science-box">
@@ -194,86 +539,210 @@
                         </div>
                     </div>
 
-                    <h2>Why Littoralicious</h2>
+                </div>
+            </div>
+        </section>
 
-                    <p>
-                        I spent years looking for a publication that respected yacht chefs. That understood our constraints. That gave us science instead of stories, data instead of dogma.
-                    </p>
+        <!-- ========== 5. INLINE PHOTO BREAK ========== -->
+        <div class="photo-break">
+            <img src="founder/IMG_0036.JPG"
+                 alt="Arnaud Callier at work"
+                 loading="lazy">
+            <div class="photo-break__caption">
+                <span>At sea</span>
+            </div>
+        </div>
 
-                    <p>
-                        It didn't exist.
-                    </p>
+        <!-- ========== 6. CAREER TIMELINE — The Fleet ========== -->
+        <section class="timeline">
+            <div class="container">
+                <h2 class="timeline__heading">The Fleet</h2>
 
-                    <p>
-                        Food media writes for home cooks who want entertainment. Restaurant coverage ignores the 90% of professional cooking that happens outside restaurants. Nobody writes about provisioning in Montenegro, or emulsion stability at sea, or the actual yield you get from a turbot when the fish isn't textbook-perfect.
-                    </p>
+                <div class="timeline__list">
 
-                    <p>
-                        So I built what I wanted to read.
-                    </p>
+                    <!-- Flagship entries -->
+                    <div class="timeline__entry timeline__entry--flagship">
+                        <div class="timeline__meta">2024 &ndash; Present</div>
+                        <div class="timeline__title">HEAD CHEF &middot; <span class="timeline__vessel">Private Worldwide Vessel, 60m</span></div>
+                        <div class="timeline__detail">Panama, Caribbean, Costa Rica, Bahamas, Med. 15 guests, 12 crew. Events up to 120 pax.</div>
+                    </div>
 
-                    <h2>The Philosophy</h2>
+                    <div class="timeline__entry timeline__entry--flagship">
+                        <div class="timeline__meta">2023 &ndash; 2024</div>
+                        <div class="timeline__title">SOLE CHEF &middot; <span class="timeline__vessel">M/Y Lady B, 52m</span></div>
+                        <div class="timeline__detail">Panama, Galapagos, French Polynesia, Fiji, Caribbean. 11 guests, 13 crew.</div>
+                    </div>
 
-                    <p>
-                        Five principles. Non-negotiable.
-                    </p>
+                    <!-- Compact entries -->
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2022 &ndash; 2023</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">M/Y Kensho, 75m</span></div>
+                        <div class="timeline__detail">Caribbean &amp; Med. 12 guests, 25 crew.</div>
+                    </div>
 
-                    <p>
-                        <strong>Buy once, cry once.</strong> Quality tools last decades. The cheap mandoline will fail when you need it most.
-                    </p>
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2022</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">M/Y Cloud 9, 89m</span></div>
+                        <div class="timeline__detail">USA &amp; Med. 12 guests, 30 crew.</div>
+                    </div>
 
-                    <p>
-                        <strong>No gadgets.</strong> Every tool must earn its space. On a yacht, space is finite. Justify everything.
-                    </p>
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2022</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">M/Y Christina O., 100m</span></div>
+                        <div class="timeline__detail">Caribbean &amp; Med. 34 guests, 38 crew.</div>
+                    </div>
 
-                    <p>
-                        <strong>Temperature is truth.</strong> Opinion is worthless. The thermometer doesn't lie.
-                    </p>
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2021</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">M/Y Kismet, 95m</span></div>
+                        <div class="timeline__detail">Med &amp; Portugal. 12 guests, 28 crew.</div>
+                    </div>
 
-                    <p>
-                        <strong>Mise en place is everything.</strong> Prep before you cook. The galley in motion forgives nothing.
-                    </p>
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2021</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">M/Y Vava II, 97m</span></div>
+                        <div class="timeline__detail">Caribbean &amp; Med. 36 guests, 34 crew.</div>
+                    </div>
 
-                    <p>
-                        <strong>The guest is why we're here.</strong> Every plate matters. They're paying for perfection. Give it to them.
-                    </p>
-
-                    <h2>The Offer</h2>
-
-                    <p>
-                        Littoralicious is what I wish existed ten years ago. Science-backed. Yacht-aware. Zero bullshit.
-                    </p>
-
-                    <p>
-                        If you're a professional who takes the craft seriously—whether on a yacht, in a restaurant, or in your own kitchen—this is for you.
-                    </p>
-
-                    <p>
-                        If you want listicles and influencer content, you're in the wrong place.
-                    </p>
-
-                    <p>
-                        The sea doesn't care about your Michelin stars. Neither do I.
-                    </p>
-
-                    <p>
-                        What matters is whether you can execute. Whether you understand the science behind the technique. Whether you can adapt when conditions change.
-                    </p>
-
-                    <p>
-                        That's what we cover here. That's all we cover here.
-                    </p>
-
-                    <div style="margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--color-border); text-align: center;">
-                        <p class="text-muted">
-                            Questions, contributions, corrections:<br>
-                            <a href="mailto:arnaud@littoralicious.com" style="color: var(--color-sea);">arnaud@littoralicious.com</a>
-                        </p>
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2019 &ndash; 2020</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">M/Y Symphony, 100m+</span></div>
+                        <div class="timeline__detail">Med &amp; Caribbean. 16 guests, 27 crew.</div>
                     </div>
 
                 </div>
+
+                <!-- Ashore -->
+                <h3 class="timeline__subheading">Ashore</h3>
+
+                <div class="timeline__list">
+
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2017 &ndash; 2018</div>
+                        <div class="timeline__title">CHEF DE PARTIE &middot; <span class="timeline__vessel">Le Louison, Villa La Coste &#9733;</span></div>
+                        <div class="timeline__detail">Aix-en-Provence</div>
+                    </div>
+
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2015</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">Sucre et Sel</span></div>
+                        <div class="timeline__detail">Berlin</div>
+                    </div>
+
+                    <div class="timeline__entry timeline__entry--compact">
+                        <div class="timeline__meta">2013 &ndash; 2014</div>
+                        <div class="timeline__title">SOUS CHEF &middot; <span class="timeline__vessel">Manly Beach Club</span></div>
+                        <div class="timeline__detail">Sydney</div>
+                    </div>
+
+                </div>
+
+                <!-- Cuisines & Certs science-box -->
+                <div class="science-box" style="margin-top: var(--space-12);">
+                    <span class="science-box__label">Repertoire</span>
+                    <div class="science-box__content">
+                        <p style="margin: 0 0 var(--space-3) 0;">
+                            <strong>Cuisines:</strong> French, Mediterranean, Japanese, Nikkei, Peruvian, Italian, Thai, Indian, Spanish, Mexican, Moroccan, Middle Eastern, Greek, Vietnamese
+                        </p>
+                        <p style="margin: 0 0 var(--space-3) 0;">
+                            <strong>Dietary:</strong> Vegan, Vegetarian, Kosher, Gluten-free, Whole 30, Nutritionally Conscious, Medicinal Food
+                        </p>
+                        <p style="margin: 0 0 var(--space-3) 0;">
+                            <strong>Certifications:</strong> Ship's Cook Certificate, STCW 10 (MCA), ENG 1, Food Safety Level 2, WSET Oenology Level 2, Intl. Bareboat Skipper
+                        </p>
+                        <p style="margin: 0;">
+                            <strong>Languages:</strong> French (native), English (fluent), Spanish (conversational), German (conversational)
+                        </p>
+                    </div>
+                </div>
+
             </div>
-        </article>
+        </section>
+
+        <!-- ========== 7. VIDEO SHOWCASE ========== -->
+        <section class="video-showcase">
+            <div class="container">
+                <h2 class="video-showcase__heading">From the Galley</h2>
+
+                <div class="video-showcase__pair">
+                    <video autoplay muted loop playsinline>
+                        <source src="founder/breakfast.mp4" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop playsinline>
+                        <source src="founder/breakie2.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="video-showcase__main">
+                    <video controls playsinline preload="none"
+                           poster="founder/food-poster.jpg">
+                        <source src="founder/food.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 8. PHILOSOPHY ========== -->
+        <section class="philosophy">
+            <div class="container">
+                <h2 class="philosophy__heading">The Philosophy</h2>
+
+                <p style="margin-bottom: var(--space-8); color: var(--color-muted);">
+                    Five principles. Non-negotiable.
+                </p>
+
+                <div class="philosophy__principle">
+                    <p>
+                        <strong>Buy once, cry once.</strong> Quality tools last decades. The cheap mandoline will fail when you need it most.
+                    </p>
+                </div>
+
+                <div class="philosophy__principle">
+                    <p>
+                        <strong>No gadgets.</strong> Every tool must earn its space. On a yacht, space is finite. Justify everything.
+                    </p>
+                </div>
+
+                <div class="philosophy__principle">
+                    <p>
+                        <strong>Temperature is truth.</strong> Opinion is worthless. The thermometer doesn't lie.
+                    </p>
+                </div>
+
+                <div class="philosophy__principle">
+                    <p>
+                        <strong>Mise en place is everything.</strong> Prep before you cook. The galley in motion forgives nothing.
+                    </p>
+                </div>
+
+                <div class="philosophy__principle">
+                    <p>
+                        <strong>The guest is why we're here.</strong> Every plate matters. They're paying for perfection. Give it to them.
+                    </p>
+                </div>
+
+                <div class="science-box" style="margin-top: var(--space-12);">
+                    <span class="science-box__label">Founding Principle</span>
+                    <div class="science-box__content">
+                        <p style="font-family: var(--font-serif); font-size: var(--text-lg); line-height: var(--leading-snug); margin: 0;">
+                            "The sea doesn't care about your Michelin stars. Neither do I. What matters is whether you can execute."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 9. CTA BUTTONS ========== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-stack">
+                    <a href="mailto:arnaud.callier@outlook.com" class="cta-btn cta-btn--primary">Contact Me</a>
+                    <a href="founder/arnaud_callier_cv.pdf" download class="cta-btn cta-btn--secondary">Download CV</a>
+                    <a href="https://wa.me/33695903520" class="cta-btn cta-btn--secondary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -282,19 +751,20 @@
             <div class="footer__inner">
                 <div class="footer__about">
                     <div class="footer__brand">LITTORALICIOUS</div>
-                    <p class="footer__description">Modern Science & Regional Cooking from the Littoral</p>
+                    <p class="footer__description">One purpose: to nurture. Mentally and physically.</p>
                     <p class="footer__tagline">
-                        For professionals who take their craft seriously.
+                        For those who feed others with intention.
                     </p>
                 </div>
                 <div class="footer__links">
                     <div class="footer__col">
                         <h4>Sections</h4>
                         <ul>
-                            <li><a href="index.html#dispatches">Dispatches</a></li>
-                            <li><a href="index.html#science">Science Desk</a></li>
-                            <li><a href="index.html#techniques">Techniques</a></li>
-                            <li><a href="index.html#galley">Galley Notes</a></li>
+                            <li><a href="shore-larder.html">Shore Larder</a></li>
+                            <li><a href="the-method.html">The Method</a></li>
+                            <li><a href="littoral-heritage.html">Heritage</a></li>
+                            <li><a href="the-evidence.html">The Evidence</a></li>
+                            <li><a href="the-bridge.html">The Bridge</a></li>
                         </ul>
                     </div>
                     <div class="footer__col">
@@ -312,6 +782,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>

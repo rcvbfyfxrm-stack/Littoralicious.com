@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banana Bread — Quick Reference</title>
+    <style>
+        @page { size: A4; margin: 12mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #0a0a0a;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10mm;
+        }
+        .header {
+            border-bottom: 3px solid #0a0a0a;
+            padding-bottom: 5mm;
+            margin-bottom: 6mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 9pt;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2d4a5e;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 28pt;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .meta {
+            font-size: 9pt;
+            color: #6b7280;
+            text-align: right;
+            line-height: 1.5;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+        }
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 2mm;
+            margin-bottom: 4mm;
+        }
+        h3 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #2d4a5e;
+            margin: 4mm 0 2mm 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+        td {
+            padding: 1.5mm 2mm;
+            vertical-align: top;
+            border-bottom: 1px solid #e2e2e2;
+        }
+        td:first-child { font-weight: 500; }
+        td:nth-child(2) {
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 8.5pt;
+            text-align: right;
+            color: #2d4a5e;
+        }
+        .method ol {
+            padding-left: 5mm;
+            font-size: 9.5pt;
+        }
+        .method li {
+            margin-bottom: 3mm;
+            padding-left: 2mm;
+        }
+        .method strong { color: #0a0a0a; }
+        .highlight {
+            background: #0a0a0a;
+            color: #fafafa;
+            padding: 4mm;
+            margin-top: 6mm;
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+        .highlight h2 {
+            color: #fafafa;
+            border-bottom-color: #6b7280;
+            margin-bottom: 3mm;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+        .box {
+            border: 2px solid #2d4a5e;
+            padding: 3mm;
+            margin-top: 4mm;
+        }
+        .box h3 {
+            margin-top: 0;
+            color: #2d4a5e;
+        }
+        .footer {
+            margin-top: 6mm;
+            padding-top: 3mm;
+            border-top: 1px solid #e2e2e2;
+            font-size: 7pt;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+        }
+        @media print {
+            .highlight { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <span class="brand">Littoralicious</span>
+        <h1>Banana Bread</h1>
+    </div>
+    <div class="meta">
+        Yield: 1 loaf (10-12 slices)<br>
+        Active: 15 min | Total: 1 hr 15 min<br>
+        Oven: 175°C (350°F)
+    </div>
+</header>
+
+<div class="grid">
+
+    <section>
+        <h2>Ingredients</h2>
+
+        <h3>Dry</h3>
+        <table>
+            <tr><td>All-purpose flour</td><td>240g</td></tr>
+            <tr><td>Baking soda</td><td>6g</td></tr>
+            <tr><td>Salt</td><td>4g</td></tr>
+            <tr><td>Cinnamon (opt)</td><td>2g</td></tr>
+        </table>
+
+        <h3>Wet</h3>
+        <table>
+            <tr><td>Very ripe bananas</td><td>400g</td></tr>
+            <tr><td>Butter, melted</td><td>115g</td></tr>
+            <tr><td>Brown sugar</td><td>150g</td></tr>
+            <tr><td>White sugar</td><td>50g</td></tr>
+            <tr><td>Eggs</td><td>2</td></tr>
+            <tr><td>Vanilla</td><td>10g</td></tr>
+            <tr><td>Greek yogurt</td><td>60g</td></tr>
+        </table>
+
+        <h3>Optional</h3>
+        <table>
+            <tr><td>Walnuts, toasted</td><td>100g</td></tr>
+            <tr><td>Chocolate chips</td><td>100g</td></tr>
+        </table>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+
+        <ol>
+            <li><strong>Prep:</strong> Oven 175°C. Line 9×5" pan with parchment.</li>
+            <li><strong>Dry:</strong> Whisk flour, soda, salt, cinnamon.</li>
+            <li><strong>Wet:</strong> Mash bananas. Add melted butter + sugars. Whisk in eggs, vanilla, yogurt.</li>
+            <li><strong>Combine:</strong> Fold dry into wet until just combined. Streaks OK.</li>
+            <li><strong>Bake:</strong> 175°C (350°F), 55-65 min.</li>
+            <li><strong>Done:</strong> 95°C internal. Moist crumbs on toothpick.</li>
+            <li><strong>Cool:</strong> 15 min in pan. 30 min on rack before slicing.</li>
+        </ol>
+
+        <div class="box">
+            <h3>Elevation</h3>
+            <table>
+                <tr><td>Brown the butter</td><td>+8 min</td></tr>
+                <tr><td>Add 30g white miso</td><td>+0 min</td></tr>
+                <tr><td>Tahini swirl on top</td><td>+2 min</td></tr>
+                <tr><td>Roast bananas first</td><td>+25 min</td></tr>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<section class="highlight">
+    <h2>Mise en Place</h2>
+    <div class="two-col">
+        <div>
+            <strong>DRY KIT</strong> (keeps 3 months)<br>
+            240g flour + 4g salt + 2g cinnamon + 150g brown sugar + 50g white sugar<br>
+            <em>No soda — add 6g fresh, fold last</em>
+        </div>
+        <div>
+            <strong>FROZEN BATTER</strong> (keeps 6-8 weeks)<br>
+            Complete batter → freeze in lined pan → vacuum seal block<br>
+            <em>Thaw overnight → 30 min room temp → bake 175°C</em>
+        </div>
+    </div>
+</section>
+
+<section style="margin-top: 5mm;">
+    <div class="two-col">
+        <div>
+            <h3>Storage</h3>
+            <table>
+                <tr><td>Room temp</td><td>3 days</td></tr>
+                <tr><td>Fridge</td><td>1 week</td></tr>
+                <tr><td>Freezer (baked)</td><td>3 months</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>Troubleshooting</h3>
+            <table>
+                <tr><td>Dense</td><td>Overmixed</td></tr>
+                <tr><td>Sunk middle</td><td>Underbaked</td></tr>
+                <tr><td>Gummy</td><td>Too wet bananas</td></tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <span>littoralicious.com</span>
+    <span>Page 1 — Quick Reference</span>
+</footer>
+
+</body>
+</html>

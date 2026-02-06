@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banana Bread — Mise en Place Systems</title>
+    <style>
+        @page { size: A4; margin: 12mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 9pt;
+            line-height: 1.4;
+            color: #0a0a0a;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10mm;
+        }
+        .header {
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 3mm;
+            margin-bottom: 5mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 8pt;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2d4a5e;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 16pt;
+            font-weight: 700;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6mm;
+        }
+        .full { grid-column: 1 / -1; }
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 2mm;
+            margin-bottom: 3mm;
+        }
+        h3 {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #2d4a5e;
+            margin: 3mm 0 2mm 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.5pt;
+        }
+        th {
+            text-align: left;
+            font-weight: 600;
+            padding: 1.5mm 2mm;
+            background: #f5f5f5;
+            border-bottom: 1px solid #e2e2e2;
+            font-size: 7.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        td {
+            padding: 2mm;
+            vertical-align: top;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .mono {
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 8pt;
+        }
+        .method-box {
+            background: #f0f7fa;
+            border: 2px solid #2d4a5e;
+            padding: 4mm;
+            margin-bottom: 5mm;
+        }
+        .method-box h2 {
+            color: #2d4a5e;
+            border-bottom-color: #2d4a5e;
+        }
+        .science-note {
+            background: #f8f9fa;
+            border-left: 3px solid #2d4a5e;
+            padding: 3mm;
+            margin-top: 3mm;
+            font-size: 8pt;
+        }
+        .science-note strong { color: #2d4a5e; }
+        .dark-box {
+            background: #0a0a0a;
+            color: #fafafa;
+            padding: 4mm;
+            margin-top: 5mm;
+        }
+        .dark-box h2 {
+            color: #fafafa;
+            border-bottom-color: #555;
+        }
+        .dark-box td {
+            border-bottom-color: #333;
+        }
+        ol {
+            padding-left: 5mm;
+        }
+        li {
+            margin-bottom: 2mm;
+        }
+        .tip {
+            font-size: 7.5pt;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 2mm;
+        }
+        .footer {
+            margin-top: 5mm;
+            padding-top: 3mm;
+            border-top: 1px solid #e2e2e2;
+            font-size: 7pt;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+        }
+        @media print {
+            .method-box, .dark-box, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <span class="brand">Littoralicious</span>
+        <h1>Banana Bread — Mise en Place Systems</h1>
+    </div>
+    <span class="mono">Page 2</span>
+</header>
+
+<div class="grid">
+
+    <!-- FROZEN BATTER -->
+    <section class="method-box">
+        <h2>Frozen Batter Method</h2>
+        <p style="margin-bottom: 3mm;">Best quality with zero day-of prep. Make batches when you have time, bake fresh when you need it.</p>
+
+        <h3>Batch Day</h3>
+        <ol>
+            <li>Make complete batter per recipe</li>
+            <li>Pour into parchment-lined loaf pan</li>
+            <li>Freeze solid (4+ hours)</li>
+            <li>Pop out block, vacuum seal</li>
+            <li>Label with date</li>
+        </ol>
+        <p class="tip">Keeps 6-8 weeks. Beyond this, CO₂ slowly escapes — still bakes but rises less.</p>
+
+        <h3>Day-Of: Best Quality</h3>
+        <ol>
+            <li>Thaw in fridge overnight (or counter 2-3 hrs)</li>
+            <li>Let sit room temp 30 min</li>
+            <li>Bake immediately — <span class="mono">175°C (350°F), 55-65 min</span></li>
+        </ol>
+
+        <h3>Day-Of: Fast Option</h3>
+        <ol>
+            <li>Bake from frozen — <span class="mono">165°C (325°F), 70-80 min</span></li>
+        </ol>
+        <p class="tip">90-95% as good. Paler crust, slightly uneven crumb.</p>
+
+        <div class="science-note">
+            <strong>Why thaw first wins:</strong> Even heat distribution = consistent crumb. Soda fully reactivates at room temp. Higher oven temp = better Maillard = golden crust.<br><br>
+            <strong>Critical:</strong> Don't let thawed batter sit. CO₂ is escaping. Thaw → bake immediately.
+        </div>
+    </section>
+
+    <!-- DRY KIT -->
+    <section class="method-box">
+        <h2>Dry Kit Method</h2>
+        <p style="margin-bottom: 3mm;">Longest shelf life. Make 4-6 kits at once. Only needs fresh bananas, eggs, yogurt day-of.</p>
+
+        <h3>The Kit</h3>
+        <table>
+            <tr><td>All-purpose flour</td><td class="mono">240g</td></tr>
+            <tr><td>Fine sea salt</td><td class="mono">4g</td></tr>
+            <tr><td>Cinnamon</td><td class="mono">2g</td></tr>
+            <tr><td>Brown sugar</td><td class="mono">150g</td></tr>
+            <tr><td>White sugar</td><td class="mono">50g</td></tr>
+        </table>
+        <p class="tip">NO baking soda in kit. Keeps 3 months room temp, 6 months frozen.</p>
+
+        <h3>Day-Of</h3>
+        <ol>
+            <li>Mash 400g very ripe bananas</li>
+            <li>Add 115g melted butter + entire dry kit</li>
+            <li>Whisk in 2 eggs, 10g vanilla, 60g yogurt</li>
+            <li>Add <strong>6g baking soda LAST</strong>, fold 10 seconds</li>
+            <li>Pan → bake immediately <span class="mono">175°C, 55-65 min</span></li>
+        </ol>
+
+        <div class="science-note">
+            <strong>Why no soda in kit:</strong> Baking soda degrades when stored with moisture (sugar is hygroscopic). Keeps full potency stored separately.<br><br>
+            <strong>Why soda last:</strong> Reaction starts immediately. Most CO₂ produced in first 10-15 min. Get it in the oven fast.<br><br>
+            <strong>Test old soda:</strong> Drop in vinegar. Should fizz vigorously.
+        </div>
+    </section>
+
+</div>
+
+<!-- STORAGE -->
+<section class="dark-box">
+    <h2>Storage & Refresh</h2>
+    <table>
+        <thead>
+            <tr><th>Form</th><th>Keeps</th><th>Storage</th><th>Refresh</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Baked loaf</strong></td>
+                <td>3 days room temp / 1 week fridge / 3 months frozen</td>
+                <td>Wrap tight in plastic, foil if freezing</td>
+                <td>150°C (300°F), 10-15 min</td>
+            </tr>
+            <tr>
+                <td><strong>Frozen batter block</strong></td>
+                <td>6-8 weeks frozen</td>
+                <td>Vacuum seal</td>
+                <td>Thaw + bake 175°C, or frozen 165°C</td>
+            </tr>
+            <tr>
+                <td><strong>Dry kit</strong></td>
+                <td>3 months room temp / 6 months frozen</td>
+                <td>Airtight bag or container, label</td>
+                <td>Add 6g fresh soda day-of</td>
+            </tr>
+            <tr>
+                <td><strong>Banana purée</strong></td>
+                <td>6 months frozen</td>
+                <td>400g portions, flat in vacuum bags</td>
+                <td>Thaw overnight fridge</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- TROUBLESHOOTING -->
+<section style="margin-top: 5mm;">
+    <h2>Troubleshooting</h2>
+    <table>
+        <thead>
+            <tr><th>Problem</th><th>Cause</th><th>Fix</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dense, heavy texture</td>
+                <td>Overmixed batter / too much flour</td>
+                <td>Fold gently until just combined. Weigh flour — don't scoop.</td>
+            </tr>
+            <tr>
+                <td>Sunk middle</td>
+                <td>Underbaked / old baking soda</td>
+                <td>Check at 55 min with thermometer. Test soda in vinegar.</td>
+            </tr>
+            <tr>
+                <td>Gummy layer</td>
+                <td>Excess moisture from bananas</td>
+                <td>Drain any liquid from mashed bananas. Or roast them first.</td>
+            </tr>
+            <tr>
+                <td>Dry crumb</td>
+                <td>Overbaked / not enough fat</td>
+                <td>Pull at 95°C internal. Verify butter amount.</td>
+            </tr>
+            <tr>
+                <td>Pale top</td>
+                <td>Oven running cold</td>
+                <td>Verify temp with oven thermometer. Use middle rack.</td>
+            </tr>
+            <tr>
+                <td>Didn't rise</td>
+                <td>Dead soda / batter sat too long</td>
+                <td>Fresh soda. Bake immediately after mixing.</td>
+            </tr>
+            <tr>
+                <td>Stuck to pan</td>
+                <td>Insufficient prep</td>
+                <td>Parchment sling with overhang = foolproof release.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- BATCH SCALING -->
+<section style="margin-top: 5mm;">
+    <h2>Batch Scaling</h2>
+    <table>
+        <thead>
+            <tr><th>Component</th><th>×1</th><th>×2</th><th>×4</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Flour</td><td>240g</td><td>480g</td><td>960g</td><td></td></tr>
+            <tr><td>Baking soda</td><td>6g</td><td>12g</td><td>22g</td><td>Scale slightly under at 4×</td></tr>
+            <tr><td>Bananas</td><td>400g</td><td>800g</td><td>1600g</td><td></td></tr>
+            <tr><td>Bake temp</td><td>175°C</td><td>175°C</td><td>165°C</td><td>Lower for large batch</td></tr>
+            <tr><td>Bake time</td><td>55-65 min</td><td>55-65 min</td><td>65-75 min</td><td>Check internal temp</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<footer class="footer">
+    <span>littoralicious.com | Source: Serious Eats, Harold McGee, ChefSteps</span>
+    <span>← See page 1 for full recipe</span>
+</footer>
+
+</body>
+</html>

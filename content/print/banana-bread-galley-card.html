@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banana Bread — Littoralicious Galley Card</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 9pt;
+            line-height: 1.35;
+            color: #0a0a0a;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 8mm;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 4mm;
+            margin-bottom: 4mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 8pt;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2d4a5e;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 18pt;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        .tagline {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 9pt;
+            color: #6b7280;
+            margin-top: 1mm;
+        }
+
+        .meta {
+            font-size: 7.5pt;
+            color: #6b7280;
+            text-align: right;
+        }
+
+        /* Grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5mm;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3mm;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 9pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid #0a0a0a;
+            padding-bottom: 1mm;
+            margin-bottom: 2mm;
+        }
+
+        h3 {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #2d4a5e;
+            margin: 2mm 0 1mm 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8pt;
+        }
+
+        th {
+            text-align: left;
+            font-weight: 600;
+            padding: 0.5mm 1mm;
+            border-bottom: 1px solid #e2e2e2;
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+        }
+
+        td {
+            padding: 0.5mm 1mm;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .mono {
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 7.5pt;
+        }
+
+        /* Method steps */
+        .method ol {
+            padding-left: 4mm;
+        }
+
+        .method li {
+            margin-bottom: 1.5mm;
+        }
+
+        .method strong {
+            color: #2d4a5e;
+        }
+
+        /* Quick reference box */
+        .quick-ref {
+            background: #0a0a0a;
+            color: #fafafa;
+            padding: 3mm;
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 7.5pt;
+            line-height: 1.4;
+        }
+
+        .quick-ref h2 {
+            color: #fafafa;
+            border-bottom-color: #6b7280;
+            font-size: 8pt;
+        }
+
+        /* Science callout */
+        .science {
+            background: #f8f9fa;
+            border-left: 3px solid #2d4a5e;
+            padding: 2mm 3mm;
+            font-size: 7.5pt;
+        }
+
+        .science strong {
+            color: #2d4a5e;
+        }
+
+        /* Elevation box */
+        .elevation {
+            border: 1px solid #2d4a5e;
+            padding: 2mm;
+        }
+
+        .elevation h2 {
+            color: #2d4a5e;
+            border-bottom-color: #2d4a5e;
+        }
+
+        .tier {
+            font-weight: 600;
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 1.5mm 0 0.5mm 0;
+        }
+
+        .tier-1 { color: #059669; }
+        .tier-2 { color: #d97706; }
+        .tier-3 { color: #7c3aed; }
+
+        ul {
+            padding-left: 3mm;
+            font-size: 7.5pt;
+        }
+
+        ul li {
+            margin-bottom: 0.5mm;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 3mm;
+            padding-top: 2mm;
+            border-top: 1px solid #e2e2e2;
+            font-size: 6.5pt;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                padding: 0;
+            }
+            .quick-ref {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            tr:nth-child(even) {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .science, .elevation {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <span class="brand">Littoralicious</span>
+        <h1>Banana Bread</h1>
+        <div class="tagline">The classic done right. Elevations when you have time.</div>
+    </div>
+    <div class="meta">
+        Yield: 1 loaf (10-12 slices)<br>
+        Active: 15 min | Total: 1 hr 10 min<br>
+        Oven: 175°C (350°F)
+    </div>
+</header>
+
+<div class="grid">
+
+    <!-- INGREDIENTS -->
+    <section>
+        <h2>Ingredients</h2>
+
+        <h3>Dry Mix</h3>
+        <table>
+            <tr><td>All-purpose flour</td><td class="mono">240g</td><td>2 cups</td></tr>
+            <tr><td>Baking soda</td><td class="mono">6g</td><td>1 tsp</td></tr>
+            <tr><td>Fine sea salt</td><td class="mono">4g</td><td>¾ tsp</td></tr>
+            <tr><td>Cinnamon (opt)</td><td class="mono">2g</td><td>1 tsp</td></tr>
+        </table>
+
+        <h3>Butter + Sugar</h3>
+        <table>
+            <tr><td>Unsalted butter, melted</td><td class="mono">115g</td><td>1 stick</td></tr>
+            <tr><td>Light brown sugar</td><td class="mono">150g</td><td>¾ cup</td></tr>
+            <tr><td>Granulated sugar</td><td class="mono">50g</td><td>¼ cup</td></tr>
+        </table>
+
+        <h3>Wet Mix</h3>
+        <table>
+            <tr><td>Eggs, large</td><td class="mono">100g</td><td>2 whole</td></tr>
+            <tr><td>Vanilla extract</td><td class="mono">10g</td><td>2 tsp</td></tr>
+            <tr><td>Greek yogurt</td><td class="mono">60g</td><td>¼ cup</td></tr>
+        </table>
+
+        <h3>Bananas</h3>
+        <table>
+            <tr><td>Very ripe bananas</td><td class="mono">400g</td><td>~4 medium</td></tr>
+        </table>
+
+        <h3>Optional Fold-Ins</h3>
+        <table>
+            <tr><td>Walnuts, toasted</td><td class="mono">100g</td><td>1 cup</td></tr>
+            <tr><td>Dark chocolate chips</td><td class="mono">100g</td><td>⅔ cup</td></tr>
+        </table>
+    </section>
+
+    <!-- METHOD -->
+    <section class="method">
+        <h2>Method</h2>
+
+        <h3>Phase 1: Prep (5 min)</h3>
+        <ol>
+            <li><strong>Oven:</strong> Preheat to 175°C (350°F). Grease + line 9×5 inch pan with parchment sling.</li>
+            <li><strong>Dry mix:</strong> Whisk flour, baking soda, salt, cinnamon in medium bowl.</li>
+            <li><strong>Melt butter:</strong> Microwave or stovetop until just melted. Let cool slightly.</li>
+        </ol>
+
+        <h3>Phase 2: Build Batter (10 min)</h3>
+        <ol start="4">
+            <li><strong>Mash bananas:</strong> In large bowl, mash bananas with fork. Some chunks OK.</li>
+            <li><strong>Combine wet:</strong> Add melted butter, both sugars to bananas. Whisk until combined.</li>
+            <li><strong>Add eggs:</strong> Whisk in eggs one at a time, then vanilla and yogurt.</li>
+            <li><strong>Fold dry:</strong> Add dry mix in two additions. Fold until <em>just</em> combined — streaks of flour OK. Don't overmix.</li>
+            <li><strong>Fold-ins:</strong> Gently fold in nuts/chocolate if using.</li>
+        </ol>
+
+        <h3>Phase 3: Bake (55-65 min)</h3>
+        <ol start="9">
+            <li><strong>Pour:</strong> Scrape batter into prepared pan. Smooth top.</li>
+            <li><strong>Bake:</strong> 175°C (350°F), 55-65 min. Tent with foil at 45 min if browning fast.</li>
+            <li><strong>Done when:</strong> Internal temp <span class="mono">95°C (203°F)</span>. Toothpick = moist crumbs, not wet batter.</li>
+        </ol>
+
+        <h3>Phase 4: Cool</h3>
+        <ol start="12">
+            <li><strong>Rest in pan:</strong> 15 min — structure sets.</li>
+            <li><strong>Cool on rack:</strong> 30 min minimum before slicing.</li>
+        </ol>
+    </section>
+
+    <!-- SCIENCE -->
+    <section class="science">
+        <h2>Why It Works</h2>
+        <p><strong>Ripe bananas:</strong> Enzymes convert starch → sugar. Black spots = maximum sweetness, less added sugar needed.</p>
+        <p><strong>Melted butter:</strong> Distributes fat evenly, creates denser/moister crumb than creamed butter.</p>
+        <p><strong>Yogurt:</strong> Acidity tenderizes crumb, adds tang that balances sweetness.</p>
+        <p><strong>Minimal mixing:</strong> Gluten develops with agitation. Overmix = tough, dense bread.</p>
+    </section>
+
+    <!-- ELEVATION -->
+    <section class="elevation">
+        <h2>Elevation</h2>
+
+        <div class="tier tier-1">Tier 1: No Extra Time</div>
+        <ul>
+            <li><strong>Espresso powder</strong> (1 tsp with dry) — deepens banana flavor</li>
+            <li><strong>Swap sour cream for yogurt</strong> — richer, more tang</li>
+        </ul>
+
+        <div class="tier tier-2">Tier 2: +10-15 min</div>
+        <ul>
+            <li><strong>Brown the butter</strong> — cook 6-8 min until nutty, golden solids. Maillard depth.</li>
+            <li><strong>Add white miso</strong> (30g/2 tbsp with sugars) — umami amplifies sweetness</li>
+            <li><strong>Tahini swirl</strong> — drizzle 3 tbsp on top, swirl with knife before baking</li>
+        </ul>
+
+        <div class="tier tier-3">Tier 3: +25 min</div>
+        <ul>
+            <li><strong>Roast bananas first</strong> — 150°C (300°F), unpeeled, 25 min until black. Concentrates sugar, reduces moisture, deeper flavor. Use 450g raw → ~340g roasted.</li>
+            <li><strong>Brûléed slice</strong> — thin sugar layer on slice, torch to order</li>
+        </ul>
+    </section>
+
+    <!-- QUICK REFERENCE -->
+    <section class="quick-ref full-width">
+        <h2>Quick Reference</h2>
+        <pre style="white-space: pre-wrap; margin: 0;">
+DRY KIT: 240g flour + 4g salt + 2g cinnamon + 150g brown sugar + 50g white sugar (keeps 3 months, no soda)
+FRESH: 400g banana + 115g melted butter + dry kit + 2 eggs + 10g vanilla + 60g yogurt + 6g soda LAST → 175°C, 55-65 min
+
+FROZEN BATTER (best): Thaw overnight fridge → 30 min room temp → bake immediately 175°C (350°F), 55-65 min
+FROZEN BATTER (fast): From frozen 165°C (325°F), 70-80 min — paler crust, 90-95% as good
+
+DONE: 95°C (203°F) internal | COOL: 15 min pan, 30 min rack | STORAGE: Room temp 3 days, fridge 1 week, batter 6-8 wks frozen</pre>
+    </section>
+
+    <!-- MISE EN PLACE: FROZEN VERSION -->
+    <section class="full-width" style="background: #f0f7fa; padding: 2mm; margin-bottom: 2mm;">
+        <h2 style="color: #2d4a5e;">Frozen Batter Method</h2>
+        <table>
+            <tr><td style="width: 25%;"><strong>Batch Day</strong></td><td>Make complete batter → pour into parchment-lined pan → freeze solid (4+ hrs) → pop out block → vacuum seal</td></tr>
+            <tr><td><strong>Keeps</strong></td><td><strong>6-8 weeks frozen.</strong> Beyond this, CO₂ slowly escapes. Still bakes but rises less.</td></tr>
+            <tr><td><strong>Day-Of (best)</strong></td><td>Thaw in fridge overnight or counter 2-3 hrs → room temp 30 min → bake immediately <span class="mono">175°C (350°F), 55-65 min</span></td></tr>
+            <tr><td><strong>Day-Of (fast)</strong></td><td>Bake from frozen <span class="mono">165°C (325°F), 70-80 min</span> — 90-95% as good, paler crust</td></tr>
+        </table>
+        <p style="font-size: 7pt; margin-top: 2mm;"><strong>The science:</strong> Thawed batter = even heat distribution + full soda reactivation + higher temp = better Maillard crust. Frozen bake needs lower temp (165°C) so outside doesn't set before center cooks — this means softer crust, slightly uneven crumb. <strong>Don't let thawed batter sit</strong> — CO₂ is escaping. Thaw → bake immediately.</p>
+    </section>
+
+    <!-- MISE EN PLACE: DRY VERSION -->
+    <section class="full-width">
+        <h2>Dry Kit Method</h2>
+        <table>
+            <tr><td style="width: 25%;"><strong>The Kit</strong></td><td>240g flour + 4g salt + 2g cinnamon + 150g brown sugar + 50g white sugar — all in one bag/container. Label "BB Dry"</td></tr>
+            <tr><td><strong>Keeps</strong></td><td><strong>3 months room temp, 6 months frozen.</strong> No baking soda in kit — add fresh day-of.</td></tr>
+            <tr><td><strong>Day-Of</strong></td><td>Mash 400g banana → add 115g melted butter → add dry kit → whisk in 2 eggs, 10g vanilla, 60g yogurt → add <span class="mono">6g baking soda</span> last, fold briefly → pan → bake <span class="mono">175°C, 55-65 min</span></td></tr>
+        </table>
+        <p style="font-size: 7pt; margin-top: 2mm;"><strong>The science:</strong> Baking soda loses potency when exposed to humidity and acids over time. Stored with sugars (hygroscopic) it degrades faster. Keep soda separate, add last, and bake immediately — soda produces most CO₂ in first 10-15 minutes. <strong>Test old soda:</strong> drop in vinegar — should fizz vigorously.</p>
+    </section>
+
+</div>
+
+<footer class="footer">
+    <span>littoralicious.com | Source: Serious Eats / Stella Parks</span>
+    <span>Galley Card v1.0 | Feb 2026</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banana Bread — The Recipe</title>
+    <style>
+        @page { size: A4; margin: 12mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 9pt;
+            line-height: 1.4;
+            color: #0a0a0a;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10mm;
+        }
+        .header {
+            border-bottom: 3px solid #0a0a0a;
+            padding-bottom: 4mm;
+            margin-bottom: 5mm;
+        }
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 8pt;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2d4a5e;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 26pt;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 2mm 0;
+        }
+        .tagline {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 10pt;
+            color: #6b7280;
+        }
+        .meta-bar {
+            display: flex;
+            gap: 6mm;
+            margin-top: 3mm;
+            padding-top: 3mm;
+            border-top: 1px solid #e2e2e2;
+            font-size: 8pt;
+            color: #6b7280;
+        }
+        .meta-bar span { display: flex; gap: 2mm; }
+        .meta-bar strong { color: #0a0a0a; }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6mm;
+        }
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 2mm;
+            margin-bottom: 3mm;
+        }
+        h3 {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #2d4a5e;
+            margin: 3mm 0 1.5mm 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.5pt;
+        }
+        td {
+            padding: 1mm 2mm;
+            vertical-align: top;
+        }
+        td:nth-child(2) {
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 8pt;
+            text-align: right;
+            color: #2d4a5e;
+            width: 60px;
+        }
+        .method ol {
+            padding-left: 5mm;
+        }
+        .method li {
+            margin-bottom: 2.5mm;
+            padding-left: 1mm;
+        }
+        .method strong { color: #2d4a5e; }
+        .checkpoint {
+            background: #f8f9fa;
+            border-left: 3px solid #2d4a5e;
+            padding: 2mm 3mm;
+            margin: 3mm 0;
+            font-size: 8pt;
+        }
+        .science {
+            background: #f8f9fa;
+            padding: 3mm;
+            margin-top: 4mm;
+        }
+        .science h2 {
+            border-bottom-color: #2d4a5e;
+            color: #2d4a5e;
+        }
+        .science-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+            font-size: 8pt;
+        }
+        .science-item strong {
+            color: #2d4a5e;
+        }
+        .elevation {
+            border: 2px solid #2d4a5e;
+            padding: 3mm;
+            margin-top: 4mm;
+        }
+        .elevation h2 {
+            color: #2d4a5e;
+            border-bottom-color: #2d4a5e;
+        }
+        .tier {
+            font-weight: 700;
+            font-size: 7.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 2mm 0 1mm 0;
+        }
+        .tier-1 { color: #059669; }
+        .tier-2 { color: #d97706; }
+        .tier-3 { color: #7c3aed; }
+        .elevation ul {
+            padding-left: 4mm;
+            font-size: 8pt;
+        }
+        .elevation li { margin-bottom: 1mm; }
+        .footer {
+            margin-top: 4mm;
+            padding-top: 3mm;
+            border-top: 1px solid #e2e2e2;
+            font-size: 7pt;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+        }
+        @media print {
+            .science, .checkpoint { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious</span>
+    <h1>Banana Bread</h1>
+    <p class="tagline">The classic done right. Science-backed. Elevation options when you want to impress.</p>
+    <div class="meta-bar">
+        <span><strong>Yield:</strong> 1 loaf (10-12 slices)</span>
+        <span><strong>Active:</strong> 15 min</span>
+        <span><strong>Total:</strong> 1 hr 15 min</span>
+        <span><strong>Oven:</strong> 175°C (350°F)</span>
+    </div>
+</header>
+
+<div class="grid">
+
+    <!-- INGREDIENTS -->
+    <section>
+        <h2>Ingredients</h2>
+
+        <h3>Dry</h3>
+        <table>
+            <tr><td>All-purpose flour</td><td>240g</td></tr>
+            <tr><td>Baking soda</td><td>6g</td></tr>
+            <tr><td>Fine sea salt</td><td>4g</td></tr>
+            <tr><td>Cinnamon (optional)</td><td>2g</td></tr>
+        </table>
+
+        <h3>Wet</h3>
+        <table>
+            <tr><td>Very ripe bananas (black spots)</td><td>400g</td></tr>
+            <tr><td>Unsalted butter, melted</td><td>115g</td></tr>
+            <tr><td>Light brown sugar</td><td>150g</td></tr>
+            <tr><td>Granulated sugar</td><td>50g</td></tr>
+            <tr><td>Eggs, large</td><td>2</td></tr>
+            <tr><td>Vanilla extract</td><td>10g</td></tr>
+            <tr><td>Greek yogurt</td><td>60g</td></tr>
+        </table>
+
+        <h3>Optional Fold-Ins</h3>
+        <table>
+            <tr><td>Walnuts, toasted</td><td>100g</td></tr>
+            <tr><td>Dark chocolate chips</td><td>100g</td></tr>
+        </table>
+    </section>
+
+    <!-- METHOD -->
+    <section class="method">
+        <h2>Method</h2>
+
+        <ol>
+            <li><strong>Prep:</strong> Preheat oven to 175°C (350°F). Line a 9×5" loaf pan with parchment, leaving overhang for easy removal.</li>
+
+            <li><strong>Dry mix:</strong> Whisk flour, baking soda, salt, and cinnamon in a medium bowl. Set aside.</li>
+
+            <li><strong>Mash bananas:</strong> In a large bowl, mash bananas with a fork. Some chunks are fine — adds texture.</li>
+
+            <li><strong>Build wet mix:</strong> Add melted butter and both sugars to bananas, whisk until combined. Add eggs one at a time, then vanilla and yogurt.</li>
+
+            <li><strong>Combine:</strong> Add dry mix in two additions, folding with a spatula until <em>just combined</em>. Streaks of flour are OK — overmixing makes it dense.</li>
+
+            <li><strong>Fold-ins:</strong> Gently fold in nuts or chocolate if using.</li>
+
+            <li><strong>Bake:</strong> Pour into prepared pan, smooth top. Bake 55-65 minutes. Tent with foil at 45 min if browning too fast.</li>
+        </ol>
+
+        <div class="checkpoint">
+            <strong>Done when:</strong> Internal temp reaches 95°C (203°F). Toothpick comes out with moist crumbs, not wet batter. Top is domed and golden.
+        </div>
+
+        <ol start="8">
+            <li><strong>Cool:</strong> 15 minutes in pan (structure sets), then lift out and cool 30 minutes on rack before slicing.</li>
+        </ol>
+    </section>
+
+</div>
+
+<!-- SCIENCE -->
+<section class="science">
+    <h2>The Science</h2>
+    <div class="science-grid">
+        <div class="science-item">
+            <strong>Ripe bananas:</strong> Enzymes convert starch → sugar as bananas ripen. Black spots = maximum sweetness. Less added sugar needed, better flavor.
+        </div>
+        <div class="science-item">
+            <strong>Melted butter:</strong> Distributes fat evenly = denser, moister crumb. Creamed butter traps air = lighter but drier. For banana bread, moist wins.
+        </div>
+        <div class="science-item">
+            <strong>Yogurt:</strong> Lactic acid tenderizes gluten for softer crumb. Reacts with soda for extra lift. Tang balances the sweetness.
+        </div>
+        <div class="science-item">
+            <strong>Minimal mixing:</strong> Gluten develops with agitation. Overmix = tough, dense bread with tunnels. Fold gently, stop early.
+        </div>
+    </div>
+</section>
+
+<!-- ELEVATION -->
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="grid" style="gap: 4mm;">
+        <div>
+            <div class="tier tier-1">Tier 1 — No Extra Time</div>
+            <ul>
+                <li><strong>Espresso powder</strong> (1 tsp) — deepens banana flavor</li>
+                <li><strong>Sour cream</strong> instead of yogurt — richer, more tang</li>
+            </ul>
+
+            <div class="tier tier-2">Tier 2 — Worth the Extra 10-15 min</div>
+            <ul>
+                <li><strong>Brown the butter</strong> — cook 6-8 min until nutty, golden solids. Maillard depth.</li>
+                <li><strong>Add white miso</strong> (30g with sugars) — umami amplifies sweetness</li>
+                <li><strong>Tahini swirl</strong> — drizzle 3 tbsp on top, drag knife through</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier tier-3">Tier 3 — Restaurant Level (+25 min)</div>
+            <ul>
+                <li><strong>Roast bananas first</strong> — 150°C, 25 min in skins until black. Concentrates sugar, reduces moisture, deeper caramelized flavor. Use 450g raw → ~340g roasted.</li>
+                <li><strong>Brûléed slice</strong> — thin sugar layer on cut slice, torch to order</li>
+                <li><strong>Brown butter streusel</strong> — 65g flour, 50g brown sugar, 45g cold brown butter, pinch salt. Rub together, scatter on top before baking.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <span>littoralicious.com | Adapted from Stella Parks / Serious Eats</span>
+    <span>See page 2 for mise en place systems →</span>
+</footer>
+
+</body>
+</html>

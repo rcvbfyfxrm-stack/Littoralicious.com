@@ -1,231 +1,92 @@
-# CLAUDE.md — Littoralicious
+# CLAUDE.md
 
-## Project Purpose
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Littoralicious** — A digital publication for professional yacht chefs and culinary obsessives. The name fuses "littoral" (relating to the shore/sea) with "literally delicious."
+## What This Is
 
----
+Littoralicious is a static HTML/CSS/JS digital publication for professional yacht chefs. No build step, no dependencies, no framework. Open `index.html` in a browser and it works.
 
-## Brand Identity
+## Local Development
 
-### The Core Idea
-
-> "The sea doesn't care about your Michelin stars."
-
-We are the unfiltered signal in a noise-saturated culinary world. No influencer fluff. No sponsored content dressed as insight. Just brutal, science-backed cooking intelligence for chefs who take their craft seriously.
-
-### Positioning (Onliness Statement)
-
-**Littoralicious** is the only culinary publication that combines:
-- Maritime gastronomy expertise
-- Rigorous food science
-- Zero bullshit editorial voice
-- Interface designed for working professionals
-
-### Target Audience
-
-**Primary:** Professional yacht chefs navigating the intersection of luxury service and hostile maritime environments.
-
-**Secondary:** Advanced home cooks, food nerds, and culinary professionals who value substance over spectacle.
-
-### Voice & Tone
-
-- **Direct.** No hedging. If it's wrong, say it's wrong.
-- **Technical.** Precision in language reflects precision in craft.
-- **Irreverent.** Respect the science, question the dogma.
-- **Economical.** Every word earns its place.
-
----
-
-## Design Philosophy
-
-### The Aesthetic
-
-**"Old journal refined through Apple glass."**
-
-The design draws from two sources:
-1. The authority of classic broadsheet newspapers
-2. The clarity of modern minimal interfaces
-
-### Visual Principles
-
-| Element | Approach |
-|---------|----------|
-| Color | Black, white, one accent (maritime grey-blue) |
-| Typography | Serif for headlines (authority), system sans for body (legibility) |
-| Spacing | Generous. Let content breathe. |
-| Images | Monochrome or muted. Never stock-photo-polished. |
-| Layout | Grid-based, asymmetric tension |
-
-### Design Rules
-
-1. **No gradients.** Flat is honest.
-2. **No rounded corners on content blocks.** Sharp edges signal precision.
-3. **Mono-spaced for data.** Temperatures, times, ratios.
-4. **Pull quotes are rare.** When used, they must be genuinely remarkable.
-5. **White space is content.** It signals confidence.
-
----
-
-## Content Categories
-
-### 1. Dispatches
-Short, brutal news items. 100-300 words. One insight per dispatch. Published frequently.
-
-### 2. Deep Dives
-Long-form investigations. 2,000-5,000 words. Thoroughly researched. Published monthly.
-
-### 3. The Science Desk
-Food science explained without condescension. Maillard, fermentation, emulsification — the chemistry that separates craft from guesswork.
-
-### 4. Technique Files
-Step-by-step protocols. No fluff. No "Grandma's secret." Just the method, the science, the variables.
-
-### 5. Galley Notes
-Yacht-specific content. Provisioning in remote ports. Equipment that survives salt air. Managing owner expectations.
-
----
-
-## Content Standards
-
-### Principles (from IdeaForge)
-
-1. **The Headline Does 80% of the Work** (Ogilvy)
-   - Every headline must promise specific value
-   - If you can't summarize it, don't publish it
-
-2. **Spécificité Bat Généralité** (Hopkins)
-   - "140°C for 47 minutes" > "until golden brown"
-   - Numbers, names, citations — concrete beats abstract
-
-3. **Le Client Est le Héros** (Miller)
-   - The reader is the professional solving a problem
-   - We are the guide, not the protagonist
-
-4. **La Récompense Variable** (Eyal)
-   - Mix content types and lengths
-   - Surprise in the familiar
-
-5. **Peak-End Rule** (Kahneman)
-   - Every article ends with something memorable
-   - The last line is as important as the first
-
-### Quality Gates
-
-Before publishing, every piece must answer:
-- [ ] What does the reader gain they couldn't get elsewhere?
-- [ ] Is every claim sourced or tested?
-- [ ] Could this be shorter without losing value?
-- [ ] Does the headline promise what the article delivers?
-
----
-
-## Technical Structure
-
-```
-littoralicious/
-├── index.html              # Homepage
-├── article.html            # Article template
-├── about.html              # About/manifesto
-├── assets/
-│   ├── css/
-│   │   ├── style.css       # Main stylesheet
-│   │   └── typography.css  # Type system
-│   ├── js/
-│   │   └── main.js         # Minimal interactions
-│   ├── images/
-│   └── fonts/
-├── content/
-│   ├── articles/           # Long-form markdown
-│   ├── dispatches/         # Short news markdown
-│   ├── science/            # Science desk pieces
-│   └── techniques/         # Technique files
-└── data/
-    └── articles.json       # Content index
+```bash
+npx live-server
 ```
 
----
+Content operations via `Makefile`: `make weekly`, `make review`, `make list-review`, `make clean-review`.
 
-## Typography System
+## Architecture
 
-### Scale (1.333 — Perfect Fourth)
+**Static site with manual content pipeline.** There is no static site generator.
+
+### Content Flow
+
+1. Markdown source lives in `/content/` (articles organized by category)
+2. Content templates in `/content/template/` (flat directory, category-prefixed filenames)
+3. Metadata is registered in `/data/articles.json` (slug, title, date, category, tags, read_time, featured)
+4. HTML is hand-authored in `/articles/` — there is no automated markdown-to-HTML conversion
+5. Category pages (`shore-larder.html`, `the-method.html`, `littoral-heritage.html`, `the-evidence.html`, `the-bridge.html`) hardcode links to articles
+
+### Key Files
+
+- `assets/css/style.css` — Complete design system (colors, typography, layout, dark mode)
+- `assets/js/main.js` — Vanilla JS: theme toggle (localStorage), reading progress bar, code copy buttons, external link handling, newsletter form
+- `data/articles.json` — Master content index with articles array, dispatches array, categories object, and tags taxonomy
+- `index.html` — Homepage with featured articles and weekly picks
+
+### Adding a New Article
+
+1. Write `.md` in `/content/[category]/`
+2. Add entry to `data/articles.json`
+3. Create HTML page in `/articles/` following existing article HTML structure
+4. Add link to the relevant category page
+
+### HTML Conventions
+
+- `.temperature` class for temperature values (renders with °C)
+- `.data` class for monospace numerical data
+- Articles follow a consistent template: `<article>` with `.article-header`, `.article-meta`, `.article-content`
+- Dark mode via `[data-theme="dark"]` attribute on `<html>`, toggled by JS
+
+## Design System (Enforced)
+
+### Colors
 
 ```
---text-xs:    0.75rem   (12px)
---text-sm:    0.875rem  (14px)
---text-base:  1rem      (16px)
---text-lg:    1.333rem  (21px)
---text-xl:    1.777rem  (28px)
---text-2xl:   2.369rem  (38px)
---text-3xl:   3.157rem  (50px)
+--color-ink: #0a0a0a        --color-paper: #fafafa
+--color-sea: #2d4a5e        --color-salt: #94a3b8
+--color-border: #e2e2e2     --color-muted: #6b7280
 ```
 
-### Font Stack
+### Typography
 
-**Headlines:** Georgia, 'Times New Roman', serif
-**Body:** system-ui, -apple-system, sans-serif
-**Data/Code:** 'SF Mono', Consolas, monospace
+- Serif (Georgia) for headlines — authority
+- System sans-serif for body — legibility
+- Monospace (SF Mono/Consolas) for data
+- Scale: Perfect Fourth (1.333 ratio)
 
----
+### Hard Rules
 
-## Color Tokens
+- No gradients
+- No rounded corners on content blocks
+- No stock photography
+- Images monochrome or muted
+- Metric units only (Fahrenheit in parentheses for US readers)
 
-```css
-:root {
-    /* Core */
-    --color-ink: #0a0a0a;
-    --color-paper: #fafafa;
+## Editorial Voice
 
-    /* Accents */
-    --color-sea: #2d4a5e;      /* Maritime blue-grey */
-    --color-salt: #94a3b8;     /* Muted secondary */
+Direct, technical, irreverent, economical. No hedging. See `CONTENT-GUIDE.md` for full standards.
 
-    /* Functional */
-    --color-border: #e2e2e2;
-    --color-muted: #6b7280;
+### Banned Words
 
-    /* Dark mode inverse */
-    --dm-ink: #fafafa;
-    --dm-paper: #0a0a0a;
-}
-```
+"delicious," "yummy," "mouthwatering," "elevated," "curated," "artisanal" (as marketing)
 
----
+### Headline Rules
 
-## Naming Conventions
+- Must promise specific value
+- No exclamation marks
+- No questions as headlines
+- No "7 Ways to..." listicle framing
 
-| Type | Format | Example |
-|------|--------|---------|
-| Articles | slug-with-hyphens.md | maillard-at-altitude.md |
-| Dispatches | YYYY-MM-DD-slug.md | 2026-01-25-squid-ink-recall.md |
-| Images | category-slug-01.jpg | technique-reverse-sear-01.jpg |
+## Deployment
 
----
-
-## Do Not
-
-- Add stock photography
-- Use exclamation marks in headlines
-- Publish without sources
-- Add "Subscribe to our newsletter!" popups
-- Use "delicious," "yummy," or "mouthwatering"
-- Refer to food as "elevated" or "curated"
-
----
-
-## Content Sourcing
-
-Draw from Chef vault knowledge:
-- **02-Flavors/** for ingredient science
-- **03-Techniques/** for method deep-dives
-- **05-Yacht-Operations/** for galley-specific content
-- **_References/** for equipment reviews
-
-Apply IdeaForge principles:
-- Psychology of the reader (Kahneman, Cialdini)
-- Narrative structure (Miller, McKee)
-- Precision and testing (Hopkins, Ogilvy)
-
----
-
-*Littoralicious — Literally the Sea. Literally Serious.*
+Static hosting via GitHub Pages (see `CNAME` file). Git push to `main` deploys.

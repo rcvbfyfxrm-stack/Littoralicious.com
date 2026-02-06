@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banana Bread — Details & Science</title>
+    <style>
+        @page { size: A4; margin: 12mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 8.5pt;
+            line-height: 1.4;
+            color: #0a0a0a;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 8mm;
+        }
+        .header {
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 3mm;
+            margin-bottom: 4mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 8pt;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2d4a5e;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 14pt;
+            font-weight: 700;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5mm;
+        }
+        .full { grid-column: 1 / -1; }
+        section { margin-bottom: 4mm; }
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 9pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #2d4a5e;
+            border-bottom: 1px solid #2d4a5e;
+            padding-bottom: 1mm;
+            margin-bottom: 2mm;
+        }
+        h3 {
+            font-size: 8pt;
+            font-weight: 700;
+            margin: 3mm 0 1mm 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8pt;
+        }
+        th {
+            text-align: left;
+            font-weight: 600;
+            padding: 1mm 2mm;
+            background: #f5f5f5;
+            border-bottom: 1px solid #e2e2e2;
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        td {
+            padding: 1.5mm 2mm;
+            vertical-align: top;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .mono {
+            font-family: "SF Mono", Consolas, monospace;
+            font-size: 7.5pt;
+        }
+        .science-box {
+            background: #f8f9fa;
+            border-left: 3px solid #2d4a5e;
+            padding: 3mm;
+            margin-bottom: 3mm;
+        }
+        .science-box p {
+            margin-bottom: 2mm;
+        }
+        .science-box p:last-child { margin-bottom: 0; }
+        .science-box strong { color: #2d4a5e; }
+        .method-box {
+            background: #0a0a0a;
+            color: #fafafa;
+            padding: 3mm;
+        }
+        .method-box h2 {
+            color: #fafafa;
+            border-bottom-color: #555;
+        }
+        .method-box table td {
+            border-bottom-color: #333;
+            color: #fafafa;
+        }
+        .tip {
+            font-size: 7.5pt;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 2mm;
+        }
+        .footer {
+            margin-top: 4mm;
+            padding-top: 2mm;
+            border-top: 1px solid #e2e2e2;
+            font-size: 7pt;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+        }
+        @media print {
+            .method-box, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <span class="brand">Littoralicious</span>
+        <h1>Banana Bread — Details & Science</h1>
+    </div>
+    <span class="mono">Page 2</span>
+</header>
+
+<div class="grid">
+
+    <!-- FROZEN BATTER METHOD -->
+    <section>
+        <h2>Frozen Batter Method</h2>
+
+        <h3>Batch Day</h3>
+        <p>Make complete batter → pour into parchment-lined pan → freeze solid 4+ hrs → pop out block → vacuum seal. Label with date.</p>
+
+        <h3>Day-Of: Best Quality</h3>
+        <table>
+            <tr><td>1. Thaw</td><td>Fridge overnight or counter 2-3 hrs</td></tr>
+            <tr><td>2. Temper</td><td>Room temp 30 min</td></tr>
+            <tr><td>3. Bake</td><td class="mono">175°C (350°F), 55-65 min</td></tr>
+        </table>
+
+        <h3>Day-Of: Fast (90-95% quality)</h3>
+        <table>
+            <tr><td>1. Bake from frozen</td><td class="mono">165°C (325°F), 70-80 min</td></tr>
+        </table>
+
+        <div class="science-box">
+            <p><strong>Why thaw first is better:</strong> Even heat = consistent crumb. Baking soda fully reactivates at room temp. Higher oven temp (175°C) = better Maillard = golden crust.</p>
+            <p><strong>Why frozen works:</strong> Lower temp (165°C) prevents outside setting before center cooks. Trade-off: paler crust, slightly uneven texture.</p>
+            <p><strong>Critical:</strong> Don't let thawed batter sit. CO₂ is escaping. Thaw → bake immediately.</p>
+        </div>
+
+        <p class="tip">Keeps 6-8 weeks frozen. Beyond this, CO₂ slowly escapes even frozen — loaf rises less.</p>
+    </section>
+
+    <!-- DRY KIT METHOD -->
+    <section>
+        <h2>Dry Kit Method</h2>
+
+        <h3>The Kit (make 4× at once)</h3>
+        <table>
+            <tr><td>Flour</td><td class="mono">240g</td></tr>
+            <tr><td>Salt</td><td class="mono">4g</td></tr>
+            <tr><td>Cinnamon</td><td class="mono">2g</td></tr>
+            <tr><td>Brown sugar</td><td class="mono">150g</td></tr>
+            <tr><td>White sugar</td><td class="mono">50g</td></tr>
+        </table>
+        <p class="tip">NO baking soda in kit. Keeps 3 months room temp, 6 months frozen.</p>
+
+        <h3>Day-Of</h3>
+        <table>
+            <tr><td>1.</td><td>Mash 400g very ripe bananas</td></tr>
+            <tr><td>2.</td><td>Add 115g melted butter + dry kit</td></tr>
+            <tr><td>3.</td><td>Whisk in 2 eggs, 10g vanilla, 60g yogurt</td></tr>
+            <tr><td>4.</td><td>Add <strong>6g baking soda LAST</strong>, fold briefly</td></tr>
+            <tr><td>5.</td><td>Pan → bake immediately</td></tr>
+        </table>
+
+        <div class="science-box">
+            <p><strong>Why no soda in kit:</strong> Baking soda (sodium bicarbonate) degrades when stored with acids or in humidity. Sugar is hygroscopic (absorbs moisture). Mixed together = slow degradation.</p>
+            <p><strong>Why add soda last:</strong> Reaction with acid (yogurt, banana) starts immediately. Most CO₂ produced in first 10-15 min. You want that gas in the oven, not escaping on the counter.</p>
+            <p><strong>Test old soda:</strong> Drop in vinegar. Should fizz vigorously. Weak fizz = weak rise.</p>
+        </div>
+    </section>
+
+    <!-- SCIENCE -->
+    <section class="full">
+        <h2>The Science</h2>
+        <div class="grid" style="gap: 4mm;">
+            <div class="science-box">
+                <p><strong>Ripe Bananas:</strong> Amylase enzymes convert starch → simple sugars as banana ripens. Black spots = maximum conversion. More natural sweetness, softer texture, better flavor. Green bananas = starchy, gummy bread.</p>
+            </div>
+            <div class="science-box">
+                <p><strong>Melted vs Creamed Butter:</strong> Melted butter distributes fat evenly through batter = denser, moister crumb. Creamed butter traps air = lighter but drier. For banana bread, moist > light.</p>
+            </div>
+            <div class="science-box">
+                <p><strong>Yogurt Acidity:</strong> Lactic acid tenderizes gluten, creating softer crumb. Also reacts with baking soda for additional lift. Tang balances sweetness. Sour cream works too (richer).</p>
+            </div>
+            <div class="science-box">
+                <p><strong>Minimal Mixing:</strong> Gluten develops with agitation. Overmix = tough, dense, tunneled bread. Fold until just combined — visible flour streaks are fine, they'll hydrate in oven.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELEVATION DETAILS -->
+    <section>
+        <h2>Elevation Details</h2>
+        <table>
+            <thead>
+                <tr><th>Upgrade</th><th>Method</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Brown butter</strong></td>
+                    <td>Cook 6-8 min until golden solids, nutty smell</td>
+                    <td>Maillard on milk solids = 100s of new flavor compounds</td>
+                </tr>
+                <tr>
+                    <td><strong>White miso</strong></td>
+                    <td>30g whisked with sugars</td>
+                    <td>Glutamates amplify sweetness perception without adding sugar</td>
+                </tr>
+                <tr>
+                    <td><strong>Roast bananas</strong></td>
+                    <td>150°C, 25 min in skins until black</td>
+                    <td>Evaporates 25% moisture, concentrates + caramelizes sugars</td>
+                </tr>
+                <tr>
+                    <td><strong>Tahini swirl</strong></td>
+                    <td>3 tbsp on top, drag knife through</td>
+                    <td>Richness, nuttiness, visual appeal</td>
+                </tr>
+                <tr>
+                    <td><strong>Espresso powder</strong></td>
+                    <td>1 tsp with dry ingredients</td>
+                    <td>Deepens flavor without coffee taste</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- TROUBLESHOOTING -->
+    <section>
+        <h2>Troubleshooting</h2>
+        <table>
+            <thead>
+                <tr><th>Problem</th><th>Cause</th><th>Fix</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dense, heavy</td>
+                    <td>Overmixed / too much flour</td>
+                    <td>Fold gently. Weigh flour.</td>
+                </tr>
+                <tr>
+                    <td>Sunk middle</td>
+                    <td>Underbaked / old soda</td>
+                    <td>Check at 55 min. Test soda.</td>
+                </tr>
+                <tr>
+                    <td>Gummy layer</td>
+                    <td>Too wet bananas</td>
+                    <td>Drain excess liquid. Or roast.</td>
+                </tr>
+                <tr>
+                    <td>Dry crumb</td>
+                    <td>Overbaked / not enough fat</td>
+                    <td>Pull at 95°C internal.</td>
+                </tr>
+                <tr>
+                    <td>Pale top</td>
+                    <td>Oven too low</td>
+                    <td>Verify with thermometer.</td>
+                </tr>
+                <tr>
+                    <td>Didn't rise</td>
+                    <td>Dead soda / waited too long</td>
+                    <td>Fresh soda. Bake immediately.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+<!-- STORAGE -->
+<section class="method-box full" style="margin-top: 3mm;">
+    <h2>Storage & Refresh</h2>
+    <table>
+        <thead>
+            <tr><th>Form</th><th>Keeps</th><th>Method</th><th>Refresh</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Baked loaf</td>
+                <td>3 days room temp / 1 week fridge / 3 months frozen</td>
+                <td>Wrap tight, then foil if freezing</td>
+                <td>150°C (300°F), 10-15 min</td>
+            </tr>
+            <tr>
+                <td>Frozen batter</td>
+                <td>6-8 weeks frozen</td>
+                <td>Vacuum seal block</td>
+                <td>Thaw → bake 175°C or frozen 165°C</td>
+            </tr>
+            <tr>
+                <td>Dry kit</td>
+                <td>3 months room temp / 6 months frozen</td>
+                <td>Airtight container or bag</td>
+                <td>Add fresh soda day-of</td>
+            </tr>
+            <tr>
+                <td>Frozen banana purée</td>
+                <td>6 months frozen</td>
+                <td>400g portions, flat in bags</td>
+                <td>Thaw overnight fridge</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer class="footer">
+    <span>littoralicious.com | Source: Serious Eats, Harold McGee, ChefSteps</span>
+    <span>Page 2 — Details & Science</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+# THE EVIDENCE — Template
+
+**Voice:** A translator between science and the kitchen. Clinical precision, practical language. You read the paper so they don't have to. No hype, no fear, no "superfoods."
+
+**Rhythm:** What did they find → Why should you care → What should you do → What should you not overclaim. Fast.
+
+**Word Count:** 200-300 · **Read Time:** 1 min
+
+**Source Standard:** Top-tier only. Peer-reviewed journals, systematic reviews, meta-analyses. Nothing that hasn't survived scientific verification. If the study hasn't been replicated or is from a predatory journal, it doesn't exist for our purposes.
+
+---
+
+## [HEADLINE: Plain statement of finding — what the research showed, not what you wish it showed]
+
+**The Study:**
+[One paragraph. Who (institution), what (study type: RCT, meta-analysis, observational, systematic review), where (journal, year, impact factor if notable), how big (n=participants or studies), funding source. This is the credibility paragraph. Only cite from indexed, peer-reviewed journals. If the journal isn't in PubMed, Scopus, or Web of Science — find a better source.]
+
+**Key Finding:**
+[One sentence. Plain language. The main takeaway.]
+
+**The Numbers:**
+
+| Finding | Data | Context |
+|---------|------|---------|
+| [Specific finding] | [Number, percentage, measurement] | [Why this matters practically] |
+| [Finding 2] | [Data] | [Context] |
+
+**What This Means in the Galley:**
+[2-3 sentences. Translate to action. How does this change what they do tomorrow? Be concrete — name a dish, a technique, a decision point.]
+
+**What This Does Not Mean:**
+[1-2 sentences. The overclaim people will make. Kill it before it spreads.]
+
+**Limitations:**
+- [Limitation 1 — sample size, population, methodology, industry funding]
+- [Limitation 2 — what the study didn't test]
+
+**Your Move:**
+[One sentence. One action. Or: "No action needed — this confirms what you're already doing."]
+
+**Source:** [Full citation with DOI or journal link]
+
+---
+
+## Quality Gates
+
+- [ ] Study is peer-reviewed and published in an indexed journal (PubMed, Scopus, or Web of Science)?
+- [ ] Published within last 3 years (unless foundational and repeatedly cited)?
+- [ ] Funding source disclosed — industry-funded studies flagged explicitly?
+- [ ] Limitations stated honestly?
+- [ ] No health claims beyond what the study supports?
+- [ ] "What This Does Not Mean" section is included?
+- [ ] Source citation includes DOI or direct journal link?
+
+## Red Lines
+- No "superfoods"
+- No single-study claims presented as fact
+- No health advice beyond "here's what the research shows"
+- No supplement recommendations
+- No diet endorsements
+- No "may help prevent cancer" clickbait
+- No preprints, conference abstracts, or non-peer-reviewed sources as primary evidence
+- No studies from predatory or pay-to-publish journals
+- No industry-funded research cited without disclosing the funding source
+- No nutritional claims from news outlets, blogs, or press releases — go to the paper itself
