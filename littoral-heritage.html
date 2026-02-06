@@ -26,6 +26,7 @@
                     <a href="littoral-heritage.html" class="active">Heritage</a>
                     <a href="the-evidence.html">The Evidence</a>
                     <a href="the-bridge.html">The Bridge</a>
+                    <a href="newsletter.html">Newsletter</a>
                     <a href="about.html">About</a>
                 </nav>
             </div>
@@ -58,6 +59,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer__newsletter">
+                <form class="footer-newsletter-form newsletter-form"
+                      action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
+                      method="post"
+                      target="popupwindow">
+                    <label for="footer-email-heritage">Get the monthly brief</label>
+                    <div class="footer-newsletter-form__row">
+                        <input type="email" name="email" id="footer-email-heritage" placeholder="your@email.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
             <div class="footer__inner">
                 <div class="footer__about">
                     <div class="footer__brand">LITTORALICIOUS</div>
@@ -82,6 +95,7 @@
                         <ul>
                             <li><a href="about.html">Manifesto</a></li>
                             <li><a href="founder.html">Founder</a></li>
+                            <li><a href="newsletter.html">Newsletter</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
@@ -92,6 +106,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>

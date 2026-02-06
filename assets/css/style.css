@@ -636,6 +636,78 @@ h4 { font-size: var(--text-lg); }
     color: var(--color-ink);
 }
 
+/* Footer Newsletter Signup */
+.footer__newsletter {
+    padding-bottom: var(--space-8);
+    margin-bottom: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.footer-newsletter-form label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+.footer-newsletter-form__row {
+    display: flex;
+    gap: var(--space-3);
+    max-width: 400px;
+}
+
+.footer-newsletter-form__row input[type="email"] {
+    border: 1px solid var(--color-border);
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    width: 100%;
+}
+
+.footer-newsletter-form__row input[type="email"]:focus {
+    border-color: var(--color-sea);
+    outline: none;
+}
+
+.footer-newsletter-form__row button[type="submit"] {
+    background: var(--color-sea);
+    color: var(--color-paper);
+    border: 2px solid var(--color-sea);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.footer-newsletter-form__row button[type="submit"]:hover {
+    background: transparent;
+    color: var(--color-sea);
+}
+
+[data-theme="dark"] .footer-newsletter-form__row input[type="email"] {
+    background: var(--color-subtle);
+    color: var(--color-ink);
+    border-color: var(--color-salt);
+}
+
+@media (max-width: 768px) {
+    .footer-newsletter-form__row {
+        flex-direction: column;
+    }
+
+    .footer-newsletter-form__row button[type="submit"] {
+        width: 100%;
+    }
+}
+
 .footer__legal {
     margin-top: var(--space-8);
     padding-top: var(--space-6);

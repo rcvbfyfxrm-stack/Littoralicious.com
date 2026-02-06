@@ -187,31 +187,57 @@
     // ==========================================================================
 
     function initNewsletterForm() {
-        const form = document.querySelector('form');
-        if (!form) return;
+        const forms = document.querySelectorAll('.newsletter-form');
+        if (!forms.length) return;
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        forms.forEach(function (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-            const emailInput = form.querySelector('input[type="email"]');
-            const button = form.querySelector('button[type="submit"]');
-            const email = emailInput?.value;
+                const emailInput = form.querySelector('input[type="email"]');
+                const button = form.querySelector('button[type="submit"]');
+                const statusEl = form.parentElement.querySelector('[class*="status"]');
+                const email = emailInput?.value;
 
-            if (!email) return;
+                if (!email) return;
 
-            button.textContent = 'Subscribing...';
-            button.disabled = true;
+                button.textContent = 'Subscribing...';
+                button.disabled = true;
 
-            // Simulate subscription (replace with actual endpoint)
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+                try {
+                    const formData = new FormData();
+                    formData.append('email', email);
 
-            button.textContent = 'Subscribed';
-            emailInput.value = '';
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                    });
 
-            setTimeout(() => {
-                button.textContent = 'Subscribe';
+                    if (res.ok || res.status === 201) {
+                        button.textContent = 'Subscribed';
+                        emailInput.value = '';
+                        if (statusEl) {
+                            statusEl.textContent = 'You\'re in. First issue arrives next month.';
+                            statusEl.className = statusEl.className.replace(/--error/, '') + ' newsletter-signup__status--success';
+                        }
+                    } else {
+                        throw new Error('Subscription failed');
+                    }
+                } catch (err) {
+                    button.textContent = 'Subscribe';
+                    if (statusEl) {
+                        statusEl.textContent = 'Something went wrong. Try again.';
+                        statusEl.className = statusEl.className.replace(/--success/, '') + ' newsletter-signup__status--error';
+                    }
+                }
+
                 button.disabled = false;
-            }, 3000);
+
+                setTimeout(() => {
+                    button.textContent = 'Subscribe';
+                    if (statusEl) statusEl.textContent = '';
+                }, 5000);
+            });
         });
     }
 
