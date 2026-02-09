@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    FLAME
+
+    The single flame of nurture.
+    But look closer: it contains all elements.
+    Fire (the shape), Air (rising), Water (the curve), Earth (the base).
+
+    Minimal. Powerful. True.
+  -->
+
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#0a0a0a" stroke-width="1"/>
+
+  <!-- The flame -->
+  <path
+    d="M 50 15
+       C 42 30, 35 40, 35 55
+       C 35 72, 50 82, 50 82
+       C 50 82, 65 72, 65 55
+       C 65 40, 58 30, 50 15
+       Z"
+    fill="none"
+    stroke="#0a0a0a"
+    stroke-width="2"
+  />
+
+  <!-- Inner flame -->
+  <path
+    d="M 50 35
+       C 46 45, 43 52, 43 60
+       C 43 70, 50 75, 50 75
+       C 50 75, 57 70, 57 60
+       C 57 52, 54 45, 50 35
+       Z"
+    fill="#0a0a0a"
+  />
+
+  <!-- Base line (earth) -->
+  <line x1="35" y1="82" x2="65" y2="82" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+
+</svg>
