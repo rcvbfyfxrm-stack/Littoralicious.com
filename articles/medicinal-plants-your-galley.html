@@ -14,7 +14,7 @@
         <div class="container">
             <div class="masthead__inner">
                 <div class="masthead__brand">
-                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="Littoralicious" style="height: 36px; vertical-align: middle; margin-right: 12px;">LITTORALICIOUS</a>
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="Littoralicious" style="height: 54px; display: block; margin: 0 auto 2px;">LITTORALICIOUS</a>
                     <span class="masthead__tagline">MODERN SCIENCE AND REGIONAL RECIPES FROM THE SEA</span>
                     <span class="masthead__description">Sailing Around The Plate -- Littoraly Delicious</span>
                 </div>
@@ -47,7 +47,40 @@
 
             <div class="article__content container" style="max-width: 65ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <h2>The Pattern</h2>
+                <!-- Article Actions -->
+                <div class="article-actions">
+                    <button class="print-btn" data-action="print">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9V2h12v7"/>
+                            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                            <rect x="6" y="14" width="12" height="8"/>
+                        </svg>
+                        Print
+                    </button>
+                    <button class="download-btn" data-action="download">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Save PDF
+                    </button>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="article-toc">
+                    <p class="article-toc__title">In This Article</p>
+                    <ol>
+                        <li><a href="#section-1">The Pattern</a></li>
+                        <li><a href="#section-2">Cacao</a></li>
+                        <li><a href="#section-3">Turmeric</a></li>
+                        <li><a href="#section-4">Cinnamon</a></li>
+                        <li><a href="#section-5">Saffron</a></li>
+                        <li><a href="#section-6">Chef's Takeaway</a></li>
+                    </ol>
+                </div>
+
+                <h2 id="section-1">The Pattern</h2>
                 <p>
                     Every civilisation that survived long enough to write things down did two things: it cultivated grains, and it hoarded spices. The grains kept people alive. The spices kept them healthy. This wasn't superstition — it was empirical observation across millennia, the longest clinical trial in history.
                 </p>
@@ -55,88 +88,91 @@
                     What these cultures couldn't explain, biochemistry now can. The plants they prized share a common trait: they're dense in polyphenols, alkaloids, and volatile compounds that interact with human inflammatory pathways, gut microbiota, and neurochemistry. They don't just taste good. They do things.
                 </p>
 
-                <h2>Cacao</h2>
-                <p style="font-size: var(--text-sm); color: var(--color-muted); font-style: italic;">
-                    Theobroma cacao — "food of the gods." Domesticated in Mesoamerica ~3,900 years ago.
+                <h2 id="section-2">Cacao</h2>
+                <p class="marginal">
+                    <span class="term" title="Theobroma cacao">Theobroma cacao</span> — "food of the gods." Domesticated in Mesoamerica ~3,900 years ago.
                 </p>
                 <p>
-                    The Aztecs didn't eat chocolate bars. They drank unsweetened cacao with chili and achiote — bitter, complex, ceremonial. They called it xocolātl and reserved it for warriors and priests. They weren't being dramatic. They were dosing themselves with one of the most pharmacologically active plants on earth.
+                    The Aztecs didn't eat chocolate bars. They drank unsweetened cacao with chili and achiote — bitter, complex, ceremonial. They called it <em>xocolātl</em> and reserved it for warriors and priests. They weren't being dramatic. They were dosing themselves with one of the most pharmacologically active plants on earth.
                 </p>
 
-                <div style="background: var(--color-subtle); padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid var(--color-sea);">
-                    <h4 style="margin-top: 0; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-sea);">What's In It</h4>
-                    <ul style="margin-bottom: 0; font-size: var(--text-sm);">
-                        <li><strong>Theobromine</strong> — Mild stimulant, vasodilator. Lowers blood pressure by relaxing smooth muscle in blood vessel walls. Longer-acting than caffeine, without the crash.</li>
-                        <li><strong>Flavanols (epicatechin, catechin)</strong> — Increase nitric oxide production, improving blood flow. A 2022 meta-analysis of 31 RCTs confirmed significant reduction in systolic blood pressure (Circulation Research, Vol. 131).</li>
-                        <li><strong>Phenylethylamine (PEA)</strong> — The "love molecule." Triggers dopamine release. Same compound your brain produces during attraction.</li>
-                        <li><strong>Anandamide</strong> — Binds to cannabinoid receptors. Yes, chocolate literally activates the same pathways as cannabis — in trace amounts.</li>
-                        <li><strong>Magnesium</strong> — 100g dark chocolate contains ~230mg. Most adults are deficient. Magnesium regulates 300+ enzymatic reactions.</li>
+                <div class="note note--science" data-label="Active Compounds">
+                    <ul>
+                        <li><strong>Theobromine</strong> — Mild stimulant, vasodilator. Lowers blood pressure by relaxing smooth muscle. Longer-acting than caffeine, without the crash.</li>
+                        <li><strong>Flavanols</strong> — Increase nitric oxide production, improving blood flow. <mark>31 RCTs confirmed significant BP reduction</mark> (Circulation Research, 2022).</li>
+                        <li><strong>Phenylethylamine (PEA)</strong> — The "love molecule." Triggers dopamine release.</li>
+                        <li><strong>Anandamide</strong> — Binds to cannabinoid receptors (trace amounts).</li>
+                        <li><strong>Magnesium</strong> — 100g dark chocolate = ~230mg. Regulates 300+ enzymatic reactions.</li>
                     </ul>
                 </div>
 
+                <div class="note note--key">
+                    <p><strong>70% minimum.</strong> Milk chocolate (15-25% cacao) doesn't count. Studies use 70%+ dark chocolate, 20-30g daily. Below 70%, sugar cancels the benefit.</p>
+                </div>
+
+                <h2 id="section-3">Turmeric</h2>
+                <p class="marginal">
+                    <span class="term" title="Curcuma longa">Curcuma longa</span> — Ayurvedic medicine for 4,000+ years. India consumes 80% of global production.
+                </p>
                 <p>
-                    <strong>The catch:</strong> Milk chocolate contains 15-25% cacao. The studies showing cardiovascular benefit use 70%+ dark chocolate, 20-30g daily. Below 70%, the sugar cancels the benefit. The Aztecs were right — no milk, no sugar.
+                    The active compound is <mark>curcumin</mark>, a polyphenol responsible for the yellow colour. It modulates <span class="term" title="Nuclear Factor kappa B - master regulator of inflammation">NF-κB</span>, the master switch of inflammation. When NF-κB is chronically activated — by stress, poor sleep, processed food — it drives everything from joint pain to cardiovascular disease. Curcumin turns the volume down.
                 </p>
 
-                <h2>Turmeric</h2>
-                <p style="font-size: var(--text-sm); color: var(--color-muted); font-style: italic;">
-                    Curcuma longa — Used in Ayurvedic medicine for 4,000+ years. India still consumes 80% of global production.
-                </p>
-                <p>
-                    The active compound is curcumin, a polyphenol responsible for the yellow colour. It modulates NF-κB, the master switch of inflammation. When NF-κB is chronically activated — by stress, poor sleep, processed food — it drives everything from joint pain to cardiovascular disease. Curcumin turns the volume down.
-                </p>
-                <p>
-                    <strong>The problem:</strong> Curcumin has terrible bioavailability. Your gut barely absorbs it. Indian cuisine solved this 4,000 years ago without knowing the chemistry — they cook turmeric with black pepper and fat. Piperine (the active compound in black pepper) increases curcumin absorption by 2,000%. Fat makes it cross the intestinal wall. Every traditional curry follows this pattern: turmeric + pepper + ghee or oil. Empirical genius.
-                </p>
+                <div class="note note--warning">
+                    <p><strong>Bioavailability problem:</strong> Your gut barely absorbs curcumin alone. Indian cuisine solved this 4,000 years ago — turmeric + black pepper + fat. Piperine increases absorption by <mark>2,000%</mark>. Fat helps it cross the intestinal wall.</p>
+                </div>
 
-                <table style="width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--text-sm);">
+                <table class="data-table">
                     <thead>
-                        <tr style="border-bottom: 2px solid var(--color-ink);">
-                            <th style="text-align: left; padding: var(--space-2);">Preparation</th>
-                            <th style="text-align: left; padding: var(--space-2);">Curcumin Absorption</th>
+                        <tr>
+                            <th>Preparation</th>
+                            <th>Absorption</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid var(--color-border);">
-                            <td style="padding: var(--space-2);">Turmeric alone (raw)</td>
-                            <td style="padding: var(--space-2); font-family: var(--font-mono);">~1% bioavailability</td>
+                        <tr>
+                            <td>Turmeric alone (raw)</td>
+                            <td class="num">~1%</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid var(--color-border);">
-                            <td style="padding: var(--space-2);">Turmeric + black pepper</td>
-                            <td style="padding: var(--space-2); font-family: var(--font-mono);">~20x increase</td>
+                        <tr>
+                            <td>Turmeric + black pepper</td>
+                            <td class="num">~20×</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid var(--color-border);">
-                            <td style="padding: var(--space-2);">Turmeric + black pepper + fat (traditional curry)</td>
-                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Optimal absorption</td>
+                        <tr>
+                            <td>Turmeric + pepper + fat (curry)</td>
+                            <td class="num">Optimal</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid var(--color-border);">
-                            <td style="padding: var(--space-2);">Turmeric latte (no pepper, skim milk)</td>
-                            <td style="padding: var(--space-2); font-family: var(--font-mono);">Marketing, not medicine</td>
+                        <tr>
+                            <td>Turmeric latte (no pepper)</td>
+                            <td class="num">Marketing</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2>Cinnamon</h2>
-                <p style="font-size: var(--text-sm); color: var(--color-muted); font-style: italic;">
-                    Cinnamomum verum (Ceylon) vs. Cinnamomum cassia (common). This distinction matters.
+                <h2 id="section-4">Cinnamon</h2>
+                <p class="marginal">
+                    <span class="term" title="True cinnamon from Sri Lanka">Cinnamomum verum</span> (Ceylon) vs. <span class="term" title="Chinese cinnamon - more common but contains coumarin">Cinnamomum cassia</span> (common). This distinction matters.
                 </p>
                 <p>
                     In ancient Egypt, cinnamon was worth more than gold by weight. In medieval Europe, a man's wealth was measured partly by his spice cabinet. They weren't just seasoning — they were self-medicating.
                 </p>
-                <p>
-                    Cinnamaldehyde, the compound that gives cinnamon its flavour, mimics insulin at the cellular level. It activates insulin receptor kinase and inhibits phosphatase — effectively telling cells to absorb glucose even when insulin signalling is impaired. Multiple RCTs confirm 1-6g daily of Ceylon cinnamon reduces fasting blood glucose by 10-29% in type 2 diabetics.
-                </p>
-                <p>
-                    <strong>Critical distinction:</strong> Cassia cinnamon (what most supermarkets sell) contains coumarin — a hepatotoxin at high doses. Ceylon cinnamon contains 250x less coumarin. If you're using cinnamon therapeutically, source Ceylon. If you're a chef, you should be using Ceylon anyway — the flavour is more complex, less aggressive.
+
+                <div class="note note--science">
+                    <p><strong>Cinnamaldehyde</strong> mimics insulin at the cellular level. It activates insulin receptor kinase and inhibits phosphatase — telling cells to absorb glucose even when insulin signalling is impaired. RCTs confirm <mark>1-6g daily reduces fasting blood glucose by 10-29%</mark> in type 2 diabetics.</p>
+                </div>
+
+                <div class="note note--warning">
+                    <p><strong>Ceylon vs. Cassia:</strong> Supermarket cinnamon (Cassia) contains <span class="term" title="Hepatotoxic compound - toxic to liver at high doses">coumarin</span> — a hepatotoxin at high doses. Ceylon has 250× less. Source Ceylon for therapeutic use. Better flavour anyway — more complex, less aggressive.</p>
+                </div>
+
+                <h2 id="section-5">Saffron</h2>
+                <p class="marginal">
+                    <span class="term" title="Crocus sativus">Crocus sativus</span> — 150,000 flowers per kg. Still hand-harvested. Most expensive spice for 3,000 years.
                 </p>
 
-                <h2>Saffron</h2>
-                <p style="font-size: var(--text-sm); color: var(--color-muted); font-style: italic;">
-                    Crocus sativus — 150,000 flowers to make 1kg. Still hand-harvested. The most expensive spice on earth for 3,000 years.
-                </p>
-                <p>
-                    Saffron's active compounds — crocin, crocetin, and safranal — cross the blood-brain barrier. That's rare and significant. Six clinical trials (2014-2023) showed saffron at 30mg/day performed as well as fluoxetine (Prozac) for mild-to-moderate depression, with fewer side effects. The mechanism: it modulates serotonin reuptake and has neuroprotective effects on BDNF (brain-derived neurotrophic factor).
-                </p>
+                <div class="note note--science">
+                    <p>Saffron's active compounds — <strong>crocin, crocetin, safranal</strong> — cross the blood-brain barrier. Six clinical trials (2014-2023) showed <mark>30mg/day performed as well as Prozac</mark> for mild-to-moderate depression, with fewer side effects. Mechanism: modulates serotonin reuptake + neuroprotective effects on <span class="term" title="Brain-derived neurotrophic factor - supports neuron growth">BDNF</span>.</p>
+                </div>
                 <p>
                     Persian culture has used saffron in rice, stews, and teas for millennia. The Iranians consume more saffron per capita than any nation. Correlation isn't causation — but it's worth noting.
                 </p>
