@@ -113,31 +113,28 @@
             disagreeBtn?.classList.remove('active');
 
             try {
+                const updates = {
+                    agrees: firebase.firestore.FieldValue.increment(0),
+                    disagrees: firebase.firestore.FieldValue.increment(0),
+                };
+
                 if (wasActive) {
                     saveVote(slug, null);
-                    await docRef.set(
-                        { [type + 's']: firebase.firestore.FieldValue.increment(-1) },
-                        { merge: true }
-                    );
+                    updates[type + 's'] = firebase.firestore.FieldValue.increment(-1);
                     data[type + 's'] = Math.max(0, (data[type + 's'] || 0) - 1);
                 } else {
-                    // If switching from opposite vote, decrement old
                     const prev = getVotes()[slug];
                     if (prev && prev !== type) {
-                        await docRef.set(
-                            { [prev + 's']: firebase.firestore.FieldValue.increment(-1) },
-                            { merge: true }
-                        );
+                        updates[prev + 's'] = firebase.firestore.FieldValue.increment(-1);
                         data[prev + 's'] = Math.max(0, (data[prev + 's'] || 0) - 1);
                     }
                     btn.classList.add('active');
                     saveVote(slug, type);
-                    await docRef.set(
-                        { [type + 's']: firebase.firestore.FieldValue.increment(1) },
-                        { merge: true }
-                    );
+                    updates[type + 's'] = firebase.firestore.FieldValue.increment(1);
                     data[type + 's'] = (data[type + 's'] || 0) + 1;
                 }
+
+                await docRef.set(updates, { merge: true });
             } catch (err) {
                 console.log('Firestore write failed:', err.message);
             }
