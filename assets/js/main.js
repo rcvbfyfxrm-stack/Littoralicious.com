@@ -242,170 +242,6 @@
     }
 
     // ==========================================================================
-    // Article Reactions (Agree/Disagree)
-    // ==========================================================================
-
-    const REACTIONS_KEY = 'littoralicious-reactions';
-
-    function getReactions() {
-        try {
-            return JSON.parse(localStorage.getItem(REACTIONS_KEY) || '{}');
-        } catch {
-            return {};
-        }
-    }
-
-    function saveReaction(articleId, reaction) {
-        const reactions = getReactions();
-        reactions[articleId] = reaction;
-        localStorage.setItem(REACTIONS_KEY, JSON.stringify(reactions));
-    }
-
-    function initArticleReactions() {
-        const reactionSection = document.querySelector('.article-reactions');
-        if (!reactionSection) return;
-
-        const articleId = reactionSection.dataset.articleId || window.location.pathname;
-        const agreeBtn = reactionSection.querySelector('[data-reaction="agree"]');
-        const disagreeBtn = reactionSection.querySelector('[data-reaction="disagree"]');
-        const agreeCount = reactionSection.querySelector('.reaction-count--agree');
-        const disagreeCount = reactionSection.querySelector('.reaction-count--disagree');
-
-        // Check if user already reacted
-        const userReactions = getReactions();
-        const existingReaction = userReactions[articleId];
-
-        if (existingReaction === 'agree' && agreeBtn) {
-            agreeBtn.classList.add('active');
-        } else if (existingReaction === 'disagree' && disagreeBtn) {
-            disagreeBtn.classList.add('active');
-        }
-
-        function handleReaction(type, btn, otherBtn) {
-            const wasActive = btn.classList.contains('active');
-
-            // Remove active from both
-            agreeBtn?.classList.remove('active');
-            disagreeBtn?.classList.remove('active');
-
-            if (wasActive) {
-                // Un-react
-                saveReaction(articleId, null);
-                updatePercentages(null);
-            } else {
-                // React
-                btn.classList.add('active');
-                saveReaction(articleId, type);
-                updatePercentages(type);
-            }
-        }
-
-        function updatePercentages(userReaction) {
-            // For a static site, we simulate percentages based on localStorage
-            // In production, this would call an API
-            if (agreeCount && disagreeCount) {
-                // Show a thank you message instead of fake numbers
-                if (userReaction) {
-                    agreeCount.textContent = userReaction === 'agree' ? 'Thanks!' : '';
-                    disagreeCount.textContent = userReaction === 'disagree' ? 'Noted' : '';
-                } else {
-                    agreeCount.textContent = '';
-                    disagreeCount.textContent = '';
-                }
-            }
-        }
-
-        // Initial state
-        if (existingReaction) {
-            updatePercentages(existingReaction);
-        }
-
-        agreeBtn?.addEventListener('click', () => handleReaction('agree', agreeBtn, disagreeBtn));
-        disagreeBtn?.addEventListener('click', () => handleReaction('disagree', disagreeBtn, agreeBtn));
-    }
-
-    // ==========================================================================
-    // Comment Form with Newsletter Opt-in
-    // ==========================================================================
-
-    function initCommentForm() {
-        const commentForm = document.querySelector('.comment-form');
-        if (!commentForm) return;
-
-        const form = commentForm.querySelector('form');
-        const nameInput = form?.querySelector('input[name="name"]');
-        const emailInput = form?.querySelector('input[name="email"]');
-        const commentInput = form?.querySelector('textarea[name="comment"]');
-        const subscribeCheckbox = form?.querySelector('input[name="subscribe"]');
-        const submitBtn = form?.querySelector('button[type="submit"]');
-        const commentsList = document.querySelector('.comments-list');
-
-        if (!form) return;
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name = nameInput?.value?.trim();
-            const email = emailInput?.value?.trim();
-            const comment = commentInput?.value?.trim();
-            const subscribe = subscribeCheckbox?.checked;
-
-            if (!name || !comment) {
-                alert('Please enter your name and comment.');
-                return;
-            }
-
-            submitBtn.textContent = 'Posting...';
-            submitBtn.disabled = true;
-
-            // If subscribe is checked and email provided, subscribe to newsletter
-            if (subscribe && email) {
-                try {
-                    const formData = new FormData();
-                    formData.append('email', email);
-
-                    await fetch('https://buttondown.com/api/emails/embed-subscribe/littoralicious', {
-                        method: 'POST',
-                        body: formData,
-                    });
-                } catch (err) {
-                    console.log('Newsletter subscription attempted');
-                }
-            }
-
-            // For static site, show the comment locally (won't persist on reload)
-            // In production, this would POST to an API
-            if (commentsList) {
-                const newComment = document.createElement('div');
-                newComment.className = 'comment comment--new';
-                newComment.innerHTML = `
-                    <div class="comment__header">
-                        <span class="comment__author">${escapeHtml(name)}</span>
-                        <span class="comment__date">Just now</span>
-                    </div>
-                    <div class="comment__body">${escapeHtml(comment)}</div>
-                `;
-                commentsList.prepend(newComment);
-            }
-
-            // Reset form
-            form.reset();
-            submitBtn.textContent = 'Posted!';
-
-            setTimeout(() => {
-                submitBtn.textContent = 'Post Comment';
-                submitBtn.disabled = false;
-            }, 2000);
-        });
-    }
-
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
-
-    // ==========================================================================
     // Share Buttons
     // ==========================================================================
 
@@ -442,6 +278,72 @@
     }
 
     // ==========================================================================
+    // Print & Download
+    // ==========================================================================
+
+    function initPrintButton() {
+        const printBtns = document.querySelectorAll('.print-btn, [data-action="print"]');
+        printBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.print();
+            });
+        });
+    }
+
+    function initDownloadPDF() {
+        const downloadBtns = document.querySelectorAll('.download-btn, [data-action="download"]');
+        downloadBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Use browser's print-to-PDF functionality
+                // This triggers the print dialog where user can save as PDF
+                window.print();
+            });
+        });
+    }
+
+    // ==========================================================================
+    // Table of Contents Generator
+    // ==========================================================================
+
+    function generateTableOfContents() {
+        const tocContainer = document.querySelector('.article-toc');
+        if (!tocContainer) return;
+
+        const article = document.querySelector('.article__content, .article-body');
+        if (!article) return;
+
+        const headings = article.querySelectorAll('h2');
+        if (headings.length < 2) {
+            tocContainer.style.display = 'none';
+            return;
+        }
+
+        const list = document.createElement('ol');
+
+        headings.forEach((heading, index) => {
+            // Add ID to heading if it doesn't have one
+            if (!heading.id) {
+                heading.id = `section-${index + 1}`;
+            }
+
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent;
+            li.appendChild(link);
+            list.appendChild(li);
+        });
+
+        // Clear existing content and add new TOC
+        const title = tocContainer.querySelector('.article-toc__title');
+        if (title) {
+            tocContainer.innerHTML = '';
+            tocContainer.appendChild(title.cloneNode(true));
+        }
+        tocContainer.appendChild(list);
+    }
+
+    // ==========================================================================
     // Initialize
     // ==========================================================================
 
@@ -452,8 +354,10 @@
         initCodeCopy();
         initExternalLinks();
         initNewsletterForm();
-        initArticleReactions();
-        initCommentForm();
+        // Reactions and comments now handled by community.js (Firebase-backed)
         initShareButtons();
+        initPrintButton();
+        initDownloadPDF();
+        generateTableOfContents();
     });
 })();

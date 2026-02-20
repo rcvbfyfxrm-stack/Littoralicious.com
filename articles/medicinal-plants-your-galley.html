@@ -267,6 +267,11 @@
                 <!-- Article Engagement Section -->
                 <div class="article-engagement">
 
+                    <!-- Community Pulse -->
+                    <div class="community-pulse">
+                        <span class="community-pulse__count">Loading...</span>
+                    </div>
+
                     <!-- Reactions -->
                     <div class="article-reactions" data-article-id="medicinal-plants-your-galley">
                         <p class="reactions-prompt">Did this change how you'll cook?</p>
@@ -276,16 +281,18 @@
                                     <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
                                 </svg>
                                 <span>Useful</span>
-                                <span class="reaction-count reaction-count--agree"></span>
+                                <span class="reaction-count reaction-count--agree">0</span>
                             </button>
                             <button class="reaction-btn" data-reaction="disagree">
                                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/>
                                 </svg>
                                 <span>Disagree</span>
-                                <span class="reaction-count reaction-count--disagree"></span>
+                                <span class="reaction-count reaction-count--disagree">0</span>
                             </button>
                         </div>
+                        <div class="article-reactions__stats"></div>
+                        <div class="article-reactions__bar"><div class="article-reactions__bar-fill"></div></div>
                     </div>
 
                     <!-- Share -->
@@ -313,6 +320,11 @@
                     <div class="article-comments">
                         <h3 class="comments-title">Join the conversation</h3>
 
+                        <div class="comments-sort">
+                            <button class="comments-sort__btn active" data-sort="newest">Newest</button>
+                            <button class="comments-sort__btn" data-sort="most-agreed">Most agreed</button>
+                        </div>
+
                         <div class="comment-form">
                             <form>
                                 <div class="comment-form__row">
@@ -331,7 +343,7 @@
                         </div>
 
                         <div class="comments-list">
-                            <!-- Comments will appear here -->
+                            <!-- Comments loaded from Firebase -->
                         </div>
                     </div>
 
@@ -391,7 +403,11 @@
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/community.js"></script>
 
 </body>
 </html>
