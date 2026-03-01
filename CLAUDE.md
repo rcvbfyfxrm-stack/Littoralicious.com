@@ -4,7 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Littoralicious is a static HTML/CSS/JS digital publication for professional yacht chefs. No build step, no dependencies, no framework. Open `index.html` in a browser and it works.
+Littoralicious is a free, independent digital publication that exists **to nurture** professional yacht chefs and serious culinary practitioners. No ads, no sponsors, no paywalls. Static HTML/CSS/JS — no build step, no dependencies, no framework. Open `index.html` in a browser and it works.
+
+## Governing Documents
+
+Read these before creating or editing any content:
+
+1. **[`DNA.md`](DNA.md)** — The soul. Three pillars (Grandmother, Scientist, Yacht Chef), eight core principles, the mission. **Every editorial decision answers to the DNA first.**
+2. **[`AGENTS.md`](AGENTS.md)** — Operational standards. Voice, content rules, decision framework. Serves the DNA.
+3. **[`CONTENT-GUIDE.md`](CONTENT-GUIDE.md)** — Detailed editorial standards, formatting, source tiers.
+4. **[`EDITORIAL-WORKFLOW.md`](EDITORIAL-WORKFLOW.md)** — 12 content categories, templates, pipeline.
 
 ## Local Development
 
@@ -74,11 +83,17 @@ Content operations via `Makefile`: `make weekly`, `make review`, `make list-revi
 
 ## Editorial Voice
 
+Defined by three pillars (see `DNA.md`): the warmth of a grandmother who wants you to succeed, the precision of a scientist who refuses comfortable lies, and the directness of a chef who has no time for anything that doesn't make the plate better. All three — always — in everything.
+
 Direct, technical, irreverent, economical. No hedging. See `CONTENT-GUIDE.md` for full standards.
+
+### The DNA Test
+
+> If a chef read this at 11 PM, exhausted, mid-charter — would they feel respected, learn something true, and leave with something they can use?
 
 ### Banned Words
 
-"delicious," "yummy," "mouthwatering," "elevated," "curated," "artisanal" (as marketing)
+"delicious," "yummy," "mouthwatering," "elevated," "curated," "artisanal" (as marketing), "superfood," "game-changer," "hack"
 
 ### Headline Rules
 
