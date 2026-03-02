@@ -29,6 +29,60 @@
       "featured": false
     },
     {
+      "slug": "sea-urchin-seasonal-guide",
+      "title": "Sea Urchin: Seasonal Guide, Compound Profile, and Sourcing",
+      "date": "2026-02-05",
+      "category": "shore-larder",
+      "tags": ["sea-urchin", "seasonal", "sourcing", "compound-profile", "ingredients"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "salt-cured-anchovies",
+      "title": "Salt-Cured Anchovies: Seasonal Guide, Compound Profile, and Sourcing",
+      "date": "2026-02-26",
+      "category": "shore-larder",
+      "tags": ["anchovy", "fermentation", "DOP", "sourcing", "ingredients"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "bluefin-tuna-guide",
+      "title": "Bluefin Tuna: Seasonal Guide, Cuts, and Sourcing",
+      "date": "2026-03-02",
+      "category": "shore-larder",
+      "tags": ["tuna", "bluefin", "ICCAT", "sourcing", "cuts"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "sea-urchin-beurre-blanc",
+      "title": "Sea Urchin Beurre Blanc: Roe as Natural Emulsifier",
+      "date": "2026-02-05",
+      "category": "the-method",
+      "tags": ["sea-urchin", "technique", "emulsion", "beurre-blanc", "sauce"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "spaghetti-con-colatura",
+      "title": "Spaghetti con Colatura di Alici di Cetara",
+      "date": "2026-02-26",
+      "category": "the-method",
+      "tags": ["colatura", "pasta", "recipe", "amalfi", "technique"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "tuna-cold-centre-sear",
+      "title": "Searing Tuna: The Cold-Centre Technique",
+      "date": "2026-03-02",
+      "category": "the-method",
+      "tags": ["tuna", "searing", "technique", "maillard"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
       "slug": "cooked-fire-made-us-human",
       "title": "Cooked: How Fire Made Us Human and Why the Person Holding the Pan Still Matters",
       "date": "2026-03-01",
@@ -54,6 +108,87 @@
       "tags": ["spices", "phytochemistry", "health", "ingredients", "science"],
       "read_time": 14,
       "featured": true
+    },
+    {
+      "slug": "umami-western-cuisine",
+      "title": "Umami in Western Cuisine: Fermentation as the Universal Glutamate Engine",
+      "date": "2026-02-05",
+      "category": "the-evidence",
+      "tags": ["umami", "fermentation", "glutamate", "food-science"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "colatura-proteolysis",
+      "title": "Proteolysis and Amino Acid Evolution in Colatura di Alici",
+      "date": "2026-02-26",
+      "category": "the-evidence",
+      "tags": ["colatura", "proteolysis", "enzymes", "food-science"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "cites-shark-protections",
+      "title": "CITES CoP20: 70+ Shark and Ray Species Now Protected",
+      "date": "2026-03-02",
+      "category": "the-evidence",
+      "tags": ["CITES", "shark", "regulation", "sustainability"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "spaghetti-ricci-di-mare",
+      "title": "Spaghetti ai Ricci di Mare: Mondello, Sicily",
+      "date": "2026-02-05",
+      "category": "littoral-heritage",
+      "tags": ["sea-urchin", "sicily", "pasta", "tradition"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "colatura-di-alici-cetara",
+      "title": "Colatura di Alici and the Town That Never Stopped",
+      "date": "2026-02-26",
+      "category": "littoral-heritage",
+      "tags": ["colatura", "cetara", "amalfi", "tradition", "fermentation"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "tonno-di-favignana",
+      "title": "Tonno di Favignana: The Mattanza and the Cuisine That Survived",
+      "date": "2026-03-02",
+      "category": "littoral-heritage",
+      "tags": ["tuna", "favignana", "mattanza", "sicily", "tradition"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "myojaku-three-stars",
+      "title": "Myojaku Earns Three Stars and STCW Anti-Harassment Training Goes Mandatory",
+      "date": "2026-02-05",
+      "category": "the-bridge",
+      "tags": ["michelin", "umami", "STCW", "training", "industry"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "michelin-spain-fueleu-maritime",
+      "title": "Michelin Spain 2026 Expands and FuelEU Maritime Enters First Compliance Cycle",
+      "date": "2026-02-26",
+      "category": "the-bridge",
+      "tags": ["michelin", "spain", "FuelEU", "maritime", "regulation"],
+      "read_time": 4,
+      "featured": false
+    },
+    {
+      "slug": "noma-la-us-tariffs",
+      "title": "Noma Opens in Los Angeles and US Tariffs Reshape European Provisioning",
+      "date": "2026-03-02",
+      "category": "the-bridge",
+      "tags": ["noma", "tariffs", "provisioning", "industry"],
+      "read_time": 4,
+      "featured": false
     }
   ],
   "categories": {
@@ -90,6 +225,21 @@
     "anthropology", "food-science", "cooking-chemistry", "evolution",
     "fats", "nutrition", "omega-3",
     "salt", "seasoning", "mineral-content",
-    "acid", "vinegar", "citrus", "flavour-balance"
+    "acid", "vinegar", "citrus", "flavour-balance",
+    "sea-urchin", "seasonal", "sourcing", "compound-profile",
+    "anchovy", "fermentation", "DOP",
+    "tuna", "bluefin", "ICCAT", "cuts",
+    "emulsion", "beurre-blanc", "sauce",
+    "colatura", "pasta", "recipe", "amalfi",
+    "searing", "maillard",
+    "umami", "glutamate",
+    "proteolysis", "enzymes",
+    "CITES", "shark", "regulation", "sustainability",
+    "sicily", "tradition",
+    "cetara",
+    "favignana", "mattanza",
+    "michelin", "STCW", "training", "industry",
+    "spain", "FuelEU", "maritime",
+    "noma", "tariffs", "provisioning"
   ]
 }
