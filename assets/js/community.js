@@ -35,6 +35,55 @@
         localStorage.setItem(COMMENT_VOTE_KEY, JSON.stringify(votes));
     }
 
+    const AVATAR_COLORS = ['#2d4a5e', '#5c9ead', '#4caf50', '#d4a816', '#7b1fa2', '#c0392b', '#e67e22', '#1abc9c'];
+
+    function getAvatarColor(name) {
+        let hash = 0;
+        for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+        return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length];
+    }
+
+    function buildAvatarHTML(name, photoURL) {
+        if (photoURL) {
+            return '<img class="comment__avatar" src="' + escapeHtml(photoURL) + '" alt="" loading="lazy">';
+        }
+        const initial = (name || '?').charAt(0).toUpperCase();
+        const color = getAvatarColor(name || '');
+        return '<span class="comment__avatar comment__avatar--initial" style="background:' + color + '">' + escapeHtml(initial) + '</span>';
+    }
+
+    function resizeImage(file, maxSize) {
+        return new Promise(function (resolve) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = new Image();
+                img.onload = function () {
+                    var w = img.width, h = img.height;
+                    if (w > maxSize || h > maxSize) {
+                        if (w > h) { h = Math.round(h * maxSize / w); w = maxSize; }
+                        else { w = Math.round(w * maxSize / h); h = maxSize; }
+                    }
+                    var canvas = document.createElement('canvas');
+                    canvas.width = w;
+                    canvas.height = h;
+                    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                    canvas.toBlob(function (blob) { resolve(blob); }, 'image/jpeg', 0.85);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    async function uploadAvatar(file) {
+        if (!storage) return null;
+        var blob = await resizeImage(file, 200);
+        var filename = 'avatars/' + Date.now() + '_' + Math.random().toString(36).slice(2, 8) + '.jpg';
+        var ref = storage.ref(filename);
+        await ref.put(blob, { contentType: 'image/jpeg' });
+        return ref.getDownloadURL();
+    }
+
     function escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
@@ -162,6 +211,7 @@
 
         let html = '<div class="' + cls + '" data-comment-id="' + id + '">';
         html += '<div class="comment__header">';
+        html += buildAvatarHTML(comment.name, comment.photoURL);
         html += '<span class="comment__author">' + escapeHtml(comment.name) + '</span>';
         html += '<span class="comment__date">' + timeAgo(ts) + '</span>';
         html += '</div>';
@@ -393,6 +443,25 @@
         // Comment form
         const form = commentsSection.querySelector('.comment-form form');
         if (form) {
+            // Photo upload preview
+            let pendingPhoto = null;
+            const photoInput = form.querySelector('input[name="photo"]');
+            const photoPreview = form.querySelector('.photo-upload__preview');
+            if (photoInput) {
+                photoInput.addEventListener('change', function () {
+                    const file = this.files[0];
+                    if (!file) { pendingPhoto = null; if (photoPreview) photoPreview.style.backgroundImage = ''; return; }
+                    pendingPhoto = file;
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        if (photoPreview) {
+                            photoPreview.style.backgroundImage = 'url(' + e.target.result + ')';
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
@@ -430,6 +499,16 @@
                 }
 
                 try {
+                    // Upload photo if selected
+                    let photoURL = null;
+                    if (pendingPhoto) {
+                        try {
+                            photoURL = await uploadAvatar(pendingPhoto);
+                        } catch (err) {
+                            console.log('Photo upload failed:', err.message);
+                        }
+                    }
+
                     const commentData = {
                         name: name,
                         content: content,
@@ -437,6 +516,7 @@
                         agrees: 0,
                         disagrees: 0,
                     };
+                    if (photoURL) commentData.photoURL = photoURL;
 
                     const docRef = await db.collection('articles').doc(slug)
                         .collection('comments').add(commentData);
@@ -449,7 +529,7 @@
                     if (list) {
                         const el = document.createElement('div');
                         el.innerHTML = buildCommentHTML(
-                            { ...commentData, timestamp: { toDate: () => new Date() } },
+                            { ...commentData, photoURL: photoURL, timestamp: { toDate: () => new Date() } },
                             docRef.id,
                             false
                         );
@@ -460,6 +540,8 @@
                     }
 
                     form.reset();
+                    pendingPhoto = null;
+                    if (photoPreview) photoPreview.style.backgroundImage = '';
                     submitBtn.textContent = 'Posted!';
                     setTimeout(() => {
                         submitBtn.textContent = 'Post Comment';

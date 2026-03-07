@@ -33,7 +33,6 @@
                     <a href="../the-evidence.html">The Evidence</a>
                     <a href="../the-bridge.html">The Bridge</a>
                     <a href="../newsletter.html">Newsletter</a>
-                    <a href="../about.html">About</a>
                 </nav>
             </div>
         </div>
@@ -194,6 +193,11 @@
                                     <input type="text" name="name" placeholder="Your name" required>
                                     <input type="email" name="email" placeholder="Email (optional)">
                                 </div>
+                                <label class="photo-upload" title="Add your photo">
+                                    <input type="file" name="photo" accept="image/*" hidden>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                                    <span class="photo-upload__preview"></span>
+                                </label>
                                 <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" required></textarea>
                                 <div class="comment-form__footer">
                                     <label class="comment-form__subscribe">
@@ -222,7 +226,7 @@
                 <form class="footer-newsletter-form newsletter-form"
                       action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
                       method="post"
-                      target="popupwindow">
+>
                     <label for="footer-email-sea-urchin-seasonal-guide">Get the monthly brief</label>
                     <div class="footer-newsletter-form__row">
                         <input type="email" name="email" id="footer-email-sea-urchin-seasonal-guide" placeholder="your@email.com" required>
@@ -268,6 +272,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
     <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/community.js"></script>

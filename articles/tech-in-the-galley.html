@@ -143,7 +143,6 @@
                     <a href="../the-evidence.html">The Evidence</a>
                     <a href="../the-bridge.html">The Bridge</a>
                     <a href="../newsletter.html">Newsletter</a>
-                    <a href="../about.html">About</a>
                 </nav>
             </div>
         </div>
@@ -155,7 +154,7 @@
                 <div class="article__meta">
                     <span class="article__category">The Method</span>
                     <time class="article__date">March 5, 2026</time>
-                    <span class="article__reading-time">10 min read</span>
+                    <span class="article__reading-time">15 min read</span>
                 </div>
                 <h1 class="article__title">Technology in the Galley: AI Is Your New Sous Chef</h1>
                 <p class="article__lede">
@@ -171,10 +170,13 @@
                     <ul>
                         <li><a href="#why">Why This Matters for Yacht Chefs</a></li>
                         <li><a href="#what">What AI Can Do in Your Galley</a></li>
+                        <li><a href="#examples">Real Menus, Real Prompts</a></li>
                         <li><a href="#how">How to Get Started (3 Minutes)</a></li>
                         <li><a href="#agent">The Menu Agent: Copy, Paste, Cook</a></li>
                         <li><a href="#platforms">Where to Use It</a></li>
+                        <li><a href="#privacy">Privacy and Your Guests&rsquo; Data</a></li>
                         <li><a href="#claude-code">Claude Code: The Power Tool</a></li>
+                        <li><a href="#pdf">From Prompt to Printed Menu in 2 Minutes</a></li>
                         <li><a href="#tips">Tips from a Working Galley</a></li>
                     </ul>
                 </div>
@@ -208,6 +210,52 @@
                 <p><strong>Wine pairing.</strong> One wine per menu, from sustainable producers with real stories &mdash; not the obvious bottle, but the one that makes guests ask where you found it.</p>
 
                 <p><strong>Translation and cultural research.</strong> Hosting Greek guests? Ask for traditional dishes, proper pronunciation, and regional variations. The AI knows more cuisines than any single chef ever will.</p>
+
+                <!-- Section: Real Examples -->
+                <h2 id="examples">Real Menus, Real Prompts</h2>
+
+                <p>This is not theoretical. Here are real prompts from a working galley &mdash; and the kind of menus that came back in under two minutes.</p>
+
+                <h3>Crew Lunch: Make-Your-Own Deli</h3>
+                <div class="copy-block">
+                    <div class="copy-block__header">
+                        <span class="copy-block__title">Example prompt</span>
+                    </div>
+                    <div class="copy-block__content">"Crew lunch for 9. Make-your-own deli station. I have sourdough, rye, turkey, roast beef, Swiss cheese, cheddar. Keep it simple, filling, quick to set up. Add a soup."</div>
+                </div>
+                <p>The AI builds the full spread: bread options, proteins, cheeses, condiment bar, two salads, a soup. You adjust, confirm, done. Your crew gets variety. You spend 20 minutes instead of 40.</p>
+
+                <h3>Crew Lunch: Poke Bowl Bar</h3>
+                <div class="copy-block">
+                    <div class="copy-block__header">
+                        <span class="copy-block__title">Example prompt</span>
+                    </div>
+                    <div class="copy-block__content">"Crew poke bowl bar for 9. I have sushi-grade tuna, salmon, rice, edamame, avocado, mango. Build me the station with all the toppings and sauces."</div>
+                </div>
+                <p>Back comes a complete station: base options (sushi rice, brown rice, mixed greens), proteins, 8&ndash;10 toppings, three sauces with recipes. The kind of crew lunch that makes people actually say thank you.</p>
+
+                <h3>Guest Dinner: Nobu Style</h3>
+                <div class="copy-block">
+                    <div class="copy-block__header">
+                        <span class="copy-block__title">Example prompt</span>
+                    </div>
+                    <div class="copy-block__content">"Guests dinner, 8 pax, Nobu-inspired tasting menu. I have black cod, wagyu, yellowtail, uni. One guest is gluten-free. Elegant, not fussy."</div>
+                </div>
+                <p>The AI returns a 7-course tasting menu with a Cultural Touchstone name, each dish described ingredient-first, a gluten-free footnote only where needed, and a sake pairing suggestion. Print-ready in minutes.</p>
+
+                <h3>More Things You Can Ask</h3>
+                <ul>
+                    <li>&ldquo;Build me a Mediterranean family-style lunch. I have lamb, branzino, and lots of summer vegetables.&rdquo;</li>
+                    <li>&ldquo;Crew breakfast for 7, make-your-own a&ccedil;a&iacute; bowl station. What toppings should I prep?&rdquo;</li>
+                    <li>&ldquo;I&rsquo;m doing a BBQ for 12 guests tonight. American steakhouse theme. What cuts, what sides, what order?&rdquo;</li>
+                    <li>&ldquo;Convert last night&rsquo;s Italian dinner into a provision list for 5 days.&rdquo;</li>
+                    <li>&ldquo;Give me 5 Cultural Touchstone names for a Greek island sunset dinner.&rdquo;</li>
+                    <li>&ldquo;The guests loved the tuna tartare. Give me 3 variations I can rotate through the week.&rdquo;</li>
+                </ul>
+
+                <div class="note note--key">
+                    <p><strong>The pattern:</strong> Be specific about what you have, who you&rsquo;re feeding, and the style you want. The more context you give, the less you need to correct. Talk to it like a commis on day one &mdash; clear, direct, no ambiguity.</p>
+                </div>
 
                 <!-- Section 3 -->
                 <h2 id="how">How to Get Started (3 Minutes)</h2>
@@ -366,6 +414,32 @@ ANTI-PATTERNS:
                     <p><strong>Pro tip:</strong> On Claude, use &ldquo;Projects&rdquo; to save your menu agent as a persistent system prompt. Every new conversation in that project will already have the agent loaded &mdash; no re-pasting needed.</p>
                 </div>
 
+                <!-- Section: Privacy -->
+                <h2 id="privacy">Privacy and Your Guests&rsquo; Data</h2>
+
+                <p>
+                    This matters. You handle sensitive information &mdash; guest names, dietary restrictions, allergies, personal preferences, travel plans. Before you paste any of that into an AI, you need to know where it goes.
+                </p>
+
+                <div class="note note--warning">
+                    <p><strong>Rule of thumb:</strong> Never put a guest&rsquo;s full name, contact details, or anything that identifies them personally into a free-tier AI chat. If you need to reference preferences, use &ldquo;Guest 1&rdquo;, &ldquo;the principal&rdquo;, or initials only.</p>
+                </div>
+
+                <p><strong>What each platform does with your data:</strong></p>
+
+                <ul>
+                    <li><strong>ChatGPT (OpenAI):</strong> Free-tier conversations may be used to train future models unless you opt out in Settings &rarr; Data Controls &rarr; &ldquo;Improve the model for everyone.&rdquo; The paid Team and Enterprise plans do not train on your data. If you&rsquo;re on the free or Plus plan, assume your input is not private.</li>
+                    <li><strong>Claude (Anthropic):</strong> Free and Pro conversations are not used for training by default. Anthropic&rsquo;s policy is clearer on this than most. Still, don&rsquo;t paste anything you wouldn&rsquo;t want stored on a server.</li>
+                    <li><strong>Gemini (Google):</strong> Free-tier conversations may be reviewed by humans and used for training. Gemini Advanced with a Google Workspace plan has stronger privacy protections. Check your Google AI settings.</li>
+                    <li><strong>Copilot (Microsoft):</strong> Enterprise versions have commercial data protection. The free consumer version has weaker guarantees.</li>
+                </ul>
+
+                <p><strong>For menu planning specifically</strong> &mdash; if you&rsquo;re only sharing cuisine themes, ingredients you have, and service style, there&rsquo;s no privacy risk. That&rsquo;s generic information. The risk starts when you add guest names, yacht names, itineraries, or personal health details.</p>
+
+                <div class="note note--action">
+                    <p><strong>Best practice:</strong> Use AI freely for menu creation, recipe ideas, provisioning maths, and cultural research &mdash; none of that is sensitive. For guest preference management, either anonymise the data first or use a paid plan with explicit no-training guarantees. When in doubt, strip out names and identifying details before pasting.</p>
+                </div>
+
                 <!-- Section 6: Claude Code -->
                 <h2 id="claude-code">Claude Code: The Power Tool</h2>
 
@@ -429,6 +503,63 @@ ANTI-PATTERNS:
 
                 <p>Official documentation: <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">code.claude.com/docs</a></p>
 
+                <!-- Section: PDF Generation -->
+                <h2 id="pdf">From Prompt to Printed Menu in 2 Minutes</h2>
+
+                <p>
+                    This is the part that changes your daily workflow. With Claude Code, you don&rsquo;t just get a menu &mdash; you get a <strong>print-ready PDF menu card</strong>. Formatted, styled, with your fonts, your layout, ready to hand to the chief stew or slide under the guest cabin door. No Word. No Canva. No back-and-forth with the interior team. You control the menu from creation to print.
+                </p>
+
+                <h3>How It Works</h3>
+
+                <p>
+                    Claude Code uses LaTeX (a professional typesetting system &mdash; the same technology used to print books and scientific papers) to generate beautifully formatted menu cards. You don&rsquo;t need to know LaTeX. You don&rsquo;t even need to know it exists. You just talk:
+                </p>
+
+                <div class="copy-block">
+                    <div class="copy-block__header">
+                        <span class="copy-block__title">What you say to Claude Code</span>
+                    </div>
+                    <div class="copy-block__content">"Create tonight's guest dinner menu. Mediterranean family style. I have branzino and lamb rack. 8 guests, Mrs. Davis is vegetarian. Generate the PDF menu card."</div>
+                </div>
+
+                <p>Claude Code does the rest:</p>
+                <ol>
+                    <li>Builds the menu using the agent rules (Cultural Touchstone name, ingredient-first, no operational noise)</li>
+                    <li>Writes a LaTeX file with proper typography &mdash; elegant fonts, thin dividers, sourcing footer</li>
+                    <li>Compiles it to PDF automatically</li>
+                    <li>Saves it in your menu folder, named and dated</li>
+                </ol>
+
+                <p>You open the PDF. You print it. Done. The entire process &mdash; from &ldquo;I have branzino and lamb&rdquo; to a printed card on the table &mdash; takes about two minutes.</p>
+
+                <h3>Why This Matters</h3>
+
+                <p>
+                    On most yachts, the menu card workflow is painful. The chef writes the menu, sends it to the chief stew, the chief stew formats it in Word or Canva, sends it back for approval, the chef corrects two dishes, it goes back again. Three people. Four messages. Twenty minutes minimum &mdash; and that&rsquo;s if everyone&rsquo;s available.
+                </p>
+
+                <p>
+                    With Claude Code, <strong>you own the entire pipeline</strong>. You create the menu and the printed card in one step. The chief stew gets the final PDF directly &mdash; or you print it yourself. No formatting bottleneck. No waiting. No &ldquo;can you change the font?&rdquo; messages at 6 PM when service starts at 7.
+                </p>
+
+                <div class="note note--action">
+                    <p><strong>For chief stews:</strong> This is not about losing control of the menu card &mdash; it&rsquo;s about getting it faster. The PDF comes out clean, consistent, and professional every time. You can still adjust the template (fonts, layout, yacht logo) once, and every menu after that matches your standards automatically.</p>
+                </div>
+
+                <h3>What You Need Installed</h3>
+
+                <p>Claude Code handles the LaTeX installation for you. The first time you ask for a PDF, it will check if LaTeX is installed and guide you through setup if needed. On Mac, it&rsquo;s one command:</p>
+
+                <div class="copy-block">
+                    <div class="copy-block__header">
+                        <span class="copy-block__title">One-time setup</span>
+                    </div>
+                    <div class="copy-block__content">brew install --cask mactex-no-gui</div>
+                </div>
+
+                <p>After that, every menu you create can become a PDF with one sentence: &ldquo;Generate the PDF.&rdquo;</p>
+
                 <!-- Section 7: Tips -->
                 <h2 id="tips">Tips from a Working Galley</h2>
 
@@ -440,7 +571,7 @@ ANTI-PATTERNS:
 
                 <p><strong>Use it for ideas, not just execution.</strong> &ldquo;Give me 5 Cultural Touchstone names for a Greek island dinner&rdquo; is a valid prompt. So is &ldquo;What would Sukiyabashi Jiro serve as an amuse-bouche with sea urchin?&rdquo;</p>
 
-                <p><strong>Paste in your guest feedback.</strong> &ldquo;Here are the WhatsApp messages from last trip. Extract all food preferences and update my guest profile.&rdquo; The AI does in 30 seconds what takes you 30 minutes.</p>
+                <p><strong>Paste in your guest feedback.</strong> &ldquo;Here are the WhatsApp messages from last trip. Extract all food preferences and update my guest profile.&rdquo; The AI does in 30 seconds what takes you 30 minutes. We built an entire system around this &mdash; see <a href="whatsapp-trip-intelligence.html">WhatsApp as Your Trip Intelligence System</a> for the full method.</p>
 
                 <div class="note note--key">
                     <p><strong>The test:</strong> If you spent 45 minutes writing a menu card by hand, and the AI gives you a better one in 3 minutes &mdash; that&rsquo;s 42 minutes back in your day. Over a 10-day charter, that&rsquo;s 7 hours. Use them to sleep, to prep, or to cook something you actually want to cook.</p>
@@ -548,6 +679,11 @@ ANTI-PATTERNS:
                                     <input type="text" name="name" placeholder="Your name" required>
                                     <input type="email" name="email" placeholder="Email (optional)">
                                 </div>
+                                <label class="photo-upload" title="Add your photo">
+                                    <input type="file" name="photo" accept="image/*" hidden>
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                                    <span class="photo-upload__preview"></span>
+                                </label>
                                 <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" required></textarea>
                                 <div class="comment-form__footer">
                                     <label class="comment-form__subscribe">
@@ -576,7 +712,7 @@ ANTI-PATTERNS:
                 <form class="footer-newsletter-form newsletter-form"
                       action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
                       method="post"
-                      target="popupwindow">
+>
                     <label for="footer-email-tech">Get the monthly brief</label>
                     <div class="footer-newsletter-form__row">
                         <input type="email" name="email" id="footer-email-tech" placeholder="your@email.com" required>
@@ -621,26 +757,40 @@ ANTI-PATTERNS:
     </footer>
 
     <script>
-    function copyAgent(btn) {
-        var text = document.getElementById('agent-text').textContent;
-        navigator.clipboard.writeText(text).then(function() {
+    function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch(e) {}
+        document.body.removeChild(ta);
+    }
+    function doCopy(text, btn, label) {
+        var done = function() {
             btn.textContent = 'Copied!';
             btn.classList.add('copied');
             setTimeout(function() {
-                btn.textContent = 'Copy to Clipboard';
+                btn.textContent = label;
                 btn.classList.remove('copied');
             }, 2000);
-        });
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function() {
+                fallbackCopy(text);
+                done();
+            });
+        } else {
+            fallbackCopy(text);
+            done();
+        }
+    }
+    function copyAgent(btn) {
+        doCopy(document.getElementById('agent-text').textContent, btn, 'Copy to Clipboard');
     }
     function copyText(btn, text) {
-        navigator.clipboard.writeText(text).then(function() {
-            btn.textContent = 'Copied!';
-            btn.classList.add('copied');
-            setTimeout(function() {
-                btn.textContent = 'Copy';
-                btn.classList.remove('copied');
-            }, 2000);
-        });
+        doCopy(text, btn, 'Copy');
     }
     function toggleAgent(btn) {
         var content = document.getElementById('agent-text');
@@ -654,10 +804,32 @@ ANTI-PATTERNS:
             btn.textContent = 'Show full prompt';
         }
     }
+    // Share buttons
+    document.querySelectorAll('.share-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var type = btn.getAttribute('data-share');
+            var url = encodeURIComponent(window.location.href);
+            var title = encodeURIComponent(document.title);
+            if (type === 'twitter') {
+                window.open('https://x.com/intent/tweet?url=' + url + '&text=' + title, '_blank');
+            } else if (type === 'linkedin') {
+                window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
+            } else if (type === 'copy') {
+                doCopy(window.location.href, btn, '');
+                var svg = btn.querySelector('svg');
+                if (svg) {
+                    var orig = btn.innerHTML;
+                    btn.innerHTML = '<span style="font-size:12px;">Copied!</span>';
+                    setTimeout(function() { btn.innerHTML = orig; }, 2000);
+                }
+            }
+        });
+    });
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
     <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/community.js"></script>

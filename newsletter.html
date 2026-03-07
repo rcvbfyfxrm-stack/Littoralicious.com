@@ -293,7 +293,6 @@
                     <a href="the-evidence.html">The Evidence</a>
                     <a href="the-bridge.html">The Bridge</a>
                     <a href="newsletter.html" class="active">Newsletter</a>
-                    <a href="about.html">About</a>
                 </nav>
             </div>
         </div>
@@ -307,7 +306,7 @@
                 <span class="newsletter-header__category">Newsletter</span>
                 <h1 class="newsletter-header__title">The Monthly Brief</h1>
                 <p class="newsletter-header__intro">
-                    Once a month. One thread connecting what's in season, how to use it, why it works, where it came from, and what's happening in the industry. No filler, no sponsorships, no algorithms. Written for yacht chefs who cook with intention.
+                    Learn five things every week about cooking and your industry. That's 260 things in a year &mdash; 260 techniques, ingredients, science facts, sourcing tips, and industry insights you didn't have before. One thread connecting what's in season, how to use it, why it works, where it came from, and what's happening around you. No filler, no sponsorships, no algorithms. Written for yacht chefs who cook with intention.
                 </p>
             </div>
         </header>
@@ -373,7 +372,7 @@
                 <form class="newsletter-signup__form newsletter-form"
                       action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
                       method="post"
-                      target="popupwindow">
+>
                     <input type="email" name="email" placeholder="your@email.com" required>
                     <button type="submit">Subscribe</button>
                 </form>
@@ -435,7 +434,7 @@
                 <form class="footer-newsletter-form newsletter-form"
                       action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
                       method="post"
-                      target="popupwindow">
+>
                     <label for="footer-email-newsletter">Get the monthly brief</label>
                     <div class="footer-newsletter-form__row">
                         <input type="email" name="email" id="footer-email-newsletter" placeholder="your@email.com" required>
@@ -480,6 +479,55 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+    (function () {
+        document.querySelectorAll('.newsletter-form').forEach(function (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var emailInput = form.querySelector('input[name="email"]');
+                var email = emailInput ? emailInput.value.trim() : '';
+                if (!email) return;
+
+                var btn = form.querySelector('button[type="submit"]');
+                var origText = btn.textContent;
+                btn.textContent = 'Subscribing...';
+                btn.disabled = true;
+
+                var fd = new FormData();
+                fd.append('email', email);
+
+                fetch('https://buttondown.com/api/emails/embed-subscribe/littoralicious', {
+                    method: 'POST',
+                    body: fd
+                }).then(function () {
+                    // Show inline success
+                    var status = form.closest('.newsletter-signup, .footer__newsletter');
+                    var statusEl = status ? status.querySelector('.newsletter-signup__status') : null;
+                    if (statusEl) {
+                        statusEl.textContent = 'Subscribed! Check your inbox.';
+                        statusEl.className = 'newsletter-signup__status newsletter-signup__status--success';
+                    } else {
+                        btn.textContent = 'Subscribed!';
+                    }
+                    emailInput.value = '';
+                    setTimeout(function () {
+                        btn.textContent = origText;
+                        btn.disabled = false;
+                    }, 3000);
+                }).catch(function () {
+                    var status = form.closest('.newsletter-signup, .footer__newsletter');
+                    var statusEl = status ? status.querySelector('.newsletter-signup__status') : null;
+                    if (statusEl) {
+                        statusEl.textContent = 'Something went wrong. Try again.';
+                        statusEl.className = 'newsletter-signup__status newsletter-signup__status--error';
+                    }
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                });
+            });
+        });
+    })();
+    </script>
 
 </body>
 </html>

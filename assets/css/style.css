@@ -1429,10 +1429,71 @@ mark {
 
 .comment__header {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    gap: var(--space-3);
     margin-bottom: var(--space-2);
 }
+
+/* Avatar — sticker style */
+.comment__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid var(--color-paper);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comment__avatar--initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+/* Photo upload button */
+.photo-upload {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+    color: var(--color-muted);
+    transition: color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.photo-upload:hover {
+    color: var(--color-sea);
+}
+
+.photo-upload svg {
+    width: 20px;
+    height: 20px;
+}
+
+.photo-upload__preview {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--color-border);
+    display: none;
+}
+
+.photo-upload__preview[style*="background-image"] {
+    display: block;
+}
+
+/* Dark mode avatar border */
+@media (prefers-color-scheme: dark) {
+    .comment__avatar { border-color: #1a1a1a; }
+}
+[data-theme="dark"] .comment__avatar { border-color: #1a1a1a; }
 
 .comment__author {
     font-weight: 600;
@@ -1442,6 +1503,7 @@ mark {
 .comment__date {
     font-size: var(--text-xs);
     color: var(--color-muted);
+    margin-left: auto;
 }
 
 .comment__body {

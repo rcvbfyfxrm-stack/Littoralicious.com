@@ -10,14 +10,15 @@
  */
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyBYlg3FpLvUILXTNWpaRo0W9aUlKaWl3mc',
-    authDomain: 'littoralicious.firebaseapp.com',
-    projectId: 'littoralicious',
-    storageBucket: 'littoralicious.firebasestorage.app',
-    messagingSenderId: '517367024770',
-    appId: '1:517367024770:web:5d1134186c9d79ba2a389b',
+    apiKey: 'AIzaSyBIbFq4FtYsoz3_GAoQaJAOynaaouooYFE',
+    authDomain: 'littoralicious-web-eceed.firebaseapp.com',
+    projectId: 'littoralicious-web-eceed',
+    storageBucket: 'littoralicious-web-eceed.firebasestorage.app',
+    messagingSenderId: '1024688297116',
+    appId: '1:1024688297116:web:e208f3c7f71019268ec959',
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+const storage = typeof firebase.storage === 'function' ? firebase.storage() : null;
