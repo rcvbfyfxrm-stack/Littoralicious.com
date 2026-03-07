@@ -465,30 +465,23 @@ ANTI-PATTERNS:
                 <h3>Install Claude Code (5 Minutes)</h3>
 
                 <p>
-                    <span class="step-number">1</span> <strong>Get a Claude account.</strong> Go to <a href="https://claude.ai/pricing" target="_blank" rel="noopener">claude.ai/pricing</a> &mdash; you need at least the Pro plan.<br><br>
-                    <span class="step-number">2</span> <strong>Open your terminal.</strong> On Mac: open Terminal (in Applications &rarr; Utilities). On Windows: open PowerShell.<br><br>
-                    <span class="step-number">3</span> <strong>Install with one command:</strong>
+                    <span class="step-number">1</span> <strong>Get a Claude account.</strong> Go to <a href="https://claude.ai/pricing" target="_blank" rel="noopener">claude.ai/pricing</a> &mdash; you need a Max plan subscription or an Anthropic API key with credits.<br><br>
+                    <span class="step-number">2</span> <strong>Open your terminal.</strong> On Mac: open Terminal (in Applications &rarr; Utilities). On Windows: install <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener">WSL</a> (Windows Subsystem for Linux) first &mdash; Claude Code does not run in native PowerShell.<br><br>
+                    <span class="step-number">3</span> <strong>Install Node.js</strong> if you don&rsquo;t have it. On Mac: <code>brew install node</code>. On Windows/WSL: <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. You need version 18 or higher.<br><br>
+                    <span class="step-number">4</span> <strong>Install Claude Code:</strong>
                 </p>
 
                 <div class="copy-block">
                     <div class="copy-block__header">
-                        <span class="copy-block__title">macOS / Linux</span>
-                        <button class="copy-btn" onclick="copyText(this, 'curl -fsSL https://claude.ai/install.sh | bash')">Copy</button>
+                        <span class="copy-block__title">macOS / Linux / WSL</span>
+                        <button class="copy-btn" onclick="copyText(this, 'npm install -g @anthropic-ai/claude-code')">Copy</button>
                     </div>
-                    <div class="copy-block__content">curl -fsSL https://claude.ai/install.sh | bash</div>
-                </div>
-
-                <div class="copy-block">
-                    <div class="copy-block__header">
-                        <span class="copy-block__title">Windows PowerShell</span>
-                        <button class="copy-btn" onclick="copyText(this, 'irm https://claude.ai/install.ps1 | iex')">Copy</button>
-                    </div>
-                    <div class="copy-block__content">irm https://claude.ai/install.ps1 | iex</div>
+                    <div class="copy-block__content">npm install -g @anthropic-ai/claude-code</div>
                 </div>
 
                 <p>
-                    <span class="step-number">4</span> <strong>Start it.</strong> Type <code>claude</code> in your terminal and press Enter. Log in when prompted.<br><br>
-                    <span class="step-number">5</span> <strong>Navigate to your galley folder.</strong> Then just talk: &ldquo;Read my guest preferences and create an Italian dinner menu for tonight.&rdquo;
+                    <span class="step-number">5</span> <strong>Start it.</strong> Type <code>claude</code> in your terminal and press Enter. Log in when prompted.<br><br>
+                    <span class="step-number">6</span> <strong>Navigate to your galley folder.</strong> Then just talk: &ldquo;Read my guest preferences and create an Italian dinner menu for tonight.&rdquo;
                 </p>
 
                 <h3>Video Tutorial</h3>
@@ -501,7 +494,7 @@ ANTI-PATTERNS:
                     <li><a href="https://www.youtube.com/watch?v=fYX6hHC9FhQ" target="_blank" rel="noopener"><strong>The Ultimate Claude Code Course</strong></a> &mdash; Comprehensive course for complete beginners (Sabrina Ramonov)</li>
                 </ul>
 
-                <p>Official documentation: <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">code.claude.com/docs</a></p>
+                <p>Official documentation: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">docs.anthropic.com/claude-code</a></p>
 
                 <!-- Section: PDF Generation -->
                 <h2 id="pdf">From Prompt to Printed Menu in 2 Minutes</h2>
@@ -585,7 +578,7 @@ ANTI-PATTERNS:
                 <div class="article-sources">
                     <p><strong>Resources</strong></p>
                     <p>
-                        Claude Code documentation: <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">code.claude.com/docs</a> |
+                        Claude Code documentation: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">docs.anthropic.com/claude-code</a> |
                         Claude AI: <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> |
                         ChatGPT: <a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a> |
                         Gemini: <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
