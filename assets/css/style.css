@@ -390,6 +390,30 @@ h4 { font-size: var(--text-lg); }
         justify-content: center;
         gap: var(--space-4);
     }
+
+    /* Force 2-column grids to stack on mobile */
+    .article__content div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Ensure readable text on mobile */
+    .article__content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .article__content p,
+    .article__content li {
+        color: var(--color-ink);
+    }
+
+    /* Improve contrast on colored boxes */
+    .article__content div[style*="background: #f8f9fa"] p,
+    .article__content div[style*="background: #eef2f7"] p,
+    .article__content div[style*="background: #f0f7f4"] p,
+    .article__content div[style*="background: #fef3e2"] p {
+        color: #1a1a1a !important;
+    }
 }
 
 /* --------------------------------------------------------------------------
