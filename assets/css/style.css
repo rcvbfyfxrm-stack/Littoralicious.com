@@ -391,28 +391,44 @@ h4 { font-size: var(--text-lg); }
         gap: var(--space-4);
     }
 
-    /* Force 2-column grids to stack on mobile */
-    .article__content div[style*="grid-template-columns: 1fr 1fr"] {
+    /* Force inline grids to stack on mobile */
+    .article__content div[style*="grid-template-columns"] {
         grid-template-columns: 1fr !important;
     }
 
-    /* Ensure readable text on mobile */
+    /* Readable text on mobile — bump sizes, darken colors */
     .article__content {
-        font-size: 1rem;
-        line-height: 1.7;
+        font-size: 1.05rem;
+        line-height: 1.75;
     }
 
-    .article__content p,
-    .article__content li {
-        color: var(--color-ink);
-    }
-
-    /* Improve contrast on colored boxes */
-    .article__content div[style*="background: #f8f9fa"] p,
-    .article__content div[style*="background: #eef2f7"] p,
-    .article__content div[style*="background: #f0f7f4"] p,
-    .article__content div[style*="background: #fef3e2"] p {
+    /* All text inside colored boxes must be dark and readable */
+    .article__content div[style*="background:"] p,
+    .article__content div[style*="background:"] li,
+    .article__content div[style*="background:"] span {
         color: #1a1a1a !important;
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+    }
+
+    /* Headings inside boxes stay colored */
+    .article__content div[style*="background:"] h4 {
+        font-size: 0.8rem !important;
+    }
+
+    /* Exception: dark background boxes keep light text */
+    .article__content div[style*="background: #1a"] p,
+    .article__content div[style*="background: #1a"] li,
+    .article__content div[style*="background: #1a"] span,
+    .article__content div[style*="background: linear-gradient"] p,
+    .article__content div[style*="background: linear-gradient"] span {
+        color: #e0e0e0 !important;
+    }
+
+    /* Small text inside cards — make it readable on mobile */
+    .article__content div[style*="background:"] .article-card__meta,
+    .article__content [style*="font-size: var(--text-xs)"] {
+        font-size: 0.85rem !important;
     }
 }
 
