@@ -57,8 +57,14 @@
                 <span class="divider__text">Published</span>
             </div>
 
-            <div class="article-list" style="margin-top: var(--space-8);">
-                <article class="dispatch">
+            <div style="margin-top: var(--space-6);">
+                <input type="search" id="dispatch-search" placeholder="Search dispatches by title, tag, or keyword..." autocomplete="off"
+                    style="width:100%; padding: var(--space-4); font-size: var(--text-base); font-family: inherit; border: 1px solid var(--color-border); background: var(--color-paper); color: var(--color-ink); box-sizing: border-box;">
+                <p id="dispatch-count" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); margin: var(--space-2) 0 0 0;"></p>
+            </div>
+
+            <div class="article-list" id="dispatch-list" style="margin-top: var(--space-6);">
+                <article class="dispatch" data-tags="tax crew employment legal finance residency career trade-winds">
                     <time class="dispatch__date">2026-04-08</time>
                     <h3 class="dispatch__title">
                         <a href="articles/yacht-crew-tax-guide.html">The Truth About Paying Tax as Yacht Crew</a>
@@ -66,10 +72,10 @@
                     <div class="dispatch__body">
                         <p>What Europeans, Americans, South Africans, and Australians actually owe in tax. The myth of tax-free yachting, the CRS reality, and the practical steps to get compliant.</p>
                     </div>
-                    <span style="font-size: var(--text-xs); color: var(--color-salt);">12 min read</span>
+                    <span style="font-size: var(--text-xs); color: var(--color-salt);">12 min read &middot; #tax #crew #career</span>
                 </article>
 
-                <article class="dispatch">
+                <article class="dispatch" data-tags="career yacht-chef certification STCW crew employment industry trade-winds">
                     <time class="dispatch__date">2026-04-08</time>
                     <h3 class="dispatch__title">
                         <a href="articles/how-to-become-a-yacht-chef.html">How to Become a Yacht Chef: The Real Path Nobody Advertises</a>
@@ -77,10 +83,10 @@
                     <div class="dispatch__body">
                         <p>Certifications, day work, crew agencies, what to cook at a trial, salary by vessel size, and what nobody tells you before your first season.</p>
                     </div>
-                    <span style="font-size: var(--text-xs); color: var(--color-salt);">14 min read</span>
+                    <span style="font-size: var(--text-xs); color: var(--color-salt);">14 min read &middot; #career #certification #STCW</span>
                 </article>
 
-                <article class="dispatch">
+                <article class="dispatch" data-tags="michelin umami STCW training industry the-bridge">
                     <time class="dispatch__date">2026-02-05</time>
                     <h3 class="dispatch__title">
                         <a href="articles/myojaku-three-stars.html">Myojaku Earns Three Stars and STCW Anti-Harassment Training Goes Mandatory</a>
@@ -88,10 +94,37 @@
                     <div class="dispatch__body">
                         <p>Myojaku earns three Michelin stars by stripping umami back to the ingredient itself. Plus: STCW anti-harassment training goes mandatory for all flag states.</p>
                     </div>
-                    <span style="font-size: var(--text-xs); color: var(--color-salt);">4 min read</span>
+                    <span style="font-size: var(--text-xs); color: var(--color-salt);">4 min read &middot; #michelin #STCW #industry</span>
                 </article>
             </div>
+            <p id="dispatch-empty" style="display:none; color: var(--color-muted); text-align:center; padding: var(--space-8) 0;">No dispatches match. Try a broader search, or <a href="tags.html">browse every article by theme</a>.</p>
         </section>
+
+        <script>
+        (() => {
+            const input = document.getElementById('dispatch-search');
+            const list = document.getElementById('dispatch-list');
+            const empty = document.getElementById('dispatch-empty');
+            const count = document.getElementById('dispatch-count');
+            const items = Array.from(list.querySelectorAll('.dispatch'));
+            const total = items.length;
+            count.textContent = `${total} dispatch${total === 1 ? '' : 'es'}`;
+            input.addEventListener('input', () => {
+                const q = input.value.trim().toLowerCase();
+                let shown = 0;
+                items.forEach(el => {
+                    const hay = (el.textContent + ' ' + (el.dataset.tags || '')).toLowerCase();
+                    const match = !q || hay.includes(q);
+                    el.style.display = match ? '' : 'none';
+                    if (match) shown++;
+                });
+                empty.style.display = shown === 0 ? 'block' : 'none';
+                count.textContent = q
+                    ? `${shown} of ${total} dispatch${total === 1 ? '' : 'es'} matching "${q}"`
+                    : `${total} dispatch${total === 1 ? '' : 'es'}`;
+            });
+        })();
+        </script>
 
         <!-- Podcasts & Shows -->
         <section class="container" style="padding: var(--space-12) 0;">
@@ -281,6 +314,7 @@
                             <li><a href="littoral-heritage.html">Heritage</a></li>
                             <li><a href="the-evidence.html">The Evidence</a></li>
                             <li><a href="the-bridge.html">The Bridge</a></li>
+                            <li><a href="tags.html">Browse by Theme</a></li>
                         </ul>
                     </div>
                     <div class="footer__col">
