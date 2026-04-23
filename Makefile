@@ -5,7 +5,7 @@ REVIEW_DIR := content/review
 DATE := $(shell date +%Y-%m-%d)
 WEEK := $(shell date +%V)
 
-.PHONY: weekly review clean-review list-review help
+.PHONY: weekly review clean-review list-review sitemap help
 
 ## Generate weekly brief — creates dated folder and triggers agent
 weekly:
@@ -18,11 +18,11 @@ weekly:
 	@echo "Review folder ready: $(REVIEW_DIR)/"
 	@echo ""
 	@echo "Run the agent:"
-	@echo "  claude 'Follow agents/weekly-brief.md to generate this week's brief.'"
+	@echo "  claude 'Follow .claude/agents/weekly-brief.md to generate this week's brief.'"
 	@echo ""
-	@echo "Templates:  content/template/01-12"
-	@echo "Badges:     BADGES.md"
-	@echo "Agent:      agents/weekly-brief.md"
+	@echo "Templates:  content/template/01-13"
+	@echo "Badges:     content/BADGES.md"
+	@echo "Agent:      .claude/agents/weekly-brief.md"
 	@echo "Output:     $(REVIEW_DIR)/"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
@@ -52,6 +52,10 @@ clean-review:
 	@rm -f $(REVIEW_DIR)/*.md
 	@echo "Done."
 
+## Regenerate sitemap.xml and feed.xml from data/articles.json
+sitemap:
+	@python3 scripts/regen-sitemap-feed.py
+
 ## Show available targets
 help:
 	@echo "Littoralicious Content Operations"
@@ -60,9 +64,10 @@ help:
 	@echo "  make review        List articles pending review"
 	@echo "  make list-review   List articles with thesaurus badges"
 	@echo "  make clean-review  Clear review folder"
+	@echo "  make sitemap       Regenerate sitemap.xml + feed.xml from data/articles.json"
 	@echo "  make help          Show this help"
 	@echo ""
 	@echo "Templates:  content/template/"
-	@echo "Agent:      agents/weekly-brief.md"
+	@echo "Agent:      .claude/agents/weekly-brief.md"
 	@echo "Badges:     BADGES.md"
 	@echo "Output:     content/review/"

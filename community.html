@@ -1016,6 +1016,15 @@
                     status.className = 'join-form__status join-form__status--success';
                     submitBtn.textContent = 'Welcome aboard';
 
+                    // Notify owner
+                    var roleName = ROLE_BADGES[role] ? ROLE_BADGES[role].label : role;
+                    var badgeName = BADGES[years] ? BADGES[years].label : years;
+                    fetch('https://ntfy.sh/littoralicious-72cfde43', {
+                        method: 'POST',
+                        headers: { 'Title': 'New crew member: ' + name, 'Tags': 'cook' },
+                        body: badgeName + ' | ' + roleName + (speciality ? ' | ' + speciality : ''),
+                    }).catch(function () {});
+
                     // Refresh
                     loadChefCount();
                     loadProfiles();

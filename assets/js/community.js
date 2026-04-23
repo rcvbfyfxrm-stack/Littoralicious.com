@@ -9,6 +9,10 @@
     const VOTE_KEY = 'littoralicious-votes';
     const COMMENT_VOTE_KEY = 'littoralicious-comment-votes';
 
+    function log() {
+        if (window.DEBUG === true) console.log.apply(console, arguments);
+    }
+
     // ======================================================================
     // Helpers
     // ======================================================================
@@ -134,7 +138,7 @@
             const snap = await docRef.get();
             if (snap.exists) data = snap.data();
         } catch (err) {
-            console.log('Firestore read failed:', err.message);
+            log('Firestore read failed:', err.message);
         }
 
         function render(d) {
@@ -185,7 +189,7 @@
 
                 await docRef.set(updates, { merge: true });
             } catch (err) {
-                console.log('Firestore write failed:', err.message);
+                log('Firestore write failed:', err.message);
             }
 
             render(data);
@@ -281,7 +285,7 @@
             bindCommentActions(slug);
 
         } catch (err) {
-            console.log('Failed to load comments:', err.message);
+            log('Failed to load comments:', err.message);
             list.innerHTML = '<p class="comments-empty">Comments unavailable. Check back later.</p>';
         }
     }
@@ -332,7 +336,7 @@
                     if (countEl) countEl.textContent = parseInt(countEl.textContent) + 1;
                     saveCommentVote(id, type);
                 } catch (err) {
-                    console.log('Vote failed:', err.message);
+                    log('Vote failed:', err.message);
                 }
             });
         });
@@ -402,7 +406,7 @@
                         repliesContainer.appendChild(newReply);
                         bindCommentActions(slug);
                     } catch (err) {
-                        console.log('Reply failed:', err.message);
+                        log('Reply failed:', err.message);
                         submitBtn.textContent = 'Post Reply';
                         submitBtn.disabled = false;
                     }
@@ -494,7 +498,7 @@
                             body: formData,
                         });
                     } catch (err) {
-                        console.log('Newsletter subscription attempted');
+                        log('Newsletter subscription attempted');
                     }
                 }
 
@@ -505,7 +509,7 @@
                         try {
                             photoURL = await uploadAvatar(pendingPhoto);
                         } catch (err) {
-                            console.log('Photo upload failed:', err.message);
+                            log('Photo upload failed:', err.message);
                         }
                     }
 
@@ -548,7 +552,7 @@
                         submitBtn.disabled = false;
                     }, 2000);
                 } catch (err) {
-                    console.log('Comment failed:', err.message);
+                    log('Comment failed:', err.message);
                     submitBtn.textContent = 'Post Comment';
                     submitBtn.disabled = false;
                 }
@@ -564,7 +568,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         if (typeof firebase === 'undefined' || typeof db === 'undefined') {
-            console.log('Firebase not loaded — community features disabled');
+            log('Firebase not loaded — community features disabled');
             return;
         }
         initReactions();

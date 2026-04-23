@@ -1,18 +1,36 @@
 {
-  "hosting": {
-    "public": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
-      "validation/**",
-      "data/**"
-    ]
+  "firestore": {
+    "rules": "firestore.rules"
   },
   "storage": {
     "rules": "storage.rules"
   },
-  "firestore": {
-    "rules": "firestore.rules"
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".firebase/**",
+      ".git/**",
+      ".claude/**",
+      ".archive/**",
+      "agents/**",
+      "content/**",
+      "validation/**",
+      "email/**",
+      "logs/**",
+      "scripts/**",
+      "mcp/**",
+      "node_modules/**",
+      "AGENTS.md",
+      "CLAUDE.md",
+      "CONTENT-GUIDE.md",
+      "DNA.md",
+      "EDITORIAL-WORKFLOW.md",
+      "Makefile",
+      "README.md",
+      "firestore.rules",
+      "storage.rules"
+    ]
   }
 }

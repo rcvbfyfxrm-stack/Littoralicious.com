@@ -68,7 +68,7 @@ The Weekly Brief is the primary recurring output. Run it with `make weekly`.
 ### Steps
 
 1. **`make weekly`** — Creates review folder, prints instructions
-2. **Run the agent** — `claude 'Follow agents/Agent - Weekly Brief.md to generate this week's brief.'`
+2. **Run the agent** — `claude 'Follow .claude/agents/weekly-brief.md to generate this week's brief.'`
 3. **Agent researches** — Finds seasonal ingredient, connects technique + science + heritage + news
 4. **Agent writes** — Individual articles saved to `content/review/` + combined digest
 5. **Review** — `make review` or `make list-review` to inspect output
@@ -79,9 +79,9 @@ The Weekly Brief is the primary recurring output. Run it with `make weekly`.
 
 | File | Purpose |
 |------|---------|
-| `agents/Agent - Weekly Brief.md` | Weekly brief generation instructions |
-| `agents/Agent - Article.md` | Standalone article generation instructions |
-| `BADGES.md` | Badge taxonomy for content tagging |
+| `.claude/agents/weekly-brief.md` | Weekly brief generation instructions |
+| `.claude/agents/article.md` | Standalone article generation instructions |
+| `content/BADGES.md` | Badge taxonomy for content tagging |
 | `CONTENT-GUIDE.md` | Full editorial standards |
 
 ---
