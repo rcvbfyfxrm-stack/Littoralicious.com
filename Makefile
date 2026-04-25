@@ -5,11 +5,7 @@ REVIEW_DIR := content/review
 DATE := $(shell date +%Y-%m-%d)
 WEEK := $(shell date +%V)
 
-.PHONY: weekly review clean-review list-review sitemap help lint status publish validate links pages review-stale extract-suppliers studio
-
-## Rebuild data/drafts.json from content/drafts/ and content/review/ for studio.html
-studio:
-	@python3 scripts/build-drafts-index.py
+.PHONY: weekly review clean-review list-review sitemap help lint status publish validate links pages review-stale extract-suppliers
 
 ## Generate weekly brief — creates dated folder and triggers agent
 weekly:
