@@ -258,6 +258,16 @@ content/review/2026-02-08-weekly-brief.md
 - [ ] At least one moment of surprise per section
 - [ ] Last line is as good as the first (Peak-End Rule)
 
+### Visual Retention (CONTENT-GUIDE.md § Knowledge Retention System)
+- [ ] Callout boxes meet category minimums (see table in CONTENT-GUIDE.md)
+- [ ] Box types are mixed — no two identical boxes back-to-back
+- [ ] At least 3 `<mark>` highlights on critical numbers/stats
+- [ ] `.term` used on first appearance of technical/scientific terms
+- [ ] No section goes more than 3 paragraphs without a visual break
+- [ ] Summary box at end of article (mandatory for 8+ min read time)
+- [ ] Passes the Scan Test: 5 key facts extractable from boxes and highlights alone without reading paragraphs
+- [ ] Minimum 10 tags in homepage card and articles.json
+
 ### Authenticity
 - [ ] Sounds like a chef talking to a chef
 - [ ] Zero marketing language

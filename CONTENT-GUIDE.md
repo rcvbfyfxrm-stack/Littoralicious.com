@@ -122,6 +122,173 @@ Use the `.data` class for any numerical data that benefits from monospace:
 
 Use for comparative data. Keep columns under 6. Align numerical data right.
 
+### The Knowledge Retention System (Mandatory — No Exceptions)
+
+A chef reads this at 11 PM, wrecked, between courses. The knowledge has to jump off the screen, burn into memory, and survive until morning. Plain paragraphs don't do that. Color does. Contrast does. Structure does. Research shows color-coded annotations improve recall by 11.5%. We are going to use every visual weapon in the arsenal.
+
+**This is not optional.** Every single article on Littoralicious must be visually loaded for retention. If an article reads like a grey wall of text, it is not done.
+
+---
+
+#### Tool 1: Callout Boxes — The Backbone
+
+Five color-coded box types. Every article uses a mix. No article ships without them.
+
+| Type | Class | Label | Color | Purpose |
+|------|-------|-------|-------|---------|
+| Key Point | `note note--key` | KEY POINT | Gold/Yellow | The fact that must survive in the reader's head tomorrow |
+| Science | `note note--science` | THE SCIENCE | Blue | Research data, statistics, peer-reviewed claims |
+| Action | `note note--action` | TAKEAWAY | Green | Practical instruction — what to DO with this knowledge |
+| Warning | `note note--warning` | WARNING | Red | Mistakes, dangers, things that ruin the dish or the career |
+| Quote | `note note--quote` | REFERENCE | Purple | Citations, quotes, attributed wisdom |
+
+```html
+<div class="note note--key"><p>Your key point here.</p></div>
+<div class="note note--science"><p>Research data here.</p></div>
+<div class="note note--action"><p>Practical instruction here.</p></div>
+<div class="note note--warning"><p>Warning or caution here.</p></div>
+<div class="note note--quote"><p>"Quote text" — Author</p></div>
+```
+
+Override the default label with `data-label`:
+```html
+<div class="note note--action" data-label="The Galley Move"><p>Custom-labeled box.</p></div>
+```
+
+**Box Rules:**
+- Place boxes AFTER the paragraph that introduces the concept
+- Keep box text punchy: 1–3 sentences. If it needs more, it's a section, not a box
+- Never stack two boxes of the same type back-to-back
+- Minimum counts by category:
+
+| Category | Minimum Boxes | Required Types |
+|----------|--------------|----------------|
+| The Method (recipes) | 5 | 2 science, 1 action, 1 warning, 1 key |
+| Shore Larder | 5 | 2 science, 1 key, 1 action, 1 warning |
+| The Evidence | 6 | 3 science, 1 key, 1 action, 1 quote |
+| Port Call | 5 | 2 key, 2 action, 1 warning |
+| Trade Winds | 5 | 2 key, 1 warning, 1 action, 1 quote |
+| Littoral Heritage | 4 | 1 key, 1 quote, 1 science, 1 action |
+| The Bridge | 4 | 1 key, 1 science, 1 action, 1 warning |
+| Signal Fire | 4 | 1 key, 1 quote, 1 action, 1 science |
+
+For articles over 12 min read time, double the minimums.
+
+---
+
+#### Tool 2: Inline Highlights — Make Numbers and Facts Pop
+
+Use `<mark>` tags to highlight critical numbers, percentages, temperatures, and short facts INSIDE paragraphs. The yellow flash catches the scanning eye.
+
+```html
+<p>A 2024 survey found crew mood dropped to <mark>6.5 out of 10</mark>, with <mark>82% reporting anxiety</mark>.</p>
+```
+
+**When to use `<mark>`:**
+- Any statistic or percentage worth remembering
+- Critical temperatures or times in recipes
+- A surprising number that challenges assumptions
+- The single most important phrase in a dense paragraph
+
+**Minimum:** At least 3 `<mark>` highlights per article. More for data-heavy pieces.
+
+---
+
+#### Tool 3: Term Definitions — Teach Vocabulary In-Line
+
+Use `.term` for technical terms the reader might not know or where precision matters. The dotted underline signals "this word is exact, not casual."
+
+```html
+<span class="term">Allicin</span> is the compound responsible for garlic's pungent bite.
+```
+
+**When to use `.term`:**
+- First appearance of a scientific compound name
+- Industry-specific jargon (STCW, MLC, PME, SED)
+- Foreign culinary terms on first use
+- Any word where the precise definition matters to the argument
+
+---
+
+#### Tool 4: Science Boxes — Deep Technical Data
+
+For structured technical information that needs its own container with a label, title, and detailed content. Bigger than a callout box, more structured.
+
+```html
+<div class="science-box">
+    <div class="science-box__label">Compound Analysis</div>
+    <div class="science-box__title">Why Brown Butter Tastes Different</div>
+    <div class="science-box__content">
+        At 150°C, milk solids undergo Maillard reactions producing...
+    </div>
+</div>
+```
+
+**When to use:** Compound tables, chemical breakdowns, structured data that doesn't fit a simple table. At least 1 per Shore Larder and Evidence article.
+
+---
+
+#### Tool 5: Summary Boxes — Lock It In at the End
+
+Every article over 8 min read time MUST end with a summary box. This is the "if you remember nothing else" checklist.
+
+```html
+<div class="summary-box">
+    <div class="summary-box__title">What to Remember</div>
+    <ul>
+        <li>First key takeaway</li>
+        <li>Second key takeaway</li>
+        <li>Third key takeaway</li>
+    </ul>
+</div>
+```
+
+**Rules:** 3–5 bullet points maximum. Each bullet is one sentence. Written as actionable statements, not summaries.
+
+---
+
+#### Tool 6: Quick Reference Cards — The Dark Cheat Sheet
+
+Inverted dark cards for at-a-glance reference data. Identity cards for ingredients, spec sheets for equipment, quick stats.
+
+```html
+<div class="quick-ref">
+    <div class="quick-ref__title">Quick Reference</div>
+    <div class="quick-ref__grid">
+        <div class="quick-ref__item">
+            <div class="quick-ref__label">Season</div>
+            <div class="quick-ref__value">Oct–Mar</div>
+        </div>
+    </div>
+</div>
+```
+
+**When to use:** Shore Larder articles (ingredient identity cards), Port Call articles (key contacts/hours), recipe articles (at-a-glance specs).
+
+---
+
+#### The Visual Density Rule
+
+**No section of an article should go more than 3 paragraphs without a visual break.** A visual break is any of: callout box, science box, table, quick-ref card, summary box, or a styled data grid. If you hit 4 consecutive plain paragraphs, you missed an opportunity to make the knowledge stick.
+
+**The Scan Test:** A reader scrolling fast through the article should be able to extract the 5 most important facts from boxes and highlights alone, without reading a single paragraph. If they can't, the article needs more visual anchoring.
+
+---
+
+### Article Tags (Mandatory)
+
+Every article MUST have tags in its homepage card (`data-tags` attribute) AND in `data/articles.json`. Tags enable search — they are how readers find content beyond the title.
+
+**Minimum 10 tags per article.** Include:
+- Category name (e.g., `recipe`, `ingredient-deep-dive`, `provisioning`)
+- Main subject(s) (e.g., `banana`, `garlic`, `miami`)
+- Technique or topic (e.g., `baking`, `fermentation`, `tax`)
+- Related concepts (e.g., `maillard`, `umami`, `food-science`)
+- Practical context (e.g., `charter-prep`, `galley-staple`, `comfort`)
+- Region if applicable (e.g., `mediterranean`, `caribbean`, `france`)
+- Related ingredients (e.g., `brown-butter`, `miso`, `lemon`)
+- Searchable synonyms (e.g., `dessert` and `sweet`, `healthy` and `wellness`)
+
 ### Code Blocks
 
 For protocols with multiple steps or technical formulas:
