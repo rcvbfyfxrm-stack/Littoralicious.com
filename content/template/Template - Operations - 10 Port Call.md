@@ -1,14 +1,79 @@
 # PORT CALL — Template
 
+**HTML template:** `articles/_template-port-call.html` — copy this for every new port. Long-form prose + foldable sections + inline caution badges + watch-outs by season. Mirrors the Venice terroir guide's reading experience but for provisioning intel. Reference implementation: `articles/provisioning-miami-ftl.html`.
+
+**Polish conventions (mirror across every port — applied to Miami 2026-04-28):**
+- The opening "Four things to set up on day one" / "Three things to set up before arrival" paragraph uses **strong-bolded numbers**: `<strong>(1)</strong> … <strong>(2)</strong> … <strong>(3)</strong> …` — visually scannable, not flat parentheses.
+- The follow-on warning sentence is `<p><strong>The warning.</strong> If you …</p>` — **period after "warning", not colon.** Same for any "The bottom line." / "The hack." sentence-leads.
+- Funfact and pull-quote boxes use the **`pc-funfact`** and **`pc-pullq`** class names (the unprefixed `funfact` / `pullq` are kept as aliases but the prefixed forms are canonical for port-call articles).
+- Inline cross-references to suppliers in the prose use `<a href="#p-{id}" style="color:var(--color-sea); text-decoration: underline;">Name</a>` — the underline matters; flat sea-coloured text reads as muted, not as a link.
+- The quicknav strip ends with `<a href="#watchouts" class="warn">⚠ Watch-outs</a>` (red, bold) — the only nav item that breaks the gold accent.
+- Use proper HTML entities: `&mdash;` for em-dashes, `&rsquo;` for curly apostrophes, `&euro;` for €, `&ndash;` for en-dashes in price ranges. Avoid raw "—" / "'" / "€" / "–" in HTML files — they survive but the entity form is safer across editors.
+
 **Voice:** The chef who has provisioned this port three times and is handing you the shortcut. No options paralysis — one or two picks per category, tested, with the move that saves you time or money. Direct, supplier-specific, price-conscious.
 
-**Rhythm:** Local reality → Three tiers by time available (24h / 2-3 days / time-rich) → Freezer-ready → Local gems → Bottom line.
+**Market-stand rule (mandatory since 2026-04-29):** Every time the article points the reader to an open-air or covered market (Mercato di Rialto, Marché Forville, Mercat de la Boqueria, Pescheria, halles, fish auction quay, farmers' market, etc.) it MUST also name the **specific stand / vendor / counter** to ask for — and what that stand is the best at. "Go to Rialto Pescheria" is template fail. "Go to Rialto Pescheria — ask for **Marco at the third stall on the right** for line-caught seabass; he holds back the day-boat tag" is the standard.
+
+For each market mentioned, the article must answer:
+- **Which stand** (name of vendor, family, stall number, signage, or "third on the left from the X entrance" — whatever lets a stranger find it)
+- **What that stand is best at** (one or two categories — fish only, or shellfish + day-boat fish, or heritage breed pork only, etc.)
+- **What to ask for by name** (species, cut, breed, named fisherman/farmer, vintage)
+- **When to arrive** (open time vs the time the good stuff is gone — markets fail readers who arrive at "open")
+- **Cash or card** (most market stands are cash; budget accordingly)
+- **One useful rapport line** in the local language if it changes treatment ("dimmi cosa è arrivato stamattina", "qu'est-ce qui est tombé du bateau ce matin", etc.)
+
+Do not list a market generically. If you do not yet know which stand, the article is not ready — go find out, or cut the market reference and replace it with a direct supplier the chef can rely on. **A nameless market is options paralysis on the dock with a guest list waiting.**
+
+**Structure (mirrors the Venice terroir Guide):** Hero · quicknav strip · short brief · **Three Berths** grid (top picks, like Venice's "Three Tables") · foldable sections (Wholesale · Fish · Meat · Specialty · Bread · Produce · Asian · Wine · Agents/Logistics) · **Watch-outs by Season & Event** (city-wide events only) · Bottom Line. Every entry is a `<details class="pfold">`; every section is a `<details class="sfold">`. Open by default for the most-read sections (Three Berths, Watch-outs, Bottom Line). **No standalone "What to Buy / Local Gems / Seasonal Specialties" section** — sparkle that intel through the relevant supplier paragraphs (with red `cau--high` pills for tight windows or fragile harvests).
+
+**Inline caution badges (mandatory):** Every entry that has an operational gotcha gets a small inline `<span class="cau cau--high|cau--med|cau--info" data-fix="...">...</span>` right next to its name. The label is short ("Cash · 60-min window", "Closed Sun", "Boat Show Surge"); the `data-fix` attribute holds the workaround in plain English. Hover reveals the workaround as a dark tooltip. Three severities:
+
+- `cau--high` (red) — will break the day if ignored
+- `cau--med` (amber) — annoying, recoverable
+- `cau--info` (blue) — good to know, low impact
+
+Examples:
+- *Haulover Marina:* `<span class="cau cau--high" data-fix="Cash only — sometimes the only option. Carry $200–500.">Cash · 60-min window</span>`
+- *Costco Business Center:* `<span class="cau cau--med" data-fix="Closed Sundays year-round. Plan the bulk run for Mon–Sat morning.">Closed Sun</span>`
+- *Restaurant Depot:* `<span class="cau cau--info" data-fix="First-time setup at the FL branch takes 15–30 min. Bring boat docs + business card + captain's ID.">Day-1 Setup</span>`
+
+**Rhythm:** Local reality → Three berths → Foldable sections by category (with seasonal specialties woven inline + red `cau--high` pills for tight windows) → **Watch-outs by Season & Event** (city-wide events only) → Bottom line.
 
 **Word Count:** 2,000-3,500 · **Read Time:** 8-14 min
 
 **Design principle:** A chef should be able to scan this on a phone, pick their tier based on time available, and move. Each tier is self-contained — the 24-hour chef never has to read the time-rich section. One or two suppliers per slot per tier. No decision fatigue.
 
 **Companion file:** Every Port Call article has a companion file: `[city]-suppliers-extended.md` in the same directory. The article is the shortcut. The companion file is the encyclopedia.
+
+**Watch-outs section (mandatory since 2026-04-28, refined 2026-04-30):** Every Port Call MUST include a **⚠ Watch-outs by Season & Event** section, but **keep it short** — the section is reserved for **city-wide / port-wide events** that affect logistics across multiple suppliers (festival lock-outs, weather windows, public-holiday closures, hurricane watch). It is NOT a catalogue of seasonal produce.
+
+**Seasonal product / single-supplier gotchas live INLINE,** as a red `<span class="cau cau--high" data-fix="...">...</span>` pill on the supplier or market entry where the chef is already reading — never as a standalone card. The renderer filters out `low` and `info` automatically; further trim `medium` items that are really single-supplier seasonality.
+
+**No dedicated "What to Buy / Local Gems" section.** Seasonal specialties (castraure, moeche, white asparagus, Cartizze Prosecco, summer truffle, etc.) are woven into the relevant supplier paragraph — what it is, when, how to use it, and a red caution pill if the window is tight or the harvest is fragile. A standalone "What to Buy" section duplicates intel and bloats the page.
+
+Two examples that justify the split:
+
+- *Venice — Biennale opening week (high, in section):* "Water taxis fully booked. Hotels block the entire Consorzio Motoscafi fleet 2–3 weeks ahead. Walk-up motoscafo near impossible. Workaround: book 14 days ahead in writing with deposit, vaporetto + carrello fallback, marina portage from Piazzale Roma."
+- *Venice — castraure (inline, NOT in section):* `<span class="cau cau--high" data-fix="Castraure season is ~10 days then over — last week of April into the first week of May. Phone I Sapori di Sant'Erasmo +39 347 059 4687 to confirm the year's window before promising the dish on a printed menu.">Castraure: 10-day window, ends abruptly</span>` — sits on the Erbaria entry where the chef is already deciding what to buy.
+
+The dividing line: if it affects **multiple suppliers across the port at once**, it's a watch-out. If it lives at **one supplier or one ingredient**, it's an inline red pill on that entry.
+
+Real examples that ARE watch-outs:
+
+- *Venice* — water taxis fully booked during Biennale opening week / Mostra; Giudecca canal closed for the Redentore pontoon bridge in July; acqua alta floods half the city Nov–Jan; Ferragosto closes half the trattorie 2–3 weeks; Carnevale jams Piazza San Marco.
+- *Miami / FTL* — Boat Show late Oct/early Nov locks the entire port; Art Basel first week of December saturates Wynwood/South Beach; hurricane season strips supermarket shelves in 24 h on a named-storm watch; Spring Break March chaos.
+- *St. Barth* — eggs and dairy disappear from the island around New Year; produce arrives only 2× a week by ferry; restaurant reservations need 6 weeks for the Christmas/NYE window.
+
+Real examples that are NOT watch-outs (inline red pills only):
+
+- Castraure 10-day window (Venice → Erbaria entry)
+- Moeche fragile harvest (Venice → Pescheria entry)
+- Cartizze single-cru Prosecco availability (Venice → Mascari entry)
+- Single-supplier closing days (Pescheria closed Sun + Mon → on the Pescheria entry, not in the section)
+
+Each watch-outs entry: **title · when · severity (high/medium) · what (concrete consequence across multiple suppliers) · workaround (concrete fix with numbers, lead times, names)**. Author the entries in the data file's `WATCHOUTS = [...]` array — see `assets/js/port-call-venice-data.js` and `assets/js/port-call-miami-ftl-data.js` for the schema. The shared renderer (`port-call-render.js`) emits them automatically into any `#pcv-watchouts` container.
+
+Cross-check before publishing: **the dedicated Watch-outs section is short** (3–6 entries, all city-wide events). Anything seasonal-but-single-supplier was reclassified as an inline `.cau cau--high` pill and appears next to the supplier in its section. Every workaround includes a concrete number / phone / supplier name. **Trim aggressively** — the goal is "the things that will actually break your day across the port", not an inventory of every gotcha.
 
 ---
 
@@ -141,6 +206,7 @@ Every entry below includes two options: **delivery** (they come to you, with ful
 ## FISHMONGER / PESCHERIA
 
 **Go-to:** **[Shop or quay name]** — [Address]. [Hours]. [What they land / stock]. [Cash only / card]. [Best day of week].
+**If it's a multi-stand market — which stand:** [Vendor name OR stall number OR "third on the right from the canal entrance"]. **Best at:** [day-boat seabass / shellfish only / cuttlefish + octopus / etc.]. **When to arrive:** [opens at X but the good stuff is gone by Y]. **Rapport line:** [e.g., "dimmi cosa è arrivato stamattina"].
 What to ask for by name: [Species, cuts, specific fisherman if relevant].
 
 **Delivery:** [Yes / No].
@@ -153,6 +219,7 @@ What to ask for by name: [Species, cuts, specific fisherman if relevant].
 ## BUTCHER / MACELLERIA
 
 **Go-to:** **[Shop]** — [Address]. [Hours]. [Specialty cuts, ageing programme, source farms]. [Lead time for whole primals or portioned vac-pack].
+**If it's a market hall (Boqueria, Marché des Capucins, Mercato di Mezzo, etc.) — which counter:** [Family name or stall sign]. **Best at:** [heritage-breed pork / dry-aged beef / lamb only / charcuterie cured on site].
 What to ask for by name: [Cut, ageing days, breed, farm if named on the shop board].
 
 **Delivery:** [Yes / No].
@@ -165,6 +232,7 @@ What to ask for by name: [Cut, ageing days, breed, farm if named on the shop boa
 ## FISHERMAN DIRECT / QUAYSIDE
 
 **Go-to:** **[Quay, port or auction]** — [Address]. [Auction or open-sale time]. [What boats come in when]. [Cash / card]. [Language spoken].
+**Which boat / which name:** [Specific vessel name(s), captain's first name, or the cooperative window to ask at]. **Best at:** [what THIS boat consistently lands — e.g., "day-boat St-Pierre and red mullet, never tuna"]. **When to be there:** [the realistic window — auction is X but small sales open at Y].
 
 **Delivery:** [Rare / yes / no].
 - If yes: **Who arranges:** [the cooperative / a named wholesaler / a buyer's agent]. **Minimum order:** [kg]. **Lead time:** [e.g., "Order the evening before, delivered dockside by 09:00"]. **Delivery window:** [hours]. **Contact:** [phone / WhatsApp]. **Packaging:** [ice box, vac-pack, whole/gutted/filleted]. **Invoicing:** [terms].
@@ -231,6 +299,7 @@ What to ask for by name: [Cut, ageing days, breed, farm if named on the shop boa
 ## PRIMEUR / PRODUCE — TOP TIER
 
 **Go-to:** **[Farm shop, market stall, urban primeur]** — [Address]. [Hours]. [What's in season now vs supermarket equivalents]. [Organic / local / imported distinction].
+**If it's a market — which stall:** [Family/vendor name, stall number, or signage]. **Best at:** [tomatoes only / leafy greens + herbs / heritage citrus / mushroom specialist]. **Avoid the resellers:** [how to spot a producer-stall vs a reseller — visible crates from the farm, dirt-on-roots, hand-written prices, owner not employees]. **Rapport line:** [e.g., "qu'est-ce que vous avez tiré du jardin ce matin ?"].
 
 **Delivery:** [Yes / No].
 - If yes: **Minimum order:** [€X]. **Lead time:** [hours]. **Delivery days:** [specify]. **Delivery window:** [hours]. **Contact:** [phone / WhatsApp]. **Packaging:** [crates / boxes / returnable]. **Invoicing:** [terms].
@@ -256,14 +325,20 @@ Most of what you buy gets frozen. Suppliers who vac-pack, portion, and blast-chi
 
 ---
 
-# LOCAL GEMS
+# LOCAL GEMS — INLINE, NOT A SECTION
 
-What this port does better or cheaper than anywhere else. Stock up — you will not find this at the next stop.
+What this port does better or cheaper than anywhere else gets **woven into the relevant supplier paragraphs**, never collected into a standalone "Local Gems" / "What to Buy" section. The chef is already reading the Erbaria entry when they need to know about castraure; the chef is already reading the Pescheria entry when they need to know about moeche. Putting it twice is bloat.
 
-| Item | Where | Why Here |
-|------|-------|----------|
-| [Local specialty] | [Source] | [What makes it worth buying here] |
-| [Local specialty] | [Source] | [What makes it worth buying here] |
+For each local gem, in the supplier paragraph that already names the source:
+
+- **What it is** — one short clause
+- **When** — calendar window, with the year if it shifts
+- **How to use** — one canonical preparation
+- **Red caution pill** if the window is tight (≤2 weeks), the harvest is fragile, or the dish must never be promised on a printed menu
+
+Example (Venice / Erbaria entry, inline): "*Castraure di Sant'Erasmo — the apical-bud first artichokes, raw with olive oil and Parmigiano shavings or fried whole. <span class='cau cau--high'>Castraure: 10-day window, ends abruptly</span>*"
+
+If a port has a "buy here, you will not find this at the next stop" intel that does not naturally attach to one supplier, surface it in the Bottom Line paragraph instead — not as a new section.
 
 ---
 
