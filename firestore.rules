@@ -69,5 +69,17 @@ service cloud.firestore {
       allow create, update: if isSignedIn() && request.auth.uid == userId;
       allow delete: if isAdmin();
     }
+
+    // Supplier ratings (Port Call): per-article, per-supplier ups/downs.
+    // Doc id pattern: <articleId>__<supplierId>  (e.g. "port-call-venice__fruttolo")
+    match /supplier_ratings/{ratingId} {
+      allow read: if true;
+      // Vote-count updates only — no other fields can be written from the client.
+      allow create: if request.resource.data.diff({}).affectedKeys()
+        .hasOnly(['articleId', 'supplierId', 'ups', 'downs', 'updatedAt']);
+      allow update: if request.resource.data.diff(resource.data).affectedKeys()
+        .hasOnly(['ups', 'downs', 'updatedAt']);
+      allow delete: if isAdmin();
+    }
   }
 }

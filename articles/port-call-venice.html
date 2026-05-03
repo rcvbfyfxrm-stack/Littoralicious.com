@@ -16,13 +16,19 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/port-call-content.css">
     <link rel="stylesheet" href="../assets/css/port-call.css">
+    <link rel="stylesheet" href="../assets/css/supplier-rating.css">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
 
     <!-- Leaflet for the interactive port-call map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Firebase (for community supplier ratings) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
 </head>
-<body>
+<body data-article-id="port-call-venice">
 
     <!-- Sticky right-side foldable mini-map (hidden under 980px viewport) -->
     <aside class="pcv-mini is-collapsed" id="pcv-mini" aria-label="Lagoon map of Venice provisioning points">
@@ -67,8 +73,8 @@
             <header class="article__header container">
                 <div class="article__meta">
                     <span class="article__category">Port Call</span>
-                    <time class="article__date">Updated April 28, 2026</time>
-                    <span class="article__reading-time">14 min read</span>
+                    <time class="article__date">Updated May 3, 2026</time>
+                    <span class="article__reading-time">15 min read</span>
                 </div>
                 <h1 class="article__title">Port Call Venice: Provisioning a City With No Roads</h1>
                 <p class="article__lede">
@@ -127,7 +133,7 @@
                             </div>
                         </div>
 
-                        <details class="pfold cult" id="p-santelena">
+                        <details class="pfold cult" id="p-santelena" data-supplier-id="santelena">
                             <summary><div><div class="pfold__name">📍 Marina Sant'Elena</div><div class="pfold__hook">Campo della Chiesa 1, Sant'Elena · ≤65 m · +39 041 520 2675</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">The historic-centre default · 10-min walk to San Marco · power 125–400 A</div>
@@ -142,7 +148,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold cult" id="p-vyp">
+                        <details class="pfold cult" id="p-vyp" data-supplier-id="vyp">
                             <summary><div><div class="pfold__name">📍 Venice Yacht Pier (Riva dei Sette Martiri / Santa Marta)</div><div class="pfold__hook">≤140 m · 9.5 m draft · +39 347 608 2425</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">The main superyacht quay · two locations · pick Santa Marta for easier logistics</div>
@@ -156,7 +162,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold cult" id="p-certosa">
+                        <details class="pfold cult" id="p-certosa" data-supplier-id="certosa">
                             <summary><div><div class="pfold__name">📍 Venezia Certosa Marina (Vento di Venezia)</div><div class="pfold__hook">Isola della Certosa · ≤60 m · refit yard · +39 041 520 8588</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Refit yard + deep-water berths · 10-min water taxi to San Marco</div>
@@ -207,7 +213,7 @@
                     <summary><div class="sfold__titlewrap"><div class="sfold__title">Agents, Logistics &amp; Water Taxis</div><div class="sfold__desc">The first call before arrival. Customs, supplier coordination, dockside delivery, the portage boat from Piazzale Roma.</div></div><span class="sfold__count">3 picks</span><span class="sfold__chev">▶</span></summary>
                     <div class="sfold__body">
 
-                        <details class="pfold top" id="p-pesto">
+                        <details class="pfold top" id="p-pesto" data-supplier-id="pesto">
                             <summary><div><div class="pfold__name">📍 Pesto Sea Group (Yacht Agent)</div><div class="pfold__hook">Via Banchina dell'Azoto 15/A, Marghera · since 1966 · +39 041 509 8011</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Italy's most established yacht agency · JV with Cosulich · the right first call</div>
@@ -222,7 +228,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold top" id="p-motoscafi">
+                        <details class="pfold top" id="p-motoscafi" data-supplier-id="motoscafi">
                             <summary><div><div class="pfold__name">📍 Consorzio Motoscafi (Water Taxi)</div><div class="pfold__hook">Official water-taxi consortium · 24/7 · +39 041 240 6712 day · +39 041 522 2303 night</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">The official consortium · negotiate flat rate before boarding</div>
@@ -237,7 +243,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold" id="p-wesupply">
+                        <details class="pfold" id="p-wesupply" data-supplier-id="wesupply">
                             <summary><div><div class="pfold__name">📍 We Supply Yachts (remote)</div><div class="pfold__hook">Netherlands HQ · global delivery · 48-hour guarantee</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <p>Netherlands-based, global delivery, 48-hour guarantee, 24/7. No permanent Venice office — remote-ordering option. Premium of 20–30% over retail; they handle the logistics nightmare for you. Useful when the local agent is fully booked.</p>
@@ -255,7 +261,7 @@
 
                         <div class="pc-funfact"><strong>The Mestre run pattern.</strong> Rent a van at Mestre rail station. Drive to Esselunga or Ipercoop Nave de Vero. Pre-order with Carpitella for serious cuts. Load non-perishables, wine, dry goods, bulk dairy, frozen items. Drive to Piazzale Roma &mdash; the last point a vehicle can reach before Venice becomes water and stone. Marina agent arranges a portage boat to transfer boxes. Typical range &euro;100&ndash;200.</div>
 
-                        <details class="pfold top" id="p-carpitella">
+                        <details class="pfold top" id="p-carpitella" data-supplier-id="carpitella">
                             <summary><div><div class="pfold__name">📍 Macelleria Carpitella (Mestre) — the meat answer</div><div class="pfold__hook">Corso del Popolo 53, Mestre · since 1953 · +39 041 950 817</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Three generations · featured in Il Golosario + EUROCARNI</div>
@@ -270,7 +276,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold" id="p-ipercoop">
+                        <details class="pfold" id="p-ipercoop" data-supplier-id="ipercoop">
                             <summary><div><div class="pfold__name">📍 Ipercoop — Centro Commerciale Nave de Vero (Marghera)</div><div class="pfold__hook">Via Pietro Arduino 20, Marghera · ~10 min from Piazzale Roma</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Hypermarket · strong on fresh produce + Coop private label</div>
@@ -283,7 +289,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold" id="p-esselunga">
+                        <details class="pfold" id="p-esselunga" data-supplier-id="esselunga">
                             <summary><div><div class="pfold__name">📍 Esselunga Mestre (multiple branches)</div><div class="pfold__hook">Best Italian supermarket chain on operations + butcher counter</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Operations, consistency, the butcher counter</div>
@@ -297,10 +303,11 @@
 
                 <!-- ========== MARKETS & DIRECT SUPPLY ========== -->
                 <details class="sfold" id="markets">
-                    <summary><div class="sfold__titlewrap"><div class="sfold__title">Markets &amp; Direct Supply</div><div class="sfold__desc">Rialto Pescheria at 07:30 before anyone else arrives. Erbaria for produce. Sant'Erasmo by phone for castraure direct.</div></div><span class="sfold__count">3 picks</span><span class="sfold__chev">▶</span></summary>
+                    <summary><div class="sfold__titlewrap"><div class="sfold__title">Markets &amp; Direct Supply</div><div class="sfold__desc">Rialto Pescheria at 07:30 + Ittica Zane on the inside. Erbaria for produce. Pescheria Delfino for fish + veg near Arsenale. Il Fruttolo (Stefano) for go-see + morning boat delivery on the S. Stefano side. Macelleria Bergamo as the on-island meat answer. Sant'Erasmo by phone for castraure direct.</div></div><span class="sfold__count">7 picks</span><span class="sfold__chev">▶</span></summary>
                     <div class="sfold__body">
+                        <p class="sr-section-note">Tap thumbs-up on any supplier you've used &mdash; the highest-rated picks float to the top of each section automatically. One vote per browser, toggle to undo.</p>
 
-                        <details class="pfold top" id="p-pescheria">
+                        <details class="pfold top" id="p-pescheria" data-supplier-id="pescaria">
                             <summary><div><div class="pfold__name">📍 Rialto Pescaria (Fish Market)</div><div class="pfold__hook">Campo de la Pescaria, San Polo · since 1097 · Tue–Sat 07:30–13:00</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Best fresh fish in the northern Adriatic since 1097</div>
@@ -313,7 +320,38 @@
                             </div>
                         </details>
 
-                        <details class="pfold" id="p-erbaria">
+                        <details class="pfold top" id="p-zane" data-supplier-id="zane">
+                            <summary><div><div class="pfold__name">📍 Ittica Zane (Rialto banco) — Matteo &amp; Nino, four generations</div><div class="pfold__hook">Rialto Pescheria · Matteo (banco lead) · +39 339 863 6522 (WhatsApp)</div></div><span class="pfold__chev">▶</span></summary>
+                            <div class="pfold__body">
+                                <div class="pfold__recog">Four generations · go-and-see + delivery · ask for Matteo or Nino · WhatsApp the order</div>
+                                <p>One of the few real fishmonger banchi still trading at Rialto. <strong>Nino</strong> (Emilio "Nino" Zane) has been on the floor 50+ years, four generations of the same family. <strong>Matteo</strong> leads the day-team of seven — that's the WhatsApp contact below. Walk in at opening, see what landed at dawn, talk through the day's catch, then send the chef's order on WhatsApp for cleaning, filleting, ice-boxing and dock-side delivery. The exact pattern Il Fruttolo runs for produce, but for fish.</p>
+                                <p><strong>What to ask for:</strong> cleaned and gutted (or fully filleted with bones for stock kept aside), iced in a chilled box, time-windowed delivery to the dock or marina office. They'll handle the cuttlefish ink for you on request — say so when ordering. <span class="cau cau--high" data-fix="Like Rialto Pescaria itself, closed Sun + Mon. Confirm WhatsApp orders by 18:00 D-1 for next-morning landing; the boats decide what you cook, not the menu.">Closed Sun + Mon</span> <span class="cau cau--med" data-fix="Always cross-check with Rialto Pescaria opening days — if the Pescheria is shut for a public holiday or maintenance, the banco is shut too.">Mirror market hours</span></p>
+                                <div class="pfold__meta">
+                                    <div><strong>Banco</strong>Ittica Zane — Rialto Pescheria, Campo de la Pescaria, San Polo</div>
+                                    <div><strong>Contact</strong>Matteo (banco lead) · ask for Nino on the floor</div>
+                                    <div><strong>WhatsApp</strong><a href="https://wa.me/393398636522" target="_blank" rel="noopener">+39 339 863 6522</a></div>
+                                    <div><strong>Hours</strong>Tue–Sat 07:30–13:00 (mirrors Pescheria)</div>
+                                </div>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ittica+Zane+Rialto+Venezia" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+                            </div>
+                        </details>
+
+                        <details class="pfold top" id="p-delfino" data-supplier-id="delfino">
+                            <summary><div><div class="pfold__name">📍 Pescheria Delfino — fish + veg, near Arsenale (go-see + delivery)</div><div class="pfold__hook">Fondamenta Sant'Anna, Castello 1131 · +39 041 522 3028 · 10 min from Arsenale via Via Garibaldi</div></div><span class="pfold__chev">▶</span></summary>
+                            <div class="pfold__body">
+                                <div class="pfold__recog">Go-and-see + deliver · fish AND vegetables on the same counter</div>
+                                <p>The Arsenale-side alternative to Rialto Pescaria. Walk in via Via Garibaldi (10 min from Arsenale, 5 min from Sant'Elena), see what's landed that morning, then place the order day-ahead by phone for delivery to the boat. Veggies on the same counter — useful one-stop for the dock-side berths when the cross-city haul to Rialto is not worth it. <span class="cau cau--med" data-fix="Verify opening days the day before — fish counters typically close Sun and often Mon. Confirm by phone (+39 041 522 3028) before you commit a menu line.">Verify Sun/Mon opening</span></p>
+                                <div class="pfold__meta">
+                                    <div><strong>Address</strong>Fondamenta Sant'Anna, Sestiere Castello 1131, 30122 Venezia</div>
+                                    <div><strong>Phone</strong>+39 041 522 3028</div>
+                                    <div><strong>Web</strong>delfinosnc.it/pescheria</div>
+                                    <div><strong>Hours</strong>Tue–Sat (verify on the day)</div>
+                                </div>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pescheria+Delfino+Castello+1131+Venezia" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+                            </div>
+                        </details>
+
+                        <details class="pfold" id="p-erbaria" data-supplier-id="erbaria">
                             <summary><div><div class="pfold__name">📍 Rialto Erbaria (Produce Market)</div><div class="pfold__hook">Campo de l'Erbaria, San Polo · Mon–Sat 07:00–13:00</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Adjacent open-air produce market · seasonal lagoon produce</div>
@@ -326,7 +364,38 @@
                             </div>
                         </details>
 
-                        <details class="pfold top" id="p-sapori">
+                        <details class="pfold top" id="p-fruttolo" data-supplier-id="fruttolo">
+                            <summary><div><div class="pfold__name">📍 Il Fruttolo — produce, go-see + morning boat delivery</div><div class="pfold__hook">Stefano · Calle Franco Passarella 8 · serves S. Stefano side · +39 347 603 2087 (WhatsApp)</div></div><span class="pfold__chev">▶</span></summary>
+                            <div class="pfold__body">
+                                <div class="pfold__recog">Go-and-see + deliver · the gold pattern · ask for Stefano · order D-1 by WhatsApp</div>
+                                <p>Walk in, ask for <strong>Stefano</strong>, pick the produce, build the rapport — then send the order on WhatsApp the day before for delivery to the boat in the morning. Service area covers the Santo Stefano / San Marco side of the centre, which makes them the answer when you're berthed away from Rialto and don't want the Erbaria run. From Sant'Elena it's also workable — Stefano runs deliveries himself by boat across the centre. <strong>Be specific on the order:</strong> variety, ripeness window, count, size. "Good tomatoes" is not an order — "8 kg Cuore di Bue, ripe to use within 48 h, sized for halving" is. <span class="cau cau--info" data-fix="Send the WhatsApp order by 18:00 D-1 with: items, quantities, ripeness, dock/gate access, delivery time window, and crew contact. The earlier the order, the better the selection.">WhatsApp by 18:00 D-1</span></p>
+                                <div class="pfold__meta">
+                                    <div><strong>Contact</strong>Stefano</div>
+                                    <div><strong>Address</strong>Calle Franco Passarella 8, Venezia (delivers across the centre incl. S. Stefano + Sant'Elena)</div>
+                                    <div><strong>WhatsApp</strong><a href="https://wa.me/393476032087" target="_blank" rel="noopener">+39 347 603 2087</a></div>
+                                    <div><strong>Hours</strong>Walk-in by day · WhatsApp orders D-1 · morning delivery to the boat</div>
+                                    <div><strong>Web</strong>facebook.com/ilfruttolo</div>
+                                </div>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Il+Fruttolo+Venezia" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+                            </div>
+                        </details>
+
+                        <details class="pfold top" id="p-bergamo" data-supplier-id="bergamo">
+                            <summary><div><div class="pfold__name">📍 Macelleria Bergamo — Cannaregio's island butcher</div><div class="pfold__hook">Cannaregio 1837/C · Carlo &amp; Paolo, two cousins · go-and-see + ask</div></div><span class="pfold__chev">▶</span></summary>
+                            <div class="pfold__body">
+                                <div class="pfold__recog">The on-island meat answer · Carpitella stays the Mestre wholesale call</div>
+                                <p>Run by two cousins, <strong>Carlo Nobile</strong> and <strong>Paolo Bergamo</strong>. Best variety of meat in Cannaregio: beef, pork, lamb, slow-roasted chickens, deli meats, farm-fresh eggs, a small selection of regional wines. Walk-in counter, mornings; extended hours Friday and Saturday. The on-island answer when you need quality protein without the Mestre run — pair with Carpitella in Mestre for whole-animal pre-orders, wagyu, or dry-aged. <span class="cau cau--high" data-fix="WhatsApp / direct number not yet confirmed by Littoralicious. Walk in on the first port call, ask Carlo or Paolo directly for the WhatsApp + delivery terms, then send the update via the supplier-update form on the article. Don't rely on a phone number you can't verify in person — and don't print one we haven't double-checked.">Verify the number on first visit</span> <span class="cau cau--med" data-fix="Open mornings only most days, with extended hours Fri + Sat. Plan the meat run before noon.">Mornings only</span></p>
+                                <div class="pfold__meta">
+                                    <div><strong>Owners</strong>Carlo Nobile &amp; Paolo Bergamo (cousins)</div>
+                                    <div><strong>Address</strong>Cannaregio 1837/C, 30121 Venezia VE</div>
+                                    <div><strong>Phone / WhatsApp</strong>Confirm on first visit — not yet verified by Littoralicious</div>
+                                    <div><strong>Hours</strong>Mornings · extended Fri + Sat</div>
+                                </div>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Macelleria+Bergamo+Cannaregio+1837+Venezia" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+                            </div>
+                        </details>
+
+                        <details class="pfold top" id="p-sapori" data-supplier-id="sapori">
                             <summary><div><div class="pfold__name">📍 I Sapori di Sant'Erasmo (Finotello family) — direct supply</div><div class="pfold__hook">Via de la Boaria Vecia 6, Sant'Erasmo · +39 347 059 4687 · by appointment</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Founding family · Slow Food Presidium · the shortest possible supply chain</div>
@@ -349,7 +418,7 @@
                     <summary><div class="sfold__titlewrap"><div class="sfold__title">Specialty Shops &amp; Wine</div><div class="sfold__desc">Aliani for the Parmigiano wheel. Mascari for the Veneto wine case + spices. Schiavi for the natural-leaning serious cellar.</div></div><span class="sfold__count">5 picks</span><span class="sfold__chev">▶</span></summary>
                     <div class="sfold__body">
 
-                        <details class="pfold top" id="p-aliani">
+                        <details class="pfold top" id="p-aliani" data-supplier-id="aliani">
                             <summary><div><div class="pfold__name">📍 Aliani Casa del Parmigiano</div><div class="pfold__hook">San Polo 214/215, Campo Bella Vienna · since 1936</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Three generations · Veneto register of historic shops</div>
@@ -362,7 +431,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold top" id="p-mascari">
+                        <details class="pfold top" id="p-mascari" data-supplier-id="mascari">
                             <summary><div><div class="pfold__name">📍 Antica Drogheria Mascari</div><div class="pfold__hook">San Polo 381, Ruga dei Spezieri · since 1948 · +39 041 522 9762</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Last serious spice merchant on the historic spice street · 600+ wine labels</div>
@@ -377,7 +446,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold top" id="p-schiavi">
+                        <details class="pfold top" id="p-schiavi" data-supplier-id="schiavi">
                             <summary><div><div class="pfold__name">📍 Cantine del Vino già Schiavi (Al Bottegon)</div><div class="pfold__hook">Dorsoduro 992, Fondamenta Nani · +39 041 523 0034</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Iconic Dorsoduro merchant + bàcaro · serious Veneto labels by the case</div>
@@ -392,7 +461,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold" id="p-salvmeria">
+                        <details class="pfold" id="p-salvmeria" data-supplier-id="salvmeria">
                             <summary><div><div class="pfold__name">📍 Osteria Salvmeria (Via Garibaldi)</div><div class="pfold__hook">Via Giuseppe Garibaldi 1769, Castello · +39 041 522 3971</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Bacaro-deli minutes from Sant'Elena · Slow Food presidia</div>
@@ -406,7 +475,7 @@
                             </div>
                         </details>
 
-                        <details class="pfold warn" id="p-domori">
+                        <details class="pfold warn" id="p-domori" data-supplier-id="domori">
                             <summary><div><div class="pfold__name">📍 Cantina Do Mori (since 1462)</div><div class="pfold__hook">San Polo 429, Calle dei Do Mori · oldest bàcaro in Venice</div></div><span class="pfold__chev">▶</span></summary>
                             <div class="pfold__body">
                                 <div class="pfold__recog">Cultural reference, not chef-grade · go just after opening, listen, leave</div>
@@ -514,6 +583,7 @@
         };
     </script>
     <script defer src="../assets/js/port-call-map-only.js"></script>
+    <script defer src="../assets/js/supplier-rating.js"></script>
     <script>
     window.addEventListener('load', function () {
         if (!window.PCV_DATA || !window.PCV_DATA.WATCHOUTS) return;
