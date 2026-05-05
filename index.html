@@ -217,12 +217,12 @@
         var noResults = document.getElementById('no-results');
         var searchCount = document.getElementById('search-count');
         var filterBtns = document.querySelectorAll('.search-filter');
-        var articles = articleList.querySelectorAll('.article-card');
         var activeFilter = 'all';
 
         function filterArticles() {
             var query = searchInput.value.toLowerCase().trim();
             var visible = 0;
+            var articles = articleList.querySelectorAll('.article-card');
 
             articles.forEach(function(card) {
                 var title = card.querySelector('.article-card__title').textContent.toLowerCase();
@@ -271,6 +271,47 @@
         // Set initial active style
         filterBtns[0].style.borderColor = 'var(--color-sea)';
         filterBtns[0].style.color = 'var(--color-sea)';
+    })();
+
+    // Auto-prepend any articles in data/articles.json that aren't already in the DOM.
+    // Lets a chef publish by editing the JSON only — no homepage hand-edit needed.
+    (function autoPrependFromJson() {
+        var list = document.getElementById('article-list');
+        if (!list) return;
+        fetch('data/articles.json', { cache: 'no-store' }).then(function(r) {
+            return r.ok ? r.json() : null;
+        }).then(function(data) {
+            if (!data || !Array.isArray(data.articles)) return;
+            var present = {};
+            list.querySelectorAll('.article-card a[href^="articles/"]').forEach(function(a) {
+                var m = a.getAttribute('href').match(/articles\/([^.\/]+)\.html/);
+                if (m) present[m[1]] = true;
+            });
+            var cats = (data.categories) || {};
+            // Sort newest first.
+            var fresh = data.articles
+                .filter(function(a) { return a && a.slug && !present[a.slug]; })
+                .sort(function(a, b) { return (b.date || '').localeCompare(a.date || ''); });
+            if (!fresh.length) return;
+            var anchor = list.querySelector('.article-card');
+            fresh.forEach(function(a) {
+                var catName = (cats[a.category] && cats[a.category].name) || a.category || '';
+                var tags = (a.tags || []).join(' ').replace(/"/g, '');
+                var card = document.createElement('article');
+                card.className = 'article-card';
+                card.setAttribute('data-category', catName);
+                card.setAttribute('data-tags', tags);
+                card.innerHTML =
+                    '<div class="article-card__meta">' +
+                        '<span class="article-card__category">' + catName + '</span>' +
+                        '<span>' + (a.read_time ? a.read_time + ' min' : '') + '</span>' +
+                    '</div>' +
+                    '<h3 class="article-card__title">' +
+                        '<a href="articles/' + a.slug + '.html">' + a.title + '</a>' +
+                    '</h3>';
+                if (anchor) list.insertBefore(card, anchor); else list.appendChild(card);
+            });
+        }).catch(function() { /* fallback: hardcoded list still renders */ });
     })();
     </script>
 </body>
