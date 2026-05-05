@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lons-le-Saunier, Jura — Terroir · The World Affair</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<!-- Port Call kit (carte interactive + carte latérale repliable + tags + vote) -->
+<link rel="stylesheet" href="../_assets/port-call/port-call-vars.css">
+<link rel="stylesheet" href="../_assets/port-call/port-call.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+:root {
+  --bg: #f4f1eb;
+  --bg2: #faf8f4;
+  --ink: #1a1a1a;
+  --ink-soft: #3d3d3d;
+  --ink-mut: #7a7672;
+  --accent: #8b6914;
+  --accent-sea: #5b8a9a;
+  --accent-wine: #8b4557;
+  --line: #d4cfc5;
+  --line-2: rgba(139,105,20,0.15);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 15.5px;
+}
+.sticky {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(244,241,235,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+.inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: baseline; }
+.brand { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); }
+.brand a { color: inherit; text-decoration: none; }
+.brand a:hover { text-decoration: underline; }
+.date { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mut); letter-spacing: 1px; }
+.hero { max-width: 900px; margin: 0 auto; padding: 64px 24px 48px; border-bottom: 1px solid var(--line); }
+.hero .kicker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 8px; }
+.hero .sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--ink-soft); margin-bottom: 28px; }
+.hero .lead { font-size: 17px; color: var(--ink-soft); max-width: 720px; }
+.section { max-width: 900px; margin: 0 auto; padding: 44px 24px; border-bottom: 1px solid var(--line); }
+.section h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; margin-bottom: 18px; letter-spacing: -0.01em; }
+.section .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); border: 1px solid var(--line); padding: 4px 10px; margin-bottom: 12px; }
+.section p { color: var(--ink-soft); max-width: 780px; margin-bottom: 14px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+@media (max-width: 720px) { .cols { grid-template-columns: 1fr; gap: 20px; } .hero h1 { font-size: 44px; } }
+.pullq { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: var(--accent); padding: 14px 22px; border-left: 3px solid var(--accent); margin: 12px 0; background: var(--bg2); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-mut); font-weight: 500; }
+td .mut { color: var(--ink-mut); font-size: 12px; margin-top: 2px; }
+tr:hover td { background: var(--bg2); }
+ul { padding-left: 22px; color: var(--ink-soft); }
+li { margin-bottom: 6px; }
+a { color: var(--accent-sea); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--ink); }
+.footer { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mut); text-align: center; letter-spacing: 1px; }
+.footer a { color: var(--ink-mut); }
+.footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="sticky"><div class="inner">
+  <div class="brand"><a href="../">The World Affair</a> · Terroir</div>
+  <div class="lang-switch" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px"><a href="index.html" class="active" style="color:#fafafa;background:#1a1a1a;border:1px solid #1a1a1a;padding:3px 8px;text-decoration:none">FR</a> <a href="en.html" style="color:#7a7672;border:1px solid #d4cfc5;padding:3px 8px;text-decoration:none">EN</a></div>
+  <div class="date">05 May 2026</div>
+</div></div>
+
+<section class="hero">
+  <div class="kicker">Terroir · Jura, France</div>
+  <h1>Lons-le-Saunier</h1>
+  <div class="sub">Sel, Comté, Vin Jaune — la France lente</div>
+  <p class="lead">Lons-le-Saunier ne se donne pas. C'est une petite préfecture de 17 000 âmes posée sur le Revermont, là où la plaine de Bresse vient mourir dans le premier plateau du Jura. Le sol y suinte du sel depuis l'âge du bronze — d'où le nom (saunier = saulnier, ouvrier du sel) — et c'est ce sel qui a fixé tout le reste : les vaches montbéliardes qui boivent saumure pour faire un lait gras, le Comté qui s'affine en cave fraîche, le Morteau qui se fume au tuyé. Ajoutez le Savagnin qui pousse à 30 km à l'est, sur les marnes bleues de Château-Chalon, et vous tenez la formule : un terroir de patience.</p>
+</section>
+
+<section class="section">
+  <span class="tag">Les quartiers</span>
+  <h2>Où ça vit</h2>
+  <p>Lons est petit — tout se fait à pied en quinze minutes. Les vraies adresses se trouvent dans trois axes ; le reste est en périphérie ou dans le vignoble.</p>
+  <ul>
+    <li><strong>Place de la Liberté &amp; rue du Commerce</strong> — le cœur historique, statue de Rouget de Lisle (Bartholdi, 1882), 146 m d'arcades médiévales en pierre dorée — la seule rue à arcades de Franche-Comté. Pâtisserie Pelen, Fromagerie Vagne, Caveau des Jacobins.</li>
+    <li><strong>Place de la Comédie / Halles</strong> — le marché (jeudi, samedi), le Bistrot des Halles, le Café de la Comédie. C'est ici qu'on déjeune les jours de marché.</li>
+    <li><strong>Quartier de la Chevalerie &amp; Source Salée</strong> — parc aux platanes, kiosque 1900, et le bassin des sources salines historiques (l'eau y est encore à 30 g/L). Le passé thermal de la ville.</li>
+    <li><strong>Quartier du Stade / Pavigny</strong> — au sud-est, en lisière de centre. Le Comtois et Le Bouchon du Stade — adresses de bistrot pas touristiques.</li>
+    <li><strong>Montciel &amp; Chille</strong> — quartiers résidentiels au nord-est. Le Parenthèse pousse à 5 min en voiture, dans la campagne de Chille.</li>
+    <li><strong>Hors-ville</strong> — Arbois (15 km, capitale du vin du Jura), Château-Chalon (15 km, Vin Jaune), Poligny (25 km, capitale du Comté), Montigny-lès-Arsures, Pontarlier (absinthe). Le terroir n'est jamais centralisé — il faut rouler.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <span class="tag">Pourquoi maintenant</span>
+  <div class="pullq">Mai-juin : les comté d'estive arrivent en cave, les morilles tiennent encore, le Vin Jaune nouveau (millésime −6 ans, mis en mars) entre en bouteille. La saison où le Jura déplie tout.</div>
+</section>
+
+<section class="section">
+  <span class="tag">Histoire &amp; terroir</span>
+  <h2>D'où ça vient</h2>
+  <p>L'eau salée qui sort de terre ici a été exploitée depuis 5 000 ans avant J.-C. Les Romains y construisent une saline. La ville prend son essor médiéval grâce au sel et aux foires aux fromages. Pasteur naît à Dole en 1822, installe son labo à Arbois (15 km nord) et c'est sur le Vin Jaune de Pupillin qu'il tirera sa thèse de doctorat sur la fermentation alcoolique en 1857. Rouget de Lisle, fils de la ville (né rue du Commerce, 1760), composera la Marseillaise à Strasbourg en 1792 — sa statue par Bartholdi (le sculpteur de la Liberté) tient la place de la Liberté depuis 1882. Au XIXᵉ, la maison Bel y invente La Vache qui rit (1921). La ville thermale (sources salines, eau de la Source de l'Étoile) tourne encore.</p>
+</section>
+
+<section class="section">
+  <div class="cols">
+    <div>
+      <span class="tag">Ce qu'on mange</span>
+      <h2>À table</h2>
+      <p>Trois vérités qui ne se discutent pas. Le Comté — pas un, mais une famille : 18 mois de cave, gras et noisette ; 24 mois, plus salin et grenu ; 36 mois, sec et caramel. Goûter trois âges côte à côte est l'éducation de base, et tous les fromagers sérieux le proposent. La saucisse de Morteau (anneau sous bouchon de bois) et la Montbéliard (plus fine, plus fumée), accompagnées de cancoillotte fondue avec un trait d'ail et de vin blanc — la cuisine paysanne du Haut-Jura est faite de cela. La poularde de Bresse pochée au Vin Jaune et morilles est le plat-cathédrale, le plat qu'on commande pour comprendre pourquoi la région existe : le sotolon du Vin Jaune (4,5-diméthyl-2-furanone) lié au glutamate des morilles séchées et au gras de la volaille à pattes bleues — chimie pure.</p>
+    </div>
+    <div>
+      <span class="tag">Ce qu'on boit</span>
+      <h2>Au verre</h2>
+      <p>Le Jura compte sept cépages, pas le bordelais. Savagnin (le grand blanc, oxydatif ou ouillé), Chardonnay, Trousseau et Poulsard pour les rouges fluets, Pinot Noir, plus le Vin Jaune (Savagnin élevé 6 ans 3 mois sous voile en fût non ouillé, mis en clavelin de 62 cl) et le Vin de Paille (raisins passerillés trois mois, doux). Boire les Macvin (mistelle marc + moût) en apéritif, le Crémant du Jura à toute heure, et garder le Vin Jaune pour la table — Domaine Macle (Château-Chalon), Stéphane Tissot (Arbois), Jean-François Ganevat (Rotalier) sont les trois noms qu'on apprend en premier. Côté digestif : la liqueur de sapin (Distillerie Les Fils d'Émile Pernot, Pontarlier) et l'absinthe — interdite jusqu'en 2011 en France, redistillée à 30 km à Pontarlier.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="tag">Adresses signature</span>
+  <h2>Les trois à retenir</h2>
+  <p style="color: var(--ink-mut); font-size: 13px; margin-bottom: 18px;">Les trois tables qu'on garde si on n'a qu'une soirée. Le reste sous forme de carte et de fiches plus bas.</p>
+  <div class="pcv-berths" id="pcv-berths"></div>
+</section>
+
+<section class="section" style="padding-top: 24px;">
+  <span class="tag">La carte</span>
+  <h2>Où c'est, vraiment</h2>
+  <p style="color: var(--ink-mut); font-size: 13px; margin-bottom: 18px;">Survolez une fiche pour faire briller le marqueur. Carte latérale à droite (repliable, zoomable). Données brutes (CSV) : <a href="data.csv">télécharger</a></p>
+  <div class="pcv-map-wrap">
+    <div class="pcv-map-head"><strong>Lons-le-Saunier — Où tout se trouve</strong><span>Cliquez un marqueur pour téléphone, horaires, lien Maps</span></div>
+    <div id="pcv-map"></div>
+    <div class="pcv-legend" id="pcv-legend">
+      <button data-cat="berth"><i class="dot-berth"></i> Signature</button>
+      <button data-cat="market"><i class="dot-market"></i> Marché / Direct</button>
+      <button data-cat="shop"><i class="dot-shop"></i> Restaurant / Bar</button>
+      <button data-cat="mainland"><i class="dot-mainland"></i> Hors-ville</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 24px;">
+  <span class="tag">Les tables</span>
+  <div class="pcv-tier" data-tier="notime"><div class="pcv-tier__head"><h3>Si vous n'avez <strong style="color:#fafafa">qu'un soir</strong></h3><em>Une table marquante. Pas de débat.</em></div><div class="pcv-tier__list" id="pcv-list-notime"></div></div>
+  <div class="pcv-tier" data-tier="several"><div class="pcv-tier__head"><h3>Si vous restez <strong style="color:#fafafa">plusieurs jours</strong></h3><em>Les tables qu'on revisite. Quotidien soigné.</em></div><div class="pcv-tier__list" id="pcv-list-several"></div></div>
+  <div class="pcv-tier" data-tier="plenty"><div class="pcv-tier__head"><h3>Si vous voulez <strong style="color:#fafafa">aller plus loin</strong></h3><em>Curiosités, marchés, day-trips.</em></div><div class="pcv-tier__list" id="pcv-list-plenty"></div></div>
+</section>
+
+<section class="section">
+  <div class="cols">
+    <div>
+      <span class="tag">Une promenade</span>
+      <h2>Le chemin</h2>
+      <p>Partir place de la Liberté à l'aube, sous Rouget de Lisle qui pointe son violon. Descendre la rue du Commerce — la seule rue à arcades médiévales de Franche-Comté, 146 mètres de pierre dorée — passer devant la maison où il est né (n°24, plaque). Bifurquer à gauche par la rue Saint-Désiré : à l'église romane du XIᵉ, demander à voir la crypte — sarcophage mérovingien de saint Désiré, VIᵉ siècle. Sortir, traverser le parc de la Chevalerie (vieux platanes, kiosque 1900), redescendre par les Bains, longer le bassin de la Source Salée (l'eau y est encore à 30 g/L de sel), terminer au marché place de la Comédie. Quarante minutes. La ville se lit dans les odeurs : pierre humide, sel, levain, fumée de Morteau au tuyé du charcutier.</p>
+    </div>
+    <div>
+      <span class="tag">À éviter</span>
+      <h2>Ce qu'on laisse</h2>
+      <p>La rue du Commerce le samedi midi est piégée par deux pizzerias touristiques qui font passer un comté industriel pour un fromage de garde — passer son chemin, monter aux halles couvertes ou réserver chez Le Comtois. Éviter aussi les caves "de dégustation Vin Jaune" en centre-ville qui versent du Savagnin ouillé en faisant croire que c'est jaune : le vrai Vin Jaune se goûte chez le vigneron, à Château-Chalon (15 km).</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="tag">Le moment juste</span>
+  <div class="pullq">Mai-juin pour les morilles, le comté d'estive et le crémant frais. Septembre pour les vendanges et la Percée du Vin Jaune (premier week-end de février, mais c'est en septembre que les caves laissent vraiment goûter le Savagnin neuf).</div>
+</section>
+
+<section class="section">
+  <span class="tag">Sources</span>
+  <h2>Vérifications</h2>
+  <ul><li><a href='https://guide.michelin.com/fr/fr/bourgogne-franche-comte/lons-le-saunier' target='_blank' rel='noopener'>Guide Michelin — Restaurants Lons-le-Saunier & Arbois</a></li><li><a href='https://www.maison-du-comte.com/' target='_blank' rel='noopener'>Comté AOP — La Maison du Comté (Poligny)</a></li><li><a href='https://www.jura-vins.com/' target='_blank' rel='noopener'>Vins du Jura — CIVJ (Comité Interprofessionnel)</a></li><li><a href='https://www.lons-jura.fr/' target='_blank' rel='noopener'>Office de Tourisme Lons Jura</a></li><li><a href='https://www.salineroyale.com/' target='_blank' rel='noopener'>Salines Royales d'Arc-et-Senans (UNESCO)</a></li></ul>
+</section>
+
+<footer class="footer">
+  <a href="../">← Toutes les villes du Terroir</a>
+  &nbsp;·&nbsp;
+  <a href="../">Retour à la gazette</a>
+  <br><br>
+  46.6747, 5.5538
+</footer>
+
+<!-- Carte latérale (repliable, zoomable) -->
+<aside class="pcv-mini is-collapsed" id="pcv-mini">
+  <button class="pcv-mini__handle" id="pcv-mini-handle" aria-expanded="false">Carte Lons-le-Saunier</button>
+  <div id="pcv-mini-body">
+    <div class="pcv-mini__head"><strong>Où vous êtes</strong><span>scroll · survol · zoom</span></div>
+    <div id="pcv-mini-map"></div>
+    <div class="pcv-mini__active" id="pcv-mini-active">
+      <b>Survolez une fiche</b><span>La carte met en valeur l'adresse pointée.</span>
+    </div>
+  </div>
+</aside>
+
+<script src="data.js"></script>
+<script>
+window.PCV_CONFIG = {
+  articleId:    'terroir-lons-le-saunier-jura',
+  portName:     'Lons-le-Saunier',
+  center:       [46.6747, 5.5538],
+  zoom:         13,
+  cityRadiusKm: 25
+};
+</script>
+<script defer src="../_assets/port-call/port-call-render.js"></script>
+
+</body>
+</html>
