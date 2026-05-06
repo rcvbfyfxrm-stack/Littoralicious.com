@@ -1,203 +1,1979 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lons-le-Saunier, Jura — Terroir · The World Affair</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lons-le-Saunier — Terroir Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
-<!-- Port Call kit (carte interactive + carte latérale repliable + tags + vote) -->
+<!-- Port Call kit (existing — keeps card list, side map, vote) -->
 <link rel="stylesheet" href="../_assets/port-call/port-call-vars.css">
 <link rel="stylesheet" href="../_assets/port-call/port-call.css">
+  <link rel="stylesheet" href="../_assets/port-call/tcard.css">
+
+<!-- Leaflet (hero map + side map both use it) -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <style>
-:root {
-  --bg: #f4f1eb;
-  --bg2: #faf8f4;
-  --ink: #1a1a1a;
-  --ink-soft: #3d3d3d;
-  --ink-mut: #7a7672;
-  --accent: #8b6914;
-  --accent-sea: #5b8a9a;
-  --accent-wine: #8b4557;
-  --line: #d4cfc5;
-  --line-2: rgba(139,105,20,0.15);
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.75;
-  font-size: 15.5px;
-}
-.sticky {
-  position: sticky; top: 0; z-index: 10;
-  background: rgba(244,241,235,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-  padding: 12px 0;
-}
-.inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: baseline; }
-.brand { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); }
-.brand a { color: inherit; text-decoration: none; }
-.brand a:hover { text-decoration: underline; }
-.date { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mut); letter-spacing: 1px; }
-.hero { max-width: 900px; margin: 0 auto; padding: 64px 24px 48px; border-bottom: 1px solid var(--line); }
-.hero .kicker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 8px; }
-.hero .sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: var(--ink-soft); margin-bottom: 28px; }
-.hero .lead { font-size: 17px; color: var(--ink-soft); max-width: 720px; }
-.section { max-width: 900px; margin: 0 auto; padding: 44px 24px; border-bottom: 1px solid var(--line); }
-.section h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; margin-bottom: 18px; letter-spacing: -0.01em; }
-.section .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); border: 1px solid var(--line); padding: 4px 10px; margin-bottom: 12px; }
-.section p { color: var(--ink-soft); max-width: 780px; margin-bottom: 14px; }
-.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-@media (max-width: 720px) { .cols { grid-template-columns: 1fr; gap: 20px; } .hero h1 { font-size: 44px; } }
-.pullq { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: var(--accent); padding: 14px 22px; border-left: 3px solid var(--accent); margin: 12px 0; background: var(--bg2); }
-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
-th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-mut); font-weight: 500; }
-td .mut { color: var(--ink-mut); font-size: 12px; margin-top: 2px; }
-tr:hover td { background: var(--bg2); }
-ul { padding-left: 22px; color: var(--ink-soft); }
-li { margin-bottom: 6px; }
-a { color: var(--accent-sea); text-decoration: underline; text-underline-offset: 2px; }
-a:hover { color: var(--ink); }
-.footer { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mut); text-align: center; letter-spacing: 1px; }
-.footer a { color: var(--ink-mut); }
-.footer a:hover { color: var(--accent); }
+  :root {
+    --paper: #fafafa;
+    --paper-2: #f2efe8;
+    --ink: #0a0a0a;
+    --ink-2: #3a3a3a;
+    --ink-3: #6a6a6a;
+    --rule: #d7d2c4;
+    --sea: #2d4a5e;
+    --sea-2: #1e3443;
+    --color-subtle: #ede9de;
+    --gold: #8a6a2e;
+    --amber: #a86a2f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Hero */
+  .hero {
+    background: var(--paper);
+    padding: 56px 20px 32px;
+    text-align: center;
+    border-bottom: 2px solid var(--ink);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.6em;
+    color: var(--ink);
+    letter-spacing: 10px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .hero .region {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--ink-2);
+    font-size: 0.88em;
+    margin-top: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero .philosophy {
+    color: var(--sea);
+    font-size: 1em;
+    margin-top: 22px;
+    font-style: italic;
+    font-family: 'Playfair Display', Georgia, serif;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .signature {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--ink-3);
+    font-size: 0.72em;
+    margin-top: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .hero .date {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--ink-3);
+    font-size: 0.68em;
+    margin-top: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .hero .lang-switch { margin-top: 22px; }
+  .hero .lang-switch a {
+    display: inline-block; padding: 4px 10px; font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    border: 1px solid var(--rule); color: var(--ink-3); margin: 0 3px;
+  }
+  .hero .lang-switch a.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* Sticky quicknav */
+  .quicknav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,250,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 16px; text-align: center;
+    overflow-x: auto; white-space: nowrap;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .quicknav a {
+    display: inline-block;
+    color: var(--ink-2); font-size: 0.7em;
+    text-transform: uppercase; letter-spacing: 2px;
+    padding: 6px 10px; border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .quicknav a:hover { color: var(--sea); border-bottom-color: var(--sea); }
+  .quicknav .sep { color: var(--rule); margin: 0 2px; }
+
+  .container { max-width: 820px; margin: 0 auto; padding: 0 18px 60px; }
+
+  /* Hero Leaflet map (full-width inside container) */
+  .hero-map { position: relative; margin: 22px 0 6px; border: 1px solid var(--rule); background: var(--paper-2); }
+  .hero-map__head {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+    padding: 10px 14px; border-bottom: 1px solid var(--rule);
+    background: #1a2a3a; color: #e8e0d4;
+  }
+  .hero-map__head strong { color: #c4a35a; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .hero-map__head span { font-size: 10px; color: #94a3b8; font-family: 'JetBrains Mono', monospace; }
+  #map { width: 100%; height: 360px; }
+
+  /* Floating active-pin pill */
+  .floating-active {
+    position: fixed; bottom: 18px; right: 18px; z-index: 900;
+    background: #1a2a3a; color: #e8e0d4;
+    border: 2px solid #c4a35a; padding: 12px 16px; max-width: 320px;
+    font-family: 'Inter', system-ui, sans-serif; font-size: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3); display: none;
+  }
+  .floating-active.is-visible { display: block; }
+  .floating-active b { display: block; color: #c4a35a; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .floating-active strong { color: #fafafa; }
+  .floating-active a { color: #7ba3bd; text-decoration: underline; display: inline-block; margin-top: 6px; font-size: 11px; }
+  @media (max-width: 600px) { .floating-active { display: none !important; } }
+
+  /* Instructions banner */
+  .instructions {
+    font-family: system-ui, -apple-system, sans-serif;
+    text-align: center; color: var(--ink-3);
+    font-size: 0.8em; padding: 14px 0 8px;
+    font-style: italic; letter-spacing: 0.5px;
+  }
+  .instructions strong { color: var(--sea); font-style: normal; font-weight: 500; }
+
+  /* Drop-cap lead */
+  .lead {
+    font-size: 1.02em; line-height: 1.8;
+    margin: 22px 0 18px; color: var(--ink);
+  }
+  .lead::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.4em; float: left;
+    line-height: 0.9; padding: 6px 10px 0 0;
+    color: var(--sea); font-weight: 900;
+  }
+  .lead p { margin-bottom: 14px; }
+  .lead p:last-child { margin-bottom: 0; }
+  .lead strong { color: var(--ink); }
+  .lead a, .prose a { border-bottom: 1px dotted var(--sea); color: var(--sea-2); }
+  .lead em, .prose em { font-style: italic; }
+
+  /* Funfact + Alert */
+  .funfact {
+    background: #fbf9f0; border-left: 3px solid var(--sea);
+    padding: 14px 20px; margin: 20px auto;
+    font-size: 0.94rem; color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic; line-height: 1.65; max-width: 65ch;
+  }
+  .funfact::before {
+    content: 'FUN FACT · ';
+    font-family: 'JetBrains Mono', monospace; font-style: normal;
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    color: var(--sea); font-weight: 700;
+    display: inline-block; margin-right: 6px;
+  }
+  .funfact strong { color: var(--ink); font-style: normal; font-weight: 600; }
+  .alert {
+    background: #fff6e8; border-left: 4px solid var(--amber);
+    padding: 14px 18px; margin: 18px 0;
+    font-size: 0.92em; line-height: 1.65;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .alert .alert-label {
+    color: var(--amber); font-weight: 600;
+    font-size: 0.8em; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 6px; display: block;
+  }
+  .alert a { border-bottom: 1px dotted var(--amber); color: var(--amber); }
+
+  /* Overlined prose section */
+  .prose { margin: 32px 0; }
+  .prose .overline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72em; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .prose .subhead {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic; font-size: 1.2em;
+    color: var(--ink-2); margin-bottom: 14px;
+  }
+  .prose p {
+    font-size: 1em; line-height: 1.8; margin-bottom: 14px;
+    color: var(--ink); font-family: Georgia, 'Times New Roman', serif;
+  }
+  .prose ul { list-style: none; padding: 0; margin: 12px 0; }
+  .prose ul li {
+    padding: 10px 0; border-bottom: 1px dashed var(--rule);
+    font-size: 0.96em; line-height: 1.7;
+    color: var(--ink-2); font-family: Georgia, 'Times New Roman', serif;
+  }
+  .prose ul li:last-child { border-bottom: none; }
+  .prose ul li strong { color: var(--ink); font-weight: 600; }
+
+  /* Section fold (sfold) */
+  details.sfold { border-top: 1px solid var(--rule); margin-top: 18px; }
+  details.sfold > summary {
+    list-style: none; cursor: pointer;
+    padding: 18px 0 10px; display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center; gap: 14px;
+    transition: background 0.15s;
+  }
+  details.sfold > summary::-webkit-details-marker { display: none; }
+  details.sfold > summary:hover { background: var(--color-subtle); }
+  .sfold__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3em; color: var(--ink);
+    letter-spacing: 2px; text-transform: uppercase; font-weight: 700;
+  }
+  .sfold__desc {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--ink-3); font-size: 0.82em;
+    font-style: italic; margin-top: 3px; letter-spacing: 0.3px;
+  }
+  .sfold__count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68em; color: var(--sea);
+    background: var(--paper-2); border: 1px solid var(--rule);
+    padding: 4px 10px; border-radius: 14px;
+    letter-spacing: 0.8px; text-transform: uppercase;
+  }
+  .sfold__chev {
+    color: var(--sea); font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4em; line-height: 1; transition: transform 0.2s;
+    width: 18px; text-align: center;
+  }
+  details.sfold[open] > summary .sfold__chev { transform: rotate(45deg); }
+  details.sfold > summary .sfold__chev::before { content: "+"; }
+  .sfold__body { padding: 6px 0 14px; }
+
+  /* Sources list */
+  ul.sources { list-style: none; padding: 0; }
+  ul.sources li {
+    padding: 8px 0; border-bottom: 1px dashed var(--rule);
+    font-size: 0.88em; font-family: system-ui, sans-serif;
+  }
+  ul.sources li:last-child { border-bottom: none; }
+  ul.sources li a { color: var(--sea-2); border-bottom: 1px dotted var(--sea); }
+
+  /* Footer */
+  .footer {
+    text-align: center; color: var(--ink-3);
+    font-size: 0.8em; padding: 50px 0 20px;
+    border-top: 2px solid var(--ink); margin-top: 40px;
+  }
+  .footer .sig {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--ink-3); font-size: 0.72em;
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  /* tweak port-call kit colors so it sits on the cream paper */
+  .pcv-tier { background: transparent !important; }
+  .pcv-card { background: #fff; border: 1px solid var(--rule); }
+  .pcv-card.is-hover { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* === Extended palette (Venice parity) === */
+  :root {
+    --brown-red: #7a3530;
+    --brown-deep: #5b3a26;
+    --indigo: #3a3a6a;
+    --green: #3a6a45;
+    --purple: #5a3a6a;
+    --teal: #2a6a6a;
+    --beige: #8a7350;
+    --mustard: #a07a20;
+    --muted-red: #8a3a3a;
+    --red-orange: #b04a2a;
+  }
+
+  /* Tier sub-headers (used in tables sfold) */
+  .tier-sub {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.9em; color: var(--sea);
+    letter-spacing: 3px; text-transform: uppercase;
+    margin: 18px 0 8px; padding-bottom: 4px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .tier-sub:first-child { margin-top: 6px; }
+  .tier-note {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--ink-3); font-size: 0.82em;
+    font-style: italic; margin-bottom: 6px;
+  }
+
+  /* Place fold (pfold) */
+  details.pfold {
+    background: #fff; border: 1px solid var(--rule);
+    border-left-width: 3px; border-radius: 0;
+    margin: 8px 0;
+  }
+  details.pfold > summary {
+    list-style: none; cursor: pointer; padding: 12px 16px;
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; gap: 12px;
+  }
+  details.pfold > summary::-webkit-details-marker { display: none; }
+  details.pfold > summary:hover { background: var(--color-subtle); }
+  .pfold__name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05em; color: var(--ink);
+    font-weight: 700; letter-spacing: 0.3px;
+  }
+  .pfold__hook {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--ink-3); font-size: 0.8em;
+    margin-top: 3px; line-height: 1.45;
+  }
+  .pfold__hook em { color: var(--sea-2); font-style: italic; }
+  .pfold__chev {
+    color: var(--ink-3); font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15em; line-height: 1; transition: transform 0.2s;
+    width: 18px; text-align: center;
+  }
+  details.pfold[open] > summary .pfold__chev { transform: rotate(45deg); }
+  details.pfold > summary .pfold__chev::before { content: "+"; }
+  .pfold__body { padding: 4px 16px 16px; border-top: 1px solid var(--rule); font-size: 0.92em; }
+  .pfold__desc { color: var(--ink); line-height: 1.7; margin-bottom: 12px; }
+  .pfold__recog { font-style: italic; color: var(--ink-2); font-size: 0.86em; margin-bottom: 8px; }
+  .pfold__meta {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px 14px; background: var(--paper);
+    border-top: 1px dashed var(--rule); padding: 10px 0 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.82em; color: var(--ink-2);
+  }
+  .pfold__meta strong {
+    display: block; font-size: 0.78em; color: var(--sea);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 2px; font-weight: 500;
+  }
+  details.pfold--restaurant { border-left-color: var(--brown-red); }
+  details.pfold--bougie { border-left-color: var(--gold); background: #fcf8ee; }
+  details.pfold--bar { border-left-color: var(--amber); }
+  details.pfold--music { border-left-color: var(--purple); }
+  details.pfold--market { border-left-color: var(--teal); }
+  details.pfold--cafe { border-left-color: var(--beige); }
+  details.pfold--walk { border-left-color: var(--green); }
+  details.pfold--culture { border-left-color: var(--indigo); }
+  details.pfold--producer { border-left-color: var(--brown-deep); }
+  details.pfold--dish { border-left-color: var(--mustard); background: #fcf7e4; }
+  details.pfold--avoid { border-left-color: var(--muted-red); background: #fbecec; }
+  details.pfold--event { border-left-color: var(--indigo); }
+
+  /* Three Tables podium */
+  .three-tables { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 14px 0 4px; }
+  @media (max-width: 760px) { .three-tables { grid-template-columns: 1fr; } }
+  .tt-col { background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--sea); padding: 18px 14px; }
+  .tt-col h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 0.95em; color: var(--sea); text-align: center; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .tt-col .subtitle { font-family: system-ui, -apple-system, sans-serif; text-align: center; color: var(--ink-3); font-size: 0.72em; margin-bottom: 12px; font-style: italic; }
+  .tt-col ol { list-style: none; counter-reset: tt-c; padding: 0; }
+  .tt-col li { counter-increment: tt-c; padding: 9px 0; border-bottom: 1px dashed var(--rule); font-size: 0.84em; line-height: 1.45; color: var(--ink); position: relative; padding-left: 24px; }
+  .tt-col li::before { content: counter(tt-c); position: absolute; left: 0; top: 9px; color: var(--sea); font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.92em; }
+  .tt-col li:last-child { border-bottom: none; }
+  .tt-col li a { color: var(--ink); border-bottom: 1px dotted var(--sea); }
+  .tt-col li .meta { font-family: system-ui, -apple-system, sans-serif; display: block; color: var(--ink-3); font-size: 0.82em; margin-top: 2px; font-style: italic; }
+
+  /* Timeline */
+  .timeline { background: #fff; border: 1px solid var(--rule); padding: 12px 18px; margin: 14px 0 4px; }
+  .timeline .slot { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .timeline .slot:last-child { border-bottom: none; }
+  .timeline .time { font-family: 'JetBrains Mono', monospace; color: var(--sea); font-size: 0.78em; letter-spacing: 1.5px; text-transform: uppercase; }
+  .timeline .plan { font-size: 0.92em; line-height: 1.65; color: var(--ink); }
+  .timeline .plan a { color: var(--ink); border-bottom: 1px dotted var(--sea); }
+  .timeline .plan strong { color: var(--ink); }
+  @media (max-width: 600px) { .timeline .slot { grid-template-columns: 1fr; gap: 4px; } }
+
+  /* Calendar */
+  table.calendar { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 0.82em; background: #fff; border: 1px solid var(--rule); }
+  table.calendar thead { background: var(--paper-2); }
+  table.calendar th { font-family: 'Playfair Display', Georgia, serif; color: var(--sea); font-weight: 700; text-align: left; padding: 10px 10px; border-bottom: 2px solid var(--rule); font-size: 0.92em; letter-spacing: 1px; text-transform: uppercase; }
+  table.calendar td { padding: 9px 10px; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+  table.calendar tr:last-child td { border-bottom: none; }
+  table.calendar tr:hover td { background: var(--color-subtle); color: var(--ink); }
+  table.calendar td.month { color: var(--sea); font-weight: 600; font-family: 'Playfair Display', Georgia, serif; letter-spacing: 1px; white-space: nowrap; }
+
+  /* Follow grid */
+  .follow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+  .follow-card { background: #fff; border: 1px solid var(--rule); border-left: 3px solid var(--indigo); padding: 12px 14px; }
+  .follow-card .handle { font-family: 'JetBrains Mono', monospace; font-size: 0.88em; color: var(--indigo); font-weight: 500; }
+  .follow-card .why { font-family: system-ui, -apple-system, sans-serif; color: var(--ink-3); font-size: 0.78em; margin-top: 4px; line-height: 1.5; }
+
+  /* Plain list */
+  ul.plain { list-style: none; padding: 0; margin: 10px 0; }
+  ul.plain li { padding: 8px 0; color: var(--ink-2); font-size: 0.92em; line-height: 1.65; border-bottom: 1px dashed var(--rule); }
+  ul.plain li:last-child { border-bottom: none; }
+  ul.plain li strong { color: var(--ink); }
+
+  /* Map link button */
+  .map-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 7px 14px; background: var(--paper); color: var(--sea); border: 1px solid var(--sea); font-family: system-ui, -apple-system, sans-serif; font-size: 0.76em; font-weight: 500; letter-spacing: 0.6px; transition: all 0.15s; }
+  .map-link:hover { background: var(--sea); color: var(--paper); }
 </style>
 </head>
 <body>
 
-<div class="sticky"><div class="inner">
-  <div class="brand"><a href="../">The World Affair</a> · Terroir</div>
-  <div class="lang-switch" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px"><a href="index.html" class="active" style="color:#fafafa;background:#1a1a1a;border:1px solid #1a1a1a;padding:3px 8px;text-decoration:none">FR</a> <a href="en.html" style="color:#7a7672;border:1px solid #d4cfc5;padding:3px 8px;text-decoration:none">EN</a></div>
-  <div class="date">05 May 2026</div>
-</div></div>
-
-<section class="hero">
-  <div class="kicker">Terroir · Jura, France</div>
-  <h1>Lons-le-Saunier</h1>
-  <div class="sub">Sel, Comté, Vin Jaune — la France lente</div>
-  <p class="lead">Lons-le-Saunier ne se donne pas. C'est une petite préfecture de 17 000 âmes posée sur le Revermont, là où la plaine de Bresse vient mourir dans le premier plateau du Jura. Le sol y suinte du sel depuis l'âge du bronze — d'où le nom (saunier = saulnier, ouvrier du sel) — et c'est ce sel qui a fixé tout le reste : les vaches montbéliardes qui boivent saumure pour faire un lait gras, le Comté qui s'affine en cave fraîche, le Morteau qui se fume au tuyé. Ajoutez le Savagnin qui pousse à 30 km à l'est, sur les marnes bleues de Château-Chalon, et vous tenez la formule : un terroir de patience.</p>
-</section>
-
-<section class="section">
-  <span class="tag">Les quartiers</span>
-  <h2>Où ça vit</h2>
-  <p>Lons est petit — tout se fait à pied en quinze minutes. Les vraies adresses se trouvent dans trois axes ; le reste est en périphérie ou dans le vignoble.</p>
-  <ul>
-    <li><strong>Place de la Liberté &amp; rue du Commerce</strong> — le cœur historique, statue de Rouget de Lisle (Bartholdi, 1882), 146 m d'arcades médiévales en pierre dorée — la seule rue à arcades de Franche-Comté. Pâtisserie Pelen, Fromagerie Vagne, Caveau des Jacobins.</li>
-    <li><strong>Place de la Comédie / Halles</strong> — le marché (jeudi, samedi), le Bistrot des Halles, le Café de la Comédie. C'est ici qu'on déjeune les jours de marché.</li>
-    <li><strong>Quartier de la Chevalerie &amp; Source Salée</strong> — parc aux platanes, kiosque 1900, et le bassin des sources salines historiques (l'eau y est encore à 30 g/L). Le passé thermal de la ville.</li>
-    <li><strong>Quartier du Stade / Pavigny</strong> — au sud-est, en lisière de centre. Le Comtois et Le Bouchon du Stade — adresses de bistrot pas touristiques.</li>
-    <li><strong>Montciel &amp; Chille</strong> — quartiers résidentiels au nord-est. Le Parenthèse pousse à 5 min en voiture, dans la campagne de Chille.</li>
-    <li><strong>Hors-ville</strong> — Arbois (15 km, capitale du vin du Jura), Château-Chalon (15 km, Vin Jaune), Poligny (25 km, capitale du Comté), Montigny-lès-Arsures, Pontarlier (absinthe). Le terroir n'est jamais centralisé — il faut rouler.</li>
-  </ul>
-</section>
-
-<section class="section">
-  <span class="tag">Pourquoi maintenant</span>
-  <div class="pullq">Mai-juin : les comté d'estive arrivent en cave, les morilles tiennent encore, le Vin Jaune nouveau (millésime −6 ans, mis en mars) entre en bouteille. La saison où le Jura déplie tout.</div>
-</section>
-
-<section class="section">
-  <span class="tag">Histoire &amp; terroir</span>
-  <h2>D'où ça vient</h2>
-  <p>L'eau salée qui sort de terre ici a été exploitée depuis 5 000 ans avant J.-C. Les Romains y construisent une saline. La ville prend son essor médiéval grâce au sel et aux foires aux fromages. Pasteur naît à Dole en 1822, installe son labo à Arbois (15 km nord) et c'est sur le Vin Jaune de Pupillin qu'il tirera sa thèse de doctorat sur la fermentation alcoolique en 1857. Rouget de Lisle, fils de la ville (né rue du Commerce, 1760), composera la Marseillaise à Strasbourg en 1792 — sa statue par Bartholdi (le sculpteur de la Liberté) tient la place de la Liberté depuis 1882. Au XIXᵉ, la maison Bel y invente La Vache qui rit (1921). La ville thermale (sources salines, eau de la Source de l'Étoile) tourne encore.</p>
-</section>
-
-<section class="section">
-  <div class="cols">
-    <div>
-      <span class="tag">Ce qu'on mange</span>
-      <h2>À table</h2>
-      <p>Trois vérités qui ne se discutent pas. Le Comté — pas un, mais une famille : 18 mois de cave, gras et noisette ; 24 mois, plus salin et grenu ; 36 mois, sec et caramel. Goûter trois âges côte à côte est l'éducation de base, et tous les fromagers sérieux le proposent. La saucisse de Morteau (anneau sous bouchon de bois) et la Montbéliard (plus fine, plus fumée), accompagnées de cancoillotte fondue avec un trait d'ail et de vin blanc — la cuisine paysanne du Haut-Jura est faite de cela. La poularde de Bresse pochée au Vin Jaune et morilles est le plat-cathédrale, le plat qu'on commande pour comprendre pourquoi la région existe : le sotolon du Vin Jaune (4,5-diméthyl-2-furanone) lié au glutamate des morilles séchées et au gras de la volaille à pattes bleues — chimie pure.</p>
-    </div>
-    <div>
-      <span class="tag">Ce qu'on boit</span>
-      <h2>Au verre</h2>
-      <p>Le Jura compte sept cépages, pas le bordelais. Savagnin (le grand blanc, oxydatif ou ouillé), Chardonnay, Trousseau et Poulsard pour les rouges fluets, Pinot Noir, plus le Vin Jaune (Savagnin élevé 6 ans 3 mois sous voile en fût non ouillé, mis en clavelin de 62 cl) et le Vin de Paille (raisins passerillés trois mois, doux). Boire les Macvin (mistelle marc + moût) en apéritif, le Crémant du Jura à toute heure, et garder le Vin Jaune pour la table — Domaine Macle (Château-Chalon), Stéphane Tissot (Arbois), Jean-François Ganevat (Rotalier) sont les trois noms qu'on apprend en premier. Côté digestif : la liqueur de sapin (Distillerie Les Fils d'Émile Pernot, Pontarlier) et l'absinthe — interdite jusqu'en 2011 en France, redistillée à 30 km à Pontarlier.</p>
-    </div>
+<!-- HERO -->
+<div class="hero">
+  <h1>LONS-LE-SAUNIER</h1>
+  <div class="region">Jura &middot; France</div>
+  <div class="philosophy">&ldquo;Salt, Comté, Vin Jaune — slow France&rdquo;</div>
+  <div class="signature">&mdash; <a href="https://www.littoralicious.com" style="color:inherit;border-bottom:1px solid currentColor;">Littoralicious</a> &middot; The World Affair</div>
+  <div class="date">Terroir Briefing · 5 May 2026</div>
   </div>
-</section>
 
-<section class="section">
-  <span class="tag">Adresses signature</span>
-  <h2>Les trois à retenir</h2>
-  <p style="color: var(--ink-mut); font-size: 13px; margin-bottom: 18px;">Les trois tables qu'on garde si on n'a qu'une soirée. Le reste sous forme de carte et de fiches plus bas.</p>
-  <div class="pcv-berths" id="pcv-berths"></div>
-</section>
+<!-- QUICK NAV -->
+<nav class="quicknav">
+  <a href="#map-section">Map</a><span class="sep">&middot;</span>
+  <a href="#quartiers">Neighborhoods</a><span class="sep">&middot;</span>
+  <a href="#why-now">Why now</a><span class="sep">&middot;</span>
+  <a href="#history">History</a><span class="sep">&middot;</span>
+  <a href="#eat">What to eat</a><span class="sep">&middot;</span>
+  <a href="#drink">What to drink</a><span class="sep">&middot;</span>
+  <a href="#tables">Tables</a><span class="sep">&middot;</span>
+  <a href="#three-tables">3 Tables</a><span class="sep">&middot;</span>
+  <a href="#twentyfour">24 h</a><span class="sep">&middot;</span>
+  <a href="#dish">Dishes</a><span class="sep">&middot;</span>
+  <a href="#culture">Culture</a><span class="sep">&middot;</span>
+  <a href="#events">Events</a><span class="sep">&middot;</span>
+  <a href="#walks">Walks</a><span class="sep">&middot;</span>
+  <a href="#markets">Markets</a><span class="sep">&middot;</span>
+  <a href="#producers">Producers</a><span class="sep">&middot;</span>
+  <a href="#seasonal">Calendar</a><span class="sep">&middot;</span>
+  <a href="#walk">Walk</a><span class="sep">&middot;</span>
+  <a href="#avoid">Avoid</a>
+</nav>
 
-<section class="section" style="padding-top: 24px;">
-  <span class="tag">La carte</span>
-  <h2>Où c'est, vraiment</h2>
-  <p style="color: var(--ink-mut); font-size: 13px; margin-bottom: 18px;">Survolez une fiche pour faire briller le marqueur. Carte latérale à droite (repliable, zoomable). Données brutes (CSV) : <a href="data.csv">télécharger</a></p>
-  <div class="pcv-map-wrap">
-    <div class="pcv-map-head"><strong>Lons-le-Saunier — Où tout se trouve</strong><span>Cliquez un marqueur pour téléphone, horaires, lien Maps</span></div>
-    <div id="pcv-map"></div>
-    <div class="pcv-legend" id="pcv-legend">
-      <button data-cat="berth"><i class="dot-berth"></i> Signature</button>
-      <button data-cat="market"><i class="dot-market"></i> Marché / Direct</button>
-      <button data-cat="shop"><i class="dot-shop"></i> Restaurant / Bar</button>
-      <button data-cat="mainland"><i class="dot-mainland"></i> Hors-ville</button>
+<div class="container">
+
+  <!-- HERO MAP -->
+  <section id="map-section" class="hero-map">
+    <div class="hero-map__head">
+      <strong>All places in this guide</strong>
+      <span>click a marker for the address</span>
     </div>
+    <div id="map"></div>
+  </section>
+
+  <!-- LEAD -->
+  <div class="lead">
+    <p><strong>Lons-le-Saunier doesn't give itself away.</strong> It's a small prefecture of 17,000 souls perched on the Revermont, where the Bresse plain dies into the first plateau of the Jura. The ground has been seeping salt since the Bronze Age — hence the name (<em>saunier</em> = salt-worker) — and that salt fixed everything else: the Montbéliarde cows that drink brine to give fat milk, the Comté that ages in cool cellars, the Morteau smoked in a <em>tuyé</em>. Add the Savagnin that grows 30 km east on the blue marls of Château-Chalon, and you have the formula: <em>a terroir of patience</em>.</p>
+    <p>Four things to settle first: (1) taste three ages of Comté side by side at <a href="#venue-v11-fromagerie-vagne" data-pin="p-v11-fromagerie-vagne">Fromagerie Vagne</a> — 18 / 24 / 36 months, the basic education; (2) drive Arbois to Château-Chalon (15 km), visit <a href="#venue-v13-domaine-macle" data-pin="p-v13-domaine-macle">Macle</a> by appointment and <a href="#venue-v14-domaine-st-phane-tissot" data-pin="p-v14-domaine-st-phane-tissot">Tissot</a> at the shop; (3) lunch at <a href="#venue-v03-le-comtois" data-pin="p-v03-le-comtois">Le Comtois</a> on a market day (Thursday or Saturday), Morteau-lentils, chalkboard menu, gentle prices; (4) order once — really once — the <strong>poached Bresse poularde with Vin Jaune and morels</strong> at <a href="#venue-v01-restaurant-jean-paul-jeunet" data-pin="p-v01-restaurant-jean-paul-jeunet">Jeunet</a> in Arbois.</p>
+    <p><strong>The warning:</strong> never drink "Vin Jaune" on a tourist terrace in the centre. Real Vin Jaune sits in the winemaker's cellar, not under the arcades. If the bottle isn't a 62 cl <em>clavelin</em>, it's not Vin Jaune.</p>
   </div>
-</section>
 
-<section class="section" style="padding-top: 24px;">
-  <span class="tag">Les tables</span>
-  <div class="pcv-tier" data-tier="notime"><div class="pcv-tier__head"><h3>Si vous n'avez <strong style="color:#fafafa">qu'un soir</strong></h3><em>Une table marquante. Pas de débat.</em></div><div class="pcv-tier__list" id="pcv-list-notime"></div></div>
-  <div class="pcv-tier" data-tier="several"><div class="pcv-tier__head"><h3>Si vous restez <strong style="color:#fafafa">plusieurs jours</strong></h3><em>Les tables qu'on revisite. Quotidien soigné.</em></div><div class="pcv-tier__list" id="pcv-list-several"></div></div>
-  <div class="pcv-tier" data-tier="plenty"><div class="pcv-tier__head"><h3>Si vous voulez <strong style="color:#fafafa">aller plus loin</strong></h3><em>Curiosités, marchés, day-trips.</em></div><div class="pcv-tier__list" id="pcv-list-plenty"></div></div>
-</section>
+  <!-- FUN FACT -->
+  <div class="funfact"><strong>The clavelin holds 62 cl, not 75.</strong> Why? Because during Vin Jaune's six years and three months under flor in unfilled barrel, exactly 38% of the "angel's share" evaporates from 100 cl. The clavelin records, in numbers, the waiting.</div>
 
-<section class="section">
-  <div class="cols">
-    <div>
-      <span class="tag">Une promenade</span>
-      <h2>Le chemin</h2>
-      <p>Partir place de la Liberté à l'aube, sous Rouget de Lisle qui pointe son violon. Descendre la rue du Commerce — la seule rue à arcades médiévales de Franche-Comté, 146 mètres de pierre dorée — passer devant la maison où il est né (n°24, plaque). Bifurquer à gauche par la rue Saint-Désiré : à l'église romane du XIᵉ, demander à voir la crypte — sarcophage mérovingien de saint Désiré, VIᵉ siècle. Sortir, traverser le parc de la Chevalerie (vieux platanes, kiosque 1900), redescendre par les Bains, longer le bassin de la Source Salée (l'eau y est encore à 30 g/L de sel), terminer au marché place de la Comédie. Quarante minutes. La ville se lit dans les odeurs : pierre humide, sel, levain, fumée de Morteau au tuyé du charcutier.</p>
-    </div>
-    <div>
-      <span class="tag">À éviter</span>
-      <h2>Ce qu'on laisse</h2>
-      <p>La rue du Commerce le samedi midi est piégée par deux pizzerias touristiques qui font passer un comté industriel pour un fromage de garde — passer son chemin, monter aux halles couvertes ou réserver chez Le Comtois. Éviter aussi les caves "de dégustation Vin Jaune" en centre-ville qui versent du Savagnin ouillé en faisant croire que c'est jaune : le vrai Vin Jaune se goûte chez le vigneron, à Château-Chalon (15 km).</p>
-    </div>
+  <!-- INSTRUCTIONS -->
+  <div class="instructions"><strong>How to read this guide:</strong> click a section to expand it &middot; click a card for details (phone, hours, Maps link) &middot; hover a card to glow the matching pin on the map.</div>
+
+  <!-- ALERT -->
+  <div class="alert">
+    <span class="alert-label">🍂 May–June — the morels + summer-pasture Comté window</span>
+    Fresh morels still hold for two or three weeks, summer-pasture Comté (spring meadow milk, intense yellow) enters the cellars, and new Vin Jaune (vintage −6 years, bottled in March) begins to open. The only window in which the trinity is possible in a single day: <a href="#venue-v01-restaurant-jean-paul-jeunet" data-pin="p-v01-restaurant-jean-paul-jeunet">Jeunet's Vin Jaune poularde</a>, <a href="#venue-v11-fromagerie-vagne" data-pin="p-v11-fromagerie-vagne">three ages of Comté at Vagne</a>, <a href="#venue-v13-domaine-macle" data-pin="p-v13-domaine-macle">Macle tasting</a>.
   </div>
-</section>
 
-<section class="section">
-  <span class="tag">Le moment juste</span>
-  <div class="pullq">Mai-juin pour les morilles, le comté d'estive et le crémant frais. Septembre pour les vendanges et la Percée du Vin Jaune (premier week-end de février, mais c'est en septembre que les caves laissent vraiment goûter le Savagnin neuf).</div>
-</section>
+  <!-- QUARTIERS -->
+  <section id="quartiers" class="prose">
+    <div class="overline">THE NEIGHBORHOODS</div>
+    <div class="subhead">Where it lives</div>
+    <p>Lons is small — everything is fifteen minutes on foot. The real addresses sit on three axes; the rest is in the outskirts or in the vineyard.</p>
+    <ul>
+      <li><strong>Place de la Liberté & rue du Commerce</strong> &mdash; the historic heart, statue of Rouget de Lisle (Bartholdi, 1882), 146 m of medieval golden-stone arcades — Franche-Comté's only arcaded street. Pâtisserie Pelen, Fromagerie Vagne, Caveau des Jacobins.</li>
+      <li><strong>Place de la Comédie / Halles</strong> &mdash; the market (Thursday, Saturday), the Bistrot des Halles, the Café de la Comédie. This is where you lunch on market days.</li>
+      <li><strong>Quartier de la Chevalerie & Source Salée</strong> &mdash; plane-tree park, 1900 bandstand, and the historical saline-spring pool (water still at 30 g/L). The town's thermal past.</li>
+      <li><strong>Quartier du Stade / Pavigny</strong> &mdash; southeast, on the edge of the center. Le Comtois and Le Bouchon du Stade — non-touristy bistros.</li>
+      <li><strong>Montciel & Chille</strong> &mdash; residential quarters to the northeast. Le Parenthèse is a 5-min drive away, in the Chille countryside.</li>
+      <li><strong>Hors-ville</strong> &mdash; Arbois (15 km, capital of Jura wine), Château-Chalon (15 km, Vin Jaune), Poligny (25 km, capital of Comté), Montigny-lès-Arsures, Pontarlier (absinthe). The terroir is never centralized — you have to drive.</li>
+    </ul>
+  </section>
 
-<section class="section">
-  <span class="tag">Sources</span>
-  <h2>Vérifications</h2>
-  <ul><li><a href='https://guide.michelin.com/fr/fr/bourgogne-franche-comte/lons-le-saunier' target='_blank' rel='noopener'>Guide Michelin — Restaurants Lons-le-Saunier & Arbois</a></li><li><a href='https://www.maison-du-comte.com/' target='_blank' rel='noopener'>Comté AOP — La Maison du Comté (Poligny)</a></li><li><a href='https://www.jura-vins.com/' target='_blank' rel='noopener'>Vins du Jura — CIVJ (Comité Interprofessionnel)</a></li><li><a href='https://www.lons-jura.fr/' target='_blank' rel='noopener'>Office de Tourisme Lons Jura</a></li><li><a href='https://www.salineroyale.com/' target='_blank' rel='noopener'>Salines Royales d'Arc-et-Senans (UNESCO)</a></li></ul>
-</section>
+  <!-- WHY NOW -->
+  <section id="why-now" class="prose">
+    <div class="overline">WHY NOW</div>
+    <div class="subhead">The right moment</div>
+    <p>May–June: summer-pasture Comté arrives in the cellars, morels still hold, new Vin Jaune (vintage −6 years, bottled in March) goes into bottle. The season the Jura unfolds everything.</p>
+  </section>
 
+  <!-- HISTORY -->
+  <section id="history" class="prose">
+    <div class="overline">HISTORY & TERROIR</div>
+    <div class="subhead">Where it comes from</div>
+    <p>The salt water that rises here has been worked since 5,000 BC. The Romans built a salt-works on the spot. The town's medieval rise came from salt and cheese fairs. Pasteur was born in Dole in 1822, set up his lab in Arbois (15 km north), and it was on the Vin Jaune of Pupillin that he wrote his doctoral thesis on alcoholic fermentation in 1857. Rouget de Lisle, son of the town (born rue du Commerce, 1760), composed the Marseillaise in Strasbourg in 1792 — his statue by Bartholdi (sculptor of Liberty) has stood on Place de la Liberté since 1882. In the 19th century the Bel house invented <em>La Vache qui rit</em> here (1921). The thermal town (saline springs, water from the Étoile spring) still turns. 25 km away, at <a href="#venue-v17-salines-royales-d-arc-et-senans-unes" data-pin="p-v17-salines-royales-d-arc-et-senans-unes">Arc-et-Senans</a>, Ledoux's royal saltworks (1775, UNESCO 1982) received the brine from Salins-les-Bains by wooden saumoduc to evaporate it — an industrial salt chain that ran for a century and a half.</p>
+  </section>
+
+  <!-- EAT -->
+  <section id="eat" class="prose">
+    <div class="overline">WHAT TO EAT</div>
+    <div class="subhead">What to eat</div>
+    <p>Three truths beyond debate. <strong>Comté</strong> — not one cheese but a family: 18 months in cellar, fatty and nutty; 24 months, saltier and grainy; 36 months, dry and caramel. Tasting three ages side by side is the basic education, and every serious cheesemonger offers it. <strong>Saucisse de Morteau</strong> (in a ring sealed with a wooden plug) and <strong>Montbéliard</strong> (finer, more smoky), with <strong>cancoillotte</strong> melted with a stroke of garlic and white wine — Haut-Jura peasant cooking is made of this. The <strong>poached Bresse poularde with Vin Jaune and morels</strong> is the cathedral dish, the plate you order to understand why the region exists: Vin Jaune's sotolon (4,5-dimethyl-2-furanone) bound to the free glutamate of dried morels and the fat of the blue-footed bird — pure chemistry.</p>
+  </section>
+
+  <!-- DRINK -->
+  <section id="drink" class="prose">
+    <div class="overline">WHAT TO DRINK</div>
+    <div class="subhead">What to drink</div>
+    <p>The Jura counts seven grape varieties, not Bordeaux's count. <strong>Savagnin</strong> (the great white, oxidative or topped-up), Chardonnay, Trousseau and Poulsard for the slender reds, Pinot Noir, plus <strong>Vin Jaune</strong> (Savagnin aged 6 years 3 months under flor in an unfilled barrel, bottled in 62 cl <em>clavelin</em>) and <strong>Vin de Paille</strong> (grapes raisined for three months, sweet). Drink <strong>Macvin</strong> (a mistelle of marc + must) as an apéritif, Crémant du Jura at any hour, and keep Vin Jaune for the table — <a href="#venue-v13-domaine-macle" data-pin="p-v13-domaine-macle">Domaine Macle</a> (Château-Chalon), <a href="#venue-v14-domaine-st-phane-tissot" data-pin="p-v14-domaine-st-phane-tissot">Stéphane Tissot</a> (Arbois), Jean-François Ganevat (Rotalier) are the three names you learn first. For digestifs: pine-bud liqueur (Distillerie Les Fils d'Émile Pernot, Pontarlier) and absinthe — banned in France until 2011, distilled again 30 km away in Pontarlier.</p>
+  </section>
+
+  <!-- TABLES (existing port-call render kit handles this) -->
+  <details class="sfold" id="tables" open>
+    <summary>
+      <div>
+        <div class="sfold__title">The Tables</div>
+        <div class="sfold__desc">The full inventory — click a card for details.</div>
+      </div>
+      <span class="sfold__count">17 addresses</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="pcv-berths" id="pcv-berths"></div>
+      <div class="pcv-tier" data-tier="notime"><div class="pcv-tier__head"><h3>If you only have <strong>one evening</strong></h3><em>One memorable table. No debate.</em></div><div class="pcv-tier__list" id="pcv-list-notime"></div></div>
+      <div class="pcv-tier" data-tier="several"><div class="pcv-tier__head"><h3>If you stay <strong>several days</strong></h3><em>Tables you revisit.</em></div><div class="pcv-tier__list" id="pcv-list-several"></div></div>
+      <div class="pcv-tier" data-tier="plenty"><div class="pcv-tier__head"><h3>If you want to <strong>go further</strong></h3><em>Curiosities, markets, day-trips.</em></div><div class="pcv-tier__list" id="pcv-list-plenty"></div></div>
+    </div>
+  </details>
+
+  <!-- WALK -->
+  <section id="walk" class="prose">
+    <div class="overline">A WALK</div>
+    <div class="subhead">The path</div>
+    <p>Leave Place de la Liberté at dawn, under Rouget de Lisle pointing his violin. Walk down rue du Commerce — Franche-Comté's only medieval arcaded street, 146 metres of golden stone — past the house where he was born (no. 24, plaque). Branch left into rue Saint-Désiré: at the 11th-century Romanesque church, ask the keeper to see the crypt — the Merovingian sarcophagus of Saint Désiré, 6th century. Out again, cross the Chevalerie park (old plane trees, 1900 bandstand), drop back via the Baths, walk past the Source Salée pool (still 30 g/L salt), finish at the Place de la Comédie market. Forty minutes. The town reads through smells: wet stone, salt, leaven, Morteau smoke from the butcher's <em>tuyé</em>.</p>
+  </section>
+
+  <!-- AVOID -->
+  <section id="avoid" class="prose">
+    <div class="overline">AVOID</div>
+    <div class="subhead">What we leave alone</div>
+    <p>Rue du Commerce on Saturday at noon is trapped by two tourist pizzerias that pass off industrial Comté as a serious aged cheese — walk past, go up to the covered halls, or book at Le Comtois. Also avoid the "Vin Jaune tasting" cellars in the centre that pour topped-up Savagnin under that name: real Vin Jaune is tasted at the winemaker's place, in Château-Chalon (15 km).</p>
+  </section>
+
+  <!-- ================= THREE TABLES ================= -->
+  <details class="sfold" id="three-tables" open>
+    <summary>
+      <div>
+        <div class="sfold__title">The Three Tables</div>
+        <div class="sfold__desc">Best · Authentic · Stories — 15 distilled picks</div>
+      </div>
+      <span class="sfold__count">15 entries</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="three-tables">
+        <div class="tt-col">
+          <h3>The Best</h3>
+          <div class="subtitle">The 5 best tables</div>
+          <ol>
+            <li><a href="#venue-v01-restaurant-jean-paul-jeunet" data-pin="p-v01-restaurant-jean-paul-jeunet">Jean-Paul Jeunet</a><span class="meta">Arbois &middot; Michelin Guide &middot; Vin Jaune sanctuary</span></li>
+            <li><a href="#venue-v02-la-maison-carr-e-vincent-mercier" data-pin="p-v02-la-maison-carr-e-vincent-mercier">Maison Carrée &mdash; V. Mercier</a><span class="meta">Arbois &middot; Bib Gourmand &middot; Jura bistronomy</span></li>
+            <li><a href="#venue-v05-h-tel-restaurant-le-parenth-se" data-pin="p-v05-h-tel-restaurant-le-parenth-se">Le Parenthèse</a><span class="meta">Chille &middot; produce-driven cuisine &middot; serious menu</span></li>
+            <li><a href="#p-castel-damandre">Le Castel Damandre</a><span class="meta">Les Planches-près-Arbois &middot; Jura classic</span></li>
+            <li><a href="#p-grain-de-sel">Grain de Sel</a><span class="meta">Lons center &middot; quiet bistronomy</span></li>
+          </ol>
+        </div>
+        <div class="tt-col">
+          <h3>The Authentic</h3>
+          <div class="subtitle">The soul of the Jura</div>
+          <ol>
+            <li><a href="#venue-v03-le-comtois" data-pin="p-v03-le-comtois">Le Comtois</a><span class="meta">Lons &middot; market bistro &middot; slate menu</span></li>
+            <li><a href="#venue-v04-le-bistrot-des-halles" data-pin="p-v04-le-bistrot-des-halles">Le Bistrot des Halles</a><span class="meta">Lons &middot; regulars' canteen</span></li>
+            <li><a href="#venue-v06-le-bouchon-du-stade" data-pin="p-v06-le-bouchon-du-stade">Le Bouchon du Stade</a><span class="meta">Lons &middot; workers' canteen &middot; country meats</span></li>
+            <li><a href="#p-caveau-arbois">Le Caveau d'Arbois</a><span class="meta">Arbois &middot; Jura tradition &middot; family cellar</span></li>
+            <li><a href="#p-finette">La Finette &mdash; Taverne d'Arbois</a><span class="meta">Arbois &middot; institution since 1971</span></li>
+          </ol>
+        </div>
+        <div class="tt-col">
+          <h3>The Stories</h3>
+          <div class="subtitle">Tables with a story</div>
+          <ol>
+            <li><a href="#venue-v01-restaurant-jean-paul-jeunet" data-pin="p-v01-restaurant-jean-paul-jeunet">Jean-Paul Jeunet</a><span class="meta">Arbois &middot; three generations at the same address</span></li>
+            <li><a href="#venue-v15-maison-de-louis-pasteur" data-pin="p-v15-maison-de-louis-pasteur">Maison Pasteur</a><span class="meta">Arbois &middot; the lab where fermentation was first understood</span></li>
+            <li><a href="#venue-v07-p-tisserie-chocolaterie-pelen" data-pin="p-v07-p-tisserie-chocolaterie-pelen">Pâtisserie Pelen</a><span class="meta">Lons &middot; since 1899 &middot; the galet de l'Ain</span></li>
+            <li><a href="#venue-v17-salines-royales-d-arc-et-senans-unes" data-pin="p-v17-salines-royales-d-arc-et-senans-unes">Salines Royales</a><span class="meta">Arc-et-Senans &middot; UNESCO 1982 &middot; Ledoux 1775</span></li>
+            <li><a href="#p-poligny-comte">Maison du Comté</a><span class="meta">Poligny &middot; the PDO story told in the cellar</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ================= 24 HEURES ================= -->
+  <details class="sfold" id="twentyfour" open>
+    <summary>
+      <div>
+        <div class="sfold__title">24 Hours</div>
+        <div class="sfold__desc">If you leave tomorrow — six decisions, already made</div>
+      </div>
+      <span class="sfold__count">7 slots</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="timeline">
+        <div class="slot">
+          <div class="time">07:30&ndash;09:30</div>
+          <div class="plan"><strong>Morning.</strong> <a href="#venue-v10-march-de-lons-le-saunier" data-pin="p-v10-march-de-lons-le-saunier">Marché de Lons</a> place de la Comédie (jeudi ou samedi). Comté de Marcel Petite, Morteau, miel de sapin, légumes du plateau. Espresso à <a href="#venue-v08-le-caf-de-la-com-die" data-pin="p-v08-le-caf-de-la-com-die">Café de la Comédie</a> on the terrace opposite.</div>
+        </div>
+        <div class="slot">
+          <div class="time">10:00&ndash;11:30</div>
+          <div class="plan"><strong>Late morning.</strong> <a href="#venue-v11-fromagerie-vagne" data-pin="p-v11-fromagerie-vagne">Fromagerie Vagne</a> rue du Commerce &mdash; ask for the three-age tasting (18 / 24 / 36 months). Then <a href="#venue-v09-caveau-des-jacobins" data-pin="p-v09-caveau-des-jacobins">Caveau des Jacobins</a> rue Richebourg to understand the seven grape varieties before heading up to Château-Chalon.</div>
+        </div>
+        <div class="slot">
+          <div class="time">12:30&ndash;14:30</div>
+          <div class="plan"><strong>Lunch.</strong> <a href="#venue-v03-le-comtois" data-pin="p-v03-le-comtois">Le Comtois</a> &mdash; Morteau and lentils or coq au Vin Jaune. Slate menu, 22€ lunch. Book the day before in season.</div>
+        </div>
+        <div class="slot">
+          <div class="time">15:00&ndash;18:00</div>
+          <div class="plan"><strong>Afternoon.</strong> Drive Lons → Château-Chalon (15 km) → Arbois (15 km). Visit by appointment at <a href="#venue-v13-domaine-macle" data-pin="p-v13-domaine-macle">Domaine Macle</a> in Château-Chalon, then cellar visit at <a href="#venue-v14-domaine-st-phane-tissot" data-pin="p-v14-domaine-st-phane-tissot">Stéphane Tissot</a> in Montigny-lès-Arsures. Drop by the <a href="#venue-v15-maison-de-louis-pasteur" data-pin="p-v15-maison-de-louis-pasteur">Maison Pasteur</a> in Arbois if time allows (1h).</div>
+        </div>
+        <div class="slot">
+          <div class="time">Take home</div>
+          <div class="plan"><strong>Take home.</strong> A 36-month vacuum-sealed Comté from Vagne, a 62cl clavelin of Macle Vin Jaune, a jar of cancoillotte au Vin Jaune, a bag of galets de l'Ain from <a href="#venue-v07-p-tisserie-chocolaterie-pelen" data-pin="p-v07-p-tisserie-chocolaterie-pelen">Pelen</a>. All travel well.</div>
+        </div>
+        <div class="slot">
+          <div class="time">20:00&ndash;22:30</div>
+          <div class="plan"><strong>Dinner.</strong> <a href="#venue-v01-restaurant-jean-paul-jeunet" data-pin="p-v01-restaurant-jean-paul-jeunet">Jean-Paul Jeunet</a> in Arbois &mdash; Bresse poularde poached in Vin Jaune with morels. Book 10 days ahead in season (May–July, September–October). Alternatives: <a href="#venue-v02-la-maison-carr-e-vincent-mercier" data-pin="p-v02-la-maison-carr-e-vincent-mercier">Maison Carrée</a> (younger, freer) or <a href="#venue-v05-h-tel-restaurant-le-parenth-se" data-pin="p-v05-h-tel-restaurant-le-parenth-se">Le Parenthèse</a> (in the country, 5 min by car).</div>
+        </div>
+        <div class="slot">
+          <div class="time">23:00+</div>
+          <div class="plan"><strong>Night.</strong> Lons sleeps early. A walk from Place de la Liberté to Place de la Comédie under the arcades, then to bed. The Jura isn't a nightlife region.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ================= TABLES (extension de la sfold #tables existante — ne pas dupliquer l'ID) ================= -->
+  <details class="sfold" id="tables-extended">
+    <summary>
+      <div>
+        <div class="sfold__title">Tables — by tier</div>
+        <div class="sfold__desc">The same inventory, sorted by tier — Best, Recognized, Stories, Authentic, Market bistros</div>
+      </div>
+      <span class="sfold__count">17+ addresses</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <div class="tier-sub">The Best &mdash; the best tables</div>
+      <div class="tier-note">See the full entries in the Tables section above.</div>
+      <p style="font-size:0.92em;line-height:1.7;color:var(--ink-2);">
+        <a href="#venue-v01-restaurant-jean-paul-jeunet" data-pin="p-v01-restaurant-jean-paul-jeunet">Jean-Paul Jeunet</a> (Arbois) remains the cathedral of Vin Jaune at table &mdash; three generations, 9 rue de l'Hôtel de Ville. The <a href="#venue-v02-la-maison-carr-e-vincent-mercier" data-pin="p-v02-la-maison-carr-e-vincent-mercier">Maison Carrée</a> by Vincent Mercier (Bib Gourmand) plays the same score younger, with a by-the-glass Vin Jaune list (rare). In the country, <a href="#venue-v05-h-tel-restaurant-le-parenth-se" data-pin="p-v05-h-tel-restaurant-le-parenth-se">Le Parenthèse</a> in Chille works under the radar &mdash; 24-month Comté risotto, sweetbreads in Macvin sauce.
+      </p>
+
+      <div class="tier-sub">Recognized &mdash; le tier guide</div>
+      <p style="font-size:0.92em;line-height:1.7;color:var(--ink-2);">
+        Outside the centre, two tables to aim for: <strong>Le Castel Damandre</strong> in Les Planches-près-Arbois (careful regional cooking, stone setting) and <strong>Les Caudalies</strong> in Arbois (Bib Gourmand occasionally, depending on the guide edition &mdash; verify).
+      </p>
+
+      <div class="tier-sub">Stories &mdash; tables with a story</div>
+      <p style="font-size:0.92em;line-height:1.7;color:var(--ink-2);">
+        In Arbois, <strong>La Finette &mdash; Taverne d'Arbois</strong> has been running since 1971 and changes neither menu nor spirit (Vin Jaune poularde, comté fondue, terroir plates). In Lons, <a href="#venue-v07-p-tisserie-chocolaterie-pelen" data-pin="p-v07-p-tisserie-chocolaterie-pelen">Pâtisserie Pelen</a> (1899) is the edible institution &mdash; six generations of pastry-makers, the <em>galet de l'Ain</em> (chocolate-praline shaped like a river pebble) was invented here. The Salines building in Salins-les-Bains (UNESCO since the 2009 extension) still houses underground-heated evaporation.
+      </p>
+
+      <div class="tier-sub">Authentic &mdash; l'âme jurassienne</div>
+      <p style="font-size:0.92em;line-height:1.7;color:var(--ink-2);">
+        <a href="#venue-v03-le-comtois" data-pin="p-v03-le-comtois">Le Comtois</a> et <a href="#venue-v04-le-bistrot-des-halles" data-pin="p-v04-le-bistrot-des-halles">Le Bistrot des Halles</a> are the two market addresses in Lons &mdash; one near Place de la Comédie, the other on the square itself. <a href="#venue-v06-le-bouchon-du-stade" data-pin="p-v06-le-bouchon-du-stade">Le Bouchon du Stade</a> is the workers' canteen of the southeast quarter: AAAAA andouillette, ribeye in Trousseau, comté board. None of the three needs booking outside market days.
+      </p>
+
+      <div class="tier-sub">Market bistros — the Jura equivalent of the tasca</div>
+      <p style="font-size:0.92em;line-height:1.7;color:var(--ink-2);">
+        The bistrot de marché is to the Jura what the tasca is to Portugal or the konoba to Dalmatia: a neighborhood address, short menu, soft prices, market day required. The three Lonsois are already cited. In Arbois, add <strong>Le Caveau d'Arbois</strong> (rue de Courcelles) — family cellar, regional plates, terrace on the pedestrian street. À Poligny, <strong>Hostellerie des Monts de Vaux</strong> (verify seasonal status &mdash; l'établissement a connu plusieurs ré-ouvertures).
+      </p>
+
+      <article class="tcard tcard--restaurant" data-section="tables-extended" data-venue-id="p-castel-damandre" id="p-castel-damandre">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">RESTAURANT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Le Castel Damandre</span></h3>
+        <div class="tcard__hook">Les Planches-près-Arbois &middot; careful regional cooking &middot; stone setting &mdash; <em>the other serious table of the Arbois</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Recommended at weekends</span>
+          <span class="tcard__chip tcard__chip--price">30&ndash;55 €</span>
+        </div>
+        <p class="tcard__body">Country inn in a hamlet 4 km from Arbois, overlooking the Planches reculée. Classic Jura cooking, no overreach — Doubs trout, Bresse chicken in Vin Jaune, three-age comté. Stone setting, summer terrace. Booking recommended at weekends.</p>
+        <dl class="tcard__details">
+          <div><strong>What to order</strong>Trout; chicken in Vin Jaune; comté tart</div>
+          <div><strong>Hours</strong>Verify before going (seasonal)</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Castel+Damandre+Les+Planches+pres+Arbois" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-castel-damandre" data-section="tables-extended" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="tables-extended" data-venue-id="p-grain-de-sel" id="p-grain-de-sel">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">RESTAURANT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Grain de Sel</span></h3>
+        <div class="tcard__hook">Lons center &middot; quiet bistronomy &mdash; <em>short menu that changes &mdash; verify opening status</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Recommended</span>
+          <span class="tcard__chip tcard__chip--price">25&ndash;45 €</span>
+        </div>
+        <p class="tcard__body">Small bistronomy table in the center, short menu following the season. Doesn't appear consistently in the print guides &mdash; verify directly before going.</p>
+        <dl class="tcard__details">
+          <div><strong>What to order</strong>Daily special &middot; seasonal menu</div>
+          <div><strong>Hours</strong>To verify</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Grain+de+Sel+Lons-le-Saunier" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-grain-de-sel" data-section="tables-extended" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="tables-extended" data-venue-id="p-finette" id="p-finette">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">RESTAURANT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">La Finette &mdash; Taverne d'Arbois</span></h3>
+        <div class="tcard__hook">Arbois (avenue Pasteur) &middot; since 1971 &mdash; <em>terroir institution, the menu does not change</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Yes in season</span>
+          <span class="tcard__chip tcard__chip--price">25&ndash;45 €</span>
+        </div>
+        <p class="tcard__body">Tavern opened in 1971, wood-and-fountain room, terroir cooking held straight: Bresse chicken in Vin Jaune, three-age comté fondue, morel crust, fir-syrup waffle. Not for finesse — for historical accuracy. Wide Jura wine list.</p>
+        <dl class="tcard__details">
+          <div><strong>What to order</strong>Chicken in Vin Jaune; comté fondue; morel crust</div>
+          <div><strong>Hours</strong>Lunch & dinner</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=La+Finette+Taverne+d+Arbois" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-finette" data-section="tables-extended" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="tables-extended" data-venue-id="p-caveau-arbois" id="p-caveau-arbois">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">RESTAURANT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Le Caveau d'Arbois</span></h3>
+        <div class="tcard__hook">Arbois (rue de Courcelles) &middot; family cellar &mdash; <em>regional plates, terrace on the pedestrian street</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Recommended at weekends</span>
+          <span class="tcard__chip tcard__chip--price">25&ndash;45 €</span>
+        </div>
+        <p class="tcard__body">Family-run cellar-restaurant in the heart of Arbois, on the street down to Place de la Liberté. Regional plates without folklore: snails, coq au Vin Jaune, aged comté. Good Arbois winemaker selection by the glass.</p>
+        <dl class="tcard__details">
+          <div><strong>What to order</strong>Coq au Vin Jaune; trout; comté board</div>
+          <div><strong>Hours</strong>Lunch & dinner</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Le+Caveau+d+Arbois" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-caveau-arbois" data-section="tables-extended" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= BOUGIE ================= -->
+  <details class="sfold" id="bougie">
+    <summary>
+      <div>
+        <div class="sfold__title">Where money sits</div>
+        <div class="sfold__desc">Prestige addresses beyond the Best</div>
+      </div>
+      <span class="sfold__count">3 addresses</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--bougie" data-section="bougie" data-venue-id="p-chateau-germigney" id="p-chateau-germigney">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">PRESTIGE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Château de Germigney</span></h3>
+        <div class="tcard__hook">Port-Lesney (40 min de Lons) &middot; Relais &amp; Châteaux &mdash; <em>18th-century château by the Loue, gastronomic restaurant</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Essential</span>
+          <span class="tcard__chip tcard__chip--price">120&ndash;200 €</span>
+        </div>
+        <p class="tcard__body">18th-century château, French formal garden, Relais &amp; Châteaux. Gastronomic restaurant. The slow luxury of the Jura: you come for the house more than the table, but the cooking holds its rank. Follow the seasonal program &mdash; truffle menu in winter, morels in May.</p>
+        <dl class="tcard__details">
+          <div><strong>What to order</strong>Tasting menu &middot; morels in season</div>
+          <div><strong>Hours</strong>Seasonal &middot; verify</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Château+de+Germigney+Port-Lesney" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-chateau-germigney" data-section="bougie" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--bougie" data-section="bougie" data-venue-id="p-chateau-vaux" id="p-chateau-vaux">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">PRESTIGE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Hostellerie des Monts de Vaux</span></h3>
+        <div class="tcard__hook">Poligny (25 min de Lons) &middot; former post-house &mdash; <em>verify opening status (seasonal)</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--price">80&ndash;140 €</span>
+        </div>
+        <p class="tcard__body">Former post-house on the plateau, panoramic view over Poligny. Restaurant and hotel. Several successive reopenings &mdash; verify the operating status and hours before planning.</p>
+        <dl class="tcard__details">
+          <div><strong>Status</strong>Seasonal &middot; verify directly</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Hostellerie+Monts+de+Vaux+Poligny" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-chateau-vaux" data-section="bougie" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--bougie" data-section="bougie" data-venue-id="p-chateau-vins-jura" id="p-chateau-vins-jura">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">PRESTIGE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Château d'Arlay</span></h3>
+        <div class="tcard__hook">Arlay (10 km de Lons) &middot; 18th century &middot; visit + tasting &mdash; <em>one of the oldest wine estates in the Jura</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Recommended</span>
+          <span class="tcard__chip tcard__chip--price">10&ndash;25 € visite</span>
+        </div>
+        <p class="tcard__body">Private 18th-century château with a wine estate held by the same family (Laguiche) for five centuries. Tours of the gardens, château and cellars. Côtes du Jura wines, Vin Jaune, Macvin. Falconry still lives at the château &mdash; summer demonstrations. This is the Jura's quiet aristocracy, no flash.</p>
+        <dl class="tcard__details">
+          <div><strong>What to order</strong>Visit + tasting &middot; Côtes du Jura white &middot; Vin Jaune</div>
+          <div><strong>Hours</strong>Seasonal (Apr–Oct)</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Château+d+Arlay+Jura" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-chateau-vins-jura" data-section="bougie" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= LE PLAT ================= -->
+  <details class="sfold" id="dish">
+    <summary>
+      <div>
+        <div class="sfold__title">The Dish</div>
+        <div class="sfold__desc">Canonical dishes — the plates that define the Jura</div>
+      </div>
+      <span class="sfold__count">8 dishes</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <div class="funfact"><strong>Sotolon &mdash; 4,5-dimethyl-2-(5H)-furanone &mdash; is the molecule of Vin Jaune.</strong> It appears at around 200 µg/L by the end of the flor élevage, after six years and three months in unfilled barrel. The same molecule gives curry, fenugreek, and maple syrup their signature aromas &mdash; at different concentrations. When you recognize a Vin Jaune on the nose, it's sotolon you identify.</div>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-poularde" id="p-dish-poularde">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127831; Poularde de Bresse au Vin Jaune et morilles</span></h3>
+        <div class="tcard__hook">The cathedral dish of the Jura &mdash; <em>pure chemistry: sotolon × glutamate</em></div>
+        <p class="tcard__body">Bresse poularde PDO (blue-footed, raised at least 16 weeks) steam-poached, Vin Jaune sauce (Savagnin aged 6 years 3 months under flor), rehydrated dried morels. Vin Jaune's sotolon (4,5-dimethyl-2-furanone) binds to the free glutamate of dried morels and the fat of the bird &mdash; umami written into a cookbook. The dish was born in the early 20th century, codified by the chefs of Burgundy and Franche-Comté; in Arbois, Jeunet keeps the canonical version.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-poularde" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-comte-3ages" id="p-dish-comte-3ages">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129472; Comté trois âges &mdash; 18 / 24 / 36 mois</span></h3>
+        <div class="tcard__hook">The basic Jura education &mdash; <em>the cheese changes worlds every six months</em></div>
+        <p class="tcard__body">Comté isn't a cheese but a family of cheeses. At 18 months, the paste is still supple, fat and hazelnut dominate. At 24 months, salt crystallizes (the <em>tyrosine crystals</em>, in fact amino-acid clusters), texture turns grainy. At 36 months, the paste is dry, caramel and meat-broth take over. Every serious cheesemonger offers the comparative tasting &mdash; <a href="#venue-v11-fromagerie-vagne" data-pin="p-v11-fromagerie-vagne">Vagne</a> in Lons and the <a href="#venue-v12-maison-du-comt" data-pin="p-v12-maison-du-comt">Maison du Comté</a> in Poligny make it a didactic exercise.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-comte-3ages" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-morteau-cancoillotte" id="p-dish-morteau-cancoillotte">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129385; Morteau-cancoillotte</span></h3>
+        <div class="tcard__hook">Smoked sausage + liquid cheese &mdash; <em>the peasant cooking of the Haut-Jura</em></div>
+        <p class="tcard__body">Morteau sausage PGI: fatty and lean pork, garlic, white wine, smoked in a <em>tuyé</em> (traditional pyramid chimney) over softwood for at least 48 hours. Identified by the wooden plug (the <em>cheville</em>) that seals the ring. Served with Puy or Jura green lentils, or warm-poached with cancoillotte (fresh metton cheese melted with a stroke of garlic and white wine, sometimes with cumin or Vin Jaune).</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-morteau-cancoillotte" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-croute-morilles" id="p-dish-croute-morilles">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127812; Croûte aux morilles</span></h3>
+        <div class="tcard__hook">Savory pain perdu, cream, morels &mdash; <em>May–June dish, narrow window</em></div>
+        <p class="tcard__body">A slice of stale country bread, lightly buttered, gratinated under a cream of fresh morels in Vin Jaune. The fresh-morel window is narrow &mdash; April to mid-June depending on altitude. Off-season, the dried-morel version is honest, but it's in May the dish reaches its full register.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-croute-morilles" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-truite-doubs" id="p-dish-truite-doubs">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#128031; Truite de Doubs au bleu</span></h3>
+        <div class="tcard__hook">Live trout, vinegar court-bouillon &mdash; <em>the skin turns azure, hence the name</em></div>
+        <p class="tcard__body">Live trout (essential &mdash; otherwise the blue won't set) plunged straight into a vinegar court-bouillon. The mucus layer oxidizes on contact with the vinegar and the skin takes on a blue-violet hue. The fish stays straight, skin intact. Served warm, melted butter, parsley. The Loue trout farm (Mouthier-Haute-Pierre) supplies most restaurants &mdash; trout raised in living water.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-truite-doubs" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-coq-vin-jaune" id="p-dish-coq-vin-jaune">
+        <div class="tcard__rank">#6</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127813; Coq au Vin Jaune</span></h3>
+        <div class="tcard__hook">Peasant cousin of the poularde &mdash; <em>same sauce, more rustic meat</em></div>
+        <p class="tcard__body">The peasant version of the Bresse poularde: a farm rooster (1.8–2.5 kg, older, therefore more flavorful), Vin Jaune and cream sauce, sometimes with morels or simply seasonal mushrooms. Longer cooking (90 min minimum). The archetype of the Jura Sunday.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-coq-vin-jaune" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-gaudes" id="p-dish-gaudes">
+        <div class="tcard__rank">#7</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127858; Gaudes</span></h3>
+        <div class="tcard__hook">Toasted corn-flour porridge &mdash; <em>poor-man's plate turned Comtois identity</em></div>
+        <p class="tcard__body">Oven-toasted corn coarsely ground into flour, cooked as porridge in milk or water. The color recalls polenta, but the grain-toasting gives a more bitter, rounder taste. Eaten hot with butter and salt for breakfast, or as a meat side. The nickname of the Comtois &mdash; <em>les Gaudes</em> &mdash; comes from this. Disappearing from menus &mdash; ask explicitly.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-gaudes" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--restaurant" data-section="dish" data-venue-id="p-dish-vacherin" id="p-dish-vacherin">
+        <div class="tcard__rank">#8</div>
+        <div class="tcard__type">DISH</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129472; Mont d'Or (Vacherin du Haut-Doubs)</span></h3>
+        <div class="tcard__hook">Pink rind, spruce-bark belt &mdash; <em>September–May only</em></div>
+        <p class="tcard__body">PDO since 1981. Soft-paste raw-milk Montbéliarde cheese belted with a strip of spruce bark that perfumes the rind and supports the running paste. Strictly seasonal (made August 15–March 15, sold through May). Served warm in the oven (lid off, garlic, white wine) with steamed potatoes and charcuterie &mdash; this is the <em>boîte chaude</em>, the winter ritual dish. Fromagerie Vagne and Lons market are the two serious buying points in town.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-dish-vacherin" data-section="dish" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= AU VERRE ================= -->
+  <details class="sfold" id="drink">
+    <summary>
+      <div>
+        <div class="sfold__title">What to drink</div>
+        <div class="sfold__desc">Seven grape varieties, a Vin Jaune, a Vin de Paille — and a Macvin for the apéritif</div>
+      </div>
+      <span class="sfold__count">9 entries</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <div class="funfact"><strong>The 62 cl clavelin is unique in the world.</strong> No other French appellation has its own bottle format. The 62 cl is what's left of 100 cl of Savagnin after six years and three months under flor in unfilled barrel: 38 cl lost to evaporation. The bottle records, in figures, the waiting.</div>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-vin-jaune" id="p-drink-vin-jaune">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Vin Jaune &mdash; Château-Chalon AOC</span></h3>
+        <div class="tcard__hook">50 ha &middot; Macle, Berthet-Bondet, Tissot, Ganevat &mdash; <em>the Savagnin cathedral</em></div>
+        <p class="tcard__body">Savagnin (Naturé clone) on blue Liassic marls, harvested at 14° minimum, aged in oak <em>without topping up</em> &mdash; a yeast veil (<em>Saccharomyces cerevisiae</em>, Jura strain) protects the wine from oxidation while allowing slow transformation. Six years and three months minimum, bottled in 62 cl clavelin. AOC Château-Chalon is the strict enclave (50 ha, four villages: Château-Chalon, Menétru-le-Vignoble, Domblans, Nevy-sur-Seille). Outside Château-Chalon, all of the Jura can make Vin Jaune under the AOCs Côtes du Jura, Arbois, l'Étoile.</p>
+        <dl class="tcard__details">
+          <div><strong>Producers</strong><a href="#venue-v13-domaine-macle" data-pin="p-v13-domaine-macle">Macle</a> &middot; Berthet-Bondet &middot; <a href="#venue-v14-domaine-st-phane-tissot" data-pin="p-v14-domaine-st-phane-tissot">Tissot</a> &middot; Ganevat &middot; Pignier</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-vin-jaune" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-savagnin" id="p-drink-savagnin">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Savagnin &mdash; ouillé vs sous voile</span></h3>
+        <div class="tcard__hook">The great Jura white &mdash; <em>two schools, two worlds</em></div>
+        <p class="tcard__body">Outside Vin Jaune, Savagnin is made in two registers. <strong>Topped-up</strong> (barrel kept full, no flor): a straight white wine, citrus, saline, the blue marls readable &mdash; comparable to a dry Riesling. <strong>Under flor</strong> but outside AOC Vin Jaune (e.g. Côtes du Jura without the minimum duration): between the two, lightly oxidative. Learning to tell them apart is an exercise done by the glass &mdash; at the <a href="#venue-v09-caveau-des-jacobins" data-pin="p-v09-caveau-des-jacobins">Caveau des Jacobins</a>, the wine merchant guides you.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-savagnin" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-vin-paille" id="p-drink-vin-paille">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127815; Vin de Paille</span></h3>
+        <div class="tcard__hook">Three-month raisined grapes &mdash; <em>200 g/L residual sugar, 37.5 cl half-bottle</em></div>
+        <p class="tcard__body">Grapes (Chardonnay, Savagnin, Poulsard) dried at least three months on racks (originally on straw &mdash; hence the name), losing 50% of their water weight. Pressed in January–February, 200 g/L minimum residual sugar after vinification. Aged at least 18 months, bottled in 37.5 cl half-bottles. Serve cool (8–10°C) at the end of the meal, with very aged Comté or a chocolate dessert.</p>
+        <dl class="tcard__details">
+          <div><strong>Producers</strong>Tissot &middot; Macle &middot; Pignier &middot; Mossu</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-vin-paille" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-macvin" id="p-drink-macvin">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127864; Macvin du Jura AOC</span></h3>
+        <div class="tcard__hook">Marc + must mistelle &mdash; <em>the classic Jura apéritif</em></div>
+        <p class="tcard__body">Mistelle made by mutting fresh grape must with 52° Franche-Comté marc (Cistercian recipe, harvest stopped at 17° potential). Cask-aged 12 months minimum. Red or white. Sugar, alcohol, fruit. Served chilled as an apéritif &mdash; or in cooking with foie gras, sweetbreads, melon.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-macvin" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-cremant" id="p-drink-cremant">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Crémant du Jura AOC</span></h3>
+        <div class="tcard__hook">Champagne method &middot; Chardonnay-led &mdash; <em>massively under-rated abroad</em></div>
+        <p class="tcard__body">Traditional method (second fermentation in bottle). Chardonnay dominant for whites, Pinot Noir and Poulsard for rosés. At least 9 months on lees, 12 for the best. The strongest value in French sparkling &mdash; entry-level Champagne quality at Crémant prices.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-cremant" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-trousseau-poulsard" id="p-drink-trousseau-poulsard">
+        <div class="tcard__rank">#6</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Trousseau &amp; Poulsard &mdash; les rouges fluets</span></h3>
+        <div class="tcard__hook">Frontier varieties &middot; pale color &middot; light tannin &mdash; <em>airborne Burgundy</em></div>
+        <p class="tcard__body"><strong>Trousseau</strong> &mdash; small-berried red variety, thin skin, more tannic than Poulsard, thrives on the stony soils of Arbois. Reference: Tissot &laquo;Singulier&raquo;, Bornard &laquo;Le Garde-Corps&raquo;. <strong>Poulsard</strong> (or Ploussard in Pupillin) &mdash; pale red, almost rosé, low-tannin, wild-strawberry and white-pepper aromatics. Serve cool (12–14°C) with charcuterie or poultry. Reference: Pignier, Overnoy, Houillon. The two varieties tell you what red is in a slate-and-marl climate &mdash; nothing like Bordeaux.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-trousseau-poulsard" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-absinthe" id="p-drink-absinthe">
+        <div class="tcard__rank">#7</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127864; Absinthe de Pontarlier</span></h3>
+        <div class="tcard__hook">Pernot, Devoille, Guy distilleries &mdash; <em>banned 1915–2011, distilled again 30 km away</em></div>
+        <p class="tcard__body">Absinthe was born in Couvet (Switzerland, Val-de-Travers) in the late 18th century, then Pontarlier became the French capital of distillation in the 19th. Banned in France from 1915 to 2011 over the thujone myth &mdash; an alkaloid of grand wormwood (<em>Artemisia absinthium</em>). Today several houses distill in Pontarlier (Distillerie Les Fils d'Émile Pernot, Devoille, Guy). Classically served as a <em>fountain</em>: ice water dripped onto a sugar cube on a slotted spoon &mdash; the green turns cloudy (<em>louche</em>). Taste: green anise, fennel, lemon balm, hyssop.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-absinthe" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-sapin" id="p-drink-sapin">
+        <div class="tcard__rank">#8</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127794; Liqueur de sapin</span></h3>
+        <div class="tcard__hook">Spring spruce buds &mdash; <em>tender green, sugar, resin</em></div>
+        <p class="tcard__body">Spruce buds picked in May (the new tender-green growth) macerated in neutral spirit, sweetened, sometimes finished with fir-honey. Distillerie Les Fils d'Émile Pernot and Distillerie Guy in Pontarlier are the two references. Served as a digestif or in cocktails (sapin-tonic, gin-sapin). The fir syrup &mdash; non-alcoholic, more rustic &mdash; also tops the <em>fir-syrup waffle</em>, La Finette's signature.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-sapin" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--bar" data-section="drink" data-venue-id="p-drink-pelen-galet" id="p-drink-pelen-galet">
+        <div class="tcard__rank">#9</div>
+        <div class="tcard__type">DRINK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9749; Café et galet de l'Ain &mdash; Pelen</span></h3>
+        <div class="tcard__hook">Pâtisserie 1899 &middot; rue du Commerce &mdash; <em>institution, tea-room upstairs</em></div>
+        <p class="tcard__body">Maison Pelen, founded in 1899 by the Pelen family, six generations at the same address under the arcades. The <em>galet de l'Ain</em> (chocolate-praline shaped like a river pebble, gianduja ganache) is the house invention &mdash; the edible souvenir to take home. Tea-room upstairs: decent espresso, comté tart, coffee éclair.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-drink-pelen-galet" data-section="drink" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= MUSIQUE ================= -->
+  <details class="sfold" id="music">
+    <summary>
+      <div>
+        <div class="sfold__title">Music</div>
+        <div class="sfold__desc">Festivals, jazz, brass — and the honest note on nightlife</div>
+      </div>
+      <span class="sfold__count">4 entries</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--music" data-section="music" data-venue-id="p-music-jura-music" id="p-music-jura-music">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">MUSIC</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127925; Festival de Music du Haut-Jura</span></h3>
+        <div class="tcard__hook">May–June &middot; Saint-Claude, Lons, Arbois &mdash; <em>classical music in a rural setting</em></div>
+        <p class="tcard__body">Classical &amp; chamber programming, concerts in Haut-Jura churches and abbeys since the 1980s. Intimate scale &mdash; string quintet in a 12th-century nave. Verify the annual program.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-music-jura-music" data-section="music" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--music" data-section="music" data-venue-id="p-music-bouche-bouche" id="p-music-bouche-bouche">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">MUSIC</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127932; De Bouche à Oreille</span></h3>
+        <div class="tcard__hook">Summer &middot; Lons and surroundings &mdash; <em>world music &amp; singular voices</em></div>
+        <p class="tcard__body">Small summer festival focused on world music and voice &mdash; verify the program each year. Open-air concerts, parks, squares. Check the calendar on the town hall or Tourist Office site before going.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-music-bouche-bouche" data-section="music" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--music" data-section="music" data-venue-id="p-music-jura-jazz" id="p-music-jura-jazz">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">MUSIC</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127927; Jura Jazz à Salins-les-Bains</span></h3>
+        <div class="tcard__hook">Summer &middot; Saline Royale &middot; verify &mdash; <em>jazz in the salt chapel</em></div>
+        <p class="tcard__body">Jazz festival held some years in Salins-les-Bains, sometimes also at Arc-et-Senans inside the Saline Royale buildings (UNESCO). The stone's resonance does most of the work. To verify &mdash; the program has been intermittent.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-music-jura-jazz" data-section="music" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <div class="alert">
+        <span class="alert-label">&#9888; Honest note on nightlife</span>
+        Lons isn't a nightlife town &mdash; and neither is the Jura. No electronic scene, no serious club. For melodic techno or clean house, you go down to Lyon (1h30) or Geneva (1h30); for a quiet party, Arbois and Poligny have their cellars open until midnight in summer. The walk under the arcades at 11pm is, here, the real night.
+      </div>
+
+    </div>
+  </details>
+
+  <!-- ================= CULTURE ================= -->
+  <details class="sfold" id="culture">
+    <summary>
+      <div>
+        <div class="sfold__title">Culture</div>
+        <div class="sfold__desc">Fixed stop — between Pasteur and Ledoux</div>
+      </div>
+      <span class="sfold__count">7 places</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <div class="funfact"><strong>Louis Pasteur defended his thesis in 1857</strong> on the alcoholic fermentation of Pupillin's Vin Jaune. It was in his Arbois laboratory &mdash; the only 19th-century scientific lab preserved in its original state in France &mdash; that he first demonstrated fermentation is the work of living micro-organisms, not an abiotic chemical process. Microbiology begins at the foot of a Savagnin barrel.</div>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-pasteur" id="p-culture-pasteur">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Maison de Louis Pasteur</span></h3>
+        <div class="tcard__hook">Arbois (rue de Courcelles) &middot; 7–9€ &mdash; <em>the only 19th-century scientific laboratory preserved in France</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--access">Recommended in season</span>
+          <span class="tcard__chip tcard__chip--price">7&ndash;9 €</span>
+        </div>
+        <p class="tcard__body">The family home &mdash; and intact laboratory &mdash; where Pasteur conducted his work on alcoholic fermentation (1857), pasteurization (1864), and later vaccines. The experimental vineyard still exists, in the courtyard. The benches, instruments, microscopes, and lab notebooks are all in place. See also <a href="#venue-v15-maison-de-louis-pasteur" data-pin="p-v15-maison-de-louis-pasteur">the full entry</a>.</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>Guided tour of the lab + experimental vineyard</div>
+          <div><strong>Hours</strong>Seasonal (Apr–Nov)</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Maison+de+Louis+Pasteur+Arbois" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-culture-pasteur" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-arc-senans" id="p-culture-arc-senans">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Saline royale d'Arc-et-Senans</span></h3>
+        <div class="tcard__hook">Arc-et-Senans (45 min) &middot; UNESCO 1982 &middot; 13–15€ &mdash; <em>Ledoux 1775 &middot; utopian architecture</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--price">13&ndash;15 €</span>
+        </div>
+        <p class="tcard__body">Designed by Claude-Nicolas Ledoux for Louis XV in 1775, completed in 1779. A semi-circle of golden-stone buildings organized around the Director's House, where the brine arriving by wooden <em>saumoduc</em> (21 km) from Salins-les-Bains was evaporated by heating. Manufacturing ran until 1895. The stone is still salt-impregnated &mdash; visible in the white efflorescences on the interior walls. Summer Garden Festival (June–October). See <a href="#venue-v17-salines-royales-d-arc-et-senans-unes" data-pin="p-v17-salines-royales-d-arc-et-senans-unes">the full entry</a>.</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>Main building + Garden Festival (June–Oct)</div>
+          <div><strong>Hours</strong>Annual</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Saline+Royale+Arc+et+Senans" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-culture-arc-senans" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-salins" id="p-culture-salins">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Grandes Salines de Salins-les-Bains</span></h3>
+        <div class="tcard__hook">Salins-les-Bains (50 min) &middot; UNESCO 2009 &middot; 9–12€ &mdash; <em>the other end of the saumoduc &mdash; the salt's origin</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--price">9&ndash;12 €</span>
+        </div>
+        <p class="tcard__body">The origin building of the Comté salt chain. 13th-century underground gallery, 19th-century balance pumps, evaporation room. The brine surged at 30 g/L salt and was evaporated on-site or pumped toward Arc-et-Senans from 1779. Uninterrupted activity from 1175 to 1962. UNESCO since 2009 (extension of the Arc-et-Senans listing).</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>13th-century underground gallery &middot; pan room</div>
+          <div><strong>Hours</strong>Guided tour only</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Grandes+Salines+de+Salins+les+Bains" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-culture-salins" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-vache-qui-rit" id="p-culture-vache-qui-rit">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">La Maison de La Vache qui rit</span></h3>
+        <div class="tcard__hook">Lons (Avenue du 44ᵉ RI) &middot; 8–10€ &mdash; <em>the factory where Léon Bel invented the brand in 1921</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--price">8&ndash;10 €</span>
+        </div>
+        <p class="tcard__body">Museum installed in the original Bel factory building in Lons. Léon Bel registered the trademark <em>La Vache qui rit</em> in 1921 &mdash; the drawing by Benjamin Rabier, taken from a Great War military mascot. Exhibits on image, 20th-century marketing, industrial cheesemaking, the sociological dimension of the brand. Worth a visit even if you hate the product.</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>Exhibition rooms &middot; children's workshops</div>
+          <div><strong>Hours</strong>Year-round &middot; closed some Mondays</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Maison+Vache+qui+rit+Lons-le-Saunier" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-culture-vache-qui-rit" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-eglise-cordeliers" id="p-culture-eglise-cordeliers">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Église des Cordeliers</span></h3>
+        <div class="tcard__hook">Lons centre &middot; free &mdash; <em>necropolis of the sires de Chalon &middot; 14th-c. recumbent effigies</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--price">Free</span>
+        </div>
+        <p class="tcard__body">Former church of the Cordeliers convent (13th c.), necropolis of the sires de Chalon-Arlay, lords of the County of Burgundy. 14th-c. polychrome recumbent effigies. Baroque woodwork, retable. Often empty. Ask the town hall or tourist office if it's closed.</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>Sires de Chalon recumbents &middot; woodwork</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-culture-eglise-cordeliers" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-eglise-saint-desire" id="p-culture-eglise-saint-desire">
+        <div class="tcard__rank">#6</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Église Saint-Désiré</span></h3>
+        <div class="tcard__hook">Lons centre &middot; free &mdash; <em>11th-c. Romanesque &middot; Merovingian sarcophagus</em></div>
+        <p class="tcard__body">One of the oldest Romanesque churches in Franche-Comté (11th century). The crypt holds the Merovingian sarcophagus of Saint Désiré, bishop of Besançon who died around 411 &mdash; a slab carved with palms and crosses whose dating has been refined to the 6ᵉ century. Ask the keepers to see the crypt during service hours.</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>Merovingian crypt &middot; sarcophagus of Saint Désiré</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-culture-eglise-saint-desire" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-rouget" id="p-culture-rouget">
+        <div class="tcard__rank">#7</div>
+        <div class="tcard__type">CULTURE</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Maison natale de Rouget de Lisle</span></h3>
+        <div class="tcard__hook">Lons (24 rue du Commerce) &middot; free, plaque &mdash; <em>the author of La Marseillaise was born here in 1760</em></div>
+        <p class="tcard__body">Plaque on the birthplace of Claude Joseph Rouget de Lisle (1760–1836), author of the <em>Chant de guerre pour l'Armée du Rhin</em> (composed in Strasbourg, 25–26 April 1792), which became La Marseillaise. His statue on Place de la Liberté is by Bartholdi (1882) &mdash; the same sculptor who would later make the Statue of Liberty in New York.</p>
+        <dl class="tcard__details">
+          <div><strong>What to see</strong>Plaque &middot; Bartholdi statue on Place de la Liberté</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-culture-rouget" data-section="culture" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= TRAVAILLER & SOUFFLER ================= -->
+  <details class="sfold" id="work">
+    <summary>
+      <div>
+        <div class="sfold__title">Work &amp; chill</div>
+        <div class="sfold__desc">Libraries, parks, café terraces &mdash; the quiet Lons</div>
+      </div>
+      <span class="sfold__count">5 spots</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--library" data-section="work" data-venue-id="p-work-mediatheque" id="p-work-mediatheque">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">LIBRARY</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Médiathèque de Lons-le-Saunier</span></h3>
+        <div class="tcard__hook">Place Philibert de Chalon &middot; free &mdash; <em>WiFi, reading room, press</em></div>
+        <p class="tcard__body">The municipal media library, quiet, bright, public WiFi. Ground-floor reading room, international press, local Jura collection (wines, cheeses, history). The simplest place for two hours of clean work.</p>
+        <dl class="tcard__details">
+          <div><strong>Hours</strong>Tue–Sat &middot; verify on bank holidays</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-work-mediatheque" data-section="work" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--library" data-section="work" data-venue-id="p-work-parc-chevalerie" id="p-work-parc-chevalerie">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">LIBRARY</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Parc des Bains &amp; Chevalerie</span></h3>
+        <div class="tcard__hook">Lons &middot; free &middot; old plane trees &mdash; <em>bench, 1900 bandstand, saline spring</em></div>
+        <p class="tcard__body">Lons's historic spa park. Old plane trees, 1900 bandstand, fountains, the Source Salée pool (water still 30 g/L salt &mdash; you can taste it). Quiet. The right place for a lunch break or reading a book. Coffee at the spa pavilion if it's open.</p>
+        <dl class="tcard__details">
+          <div><strong>Hours</strong>Annual</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-work-parc-chevalerie" data-section="work" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--library" data-section="work" data-venue-id="p-work-cafe-comedie" id="p-work-cafe-comedie">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">LIBRARY</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Café de la Comédie</span></h3>
+        <div class="tcard__hook">Place de la Comédie &middot; terrace &middot; €€ &mdash; <em>the best terrace for watching the market</em></div>
+        <div class="tcard__meta">
+          <span class="tcard__chip tcard__chip--price">2&ndash;12 €</span>
+        </div>
+        <p class="tcard__body">See also <a href="#venue-v08-le-caf-de-la-com-die" data-pin="p-v08-le-caf-de-la-com-die">the full entry</a>. The best terrace to settle into for an hour facing Place de la Comédie, especially on market days. Decent coffee, comté-saucisson boards, Crémant by the glass.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-work-cafe-comedie" data-section="work" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--library" data-section="work" data-venue-id="p-work-rue-arcades" id="p-work-rue-arcades">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">LIBRARY</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Rue du Commerce sous les arcades</span></h3>
+        <div class="tcard__hook">Lons centre &middot; free &mdash; <em>146 m of golden stone &middot; the rainy-day stroll</em></div>
+        <p class="tcard__body">Franche-Comté's only medieval arcaded street, 146 m of golden-stone vaults from the 16th century. Cover when it rains, shade when it's hot. All of Lons's historic shops &mdash; Pelen (1899), Fromagerie Vagne, Caveau des Jacobins &mdash; are here.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-work-rue-arcades" data-section="work" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--library" data-section="work" data-venue-id="p-work-bibliotheque-arbois" id="p-work-bibliotheque-arbois">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">LIBRARY</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">Médiathèque d'Arbois</span></h3>
+        <div class="tcard__hook">Arbois &middot; free &mdash; <em>Pasteur archive available</em></div>
+        <p class="tcard__body">Small media library, local Jura collection and Pasteur archive (correspondence, archival images). Quieter than Lons's. Verify the hours.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-work-bibliotheque-arbois" data-section="work" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= ÉVÉNEMENTS ================= -->
+  <details class="sfold" id="events">
+    <summary>
+      <div>
+        <div class="sfold__title">Events</div>
+        <div class="sfold__desc">The fixed stars of the Jura calendar</div>
+      </div>
+      <span class="sfold__count">7 events</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <div class="funfact"><strong>The Percée du Vin Jaune was born in 1997.</strong> Every first weekend of February, the Jura vineyards welcome 30,000 to 40,000 visitors to a different commune: tastings of Vin Jaune from the new vintage (released three months earlier, in November, after six years and three months of élevage), and the <em>percée</em> itself &mdash; the drawing of the first bottle of the vintage &mdash; opens the festivities. Today, Europe's largest rural wine gathering.</div>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-percee" id="p-event-percee">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Percée du Vin Jaune</span></h3>
+        <div class="tcard__hook">1st weekend of February &middot; rotating commune &mdash; <em>30,000+ visitors &middot; tastings in the host village's cellars</em></div>
+        <p class="tcard__body">The central event of Jura wine, since 1997. Each edition takes place in a different village of the vineyard &mdash; Arbois, Château-Chalon, Pupillin, Poligny, l'Étoile, etc. Winemakers open their cellars for tasting of the new vintage (released in November, after six years three months of élevage). Village meals, brass bands, auctions of old Vin Jaunes. Book lodging six months ahead &mdash; the whole département rents out.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>1st weekend of February</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-percee" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-comte" id="p-event-comte">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129472; Fête du Comté à Poligny</span></h3>
+        <div class="tcard__hook">Summer &middot; Poligny &mdash; <em>capital of Comté &middot; verify date each year</em></div>
+        <p class="tcard__body">Poligny, the official capital of Comté PDO, hosts an annual summer event around the cheese: markets, comparative tastings, production demonstrations, fruitière visits. Variable calendar &mdash; verify on the Comté Interprofessional Committee site or the <a href="#venue-v12-maison-du-comt" data-pin="p-v12-maison-du-comt">Maison du Comté</a>.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-comte" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-biou" id="p-event-biou">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127815; Le Biou d'Arbois</span></h3>
+        <div class="tcard__hook">1st Sunday of September &middot; Arbois &mdash; <em>giant-grape procession since the 16th century</em></div>
+        <p class="tcard__body">The <em>biou</em> (from <em>biaou</em>, &laquo;beautiful&raquo; in Jura dialect) is a giant grape cluster, 80 to 100 kg of grapes assembled into a single bunch by the winemakers of Arbois. Procession on the first Sunday of September since 1601 &mdash; the biou is carried on shoulders from Place de la Liberté to Saint-Just church, where it is blessed and then suspended under the vault for a year. One of the oldest still-active wine traditions in France. Pasteur attended it every year.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>1st Sunday of September</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-biou" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-festival-jardins" id="p-event-festival-jardins">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127807; Festival des Jardins &mdash; Saline royale</span></h3>
+        <div class="tcard__hook">June–October &middot; Arc-et-Senans &mdash; <em>ephemeral gardens in Ledoux's semicircle</em></div>
+        <p class="tcard__body">Since 2003. Around twenty ephemeral gardens created each year by landscape architects and artists, in the parterres and buildings of the Saline royale. A new theme each edition. Combine with the UNESCO visit &mdash; allow 3–4 hours. See <a href="#venue-v17-salines-royales-d-arc-et-senans-unes" data-pin="p-v17-salines-royales-d-arc-et-senans-unes">the entry</a>.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>June–October</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-festival-jardins" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-marche-noel" id="p-event-marche-noel">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127876; Marché de Noël de Lons</span></h3>
+        <div class="tcard__hook">December &middot; Place de la Comédie &mdash; <em>not the biggest but one of the most authentic</em></div>
+        <p class="tcard__body">Christmas market held on Place de la Comédie for three weeks in December. Local producers: Mont d'Or, Christmas Comté, winter charcuterie, fir-bud honey, mulled wine with Vin Jaune, kirsches. Smaller than Strasbourg or Colmar, but truly local.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-marche-noel" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-livre-arbois" id="p-event-livre-arbois">
+        <div class="tcard__rank">#6</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#128218; Salon du Livre &mdash; statut variable</span></h3>
+        <div class="tcard__hook">Variable &middot; verify &mdash; <em>Arbois literary tradition</em></div>
+        <p class="tcard__body">Arbois and Lons occasionally host book fairs and literary meetings &mdash; programming varies. Verify the tourist-office sites before going.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-livre-arbois" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--event" data-section="events" data-venue-id="p-event-foires" id="p-event-foires">
+        <div class="tcard__rank">#7</div>
+        <div class="tcard__type">EVENT</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129385; Foire aux fromages de Saint-Antoine de Poligny</span></h3>
+        <div class="tcard__hook">January &middot; Poligny &mdash; <em>feast of Saint Anthony, patron of charcutiers</em></div>
+        <p class="tcard__body">Historic fair around 17 January (Saint Anthony, patron of charcutiers and swineherds), a rural tradition. Comté cheese-makers, Haut-Doubs charcutiers, cured-meat stalls. Verify the date &mdash; some years suspended.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-event-foires" data-section="events" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= PROMENADES ================= -->
+  <details class="sfold" id="walks">
+    <summary>
+      <div>
+        <div class="sfold__title">Walks</div>
+        <div class="sfold__desc">Dawn, plateau, half-day — the solitary Jura</div>
+      </div>
+      <span class="sfold__count">6 walks</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--walk" data-section="walks" data-venue-id="p-walk-arcades-aube" id="p-walk-arcades-aube">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">WALK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#128276; Lons à l'aube &mdash; les arcades</span></h3>
+        <div class="tcard__hook">06:30 &middot; Place de la Liberté → Place de la Comédie &middot; 40 min &mdash; <em>the city read by smell</em></div>
+        <p class="tcard__body">Leave Place de la Liberté at 06:30. Rouget de Lisle's statue (Bartholdi 1882). Walk down rue du Commerce under the medieval arcades (146 m, 16th c., Franche-Comté's only arcaded street). Turn left into rue Saint-Désiré: at the 11th-c. Romanesque church, ask the keeper to see the crypt. Out, cross the Chevalerie park (old plane trees, 1900 bandstand), drop back via the Baths, walk past the Source Salée pool, end at the market on Place de la Comédie.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>06:30–07:30 (Thursday and Saturday to end at the market)</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-walk-arcades-aube" data-section="walks" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--walk" data-section="walks" data-venue-id="p-walk-chateau-chalon" id="p-walk-chateau-chalon">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">WALK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9978; Reculée de Château-Chalon</span></h3>
+        <div class="tcard__hook">Drive Lons → Voiteur → Château-Chalon &middot; 30 min &mdash; <em>belvedere over 50 ha of Vin Jaune</em></div>
+        <p class="tcard__body">Drive from Lons via Voiteur (15 km, 25 min). Château-Chalon is perched on a limestone spur dominating the <em>reculée</em> &mdash; a glacial cul-de-sac carved into the plateau. The belvedere on the church square takes in the 50 ha of AOC vineyard: blue Liassic marls, Savagnin on the slope. Rue de la Roche, Domaine Macle. On foot, walk the ramparts &mdash; 25 min, 360° panorama.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>Morning (eastern light on the slope)</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-walk-chateau-chalon" data-section="walks" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--walk" data-section="walks" data-venue-id="p-walk-arbois" id="p-walk-arbois">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">WALK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127815; Arbois &mdash; le tour de Pasteur</span></h3>
+        <div class="tcard__hook">Place de la Liberté → Pasteur's vines → Cuisance &middot; 90 min &mdash; <em>the chemist's walk</em></div>
+        <p class="tcard__body">Place de la Liberté, Pasteur's statue. Rue de Courcelles, Pasteur's House (visit if you like, otherwise the plaque). Out toward Pasteur's vines (1.5 km, marked trail) &mdash; the experimental clos where he conducted his work. Back along the Cuisance river, across the stone bridges, return to Place de la Liberté. Saint-Just cathedral, where the biou is hung every year, is on the way.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>Morning</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-walk-arbois" data-section="walks" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--walk" data-section="walks" data-venue-id="p-walk-baume" id="p-walk-baume">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">WALK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127794; Reculée des Planches &amp; grottes de Baume-les-Messieurs</span></h3>
+        <div class="tcard__hook">Lons → Baume-les-Messieurs &middot; 25 min by car &mdash; <em>Tufs cascade &middot; Saint-Pierre abbey &middot; Belvédères trail</em></div>
+        <p class="tcard__body">Baume-les-Messieurs is classed among the Plus Beaux Villages de France. Benedictine abbey founded in 869 by Saint Bernon, origin of Cluny &mdash; the founding party for Cluny set out from Baume in 910. Tufa cascade (living limestone concretions in continuous formation), Baume caves (guided tours), glacial <em>reculée</em>. Belvédères trail &mdash; 2h30, 200 m elevation, vertical view down into the reculée. Eating possible in the village (seasonal inns).</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>Morning (cascade en lumière) ou fin d'après-noon (lumière sur la falaise)</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-walk-baume" data-section="walks" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--walk" data-section="walks" data-venue-id="p-walk-cirque-fer-cheval" id="p-walk-cirque-fer-cheval">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">WALK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127956; Cirque du Fer à Cheval &middot; Ladoye</span></h3>
+        <div class="tcard__hook">Lons → Ladoye-sur-Seille &middot; 25 min &mdash; <em>200 m limestone amphitheater</em></div>
+        <p class="tcard__body">A Jura-plateau <em>reculée</em> at Ladoye-sur-Seille. 200 m-tall limestone amphitheater in a perfect horseshoe shape. Switch-backed panoramic trail, 2h round-trip. Spring of the Vallière at the foot. Very quiet on weekdays. Picnic possible on the summit belvedere.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-walk-cirque-fer-cheval" data-section="walks" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--walk" data-section="walks" data-venue-id="p-walk-source-salee" id="p-walk-source-salee">
+        <div class="tcard__rank">#6</div>
+        <div class="tcard__type">WALK</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#128167; Tour des sources salées</span></h3>
+        <div class="tcard__hook">Lons &mdash; Parc des Bains → Source Salée pool &middot; 25 min &mdash; <em>the origin of the name &middot; water still 30 g/L</em></div>
+        <p class="tcard__body">Lons's spa walk. Spa pavilion (1892), Parc des Bains, Source Salée pool (water visible, 30 g/L salt). Taste it (yes, you can). Jura salt is here, in the deep aquifer. Understand that the whole plateau culture of cheese and cured meat starts here, 30 m underground.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-walk-source-salee" data-section="walks" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= COINS SECRETS ================= -->
+  <details class="sfold" id="secret-gems">
+    <summary>
+      <div>
+        <div class="sfold__title">SECRET GEMS — Where locals sit when they want to be alone</div>
+        <div class="sfold__desc">Benches, bells, springs — the patience of a small prefecture</div>
+      </div>
+      <span class="sfold__count">5 spots</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <p style="font-style:italic;color:#6b7280;margin:0 0 1em 0">Lons is a town of 17,000 souls: few hidden corners, but many quietly inhabited ones to find at the right hour. Five real ones &mdash; not ten.</p>
+
+      <article class="tcard tcard--gem" data-section="secret-gems" data-venue-id="p-gem-rouget-tilleul" id="p-gem-rouget-tilleul">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">GEM</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127794; Cour du musée Rouget de Lisle &middot; le tilleul &middot; mai 14:00</span></h3>
+        <div class="tcard__hook">Birthplace of Rouget de Lisle &middot; centre &mdash; <em>the bells of the Cordeliers, Saint-Désiré, the Hospital cross</em></div>
+        <p class="tcard__body">The birthplace of Rouget de Lisle (author of La Marseillaise, born in Lons in 1760) houses a modest museum with an inner courtyard and one bench, under an old linden. At 14:00 in May the linden is in bloom (massive perfume), and it's the only place in town where you hear the bells of the Cordeliers church, of Saint-Désiré, and of the Hospital chapel ring together &mdash; three bell towers, three timbres, a few seconds apart. No-one else but you, almost always.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>14:00 in May (linden) &middot; or 16:00 Sep–Oct</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-gem-rouget-tilleul" data-section="secret-gems" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--gem" data-section="secret-gems" data-venue-id="p-gem-source-salee-aube" id="p-gem-source-salee-aube">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">GEM</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#128167; Source Salée &middot; Parc des Bains &middot; 07:30 brume</span></h3>
+        <div class="tcard__hook">Source Salée pool &middot; dawn with mist on the Revermont &mdash; <em>salt water at 30 g/L, the origin of the name</em></div>
+        <p class="tcard__body">The Source Salée pool in the Parc des Bains is free to enter. At 7:30am on a September or October morning, the mist rises from the deep aquifer and clings to the poplars. The water is still 30 g/L salt &mdash; you can taste it, yes. This is the etymological origin of Lons-le-Saunier (saulnier = salt worker). At that hour there's nobody &mdash; the spa-goers arrive at 9.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-gem-source-salee-aube" data-section="secret-gems" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--gem" data-section="secret-gems" data-venue-id="p-gem-arcades-rue-comedie" id="p-gem-arcades-rue-comedie">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">GEM</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127968; Arcades de la rue du Commerce &middot; pluie de novembre</span></h3>
+        <div class="tcard__hook">Rue du Commerce &middot; 17th-c. arcades &mdash; <em>146 columns &middot; a café at La Comédie, silent reading</em></div>
+        <p class="tcard__body">Rue du Commerce, the main artery of the old centre, is fully arcaded on both sides (146 Jura-stone columns, 17th c., listed). On a rainy November day these arcades become a dry tunnel &mdash; you hear the rain on the cobbles a metre away without taking a drop. It's one of the longest civil arcades in the Grand Est, and it's best on bad-weather days. Combine with an espresso at the counter of a Place de la Comédie café, in the dry.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-gem-arcades-rue-comedie" data-section="secret-gems" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--gem" data-section="secret-gems" data-venue-id="p-gem-puits-saline" id="p-gem-puits-saline">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">GEM</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127783; Cour de la Saline &middot; vestiges &middot; mardi morning avant marché</span></h3>
+        <div class="tcard__hook">Near the old hospital &middot; medieval salt-well &mdash; <em>salt extracted here since 5,000 BC</em></div>
+        <p class="tcard__body">Salt has been extracted at Lons without interruption since the Bronze Age &mdash; the Neolithic briquetage of the Seille (12 km away, the next valley) attests salt-making since 5,000 BC. The courtyard near the old hospital still holds the remains of the medieval salt-well. On a Tuesday morning before 8am, the place is silent &mdash; you read the stones like a palimpsest: post-holes, levelling marks, mason's marks. No sign, no tour: you look, you find, you sit.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-gem-puits-saline" data-section="secret-gems" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--gem" data-section="secret-gems" data-venue-id="p-gem-belvedere-revermont" id="p-gem-belvedere-revermont">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">GEM</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127956; Belvédère du Revermont &middot; route de Conliège &middot; coucher d'octobre</span></h3>
+        <div class="tcard__hook">5 km east of Lons &middot; D52 road &middot; Vaux reculée &mdash; <em>the first Jura plateau, the Bresse plain in the distance</em></div>
+        <p class="tcard__body">5 km east of Lons, on the road to Conliège (D52), you climb the Revermont slope &mdash; this is where the Bresse plain dies against the first Jura plateau, what geologists call <em>a relief fault</em>. At sunset in October, the view from the belvedere reaches the Saône, sometimes the Alps on very clear days (Mont-Blanc visible four days a year). Stone bench, parking for three cars. No tourists.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-gem-belvedere-revermont" data-section="secret-gems" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+    </div>
+  </details>
+
+  <!-- ================= HI-FI BARS ================= -->
+  <details class="sfold" id="hifi-bars">
+    <summary>
+      <div>
+        <div class="sfold__title">HI-FI BARS — Vinyl & sound systems</div>
+        <div class="sfold__desc">Audiophile listening bars (jazz-kissa lineage)</div>
+      </div>
+      <span class="sfold__count">Honest note</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <p style="font-style:italic;color:#6b7280;margin:0 0 1em 0">La lignée des <em>jazz kissa</em> de Tokyo &mdash; amplis à lampes, Tannoy ou Klipschorn restaurés, vinyle exclusif, sélecteur identifié, conversation chuchotée &mdash; est rare hors de Tokyo, Berlin, Paris, New York.</p>
+      <div class="alert"><span class="alert-label">&#9888; Honest note</span> Lons-le-Saunier is a 17,000-inhabitant prefecture &mdash; there's no audiophile listening bar in the strict sense, and there probably won't be one. A few wine bars (Le Monoï, La Maison Maire in Arbois) spin vinyl now and then, but without a named system or programming. For a real listening bar, the nearest credible stop is <strong>Le Sucre</strong> in Lyon (Confluence, pointed programming, Funktion-One system for the club; for pure listening, the <strong>Hot Club de Lyon</strong>, the oldest still-active jazz cellar in Europe, plays that role). 1h30 from Lons. Beaune (1h away) also has the <strong>Bar à Vins Caves Madeleine</strong> with a serious listening turntable in season.</div>
+    </div>
+  </details>
+
+  <!-- ================= ÉPICERIES DU MONDE ================= -->
+  <details class="sfold" id="ethnic-restaurants">
+    <summary>
+      <div>
+        <div class="sfold__title">ETHNIC RESTAURANTS — Worth a real visit</div>
+        <div class="sfold__desc">Restaurants from real diasporas — included only when worth it</div>
+      </div>
+      <span class="sfold__count">honest note</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <p style="font-style:italic;color:#6b7280;margin:0 0 1em 0">There is no exceptional ethnic restaurant in Lons-le-Saunier. The closest credible options are the Vietnamese, Maghrebi and Sri Lankan kitchens of Lyon (1h30) and Besançon (1h).</p>
+      <div class="alert"><span class="alert-label">&#9888; Honest note</span> Empty + honest beats fabricated. If a worthwhile ethnic table opens in Lons or Arbois, it will be added here. Until then, plan an evening detour to Lyon's Vietnamese (Phong Vinh, Bahn-Mi-Phuong) or to Besançon's Maghrebi tables.</div>
+    </div>
+  </details>
+
+  <!-- ================= MANGER VITE BIEN ================= -->
+  <details class="sfold" id="street-food">
+    <summary>
+      <div>
+        <div class="sfold__title">STREET FOOD — The quick local food that stands up</div>
+        <div class="sfold__desc">Charcoal-grilled Morteau, cancoillotte croque, Comté sandwich</div>
+      </div>
+      <span class="sfold__count">3 addresses</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <p style="font-style:italic;color:#6b7280;margin:0 0 1em 0">Lons has no &laquo;street food&raquo; tradition in the Mediterranean sense, but it has three local quick bites that stand up: charcoal-grilled Morteau in a baguette, the cancoillotte croque-monsieur, and the Comté-on-rye sandwich.</p>
+
+      <article class="tcard tcard--streetfood" data-section="street-food" data-venue-id="p-street-morteau-baguette" id="p-street-morteau-baguette">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">STREET FOOD</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129385; Saucisse de Morteau au charbon &middot; charcuteries du marché</span></h3>
+        <div class="tcard__hook">Place de la Comédie market &middot; Thu/Sat noon &mdash; <em>tuyé Morteau grilled + baguette + Beaune mustard</em></div>
+        <p class="tcard__body">At the Thursday and Saturday market, two Haut-Doubs tuyé charcutiers (Morteau, Loulle) grill their Morteau (under wooden plug) over embers at midday. <strong>What to order:</strong> a thick slice, slid into a half-baguette, strong Beaune mustard. €5. The Jurassien's market-day stand-up sandwich, eaten between the stalls. Not to be confused with industrial Morteau &mdash; look for the <em>tuyé</em> mention and the wooden plug.</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>Thu &amp; Sat morning (10am–1pm)</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-street-morteau-baguette" data-section="street-food" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--streetfood" data-section="street-food" data-venue-id="p-street-croque-cancoillotte" id="p-street-croque-cancoillotte">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">STREET FOOD</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129385; Croque-cancoillotte &middot; cafés place de la Comédie</span></h3>
+        <div class="tcard__hook">Place de la Comédie brasseries &middot; midday &mdash; <em>cancoillotte melted with garlic and white wine, Bresse ham, grilled country bread</em></div>
+        <p class="tcard__body">Cancoillotte is the Jura's melted cheese (made from metton, skimmed-milk curd then refined). Several Place de la Comédie brasseries offer a &laquo;croque-cancoillotte&raquo;: grilled country bread, roast Bresse ham, cancoillotte melted with a stroke of garlic and white wine, salamander-gratinated. It's the quick lunch of the prefecture employee &mdash; honest, rich, €9. Avoid the &laquo;station-café&raquo; versions (usually industrial cancoillotte).</p>
+        <dl class="tcard__details">
+          <div><strong>When</strong>Midday 12pm–2pm</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-street-croque-cancoillotte" data-section="street-food" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--streetfood" data-section="street-food" data-venue-id="p-street-sandwich-comte" id="p-street-sandwich-comte">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">STREET FOOD</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129472; Sandwich Comté-seigle &middot; Comtoise du Jura (rue Lecourbe)</span></h3>
+        <div class="tcard__hook">Comtoise du Jura &middot; opens 10am &mdash; <em>24-month Marcel Petite Comté + sourdough rye + demi-sel butter</em></div>
+        <p class="tcard__body">For anyone wanting a clean sandwich before a Revermont hike or a drive to Arbois, the Comtoise du Jura (rue Lecourbe, cheesemonger-grocer) prepares a 24-month Comté sandwich (Marcel Petite, Fort Saint-Antoine) on the sourdough rye from the next-door bakery, with Breton demi-sel butter. €6. Ask for 24-month Comté over 18 (the 24 has the tyrosine crystals, more saline). No industrial sandwich, no chain &mdash; three ingredients, simply assembled.</p>
+        <dl class="tcard__details">
+          <div><strong>Hour</strong>10am–1pm, 4pm–7pm</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-street-sandwich-comte" data-section="street-food" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+    </div>
+  </details>
+
+  <!-- ================= BURGER & KEBAB ================= -->
+  <details class="sfold" id="burger-kebab">
+    <summary>
+      <div>
+        <div class="sfold__title">BURGER & KEBAB — Only if exceptional</div>
+        <div class="sfold__desc">Section open only when there's a real reason</div>
+      </div>
+      <span class="sfold__count">Honest note</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="alert"><span class="alert-label">&#9888; Honest note</span> Lons has about a dozen kebabs and several &laquo;artisanal&raquo; burgers (Au P'tit Bouchon, the burger of the day at central brasseries), all decent but none exceptional in the sense of a queue, a named cook, traceable meat. It isn't the culture here &mdash; the Jura is a land of Comté, Morteau, Vin Jaune, and anything quick-and-local belongs in the <a href="#street-food">section above</a>. For a signature burger, the closest stop is <strong>Le Bouchon des Filles</strong> or <strong>Daddy's Burger</strong> in Lyon (1h30); for a serious kebab, it's <strong>Berliner Das Original</strong> in Strasbourg (2h30) or Lausanne.</div>
+    </div>
+  </details>
+
+  <!-- ================= MARCHÉS ================= -->
+  <details class="sfold" id="markets">
+    <summary>
+      <div>
+        <div class="sfold__title">Markets</div>
+        <div class="sfold__desc">What matters and when — Thursday, Saturday, and the Saint-Catherine market</div>
+      </div>
+      <span class="sfold__count">3 markets</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--market" data-section="markets" data-venue-id="p-market-lons" id="p-market-lons">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">MARKET</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127812; Marché de Lons-le-Saunier</span></h3>
+        <div class="tcard__hook">Place de la Comédie &middot; Thursday & Saturday 7am–1pm &mdash; <em>one of the finest in the Jura</em></div>
+        <p class="tcard__body">See also <a href="#venue-v10-march-de-lons-le-saunier" data-pin="p-v10-march-de-lons-le-saunier">the full entry</a>. Thursday is more rural (producers from the plateau, the Haut-Jura, Bresse), Saturday is denser and more urban. To buy: Marcel Petite Comté (Fort Saint-Antoine, the reference affineur of plateau Comté), tuyé Morteau, cancoillotte au Vin Jaune, fir-bud honey, seasonal vegetables, Jura green lentils. Before 9am for the best producers.</p>
+        <dl class="tcard__details">
+          <div><strong>Day</strong>Thursday (rural) &middot; Saturday (busy)</div>
+          <div><strong>Hour</strong>7am–1pm &middot; arrive before 9am</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Marché+Place+de+la+Comédie+Lons-le-Saunier" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-market-lons" data-section="markets" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--market" data-section="markets" data-venue-id="p-market-arbois" id="p-market-arbois">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">MARKET</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127815; Marché d'Arbois</span></h3>
+        <div class="tcard__hook">Place de la Liberté &middot; Friday morning &mdash; <em>smaller, more wine-grower-led</em></div>
+        <p class="tcard__body">Friday-morning market on Place de la Liberté in Arbois. Smaller than Lons's, more vintner-oriented: direct-sale Vin Jaune producers, Comtois charcuterie, summer-pasture cheeses, honey. Ideal alongside a morning visit to Tissot.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-market-arbois" data-section="markets" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--market" data-section="markets" data-venue-id="p-market-poligny" id="p-market-poligny">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">MARKET</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129472; Marché de Poligny</span></h3>
+        <div class="tcard__hook">Monday &amp; Friday morning &mdash; <em>capital of Comté</em></div>
+        <p class="tcard__body">Poligny's market is small but useful: the <a href="#venue-v12-maison-du-comt" data-pin="p-v12-maison-du-comt">Maison du Comté</a> is on the square, and several plateau fruitières rotate through. Verify the days in season (Monday and Friday mornings as standard).</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-market-poligny" data-section="markets" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= PRODUCTEURS ================= -->
+  <details class="sfold" id="producers">
+    <summary>
+      <div>
+        <div class="sfold__title">Producers</div>
+        <div class="sfold__desc">Where the makers live — affineurs, winemakers, charcutiers, salt-works</div>
+      </div>
+      <span class="sfold__count">6 producers</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--producer" data-section="producers" data-venue-id="p-prod-marcel-petite" id="p-prod-marcel-petite">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">PRODUCER</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129472; Marcel Petite &mdash; Fort Saint-Antoine</span></h3>
+        <div class="tcard__hook">Malbuisson (Doubs, 1h from Lons) &middot; limited visits &mdash; <em>the reference Comté affineur</em></div>
+        <p class="tcard__body">1879 military fort reconverted into an affinage cellar in 1966 by Marcel Petite. 100,000 wheels age simultaneously at 7–8°C, 95% humidity, no air conditioning &mdash; the thickness of the stone walls does everything. Marcel Petite Comté (lozenge label) is the reference for serious chefs and cheese-mongers. Limited tours, by booking. Otherwise, the wheel is everywhere at Lons market and at Vagne.</p>
+        <dl class="tcard__details">
+          <div><strong>What to buy</strong>Marcel Petite Comté 24 / 36 months &middot; at Lons market</div>
+          <div><strong>Visit</strong>By reservation &middot; via the house's website</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Fort+Saint+Antoine+Marcel+Petite" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-prod-marcel-petite" data-section="producers" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--producer" data-section="producers" data-venue-id="p-prod-macle" id="p-prod-macle">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">PRODUCER</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Domaine Macle &mdash; Château-Chalon</span></h3>
+        <div class="tcard__hook">Château-Chalon &middot; by appointment &mdash; <em>Laurent Macle receives in person</em></div>
+        <p class="tcard__body">See also <a href="#venue-v13-domaine-macle" data-pin="p-v13-domaine-macle">the entry</a>. Family estate over 12 ha in Château-Chalon. Absolute reference of Vin Jaune AOC Château-Chalon. Visits by appointment only, tasting in the family cellar, no staging. The Macle Château-Chalon clavelin &mdash; €75–110 depending on vintage &mdash; is the one bottle to lay down if you only ever buy one in your life.</p>
+        <dl class="tcard__details">
+          <div><strong>Visit</strong>By appointment</div>
+          <div><strong>Phone</strong>+33 3 84 85 21 85</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-prod-macle" data-section="producers" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--producer" data-section="producers" data-venue-id="p-prod-tissot" id="p-prod-tissot">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">PRODUCER</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127863; Domaine Stéphane Tissot &mdash; Montigny-lès-Arsures</span></h3>
+        <div class="tcard__hook">Montigny-lès-Arsures &middot; shop open &mdash; <em>biodynamics, the broadest parcel range in the Jura</em></div>
+        <p class="tcard__body">See also <a href="#venue-v14-domaine-st-phane-tissot" data-pin="p-v14-domaine-st-phane-tissot">the entry</a>. Stéphane and Bénédicte Tissot work 50 ha in certified biodynamics. The broadest and most experimental range in the Jura: Trousseau Singulier, Patchwork Chardonnay, Vin Jaune, Vin de Paille, Crémant Indigène (no sulfur, ancestral method), Trousseau liqueur. Shop walk-in; cellar visits by booking.</p>
+        <dl class="tcard__details">
+          <div><strong>Shop</strong>Walk-in</div>
+          <div><strong>Phone</strong>+33 3 84 66 08 27</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-prod-tissot" data-section="producers" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--producer" data-section="producers" data-venue-id="p-prod-mieral" id="p-prod-mieral">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">PRODUCER</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127831; Volaille Miéral &mdash; Bresse</span></h3>
+        <div class="tcard__hook">Montrevel-en-Bresse (50 min from Lons) &middot; 48-hour orders &mdash; <em>Bresse poularde PDO, chef supplier</em></div>
+        <p class="tcard__body">See also <a href="#venue-v16-volaille-mi-ral-bresse" data-pin="p-v16-volaille-mi-ral-bresse">the entry</a>. Reference Bresse-PDO poultry house, historic supplier of starred chefs in the southeast. Whole fine poularde, capon, guinea fowl, poultry liver. Order 48 hours ahead in season &mdash; vacuum-sealed for boat or car. 50 minutes from Lons, on the way to Lyon.</p>
+        <dl class="tcard__details">
+          <div><strong>Phone</strong>+33 4 74 25 48 36</div>
+        </dl>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-prod-mieral" data-section="producers" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--producer" data-section="producers" data-venue-id="p-prod-tuye-papy" id="p-prod-tuye-papy">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">PRODUCER</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#129385; Tuyé du Papy Gaby</span></h3>
+        <div class="tcard__hook">Gilley (Doubs, 1h15 from Lons) &middot; visits &mdash; <em>one of the last traditional tuyés still operating</em></div>
+        <p class="tcard__body">The <em>tuyé</em> is a traditional pyramidal chimney 5 to 7 m high, where Morteau sausages, Jésus, and hams are smoked. Tuyé du Papy Gaby in Gilley is one of the last still operating, with tours and a shop. To understand the softwood-smoking mechanic that defines Morteau PGI. Combine with a side trip to Pontarlier (absinthe).</p>
+        <dl class="tcard__details">
+          <div><strong>Visit</strong>Shop walk-in &middot; seasonal guided tours</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Tuyé+du+Papy+Gaby+Gilley" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-prod-tuye-papy" data-section="producers" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+      <article class="tcard tcard--producer" data-section="producers" data-venue-id="p-prod-pernot" id="p-prod-pernot">
+        <div class="tcard__rank">#6</div>
+        <div class="tcard__type">PRODUCER</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#127794; Distillerie Les Fils d'Émile Pernot &mdash; Pontarlier</span></h3>
+        <div class="tcard__hook">Pontarlier (1h15 from Lons) &middot; visit + tasting &mdash; <em>absinthe, fir, gentian, fruits</em></div>
+        <p class="tcard__body">Distillery founded in 1890, restarted after the lifting of absinthe's ban in 2011. Absinthe Vieux Pontarlier (60°), fir liqueur, wild gentian, Jura fruit eaux-de-vie (mirabelle, plum). Shop open, scheduled tastings. Combine with a visit to the Guy distillery (the other historic house in Pontarlier).</p>
+        <dl class="tcard__details">
+          <div><strong>Visit</strong>Shop &middot; scheduled tasting</div>
+          <div><strong>Address</strong>Pontarlier</div>
+        </dl>
+        <div class="tcard__actions">
+          <a class="tcard__action" href="https://www.google.com/maps/search/?api=1&query=Distillerie+Les+Fils+d+Emile+Pernot+Pontarlier" target="_blank" rel="noopener">Open in Google Maps →</a>
+          <button class="tcard__votes" data-venue-id="p-prod-pernot" data-section="producers" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button>
+        </div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= AVOID ================= -->
+  <details class="sfold" id="avoid">
+    <summary>
+      <div>
+        <div class="sfold__title">Avoid</div>
+        <div class="sfold__desc">Named traps — no ambiguity</div>
+      </div>
+      <span class="sfold__count">5 traps</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--avoid" data-section="avoid" data-venue-id="p-avoid-vin-jaune-terrasse" id="p-avoid-vin-jaune-terrasse">
+        <div class="tcard__rank">#1</div>
+        <div class="tcard__type">AVOID</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9888; &laquo;Vin Jaune&raquo; served on a tourist terrace</span></h3>
+        <div class="tcard__hook">City centre &middot; 75 cl bottles &mdash; <em>if it isn't a 62 cl clavelin, it isn't Vin Jaune</em></div>
+        <p class="tcard__body">The 62 cl format is mandatory for AOC Château-Chalon, Côtes du Jura Vin Jaune, Arbois Vin Jaune and Étoile Vin Jaune. If you're served a &laquo;Vin Jaune&raquo; in a 75 cl bottle, it's at best a topped-up Savagnin, at worst a natural Savagnin sold under the wrong name. Drink real Vin Jaune at the winemaker's (Macle, Tissot, Berthet-Bondet, Pignier) or at the <a href="#venue-v09-caveau-des-jacobins" data-pin="p-v09-caveau-des-jacobins">Caveau des Jacobins</a> in Lons, where the selection is curated.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-avoid-vin-jaune-terrasse" data-section="avoid" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--avoid" data-section="avoid" data-venue-id="p-avoid-pizza-arcades" id="p-avoid-pizza-arcades">
+        <div class="tcard__rank">#2</div>
+        <div class="tcard__type">AVOID</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9888; The tourist pizzerias on rue du Commerce</span></h3>
+        <div class="tcard__hook">Saturday noon &middot; industrial comté &mdash; <em>walk past, head up to the halls</em></div>
+        <p class="tcard__body">On rue du Commerce, two or three addresses serve a &laquo;comté pizza&raquo; based on industrial emmental. No relation to plateau Comté. If you want a quick midday option, head up to <a href="#venue-v04-le-bistrot-des-halles" data-pin="p-v04-le-bistrot-des-halles">Bistrot des Halles</a> on Place de la Comédie or book <a href="#venue-v03-le-comtois" data-pin="p-v03-le-comtois">Le Comtois</a>.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-avoid-pizza-arcades" data-section="avoid" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--avoid" data-section="avoid" data-venue-id="p-avoid-caves-degustation" id="p-avoid-caves-degustation">
+        <div class="tcard__rank">#3</div>
+        <div class="tcard__type">AVOID</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9888; City-centre &laquo;Vin Jaune tasting&raquo; cellars</span></h3>
+        <div class="tcard__hook">Lons &middot; small cellars with come-on shopfronts &mdash; <em>topped-up Savagnin sold as Vin Jaune</em></div>
+        <p class="tcard__body">A few shops in central Lons offer a &laquo;Vin Jaune tasting&raquo; without precision: what's actually poured is topped-up Savagnin, on the pretext that it's easier to appreciate. The honest work is at the <a href="#venue-v09-caveau-des-jacobins" data-pin="p-v09-caveau-des-jacobins">Caveau des Jacobins</a> on rue Richebourg, where the merchant explains what he's pouring.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-avoid-caves-degustation" data-section="avoid" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--avoid" data-section="avoid" data-venue-id="p-avoid-comte-industriel" id="p-avoid-comte-industriel">
+        <div class="tcard__rank">#4</div>
+        <div class="tcard__type">AVOID</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9888; Supermarket Comté sold as &laquo;Comté de Lons&raquo;</span></h3>
+        <div class="tcard__hook">Tourist shops &mdash; <em>Comté PDO has no &laquo;Lons&raquo; sub-region</em></div>
+        <p class="tcard__body">No &laquo;Comté de Lons&raquo; PDO exists. Comté is made by 130+ fruitières across a region covering the entire Jura massif (Doubs, Jura, Ain). The meaningful distinctions are altitude (plateau vs. plain), age of affinage, and the name of the fruitière or affineur (Marcel Petite, Hauts de Mâcot, Beillevaire, etc.). Buy from a cheesemonger-affineur (<a href="#venue-v11-fromagerie-vagne" data-pin="p-v11-fromagerie-vagne">Vagne</a>, Maison du Comté) or at the market &mdash; never at a supermarket if you want the good stuff.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-avoid-comte-industriel" data-section="avoid" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+      <article class="tcard tcard--avoid" data-section="avoid" data-venue-id="p-avoid-cancoillotte-industrielle" id="p-avoid-cancoillotte-industrielle">
+        <div class="tcard__rank">#5</div>
+        <div class="tcard__type">AVOID</div>
+        <h3 class="tcard__name"><span class="tcard__name-text">&#9888; Industrial UHT-pot cancoillotte</span></h3>
+        <div class="tcard__hook">Supermarkets &mdash; <em>the real one is artisanal, alive, short shelf-life</em></div>
+        <p class="tcard__body">Quality cancoillotte is made from fresh <em>metton</em> (skimmed pressed curd), melted with butter, water, salt, sometimes garlic or Vin Jaune. Keeps 8–15 days refrigerated. The industrial version (UHT, plastic pot) is stable for 3 months &mdash; and inert. To buy: Sancey-Richard in Mamirolle, Poitrey in Lavans-lès-Saint-Claude, or simply the cheesemonger's pot at the market.</p>
+        <div class="tcard__actions"><button class="tcard__votes" data-venue-id="p-avoid-cancoillotte-industrielle" data-section="avoid" type="button"><span class="star">★</span> <span class="count">0</span> VOTES</button></div>
+      </article>
+
+    </div>
+  </details>
+
+  <!-- ================= SUIVRE ================= -->
+  <details class="sfold" id="follow">
+    <summary>
+      <div>
+        <div class="sfold__title">Follow</div>
+        <div class="sfold__desc">Local accounts — pre-trip intel</div>
+      </div>
+      <span class="sfold__count">5 sources</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="follow-grid">
+        <div class="follow-card">
+          <div class="handle">jura-vins.com</div>
+          <div class="why">Interprofessional Committee of Jura Wines (CIVJ) &mdash; official calendar of Percées, Biou, festivals, and the full list of recognised estates.</div>
+        </div>
+        <div class="follow-card">
+          <div class="handle">comte.com</div>
+          <div class="why">Official Comté PDO site &mdash; fruitière map, event calendar, information on summer-pasture seasonality.</div>
+        </div>
+        <div class="follow-card">
+          <div class="handle">@maison_du_comte (IG)</div>
+          <div class="why">Official Maison du Comté account in Poligny. Tours, events, photos of the affinage cellar. Verify the account exists and is active before the trip.</div>
+        </div>
+        <div class="follow-card">
+          <div class="handle">lons-jura.fr</div>
+          <div class="why">Lons Jura Tourist Office. Market calendar, municipal events, opening hours for cultural sites (La Vache qui rit Museum, etc.).</div>
+        </div>
+        <div class="follow-card">
+          <div class="handle">salineroyale.com</div>
+          <div class="why">Saline royale d'Arc-et-Senans &mdash; Festival des Jardins programme, events, UNESCO opening hours.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ================= CALENDRIER SAISONNIER ================= -->
+  <details class="sfold" id="seasonal">
+    <summary>
+      <div>
+        <div class="sfold__title">Seasonal Calendar</div>
+        <div class="sfold__desc">Verify before each trip — what's peak by month</div>
+      </div>
+      <span class="sfold__count">12 months</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <table class="calendar">
+        <thead>
+          <tr><th>Month</th><th>Cheese / Milk</th><th>Wine / Spirits</th><th>Events</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="month">Jan</td><td>Mont d'Or (final month), summer-pasture Comté in cellar</td><td>Young Vin Jaune in bottle (vintage −6 years)</td><td>Saint-Antoine Fair, Poligny (to verify)</td><td>Cold season &middot; tartiflette / boîte chaude / fondue</td></tr>
+          <tr><td class="month">Fév</td><td>Aged Comté</td><td><strong>Percée du Vin Jaune</strong> (1st weekend)</td><td><strong>Percée du Vin Jaune</strong> (rotating commune) &middot; Saint-Claude Carnival</td><td>The Vin Jaune month &middot; everything books up</td></tr>
+          <tr><td class="month">Mar</td><td>Mont d'Or fin de saison, Aged Comté</td><td>Bottling of Vin Jaune vintage −6 years</td><td>&mdash;</td><td>Transition month</td></tr>
+          <tr><td class="month">Avr</td><td>Late-winter Comté</td><td>Crémant in force, spring Macvin</td><td>Seasonal opening of sites (Pasteur, Salines)</td><td>First morels</td></tr>
+          <tr><td class="month">Mai</td><td>First summer-pasture Comté (meadow milk)</td><td>New Trousseau and Poulsard</td><td>Festival des Jardins opens (Arc-et-Senans)</td><td><strong>Peak fresh-morel season</strong> &middot; <strong>croûte aux morilles</strong> &middot; the best month at table</td></tr>
+          <tr><td class="month">Juin</td><td>Summer-pasture Comté (intense yellow)</td><td>Rosé Crémant</td><td>Haut-Jura Festival (to verify)</td><td>End of morels &middot; first Jura asparagus</td></tr>
+          <tr><td class="month">Juil</td><td>Summer-pasture Comté</td><td>Apéritifs &middot; chilled Macvin</td><td>Summer festivals</td><td>Gardens in bloom at Arc-et-Senans</td></tr>
+          <tr><td class="month">Août</td><td>Summer-pasture Comté</td><td>Early harvest (Crémant)</td><td>Summer concerts in the abbeys</td><td>Many addresses close for 2 weeks</td></tr>
+          <tr><td class="month">Sep</td><td>Late-season Comté</td><td><strong>Harvest</strong> &middot; Crémant release</td><td><strong>Le Biou d'Arbois</strong> (1st Sunday)</td><td>The winemaker's month</td></tr>
+          <tr><td class="month">Oct</td><td>First Mont d'Or of the year</td><td>Vinification of whites</td><td>Festival des Jardins (closing)</td><td>Mont d'Or arrives &middot; forest mushrooms</td></tr>
+          <tr><td class="month">Nov</td><td>Mont d'Or in peak season</td><td>Release of Vin Jaune vintage −6 years</td><td>&mdash;</td><td>First frosts &middot; tartiflettes</td></tr>
+          <tr><td class="month">Déc</td><td>Mont d'Or, Christmas Comté</td><td>Mulled wine with Vin Jaune</td><td>Lons Christmas market (3 weeks)</td><td>High spa season &middot; Christmas bookings</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <!-- ================= CE QUE JE N'AI PU VÉRIFIER ================= -->
+  <details class="sfold" id="verify">
+    <summary>
+      <div>
+        <div class="sfold__title">What I couldn't verify</div>
+        <div class="sfold__desc">Operational uncertainties to confirm on arrival</div>
+      </div>
+      <span class="sfold__count">7 alerts</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <ul class="plain">
+        <li><strong>Phone numbers</strong> &mdash; the phones in the cards (Jeunet, Macle, Tissot, Miéral, Pelen, Maison du Comté, Pasteur) were extracted from public sources but not double-cross-checked. Always verify directly on the producer's site or via a Google search before calling.</li>
+        <li><strong>Hostellerie des Monts de Vaux (Poligny)</strong> &mdash; the establishment has gone through several re-openings and seasonal closures. 2026 operating status to verify directly before any trip.</li>
+        <li><strong>Grain de Sel (Lons)</strong> &mdash; small bistronomy table downtown; not consistently listed in print guides. Verify opening, hours and menu before going.</li>
+        <li><strong>Haut-Jura Music Festival, De Bouche à Oreille, Jura Jazz, Saint-Antoine Fair Poligny</strong> &mdash; the annual programming of these events is variable. 2026–2027 editions must be confirmed on organiser or tourist-office sites before planning.</li>
+        <li><strong>GPS coordinates</strong> &mdash; some addresses (Tuyé du Papy Gaby, Distillerie Pernot, Salines, Volaille Miéral) were geocoded to the hamlet or village; typical precision 200–500 m. Use the Maps link provided for navigation, not the raw coordinates.</li>
+        <li><strong>Poligny market</strong> &mdash; days and hours given as a guide (Monday and Friday morning as standard). Confirm with the Tourist Office before planning a specific visit.</li>
+        <li><strong>Recommended Instagram and websites (Follow section)</strong> &mdash; @maison_du_comte (IG) in particular: the account's existence and activity were not verified at the time of writing. Prefer the official sites (jura-vins.com, comte.com, salineroyale.com), which are stable.</li>
+      </ul>
+    </div>
+  </details>
+
+
+  <!-- SOURCES -->
+  <details class="sfold" id="sources">
+    <summary>
+      <div>
+        <div class="sfold__title">Sources & checks</div>
+        <div class="sfold__desc">Links we checked. No tourist press.</div>
+      </div>
+      <span class="sfold__count">5 links</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <ul class="sources">
+        <li><a href='https://guide.michelin.com/fr/fr/bourgogne-franche-comte/lons-le-saunier' target='_blank' rel='noopener'>Michelin Guide — Restaurants Lons-le-Saunier & Arbois</a></li>
+        <li><a href='https://www.maison-du-comte.com/' target='_blank' rel='noopener'>Comté PDO — La Maison du Comté (Poligny)</a></li>
+        <li><a href='https://www.jura-vins.com/' target='_blank' rel='noopener'>Jura Wines — CIVJ (Interprofessional Committee)</a></li>
+        <li><a href='https://www.lons-jura.fr/' target='_blank' rel='noopener'>Lons Jura Tourist Office</a></li>
+        <li><a href='https://www.salineroyale.com/' target='_blank' rel='noopener'>Saline Royale of Arc-et-Senans (UNESCO)</a></li>
+      </ul>
+      <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="data.csv">data.csv</a></p>
+    </div>
+  </details>
+
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <a href="../">← Toutes les villes du Terroir</a>
-  &nbsp;·&nbsp;
-  <a href="../">Retour à la gazette</a>
-  <br><br>
-  46.6747, 5.5538
+  <a href="../" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
+  <div class="sig" style="margin-top:14px;">The World Affair · Terroir</div>
 </footer>
 
-<!-- Carte latérale (repliable, zoomable) -->
+<!-- Floating active-pin pill (mirrors Venice vg-mini__active) -->
+<aside class="floating-active" id="floating-active">
+  <b>ACTIVE ADDRESS</b>
+  <span id="floating-text">Click or hover a marker to see it here.</span>
+  <a href="#tables" id="floating-link">View card →</a>
+</aside>
+
+<!-- Side foldable map (existing pcv-mini, fed by port-call-render.js) -->
 <aside class="pcv-mini is-collapsed" id="pcv-mini">
-  <button class="pcv-mini__handle" id="pcv-mini-handle" aria-expanded="false">Carte Lons-le-Saunier</button>
+  <button class="pcv-mini__handle" id="pcv-mini-handle" aria-expanded="false">Map</button>
   <div id="pcv-mini-body">
-    <div class="pcv-mini__head"><strong>Où vous êtes</strong><span>scroll · survol · zoom</span></div>
+    <div class="pcv-mini__head"><strong>You are here</strong><span>scroll · zoom · click</span></div>
     <div id="pcv-mini-map"></div>
     <div class="pcv-mini__active" id="pcv-mini-active">
-      <b>Survolez une fiche</b><span>La carte met en valeur l'adresse pointée.</span>
+      <b>Hover a card</b><span>The map highlights the pinned address.</span>
     </div>
   </div>
 </aside>
@@ -208,11 +1984,170 @@ window.PCV_CONFIG = {
   articleId:    'terroir-lons-le-saunier-jura',
   portName:     'Lons-le-Saunier',
   center:       [46.6747, 5.5538],
-  zoom:         13,
-  cityRadiusKm: 25
+  zoom:         11,
+  cityRadiusKm: 80
 };
 </script>
 <script defer src="../_assets/port-call/port-call-render.js"></script>
+
+<!-- Hero Leaflet map (additive — does not interfere with pcv-mini) -->
+<script>
+window.addEventListener('load', function () {
+  if (typeof L === 'undefined' || !window.PCV_DATA) return;
+  var data = window.PCV_DATA;
+  var venues = data.VENUES || [];
+  var pColors = data.PRODUCT_COLORS || {};
+
+  var map = L.map('map', {
+    zoomControl: true, scrollWheelZoom: false, doubleClickZoom: true,
+    touchZoom: true, dragging: true, attributionControl: true
+  }).setView([46.6747, 5.5538], 11);
+  window.__terroirMap = map;
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19, subdomains: 'abcd',
+    attribution: '&copy; OpenStreetMap &copy; CARTO'
+  }).addTo(map);
+
+  var markers = {};
+  var floatActive = document.getElementById('floating-active');
+  var floatText   = document.getElementById('floating-text');
+  var floatLink   = document.getElementById('floating-link');
+
+  function colorFor(v) {
+    var t = (v.productTags && v.productTags[0]) || '';
+    return pColors[t] || (data.COLORS || {})[v.cat] || '#444';
+  }
+
+  function showActive(v) {
+    if (!floatActive) return;
+    floatActive.classList.add('is-visible');
+    floatText.innerHTML = '<strong>' + v.name + '</strong>' +
+      (v.neighborhood ? ' &mdash; ' + v.neighborhood : '') +
+      (v.why ? '<br><span style="color:#c8c0b4;font-size:11px;">' + v.why.slice(0, 140) + (v.why.length > 140 ? '…' : '') + '</span>' : '');
+    if (floatLink) floatLink.setAttribute('href', '#venue-' + v.id);
+  }
+
+  venues.forEach(function (v) {
+    if (!v.lat || !v.lng) return;
+    var c = colorFor(v);
+    var icon = L.divIcon({
+      className: '',
+      html: '<div style="background:' + c + ';width:14px;height:14px;border-radius:50%;'
+          + 'border:2px solid #1a2a3a;box-shadow:0 0 0 1px rgba(255,255,255,0.6),0 1px 4px rgba(0,0,0,0.4);"></div>',
+      iconSize: [16, 16], iconAnchor: [8, 8]
+    });
+    var marker = L.marker([v.lat, v.lng], { icon: icon, riseOnHover: true });
+    marker.bindTooltip(v.name, { direction: 'right', offset: [10, 0], opacity: 1, permanent: false });
+    var why = v.why ? v.why.slice(0, 200) + (v.why.length > 200 ? '…' : '') : '';
+    marker.bindPopup(
+      '<em>' + ((data.CAT_LABELS || {})[v.cat] || v.cat) + (v.neighborhood ? ' · ' + v.neighborhood : '') + '</em>' +
+      '<b>' + v.name + '</b>' +
+      (why ? '<span style="color:#c8c0b4;display:block;margin-bottom:6px;">' + why + '</span>' : '') +
+      '<a href="#venue-' + v.id + '" onclick="document.getElementById(\'venue-' + v.id + '\') && document.getElementById(\'venue-' + v.id + '\').scrollIntoView({behavior:\'smooth\',block:\'center\'});">View card →</a>' +
+      (v.maps ? '<br><a href="' + v.maps + '" target="_blank" rel="noopener">Open in Google Maps →</a>' : '')
+    );
+    marker.on('mouseover', function () { showActive(v); });
+    marker.on('click',     function () { showActive(v); });
+    marker.addTo(map);
+    markers[v.id] = marker;
+  });
+
+  window.__terroirMarkers = markers;
+  try {
+    var pts = venues.filter(function (v) { return v.lat && v.lng; })
+                    .map(function (v) { return [v.lat, v.lng]; });
+    if (pts.length) map.fitBounds(pts, { padding: [22, 22], maxZoom: 14 });
+  } catch (e) {}
+
+  // Hovering a venue card on the page opens the matching pin
+  setTimeout(function () {
+    document.querySelectorAll('.pcv-card').forEach(function (card) {
+      var id = card.getAttribute('data-venue-id');
+      var m = markers[id];
+      if (!m) return;
+      var v = venues.find(function (x) { return x.id === id; });
+      card.addEventListener('mouseenter', function () {
+        showActive(v);
+        m.openTooltip();
+      });
+      card.addEventListener('mouseleave', function () { m.closeTooltip(); });
+      // "Show on map" affordance
+      var showLink = document.createElement('a');
+      showLink.textContent = 'Show on map ↑';
+      showLink.href = '#map-section';
+      showLink.style.cssText = 'display:inline-block;margin-top:8px;font-size:11px;color:var(--accent-sea, #5b8a9a);text-decoration:underline;';
+      showLink.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        document.getElementById('map-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(function () { map.panTo([v.lat, v.lng], { animate: true }); m.openPopup(); }, 500);
+      });
+      var meta = card.querySelector('.pcv-card__meta');
+      if (meta) meta.appendChild(showLink);
+    });
+  }, 600);
+});
+</script>
+
+
+<!-- Firebase compat (for terroir voting) -->
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="../_assets/port-call/votes.js"></script>
+<script defer src="../_assets/port-call/pin-hover.js"></script>
+
+<!-- Sticky mini-map (mirrors hero map; visible while scrolling) -->
+<aside class="terroir-mini" id="terroir-mini">
+  <div class="terroir-mini__head">
+    <span>Map</span>
+    <button id="terroir-mini-close" aria-label="Hide">×</button>
+  </div>
+  <div class="terroir-mini__map" id="terroir-mini-map"></div>
+</aside>
+<button class="terroir-mini-toggle" id="terroir-mini-toggle">Map</button>
+<script>
+window.addEventListener('load', function () {
+  var mini = document.getElementById('terroir-mini');
+  var toggle = document.getElementById('terroir-mini-toggle');
+  var close = document.getElementById('terroir-mini-close');
+  if (!mini) return;
+  function show() { mini.classList.add('is-visible'); }
+  function hide() { mini.classList.remove('is-visible'); }
+  var hero = document.getElementById('map-section');
+  if (hero) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting && window.scrollY > 300) show(); else hide();
+      });
+    }, { threshold: 0 });
+    io.observe(hero);
+  }
+  if (toggle) toggle.addEventListener('click', show);
+  if (close) close.addEventListener('click', hide);
+  var iv = setInterval(function () {
+    if (typeof L === 'undefined' || !window.PCV_DATA || !window.__terroirMap) return;
+    clearInterval(iv);
+    var data = window.PCV_DATA;
+    var mainMap = window.__terroirMap;
+    var miniMap = L.map('terroir-mini-map', {
+      zoomControl: false, scrollWheelZoom: false, dragging: false,
+      doubleClickZoom: false, touchZoom: false, attributionControl: false,
+      keyboard: false
+    }).setView(mainMap.getCenter(), Math.max(mainMap.getZoom() - 1, 9));
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      maxZoom: 18, subdomains: 'abcd'
+    }).addTo(miniMap);
+    (data.VENUES || []).forEach(function (v) {
+      if (!v.lat || !v.lng) return;
+      var t = (v.productTags && v.productTags[0]) || '';
+      var c = (data.PRODUCT_COLORS || {})[t] || (data.COLORS || {})[v.cat] || '#444';
+      L.circleMarker([v.lat, v.lng], { radius: 4, color: c, fillColor: c, fillOpacity: 0.95, weight: 1 }).addTo(miniMap);
+    });
+    mainMap.on('move', function () {
+      miniMap.setView(mainMap.getCenter(), Math.max(mainMap.getZoom() - 1, 9));
+    });
+  }, 250);
+});
+</script>
 
 </body>
 </html>

@@ -104,4 +104,10 @@ Direct, technical, irreverent, economical. No hedging. See `CONTENT-GUIDE.md` fo
 
 ## Deployment
 
-Static hosting via GitHub Pages (see `CNAME` file). Git push to `main` deploys.
+**Firebase Hosting** (project `littoralicious-web-eceed`) is the live host. Despite the `CNAME` file, DNS routes `www.littoralicious.com` to Firebase, not GitHub Pages.
+
+```bash
+firebase deploy --only hosting
+```
+
+`git push origin main` alone does NOT publish — it only updates a GitHub Pages mirror nobody reads. Workflow: commit → push → `firebase deploy --only hosting`.

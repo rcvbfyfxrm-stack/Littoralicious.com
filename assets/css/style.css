@@ -372,7 +372,7 @@ h4 { font-size: var(--text-lg); }
 }
 
 .masthead__nav {
-    display: flex;
+    display: none !important;
     gap: var(--space-6);
     margin-top: var(--space-6);
     padding-top: var(--space-4);
@@ -503,6 +503,37 @@ h4 { font-size: var(--text-lg); }
 .article-card__category {
     color: var(--color-sea);
 }
+
+.article-card__subtag {
+    background: var(--color-sea);
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+/* WhatsApp link — auto-injected next to phone numbers */
+.wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #25D366;
+    color: #fff !important;
+    padding: 1px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none !important;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+    white-space: nowrap;
+    border: none !important;
+    transition: background 150ms ease;
+}
+.wa-link:hover { background: #128C7E; }
+.wa-link span { font-size: 12px; }
 
 .article-card__title {
     font-family: var(--font-serif);
