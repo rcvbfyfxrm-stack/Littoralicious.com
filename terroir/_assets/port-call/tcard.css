@@ -213,20 +213,29 @@
 }
 .terroir-mini__map { width: 100%; height: calc(100% - 24px); }
 
-/* Mobile: replace floating mini with a toggle button */
+/* Toggle button (always available on desktop + mobile so user can reopen the map) */
+.terroir-mini-toggle {
+  position: fixed; right: 16px; bottom: 16px; z-index: 951;
+  background: #1a2a3a; color: #c4a35a;
+  border: 1px solid #c4a35a;
+  padding: 8px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7em; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: none;            /* shown only when the mini-map is hidden */
+}
+.terroir-mini-toggle.is-visible { display: inline-block; }
+
+/* When user explicitly closes, hide BOTH the mini and the floating active pill */
+.terroir-mini.is-user-closed,
+.floating-active.is-user-closed { display: none !important; }
+
+/* Mobile: floating mini takes more room */
 @media (max-width: 700px) {
   .terroir-mini { width: 92vw; height: 50vh; right: 4vw; bottom: 70px; }
-  .terroir-mini-toggle {
-    position: fixed; right: 16px; bottom: 16px; z-index: 951;
-    background: #1a2a3a; color: #c4a35a;
-    border: 1px solid #c4a35a;
-    padding: 10px 14px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72em; letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
 }
-@media (min-width: 701px) {
-  .terroir-mini-toggle { display: none; }
-}
+
+/* Pin hover highlight — works for venue (p-*), neighborhood (n-*), work (p-*), walks (w-*) */
+.is-pin-active { filter: drop-shadow(0 0 6px #c4a35a); transform: scale(1.18); transition: transform 0.12s; }
+.is-pin-area-active { stroke: #c4a35a !important; stroke-width: 3 !important; fill-opacity: 0.32 !important; }

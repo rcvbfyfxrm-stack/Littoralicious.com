@@ -81,5 +81,18 @@ service cloud.firestore {
         .hasOnly(['ups', 'downs', 'updatedAt']);
       allow delete: if isAdmin();
     }
+
+    // Terroir guide votes (per-venue ★ count). Public, no auth — the site has none.
+    // Path: terroir_votes/{guide-slug}/venues/{venue-id}
+    // Strict: only `count` and `lastVote` writable; create starts at 1; update increments by exactly 1.
+    match /terroir_votes/{slug}/venues/{venueId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['count', 'lastVote'])
+        && request.resource.data.count == 1;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys()
+        .hasOnly(['count', 'lastVote'])
+        && request.resource.data.count == resource.data.count + 1;
+      allow delete: if isAdmin();
+    }
   }
 }

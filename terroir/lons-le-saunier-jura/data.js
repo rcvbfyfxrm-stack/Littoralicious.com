@@ -458,5 +458,30 @@ window.PCV_DATA = (function () {
     "maps": "https://www.google.com/maps/search/?api=1&query=Salines+Royales+d'Arc-et-Senans+(UNESCO)+Lons-le-Saunier"
   }
 ];
-    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS };
+    const NEIGHBORHOODS = [
+        { id: 'n-place-liberte', name: 'Place de la Liberté & rue du Commerce', center: [46.6748, 5.5544], radius: 180, maps_url: 'https://www.google.com/maps/search/?api=1&query=Place+de+la+Liberté+Lons-le-Saunier' },
+        { id: 'n-place-comedie', name: 'Place de la Comédie / Halles', center: [46.6738, 5.5530], radius: 130, maps_url: 'https://www.google.com/maps/search/?api=1&query=Place+de+la+Comédie+Lons-le-Saunier' },
+        { id: 'n-chevalerie', name: 'Quartier de la Chevalerie & Source Salée', center: [46.6722, 5.5480], radius: 280, maps_url: 'https://www.google.com/maps/search/?api=1&query=Parc+de+la+Chevalerie+Lons-le-Saunier' },
+        { id: 'n-pavigny', name: 'Quartier du Stade / Pavigny', center: [46.6728, 5.5470], radius: 260, maps_url: 'https://www.google.com/maps/search/?api=1&query=Pavigny+Lons-le-Saunier' },
+        { id: 'n-chille', name: 'Montciel & Chille', center: [46.6900, 5.5700], radius: 600, maps_url: 'https://www.google.com/maps/search/?api=1&query=Chille+Jura' },
+        { id: 'n-arbois', name: 'Arbois (Jura wine capital)', center: [46.9036, 5.7747], radius: 700, maps_url: 'https://www.google.com/maps/search/?api=1&query=Arbois+Jura' },
+        { id: 'n-chateau-chalon', name: 'Château-Chalon', center: [46.7556, 5.6394], radius: 350, maps_url: 'https://www.google.com/maps/search/?api=1&query=Château-Chalon' },
+        { id: 'n-poligny', name: 'Poligny (Comté capital)', center: [46.8389, 5.7064], radius: 500, maps_url: 'https://www.google.com/maps/search/?api=1&query=Poligny+Jura' }
+    ];
+    const WALKS = [
+        { id: 'w-arcades-aube', name: 'Rue du Commerce arcades at dawn', start: [46.6748, 5.5544], maps_url: 'https://www.google.com/maps/search/?api=1&query=Rue+du+Commerce+Lons-le-Saunier' },
+        { id: 'w-chateau-chalon', name: 'Château-Chalon vineyard walk', start: [46.7556, 5.6394], maps_url: 'https://www.google.com/maps/search/?api=1&query=Château-Chalon+vignoble' },
+        { id: 'w-arbois', name: 'Arbois old town', start: [46.9036, 5.7747], maps_url: 'https://www.google.com/maps/search/?api=1&query=Arbois+centre+ville' },
+        { id: 'w-baume', name: 'Baume-les-Messieurs cirque', start: [46.7095, 5.6450], maps_url: 'https://www.google.com/maps/search/?api=1&query=Baume-les-Messieurs' },
+        { id: 'w-cirque-fer-cheval', name: 'Cirque du Fer-à-Cheval', start: [46.6900, 5.6800], maps_url: 'https://www.google.com/maps/search/?api=1&query=Cirque+du+Fer+à+Cheval+Jura' },
+        { id: 'w-source-salee', name: 'Source Salée pool', start: [46.6722, 5.5485], maps_url: 'https://www.google.com/maps/search/?api=1&query=Source+Salée+Lons-le-Saunier' }
+    ];
+    const WORK_SPOTS = [
+        { id: 'p-work-mediatheque', name: 'Médiathèque', start: [46.6740, 5.5520] },
+        { id: 'p-work-parc-chevalerie', name: 'Parc de la Chevalerie', start: [46.6722, 5.5480] },
+        { id: 'p-work-cafe-comedie', name: 'Café de la Comédie', start: [46.6736, 5.5532] },
+        { id: 'p-work-rue-arcades', name: 'Rue du Commerce arcades', start: [46.6748, 5.5544] },
+        { id: 'p-work-bibliotheque-arbois', name: 'Bibliothèque d’Arbois', start: [46.9036, 5.7747] }
+    ];
+    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS };
 })();

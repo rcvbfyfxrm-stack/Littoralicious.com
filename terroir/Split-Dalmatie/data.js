@@ -373,5 +373,28 @@ window.PCV_DATA = (function () {
     "maps": "https://www.google.com/maps/search/?api=1&query=Uje+Oil+Bar+Split"
   }
 ];
-    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS };
+    const NEIGHBORHOODS = [
+        { id: 'n-palais', name: "Diocletian's Palace", center: [43.5086, 16.4403], radius: 220, maps_url: 'https://www.google.com/maps/search/?api=1&query=Diocletian+Palace+Split' },
+        { id: 'n-veli-varos', name: 'Veli Varoš', center: [43.5079, 16.4332], radius: 280, maps_url: 'https://www.google.com/maps/search/?api=1&query=Veli+Varos+Split' },
+        { id: 'n-riva-matejuska', name: 'Riva & Matejuška', center: [43.5074, 16.4378], radius: 300, maps_url: 'https://www.google.com/maps/search/?api=1&query=Matejuska+Split' },
+        { id: 'n-marjan', name: 'Marjan', center: [43.5117, 16.4135], radius: 700, maps_url: 'https://www.google.com/maps/search/?api=1&query=Marjan+Hill+Split' },
+        { id: 'n-firule-bacvice', name: 'Firule & Bačvice', center: [43.5045, 16.4555], radius: 350, maps_url: 'https://www.google.com/maps/search/?api=1&query=Bacvice+Split' },
+        { id: 'n-prokurative', name: 'Prokurative', center: [43.5076, 16.4385], radius: 120, maps_url: 'https://www.google.com/maps/search/?api=1&query=Prokurative+Split' },
+        { id: 'n-pazar', name: 'Pazar (Silver Gate)', center: [43.5083, 16.4424], radius: 110, maps_url: 'https://www.google.com/maps/search/?api=1&query=Pazar+Split' }
+    ];
+    const WALKS = [
+        { id: 'w-palace-aube', name: 'Palace at dawn', start: [43.5089, 16.4405], maps_url: 'https://www.google.com/maps/search/?api=1&query=Golden+Gate+Diocletian+Palace' },
+        { id: 'w-marjan-circuit', name: 'Marjan — full circuit', start: [43.5079, 16.4332], maps_url: 'https://www.google.com/maps/search/?api=1&query=Marjan+trail+Veli+Varos+Split' },
+        { id: 'w-trogir-day', name: 'Trogir half-day', start: [43.5145, 16.2515], maps_url: 'https://www.google.com/maps/search/?api=1&query=Trogir+old+town' },
+        { id: 'w-salona', name: 'Salona — Roman city', start: [43.5392, 16.4790], maps_url: 'https://www.google.com/maps/search/?api=1&query=Salona+archaeological+site' },
+        { id: 'w-brac-day', name: 'Brač half-day', start: [43.3839, 16.5499], maps_url: 'https://www.google.com/maps/search/?api=1&query=Supetar+Brac+ferry+port' }
+    ];
+    const WORK_SPOTS = [
+        { id: 'p-work-marjan-bench', name: 'Marjan — first terrace bench', start: [43.5106, 16.4262] },
+        { id: 'p-work-d16', name: 'D16 Coffee', start: [43.5086, 16.4406] },
+        { id: 'p-work-bajamonti-terrace', name: 'Bajamonti terrace', start: [43.5076, 16.4386] },
+        { id: 'p-work-riva', name: 'Riva promenade', start: [43.5074, 16.4400] },
+        { id: 'p-work-bacvice', name: 'Bačvice beach', start: [43.5045, 16.4555] }
+    ];
+    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS };
 })();
