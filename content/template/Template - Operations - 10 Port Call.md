@@ -12,6 +12,10 @@
 
 **Voice:** The chef who has provisioned this port three times and is handing you the shortcut. No options paralysis — one or two picks per category, tested, with the move that saves you time or money. Direct, supplier-specific, price-conscious.
 
+**Contact-detail rule (mandatory since 2026-05-01) — double-cross every supplier:** Every supplier entry — Tier 1, 2, 3, companion file, all of them — MUST carry a verified **phone number** and a **Google Maps link** (`https://www.google.com/maps/search/?api=1&query=...` or a `?q=lat,lng` form). Both must be cross-checked from at least two independent sources (official site + TripAdvisor / Localshop / camera di commercio / direct call) before publication. If a number cannot be double-confirmed, mark it `phone: TBC — verify` and ship without it rather than print a wrong digit. Maps link is non-negotiable: a chef on the dock with no Italian and 40 min before service must be able to tap the entry and walk. WhatsApp number, when different from the landline, is added in addition (e.g., `+39 041 522 3028 · WhatsApp +39 347 603 2087`). The data file schema (`port-call-{city}-data.js`) already has `phone:` and `maps:` fields — fill them; never leave them empty for a published entry.
+
+**"Go-and-see + deliver" rule (mandatory since 2026-05-01) — the gold pattern:** When a supplier lets the chef **walk in, inspect the produce/fish, build rapport, AND** get a morning delivery to the boat, that supplier is gold and MUST be surfaced in the Port Call article — not buried in the companion file. Blind-order-only suppliers are second-tier; market-only (no delivery) suppliers are third-tier. The Port Call must always answer: "Who can I see in person AND who will deliver to my dock?" If a port has no go-and-see+deliver supplier, say so explicitly in the Bottom Line — the chef needs to know that gap. Every go-and-see+deliver entry must carry: walk-in hours, delivery cutoff (e.g., "WhatsApp by 18:00 D-1"), morning delivery window, dock/gate access notes, and a one-line "be specific" reminder (variety, ripeness, count — never "good tomatoes").
+
 **Market-stand rule (mandatory since 2026-04-29):** Every time the article points the reader to an open-air or covered market (Mercato di Rialto, Marché Forville, Mercat de la Boqueria, Pescheria, halles, fish auction quay, farmers' market, etc.) it MUST also name the **specific stand / vendor / counter** to ask for — and what that stand is the best at. "Go to Rialto Pescheria" is template fail. "Go to Rialto Pescheria — ask for **Marco at the third stall on the right** for line-caught seabass; he holds back the day-boat tag" is the standard.
 
 For each market mentioned, the article must answer:
@@ -400,6 +404,8 @@ For every meat/fish/seafood supplier:
 - Wholesale card logistics (Metro, Costco — documents needed)
 - Marina / dock delivery (who does, who does not, who has truck access)
 - WhatsApp ordering (butchers, fishmongers, specialty)
+- **Go-and-see + deliver suppliers** — walk in, inspect, build rapport, then get morning delivery to the boat (the gold pattern; surface these in the article, not the companion file)
+- **Phone + Google Maps link on every entry** — double-cross-checked from two sources; never publish a wrong number, never publish without a maps link
 - Cross-border or mainland-vs-island provisioning (Mestre not Venice, La Linea not Gibraltar, Nice not Monaco)
 - Duty-free advantages / import tax traps / bonded vessel handling
 - Market timing (arrival times, auction times, online cutoffs)

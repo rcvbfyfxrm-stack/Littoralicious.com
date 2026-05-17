@@ -347,6 +347,65 @@
     // Initialize
     // ==========================================================================
 
+    // ==========================================================================
+    // WhatsApp links — auto-enhance phone numbers
+    // - Adds a WhatsApp button after every <a href="tel:+...">
+    // - Auto-linkifies "Phone / Mobile / Harbour / WhatsApp" entries in supplier
+    //   meta blocks (so existing static articles get WA links without edits)
+    // ==========================================================================
+
+    function buildWaButton(digits) {
+        const a = document.createElement('a');
+        a.className = 'wa-link';
+        a.href = 'https://wa.me/' + digits;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.title = 'Chat on WhatsApp';
+        a.setAttribute('aria-label', 'Chat on WhatsApp');
+        a.innerHTML = '<span aria-hidden="true">💬</span> WhatsApp';
+        return a;
+    }
+
+    function enhancePhoneNumbers() {
+        // 1) Tel links → append WhatsApp button
+        document.querySelectorAll('a[href^="tel:+"]').forEach((a) => {
+            if (a.dataset.waEnhanced) return;
+            const digits = a.getAttribute('href').replace(/^tel:\+/, '').replace(/\D/g, '');
+            if (!digits) return;
+            a.dataset.waEnhanced = '1';
+            a.insertAdjacentText('afterend', ' ');
+            a.parentNode.insertBefore(buildWaButton(digits), a.nextSibling);
+        });
+
+        // 2) Static "Phone / Mobile / Harbour / WhatsApp" rows in supplier meta blocks
+        const PHONE_LABELS = ['phone', 'mobile', 'harbour', 'whatsapp', 'tel', 'cell'];
+        document.querySelectorAll('.pfold__meta div, .pcv-card__meta div').forEach((row) => {
+            if (row.dataset.waEnhanced) return;
+            const strong = row.querySelector('strong');
+            if (!strong) return;
+            const label = strong.textContent.trim().toLowerCase();
+            if (!PHONE_LABELS.includes(label)) return;
+            // Already linkified?
+            if (row.querySelector('a[href^="tel:"]')) return;
+            // Extract phone number from the text node after <strong>
+            const after = strong.nextSibling;
+            if (!after || after.nodeType !== 3) return;
+            const raw = after.textContent.trim();
+            const match = raw.match(/\+?[\d][\d\s\-().]{6,}/);
+            if (!match) return;
+            const fullNum = match[0].trim();
+            const digits = fullNum.replace(/\D/g, '');
+            if (digits.length < 7) return;
+            const tel = document.createElement('a');
+            tel.href = 'tel:+' + digits;
+            tel.textContent = fullNum;
+            after.parentNode.replaceChild(tel, after);
+            tel.insertAdjacentText('afterend', ' ');
+            tel.parentNode.insertBefore(buildWaButton(digits), tel.nextSibling);
+            row.dataset.waEnhanced = '1';
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         formatTemperatures();
         initReadingProgress();
@@ -359,5 +418,8 @@
         initPrintButton();
         initDownloadPDF();
         generateTableOfContents();
+        enhancePhoneNumbers();
+        // Re-run after dynamic supplier rendering
+        setTimeout(enhancePhoneNumbers, 1500);
     });
 })();

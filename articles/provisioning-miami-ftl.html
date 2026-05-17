@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://www.littoralicious.com/articles/provisioning-miami-ftl.html">
     <meta property="og:site_name" content="Littoralicious">
     <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260506b">
     <link rel="stylesheet" href="../assets/css/port-call-content.css">
     <link rel="stylesheet" href="../assets/css/port-call.css">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
@@ -76,6 +76,22 @@
 
             <div class="article__content container" style="max-width: 70ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
+                <!-- ================= INTERACTIVE MAP (top of article) ================= -->
+                <div class="pcv-map-wrap" role="region" aria-label="Interactive map of Miami / FTL provisioning points">
+                    <div class="pcv-map-head">
+                        <strong>South Florida &mdash; Where Everything Is</strong>
+                        <span>Click any pin for phone, hours, maps link &middot; toggle categories below</span>
+                    </div>
+                    <div id="pcv-map"></div>
+                    <div class="pcv-legend" id="pcv-legend">
+                        <button data-cat="berth"><i class="dot-berth"></i> Berths</button>
+                        <button data-cat="market"><i class="dot-market"></i> Markets &amp; Direct</button>
+                        <button data-cat="shop"><i class="dot-shop"></i> Specialty &amp; Online</button>
+                        <button data-cat="mainland"><i class="dot-mainland"></i> Wholesale / Bulk</button>
+                        <button data-cat="logistics"><i class="dot-logistics"></i> Logistics &amp; Agent</button>
+                    </div>
+                </div>
+
                 <nav class="pc-quicknav">
                     <a href="#three-berths">Three Berths</a><span class="sep">&middot;</span>
                     <a href="#pcv-map">Map</a><span class="sep">&middot;</span>
@@ -93,10 +109,6 @@
                 </nav>
 
 
-            <p>Four things to set up on day one: <strong>(1)</strong> Costco Business Center membership at the Doral or Pompano branch &mdash; restaurant-format packaging, 5 kg flour bags, case lots; <strong>(2)</strong> Restaurant Depot membership (free with boat registration + business card + captain&rsquo;s ID) &mdash; covers every Restaurant Depot in the US once issued; <strong>(3)</strong> a wholesale account with <a href="#p-halperns" style="color: var(--color-sea); text-decoration: underline;">Halpern&rsquo;s</a> &mdash; same source the agents use, minus 15&ndash;18%; <strong>(4)</strong> the Haulover Marina cash routine &mdash; boats land at noon and 17:00, yellowtail snapper and mahi at 40&ndash;60% off retail.</p>
-
-            <p><strong>The warning.</strong> If you are paying retail at Whole Foods for staples, you are paying triple. If you are using a chandler for dry store, you are paying double. Use the agent only when the charter starts in 24 hours and you have not left the boat. Otherwise the wholesale infrastructure is so accessible here that it is hard to justify.</p>
-
             <div class="pc-funfact"><strong>Costco Business Center is not regular Costco.</strong> The Doral and Pompano Beach branches carry restaurant-format packaging &mdash; 5 kg flour bags, case lots, portion-controlled proteins. Make the 20-minute drive. Regular Costco sells consumer packs; the Business Center sells professional packs. The difference in value and format is the single biggest unlock in this port.</div>
 
             <!-- ================= THREE BERTHS ================= -->
@@ -112,110 +124,31 @@
                 <div class="sfold__body">
 
                 <div class="pc-berths">
-                    <div class="pc-berth">
-                        <h3>Pier Sixty-Six</h3>
-                        <div class="pc-berth__sub">FTL &middot; Megayacht &le;100m &middot; 2024 rebuild</div>
+                    <div class="pc-berth" id="p-pier66">
+                        <h3>Pier Sixty-Six Marina</h3>
+                        <div class="pc-berth__sub">FTL &middot; ≤100m &middot; 2024 rebuild &middot; <a href="tel:+19547283578">+1 954 728 3578</a> &middot; VHF 16 / 71</div>
                         <ol>
-                            <li><a href="#p-pier66">Pier Sixty-Six Marina</a><span class="meta">2301 SE 17th St Causeway &middot; brand-new floating-concrete megayacht slips, easiest base for the 17th St supplier corridor</span></li>
+                            <li><span class="meta">2301 SE 17th St Causeway &middot; 164 floating-concrete slips, easiest base for the 17th St supplier corridor (chandlers, couriers, rental cars within 2 km). <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pier+Sixty-Six+Marina+Fort+Lauderdale" target="_blank" rel="noopener">📍 Maps</a></span></li>
                         </ol>
                     </div>
-                    <div class="pc-berth">
-                        <h3>Bahia Mar</h3>
-                        <div class="pc-berth__sub">FTL &middot; Iconic &middot; Yacht Show host</div>
+                    <div class="pc-berth" id="p-bahiamar">
+                        <h3>Bahia Mar Yachting Center</h3>
+                        <div class="pc-berth__sub">FTL &middot; ≤90m &middot; Yacht Show host &middot; <a href="tel:+19546276309">+1 954 627 6309</a> &middot; VHF 16</div>
                         <ol>
-                            <li><a href="#p-bahiamar">Bahia Mar Yachting Center</a><span class="meta">801 Seabreeze Boulevard &middot; 250+ slips, beach side of the Intracoastal, host of the FTL International Boat Show</span></li>
+                            <li><span class="meta">801 Seabreeze Boulevard &middot; 250+ slips on the beach side of the Intracoastal, host of the FTL International Boat Show (late Oct / early Nov). <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bahia+Mar+Fort+Lauderdale" target="_blank" rel="noopener">📍 Maps</a></span></li>
                         </ol>
                     </div>
-                    <div class="pc-berth">
-                        <h3>Island Gardens</h3>
-                        <div class="pc-berth__sub">Miami &middot; Megayacht &le;170m &middot; Watson Island</div>
+                    <div class="pc-berth" id="p-islandgardens">
+                        <h3>Island Gardens Deep Harbour</h3>
+                        <div class="pc-berth__sub">Miami &middot; ≤170m &middot; Watson Island &middot; <a href="tel:+13055211300">+1 305 521 1300</a> &middot; VHF 16</div>
                         <ol>
-                            <li><a href="#p-islandgardens">Island Gardens Deep Harbour</a><span class="meta">888 MacArthur Causeway &middot; vessels to 170m, deep water, walk to downtown Miami, hop to Wynwood</span></li>
+                            <li><span class="meta">888 MacArthur Causeway &middot; vessels to 170m, deep water, walk to downtown Miami, hop to Wynwood. The Miami answer when FTL doesn&rsquo;t fit. <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Island+Gardens+Deep+Harbour+Miami" target="_blank" rel="noopener">📍 Maps</a></span></li>
                         </ol>
                     </div>
                 </div>
-
-                <details class="pfold cult" id="p-pier66">
-                    <summary>
-                        <div>
-                            <div class="pfold__name">Pier Sixty-Six Marina</div>
-                            <div class="pfold__hook">2301 SE 17th St Causeway, Fort Lauderdale &middot; vessels &le;100 m &middot; +1 954 728 3578</div>
-                        </div>
-                        <span class="pfold__chev">&#9656;</span>
-                    </summary>
-                    <div class="pfold__body">
-                        <div class="pfold__recog">Reborn 2024 &mdash; the new default for FTL megayacht stops</div>
-                        <p>164 slips, vessels to ~100 m, Cat-5 floating concrete. Easiest base for the FTL provisioning circuit &mdash; Pier 66 / Bahia Mar / Las Olas all within 2 km. Seventeenth Street is the corridor with the chandlers, the courier dispatchers, and the rental-car agencies. <span class="cau cau--med" data-fix="Late Oct / early Nov: FTL International Boat Show locks the entire port. Provision the week BEFORE the show opens or pay 30–50% surcharges with 2–3 day lead times.">Boat Show Surge</span></p>
-                        <div class="pfold__meta">
-                            <div><strong>Phone</strong>+1 954 728 3578</div>
-                            <div><strong>Email</strong>marina@pier66marina.com</div>
-                            <div><strong>VHF</strong>16 / 71</div>
-                            <div><strong>Web</strong>pier66marina.com</div>
-                        </div>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pier+Sixty-Six+Marina+Fort+Lauderdale" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
-                    </div>
-                </details>
-
-                <details class="pfold cult" id="p-bahiamar">
-                    <summary>
-                        <div>
-                            <div class="pfold__name">Bahia Mar Yachting Center</div>
-                            <div class="pfold__hook">801 Seabreeze Blvd, Fort Lauderdale &middot; vessels &le;90 m &middot; +1 954 627 6309</div>
-                        </div>
-                        <span class="pfold__chev">&#9656;</span>
-                    </summary>
-                    <div class="pfold__body">
-                        <div class="pfold__recog">Iconic FTL marina &middot; host of the FTL International Boat Show</div>
-                        <p>Iconic Fort Lauderdale marina, on the beach side of the Intracoastal. 250+ slips. Closer to the beach, slightly further from the 17th St supplier corridor than Pier 66. <span class="cau cau--high" data-fix="During the Boat Show (late Oct / early Nov) Bahia Mar IS the venue. Forget walk-up provisioning. Forget the on-foot supplier walk. Plan the entire visit around it or skip the dates.">Boat Show Venue</span></p>
-                        <div class="pfold__meta">
-                            <div><strong>Phone</strong>+1 954 627 6309</div>
-                            <div><strong>Email</strong>bahiamarmarina@suntex.com</div>
-                            <div><strong>VHF</strong>16</div>
-                            <div><strong>Web</strong>suntex.com</div>
-                        </div>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bahia+Mar+Fort+Lauderdale" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
-                    </div>
-                </details>
-
-                <details class="pfold cult" id="p-islandgardens">
-                    <summary>
-                        <div>
-                            <div class="pfold__name">Island Gardens Deep Harbour</div>
-                            <div class="pfold__hook">888 MacArthur Causeway, Miami &middot; vessels &le;170 m &middot; +1 305 521 1300</div>
-                        </div>
-                        <span class="pfold__chev">&#9656;</span>
-                    </summary>
-                    <div class="pfold__body">
-                        <div class="pfold__recog">Miami&rsquo;s superyacht marina &middot; Watson Island, downtown access</div>
-                        <p>Miami&rsquo;s superyacht marina on Watson Island &mdash; vessels to 170 m, deep water, walking distance to downtown Miami and a short hop to Wynwood. The Miami answer when FTL doesn&rsquo;t fit the itinerary. <span class="cau cau--high" data-fix="First week of December: Art Basel Miami floods Wynwood, Design District, South Beach. Premium suppliers maxed for VIP catering. Pre-order all premium proteins 10 days ahead.">Art Basel</span></p>
-                        <div class="pfold__meta">
-                            <div><strong>Phone</strong>+1 305 521 1300</div>
-                            <div><strong>Email</strong>info@islandgardens.com</div>
-                            <div><strong>VHF</strong>16</div>
-                            <div><strong>Web</strong>islandgardens.com</div>
-                        </div>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Island+Gardens+Deep+Harbour+Miami" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
-                    </div>
-                </details>
 
                 </div>
             </details>
-
-            <!-- ================= INTERACTIVE MAP ================= -->
-            <div class="pcv-map-wrap" role="region" aria-label="Interactive map of Miami / FTL provisioning points">
-                <div class="pcv-map-head">
-                    <strong>South Florida &mdash; Where Everything Is</strong>
-                    <span>Click any pin for phone, hours, maps link &middot; toggle categories below</span>
-                </div>
-                <div id="pcv-map"></div>
-                <div class="pcv-legend" id="pcv-legend">
-                    <button data-cat="berth"><i class="dot-berth"></i> Berths</button>
-                    <button data-cat="market"><i class="dot-market"></i> Markets &amp; Direct</button>
-                    <button data-cat="shop"><i class="dot-shop"></i> Specialty &amp; Online</button>
-                    <button data-cat="mainland"><i class="dot-mainland"></i> Wholesale / Bulk</button>
-                    <button data-cat="logistics"><i class="dot-logistics"></i> Logistics &amp; Agent</button>
-                </div>
-            </div>
 
             <!-- ================= BRIEF ================= -->
             <details class="sfold" id="brief">

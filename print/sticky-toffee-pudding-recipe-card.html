@@ -6,68 +6,82 @@
     <style>
         @page { size: A4; margin: 0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; }
+        html, body { height: 100%; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 8.5pt;
-            line-height: 1.38;
+            font-size: 8.3pt;
+            line-height: 1.3;
             color: #0a0a0a;
             background: #fff;
-            max-width: 210mm;
+            width: 210mm;
+            height: 297mm;
             margin: 0 auto;
-            padding: 8mm 10mm 7mm;
+            padding: 6mm 9mm 5mm;
+            display: flex;
+            flex-direction: column;
         }
-        .header { border-bottom: 3px solid #0a0a0a; padding-bottom: 3mm; margin-bottom: 3.5mm; }
-        .brand { font-family: Georgia, serif; font-size: 7.5pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
-        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
-        h1 { font-family: Georgia, serif; font-size: 24pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; margin: 1mm 0; }
-        .hook { font-family: Georgia, serif; font-style: italic; font-size: 9.5pt; color: #4a5568; line-height: 1.35; }
-        .meta-bar { display: flex; gap: 5mm; margin-top: 2.5mm; padding-top: 2.5mm; border-top: 1px solid #e2e2e2; font-size: 8pt; color: #6b7280; }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.8pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 7pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 20pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 9pt; color: #4a5568; line-height: 1.28; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 8.3pt; color: #6b7280; }
         .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
 
-        .main { display: grid; grid-template-columns: 37% 1fr; gap: 5mm; margin-bottom: 3mm; }
-        h2 { font-family: Georgia, serif; font-size: 9.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.5mm; margin-bottom: 2.5mm; }
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 9.7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
 
-        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -1.5mm 0 2mm 0; }
-        .group-label { font-size: 7.5pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.5mm 0 1mm; }
-        .ingredients table { width: 100%; border-collapse: collapse; font-size: 8pt; }
-        .ingredients td { padding: 0.7mm 1mm; vertical-align: top; }
-        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.5pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
-        .ingredients td:nth-child(3) { font-size: 7pt; text-align: right; color: #6b7280; white-space: nowrap; width: 60px; padding-left: 2mm; }
-        .note { font-size: 7pt; color: #6b7280; font-style: italic; }
-        .equipment { font-size: 7pt; color: #6b7280; margin-top: 2.5mm; padding-top: 1.5mm; border-top: 1px solid #f0f0f0; line-height: 1.35; }
+        .ingredients-note { font-size: 7pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.8pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.4mm 0 0.9mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 8.3pt; }
+        .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.8pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 7.4pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 7.4pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 7.4pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
 
-        .method ol { padding-left: 4.5mm; counter-reset: step; list-style: none; }
-        .method li { margin-bottom: 1.5mm; padding-left: 1mm; counter-increment: step; position: relative; }
-        .method li::before { content: counter(step) "."; position: absolute; left: -4.5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.5pt; }
+        .method ol { padding-left: 5mm; counter-reset: step; list-style: none; }
+        .method li { margin-bottom: 1.3mm; padding-left: 0.5mm; counter-increment: step; position: relative; }
+        .method li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.8pt; }
         .method li > strong:first-child { color: #2d4a5e; }
-        .why { display: block; margin: 0.5mm 0 0.5mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 7pt; font-style: italic; color: #4a5568; line-height: 1.3; }
+        .why { display: block; margin: 0.6mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 7.4pt; font-style: italic; color: #4a5568; line-height: 1.28; }
         .why cite { font-style: normal; color: #2d4a5e; }
-        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 2mm 3mm; margin-top: 2.5mm; font-size: 8pt; line-height: 1.35; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 8.3pt; line-height: 1.32; }
         .done strong { color: #2d4a5e; }
 
-        .sauce-block { background: #fdf8f0; border-left: 3px solid #b88a3a; padding: 2mm 3mm; margin-top: 2.5mm; font-size: 8pt; line-height: 1.4; }
+        .sauce-block { background: #fdf8f0; border-left: 3px solid #b88a3a; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 8.3pt; line-height: 1.34; }
         .sauce-block strong { color: #8a5e1a; }
-        .sauce-block ol { padding-left: 4mm; margin-top: 1mm; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 1mm; }
 
-        .elevation { border: 2px solid #2d4a5e; padding: 2mm 2.5mm; margin-bottom: 2mm; }
-        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.5mm; }
-        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; }
-        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
         .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
-        .elevation ul { padding-left: 3mm; font-size: 7pt; line-height: 1.3; }
-        .elevation li { margin-bottom: 0.3mm; }
+        .elevation ul { padding-left: 3.2mm; font-size: 7.4pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
         .elevation li strong { color: #0a0a0a; }
 
-        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 1.5mm; }
-        .bottom h2 { font-size: 8pt; }
-        .troubleshoot table, .charter table { width: 100%; font-size: 7pt; border-collapse: collapse; }
-        .troubleshoot td, .charter td { padding: 0.5mm 1.5mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1.4mm; }
+        .bottom h2 { font-size: 8.3pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 7.4pt; border-collapse: collapse; line-height: 1.3; }
+        .troubleshoot td, .charter td { padding: 0.6mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
         .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
-        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7pt; }
         .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
         .charter tr:first-child td:last-child { font-weight: 600; }
 
-        .footer { padding-top: 1.5mm; border-top: 1px solid #e2e2e2; font-size: 6pt; color: #94a3b8; display: flex; justify-content: space-between; }
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 6pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .footer a { color: #94a3b8; text-decoration: none; border-bottom: 1px dotted #cbd2da; }
+        .footer .colophon { display: flex; gap: 4mm; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 6pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6.5pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact a:hover { color: #0a0a0a; }
+        .contact .ig-logo { width: 7pt; height: 7pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
         @media print { .done, .sauce-block, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
     </style>
 </head>
@@ -236,9 +250,27 @@
     </section>
 </div>
 
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
 <footer class="footer">
     <span>Tradition: Coulson (Sharrow Bay), Cartmel Village &nbsp;|&nbsp; Science: McGee &middot; Parks &middot; Modernist Cuisine</span>
-    <span>littoralicious.com &mdash; The Blueprint</span>
+    <span class="colophon">
+        <span>&mdash; The Blueprint</span>
+    </span>
 </footer>
 
 </body>

@@ -31,7 +31,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Michelin"
     ],
-    "why": "Michelin Guide — table historique d'Arbois, Vin Jaune comme religion. À commander : Poularde de Bresse au Vin Jaune et morilles ; truite de Doubs ; tarte au comté 36 mois. Le sanctuaire du Vin Jaune à table. Carte des Jaune anciens (Macle 1986, Tissot 1990) à voir et boire. Réserver 10 jours avant en saison.",
+    "why": "Michelin Guide — table historique d'Arbois, Vin Jaune comme religion. What to order: Poularde de Bresse au Vin Jaune et morilles ; truite de Doubs ; tarte au comté 36 mois. Le sanctuaire du Vin Jaune à table. Carte des Jaune anciens (Macle 1986, Tissot 1990) à voir et boire. Réserver 10 jours avant en saison.",
     "address": "9 rue de l'Hôtel de Ville, 39600 Arbois",
     "phone": "+33 3 84 66 05 67",
     "hours": "Dinner",
@@ -58,7 +58,7 @@ window.PCV_DATA = (function () {
       "Michelin",
       "Contemporary"
     ],
-    "why": "Bib Gourmand — bistronomie jurassienne contemporaine. À commander : Tartare de bœuf montbéliarde au Trousseau ; sandre, cancoillotte fumée ; gaufre, miel de sapin. Plus jeune et plus libre que Jeunet. La salle est minuscule, terrasse l'été. Carte des vins jaunes au verre, rare.",
+    "why": "Bib Gourmand — bistronomie jurassienne contemporaine. What to order: Tartare de bœuf montbéliarde au Trousseau ; sandre, cancoillotte fumée ; gaufre, miel de sapin. Plus jeune et plus libre que Jeunet. La salle est minuscule, terrasse l'été. Carte des vins jaunes au verre, rare.",
     "address": "Rue de Faramand, 39600 Arbois",
     "phone": "",
     "hours": "All day",
@@ -84,7 +84,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Traditional"
     ],
-    "why": "Bistrot du marché — cuisine jurassienne sans folklore. À commander : Saucisse de Morteau, lentilles vertes du Jura ; coq au Vin Jaune ; fondue au Comté trois âges. Bondé le jour du marché (jeudi, samedi). Carte courte ardoise, cancoillotte maison. À midi, formule à 22 € qui tient la route.",
+    "why": "Bistrot du marché — cuisine jurassienne sans folklore. What to order: Saucisse de Morteau, lentilles vertes du Jura ; coq au Vin Jaune ; fondue au Comté trois âges. Bondé le jour du marché (jeudi, samedi). Carte courte ardoise, cancoillotte maison. À midi, formule à 22 € qui tient la route.",
     "address": "Rue de Pavigny, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "Lunch",
@@ -110,7 +110,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Traditional"
     ],
-    "why": "Adresse de marché — clientèle d'habitués. À commander : Plat du jour ardoise ; entrecôte montbéliarde ; tête de veau (jeudi). Y aller à midi le jour du marché, jamais le soir. Carte des vins jaunes courte mais propre.",
+    "why": "Adresse de marché — clientèle d'habitués. What to order: Plat du jour ardoise ; entrecôte montbéliarde ; tête de veau (jeudi). Y aller à midi le jour du marché, jamais le soir. Carte des vins jaunes courte mais propre.",
     "address": "Place de la Comédie, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "Lunch",
@@ -136,7 +136,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Contemporary"
     ],
-    "why": "Cuisine de produit — équipe jeune. À commander : Risotto au comté 24 mois ; truite ikejime, beurre noisette ; ris de veau, sauce au Macvin. Hors centre — 5 minutes en voiture. Salle calme, terrasse jardin. Bon rapport qualité-prix le midi en semaine.",
+    "why": "Cuisine de produit — équipe jeune. What to order: Risotto au comté 24 mois ; truite ikejime, beurre noisette ; ris de veau, sauce au Macvin. Hors centre — 5 minutes en voiture. Salle calme, terrasse jardin. Bon rapport qualité-prix le midi en semaine.",
     "address": "Route de Besançon, 39570 Chille",
     "phone": "",
     "hours": "Dinner",
@@ -162,7 +162,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Traditional"
     ],
-    "why": "Cantine ouvrière — viandes de pays. À commander : Andouillette AAAAA ; entrecôte au Trousseau ; planche fromages comtois. Cantine sans chichi. Pas de site, paye en CB ou cash. À éviter le samedi soir (foot).",
+    "why": "Cantine ouvrière — viandes de pays. What to order: Andouillette AAAAA ; entrecôte au Trousseau ; planche fromages comtois. Cantine sans chichi. Pas de site, paye en CB ou cash. À éviter le samedi soir (foot).",
     "address": "Avenue Camille Prost, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "Lunch",
@@ -188,7 +188,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Cafe"
     ],
-    "why": "Maison fondée 1899 — galets de l'Ain (chocolat-praliné). À commander : Galet de l'Ain ; tarte au comté ; éclair café. Institution. Le galet est le souvenir comestible à ramener. Salon de thé à l'étage.",
+    "why": "Maison fondée 1899 — galets de l'Ain (chocolat-praliné). What to order: Galet de l'Ain ; tarte au comté ; éclair café. Institution. Le galet est le souvenir comestible à ramener. Salon de thé à l'étage.",
     "address": "1 Rue du Commerce, 39000 Lons-le-Saunier",
     "phone": "+33 3 84 24 13 32",
     "hours": "All day",
@@ -214,7 +214,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Cafe"
     ],
-    "why": "Café terrasse face au théâtre 1840. À commander : Espresso ; verre de Crémant ; planche comté-saucisson. La meilleure terrasse pour observer le marché. Pas de spécialité, mais le café est correct et l'emplacement bat tout.",
+    "why": "Café terrasse face au théâtre 1840. What to order: Espresso ; verre de Crémant ; planche comté-saucisson. La meilleure terrasse pour observer le marché. Pas de spécialité, mais le café est correct et l'emplacement bat tout.",
     "address": "Place de la Comédie, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "All day",
@@ -240,7 +240,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Wine"
     ],
-    "why": "Cave à vins jurassiens — vente et dégustation. À commander : Vin Jaune Macle ou Tissot ; Crémant brut ; Macvin pour l'apéritif. Pour comprendre les sept cépages avant de monter à Château-Chalon. Le caviste explique vraiment, pas de bla-bla.",
+    "why": "Cave à vins jurassiens — vente et dégustation. What to order: Vin Jaune Macle ou Tissot ; Crémant brut ; Macvin pour l'apéritif. Pour comprendre les sept cépages avant de monter à Château-Chalon. Le caviste explique vraiment, pas de bla-bla.",
     "address": "12 Rue Richebourg, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "All day",
@@ -268,7 +268,7 @@ window.PCV_DATA = (function () {
       "Produce",
       "Cheese"
     ],
-    "why": "Marché jeudi & samedi matin — l'un des plus beaux du Jura. À commander : Comté de Marcel Petite (Fort Saint-Antoine) ; Morteau d'un tuyé ; cancoillotte ; miel de sapin. 7h-13h, jeudi et samedi. Jeudi est plus paysan, samedi plus dense. Producteurs montés du plateau (Hauts-Jura, Bresse).",
+    "why": "Marché jeudi & samedi matin — l'un des plus beaux du Jura. What to order: Comté de Marcel Petite (Fort Saint-Antoine) ; Morteau d'un tuyé ; cancoillotte ; miel de sapin. 7h-13h, jeudi et samedi. Jeudi est plus paysan, samedi plus dense. Producteurs montés du plateau (Hauts-Jura, Bresse).",
     "address": "Place de la Comédie, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "All day",
@@ -295,7 +295,7 @@ window.PCV_DATA = (function () {
       "Cheese",
       "Produce"
     ],
-    "why": "Fromager-affineur du centre — Comté de plusieurs maisons. À commander : Plateau dégustation comté 18/24/36 mois ; Bleu de Gex ; Mont d'Or (oct-mai) ; cancoillotte. Demandez à goûter trois âges côte à côte — c'est la base. Sous-vide possible pour rapporter au bateau.",
+    "why": "Fromager-affineur du centre — Comté de plusieurs maisons. What to order: Plateau dégustation comté 18/24/36 mois ; Bleu de Gex ; Mont d'Or (oct-mai) ; cancoillotte. Demandez à goûter trois âges côte à côte — c'est la base. Sous-vide possible pour rapporter au bateau.",
     "address": "Rue du Commerce, 39000 Lons-le-Saunier",
     "phone": "",
     "hours": "All day",
@@ -321,7 +321,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Cheese"
     ],
-    "why": "Centre d'interprétation officiel du Comté AOP — visite cave. À commander : Visite + dégustation comparative cave d'altitude vs cave de plaine. Le détour utile : on comprend pourquoi un comté de fruitière de plateau ne ressemble pas à un comté de plaine. 45 min.",
+    "why": "Centre d'interprétation officiel du Comté AOP — visite cave. What to order: Visite + dégustation comparative cave d'altitude vs cave de plaine. Le détour utile : on comprend pourquoi un comté de fruitière de plateau ne ressemble pas à un comté de plaine. 45 min.",
     "address": "Avenue de la Résistance, 39800 Poligny",
     "phone": "+33 3 84 37 78 40",
     "hours": "All day",
@@ -347,7 +347,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Wine"
     ],
-    "why": "Référence absolue du Vin Jaune de Château-Chalon. À commander : Château-Chalon ; Côtes du Jura blanc tradition ; Crémant. Visite uniquement sur rendez-vous. Laurent Macle reçoit lui-même. Dégustation sérieuse, dans la cave familiale, sans mise en scène.",
+    "why": "Référence absolue du Vin Jaune de Château-Chalon. What to order: Château-Chalon ; Côtes du Jura blanc tradition ; Crémant. Visite uniquement sur rendez-vous. Laurent Macle reçoit lui-même. Dégustation sérieuse, dans la cave familiale, sans mise en scène.",
     "address": "Rue de la Roche, 39210 Château-Chalon",
     "phone": "+33 3 84 85 21 85",
     "hours": "All day",
@@ -373,7 +373,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Wine"
     ],
-    "why": "Le Jura biodynamique — gamme la plus complète. À commander : Arbois Trousseau Singulier ; Vin Jaune ; Vin de Paille ; Crémant Indigène. Plus large que Macle, plus expérimental. Grande gamme parcellaire. Boutique ouverte, mais réserver pour visiter les caves.",
+    "why": "Le Jura biodynamique — gamme la plus complète. What to order: Arbois Trousseau Singulier ; Vin Jaune ; Vin de Paille ; Crémant Indigène. Plus large que Macle, plus expérimental. Grande gamme parcellaire. Boutique ouverte, mais réserver pour visiter les caves.",
     "address": "39 Rue de Curon, 39600 Montigny-lès-Arsures",
     "phone": "+33 3 84 66 08 27",
     "hours": "All day",
@@ -399,7 +399,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Cult"
     ],
-    "why": "Maison-laboratoire de Pasteur — préservée intacte. À commander : Visite guidée du labo + vignoble expérimental. Sa thèse sur la fermentation alcoolique a démarré ici, sur le Vin Jaune de Pupillin. Le labo est le seul de France conservé en l'état. Une heure.",
+    "why": "Maison-laboratoire de Pasteur — préservée intacte. What to order: Visite guidée du labo + vignoble expérimental. Sa thèse sur la fermentation alcoolique a démarré ici, sur le Vin Jaune de Pupillin. Le labo est le seul de France conservé en l'état. Une heure.",
     "address": "83 Rue de Courcelles, 39600 Arbois",
     "phone": "+33 3 84 66 11 72",
     "hours": "All day",
@@ -425,7 +425,7 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Meat"
     ],
-    "why": "Volailler référent de la Bresse AOP — fournisseur de chefs. À commander : Poularde de Bresse fine entière ; chapon ; pintade ; foie de volaille. Pour la poularde au Vin Jaune. À 50 minutes de route. Commander 48h avant en saison. Sous-vide pour le bateau.",
+    "why": "Volailler référent de la Bresse AOP — fournisseur de chefs. What to order: Poularde de Bresse fine entière ; chapon ; pintade ; foie de volaille. Pour la poularde au Vin Jaune. À 50 minutes de route. Commander 48h avant en saison. Sous-vide pour le bateau.",
     "address": "Place de la Grenette, 01340 Montrevel-en-Bresse",
     "phone": "+33 4 74 25 48 36",
     "hours": "All day",
@@ -451,12 +451,37 @@ window.PCV_DATA = (function () {
     "productTags": [
       "Cult"
     ],
-    "why": "UNESCO 1982 — saline royale Ledoux 1775, architecture utopique. À commander : Visite + festival des jardins (juin-oct). Pour comprendre la chaîne du sel jurassien : la saumure de Salins-les-Bains arrivait ici par saumoduc en bois pour y être évaporée. Architecture Ledoux, vraie fascination.",
+    "why": "UNESCO 1982 — saline royale Ledoux 1775, architecture utopique. What to order: Visite + festival des jardins (juin-oct). Pour comprendre la chaîne du sel jurassien : la saumure de Salins-les-Bains arrivait ici par saumoduc en bois pour y être évaporée. Architecture Ledoux, vraie fascination.",
     "address": "Grande Rue, 25610 Arc-et-Senans",
     "phone": "+33 3 81 54 45 45",
     "hours": "All day",
     "maps": "https://www.google.com/maps/search/?api=1&query=Salines+Royales+d'Arc-et-Senans+(UNESCO)+Lons-le-Saunier"
   }
 ];
-    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS };
+    const NEIGHBORHOODS = [
+        { id: 'n-place-liberte', name: 'Place de la Liberté & rue du Commerce', center: [46.6748, 5.5544], radius: 180, maps_url: 'https://www.google.com/maps/search/?api=1&query=Place+de+la+Liberté+Lons-le-Saunier' },
+        { id: 'n-place-comedie', name: 'Place de la Comédie / Halles', center: [46.6738, 5.5530], radius: 130, maps_url: 'https://www.google.com/maps/search/?api=1&query=Place+de+la+Comédie+Lons-le-Saunier' },
+        { id: 'n-chevalerie', name: 'Quartier de la Chevalerie & Source Salée', center: [46.6722, 5.5480], radius: 280, maps_url: 'https://www.google.com/maps/search/?api=1&query=Parc+de+la+Chevalerie+Lons-le-Saunier' },
+        { id: 'n-pavigny', name: 'Quartier du Stade / Pavigny', center: [46.6728, 5.5470], radius: 260, maps_url: 'https://www.google.com/maps/search/?api=1&query=Pavigny+Lons-le-Saunier' },
+        { id: 'n-chille', name: 'Montciel & Chille', center: [46.6900, 5.5700], radius: 600, maps_url: 'https://www.google.com/maps/search/?api=1&query=Chille+Jura' },
+        { id: 'n-arbois', name: 'Arbois (Jura wine capital)', center: [46.9036, 5.7747], radius: 700, maps_url: 'https://www.google.com/maps/search/?api=1&query=Arbois+Jura' },
+        { id: 'n-chateau-chalon', name: 'Château-Chalon', center: [46.7556, 5.6394], radius: 350, maps_url: 'https://www.google.com/maps/search/?api=1&query=Château-Chalon' },
+        { id: 'n-poligny', name: 'Poligny (Comté capital)', center: [46.8389, 5.7064], radius: 500, maps_url: 'https://www.google.com/maps/search/?api=1&query=Poligny+Jura' }
+    ];
+    const WALKS = [
+        { id: 'w-arcades-aube', name: 'Rue du Commerce arcades at dawn', start: [46.6748, 5.5544], maps_url: 'https://www.google.com/maps/search/?api=1&query=Rue+du+Commerce+Lons-le-Saunier' },
+        { id: 'w-chateau-chalon', name: 'Château-Chalon vineyard walk', start: [46.7556, 5.6394], maps_url: 'https://www.google.com/maps/search/?api=1&query=Château-Chalon+vignoble' },
+        { id: 'w-arbois', name: 'Arbois old town', start: [46.9036, 5.7747], maps_url: 'https://www.google.com/maps/search/?api=1&query=Arbois+centre+ville' },
+        { id: 'w-baume', name: 'Baume-les-Messieurs cirque', start: [46.7095, 5.6450], maps_url: 'https://www.google.com/maps/search/?api=1&query=Baume-les-Messieurs' },
+        { id: 'w-cirque-fer-cheval', name: 'Cirque du Fer-à-Cheval', start: [46.6900, 5.6800], maps_url: 'https://www.google.com/maps/search/?api=1&query=Cirque+du+Fer+à+Cheval+Jura' },
+        { id: 'w-source-salee', name: 'Source Salée pool', start: [46.6722, 5.5485], maps_url: 'https://www.google.com/maps/search/?api=1&query=Source+Salée+Lons-le-Saunier' }
+    ];
+    const WORK_SPOTS = [
+        { id: 'p-work-mediatheque', name: 'Médiathèque', start: [46.6740, 5.5520] },
+        { id: 'p-work-parc-chevalerie', name: 'Parc de la Chevalerie', start: [46.6722, 5.5480] },
+        { id: 'p-work-cafe-comedie', name: 'Café de la Comédie', start: [46.6736, 5.5532] },
+        { id: 'p-work-rue-arcades', name: 'Rue du Commerce arcades', start: [46.6748, 5.5544] },
+        { id: 'p-work-bibliotheque-arbois', name: 'Bibliothèque d’Arbois', start: [46.9036, 5.7747] }
+    ];
+    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS };
 })();

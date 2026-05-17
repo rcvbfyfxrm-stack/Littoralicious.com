@@ -482,5 +482,27 @@ window.PCV_DATA = (function () {
     "maps": "https://www.google.com/maps/search/?api=1&query=Bon+Bon+Carvoeiro"
   }
 ];
-    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS };
+    const NEIGHBORHOODS = [
+        { id: 'n-cidade-velha', name: 'Cidade Velha', center: [37.0145, -7.9358], radius: 200, maps_url: 'https://www.google.com/maps/search/?api=1&query=Cidade+Velha+Faro' },
+        { id: 'n-faro-centro', name: 'Faro Centro', center: [37.0175, -7.9350], radius: 380, maps_url: 'https://www.google.com/maps/search/?api=1&query=Faro+Centro' },
+        { id: 'n-marina', name: 'Marina / Doca', center: [37.0166, -7.9319], radius: 250, maps_url: 'https://www.google.com/maps/search/?api=1&query=Marina+de+Faro' },
+        { id: 'n-mercado-faro', name: 'Mercado Municipal', center: [37.0193, -7.9302], radius: 120, maps_url: 'https://www.google.com/maps/search/?api=1&query=Mercado+Municipal+Faro' },
+        { id: 'n-praia-faro', name: 'Praia de Faro / Ilha', center: [36.9961, -7.9929], radius: 600, maps_url: 'https://www.google.com/maps/search/?api=1&query=Praia+de+Faro' },
+        { id: 'n-olhao', name: 'Olhão', center: [37.0282, -7.8425], radius: 700, maps_url: 'https://www.google.com/maps/search/?api=1&query=Olhao+waterfront' }
+    ];
+    const WALKS = [
+        { id: 'w-cidade-velha-aube', name: 'Cidade Velha at dawn', start: [37.0143, -7.9359], maps_url: 'https://www.google.com/maps/search/?api=1&query=Sé+de+Faro' },
+        { id: 'w-ria-formosa', name: 'Ria Formosa boardwalk', start: [37.0143, -7.9290], maps_url: 'https://www.google.com/maps/search/?api=1&query=Ria+Formosa+Faro' },
+        { id: 'w-ilha-deserta', name: 'Ilha Deserta', start: [37.0136, -7.9333], maps_url: 'https://www.google.com/maps/search/?api=1&query=Ilha+Deserta+ferry+Faro' },
+        { id: 'w-tavira-bird', name: 'Tavira / bird-watching', start: [37.1262, -7.6498], maps_url: 'https://www.google.com/maps/search/?api=1&query=Tavira+old+town' },
+        { id: 'w-cabo-sao-vicente', name: 'Cabo de São Vicente', start: [37.0234, -8.9947], maps_url: 'https://www.google.com/maps/search/?api=1&query=Cabo+de+Sao+Vicente' }
+    ];
+    const WORK_SPOTS = [
+        { id: 'p-work-biblioteca', name: 'Biblioteca Municipal', start: [37.0192, -7.9325] },
+        { id: 'p-work-jardim-manuel-bivar', name: 'Jardim Manuel Bívar', start: [37.0162, -7.9347] },
+        { id: 'p-work-cafe-aliança', name: 'Café Aliança', start: [37.0163, -7.9335] },
+        { id: 'p-work-marina', name: 'Marina', start: [37.0166, -7.9319] },
+        { id: 'p-work-praia-faro', name: 'Praia de Faro', start: [36.9961, -7.9929] }
+    ];
+    return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS };
 })();

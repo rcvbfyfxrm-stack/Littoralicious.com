@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
 
     <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260506b">
     <link rel="stylesheet" href="../assets/css/port-call-content.css">
     <link rel="stylesheet" href="../assets/css/port-call.css">
     <link rel="stylesheet" href="../assets/css/supplier-rating.css">
@@ -84,6 +84,22 @@
 
             <div class="article__content container" style="max-width: 70ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
+                <!-- ========== INTERACTIVE MAP (top of article) ========== -->
+                <div class="pcv-map-wrap" role="region" aria-label="Interactive map of Venice provisioning points">
+                    <div class="pcv-map-head">
+                        <strong>The Lagoon &mdash; Where Everything Is</strong>
+                        <span>Click any pin for phone, hours, maps link &middot; toggle categories below</span>
+                    </div>
+                    <div id="pcv-map"></div>
+                    <div class="pcv-legend" id="pcv-legend">
+                        <button data-cat="berth"><i class="dot-berth"></i> Berths</button>
+                        <button data-cat="market"><i class="dot-market"></i> Markets &amp; Direct</button>
+                        <button data-cat="shop"><i class="dot-shop"></i> Specialty &amp; Wine</button>
+                        <button data-cat="mainland"><i class="dot-mainland"></i> Mestre / Mainland</button>
+                        <button data-cat="logistics"><i class="dot-logistics"></i> Logistics</button>
+                    </div>
+                </div>
+
                 <nav class="pc-quicknav">
                     <a href="#three-berths">Three Berths</a><span class="sep">&middot;</span>
                     <a href="#pcv-map">Map</a><span class="sep">&middot;</span>
@@ -96,10 +112,6 @@
                     <a href="#watchouts" class="warn">⚠ Watch-outs</a><span class="sep">&middot;</span>
                     <a href="#bottom">Bottom Line</a>
                 </nav>
-
-                <p>Three things to set up before arrival: <strong>(1)</strong> brief <a href="#p-pesto" style="color:var(--color-sea); text-decoration: underline;">Pesto Sea Group</a> 48 h ahead with your provision list and dietary requirements &mdash; they coordinate suppliers and dockside delivery; <strong>(2)</strong> reserve <a href="#p-motoscafi" style="color:var(--color-sea); text-decoration: underline;">Consorzio Motoscafi</a> for your provisioning runs ahead of time, especially during Biennale or Mostra weeks; <strong>(3)</strong> call <a href="#p-sapori" style="color:var(--color-sea); text-decoration: underline;">I Sapori di Sant&rsquo;Erasmo</a> to confirm the castraure window if your dates are late April / early May.</p>
-
-                <p><strong>The warning.</strong> If you arrive without a yacht agent during Biennale opening week, you will not get a water taxi for the first three days. The hotels block the entire fleet two weeks ahead. The walk-up motoscafo is a fantasy that week. Plan accordingly.</p>
 
                 <div class="pc-funfact"><strong>Venice has 118 islands, 417 bridges, and ~150 canals</strong> &mdash; and the city rests on millions of waterlogged alder and larch piles driven into the lagoon mud. Submerged for a thousand years, the wood petrified into a stone-like matrix. Every supplier is on water, every delivery is by boat, and the moment a single canal closes for a procession or pontoon bridge, your provisioning plan changes.</div>
 
@@ -116,86 +128,25 @@
                     <div class="sfold__body">
 
                         <div class="three-berths">
-                            <div class="tb-col">
-                                <h3>Sant'Elena</h3>
-                                <div class="subtitle">Castello · ≤65 m · walk to San Marco</div>
-                                <ol><li><a href="#p-santelena">Marina Sant'Elena</a><span class="meta">Eastern tip of Castello — 12 berths to 30 m + 11 from 40–65 m, external quay 70 m+. Real Venice neighbourhood (Via Garibaldi).</span></li></ol>
+                            <div class="tb-col" id="p-santelena" data-supplier-id="santelena">
+                                <h3>Marina Sant'Elena</h3>
+                                <div class="subtitle">Castello · ≤65 m · walk to San Marco · <a href="tel:+390415202675">+39 041 520 2675</a></div>
+                                <ol><li><span class="meta">Eastern tip of Castello — 12 berths to 30 m + 11 from 40–65 m, external quay 70 m+. Real Venice neighbourhood (Via Garibaldi). <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Marina+Santelena+Venezia" target="_blank" rel="noopener">📍 Maps</a></span></li></ol>
                             </div>
-                            <div class="tb-col">
+                            <div class="tb-col" id="p-vyp" data-supplier-id="vyp">
                                 <h3>Venice Yacht Pier</h3>
-                                <div class="subtitle">Riva dei Sette Martiri · superyacht ≤140 m</div>
-                                <ol><li><a href="#p-vyp">Venice Yacht Pier</a><span class="meta">Main superyacht quay between Arsenale and Giardini. 9.5 m draft. Santa Marta secondary berth = easier provisioning (closer to Piazzale Roma road).</span></li></ol>
+                                <div class="subtitle">Riva dei Sette Martiri · ≤140 m · 9.5 m draft · <a href="tel:+393476082425">+39 347 608 2425</a></div>
+                                <ol><li><span class="meta">Main superyacht quay between Arsenale and Giardini. Santa Marta secondary berth = easier provisioning (closer to Piazzale Roma road). <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Venice+Yacht+Pier+Riva+dei+Sette+Martiri" target="_blank" rel="noopener">📍 Maps</a></span></li></ol>
                             </div>
-                            <div class="tb-col">
-                                <h3>Certosa</h3>
-                                <div class="subtitle">Refit yard · ≤60 m · quiet</div>
-                                <ol><li><a href="#p-certosa">Venezia Certosa Marina</a><span class="meta">Isola della Certosa — refit yard + deep-water berths, 10-min water taxi to San Marco. Right call for combining a yard period with Venice access.</span></li></ol>
+                            <div class="tb-col" id="p-certosa" data-supplier-id="certosa">
+                                <h3>Venezia Certosa Marina</h3>
+                                <div class="subtitle">Isola della Certosa · ≤60 m · refit yard · <a href="tel:+390415208588">+39 041 520 8588</a></div>
+                                <ol><li><span class="meta">Refit yard + deep-water berths, 10-min water taxi to San Marco. Right call for combining a yard period with Venice access. <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Venezia+Certosa+Marina+Isola+della+Certosa" target="_blank" rel="noopener">📍 Maps</a></span></li></ol>
                             </div>
                         </div>
 
-                        <details class="pfold cult" id="p-santelena" data-supplier-id="santelena">
-                            <summary><div><div class="pfold__name">📍 Marina Sant'Elena</div><div class="pfold__hook">Campo della Chiesa 1, Sant'Elena · ≤65 m · +39 041 520 2675</div></div><span class="pfold__chev">▶</span></summary>
-                            <div class="pfold__body">
-                                <div class="pfold__recog">The historic-centre default · 10-min walk to San Marco · power 125–400 A</div>
-                                <p>Eastern tip of Castello island. 12 berths to 30 m, 11 berths 40–65 m, external quay for 70 m+. The Via Garibaldi neighbourhood around the marina is one of the last genuinely Venetian areas — real bakeries, real bars, real residents. Crew morale benefits noticeably from being berthed somewhere with a working community around it. <span class="cau cau--high" data-fix="During Biennale opening (mid-May Architettura 2026, mid-May Arte 2027) and the Mostra (late Aug / early Sep), berths are blocked out 6+ months ahead. Reserve through Pesto Sea Group as soon as the dates lock.">Festival lock-out</span></p>
-                                <div class="pfold__meta">
-                                    <div><strong>Address</strong>Campo della Chiesa 1, Sant'Elena, 30122 Venezia</div>
-                                    <div><strong>Phone</strong>+39 041 520 2675</div>
-                                    <div><strong>Email</strong>sales@marinasantelena.com</div>
-                                    <div><strong>Web</strong>marinasantelena.com</div>
-                                </div>
-                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Marina+Santelena+Venezia" target="_blank" rel="noopener">📍 Open in Google Maps</a>
-                            </div>
-                        </details>
-
-                        <details class="pfold cult" id="p-vyp" data-supplier-id="vyp">
-                            <summary><div><div class="pfold__name">📍 Venice Yacht Pier (Riva dei Sette Martiri / Santa Marta)</div><div class="pfold__hook">≤140 m · 9.5 m draft · +39 347 608 2425</div></div><span class="pfold__chev">▶</span></summary>
-                            <div class="pfold__body">
-                                <div class="pfold__recog">The main superyacht quay · two locations · pick Santa Marta for easier logistics</div>
-                                <p>Main superyacht quay between Arsenale and Giardini — vessels to 140 m, 9.5 m draft. The Santa Marta / San Basilio secondary berth on the western edge is closer to Piazzale Roma road connections — request that one if you have a choice, since heavy provisioning runs from Mestre depend on the Piazzale Roma portage. <span class="cau cau--med" data-fix="Riva dei Sette Martiri is exposed to bow-on chop from Bacino San Marco passenger ferries during peak hours. Santa Marta is calmer but further from San Marco walking access.">Choose your berth wisely</span></p>
-                                <div class="pfold__meta">
-                                    <div><strong>Phone</strong>+39 347 608 2425</div>
-                                    <div><strong>Email</strong>info@veniceyachtpier.com</div>
-                                    <div><strong>Web</strong>veniceyachtpier.com</div>
-                                </div>
-                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Venice+Yacht+Pier+Riva+dei+Sette+Martiri" target="_blank" rel="noopener">📍 Open in Google Maps</a>
-                            </div>
-                        </details>
-
-                        <details class="pfold cult" id="p-certosa" data-supplier-id="certosa">
-                            <summary><div><div class="pfold__name">📍 Venezia Certosa Marina (Vento di Venezia)</div><div class="pfold__hook">Isola della Certosa · ≤60 m · refit yard · +39 041 520 8588</div></div><span class="pfold__chev">▶</span></summary>
-                            <div class="pfold__body">
-                                <div class="pfold__recog">Refit yard + deep-water berths · 10-min water taxi to San Marco</div>
-                                <p>Refit yard + deep-water berths to 60 m on Certosa Island. Quieter than central Venice; 10-minute water taxi to San Marco. The right call when combining a yard period with Venice access — full shipyard capability, less foot traffic. The trade-off: every supplier run requires a boat. <span class="cau cau--info" data-fix="VHF Channel 72 — confirm before approach. Harbour master direct: +39 320 658 3454.">VHF Ch. 72</span></p>
-                                <div class="pfold__meta">
-                                    <div><strong>Address</strong>Isola della Certosa, 30141 Venezia</div>
-                                    <div><strong>Phone</strong>+39 041 520 8588</div>
-                                    <div><strong>Harbour</strong>+39 320 658 3454</div>
-                                    <div><strong>Email</strong>marina@ventodivenezia.it</div>
-                                    <div><strong>Web</strong>veneziacertosamarina.it</div>
-                                </div>
-                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Venezia+Certosa+Marina+Isola+della+Certosa" target="_blank" rel="noopener">📍 Open in Google Maps</a>
-                            </div>
-                        </details>
-
                     </div>
                 </details>
-
-                <!-- ========== INTERACTIVE MAP ========== -->
-                <div class="pcv-map-wrap" role="region" aria-label="Interactive map of Venice provisioning points">
-                    <div class="pcv-map-head">
-                        <strong>The Lagoon &mdash; Where Everything Is</strong>
-                        <span>Click any pin for phone, hours, maps link &middot; toggle categories below</span>
-                    </div>
-                    <div id="pcv-map"></div>
-                    <div class="pcv-legend" id="pcv-legend">
-                        <button data-cat="berth"><i class="dot-berth"></i> Berths</button>
-                        <button data-cat="market"><i class="dot-market"></i> Markets &amp; Direct</button>
-                        <button data-cat="shop"><i class="dot-shop"></i> Specialty &amp; Wine</button>
-                        <button data-cat="mainland"><i class="dot-mainland"></i> Mestre / Mainland</button>
-                        <button data-cat="logistics"><i class="dot-logistics"></i> Logistics</button>
-                    </div>
-                </div>
 
                 <!-- ========== BRIEF ========== -->
                 <details class="sfold" id="brief">
@@ -204,7 +155,7 @@
                         <p><strong>Port type: water-only historic centre + mainland wholesale.</strong> The single defining constraint: no road vehicles on the island. Everything moves by boat or on foot. A delivery van full of provisions in Mestre cannot drive to the boat — it stops at Piazzale Roma, and the marina arranges a portage boat from there.</p>
                         <div class="pc-pullq">No road vehicles on the island. Everything moves by boat or on foot. A van full of provisions in Mestre cannot drive to the boat.</div>
                         <p>This shapes every supplier decision. The fish market is in San Polo because the fishermen land at the Pescheria pier. The wholesale clubs are in Mestre + Marghera because the trucks need road access. The water taxis are the most expensive private transport in the Mediterranean (Consorzio Motoscafi metered at €15 minimum + €2/min) because they're the only way to move boxes across the lagoon.</p>
-                        <p><strong>Three things to brief your yacht agent on, in writing, 48 h before arrival:</strong> (1) full provision list with brand specs where they matter; (2) any dietary requirements; (3) which berth you've requested and which one is acceptable as a fallback.</p>
+                        <p><strong>Two things to brief your yacht agent on, in writing, 48 h before arrival:</strong> (1) full provision list with brand specs where they matter; (2) any dietary requirements.</p>
                     </div>
                 </details>
 
