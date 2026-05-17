@@ -378,8 +378,11 @@ body {
 
 /* --- Hub grid (the 16 domain category cards) --- */
 .hub-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px; margin: 28px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 18px; margin: 28px auto;
+  justify-content: center;
+  max-width: 1040px;
 }
 .hub-card {
   background: var(--bg2); border: 1px solid var(--border);
