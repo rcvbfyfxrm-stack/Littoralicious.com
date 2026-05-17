@@ -291,3 +291,215 @@ body {
   .page { padding: 12px; }
   .domain-page-title { font-size: 22px; }
 }
+
+/* =====================================================================
+   COMPATIBILITY LAYER — Citadel-named classes restyled to cream paper.
+   build.py was rewritten to emit .topbar/.section/.hub-card/.page-nav
+   names. The design lock (CLAUDE.md) keeps the NYT/cream identity, so
+   these classes map to the existing palette instead of introducing dark
+   terminal styling.
+   ===================================================================== */
+
+/* --- Topbar (replaces .topnav for new editions) --- */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; height: 48px;
+  padding: 0 24px; gap: 14px;
+}
+.topbar-brand {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: 14px; letter-spacing: 1px; color: var(--text);
+  text-decoration: none; text-transform: uppercase;
+}
+.topbar-nav {
+  display: flex; align-items: center; gap: 2px;
+  flex: 1; overflow-x: auto; scrollbar-width: none;
+}
+.topbar-nav::-webkit-scrollbar { display: none; }
+.topbar-link {
+  padding: 6px 12px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; letter-spacing: .3px;
+  text-transform: uppercase; white-space: nowrap;
+  color: var(--text2); text-decoration: none;
+  font-family: 'Libre Baskerville', serif; transition: all .15s;
+}
+.topbar-link:hover { background: var(--bg3); color: var(--text); }
+.topbar-link.active { background: var(--text); color: var(--bg); }
+.topbar-right { margin-left: auto; }
+.topbar-status {
+  font-family: 'Playfair Display', serif; font-size: 10px;
+  letter-spacing: 2px; color: var(--muted); text-transform: uppercase;
+}
+
+/* --- Collapsible sections (briefing flash / urgent / chiffres) --- */
+.section {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 4px; margin-bottom: 16px; overflow: hidden;
+}
+.section-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: background .15s;
+}
+.section.open .section-header { border-bottom-color: var(--border); }
+.section-header:hover { background: var(--bg3); }
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: 14px;
+  font-weight: 700; color: var(--text); letter-spacing: .3px;
+  text-transform: uppercase;
+}
+.section-badge {
+  font-size: 9px; padding: 3px 8px; border-radius: 10px;
+  background: var(--bg3); color: var(--muted);
+  letter-spacing: 1px; text-transform: uppercase; font-weight: 600;
+}
+.section-arrow {
+  margin-left: auto; font-size: 10px; color: var(--muted);
+  transition: transform .2s;
+}
+.section.open .section-arrow { transform: rotate(0deg); }
+.section:not(.open) .section-arrow { transform: rotate(-90deg); }
+.section-body { padding: 18px; display: block; }
+.section:not(.open) .section-body { display: none; }
+
+/* --- Narrative call-outs (red urgent box, etc.) --- */
+.narrative {
+  background: var(--bg3); border-left: 4px solid var(--red);
+  padding: 14px 16px; border-radius: 0 4px 4px 0;
+}
+.narrative-title {
+  font-family: 'Playfair Display', serif; font-size: 12px;
+  font-weight: 700; color: var(--text); margin-bottom: 8px;
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.narrative-text { font-size: 13px; color: var(--text2); line-height: 1.7; }
+
+/* --- Hub grid (the 16 domain category cards) --- */
+.hub-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px; margin: 28px 0;
+}
+.hub-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 18px 18px 16px 22px;
+  text-decoration: none; color: var(--text);
+  position: relative; transition: all .2s;
+  display: flex; flex-direction: column;
+}
+.hub-card:hover {
+  border-color: var(--text); transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+.hub-card-num {
+  font-family: 'Playfair Display', serif; font-size: 10px;
+  color: var(--muted); letter-spacing: 1px; margin-bottom: 4px;
+}
+.hub-card-title {
+  font-family: 'Playfair Display', serif; font-size: 16px;
+  font-weight: 700; color: var(--text); margin-bottom: 10px;
+}
+.hub-card-desc {
+  font-size: 12px; color: var(--text2); line-height: 1.6;
+  flex: 1; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
+}
+.hub-card-tags {
+  margin-top: 12px; padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* --- Color tags --- */
+.tag {
+  display: inline-block; padding: 3px 8px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; letter-spacing: .5px;
+  text-transform: uppercase; font-family: 'Libre Baskerville', serif;
+  background: var(--bg3); color: var(--text2);
+}
+.tag-purple { background: var(--pbg); color: var(--purple); }
+.tag-green  { background: var(--gbg); color: var(--green);  }
+.tag-red    { background: var(--rbg); color: var(--red);    }
+.tag-yellow { background: var(--ybg); color: var(--yellow); }
+.tag-orange { background: var(--obg); color: var(--orange); }
+.tag-cyan   { background: var(--cbg); color: var(--cyan);   }
+.tag-teal   { background: var(--tbg); color: var(--teal);   }
+.tag-lime   { background: var(--lbg); color: var(--lime);   }
+.tag-pink   { background: var(--pkbg); color: var(--pink);  }
+.tag-accent { background: var(--bg3); color: var(--accent); }
+
+/* --- Domain page header (page-num + title) --- */
+.page-header {
+  margin-bottom: 24px; padding-bottom: 16px;
+  border-bottom: 2px solid var(--border2);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.page-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  color: var(--bg); font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 14px; margin-right: 10px;
+  vertical-align: middle;
+}
+.page-title {
+  font-family: 'Playfair Display', serif; font-size: 26px;
+  font-weight: 900; color: var(--text); vertical-align: middle;
+}
+.page-subtitle {
+  font-size: 12px; color: var(--muted); letter-spacing: .5px;
+  padding-left: 42px;
+}
+
+/* --- Page nav (prev/next at bottom of edition or domain page) --- */
+.page-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 32px; padding-top: 20px;
+  border-top: 2px solid var(--border2); gap: 16px;
+}
+.page-nav a {
+  flex: 1; max-width: 48%;
+  padding: 12px 16px; border-radius: 4px;
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text2); text-decoration: none; transition: all .15s;
+}
+.page-nav a:hover { background: var(--bg3); color: var(--text); border-color: var(--text); }
+.page-nav-label {
+  font-size: 10px; color: var(--muted); letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.page-nav-title {
+  font-family: 'Playfair Display', serif; font-size: 13px;
+  font-weight: 600; color: var(--text);
+}
+
+/* --- Generic table (.tbl) --- */
+.tbl {
+  width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 4px;
+  overflow: hidden;
+}
+.tbl th {
+  text-align: left; padding: 10px 12px; font-size: 10px;
+  text-transform: uppercase; letter-spacing: .8px; color: var(--muted);
+  border-bottom: 2px solid var(--border2); font-weight: 700;
+  background: var(--bg3); font-family: 'Libre Baskerville', serif;
+}
+.tbl td {
+  padding: 10px 12px; border-bottom: 1px solid var(--border);
+  color: var(--text2);
+}
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: var(--bg3); }
+.mono { font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; font-size: 11px; color: var(--muted); }
+
+/* --- Responsive overrides for the new classes --- */
+@media (max-width: 768px) {
+  .hub-grid { grid-template-columns: 1fr; }
+  .topbar { padding: 0 12px; height: 44px; }
+  .topbar-nav { display: none; }
+  .topbar-brand { font-size: 12px; }
+  .page-title { font-size: 20px; }
+  .page-subtitle { padding-left: 0; }
+  .page-nav { flex-direction: column; }
+  .page-nav a { max-width: 100%; }
+}
