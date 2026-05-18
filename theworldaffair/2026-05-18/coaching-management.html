@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaching &amp; Management &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#455A64">Coaching &amp; Management</div>
+  <h1 class="article-title">L&#x27;« agent manager » émerge — 45 % des orgs réduisent les couches</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>La semaine du 12 au 18 mai 2026 a confirmé un basculement que les éditoriaux annonçaient depuis dix-huit mois sans y croire vraiment : la couche intermédiaire du management s'érode pour de bon. Le rapport « Artificial Intelligence and Business Strategy » du MIT Sloan Management Review, publié ce printemps, livre le chiffre qui circule désormais dans toutes les salles de comité : 45 % des organisations ayant déployé l'IA agentique à grande échelle anticipent une réduction des couches de middle management d'ici 2029. Microsoft, dans son Work Trend Index publié cette même semaine, calcule que les facteurs organisationnels — culture, soutien managérial, pratiques RH — comptent pour 67 % de l'impact réel de l'IA, contre 32 % pour la motivation individuelle. Autrement dit : ce n'est pas l'outil qui fait la productivité, c'est la chaîne hiérarchique qui décide d'y croire. Le reste de cette édition examine ce que cela change pour un chef d'équipe restreinte sous pression — galley, atelier, brigade — qui ne dispose ni d'un département RH ni d'un consultant McKinsey, mais doit décider lundi matin si l'on garde le stand-up.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. L'« agent manager » : nouvelle fonction, vieux dilemmes</h3>
+<p>La Harvard Business Review a publié le 14 mai une analyse remarquée sous le titre <em>When Feedback Crosses the Line</em> — mais c'est un autre article de la même livraison, consacré à la fonction émergente d'« agent manager », qui a fait le plus de bruit dans les DM des managers tech. L'idée : à mesure que les agents d'IA accomplissent des tâches coordonnatrices (planification, reporting, première rédaction, suivi de KPI), il faut quelqu'un pour les superviser comme on supervisait jadis un junior. Définir les métriques. Surveiller le drift — c'est-à-dire la dérive lente de la qualité des sorties quand le modèle s'éloigne de son entraînement initial. Auditer les décisions. Décider du re-training.</p>
+<p>Les données chiffrées circulent enfin. Selon une étude PwC reprise par PYMNTS le 13 mai, 66 % des entreprises ayant adopté des agents IA rapportent une hausse de productivité, 57 % des économies de coûts, 55 % une accélération des décisions. Plus précisément : un panel de Microsoft mesure que les managers utilisant des agents complètent les tâches comme les évaluations de promotion 75 % plus vite. Les travailleurs du savoir équipés récupèrent une médiane de 6,4 heures par semaine.</p>
+<p>Le piège, identifié par PwC : seuls 20 % des entreprises captent 75 % des gains économiques de l'IA. Et ce ne sont pas celles qui ont le plus déployé — ce sont celles qui ont restructuré le flux décisionnel autour de l'outil. Pour un chef d'équipe de cinq personnes, la traduction est concrète : adopter un agent (rédaction de menus, suivi de provisions, briefs de service) ne produit rien si le rituel de validation humaine n'est pas explicitement intégré au flux. <em>Human checkpoint into every process that matters</em>, écrit PYMNTS. La règle tient en une phrase : l'agent propose, un humain identifié signe.</p>
+<h3>II. Le « hybrid creep » et la trahison silencieuse</h3>
+<p><em>Fortune</em> a remis en circulation le 13 janvier dernier le terme « hybrid creep » pour décrire un phénomène désormais documenté : la dérive lente, non annoncée, des accords hybrides vers un retour de fait au bureau. Les chiffres Q1 2026 confirment la tendance — les offres d'emploi explicitement remote ou hybrides ont reculé par rapport à 2025. Amazon, JPMorgan, Microsoft, Meta : tous ont resserré sans rompre les contrats. Personne n'annonce. Les managers reçoivent un « pourrais-tu être là mercredi aussi ? » qui devient, en trois mois, une présence de fait à cinq jours.</p>
+<p>La recherche disponible reste têtue : un hybride 2-3 jours produit des résultats équivalents au plein présentiel sur la productivité, l'innovation, la satisfaction et la rétention. À l'inverse, une étude largement reprise cette saison établit que les mandats RTO stricts augmentent le turnover volontaire de 18 % chez les hauts performeurs, et frappent disproportionnellement les femmes, les aidants familiaux et les salariés en situation de handicap. La leçon pour un chef d'équipe restreinte n'est pas de choisir un camp idéologique. C'est de comprendre que le <em>creep</em> est une question de courage managérial : si vous voulez quatre jours en présence, dites-le franchement et acceptez l'arbitrage. Le brouillard coûte plus cher que le mandat.</p>
+<h3>III. Le feedback qui n'humilie pas (et celui qui détruit)</h3>
+<p>L'article HBR de mai <em>When Feedback Crosses the Line</em> synthétise dix ans de recherche sur le feedback qui blesse plus qu'il ne corrige. Le mécanisme central, documenté dans le <em>Journal of Organizational Behavior</em> : un feedback négatif perçu comme humiliant déclenche une honte personnelle qui se traduit, le même soir, en épuisement émotionnel. Une étude Harvard Business School complémentaire montre que le feedback négatif entre collègues mène rarement à l'amélioration — les destinataires reconfigurent leur réseau interne pour éviter les critiques, et migrent vers des interlocuteurs plus bienveillants. Net : le feedback dur ne corrige pas, il déplace le problème.</p>
+<p>Le seul registre qui fonctionne, selon une méta-analyse 2024 reprise cette semaine dans <em>Strategy+Business</em>, est le « future-focused feedback » : la conversation centrée non sur l'erreur passée mais sur l'action suivante. Quand le destinataire perçoit le feedback comme orienté vers les prochaines étapes, il accepte aussi bien un message négatif qu'un message positif. C'est une découverte technique, pas un slogan : le cerveau traite différemment « tu as raté X » et « voici comment X marchera mieux demain ». Pour un manager de galley, la règle opératoire tient en deux phrases. Une : ne jamais donner de feedback critique en présence d'un tiers, jamais. Deux : terminer chaque feedback dur par une question d'action — <em>qu'est-ce qu'on essaie au prochain service ?</em> — pas une morale.</p>
+<h3>IV. Sarah Soule et la psychological safety : ce que les narcissiques cassent</h3>
+<p>La doyenne de Stanford GSB, Sarah A. Soule, est revenue cette semaine sur la psychological safety dans une intervention sur le campus relayée par <em>Stanford Business Insights</em>. Sa définition est plus opérationnelle qu'on ne le croit : c'est l'environnement où les gens peuvent parler franchement <em>sans craindre que cela altère la manière dont le leader les voit</em>. La nuance compte : il ne s'agit pas d'absence de jugement, mais de découplage entre la prise de parole et le verdict managérial.</p>
+<p>Une étude 2024 reprise dans la même série (Alzahawi, Reit, Flynn) confirme une intuition cynique : les leaders très ambitieux se notent plus efficaces que les autres ne les notent. La confiance ouvre la porte du leadership ; l'efficacité, elle, s'évalue à travers le comportement observable — écoute, calibrage, réponse aux signaux. Et les leaders narcissiques, conclut une étude liée publiée par Stanford ce mois-ci, créent mécaniquement des environnements à faible psychological safety. Le coût n'est pas moral, il est opérationnel : moins de bugs remontés, moins d'alertes précoces, plus de surprises onéreuses. Sur un yacht en charter, l'équivalent est immédiat : une équipe qui n'ose pas dire que le frigo dérive perd un service entier deux jours plus tard.</p>
+<h3>V. Le livre du mois : <em>The Neuroscience of Leadership</em></h3>
+<p>Sortie le 6 mai chez Fielding Press, l'ouvrage de Marcia Ruben, <em>The Neuroscience of Leadership</em>, mérite l'achat pour une raison précise : il ne recycle pas Daniel Goleman. Il appuie chaque recommandation managériale sur des mécanismes neurobiologiques identifiés — réponse de menace amygdalienne, fenêtre de tolérance, charge cognitive — et propose des protocoles testables. À lire en parallèle de <em>All You Have to Do Is Ask</em> de Wayne Baker (réédition 2026), qui documente une chose simple : les équipes qui demandent explicitement de l'aide reçoivent en moyenne 90 % de ce qu'elles demandent, contre 25 % pour les équipes qui « débrouillent ». Le déficit n'est pas dans l'offre. Il est dans la formulation de la requête.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Le podcast de Lenny Rachitsky du 3 mai (épisode avec Max Schoening, head of product chez Notion) acte un déplacement discret : les designers et PM qui <em>prototypent en terminal</em> deviennent plus rapides que ceux qui itèrent en Figma. Conséquence managériale : la frontière design/dev s'efface, et les managers qui maintenaient un rituel de handoff perdent leur fonction.</li>
+<li>McKinsey publie cette semaine <em>Agentic organizations: Turning AI into business value</em> — la conclusion centrale est moins glamour que le titre : la plupart des entreprises ont déployé l'IA, presque aucune n'a déployé une <em>organisation agentique</em>. L'écart entre les deux est exactement la dette managériale à venir.</li>
+<li>Le terme « agent manager » n'apparaît dans aucun référentiel de classification d'emploi en France (PCS, ROME). Cela signifie que pendant 18 mois au moins, la fonction sera assumée par défaut par des managers existants — sans formation, sans description de poste, sans rémunération adaptée.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le fil de cette édition est celui de la déhiérarchisation involontaire. L'IA agentique ne « supprime » pas le middle management — elle le déplace vers une fonction d'orchestration que personne n'a appris à exercer. Le feedback humain devient plus rare et donc plus chargé, ce qui rend la science du feedback non-humiliant urgente. Le hybride se referme parce que les managers n'osent pas arbitrer franchement, et la psychological safety se dégrade là où l'on n'ose plus dire ce qui ne marche pas. Pour un chef d'équipe de cinq personnes sous pression, le programme de la semaine tient en trois gestes : intégrer un <em>human checkpoint</em> explicite à chaque sortie d'IA, formuler chaque feedback critique en question d'action, et nommer clairement la règle de présence plutôt que de laisser le creep décider.</p>
+<hr>
+<p><em>Journal Liberté — Coaching & Management — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="sante-positive.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Santé Positive &amp; Bien-être</span></a><a href="eloquence-rhetorique.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Éloquence &amp; Rhétorique</span></a></div></div><div class="site-footer">The World Affair &mdash; Coaching &amp; Management</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

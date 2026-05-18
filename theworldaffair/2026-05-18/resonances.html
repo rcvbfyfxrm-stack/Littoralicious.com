@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résonances &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#3E2723">Résonances</div>
+  <h1 class="article-title">Cinq notes IdeaForge éclairent la semaine</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>La semaine qui s'achève a un goût particulier : celui d'une époque qui cherche ses formes et ne les trouve pas — ou plutôt, qui les trouve une à une, par effraction, et les nomme avec un retard de plusieurs siècles. À Bruxelles, on ressuscite le Chat Control sous une « base juridique volontaire » qui dit en creux ce que Bernays théorisait dès 1928 : on n'ordonne plus, on autorise — et l'autorisation, prise dans la pression réglementaire, devient indistinguable de l'obligation. À Oxford, des physiciens observent pour la première fois un effet quantique du quatrième ordre — une non-commutativité dont la fertilité avait été annoncée en 2021, et que cinq ans de recherche ont mise en forme. À New York, le 10 ans casse 4,6 % parce que le marché « ne croit plus aux histoires ». À Pékin, un sommet d'État livre un « accord cadre sans cadre ». Chacune de ces séquences résonne avec une note déjà classée dans l'IdeaForge : Meadows et ses points de levier, Bernays et l'ingénierie du consentement, Perec et la contrainte créatrice, Rilke et la question habitée, Harari et les fictions collectives. Cette édition les écoute ensemble — non pas pour rabattre l'actualité sur la bibliothèque, mais pour faire entendre, dans le bruit du présent, les harmoniques d'une lecture qui dure.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Chat Control « volontaire » : la main gantée de soie</h3>
+<p><strong>Lecture de référence :</strong> <em>IdeaForge — Propagande & Manipulation</em> (Idée 1.1 : « Le Gouvernement Invisible — L'Ingénierie du Consentement », Bernays, <em>Propaganda</em>, 1928).</p>
+<p>La phrase qu'il faut tenir à voix haute, depuis l'édition Liberté & Surveillance du 18 mai : « Une obligation crée un débat public, une jurisprudence, des recours. Une "autorisation volontaire" crée une zone grise où la pression réglementaire, commerciale et politique convergera pour rendre le scan de facto obligatoire. » Voilà, en deux phrases d'analyse réglementaire, le théorème central de Bernays remis au goût de Bruxelles.</p>
+<p>Dans l'IdeaForge, l'image est posée d'avance : <em>une main gantée de soie qui guide une foule à travers un labyrinthe dont les murs sont faits de miroirs — chacun croit choisir son chemin, mais tous convergent vers la même sortie.</em> L'astuce de la présidence danoise n'est pas un compromis — c'est un perfectionnement. Le Parlement a voté contre l'obligation à une voix près le 26 mars ; la procédure produit aussitôt une variante qui désarme l'opposition en la déclarant superflue. Le scan reste, l'objection disparaît. Ce n'est pas du cynisme, c'est de la mécanique. Bernays l'écrivait : <em>« Ne jamais ordonner, faire désirer. »</em> Ici : ne jamais imposer, autoriser.</p>
+<p>La résonance secondaire est plus dérangeante. <em>IdeaForge — Systèmes, Géopolitique & Liberté Numérique</em> rappelle que les points de levier les plus efficaces, selon Donella Meadows, ne sont pas les paramètres explicites d'un système mais ses <em>règles</em> — qui décide, et selon quels critères. Le Chat Control 2.0 ne change pas la finalité (le scan) ; il change la règle (qui scanne, sous quel motif). Or, dans la hiérarchie de Meadows, modifier la règle est plus puissant que modifier le paramètre. Bruxelles, sans le dire, joue au niveau 4 sur les 12 points de levier — c'est-à-dire à un étage où l'opposition n'a, structurellement, pas le temps de se réorganiser.</p>
+<p>Ce que ça donne à un faiseur, comme dirait l'IdeaForge : se méfier de toute formule qui présente un changement de règle comme un assouplissement.</p>
+<h3>II. Le 10 ans à 4,6 % : quand le marché cesse de croire aux histoires</h3>
+<p><strong>Lecture de référence :</strong> <em>IdeaForge — Lex Fridman × Yuval Harari</em> (Force 1 : « Les fictions comme infrastructure du réel », <em>Sapiens</em> 2011 ; <em>Homo Deus</em> 2016).</p>
+<p>La phrase qui ouvre l'édition Finance & Marchés du 18 mai pourrait être signée Harari : « Le marché a écouté Pékin, regardé Hormuz, et acheté des Treasuries. Mais quand le 10 ans casse 4,6 %, c'est qu'il ne croit plus aux histoires. » Le rendement long, dans cette grammaire, n'est pas un nombre — c'est un acte de défiance narrative. Tant que les opérateurs croient à la fiction collective « inflation transitoire, désinflation en route, deux baisses Fed pour 2026 », la prime de terme reste écrasée. Au moment où la fiction se craquelle — Hormuz qui dure, BCE qui « débat » d'une hausse, FOMC qui glisse vers le restrictif — le rendement monte indépendamment des taux directeurs.</p>
+<p>L'IdeaForge Harari le formulait ainsi : <em>« The greatest fiction of the modern world is that we know what's happening. »</em> Pendant cinq ans, la fiction d'un retour à la normale post-Covid a tenu lieu de boussole macro. Elle a permis d'absorber des chocs (banque centrales 2022-2023, banques régionales 2023, Hormuz 2026) tant qu'on pouvait raconter une suite. Le « bear steepening » — les yields longs qui montent plus vite que les courts — est le moment où la suite ne se raconte plus. Le marché n'a pas de meilleure information que les chancelleries ; il a juste, à un moment, cessé de croire à celle qu'on lui distribuait.</p>
+<p>La résonance maritime, pour un chef de yacht qui lit ces lignes en mai : sur un bateau, on apprend qu'une fiction collective peut tenir longtemps tant que personne ne regarde le baromètre. Quand le baromètre descend, ce n'est pas la météo qui change — c'est la lecture qui était fausse, et le bateau qui s'apprête à le payer. 4,60 % sur le 10 ans n'annonce pas la tempête ; il annonce qu'on avait sous-estimé celle qui était déjà en formation depuis février.</p>
+<h3>III. Quadsqueezing et les contraintes qui amplifient</h3>
+<p><strong>Lecture de référence :</strong> <em>IdeaForge — Innovation & Contrainte</em> (Idée 5.1 : « La contrainte comme moteur de fertilité — le modèle OuLiPo », Perec, Queneau, Le Lionnais).</p>
+<p>L'expérience d'Oxford publiée le 1ᵉʳ mai dans <em>Nature Physics</em> mérite d'être lue à la lumière de la pensée oulipienne. Le principe technique : appliquer à un même ion piégé deux forces dont chacune, <em>seule</em>, produit un effet trivial — mais qui, <em>combinées</em>, et précisément parce qu'elles ne commutent pas, engendrent un état quantique d'ordre quatre, accéléré d'un facteur cent. La non-commutativité n'est pas un obstacle ; c'est la condition de la richesse.</p>
+<p>Perec a écrit <em>La Disparition</em> (1969) en s'interdisant la lettre E. La contrainte n'a pas comprimé son écriture — elle l'a fait dériver vers des constructions qu'il n'aurait jamais inventées en liberté. <em>IdeaForge — Innovation & Contrainte</em> le formule en une phrase qu'il faut tenir : <em>« La question productive n'est pas "quelle contrainte puis-je ajouter?" mais "qu'est-ce que la contrainte rend possible que la liberté n'aurait jamais permis?" »</em> C'est exactement ce que les physiciens d'Oxford ont fait. Deux forces qui se contraignent mutuellement — par leur non-commutativité — produisent un effet inaccessible à chacune séparément. La contrainte mathématique devient le moteur de la fertilité physique.</p>
+<p>L'extension est culinaire, et elle est immédiate pour un chef. La contrainte de la cuisine de yacht — espace réduit, ravitaillement irrégulier, palette d'ingrédients limitée, exigence de service simultané pour des palais hétérogènes — ne comprime pas la cuisine ; elle la pousse vers des territoires de précision et d'économie qu'aucune brigade terrestre n'explore. Comme dans le quadsqueezing : deux contraintes qui ne se laissent pas commuter (le temps court ET la rigueur du goût) génèrent, ensemble, une fertilité d'un autre ordre.</p>
+<p>La leçon transversale : dans une époque qui prêche à tous les étages la « liberté sans friction » — outils sans contraintes, dialogues sans frottement, contenus sans format — la matière, qu'elle soit poétique, physique ou alimentaire, continue de répondre que ce qui n'a pas de contrainte n'a pas de forme, et que ce qui n'a pas de forme n'a pas d'intensité.</p>
+<h3>IV. Robot Neuralink et la frontière de l'éthique appliquée</h3>
+<p><strong>Lecture de référence :</strong> <em>IdeaForge — Lex Fridman × Roger Penrose</em> (Force 1 : « Conscience et incomputabilité », <em>The Emperor's New Mind</em>, 1989) ; <em>IdeaForge — Lex Fridman × Karl Friston</em> (Free Energy Principle, 2020).</p>
+<p>Deux récits parus cette semaine se télescopent. Le 7 mai, Elon Musk précise que le nouveau robot chirurgical de Neuralink — bras à cinq axes, 1,5 seconde par électrode — pourra atteindre l'hippocampe, le thalamus, l'amygdale. Le 8 mai, Buchak et Heath publient sur Aeon leur essai sur la <em>frontier AI ethics</em> : les grands modèles manifestent une <em>cognitive moral skill</em> qui n'est ni la conscience, ni la motivation morale, mais une compétence de raisonnement éthique mesurable. Et le 9 mai, Innsbruck-Vienne mettent 608 unités de masse atomique en superposition spatiale.</p>
+<p>Que se passe-t-il quand on aligne ces trois nouvelles ? Penrose, dans l'IdeaForge, soutient depuis 1989 que la compréhension n'est pas un processus computationnel — qu'elle implique des effets quantiques irréductibles au niveau des microtubules du cortex (théorie Orch-OR avec Hammeroff). Friston, dans l'IdeaForge de février, propose au contraire que la cognition obéit à un principe d'énergie libre dont la formalisation est complètement classique. Les deux étaient incompatibles sur le papier. Ils le sont moins quand on regarde ce que mai 2026 met sur la table : un robot qui sait atteindre n'importe quel point du cerveau, des modèles d'IA qui raisonnent moralement sans motivation morale, et des objets de plus en plus massifs dont le comportement quantique persiste plus loin qu'on ne le prédisait.</p>
+<p>Le pivot éthique n'est pas qu'on puisse atteindre l'amygdale ou simuler un raisonnement moral ; c'est que les vieux clivages (quantique vs classique, conscient vs computationnel, cerveau vs machine) deviennent moins informatifs à mesure que les preuves expérimentales s'accumulent dans des zones intermédiaires. La <em>frontier AI ethics</em> de Buchak et Heath, en ce sens, n'est pas une discipline nouvelle — c'est l'aveu que les anciennes catégories ne capturent plus le terrain. Penrose et Friston pensaient s'opposer ; la décennie qui vient va devoir les écouter sans clore le dossier.</p>
+<h3>V. Voir ce que les autres ne voient pas — le « period eye » à l'âge de la fibre quantique</h3>
+<p><strong>Lecture de référence :</strong> <em>IdeaForge — Voir & Attention</em> (Idée 1.1 : Baxandall, <em>Painting and Experience in Fifteenth-Century Italy</em>, 1972).</p>
+<p>L'expérience du « triangle élégant » menée à Constructor University par Nicolas Gisin et signalée le 7 mai met en évidence une forme de non-localité dite <em>genuine quantum network nonlocality</em> — un comportement qui ne peut pas être expliqué par un modèle local classique et qui n'est pas réductible à la non-localité de Bell standard. Pour comprendre ce résultat, il faut un œil entraîné. Pas un œil universel — un œil spécifique, formé par des décennies de pratique sur les violations de Bell, sur les inégalités CHSH, sur l'arithmétique des corrélations.</p>
+<p>Baxandall, dans <em>Painting and Experience</em>, formulait ce point pour le Quattrocento : un marchand florentin qui jaugeait la contenance des tonneaux à l'œil voyait dans un Piero della Francesca des relations spatiales qu'un spectateur non entraîné ne lit pas. Le regard n'est pas donné — il est produit, socialement, corporellement, historiquement. <em>IdeaForge — Voir & Attention</em> le résume ainsi : <em>« voir n'est pas recevoir. Voir est un acte — historique, charnel, partiel, irremplaçable. »</em></p>
+<p>Ce que ça donne pour un lecteur d'actualité scientifique en mai 2026 : la question utile n'est pas « qu'est-ce que cela signifie ? » — c'est « quelle formation me rend capable de voir ce qui se joue ici ? ». Sans la pratique des inégalités de Bell, le « triangle élégant » est un graphique parmi d'autres. Avec, c'est l'annonce qu'une géométrie nouvelle commence à se laisser cartographier. Le <em>period eye</em> du XXIᵉ siècle se forme — il se forme dans les groupes de lecture de physique théorique, dans les ateliers de cryptographie post-quantique, dans les forums obscurs où des doctorants discutent des bornes de Tsirelson. C'est un œil situé, lui aussi. Et la prochaine génération d'auteurs scientifiques sera celle qui saura, comme Baxandall pour la peinture, <em>nommer</em> cette situation au lieu de prétendre à l'universalité.</p>
+<hr>
+<h2>Constellations</h2>
+<p><strong>Constellation 1 — Les autorisations qui deviennent obligations.</strong> Trois récits de la semaine partagent une syntaxe : un cadre « volontaire » qui, pris dans une pression réseau, devient de facto contraignant. Chat Control 2.0 à Bruxelles, négociation de prix Medicare en troisième vague (le programme « optionnel » qui devient incontournable pour qui veut vendre des médicaments aux États-Unis), et même Codex mobile chez OpenAI — agent codeur disponible gratuitement à tous, qui rend très vite le développement sans agent suspect aux yeux des recruteurs. La fiction libérale de l'« autorisation » sans contrainte est l'idéologie centrale de notre décennie. <em>IdeaForge — Propagande & Manipulation</em> en garde l'archéologie ; il faudrait bientôt en faire la phénoménologie.</p>
+<p><strong>Constellation 2 — La matière qui résiste plus longtemps qu'on ne croyait.</strong> 608 unités de masse atomique en superposition. 14,5 kilomètres d'intrication métropolitaine à 78,6 % de fidélité. Quadsqueezing observé à l'ordre quatre. Trois résultats qui disent la même chose, depuis trois angles : la frontière entre quantique et classique recule plus lentement qu'on ne le pensait, mais elle recule. La métaphysique de la décohérence — version douce de la croyance que « tout finit classique » — devient empiriquement contestable. <em>IdeaForge — Cognition, Corps, Matière</em> serait, à mon sens, le bon dossier à rouvrir pour suivre cette ligne : Merleau-Ponty parlait du corps qui voit en étant vu ; les physiciens parlent maintenant d'agrégats d'atomes qui sont quantiques en étant macroscopiques. Le chiasme se reformule.</p>
+<p><strong>Constellation 3 — Les calendriers qui deviennent les contrats.</strong> IBM promet <em>Quantum Advantage</em> fin 2026. Quantinuum dépose un S-1 sur la base d'une roadmap 2030. NIST publie le draft HQC au premier semestre. Lenacapavir vise trois millions de personnes couvertes en 2028. La pratique de la promesse chiffrée, qu'on aurait pu croire confinée aux laboratoires, est devenue la grammaire de la deep tech, de la santé publique, de la politique commerciale. <em>IdeaForge — La Pratique du Faiseur</em> rappelait que « le travail précède l'inspiration, la discipline précède le talent » ; on pourrait y ajouter, pour 2026 : <em>le calendrier précède la performance, et la performance se mesurera à la fidélité au calendrier</em>.</p>
+<hr>
+<h2>Connexion</h2>
+<p>Ce que ces résonances suggèrent, pris ensemble, c'est qu'Arnaud lit en ce moment dans la bonne direction. Les notes IdeaForge sur la propagande (Bernays, Ellul, Arendt), sur les systèmes (Meadows, Kauffman), sur les fictions collectives (Harari, Snowden), sur la contrainte créatrice (Perec, Char, Rilke), et sur le voir entraîné (Baxandall, Merleau-Ponty) ne sont pas cinq lectures parallèles : ce sont cinq angles sur un même problème — comment une époque produit ses formes, et comment un faiseur, dans cette époque, garde une capacité de voir et d'écrire qui ne soit pas elle-même un produit de la pression. La quinzaine qui vient mérite, peut-être, une lecture des <em>Lettres à un jeune poète</em> (lettre 4 ou 7, au choix) en face de l'actualité géopolitique. Rilke et le 10 ans à 4,6 %. La méditation sur la question habitée pendant que les marchés cessent de croire aux histoires. Ce sont, exactement, les deux disciplines dont une époque comme la nôtre a le plus besoin.</p>
+<hr>
+<p><em>Journal Liberté — Résonances — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="eloquence-rhetorique.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Éloquence &amp; Rhétorique</span></a><span></span></div></div><div class="site-footer">The World Affair &mdash; Résonances</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

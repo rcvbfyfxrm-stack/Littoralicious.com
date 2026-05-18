@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Culinaire &amp; Photographie &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#AD1457">Design Culinaire &amp; Photographie</div>
+  <h1 class="article-title">World Food Photo 2026 — la fin du plat « trop léché »</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Le printemps 2026 marque, dans la photographie alimentaire, une bascule que les studios commerciaux constatent avec un mélange de soulagement et de vertige : la fin du règne du plat trop net, trop saturé, trop calculé. Les shortlists des World Food Photography Awards 2026, publiées en avril, en témoignent — les images primées montrent davantage des mains, des nappes, des contre-jours, des fragments. Les briefs publicitaires des grandes marques européennes suivent. En parallèle, le design d'intérieur des restaurants 2026 s'oriente vers le tactile, le matériau, l'acoustique — la salle redevient une caisse de résonance plutôt qu'une vitrine. Cette édition lit ensemble ces deux mouvements convergents : ce qu'on photographie et où l'on mange se rejoignent dans une même fatigue du clinquant.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. World Food Photography Awards 2026 : la fin du plat « trop »</h3>
+<p>La shortlist publiée par le Pink Lady Food Photographer of the Year — devenu World Food Photography Awards depuis le rachat — illustre clairement le tournant. Les images retenues cette année privilégient la pénombre, le grain, l'ombre portée, la macro-texture. Une croûte de pain, photographiée presque en gros plan, devient paysage. Un torchon froissé, une fourchette posée de travers, un éclat de coquille — ces détails « non finis » l'emportent sur les compositions léchées qui dominaient encore la catégorie « commercial » il y a trois ans.</p>
+<p>Les jurys, interrogés par My Modern Met début mai, formulent un constat répété : la perfection industrielle de l'image alimentaire, à force d'omniprésence sur Instagram et TikTok, a engendré sa propre saturation. Les publics jeunes ne réagissent plus aux plats trop léchés — ils détectent immédiatement la post-production, le lifting culinaire, la fausse vapeur produite à la cigarette électronique. Ce qui passe désormais, ce sont les photos qui assument l'imperfection : le coulis qui déborde, le riz qui adhère, la fumée qui s'éparpille.</p>
+<p>Cette mutation n'est pas un retour à l'amateurisme. Les photographes les plus demandés — Sean Calitz, Mikkel Vang, Aya Brackett, plus récemment Lara Eichhorn — maîtrisent leurs lumières avec une précision d'orfèvre ; simplement, ils placent cette précision au service d'un faux désordre. C'est, paradoxalement, une discipline d'autant plus exigeante.</p>
+<h3>II. Studio Monica Stevenson : le retour à la fenêtre</h3>
+<p>Monica Stevenson, dont le studio à New York et en Caroline du Nord publie chaque trimestre une lecture des tendances, a posé en avril 2026 un diagnostic limpide : la lumière naturelle est redevenue la norme dans les campagnes haut de gamme. Pas la lumière naturelle effective — peu de studios fonctionnent réellement à la fenêtre — mais la lumière naturelle simulée, douce, latérale, avec des transitions ombre-lumière généreuses.</p>
+<p>Le matériel suit : panneaux LED Aputure à très haut indice de rendu chromatique, diffuseurs gigantesques en silk-bounce, scrims gradués. L'objectif est de retrouver, en studio, la qualité de la fenêtre de cuisine du nord — l'éclairage des peintures hollandaises du XVIIe siècle, en somme. Vermeer servant de référence à un brief Nespresso : c'est l'état du marché en 2026.</p>
+<p>Pour le chef qui photographie ses propres plats — au yacht, à terre, en repérage —, l'enseignement pratique est précieux. Une vraie fenêtre orientée nord, vers onze heures du matin ou seize heures l'après-midi, par temps légèrement nuageux, surpasse n'importe quel kit de lumière à 4 000 euros. Encore faut-il accepter de cuisiner pour la lumière, et non l'inverse.</p>
+<h3>III. Salles 2026 : le tactile, l'acoustique, le matériau</h3>
+<p>Côté design d'intérieur, plusieurs publications convergent — Hospitality Career Profile, Decorilla, des compilations Webstaurantstore — sur des tendances 2026 qui prolongent et radicalisent l'évolution amorcée depuis trois ans.</p>
+<p>Premier mouvement : les matériaux réintroduits — bois récupéré, terre cuite, lin, chanvre, pierre brute. Wallpapers tridimensionnels, parfois absorbants acoustiquement (les fameux fonik panels suisses, qui s'intègrent désormais aux décors plutôt que d'être plaqués au plafond). Les surfaces brillantes, miroirs, métaux polis, perdent du terrain — sauf en contre-point ponctuel.</p>
+<p>Deuxième mouvement : la lutte contre la nuisance sonore. Les restaurants étoilés acceptent désormais des budgets acoustiques que jamais ils n'avaient envisagés — panneaux suspendus, rideaux lourds, banquettes tapissées de mélaminé acoustique. Le décibel devient un poste d'investissement aussi sérieux que la cave.</p>
+<p>Troisième mouvement : les zones de compostage et de tri visibles. Plusieurs nouvelles maisons — Apricity à Londres, Ekstedt at the Yard à Stockholm — exposent leurs systèmes de gestion des déchets comme un élément du décor. Ce n'est plus du greenwashing : c'est devenu un point de fierté affichée.</p>
+<h3>IV. Le dressage libre s'installe — sans tuer l'horloge</h3>
+<p>Sur la question du dressage proprement dit, le mouvement vers le « free form plating » s'amplifie sans pour autant éliminer la méthode classique du cadran. Les guides 2026 le notent : les jeunes chefs alternent désormais selon la nature du plat. Une carpaccio peut être dressé en spirale précise ; un plat de chasse, jeté en grand désordre apparent sur une ardoise. Le matériau du contenant — bois, pierre, terre cuite, parfois feuilles de bananier ou pierres plates — devient lui-même partie du langage. Le rond blanc en porcelaine de Limoges, longtemps standard absolu, est en repli notable.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Les marques de vaisselle artisanale — Jicon au Japon, 1882 Ltd en Angleterre, Yumiko Iihoshi — voient leurs commandes restaurants doubler depuis 2024, signe que la pièce sérielle perd du terrain.</li>
+<li>La photographie « hands-in-frame », mains coupées au poignet entrant dans le cadre, devient signature dominante des magazines food (Cherry Bombe, Suitcase, Fool) — une présence humaine sans visage, qui personnalise sans identifier.</li>
+<li>Les murs verts intérieurs reculent au profit de plantes posées, mobiles, individuellement identifiées — l'effet « jardin tropical » a saturé.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le geste visuel de 2026, photographique comme architectural, est celui d'un retour à la matière qui se voit. La croûte assumée. Le panneau acoustique en lin apparent. La main qui entre dans le cadre sans s'excuser. La pierre brute en sous-assiette plutôt que la porcelaine miroir. Tous ces choix racontent une même fatigue de la perfection produite, et un même soulagement à reconnaître la fabrique du repas — ses outils, ses mains, ses imperfections. Pour le cuisinier-poète qui dresse à bord, c'est une autorisation : on peut soigner sans lustrer, composer sans figer, photographier sans mentir. La discipline ne disparaît pas — elle se déplace, du fini visible vers la justesse invisible.</p>
+<hr>
+<p><em>Journal Liberté — Design Culinaire & Photographie — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="techniques-culinaires.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Techniques Culinaires</span></a><a href="culture-societe.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Culture &amp; Société</span></a></div></div><div class="site-footer">The World Affair &mdash; Design Culinaire &amp; Photographie</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

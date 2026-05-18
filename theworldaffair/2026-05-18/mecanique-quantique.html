@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mécanique Quantique &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#311B92">Mécanique Quantique</div>
+  <h1 class="article-title">Oxford démontre le quadsqueezing (×100)</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Mai 2026 est une saison étrange pour la mécanique quantique : aucun « moment Willow » comme en octobre dernier, aucune une de <em>Nature</em> qui éclipse toutes les autres. À la place, une accumulation de signaux qui, mis bout à bout, redessinent la carte. À Oxford, le <em>quadsqueezing</em> — premier ordre quatre de la compression quantique jamais observé — vient de paraître dans <em>Nature Physics</em> (1ᵉʳ mai, DOI 10.1038/s41567-026-03222-6) ; à New York, un réseau quantique à trois nœuds tient l'intrication sur de la fibre commerciale ; à Hefei, l'USTC chinoise réalise une intrication matière-matière sur 14,5 kilomètres avec une fidélité de 78,6 % et un débit cent fois supérieur aux relais métropolitains précédents. IBM, qui domine encore le calendrier d'attentes, prépare son <em>Quantum Advantage</em> annoncé pour fin 2026 sur la base de Nighthawk (120 qubits, 30 % de complexité de plus que le R2 Heron). Quantinuum dépose un S-1 préliminaire à la SEC. Et, dans une discrétion remarquable, des atomes ultra-froids atteignent une superposition spatiale à 608 unités de masse atomique — la « chose massive en deux endroits à la fois » la plus lourde jamais réalisée. Cette édition tente de lire la cohérence du tableau, à travers l'ion piégé d'Oxford, la fibre new-yorkaise, la dette de Quantinuum, et le chat de Schrödinger qui pèse maintenant 608 protons.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Quadsqueezing : l'ordre quatre de la matière comprimée</h3>
+<p>Le 1ᵉʳ mai, dans <em>Nature Physics</em>, l'équipe du Pr Christopher Ballance à Oxford a publié la première démonstration expérimentale de ce que la théorie appelle un <em>fourth-order squeezing</em> — proposition initiale formulée en 2021 par Raghavendra Srinivas et Robert Tyler Sutherland. La compression quantique du premier et du second ordre, on connaît : c'est elle qui permet à LIGO d'aller chercher des ondes gravitationnelles sous la limite quantique standard, en redistribuant l'incertitude entre amplitude et phase. L'ordre trois était plus rare, l'ordre quatre était resté théorique pendant cinq ans. Il ne l'est plus.</p>
+<p>La méthode consiste à appliquer simultanément à un ion calcium 40 piégé deux forces dont chacune, séparément, produirait un effet trivial. Mises ensemble, et précisément parce qu'elles ne commutent pas — au sens algébrique strict, <em>[A, B] ≠ 0</em> —, elles s'amplifient mutuellement et engendrent un état dont la distribution de Wigner présente quatre lobes négatifs (signature d'une non-classicité d'ordre quatre). Le résultat le plus remarquable n'est pas la non-classicité elle-même : c'est la vitesse. L'interaction quadratique attendue par les approches conventionnelles se trouve accélérée d'un facteur supérieur à cent. Ce qui était hors d'atteinte expérimentale est désormais réalisable en quelques microsecondes.</p>
+<p>L'enjeu n'est pas spéculatif. Les états quantiques très non-classiques sont la matière première des protocoles de métrologie post-Heisenberg, de la simulation de hamiltoniens non-linéaires (modèles de Bose-Hubbard étendus, hadrons de basse énergie), et de certains codes correcteurs d'erreurs bosoniques que PsiQuantum, Xanadu et la plateforme silicium-photonique de Quandela cherchent à exploiter. La voie d'Oxford — combiner deux forces commandées pour exploiter la non-commutativité — est étonnamment simple à transposer hors du trapping d'ions : à des résonateurs supraconducteurs, à des photons en cavité, voire à des atomes neutres pincés optiquement.</p>
+<p>Le détail qui donne l'échelle : sur Twitter scientifique, Carlo Rovelli (qui n'est pourtant pas un homme à s'enflammer) a parlé d'un « élargissement du vocabulaire expérimental de la mécanique quantique » — formulation prudente, mais venant d'un théoricien de la gravité quantique, ce n'est pas rien. Il faudra suivre, ces prochains mois, qui réplique le résultat dans d'autres plateformes. C'est le test décisif.</p>
+<h3>II. New York–USTC : deux modèles concurrents de l'Internet quantique</h3>
+<p>Le 13 mai, l'équipe de Qiang Zhang (USTC, Hefei) a publié dans <em>Nature</em> un relais quantique multi-modes opérant sur 14,5 kilomètres de fibre métropolitaine, avec une fidélité d'intrication matière-matière de 78,6 % et un débit de distribution d'intrication cent fois supérieur aux meilleurs précédents (les travaux de Delft et de Pan Jianwei en 2023). Le même mois, le consortium NYU-Stony Brook-Brookhaven a publié dans <em>PRX Quantum</em> la mise en service d'un réseau à trois nœuds sur la fibre optique commerciale de la ville de New York, démontrant pour la première fois que les pertes et le bruit d'une infrastructure métropolitaine dense ne sont pas rédhibitoires.</p>
+<p>Deux approches, deux philosophies. L'USTC repose sur des mémoires quantiques à ions de rubidium en cavité, qui stockent l'intrication assez longtemps pour permettre le <em>swapping</em> d'un nœud à l'autre. Le consortium new-yorkais préfère des sources photoniques à conversion paramétrique et des détecteurs supraconducteurs SNSPD, sans mémoire — un schéma plus simple mais plus volatil, qui repose sur la synchronisation ultrafine entre nœuds. À court terme, la voie chinoise gagne en fidélité ; à moyen terme, la voie new-yorkaise gagne en intégrabilité sur l'infrastructure existante.</p>
+<p>L'événement collatéral, signalé par <em>phys.org</em> le 7 mai, est une expérience dite du « triangle élégant » menée à Constructor University par l'équipe de Nicolas Gisin (le pionnier de la cryptographie quantique commerciale). Le réseau triangulaire à trois nœuds et trois sources d'intrication indépendantes manifeste une forme de non-localité dite <em>genuine quantum network nonlocality</em> — un comportement qui ne peut être expliqué par aucun modèle local classique et qui ne se réduit pas à la non-localité de Bell standard. Pour la téléologie de l'Internet quantique, c'est un jalon : on commence à voir apparaître des propriétés <em>de réseau</em> qui n'étaient pas présentes dans le système binaire Alice-Bob.</p>
+<p>La question géopolitique sous-jacente est lourde. La Chine pousse pour un standard de fait (intrication-mémoire) ; les États-Unis poussent pour un standard d'opportunité (intrication-fibre commerciale). L'Europe, avec le projet Quantum Internet Alliance piloté par Stephanie Wehner à Delft, navigue entre les deux. Au sol comme dans l'orbite (Micius en 2017, ses successeurs européens et américains attendus pour 2027-2028), c'est le routage de la confiance qui se joue.</p>
+<h3>III. Nighthawk, Loon, et la promesse 2026 d'IBM</h3>
+<p>Au IBM Quantum Developer Conference de novembre 2025 (annonce dont les retombées de roadmap se prolongent jusqu'en mai 2026), IBM a présenté deux processeurs : Nighthawk (120 qubits, fidélité de portes à deux qubits de 99,9 % sur les médians et un <em>quantum volume</em> effectif que la firme refuse encore de chiffrer publiquement) et Loon — un démonstrateur expérimental qui, pour la première fois, intègre tous les composants nécessaires à la correction d'erreur tolérante : couplage longue portée par bus à résonateur, multiplexage cryogénique, et décodage temps-réel à moins de 480 nanosecondes par cycle de syndrome.</p>
+<p>Le chiffre qui mérite l'attention n'est pas le nombre de qubits — c'est le 480 ns. La correction d'erreur quantique ne se réduit pas à détecter une erreur : il faut la décoder en temps réel, avant que la décohérence n'efface l'information. Pour les codes <em>qLDPC</em> (quantum low-density parity check) qu'IBM cible — alternative plus économe en qubits que le code de surface de Google —, le décodage temps-réel par hardware classique était l'obstacle annoncé comme rédhibitoire. Il vient d'être levé.</p>
+<p>L'agenda affiché par Jay Gambetta : <em>Quantum Advantage</em> (un calcul utile, vérifiable, hors d'atteinte d'un superordinateur classique) avant la fin 2026. <em>Fault Tolerance</em> pour 2029. Les sceptiques rappellent que l'écart entre une démonstration de laboratoire et une charge de travail productive reste cosmique ; les pragmatiques notent qu'IBM est la seule firme du secteur à publier une roadmap chiffrée année par année, et qu'elle a tenu jusqu'ici. Les deux camps ont raison, et c'est précisément ce qui rend l'année 2026 décisive.</p>
+<h3>IV. Quantinuum à la SEC : la monétisation de l'attente</h3>
+<p>Le 12 mai, Quantinuum (Honeywell + Cambridge Quantum) a déposé un S-1 préliminaire auprès de la Securities and Exchange Commission. Les chiffres révélés : 30,9 millions de dollars de revenus nets en 2025, 192,6 millions de dollars de pertes nettes. La feuille de route produits évoque un processeur à plus d'un million de qubits physiques à l'horizon 2030+. Honeywell conservera une influence significative post-IPO.</p>
+<p>Trois observations. Première : le ratio perte/revenu (6,2:1) est typique des fournisseurs d'infrastructure deep tech pré-traction commerciale — comparable, à échelle, aux pertes de SpaceX en 2014 ou de Plug Power à ses débuts. Deuxième : la valorisation implicite, que la presse spécialisée chiffre entre 10 et 12 milliards de dollars, repose entièrement sur la crédibilité de la roadmap à 2030, pas sur les contrats actuels (BMW pour la simulation de matériaux de pile à combustible, JP Morgan pour l'optimisation de portefeuille, quelques agences gouvernementales). Troisième : le calendrier d'IPO, attendu pour le quatrième trimestre 2026, dépendra plus de la performance de Nighthawk d'IBM et du calendrier de production de PsiQuantum (qui annonce son premier système fault-tolerant pour 2027) que des chiffres propres à Quantinuum.</p>
+<p>L'ironie de la séquence : alors qu'IonQ poursuit son partenariat avec Q-CTRL pour intégrer Fire Opal (suppression d'erreur dynamique) dans son cloud, et alors qu'Atom Computing prépare une levée Series C autour de l'objectif des 10 000 qubits neutres, le marché quantique entre dans sa phase de <em>consolidation par épuisement capitalistique</em>. Ceux qui n'ont pas levé en 2024-2025 risquent de ne plus pouvoir lever en 2026-2027 dans l'environnement de taux long à 4,6 %.</p>
+<h3>V. La masse du chat : 608 unités de masse atomique en superposition</h3>
+<p>Publié dans <em>Nature Physics</em> le 9 mai (DOI 10.1038/s41567-026-03281-9), un travail conjoint des universités d'Innsbruck et de Vienne démontre une superposition spatiale macroscopique par effet tunnel d'agrégats d'atomes ultra-froids dans un réseau optique. La masse totale en superposition atteint 608 unités de masse atomique — environ deux ordres de grandeur au-dessus des records précédents en superposition cohérente d'objets « lourds ».</p>
+<p>Pourquoi 608 ? Parce que la frontière entre quantique et classique n'est pas une frontière de principe — c'est une frontière de décohérence. Plus un objet est massif, plus rapidement il se couple à son environnement et plus vite la superposition s'effondre. Les théories alternatives (Penrose, GRW, Diósi) prédisent qu'à partir d'une certaine masse, l'effondrement devient <em>objectif</em>, intrinsèque au système, indépendamment de toute observation. 608 unités est encore très loin du seuil de Penrose (estimé autour de 10¹⁴ uma), mais chaque ordre de magnitude grappillé est une donnée précieuse pour distinguer les interprétations.</p>
+<p>Le résultat dialogue à distance avec un autre, publié dans <em>Science Advances</em> en avril, qui a réussi à mettre un microcristal de saphir de 16 microgrammes en superposition de vibration. Deux familles d'objets — atomes liquéfiés ou solides micrométriques —, deux méthodes — tunnel ou couplage opto-mécanique —, deux laboratoires concurrents. L'enjeu sous-jacent est philosophique autant qu'expérimental : à partir de combien d'unités de masse cesse-t-on de pouvoir dire que la physique quantique « s'applique » ? La réponse semble être : on n'a pas encore trouvé la limite, et plus on cherche, plus elle recule.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Le NIST a confirmé, début mai, que le draft du standard HQC (Hamming Quasi-Cyclic, sélectionné en mars 2025 pour compléter ML-KEM) sera publié à la fin du premier semestre 2026 — calendrier conforme. La cryptographie post-quantique n'attendra pas que les ordinateurs quantiques cassent RSA pour s'installer ; elle s'installe parce que les agences fédérales américaines doivent migrer d'ici 2030.</li>
+<li>IonQ a annoncé fin avril une intégration native du SDK Q-CTRL Fire Opal dans son cloud Quantum-as-a-Service ; le gain mesuré sur les benchmarks VQE pour la chimie quantique avoisine 50 %. Si la donnée se confirme sur d'autres charges de travail, ce sera la première fois qu'une suppression d'erreur logicielle pure rend un avantage quantique tangible aux utilisateurs finaux.</li>
+<li>Le télescope du CERN sur les violations CP étendues a, lors de sa campagne de février-mars, observé une asymétrie particule-antiparticule supplémentaire dans les désintégrations de baryons charmés — résultat encore préliminaire, mais qui pourrait éclairer pourquoi l'univers contient plus de matière que d'antimatière, énigme cosmologique de premier ordre liée à la physique fondamentale.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Si une thèse unit cette semaine quantique, c'est celle-ci : ce qui était spéculatif il y a cinq ans devient méthodique. Le <em>quadsqueezing</em> devient une technique ; l'intrication métropolitaine devient une infrastructure ; la superposition macroscopique devient une donnée numérique. Pendant ce temps, les firmes vendent — à la SEC, à BMW, à la Fed — une promesse encore non livrée mais désormais chiffrée. La physique quantique n'est plus l'horizon ; elle est devenue le calendrier. Et un calendrier, en science comme en politique, n'est pas une certitude — c'est un engagement contraint par la matière. Reste à voir, dans les deux ans qui viennent, qui tiendra son calendrier, et qui devra raconter, devant un comité d'audit ou un référé scientifique, pourquoi l'avenir s'est encore décalé.</p>
+<hr>
+<p><em>Journal Liberté — Mécanique Quantique — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="science-tech.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Science &amp; Tech</span></a><a href="espace-energie.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Espace &amp; Énergie</span></a></div></div><div class="site-footer">The World Affair &mdash; Mécanique Quantique</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

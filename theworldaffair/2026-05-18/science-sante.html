@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science de la Santé &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#AD1457">Science de la Santé</div>
+  <h1 class="article-title">NEOPRISM-CRC : zéro rechute à 33 mois</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Cette première édition Science de la Santé inaugure une chronique distincte de Santé & Médecine — non plus l'actualité industrielle ou les incidents sanitaires, mais la lecture des journaux médicaux. Cette semaine, quatre publications dominent. The Lancet présente KEYNOTE-B96 dans le cancer de l'ovaire platine-résistant, gain de 4,2 mois de survie globale. NEOPRISM-CRC montre que 9 semaines de pembrolizumab avant chirurgie maintiennent 32 patients en rémission complète à 33 mois. Le NEJM publie la Phase 3 d'orforglipron, premier GLP-1 oral non peptidique, et Eli Lilly annonce les résultats TRANSCEND-T2D-1 du tritutide. Et Digestive Disease Week 2026 confirme qu'un microbiote intestinal « rajeuni » protège la fonction hépatique chez la souris âgée.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. NEOPRISM-CRC : changer l'ordre des choses en cancérologie colorectale</h3>
+<p>L'essai britannique NEOPRISM-CRC, publié cette semaine, reformule la prise en charge d'un sous-groupe spécifique de cancer colorectal : les tumeurs MMR-déficientes / MSI-hautes, en stade 2 ou 3. Le protocole standard combine chirurgie puis chimiothérapie adjuvante sur plusieurs mois. NEOPRISM-CRC inverse la séquence et la radicalise : neuf semaines de pembrolizumab — un anti-PD-1 — administrées avant chirurgie, et rien d'autre.</p>
+<p>Le résultat est massif. Sur 32 patients suivis 33 mois après l'intervention, aucune rechute. Aucune. Dans un cancer où la rechute à trois ans pour ces stades varie entre 15 et 30 % avec le protocole standard, c'est un signal très fort. La taille d'échantillon reste modeste, le suivi pas encore à cinq ans, et la généralisation à d'autres sous-types tumoraux non démontrée. Mais le mécanisme est cohérent : les tumeurs MMR-déficientes accumulent un nombre élevé de néo-antigènes que l'immunothérapie révèle au système immunitaire, et la chirurgie ne fait plus que retirer ce qu'il en reste.</p>
+<p>L'implication pratique est qu'un patient correctement biomarqué — MMR/MSI sont des tests désormais standard — pourrait passer de plusieurs mois de chimiothérapie à neuf semaines d'immunothérapie suivies d'une chirurgie unique. La qualité de vie, le coût de prise en charge et la toxicité cumulée changent d'ordre de grandeur. Reste à attendre la validation par des essais randomisés de taille suffisante avant que les sociétés savantes modifient leurs recommandations. Les premières discussions à l'ASCO juin 2026 promettent d'être tendues.</p>
+<h3>II. KEYNOTE-B96 : l'immunothérapie progresse dans l'ovaire platine-résistant</h3>
+<p>Publié dans The Lancet en avril 2026, l'essai de Phase 3 KEYNOTE-B96 démontre un gain de survie globale de 4,2 mois (médian) chez les patientes atteintes de cancer de l'ovaire platine-résistant PD-L1 positif, traitées par paclitaxel hebdomadaire associé à pembrolizumab (avec ou sans bevacizumab), versus standard. L'essai randomisé en double aveugle a inclus 643 patientes.</p>
+<p>Quatre mois et demi peut paraître modeste. Ce ne l'est pas dans ce contexte. Le cancer de l'ovaire platine-résistant — qui ne répond plus aux sels de platine après une première ligne — était jusqu'ici une indication où peu d'options modifiaient la survie. Plusieurs molécules ciblées avaient échoué en Phase 3 dans la décennie précédente. Le gain de KEYNOTE-B96 est donc cliniquement significatif, et particulièrement pour les patientes PD-L1 positives qui forment un sous-groupe pour lequel le rapport bénéfice-risque devient nettement favorable. Une approbation FDA est attendue avant fin 2026.</p>
+<h3>III. Orforglipron : le premier GLP-1 oral à la portée de la production de masse</h3>
+<p>Le NEJM a publié en mai la Phase 3 multinationale randomisée en double aveugle d'orforglipron — premier agoniste oral du récepteur GLP-1 sous forme de petite molécule non peptidique. Doses de 6, 12, ou 36 mg quotidiens versus placebo, 72 semaines, en complément d'une alimentation saine et d'une activité physique. Les résultats détaillés montrent une perte de poids progressive et soutenue, sans atteindre les sommets du sémaglutide ou du tirzépatide injectables, mais avec un profil de tolérance comparable.</p>
+<p>L'enjeu n'est pas la performance maximale, mais la voie d'administration. Une molécule orale, non peptidique, est fabricable industriellement à un coût et selon une logistique sans commune mesure avec les injectables peptidiques. La rupture d'approvisionnement chronique des GLP-1 injectables depuis 2023, source de frustration majeure pour patients et prescripteurs, devient pour Lilly un argument compétitif central : si orforglipron obtient l'AMM, l'accessibilité monte d'un cran significatif. Parallèlement, Lilly a annoncé en mai les résultats topline de TRANSCEND-T2D-1 — premier essai de Phase 3 du retatrutide (triple agoniste GIP/GLP-1/glucagon) dans le diabète type 2 — confirmant la plateforme GLP-1 multi-récepteur comme la prochaine vague thérapeutique.</p>
+<h3>IV. Le microbiote rajeuni : la souris, le foie et la promesse longévité</h3>
+<p>Présentée à Digestive Disease Week 2026, une étude montre que la transplantation chez la souris âgée de microbiote intestinal provenant de souris jeunes produit des effets protecteurs systémiques marqués, en particulier sur le foie. Aucune des souris ayant reçu le microbiote « jeune » n'a développé de cancer hépatique en fin d'étude, contre 2 sur 8 dans le groupe contrôle âgé non traité.</p>
+<p>C'est une étude animale, et il faut le rappeler — la moitié des promesses précliniques en gériatrie ne se traduit jamais chez l'humain. Mais la cohérence mécaniste est forte. Le vieillissement intestinal s'accompagne d'une perte de diversité microbienne et d'une diminution des bactéries produisant des acides gras à chaîne courte. Cette dégradation affaiblit la barrière intestinale et alimente une inflammation chronique de bas grade — l'inflammaging — qui contribue à plusieurs pathologies liées à l'âge, dont les hépatopathies métaboliques. La preuve causale, par transplantation, justifie le lancement d'essais cliniques humains, et plusieurs équipes ont signalé leur intention de soumettre des protocoles dans l'année.</p>
+<h3>V. Au passage : trois autres signaux de la livraison NEJM de mai</h3>
+<p>Plus brièvement, le NEJM de mai contient trois résultats à signaler. L'ensitrelvir, inhibiteur de protéase 3C-like, prévient le Covid-19 chez les contacts familiaux de patients infectés — une indication prophylactique nouvelle qui pourrait modifier la gestion des clusters. La thrombectomie pour AVC sur occlusion de vaisseau de calibre moyen produit une indépendance fonctionnelle à 90 jours dans 58,6 % des cas, contre 46,6 % en prise en charge médicale, mais au prix d'un risque accru d'hémorragie intracrânienne — bénéfice net positif, à mettre en balance patient par patient. Le pegcetacoplan réduit significativement la protéinurie dans la glomérulopathie C3 et la MPGN à complexes immuns — une indication rénale rare mais sans alternative validée jusqu'à présent.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>L'essai AL002 dans la maladie d'Alzheimer précoce, publié dans Nature Medicine, n'a pas atteint son critère principal d'efficacité clinique malgré un engagement cible démontré — rappel que la voie TREM2 reste hypothétique, et que les biomarqueurs ne prédisent pas toujours le bénéfice.</li>
+<li>L'essai d'immuno-chimiothérapie chronobiologique en cancer du poumon non à petites cellules, publié dans Nature Medicine, suggère qu'administrer le traitement le matin plutôt que l'après-midi modifie significativement les résultats — la chronopharmacologie cesse d'être marginale.</li>
+<li>Le NIH américain finance pour la première fois en mai un essai de Phase 2 sur la transplantation fécale dans la résistance bactérienne multi-drogue en réanimation — passage d'un usage compassionnel à un protocole randomisé.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Cinq publications, un fil. L'immunothérapie change la séquence (NEOPRISM-CRC), élargit ses indications (KEYNOTE-B96), et redéfinit ce que signifie un protocole standard. Les GLP-1 deviennent oraux (orforglipron) puis multi-récepteurs (retatrutide), et passent d'une classe thérapeutique de niche à un blockbuster industriel structurant. Le microbiote, longtemps cantonné aux pages les plus spéculatives de la littérature, produit des preuves causales sur la longévité fonctionnelle des organes périphériques. Et la chronopharmacologie suggère qu'il faut désormais traiter aussi avec le temps, pas seulement avec la molécule. La médecine du milieu de la décennie 2020 n'est plus celle des grandes ruptures pharmacologiques uniques — elle est celle des séquences, des combinaisons, des biomarqueurs qui guident, et des trajectoires patient personnalisées. Ce qui se publie aujourd'hui dans le NEJM s'écrira en pratique courante dans cinq ans. Le décalage rétrécit.</p>
+<hr>
+<p><em>Journal Liberté — Science de la Santé — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="sante-medecine.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Santé &amp; Médecine</span></a><a href="science-tech.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Science &amp; Tech</span></a></div></div><div class="site-footer">The World Affair &mdash; Science de la Santé</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
