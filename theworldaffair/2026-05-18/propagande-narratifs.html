@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propagande &amp; Narratifs &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#B71C1C">Propagande &amp; Narratifs</div>
+  <h1 class="article-title">Cinq narratifs de la semaine à examiner avec lenteur</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Semaine épaisse en storytelling officiel. Trois pôles d'émission ont dominé le bruit médiatique : la Maison Blanche, qui a vendu son sommet de Pékin comme une « stabilisation historique » pendant que le rendement du Trésor à 30 ans atteignait 5,127 % — son plus haut depuis 2007 ; la Silicon Valley, où l'indice Ramp a permis à <em>TechCrunch</em> et <em>Axios</em> de titrer « Anthropic dépasse OpenAI » sur la base d'un seul jeu de données de cartes corporate ; et la City, qui a célébré la levée de 5 milliards de dollars d'Anduril à 61 milliards de valorisation comme la preuve d'une « rationalité géopolitique » du capital. À l'arrière-plan, l'OMI a re-reporté son Net-Zero Framework à décembre 2026 sans que les communiqués de l'industrie n'en tirent la moindre conclusion désagréable, et les négociations Iran-États-Unis ont produit la phrase de la semaine — Trump : <em>« very positive discussions »</em> (CNBC, 7 mai) — alors que 1 600 navires demeurent bloqués dans le détroit d'Hormuz. Cinq récits, cinq techniques. Aucune posture militante : seulement l'examen lent de ce qu'on nous dit, et de ce qu'on omet de nous dire.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le sommet Trump-Xi, « stabilisation historique » des relations sino-américaines</h3>
+<p>Le récit dominant, scandé entre le 14 et le 16 mai par la Maison Blanche, le <em>People's Daily</em> et CNBC, tient en une formule de Donald Trump : « a lot of different problems were settled ». Le communiqué conjoint évoque des « overall balanced and positive outcomes » et la création annoncée d'un <em>trade council</em> et d'un <em>investment council</em>. CNBC titre sur les « 3 big takeaways » ; <em>Bloomberg</em> parle d'une <em>« stabilization »</em> des relations. Le récit est poussé conjointement par deux administrations qui ont chacune un intérêt politique à présenter le voyage comme un succès : Trump avant les midterms, Xi devant un Bureau politique inquiet de l'état réel de l'économie chinoise.</p>
+<p>La technique est classique : ce que Lippmann appelait dans <em>Public Opinion</em> (1922) la fabrication d'un <em>stereotype</em> — une image préformée que le lecteur doit adopter avant même d'avoir vu les faits. Plus précisément, il s'agit d'un <em>appeal to authority</em> combiné à une <em>glittering generality</em> : « overall balanced and positive outcomes » est une phrase qui ne dit rien et qu'on ne peut contester sans paraître pinailleur. Chomsky et Herman, dans <em>Manufacturing Consent</em>, nommaient « sourcing » ce verrou : la presse économique reprend les éléments de langage des gouvernements parce qu'elle dépend d'eux pour son flux d'information.</p>
+<p>Ce qui manque : le verdict du marché obligataire. Le rendement du 30-year Treasury a grimpé à 5,127 %, le 10-year à 4,595 % — <em>Bloomberg Brief</em> parle d'un <em>« global bond selloff »</em> concomitant du sommet (15 mai). NBC News titre, sans détour : <em>« Few deals from Trump's trip and no progress on Iran send global markets into a sell-off. »</em> Aucun accord chiffré sur les contrôles à l'export de semi-conducteurs, aucune avancée sur Hormuz, aucun engagement sur la question taïwanaise. Le Council on Foreign Relations, dans son briefing post-sommet, parle d'une rencontre « heavy on choreography, light on deliverables ».</p>
+<p>La lecture honnête : un sommet n'a pas besoin d'accord écrit pour être utile — la simple absence d'incident est un acquis. Mais qualifier l'événement de <em>stabilisation</em> relève du <em>framing</em> préemptif. Ce qu'on sait : les deux parties ont reconnu un canal de dialogue. Ce qu'on ne sait pas : si ce canal résiste au premier choc — incident maritime, sanction technologique, escalade sur Hormuz. Lire les rendements obligataires plutôt que les communiqués reste, cette semaine, le meilleur baromètre.</p>
+<h3>II. « Anthropic dépasse OpenAI » — l'indice Ramp comme oracle</h3>
+<p><em>TechCrunch</em>, le 13 mai : « Anthropic now has more business customers than OpenAI, according to Ramp data. » <em>Axios</em> embraye le même jour : <em>« Anthropic overtakes OpenAI in workplace AI adoption. »</em> <em>VentureBeat</em>, <em>Storyboard18</em>, <em>Bloomberg</em> relaient. Les chiffres : 34,4 % des entreprises de l'échantillon paient Anthropic (+3,8 % en avril), contre 32,3 % pour OpenAI (−2,9 %). Le récit est techniquement exact ; ce qui est manipulable, c'est ce qu'on en <em>infère</em>.</p>
+<p>Qui le pousse : Anthropic, évidemment, qui a intérêt à crédibiliser sa stratégie <em>enterprise-first</em> auprès des investisseurs (la société lève des tours à des valorisations vertigineuses) ; et Ramp, fintech de gestion de dépenses, dont l'« AI Index » est devenu un outil de marketing remarquablement efficace — chaque édition génère des dizaines d'articles gratuits. L'opération est ce que Bernays, dans <em>Propaganda</em> (1928), nommait « engineering of consent » par l'autorité statistique : on transforme un dataset propriétaire en référence universelle.</p>
+<p>La technique : <em>manufactured consensus</em> via <em>unique source citation</em>. Aristote, dans la <em>Rhétorique</em>, l'appelait pseudo-<em>ethos</em> : on emprunte la crédibilité d'un chiffre pour donner du poids à une thèse. Ce que masque le titre, c'est que Ramp mesure les paiements par carte corporate sur sa propre clientèle — environ 50 000 entreprises, biaisées vers les start-ups américaines de moins de 500 salariés. Aucun grand compte Fortune 500, aucune entreprise européenne sous SEPA, aucun contrat enterprise négocié hors carte. Les usages réels (volume de tokens, déploiements via Azure pour OpenAI ou Bedrock pour Anthropic) sont invisibles à cet indicateur. <em>VentureBeat</em> lui-même, à la fin de son article, cite « 3 big threats » qui pourraient effacer l'avance — phrase qu'aucun autre relais n'a reprise.</p>
+<p>Lecture honnête : Anthropic gagne effectivement du terrain dans le segment SMB américain, en particulier sur les workflows de code (Claude Code). C'est un fait. Mais « dépasser OpenAI » au sens absolu — revenu, déploiements grand compte, infrastructure — n'est pas démontré par Ramp et n'est probablement pas vrai à ce stade. Le piège classique : confondre une métrique <em>proxy</em> avec la réalité qu'elle approxime.</p>
+<h3>III. Anduril à 61 milliards : la « rationalité géopolitique » comme verrou rhétorique</h3>
+<p>Le 13 mai, Anduril boucle une Série H de 5 milliards de dollars à 61 milliards de valorisation — doublement en moins d'un an. Thrive Capital et Andreessen Horowitz mènent le tour. Le récit servi par TechCrunch, CNBC, Bloomberg : la valorisation est rationnelle parce que le contexte géopolitique l'est aussi (Golden Dome à 185 milliards, contrat US Army avec plafond de 20 milliards sur dix ans, revenu doublé à 2,2 milliards en 2025).</p>
+<p>Qui pousse : les investisseurs eux-mêmes, qui doivent justifier le mark-up pour leurs LPs, et la presse tech qui dépend du <em>deal flow</em> de a16z pour ses scoops. Marc Andreessen a publié sur X, dans la semaine, plusieurs threads sur la <em>« reindustrialization »</em> — ce que Habermas, dans <em>Legitimation Crisis</em> (1973), aurait reconnu comme un effort discursif de re-légitimation d'un capitalisme dont les profits dépendent désormais ouvertement de la commande publique.</p>
+<p>La technique : <em>appeal to inevitability</em> doublée d'une <em>false cause</em>. « Le monde est dangereux, donc cette valorisation est juste. » Le syllogisme escamote l'étape intermédiaire — la marge brute, le ratio prix/revenu (61 Md $ pour 2,2 Md $ de chiffre, soit 28× le revenu, soit deux fois Lockheed Martin), et la dépendance contractuelle à une administration unique. Multiple comparable : Palantir cote à 30× le revenu <em>après</em> des décennies de Pentagone. Le <em>cui bono</em> est explicite mais reste impensé dans la couverture : Thrive et a16z ont besoin que les prochains tours se fassent au-dessus de 61 Md $ pour cristalliser leurs gains.</p>
+<p>Lecture honnête : Anduril est une vraie société, avec de vrais contrats, dans un cycle de dépenses réel. Mais le passage de « entreprise prometteuse » à « valorisation rationnelle » est un saut rhétorique. Quand le récit géopolitique flanchera — fin de cycle Trump, traité de paix, ralentissement budgétaire — la même valorisation deviendra rétrospectivement « bullish ».</p>
+<h3>IV. Le Net-Zero maritime « toujours sur les rails »</h3>
+<p>L'OMI a, lors du MEPC 84 début mai, repoussé pour la seconde fois l'adoption de son <em>Net-Zero Framework</em>. Le vote est désormais espéré pour la session de décembre 2026. Les communiqués de la Chambre internationale de la marine marchande, repris par <em>Splash247</em> et <em>WorldCargo News</em>, parlent de <em>« continued progress »</em> et de <em>« framework that survived the negotiations »</em>. <em>Carbon Brief</em> titre, dans un Q&A : « How countries got the global net-zero shipping deal <em>back on track</em>. »</p>
+<p>La technique : <em>euphemism</em> et <em>passive voice</em>. On dit « postponed » plutôt que « rejected », « further adjustments required » plutôt que « bloqué par l'Arabie saoudite, les États-Unis et plusieurs États pétroliers ». Klemperer, dans <em>LTI</em>, avait diagnostiqué ce mécanisme : on neutralise par la syntaxe ce qu'on ne veut pas affronter par le contenu. L'autre technique est l'<em>appel à l'inéluctabilité</em> : « le cadre survivra parce qu'il le faut bien ». Les communiqués des armateurs et des opérateurs portuaires ont intérêt à maintenir ce récit — leurs investissements en GNL et méthanol supposent un prix carbone à moyen terme.</p>
+<p>Ce qui manque : les délégations qui ont fait dérailler le vote (publication par WWF Arctic et EDF), l'impact concret sur le mécanisme de prix carbone mondial (premier du genre, désormais reporté), et l'effet de second ordre — l'Union européenne maintient son propre régime (FuelEU Maritime, ETS étendu au shipping), ce qui crée précisément l'asymétrie réglementaire que l'OMI devait éviter. La lecture honnête : le Net-Zero shipping est <em>en cale sèche</em>, pas <em>back on track</em>. Que cela soit politiquement rattrapable en décembre n'est pas une raison pour réécrire la séquence présente.</p>
+<h3>V. Le processus de paix iranien comme négociation « durable »</h3>
+<p>Récit de la semaine, porté par la Maison Blanche : <em>« We are having very positive discussions with Iran »</em> (Trump, CNBC, 7 mai), « war will be over quickly ». <em>Time</em>, le 11 mai, titre « What's the Status of U.S.-Iran War and Peace Talks? » sur un mode prudemment optimiste. Al Jazeera, plus sceptique, demande si Washington a accepté la séquence iranienne — Hormuz d'abord, nucléaire ensuite.</p>
+<p>La technique : <em>anchoring</em> et <em>premature closure</em>. En répétant l'adjectif « positive », l'émetteur fixe un point d'ancrage cognitif autour duquel toute information contradictoire devient <em>bruit</em>. Combiné à une <em>bait-and-switch</em> (les conditions iraniennes — fin du blocus naval, levée des sanctions, contrôle iranien sur Hormuz — sont éclipsées par la phrase synthétique « peace talks »).</p>
+<p>Ce qui manque : 1 600 navires immobilisés dans le détroit ; l'opération <em>Project Freedom</em> lancée puis suspendue en 48 heures après n'avoir guidé que deux navires ; la médiation par le Pakistan, qui signale que le canal direct n'existe pas. Lecture honnête : il y a un dialogue, ce qui vaut mieux que rien. Mais qualifier la séquence de <em>peace process</em> implique une trajectoire structurelle, alors qu'il s'agit pour l'heure d'un échange de positions maximalistes via tiers. La fragilité est dans l'asymétrie même du langage employé.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li><strong>« L'IA open-source chinoise rattrape Anthropic »</strong> — récit en formation sur X et dans la presse spécialisée chinoise (Qwen 3.5, DeepSeek V4). À surveiller : qui finance les benchmarks cités.</li>
+<li><strong>« Le Vatican modernise sa gouvernance »</strong> — Pope Leo XIV publie son <em>Regulation of the Roman Curia</em> en cinq ans <em>ad experimentum</em>. La fin du latin curial est traitée comme cosmétique alors qu'elle marque une bascule institutionnelle. Lecture à reprendre la semaine prochaine.</li>
+<li><strong>« Starship V3 va réussir parce que les tests statiques sont positifs »</strong> — drumbeat PR de SpaceX à 24h du tir du 19 mai. Six précédents <em>static fires</em> réussis suivis d'échecs en vol méritent qu'on n'oublie pas l'écart entre essai au sol et vol.</li>
+</ul>
+<hr>
+<h2>Boîte à Outils</h2>
+<p>Quatre techniques à reconnaître la semaine prochaine, où qu'elles surgissent.</p>
+<p><strong>1. Glittering generality.</strong> Mot ou expression vague à connotation positive (« balanced », « stabilization », « historic ») qui ne dit rien de vérifiable. Test : si on remplace le mot par son contraire, la phrase devient-elle absurde, ou simplement orientée différemment ? Exemple : <em>« overall balanced and positive outcomes »</em> (communiqué Pékin).</p>
+<p><strong>2. Manufactured consensus.</strong> Une source unique transformée en référence universelle par citation circulaire. Exemple : l'indice Ramp, repris par 30 médias en 48 heures comme s'il s'agissait d'un consensus.</p>
+<p><strong>3. Appeal to inevitability.</strong> « Le contexte rend X inévitable, donc X est justifié. » Court-circuit logique. Exemple : « la géopolitique justifie la valorisation d'Anduril ».</p>
+<p><strong>4. Passive voice as euphemism.</strong> « A été reporté », « a survécu aux négociations » — le sujet disparaît, donc la responsabilité aussi. Exemple : l'OMI re-reporte son Net-Zero sans qu'aucune capitale ne soit nommée.</p>
+<hr>
+<h2>Connexion</h2>
+<p>Cinq récits, une grammaire commune : la substitution du verbe d'état au verbe d'action. <em>Stabiliser</em>, <em>dépasser</em>, <em>survivre</em>, <em>progresser</em>, <em>discuter</em> — autant de verbes qui décrivent des positions plutôt que des transformations. Postman, dans <em>Amusing Ourselves to Death</em>, prévenait : quand la culture publique passe du livre à l'image, le discours politique cesse de raisonner et commence à <em>poser</em>. La semaine du 10-18 mai 2026 illustre cette bascule à un degré rare. Les marchés obligataires, eux, continuent de raisonner — c'est pourquoi le 30-year Treasury à 5,127 % est, cette semaine, l'éditorial le plus honnête qu'on puisse lire. La semaine prochaine, on guettera l'après-Starship V3, les premiers chiffres du déstockage des navires d'Hormuz, et la prochaine itération de l'indice Ramp — pour vérifier si la « bascule » Anthropic/OpenAI tient au-delà d'un mois.</p>
+<hr>
+<p><em>Journal Liberté — Propagande & Narratifs — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="geopolitique.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Géopolitique</span></a><a href="finance-marches.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Finance &amp; Marchés</span></a></div></div><div class="site-footer">The World Affair &mdash; Propagande &amp; Narratifs</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
