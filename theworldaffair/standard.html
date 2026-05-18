@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Culinaire &amp; Photographie &mdash; The World Affair</title>
+<title>Standard &eacute;ditorial &mdash; The World Affair</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,12 +17,11 @@ a:hover { color: #3a5a6a; }
 .masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
 .masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
 .masthead-title a { text-decoration: none; color: inherit; }
-.masthead-title a:hover { color: #1a1714; }
 .masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
-.masthead-meta span { white-space: nowrap; }
 .masthead-dot { color: #c8c0b4; }
-.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
-.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
 .nav-link:first-child { border-left: 1px solid #c8c0b4; }
 .nav-link:hover { background: #e6e1d8; color: #1a1714; }
 .nav-link.active { background: #1a1714; color: #f4f1eb; }
@@ -34,6 +33,7 @@ a:hover { color: #3a5a6a; }
 .flash-box ul { margin: 0; padding-left: 18px; }
 .flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
 .flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
 .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
 .hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
 .hub-card:hover { background: #ede9e1; }
@@ -45,23 +45,25 @@ a:hover { color: #3a5a6a; }
 .article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
 .article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
 .article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
-.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
 .article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
-.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
-.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
 .article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
 .article-body strong { color: #1a1714; }
 .article-body em { font-style: italic; }
-.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
-.article-body a:hover { color: #1a1714; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
 .article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
 .article-body li { margin-bottom: 6px; line-height: 1.65; }
 .article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
 .article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
-.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
-.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
-.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
-.article-body tr:hover td { background: #ede9e1; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
 .bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
 .bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
 .bottom-nav a:nth-child(2) { text-align: right; }
@@ -69,53 +71,81 @@ a:hover { color: #3a5a6a; }
 .bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
 .bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
 .site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
-@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
 @media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
 </style>
 </head>
 <body><header class="masthead">
   <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
-  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <h1 class="masthead-title"><a href="index.html">The World Affair</a></h1>
   <div class="masthead-meta">
-    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
-    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>Standard &eacute;ditorial</span><span class="masthead-dot">&bull;</span>
+    <span>Discipline op&eacute;rationnelle</span><span class="masthead-dot">&bull;</span>
     <span>NEXUS Intelligence</span>
   </div>
-</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
-  <div class="article-overline" style="color:#AD1457">Design Culinaire &amp; Photographie</div>
-  <h1 class="article-title">World Food Photo 2026 — la fin du plat « trop léché »</h1>
-  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
-</div><div class="article-body"><h2>Édition du Jour</h2>
-<p>Le printemps 2026 marque, dans la photographie alimentaire, une bascule que les studios commerciaux constatent avec un mélange de soulagement et de vertige : la fin du règne du plat trop net, trop saturé, trop calculé. Les shortlists des World Food Photography Awards 2026, publiées en avril, en témoignent — les images primées montrent davantage des mains, des nappes, des contre-jours, des fragments. Les briefs publicitaires des grandes marques européennes suivent. En parallèle, le design d'intérieur des restaurants 2026 s'oriente vers le tactile, le matériau, l'acoustique — la salle redevient une caisse de résonance plutôt qu'une vitrine. Cette édition lit ensemble ces deux mouvements convergents : ce qu'on photographie et où l'on mange se rejoignent dans une même fatigue du clinquant.</p>
+</header><nav class="nav-bar"><a class="nav-link" href="index.html">Derni&egrave;re &Eacute;dition</a><a class="nav-link" href="archive.html">Archives</a><a class="nav-link" href="corrections.html">Corrections</a><a class="nav-link active" href="standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">Standard &Eacute;ditorial</div>
+  <h1 class="article-title">TheWorldAffair &mdash; Editorial Standard</h1>
+  <div class="article-date">Discipline op&eacute;rationnelle &mdash; en vigueur 18 mai 2026</div>
+</div><div class="article-body"><p><em>Operating discipline for every edition. Issued 18 May 2026.</em></p>
+<p>The gazette aspires to be a <strong>publication of record</strong>: independent, critical, deeply-sourced, one step ahead of mainstream media. This document codifies the ten disciplines that make that aspiration enforceable.</p>
 <hr>
-<h2>Les Récits</h2>
-<h3>I. World Food Photography Awards 2026 : la fin du plat « trop »</h3>
-<p>La shortlist publiée par le Pink Lady Food Photographer of the Year — devenu World Food Photography Awards depuis le rachat — illustre clairement le tournant. Les images retenues cette année privilégient la pénombre, le grain, l'ombre portée, la macro-texture. Une croûte de pain, photographiée presque en gros plan, devient paysage. Un torchon froissé, une fourchette posée de travers, un éclat de coquille — ces détails « non finis » l'emportent sur les compositions léchées qui dominaient encore la catégorie « commercial » il y a trois ans.</p>
-<p>Les jurys, interrogés par My Modern Met début mai, formulent un constat répété : la perfection industrielle de l'image alimentaire, à force d'omniprésence sur Instagram et TikTok, a engendré sa propre saturation. Les publics jeunes ne réagissent plus aux plats trop léchés — ils détectent immédiatement la post-production, le lifting culinaire, la fausse vapeur produite à la cigarette électronique. Ce qui passe désormais, ce sont les photos qui assument l'imperfection : le coulis qui déborde, le riz qui adhère, la fumée qui s'éparpille.</p>
-<p>Cette mutation n'est pas un retour à l'amateurisme. Les photographes les plus demandés — Sean Calitz, Mikkel Vang, Aya Brackett, plus récemment Lara Eichhorn — maîtrisent leurs lumières avec une précision d'orfèvre ; simplement, ils placent cette précision au service d'un faux désordre. C'est, paradoxalement, une discipline d'autant plus exigeante.</p>
-<h3>II. Studio Monica Stevenson : le retour à la fenêtre</h3>
-<p>Monica Stevenson, dont le studio à New York et en Caroline du Nord publie chaque trimestre une lecture des tendances, a posé en avril 2026 un diagnostic limpide : la lumière naturelle est redevenue la norme dans les campagnes haut de gamme. Pas la lumière naturelle effective — peu de studios fonctionnent réellement à la fenêtre — mais la lumière naturelle simulée, douce, latérale, avec des transitions ombre-lumière généreuses.</p>
-<p>Le matériel suit : panneaux LED Aputure à très haut indice de rendu chromatique, diffuseurs gigantesques en silk-bounce, scrims gradués. L'objectif est de retrouver, en studio, la qualité de la fenêtre de cuisine du nord — l'éclairage des peintures hollandaises du XVIIe siècle, en somme. Vermeer servant de référence à un brief Nespresso : c'est l'état du marché en 2026.</p>
-<p>Pour le chef qui photographie ses propres plats — au yacht, à terre, en repérage —, l'enseignement pratique est précieux. Une vraie fenêtre orientée nord, vers onze heures du matin ou seize heures l'après-midi, par temps légèrement nuageux, surpasse n'importe quel kit de lumière à 4 000 euros. Encore faut-il accepter de cuisiner pour la lumière, et non l'inverse.</p>
-<h3>III. Salles 2026 : le tactile, l'acoustique, le matériau</h3>
-<p>Côté design d'intérieur, plusieurs publications convergent — Hospitality Career Profile, Decorilla, des compilations Webstaurantstore — sur des tendances 2026 qui prolongent et radicalisent l'évolution amorcée depuis trois ans.</p>
-<p>Premier mouvement : les matériaux réintroduits — bois récupéré, terre cuite, lin, chanvre, pierre brute. Wallpapers tridimensionnels, parfois absorbants acoustiquement (les fameux fonik panels suisses, qui s'intègrent désormais aux décors plutôt que d'être plaqués au plafond). Les surfaces brillantes, miroirs, métaux polis, perdent du terrain — sauf en contre-point ponctuel.</p>
-<p>Deuxième mouvement : la lutte contre la nuisance sonore. Les restaurants étoilés acceptent désormais des budgets acoustiques que jamais ils n'avaient envisagés — panneaux suspendus, rideaux lourds, banquettes tapissées de mélaminé acoustique. Le décibel devient un poste d'investissement aussi sérieux que la cave.</p>
-<p>Troisième mouvement : les zones de compostage et de tri visibles. Plusieurs nouvelles maisons — Apricity à Londres, Ekstedt at the Yard à Stockholm — exposent leurs systèmes de gestion des déchets comme un élément du décor. Ce n'est plus du greenwashing : c'est devenu un point de fierté affichée.</p>
-<h3>IV. Le dressage libre s'installe — sans tuer l'horloge</h3>
-<p>Sur la question du dressage proprement dit, le mouvement vers le « free form plating » s'amplifie sans pour autant éliminer la méthode classique du cadran. Les guides 2026 le notent : les jeunes chefs alternent désormais selon la nature du plat. Une carpaccio peut être dressé en spirale précise ; un plat de chasse, jeté en grand désordre apparent sur une ardoise. Le matériau du contenant — bois, pierre, terre cuite, parfois feuilles de bananier ou pierres plates — devient lui-même partie du langage. Le rond blanc en porcelaine de Limoges, longtemps standard absolu, est en repli notable.</p>
-<hr>
-<h2>Signaux Faibles</h2>
+<h2>1. SOURCE DISCIPLINE</h2>
 <ul>
-<li>Les marques de vaisselle artisanale — Jicon au Japon, 1882 Ltd en Angleterre, Yumiko Iihoshi — voient leurs commandes restaurants doubler depuis 2024, signe que la pièce sérielle perd du terrain.</li>
-<li>La photographie « hands-in-frame », mains coupées au poignet entrant dans le cadre, devient signature dominante des magazines food (Cherry Bombe, Suitcase, Fool) — une présence humaine sans visage, qui personnalise sans identifier.</li>
-<li>Les murs verts intérieurs reculent au profit de plantes posées, mobiles, individuellement identifiées — l'effet « jardin tropical » a saturé.</li>
+<li>Every factual claim ships with at least <strong>one named source + URL</strong> inline.</li>
+<li>Quantitative claims require <strong>two INDEPENDENT sources</strong>. Echo-citations (Fortune quoting Ramp; Reuters citing AP) DO NOT count as a second source.</li>
+<li>Where only one source exists, the claim ships with a <strong>🟡 Source unique</strong> badge.</li>
+<li>Primary sources are preferred in this order: regulatory filings (SEC, AMF, OJEU, Federal Register) → peer-reviewed journals (NEJM, Nature, Science, <em>bioRxiv</em> preprints flagged as such) → primary data (Mauna Loa CO2, EIA STEO, AIS feeds, on-chain) → tier-1 newswires (Reuters, Bloomberg, FT, AP).</li>
+<li>Press releases are NOT sources. They are claims by interested parties; cite the release URL only as evidence of the <em>claim</em>, not as confirmation of the <em>fact</em>.</li>
 </ul>
+<h2>2. INCENTIVE LAYER</h2>
+<p>Every récit closes with a <code><strong>Qui paie · Qui profite :</strong></code> micro-line (≤ 15 words) naming the financial, political, or reputational beneficiary. If unknown: write <code><strong>Qui paie · Qui profite :</strong> unclear — to track.</code></p>
+<p>The gazette never assumes good faith without naming whose good faith it's assuming.</p>
+<h2>3. CONFIDENCE LABELS</h2>
+<p>Each récit ships with one of three badges, placed immediately after the title:</p>
+<ul>
+<li><strong>🟢 Confirmé</strong> — primary source available, two-source rule met.</li>
+<li><strong>🟡 À vérifier</strong> — one source, plausible, surfaced but hedged.</li>
+<li><strong>🔴 Spéculation</strong> — analytical inference. Useful but explicitly labeled.</li>
+</ul>
+<p>Default to the most conservative tier. Promote only on evidence.</p>
+<h2>4. INDICATEURS AVANCÉS</h2>
+<p>Every domain ships a 4-6 row table of leading metrics at the top:</p>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody></tbody></table>
+<p>These are <strong>proxies that beat press releases by weeks</strong>: hyperscaler capex, tanker AIS gaps, ClinicalTrials.gov registrations, CISA KEV adds, stablecoin float, MOVE index, port-call volumes, Mauna Loa CO2 — domain-specific. The full proxy playbook is in <code>NEXUS/OUTPUT/TheWorldAffair-AUDIT.md</code>.</p>
+<p>The gazette tracks indicators because the news cycle is downstream of the data.</p>
+<h2>5. RÉTROSPECTIVE (in Synthèse)</h2>
+<p>Every Synthèse opens with a 5-line <code>## Rétrospective</code> section:</p>
+<blockquote><em>"In edition N°X we said A. New information: B. We were [right / partially right / wrong] because C."</em></blockquote>
+<p>If nothing was overturned, say so explicitly. Silence on corrections = complicity with one's own past errors.</p>
+<h2>6. CE QUI RESTE OPAQUE</h2>
+<p>Every major récit closes with <code><strong>🤔 Ce qui reste opaque :</strong></code> (1-2 lines) naming what's still unresolved and what would change the reading. This is intellectual honesty made structural.</p>
+<h2>7. CONSÉQUENCE OPÉRABLE</h2>
+<p>Replace generic <em>"ce qui change"</em> with <code><strong>Conséquence opérable (7-30j) :</strong></code> — 1-2 sentences naming a concrete observable downstream effect to watch in the next 7-30 days. If a reader cannot act on the prediction, the prediction is decoration.</p>
+<h2>8. CROSS-CHECK PROTOCOL</h2>
+<p>The top-3 stories of each edition (identified during synthesis) get an independent verification pass: a different agent, different sources, different angle, before publish. The cross-check produces either confirmation (proceed), refinement (rewrite), or kill (drop the récit).</p>
+<h2>9. NO PARTY LINE</h2>
+<p>Apply the same skepticism to: Trump administration, EU Commission, big tech, climate organizations, Wall Street consensus, Chinese state press, Russian state press, <strong>and the gazette's own prior framing</strong>. The <em>Propagande & Narratifs</em> domain may critique any previous edition of TheWorldAffair.</p>
+<p>The gazette earns its independence by directing skepticism at every interest — including the interests the editorial team finds sympathetic.</p>
+<h2>10. THE ARNAUD TEST</h2>
+<p>Before publish, each récit must pass:</p>
+<blockquote><em>"Would Arnaud learn something he could not get from Le Monde + FT + Reuters + a good podcast?"</em></blockquote>
+<p>If no: kill the récit. Volume is not value. The gazette publishes important news. It does not publish noise.</p>
 <hr>
-<h2>Connexion</h2>
-<p>Le geste visuel de 2026, photographique comme architectural, est celui d'un retour à la matière qui se voit. La croûte assumée. Le panneau acoustique en lin apparent. La main qui entre dans le cadre sans s'excuser. La pierre brute en sous-assiette plutôt que la porcelaine miroir. Tous ces choix racontent une même fatigue de la perfection produite, et un même soulagement à reconnaître la fabrique du repas — ses outils, ses mains, ses imperfections. Pour le cuisinier-poète qui dresse à bord, c'est une autorisation : on peut soigner sans lustrer, composer sans figer, photographier sans mentir. La discipline ne disparaît pas — elle se déplace, du fini visible vers la justesse invisible.</p>
+<h2>DOMAIN COVERAGE</h2>
+<p>The gazette covers <strong>~22 consolidated domains</strong> per edition. Volume targets:</p>
+<ul>
+<li>3-5 récits per domain (no more — pick THE 3 to 5)</li>
+<li>1200-1600 words per domain (with the discipline above embedded)</li>
+<li>Each édition is readable in 25-35 minutes</li>
+</ul>
+<p>The 22 consolidated domains (subject to incident-driven expansion):</p>
+<table><thead><tr><th>Cluster</th><th>Domain</th></tr></thead><tbody><tr><td><strong>Affaires & Pouvoir</strong></td><td>Géopolitique · Propagande & Narratifs · Finance & Marchés · Crypto</td></tr><tr><td><strong>Numérique</strong></td><td>Numérique & Libertés · LLM & Agents · Innovation & Startups</td></tr><tr><td><strong>Science</strong></td><td>Science & Tech · Mécanique Quantique · Espace & Énergie</td></tr><tr><td><strong>Vie</strong></td><td>Santé · Philosophie & Psychologie</td></tr><tr><td><strong>Mer & Table</strong></td><td>Maritime · Gastronomie · Cuisine & Technique</td></tr><tr><td><strong>Culture</strong></td><td>Culture & Société · Lettres & Sons · Découverte</td></tr><tr><td><strong>Pratique</strong></td><td>Pratique (Coaching & Éloquence) · Podcasts & Interviews</td></tr><tr><td><strong>Souffle</strong></td><td>Bonnes Nouvelles · Résonances · Terroir <em>(when agent available)</em></td></tr></tbody></table>
+<p>Merging rule: when a fact crosses two domains (e.g., an antitrust ruling against an AI lab), it appears in the more <em>specific</em> domain and is cross-linked from the broader one. No duplication.</p>
 <hr>
-<p><em>Journal Liberté — Design Culinaire & Photographie — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="techniques-culinaires.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Techniques Culinaires</span></a><a href="culture-societe.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Culture &amp; Société</span></a></div></div><div class="site-footer">The World Affair &mdash; Design Culinaire &amp; Photographie</div>
+<h2>VERSIONING</h2>
+<p>This standard is versioned. Material changes are logged in the commit history of this file at <code>NEXUS/Projects/I/theworldaffair/EDITORIAL-STANDARD.md</code>. Disagreement with the standard is welcome — but it is resolved by amending the standard, not by ignoring it.</p>
+<p>— <em>The editorial team, in dialogue with itself.</em></p></div><div class="bottom-nav"><a href="corrections.html"><span class="bottom-nav-label">&larr; Corrections</span><span class="bottom-nav-title">Registre permanent</span></a><a href="index.html"><span class="bottom-nav-label">Derni&egrave;re &eacute;dition &rarr;</span><span class="bottom-nav-title">Lire l'&eacute;dition</span></a></div></div><div class="site-footer">The World Affair &mdash; Editorial Standard</div>
 <div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
 <div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
   <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">

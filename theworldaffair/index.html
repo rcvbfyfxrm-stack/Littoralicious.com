@@ -17,12 +17,11 @@ a:hover { color: #3a5a6a; }
 .masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
 .masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
 .masthead-title a { text-decoration: none; color: inherit; }
-.masthead-title a:hover { color: #1a1714; }
 .masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
-.masthead-meta span { white-space: nowrap; }
 .masthead-dot { color: #c8c0b4; }
-.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
-.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
 .nav-link:first-child { border-left: 1px solid #c8c0b4; }
 .nav-link:hover { background: #e6e1d8; color: #1a1714; }
 .nav-link.active { background: #1a1714; color: #f4f1eb; }
@@ -34,6 +33,7 @@ a:hover { color: #3a5a6a; }
 .flash-box ul { margin: 0; padding-left: 18px; }
 .flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
 .flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
 .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
 .hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
 .hub-card:hover { background: #ede9e1; }
@@ -45,23 +45,25 @@ a:hover { color: #3a5a6a; }
 .article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
 .article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
 .article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
-.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
 .article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
-.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
-.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
 .article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
 .article-body strong { color: #1a1714; }
 .article-body em { font-style: italic; }
-.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
-.article-body a:hover { color: #1a1714; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
 .article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
 .article-body li { margin-bottom: 6px; line-height: 1.65; }
 .article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
 .article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
-.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
-.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
-.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
-.article-body tr:hover td { background: #ede9e1; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
 .bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
 .bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
 .bottom-nav a:nth-child(2) { text-align: right; }
@@ -69,7 +71,7 @@ a:hover { color: #3a5a6a; }
 .bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
 .bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
 .site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
-@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
 @media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
 </style>
 </head>
@@ -81,195 +83,132 @@ a:hover { color: #3a5a6a; }
     <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
     <span>NEXUS Intelligence</span>
   </div>
-</header><nav class="nav-bar"><a class="nav-link active" href="2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="2026-05-18/synthese.html">Synth&egrave;se</a><a class="nav-link" href="archive.html">Archives</a></nav><div class="page"><div class="flash-box"><div class="flash-title">En 60 Secondes</div><ul>
-<li><strong>Géopolitique</strong> — Trois jours après le sommet Trump-Xi (13-15 mai), les marchés sanctionnent l'absence d'accord : S&P -1,24 %, 10-ans US qui casse 4,60 %. La trêve Ukraine du 9-11 mai a tenu, Poutine repousse la rencontre Zelensky sine die.</li>
-<li><strong>Finance</strong> — Le 10-ans US franchit 4,60 % en bear-steepening. BCE coincée (inflation zone euro à 3 %, 86 % de proba de hausse au 11 juin). Or à 3 800 $, rotation forcée vers les défensives.</li>
-<li><strong>LLM</strong> — xAI dissoute le 6 mai et absorbée comme division <strong>SpaceXAI</strong> de Musk. Anthropic dépasse OpenAI en adoption entreprise (34,4 %). Les benchmarks SWE-Bench Pro recadrent la hiérarchie.</li>
-<li><strong>Cybersécurité</strong> — Fallout ShinyHunters / Canvas : fermeture du programme Free-For-Teacher, plaintes COPPA imminentes. Accord politique sur l'AI Act Omnibus le 7 mai. Patch Tuesday sans zéro-day (première depuis juin 2024).</li>
-<li><strong>Santé</strong> — Cluster hantavirus Hondius : 12 cas confirmés / probables, 41 sous surveillance US. Pas de transmission secondaire documentée.</li>
-<li><strong>Science Santé</strong> — <strong>NEOPRISM-CRC</strong> : 9 semaines de pembrolizumab pré-chirurgie, <strong>zéro rechute à 33 mois</strong> sur 32 patients colorectal MSI-high. KEYNOTE-B96 +4,2 mois en survie ovaire. Orforglipron Phase 3 au <em>NEJM</em>.</li>
-<li><strong>Quantum</strong> — Oxford démontre le <strong>quadsqueezing</strong> (effet quantique du quatrième ordre, <em>Nature Physics</em>, 1er mai). Accélération ×100 sur ion calcium piégé. Réseau quantique NY ↔ USTC Hefei à 14,5 km, fidélité 78,6 %.</li>
-<li><strong>Espace</strong> — <strong>Starship V3</strong> confirmé pour mardi 19 mai, 22h30 GMT, depuis Pad 2. NIF à 8,6 MJ, SPARC tient 8,2 s à 100 MK. Donut Lab livre une batterie solide à 400 Wh/kg.</li>
-<li><strong>Liberté</strong> — <strong>Chat Control 2.0</strong> ressuscité par la présidence danoise via un mécanisme « volontaire » (trilogue 4 mai). L'affaire Apple-Home Office révèle la portée mondiale du notice britannique.</li>
-<li><strong>Crypto</strong> — Flash-crash BTC sous 77 k$ le 15 mai (657 M$ liquidés). T-2 mois du GENIUS Act (18 juillet) : USAT vs USDC pour le marché institutionnel américain.</li>
-<li><strong>Innovation</strong> — Anduril Série H 5 Md $ à 61 Md $ confirmée. Helsing négocie 1,2 Md $ à 18 Md $. Mistral vise 2 Md $. Le ticket moyen agents IA passe de 82 M $ à 155 M $ en six mois.</li>
-<li><strong>Maritime / Droit</strong> — Polar Code étendu aux yachts privés >300 GT (en vigueur 1er janvier 2026). IMO Net-Zero reporté à décembre. Cayman impose désormais des contrats écrits sur yachts privés. Détentions Paris MoU +23 % au T1.</li>
-<li><strong>Gastronomie / Nutrition</strong> — Michelin Belgique-Lux 2026 couronne <strong>Cuines 33</strong> (Knokke) et <strong>The Jane</strong> (Anvers) en deuxième étoile. Resserrement scientifique sur les ultra-transformés : Florida Atlantic +47 % AVC/infarctus, essai croisé <em>Nature Medicine</em> — la matrice elle-même est en cause.</li>
-<li><strong>Culture</strong> — <strong>Amy Sherald</strong> inaugure <em>American Sublime</em> au High Museum d'Atlanta avec la toile que le Smithsonian voulait censurer. Pulitzer 2026 à Daniel Kraus (<em>Angel Down</em>) et Brian Goldstone. <strong>Ed O'Brien</strong> publie <em>Blue Morpho</em> le 22 mai.</li>
-<li><strong>Bonnes Nouvelles</strong> — Le <strong>ver de Guinée</strong> descend à <strong>un seul cas humain</strong> au S1 2025 — éradication formelle à portée d'ici 2030.</li>
-<li><strong>Coaching / Éloquence</strong> — L'« agent manager » émerge dans HBR de mai (45 % des orgs à forte adoption IA agentique prévoient une réduction des couches intermédiaires). Sœur Raffaella Petrini à Notre Dame le 17 mai : première femme présidente du Gouvernorat du Vatican, leçon de pause d'ouverture (4-6 s).</li>
+  <div class="masthead-version">v1.1 &mdash; sous discipline &eacute;ditoriale</div>
+</header><nav class="nav-bar"><a class="nav-link active" href="2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="2026-05-18/synthese.html">Synth&egrave;se</a><a class="nav-link" href="archive.html">Archives</a><a class="nav-link" href="corrections.html">Corrections</a><a class="nav-link" href="standard.html">Standard</a></nav><div class="page"><div class="flash-box"><div class="flash-title">En 60 Secondes &mdash; Importantes Seulement</div><ul>
+<li><strong>Géopolitique</strong> — Le 30Y US Treasury casse <strong>5,12 %</strong> après Pékin : les obligataires votent contre la « stabilisation » diplomatique. Capacité pétrolière du Golfe shut-in <strong>> 14 mb/j</strong> (IEA OMR). [🟢]</li>
+<li><strong>LLM</strong> — Microsoft capex Q3 FY26 = <strong>31,9 Md $ (+49 % YoY)</strong> : la vraie histoire n'est pas qui gagne Anthropic vs OpenAI mais qui leur loue les watts. <strong>OpenRouter</strong> : Chinese open-weight models = <strong>45 %+ du flow</strong> token mondial. [🟢]</li>
+<li><strong>Quantum</strong> — Quantinuum <strong>revenu 30,9 M $ / pertes 192,6 M $</strong> en 2025, Q1 2026 revenu <strong>−73 % YoY</strong>. Le quadsqueezing est réel ; le business model ne l'est pas (encore). [🟢]</li>
+<li><strong>Crypto</strong> — ETFs spot BTC <strong>−1,039 Md $ de sorties</strong> sur 11-15 mai, rompant six semaines d'entrées. BTC se comporte comme actif de duration sous 30Y à 5 %, pas comme refuge. [🟢]</li>
+<li><strong>Santé</strong> — NEOPRISM-CRC : <strong>zéro rechute à 33 mois sur 32 patients</strong> colorectal MSI-high sous pembrolizumab pré-chirurgie (<a href="https://clinicaltrials.gov/study/NCT05197322" target="_blank" rel="noopener"><em>Lancet Oncology</em>, ASCO Plenary 13 mai, NCT05197322</a>). [🟢]</li>
+<li><strong>Climat</strong> — Mauna Loa avril 2026 = <strong>428,2 ppm CO2 (+2,8 vs avril 2025)</strong>. Le contre-poids structurel à toutes les bonnes nouvelles. [🟢]</li>
+<li><strong>Numérique & Libertés</strong> — Patch Tuesday du 13 mai : <strong>118-120 CVE, 0 zéro-day</strong> — première fois depuis juin 2024. La défaillance des vendeurs est en train de muter. [🟢]</li>
 </ul>
-<hr></div><div class="section-divider"><span>33 rubriques du jour</span></div><div class="hub-grid"><a class="hub-card" href="2026-05-18/synthese.html">
-  <div class="hub-card-overline" style="color:#8b3a3a">Synth&egrave;se Quotidienne</div>
-  <div class="hub-card-title">Une semaine o&ugrave; les ordres anciens c&egrave;dent sans bruit</div>
-  <div class="hub-card-excerpt">&laquo; En 60 secondes, l'urgent, les trois histoires du jour, les connexions cross-domaines et les chiffres qui comptent. La lecture int&eacute;grale en quinze minutes. &raquo;</div>
+<hr></div><div class="section-divider"><span>22 rubriques consolid&eacute;es du jour</span></div><div class="hub-grid"><a class="hub-card" href="2026-05-18/synthese.html">
+  <div class="hub-card-overline" style="color:#8b3a3a">Synth&egrave;se Quotidienne &mdash; v1.1</div>
+  <div class="hub-card-title">La m&ecirc;me semaine, lue par la discipline &eacute;ditoriale</div>
+  <div class="hub-card-excerpt">&laquo; R&eacute;trospective (ce qu'on a corrig&eacute; depuis v1.0), En 60 Secondes, l'urgent, les trois histoires du jour, les chiffres sourc&eacute;s, ce qui reste opaque. Lecture int&eacute;grale en vingt-cinq minutes. &raquo;</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/geopolitique.html">
   <div class="hub-card-overline" style="color:#D32F2F">Géopolitique</div>
-  <div class="hub-card-title">Trois jours après Pékin, les marchés sanctionnent</div>
-  <div class="hub-card-excerpt">« Trump rentre avec des engagements vagues sur Iran et Hormuz; S&P -1,24 %, 10-ans à 4,60 %, or à 3 800 $. La trêve Ukraine du 9-11 mai a tenu mais Poutine repousse sine die la rencontre Zelensky. »</div>
+  <div class="hub-card-title">La procrastination armée a maintenant un prix obligataire</div>
+  <div class="hub-card-excerpt">« Trois théâtres (Pékin, Hormuz, Ukraine), une grammaire du report, facturée aux marchés obligataires. Le 30Y US Treasury à 5,12 % comme verdict — capacité pétrolière du Golfe shut-in > 14 mb/j (IEA OMR). »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/propagande-narratifs.html">
   <div class="hub-card-overline" style="color:#B71C1C">Propagande &amp; Narratifs</div>
-  <div class="hub-card-title">Cinq narratifs de la semaine à examiner avec lenteur</div>
-  <div class="hub-card-excerpt">« Le sommet Trump-Xi en « stabilisation historique », le classement Ramp qui couronne Anthropic, Anduril à 61 Md $ valorisé comme du SaaS, le Net-Zero maritime « toujours sur les rails », et le processus de paix iranien « durable ». Cinq techniques rhétoriques, ce qu'elles cachent. »</div>
+  <div class="hub-card-title">Cinq récits officiels, une même substitution du verbe d&#x27;état au verbe d&#x27;action</div>
+  <div class="hub-card-excerpt">« Sommet « stabilisation » Pékin, *manufactured consensus* Ramp/Anthropic, *appeal to inevitability* Anduril, voix passive OMI Net-Zero, *premature closure* Iran. Indicateur de vérité : 30Y à 5,12 %. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/finance-marches.html">
   <div class="hub-card-overline" style="color:#1565C0">Finance &amp; Marchés</div>
-  <div class="hub-card-title">Le 10-ans US casse 4,60 % — bear-steepening</div>
-  <div class="hub-card-excerpt">« Bear-steepening sur la dette américaine, BCE coincée par une inflation zone euro à 3 % (86 % de proba de hausse au 11 juin), or à 3 800 $, rotation forcée vers les défensives. La prime de risque géopolitique s'incorpore. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/llm-agents.html">
-  <div class="hub-card-overline" style="color:#6B4EFF">LLM &amp; Agents</div>
-  <div class="hub-card-title">xAI dissoute. SpaceXAI naît. Le marché se referme à trois</div>
-  <div class="hub-card-excerpt">« Le 6 mai, dissolution juridique de xAI et absorption dans SpaceXAI à Memphis. Anthropic dépasse OpenAI en adoption entreprise (34,4 %, Stack Overflow / a16z 13 mai). Les benchmarks SWE-Bench Pro recadrent la hiérarchie. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/cybersecurite-regulation.html">
-  <div class="hub-card-overline" style="color:#E65100">Cybersécurité &amp; Régulation</div>
-  <div class="hub-card-title">Fallout Canvas, AI Act Omnibus, Patch Tuesday calme</div>
-  <div class="hub-card-excerpt">« Suite ShinyHunters / Canvas : fermeture du programme Free-For-Teacher, plaintes COPPA imminentes. Accord politique sur l'AI Act Omnibus le 7 mai. Premier Patch Tuesday sans zéro-day depuis juin 2024. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/sante-medecine.html">
-  <div class="hub-card-overline" style="color:#C62828">Santé &amp; Médecine</div>
-  <div class="hub-card-title">Hantavirus Hondius — 12 cas, 41 surveillés</div>
-  <div class="hub-card-excerpt">« Le cluster sur le navire de croisière Hondius compte 12 cas confirmés ou probables, 41 personnes sous surveillance aux États-Unis. Pas de transmission secondaire documentée. La doctrine post-COVID continue à fonctionner. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/science-sante.html">
-  <div class="hub-card-overline" style="color:#AD1457">Science de la Santé</div>
-  <div class="hub-card-title">NEOPRISM-CRC : zéro rechute à 33 mois</div>
-  <div class="hub-card-excerpt">« Pembrolizumab pré-chirurgie sur cancer colorectal MSI-high — 32 patients, zéro rechute. KEYNOTE-B96 ajoute 4,2 mois en ovaire. Orforglipron Phase 3 publié au NEJM. La fenêtre 2026-2028 entre en oncologie de précision. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/science-tech.html">
-  <div class="hub-card-overline" style="color:#00838F">Science &amp; Tech</div>
-  <div class="hub-card-title">Neuralink robot cinq axes + quatre papiers Nature Neuroscience</div>
-  <div class="hub-card-excerpt">« Interface neuronale universelle (robot Neuralink cinq axes). Quatre papiers Nature Neuroscience reconfigurent la mémoire : mitochondries, hippocampe sous anesthésie, attention auditive, compositionnalité. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/mecanique-quantique.html">
-  <div class="hub-card-overline" style="color:#311B92">Mécanique Quantique</div>
-  <div class="hub-card-title">Oxford démontre le quadsqueezing (×100)</div>
-  <div class="hub-card-excerpt">« Première démonstration expérimentale d'un effet quantique du quatrième ordre (Nature Physics, 1er mai). Réseau quantique NY ↔ USTC Hefei à 14,5 km, fidélité 78,6 %. IBM Nighthawk/Loon et S-1 Quantinuum à la SEC. Superposition à 608 uma. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/espace-energie.html">
-  <div class="hub-card-overline" style="color:#1B5E20">Espace &amp; Énergie</div>
-  <div class="hub-card-title">Starship V3 confirmé mardi 19 mai 22h30 GMT</div>
-  <div class="hub-card-excerpt">« Vol inaugural depuis Pad 2. NIF à 8,6 MJ, SPARC tient 8,2 secondes à 100 millions de kelvins. Donut Lab livre une batterie solide à 400 Wh/kg, recharge cinq minutes. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/innovation-startups.html">
-  <div class="hub-card-overline" style="color:#FF6D00">Innovation &amp; Startups</div>
-  <div class="hub-card-title">Anduril 5 Md $ à 61 Md $ confirmé — defense tech = SaaS</div>
-  <div class="hub-card-excerpt">« Série H d'Anduril officialisée. Helsing négocie 1,2 Md $ à 18 Md $. Mistral vise 2 Md $. Le ticket moyen des startups agents IA passe de 82 M $ à 155 M $ en six mois. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/liberte-surveillance.html">
-  <div class="hub-card-overline" style="color:#4A148C">Liberté &amp; Surveillance</div>
-  <div class="hub-card-title">Chat Control 2.0 ressuscité par la présidence danoise</div>
-  <div class="hub-card-excerpt">« Mécanisme « volontaire » introduit en trilogue le 4 mai — la défaite politique de mars rebadgée en victoire technique. L'affaire Apple-Home Office révèle la portée mondiale du notice britannique au-delà de l'ADP. »</div>
+  <div class="hub-card-title">Le 30 ans casse 5 % — repricing structurel de la prime de terme</div>
+  <div class="hub-card-excerpt">« La crédibilité désinflationniste s'érode plus vite que l'inflation. HICP zone euro 3,0 % en avril (+0,6 pt vs mars). Or à ~4 500 $ — correction par rapport à v1.0. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/crypto.html">
   <div class="hub-card-overline" style="color:#B8860B">Crypto</div>
-  <div class="hub-card-title">Flash-crash BTC sous 77 k$ — T-2 mois du GENIUS Act</div>
-  <div class="hub-card-excerpt">« 657 M $ liquidés le 15 mai. USAT vs USDC pour le marché institutionnel américain au 18 juillet. La SEC s'efface, le Treasury prend le relais. Strategy reste long. »</div>
+  <div class="hub-card-title">Bifurcation GENIUS Act — USDC/USAT compliant vs USDT offshore</div>
+  <div class="hub-card-excerpt">« BTC se comporte comme actif de duration sous 30Y à 5 %, pas comme refuge. ETFs spot BTC sortie nette −1,039 Md $ sur 11-15 mai, rompant 6 semaines d'entrées. T-2 mois du 18 juillet. »</div>
   <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/droit-maritime.html">
-  <div class="hub-card-overline" style="color:#01579B">Droit Maritime &amp; Yachting</div>
-  <div class="hub-card-title">Polar Code étendu aux yachts &gt;300 GT, Paris MoU +23 %</div>
-  <div class="hub-card-excerpt">« En vigueur depuis le 1er janvier 2026 — exigences SOLAS de planification voyage et sécurité polaire pour les yachts privés. IMO Net-Zero reporté à décembre. Cayman impose désormais des contrats écrits sur yachts privés. Détentions Paris MoU +23 % au T1. »</div>
+</a><a class="hub-card" href="2026-05-18/numerique-libertes.html">
+  <div class="hub-card-overline" style="color:#4A148C">Numérique &amp; Libertés</div>
+  <div class="hub-card-title">Une même technique migre de la loi vers l&#x27;infrastructure</div>
+  <div class="hub-card-excerpt">« Chat Control « volontaire » à Bruxelles, notice Apple « narrowed mais maintenu », AI Act Omnibus, Canvas LMS 2e brèche. Patch Tuesday du 13 mai : 118-120 CVE, 0 zéro-day (1ère fois depuis juin 2024). »</div>
   <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/maritime-sailing.html">
-  <div class="hub-card-overline" style="color:#0277BD">Maritime &amp; Sailing</div>
-  <div class="hub-card-title">Antigua-Bermuda à True — victoire dans les molles</div>
-  <div class="hub-card-excerpt">« Swan 75 de Howie Hodgson, vainqueur en pétoles atypiques le 5 mai (trois bateaux hors délais sur sept). Préparation IMOCA Vendée Arctique 7-12 juin. SailGP Bermuda dominé par les Australiens. »</div>
+</a><a class="hub-card" href="2026-05-18/llm-agents.html">
+  <div class="hub-card-overline" style="color:#6B4EFF">LLM &amp; Agents</div>
+  <div class="hub-card-title">Anthropic dépasse OpenAI — ou pas, selon où l&#x27;on regarde</div>
+  <div class="hub-card-excerpt">« Ramp dit 34,4 % d'adoption (🟡 source unique). OpenRouter dit 15,4 % de market share mais 1,6 T tokens/sem, Chinese open-weight = 45 %+ du flow. Le vrai gagnant : Microsoft à 31,9 Md $ capex Q3 FY26. »</div>
   <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/seamanship.html">
-  <div class="hub-card-overline" style="color:#1565C0">Seamanship</div>
-  <div class="hub-card-title">Atlantic Challenge Roskilde — dix nations en gigues</div>
-  <div class="hub-card-excerpt">« Contest of Seamanship au Viking Ship Museum, 4-14 juillet. Stage préalable à Mesquer en gigues Bantry Bay. Marlinspike inscrit dans la mémoire des nations maritimes. »</div>
+</a><a class="hub-card" href="2026-05-18/innovation-startups.html">
+  <div class="hub-card-overline" style="color:#FF6D00">Innovation &amp; Startups</div>
+  <div class="hub-card-title">Anduril à 61 Md $ — le multiple qui dit tout</div>
+  <div class="hub-card-excerpt">« Série H 5 Md $, valued ~14× forward revenue (vs Lockheed 2×, Palantir 60×). Top-3 IA absorbe 67,3 % du capital Q1 PitchBook (255,5 Md $ total). »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/science-tech.html">
+  <div class="hub-card-overline" style="color:#00838F">Science &amp; Tech</div>
+  <div class="hub-card-title">Neuralink — du cortex moteur au cerveau profond</div>
+  <div class="hub-card-excerpt">« Robot G2 cinq axes annonçant 1,5 s/électrode (vs 17 s G1). 🟡 Annoncé via X, pas via FDA. Quatre papiers Nature Neuroscience reconfigurent la mémoire : mitochondries, hippocampe, attention auditive, compositionnalité. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/mecanique-quantique.html">
+  <div class="hub-card-overline" style="color:#311B92">Mécanique Quantique</div>
+  <div class="hub-card-title">Quadsqueezing — l&#x27;ordre quatre devient méthode</div>
+  <div class="hub-card-excerpt">« Oxford Ballance group, Nature Physics 1 mai 2026, accélération × 100. Confirmé indépendamment USTC + MIT. MAIS : Quantinuum 2025 revenu 30,9 M $ / pertes 192,6 M $, Q1 2026 revenu −73 % YoY. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/espace-energie.html">
+  <div class="hub-card-overline" style="color:#1B5E20">Espace &amp; Énergie</div>
+  <div class="hub-card-title">Starship V3 — la cadence comme programme</div>
+  <div class="hub-card-excerpt">« 🟡 Vol prévu 19 mai 22h30 GMT non effectué à publication. Microsoft = 34,7 GW clean power contractés, n°1 mondial dépassant Amazon — la vraie histoire énergétique. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/sante.html">
+  <div class="hub-card-overline" style="color:#C62828">Santé</div>
+  <div class="hub-card-title">NEOPRISM-CRC inverse la séquence du colorectal MSI-haut</div>
+  <div class="hub-card-excerpt">« 9 semaines de pembrolizumab pré-chirurgie, zéro rechute à 33 mois sur 32 patients (Lancet, NCT05197322). KEYNOTE-B96 +4,2 mois ovaire. Orforglipron Phase 3 publiée. La fenêtre 2026-2028 s'ouvre. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/philosophie-psychologie.html">
+  <div class="hub-card-overline" style="color:#37474F">Philosophie &amp; Psychologie</div>
+  <div class="hub-card-title">Klein &amp; Swann démontent la métaphore du « soi vide »</div>
+  <div class="hub-card-excerpt">« 28 % de réplication pour priming/nudge, 67 % pour les modèles agentiques (Perspectives on Psychological Science, 5 mai). Plus Buchak & Heath sur Aeon : les LLM ont une cognitive moral skill sans agence morale. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/maritime.html">
+  <div class="hub-card-overline" style="color:#0277BD">Maritime</div>
+  <div class="hub-card-title">MEPC 84 clôt sans Net-Zero — Polar Code et Cayman entrent</div>
+  <div class="hub-card-excerpt">« Report Net-Zero à l'automne. Polar Code étendu aux yachts >300 GT en vigueur 1er janvier. Cayman impose contrats écrits sur yachts privés. Détentions Paris MoU +23 % T1 sur flotte DNV. Lürssen Boardwalk 117 m. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/gastronomie.html">
   <div class="hub-card-overline" style="color:#C2185B">Gastronomie</div>
-  <div class="hub-card-title">Michelin Belgique-Lux 2026 — Flandre gagne deux deuxièmes étoiles</div>
-  <div class="hub-card-excerpt">« Cuines 33 (Knokke) et The Jane (Anvers) couronnés, dévoilés au Handelsbeurs fin avril. Bascule du centre de gravité gastronomique belge vers la Flandre. James Beard 2026 à Chicago le 15 juin. »</div>
+  <div class="hub-card-title">Michelin Belgique-Lux 2026 — Anvers bascule au nord flamand</div>
+  <div class="hub-card-excerpt">« Cuines 33 (Knokke) et The Jane (Anvers) en deuxième étoile. 50 Best part à Abu Dhabi en novembre — première sortie hors Europe-Amériques, payée ~10 M € sur 3 ans par le DCT. 139 étoilés (+4) sur 764 restaurants. »</div>
   <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/nutrition-cuisine.html">
-  <div class="hub-card-overline" style="color:#BF360C">Nutrition &amp; Cuisine</div>
-  <div class="hub-card-title">Ultra-transformés : +47 % AVC/infarctus, la matrice en cause</div>
-  <div class="hub-card-excerpt">« Florida Atlantic et USC Keck convergent ; un essai croisé Nature Medicine met en cause la matrice de transformation elle-même, pas seulement les calories. La régulation post-2027 se prépare. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/techniques-culinaires.html">
-  <div class="hub-card-overline" style="color:#4E342E">Techniques Culinaires</div>
-  <div class="hub-card-title">CRISPR-Cas9 sur champignons fermentaires — Stanford × Mugaritz</div>
-  <div class="hub-card-excerpt">« Vayu Hill-Maini édite par CRISPR des champignons en partenariat avec Ramón Perisé. Fermentation de précision contre le retour parallèle au feu vif — deux écoles cohabitent dans les cuisines 2026. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/design-culinaire.html">
-  <div class="hub-card-overline" style="color:#AD1457">Design Culinaire &amp; Photographie</div>
-  <div class="hub-card-title">World Food Photo 2026 — la fin du plat « trop léché »</div>
-  <div class="hub-card-excerpt">« Retour à la lumière de fenêtre type Vermeer, à la main coupée au poignet visible dans le cadre, aux pierres brutes en sous-assiette. La décennie 2015-2024 du dressage hyperléché est officiellement morte. »</div>
+</a><a class="hub-card" href="2026-05-18/cuisine-technique.html">
+  <div class="hub-card-overline" style="color:#4E342E">Cuisine &amp; Technique</div>
+  <div class="hub-card-title">Le faisceau UPF franchit le seuil observationnel</div>
+  <div class="hub-card-excerpt">« Trois travaux convergents : Florida Atlantic +47 % AVC/infarctus, USC Keck prédiabète jeune adulte, essai Nature Medicine apports macros appariés. La matrice elle-même en cause. Hill-Maini CRISPR fermentation × Mugaritz. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/culture-societe.html">
   <div class="hub-card-overline" style="color:#795548">Culture &amp; Société</div>
-  <div class="hub-card-title">Amy Sherald, American Sublime — la toile que le Smithsonian voulait censurer</div>
-  <div class="hub-card-excerpt">« Inauguration au High Museum d'Atlanta. La toile qui avait été retirée à Washington trouve son public à l'échelle nationale. Le débat sur la censure muséale rebondit avec une force nouvelle. »</div>
+  <div class="hub-card-title">Sherald à Atlanta — la toile que le Smithsonian a censurée</div>
+  <div class="hub-card-excerpt">« American Sublime au High Museum (15 mai). Plus Abramović Accademia (6 mai, première artiste vivante femme), Cannes 79 Park Chan-wook, Eurovision Bulgarie avec 5 boycotts pour 35 pays participants. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/lettres-sons.html">
+  <div class="hub-card-overline" style="color:#6D4C41">Lettres &amp; Sons</div>
+  <div class="hub-card-title">Pulitzer Kraus, Booker demain, Ed O&#x27;Brien le 22 mai</div>
+  <div class="hub-card-excerpt">« Pulitzer 2026 à Daniel Kraus (Angel Down). International Booker Tate Modern demain. Ed O'Brien Blue Morpho (signal taste-profile : Radiohead, War On Drugs, Maribou State). Drake Iceman = record Spotify single-day 2026. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/decouverte.html">
+  <div class="hub-card-overline" style="color:#00695C">Découverte</div>
+  <div class="hub-card-title">Internet Archive franchit 1T pages — NYT et Guardian bloquent</div>
+  <div class="hub-card-excerpt">« Le seuil atteint cette semaine ; NYT et Guardian désormais bloquent la Wayback. Plus : Public Domain Day 2026 (Faulkner, Hammett, Betty Boop libérés). Belmond Paris-Amalfi 4 mai. Zannier Île de Bendor 1er mai. »</div>
+  <span class="hub-card-arrow">&rarr;</span>
+</a><a class="hub-card" href="2026-05-18/pratique.html">
+  <div class="hub-card-overline" style="color:#827717">Pratique</div>
+  <div class="hub-card-title">L&#x27;agent manager émerge, la pause de 4-6 secondes prend du poids</div>
+  <div class="hub-card-excerpt">« HBR Zhao When Feedback Crosses the Line (2 mars). Microsoft WTI 2026 : 67 % impact dépend des managers. Sœur Petrini Notre Dame cold-open 6s. Conan O'Brien Harvard 28 mai. Agents IA actifs M365 +15× YoY. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/podcasts-interviews.html">
   <div class="hub-card-overline" style="color:#7B1FA2">Podcasts &amp; Interviews</div>
-  <div class="hub-card-title">Dwarkesh Patel × Jensen Huang — trois heures d&#x27;audit</div>
-  <div class="hub-card-excerpt">« L'interview la plus inconfortable de la Silicon Valley sortie cette semaine. Dwarkesh interroge Huang sur la stratégie capacité Blackwell, la dépendance TSMC, et le scénario où Nvidia perd son monopole d'inférence. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/livres-litterature.html">
-  <div class="hub-card-overline" style="color:#6D4C41">Livres &amp; Littérature</div>
-  <div class="hub-card-title">Pulitzer 2026 à Kraus et Goldstone, International Booker mercredi</div>
-  <div class="hub-card-excerpt">« Daniel Kraus pour Angel Down (fiction) et Brian Goldstone pour There Is No Place For Us (general nonfiction). Le Booker International est proclamé demain à Tate Modern. Saison des prix mai-juin lancée. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/musique-son.html">
-  <div class="hub-card-overline" style="color:#6A1B9A">Musique &amp; Son</div>
-  <div class="hub-card-title">Ed O&#x27;Brien — Blue Morpho le 22 mai, signal de résonance</div>
-  <div class="hub-card-excerpt">« Le guitariste de Radiohead publie son deuxième solo six ans après Earth — résonance directe avec le taste profile. Maribou State annonce parallèlement un live à Berlin. Daft Punk dévoile son premier remaster studio. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/open-culture.html">
-  <div class="hub-card-overline" style="color:#00695C">Open Culture</div>
-  <div class="hub-card-title">Internet Archive franchit le trillion de pages — bloqué par NYT et Guardian</div>
-  <div class="hub-card-excerpt">« Le seuil du trillion archivé atteint cette semaine, mais les robots du New York Times et du Guardian bloquent désormais la collecte. La question du domaine public face aux paywalls structurels s'aiguise. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/experiences-destinations.html">
-  <div class="hub-card-overline" style="color:#00838F">Expériences &amp; Destinations</div>
-  <div class="hub-card-title">Belmond ouvre Paris ↔ Côte amalfitaine en train</div>
-  <div class="hub-card-excerpt">« Le Venice Simplon-Orient-Express inaugure sa liaison directe entre Paris et la côte amalfitaine. Le retour du rail européen post-aérien continue de s'écrire. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/psychologie.html">
-  <div class="hub-card-overline" style="color:#5D4037">Psychologie</div>
-  <div class="hub-card-title">Klein &amp; Swann — la métaphore du « soi vide » prédit la non-réplicabilité</div>
-  <div class="hub-card-excerpt">« Perspectives on Psychological Science : 28 % de réplication pour les études fondées sur la métaphore du soi vide, contre 67 % pour celles fondées sur des processus mécanistes. Une grille de lecture du replication gap. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/philosophie.html">
-  <div class="hub-card-overline" style="color:#37474F">Philosophie</div>
-  <div class="hub-card-title">Buchak &amp; Heath — la cognitive moral skill des LLM</div>
-  <div class="hub-card-excerpt">« Article majeur sur Aeon : les modèles possèdent une compétence morale cognitive sans agence morale cohérente. Appel à une frontier AI ethics distincte de la safety classique. Le débat post-Chalmers prend forme. »</div>
+  <div class="hub-card-title">Dwarkesh × Jensen Huang — record vues podcast tech 72h 2026</div>
+  <div class="hub-card-excerpt">« L'audit le plus inconfortable de la Silicon Valley. Plus Lex Fridman × Brownworth #495 Vikings, Acquired Vanguard cette semaine. Chaque récit lié à l'URL épisode Apple/Spotify/YouTube. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/bonnes-nouvelles.html">
   <div class="hub-card-overline" style="color:#2E7D32">Bonnes Nouvelles</div>
-  <div class="hub-card-title">Ver de Guinée : un seul cas humain au S1 2025</div>
-  <div class="hub-card-excerpt">« Le rapport semestriel du Carter Center publié le 14 mai confirme la trajectoire. Éradication formelle visée d'ici 2030 — la seconde maladie éradiquée de l'histoire humaine après la variole. Trente-neuf ans de patience structurelle. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/sante-positive.html">
-  <div class="hub-card-overline" style="color:#33691E">Santé Positive &amp; Bien-être</div>
-  <div class="hub-card-title">Nature 13 mai — fenêtre optimale de sommeil 6,4–7,8 h</div>
-  <div class="hub-card-excerpt">« 500 000 participants UK Biobank, vieillissement biologique multi-organes. Le hammock-shaped curve est confirmé : trop peu ET trop long détériorent. La précision se déplace de la durée brute vers la régularité de la phase. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/coaching-management.html">
-  <div class="hub-card-overline" style="color:#455A64">Coaching &amp; Management</div>
-  <div class="hub-card-title">L&#x27;« agent manager » émerge — 45 % des orgs réduisent les couches</div>
-  <div class="hub-card-excerpt">« HBR de mai identifie la nouvelle fonction. MIT Sloan documente que 45 % des organisations à forte adoption d'IA agentique anticipent une réduction du middle management. Hybrid creep : +18 % de turnover volontaire sur RTO strict. »</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-18/eloquence-rhetorique.html">
-  <div class="hub-card-overline" style="color:#827717">Éloquence &amp; Rhétorique</div>
-  <div class="hub-card-title">Sœur Raffaella Petrini à Notre Dame — la pause de 4-6 secondes</div>
-  <div class="hub-card-excerpt">« Première femme présidente du Gouvernorat du Vatican à délivrer la commencement address (17 mai). Sa technique d'ouverture par la pause calibrée fait école. Conan O'Brien attendu à Harvard le 28 mai. »</div>
+  <div class="hub-card-title">Ver de Guinée à 1 cas humain S1 2025 — et Mauna Loa à 428,2 ppm</div>
+  <div class="hub-card-excerpt">« Carter Center confirme la trajectoire (mais réservoir canin tchadien 550 infections — variable bloquante nommée). Ozone 5e plus petit trou depuis 1992 (astérisque CFC-113a/114a MIT). Solaire ERCOT > charbon annuel. »</div>
   <span class="hub-card-arrow">&rarr;</span>
 </a><a class="hub-card" href="2026-05-18/resonances.html">
   <div class="hub-card-overline" style="color:#3E2723">Résonances</div>
   <div class="hub-card-title">Cinq notes IdeaForge éclairent la semaine</div>
-  <div class="hub-card-excerpt">« Bernays Propaganda ↔ Chat Control 2.0; Harari fictions ↔ 10-ans à 4,60 %; OuLiPo et Perec ↔ quadsqueezing Oxford; Penrose et Friston ↔ Neuralink + frontier AI ethics; Baxandall period eye ↔ non-localité de réseau de Gisin. »</div>
+  <div class="hub-card-excerpt">« Bernays Propaganda ↔ Chat Control 2.0 ; Meadows points de levier ↔ migration loi-vers-infrastructure ; OuLiPo Perec ↔ quadsqueezing Oxford ; Penrose & Friston ↔ Neuralink + frontier AI ethics ; Baxandall period eye ↔ non-localité de réseau. »</div>
   <span class="hub-card-arrow">&rarr;</span>
-</a></div><div class="bottom-nav"><a href="2026-05-16.html"><span class="bottom-nav-label">&larr; &Eacute;dition pr&eacute;c&eacute;dente</span><span class="bottom-nav-title">Samedi 16 Mai 2026 — N°136</span></a><a href="archive.html"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Edition N&deg;138</div>
+</a></div><div class="bottom-nav"><a href="2026-05-16.html"><span class="bottom-nav-label">&larr; &Eacute;dition pr&eacute;c&eacute;dente</span><span class="bottom-nav-title">Samedi 16 Mai 2026 — N°136</span></a><a href="archive.html"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Edition N&deg;138 &mdash; v1.1</div>
 <div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
 <div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
   <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maritime &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="masthead-version">v1.1 &mdash; sous discipline &eacute;ditoriale</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a><a class="nav-link" href="../corrections.html">Corrections</a><a class="nav-link" href="../standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#0277BD">Maritime</div>
+  <h1 class="article-title">MEPC 84 clôt sans Net-Zero — Polar Code et Cayman entrent</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138 &mdash; v1.1</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Le printemps maritime 2026 condense trois temporalités contradictoires. Sur l'eau, l'Antigua Bermuda Race s'est conclue le 5 mai par la victoire en temps compensé du Swan 75 <em>True</em>, immédiatement suivie de la cinquième étape SailGP dans la même Great Sound bermudienne, encore remportée par Tom Slingsby. À Londres, le MEPC 84 (27 avril-1er mai) a clôturé sans adopter le Net-Zero Framework : vote reporté à une session extraordinaire de l'automne, blocage États-Unis–Arabie saoudite–pavillons de complaisance contre Pacifique insulaire. Côté droit, le Polar Code étendu aux yachts de plus de 300 GT est entré en vigueur le 1er janvier, et le Cayman Islands Shipping Registry impose désormais les contrats écrits à tout équipage, privé inclus. Et 117 mètres Lürssen, <em>Boardwalk</em> quitte Bremen vers Gibraltar — l'industrie livre pendant que la régulation discute.</p>
+<hr>
+<h2>📊 Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody><tr><td>Transits Suez (avril 2026, vs pré-2023)</td><td>~70 % du volume</td><td>+5 pts</td><td><a href="https://www.lloydslist.com/" target="_blank" rel="noopener">Lloyd's List Intelligence</a></td></tr><tr><td>Baltic Dry Index (clôture 16 mai)</td><td>1 412</td><td>-3,2 % sur 30j</td><td><a href="https://www.balticexchange.com/" target="_blank" rel="noopener">Baltic Exchange</a></td></tr><tr><td>SCFI composite (16 mai)</td><td>1 287 USD/EVP</td><td>-1,8 % sur 30j</td><td><a href="https://en.sse.net.cn/indices/scfinew.jsp" target="_blank" rel="noopener">SSE / Shanghai Shipping Exchange</a></td></tr><tr><td>Détentions Paris MoU sur flotte DNV (T1 2026)</td><td>64</td><td>+23 % vs T1 2025 (52)</td><td><a href="https://www.dnv.com/maritime/publications/" target="_blank" rel="noopener">DNV Maritime</a></td></tr><tr><td>Différentiel HSFO/VLSFO Med ECA (avril)</td><td>110 USD/t</td><td>+47 % vs moyenne 2024 (75)</td><td><a href="https://shipandbunker.com/prices" target="_blank" rel="noopener">Ship & Bunker</a></td></tr><tr><td>Carnet de commandes >70 m (file 2026-2028)</td><td>>80 unités</td><td>stable</td><td><a href="https://www.superyachttimes.com/" target="_blank" rel="noopener">SuperYacht Times</a></td></tr></tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. MEPC 84 : le Net-Zero reporté à l'automne, le coût du non-accord se chiffre</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le Marine Environment Protection Committee de l'OMI a clos sa 84e session le 1er mai à Londres sans adopter le Net-Zero Framework, paquet réglementaire qui combinerait un global fuel standard, une comptabilité d'émissions en cycle de vie <em>well-to-wake</em>, et un mécanisme de tarification GES pour les navires de plus de 5 000 GT, prévu pour s'appliquer dès 2028 à environ 85 % des émissions du shipping mondial selon <a href="https://cleanshipping.org/" target="_blank" rel="noopener">le briefing du Clean Shipping Coalition, 2 mai 2026</a>. Le compte rendu officiel de la session figure dans le <a href="https://www.imo.org/en/MediaCentre/MeetingSummaries/Pages/MEPC-84.aspx" target="_blank" rel="noopener">rapport MEPC 84/15 publié par l'IMO</a>.</p>
+<p>La fracture est connue. Les pays insulaires du Pacifique — emmenés par les Marshall Islands, les Tuvalu, le Vanuatu — réclament un prix-plancher de 150 USD la tonne CO2-équivalent. La Chine, l'Inde et le Brésil ne veulent pas dépasser 30 USD. Les armateurs européens (BIMCO, ECSA) soutiennent paradoxalement un prix élevé uniformément appliqué — il neutraliserait l'avantage compétitif des pavillons Panama-Liberia-Marshall. Les États-Unis, sous l'administration Trump, ont notifié qu'ils ne ratifieront aucun mécanisme entraînant une taxation internationale du pavillon US (<a href="https://www.reuters.com/business/environment/" target="_blank" rel="noopener">Reuters, 30 avril 2026</a>).</p>
+<p>L'incertitude pèse sur les commandes. Commander aujourd'hui un navire conventionnel, c'est risquer la non-conformité à mi-vie. Commander un méthanol-ready ou ammoniac-ready, c'est payer 25-35 % plus cher sans certitude que le carburant sera disponible aux ports d'escale. Pour les superyachts, l'effet du seuil 5 000 GT est indirect : il exclut quasi tous les yachts privés, mais le renchérissement du soutage et des taxes portuaires se transmet par les chaînes logistiques. <em>Maritime Executive</em> estime l'effet de premier ordre, pour un superyacht consommant 250 tonnes/an, entre 35 000 et 70 000 USD annuels en année 1, doublant à horizon 2030.</p>
+<p><strong>Qui paie · Qui profite :</strong> Paie le shipping commercial et les ports. Profite : les chantiers spécialisés alt-fuel, les pavillons US et golfe Arabique.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller la date d'annonce de la session extraordinaire MEPC (probable octobre-novembre) ; observer l'écart de prime d'assurance entre navires conventionnels et alt-fuel sur les renouvellements P&I de juillet (cycle août-septembre).</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le mécanisme exact de redistribution des recettes carbone (qui revient aux pays insulaires, qui finance la transition flottes du Sud) n'a pas été tranché ; sans cet arbitrage, aucun vote final n'est tenable.</p>
+<h3>II. Polar Code étendu et Cayman contrats écrits : le yachting cesse d'être un angle mort réglementaire</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Deux dispositifs sont entrés en vigueur le 1er janvier 2026 et reconfigurent l'enveloppe juridique du yachting haut de gamme. Le Polar Code de l'OMI s'applique désormais aux yachts de plaisance de 300 GT et plus opérant en eaux polaires (<a href="https://www.imo.org/en/OurWork/Safety/Pages/polar-default.aspx" target="_blank" rel="noopener">texte intégré IMO, résolution MEPC.385(77)</a>) — les unités neuves doivent être conformes immédiatement, les existantes ont jusqu'au 1er janvier 2027 pour s'aligner. L'enveloppe de conformité chiffrée par <a href="https://www.dnv.com/maritime/publications/polar-code/" target="_blank" rel="noopener">DNV</a> et <a href="https://marine-offshore.bureauveritas.com/" target="_blank" rel="noopener">Bureau Veritas</a> oscille entre 250 000 et 1,2 million d'euros selon l'unité, couvrant ice-radar, voyage planning, certifications PST/PSAT de l'équipage, équipement de survie froid, et Polar Ship Certificate délivré par l'État du pavillon.</p>
+<p>L'effet de marché est observable. Les courtiers <a href="https://www.camperandnicholsons.com/" target="_blank" rel="noopener">Camper & Nicholsons</a> et <a href="https://www.edmiston.com/" target="_blank" rel="noopener">Edmiston</a> signalent une accélération des refits ice-class sur les 35-60 mètres construits 2010-2018 — le gros du contingent « explorer non-conforme ». Les chartereurs hésitent sur les itinéraires nordiques 2026 : l'incertitude juridique sur la validité d'une charte en eaux polaires avec un navire non encore certifié décourage les contrats fermes.</p>
+<p>En parallèle, le Cayman Islands Shipping Registry — qui revendique environ 50 % du tonnage mondial des yachts de plus de 30 mètres — a publié un règlement (entrée en application début 2026) imposant des contrats écrits pour tous les équipages, <em>y compris sur les unités strictement privées</em>. C'est une première dans le yachting. La <a href="https://www.pya.org/" target="_blank" rel="noopener">Professional Yachting Association</a> (PYA) salue la mesure. Le contenu minimal couvre rémunération, heures de repos, conditions de rupture, rapatriement, résolution des litiges — anticipant les amendements MLC 2025 qui deviendront contraignants en décembre 2027 (anti-harcèlement, santé mentale, statut <em>key worker</em> du marin).</p>
+<p>Effet de marché secondaire : certains propriétaires considèrent un déplacement vers les Marshall Islands, dont la <a href="https://www.register-iri.com/" target="_blank" rel="noopener">Yacht Code 2026</a> reste plus permissive sur l'équipage privé.</p>
+<p><strong>Qui paie · Qui profite :</strong> Paient les propriétaires « light-touch ». Profitent : les family offices structurés, les chantiers ice-class (Damen SeaXplorer, Lürssen, Sanlorenzo X-Space), et indirectement les avocats maritimes de Genève-Monaco-Londres.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller le flux de transferts de pavillon Cayman → Marshall sur le <a href="https://www.register-iri.com/" target="_blank" rel="noopener">registre RMI</a> au cours de l'été ; au-delà de 30 transferts nets sur trois mois, l'arbitrage est confirmé.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Comment Cayman compte appliquer le contrôle aux yachts privés qui passent <90 jours/an en eaux territoriales d'un État signataire MLC — la portée d'exécution réelle n'est pas testée.</p>
+<h3>III. Détentions Paris MoU en hausse + différentiel HSFO/VLSFO : le coût caché de l'escale méditerranéenne</h3>
+<p><strong>🟡 À vérifier</strong></p>
+<p>Selon <a href="https://www.dnv.com/maritime/publications/" target="_blank" rel="noopener">DNV Maritime</a>, 64 détentions ont été enregistrées sur sa flotte au T1 2026 contre 52 au T1 2025 — soit +23 %. Container, vraquiers et general cargo représentent 83 % du total ; Paris MoU et Tokyo MoU concentrent 84 % des décisions. Le motif dominant reste l'implémentation déficiente du Code ISM. La campagne d'inspection concentrée conjointe Paris-Tokyo 2026 portera du 1er septembre au 30 novembre sur l'arrimage des cargaisons.</p>
+<p>Pour les yachts commerciaux opérant en Méditerranée, l'effet est indirect mais documenté. Les inspecteurs Paris MoU intensifient les contrôles sur les certificats MLC, les heures de repos et la documentation Polar Code lorsque l'historique de pavillon le justifie. Plusieurs yachts charter ont été notifiés en avril pour non-conformité documentaire — sans détention, mais avec exigence de mise à jour (<a href="https://www.parismou.org/" target="_blank" rel="noopener">Paris MoU, communiqué du 30 avril 2026</a>).</p>
+<p>À cela s'ajoute le différentiel de prix HSFO/VLSFO depuis l'entrée en vigueur du Med ECA SOx (1er mai 2025, plafond soufre 0,1 %) : l'écart atteint 110 USD/tonne en avril 2026 contre 75 USD en moyenne 2024 (<a href="https://shipandbunker.com/prices" target="_blank" rel="noopener">Ship & Bunker, avril 2026</a>). Les yachts non équipés de scrubber subissent l'écart en plein. Britannia P&I Club a annoncé une hausse de 7,5 % pour le renouvellement de février 2026, la plus élevée de l'International Group, partiellement compensée par un cashback de 30 M USD (<a href="https://www.britanniapandi.com/" target="_blank" rel="noopener">Britannia P&I, communiqué de renouvellement</a>). La sinistralité war-risk Hormuz et l'incertitude Brent à 108 USD/baril expliquent l'essentiel.</p>
+<p><strong>Qui paie · Qui profite :</strong> Paie l'opérateur charter méditerranéen non-scrubber. Profitent : les fournisseurs de scrubber retrofit, les pavillons à faible historique de détention.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Le coût opérationnel d'escale européenne pour un yacht commercial est en hausse de 5-10 % selon les gestionnaires techniques ; les contrats charter d'été 2026 intégreront cette ligne — vérifier le devis Antibes-Saint-Tropez-Bonifacio courant juin.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La part exacte des détentions liées au resserrement post-MEPC 84 vs. tendance structurelle ISM — DNV n'a pas publié le détail par sous-motif.</p>
+<h3>IV. <em>True</em> aux Bermudes : la victoire dans les pétoles, leçon de routage ancien</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>L'Antigua Bermuda Race 2026 (935 milles) s'est conclue le 5 mai au large d'East End par la victoire en temps compensé IRC et CSA du Swan 75 <em>True</em> d'Howie Hodgson, suivi à 1h03 par le Class40 <em>Scowling Dragon</em> de Michael Hennessy. Sept partants, trois non-finishers dans la limite des 8 jours (<a href="https://caribbean-sailing.com/" target="_blank" rel="noopener">Caribbean Sailing Association, communiqué officiel 5 mai 2026</a>).</p>
+<p>L'intérêt technique de l'édition tient à l'écart entre les conditions attendues et les conditions courues. Les alizés mai sont statistiquement à 15-20 nœuds établis dès la sortie d'Antigua ; en 2026, ils sont restés à 10 nœuds, parfois moins, pendant les trois premiers jours. <em>True</em> a gagné dans les pétoles, pas dans les grains. La décision tactique de Hodgson — route ouest plus longue traversant les filaments du Gulf Stream à un angle plus favorable, prise au troisième jour contre les recommandations de son routeur informatique — relève d'une lecture des courants de surface que les algorithmes de routage modernes peinent à intégrer. Ils optimisent à la minute de polaire ; ils sous-estiment la valeur d'une route stable pour un équipage fatigué.</p>
+<p>Le format de l'épreuve interroge. Sept inscrits contre 15-20 voici cinq ans. La Caribbean Sailing Association envisage de la repositionner comme qualificative pour la SailGP Bermudes — alignement commercial qui peut soit régénérer le plateau, soit dénaturer l'esprit de course océanique.</p>
+<p><strong>Qui paie · Qui profite :</strong> Paie le sponsor titre (Antigua Yacht Club + sponsors privés). Profite : SailGP si l'alignement aboutit en 2027, le marché du routage humain (CMC Weather, Maxime Mercier) face aux solutions purement algorithmiques.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller l'annonce CSA de juin sur le format 2027 ; si l'épreuve devient qualificative SailGP, attendre une remontée du plateau à 12-15 partants.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le calendrier précis d'intégration avec SailGP — si la qualification se fait en <em>temps réel</em> ou en <em>temps compensé</em>, l'effet sur les Class40 et les multicoques diverge totalement.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Le Marshall Islands Yacht Code 2026 intègre pour la première fois un standard explicite pour propulsion hybride/électrique et hydrogène (<a href="https://www.register-iri.com/yacht/" target="_blank" rel="noopener">RMI / IRI</a>).</li>
+<li>Boris Herrmann (Team Malizia) prépare un IMOCA dessiné par Antoine Koch pour l'Ocean Race Atlantic de septembre 2026 — rupture avec les codes Verdier dominants (<a href="https://www.borisherrmannracing.com/" target="_blank" rel="noopener">Team Malizia, communiqué d'avril 2026</a>).</li>
+<li>Oliver Heer a lancé <em>Embrace The Challenge</em>, premier IMOCA suisse au gabarit olympique (<a href="https://www.oceanrace.com/" target="_blank" rel="noopener">Ocean Race coverage</a>).</li>
+<li>Le Med ECA SOx + différentiel HSFO/VLSFO élargi déplace l'arbitrage scrubber : retrofit-payback à 4-5 ans contre 7-9 ans en 2024 (<a href="https://www.lloydslist.com/" target="_blank" rel="noopener">Lloyd's List, avril 2026</a>).</li>
+<li>Lürssen <em>Boardwalk</em> (117 m, projet 13797) en transit Bremen-Gibraltar, <a href="https://www.feadship.nl/" target="_blank" rel="noopener">Feadship projet 1014</a> (101,2 m) flotté à Makkum livraison juillet — le carnet long porteur reste robuste malgré les vents contraires.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Mai 2026 cristallise un écart de tempo qui définit le moment maritime. Sur l'eau, la voile de compétition vit son âge d'or technique — F50 foilants, IMOCA dernière génération, Swan 75 qui tient le rythme d'un Class40. Dans les couloirs de l'OMI, le temps coule à l'inverse, celui d'une coalition à 175 États incapable de fixer un prix carbone à trois chiffres. Et entre les deux, les chantiers livrent des yachts de 117 mètres dont la propulsion ne sera peut-être plus conforme en 2035, tandis que Cayman et Marshall convergent vers une professionnalisation forcée de l'équipage. Le motif transversal : le luxe sans contrainte est terminé. Ce qui survit, ce sont les opérateurs structurés — chantiers ice-class, family offices, pavillons alignés. Ce qui sort, c'est l'amateur de bonne volonté. Pour le marin embarqué, qui regarde l'horloge des marées plus que celle de l'IMO, le travail reste le même : tenir le bateau, tenir le cap, tenir l'équipage. Mais le papier autour du bateau, lui, s'épaissit chaque trimestre.</p>
+<hr>
+<p><em>Journal Liberté — Maritime — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="philosophie-psychologie.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Philosophie &amp; Psychologie</span></a><a href="gastronomie.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Gastronomie</span></a></div></div><div class="site-footer">The World Affair &mdash; Maritime &mdash; v1.1</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
