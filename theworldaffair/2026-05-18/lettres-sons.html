@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lettres &amp; Sons &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="masthead-version">v1.1 &mdash; sous discipline &eacute;ditoriale</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a><a class="nav-link" href="../corrections.html">Corrections</a><a class="nav-link" href="../standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#6D4C41">Lettres &amp; Sons</div>
+  <h1 class="article-title">Pulitzer Kraus, Booker demain, Ed O&#x27;Brien le 22 mai</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138 &mdash; v1.1</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Quinze jours qui pèsent. Le 4 mai, <a href="https://www.pulitzer.org/winners/daniel-kraus" target="_blank" rel="noopener">le Pulitzer Fiction</a> a couronné Daniel Kraus pour <em>Angel Down</em> — roman de 14-18 tenu en une seule phrase. Le 5 mai, <a href="https://www.franceinfo.fr/culture/livres/le-prix-goncourt-du-premier-roman-attribue-a-clement-de-romain-lemire-un-temoignage-intime-sur-l-inceste_7985009.html" target="_blank" rel="noopener">l'Académie Goncourt a remis à Romain Lemire son Premier roman pour <em>Clément</em></a>, témoignage d'inceste paternel. Demain mardi, <a href="https://thebookerprizes.com/the-booker-library/books/taiwan-travelogue" target="_blank" rel="noopener">Tate Modern proclame l'International Booker 2026</a> — favori, <em>Taiwan Travelogue</em> de Yáng Shuāng-zǐ. Et côté musique : vendredi 15 mai, <a href="https://en.wikipedia.org/wiki/Iceman_(Drake_album" target="_blank" rel="noopener">Drake a sorti trois albums simultanés</a>) et battu le record Spotify single-day 2026. Dans dix jours, <a href="https://www.xsnoize.com/ed-obrien-announces-new-album-blue-morpho-out-22-may-2026-and-shares-title-track/" target="_blank" rel="noopener">Ed O'Brien (Radiohead) publie <em>Blue Morpho</em></a>, même date que <a href="https://www.thelineofbestfit.com/news/future-islands-celebrate-20-years-together-with-new-album-from-a-hole-in-the-floor-to-a-fountain-of-youth" target="_blank" rel="noopener">le double-LP 20 ans de Future Islands</a>. Le 1er mai, <a href="https://en.wikipedia.org/wiki/In_Times_of_Dragons" target="_blank" rel="noopener"><em>In Times of Dragons</em> de Tori Amos</a> a inauguré la saison politique de la pop adulte. Cinq récits, deux disciplines, un même test : qu'est-ce qui survit à juin ?</p>
+<hr>
+<h2>📊 Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody><tr><td>Pulitzer Fiction 2026 — lauréat</td><td>Daniel Kraus, <em>Angel Down</em></td><td>nouveau</td><td><a href="https://www.pulitzer.org/winners/daniel-kraus" target="_blank" rel="noopener">Pulitzer</a></td></tr><tr><td>Booker International — short-list</td><td>6 titres / 128 soumis</td><td>inchangé (4-2026)</td><td><a href="https://thebookerprizes.com/the-booker-library/books/taiwan-travelogue" target="_blank" rel="noopener">Booker Prizes</a></td></tr><tr><td>Drake <em>Iceman</em> — record Spotify</td><td>#1 streams/jour 2026</td><td>nouveau record</td><td><a href="https://www.billboard.com/music/rb-hip-hop/drake-iceman-2026-spotify-record-single-day-album-streams-1236249717/" target="_blank" rel="noopener">Billboard</a></td></tr><tr><td>Goncourt Premier roman 2026</td><td>Romain Lemire, <em>Clément</em></td><td>nouveau</td><td><a href="https://www.livreshebdo.fr/article/les-laureats-des-goncourt-de-printemps-2026" target="_blank" rel="noopener">Livres Hebdo</a></td></tr><tr><td>22 mai — sorties simultanées</td><td>O'Brien + Future Islands</td><td>densité inhabituelle</td><td>labels</td></tr></tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Pulitzer Fiction 2026 : <em>Angel Down</em>, la guerre tenue en une phrase</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 4 mai, le jury Pulitzer a primé <a href="https://www.pulitzer.org/winners/daniel-kraus" target="_blank" rel="noopener"><em>Angel Down</em> de Daniel Kraus</a> en catégorie Fiction. Le roman — la chute, dans le no man's land de 1917, d'un ange découvert parmi les morts par une escouade américaine — est écrit comme une seule longue phrase (<a href="https://www.libraryjournal.com/story/pulitzer-prizes-2026-book-pulse" target="_blank" rel="noopener">Library Journal, mai 2026</a>). Tour de force que la citation officielle décrit comme « <em>a breathless novel of World War I, a stylistic tour-de-force</em> » (<a href="https://www.npr.org/2026/05/04/nx-s1-5803483/pulitzer-prize-winners-2026" target="_blank" rel="noopener">NPR, 4 mai</a>). Kraus, jusqu'ici classé en fantastique et young adult (<em>The Living Dead</em>, co-écrit avec George Romero), accède d'un coup au canon littéraire général. Le livre concourait contre <em>Audition</em> de Katie Kitamura et <em>Stag Dance</em> de Torrey Peters — deux titres pourtant donnés favoris six mois plus tôt par les pages livres du <em>New York Times</em> (<a href="https://www.simonandschuster.com/books/Angel-Down-(Pulitzer-Prize-Winner" target="_blank" rel="noopener">Simon & Schuster — page éditeur</a>/Daniel-Kraus/9781668068519)).</p>
+<p>En General Nonfiction, le prix va à Brian Goldstone pour <em>There Is No Place for Us: Working and Homeless in America</em> — cinq familles d'Atlanta, toutes salariées, toutes sans logement, suivies sept ans. Le livre dynamite la fiction américaine du <em>deserving poor</em>. Jill Lepore reçoit le Pulitzer d'Histoire pour <em>We the People: A History of the U.S. Constitution</em> (800 pages, Liveright). Cohérence du jury cette année : revisiter les fondations américaines depuis les marges — la rue, la constitution réinterprétée, l'enquête longue.</p>
+<p>L'objet Kraus mérite attention au-delà de son prix. Une phrase unique de 320 pages, ce n'est pas une coquetterie — c'est une discipline d'écriture qui interdit le retour en arrière, refuse toute hiérarchie syntaxique, et oblige le lecteur à un rythme propre. Modèle revendiqué : <em>Tree of Smoke</em> de Denis Johnson (National Book Award 2007). Le précédent récent : <em>Solar Bones</em> de Mike McCormack (Goldsmiths 2016). Tradition rare, école sans école.</p>
+<p><strong>Qui paie · Qui profite :</strong> Simon & Schuster (éditeur) bénéficie d'un retour critique majeur ; Liveright (Lepore) consolide son catalogue Histoire ; les agents littéraires de Kraus passent en tier-1 du soir au lendemain.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller les ventes BookScan US semaines 19-22 pour <em>Angel Down</em> — un Pulitzer Fiction produit historiquement +800 % en quatre semaines. Si la courbe plafonne sous 25 000 exemplaires, on tient un signal : le prix n'achète plus le rayon.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La motivation du jury entre Kraus et Kitamura n'a pas filtré. Les délibérations Pulitzer restent confidentielles trois ans — ce qui est exactement ce qui rend leur lecture difficile à anticiper.</p>
+<hr>
+<h3>II. Booker International, demain à Tate Modern : Taiwan en favori</h3>
+<p><strong>🟡 À vérifier (résultat 19 mai)</strong></p>
+<p>Mardi 19 mai à 22h05 BST, <a href="https://thebookerprizes.com/the-booker-library/books/taiwan-travelogue" target="_blank" rel="noopener">la Tate Modern annonce le lauréat de l'International Booker 2026</a>. Le jury, présidé par l'écrivaine britannique Natasha Brown (auteure d'<em>Assembly</em>), rassemble le mathématicien Marcus du Sautoy, la traductrice Sophie Hughes, le Kényan Troy Onyango et l'Indienne Nilanjana S. Roy. Six livres, cinq langues, deux cents soumissions au départ (<a href="https://focustaiwan.tw/culture/202604010005" target="_blank" rel="noopener">Focus Taiwan, avril 2026</a>).</p>
+<p>Le favori des bookmakers : <em>Taiwan Travelogue</em> (mandarin → anglais), traduit par Lin King. Le roman, publié en 2020 par Yáng Shuāng-zǐ, prend la forme d'une fausse traduction d'un faux carnet de voyage d'une romancière japonaise traversant Taiwan en 1938 sous la domination coloniale. Le dispositif est un canular méta-littéraire — qui, sous couvert de pastiche colonial, écrit une histoire de l'amitié féminine et de l'identité taïwanaise contemporaine. Le livre avait remporté le Golden Tripod (plus haute distinction littéraire taïwanaise) en 2020, puis le US National Book Award for Translated Literature pour la traduction de King — premier ouvrage taïwanais à l'obtenir (<a href="https://www.taipeitimes.com/News/taiwan/archives/2026/04/01/2003854846" target="_blank" rel="noopener">Taipei Times, avril 2026</a>).</p>
+<p>Une victoire taïwanaise serait une première historique. Politiquement, l'événement n'est pas neutre : récompenser un roman publié à Taipei en pleine décennie de tensions sino-américaines, c'est un acte éditorial qui sait ce qu'il fait. Les 50 000 £ se partagent à parts égales entre auteur et traducteur — règle qui distingue le Booker International du Goncourt depuis 2016, et que d'autres prix internationaux (Médicis étranger, Premio Strega Europeo) ont commencé à reproduire depuis 2024.</p>
+<p><strong>Qui paie · Qui profite :</strong> Booker Prize Foundation (financement Crankstart, Man Group sortie en 2018) ; un palmarès taïwanais déplace symboliquement le centre de gravité de la littérature mondiale d'un cran vers l'Est.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Suivre les annonces de droits étrangers à la Foire de Londres et à BookExpo (post-20 mai) — un Booker International produit un effet d'achat de droits dans 8-12 langues sur les six semaines suivantes.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le rôle exact des éditeurs indépendants (Honford Star pour la version anglaise) dans la mécanique des prix — leur capacité à porter un Booker en termes logistiques est rarement discutée publiquement.</p>
+<hr>
+<h3>III. Stuart, Smith, Lemire : la rentrée des prosateurs</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Douglas Stuart publie le 5 mai <a href="https://groveatlantic.com/book/john-of-john/" target="_blank" rel="noopener"><em>John of John</em></a> chez Grove Atlantic. Après <em>Shuggie Bain</em> (Booker 2020) et <em>Young Mungo</em>, le Glaswégien transporte son lecteur dans l'archipel des Hébrides extérieures. John-Calum Macleod prend le ferry vers l'île de Harris, sans argent et sans rien à montrer de son école d'art ; il y retrouve deux figures — son père John, paysan-éleveur, tisseur de tweed, prédicateur laïc presbytérien, et sa grand-mère maternelle Ella, Glaswegienne adepte du juron. Le <em>Boston Globe</em> qualifie le livre de « <em>one of 2026's literary triumphs</em> ». Sélection Oprah's Book Club. Stuart abandonne la prose flamboyante et naturaliste de ses deux premiers romans pour une syntaxe plus stratifiée — manière, peut-être, de répondre à ceux qui le soupçonnaient de réécrire indéfiniment <em>Shuggie Bain</em>.</p>
+<p>Ali Smith publie le 19 mai <a href="https://www.penguin.co.uk/books/459054/glyph-by-smith-ali/9780241665596" target="_blank" rel="noopener"><em>Glyph</em></a> chez Hamish Hamilton / Pantheon (US). Suite homophonique de <em>Gliff</em> (2024). Deux sœurs, Petra et Patch, conjurent un fantôme dans leur enfance ; trente ans plus tard, Petra trouve un cheval-fantôme dans sa chambre, et se rapproche de sa sœur dont elle s'était éloignée. Smith poursuit son projet de cartographie hallucinée du présent à travers la persistance des récits anciens — méthode amorcée avec son <em>Seasonal Quartet</em> (2016-2020).</p>
+<p>En France, Romain Lemire a reçu le 5 mai le <a href="https://www.academiegoncourt.com/goncourt-du-premier-roman" target="_blank" rel="noopener">Goncourt du Premier roman</a> pour <em>Clément</em> (Le Cherche-Midi). Le livre — récit du viol par son propre père de l'auteur, lyricien et musicien franco-belge — a été décrit par franceinfo comme « <em>un témoignage intime sur l'inceste</em> » (<a href="https://www.franceinfo.fr/culture/livres/le-prix-goncourt-du-premier-roman-attribue-a-clement-de-romain-lemire-un-temoignage-intime-sur-l-inceste_7985009.html" target="_blank" rel="noopener">franceinfo, 5 mai</a>). Au-delà du sujet, le livre s'inscrit dans une décennie d'écritures de l'inceste paternel — Springora, Kouchner, Marie Vingtras — dont il dépasse parfois la pudeur méthodologique pour entrer dans une matière plus brute.</p>
+<p><strong>Qui paie · Qui profite :</strong> Grove Atlantic capitalise sur Stuart en visant les jurys US (NBA, NBCC) ; Le Cherche-Midi double sa visibilité ; Penguin Random House continue d'amortir l'investissement Ali Smith sur trois décennies.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Pour Lemire, suivre les ventes Nielsen BookScan France à 30 jours — au-delà de 40 000 exemplaires, le livre devient un objet judiciaire autant que littéraire, avec dépôt de plainte possible (le père n'est pas nommé dans le livre).</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Aucun des trois titres n'a encore franchi le seuil critique de quatre semaines de visibilité libraire — la durée vraie de leur poids dans la conversation reste à mesurer en juillet.</p>
+<hr>
+<h3>IV. Ed O'Brien, <em>Blue Morpho</em> — le 22 mai (résonance Radiohead / War On Drugs)</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 22 mai, Ed O'Brien — guitariste de Radiohead depuis 1985 — publie <a href="https://edobrien.bandcamp.com/album/blue-morpho" target="_blank" rel="noopener"><em>Blue Morpho</em></a> chez Transgressive Records (et non Capitol, comme certains briefings le rapportaient à tort). Sept titres, produit par Paul Epworth et Riley MacIntyre. C'est le premier album signé sous son nom complet, après <em>Earth</em> (2020) publié sous l'alias EOB (<a href="https://consequence.net/2026/03/ed-obrien-blue-morpho-new-album-title-track-stream/" target="_blank" rel="noopener">Consequence, mars 2026</a>). L'enregistrement s'est fait au pays de Galles et à Londres, après une période de dépression — O'Brien revendique l'inspiration de Wim Hof, de la campagne galloise, et un conseil de Thom Yorke : <em>cataloguer et revisiter les idées de chansons</em>. Un court-métrage accompagne la sortie, <em>Blue Morpho: The Three Act Play</em>.</p>
+<p><strong>🎶 Signal taste-profile.</strong> Pour un auditeur d'Arnaud calibré sur <em>Lost in the Dream</em> de The War On Drugs, sur <em>Kingdoms in Colour</em> de Maribou State, sur le <em>Moon Safari</em> d'Air ou sur HVOB, l'objet est central. O'Brien occupe le même territoire émotionnel — rock atmosphérique européen, guitare lyrique, refus de l'opposition stade / post-rock. Le disque devrait inclure deux titres co-écrits avec Nathan Jenkins (Bullion) et un featuring du chanteur portugais António Zambujo. <em>Blue Morpho</em> ne tentera pas de dominer la radio. Il a vocation à survivre cinq ans dans des appartements de Lisbonne, des trajets de TGV nocturnes, des cuisines d'été en Andalousie.</p>
+<p>Le même 22 mai, Future Islands sort <a href="https://futureislands.bandcamp.com/album/from-a-hole-in-the-floor-to-a-fountain-of-youth" target="_blank" rel="noopener"><em>From a Hole in the Floor to a Fountain of Youth</em></a> — double-LP des 20 ans du groupe, vingt titres, dont des inédits et rarities (singles « Sail » et « Find Love »). Pour l'auditoire qui a tenu avec <em>Singles</em> (2014) et <em>People Who Aren't There Anymore</em> (2024), c'est l'album-bilan d'un groupe qui a réussi le passage du synthpop indie à la pop adulte sans s'aliéner.</p>
+<p><strong>Qui paie · Qui profite :</strong> Transgressive et 4AD (Future Islands) confirment leur place dans la chaîne indie / catalogue ; O'Brien rentabilise une notoriété Radiohead sans la diluer.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller les notes Pitchfork sur <em>Blue Morpho</em> (parution sous 7-10 jours après le 22 mai). Une note ≥ 7.8 confirmerait la place d'O'Brien dans la critique indépendante 2026 ; sous 7.0, le disque retombe en signal de niche.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> L'engagement réel d'O'Brien sur les tournées 2026 — Radiohead vient d'annoncer son retour scénique d'automne. La fenêtre de défense de <em>Blue Morpho</em> sera étroite.</p>
+<hr>
+<h3>V. Drake <em>Iceman</em>, Tori Amos <em>In Times of Dragons</em> : la pop et la guerre</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Vendredi 15 mai, Drake a sorti non pas un album mais <a href="https://variety.com/2026/music/news/drake-releases-iceman-habibti-maid-of-honour-albums-1236749401/" target="_blank" rel="noopener">trois albums simultanés</a> — <em>Iceman</em> (13 titres), <em>Habibti</em> et <em>Maid of Honour</em>. <em>Iceman</em> a établi le record Spotify single-day 2026 sur la plateforme : artiste le plus streamé, album le plus streamé, single (« Make Them Cry ») le plus streamé sur une journée (<a href="https://www.billboard.com/music/rb-hip-hop/drake-iceman-2026-spotify-record-single-day-album-streams-1236249717/" target="_blank" rel="noopener">Billboard, 16 mai</a>). La promotion a duré six semaines, avec sculpture de glace de 25 pieds installée à Toronto le 20 avril, date de sortie cachée dans la masse.</p>
+<p>Le geste est stratégique. Drake sort de sa rivalité 2024 avec Kendrick Lamar blessé culturellement, et son procès contre Universal sur la diffamation algorithmique de « Not Like Us » court toujours. <em>Iceman</em> devait fonctionner comme communiqué d'autorité. La triple sortie en a fait un acte de saturation : occuper toutes les playlists, ne laisser de place à aucune contre-narration la semaine de Cannes et d'Eurovision. Tactique commerciale plus que pari artistique.</p>
+<p>À l'opposé, Tori Amos a publié le 1er mai chez Fontana <a href="https://en.wikipedia.org/wiki/In_Times_of_Dragons" target="_blank" rel="noopener"><em>In Times of Dragons</em></a> — dix-huitième album studio, dix-sept titres, 76 minutes (<a href="https://readdork.com/album/tori-amos-in-times-of-dragons" target="_blank" rel="noopener">Dork</a>). Amos elle-même décrit l'objet comme « <em>a metaphorical story about the fight for Democracy over Tyranny</em> », visant explicitement Trump. AllMusic note un disque « <em>emotionally heavy, often devastating</em> » ; Rolling Stone, 3.5/5. Tournée européenne au printemps, 35 dates US à partir de juillet. Pour la pop adulte américaine post-2000, c'est le pendant exact du retour Paul McCartney annoncé pour fin mai : ces artistes refusent de vieillir en producteurs nostalgiques, et écrivent — encore.</p>
+<p><strong>Qui paie · Qui profite :</strong> OVO Sound et Republic Records (Drake) ; Fontana (Amos). Pour Drake, la saturation Spotify vaut une couverture <em>Rolling Stone</em> — sauf qu'elle ne dure pas 72 heures.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Suivre les positions Hot 100 <em>post-J+10</em> pour <em>Iceman</em> — la rétention au-delà du J+14 indiquera si la saturation a généré une vraie traction ou un pic. La courbe de Drake est devenue le meilleur indicateur de fatigue rap mainstream 2026.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le contenu réel de <em>Habibti</em> (rumeurs de collaborations Bizarrap) — les featurings effectifs n'ont pas été divulgués au moment de la sortie.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Le manuscrit posthume de Joan Didion <em>Notes to John</em> (HarperCollins) continue de diviser : le <em>NYRB</em> y voit <em>« la violence intime d'un journal qu'on n'aurait pas dû publier »</em>, le <em>LRB</em> défend la décision éditoriale (<a href="https://www.harpercollins.com/products/notes-to-john-joan-didion" target="_blank" rel="noopener">HarperCollins page éditeur</a>).</li>
+<li><a href="https://standardebooks.org/" target="_blank" rel="noopener">Standard Ebooks a passé en mai 2024 les 1 000 titres</a> (Ulysses a marqué la borne) — petit chiffre, énorme valeur d'usage sur Kindle ; cf. domaine Découverte.</li>
+<li><a href="https://www.sonymusic.es/" target="_blank" rel="noopener">Vicente Amigo prépare un nouveau disque pour octobre</a> — premier depuis <em>Memoria de los Sentidos</em> (2017). Annonce Sony Music Spain. <em>Signal taste-profile.</em></li>
+<li>Le single Christine and the Queens — Daft Punk publié cette semaine en hommage à Bangalter / de Homem-Christo touche le pilier French Touch d'Arnaud (cf. <em>Discovery</em>, 1998).</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le fil de cette quinzaine est celui de la <em>consécration</em>, dans son sens étymologique : retirer du commerce ordinaire pour exposer à un autre régime de lecture. Le Pulitzer consacre Kraus en sortant la guerre du genre. Le Booker s'apprête peut-être à consacrer une langue minoritaire. Le Goncourt consacre une voix inconnue qui dit l'inavouable. Stuart, Smith, O'Brien, Future Islands consacrent leur propre méthode. Drake, lui, ne cherche pas la consécration — il cherche l'occupation de territoire, ce qui n'a jamais produit, dans l'histoire de la pop, un seul disque réécouté à dix ans. La vraie question de mai 2026 n'est pas qui gagne les prix : c'est qui reste écouté ou lu en 2036. La réponse est probablement que ce sera Kraus, ce sera Ali Smith, ce sera O'Brien, ce sera Amos — pas parce qu'ils sont meilleurs, mais parce qu'ils acceptent l'épreuve de la durée. Drake bat des records à 24h. Ed O'Brien gagne des appartements à dix ans. Ce sont deux métiers différents.</p>
+<hr>
+<p><em>Journal Liberté — Lettres & Sons — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="culture-societe.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Culture &amp; Société</span></a><a href="decouverte.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Découverte</span></a></div></div><div class="site-footer">The World Affair &mdash; Lettres &amp; Sons &mdash; v1.1</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

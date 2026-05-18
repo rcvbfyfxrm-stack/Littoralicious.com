@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nutrition &amp; Cuisine &mdash; The World Affair</title>
+<title>Corrections &mdash; The World Affair</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,12 +17,11 @@ a:hover { color: #3a5a6a; }
 .masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
 .masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
 .masthead-title a { text-decoration: none; color: inherit; }
-.masthead-title a:hover { color: #1a1714; }
 .masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
-.masthead-meta span { white-space: nowrap; }
 .masthead-dot { color: #c8c0b4; }
-.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
-.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
 .nav-link:first-child { border-left: 1px solid #c8c0b4; }
 .nav-link:hover { background: #e6e1d8; color: #1a1714; }
 .nav-link.active { background: #1a1714; color: #f4f1eb; }
@@ -34,6 +33,7 @@ a:hover { color: #3a5a6a; }
 .flash-box ul { margin: 0; padding-left: 18px; }
 .flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
 .flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
 .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
 .hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
 .hub-card:hover { background: #ede9e1; }
@@ -45,23 +45,25 @@ a:hover { color: #3a5a6a; }
 .article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
 .article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
 .article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
-.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
 .article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
-.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
-.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
 .article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
 .article-body strong { color: #1a1714; }
 .article-body em { font-style: italic; }
-.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
-.article-body a:hover { color: #1a1714; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
 .article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
 .article-body li { margin-bottom: 6px; line-height: 1.65; }
 .article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
 .article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
-.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
-.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
-.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
-.article-body tr:hover td { background: #ede9e1; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
 .bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
 .bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
 .bottom-nav a:nth-child(2) { text-align: right; }
@@ -69,50 +71,56 @@ a:hover { color: #3a5a6a; }
 .bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
 .bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
 .site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
-@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
 @media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
 </style>
 </head>
 <body><header class="masthead">
   <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
-  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <h1 class="masthead-title"><a href="index.html">The World Affair</a></h1>
   <div class="masthead-meta">
-    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
-    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>Corrections</span><span class="masthead-dot">&bull;</span>
+    <span>Registre permanent</span><span class="masthead-dot">&bull;</span>
     <span>NEXUS Intelligence</span>
   </div>
-</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
-  <div class="article-overline" style="color:#BF360C">Nutrition &amp; Cuisine</div>
-  <h1 class="article-title">Ultra-transformés : +47 % AVC/infarctus, la matrice en cause</h1>
-  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
-</div><div class="article-body"><h2>Édition du Jour</h2>
-<p>Le mois de mai 2026 aura été dense en publications nutritionnelles, mais une ligne de fracture s'impose : celle des aliments ultra-transformés (UPF), qui passent du statut de soupçon clinique à celui de cause structurelle. Trois travaux convergents publiés ces dernières semaines — Florida Atlantic University sur le risque cardiovasculaire, USC Keck School sur le prédiabète des jeunes adultes, et un essai croisé britannique randomisé sur la perte de poids — renforcent un faisceau désormais difficile à écarter. En contrepoint, deux études prolongent la piste polyphénols-microbiote-vieillissement biologique du programme DIRECT-PLUS israélien. Cette édition met en regard ces signaux, sans céder au déterminisme qui guette toute lecture de la nutrition contemporaine.</p>
+</header><nav class="nav-bar"><a class="nav-link" href="index.html">Derni&egrave;re &Eacute;dition</a><a class="nav-link" href="archive.html">Archives</a><a class="nav-link active" href="corrections.html">Corrections</a><a class="nav-link" href="standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">Corrections &amp; R&eacute;trospective</div>
+  <h1 class="article-title">Le silence sur les corrections est de la complicit&eacute;</h1>
+  <div class="article-date">Registre permanent &mdash; mis &agrave; jour &agrave; chaque &eacute;dition</div>
+</div><div class="article-body">
+<p><em>Cette page liste toutes les erreurs, impr&eacute;cisions et faiblesses &eacute;ditoriales que la gazette a corrig&eacute;es depuis sa premi&egrave;re publication. Chaque entr&eacute;e nomme le chiffre, le contexte, et la raison du correctif.</em></p>
+
+<h2>Edition N&deg;138 &mdash; v1.0 &rarr; v1.1 (18 mai 2026)</h2>
+
+<h3>Or &agrave; 4 530 &dollar; &rarr; ~4 500 &dollar;</h3>
+<p>v1.0 affichait un prix de l'or trop pr&eacute;cis pour un actif n&eacute;goci&eacute; 24 h. La direction (haussi&egrave;re) tenait, la d&eacute;cimale ne tenait pas. <em>Partiellement juste &mdash; correction sur la pr&eacute;cision, pas sur la direction.</em></p>
+
+<h3>Ratio USDT/USDC en faveur de USDC &rarr; &eacute;largissement de l'&eacute;cart, USDT continue de dominer le march&eacute; offshore</h3>
+<p>v1.0 anticipait une &eacute;rosion de Tether sous l'effet du GENIUS Act. v1.1 corrige : le march&eacute; bifurque, ne converge pas. <em>Faux sur la direction &mdash; le GENIUS Act consolide deux p&ocirc;les distincts.</em></p>
+
+<h3>&laquo; Anthropic d&eacute;passe OpenAI 34,4 % d'adoption entreprise &raquo; pr&eacute;sent&eacute; comme fait &rarr; 🟡 Source unique, contredit par OpenRouter</h3>
+<p>v1.0 r&eacute;p&eacute;tait un claim Ramp comme s'il &eacute;tait corrobor&eacute;. v1.1 ajoute le badge Source unique et triangule avec OpenRouter (Anthropic 15,4 % de market share, mais 1,6 T tokens/sem ; mod&egrave;les open-weight chinois &agrave; 45 %+ du flow). <em>Manufactured consensus &mdash; pr&eacute;cis&eacute;ment ce que notre propre domaine Propagande &amp; Narratifs flaggait dans la m&ecirc;me &eacute;dition. La contradiction interne est r&eacute;solue.</em></p>
+
+<h3>&laquo; Trois march&eacute;s se referment &agrave; trois acteurs &raquo; (narratif unique) &rarr; concentration distincte par secteur</h3>
+<p>v1.0 collait trois ph&eacute;nom&egrave;nes sous un seul narratif. v1.1 d&eacute;sambig&uuml;e : top-3 IA absorbe 67,3 % du capital Q1 PitchBook ; Anduril valoris&eacute; &agrave; 14&times; revenu vs Lockheed 2&times; vs Palantir 60&times; ; AI agentique consolid&eacute; au niveau du calcul, pas des mod&egrave;les. <em>Juste structurellement, faux sur le m&eacute;canisme.</em></p>
+
+<h3>Z&eacute;ro lien hypertexte vers les sources sur toute l'&eacute;dition</h3>
+<p>v1.0 nommait les sources (&laquo; selon Reuters, rapporte Nature &raquo;) mais ne les liait pas. v1.1 lie chaque claim factuel &agrave; son URL primaire. <em>R&eacute;gression silencieuse corrig&eacute;e &mdash; le standard &eacute;ditorial impose maintenant la r&egrave;gle inline-link.</em></p>
+
+<h3>Pas de R&eacute;trospective auparavant</h3>
+<p>v1.1 ouvre chaque &eacute;dition par cette section. <em>Le silence sur les corrections &eacute;tait lui-m&ecirc;me un signal &mdash; il est lev&eacute;.</em></p>
+
 <hr>
-<h2>Les Récits</h2>
-<h3>I. Ultra-transformés : le faisceau se resserre</h3>
-<p>L'étude la plus citée du printemps est celle de Florida Atlantic University, publiée dans l'American Journal of Medicine en février 2026 et reprise en cascade tout l'avril. Les adultes situés dans le quintile supérieur de consommation d'aliments ultra-transformés présentent un risque accru de 47% d'infarctus ou d'AVC. Le chiffre tient après ajustement pour l'âge, le tabagisme, le revenu, l'activité physique. C'est ce dernier point qui change la donne : on ne peut plus dire que les UPF sont un marqueur indirect de pauvreté ou de sédentarité. Quelque chose, dans la matrice elle-même de ces produits, agit.</p>
-<p>Une seconde étude, conduite par la Keck School of Medicine de l'USC sur de jeunes adultes hispano-américains, a établi qu'une augmentation modérée des apports en UPF est associée à un risque accru de prédiabète. La cohorte était jeune — vingt à trente ans —, ce qui éloigne l'effet de cumul vieillesse-maladie souvent invoqué pour expliquer les associations brutales.</p>
-<p>Enfin, un essai croisé randomisé publié dans Nature Medicine, conduit au Royaume-Uni sur des adultes en surpoids, a comparé deux régimes respectant les recommandations nutritionnelles britanniques mais différant par leur degré de transformation. À huit semaines, le régime minimalement transformé entraînait une perte de poids et une amélioration cardiométabolique significativement supérieures au régime ultra-transformé — alors même que les apports macronutritionnels étaient appariés. Ce point est crucial : il invalide l'argument du « ce n'est qu'une question de calories ».</p>
-<p>Le débat scientifique n'est pas clos. Des chercheurs reprochent à l'essai des protocoles d'aveuglement imparfaits — il est difficile de cacher à un participant qu'il mange du brocoli vapeur plutôt qu'une lasagne surgelée. Mais le faisceau, désormais, dépasse l'observationnel.</p>
-<h3>II. Polyphénols et âge biologique : la piste Mankai</h3>
-<p>Côté hypothèses positives, le programme DIRECT-PLUS, conduit en Israël par Iris Shai et son équipe à l'université Ben-Gurion, continue de produire des résultats lus avec attention. Sa version « green Mediterranean diet » — méditerranéenne enrichie en polyphénols par adjonction de thé vert, de noix, et surtout de Mankai (Wolffia globosa, lentille d'eau cultivée hydroponiquement) — a montré, sur dix-huit mois, un ralentissement mesurable de l'âge biologique mesuré par horloges épigénétiques.</p>
-<p>L'effet, modeste mais reproductible, atteint l'équivalent d'environ dix-huit mois d'âge méthylationnel évité par rapport au groupe contrôle. Les mécanismes invoqués sont multiples : modulation du microbiote intestinal, métabolites phénoliques urinaires, baisse de la graisse viscérale, baisse des marqueurs inflammatoires.</p>
-<p>Pour le chef de bord, l'enseignement pratique est presque trivial. Augmenter, sans rien retirer d'autre, l'huile d'olive vierge extra (oleuropéine), le thé vert (catéchines), les baies, les noix de Grenoble. Réduire la viande rouge et les charcuteries. Ce que la grand-mère méditerranéenne savait, l'épigénétique commence à le démontrer. La nouveauté n'est pas dans la recommandation — elle est dans la robustesse du signal moléculaire.</p>
-<h3>III. Aliments pour bébés : 71% d'ultra-transformés</h3>
-<p>Une publication dans Nutrients, relayée par l'Environmental Working Group américain, a établi que 71% des aliments pour nourrissons et jeunes enfants vendus en supermarché aux États-Unis répondent à la classification NOVA des ultra-transformés. Plus de 105 additifs uniques ont été identifiés à travers l'échantillon analysé.</p>
-<p>Le chiffre, brut, est moins choquant qu'il ne paraît : la pasteurisation, les vitamines ajoutées, certains émulsifiants courants suffisent à faire basculer un produit dans NOVA 4. Mais la critique de fond reste valable : les premiers mille jours conditionnent durablement la maturation du microbiote intestinal, la calibration du goût (préférence pour le sucré et le salé), et probablement la régulation à long terme de la satiété. Habituer un nourrisson à des matrices fluidifiées, sucrées, homogénéisées, n'est pas neutre.</p>
-<hr>
-<h2>Signaux Faibles</h2>
+
+<h2>Comment cette page fonctionne</h2>
 <ul>
-<li>Une étude de l'université Monash sur 2 100 adultes australiens cognitivement sains montre qu'une légère augmentation quotidienne des UPF est associée à une baisse mesurable de la capacité d'attention — y compris chez les personnes par ailleurs bien-mangeuses.</li>
-<li>Un travail de la Lancet Series sur les UPF, publié en marges du printemps 2026, présente la consommation d'UPF comme « menace majeure de santé publique mondiale » — formulation qui marque un alignement éditorial de premier rang.</li>
-<li>Les indices de polyphénols urinaires (microbial phenolic metabolites score) émergent comme biomarqueurs robustes d'adhésion méditerranéenne — plus fiables que les questionnaires alimentaires déclaratifs.</li>
+<li>Chaque correction est nomm&eacute;e avec le chiffre exact ou le claim exact.</li>
+<li>Chaque correction note le type d'erreur : <em>direction</em>, <em>magnitude</em>, <em>source</em>, <em>cadrage</em>, ou <em>omission</em>.</li>
+<li>Aucune correction n'est silencieusement int&eacute;gr&eacute;e dans la prose des &eacute;ditions suivantes &mdash; tout passe par cette page.</li>
+<li>Le standard &eacute;ditorial qui r&eacute;git ces r&egrave;gles est consultable sur la page <a href="standard.html">Standard</a>.</li>
 </ul>
-<hr>
-<h2>Connexion</h2>
-<p>Le motif commun de cette édition est celui de la matrice. Le nutriment isolé — vitamine, fibre, polyphénol — ne dit jamais toute l'histoire d'un aliment. Ce qui compte est la structure : densité, hydratation, fibres intactes, liaisons protéine-amidon, microstructure cellulaire. L'industrie ultra-transformée détruit cette matrice et la reconstruit avec des arômes, des émulsifiants, des édulcorants. La méditerranéenne enrichie en polyphénols, à l'inverse, ajoute des matrices vivantes — feuilles, noix, micro-algues — à une base déjà préservée. Pour le chef qui cuisine à bord, la leçon est simple : protéger la structure des ingrédients, c'est protéger leur effet biologique. Cuire, fermenter, mariner — oui. Décomposer-recomposer industriellement — non. La cuisine, en ce sens, redevient un acte médical sans avoir cessé d'être un acte de plaisir.</p>
-<hr>
-<p><em>Journal Liberté — Nutrition & Cuisine — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="gastronomie.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Gastronomie</span></a><a href="techniques-culinaires.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Techniques Culinaires</span></a></div></div><div class="site-footer">The World Affair &mdash; Nutrition &amp; Cuisine</div>
+
+</div><div class="bottom-nav"><a href="index.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Derni&egrave;re &eacute;dition</span></a><a href="standard.html"><span class="bottom-nav-label">Standard &rarr;</span><span class="bottom-nav-title">Discipline &eacute;ditoriale</span></a></div></div><div class="site-footer">The World Affair &mdash; Corrections</div>
 <div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
 <div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
   <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">

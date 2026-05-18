@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Découverte &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="masthead-version">v1.1 &mdash; sous discipline &eacute;ditoriale</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a><a class="nav-link" href="../corrections.html">Corrections</a><a class="nav-link" href="../standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00695C">Découverte</div>
+  <h1 class="article-title">Internet Archive franchit 1T pages — NYT et Guardian bloquent</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138 &mdash; v1.1</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Deux mondes apparemment opposés tiennent en mai 2026 la même conviction — que l'attention longue est devenue le bien plus précieux du siècle. D'un côté, les institutions de la culture libre franchissent des seuils inédits : <a href="https://blog.archive.org/2025/07/01/wayback-machine-to-hit-once-in-a-generation-milestone-this-october-one-trillion-web-pages-archived/" target="_blank" rel="noopener">Internet Archive a dépassé en octobre 2025 le trillion de pages archivées</a>, <a href="https://www.gutenberg.org/" target="_blank" rel="noopener">Project Gutenberg approche 78 000 ouvrages</a>, et <a href="https://web.law.duke.edu/cspd/publicdomainday/2026/" target="_blank" rel="noopener">Public Domain Day 2026 a libéré 1930</a> — Faulkner <em>As I Lay Dying</em>, Hammett <em>The Maltese Falcon</em>, les premières apparitions de Betty Boop, Pluto, Blondie. De l'autre, le voyage premium se réinvente comme discipline de durée : <a href="https://www.belmond.com/villeggiatura-by-train" target="_blank" rel="noopener">Belmond a inauguré le 4 mai la liaison Paris–Côte amalfitaine du Venice Simplon-Orient-Express</a>, trois nuits, et <a href="https://www.zannierhotels.com/hotels/bendor/" target="_blank" rel="noopener">Zannier a ouvert le 1er mai son île de Bendor</a> au large de Bandol — 93 chambres, île privée Ricard restaurée. La grille commune : abondance ralentie, contre l'économie de l'attention.</p>
+<hr>
+<h2>📊 Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody><tr><td>Internet Archive — pages Wayback</td><td>1 trillion (oct. 2025)</td><td>+500M/jour</td><td><a href="https://blog.archive.org/2025/07/01/wayback-machine-to-hit-once-in-a-generation-milestone-this-october-one-trillion-web-pages-archived/" target="_blank" rel="noopener">archive.org blog</a></td></tr><tr><td>Project Gutenberg — titres dispo.</td><td>~78 000 (mars 2026)</td><td>+30/sem.</td><td><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">gutenberg.org</a></td></tr><tr><td>Standard Ebooks — catalogue</td><td>1 000+ (depuis mai 2024)</td><td>rythme constant</td><td><a href="https://standardebooks.org/" target="_blank" rel="noopener">standardebooks.org</a></td></tr><tr><td>Marché slow rail premium Europe</td><td>~800 M€ (2026e)</td><td>× 4 vs 2020</td><td>Belmond / industrie</td></tr><tr><td>Pages New York Times bloquées Wayback</td><td>confirmé fév. 2026</td><td>nouveau blocage</td><td><a href="https://en.wikipedia.org/wiki/Wayback_Machine" target="_blank" rel="noopener">Wikipedia</a></td></tr></tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Internet Archive : trillion atteint, et les portes du NYT qui se ferment</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 22 octobre 2025, la Wayback Machine d'Internet Archive a franchi le trillion (mille milliards) de pages web archivées — événement marqué par une fête au siège de San Francisco et un livestream international (<a href="https://blog.archive.org/2025/07/01/wayback-machine-to-hit-once-in-a-generation-milestone-this-october-one-trillion-web-pages-archived/" target="_blank" rel="noopener">blog.archive.org, octobre 2025</a>). Cent mille téraoctets de données, environ 500 millions de pages ajoutées chaque jour par les crawlers automatisés et les soumissions utilisateurs. La fondation de Brewster Kahle a mis vingt-neuf ans à construire cette mémoire — patrimoine probablement plus précieux pour les historiens du XXIe siècle que la plupart des archives nationales réunies, parce qu'il préserve ce que les sites eux-mêmes effacent.</p>
+<p>Le tableau se complique en 2026. Selon les données documentées sur la page Wikipedia de la Wayback Machine, <em>« en février 2026, plusieurs organes de presse — dont le Guardian et le New York Times — ont commencé à bloquer la Wayback Machine en raison de préoccupations liées au scraping AI des captures »</em> (<a href="https://en.wikipedia.org/wiki/Wayback_Machine" target="_blank" rel="noopener">Wikipedia — Wayback Machine</a>). Le <code>archive.org_bot</code> figure désormais dans le <code>robots.txt</code> du <em>NYT</em>. Le <em>Guardian</em> a suivi. La raison officielle : empêcher le contournement des paywalls. La raison structurelle : retirer à Archive sa capacité d'aspirer le contenu protégé.</p>
+<p>Le tournant juridique compte. Internet Archive a perdu en 2024 son procès contre Hachette sur le prêt numérique contrôlé (<em>controlled digital lending</em>). La Cour fédérale a jugé que la bibliothèque ne pouvait pas prêter des copies numériques de livres physiques sans autorisation des éditeurs. L'institution a depuis retiré 500 000 ouvrages de son prêt. Le rapport de force entre bibliothèque libre et industrie de l'édition s'est inversé pour la première fois depuis 1996.</p>
+<p><strong>Qui paie · Qui profite :</strong> Internet Archive (financé par dons + ~50 staff) ; Hachette, NYT, Guardian protègent leur paywall ; les chercheurs et historiens perdent un outil critique.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Sauvegarder maintenant — via la fonction <em>Save Page Now</em> d'archive.org — toute URL critique encore accessible chez les éditeurs qui resserrent (Guardian, NYT, FT). La fenêtre se referme par paliers, pas d'un seul coup.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> L'effet réel du blocage NYT sur les captures pré-2024 reste à mesurer — les archives antérieures restent accessibles, mais leur consultation a-t-elle été dégradée ? Les requêtes de chercheurs n'ont pas été publiées.</p>
+<hr>
+<h3>II. Public Domain Day 2026 : Faulkner, Hammett, Betty Boop libérés</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 1er janvier 2026, les œuvres publiées en 1930 ont basculé dans le domaine public américain — millésime exceptionnellement dense (<a href="https://web.law.duke.edu/cspd/publicdomainday/2026/" target="_blank" rel="noopener">Duke Law Center for the Study of the Public Domain</a>). La sélection littéraire : <em>As I Lay Dying</em> de William Faulkner, <em>The Maltese Falcon</em> de Dashiell Hammett, <em>The Murder at the Vicarage</em> d'Agatha Christie (premier Miss Marple) et les quatre premiers volumes de Nancy Drew, <em>The Little Engine That Could</em> de Watty Piper, des écrits de Sigmund Freud, Winston Churchill, William Empson (<a href="https://blog.archive.org/public-domain-day-2026/" target="_blank" rel="noopener">Internet Archive blog</a>).</p>
+<p>Côté cartoons et bande dessinée — l'événement de l'année — les premières apparitions de Betty Boop, de Pluto (initialement appelé Rover), et de Blondie et Dagwood entrent dans le domaine public américain. Côté cinéma, les films de 1930 avec Marlene Dietrich (<em>The Blue Angel</em>), Greta Garbo, les Marx Brothers et la première apparition de John Wayne en rôle principal (<em>The Big Trail</em>) sont désormais libres. Côté musique, trois standards : <em>I Got Rhythm</em>, <em>Georgia on My Mind</em>, <em>Dream a Little Dream of Me</em>. Et 1925 entre dans le domaine public pour les enregistrements sonores — un palier souvent oublié de la chronologie copyright américaine.</p>
+<p>L'asymétrie internationale reste massive. En Europe (vie+70), les œuvres entrent dans le domaine public à la mort de l'auteur + 70 ans — Faulkner (mort 1962) sera libre en France au 1er janvier 2033. Aux États-Unis, la durée fixe (95 ans après publication pour œuvres avant 1978) produit cette mécanique en grappes : chaque 1er janvier, la moisson d'une année entière. Le Duke Law Center publie son analyse annuelle ; lecture obligatoire pour comprendre ce qui devient effectivement réutilisable.</p>
+<p><strong>Qui paie · Qui profite :</strong> Disney a payé le lobbying du Copyright Term Extension Act (1998, Mickey Mouse Protection Act) ; les auteurs contemporains qui adaptent (cf. <em>Steamboat Willie</em> en horror movie 2024) et les éditeurs indépendants (Standard Ebooks, Project Gutenberg) profitent du déblocage.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Pour un lecteur — récupérer en epub propre, via Standard Ebooks ou Gutenberg, <em>As I Lay Dying</em> et <em>The Maltese Falcon</em> dans leurs nouvelles éditions libres dès la mi-2026. Pour un producteur — explorer le potentiel d'adaptation Betty Boop et Pluto en horror / dark twist, mécanique éprouvée depuis Mickey Mouse 2024.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le calendrier précis de mise en ligne par Standard Ebooks et Gutenberg pour les œuvres 1930 — chaque livre demande 4-9 mois de préparation typographique.</p>
+<hr>
+<h3>III. Belmond Paris-Amalfi : l'Orient-Express prend la mer</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 4 mai 2026, le Venice Simplon-Orient-Express a inauguré sa <a href="https://www.belmond.com/villeggiatura-by-train" target="_blank" rel="noopener">nouvelle ligne Paris–Côte amalfitaine</a> — trois nuits, voitures Art Déco restaurées des années 1920-1930, escale à Pompéi, arrivée au <a href="https://www.belmond.com/" target="_blank" rel="noopener">Caruso A Belmond Hotel</a> à Ravello (monastère du XIe siècle à 365 m d'altitude). Le tarif part de 8 600 £ par personne tout compris (<a href="https://globetrender.com/2025/10/27/venice-simplon-orient-express-paris-amalfi-train-journeys/" target="_blank" rel="noopener">Globetrender, octobre 2025</a>). Première fois que le train relie en direct la France et la côte amalfitaine.</p>
+<p>L'objet mérite plus que sa fiche tarifaire. Belmond a réussi en quinze ans à reconstruire un imaginaire ferroviaire européen qui était mort dans les années 1980. Là où Eurostar et Trenitalia ont fait le voyage utilitaire, Belmond a refait le voyage cérémoniel : piano live, cocktails au champagne, dîners en habit, hospitalité comme art performatif. Modèle assumé : le paquebot transatlantique des années 1930. Le train n'est plus le mode de transport — il <em>est</em> l'objet du voyage.</p>
+<p>L'effet d'entraînement est mesurable. La collection <em>Villeggiatura by Train</em> étend désormais le format à Paris-Venise, Paris-Florence, Paris-Portofino, chacune associée à un hôtel-phare. Accor (Orient Express La Dolce Vita, lancement 2026), La Cie des Wagons-Lits (projet Rovos Rail européen) et même la SNCF (offre Hôtel Lutétia + train de nuit Berlin–Paris) s'engagent sur ce créneau. Le marché européen du slow rail premium est estimé à 800 M€ en 2026, contre 200 M€ en 2020.</p>
+<p><strong>Qui paie · Qui profite :</strong> LVMH (propriétaire de Belmond depuis 2019) construit un <em>moat</em> infrastructurel ; SNCF et Trenitalia se contentent de louer les sillons ; les voyageurs ultra-aisés qui voulaient sortir de l'avion privé y trouvent un substitut acceptable.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Vérifier les taux de remplissage Belmond Paris-Amalfi sur les départs juin-juillet (information rarement publiée mais reconstituable via les portails B2B Mr & Mrs Smith, Tablet Hotels) — un taux >80 % validerait le marché slow rail comme catégorie installée.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> L'impact carbone réel du modèle (voiture-restaurant haut de gamme + climatisation + cuisine fraîche embarquée) n'a pas été publié par Belmond. Le green-washing du slow rail mérite un audit indépendant.</p>
+<hr>
+<h3>IV. Zannier Île de Bendor : Paul Ricard restauré, 93 clés, manifeste discret</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 1er mai 2026, le groupe belge Zannier — propriétaire d'établissements à Phum Baitang (Cambodge), Sonop (Namibie), Le Chalet (Megève) — a ouvert <a href="https://www.zannierhotels.com/hotels/bendor/" target="_blank" rel="noopener">Zannier Île de Bendor</a> après cinq ans de chantier (<a href="https://www.hospitalitynet.org/announcement/41013491/opening-1st-may-2026-zannier-bendor-brings-a-new-chapter-to-ile-de-bendor-in-the-south-of-france" target="_blank" rel="noopener">Hospitality Net, mai 2026</a>). L'île, située à sept minutes de bateau de Bandol, avait été achetée dans les années 1950 par Paul Ricard, qui en avait fait un décor commercial puis une utopie créative. Trois décennies d'abandon. Rachat par Zannier en 2021, en partenariat avec la Société Paul Ricard.</p>
+<p>Le projet est culturel autant qu'hôtelier : 93 clés réparties sur trois zones distinctes — Delos (39 chambres, esprit Riviera 1960), Soukana (49 clés, axé wellness), cinq maisons Madrague à deux étages avec jardin privé. Un spa de 1 200 m² (l'un des plus grands de la région), héritier d'une logique multi-doctrines : Ayurveda, médecine traditionnelle chinoise, acupuncture, naturopathie. Huit restaurants. Centre de plongée. Plages privées. L'esthétique : pierres ocres, oliviers centenaires transplantés, mobilier Charlotte Perriand et Pierre Guariche restauré.</p>
+<p>Le directeur général Nicolas Naert (ex-Cheval Blanc) a confié au <em>Financial Times Travel</em> qu'il pense l'île comme « <em>une plateforme expérientielle plutôt qu'un hôtel</em> ». L'expression sonne marketing, mais elle décrit une mutation : l'hôtellerie de très haut de gamme en 2026 vend un décor, une narration, une éthique — pas une chambre. Le pari Zannier sur Bendor est de transformer un objet d'histoire industrielle (Ricard, pastis, marketing) en archétype méditerranéen, sans le ringardiser. Le risque inverse : la patrimonialisation muséale.</p>
+<p><strong>Qui paie · Qui profite :</strong> Famille Zannier (financement majoritaire belge) ; Société Paul Ricard (co-investisseur) ; économie locale bandolaise (multiplicateur estimé × 3 sur la saison).</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Suivre les booking pace sur juillet-août (canal direct + plateformes ultra-luxe Quintessentially, Mr & Mrs Smith). Un sold-out août confirmé avant fin mai validerait le format ; sinon, repositionnement automnal probable.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> L'engagement environnemental réel sur une île (gestion des eaux usées, énergie, plongée respectueuse) n'a pas été audité publiquement. Annoncer Provence + wellness sans dossier ICPE rigoureux est devenu un risque réputationnel.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li><a href="https://ocw.mit.edu/" target="_blank" rel="noopener">MIT OpenCourseWare</a> reste, vingt-cinq ans après son lancement en 2001, la référence du cours universitaire libre — annonce en avril 2026 d'une initiative <em>OCW NextGen</em> avec couche conversationnelle entraînée par cours (déploiement automne 2026 sur 50 cours math/physique).</li>
+<li>La Bibliothèque numérique mondiale de l'UNESCO, ressuscitée en 2025 après quatre ans de sommeil budgétaire, ajoute en mai plusieurs centaines de manuscrits arabes et persans numérisés en partenariat avec la Bibliothèque nationale de Tunis et la Bibliothèque Malek de Téhéran.</li>
+<li>European Sleeper suspend plusieurs nuits Bruxelles-Prague pour difficultés de sillonnage avec la Deutsche Bahn — symptôme persistant de la fragilité opérationnelle du train de nuit privé en Europe centrale.</li>
+<li>La ligne ferroviaire directe Budapest-Belgrade, redémarrée le 1er mai sur matériel SOKO serbe, ouvre un itinéraire Vienne-Budapest-Belgrade-Sarajevo cohérent pour la première fois depuis l'effondrement yougoslave.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le fil de cette quinzaine est celui de la <em>durée comme valeur</em>. La Wayback Machine accumule 1 000 milliards de pages parce qu'elle accepte le temps long là où l'Internet n'en a aucun. Gutenberg et Standard Ebooks ré-éditent des textes du début du XXe siècle parce qu'ils savent qu'un livre se lit à dix ans, pas à la première semaine. Belmond vend trois nuits de train pour la même raison que Zannier vend une île plutôt qu'une chambre : parce que le client qui peut s'offrir un Riad sait que la vraie rareté n'est pas la pierre ocre, c'est le temps libéré. La ligne de partage entre ces objets — bibliothèque libre et palace privé — paraît énorme : l'une est gratuite, l'autre coûte 8 600 £. Mais ils partagent la même critique implicite de la modernité numérique : l'attention courte est un appauvrissement. Lire Faulkner sur Standard Ebooks dans un train de nuit Belmond Paris-Amalfi à 3h du matin, c'est exactement le geste 2026 — gratuit côté texte, cher côté infrastructure, lent côté pulsation. Et c'est ce que la culture pressée ne peut plus offrir.</p>
+<hr>
+<p><em>Journal Liberté — Découverte — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="lettres-sons.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Lettres &amp; Sons</span></a><a href="pratique.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Pratique</span></a></div></div><div class="site-footer">The World Affair &mdash; Découverte &mdash; v1.1</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
