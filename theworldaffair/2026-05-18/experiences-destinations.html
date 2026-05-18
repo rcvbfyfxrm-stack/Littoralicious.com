@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expériences &amp; Destinations &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00838F">Expériences &amp; Destinations</div>
+  <h1 class="article-title">Belmond ouvre Paris ↔ Côte amalfitaine en train</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Mai 2026 marque l'un des mois les plus denses du calendrier des nouveautés voyage depuis une décennie. Lundi 4 mai, Belmond a inauguré la première liaison directe Paris–Côte amalfitaine de l'histoire du Venice Simplon-Orient-Express — trois nuits, Art Déco intégral, escale au Caruso de Ravello. Le même mois, le Zannier Île de Bendor ouvre une île privée en Méditerranée provençale après cinq ans de travaux. La nouvelle ligne directe Budapest-Belgrade circule depuis le 1ᵉʳ mai sur le matériel moderne SOKO. Et à Caorle, sur la côte vénitienne, l'ouverture du Cavallino Bianco propose une réinterprétation balnéaire du modèle alpin d'Ortisei. Quatre objets, une seule logique : le voyage redevient une expérience structurée, durable, racontable.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Belmond Paris-Amalfi : l'Orient-Express prend la mer</h3>
+<p>Le 4 mai 2026, le Venice Simplon-Orient-Express a inauguré sa nouvelle ligne directe Paris–Amalfi. Trois nuits, en voitures Art Déco restaurées des années 1920 et 1930, avec piano live, cocktails au champagne, et arrivée au Caruso A Belmond Hotel à Ravello, monastère du XIᵉ siècle perché à 365 mètres au-dessus de la côte tyrrhénienne. Une escale à Pompéi est prévue dans le programme étendu <em>Villeggiatura by Train</em>, série de circuits ferroviaires italiens lancée pour 2026.</p>
+<p>Le tarif — à partir de 8 000 £ par personne pour la formule standard — signale clairement le positionnement. Mais l'objet mérite plus que sa fiche tarifaire. Belmond a réussi en quinze ans à reconstruire un imaginaire ferroviaire européen qui était mort dans les années 1980. Là où Eurostar et Trenitalia ont fait le voyage utilitaire, Belmond a refait le voyage cérémoniel. Le train n'est plus le mode de transport ; il est l'objet du voyage. Modèle assumé : le paquebot transatlantique des années 1930, avec ses dîners en habit, sa lenteur revendiquée, son hospitalité comme art performatif.</p>
+<p>L'effet d'entraînement est mesurable : Accor (Orient Express La Dolce Vita), La Cie des Wagons-Lits (projet Rovos Rail européen), et même la SNCF (offre Hôtel Lutétia + train de nuit Berlin–Paris en partenariat) s'engagent désormais sur ce créneau du <em>slow rail premium</em>. Le marché du train comme expérience pèserait 800 millions d'euros en Europe en 2026, contre 200 en 2020.</p>
+<h3>II. Zannier Île de Bendor : une île privée, 93 chambres, un manifeste</h3>
+<p>Le groupe Zannier — discret hôtelier belge propriétaire d'établissements à Phum Baitang (Cambodge), Sonop (Namibie) et Le Chalet (Megève) — ouvre en mai son projet le plus ambitieux : Zannier Île de Bendor. L'île, située au large de Bandol en Provence, avait été achetée dans les années 1950 par Paul Ricard comme décor commercial. Abandonnée pendant trois décennies, elle a été rachetée par les Zannier en 2021 et entièrement repensée comme un village provençal — 93 chambres réparties sur trois zones distinctes, huit restaurants, centre de plongée, spa, plages privées.</p>
+<p>Le pari est culturel autant qu'hôtelier : transformer une île commerciale ratée en archétype méditerranéen — calanques, murs ocres, oliviers centenaires transplantés, mobilier de Charlotte Perriand et Pierre Guariche restauré. Le directeur général Nicolas Naert (ex-Cheval Blanc) a confié au <em>Financial Times Travel</em> qu'il pense l'île comme « une plateforme expérientielle plutôt qu'un hôtel ». L'expression sonne marketing, mais elle décrit une réalité : l'hôtellerie de très haut de gamme en 2026 vend une narration, un décor, une éthique — pas une chambre.</p>
+<h3>III. Budapest-Belgrade : le retour discret d'une route balkanique</h3>
+<p>Le 1ᵉʳ mai 2026, la liaison ferroviaire directe Budapest-Belgrade a redémarré sur du matériel moderne Serbian SOKO, après quinze ans d'interruption et plusieurs faux départs. Le trajet — environ trois heures — était jusqu'ici réservé aux voyageurs prêts à des correspondances pénibles à la frontière hungaro-serbe.</p>
+<p>L'ouverture compte au-delà de l'amateur de trains. C'est la première liaison ferroviaire moderne entre Europe centrale et Balkans depuis l'effondrement des réseaux yougoslaves dans les années 1990. La Chine a financé une partie de l'infrastructure (la ligne Budapest-Belgrade-Skopje-Athènes est intégrée à la <em>Belt and Road</em> version balkanique). Pour le voyageur slow, l'effet est concret : Vienne–Budapest–Belgrade–Sarajevo devient un itinéraire ferroviaire cohérent, à enchaîner sur quatre ou cinq jours.</p>
+<h3>IV. Cavallino Bianco Caorle : l'hôtellerie familiale alpine s'invite sur la côte vénitienne</h3>
+<p>Le 5 mai a ouvert, sur la côte vénitienne entre Venise et Trieste, le Cavallino Bianco Caorle : 101 suites avec vue mer, cinq hectares de plage privée, centre de wellness de 4 000 m². Le projet est porté par Ralph A. Riffeser, propriétaire de l'institution éponyme d'Ortisei (Tyrol du Sud), reconnue depuis trente ans comme l'une des meilleures adresses familiales d'Europe alpine. Il s'agit de transposer un modèle — service obsessionnel des familles avec enfants, structuration des journées par groupes d'âge, restauration italienne haute couture — depuis les Dolomites jusqu'à l'Adriatique.</p>
+<p>Le pari est intéressant en ce qu'il propose une réponse à un vide du marché : l'hôtellerie balnéaire italienne pour familles aisées n'a presque pas évolué depuis les années 1970. Les Bagni de Forte dei Marmi, les hôtels du Lido — tradition oui, mais format figé. Cavallino Bianco Caorle injecte dans cet écosystème une exigence opérationnelle alpine qui pourrait reconfigurer le secteur.</p>
+<h3>V. Festivals et calendriers : fin mai-juin</h3>
+<p>Cannes ferme le 23 mai. La Biennale d'architecture de Venise (commissariat Carlo Ratti, thème <em>Intelligens. Natural. Artificial. Collective.</em>) tient jusqu'au 23 novembre. Le festival de Glyndebourne ouvre sa saison opératique le 21 mai avec une nouvelle production de <em>Don Giovanni</em> dirigée par Robin Ticciati. Le Festival de Cap Roig (Catalogne, juillet) a annoncé sa programmation cette semaine : Diana Krall, Joan Manuel Serrat, Bonnie Raitt en première européenne. Et le festival italien Umbria Jazz (juillet) confirme la venue de Pat Metheny pour deux dates exceptionnelles à Pérouse.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>European Sleeper a annoncé la suspension de plusieurs nuits Bruxelles-Prague pour cause de difficultés de sillonnage avec la DB — symptôme persistant de la fragilité opérationnelle du train de nuit privé en Europe centrale.</li>
+<li>L'aéroport de Florence rouvre sa piste rallongée fin mai, permettant l'arrivée des long-courriers — décision controversée pour une ville déjà saturée touristiquement.</li>
+<li>Conde Nast Traveler publie sa liste <em>Hot List 2026</em> le 20 mai ; les bookmakers de l'industrie hôtelière parient sur la présence des nouveaux établissements Aman à Tokyo Marunouchi et Six Senses à Rome.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le fil de cette quinzaine est celui de la <em>durée comme valeur de luxe</em>. Belmond vend trois nuits — pas trois heures. Zannier vend une île — pas une chambre. Cavallino Bianco vend une semaine de famille — pas un week-end. La ligne Budapest-Belgrade rouvre un voyage de fond qu'aucun vol low-cost ne pourra remplacer. Dans un marché du voyage par ailleurs colonisé par les courts séjours métropolitains, les city-breaks compulsifs, les escapes Airbnb de 48 heures, une catégorie distincte se redéfinit : celle des voyages qui exigent qu'on leur consacre un temps suffisant pour qu'ils existent. C'est cher, c'est rare, c'est intentionnel. Et c'est probablement, pour qui a les moyens et le calendrier d'en bénéficier, ce que le voyage de 2026 peut offrir de plus précieux — non pas voir davantage, mais voir mieux, plus lentement, à travers la fenêtre d'un wagon-restaurant que le paysage met deux heures à traverser.</p>
+<hr>
+<p><em>Journal Liberté — Expériences & Destinations — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="open-culture.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Open Culture</span></a><a href="psychologie.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Psychologie</span></a></div></div><div class="site-footer">The World Affair &mdash; Expériences &amp; Destinations</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

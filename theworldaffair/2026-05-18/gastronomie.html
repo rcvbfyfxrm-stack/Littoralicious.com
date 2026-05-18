@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gastronomie &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#C2185B">Gastronomie</div>
+  <h1 class="article-title">Michelin Belgique-Lux 2026 — Flandre gagne deux deuxièmes étoiles</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>À quatre semaines du grand raout américain de Chicago — la cérémonie James Beard du 15 juin —, l'industrie regarde simultanément vers trois horloges. Celle, déjà sonnée, des étoiles Michelin Belgique-Luxembourg, dévoilées début mai à la Bourse de commerce d'Anvers, avec deux nouvelles deux-étoiles et dix premières étoiles. Celle, lointaine et tendue, des World's 50 Best qui s'égrèneront en novembre à Abu Dhabi — première sortie hors Europe-Amériques du palmarès, geste géopolitique autant que gastronomique. Et celle, intermédiaire, des palmarès régionaux et des micro-mouvements qui dessinent le paysage : ouvertures, fermetures, rachats, départs. Cette édition prend la mesure d'un mois de mai charnière, où les hiérarchies se réajustent en silence avant la saison des trophées.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Anvers couronne deux maisons : la Belgique fait sa rentrée</h3>
+<p>Le 28 avril dernier, sous les voûtes Beaux-Arts du Handelsbeurs anversois — bâtiment du XVIe siècle restauré qui fut la première bourse de commerce d'Europe —, l'inspection Michelin a remis ses étoiles 2026 pour la Belgique et le Luxembourg. Le résultat : 764 restaurants au guide, 139 étoilés au total, deux promotions à la deuxième étoile, dix premières étoiles.</p>
+<p>Les deux nouveaux deux-macarons disent quelque chose du pays. Cuines 33, à Knokke, sur la côte flamande, porté par le chef Edwin Menue et sa compagne Fleur Boussy en salle : une maison fondée en 2017, longtemps perçue comme un bistrot d'auteur, qui consolide sa promotion. Et The Jane, à Anvers, sous la direction de Nick Bril dans une ancienne chapelle militaire — l'un des dîners les plus photographiés d'Europe depuis dix ans, dont la deuxième étoile faisait l'objet d'un consensus tardif. Que les deux montées soient flamandes n'est pas anodin : la Belgique gastronomique, longtemps dominée par l'axe wallon Liège-Hainaut, bascule son centre de gravité vers le nord, là où le tourisme néerlandais et la clientèle d'affaires internationale alimentent des additions de 250 euros sans broncher.</p>
+<p>Atabula, qui a couvert la cérémonie, souligne un point souvent oublié : la Belgique reste, par habitant, le pays le plus étoilé du monde après Monaco. Une densité qui pose une question brutale aux jeunes chefs — comment ouvrir, dans un marché aussi saturé, sans simplement déplacer des couverts d'une maison à l'autre.</p>
+<p>Aucune perte de troisième étoile cette année. Aucune promotion non plus. Le sommet du tableau belge reste figé : Hof van Cleve, Boury, Zilte. Trois maisons qui ont passé le cap des vingt ans d'étoiles et qui constituent désormais une sorte de patrimoine immatériel — protégé, mais aussi enfermé dans ses propres codes.</p>
+<h3>II. Chicago, 15 juin : le suspense Beard sous le lustre du Lyric Opera</h3>
+<p>Dans quatre semaines, le Lyric Opera de Chicago accueillera la cérémonie 2026 des James Beard Awards. La liste des finalistes est connue depuis fin mars ; les pronostics circulent dans les cuisines depuis. Nancy Silverton, fondatrice de La Brea Bakery en 1989, recevra le Lifetime Achievement Award — une consécration logique pour celle qui a, plus que quiconque, démocratisé le pain de levain naturel en Californie.</p>
+<p>Côté Chicago, ville hôte, plusieurs noms méritent l'attention. Bailey Sullivan, à Monteverde Restaurant & Pastificio, dans la catégorie Outstanding Pastry Chef ou Baker — elle travaille sous la direction de Sarah Grueneberg, Beard 2017, ce qui rend la nomination doublement intéressante. Norman Fenton, du tasting menu Cariño à Uptown, étoilé Michelin, finaliste sur sa cuisine mexicaine de mémoire — Fenton a passé plusieurs années à Mexico avant de rentrer aux États-Unis. Une nomination qui rappelle que la gastronomie mexicaine haut de gamme, longtemps confinée à Pujol et Quintonil, irrigue désormais Chicago, Los Angeles, Houston.</p>
+<p>La grande question politique de l'édition : le Beard saura-t-il maintenir sa nouvelle grille de critères — diversité, équité, conditions de travail — après les controverses de 2020-2023 qui avaient gelé les remises pendant deux ans. La Fondation a entièrement refondu son processus de vote en 2022. Les premières années post-réforme ont donné des résultats plus équilibrés géographiquement et démographiquement. Reste à voir si l'édition 2026 confirme la tendance ou marque un retour aux habitudes.</p>
+<h3>III. Abu Dhabi en novembre : géopolitique du palmarès</h3>
+<p>Le World's 50 Best 2026 sera révélé à Abu Dhabi en novembre. C'est la première fois que la cérémonie quitte l'Europe et les Amériques — Singapour avait été envisagé en 2024, Las Vegas en 2025 (organisé finalement à Turin). Abu Dhabi paye, on s'en doute. Le sponsoring du Department of Culture and Tourism abu dhabien dépasse, selon les estimations sectorielles, les dix millions d'euros sur trois ans.</p>
+<p>Maido (Lima), sacré numéro un en 2025, basculera dans le club fermé des Best of the Best — inéligibles, conservant le prestige mais libérant la place. Les pronostics convergent vers trois maisons : Asador Etxebarri (Axpe, Espagne), DiverXO (Madrid), Atomix (New York). Une victoire d'Etxebarri scellerait un mouvement : celui du retour à la cuisine à la braise, à la simplicité radicale, après deux décennies de virtuosité technique.</p>
+<p>Le voyage à Abu Dhabi pose aussi des questions pratiques aux chefs invités. Plusieurs maisons européennes ont déjà fait savoir, en off, qu'elles enverraient des sous-chefs plutôt que les patrons — la haute saison méditerranéenne bat son plein en novembre, et un aller-retour de quatre jours coûte cher en lignes de service.</p>
+<h3>IV. Ouvertures de printemps : Saint-Louis, Boston, Portland</h3>
+<p>Pendant que la presse anglo-saxonne se concentre sur les palmarès, les villes-laboratoires américaines bougent. Saint-Louis a connu, ce mois-ci, seize ouvertures pour trois fermetures — un solde positif rare en 2026 où la fragilité du modèle indépendant inquiète. Eni's Pizzeria, Tiger Soup Dumplings, The Noble Crown : trois adresses qui disent l'éclectisme géographique du moment, italien, chinois, américain de tradition.</p>
+<p>À Boston, S&S Deli ferme à Inman Square après plusieurs décennies — une institution juive du petit déjeuner-déjeuner que la pression foncière de Cambridge n'aura pas épargnée. Uptown Social ouvre dans le South End. À Portland (Oregon), Nolia et Aura Dorada lèvent le rideau en mai — la première sur une cuisine du sud des États-Unis revisitée, la seconde sur une carte latino-américaine pan-régionale.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>La Liste 2026, classement français concurrent du 50 Best, a couronné en décembre dernier un restaurant asiatique pour la première fois — signe d'un basculement durable du centre de gravité gastronomique vers le Pacifique.</li>
+<li>Les Grandes Tables du Monde tenaient leurs Rencontres 2026 à Lyon les 29-30 mars : thème central, l'absorption des coûts énergétiques par les maisons trois-étoiles, devenu sujet existentiel.</li>
+<li>Plusieurs grandes maisons parisiennes négocient discrètement des passages à quatre jours de service hebdomadaire — la pénurie de personnel qualifié, plus que la rentabilité, force la main.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le fil de cette édition est celui de la géographie qui se redessine. Le Michelin belge couronne Anvers et Knokke plutôt que Liège ou Bruxelles. Le 50 Best part à Abu Dhabi. Les Beard se tiennent à Chicago — pas New York, pas Los Angeles. Ce n'est pas un hasard : la gastronomie de prestige cherche des lieux qui veulent encore d'elle, qui paient pour l'avoir, qui s'en servent pour exister. Pendant ce temps, dans les ports, dans les arrière-cuisines, dans les Saint-Louis et les Portland, le métier continue son mouvement souterrain — ouvrir, fermer, recommencer. C'est dans cet écart entre les cérémonies et le service que se joue, encore et toujours, la vie réelle des cuisines.</p>
+<hr>
+<p><em>Journal Liberté — Gastronomie — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="seamanship.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Seamanship</span></a><a href="nutrition-cuisine.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Nutrition &amp; Cuisine</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

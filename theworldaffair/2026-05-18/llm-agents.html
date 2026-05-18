@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM &amp; Agents &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-title a:hover { color: #1a1714; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta span { white-space: nowrap; }
+.masthead-dot { color: #c8c0b4; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; }
+.nav-link { padding: 10px 20px; font-family: 'Libre Baskerville', serif; font-size: 11px; font-weight: 400; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 720px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 24px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: #1a1714; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 14px 0; }
+.article-body th { text-align: left; padding: 8px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a847a; border-bottom: 2px solid #b5ad9f; font-weight: 700; }
+.article-body td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; }
+.article-body tr:hover td { background: #ede9e1; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 18 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;138</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-18.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#6B4EFF">LLM &amp; Agents</div>
+  <h1 class="article-title">xAI dissoute. SpaceXAI naît. Le marché se referme à trois</h1>
+  <div class="article-date">Lundi 18 Mai 2026 &mdash; Edition N&deg;138</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>L'édition précédente, publiée le 16 mai, signalait la naissance d'un triumvirat : Codex mobile chez OpenAI, Grok Build chez xAI, Claude Code chez Anthropic. Deux jours plus tard, le tableau a déjà bougé. xAI n'existe plus en tant qu'entité juridique autonome — la société a été dissoute le 6 mai et opère désormais comme division SpaceXAI à l'intérieur de SpaceX, sous la même verrière qu'Elon Musk préfère décidément à tout dispositif de gouvernance distinct. Anthropic, pour la première fois, dépasse OpenAI dans l'adoption entreprise. Et les premiers chiffres de benchmark indépendants sur les trois agents — SWE-Bench Pro, tasse adversariale d'hallucinations — commencent à dessiner une hiérarchie technique que les communiqués marketing s'étaient appliqués à brouiller.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. La dissolution discrète de xAI</h3>
+<p>Le 6 mai 2026, sans conférence de presse, xAI a cessé d'exister en tant que société indépendante. L'entité a été absorbée par SpaceX sous le nom de division SpaceXAI. Officiellement, il s'agit d'une rationalisation : Musk consolide ses participations, mutualise les ressources de calcul, met fin à la fiction d'une gouvernance séparée. Officieusement, c'est l'aveu d'un échec relatif. xAI, lancée en 2023 avec l'ambition de rivaliser frontalement avec OpenAI, n'a jamais atteint la traction commerciale espérée. Le lancement de Grok Build, le 14 mai, intervient huit jours après cette absorption — autrement dit, c'est désormais SpaceX, et non plus xAI, qui s'invite dans le marché des agents codeurs.</p>
+<p>L'agent lui-même est intéressant techniquement. SWE-Bench Verified à 70,8 %, contexte 256 000 tokens, jusqu'à huit sous-agents parallèles travaillant sur des branches séparées, et un mode plan qui exige validation utilisateur avant toute écriture sur disque. Mais le prix raconte la difficulté commerciale : 299 dollars par mois en plein tarif SuperGrok Heavy, ramené à 99 dollars pour six mois en promotion d'amorçage. Anthropic et OpenAI vendent Claude Code et Codex à des prix structurellement plus bas, intégrés dans des abonnements ChatGPT et Claude que les développeurs achètent déjà pour d'autres usages.</p>
+<p>La consolidation à trois acteurs cache donc une réalité plus crue : il y a deux acteurs commerciaux dominants (Anthropic, OpenAI), et un troisième entrant qui doit racheter sa pertinence à coups de promotions. Le marché de l'agent codeur ressemble de plus en plus à celui des consoles de jeu : ressources d'entrée massives, effets de réseau autour des extensions et des écosystèmes, marges minces pour qui n'a pas atteint l'échelle.</p>
+<h3>II. Codex mobile : l'agent dans la poche</h3>
+<p>OpenAI a déployé Codex sur l'application mobile ChatGPT le 14 mai, simultanément sur iOS et Android, et accessible à tous les niveaux d'abonnement — y compris la gratuité. La fonctionnalité ne déplace pas le calcul lourd vers le téléphone ; elle déplace le contrôle. On peut, depuis un quai de métro, valider un diff, approuver une commande shell, relancer un test, guider une session active dont l'exécution se poursuit sur la machine de travail.</p>
+<p>L'idée n'est pas nouvelle — Anthropic a sorti une fonctionnalité analogue sur Claude Code en avril — mais sa généralisation à la base utilisateur gratuite de ChatGPT change l'échelle. Codex devient le premier agent codeur réellement accessible à plusieurs centaines de millions de personnes, ce qui pose à terme une question d'ergonomie de masse : que se passe-t-il quand des utilisateurs non-développeurs commencent à approuver des commandes shell qu'ils ne comprennent pas, sur des repositories qu'ils n'ont pas écrits ? OpenAI a dû insérer plusieurs garde-fous explicites de confirmation, et l'on devine que les premiers incidents de production guideront les ajustements à venir.</p>
+<h3>III. Anthropic dépasse OpenAI en entreprise</h3>
+<p>Selon les chiffres publiés cette semaine par Ramp et confirmés indirectement par Fortune et VentureBeat, Anthropic a atteint 34,4 % d'adoption entreprise contre une croissance OpenAI de 0,3 % sur un an. C'est la première fois depuis le lancement de ChatGPT en 2022 qu'OpenAI cède la première position sur un segment majeur. Le moteur de ce basculement est triple : Claude Code domine le créneau le plus lucratif (les développeurs paient cher, à condition d'être convaincus) ; le partenariat avec Microsoft 365 Copilot, annoncé début mai, intègre les agents Anthropic dans Outlook, Excel et Teams pour les services financiers ; et l'accord de données avec Moody's positionne Claude comme l'agent par défaut pour l'analyse de crédit chez plusieurs grandes banques.</p>
+<p>La contrepartie est une crise d'infrastructure. Anthropic croît plus vite que ses capacités de calcul. D'où l'accord de 1,8 milliard de dollars signé avec Akamai pour de la capacité distribuée, et un contrat compute conclu avec SpaceX — détail amusant, puisque cela revient à acheter du GPU à la maison-mère de son concurrent direct Grok Build. La guerre commerciale et la coopération industrielle coexistent sans complexe.</p>
+<h3>IV. Le benchmark qui dérange</h3>
+<p>Les chiffres SWE-Bench Verified et SWE-Bench Pro publiés cette semaine recadrent le débat technique. Sur Verified — la version historique du benchmark — GPT-5.5 mène à 88,7 % contre 87,6 % pour Claude Opus 4.7. Sur Pro, plus difficile et moins contaminé par les données d'entraînement, Claude Opus 4.7 reprend la tête à 64,3 % contre 58,6 %. OpenAI a discrètement cessé de publier ses scores Verified en début d'année et recommande désormais Pro comme référence. Traduction : le benchmark que les modèles ont vu pendant l'entraînement est devenu inutilisable, et les vrais écarts émergent sur les jeux d'épreuves nouveaux.</p>
+<p>Côté hallucinations, le tableau est moins flatteur pour tout le monde. Les meilleurs modèles affichent 22 % de taux d'erreur factuelle dans les pires conditions adversariales, les pires dépassent 94 %. GPT-4o tombe de 98,2 % d'exactitude à 64,4 % sous pression adversariale. DeepSeek R1 chute de plus de 90 % à 14,4 %. Le pli est clair : les benchmarks « heureux » mentent encore, et les écarts annoncés se compriment fortement dès qu'on sort des jeux d'épreuves publiés.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>ReasonBlocks, une jeune pousse Y Combinator, lève en mai sur un produit unique : détecter les échecs d'agent en cours d'exécution pour économiser des cycles de calcul. La méta-couche devient une catégorie.</li>
+<li>La taille moyenne des tours de financement pour agents autonomes atteint 155 millions de dollars au premier trimestre 2026, contre 82 millions un an plus tôt — une inflation de capital qui précède soit une rationalisation brutale, soit la formation d'une bulle classique.</li>
+<li>L'agent codeur de Mistral, attendu avant l'été, sera positionné comme alternative souveraine européenne — un argument géopolitique plus que technique.</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Le marché de l'agent codeur reproduit, à vitesse accélérée, l'évolution des plateformes cloud des années 2010 : démarrage pluriel, consolidation rapide en oligopole, captation de la valeur par ceux qui contrôlent le calcul. La différence est que la consolidation s'opère ici en mois, pas en années. xAI est devenue division SpaceX en moins de trois ans d'existence indépendante. Anthropic et OpenAI se livrent une guerre d'écosystèmes où le code source open n'a plus d'importance face à l'intégration entreprise et à la disponibilité du calcul. Et derrière le bruit des annonces, une question structurelle se pose : à quel moment le marché commencera-t-il à exiger des garanties de fiabilité — uptime, taux d'hallucination borné contractuellement, audits indépendants — qui sont aujourd'hui presque entièrement absentes des contrats commerciaux ?</p>
+<hr>
+<p><em>Journal Liberté — LLM & Agents Autonomes — 18 mai 2026</em></p></div><div class="bottom-nav"><a href="finance-marches.html"><span class="bottom-nav-label">&larr; Pr&eacute;c&eacute;dent</span><span class="bottom-nav-title">Finance &amp; Marchés</span></a><a href="cybersecurite-regulation.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Cybersécurité &amp; Régulation</span></a></div></div><div class="site-footer">The World Affair &mdash; LLM &amp; Agents</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
