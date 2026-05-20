@@ -1,180 +1,148 @@
 ---
-title: "Three Prompts, Three Levels: Generating Menus With AI"
-date: 2026-05-12
-category: galley
-tags: [ai, prompts, menus, claude, chatgpt, workflow, terminal, automation]
-read_time: 10
+title: "Chef Agent v5.0: One Prompt That Runs Your Whole Menu Department"
+date: 2026-05-16
+category: the-method
+tags: [ai, prompts, menus, claude, chef-agent, workflow, terminal, latex, automation]
+read_time: 9
 status: draft
 ---
 
-A guest list of eight lands at 11 PM for a charter starting at noon. Two of them are pescatarian, one is coeliac, the owner hates fennel. You need a four-day rotation by breakfast. You can spend the next ninety minutes writing menus by hand, or you can spend ninety seconds briefing an AI that already knows how a yacht menu should read.
+A guest list of eight lands at 11 PM for a charter starting at noon. Two of them are pescatarian, one is coeliac, the owner hates fennel. You need a four-day rotation by breakfast. There is exactly one prompt for this.
 
-This guide is about the second option. Not the marketing version — the working version. Three prompts you can copy, three escalating ways to run them, and the honest line where the machine stops helping and the chef takes over.
+It is 919 lines. You paste it once into any decent AI — Claude, ChatGPT, Gemini — and from that moment on the AI knows how a yacht menu reads, what a Cultural Touchstone is, why a French menu must look different from a Japanese one, where to save the LaTeX, and when to ask for the wine pairing card.
 
----
-
-## The Premise
-
-A prompt is a recipe for behavior. Hand the same model a vague request and it returns a vague menu. Hand it a 600-line operating manual that defines tone, structure, language, sourcing, layout, and design — and it returns a card that looks like it came from Pujol.
-
-The three prompts compared here come from the same kitchen but solve different problems. Pick the one that matches what you actually need.
+The prompt is called **Chef Agent v5.0**. It is the only menu prompt worth keeping on the boat. This article is what's inside it and how to use it.
 
 ---
 
-## The Three Prompts at a Glance
+## What the Prompt Is
 
-| | **Menu (sous-chef)** | **Menu-Complete v3.0** | **Chef Agent v5.0** |
+A single 919-line spec covering every menu service a yacht chef will ever ship: eight formats, ten cuisines, four output files (menu .tex, menu .pdf, wine .tex, wine .pdf), plus a mandatory pre-check on guest preferences. It does not generate menus on its own — it generates them *with* you, and won't touch a `.tex` file until you say *yes* on the markdown draft.
+
+It assumes you have terminal AI installed (Claude Code, Codex CLI, Gemini CLI, or aider) and XeLaTeX on the laptop. The same spec also works pasted into a [Claude Project](https://claude.ai/projects) or a Custom GPT — you'll lose the auto-PDF-compile step but keep the structural intelligence.
+
+---
+
+## Eight Service Formats It Handles
+
+| Format | What you get |
+|---|---|
+| Guests Breakfast | À la carte suggestions, each with a one-line health note |
+| Guests Lunch (family style) | Proteins + vegetables + starch + salad. Generous, shared. |
+| Guests Dinner — Family Style | Same structure as lunch, richer proteins, fuller composition |
+| Guests Dinner — Plated | Three courses: one starter, one main, one dessert |
+| Guests Dinner — Tasting Menu | 5–8 courses: canapés → amuse → starter → fish → meat → pre-dessert → dessert → mignardises |
+| Guests Theme Night | One Cultural Touchstone, every dish in service of it |
+| Crew Lunch / Crew Dinner | Efficient, satisfying, distinct flavor world per service |
+| Kids Menu | Same touchstone as adults, playful adaptations, separate card |
+
+Say *"crew lunch tomorrow"* and the AI snaps into the right structure. Say *"tasting menu, charter, Saturday, Italian"* and you get the eight-course flow with Palatino typography and a Cultural Touchstone instead of the words *"tasting menu."*
+
+---
+
+## The Five Rules That Make It Work
+
+### 1. The Cultural Touchstone
+
+Never "Italian Lunch." Always *Notte a Napoli*, *Tokyo Night Market*, *Pop-Up Panda Express*, *Ottolenghi-Style Salad Table*. A short phrase that triggers cultural memory — a place, a restaurant, a vibe. The prompt rejects generic theme names by default.
+
+### 2. The Menu Card Is Sacred
+
+No date on the card. No "Crew Dinner" label. No "Service: Buffet" stamp. The card shows title → dishes → sourcing footer, and nothing else. Operational data lives in the filename (`2026-05-12_Crew-Dinner_Bangkok-Night-Market.tex`) and LaTeX comments. The guest sees a menu, not a clipboard.
+
+### 3. Confirm Before Building
+
+The prompt never goes straight to PDF. It drafts the menu in markdown, shows it to you, waits for your *"yes,"* then builds the `.tex`, compiles the `.pdf`, opens it, and asks if you want the wine pairing card. Mandatory workflow. Non-overridable. You see the dishes before the file system sees them.
+
+### 4. Guest Preferences Are Mandatory
+
+Before writing a single dish, the prompt reads your preference files. If Mr Bravo has zero tolerance for onions, no dish anywhere in the menu contains an onion. If one guest is coeliac, the relevant dish gets a subtle `gf` superscript and a tiny footnote at the bottom of the card. Light enough that normal guests don't notice. Clear enough that the affected guest knows they're covered.
+
+### 5. Two Contrasting Proteins
+
+For any family-style service: one grilled + one braised. Lean + unctuous. Cool + warm. Never two of the same temperament. It forces a balanced plate without you thinking about it.
+
+---
+
+## The Design System (The Part Most Prompts Skip)
+
+Cover the title. Can you tell the cuisine from the design? If a French menu and an Italian menu look the same except for the words, the prompt has failed you.
+
+Chef Agent v5.0 specifies a complete sensory world per cuisine:
+
+| Cuisine | Font | Color signature | Ornament |
 |---|---|---|---|
-| **What it produces** | A single-dish or multi-course brief — ingredients, mise, timing, plating, allergens, cost per cover | A printable menu card — Cultural Touchstone name, typography matched to cuisine, LaTeX/PDF output | Same as v3.0 plus: guest preferences, wine pairing, tasting/plated/family-style formats, kids menus |
-| **Reads like** | A galley brief at the pass | A menu you'd see at a Michelin restaurant | A complete menu service department |
-| **Output format** | Markdown | Markdown → `.tex` → `.pdf` | Markdown → `.tex` → `.pdf` (+ wine card, kids card) |
-| **Time to first result** | 30 seconds | 2 minutes | 3–5 minutes (reads preferences first) |
-| **Audience** | The chef cooking | The guest reading | Both |
-| **Best for** | Daily crew service, recipe scaling, mise planning | Photogenic crew or charter menus, single events | Full charter operation, multi-day rotation, dietary management |
+| French | Didot | Noir + Rouge | ◇ ◇ ◇ |
+| Italian | Palatino | Terracotta + Gold | short centered rule |
+| Japanese | Optima | Obsidian + Red | · (single dot) |
+| Nordic | Avenir Next | Sage + Cream | no ornament — space only |
+| Spanish | Didot | Burgundy + Gold | ‖ |
+| Greek | Optima | Azure + White | ∼ ∼ ∼ |
+| Levantine | Palatino | Ochre + Gold | ◊ ◊ ◊ |
+| Mexican | Hoefler Text | Terracotta + Obsidian | gold dot under title |
+| Asian Fusion | Avenir Next Bold | Obsidian + Red | thin accent rule |
+| American | Avenir Next Bold | Brick + Gold | — — — |
 
-The mistake is using the wrong one. A 4-page tasting-menu prompt is overkill for crew lunch on a Tuesday. A galley brief is too sparse to print and slide under a guest's wine glass.
+It also dictates *spacing*. Japanese and Nordic menus get 1.4-inch margins and `\setstretch{1.8}`. Italian gets warmer typography with italic dish names. Mexican gets a gold rule under the title. You don't open a CSS file — the prompt does it for you.
 
----
-
-## Level 1 — Browser, Five Minutes
-
-The fastest way in. Works on any chat AI: [Claude](https://claude.ai), ChatGPT, Gemini, Le Chat, Copilot.
-
-**Setup:**
-1. Open a new chat
-2. Paste the full prompt as your first message — yes, the whole thing, 300 to 800 lines depending on which one
-3. End with: *"Acknowledge you've read this. Then ask me what menu I need."*
-4. Send
-
-The AI now has the operating manual in context. Your next message can be one line: *"Crew dinner tonight, Thai, chicken fajitas — no wait, fajitas tomorrow, tonight is Thai beef with eggs in the pad thai."* It will produce a menu in the right structure, in the right language, with the right dish order, with a Cultural Touchstone name that fits the time of day.
-
-**What you give up at this level:**
-- Context resets when the tab closes. Tomorrow you paste the prompt again.
-- No file output. You copy the markdown out by hand.
-- No PDF. You'd have to paste the LaTeX into [Overleaf](https://overleaf.com) to compile, or screenshot the markdown.
-- No memory of last week's menus. The AI will happily suggest the same dish three nights running.
-
-**Best for:** trying a prompt for the first time. Drafting one menu. Comparing how different AI models interpret the same brief. (Claude tends to follow the typography rules more strictly than ChatGPT, in my experience.)
+The test the prompt enforces on itself: *"Would the world's best restaurant of this cuisine print this card?"* If a French card doesn't feel like Le Bernardin would hand it to a guest, the AI redrafts before it shows you anything.
 
 ---
 
-## Level 2 — Persistent Assistant, Same-Day Setup
-
-The middle path. Twenty minutes of setup, then you stop pasting prompts forever.
-
-Every major AI now offers a *workspace* — a place where you load a system prompt once and chat with it across sessions:
-
-- **Claude:** [Projects](https://claude.ai/projects) — paste the prompt in *System instructions*, drop reference files in *Project knowledge*
-- **ChatGPT:** [Custom GPT](https://chatgpt.com/gpts) — same idea, called "Instructions"
-- **Mistral Le Chat:** Agents
-- **Gemini:** Gems
-- **Perplexity:** Spaces
-
-Paste **Chef Agent v5.0** as the system instruction. Optionally upload your guest preference files, your sourcing notes, your previous charter menus. Save it. From now on, every conversation in that workspace starts with the AI already briefed.
-
-You now have a menu agent you can text-message. *"Lunch tomorrow, eight crew, leftover lamb, what do you suggest?"* It will answer in your voice, in your structure, with sourcing footnotes, asking about wine pairing if it's a charter.
-
-**What's better than Level 1:**
-- The prompt is loaded once, forever
-- The AI can read attached files (preference sheets, supplier lists)
-- You can branch — one workspace for crew, one for charter, one for kids menus
-- Better-quality output, because the AI doesn't have to spend its first 2000 tokens rereading the manual
-
-**What you still give up:**
-- The AI cannot write `.tex` files to your laptop. It can output them, but you copy-paste.
-- No automatic PDF compile.
-- No automatic file naming with today's date and theme.
-- No saving the menu to a "Production" folder where the deck crew can find it.
-
-**Best for:** a chef who plans menus weekly, runs the same boat repeatedly, doesn't want to live in a terminal but wants more than a fresh chat every time.
-
----
-
-## Level 3 — Terminal, Full Automation
-
-The point where the AI stops being a chat partner and becomes an assistant chef. It writes files. It compiles PDFs. It opens them in your viewer. It saves them to a dated folder ready for handover. You can run an entire week of menus from one prompt at a galley bench.
-
-This is what the **Chef Agent v5.0** prompt was designed for — note the lines about reading preference files from disk, compiling LaTeX with `xelatex`, saving to `galleythesaurus/05-Yacht-Operations/03-Menus/Production/`. None of that runs in a browser. It runs in a terminal.
-
-The tools that make this possible, free or near-free as of 2026:
-
-| Tool | What it is | Setup |
-|------|-----------|-------|
-| [Claude Code](https://claude.com/claude-code) | Anthropic's terminal agent. Can read/write files, run commands, install dependencies. | `npm install -g @anthropic-ai/claude-code`, then `claude` in any folder |
-| [Codex CLI](https://github.com/openai/codex) | OpenAI's equivalent. Same idea, different model. | Install via npm or Homebrew |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | Google's terminal agent. | npm install |
-| [aider](https://aider.chat) | Open-source. Brings any model (Claude, GPT, local Llama) into the terminal. | `pip install aider-chat` |
-
-**One-time setup, in plain English:**
-
-1. Install [Homebrew](https://brew.sh) and a terminal AI tool of your choice (twenty minutes)
-2. Install LaTeX so the AI can compile PDFs: `brew install --cask mactex-no-gui` (the AI will tell you to do this on first run — install once, never think about it again)
-3. Save the **Chef Agent v5.0** prompt as a file named `menu.md` inside `~/.claude/agents/` (for Claude Code) or the equivalent for your tool
-4. Open Terminal, navigate to a working folder, type `claude` (or `codex`, etc.)
-
-**From here on, your workflow is:**
+## What the Workflow Looks Like
 
 ```
-You:    Crew dinner tonight, Thai, beef and pad thai with eggs
-AI:     [drafts the menu in markdown, shows it to you]
+You:    Guests dinner tasting menu Saturday, Italian, eight covers, owner hates fennel
+AI:     Reading preferences... Bravo family on file.
+        No onions for Mr Bravo. No melon for kids.
+        Drafting "Notte a Napoli" — eight courses, fennel substituted with
+        charred romanesco where needed.
+        [shows full markdown]
         Does this look good?
-You:    No toasted rice in the dipping sauce, no bean sprouts in the pad thai
-AI:     [updates the draft]
-        Confirmed?
 You:    Yes
-AI:     [writes 2026-05-12_Crew-Dinner_Bangkok-Night-Market.tex]
-        [compiles to PDF]
-        [opens the PDF]
-        Done. Want a wine pairing card?
+AI:     Wine pairing card?
+You:    Yes — one wine, biodynamic if possible
+AI:     [creates 2026-05-21_Guests-Dinner-Tasting_Notte-a-Napoli.tex]
+        [compiles PDF — Palatino, terracotta, eight short-rule dividers]
+        [creates 2026-05-21_Wine-Pairing_Notte-a-Napoli.tex]
+        [compiles wine PDF]
+        Both files saved to 03-Menus/Production/. Opening the menu now.
 ```
 
-That whole exchange takes under three minutes. The output is a printable card with cuisine-matched typography, sourcing footer, dietary footnotes where needed, saved to a dated folder ready for the deckie to print.
-
-**What you give up:**
-- Setup is one afternoon if you've never used a terminal. Half a day at most.
-- The AI costs a few cents per menu via API. Subscription tiers exist for heavy use.
-- You need a working laptop. (You should have one anyway.)
-
-**Best for:** a charter chef running multiple boats, a private chef who writes 50+ menus a season, anyone who values being able to text *"redo tonight's menu, the guest changed their mind"* and have a new PDF in their inbox sixty seconds later.
+Under five minutes. Tasting menu with proper cultural typography. Wine card. No onions anywhere. Fennel swapped for romanesco. A `gf` footnote on the gluten course because the coeliac guest is on file. All done before the engineer finishes his coffee.
 
 ---
 
-## Which Prompt for Which Job
+## What You Need to Run It
 
-| If you need… | Use this prompt | At this level |
-|---|---|---|
-| A single recipe brief with mise and timing | Menu (sous-chef) | Level 1 — browser |
-| A pretty crew menu for the WhatsApp group | Menu-Complete v3.0 | Level 2 — workspace |
-| A guest charter menu with sourcing footer | Menu-Complete v3.0 | Level 2 or 3 |
-| Multi-day rotation with guest allergies, wine pairings, kids cards, all auto-filed | Chef Agent v5.0 | Level 3 — terminal |
-| To dictate from the deck and get a printable PDF in a minute | Chef Agent v5.0 | Level 3 — terminal |
+- A terminal AI agent: [Claude Code](https://claude.com/claude-code), [Codex CLI](https://github.com/openai/codex), [Gemini CLI](https://github.com/google-gemini/gemini-cli), or [aider](https://aider.chat)
+- XeLaTeX on the laptop: `brew install --cask mactex-no-gui` (macOS), one-time
+- The prompt file saved as `menu.md` inside `~/.claude/agents/` (or the equivalent folder for your tool)
+- A folder for guest preferences that the prompt reads from before writing dishes — usually `Preferences/[Family]_preferences.txt` plus the active handover sheet's *Don'ts* list
 
-The shorthand: **Menu** is for the kitchen, **Menu-Complete** is for the dining room, **Chef Agent v5.0** is for the whole department.
+If you're not on a terminal, paste the prompt into [Claude Projects](https://claude.ai/projects) or a [ChatGPT Custom GPT](https://chatgpt.com/gpts). You lose the auto-compile, but the structural rules — Cultural Touchstone, design system, dietary footnotes, dish order, wine pairing prompt — all still fire. You just copy-paste the LaTeX into [Overleaf](https://overleaf.com) for the final PDF.
 
 ---
 
 ## The Honest Limits
 
-The AI does not know:
+The prompt does not know:
 
-- That the local butcher in Bonifacio only delivers on Tuesdays
-- That the second engineer is gluten-intolerant but never wrote it down because he's embarrassed
-- That last week's lamb was bought from a supplier that ghosted you
-- That the owner's wife said she'd kill for proper carbonara but the prompt doesn't know who the owner's wife is
-- What the food actually tastes like after you make it
+- Which Italian deli in your current port still has burrata at 7 PM
+- That the second engineer is gluten-intolerant but never told anyone
+- That last week's lamb supplier ghosted you
+- Whether the actual dish you cooked tastes the way it reads on the card
 
-It does know:
+The prompt does know:
 
-- The structural rules of a good menu
-- The typographic language of every major cuisine
-- How to write a dipping sauce in plain English without saying "delicious"
-- How to assemble a four-course tasting menu that flows
-- How to save it as a file, named properly, in the right folder, compiled and ready to print
+- The structural rules of every cuisine it ships with
+- The typographic identity of each one
+- How to make a tasting menu flow from light to dark
+- How to never put an onion in front of Mr Bravo
+- How to file everything where the deckie can find it at 6 AM
 
-That's a lot. It's also not the chef. You are still the chef. The AI saves you the typing, the formatting, the file-naming, the LaTeX. It does not save you the tasting, the sourcing, the seven hands the deckie needs at service.
-
-Use it for the work that doesn't deserve your hands. Keep your hands for the food.
+That's enough to save you ninety minutes a charter. It's not enough to replace you. Use it for the typing, the formatting, the LaTeX, the file-naming, the cultural-touchstone naming, the dish-order discipline. Keep your own hands on the tasting spoon.
 
 ---
 
-*The three prompts referenced in this article are available in the [Littoralicious tools repository](#). Pick one, paste it, and try the first level today. The terminal version is a Sunday-afternoon project. The menu it produces tonight is a five-minute project.*
+*The prompt itself is a single markdown file. Drop it into your AI of choice and start with one line: "Crew lunch tomorrow." See what comes back.*
