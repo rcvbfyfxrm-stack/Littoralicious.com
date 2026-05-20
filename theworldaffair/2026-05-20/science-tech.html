@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science &amp; Tech &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 20 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;140</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Sciences &amp; Frontières</div>
+  <div class="masthead-version">v1.1 — daily</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-20.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a><a class="nav-link" href="../corrections.html">Corrections</a><a class="nav-link" href="../standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00838F">Science &amp; Tech</div>
+  <h1 class="article-title">Science &amp; Tech</h1>
+  <div class="article-date">Mercredi 20 Mai 2026 &mdash; Edition N&deg;140</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Quatre fils se croisent cette semaine et dessinent la même grammaire : la science avance vite là où ses garde-fous reculent. À Ituri, l'OMS a déclaré le 17 mai une urgence sanitaire de portée internationale après 543 cas suspects et 131 décès liés au virus Ebola Bundibugyo (<a href="https://www.who.int/news/item/17-05-2026-epidemic-of-ebola-disease-in-the-democratic-republic-of-the-congo-and-uganda-determined-a-public-health-emergency-of-international-concern" target="_blank" rel="noopener">WHO, 17 mai 2026</a>), avec un cas américain confirmé deux jours plus tard (<a href="https://www.washingtonpost.com/health/2026/05/17/cdc-readies-team-respond-ebola-outbreak-africa/" target="_blank" rel="noopener">Washington Post, 17 mai 2026</a>). À Vancouver et Tokyo, Sakana AI et l'UBC ont publié dans <em>Nature</em> le 13 mai un système d'« AI Scientist » dont le manuscrit a franchi un peer review réel (<a href="https://www.nature.com/articles/s41586-026-10265-5" target="_blank" rel="noopener">Nature, 2026</a>). À Bethesda, le NIH a annoncé le 1ᵉʳ mai l'arrêt des nouvelles bourses aux partenaires étrangers (<a href="https://sciencebusiness.net/news/clinical-trials/trump-halts-new-nih-grants-international-health-research-partners" target="_blank" rel="noopener">Science|Business, mai 2026</a>) — pendant qu'un audit révèle 12,4 % des préprints bioRxiv 2025 contenant du texte généré par LLM. Cette édition relie les quatre.</p>
+<hr>
+<h2>📊 Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody><tr><td>Cas suspects Ebola Bundibugyo (DRC+UG)</td><td>543</td><td>+297 en 72 h</td><td><a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602" target="_blank" rel="noopener">WHO DON, 19 mai 2026</a></td></tr><tr><td>Décès suspects Ebola</td><td>131</td><td>+51 en 72 h</td><td><a href="https://africacdc.org/news-item/africa-cdc-calls-for-urgent-regional-coordination-following-ebola-virus-disease-outbreak-in-ituri-province-drc-and-imported-ebola-bundibugyo-case-reported-by-uganda/" target="_blank" rel="noopener">Africa CDC, mai 2026</a></td></tr><tr><td>Préprints bioRxiv 2025 avec texte IA détecté</td><td>12,4 %</td><td>vs ~0 % en 2024</td><td><a href="https://www.biorxiv.org/content/10.64898/2026.01.01.697311v1" target="_blank" rel="noopener">bioRxiv, 2026</a></td></tr><tr><td>Délai médian soumission H5N1 → GISAID</td><td>7,5 mois</td><td>stable (alerte structurelle)</td><td><a href="https://www.nature.com/articles/s41587-025-02636-6" target="_blank" rel="noopener">Nature Biotech, 2025</a></td></tr><tr><td>Bourses NIH terminées/suspendues depuis février 2025</td><td>5 844</td><td>+0 cette semaine (gel maintenu)</td><td><a href="https://www.statnews.com/2026/03/19/nih-funding-national-researcher-survey-finds-cutbacks-disruptions/" target="_blank" rel="noopener">STAT, 19 mars 2026</a></td></tr><tr><td>Taux d'acceptation bourses NCI (cancer)</td><td>1/25</td><td>vs 1/10 il y a 2 ans</td><td><a href="https://cen.acs.org/policy/research-funding/nih-research-grants-funding-challenges/104/web/2026/03" target="_blank" rel="noopener">C&EN, mars 2026</a></td></tr></tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Ituri, Bundibugyo, et la PHEIC qui ne disait pas son nom</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 15 mai, le ministère de la Santé de la République démocratique du Congo a confirmé un foyer d'Ebola dans le territoire d'Ituri, au nord-est (<a href="https://www.cdc.gov/han/php/notices/han00530.html" target="_blank" rel="noopener">CDC HAN, 18 mai 2026</a>). Le 17 mai, le directeur général de l'OMS a déclaré l'épidémie urgence sanitaire de portée internationale (PHEIC) — la quatrième en quinze ans pour un filovirus (<a href="https://www.who.int/news/item/17-05-2026-epidemic-of-ebola-disease-in-the-democratic-republic-of-the-congo-and-uganda-determined-a-public-health-emergency-of-international-concern" target="_blank" rel="noopener">WHO, 17 mai 2026</a>). Au 19 mai, le bilan est passé à 543 cas suspects et 131 décès (<a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602" target="_blank" rel="noopener">WHO DON, 19 mai 2026</a>, corroboré par <a href="https://www.aljazeera.com/news/2026/5/16/drc-health-minister-warns-very-high-ebola-lethality-rate-as-toll-hits-80" target="_blank" rel="noopener">Al Jazeera, 16 mai 2026</a>). Le ministre de la Santé congolais évoque une létalité « très élevée », l'OMS situe la fourchette historique du Bundibugyo entre 25 et 50 %.</p>
+<p>Deux faits méritent l'attention au-delà du décompte. D'abord la diffusion transfrontalière : deux cas indépendants confirmés à Kampala les 15 et 16 mai, sans lien apparent entre les deux porteurs (<a href="https://africacdc.org/news-item/africa-cdc-calls-for-urgent-regional-coordination-following-ebola-virus-disease-outbreak-in-ituri-province-drc-and-imported-ebola-bundibugyo-case-reported-by-uganda/" target="_blank" rel="noopener">Africa CDC, mai 2026</a>) — ce qui suggère soit un foyer congolais plus ancien que l'annonce du 15 mai, soit une seconde introduction zoonotique. Ensuite le cas américain : le Dr Peter Stafford, médecin missionnaire, a été déclaré positif le dimanche 17 mai et évacué vers l'Allemagne (<a href="https://www.cidrap.umn.edu/ebola/who-declares-ebola-outbreak-emergency-cdc-restricts-travel-confirms-us-doctor-infected" target="_blank" rel="noopener">CIDRAP, mai 2026</a>, corroboré par <a href="https://www.statnews.com/2026/05/17/ebola-outbreak-congo-americans-exposure-suspected-cases/" target="_blank" rel="noopener">STAT, 17 mai 2026</a>). Le 18 mai, CDC et DHS ont activé un dépistage renforcé et des restrictions d'entrée (<a href="https://www.washingtonpost.com/health/2026/05/17/cdc-readies-team-respond-ebola-outbreak-africa/" target="_blank" rel="noopener">Washington Post, 17 mai 2026</a>).</p>
+<p>Pourquoi cela compte au-delà du sanitaire : il n'existe aucun vaccin homologué contre la souche Bundibugyo. Les vaccins Ervebo et Sabin ciblent le Zaïre. La cavalerie est donc, pour la première fois depuis 2014, en partie désarmée. Et l'arrêt des bourses NIH aux partenaires étrangers, annoncé le 1ᵉʳ mai, ampute précisément les chaînes de surveillance virologique qui auraient pu détecter la circulation Bundibugyo plus tôt.</p>
+<p><strong>Qui paie · Qui profite :</strong> populations rurales d'Ituri et personnels soignants ; bénéficiaires : aucun, sauf les fabricants de tests PCR portatifs sollicités en urgence.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> suivre le taux de croissance journalier des cas suspects — au-dessus de 8 %/jour la trajectoire bascule vers le scénario 2014 ouest-africain ; sous 4 %/jour, on reste dans le pattern Bundibugyo Uganda 2007.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> la chaîne épidémiologique exacte entre les cas de Kampala et le foyer d'Ituri ; aucune séquence virale comparée n'a été publiée à la date du 20 mai, alors que les outils GISAID le permettent en 72 h.</p>
+<h3>II. <em>Nature</em> publie une machine — la chaîne de production scientifique automatisée</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le journal <em>Nature</em> a publié le 13 mai « Towards end-to-end automation of AI research », signé par les équipes de Sakana AI (Tokyo), de l'UBC, du Vector Institute et d'Oxford (<a href="https://www.nature.com/articles/s41586-026-10265-5" target="_blank" rel="noopener">Nature 651, 914–919, 2026</a>, corroboré par <a href="https://www.cs.ubc.ca/news/2026/03/ai-scientist" target="_blank" rel="noopener">UBC CS, 11 mars 2026</a> et <a href="https://techxplore.com/news/2026-05-ai-scientist-academic-papers-fully.html" target="_blank" rel="noopener">TechXplore, mai 2026</a>). Le système — baptisé <em>The AI Scientist</em> — formule des hypothèses, écrit le code, exécute les expériences, rédige le manuscrit, et conduit son propre peer review interne. Le manuscrit ainsi produit a passé la première ronde de relecture d'un workshop d'une conférence top-tier de machine learning (acceptance rate déclaré de 70 %).</p>
+<p>Ce qui est nouveau n'est pas l'écriture automatique : c'est la chaîne complète, de l'idée à la soumission, sans humain dans la boucle. Et ce qui apparaît plus discrètement, c'est le moment où la publication est tombée : trois semaines après la mise en ligne sur bioRxiv d'un détecteur de texte IA qui chiffre à 12,4 % la proportion de préprints biomédicaux 2025 contenant au moins un passage généré par LLM — contre quasiment 0 % en 2024 (<a href="https://www.biorxiv.org/content/10.64898/2026.01.01.697311v1" target="_blank" rel="noopener">bioRxiv 2026</a>). L'asymétrie géographique est saisissante : 32 % pour les institutions sud-coréennes, 26 % chinoises, 7,4 % américaines.</p>
+<p>L'effet de système est en train de se cristalliser. Une étude randomisée à ICLR 2025 publiée dans <em>Nature Machine Intelligence</em> montre que le feedback LLM rend les revues plus informatives (<a href="https://www.nature.com/articles/s42256-026-01188-x" target="_blank" rel="noopener">Nature MI, 2026</a>) — mais une autre travaille publiée parallèlement souligne que les reviews LLM sont manipulables jusqu'à 90 % d'accord forcé par injection de contenu adversariale (<a href="https://arxiv.org/pdf/2412.01708" target="_blank" rel="noopener">arXiv 2412.01708</a>). Autrement dit : la même semaine, <em>Nature</em> publie un papier écrit par une machine, et la communauté découvre que les reviewers machines peuvent être trompés à volonté.</p>
+<p><strong>Qui paie · Qui profite :</strong> revues et lecteurs paient la dilution du signal ; les bénéficiaires sont les chercheurs des labs déjà productifs (un article récent chiffre à +67 % la production des adopteurs d'IA).</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> surveiller les politiques éditoriales de <em>Cell</em>, <em>Lancet</em>, <em>PNAS</em> — la première grande revue qui imposera la divulgation pipeline-LLM obligatoire signalera que le rapport de force éditorial bascule.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> le taux réel de re-soumission silencieuse du même papier IA sous d'autres noms ; aucune revue ne dispose aujourd'hui d'un système de détection cross-revues, et les éditeurs eux-mêmes ne s'échangent pas les empreintes de soumissions rejetées.</p>
+<h3>III. NIH : la décrue financière comme politique scientifique</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 1ᵉʳ mai, le NIH a annoncé l'arrêt immédiat de la plupart des nouvelles bourses aux partenaires étrangers travaillant dans des consortiums conduits par les États-Unis (<a href="https://sciencebusiness.net/news/clinical-trials/trump-halts-new-nih-grants-international-health-research-partners" target="_blank" rel="noopener">Science|Business, mai 2026</a>). L'annonce s'ajoute à une séquence cumulative : 5 844 bourses NIH terminées ou suspendues depuis février 2025, 2,45 milliards de dollars retirés directement de la recherche, 15 % des chercheurs concernés par des annulations, 45 % par des délais (<a href="https://www.statnews.com/2026/03/19/nih-funding-national-researcher-survey-finds-cutbacks-disruptions/" target="_blank" rel="noopener">STAT, 19 mars 2026</a>). Le 5 mai, <em>NPR</em> documentait les nouveaux mécanismes administratifs utilisés pour retenir les fonds malgré le rejet par le Congrès de la coupe budgétaire de 40 % demandée par la Maison-Blanche (<a href="https://www.npr.org/2026/05/05/nx-s1-5808286/the-trump-administration-is-finding-new-ways-to-withhold-federal-funding-for-science" target="_blank" rel="noopener">NPR, 5 mai 2026</a>).</p>
+<p>Le chiffre qui fait basculer le récit du conjoncturel au structurel : au National Cancer Institute, la probabilité de décrocher une bourse est passée de 1 sur 10 à 1 sur 25 (<a href="https://cen.acs.org/policy/research-funding/nih-research-grants-funding-challenges/104/web/2026/03" target="_blank" rel="noopener">C&EN, mars 2026</a>). Le NIH a accordé 5 564 bourses de moins en FY 2025 qu'en FY 2024 — baisse de 8,6 % — sans que le budget alloué ne diminue : c'est le mécanisme de « forward funding » qui aspire la trésorerie, pas le plafond budgétaire (<a href="https://www.science.org/content/article/odds-winning-nih-grants-plummet-new-funding-policy-and-spending-delays-bite" target="_blank" rel="noopener">Science, 2026</a>). L'effet asymétrique frappe surtout les chercheurs en début de carrière et les femmes.</p>
+<p>La connexion avec le récit Ebola n'est pas rhétorique : la surveillance virologique en RDC dépend précisément des consortiums internationaux que le 1ᵉʳ mai a désargentés. Et la connexion avec le récit IA n'est pas non plus accidentelle : moins de financement humain, plus de pression à produire, et le LLM devient — pour la pause-café et pour le papier — la solution rationnelle individuelle face à un système qui se grippe.</p>
+<p><strong>Qui paie · Qui profite :</strong> patients américains des maladies oncologiques (délai d'innovation), early-career researchers, partenaires étrangers ; bénéficiaires : les grands labs établis qui accumulent les bourses survivantes.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> surveiller le pipeline des essais Phase III oncologiques co-financés — si les sponsors industriels reprennent à leur charge ce que le NIH ne couvre plus, on entre dans une privatisation accélérée de la recherche translationnelle.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> la durée réelle des gels — l'administration n'a publié aucun calendrier de levée, et les recours judiciaires en cours ne convergent pas vers une issue lisible avant l'automne.</p>
+<h3>IV. Neuralink, la voix retrouvée et le double mandat éthique</h3>
+<p><strong>🟡 À vérifier</strong> <em>(les vérifications indépendantes des performances réelles restent limitées aux démos contrôlées par Neuralink)</em></p>
+<p>Le 31 mars, Elon Musk a confirmé publiquement le succès du « VOICE trial » de Neuralink en publiant une vidéo de Kenneth Shock, patient atteint de SLA, prononçant des phrases via son implant N1 (<a href="https://www.basenor.com/blogs/news/neuralink-voice-trial-bci-helps-als-patient-speak-again" target="_blank" rel="noopener">Basenor, 2026</a>, corroboré par <a href="https://www.newsbytesapp.com/news/science/elon-musks-neuralink-helps-man-speak-using-brain-implant/tldr" target="_blank" rel="noopener">Newsbytes, 2026</a>). Implanté en janvier 2026, Kenneth est le second participant de VOICE et le 21ᵉ de l'étude PRIME globale. La technologie décode les phonèmes à partir des signaux neuronaux et synthétise la voix d'origine du patient.</p>
+<p>Pourquoi cette pièce arrive dans la même édition que les trois précédentes : parce que Neuralink est aujourd'hui l'exemple-type d'une recherche qui contourne les goulets d'étranglement traditionnels — financement public, peer review pré-clinique long, transparence des données brutes — en s'appuyant sur capital privé, communication virale et marketing patient. Synchron, son concurrent moins exposé, a implanté plus de 50 patients via voie endovasculaire sans incident grave rapporté (<a href="https://3zebras.com/science/brain-computer-interface-2026-neuralink-synchron-update/15397/" target="_blank" rel="noopener">3Zebras, 2026</a>). Paradromics a obtenu en avril son feu vert FDA pour son propre essai speech (<a href="https://pharmaphorum.com/news/neuralink-rival-paradromics-cleared-start-speech-trial" target="_blank" rel="noopener">Pharmaphorum, 2026</a>). La course est lancée — et l'asymétrie informationnelle aussi : aucune des trois sociétés n'a publié de données complètes dans une revue à comité de lecture.</p>
+<p><strong>Qui paie · Qui profite :</strong> patients SLA enrôlés (bénéfice individuel réel) ; Neuralink (valorisation), Musk (capital narratif) ; les chercheurs publics qui ne peuvent ni reproduire ni contester sans accès aux données paient.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> suivre les publications d'examen par la FDA et toute fuite des protocoles d'évaluation ; tant que les données brutes ne sont pas indexées en preprint, le récit reste contrôlé par l'émetteur.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> la durabilité de la performance — les BCIs intracorticaux ont historiquement perdu en signal sur 12-18 mois ; Kenneth est implanté depuis janvier, le test critique tombe à l'automne 2026.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Étude UCSC : matériau « batterie solaire rechargeable » stockant la lumière dans des molécules (<a href="https://www.sciencedaily.com/" target="_blank" rel="noopener">ScienceDaily, 14 mai 2026</a>) — à suivre pour la transition énergétique miniature.</li>
+<li>Génome japonais : une troisième population ancestrale identifiée, contredisant la théorie « dual origins » dominante depuis 30 ans (<a href="https://www.sciencedaily.com/" target="_blank" rel="noopener">ScienceDaily, mai 2026</a>).</li>
+<li>Imagerie cérébrale : niveaux de choline préfrontale plus bas chez les patients anxieux — premier biomarqueur convergent à grande échelle (<a href="https://www.sciencedaily.com/" target="_blank" rel="noopener">ScienceDaily, 16 mai 2026</a>).</li>
+<li>CAR-T Zorpo-cel pour lupus réfractaire : rémission sans corticoïdes maintenue à 24 semaines, RMAT FDA accordé en avril (<a href="https://www.lupus.org/news/new-study-finds-anticd19-cart-therapy-zorpocel-safe-and-effective-treatment-for-people-with" target="_blank" rel="noopener">Lupus Foundation, 2026</a>).</li>
+<li>Surveillance H5N1 : délai médian sample-to-GISAID toujours à 7,5 mois — décalage qui rend la phylogénie en temps réel impossible (<a href="https://www.nature.com/articles/s41587-025-02636-6" target="_blank" rel="noopener">Nature Biotech, 2025</a>).</li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Quatre récits, un même mécanisme : la science institutionnelle perd ses régulateurs lents — peer review, surveillance publique, financement fédéral indépendant — pendant que les accélérateurs privés et automatiques ne rendent pas de comptes équivalents. À Ituri, l'OMS court derrière un virus que personne n'avait financé pour séquencer en routine. À <em>Nature</em>, une machine publie pendant que la communauté découvre que ses détecteurs sont déjà débordés. À Bethesda, l'État se retire et laisse la recherche translationnelle aux mains des consortiums industriels et des sociétés à capital concentré. À Austin, Neuralink fait sa science par communiqué et démo vidéo. Le scénario commun n'est ni le triomphe de l'IA ni l'effondrement du public — c'est l'inversion silencieuse des rapports de vitesse : les régulateurs deviennent les organes lents, les opérateurs privés les organes rapides, et le citoyen reste captif d'une asymétrie d'information qu'aucun des deux camps n'a intérêt à réduire.</p>
+<hr>
+<p><em>Journal Liberté — Science & Tech — 2026-05-20</em></p></div><div class="bottom-nav"><span></span><a href="mecanique-quantique.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Mécanique Quantique</span></a></div></div><div class="site-footer">The World Affair &mdash; Science &amp; Tech &mdash; v1.1 — daily</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
