@@ -917,6 +917,262 @@ input, textarea { font-family: inherit; }
 }
 .theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
 
+/* ==========================================================
+   v3: theme of day, resume, MC, treasure, notes, dots, quotables
+   ========================================================== */
+.theme-of-day {
+  text-align: center;
+  margin: var(--s-6) auto 0;
+  max-width: 600px;
+  padding: var(--s-3) var(--s-4);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color var(--tr);
+}
+.theme-of-day:hover { color: var(--ink); }
+.theme-of-day__label {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--salt);
+  margin-bottom: var(--s-1);
+}
+.theme-of-day__name {
+  font-size: var(--t-md);
+  color: var(--ink);
+}
+.theme-of-day__meta {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--salt);
+  letter-spacing: 0.04em;
+  margin-top: var(--s-1);
+}
+
+.resume-banner {
+  max-width: 560px;
+  margin: 0 auto var(--s-6);
+  padding: var(--s-4);
+  border: 1px solid var(--line-strong);
+  text-align: center;
+}
+.resume-banner__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: var(--s-2);
+}
+.resume-banner__line {
+  font-family: var(--font-serif);
+  font-size: var(--t-md);
+  color: var(--ink);
+  margin-bottom: var(--s-3);
+}
+.resume-banner__actions {
+  display: flex;
+  gap: var(--s-3);
+  justify-content: center;
+}
+
+/* Mastery dots in tiles */
+.mastery-dots {
+  position: absolute;
+  bottom: var(--s-2);
+  right: var(--s-2);
+  font-size: 10px;
+  color: var(--salt);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+.mastery-dots.is-mastered { color: var(--sea); }
+
+/* MC options */
+.mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin-top: var(--s-8);
+}
+.mc-option {
+  width: 100%;
+  text-align: left;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--t-md);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all var(--tr);
+}
+.mc-option:hover { border-color: var(--ink); background: var(--subtle); }
+.mc-option.is-correct {
+  border-color: var(--c-image);
+  background: var(--paper-warm);
+  color: var(--c-image);
+  font-style: normal;
+}
+.mc-option.is-wrong {
+  border-color: #c54f4f;
+  color: #c54f4f;
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+.mc-option:disabled { cursor: default; }
+.mc-option__num {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 11px;
+  color: var(--salt);
+  margin-right: var(--s-3);
+  letter-spacing: 0.05em;
+}
+
+/* Treasure card */
+.treasure-shell {
+  max-width: 640px;
+  width: 100%;
+  padding: var(--s-8) var(--s-6);
+  background: var(--paper-warm);
+  text-align: center;
+  animation: cardIn 360ms var(--ease);
+}
+.treasure-shell__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--c-concept);
+  margin-bottom: var(--s-6);
+}
+.treasure-shell__cite {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--t-xl);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  margin-bottom: var(--s-4);
+}
+.treasure-shell__attr {
+  font-size: var(--t-sm);
+  color: var(--muted);
+  margin-bottom: var(--s-8);
+}
+
+/* Personal notes */
+.notes-wrap {
+  margin-top: var(--s-6);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
+.notes-wrap__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: var(--s-2);
+}
+.notes-input {
+  width: 100%;
+  padding: var(--s-3);
+  border: 1px dashed var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  resize: vertical;
+  min-height: 56px;
+  outline: none;
+  transition: border-color var(--tr);
+}
+.notes-input:focus { border-style: solid; border-color: var(--ink); }
+
+/* Quotables */
+.quotables {
+  max-width: 640px;
+  margin: 0 auto var(--s-8);
+}
+.quotables__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+  margin-bottom: var(--s-4);
+  text-align: center;
+}
+.quotable {
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+.quotable:last-child { border-bottom: 1px solid var(--line); }
+.quotable__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--t-base);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  padding-right: 80px;
+  text-align: left;
+}
+.quotable__attr {
+  font-size: var(--t-xs);
+  color: var(--muted);
+  margin-top: var(--s-1);
+  text-align: left;
+}
+.quotable__copy {
+  position: absolute;
+  top: var(--s-4);
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all var(--tr);
+}
+.quotable__copy:hover { color: var(--ink); border-color: var(--ink); }
+.quotable__copy.is-copied { color: var(--c-image); border-color: var(--c-image); }
+
+/* Acquired burst */
+.acquired-burst {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--t-2xl);
+  color: var(--sea);
+  pointer-events: none;
+  z-index: 200;
+  opacity: 0;
+  animation: burst 1100ms var(--ease);
+}
+@keyframes burst {
+  0%   { opacity: 0; transform: translate(-50%, -45%) scale(0.92); }
+  20%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -55%) scale(1.05); }
+}
+
 @media (max-width: 640px) {
   .rating-row { grid-template-columns: repeat(2, 1fr); }
   .deck-grid { grid-template-columns: 1fr; }
@@ -945,7 +1201,18 @@ input, textarea { font-family: inherit; }
 
     <div id="nudgeBox" class="hidden"></div>
 
+    <div id="resumeBanner" class="resume-banner hidden">
+      <div class="resume-banner__label">une traversée t'attend</div>
+      <div class="resume-banner__line" id="resumeLine"></div>
+      <div class="resume-banner__actions">
+        <button class="btn-primary" id="resumeBtn">reprendre</button>
+        <button class="btn-ghost" id="resumeAbandonBtn">recommencer</button>
+      </div>
+    </div>
+
     <div class="stats-line" id="statsLine"></div>
+
+    <div id="themeOfDay" class="theme-of-day hidden"></div>
 
     <div id="poleStarSection" class="hidden">
       <div id="poleStar"></div>
@@ -1051,6 +1318,11 @@ input, textarea { font-family: inherit; }
 
     <div class="end-testimony" id="endTestimony"></div>
 
+    <div class="quotables hidden" id="quotablesBlock">
+      <div class="quotables__label">à copier · garder · offrir</div>
+      <div id="quotablesList"></div>
+    </div>
+
     <div class="reflect-wrap">
       <div class="reflect-wrap__label">une phrase pour t'en souvenir</div>
       <textarea class="reflect-input" id="reflectInput" placeholder="ce qui t'a frappé, surpris, fait douter…"></textarea>
@@ -1073,7 +1345,27 @@ input, textarea { font-family: inherit; }
 
 const STORAGE_KEY = 'sextant.v2';
 const STORAGE_LEGACY = 'sextant.v1';
+const STORAGE_SESSION = 'sextant.session';
 const DAY = 86400000;
+
+const THEMES = [
+  { name: 'La Liberté',    keys: ['liberté','liberte','autonomie','choix','volonté','volonte'] },
+  { name: 'Le Temps',      keys: ['temps','présent','present','mort','finitude','durée','duree'] },
+  { name: 'L’Image',  keys: ['image','imagination','symbole','figure','vision'] },
+  { name: 'Le Pouvoir',    keys: ['pouvoir','domination','autorité','autorite','hiérarchie','hierarchie'] },
+  { name: 'L’Attention', keys: ['attention','focus','présence','presence','conscience','flow'] },
+  { name: 'La Mémoire',    keys: ['mémoire','memoire','oubli','souvenir','trace'] },
+  { name: 'Le Désir',      keys: ['désir','desir','pulsion','libido','élan','elan'] },
+  { name: 'La Vérité',     keys: ['vérité','verite','lucidité','lucidite','mensonge','honnêteté','honnetete'] },
+  { name: 'La Création',   keys: ['création','creation','art','œuvre','oeuvre','invention','créativité','creativite'] },
+  { name: 'Le Corps',      keys: ['corps','incarnation','chair','somatique','santé','sante'] },
+  { name: 'Le Lien',       keys: ['amour','lien','attachement','amitié','amitie','relation','couple'] },
+  { name: 'L’Absurde',keys: ['absurde','sens','nihilisme','révolte','revolte'] },
+  { name: 'La Sagesse',    keys: ['sagesse','éthique','ethique','vertu','stoïcisme','stoicisme','marc aurèle'] },
+  { name: 'Le Beau',       keys: ['beau','esthétique','esthetique','sublime','jugement'] },
+  { name: 'La Vérité du Langage', keys: ['langage','mot','rhétorique','rhetorique','wittgenstein','sémantique','semantique'] },
+  { name: 'Le Travail',    keys: ['travail','œuvre','oeuvre','focus','attention','métier','metier'] },
+];
 
 const TYPE_LABEL = {
   thinker: 'penseur',
@@ -1116,6 +1408,7 @@ function defaultState() {
     cards: {},          // cardId → { s, d, due, seen, last }
     favorites: [],
     pinned: [],
+    notes: {},          // cardId → user's personal annotation
     streak: { count: 0, lastDay: null, graceUsed: false },
     totalSessions: 0,
     totalRatings: 0,
@@ -1210,6 +1503,113 @@ function toast(msg, ms=1400) {
   const t = $('#toast'); t.textContent = msg; t.classList.add('is-on');
   setTimeout(()=>t.classList.remove('is-on'), ms);
 }
+function burst(msg) {
+  const b = el('div', { class: 'acquired-burst' }, msg);
+  document.body.appendChild(b);
+  setTimeout(() => b.remove(), 1200);
+}
+
+/* ---------- Session persistence ---------- */
+function persistSession() {
+  if (!SESSION || SESSION.idx >= SESSION.queue.length) {
+    localStorage.removeItem(STORAGE_SESSION);
+    return;
+  }
+  const data = {
+    queueIds: SESSION.queue.map(c => c.id),
+    idx: SESSION.idx,
+    results: SESSION.results,
+    masteredNew: SESSION.masteredNew,
+    recallTexts: SESSION.recallTexts || {},
+    startedAt: SESSION.startedAt,
+    revealed: SESSION.revealed || false,
+    treasureShown: SESSION.treasureShown || false,
+    treasureAt: SESSION.treasureAt,
+    theme: SESSION.theme || null,
+  };
+  try { localStorage.setItem(STORAGE_SESSION, JSON.stringify(data)); } catch(e) {}
+}
+function loadSavedSession() {
+  try {
+    const raw = localStorage.getItem(STORAGE_SESSION);
+    if (!raw) return null;
+    const d = JSON.parse(raw);
+    const queue = (d.queueIds || []).map(id => DECK.cards.find(c => c.id === id)).filter(Boolean);
+    if (!queue.length || d.idx >= queue.length) { clearSavedSession(); return null; }
+    return {
+      queue, idx: d.idx || 0,
+      results: d.results || [],
+      masteredNew: d.masteredNew || 0,
+      recallTexts: d.recallTexts || {},
+      startedAt: d.startedAt || Date.now(),
+      revealed: !!d.revealed,
+      treasureShown: !!d.treasureShown,
+      treasureAt: d.treasureAt,
+      theme: d.theme || null,
+    };
+  } catch(e) { return null; }
+}
+function clearSavedSession() {
+  try { localStorage.removeItem(STORAGE_SESSION); } catch(e) {}
+}
+
+/* ---------- Theme of day ---------- */
+function themeOfDay() {
+  let h = 0;
+  for (const ch of today()) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return THEMES[h % THEMES.length];
+}
+function matchesTheme(card, theme) {
+  if (!theme) return true;
+  const hay = [
+    card.title, card.thinker, card.essence, card.image_text,
+    (card.tags || []).join(' '), (card.domain || ''), card.citation, card.context
+  ].filter(Boolean).join(' ').toLowerCase();
+  return theme.keys.some(k => hay.includes(k.toLowerCase()));
+}
+
+/* ---------- Treasure card (surprise) ---------- */
+function treasureCard(exclude=new Set()) {
+  // Striking citation, ideally one user hasn't seen recently or favorited
+  const pool = DECK.cards.filter(c =>
+    c.type === 'citation' &&
+    c.title && c.title.length > 60 && c.title.length < 200 &&
+    !exclude.has(c.id)
+  );
+  if (!pool.length) return null;
+  // Slight bias toward favorites + new cards
+  const fav = pool.filter(c => STATE.favorites.includes(c.id));
+  if (fav.length && Math.random() < 0.4) return fav[Math.floor(Math.random()*fav.length)];
+  const fresh = pool.filter(c => !STATE.cards[c.id]);
+  if (fresh.length && Math.random() < 0.6) return fresh[Math.floor(Math.random()*fresh.length)];
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+
+/* ---------- MC distractors ---------- */
+function mcDistractors(card, n=3) {
+  if (!card.thinker) return [];
+  const thinkers = new Set();
+  for (const c of DECK.cards) {
+    if (c.thinker && c.thinker !== card.thinker && c.type === 'thinker') thinkers.add(c.thinker);
+  }
+  // fallback: any thinker from citations
+  if (thinkers.size < n) {
+    for (const c of DECK.cards) {
+      if (c.thinker && c.thinker !== card.thinker) thinkers.add(c.thinker);
+    }
+  }
+  return shuffle([...thinkers]).slice(0, n);
+}
+
+/* ---------- Mastery dots ---------- */
+function masteryDots(cardId) {
+  const c = STATE.cards[cardId];
+  if (!c) return { text: '○', mastered: false };          // never seen
+  if (c.s < 1)  return { text: '◔', mastered: false };
+  if (c.s < 7)  return { text: '◐', mastered: false };
+  if (c.s < 14) return { text: '◕', mastered: false };
+  return { text: '★', mastered: true };                   // acquired
+}
 
 /* ---------- FSRS-lite scheduler ----------
    Per-card state: { s: stability (days), d: difficulty 0-1,
@@ -1229,20 +1629,18 @@ function isMastered(id) {
 
 function rateCard(id, rating) {
   const prev = cardState(id);
+  const wasMastered = prev.s >= 14;
   const now = Date.now();
   let { s, d } = prev;
 
-  // Difficulty update (clamped 0.1..1.0)
   const dDelta = { again: 0.15, hard: 0.05, good: 0, easy: -0.10 }[rating] || 0;
   d = Math.max(0.1, Math.min(1.0, d + dDelta));
 
-  // Stability update
   if (rating === 'again') {
-    s = Math.max(0.5, s * 0.3);              // reset hard
+    s = Math.max(0.5, s * 0.3);
   } else if (s === 0) {
-    s = { hard: 1, good: 2, easy: 4 }[rating] || 1;   // first-pass intervals
+    s = { hard: 1, good: 2, easy: 4 }[rating] || 1;
   } else {
-    // grow by factor scaled by (1 - difficulty)
     const factor = { hard: 1.2, good: 2.0, easy: 3.5 }[rating];
     s = Math.max(1, s * (1 + (factor - 1) * (1 - d)));
   }
@@ -1251,6 +1649,8 @@ function rateCard(id, rating) {
   STATE.cards[id] = { s, d, due, seen: prev.seen + 1, last: now };
   STATE.totalRatings += 1;
   saveState();
+  // Celebrate acquisition
+  if (!wasMastered && s >= 14) burst('acquise');
   return { prev, next: { s, d, due } };
 }
 
@@ -1432,11 +1832,34 @@ function renderHome() {
 
   $('#deckMeta').textContent = `${DECK.card_count.toLocaleString('fr-FR')} cartes · ${DECK.cards.filter(c=>c.source==='cosmos').length} cosmos · ${DECK.cards.filter(c=>c.source==='ideaforge').length} ideaforge`;
 
+  renderResumeBanner();
+  renderThemeOfDay();
   renderNudge();
   renderPoleStar();
   renderDiscoverFilters();
   renderDiscover();
   updateCtaMeta();
+}
+
+function renderResumeBanner() {
+  const saved = loadSavedSession();
+  const box = $('#resumeBanner');
+  if (!saved) { box.classList.add('hidden'); return; }
+  box.classList.remove('hidden');
+  $('#resumeLine').textContent = `${saved.idx} / ${saved.queue.length} cartes · ${saved.theme ? 'thème : ' + saved.theme : 'mixte'}`;
+}
+
+function renderThemeOfDay() {
+  const theme = themeOfDay();
+  const pool = DECK.cards.filter(c => matchesTheme(c, theme));
+  const box = $('#themeOfDay');
+  if (!pool.length) { box.classList.add('hidden'); return; }
+  box.classList.remove('hidden');
+  box.innerHTML = '';
+  box.appendChild(el('div', { class: 'theme-of-day__label' }, 'thème du jour'));
+  box.appendChild(el('div', { class: 'theme-of-day__name' }, theme.name));
+  box.appendChild(el('div', { class: 'theme-of-day__meta' }, `${pool.length} cartes dans ce thème — clique pour une traversée thématique`));
+  box.onclick = () => startThemedSession(theme);
 }
 
 function renderNudge() {
@@ -1631,18 +2054,67 @@ function makeDeckTile(card, opts={}) {
 }
 
 /* ---------- Session ---------- */
-function startSession() {
-  const queue = buildSession();
-  if (!queue.length) { toast('aucune carte disponible'); return; }
-  SESSION = { queue, idx: 0, results: [], startedAt: Date.now(), masteredNew: 0, recallTexts: {} };
+function newSession(queue, opts={}) {
+  // Treasure injection at ~ middle of session
+  const treasureAt = queue.length >= 5 ? Math.floor(queue.length / 2) : -1;
+  const exclude = new Set(queue.map(c => c.id));
+  SESSION = {
+    queue,
+    idx: 0, results: [], startedAt: Date.now(),
+    masteredNew: 0, recallTexts: {},
+    treasureAt, treasureShown: false,
+    treasure: treasureAt >= 0 ? treasureCard(exclude) : null,
+    theme: opts.theme || null,
+  };
+  clearSavedSession();
   $('#homeView').classList.add('hidden');
   $('#sessionView').classList.remove('hidden');
   renderCard();
+  persistSession();
+}
+function startSession() {
+  const queue = buildSession();
+  if (!queue.length) { toast('aucune carte disponible'); return; }
+  newSession(queue);
 }
 function startSessionFrom(ids) {
   const cards = ids.map(id => DECK.cards.find(c => c.id === id)).filter(Boolean);
   if (!cards.length) return;
-  SESSION = { queue: cards, idx: 0, results: [], startedAt: Date.now(), masteredNew: 0, recallTexts: {} };
+  newSession(cards);
+}
+function startThemedSession(theme) {
+  const pool = DECK.cards.filter(c => matchesTheme(c, theme));
+  if (!pool.length) { toast('aucune carte dans ce thème'); return; }
+  // Pinned first, then due, then new — within theme
+  const size = STATE.sessionSize;
+  const pinned = pool.filter(c => STATE.pinned.includes(c.id));
+  const due = pool.filter(c => !STATE.pinned.includes(c.id) && !isNew(c.id) && isDue(c.id));
+  const fresh = pool.filter(c => !STATE.pinned.includes(c.id) && isNew(c.id));
+  const rest = pool.filter(c => !pinned.includes(c) && !due.includes(c) && !fresh.includes(c));
+  const queue = interleaveTypes(shuffle([
+    ...shuffle(pinned).slice(0, Math.ceil(size*0.3)),
+    ...shuffle(due).slice(0, Math.ceil(size*0.4)),
+    ...shuffle(fresh).slice(0, Math.ceil(size*0.3)),
+    ...shuffle(rest).slice(0, size),
+  ])).slice(0, size);
+  if (!queue.length) { toast('aucune carte dans ce thème'); return; }
+  newSession(queue, { theme: theme.name });
+}
+function resumeSession() {
+  const saved = loadSavedSession();
+  if (!saved) { toast('aucune traversée à reprendre'); return; }
+  SESSION = {
+    queue: saved.queue,
+    idx: saved.idx,
+    results: saved.results,
+    startedAt: saved.startedAt,
+    masteredNew: saved.masteredNew,
+    recallTexts: saved.recallTexts,
+    treasureAt: saved.treasureAt,
+    treasureShown: saved.treasureShown,
+    treasure: saved.treasureAt != null ? treasureCard(new Set(saved.queue.map(c=>c.id))) : null,
+    theme: saved.theme,
+  };
   $('#homeView').classList.add('hidden');
   $('#sessionView').classList.remove('hidden');
   renderCard();
@@ -1650,6 +2122,13 @@ function startSessionFrom(ids) {
 
 function renderCard() {
   if (!SESSION || SESSION.idx >= SESSION.queue.length) { endSession(); return; }
+
+  // TREASURE injection point
+  if (SESSION.treasure && !SESSION.treasureShown && SESSION.idx === SESSION.treasureAt) {
+    renderTreasure();
+    return;
+  }
+
   const c = SESSION.queue[SESSION.idx];
   $('#sessionCounter').textContent = `${SESSION.idx+1} / ${SESSION.queue.length}`;
   $('#sessionBar').style.width = ((SESSION.idx) / SESSION.queue.length * 100) + '%';
@@ -1662,6 +2141,13 @@ function renderCard() {
   eb.appendChild(el('span', {}, cs ? `vue ${cs.seen}×` : 'nouvelle'));
   card.appendChild(eb);
 
+  // Decide citation challenge mode: MC if thinker known and 40% chance (or pinned)
+  SESSION._mode = null;
+  if (c.type === 'citation' && c.thinker && Math.random() < 0.4) {
+    SESSION._mode = 'mc';
+  }
+  persistSession();
+
   // FRONT — minimal, one focus
   if (c.type === 'thinker') {
     card.appendChild(el('div', { class: 'card__title' }, c.title));
@@ -1670,27 +2156,51 @@ function renderCard() {
     card.appendChild(el('div', { class: 'card__title' }, c.title));
     if (c.thinker) card.appendChild(el('div', { class: 'card__subtitle' }, c.thinker));
   } else if (c.type === 'citation') {
-    // Cloze: blank one key word
-    const cloze = pickClozeWord(c.title);
-    const big = el('div', { class: 'card__cite-big' });
-    if (cloze) {
-      const before = c.title.slice(0, c.title.indexOf(cloze.raw));
-      const after = c.title.slice(c.title.indexOf(cloze.raw) + cloze.raw.length);
-      big.appendChild(document.createTextNode(before));
-      const input = el('input', { class: 'cloze-input', type: 'text', placeholder: '___', autocomplete: 'off', spellcheck: 'false', id: 'clozeInput' });
-      big.appendChild(input);
-      big.appendChild(document.createTextNode(after));
-      SESSION._cloze = cloze.clean;
-    } else {
+    if (SESSION._mode === 'mc') {
+      // Multiple-choice: show citation, ask "qui?"
+      const big = el('div', { class: 'card__cite-big' });
       big.appendChild(document.createTextNode(c.title));
+      card.appendChild(big);
+      const subtitle = el('div', { class: 'card__subtitle', style: 'margin-top: var(--s-6); text-align: center;' }, 'qui a dit ça ?');
+      card.appendChild(subtitle);
+
+      const opts = mcDistractors(c, 3);
+      const all = shuffle([c.thinker, ...opts]);
+      SESSION._mcCorrect = c.thinker;
+      const wrap = el('div', { class: 'mc-options' });
+      all.forEach((author, i) => {
+        const btn = el('button', {
+          class: 'mc-option',
+          onClick: () => handleMcChoice(c, card, author, btn, wrap)
+        });
+        btn.appendChild(el('span', { class: 'mc-option__num' }, String.fromCharCode(65+i)));
+        btn.appendChild(document.createTextNode(author));
+        wrap.appendChild(btn);
+      });
+      card.appendChild(wrap);
+    } else {
+      // Cloze: blank one key word
+      const cloze = pickClozeWord(c.title);
+      const big = el('div', { class: 'card__cite-big' });
+      if (cloze) {
+        const before = c.title.slice(0, c.title.indexOf(cloze.raw));
+        const after = c.title.slice(c.title.indexOf(cloze.raw) + cloze.raw.length);
+        big.appendChild(document.createTextNode(before));
+        const input = el('input', { class: 'cloze-input', type: 'text', placeholder: '___', autocomplete: 'off', spellcheck: 'false', id: 'clozeInput' });
+        big.appendChild(input);
+        big.appendChild(document.createTextNode(after));
+        SESSION._cloze = cloze.clean;
+      } else {
+        big.appendChild(document.createTextNode(c.title));
+      }
+      card.appendChild(big);
     }
-    card.appendChild(big);
   } else if (c.type === 'image') {
     card.appendChild(el('div', { class: 'card__image-block' }, c.image_text));
   }
 
-  // Active-recall input (optional, not for citation cloze)
-  if (c.type !== 'citation') {
+  // Active-recall input (optional, not for citation challenges)
+  if (c.type !== 'citation' && SESSION._mode !== 'mc') {
     const wrap = el('div', { class: 'recall-input-wrap' });
     wrap.appendChild(el('div', { class: 'recall-input-wrap__label' }, 'qu’est-ce qui te revient ? (optionnel)'));
     wrap.appendChild(el('textarea', { class: 'recall-input', id: 'recallInput', placeholder: 'note ce que tu te rappelles avant de révéler…' }));
