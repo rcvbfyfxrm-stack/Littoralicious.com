@@ -312,6 +312,9 @@ input, textarea { font-family: inherit; }
 .deck-card[data-type="concept"]  { border-left-color: var(--c-concept); }
 .deck-card[data-type="citation"] { border-left-color: var(--c-citation); }
 .deck-card[data-type="image"]    { border-left-color: var(--c-image); }
+.deck-card[data-type="vocab"]    { border-left-color: var(--sea); }
+.deck-card[data-type="vocab"] .deck-card__type { color: var(--sea); }
+.card[data-type="vocab"] .card__eyebrow { color: var(--sea); }
 
 .deck-card__type {
   font-size: 10px;
@@ -918,6 +921,126 @@ input, textarea { font-family: inherit; }
 .theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
 
 /* ==========================================================
+   v4: story blocks (anecdote, dark side, challenger, cynical test, perennity)
+   ========================================================== */
+.story-block {
+  margin: var(--s-6) 0;
+  padding: var(--s-4) var(--s-6);
+  border-left: 2px solid var(--line);
+  background: var(--subtle);
+}
+.story-block__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: var(--s-2);
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.story-block__text {
+  font-family: var(--font-serif);
+  font-size: var(--t-base);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  font-style: normal;
+}
+.story-block--anecdote {
+  border-left-color: var(--c-thinker);
+  background: rgba(123,31,162,0.04);
+}
+.story-block--legacy {
+  border-left-color: #b07a00;
+  background: rgba(176,122,0,0.04);
+}
+.story-block--tensions {
+  border-left-color: #c54f4f;
+  background: rgba(197,79,79,0.04);
+}
+.story-block--provoc {
+  border-left-color: var(--sea);
+  background: rgba(45,74,94,0.04);
+}
+.story-block--dark {
+  border-left-color: #c54f4f;
+  background: rgba(197,79,79,0.04);
+}
+.story-block--challenger {
+  border-left-color: var(--c-thinker);
+  background: rgba(107,58,140,0.04);
+}
+.story-block--cynical {
+  border-left-color: #d68b00;
+  background: rgba(214,139,0,0.04);
+}
+.story-block--perennity {
+  border-left-color: var(--c-image);
+  background: rgba(76,175,80,0.04);
+}
+[data-theme="dark"] .story-block--anecdote { background: rgba(194,160,217,0.06); }
+[data-theme="dark"] .story-block--legacy { background: rgba(217,187,106,0.06); }
+[data-theme="dark"] .story-block--tensions { background: rgba(229,115,115,0.06); }
+[data-theme="dark"] .story-block--provoc { background: rgba(143,181,206,0.06); }
+[data-theme="dark"] .story-block--dark { background: rgba(229,115,115,0.06); }
+[data-theme="dark"] .story-block--challenger { background: rgba(194,160,217,0.06); }
+[data-theme="dark"] .story-block--cynical { background: rgba(217,187,106,0.06); }
+[data-theme="dark"] .story-block--perennity { background: rgba(155,201,164,0.06); }
+
+/* Inline vocab terms within a concept reveal */
+.vocab-inline {
+  margin: var(--s-4) 0;
+  padding: var(--s-3) var(--s-4);
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+}
+.vocab-inline__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: var(--s-2);
+}
+.vocab-inline__item {
+  font-family: var(--font-serif);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  padding: var(--s-1) 0;
+}
+.vocab-inline__term {
+  font-style: italic;
+  color: var(--sea);
+  font-weight: 500;
+}
+.vocab-inline__sep { color: var(--salt); margin: 0 var(--s-2); }
+
+/* Vocab card — distinct, focused */
+.card[data-type="vocab"] .card__title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--t-2xl);
+  color: var(--sea);
+}
+.vocab-prompt {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--muted);
+  margin: var(--s-6) 0;
+}
+.vocab-definition {
+  font-family: var(--font-serif);
+  font-size: var(--t-md);
+  line-height: var(--lh-snug);
+  padding: var(--s-6) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+/* ==========================================================
    v3: theme of day, resume, MC, treasure, notes, dots, quotables
    ========================================================== */
 .theme-of-day {
@@ -1371,8 +1494,17 @@ const TYPE_LABEL = {
   thinker: 'penseur',
   concept: 'concept',
   citation: 'citation',
-  image:   'l’image'
+  image:   'l’image',
+  vocab:   'mot'
 };
+
+function storyBlock(label, text, variant) {
+  if (!text) return null;
+  const block = el('div', { class: 'story-block story-block--' + variant });
+  block.appendChild(el('div', { class: 'story-block__label' }, label));
+  block.appendChild(el('div', { class: 'story-block__text' }, text));
+  return block;
+}
 
 const DOMAIN_CHIPS = [
   ['all', 'Tout'],
@@ -1398,7 +1530,8 @@ const TYPE_CHIPS = [
   ['thinker', 'Penseurs'],
   ['concept', 'Concepts'],
   ['citation', 'Citations'],
-  ['image', 'Images']
+  ['image', 'Images'],
+  ['vocab', 'Vocabulaire']
 ];
 
 /* ---------- State ---------- */
@@ -2022,6 +2155,7 @@ function makeDeckTile(card, opts={}) {
   let title = card.title;
   if (card.type === 'citation') title = '« ' + (card.title || '') + ' »';
   if (card.type === 'image') title = card.image_text ? (card.image_text.slice(0, 120) + (card.image_text.length > 120 ? '…' : '')) : card.title;
+  if (card.type === 'vocab') title = card.title + ' — ' + (card.definition || '').slice(0, 80) + ((card.definition||'').length > 80 ? '…' : '');
   tile.appendChild(el('div', { class: 'deck-card__title' }, title));
   if (card.thinker) tile.appendChild(el('div', { class: 'deck-card__thinker' }, card.thinker));
   if (opts.showAction === 'pin') {
@@ -2196,10 +2330,14 @@ function renderCard() {
     }
   } else if (c.type === 'image') {
     card.appendChild(el('div', { class: 'card__image-block' }, c.image_text));
+  } else if (c.type === 'vocab') {
+    card.appendChild(el('div', { class: 'card__title' }, c.title));
+    if (c.thinker) card.appendChild(el('div', { class: 'card__subtitle' }, c.thinker));
+    card.appendChild(el('div', { class: 'vocab-prompt' }, 'que signifie ce mot ?'));
   }
 
-  // Active-recall input (optional, not for citation challenges)
-  if (c.type !== 'citation' && SESSION._mode !== 'mc') {
+  // Active-recall input (optional, not for citation challenges or vocab)
+  if (c.type !== 'citation' && c.type !== 'vocab' && SESSION._mode !== 'mc') {
     const wrap = el('div', { class: 'recall-input-wrap' });
     wrap.appendChild(el('div', { class: 'recall-input-wrap__label' }, 'qu’est-ce qui te revient ? (optionnel)'));
     wrap.appendChild(el('textarea', { class: 'recall-input', id: 'recallInput', placeholder: 'note ce que tu te rappelles avant de révéler…' }));
@@ -2280,6 +2418,11 @@ function revealCard(c, cardEl) {
       q.appendChild(el('span', { class: 'card__cite-attr' }, c.title));
       cardEl.appendChild(q);
     }
+    // Story enrichment for thinker
+    const sa = storyBlock('✺ portrait', c.bio_anecdote, 'anecdote'); if (sa) cardEl.appendChild(sa);
+    const sl = storyBlock('⚐ destin posthume', c.legacy_story, 'legacy'); if (sl) cardEl.appendChild(sl);
+    const sp = storyBlock('? question provocante', c.provocative_question, 'provoc'); if (sp) cardEl.appendChild(sp);
+    const st = storyBlock('↯ tensions internes', c.inner_tensions, 'tensions'); if (st) cardEl.appendChild(st);
     if (c.oeuvre) {
       cardEl.appendChild(el('div', { class: 'card__meta' },
         el('span', {}, 'œuvres : ' + (c.oeuvre.length > 100 ? c.oeuvre.slice(0,100)+'…' : c.oeuvre))));
@@ -2293,6 +2436,11 @@ function revealCard(c, cardEl) {
       if (c.cite_author || c.thinker) q.appendChild(el('span', { class: 'card__cite-attr' }, c.cite_author || c.thinker));
       cardEl.appendChild(q);
     }
+    // Story enrichment for concept
+    const sd = storyBlock('⚠ le côté sombre', c.dark_side, 'dark'); if (sd) cardEl.appendChild(sd);
+    const sc = storyBlock('↔ l’autre côté', c.challenger, 'challenger'); if (sc) cardEl.appendChild(sc);
+    const sct = storyBlock('? le test cynique', c.cynical_test, 'cynical'); if (sct) cardEl.appendChild(sct);
+    const sp = storyBlock('∞ pérennité', c.perennity, 'perennity'); if (sp) cardEl.appendChild(sp);
     if (c.verdict) cardEl.appendChild(el('div', { class: 'card__verdict' }, c.verdict));
   } else if (c.type === 'citation') {
     if (c.thinker || c.cite_author) {
@@ -2306,6 +2454,12 @@ function revealCard(c, cardEl) {
   } else if (c.type === 'image') {
     cardEl.appendChild(el('div', { class: 'card__title', style: 'font-size: var(--t-lg); margin-top: var(--s-6);' }, c.title));
     if (c.essence) cardEl.appendChild(el('div', { class: 'card__essence' }, c.essence));
+  } else if (c.type === 'vocab') {
+    cardEl.appendChild(el('div', { class: 'vocab-definition' }, c.definition || '—'));
+    if (c.context) {
+      cardEl.appendChild(el('div', { class: 'card__subtitle', style: 'text-align: center; margin-top: var(--s-3);' },
+        'rencontré dans : ' + c.context));
+    }
   }
 
   // Connections
