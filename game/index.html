@@ -2169,12 +2169,11 @@ function renderCard() {
       SESSION._mcCorrect = c.thinker;
       const wrap = el('div', { class: 'mc-options' });
       all.forEach((author, i) => {
-        const btn = el('button', {
-          class: 'mc-option',
-          onClick: () => handleMcChoice(c, card, author, btn, wrap)
-        });
+        const btn = document.createElement('button');
+        btn.className = 'mc-option';
         btn.appendChild(el('span', { class: 'mc-option__num' }, String.fromCharCode(65+i)));
         btn.appendChild(document.createTextNode(author));
+        btn.addEventListener('click', () => handleMcChoice(c, card, author, btn, wrap));
         wrap.appendChild(btn);
       });
       card.appendChild(wrap);
