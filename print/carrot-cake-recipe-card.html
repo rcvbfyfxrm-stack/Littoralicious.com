@@ -54,6 +54,10 @@
         .sauce-block strong { color: #5b21b6; }
         .sauce-block ol { padding-left: 4.2mm; margin-top: 1mm; }
 
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.9mm 2.8mm; margin: 2.2mm 0; font-size: 7.7pt; line-height: 1.34; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
         .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
         .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
         .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
@@ -82,7 +86,7 @@
         .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
         .contact .sep { color: #cbd2da; }
         .spacer { flex: 1; min-height: 0; }
-        @media print { .done, .sauce-block, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+        @media print { .done, .sauce-block, .subrecipe, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
     </style>
 </head>
 <body>
@@ -108,8 +112,8 @@
         <div class="group-label">Maceration</div>
         <table>
             <tr><td>Carrots, peeled, grated</td><td>400g</td><td>~5 med</td></tr>
-            <tr><td>Brown sugar <span class="note">(for macerating)</span></td><td>30g</td><td>2 tbsp</td></tr>
-            <tr><td>Fine salt <span class="note">(draw moisture)</span></td><td>3g</td><td>&frac12; tsp</td></tr>
+            <tr><td>Light brown sugar <span class="note">(for macerating)</span></td><td>30g</td><td>2 tbsp</td></tr>
+            <tr><td>Fine sea salt <span class="note">(draw moisture)</span></td><td>3g</td><td>&frac12; tsp</td></tr>
         </table>
 
         <div class="group-label">Dry</div>
@@ -127,20 +131,20 @@
         <table>
             <tr><td>Light brown sugar</td><td>190g</td><td>scant 1 cup</td></tr>
             <tr><td>Granulated sugar</td><td>100g</td><td>&frac12; cup</td></tr>
-            <tr><td>Neutral oil</td><td>200g</td><td>scant 1 cup</td></tr>
+            <tr><td>Neutral oil <span class="note">(grapeseed/sunflower)</span></td><td>200g</td><td>scant 1 cup</td></tr>
             <tr><td>Eggs, large <span class="note">(RT)</span></td><td>150g</td><td>&times;3</td></tr>
-            <tr><td>Vanilla extract</td><td>8g</td><td>1&frac12; tsp</td></tr>
-            <tr><td>Toasted-walnut butter</td><td>60g</td><td>3 tbsp</td></tr>
-            <tr><td>Orange zest</td><td>4g</td><td>1 orange</td></tr>
+            <tr><td>Pure vanilla extract</td><td>8g</td><td>1&frac12; tsp</td></tr>
+            <tr><td>Toasted-walnut butter <span class="note">(sub-recipe &darr;)</span></td><td>60g</td><td>3 tbsp</td></tr>
+            <tr><td>Orange zest, microplaned</td><td>4g</td><td>1 orange</td></tr>
         </table>
 
         <div class="group-label">Frosting</div>
         <table>
             <tr><td>Cream cheese, full-fat <span class="note">(cold)</span></td><td>340g</td><td>12 oz</td></tr>
             <tr><td>Mascarpone <span class="note">(cold)</span></td><td>115g</td><td>&frac12; cup</td></tr>
-            <tr><td>Unsalted butter, soft</td><td>85g</td><td>6 tbsp</td></tr>
+            <tr><td>Unsalted butter, soft <span class="note">(20&deg;C)</span></td><td>85g</td><td>6 tbsp</td></tr>
             <tr><td>Icing sugar, sifted</td><td>280g</td><td>2&frac14; cups</td></tr>
-            <tr><td>Vanilla extract</td><td>5g</td><td>1 tsp</td></tr>
+            <tr><td>Pure vanilla extract</td><td>5g</td><td>1 tsp</td></tr>
         </table>
 
         <p class="equipment">
@@ -158,10 +162,28 @@
             <li>
                 <strong>Press dry.</strong> Squeeze in clean towel. Target &le;280g pressed carrot. Reserve 40g liquid (optional glaze).
             </li>
-            <li>
-                <strong>Toast walnuts.</strong> 160g at 165&deg;C (325&deg;F), 10&ndash;12 min. Cool 5 min. Food processor 3&ndash;4 min &rarr; smooth butter. Weigh 60g for batter.
-                <span class="why">Toasting generates furaneol + pyrazines via Maillard. Butter format disperses volatiles through fat phase &rarr; every bite carries roasted note. <cite>&mdash; L&oacute;pez-Alt / Modernist Cuisine</cite></span>
-            </li>
+        </ol>
+
+        <div class="subrecipe">
+            <span class="sub-label">Sub-recipe &mdash; Toasted walnut butter</span>
+            <strong>Raw walnut halves, 160g</strong> &middot; pinch fine salt (optional) &middot; <em>yields ~70g butter + 80g chopped garnish</em>
+            <ol style="counter-reset: sub; padding-left: 4mm; margin-top: 0.8mm; list-style: none;">
+                <li style="counter-increment: sub; position: relative; padding-left: 1mm; margin-bottom: 0.7mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #92400e;">a.</span>
+                    Toast all 160g at <strong>165&deg;C (325&deg;F)</strong>, 10&ndash;12 min. Cool 5 min.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.7mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #92400e;">b.</span>
+                    Split: <strong>80g &rarr; food processor</strong> 3&ndash;4 min &rarr; smooth butter (~70g). Use 60g in batter; 10g extra keeps 2 wk fridge.
+                </li>
+                <li style="position: relative; padding-left: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #92400e;">c.</span>
+                    <strong>Remaining 80g:</strong> rough chop for garnish. <em>Maillard furaneol + pyrazines in the fat phase &rarr; roasted note in every bite.</em> <cite>&mdash; L&oacute;pez-Alt / Modernist</cite>
+                </li>
+            </ol>
+        </div>
+
+        <ol style="counter-reset: step 2;">
             <li>
                 <strong>Preheat 175&deg;C</strong> (350&deg;F). Butter + parchment 9&times;13&Prime; pan. Whisk all dry together.
             </li>
