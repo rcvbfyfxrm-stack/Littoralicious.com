@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synth&egrave;se Quotidienne &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Vendredi 22 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;142</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Mer &amp; Table</div>
+  <div class="masthead-version">v1.1 — daily</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-22.html">Premi&egrave;re Page</a><a class="nav-link active" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a><a class="nav-link" href="../corrections.html">Corrections</a><a class="nav-link" href="../standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">Synth&egrave;se Quotidienne</div>
+  <h1 class="article-title">Mer &amp; Table — Vendredi 22 Mai 2026</h1>
+  <div class="article-date">Edition N&deg;142</div>
+</div><div class="article-body"><h2>📋 Rétrospective</h2>
+<p>L'édition précédente du cluster <em>Mer & Table</em> n'a pas pu être relue ce matin (verrou de synchronisation ProtonDrive sur les fichiers archivés) — la comparaison ligne à ligne est donc reportée. Ce qui est vérifiable cette semaine : la thèse récurrente des goulots maritimes se confirme durement (Ormuz quasi fermé, Suez à 40 %), et la prévision d'une polarisation de la restauration — sommet qui brille, milieu qui s'effondre — se matérialise dans les chiffres britanniques. Aucun démenti factuel surfacé. Les colonnes Δ des trois éditions sont marquées « n.d. » faute d'accès aux valeurs antérieures : honnêteté plutôt que faux delta.</p>
+<hr>
+<h2>⚡ En 60 Secondes</h2>
+<ul>
+<li><strong>Maritime —</strong> Trois goulots obturés (Ormuz quasi nul, Bab el-Mandeb fragile, Suez à 40 %), Panama saturé : la carte des routes se résume à un seul conduit ouvert, et le carnet de commandes des chantiers grimpe au plus haut depuis 17 ans <a href="https://gcaptain.com/global-ship-order-book-hits-17-year-high-as-tanker-orders-surge/" target="_blank" rel="noopener">gCaptain, 2026-05</a>.</li>
+<li><strong>Gastronomie —</strong> La valeur fuit le milieu : Cheval Blanc 2025 sort à +20 % pendant que la restauration britannique perd 3,4 établissements nets par jour <a href="https://www.thedrinksbusiness.com/2026/02/hospitality-insolvencies-hit-3353-in-2025/" target="_blank" rel="noopener">The Drinks Business, 2026-02-17</a>.</li>
+<li><strong>Cuisine & Technique —</strong> L'avancée la plus actionnable n'est pas la plus spectaculaire : le protocole sous vide en deux phases (55 °C / 3 h, perte à la cuisson 11,47 %) bat la lactoferrine fermentée sur l'échelle de l'utile immédiat <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12111284/" target="_blank" rel="noopener">PMC, 2025</a>.</li>
+</ul>
+<hr>
+<h2>🚨 3 Urgents</h2>
+<ol>
+<li><strong>Charter-party Golfe — intégrer la prime d'assurance guerre dès la négociation.</strong> Tout affrètement transitant par Ormuz doit budgéter 4–6 % de la valeur coque minimum ; les couvertures annuelles ont disparu, seules subsistent les polices voyage-par-voyage <a href="https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/3/marine-war-insurance-for-hormuz-dries-up-as-middle-east-war-intensifies-99283143" target="_blank" rel="noopener">S&P Global, 2026-03-30</a>.</li>
+<li><strong>Achat de primeurs — attendre la sortie de Mouton avant d'engager.</strong> Les premiers crus (Latour, Mouton, Margaux) sortent fin mai et trancheront entre logique haussière (Cheval Blanc +20 %) et retenue contrainte <a href="https://www.decanter.com/learn/bordeaux-en-primeur/cheval-blanc-2025-released-after-smallest-harvest-since-1961/" target="_blank" rel="noopener">Decanter, 2026-05-11</a>.</li>
+<li><strong>Contrat OpenTable — négocier la portabilité des données avant tout renouvellement.</strong> Les nouvelles clauses exigent le statut de « système primaire » et basculent vers l'annuel ; une enquête antitrust est ouverte dans l'État de Washington <a href="https://www.restaurantdive.com/news/restaurants-respond-opentable-client-agreement-updates-concerns/817594/" target="_blank" rel="noopener">Restaurant Dive, 2026-05</a>.</li>
+</ol>
+<hr>
+<h2>🎯 Histoire du Jour</h2>
+<p><strong>Ormuz à 5 % : un détroit devenu arme.</strong> Depuis l'offensive de février et la mort de Khamenei, l'Iran a transformé Ormuz en levier de guerre — transits effondrés à ~5 % de la normale, missile de croisière sur le CMA CGM San Antonio le 5 mai, création unilatérale d'une <em>Persian Gulf Strait Authority</em> <a href="https://www.cnn.com/2026/04/29/world/iran-war-gulf-hormuz-shipping-maps-intl-vis/" target="_blank" rel="noopener">CNN, 2026-04-29</a>. L'angle que les marchés sous-estiment n'est pas le baril : c'est la chaîne pétrochimique asiatique — Singapour, Corée, Japon raffinent du brut du Golfe, et la pénurie de produits raffinés est l'effet de second rang qui remontera jusqu'au prix du bunker mondial. Quand les routes s'allongent, tout ce qui voyage par mer — y compris l'huile, le vin, le cacao — coûte plus cher.</p>
+<p><strong>Histoire secondaire — la polarisation de la table.</strong> Bonheur by Matt Abé décroche deux étoiles Michelin dès sa première année sur le site mythique de Le Gavroche, le même trimestre où le Royaume-Uni enregistre 762 défaillances dans l'hôtellerie-restauration <a href="https://www.hospitality-week.co.uk/news/business/uk-hospitality-collapses-remain-high-as-762-businesses-fail-in-q1/" target="_blank" rel="noopener">UK Hospitality Week, 2026-05</a>. Le sommet ne contredit pas la base : il en est l'envers mécanique.</p>
+<hr>
+<h2>🔗 Connexions Cross-Domaines</h2>
+<p><strong>1. Le détroit et l'huile <em>(Maritime × Gastronomie).</strong></em> L'indice FAO des huiles végétales a bondi de +5,9 % en avril, son plus haut depuis juin 2022, sous l'effet de tensions géopolitiques sur les approvisionnements <a href="https://www.fao.org/newsroom/detail/fao-food-price-index-up-for-third-consecutive-month-largely-on-rising-vegetable-oil-prices/en" target="_blank" rel="noopener">FAO, 2026-05-08</a>. Les mêmes mers fermées qui font flamber l'assurance maritime allongent les routes des oléagineux : la facture du chokepoint se lit autant sur le BDI que sur l'addition.</p>
+<p><strong>2. L'huile de friture, carburant disputé <em>(Maritime × Cuisine & Technique).</strong></em> Le biofuel de soute B30 grimpe à Rotterdam et Singapour, porté par la rareté des huiles de cuisson usagées (UCO) <a href="https://cyprusshippingnews.com/2026/05/20/biofuel-bunker-snapshot-b30-prices-gain-in-rotterdam-and-singapore/" target="_blank" rel="noopener">Cyprus Shipping News, 2026-05-20</a>. Pendant ce temps, la fermentation de précision (Clean Food Group, huiles de levure) cherche à remplacer les graisses tropicales transportées par mer <a href="https://tech.eu/2026/04/14/clean-food-group-raises-ps45m-to-scale-yeast-derived-oils-and-fats-from-food-waste/" target="_blank" rel="noopener">Tech.eu, 2026-04-14</a>. Un même sous-produit de cuisine — l'huile usagée — devient à la fois carburant réglementaire et matière première contestée : la décarbonation du navire entre en concurrence avec celle de l'assiette.</p>
+<p><strong>3. La valeur fuit le milieu <em>(Gastronomie × Cuisine & Technique).</strong></em> Le marché récompense les extrêmes : Cheval Blanc en haut, fermetures de masse au milieu. La technique suit la même courbe inversée — l'innovation la plus utile au chef embarqué n'est pas le réacteur de fermentation à un million de litres, c'est la séquence thermique juste. Spectaculaire en haut, structurel au milieu, actionnable dans la nuance.</p>
+<hr>
+<h2>📊 Chiffres du Jour</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Date</th><th>Source</th></tr></thead><tbody><tr><td>Baltic Dry Index</td><td>~3 005 pts</td><td>2026-05-20</td><td><a href="https://www.hellenicshippingnews.com/baltic-dry-index-climbs-to-3001-up-23-points/" target="_blank" rel="noopener">Hellenic Shipping News</a></td></tr><tr><td>Drewry World Container Index</td><td>2 712 $/40ft</td><td>2026-05-21</td><td><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank" rel="noopener">Drewry</a></td></tr><tr><td>Transits Ormuz observés</td><td>~5–6 navires/jour</td><td>2026-05-05</td><td><a href="https://albanyantree.com/commodity-market-news/tpost/war-risk-insurance-hormuz-red-sea-6-may-2026" target="_blank" rel="noopener">JMIC Update 041</a></td></tr><tr><td>FAO Food Price Index</td><td>130,7 pts (+1,6 % m/m)</td><td>avril 2026</td><td><a href="https://www.fao.org/worldfoodsituation/foodpricesindex/en" target="_blank" rel="noopener">FAO</a></td></tr><tr><td>FAO Huiles végétales</td><td>+5,9 % (plus haut depuis juin 2022)</td><td>avril 2026</td><td><a href="https://www.fao.org/newsroom/detail/fao-food-price-index-up-for-third-consecutive-month-largely-on-rising-vegetable-oil-prices/en" target="_blank" rel="noopener">FAO</a></td></tr><tr><td>Cacao (futures)</td><td>3 830 USD/t (+11,76 % m/m)</td><td>2026-05-21</td><td><a href="https://tradingeconomics.com/commodity/cocoa" target="_blank" rel="noopener">TradingEconomics</a></td></tr><tr><td>Fermetures nettes restauration UK</td><td>−305 / T1 (3,4/jour)</td><td>T1 2026</td><td><a href="https://www.credit-connect.co.uk/news/insolvency/business/hospitality-business-closures-accelerate-across-the-uk/" target="_blank" rel="noopener">Credit Connect</a></td></tr><tr><td>Cheval Blanc 2025 en primeur</td><td>+20 % vs sortie 2024</td><td>2026-05-11</td><td><a href="https://www.decanter.com/learn/bordeaux-en-primeur/cheval-blanc-2025-released-after-smallest-harvest-since-1961/" target="_blank" rel="noopener">Decanter</a></td></tr><tr><td>Sous vide 2 phases — perte à la cuisson</td><td>11,47 % (optimal 55 °C / 3 h)</td><td>2025</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12111284/" target="_blank" rel="noopener">PMC</a></td></tr></tbody></table>
+<hr>
+<h2>📅 À Surveiller</h2>
+<ul>
+<li><strong>Fin mai 2026 —</strong> Sorties primeurs des premiers crus (Latour, Mouton, Margaux) : test décisif de la campagne Bordeaux 2025.</li>
+<li><strong>Prochains 15 jours —</strong> Avis de risque MARAD sur la mer Rouge — une dégradation « élevé → modéré » serait le feu vert opérationnel des P&I Clubs.</li>
+<li><strong>Premiers 30 jours de production —</strong> Facteur de charge du parc éolien flottant EFGL (Golfe du Lion) ; au-delà de 35 %, accélération du calendrier méditerranéen.</li>
+<li><strong>À venir (date non fixée) —</strong> Lignes directrices LCA provisoires de l'ISWG-GHG (OMI) : déterminantes pour la valeur des navires GNL et dual-fuel.</li>
+<li><strong>Issue attendue —</strong> Enquête antitrust du procureur de l'État de Washington sur les clauses OpenTable.</li>
+<li><strong>Fin 2026 —</strong> Second Biotech Act européen + révision du règlement novel food.</li>
+<li><strong>4 décembre 2026 —</strong> Vote d'adoption du Cadre Net-Zéro de l'OMI (session extraordinaire MEPC.ES2).</li>
+</ul>
+<hr>
+<h2>🤔 Ce qui reste opaque — Inventaire</h2>
+<ul>
+<li><strong>Maritime —</strong> Durée réelle de la fermeture d'Ormuz (position chinoise, marge iranienne post-Khamenei inconnues) ; robustesse politique interne des Houthis après un cessez-le-feu négocié par Oman ; position de Pékin — 70 % du carnet mondial — sur les coefficients LCA ; tenue mécanique des fondations flottantes EFGL par mistral et tramontane d'hiver.</li>
+<li><strong>Gastronomie —</strong> Volume réel mis en marché par Cheval Blanc (un succès apparent peut masquer une campagne globale faible) ; absence de données INSEE T1 2026 pour comparer la France au Royaume-Uni ; issue concrète — réglementaire ou purement politique — de l'enquête antitrust OpenTable.</li>
+<li><strong>Cuisine & Technique —</strong> Identité organoleptique de la bruniture ultrasonique vs chaleur sèche ; applicabilité du protocole 2 phases au poisson gras (collagène différent) ; fiche technique et coût/kg réels des huiles de levure CleanOil ; calendrier et contenu chiffré du second Biotech Act UE.</li>
+</ul>
+<hr>
+<p><em>Journal Liberté — Synthèse Quotidienne — Cluster Mer & Table — 2026-05-22</em></p></div><div class="bottom-nav"><a href="../2026-05-22.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re Page</span></a><a href="maritime.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Maritime</span></a></div></div><div class="site-footer">The World Affair &mdash; Synth&egrave;se &mdash; v1.1 — daily</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

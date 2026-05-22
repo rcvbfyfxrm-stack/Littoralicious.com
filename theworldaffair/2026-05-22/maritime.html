@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maritime &mdash; The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Vendredi 22 Mai 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;142</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Mer &amp; Table</div>
+  <div class="masthead-version">v1.1 — daily</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-05-22.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a><a class="nav-link" href="../corrections.html">Corrections</a><a class="nav-link" href="../standard.html">Standard</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#0277BD">Maritime</div>
+  <h1 class="article-title">Maritime</h1>
+  <div class="article-date">Vendredi 22 Mai 2026 &mdash; Edition N&deg;142</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Trois goulots d'étranglement, trois logiques distinctes. Le détroit d'Ormuz est quasi fermé depuis fin février — la guerre Iran/Israël-États-Unis a réduit les transits à quelques unités par jour, et les primes d'assurance guerre ont rendu le passage commercialement insoutenable pour la plupart des armateurs. En mer Rouge, le cessez-le-feu américano-houthi de mai offre une fenêtre fragile, mais les grands transporteurs n'ont pas encore ramené leurs navires : la mémoire des mines et des missiles est longue. Le Suez reste à 40 % de sa fréquentation normale. Face à ces absences, le canal de Panama prospère — 38 transits/jour, zéro restriction pour le reste de 2026. Pendant ce temps, l'OMI a tenu son MEPC 84 à Londres fin avril : le Cadre Net-Zéro a gagné du terrain, mais la décision finale est reportée à décembre. Et en Méditerranée, un premier parc éolien flottant commercial vient de livrer son électricité au réseau français, discret signal d'un basculement énergétique maritime qui commence pour de vrai.</p>
+<hr>
+<h2>📊 Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody><tr><td>Baltic Dry Index (BDI)</td><td>~3 005 pts (20 mai 2026)</td><td>n.d.</td><td><a href="https://www.hellenicshippingnews.com/baltic-dry-index-climbs-to-3001-up-23-points/" target="_blank" rel="noopener">Hellenic Shipping News, 2026-05-20</a></td></tr><tr><td>Drewry World Container Index (WCI)</td><td>2 712 $/40ft (21 mai 2026)</td><td>n.d.</td><td><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank" rel="noopener">Drewry, 2026-05-21</a></td></tr><tr><td>VLSFO Rotterdam</td><td>~781 $/mt (semaine 20 mai)</td><td>n.d.</td><td><a href="https://shipandbunker.com/prices/emea/nwe/nl-rtm-rotterdam" target="_blank" rel="noopener">Ship & Bunker, 2026-05-20</a></td></tr><tr><td>Transits Hormuz (observés)</td><td>~5-6 navires/jour (4-5 mai 2026)</td><td>n.d. 🟡 <strong>Source unique</strong></td><td><a href="https://albanyantree.com/commodity-market-news/tpost/war-risk-insurance-hormuz-red-sea-6-may-2026" target="_blank" rel="noopener">Albany Antree / JMIC Update 041, 2026-05-05</a></td></tr><tr><td>Transits Panama Canal</td><td>38/jour (sans restriction, 2026)</td><td>n.d.</td><td><a href="https://www.riotimesonline.com/panama-canal-drops-transit-restrictions-for-rest-of-2026/" target="_blank" rel="noopener">Rio Times Online, 2026-05</a></td></tr><tr><td>Prime assurance guerre Hormuz</td><td>3–8 % valeur navire / transit</td><td>n.d.</td><td><a href="https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/3/marine-war-insurance-for-hormuz-dries-up-as-middle-east-war-intensifies-99283143" target="_blank" rel="noopener">S&P Global, 2026-03-30</a></td></tr></tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Ormuz à 5 % : quand un détroit devient néant</h3>
+<p><strong>🔴 Spéculation</strong> (sur la durée de la crise) / <strong>🟢 Confirmé</strong> (sur les faits de trafic et d'assurance)</p>
+<p>Le 28 février 2026, les États-Unis et Israël lancent une offensive aérienne contre l'Iran et éliminent Ali Khamenei. La réplique iranienne est immédiate : Téhéran bloque de facto le détroit d'Ormuz, passage obligé pour environ 20 % du pétrole mondial et 25 % du GNL. Depuis le 6 mai, les transits ouverts sont tombés à quasi zéro — <a href="https://www.cnn.com/2026/04/29/world/iran-war-gulf-hormuz-shipping-maps-intl-vis/" target="_blank" rel="noopener">CNN, 2026-04-29</a> situe le trafic global à environ 5 % de la moyenne d'avant-guerre. Le 5 mai, le porte-conteneurs CMA CGM San Antonio est touché par un missile de croisière dans le détroit, blessant huit membres d'équipage <a href="https://www.unitedagainstnucleariran.com/blog/iran-war-shipping-update-may-11-2026" target="_blank" rel="noopener">UANI Iran War Shipping Update, 2026-05-11</a>. Le même jour, l'Iran crée la <em>Persian Gulf Strait Authority</em>, s'arrogeant formellement le droit de réguler les transits.</p>
+<p>Les assureurs ont répondu par une évaporation de l'offre plutôt que par une simple hausse tarifaire. Selon <a href="https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/3/marine-war-insurance-for-hormuz-dries-up-as-middle-east-war-intensifies-99283143" target="_blank" rel="noopener">S&P Global Market Intelligence, 2026-03-30</a>, les couvertures annuelles ont été retirées ; les polices voyage-par-voyage se négocient à 3–8 % de la valeur coque — soit 3 à 8 millions de dollars pour un grand tanker. La <a href="https://www.khaleejtimes.com/world/strait-hormuz-reopening-shipping-costs-insurance-premiums" target="_blank" rel="noopener">Khaleej Times, 2026-05</a> anticipe que même une réouverture n'effacera pas ces primes avant des mois. Le <a href="https://www.weforum.org/stories/2026/04/how-middle-east-war-turning-governments-into-insurers-last-resort/" target="_blank" rel="noopener">World Economic Forum, 2026-04</a> note une tendance de fond : les gouvernements deviennent assureurs en dernier ressort, comme ils le furent jadis pour l'aviation après le 11 Septembre.</p>
+<p>L'angle non-évident ici n'est pas le prix du pétrole — c'est la chaîne pétrochimique asiatique. Les raffineries de Singapour, Corée du Sud et Japon tournent largement sur du brut du Golfe. Les pénuries de produits raffinés en Asie, signalées dès mi-mai, sont l'effet de second rang que les marchés sous-estiment.</p>
+<p><strong>Qui paie · Qui profite :</strong> Raffineries asiatiques et armateurs tankers paient ; Cape-routers et Panama profitent.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller les stocks de gazole/gasoil en Asie du Sud-Est — toute détérioration accélère une hausse des prix du bunker worldwide, avec effet direct sur les coûts d'exploitation des yachts commerciaux et des navires de croisière. Un shipowner cherchant à fréter un VLCC sur le Golfe doit anticiper une prime d'assurance de 4–6 % minimum, à intégrer dès la phase de négociation du charter-party.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La durée de la fermeture dépend de négociations diplomatiques dont les paramètres réels (position chinoise, marge de manœuvre iranienne post-Khamenei) restent opaques. L'Iran a également créé une autorité de régulation des transits — on ignore si elle sera opérationnelle ou symbolique.</p>
+<hr>
+<h3>II. Mer Rouge : cessez-le-feu houthi, scepticisme armatorial</h3>
+<p><strong>🟡 À vérifier</strong></p>
+<p>En mai 2026, Donald Trump annonce un accord de cessez-le-feu avec les Houthis, confirmé par le ministre des Affaires étrangères d'Oman : les deux parties s'engagent à ne pas cibler les navires de l'autre dans le détroit de Bab el-Mandeb. <a href="https://gcaptain.com/red-sea-shipping-faces-uncertain-future-as-houthi-ceasefire-brings-hope-and-caution/" target="_blank" rel="noopener">gCaptain, 2026-05</a> et <a href="https://splash247.com/shipping-hesitates-on-red-sea-return/" target="_blank" rel="noopener">Splash247</a> rapportent la même hésitation collective : les grands armateurs — Maersk, MSC, CMA CGM — n'ont pas reroué leurs services Asia-Europe par Suez. La part des conteneurs est-ouest passant par Suez plafonne à 18,7 %, contre près de 80 % avant la crise de fin 2023. <a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/red-sea-shipping-reopens" target="_blank" rel="noopener">S&P Global, février 2026</a> résume l'ambiguïté : le trafic a techniquement rouvert, mais les incertitudes tarifaires, sécuritaires et assurantielles maintiennent le contournement par le Cap de Bonne-Espérance comme option par défaut.</p>
+<p>L'accord houthi ne couvre pas les attaques contre Israël — ce qui laisse entière la probabilité d'incidents "par ricochet" visant des navires liés à des intérêts israéliens. Le signal avancé à surveiller : la MARAD (US Maritime Administration) maintient-elle son avis de risque élevé <a href="https://www.maritime.dot.gov/msci/2026-006-red-sea-bab-el-mandeb-strait-gulf-aden-arabian-sea-and-somali-basin-houthi-attacks" target="_blank" rel="noopener">MARAD Advisory 2026-006</a> ou le dégrade-t-elle vers "modéré" ? Une dégradation serait le feu vert opérationnel que les P&I Clubs attendront avant de changer leurs termes.</p>
+<p><strong>Qui paie · Qui profite :</strong> Armateurs Cape-routing absorbent les coûts ; Suez et Canal de Suez Authority perdent des revenus.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Si la MARAD dégrade son avis de risque dans les 15 prochains jours, anticiper une réouverture progressive par les opérateurs de taille moyenne (pas les Maersk, mais les feeders et tankers produits). Les taux spot Asia-Europe pourraient alors reculer de 10–20 % — à surveiller sur le WCI Shanghai-Rotterdam.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La robustesse politique interne du mouvement houthi après la mort de cadres lors des frappes américaines de 2025 est inconnue. Un accord négocié par Oman peut être répudié par une faction sans préavis, comme en septembre 2025.</p>
+<hr>
+<h3>III. MEPC 84 : le Cadre Net-Zéro avance, décision en décembre</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le Comité de protection du milieu marin de l'OMI (MEPC 84) a siégé à Londres du 27 avril au 1er mai 2026. La majorité des États membres ont accepté de reprendre les négociations sur la base du texte Net-Zéro <em>as agreed</em> — renversant la majorité qui avait suspendu le processus à la session extraordinaire d'octobre 2025 sous pression saoudienne <a href="https://ammoniaenergy.org/articles/mepc84-support-for-net-zero-framework-stabilizes-ahead-of-key-decision-point-in-late-2026" target="_blank" rel="noopener">Ammonia Energy Association, 2026-05</a>. Les propositions alternatives de l'Argentine et du Japon n'ont pas recueilli de soutien significatif <a href="https://safety4sea.com/mepc-84-opens-with-call-for-convergence-on-net-zero-framework/" target="_blank" rel="noopener">Safety4Sea, 2026-04-28</a>.</p>
+<p>Le vote d'adoption formelle est fixé au 4 décembre 2026 (session extraordinaire MEPC.ES2). D'ici là, le groupe de travail ISWG-GHG doit finaliser les lignes directrices sur l'Analyse du Cycle de Vie (LCA) des carburants alternatifs — biofuels, GNL, ammoniac, méthanol — sans lesquelles les armateurs ne peuvent calculer leur conformité réelle <a href="https://www.imo.org/en/mediacentre/pressbriefings/pages/imo-approves-netzero-regulations.aspx" target="_blank" rel="noopener">IMO, 2026-05</a>.</p>
+<p>Le vrai enjeu n'est pas l'accord politique : il est dans la méthodologie LCA. Si le méthane <em>upstream</em> est comptabilisé sévèrement, le GNL perd son avantage de transition. Si les biofuels de deuxième génération obtiennent des facteurs favorables, les armateurs qui ont commandé des navires dual-fuel pourront les faire passer pour verts sans changer de carburant. Ce sont des milliards de valeur d'actifs qui basculent selon les coefficients retenus.</p>
+<p><strong>Qui paie · Qui profite :</strong> Armateurs GNL risquent une dévaluation ; producteurs de méthanol vert et d'ammoniac en position d'attente favorable.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> La publication des lignes directrices LCA provisoires par l'ISWG-GHG est le prochain déclencheur documentaire. Tout shipowner en cours de négociation de clauses "green fuel" dans un charter-party devrait exiger une clause d'ajustement indexée sur les coefficients LCA officiels OMI.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La position effective de la Chine — qui contrôle 70 % du carnet de commandes mondial de navires — sur les coefficients biofuels et GNL n'a pas été communiquée publiquement. Un pivot de Pékin sur les LCA changerait l'équilibre de toute la négociation de décembre.</p>
+<hr>
+<h3>IV. Éolien flottant : la Méditerranée livre son premier électron commercial</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Le 4 mai 2026, Ocean Winds (coentreprise EDP Renewables / ENGIE) a raccordé au réseau français les trois turbines de 10 MW du parc <em>Éoliennes Flottantes du Golfe du Lion</em> (EFGL), situé à 16 km des côtes du Languedoc, par 55 mètres de fond <a href="https://www.offshorewind.biz/2026/05/05/french-floating-offshore-wind-farm-starts-delivering-electricity/" target="_blank" rel="noopener">offshorewind.biz, 2026-05-05</a> <a href="https://www.oceanwinds.com/news/uncategorized/ocean-winds-delivers-its-first-power-from-floating-offshore-wind-project-in-france/" target="_blank" rel="noopener">Ocean Winds, 2026-05-04</a>. C'est le premier parc éolien flottant commercial livré en Méditerranée, et le premier au monde intégrant des habitats marins artificiels (technologie Biohut®) pour compenser les impacts sur la biodiversité.</p>
+<p>La production annuelle attendue est de 110 000 MWh, de quoi alimenter 50 000 habitants. Ce qui compte pour la filière n'est pas ce chiffre modeste : c'est le dérisquage opérationnel en eau profonde méditerranéenne, avec des conditions de houle courte et croisée très différentes de l'Atlantique nord. Ce retour d'expérience ouvre la voie à l'EFLO (Éoliennes Flottantes d'Occitanie), projet de 250 MW attribué en 2024, et aux futurs appels d'offres français en Méditerranée.</p>
+<p>Pour la filière superyacht et charter en Méditerranée occidentale, ce projet est aussi un signal indirect : les zones de mouillage et les couloirs de navigation vont se densifier d'ici 2030-2035 autour des parcs éoliens, modifiant les plans de navigation côtiers entre Barcelone et la Corse.</p>
+<p><strong>Qui paie · Qui profite :</strong> EDF / État français subventionne via le tarif ; ENGIE et EDP Renewables sécurisent un savoir-faire exportable.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller la publication des résultats de production des premiers 30 jours — si le facteur de charge dépasse 35 % en Méditerranée, cela accélère le calendrier des appels d'offres EFLO et des projets espagnols.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La robustesse mécanique des fondations flottantes par gros temps méditerranéen hivernal reste à démontrer sur une saison complète. Les conditions de tramontane et de mistral n'ont pas d'équivalent dans les bases de données North Sea.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li><strong>Carnet de commandes shipbuilding à plus haut depuis 17 ans.</strong> 191 millions de CGT commandés à fin T1 2026, soit 17 % de la flotte mondiale — ratio inégalé depuis 2011. Les chantiers chinois captent 70 % des ordres. Livraisons peak attendues 2028-2030. <a href="https://gcaptain.com/global-ship-order-book-hits-17-year-high-as-tanker-orders-surge/" target="_blank" rel="noopener">gCaptain, 2026-05</a> / <a href="https://maritime-executive.com/article/shipbuilding-orderbook-hits-17-year-high-driven-by-tankers-reports-bimco" target="_blank" rel="noopener">Maritime Executive, 2026-05</a></li>
+</ul>
+<ul>
+<li><strong>Baltic Sea : opération Baltic Sentry toujours active.</strong> Depuis les sabotages de câbles sous-marins (fin 2024 – début 2025), l'OTAN maintient une force multinationale de surveillance des infrastructures sous-marines. Aucun nouvel incident confirmé en mai 2026, mais la tension structurelle reste élevée. <a href="https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/how-the-baltic-sea-nations-have-tackled-suspicious-cable-cuts/" target="_blank" rel="noopener">Atlantic Council, 2026</a></li>
+</ul>
+<ul>
+<li><strong>Mer Rouge/Suez : trafic toujours à 40 % de la normale.</strong> Cent jours sans attaque houthi confirmée n'ont pas suffi à rétablir la confiance des armateurs. Le Suez Canal Authority espère un retour à la normale en seconde moitié 2026. <a href="https://gcaptain.com/suez-canal-traffic-stalls-at-60-below-normal-despite-100-days-without-houthi-attacks/" target="_blank" rel="noopener">gCaptain, 2026</a></li>
+</ul>
+<ul>
+<li><strong>Taux conteneurs en hausse de 6 % sur la semaine.</strong> Le WCI Shanghai-Rotterdam est à +15 % sur 7 jours. CMA CGM annonce des FAK Asia-Europe à 4 700 $/40ft à partir du 1er juin. L'<em>early peak season</em> comprime les espaces alors que les rerouting liés à Hormuz réduisent les capacités disponibles. <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank" rel="noopener">Drewry WCI, 2026-05-21</a></li>
+</ul>
+<ul>
+<li><strong>Biofuel B30 en hausse à Rotterdam et Singapour.</strong> Les prix du B30-VLSFO gagnent 28 $/mt à Rotterdam et davantage à Singapour, portés par la hausse du VLSFO conventionnel et la rareté des huiles de cuisson usagées (UCO). Signal précoce d'une tension d'approvisionnement en feedstocks pour la décarbonation réglementaire. <a href="https://cyprusshippingnews.com/2026/05/20/biofuel-bunker-snapshot-b30-prices-gain-in-rotterdam-and-singapore/" target="_blank" rel="noopener">Cyprus Shipping News, 2026-05-20</a></li>
+</ul>
+<hr>
+<h2>Connexion</h2>
+<p>Il y a une cohérence souterraine dans les quatre récits de cette édition. Ormuz bloqué, Bab el-Mandeb incertain, Suez sous-utilisé, Panama saturé : les routes maritimes mondiales ressemblent aujourd'hui à un circuit hydraulique dont on aurait obturé les trois vannes principales, forçant le débit vers l'unique conduit encore ouvert. Cette fragmentation n'est pas un accident — c'est le résultat d'une décennie de sous-investissement dans la diplomatie maritime et d'une sur-dépendance à des goulots géographiques que toute puissance régionale peut transformer en levier de guerre.</p>
+<p>Face à cela, l'OMI essaie de réguler les émissions de navires qui n'osent plus emprunter certaines mers. L'éolien flottant promet une énergie décarbonée en Méditerranée pendant que les tankers contournent l'Afrique. Ces deux histoires — décarbonation lente, insécurité rapide — avancent sur des temporalités radicalement différentes. Le marché, lui, a déjà répondu : le carnet de commandes des chantiers est au plus haut depuis 2009, parce que quand les routes s'allongent, il faut plus de navires pour transporter la même tonne au même endroit. La crise n'a pas ralenti la mer. Elle l'a juste rendue plus longue, plus chère, et plus nécessaire.</p>
+<hr>
+<p><em>Journal Liberté — Maritime — 2026-05-22</em></p></div><div class="bottom-nav"><span></span><a href="gastronomie.html"><span class="bottom-nav-label">Suivant &rarr;</span><span class="bottom-nav-title">Gastronomie</span></a></div></div><div class="site-footer">The World Affair &mdash; Maritime &mdash; v1.1 — daily</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
