@@ -99,6 +99,23 @@ def estimate_read_time(html: str) -> int:
     return max(1, round(words / 220))
 
 
+READING_TIME_RE = re.compile(
+    r'article__reading-time["\'][^>]*>\s*(\d+)\s*min', re.IGNORECASE
+)
+
+
+def declared_read_time(html: str) -> int | None:
+    """The reading time the article states in its own header, if any.
+
+    The author sets <span class="article__reading-time">N min read</span>
+    deliberately; trust it over the crude word-count estimate. Card-style
+    drafts say "Single-page reference" instead — those return None and fall
+    back to the estimate.
+    """
+    m = READING_TIME_RE.search(html)
+    return int(m.group(1)) if m else None
+
+
 def infer_category(slug: str) -> str:
     s = slug.lower()
     for needle, cat in CATEGORY_INFERENCE:
@@ -142,7 +159,7 @@ def build_entry(html_path: Path, by_slug: dict, cats: dict) -> dict:
     lede = aj.get("description") or extract_description(html) or ""
     category = aj.get("category") or infer_category(slug)
     category_label = cats.get(category, {}).get("name") or category.replace("-", " ").title()
-    read_time = aj.get("read_time") or estimate_read_time(html)
+    read_time = aj.get("read_time") or declared_read_time(html) or estimate_read_time(html)
     added = aj.get("date") or file_added_date(html_path)
 
     return {
