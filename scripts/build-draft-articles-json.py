@@ -54,6 +54,7 @@ CATEGORY_INFERENCE = [
     ("venice", "port-call"),
     ("cooking-for-crew", "the-method"),
     ("what-littoralicious-stands-for", "the-bridge"),
+    ("frontier-techniques", "the-method"),
 ]
 
 
