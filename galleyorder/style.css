@@ -1575,121 +1575,61 @@ main.main {
    Clean masthead, readable rows, proper page-break control, no UI bleed.
    ========================================================================== */
 @media print {
-  @page { size: A4 portrait; margin: 14mm 14mm 16mm 14mm; }
+  /* === Page setup === */
+  @page { size: A4 portrait; margin: 10mm 12mm 12mm 12mm; }
+
+  /* === Hard reset to prevent screen layout bleed === */
   html, body {
     background: white !important;
     color: #0a0a0a !important;
-    font-size: 10pt;
-    font-family: Georgia, 'Times New Roman', serif;
-    line-height: 1.4;
-  }
-  .masthead, aside.sidebar, .toolbar, .modal-backdrop, .toast, .port-panel,
-  .category-footer, .category-header-add, .category-header-clear { display: none !important; }
-  .app { display: block; height: auto; overflow: visible; }
-  .body { display: block; overflow: visible; }
-  main.main { padding: 0; overflow: visible; }
-
-  /* === Print masthead — clean, newspaper-style === */
-  .print-masthead {
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1.5pt solid #0a0a0a;
-    page-break-after: avoid;
-    position: relative;
-  }
-  .print-brand-line {
-    font-family: Georgia, serif;
     font-size: 9pt;
-    letter-spacing: 0.4em;
-    color: #2d4a5e;
-    text-align: center;
-    margin-bottom: 4px;
-    font-weight: 400;
-    border-top: 0.5pt solid #2d4a5e;
-    border-bottom: 0.5pt solid #2d4a5e;
-    padding: 4px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.32;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
   }
-  .print-brand-tag {
-    font-size: 7.5pt;
-    color: #6b7280;
-    font-style: italic;
-    text-align: center;
-    margin-bottom: 12px;
-    letter-spacing: 0.04em;
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
-  .print-title {
-    font-family: Georgia, serif;
-    font-size: 24pt;
-    font-weight: 400;
-    color: #0a0a0a;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-    line-height: 1.05;
-    text-align: center;
-  }
-  /* Meta block: rendered as compact 2-row block under title */
-  .print-meta-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    gap: 4px 14px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 9.5pt;
-    padding: 6px 0 0 0;
-    border-top: 0.5pt solid #d4d4d4;
-    max-width: 100%;
-  }
-  .print-meta-grid > div {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 4px;
-    line-height: 1.3;
-    flex: 0 0 auto;
-  }
-  .print-meta-grid span {
-    font-size: 7pt;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 700;
-  }
-  .print-meta-grid strong { font-size: 10pt; color: #0a0a0a; font-weight: 700; font-family: Georgia, serif; }
 
-  /* Print footer */
-  .print-footer {
-    margin-top: 18px;
-    padding: 8px 0 0 0;
-    border-top: 1.5pt solid #0a0a0a;
-    text-align: center;
-    font-size: 7.5pt;
-    color: #6b7280;
-    letter-spacing: 0.06em;
-    font-family: Georgia, serif;
-    font-style: italic;
-  }
-  .print-footer strong { color: #2d4a5e; font-weight: 700; font-style: normal; letter-spacing: 0.08em; }
-
-  /* Hide untouched rows */
-  .item-list .row:not(.has-qty) { display: none !important; }
-  .item-list .head { display: none !important; }
-  .fav-marker, .freq-marker, .specialty-marker, .specialty-toggle { display: none !important; }
+  /* === Hide screen-only chrome === */
+  .masthead, aside.sidebar, .toolbar, .modal-backdrop, .toast, .port-panel,
+  .category-footer, .category-header-add, .category-header-clear,
+  .specialty-toggle, .specialty-marker,
+  .fav-marker, .freq-marker, .freq-marker-inline,
   .badge, .profile-flag, .qty-step, .custom-delete, .custom-badge, .auto-custom-badge,
-  .freq-marker-inline, .rename-arrow { display: none !important; }
-  .item-list .row { page-break-inside: avoid; }
-  .item-list .col-fav, .item-list .col-tier { display: none !important; }
-  .freq-marker-inline { display: none !important; }
-  .badge, .profile-flag { display: none !important; }
-  .col-fav, .col-tier, .qty-step { display: none !important; }
+  .rename-arrow,
+  .item-list .head, .item-list .col-fav, .item-list .col-tier,
+  .category-header .chev, .category-header .cat-stats, .category-header-right,
+  .section-header .chev, .section-header .section-stats { display: none !important; }
 
-  /* Hide empty wrappers */
-  .category-block.empty-print { display: none !important; }
-  .section.empty-print { display: none !important; }
+  /* === Open the entire layout for print === */
+  .app, .body, main.main, .category-block, .category-body, .section, .section-body {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
 
-  /* Print-scope: only show one category */
+  /* === Hide empty wrappers === */
+  .item-list .row:not(.has-qty) { display: none !important; }
+  .category-block.empty-print, .section.empty-print { display: none !important; }
+
+  /* === Single-category print scope === */
   html[data-print-scope="fish"] .category-block:not([data-cat="fish"]),
   html[data-print-scope="meat"] .category-block:not([data-cat="meat"]),
+  html[data-print-scope="produce"] .category-block:not([data-cat="produce"]),
   html[data-print-scope="cheese-dairy"] .category-block:not([data-cat="cheese-dairy"]),
   html[data-print-scope="freezer"] .category-block:not([data-cat="freezer"]),
   html[data-print-scope="western"] .category-block:not([data-cat="western"]),
@@ -1709,118 +1649,218 @@ main.main {
     display: none !important;
   }
 
-  /* Open everything for print */
-  .category-block .category-body, .section .section-body { display: block !important; }
-
-  .item-list {
-    grid-template-columns: 1.5fr 2fr 55px 50px 1.4fr;
-    border-top: 0.5pt solid #0a0a0a;
-    border-bottom: 0.5pt solid #0a0a0a;
-    margin-top: 6px;
-    margin-bottom: 4px;
+  /* ====================================================================
+     MASTHEAD — compact, top of page only (~7-8% of A4 height)
+     ==================================================================== */
+  .print-masthead {
+    text-align: center;
+    margin: 0 0 8mm 0 !important;
+    padding: 0 0 4mm 0 !important;
+    border-bottom: 1pt solid #0a0a0a;
+    page-break-after: avoid;
   }
-  .item-list .row > div {
-    background: transparent !important;
-    padding: 3px 8px !important;
-    border-bottom: 0.5pt solid #e8e8e8;
-    font-size: 9.5pt;
-    min-height: 0;
-    line-height: 1.35;
-    color: #0a0a0a;
-  }
-  .item-list .row:last-child > div { border-bottom: 0; }
-  .item-list .col-stars-mini {
-    display: flex !important;
-    padding: 3px 4px !important;
-    color: #b8860b !important;
-    font-size: 9pt;
-    justify-content: flex-start;
-  }
-  .item-list .col-name {
+  .print-brand-line {
     font-family: Georgia, serif;
+    font-size: 8pt;
+    letter-spacing: 0.35em;
+    color: #2d4a5e;
+    padding: 3pt 0;
+    border-top: 0.5pt solid #2d4a5e;
+    border-bottom: 0.5pt solid #2d4a5e;
+    margin-bottom: 4pt;
+  }
+  .print-brand-tag {
+    font-size: 7pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 6pt;
+  }
+  .print-title {
+    font-family: Georgia, serif;
+    font-size: 18pt;
     font-weight: 400;
     color: #0a0a0a;
-    font-size: 10pt;
+    margin-bottom: 4pt;
+    line-height: 1.1;
   }
-  .item-list .col-brand {
-    color: #4a4a4a;
+  .print-meta-grid {
+    display: block !important;
+    text-align: center;
     font-size: 8.5pt;
-    line-height: 1.3;
+    padding-top: 3pt;
+    border-top: 0.5pt solid #ccc;
+    line-height: 1.5;
   }
-  .item-list .col-qty-cell {
-    justify-content: flex-start;
-    gap: 0;
-    padding: 0 8px !important;
+  .print-meta-grid > div {
+    display: inline-block !important;
+    margin: 0 8pt;
+    line-height: 1.4;
   }
-  .item-list .col-qty-cell input,
-  .item-list .col-unit input,
-  .item-list .col-notes input {
-    border: 0 !important; background: transparent !important;
-    padding: 0; width: auto;
-    color: #0a0a0a !important;
+  .print-meta-grid span {
+    font-size: 6.5pt;
+    color: #2d4a5e;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin-right: 3pt;
   }
-  .item-list .col-qty-cell input {
-    font-weight: 700; text-align: left;
-    font-family: 'SF Mono', Consolas, monospace;
-    font-size: 10pt;
-    width: 100%;
-  }
-  .item-list .col-unit input {
-    text-align: left;
-    font-family: 'SF Mono', Consolas, monospace;
-    font-size: 9pt;
-    color: #6b7280 !important;
-  }
-  .item-list .col-notes input {
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 9pt;
-    color: #4a4a4a !important;
-  }
+  .print-meta-grid strong { font-size: 9pt; color: #0a0a0a; font-weight: 700; }
 
+  /* ====================================================================
+     CATEGORY + SECTION HEADERS — tight, hierarchical
+     ==================================================================== */
   .category-header {
-    page-break-after: avoid;
-    border-top: 0;
-    border-bottom: 0;
-    cursor: default;
-    padding: 14px 0 4px;
-    margin-top: 8px;
-    display: block;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 5mm 0 1mm 0 !important;
+    margin: 0 !important;
   }
-  .category-header .chev, .category-header .cat-stats,
-  .category-header-right { display: none !important; }
   .category-header h2 {
     font-family: Georgia, serif;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 400;
     color: #2d4a5e;
-    letter-spacing: 0.02em;
-    text-transform: none;
-    padding-bottom: 4px;
-    border-bottom: 1.5pt solid #2d4a5e;
+    border-bottom: 1pt solid #2d4a5e;
+    padding-bottom: 2pt;
+    margin: 0;
+    line-height: 1.2;
   }
   .section-header {
-    page-break-after: avoid;
-    cursor: default;
-    border-bottom: 0;
-    margin-top: 8px;
-    padding: 2px 0;
-    display: block;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 2mm 0 1mm 0 !important;
+    margin: 0 !important;
   }
-  .section-header .chev, .section-header .section-stats { display: none !important; }
   .section-header h3 {
-    font-size: 10.5pt;
+    font-size: 9.5pt;
     font-family: Georgia, serif;
     font-weight: 700;
     color: #0a0a0a;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 2px 0;
+    letter-spacing: 0.06em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
   }
-  .section { margin-bottom: 8px !important; page-break-inside: avoid; }
-  .category-block { margin-bottom: 10px !important; }
-  .category-body { display: block !important; }
-  .section-body { display: block !important; }
+  .section { margin-bottom: 2mm !important; }
+  .category-block { margin-bottom: 4mm !important; }
+
+  /* ====================================================================
+     ITEM TABLE — fixed-layout table-style grid, no overflow
+     6 visible cells in print: NAME · BRAND · QTY · UNIT · STARS · NOTES
+     ==================================================================== */
+  .item-list {
+    display: grid !important;
+    grid-template-columns: 32mm 38mm 14mm 11mm 8mm 1fr !important;
+    border-top: 0.75pt solid #0a0a0a !important;
+    border-bottom: 0.5pt solid #0a0a0a !important;
+    margin-top: 1mm !important;
+    margin-bottom: 2mm !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    page-break-inside: auto;
+  }
+  .item-list .row {
+    display: contents !important;
+    page-break-inside: avoid;
+  }
+  .item-list .row > div {
+    background: transparent !important;
+    padding: 1.5pt 4pt !important;
+    border-bottom: 0.25pt solid #ddd !important;
+    border-top: 0 !important;
+    font-size: 9pt;
+    min-height: 0 !important;
+    line-height: 1.25;
+    color: #0a0a0a;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    align-items: center;
+    display: flex !important;
+  }
+  .item-list .row:last-child > div { border-bottom: 0 !important; }
+
+  /* Per-column print styling */
+  .item-list .col-name {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    color: #0a0a0a;
+    font-size: 9pt;
+    word-break: break-word;
+  }
+  .item-list .col-brand {
+    color: #555;
+    font-size: 7.5pt;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  .item-list .col-qty-cell {
+    justify-content: flex-end !important;
+    gap: 0 !important;
+    padding: 1.5pt 4pt !important;
+  }
+  .item-list .col-qty-cell input {
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: 100% !important;
+    color: #0a0a0a !important;
+    font-weight: 700;
+    text-align: right;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 9.5pt;
+  }
+  .item-list .col-unit {
+    color: #555;
+    font-size: 8pt;
+    font-family: 'SF Mono', Consolas, monospace;
+  }
+  .item-list .col-unit input {
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: 100% !important;
+    color: #555 !important;
+    text-align: left;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 8pt;
+  }
+  .item-list .col-stars-mini {
+    display: flex !important;
+    color: #b8860b !important;
+    font-size: 8pt;
+    justify-content: center;
+    padding: 1.5pt 2pt !important;
+    letter-spacing: -1pt;
+  }
+  .item-list .col-notes {
+    padding: 1.5pt 4pt !important;
+  }
+  .item-list .col-notes input {
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: 100% !important;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 8pt;
+    color: #555 !important;
+  }
+
+  /* ====================================================================
+     FOOTER — single line under last category
+     ==================================================================== */
+  .print-footer {
+    margin-top: 6mm !important;
+    padding: 2mm 0 0 0 !important;
+    border-top: 1pt solid #0a0a0a;
+    text-align: center;
+    font-size: 7pt;
+    color: #6b7280;
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+  .print-footer strong { color: #2d4a5e; font-weight: 700; font-style: normal; letter-spacing: 0.05em; }
 }
 @media screen {
   .print-masthead, .print-footer { display: none; }
