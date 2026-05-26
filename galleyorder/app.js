@@ -492,20 +492,23 @@
 
   // ─── PROVISIONING MATH ──────────────────────────────────────────────────
   function applyPortionSuggestionsScoped(scope) {
-    // scope: { cat: <cat object> | null, sec: <sec object> | null, force: bool }
+    // scope: { cat: <cat object> | null, sec: <sec object> | null, force: bool, includeNiche: bool }
     // null = "everything". Both set = single section. cat only = whole category.
+    // Only items with portion.mainstream === true are auto-filled by default.
+    // Pass includeNiche:true to fill non-mainstream items too (chef explicit "fill all" mode).
     const ctx = enrichCtx();
     if (!ctx.guest && !ctx.crew) {
       alert("Enter PAX (guest + crew + days) in the bar above first.");
       return { total: 0 };
     }
-    let counts = { guest: 0, crew: 0, all: 0, skipped: 0 };
+    let counts = { guest: 0, crew: 0, all: 0, skipped: 0, niche: 0 };
     const cats = scope.cat ? [scope.cat] : PANTRY_DATA;
     cats.forEach(cat => {
       const secs = scope.sec ? [scope.sec] : effectiveSections(cat);
       secs.forEach(sec => sec.items.forEach(it => {
         const e = window.PANTRY_ENRICH.enrichItem(it, cat, sec, ctx);
         if (!e.portion) return;
+        if (!e.portion.mainstream && !scope.includeNiche) { counts.niche++; return; }
         if (hasOrder(it.id) && !scope.force) { counts.skipped++; return; }
         setQty(it.id, e.portion.qty);
         if (e.portion.unit && e.portion.unit !== effectiveUnit(it)) setUnit(it.id, e.portion.unit);
@@ -520,9 +523,10 @@
     if (r.total === 0) {
       showToast(r.skipped > 0
         ? `${r.skipped} items already filled — clear first to re-fill.`
-        : "No suggestions — PAX too low or no role-matching items.");
+        : "No mainstream suggestions for current PAX.");
     } else {
-      showToast(`Filled ${r.total} items · ${r.guest} guest · ${r.crew} crew · ${r.all} all-pax`);
+      const nicheNote = r.niche > 0 ? ` · ${r.niche} niche skipped (add manually)` : "";
+      showToast(`Filled ${r.total} mainstream items · ${r.guest} guest · ${r.crew} crew · ${r.all} all-pax${nicheNote}`);
       render();
     }
   }
@@ -538,11 +542,14 @@
         } else {
           showToast(`Skipped — ${r.skipped} already filled.`);
         }
+      } else if (r.niche > 0) {
+        showToast(`"${sec.title}" has only niche items — add manually as needed (${r.niche} skipped).`);
       } else {
         showToast(`No portion rules apply in "${sec.title}" for current PAX.`);
       }
     } else {
-      showToast(`${sec.title}: filled ${r.total} item${r.total === 1 ? "" : "s"} by PAX.`);
+      const nicheNote = r.niche > 0 ? ` · ${r.niche} niche skipped` : "";
+      showToast(`${sec.title}: filled ${r.total} mainstream item${r.total === 1 ? "" : "s"}${nicheNote}.`);
       render();
     }
   }
@@ -557,11 +564,14 @@
         } else {
           showToast(`Skipped — ${r.skipped} already filled.`);
         }
+      } else if (r.niche > 0) {
+        showToast(`${cat.label}: no mainstream items — ${r.niche} niche items to add manually.`);
       } else {
         showToast(`No portion rules apply in ${cat.label} for current PAX.`);
       }
     } else {
-      showToast(`${cat.label}: filled ${r.total} item${r.total === 1 ? "" : "s"} by PAX.`);
+      const nicheNote = r.niche > 0 ? ` · ${r.niche} niche skipped (add manually)` : "";
+      showToast(`${cat.label}: filled ${r.total} mainstream item${r.total === 1 ? "" : "s"}${nicheNote}.`);
       render();
     }
   }
