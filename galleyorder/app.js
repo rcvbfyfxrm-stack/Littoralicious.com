@@ -491,23 +491,77 @@
   }
 
   // ─── PROVISIONING MATH ──────────────────────────────────────────────────
-  function applyPortionSuggestions() {
+  function applyPortionSuggestionsScoped(scope) {
+    // scope: { cat: <cat object> | null, sec: <sec object> | null, force: bool }
+    // null = "everything". Both set = single section. cat only = whole category.
     const ctx = enrichCtx();
-    if (!ctx.guest && !ctx.crew) { alert("Enter PAX (guest + crew) first."); return; }
-    let counts = { guest: 0, crew: 0, all: 0 };
-    PANTRY_DATA.forEach(cat => effectiveSections(cat).forEach(sec => sec.items.forEach(it => {
-      const e = window.PANTRY_ENRICH.enrichItem(it, cat, sec, ctx);
-      if (e.portion && !hasOrder(it.id)) {
+    if (!ctx.guest && !ctx.crew) {
+      alert("Enter PAX (guest + crew + days) in the bar above first.");
+      return { total: 0 };
+    }
+    let counts = { guest: 0, crew: 0, all: 0, skipped: 0 };
+    const cats = scope.cat ? [scope.cat] : PANTRY_DATA;
+    cats.forEach(cat => {
+      const secs = scope.sec ? [scope.sec] : effectiveSections(cat);
+      secs.forEach(sec => sec.items.forEach(it => {
+        const e = window.PANTRY_ENRICH.enrichItem(it, cat, sec, ctx);
+        if (!e.portion) return;
+        if (hasOrder(it.id) && !scope.force) { counts.skipped++; return; }
         setQty(it.id, e.portion.qty);
         if (e.portion.unit && e.portion.unit !== effectiveUnit(it)) setUnit(it.id, e.portion.unit);
         counts[e.portion.role || "all"]++;
-      }
-    })));
-    const total = counts.guest + counts.crew + counts.all;
-    if (total === 0) {
-      showToast("No new suggestions — items already filled or no role-matching PAX entered.");
+      }));
+    });
+    return { ...counts, total: counts.guest + counts.crew + counts.all };
+  }
+
+  function applyPortionSuggestions() {
+    const r = applyPortionSuggestionsScoped({ cat: null, sec: null, force: false });
+    if (r.total === 0) {
+      showToast(r.skipped > 0
+        ? `${r.skipped} items already filled — clear first to re-fill.`
+        : "No suggestions — PAX too low or no role-matching items.");
     } else {
-      showToast(`Filled ${total} items · ${counts.guest} guest · ${counts.crew} crew · ${counts.all} all-pax`);
+      showToast(`Filled ${r.total} items · ${r.guest} guest · ${r.crew} crew · ${r.all} all-pax`);
+      render();
+    }
+  }
+
+  function applyPortionsForSection(catId, sIndex, force) {
+    const cat = findCat(catId); if (!cat) return;
+    const sec = effectiveSections(cat)[sIndex]; if (!sec) return;
+    const r = applyPortionSuggestionsScoped({ cat, sec, force: !!force });
+    if (r.total === 0) {
+      if (r.skipped > 0 && !force) {
+        if (confirm(`${r.skipped} item${r.skipped === 1 ? "" : "s"} in "${sec.title}" already have quantities. Overwrite them?`)) {
+          applyPortionsForSection(catId, sIndex, true);
+        } else {
+          showToast(`Skipped — ${r.skipped} already filled.`);
+        }
+      } else {
+        showToast(`No portion rules apply in "${sec.title}" for current PAX.`);
+      }
+    } else {
+      showToast(`${sec.title}: filled ${r.total} item${r.total === 1 ? "" : "s"} by PAX.`);
+      render();
+    }
+  }
+
+  function applyPortionsForCategory(catId, force) {
+    const cat = findCat(catId); if (!cat) return;
+    const r = applyPortionSuggestionsScoped({ cat, sec: null, force: !!force });
+    if (r.total === 0) {
+      if (r.skipped > 0 && !force) {
+        if (confirm(`${r.skipped} item${r.skipped === 1 ? "" : "s"} in ${cat.label} already have quantities. Overwrite them?`)) {
+          applyPortionsForCategory(catId, true);
+        } else {
+          showToast(`Skipped — ${r.skipped} already filled.`);
+        }
+      } else {
+        showToast(`No portion rules apply in ${cat.label} for current PAX.`);
+      }
+    } else {
+      showToast(`${cat.label}: filled ${r.total} item${r.total === 1 ? "" : "s"} by PAX.`);
       render();
     }
   }
@@ -2302,7 +2356,10 @@
     let html = `<div class="section ${open ? "open" : ""}" data-cat="${cat.id}" data-sec-idx="${sIndex}" data-section-key="${escapeAttr(key)}">
       <div class="section-header" data-section-toggle="${escapeAttr(key)}">
         <h3><span class="chev">▶</span>${escapeHTML(sec.title)}</h3>
-        <span class="section-stats">${stats.ordered}/${stats.total}</span>
+        <span class="section-header-tools">
+          <button type="button" class="btn-pax-section" data-fill-section="${cat.id}|${sIndex}" title="Auto-fill quantities in this section using current PAX (guest + crew + days)">⚡ PAX</button>
+          <span class="section-stats">${stats.ordered}/${stats.total}</span>
+        </span>
       </div>
       <div class="section-body"><div class="item-list">`;
     html += tableHeadHTML();
@@ -2356,6 +2413,7 @@
           <div class="footer-summary">${escapeHTML(cat.label)} · <strong>${stats.ordered}</strong> ordered of ${stats.total} catalogued${customCount ? ` · ${customCount} custom` : ""}</div>
           <div class="footer-actions">
             <button class="btn-mini btn-mini-accent" data-add-item="${cat.id}" title="Add a custom item to this category — items not in the catalog">+ Add item</button>
+            <button class="btn-mini btn-mini-pax" data-fill-cat="${cat.id}" title="Auto-fill quantities for the whole category using current PAX (guest + crew + days)">⚡ Fill ${escapeHTML(cat.label)} by PAX</button>
             <button class="btn-mini ${hasOrders ? "" : "btn-disabled"}" data-print-cat="${cat.id}" ${hasOrders ? "" : "disabled"} title="Print only this category as its own PDF">Print ${escapeHTML(cat.label)} only</button>
             <button class="btn-mini ${hasOrders ? "" : "btn-disabled"}" data-archive-cat="${cat.id}" ${hasOrders ? "" : "disabled"} title="Save just this category as a snapshot to Archives">Archive ${escapeHTML(cat.label)}</button>
             <button class="btn-mini" data-copy-cat="${cat.id}" ${hasOrders ? "" : "disabled"} title="Copy this category as plain text">Copy text</button>
@@ -2474,6 +2532,15 @@
     main.querySelectorAll("[data-archive-cat]").forEach(el => el.addEventListener("click", e => { e.stopPropagation(); archiveCategory(el.dataset.archiveCat); }));
     main.querySelectorAll("[data-copy-cat]").forEach(el => el.addEventListener("click", e => { e.stopPropagation(); copyCategoryText(el.dataset.copyCat); }));
     main.querySelectorAll("[data-clear-cat]").forEach(el => el.addEventListener("click", e => { e.stopPropagation(); clearCategory(el.dataset.clearCat); }));
+    main.querySelectorAll("[data-fill-section]").forEach(el => el.addEventListener("click", e => {
+      e.stopPropagation();
+      const [catId, sIdx] = el.dataset.fillSection.split("|");
+      applyPortionsForSection(catId, parseInt(sIdx, 10), false);
+    }));
+    main.querySelectorAll("[data-fill-cat]").forEach(el => el.addEventListener("click", e => {
+      e.stopPropagation();
+      applyPortionsForCategory(el.dataset.fillCat, false);
+    }));
     main.querySelectorAll("[data-add-item]").forEach(el => el.addEventListener("click", e => { e.stopPropagation(); openAddItemModal(el.dataset.addItem); }));
     main.querySelectorAll("[data-delete-custom]").forEach(el => el.addEventListener("click", e => {
       e.stopPropagation(); deleteCustomItem(el.dataset.deleteCustom);

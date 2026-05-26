@@ -2018,3 +2018,41 @@ main.main {
   /* Disable hover-only styles that don't make sense on touch */
   .item-list .row:hover > div { background: var(--color-paper); }
 }
+
+/* ─── PAX auto-fill controls (added 2026-05-26) ─────────────────────────── */
+.section-header-tools {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-pax-section {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  background: transparent;
+  color: var(--color-sea);
+  border: 1px solid var(--color-sea);
+  cursor: pointer;
+  border-radius: 0;
+  line-height: 1.4;
+  transition: background 0.12s, color 0.12s;
+}
+.btn-pax-section:hover {
+  background: var(--color-sea);
+  color: var(--color-paper);
+}
+.btn-mini-pax {
+  border: 1px solid var(--color-sea);
+  color: var(--color-sea);
+  background: transparent;
+  font-weight: 600;
+}
+.btn-mini-pax:hover {
+  background: var(--color-sea);
+  color: var(--color-paper);
+  border-color: var(--color-sea);
+}
+@media print {
+  .btn-pax-section, .section-header-tools .btn-pax-section, .btn-mini-pax {
+    display: none !important;
+  }
+}
