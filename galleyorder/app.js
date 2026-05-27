@@ -2319,34 +2319,29 @@
     }
     const customBadge = item.isCustom ? ` <span class="custom-badge" title="Custom item — added by you">+ custom</span>` : "";
     const customDelete = item.isCustom ? ` <button class="custom-delete" data-delete-custom="${item.id}" title="Delete this custom item">×</button>` : "";
+    const luxuryMark = item.tier === 3 ? ' <span class="luxury-mark" title="★★★ Specialty / luxury">★★★</span>' : "";
     return `
       <div class="row ${ordered} ${fav ? "fav" : ""} ${e.profileFlag ? "flag-" + e.profileFlag.severity : ""} ${item.isCustom ? "is-custom" : ""}" data-id="${item.id}">
         <div class="col-fav" data-fav="${item.id}" title="${fav ? "Remove favourite" : "Mark as favourite"}">${fav ? "★" : "☆"}</div>
-        <div class="col-tier" title="${item.tier ? `Tier ${item.tier}` : "Untiered"}">${stars}</div>
-        <div class="col-name">${escapeHTML(item.name)}${customBadge} ${profileBadge}${f >= 3 ? ` <span class="freq-marker-inline" title="Used ${f} times">↻${f}</span>` : ""}${customDelete}</div>
+        <div class="col-name">${escapeHTML(item.name)}${luxuryMark}${customBadge} ${profileBadge}${f >= 3 ? ` <span class="freq-marker-inline" title="Used ${f} times">↻${f}</span>` : ""}${customDelete}</div>
         <div class="col-brand">${escapeHTML(item.brand || "")} ${badges}</div>
         <div class="col-qty-cell">
-          <button class="qty-step" data-step="${item.id}" data-delta="-1" title="− ${naturalStep(unit)} ${escapeHTML(unit || '')}">−</button>
+          <button class="qty-step minus" data-step="${item.id}" data-delta="-1" title="− ${naturalStep(unit)} ${escapeHTML(unit || '')}">−</button>
           <input type="text" data-qty="${item.id}" value="${escapeAttr(qty)}" placeholder="—" inputmode="decimal" />
-          <button class="qty-step" data-step="${item.id}" data-delta="1" title="+ ${naturalStep(unit)} ${escapeHTML(unit || '')}">+</button>
-          <button class="qty-step mul" data-mul="${item.id}" data-factor="2" title="×2">×2</button>
-          <button class="qty-step mul" data-mul="${item.id}" data-factor="5" title="×5">×5</button>
+          <button class="qty-step plus" data-step="${item.id}" data-delta="1" title="+ ${naturalStep(unit)} ${escapeHTML(unit || '')}">+</button>
         </div>
         <div class="col-unit"><input type="text" data-unit="${item.id}" value="${escapeAttr(unit)}" placeholder="unit" /></div>
-        <div class="col-stars-mini">${stars}</div>
-        <div class="col-notes"><input type="text" data-notes="${item.id}" value="${escapeAttr(notes)}" placeholder="notes" /></div>
+        <div class="col-notes"><input type="text" data-notes="${item.id}" value="${escapeAttr(notes)}" placeholder="+ note" /></div>
       </div>`;
   }
 
   function tableHeadHTML() {
     return `
       <div class="head center">★</div>
-      <div class="head center">Tier</div>
       <div class="head">Item</div>
-      <div class="head">Brand / Spec · badges</div>
+      <div class="head">Brand · Spec</div>
       <div class="head center">Qty</div>
       <div class="head center">Unit</div>
-      <div class="head"></div>
       <div class="head">Notes</div>
     `;
   }
