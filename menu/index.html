@@ -479,6 +479,19 @@ a { color: var(--color-sea); }
 
 
 
+
+/* ---------- Tiny clean back-to-home wordmark ---------- */
+.litto-mast-min {
+  padding: 18px 24px 12px; background: var(--color-paper);
+  border-bottom: 1px solid var(--color-border); text-align: center;
+}
+.litto-mast-min__back {
+  font-family: var(--font-serif); font-weight: 700;
+  font-size: 18px; letter-spacing: 0.20em; text-transform: uppercase;
+  color: var(--color-ink); text-decoration: none; line-height: 1;
+}
+.litto-mast-min__back:hover { color: var(--color-sea); }
+
 /* ---------- Littoralicious masthead — site identity ---------- */
 .litto-masthead {
   padding: 36px 24px 0; background: var(--color-paper);
@@ -756,9 +769,13 @@ a { color: var(--color-sea); }
 .litto-footer__meta a:hover { color: var(--color-sea); border-bottom: 1px solid var(--color-sea); }
 .litto-footer__meta .sep { margin: 0 8px; opacity: 0.5; }
 
+
+/* Section labels removed from cards by request — keep dish-only display */
+.day-card .section-label { display: none !important; }
+
 /* At-a-glance + sources */
 .aag-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
   padding: 16px 0; border-top: 2px solid var(--color-ink); border-bottom: 1px solid var(--color-border);
   margin: 20px 0 12px; text-align: center;
 }
@@ -881,25 +898,8 @@ a { color: var(--color-sea); }
 </head>
 <body>
 
-<header class="litto-masthead">
-  <div class="litto-masthead__inner">
-    <div class="litto-masthead__brand">
-      <a href="https://www.littoralicious.com" class="litto-masthead__logo">Littoralicious</a>
-      <p class="litto-masthead__tagline">Modern Science · Regional Recipes · From the Sea</p>
-      <div class="litto-masthead__description">
-        <span class="litto-masthead__description-main">Sailing Around the Plate</span>
-        <span class="litto-masthead__description-sub">Littoraly Delicious</span>
-      </div>
-    </div>
-    <nav class="litto-masthead__nav">
-      <a href="https://www.littoralicious.com/shore-larder.html">Shore Larder</a>
-      <a href="https://www.littoralicious.com/the-method.html">The Method</a>
-      <a href="https://www.littoralicious.com/littoral-heritage.html">Heritage</a>
-      <a href="https://www.littoralicious.com/the-evidence.html">The Evidence</a>
-      <a href="https://www.littoralicious.com/the-bridge.html">The Bridge</a>
-      <a href="/menu/" class="active">The Menu</a>
-    </nav>
-  </div>
+<header class="litto-mast-min">
+  <a href="https://www.littoralicious.com" class="litto-mast-min__back" title="Back to Littoralicious">Littoralicious</a>
 </header>
 
 <section class="planner">
@@ -1511,10 +1511,7 @@ document.addEventListener('keydown', e => {
       const activeArr = sel[s.key];
       const poolArr = pool[s.key];
       const dishesHtml = activeArr.map((_, i) => renderDishItem(day, s.key, activeArr, i, poolArr)).join('');
-      return `<div class="section">
-        <div class="section-label"><span>${s.label}</span></div>
-        ${dishesHtml}
-      </div>`;
+      return `<div class="section">${dishesHtml}</div>`;
     }).join('');
 
     return `<div class="${cls.join(' ')}" data-week="${weekIdx}" data-day="${day}" data-tone="${pool.tone}">
