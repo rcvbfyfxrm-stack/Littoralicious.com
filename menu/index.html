@@ -917,7 +917,7 @@ a { color: var(--color-sea); }
         <h2 class="planner-title">Plan the week — the way a yacht chef thinks</h2>
         <p class="planner-desc">Pour Commencer · Le Plat · Sur la Table · Pour Finir. Each slot pulls from a pool of authentic alternatives — click <span style="font-family: var(--font-mono); font-size: 0.85em;">◂ ▸</span> on any dish to swap within the same cuisine. Mainstream proteins led. Plan 1, 2, 3 weeks or a full month at once.</p>
         <div class="planner-actions">
-          <button class="planner-action" id="btn-refresh-day" title="Shuffle today's picks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg> <span>Shuffle picks</span></button>
+          <button class="planner-action" id="btn-refresh-day" title="Shuffle today's picks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg> <span>Shuffle themes</span></button>
           <button class="planner-action primary" id="btn-print" title="Print weekly menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg> <span>Print menu</span></button>
           <button class="planner-action" id="btn-reset" title="Reset all selections"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg> <span>Reset</span></button>
         </div>
@@ -1452,7 +1452,7 @@ document.addEventListener('keydown', e => {
   function freshWeek() {
     const w = {};
     DAY_ORDER.forEach(d => {
-      w[d] = { anchor: 0 };
+      w[d] = { theme: d, anchor: 0 };
       SECTIONS.forEach(s => { w[d][s.key] = POOLS[d].default_actives[s.key].slice(); });
     });
     return w;
@@ -1462,6 +1462,10 @@ document.addEventListener('keydown', e => {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
       const o = JSON.parse(raw);
+      // v7→v8 migration: ensure every (week, day) has a `theme` key
+      (o.weeks || []).forEach(w => {
+        DAY_ORDER.forEach(d => { if (w[d] && !w[d].theme) w[d].theme = d; });
+      });
       return {
         view: o.view || 1,
         weeks: o.weeks && o.weeks.length ? o.weeks : [freshWeek()],
@@ -1498,7 +1502,7 @@ document.addEventListener('keydown', e => {
   }
 
   function renderDay(weekIdx, day) {
-    const pool = POOLS[day];
+    const pool = POOLS[sel.theme || day];
     const wk = state.weeks[weekIdx];
     const sel = wk[day];
     const anchorIdx = ((sel.anchor || 0) % pool.anchors.length + pool.anchors.length) % pool.anchors.length;
@@ -1524,7 +1528,7 @@ document.addEventListener('keydown', e => {
         </div>
         <div class="day-actions">
           <button class="fav" data-day="${day}" data-week="${weekIdx}" title="Favorite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></button>
-          <button class="shuffle" data-day="${day}" data-week="${weekIdx}" title="Shuffle this day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></button>
+          <button class="shuffle" data-day="${day}" data-week="${weekIdx}" title="Change theme — cycle to the next cuisine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></button>
         </div>
       </div>
       ${sectionsHtml}
@@ -1614,17 +1618,15 @@ document.addEventListener('keydown', e => {
     if (shuffle) {
       const w = Number(shuffle.dataset.week);
       const day = shuffle.dataset.day;
-      const pool = POOLS[day];
+      // Cycle to the NEXT theme — skip the current theme so the user always sees a change
+      const curTheme = state.weeks[w][day].theme || day;
+      const idx = DAY_ORDER.indexOf(curTheme);
+      const nextTheme = DAY_ORDER[(idx + 1) % DAY_ORDER.length];
+      state.weeks[w][day].theme = nextTheme;
+      state.weeks[w][day].anchor = 0;
+      const newPool = POOLS[nextTheme];
       SECTIONS.forEach(s => {
-        const arr = state.weeks[w][day][s.key];
-        const poolArr = pool[s.key];
-        // Random new selection without repeats
-        const indices = Array.from({length: poolArr.length}, (_,i) => i);
-        for (let i = indices.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i+1));
-          [indices[i], indices[j]] = [indices[j], indices[i]];
-        }
-        state.weeks[w][day][s.key] = indices.slice(0, arr.length);
+        state.weeks[w][day][s.key] = newPool.default_actives[s.key].slice();
       });
       renderAll();
       return;
@@ -1658,19 +1660,21 @@ document.addEventListener('keydown', e => {
 
   // Toolbar
   document.getElementById('btn-refresh-day').addEventListener('click', () => {
-    // Shuffle EVERY day across all visible weeks
+    // Permute the 7 themes across the 7 days for every visible week.
+    // Each theme gets used exactly once per week — guarantees variety.
     for (let w = 0; w < state.view; w++) {
-      DAY_ORDER.forEach(day => {
-        const pool = POOLS[day];
+      const themes = DAY_ORDER.slice();
+      for (let i = themes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i+1));
+        [themes[i], themes[j]] = [themes[j], themes[i]];
+      }
+      DAY_ORDER.forEach((day, i) => {
+        const theme = themes[i];
+        state.weeks[w][day].theme = theme;
+        state.weeks[w][day].anchor = 0;
+        const pool = POOLS[theme];
         SECTIONS.forEach(s => {
-          const arr = state.weeks[w][day][s.key];
-          const poolArr = pool[s.key];
-          const indices = Array.from({length: poolArr.length}, (_,i) => i);
-          for (let i = indices.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i+1));
-            [indices[i], indices[j]] = [indices[j], indices[i]];
-          }
-          state.weeks[w][day][s.key] = indices.slice(0, arr.length);
+          state.weeks[w][day][s.key] = pool.default_actives[s.key].slice();
         });
       });
     }
