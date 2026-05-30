@@ -1502,9 +1502,9 @@ document.addEventListener('keydown', e => {
   }
 
   function renderDay(weekIdx, day) {
-    const pool = POOLS[sel.theme || day];
     const wk = state.weeks[weekIdx];
     const sel = wk[day];
+    const pool = POOLS[sel.theme || day];
     const anchorIdx = ((sel.anchor || 0) % pool.anchors.length + pool.anchors.length) % pool.anchors.length;
     const anchor = pool.anchors[anchorIdx];
     const dayNum = DAY_ORDER.indexOf(day) + 1;
