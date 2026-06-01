@@ -10,11 +10,13 @@
       "tools/**",
       "templates/**",
       "scripts/**",
+      "content/**",
       "_live-reference/**",
       "data/draft-articles.json",
       "package.json",
       "package-lock.json",
       "*.md",
+      "**/*.md",
       "Makefile"
     ],
     "headers": [
