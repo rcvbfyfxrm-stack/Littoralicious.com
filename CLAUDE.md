@@ -16,9 +16,14 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
 
 ## Writing editorial — rules-first
 
+**The first law (DNA.md): never lose focus.** Every line must pull the reader to the next —
+that is the bar for publishing. Build focus in with the locked components: a `.summary-box`
+promise up top, `.note--quote` pull-quotes to re-hook, `.note--key`/`.note--science` insights
+where earned, `.term` for inline jargon, one takeaway to close.
+
 Before drafting any article/page, open the response with **two things**, in order:
-1. A compact **rules summary** (~150 words): mission, the three pillars, the DNA test,
-   source rule, banned words, design tokens, editorial firewall.
+1. A compact **rules summary** (~150 words): the first law (never lose focus), mission, the
+   three pillars, the DNA test, source rule, banned words, design tokens, editorial firewall.
 2. A **"Template fit:"** line naming one of the 12 templates with a one-line rationale
    (e.g. *"Template fit: The Blueprint (05) — full recipe with science"*).
 

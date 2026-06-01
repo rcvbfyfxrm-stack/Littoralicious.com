@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+{{HEAD}}
+</head>
+<body>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../shore-larder.html">Shore Larder</a>
+                    <a href="../the-method.html">The Method</a>
+                    <a href="../littoral-heritage.html">Heritage</a>
+                    <a href="../the-evidence.html">The Evidence</a>
+                    <a href="../the-bridge.html">The Bridge</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">{{SUBTAG}}</span>
+                    <time class="article__date">{{DATE}}</time>
+                    <span class="article__reading-time">{{READ}} min read</span>
+                </div>
+                <h1 class="article__title">{{TITLE}}</h1>
+                <p class="article__lede">{{LEDE}}</p>
+            </header>
+
+            <div class="article__content container" style="max-width: 65ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <!-- BODY:BEGIN — Equipment. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+<!-- BODY:BEGIN -->
+
+                <!-- Top promise: the payoff in three scannable lines. The reader sees the verdict-shape before reading on. -->
+                <div class="summary-box">
+                    <strong>What you'll get</strong>
+                    <ul>
+                        <li>Whether this kit earns its space in a 4 m&sup2; galley &mdash; or just fills the locker.</li>
+                        <li>The one number that decides the purchase, and the failure mode the brochure hides.</li>
+                        <li>A clear buy / skip / buy-only-if call, tested at sea over real charters.</li>
+                    </ul>
+                </div>
+
+                <!-- Table of Contents: keep the review's section order. Update labels/anchors to match this piece. -->
+                <div class="article-toc">
+                    <p class="article-toc__title">In This Article</p>
+                    <ul>
+                        <li><a href="#job">The Job It Has to Do</a></li>
+                        <li><a href="#spec">At a Glance</a></li>
+                        <li><a href="#claim">What It Claims</a></li>
+                        <li><a href="#test">How We Tested It</a></li>
+                        <li><a href="#verdict">The Verdict</a></li>
+                        <li><a href="#alternatives">Alternatives &amp; When Not To</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section 1: THE JOB. Open with the galley problem this gear is meant to solve — space, swell, holding temp, provisioning. Name the tool and what it competes against. -->
+                <h2 id="job">The Job It Has to Do</h2>
+                <p class="kicker"><em>Judge the kit against the task, not the brochure &mdash; here's the task.</em></p>
+                <!-- WRITER kicker: one line on why this section matters, in the reader's terms. -->
+
+                <p>One sentence on the constraint at sea that creates the need for this tool, and what chefs currently do without it.</p>
+                <!-- WRITER: define the task precisely (the temperature, the volume, the swell condition). The gear is judged against the job, not against its brochure. -->
+
+                <div class="note note--key">
+                    <p><strong>The job:</strong> One line stating exactly what success looks like for this piece of kit in a moving 4 m&sup2; galley.</p>
+                </div>
+
+                <!-- Section 2: AT A GLANCE stats grid. Reuse this inline-styled block verbatim; swap the labels/values. Keep it to the numbers that decide a purchase: price, footprint, draw, weight, noise. -->
+                <h2 id="spec">At a Glance</h2>
+                <p class="kicker"><em>The handful of numbers a chef actually weighs against locker space and the generator.</em></p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0; border: 1px solid var(--color-border); padding: var(--space-4);">
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Price</div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">&euro;000</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Footprint</div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">00 &times; 00 cm</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Power draw</div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">000 W</div>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Weight</div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">0.0 kg</div>
+                    </div>
+                </div>
+                <!-- WRITER: 3-5 stats only. Use the metrics a chef actually weighs against galley space and the generator. Metric units, imperial in parens if needed. -->
+
+                <div class="note note--action">
+                    <p><strong>Quick check:</strong> One line on whether these numbers clear your <span class="term">power budget</span> &mdash; the amps the generator can spare before the AC trips.</p>
+                </div>
+
+                <!-- Section 3: THE CLAIM. State what the maker promises, plus the mechanism — why it should work (the compound, the temperature, the reaction). Science inline, not a sidebar. -->
+                <h2 id="claim">What It Claims</h2>
+                <p class="kicker"><em>The maker's promise, and the physics that would have to hold for it to be true.</em></p>
+
+                <p>One line on the manufacturer's headline claim and the physical mechanism behind it.</p>
+                <!-- WRITER: explain the working principle so the chef understands WHY it should deliver — then we can test whether it does. -->
+
+                <div class="note note--science">
+                    <p><strong>The mechanism:</strong> One line naming the temperature, compound, or physical effect the tool relies on &mdash; e.g. <span class="term">conduction</span> versus forced-air heat &mdash; with a named source if the claim is contested.</p>
+                </div>
+
+                <div class="divider"><span class="divider__text">The proof</span></div>
+
+                <!-- Section 4: HOW WE TESTED IT. The proof. Describe the protocol honestly: how many trials, over what period, in what conditions. This is the "Tested at sea" core. -->
+                <h2 id="test">How We Tested It</h2>
+                <p class="kicker"><em>Real charters, counted trials, honest about what we couldn't control.</em></p>
+
+                <p>One line describing the test setup: the dish or task, the number of runs, the charter conditions, the period.</p>
+                <!-- WRITER: be specific and honest about uncertainty. "Worked 14 of 16 trials," not false certainty. Note sea state, ambient temp, and what it was run against. -->
+
+                <div class="note note--quote">
+                    <p>One striking line from the bench &mdash; the moment the kit either earned its place or gave itself away.</p>
+                </div>
+                <!-- WRITER pull-quote: the single sentence that re-hooks the eye mid-piece. A real observation, not a slogan. -->
+
+                <h3>What Worked</h3>
+                <ul>
+                    <li>Placeholder result &mdash; one concrete, measured win (with the number).</li>
+                    <li>Placeholder result &mdash; another observed strength under real conditions.</li>
+                </ul>
+                <!-- WRITER: tie each point to the job defined up top. Numbers over adjectives. -->
+
+                <h3>Where It Struggled</h3>
+                <ul>
+                    <li>Placeholder failure mode &mdash; what broke down, when, and by how much.</li>
+                    <li>Placeholder failure mode &mdash; the practical cost (cleanup, noise, stowage, draw).</li>
+                </ul>
+                <!-- WRITER: do not soften this. The reader is buying against a budget and a locker that is already full. -->
+
+                <div class="note note--warning">
+                    <p><strong>Watch for:</strong> One line on the failure case a buyer must know before committing &mdash; the swell limit, the cleaning trap, the part that fails first.</p>
+                </div>
+
+                <!-- Section 5: THE VERDICT. A clear, direct call. Worth the space and the spend, or not — and for whom. -->
+                <h2 id="verdict">The Verdict</h2>
+                <p class="kicker"><em>The unambiguous call &mdash; buy, skip, or buy-only-if &mdash; and the chef it's right for.</em></p>
+
+                <p>One direct sentence: buy it, skip it, or buy it only if [condition].</p>
+                <!-- WRITER: the verdict must be unambiguous and tied to galley reality — space, budget, frequency of use. Warm but honest. -->
+
+                <div class="note note--key">
+                    <p><strong>Verdict:</strong> One line summarising the call and the single chef it is right for.</p>
+                </div>
+
+                <!-- Section 6: ALTERNATIVES / WHEN NOT TO. Name the competitors and the cases where the cheaper, smaller, or simpler option wins. -->
+                <h2 id="alternatives">Alternatives &amp; When Not To</h2>
+                <p class="kicker"><em>When the cheaper, smaller, or simpler kit quietly wins.</em></p>
+
+                <p>One line framing the trade-off between this tool and the alternatives below.</p>
+                <!-- WRITER: name real alternatives. State plainly when a chef should NOT buy this (small galley, low usage, simpler kit already aboard). -->
+
+                <ul>
+                    <li><strong>Cheaper option:</strong> Placeholder &mdash; what you lose and when that loss is acceptable.</li>
+                    <li><strong>Smaller-footprint option:</strong> Placeholder &mdash; when stowage matters more than capacity.</li>
+                    <li><strong>Skip it entirely if:</strong> Placeholder &mdash; the galley or charter profile where this tool earns nothing.</li>
+                </ul>
+
+                <div class="note note--action">
+                    <p><strong>Bottom line:</strong> One line a tired chef can act on at 11 PM mid-charter &mdash; the single decision rule for this purchase. Tested at sea.</p>
+                </div>
+
+                <!-- Closing single-takeaway: the one thing the reader keeps after the page closes. -->
+                <div class="note note--key">
+                    <p><strong>The one thing:</strong> The single sentence that settles it &mdash; if you remember nothing else about this kit, remember this.</p>
+                </div>
+
+                <!-- Sources: every contested claim traceable. Reuse this block; list named makers, manuals, and any study cited inline. -->
+                <div class="article-sources">
+                    <p><strong>Sources</strong></p>
+                    <p>
+                        Manufacturer spec sheet &amp; manual |
+                        Named study or standard for any performance claim |
+                        Test conditions log (charter, sea state, dates)
+                    </p>
+                </div>
+
+                <!-- BODY:END -->
+                <!-- BODY:END -->
+
+                <!-- Article Engagement -->
+                <div class="article-engagement">
+                    <div class="engagement-pulse" data-reactions="0" data-comments="0">
+                        <span class="engagement-pulse__text">Be the first to join the conversation</span>
+                    </div>
+
+                    <div class="article-reactions" data-article-id="{{SLUG}}">
+                        <p class="reactions-prompt">Have a technique or a question? Share it.</p>
+                        <div class="reactions-grid"></div>
+                        <div class="sentiment-bar"></div>
+                    </div>
+
+                    <div class="article-share">
+                        <span class="share-label">Share:</span>
+                        <button class="share-btn" data-share="twitter" title="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="linkedin" title="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="copy" title="Copy link">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="article-comments">
+                        <h3 class="comments-title">Join the conversation <span class="comments-title__count"></span></h3>
+                        <div class="comments-sort">
+                            <button class="comments-sort__btn active" data-sort="newest">Newest</button>
+                            <button class="comments-sort__btn" data-sort="most-agreed">Most agreed</button>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <div class="comment-form__row">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                    <input type="email" name="email" placeholder="Email (optional)">
+                                </div>
+                                <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" maxlength="2000" required></textarea>
+                                <div class="comment-form__footer">
+                                    <label class="comment-form__subscribe">
+                                        <input type="checkbox" name="subscribe" checked>
+                                        <span>Subscribe to the newsletter</span>
+                                    </label>
+                                    <span class="comment-form__char-count"></span>
+                                    <button type="submit">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comments-list"></div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__newsletter">
+                <form class="footer-newsletter-form newsletter-form"
+                      action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
+                      method="post" target="popupwindow">
+                    <label for="footer-email">Get the monthly brief</label>
+                    <div class="footer-newsletter-form__row">
+                        <input type="email" name="email" id="footer-email" placeholder="your@email.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved. Information wants to be free.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/community.js"></script>
+</body>
+</html>

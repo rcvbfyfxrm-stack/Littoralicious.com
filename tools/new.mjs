@@ -17,18 +17,36 @@ if (data.articles.some((a) => a.slug === slug)) die(`slug "${slug}" already exis
 const articleFile = p("articles", `${slug}.html`);
 if (exists(articleFile)) die(`articles/${slug}.html already exists`);
 
-const category = args.category || "the-method";
-if (!cats[category]) console.warn(`  note: category "${category}" not in articles.json categories block (allowed, but check spelling)`);
+// Per-template defaults (category + header subtag) so you rarely pass --category/--subtag.
+const TEMPLATE_DEFAULTS = {
+  "shore-larder": { category: "shore-larder", subtag: "Ingredient Deep-Dive" },
+  "shore-larder-deep-dive": { category: "shore-larder", subtag: "Ingredient Deep-Dive" },
+  "the-method-technique": { category: "the-method", subtag: "Technique" },
+  "the-evidence": { category: "the-evidence", subtag: "Food Science" },
+  "littoral-heritage-article": { category: "littoral-heritage", subtag: "Heritage" },
+  "signal-fire": { category: "signal-fire", subtag: "Sourcing" },
+  "the-horizon": { category: "the-bridge", subtag: "Forecast" },
+  "trade-winds": { category: "trade-winds", subtag: "Career & Industry" },
+  "tight-ship": { category: "the-method", subtag: "Galley Operations" },
+  "port-call": { category: "port-call", subtag: "Provisioning" },
+  "the-locker": { category: "the-locker", subtag: "Equipment" },
+  "weekly-brief": { category: "the-bridge", subtag: "Digest" },
+  "the-lab": { category: "the-method", subtag: "Lab Notes" },
+  "recipe-blueprint": { category: "the-method", subtag: "Recipe Blueprint" },
+};
 const tmplName = args.template || "standard";
 const tmplFile = p("templates", `${tmplName}.html`);
 if (!exists(tmplFile)) die(`unknown template "${tmplName}" — see templates/  (run: ls templates)`);
+const DEF = TEMPLATE_DEFAULTS[tmplName] || {};
+const category = args.category || DEF.category || "the-method";
+if (!cats[category]) console.warn(`  note: category "${category}" not in articles.json categories block (allowed, but check spelling)`);
 
 const today = new Date().toISOString().slice(0, 10);
 const entry = {
   slug, title,
   date: today,
   category,
-  subtag: args.subtag || "",
+  subtag: args.subtag || DEF.subtag || "",
   tags: [],
   read_time: args.read ? parseInt(args.read, 10) : 0,
   featured: false,

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+{{HEAD}}
+</head>
+<body>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../shore-larder.html">Shore Larder</a>
+                    <a href="../the-method.html">The Method</a>
+                    <a href="../littoral-heritage.html">Heritage</a>
+                    <a href="../the-evidence.html">The Evidence</a>
+                    <a href="../the-bridge.html">The Bridge</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">{{SUBTAG}}</span>
+                    <time class="article__date">{{DATE}}</time>
+                    <span class="article__reading-time">{{READ}} min read</span>
+                </div>
+                <h1 class="article__title">{{TITLE}}</h1>
+                <p class="article__lede">{{LEDE}}</p>
+            </header>
+
+            <div class="article__content container" style="max-width: 65ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <!-- BODY:BEGIN — Provisioning. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+<!-- ====================================================================
+     PORT CALL (10) — City provisioning guide. Section rhythm:
+       port reality (funfact) -> QUICK MAP text table -> brief
+       -> agents/logistics -> suppliers/markets -> chef notes
+       -> watch-outs -> bottom line.
+     DESIGN LOCK: reuse the exact classes below (sfold/pfold/tb-col/
+     cau pills/pc-funfact/pc-pullq). NEVER a graphical/Leaflet map in
+     the body skeleton — the Quick Map is a TEXT TABLE only.
+     FOCUS LAYER: summary-box up top, a one-line kicker under every h2,
+     note--key/science/action/warning at the beats that earn them, one
+     note--quote pull-quote mid-piece, term spans on 2–4 jargon words,
+     and a closing single-takeaway. Layered ON the structure, not over it.
+     DNA: science inline, sourced claims, British spelling, "Tested at sea."
+     Banned: delicious, yummy, elevated, curated, artisanal, superfood,
+     game-changer, hack.
+===================================================================== -->
+
+<!-- LOCKED: top promise. The reader sees the payoff before reading a line. -->
+<div class="summary-box"><strong>What you'll get</strong>
+    <ul>
+        <li><!-- WRITER: the one provisioning constraint that defines this port, in a phrase. --> placeholder payoff one.</li>
+        <li><!-- WRITER: who to call first and what to brief, with the lead time. --> placeholder payoff two.</li>
+        <li><!-- WRITER: the named things this port is the place to load before you sail. --> placeholder payoff three.</li>
+    </ul>
+</div>
+
+<!-- Text index — the readable "map". Keep as plain anchor nav, never a graphic. -->
+<nav class="pc-quicknav">
+    <a href="#quick-map">Quick Map</a><span class="sep">&middot;</span>
+    <a href="#three-berths">Berths</a><span class="sep">&middot;</span>
+    <a href="#brief">Brief</a><span class="sep">&middot;</span>
+    <a href="#agents">Agents &amp; Logistics</a><span class="sep">&middot;</span>
+    <a href="#suppliers">Suppliers &amp; Markets</a><span class="sep">&middot;</span>
+    <a href="#specialty">Specialty &amp; Wine</a><span class="sep">&middot;</span>
+    <a href="#transport">Transport</a><span class="sep">&middot;</span>
+    <a href="#watchouts" class="warn">⚠ Watch-outs</a><span class="sep">&middot;</span>
+    <a href="#bottom">Bottom Line</a>
+</nav>
+
+<!-- Port reality: one paragraph of fact that defines the constraint. -->
+<div class="pc-funfact"><strong>[The single hard fact about this port]</strong> &mdash; <!-- WRITER: the geography/logistics constraint that shapes every supplier decision (no roads / ferry-only / island / tides). Sourced number where you have one. --> placeholder reality line.</div>
+
+<h2 id="quick-map">Quick Map</h2>
+<p class="pc-kicker"><!-- WRITER: one line — the whole port at a glance, by minutes from the berth. --> Where everything is, in minutes from the dock.</p>
+<!-- ============================================================
+     LOCKED COMPONENT — "Quick Map" TEXT TABLE. Reproduce this
+     <table> structure verbatim; only swap the placeholder cells.
+     This is the textual stand-in for a map — NEVER a graphic.
+     Columns: Where / What it is / Time from berth / Note.
+     One row per category zone (Berths, Markets & Direct,
+     Specialty & Wine, Mainland / Wholesale, Logistics).
+============================================================ -->
+<table class="pc-quickmap">
+    <thead>
+        <tr><th>Where</th><th>What it is</th><th>Time from berth</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+        <tr><td><strong>[Berth zone]</strong></td><td>[the harbour / anchorage cluster]</td><td>[—]</td><td>[the one operational caveat]</td></tr>
+        <tr><td><strong>[Markets &amp; Direct]</strong></td><td>[fish hall / produce / off-the-boat]</td><td>[min on foot or by tender]</td><td>[opening days that bite]</td></tr>
+        <tr><td><strong>[Specialty &amp; Wine]</strong></td><td>[cheese / wine / bakery]</td><td>[min]</td><td>[siesta / case-order lead time]</td></tr>
+        <tr><td><strong>[Mainland / Wholesale]</strong></td><td>[hypermarket / bulk run]</td><td>[the portage / ferry leg]</td><td>[full-day vs quick run]</td></tr>
+        <tr><td><strong>[Logistics]</strong></td><td>[agent / water taxi / cargo ferry]</td><td>[—]</td><td>[brief lead time]</td></tr>
+    </tbody>
+</table>
+<div class="note note--key"><p><!-- WRITER: the one row in the table that decides the day — usually the portage/ferry leg. State it flat. --> placeholder — the leg that sets every delivery window.</p></div>
+
+<h2 id="three-berths">The Three Berths</h2>
+<p class="pc-kicker"><!-- WRITER: one line — the trade-off between these three, stated as a choice. --> The shortlist, and what each one puts you walking distance from.</p>
+<!-- The shortlist any captain actually picks from. Keep the 3-column grid verbatim;
+     blank the names, subtitles and meta. tel: links and map-link are part of the lock. -->
+<div class="three-berths">
+    <div class="tb-col" id="p-berth-1">
+        <h3>[Berth one]</h3>
+        <div class="subtitle">[zone] &middot; [max LOA] &middot; [draft / walk] &middot; <a href="tel:+000000000000">[phone]</a></div>
+        <ol><li><span class="meta">[One line: who berths here and why. What it puts you in walking/tender distance of.] <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">📍 Maps</a></span></li></ol>
+    </div>
+    <div class="tb-col" id="p-berth-2">
+        <h3>[Berth two]</h3>
+        <div class="subtitle">[zone] &middot; [max LOA] &middot; [note] &middot; <a href="tel:+000000000000">[phone]</a></div>
+        <ol><li><span class="meta">[One line.] <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">📍 Maps</a></span></li></ol>
+    </div>
+    <div class="tb-col" id="p-berth-3">
+        <h3>[Berth three]</h3>
+        <div class="subtitle">[zone] &middot; [max LOA] &middot; [note]</div>
+        <ol><li><span class="meta">[One line.] <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">📍 Maps</a></span></li></ol>
+    </div>
+</div>
+<div class="note note--action"><p><!-- WRITER: the booking move — which berth to hold for provisioning vs guest access, and when to lock it. --> placeholder — book this one for the galley, that one for the guests.</p></div>
+
+<h2 id="brief">The Brief</h2>
+<p class="pc-kicker"><!-- WRITER: one line — why this port behaves unlike the last one. --> What makes this port different, and what to set up on day one.</p>
+<!-- Why this port is different + what to set up on day one. -->
+<p><strong>Port type: [one-line classification].</strong> <!-- WRITER: the defining constraint and how everything fresh actually reaches the boat (boat / portage / cargo ferry / air freight). --> placeholder. The supply runs on <span class="term">portage</span> — every box is carried, not driven.</p>
+<div class="pc-pullq">[The one sentence a tired chef should remember. The constraint, stated flat.]</div>
+<p><!-- WRITER: how the supplier game flows from that constraint — where the bulk lives vs the fresh, and why. Numbers/prices where sourced. --> placeholder.</p>
+<div class="note note--science"><p><!-- WRITER: the mechanism that makes the constraint bite — e.g. why a 30-minute ferry leg warms a chilled load past the safe-hold line, or why tides gate the tender window. The compound, the temperature, the number. --> placeholder — why the leg, not the distance, is what spoils the load.</p></div>
+<p><strong>Two things to brief your yacht agent on, in writing, [lead time] before arrival:</strong> (1) [full provision list with brand specs]; (2) [dietary requirements / wine preferences]. During [peak events], brief [longer lead] ahead.</p>
+
+<h2 id="agents">Agents, Logistics &amp; [Water Taxi / Cargo Ferry]</h2>
+<p class="pc-kicker"><!-- WRITER: one line — why the agent is the first call, not the last. --> The first call before arrival, and the channel that moves your boxes.</p>
+<!-- The first call before arrival. Each supplier is a pfold. Reproduce ONE
+     pfold verbatim per entry; .top marks the lead pick. Blank name/hook/recog/
+     prose/meta. cau pills carry the inline caution (data-fix = the workaround). -->
+<details class="pfold top" id="p-agent">
+    <summary><div><div class="pfold__name">📍 [Yacht agent name]</div><div class="pfold__hook">[address] &middot; [since YYYY] &middot; [phone]</div></div><span class="pfold__chev">▶</span></summary>
+    <div class="pfold__body">
+        <div class="pfold__recog">[why this is the first call — one line of provenance]</div>
+        <p>[What they handle: customs, supplier coordination, dockside delivery, portage. The sourced reason they are the standard.] <span class="cau cau--high" data-fix="[The workaround — what to do, with the lead time and the festival exception spelled out.]">[short pill label]</span></p>
+        <div class="pfold__meta">
+            <div><strong>Address</strong>[…]</div>
+            <div><strong>Phone</strong>[…]</div>
+            <div><strong>Email</strong>[…]</div>
+            <div><strong>Web</strong>[…]</div>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+    </div>
+</details>
+<!-- Repeat the pfold for the transport channel (water taxi / cargo ferry) and any remote-order backup. -->
+<div class="note note--warning"><p><!-- WRITER: the failure mode here — the agent who confirms but doesn't clear customs on the fresh box, or the cargo ferry that bumps provisions for cars in season. Name the move that prevents it. --> placeholder — what goes wrong when you skip the written confirm.</p></div>
+
+<h2 id="suppliers">Suppliers &amp; Markets</h2>
+<p class="pc-kicker"><!-- WRITER: one line — the standard run that feeds the boat. --> Where the fresh actually comes from, and the run that brings it aboard.</p>
+<!-- Fish hall / produce / direct supply / on-island butcher. The funfact below
+     captures the repeatable supply pattern (the run, the cut-off, the portage). -->
+<p class="sr-section-note"><!-- WRITER: optional one-liner orienting the reader to how these picks float by use-rating, if rating JS is wired for this city. --> placeholder note.</p>
+<div class="pc-funfact"><strong>[The repeatable supply pattern.]</strong> <!-- WRITER: the standard run — van/ferry/walk, where to load, the cut-off hour, the portage leg, the typical cost band. --> placeholder.</div>
+
+<details class="pfold top" id="p-market-fish">
+    <summary><div><div class="pfold__name">📍 [Fish market / banco]</div><div class="pfold__hook">[address] &middot; [since YYYY] &middot; [days &amp; hours]</div></div><span class="pfold__chev">▶</span></summary>
+    <div class="pfold__body">
+        <div class="pfold__recog">[the provenance line — since when, why it's the source]</div>
+        <p>[What lands here, the seasonal species and their windows, the science where it matters (why the soft-shell window is fragile, what the ink is for). Sourced.] <span class="cau cau--high" data-fix="[Workaround — e.g. never put the fragile species on a printed menu; verbal special only; have a substitute named.]">[pill]</span> <span class="cau cau--med" data-fix="[Second caution — closed days, acqua alta, tides.]">[pill]</span></p>
+        <div class="pfold__meta">
+            <div><strong>Address</strong>[…]</div>
+            <div><strong>Hours</strong>[…]</div>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+    </div>
+</details>
+<!-- Repeat pfold for: produce / direct-supply grower, on-island butcher, mainland
+     wholesale / hypermarket. Mark the lead pick in each cluster with class "top". -->
+<div class="note note--quote"><p><!-- WRITER: one striking line that re-hooks the eye mid-piece — the truth about provisioning this port, said the way a chef would say it. --> placeholder — the line a chef remembers about this port.</p></div>
+<div class="note note--action"><p><!-- WRITER: the move at the market — what to buy on the day, what to never put on a printed menu, the substitute to name. --> placeholder — buy on the day, name a substitute before you print.</p></div>
+
+<h2 id="specialty">Specialty Shops &amp; Wine</h2>
+<p class="pc-kicker"><!-- WRITER: one line — the things worth a special trip and a case order. --> The cheese, the case, the bakery — what's worth the lead time.</p>
+<!-- Cheese, the wine case, the bakery. Same pfold structure. -->
+<details class="pfold top" id="p-wine">
+    <summary><div><div class="pfold__name">📍 [Wine merchant]</div><div class="pfold__hook">[address] &middot; [since YYYY] &middot; [phone]</div></div><span class="pfold__chev">▶</span></summary>
+    <div class="pfold__body">
+        <div class="pfold__recog">[one line — the case-order go-to]</div>
+        <p>[The labels worth the case order, named by <span class="term">appellation</span> where it matters.] <span class="cau cau--med" data-fix="[Workaround — siesta hours, phone ahead for a multi-bottle order.]">[pill]</span></p>
+        <div class="pfold__meta">
+            <div><strong>Address</strong>[…]</div>
+            <div><strong>Phone</strong>[…]</div>
+            <div><strong>Hours</strong>[…]</div>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+    </div>
+</details>
+<!-- Repeat pfold for cheese counter, bakery, and any cultural-reference stop (mark warn). -->
+<div class="note note--key"><p><!-- WRITER: the decision point — order the case by phone N days ahead, or accept what's on the shelf. State the lead time. --> placeholder — phone the case order ahead, or take what's left.</p></div>
+
+<h2 id="transport">Transport — [Lines, Carrello / Ferry, Access Fee]</h2>
+<p class="pc-kicker"><!-- WRITER: one line — moving boxes, not people, is the whole problem. --> The routes, the baggage rule, and the fee that catches crew out.</p>
+<!-- Chef notes on moving boxes: the lines that matter, the baggage rule, any city fee. -->
+<p><strong>[Public transport in N lines]:</strong> <!-- WRITER: only the routes a chef needs, with the time-critical leg and the run-time. --> placeholder.</p>
+<p><strong>[Fares / the baggage or carrello rule]:</strong> <!-- WRITER: current-year fares, the free-baggage allowance, what a loaded <span class="term">carrello</span> (hand trolley) counts as. --> placeholder. <span class="cau cau--high" data-fix="[Workaround — off-peak only window, validate at gate, fines.]">[pill]</span></p>
+<p><strong>[Any city / day-tripper fee]:</strong> <!-- WRITER: the fee, the dates, the crew exemption and how to secure it in writing. --> placeholder. <span class="cau cau--high" data-fix="[Workaround — get the working-crew exemption in writing through the agent before sending crew ashore.]">[pill]</span></p>
+<div class="note note--warning"><p><!-- WRITER: the trap — crew fined at the gate for an unvalidated ticket or an unexempted access fee. The written move that avoids it. --> placeholder — the fine crew walk into, and the paper that prevents it.</p></div>
+
+<h2 id="watchouts">⚠ Watch-outs by Season &amp; Event</h2>
+<p class="pc-kicker"><!-- WRITER: one line — the few dates that break a charter day. --> The windows that produce every horror story — and the move for each.</p>
+<!-- The few that actually break the day. In the live build these render from a data
+     file into #wo-list; in the skeleton, list them inline as a short ol so a writer
+     can fill them without the JS. Keep severity language: "breaks the day" / "annoying". -->
+<ol>
+    <li><strong>[Event / season — when]</strong> — [what breaks] · <em>Workaround:</em> [the move]. <!-- severity: high · breaks the day --></li>
+    <li><strong>[Event / season — when]</strong> — [what breaks] · <em>Workaround:</em> [the move]. <!-- severity: medium · annoying --></li>
+    <li><strong>[Event / season — when]</strong> — [what breaks] · <em>Workaround:</em> [the move].</li>
+</ol>
+
+<h2 id="bottom">The Bottom Line</h2>
+<p class="pc-kicker"><!-- WRITER: one line — if you read nothing else, this. --> The three moves, the load-out, and what to avoid.</p>
+<!-- If you read nothing else. Three operational moves + a load-out list + an avoid list. -->
+<p>[One sentence on the port's character.] Three operational moves do 80% of the work: <strong>[move 1]</strong>, <strong>[move 2]</strong>, and <strong>[move 3]</strong>.</p>
+<p><strong>Before you sail away,</strong> load [the named, sourced things this port is the place to buy — by the case, the wheel, the window].</p>
+<p><strong>Avoid:</strong> [the named festival weeks, the closed-canal weekend, the red-alert days — the windows that produce every horror story].</p>
+<div class="note note--key"><p><strong>The one thing:</strong> <!-- WRITER: the single takeaway a chef keeps from this port — the constraint and the move that beats it, in one line. --> placeholder closing takeaway.</p></div>
+
+<!-- Sign-off carries the DNA proof. Keep it. -->
+<p><strong>Tested at sea.</strong></p>
+                <!-- BODY:END -->
+
+                <!-- Article Engagement -->
+                <div class="article-engagement">
+                    <div class="engagement-pulse" data-reactions="0" data-comments="0">
+                        <span class="engagement-pulse__text">Be the first to join the conversation</span>
+                    </div>
+
+                    <div class="article-reactions" data-article-id="{{SLUG}}">
+                        <p class="reactions-prompt">Have a technique or a question? Share it.</p>
+                        <div class="reactions-grid"></div>
+                        <div class="sentiment-bar"></div>
+                    </div>
+
+                    <div class="article-share">
+                        <span class="share-label">Share:</span>
+                        <button class="share-btn" data-share="twitter" title="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="linkedin" title="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="copy" title="Copy link">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="article-comments">
+                        <h3 class="comments-title">Join the conversation <span class="comments-title__count"></span></h3>
+                        <div class="comments-sort">
+                            <button class="comments-sort__btn active" data-sort="newest">Newest</button>
+                            <button class="comments-sort__btn" data-sort="most-agreed">Most agreed</button>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <div class="comment-form__row">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                    <input type="email" name="email" placeholder="Email (optional)">
+                                </div>
+                                <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" maxlength="2000" required></textarea>
+                                <div class="comment-form__footer">
+                                    <label class="comment-form__subscribe">
+                                        <input type="checkbox" name="subscribe" checked>
+                                        <span>Subscribe to the newsletter</span>
+                                    </label>
+                                    <span class="comment-form__char-count"></span>
+                                    <button type="submit">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comments-list"></div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__newsletter">
+                <form class="footer-newsletter-form newsletter-form"
+                      action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
+                      method="post" target="popupwindow">
+                    <label for="footer-email">Get the monthly brief</label>
+                    <div class="footer-newsletter-form__row">
+                        <input type="email" name="email" id="footer-email" placeholder="your@email.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved. Information wants to be free.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/community.js"></script>
+</body>
+</html>

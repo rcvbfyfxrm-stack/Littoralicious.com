@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+{{HEAD}}
+</head>
+<body>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../shore-larder.html">Shore Larder</a>
+                    <a href="../the-method.html">The Method</a>
+                    <a href="../littoral-heritage.html">Heritage</a>
+                    <a href="../the-evidence.html">The Evidence</a>
+                    <a href="../the-bridge.html">The Bridge</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">{{SUBTAG}}</span>
+                    <time class="article__date">{{DATE}}</time>
+                    <span class="article__reading-time">{{READ}} min read</span>
+                </div>
+                <h1 class="article__title">{{TITLE}}</h1>
+                <p class="article__lede">{{LEDE}}</p>
+            </header>
+
+            <div class="article__content container" style="max-width: 65ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <!-- BODY:BEGIN — Food Science. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+<!-- THE EVIDENCE (04) — SHORT single-study translation. Rhythm: claim → the named study → the mechanism → galley use → limitations → sources. Keep it tight: 1–2 min read. Science inline, every claim traceable, British cooking spelling, sign off "Tested at sea." Focus layered on: summary-box promise, per-h2 kickers, mid-piece pull-quote, notes at their beats, inline terms, closing single-takeaway. -->
+
+<div class="summary-box">
+    <strong>What you'll get</strong>
+    <ul>
+        <li>One peer-reviewed finding, stated plainly — no hype.</li>
+        <li>The mechanism that makes it true, and the one galley move it earns you.</li>
+        <li>The honest edge of the claim — where it stops working.</li>
+    </ul>
+</div>
+<!-- WRITER: Three scannable lines = the payoff. The reader sees the promise before reading on. -->
+
+<h2>The Claim</h2>
+<p class="kicker">The finding, in one line you can act on tonight.</p>
+<!-- WRITER: A single value kicker right under the h2. -->
+<p>One-line statement of the finding the study lets you act on.</p>
+<!-- WRITER: State the claim plainly, no hype. What does this single paper let a chef do differently? Avoid banned words (delicious, elevated, hack, etc.). -->
+
+<h2>The Paper</h2>
+<p class="kicker">Who ran it, where it ran, and why you can trust it.</p>
+<!-- WRITER: Value kicker. -->
+<p>Author(s), <em>Journal name</em>, year. DOI: 00.0000/xxxxx</p>
+<!-- WRITER: Full citation inline — named authors, journal, year, DOI. One short paragraph of context: who ran it, what it catalogues/measures, why it is credible. Disclose funding/conflicts if any. -->
+<p>One sentence on what the study actually did and who the authors are.</p>
+
+<h2>The Mechanism</h2>
+<p class="kicker">The molecule, the °C, the reaction — why the result holds.</p>
+<!-- WRITER: Value kicker. -->
+<p>One line naming the compound / temperature / reaction that explains the result.</p>
+<!-- WRITER: Explain the WHY inline at the moment it matters — name the <span class="term">compound</span>, the °C, the reaction. Define one jargon word with .term so the reader never leaves the page. Keep to 2–3 sentences. -->
+<div class="note note--science"><p>One sentence on the reaction itself — the <span class="term">mechanism</span> in plain language, where it bites.</p></div>
+<!-- WRITER: Science-in-the-method core. Inline, not a sidebar. -->
+
+<!-- OPTIONAL DATA TABLE — reuse VERBATIM when the study gives quantitative values (concentrations, temperatures, counts). Use class="num" on numeric cells. Delete if not applicable. -->
+<div style="overflow-x: auto; margin: var(--space-6) 0;">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Source / Variable</th>
+                <th>Measured Value (unit)</th>
+                <th>Mechanism</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row label</td>
+                <td class="num">000</td>
+                <td>One-line mechanism</td>
+            </tr>
+            <tr>
+                <td>Row label</td>
+                <td class="num">000</td>
+                <td>One-line mechanism</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- OPTIONAL "AT A GLANCE" STATS GRID — reuse VERBATIM from FlavorDB piece when the study has a few headline numbers worth foregrounding. Replace the four values + labels. Delete if the data table already carries the numbers. -->
+<div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-6) 0; text-align: center;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-6);">
+        <div>
+            <span style="display: block; font-size: var(--text-2xl); font-weight: bold; color: #c4a35a; font-family: var(--font-serif);">000</span>
+            <span style="font-size: var(--text-xs); color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">Stat label</span>
+        </div>
+        <div>
+            <span style="display: block; font-size: var(--text-2xl); font-weight: bold; color: #c4a35a; font-family: var(--font-serif);">000</span>
+            <span style="font-size: var(--text-xs); color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">Stat label</span>
+        </div>
+        <div>
+            <span style="display: block; font-size: var(--text-2xl); font-weight: bold; color: #c4a35a; font-family: var(--font-serif);">000</span>
+            <span style="font-size: var(--text-xs); color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">Stat label</span>
+        </div>
+        <div>
+            <span style="display: block; font-size: var(--text-2xl); font-weight: bold; color: #c4a35a; font-family: var(--font-serif);">000</span>
+            <span style="font-size: var(--text-xs); color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">Stat label</span>
+        </div>
+    </div>
+</div>
+
+<div class="note note--quote"><p>One striking line that re-hooks the eye — the finding turned into a sentence a chef repeats at the pass.</p></div>
+<!-- WRITER: Mid-piece pull-quote at the natural pivot between the science and the galley use. One line, no hype. -->
+
+<h2>Galley Implications</h2>
+<p class="kicker">The science, turned into one move you make in a 4 m² galley.</p>
+<!-- WRITER: Value kicker. -->
+<div class="note note--key"><p>The decision this finding settles — the call you make differently from now on.</p></div>
+<!-- WRITER: Key Point at the decision point. One sentence. -->
+<div class="note note--action" data-label="How To Use It">
+    <p>Direct, specific instruction: what to do with this finding in a 4 m² galley, on charter, under real constraints.</p>
+</div>
+<!-- WRITER: Translate the science into one concrete galley move. Numbers, ports, provisioning reality. This is the "how to use it" payoff — the whole reason the piece exists. -->
+
+<h2>What This Does NOT Mean</h2>
+<p class="kicker">The overreach to refuse before it costs you a service.</p>
+<!-- WRITER: Value kicker. -->
+<div class="note note--science" data-label="Important Distinction">
+    <p>Guard against the obvious overreach — the claim the data does not support.</p>
+</div>
+<!-- WRITER: Honest scope. One distinction that stops a chef misapplying the finding. -->
+<div class="note note--warning"><p>The failure mode: push this past its tested range and here is what breaks.</p></div>
+<!-- WRITER: The one mistake this finding tempts a chef into. Direct. -->
+
+<h2>Limitations</h2>
+<p class="kicker">Exactly how far the evidence reaches — and no further.</p>
+<!-- WRITER: Value kicker. -->
+<p>One or two lines on what the study cannot tell you: sample, scope, paywall, brand/age variance, raw-vs-cooked, etc.</p>
+<!-- WRITER: Be candid. Is it a <span class="term">review paper</span>, not new data? Behind a paywall? Values brand-dependent? "Worked 14 of 16 trials" honesty. Define one term inline if useful. -->
+
+<div class="divider"><span class="divider__text">The one thing</span></div>
+
+<div class="note note--key"><p>The single pinned, sourced fact to keep: one line, traceable to the paper above.</p></div>
+<!-- WRITER: Closing single-takeaway. Load-bearing, named source, nothing else competing for the eye. -->
+
+<div class="article-sources">
+    <strong>Sources</strong>
+    <p>Author(s). <em>Journal name</em>, year. DOI: 00.0000/xxxxx</p>
+    <!-- WRITER: Repeat the primary citation; add any secondary named sources/books. No "studies show" without a name. -->
+</div>
+
+<!-- Close on the house sign-off where apt: "Tested at sea." -->
+<p><em>Tested at sea.</em></p>
+                <!-- BODY:END -->
+
+                <!-- Article Engagement -->
+                <div class="article-engagement">
+                    <div class="engagement-pulse" data-reactions="0" data-comments="0">
+                        <span class="engagement-pulse__text">Be the first to join the conversation</span>
+                    </div>
+
+                    <div class="article-reactions" data-article-id="{{SLUG}}">
+                        <p class="reactions-prompt">Have a technique or a question? Share it.</p>
+                        <div class="reactions-grid"></div>
+                        <div class="sentiment-bar"></div>
+                    </div>
+
+                    <div class="article-share">
+                        <span class="share-label">Share:</span>
+                        <button class="share-btn" data-share="twitter" title="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="linkedin" title="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="copy" title="Copy link">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="article-comments">
+                        <h3 class="comments-title">Join the conversation <span class="comments-title__count"></span></h3>
+                        <div class="comments-sort">
+                            <button class="comments-sort__btn active" data-sort="newest">Newest</button>
+                            <button class="comments-sort__btn" data-sort="most-agreed">Most agreed</button>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <div class="comment-form__row">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                    <input type="email" name="email" placeholder="Email (optional)">
+                                </div>
+                                <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" maxlength="2000" required></textarea>
+                                <div class="comment-form__footer">
+                                    <label class="comment-form__subscribe">
+                                        <input type="checkbox" name="subscribe" checked>
+                                        <span>Subscribe to the newsletter</span>
+                                    </label>
+                                    <span class="comment-form__char-count"></span>
+                                    <button type="submit">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comments-list"></div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__newsletter">
+                <form class="footer-newsletter-form newsletter-form"
+                      action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
+                      method="post" target="popupwindow">
+                    <label for="footer-email">Get the monthly brief</label>
+                    <div class="footer-newsletter-form__row">
+                        <input type="email" name="email" id="footer-email" placeholder="your@email.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved. Information wants to be free.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/community.js"></script>
+</body>
+</html>

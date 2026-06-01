@@ -3,6 +3,30 @@
 > The source of truth your writing agents read before drafting. Voice + templates are
 > canon (from Arnaud's stated rules); the workflow section reflects the 2026-06 rebuild.
 
+## THE FIRST LAW — never lose focus
+
+**The reader must never lose focus. Not for a sentence.** Whatever they are reading, every
+line has one job: pull them to the next. This is the single measure of whether a piece is
+good enough to publish — above cleverness, above completeness. If attention can drift, it
+isn't finished. *Think of everything you produce this way: if the reader's eye can wander,
+you haven't earned the next line yet.*
+
+**How we engineer focus** (every article, built only from the locked components):
+
+- **Open with the payoff.** A `.summary-box` up top — what they'll walk away with, in three
+  scannable lines. Nobody reads on for a promise they can't see.
+- **One idea per section.** `<h2>` headings that promise value; short paragraphs; bold
+  lead-ins. No walls of text — a wall is where focus dies.
+- **Re-hook the eye.** Break long stretches with a `.note--quote` pull-quote — one striking line.
+- **Land the insight where it's earned.** `.note--key` ("Key Point") at each decision point;
+  `.note--science` for the mechanism, exactly where it bites.
+- **Make it usable mid-read.** `.note--action` for the move; `.note--warning` for the failure mode.
+- **Never stall the reader.** Define jargon inline with `.term` — they never leave the page to look something up.
+- **Close on one thing.** End on the single takeaway they keep.
+
+**The focus test:** read it as a tired chef at 11 PM, mid-charter. If your eye drifts even
+once — cut, tighten, or add a hook. Ship only when it doesn't.
+
 ## Mission
 
 **To Nurture.** From the Latin *nutrire* — to feed, nourish, and educate. Every recipe,
