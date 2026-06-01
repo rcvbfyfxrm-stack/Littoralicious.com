@@ -1,0 +1,16 @@
+# tooling
+node_modules/
+package-lock.json
+
+# firebase
+.firebase/
+firebase-debug.log
+*-debug.log
+
+# build scratch / recovery staging
+_live-reference/
+*.live.html
+*.live.xml
+
+# os
+.DS_Store

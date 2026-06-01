@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="A 919-line prompt that handles every yacht menu service — eight formats, ten cuisines, guest preferences, wine pairing, and the LaTeX-to-PDF pipeline.">
+    <title>Chef Agent v5.0: One Prompt That Runs Your Whole Menu Department &mdash; LITTORALICIOUS</title>
+    <meta property="og:title" content="Chef Agent v5.0: One Prompt That Runs Your Whole Menu Department &mdash; LITTORALICIOUS">
+    <meta property="og:description" content="A 919-line prompt that handles every yacht menu service — eight formats, ten cuisines, guest preferences, wine pairing, and the LaTeX-to-PDF pipeline.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.littoralicious.com/articles/draft-ai-menu-generation.html">
+    <meta property="og:site_name" content="Littoralicious">
+    <meta property="og:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
+
+    <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260506b">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+
+    <style>
+        .compare-table th { font-weight: 600; }
+        .compare-table td:first-child { font-weight: 600; white-space: nowrap; }
+        .conversation {
+            background: var(--color-paper);
+            border-left: 3px solid var(--color-sea);
+            padding: var(--space-4) var(--space-5);
+            margin: var(--space-5) 0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.88em;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+        .conversation .role { color: var(--color-sea); font-weight: 600; }
+        .rule-heading {
+            font-family: Georgia, serif;
+            font-size: 1.1em;
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="Littoralicious" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+                    <div class="masthead__description">
+                        <div class="masthead__description-main">Sailing Around The Plate</div>
+                        <div class="masthead__description-sub">Littoraly Delicious</div>
+                    </div>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../shore-larder.html">Shore Larder</a>
+                    <a href="../the-method.html" class="active">The Method</a>
+                    <a href="../littoral-heritage.html">Heritage</a>
+                    <a href="../the-evidence.html">The Evidence</a>
+                    <a href="../the-bridge.html">The Bridge</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">The Method</span>
+                    <time class="article__date">May 16, 2026</time>
+                    <span class="article__reading-time">9 min read</span>
+                </div>
+                <h1 class="article__title">Chef Agent v5.0: One Prompt That Runs Your Whole Menu Department</h1>
+                <p style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-salt); margin-bottom: var(--space-4);">919 lines &middot; eight services &middot; ten cuisines &middot; one workflow</p>
+                <p class="article__lede">
+                    A guest list of eight lands at 11&nbsp;PM for a charter starting at noon. Two of them are pescatarian, one is coeliac, the owner hates fennel. You need a four-day rotation by breakfast. There is exactly one prompt for this.
+                </p>
+            </header>
+
+            <div class="article__content container" style="max-width: 65ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <p>It is 919 lines. You paste it once into any decent AI &mdash; Claude, ChatGPT, Gemini &mdash; and from that moment on the AI knows how a yacht menu reads, what a Cultural Touchstone is, why a French menu must look different from a Japanese one, where to save the LaTeX, and when to ask for the wine pairing card.</p>
+
+                <p>The prompt is called <strong>Chef Agent v5.0</strong>. It is the only menu prompt worth keeping on the boat. This article is what&rsquo;s inside it and how to use it.</p>
+
+                <h2>What the Prompt Is</h2>
+
+                <p>A single 919-line spec covering every menu service a yacht chef will ever ship: eight formats, ten cuisines, four output files (menu <code>.tex</code>, menu <code>.pdf</code>, wine <code>.tex</code>, wine <code>.pdf</code>), plus a mandatory pre-check on guest preferences. It does not generate menus on its own &mdash; it generates them <em>with</em> you, and won&rsquo;t touch a <code>.tex</code> file until you say <em>yes</em> on the markdown draft.</p>
+
+                <p>It assumes you have terminal AI installed (Claude Code, Codex CLI, Gemini CLI, or aider) and XeLaTeX on the laptop. The same spec also works pasted into a <a href="https://claude.ai/projects">Claude Project</a> or a Custom GPT &mdash; you&rsquo;ll lose the auto-PDF-compile step but keep the structural intelligence.</p>
+
+                <h2>Eight Service Formats It Handles</h2>
+
+                <div style="overflow-x: auto; margin: var(--space-6) 0;">
+                    <table class="data-table compare-table">
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>What you get</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Guests Breakfast</td><td>&Agrave; la carte suggestions, each with a one-line health note</td></tr>
+                            <tr><td>Guests Lunch (family style)</td><td>Proteins + vegetables + starch + salad. Generous, shared.</td></tr>
+                            <tr><td>Guests Dinner &mdash; Family Style</td><td>Same structure as lunch, richer proteins, fuller composition</td></tr>
+                            <tr><td>Guests Dinner &mdash; Plated</td><td>Three courses: one starter, one main, one dessert</td></tr>
+                            <tr><td>Guests Dinner &mdash; Tasting Menu</td><td>5&ndash;8 courses: canap&eacute;s &rarr; amuse &rarr; starter &rarr; fish &rarr; meat &rarr; pre-dessert &rarr; dessert &rarr; mignardises</td></tr>
+                            <tr><td>Guests Theme Night</td><td>One Cultural Touchstone, every dish in service of it</td></tr>
+                            <tr><td>Crew Lunch / Crew Dinner</td><td>Efficient, satisfying, distinct flavor world per service</td></tr>
+                            <tr><td>Kids Menu</td><td>Same touchstone as adults, playful adaptations, separate card</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Say <em>&ldquo;crew lunch tomorrow&rdquo;</em> and the AI snaps into the right structure. Say <em>&ldquo;tasting menu, charter, Saturday, Italian&rdquo;</em> and you get the eight-course flow with Palatino typography and a Cultural Touchstone instead of the words <em>&ldquo;tasting menu.&rdquo;</em></p>
+
+                <h2>The Five Rules That Make It Work</h2>
+
+                <h3 class="rule-heading">1. The Cultural Touchstone</h3>
+                <p>Never &ldquo;Italian Lunch.&rdquo; Always <em>Notte a Napoli</em>, <em>Tokyo Night Market</em>, <em>Pop-Up Panda Express</em>, <em>Ottolenghi-Style Salad Table</em>. A short phrase that triggers cultural memory &mdash; a place, a restaurant, a vibe. The prompt rejects generic theme names by default.</p>
+
+                <h3 class="rule-heading">2. The Menu Card Is Sacred</h3>
+                <p>No date on the card. No &ldquo;Crew Dinner&rdquo; label. No &ldquo;Service: Buffet&rdquo; stamp. The card shows title &rarr; dishes &rarr; sourcing footer, and nothing else. Operational data lives in the filename (<code>2026-05-12_Crew-Dinner_Bangkok-Night-Market.tex</code>) and LaTeX comments. The guest sees a menu, not a clipboard.</p>
+
+                <h3 class="rule-heading">3. Confirm Before Building</h3>
+                <p>The prompt never goes straight to PDF. It drafts the menu in markdown, shows it to you, waits for your <em>&ldquo;yes,&rdquo;</em> then builds the <code>.tex</code>, compiles the <code>.pdf</code>, opens it, and asks if you want the wine pairing card. Mandatory workflow. Non-overridable. You see the dishes before the file system sees them.</p>
+
+                <h3 class="rule-heading">4. Guest Preferences Are Mandatory</h3>
+                <p>Before writing a single dish, the prompt reads your preference files. If Mr Bravo has zero tolerance for onions, no dish anywhere in the menu contains an onion. If one guest is coeliac, the relevant dish gets a subtle <code>gf</code> superscript and a tiny footnote at the bottom of the card. Light enough that normal guests don&rsquo;t notice. Clear enough that the affected guest knows they&rsquo;re covered.</p>
+
+                <h3 class="rule-heading">5. Two Contrasting Proteins</h3>
+                <p>For any family-style service: one grilled + one braised. Lean + unctuous. Cool + warm. Never two of the same temperament. It forces a balanced plate without you thinking about it.</p>
+
+                <h2>The Design System (The Part Most Prompts Skip)</h2>
+
+                <p>Cover the title. Can you tell the cuisine from the design? If a French menu and an Italian menu look the same except for the words, the prompt has failed you.</p>
+
+                <p>Chef Agent v5.0 specifies a complete sensory world per cuisine:</p>
+
+                <div style="overflow-x: auto; margin: var(--space-6) 0;">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Cuisine</th><th>Font</th><th>Color signature</th><th>Ornament</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>French</td><td>Didot</td><td>Noir + Rouge</td><td>&loz; &loz; &loz;</td></tr>
+                            <tr><td>Italian</td><td>Palatino</td><td>Terracotta + Gold</td><td>short centered rule</td></tr>
+                            <tr><td>Japanese</td><td>Optima</td><td>Obsidian + Red</td><td>&middot; (single dot)</td></tr>
+                            <tr><td>Nordic</td><td>Avenir Next</td><td>Sage + Cream</td><td>no ornament &mdash; space only</td></tr>
+                            <tr><td>Spanish</td><td>Didot</td><td>Burgundy + Gold</td><td>&Vert;</td></tr>
+                            <tr><td>Greek</td><td>Optima</td><td>Azure + White</td><td>&sim; &sim; &sim;</td></tr>
+                            <tr><td>Levantine</td><td>Palatino</td><td>Ochre + Gold</td><td>&#9826; &#9826; &#9826;</td></tr>
+                            <tr><td>Mexican</td><td>Hoefler Text</td><td>Terracotta + Obsidian</td><td>gold dot under title</td></tr>
+                            <tr><td>Asian Fusion</td><td>Avenir Next Bold</td><td>Obsidian + Red</td><td>thin accent rule</td></tr>
+                            <tr><td>American</td><td>Avenir Next Bold</td><td>Brick + Gold</td><td>&mdash; &mdash; &mdash;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>It also dictates <em>spacing</em>. Japanese and Nordic menus get 1.4-inch margins and <code>\setstretch{1.8}</code>. Italian gets warmer typography with italic dish names. Mexican gets a gold rule under the title. You don&rsquo;t open a CSS file &mdash; the prompt does it for you.</p>
+
+                <p>The test the prompt enforces on itself: <em>&ldquo;Would the world&rsquo;s best restaurant of this cuisine print this card?&rdquo;</em> If a French card doesn&rsquo;t feel like Le Bernardin would hand it to a guest, the AI redrafts before it shows you anything.</p>
+
+                <h2>What the Workflow Looks Like</h2>
+
+                <div class="conversation"><span class="role">You:</span>    Guests dinner tasting menu Saturday, Italian, eight covers, owner hates fennel
+<span class="role">AI:</span>     Reading preferences... Bravo family on file.
+        No onions for Mr Bravo. No melon for kids.
+        Drafting "Notte a Napoli" — eight courses, fennel substituted with
+        charred romanesco where needed.
+        [shows full markdown]
+        Does this look good?
+<span class="role">You:</span>    Yes
+<span class="role">AI:</span>     Wine pairing card?
+<span class="role">You:</span>    Yes — one wine, biodynamic if possible
+<span class="role">AI:</span>     [creates 2026-05-21_Guests-Dinner-Tasting_Notte-a-Napoli.tex]
+        [compiles PDF — Palatino, terracotta, eight short-rule dividers]
+        [creates 2026-05-21_Wine-Pairing_Notte-a-Napoli.tex]
+        [compiles wine PDF]
+        Both files saved to 03-Menus/Production/. Opening the menu now.</div>
+
+                <p>Under five minutes. Tasting menu with proper cultural typography. Wine card. No onions anywhere. Fennel swapped for romanesco. A <code>gf</code> footnote on the gluten course because the coeliac guest is on file. All done before the engineer finishes his coffee.</p>
+
+                <h2>What You Need to Run It</h2>
+
+                <ul>
+                    <li>A terminal AI agent: <a href="https://claude.com/claude-code">Claude Code</a>, <a href="https://github.com/openai/codex">Codex CLI</a>, <a href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a>, or <a href="https://aider.chat">aider</a></li>
+                    <li>XeLaTeX on the laptop: <code>brew install --cask mactex-no-gui</code> (macOS), one-time</li>
+                    <li>The prompt file saved as <code>menu.md</code> inside <code>~/.claude/agents/</code> (or the equivalent folder for your tool)</li>
+                    <li>A folder for guest preferences that the prompt reads from before writing dishes &mdash; usually <code>Preferences/[Family]_preferences.txt</code> plus the active handover sheet&rsquo;s <em>Don&rsquo;ts</em> list</li>
+                </ul>
+
+                <p>If you&rsquo;re not on a terminal, paste the prompt into <a href="https://claude.ai/projects">Claude Projects</a> or a <a href="https://chatgpt.com/gpts">ChatGPT Custom GPT</a>. You lose the auto-compile, but the structural rules &mdash; Cultural Touchstone, design system, dietary footnotes, dish order, wine pairing prompt &mdash; all still fire. You copy-paste the LaTeX into <a href="https://overleaf.com">Overleaf</a> for the final PDF.</p>
+
+                <h2>The Honest Limits</h2>
+
+                <p>The prompt does not know:</p>
+                <ul>
+                    <li>Which Italian deli in your current port still has burrata at 7 PM</li>
+                    <li>That the second engineer is gluten-intolerant but never told anyone</li>
+                    <li>That last week&rsquo;s lamb supplier ghosted you</li>
+                    <li>Whether the actual dish you cooked tastes the way it reads on the card</li>
+                </ul>
+
+                <p>The prompt does know:</p>
+                <ul>
+                    <li>The structural rules of every cuisine it ships with</li>
+                    <li>The typographic identity of each one</li>
+                    <li>How to make a tasting menu flow from light to dark</li>
+                    <li>How to never put an onion in front of Mr Bravo</li>
+                    <li>How to file everything where the deckie can find it at 6 AM</li>
+                </ul>
+
+                <p>That&rsquo;s enough to save you ninety minutes a charter. It&rsquo;s not enough to replace you. Use it for the typing, the formatting, the LaTeX, the file-naming, the cultural-touchstone naming, the dish-order discipline. Keep your own hands on the tasting spoon.</p>
+
+                <hr style="border: none; border-top: 1px solid var(--color-border); margin: var(--space-8) 0;">
+
+                <p style="color: var(--color-muted); font-size: var(--text-sm); font-style: italic;">
+                    The prompt itself is a single markdown file. Drop it into your AI of choice and start with one line: &ldquo;Crew lunch tomorrow.&rdquo; See what comes back.
+                </p>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__about">
+                    <div class="footer__brand">LITTORALICIOUS</div>
+                    <p class="footer__description">One purpose: Nurture.</p>
+                    <p class="footer__tagline">For those who feed others with intention.</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__col">
+                        <h4>Sections</h4>
+                        <ul>
+                            <li><a href="../shore-larder.html">Shore Larder</a></li>
+                            <li><a href="../the-method.html">The Method</a></li>
+                            <li><a href="../littoral-heritage.html">Heritage</a></li>
+                            <li><a href="../the-evidence.html">The Evidence</a></li>
+                            <li><a href="../the-bridge.html">The Bridge</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="../about.html">Manifesto</a></li>
+                            <li><a href="../founder.html">Founder</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved. Information wants to be free.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script defer src="../assets/js/draft-mode.js?v=20260522"></script>
+
+
+</body>
+</html>

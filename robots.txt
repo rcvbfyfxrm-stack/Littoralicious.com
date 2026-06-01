@@ -1,12 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /studio.html
-Disallow: /admin.html
-Disallow: /draft.html
-Disallow: /draftnewsletter.html
-Disallow: /data/drafts.json
+
+# Work-in-progress surfaces (not for indexing)
+Disallow: /drafts.html
 Disallow: /data/draft-articles.json
-Disallow: /terroir/
 Disallow: /game/
 
 Sitemap: https://www.littoralicious.com/sitemap.xml
