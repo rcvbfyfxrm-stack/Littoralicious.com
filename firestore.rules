@@ -1,0 +1,50 @@
+rules_version = '2';
+
+// Littoralicious Firestore security rules.
+// Two surfaces:
+//   articles/**     — public publication engagement (reactions, comments, replies).
+//                     Kept open to preserve the existing community features (community.js).
+//   draft-notes/**  — PRIVATE review notes on drafts. Reviewer allowlist only.
+//
+// Deploy with:  firebase deploy --only firestore:rules
+// (firebase.json must contain a "firestore": { "rules": "firestore.rules" } block.)
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Reviewer allowlist — EDIT THESE EMAILS ──────────────────────────────
+    function isReviewer() {
+      return request.auth != null && request.auth.token.email in [
+        'arnaudcallier@pm.me',
+        'arnaudcallier@icloud.com'
+        // add reviewer emails here
+      ];
+    }
+
+    // ── Public: live-article engagement (unchanged behaviour) ───────────────
+    // Open read/write so existing reactions/comments keep working with no auth.
+    // Tighten later if abused; do NOT remove without migrating community.js.
+    match /articles/{slug}/{document=**} {
+      allow read, write: if true;
+    }
+
+    // ── Private: draft review notes ─────────────────────────────────────────
+    match /draft-notes/{slug} {
+      allow read, write: if isReviewer();
+
+      match /notes/{noteId} {
+        allow read:   if isReviewer();
+        allow create: if isReviewer()
+                      && request.resource.data.text is string
+                      && request.resource.data.text.size() > 0
+                      && request.resource.data.text.size() < 5000;
+        allow update, delete: if isReviewer();
+      }
+    }
+
+    // ── Default deny (no-op alongside the explicit allows above) ────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

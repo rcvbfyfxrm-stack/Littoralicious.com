@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Drafts — Review · LITTORALICIOUS</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=20260506b">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+    <style>
+        /* ── Draft-review dashboard (private surface) ───────────────── */
+        .dr-wrap { max-width: 1100px; margin: 0 auto; padding: var(--space-6, 24px) var(--space-4, 16px) var(--space-12, 64px); }
+        .dr-head { border-bottom: 2px solid var(--color-ink, #0a0a0a); padding-bottom: 12px; margin-bottom: 8px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; }
+        .dr-head h1 { font-family: var(--font-serif, Georgia), serif; font-size: 1.9rem; margin: 0; }
+        .dr-head .dr-kicker { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-salt, #94a3b8); }
+        .dr-meta { font-family: var(--font-mono, "SF Mono"), monospace; font-size: 0.78rem; color: var(--color-muted, #6b7280); }
+
+        /* auth bar */
+        .dr-auth { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; }
+        .dr-auth button { font: inherit; cursor: pointer; border: 1px solid var(--color-sea, #2d4a5e); background: var(--color-sea, #2d4a5e); color: #fff; padding: 6px 14px; letter-spacing: 0.04em; }
+        .dr-auth button.ghost { background: transparent; color: var(--color-sea, #2d4a5e); }
+        .dr-auth .dr-who { color: var(--color-muted, #6b7280); }
+        .dr-banner { background: #fff8e6; border-left: 3px solid #d97706; padding: 10px 14px; font-size: 0.82rem; color: #4a5568; margin: 14px 0; }
+
+        /* cards */
+        .dr-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 22px; }
+        @media (min-width: 760px) { .dr-grid { grid-template-columns: 1fr 1fr; } }
+        .dr-card { border: 1px solid var(--color-border, #e2e2e2); border-top: 3px solid var(--color-sea, #2d4a5e); padding: 16px 18px; display: flex; flex-direction: column; }
+        .dr-card__cat { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-sea, #2d4a5e); font-weight: 700; }
+        .dr-card__title { font-family: var(--font-serif, Georgia), serif; font-size: 1.15rem; line-height: 1.2; margin: 4px 0 6px; }
+        .dr-card__title a { color: var(--color-ink, #0a0a0a); text-decoration: none; }
+        .dr-card__title a:hover { text-decoration: underline; text-decoration-color: var(--color-sea, #2d4a5e); }
+        .dr-card__lede { font-size: 0.86rem; color: var(--color-muted, #6b7280); line-height: 1.42; margin: 0 0 10px; }
+        .dr-card__row { display: flex; gap: 14px; align-items: center; font-family: var(--font-mono, "SF Mono"), monospace; font-size: 0.7rem; color: var(--color-salt, #94a3b8); margin-bottom: 10px; }
+        .dr-card__row a { color: var(--color-sea, #2d4a5e); text-decoration: none; border-bottom: 1px dotted; }
+        .dr-card__count { margin-left: auto; }
+
+        /* notes */
+        .dr-notes { border-top: 1px solid var(--color-border, #e2e2e2); margin-top: auto; padding-top: 10px; }
+        .dr-notes h4 { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted, #6b7280); margin: 0 0 8px; }
+        .dr-note { font-size: 0.82rem; line-height: 1.4; padding: 7px 9px; background: #f7f7f5; border-left: 2px solid var(--color-salt, #94a3b8); margin-bottom: 7px; }
+        .dr-note.resolved { opacity: 0.55; border-left-color: #059669; }
+        .dr-note__head { display: flex; gap: 8px; align-items: baseline; font-size: 0.66rem; color: var(--color-salt, #94a3b8); font-family: var(--font-mono, monospace); }
+        .dr-note__author { color: var(--color-sea, #2d4a5e); font-weight: 700; }
+        .dr-note__resolve { margin-left: auto; cursor: pointer; border: none; background: none; color: var(--color-salt, #94a3b8); font-size: 0.66rem; text-decoration: underline; }
+        .dr-note__text { margin-top: 3px; color: var(--color-ink, #0a0a0a); white-space: pre-wrap; }
+        .dr-note__section { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; background: #eef3f6; color: var(--color-sea, #2d4a5e); padding: 1px 6px; margin-left: 4px; }
+        .dr-noteform { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+        .dr-noteform textarea { font: inherit; font-size: 0.82rem; padding: 7px 9px; border: 1px solid var(--color-border, #e2e2e2); resize: vertical; min-height: 46px; }
+        .dr-noteform__bottom { display: flex; gap: 8px; }
+        .dr-noteform input[type=text] { flex: 1; font: inherit; font-size: 0.76rem; padding: 5px 8px; border: 1px solid var(--color-border, #e2e2e2); }
+        .dr-noteform button { font: inherit; font-size: 0.76rem; cursor: pointer; border: 1px solid var(--color-sea, #2d4a5e); background: var(--color-sea, #2d4a5e); color: #fff; padding: 5px 14px; }
+        .dr-locked { font-size: 0.78rem; color: var(--color-salt, #94a3b8); font-style: italic; padding: 6px 0; }
+        .dr-empty { color: var(--color-salt, #94a3b8); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="dr-wrap">
+        <header class="dr-head">
+            <div>
+                <div class="dr-kicker">Littoralicious · Private review surface</div>
+                <h1>Drafts</h1>
+            </div>
+            <div class="dr-auth" id="auth">
+                <span class="dr-who" id="who">Not signed in</span>
+                <button id="signin">Sign in to review</button>
+                <button id="signout" class="ghost" style="display:none">Sign out</button>
+            </div>
+        </header>
+        <div class="dr-meta" id="meta">Loading drafts…</div>
+        <div class="dr-banner" id="authbanner">Sign in with an authorised account to read and leave review notes. The draft list is visible to all; notes are private to the review team.</div>
+
+        <div class="dr-grid" id="grid"></div>
+    </div>
+
+    <!-- Firebase (compat) — same SDK the article pages use -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script>
+    (function () {
+        "use strict";
+        var auth = firebase.auth();
+        var grid = document.getElementById("grid");
+        var meta = document.getElementById("meta");
+        var who = document.getElementById("who");
+        var signinBtn = document.getElementById("signin");
+        var signoutBtn = document.getElementById("signout");
+        var banner = document.getElementById("authbanner");
+        var listeners = {};          // slug -> unsubscribe
+        var currentUser = null;
+
+        function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+
+        // ---- Auth ----
+        signinBtn.onclick = function () {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider).catch(function (e) { alert("Sign-in failed: " + e.message); });
+        };
+        signoutBtn.onclick = function () { auth.signOut(); };
+
+        auth.onAuthStateChanged(function (user) {
+            currentUser = user;
+            if (user) {
+                who.textContent = user.email || user.displayName || "signed in";
+                signinBtn.style.display = "none";
+                signoutBtn.style.display = "";
+                banner.style.display = "none";
+            } else {
+                who.textContent = "Not signed in";
+                signinBtn.style.display = "";
+                signoutBtn.style.display = "none";
+                banner.style.display = "";
+            }
+            // re-render notes regions to reflect auth state
+            document.querySelectorAll("[data-notes-for]").forEach(function (el) {
+                wireNotes(el.getAttribute("data-notes-for"), el);
+            });
+        });
+
+        // ---- Notes (Firestore: draft-notes/{slug}/notes/{id}) ----
+        function notesRef(slug) {
+            return db.collection("draft-notes").doc(slug).collection("notes").orderBy("createdAt", "asc");
+        }
+        function wireNotes(slug, container) {
+            if (listeners[slug]) { listeners[slug](); delete listeners[slug]; }
+            if (!currentUser) {
+                container.innerHTML = '<h4>Review notes</h4><div class="dr-locked">Sign in to read and add notes.</div>';
+                return;
+            }
+            container.innerHTML = '<h4>Review notes</h4><div class="dr-notelist dr-empty">Loading…</div>' + noteFormHtml(slug);
+            var listEl = container.querySelector(".dr-notelist");
+            bindForm(slug, container);
+            listeners[slug] = notesRef(slug).onSnapshot(function (snap) {
+                if (snap.empty) { listEl.className = "dr-notelist dr-empty"; listEl.textContent = "No notes yet."; return; }
+                listEl.className = "dr-notelist";
+                listEl.innerHTML = snap.docs.map(function (d) {
+                    var n = d.data();
+                    var when = n.createdAt && n.createdAt.toDate ? n.createdAt.toDate().toISOString().slice(0, 16).replace("T", " ") : "";
+                    return '<div class="dr-note ' + (n.resolved ? "resolved" : "") + '">' +
+                        '<div class="dr-note__head"><span class="dr-note__author">' + esc(n.author || n.email || "?") + '</span>' +
+                        '<span>' + esc(when) + '</span>' +
+                        '<button class="dr-note__resolve" data-id="' + d.id + '" data-slug="' + esc(slug) + '" data-res="' + (n.resolved ? "1" : "0") + '">' + (n.resolved ? "reopen" : "resolve") + '</button></div>' +
+                        '<div class="dr-note__text">' + esc(n.text) + (n.section ? '<span class="dr-note__section">' + esc(n.section) + '</span>' : "") + '</div></div>';
+                }).join("");
+                listEl.querySelectorAll(".dr-note__resolve").forEach(function (b) {
+                    b.onclick = function () {
+                        db.collection("draft-notes").doc(b.dataset.slug).collection("notes").doc(b.dataset.id)
+                          .update({ resolved: b.dataset.res !== "1" });
+                    };
+                });
+            }, function (err) { listEl.className = "dr-notelist dr-locked"; listEl.textContent = "Notes unavailable: " + err.code + " (check you're on the allowlist)."; });
+        }
+        function noteFormHtml(slug) {
+            return '<div class="dr-noteform" data-form="' + esc(slug) + '">' +
+                '<textarea placeholder="Add a review note…"></textarea>' +
+                '<div class="dr-noteform__bottom">' +
+                '<input type="text" placeholder="section (optional, e.g. Method 3)">' +
+                '<button type="button">Post note</button></div></div>';
+        }
+        function bindForm(slug, container) {
+            var form = container.querySelector('.dr-noteform[data-form="' + cssEsc(slug) + '"]');
+            if (!form) return;
+            var ta = form.querySelector("textarea");
+            var sec = form.querySelector('input[type=text]');
+            var btn = form.querySelector("button");
+            btn.onclick = function () {
+                var text = ta.value.trim();
+                if (!text) return;
+                btn.disabled = true;
+                db.collection("draft-notes").doc(slug).collection("notes").add({
+                    author: currentUser.displayName || (currentUser.email || "").split("@")[0],
+                    email: currentUser.email || "",
+                    text: text,
+                    section: sec.value.trim() || null,
+                    resolved: false,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                }).then(function () { ta.value = ""; sec.value = ""; })
+                  .catch(function (e) { alert("Could not post note: " + e.message); })
+                  .finally(function () { btn.disabled = false; });
+            };
+        }
+        function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
+
+        // ---- Load draft manifest ----
+        fetch("data/draft-articles.json", { cache: "no-cache" })
+            .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+            .then(function (data) {
+                var drafts = (data && data.drafts) || [];
+                meta.textContent = drafts.length + " draft" + (drafts.length === 1 ? "" : "s") +
+                    " · manifest " + (data._generated_at || "?") + " · auto-rebuilt on every publish";
+                if (!drafts.length) { grid.innerHTML = '<p class="dr-empty">No drafts flagged in articles.json.</p>'; return; }
+                grid.innerHTML = drafts.map(function (d) {
+                    var href = d.file ? d.file.replace(/\.html$/, "") : "#"; // cleanUrls
+                    return '<article class="dr-card">' +
+                        '<div class="dr-card__cat">' + esc(d.category_label || d.category || "Draft") + '</div>' +
+                        '<h3 class="dr-card__title"><a href="' + esc(d.file || "#") + '">' + esc(d.title || d.slug) + '</a></h3>' +
+                        (d.lede ? '<p class="dr-card__lede">' + esc(d.lede) + '</p>' : '') +
+                        '<div class="dr-card__row">' +
+                        (d.read_time ? '<span>' + esc(d.read_time) + ' min</span>' : '') +
+                        (d.added ? '<span>' + esc(d.added) + '</span>' : '') +
+                        '<a href="' + esc(href) + '?draft=1" class="dr-card__count">Open draft →</a></div>' +
+                        '<div class="dr-notes" data-notes-for="' + esc(d.slug) + '"></div>' +
+                        '</article>';
+                }).join("");
+                document.querySelectorAll("[data-notes-for]").forEach(function (el) {
+                    wireNotes(el.getAttribute("data-notes-for"), el);
+                });
+            })
+            .catch(function (e) {
+                meta.textContent = "";
+                grid.innerHTML = '<p class="dr-empty">Could not load <code>data/draft-articles.json</code> (' + esc(e.message) +
+                    '). On a fresh deploy, confirm it is no longer in firebase.json “ignore”.</p>';
+            });
+    })();
+    </script>
+</body>
+</html>
