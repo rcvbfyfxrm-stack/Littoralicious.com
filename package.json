@@ -11,6 +11,8 @@
     "validate": "node tools/validate.mjs",
     "serve": "python3 -m http.server 8080",
     "preview": "npm run build && npm run serve",
+    "review": "node tools/review.mjs",
+    "notes": "node tools/review.mjs",
     "deploy": "firebase deploy --only hosting",
     "publish": "npm run build && npm run validate && firebase deploy --only hosting"
   },
