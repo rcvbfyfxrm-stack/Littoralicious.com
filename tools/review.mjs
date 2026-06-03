@@ -23,21 +23,34 @@ const base = `https://firestore.googleapis.com/v1/projects/${PROJECT}/databases/
 const sv = (f) => f && (f.stringValue ?? f.integerValue ?? f.booleanValue ?? f.timestampValue ?? "");
 
 if (mode === "notes") {
-  const url = `${base}/articles/${slug}/comments?key=${APIKEY}&pageSize=300`;
-  const data = await (await fetch(url)).json();
-  const docs = (data.documents || []).map((d) => {
+  const fetchCol = async (col) => ((await (await fetch(`${base}/articles/${slug}/${col}?key=${APIKEY}&pageSize=300`)).json()).documents || []);
+  const pnotes = (await fetchCol("reviewNotes")).map((d) => {
+    const f = d.fields || {};
+    return { index: Number(sv(f.index)) || 0, excerpt: sv(f.excerpt) || "", note: sv(f.note) || "", ts: sv(f.ts) || "" };
+  }).filter((n) => n.note).sort((a, b) => a.index - b.index);
+  const comments = (await fetchCol("comments")).map((d) => {
     const f = d.fields || {};
     return { name: sv(f.name) || "anon", text: sv(f.text) || sv(f.comment) || sv(f.body) || "", ts: sv(f.timestamp) || sv(f.createdAt) || "" };
   }).filter((c) => c.text).sort((a, b) => String(a.ts).localeCompare(String(b.ts)));
-  if (!docs.length) { console.log(`No review notes yet on "${slug}". Leave them in the comment box on the preview article.`); process.exit(0); }
-  console.log(`\n📝 ${docs.length} review note(s) on "${slug}":\n`);
-  docs.forEach((c, i) => console.log(`  ${i + 1}. [${c.name}${c.ts ? " · " + String(c.ts).slice(0, 16).replace("T", " ") : ""}]\n     ${c.text}\n`));
+  if (!pnotes.length && !comments.length) {
+    console.log(`No notes yet on "${slug}". Open the preview, click ✎ beside a paragraph, or use the comment box at the bottom.`);
+    process.exit(0);
+  }
+  if (pnotes.length) {
+    console.log(`\n📝 ${pnotes.length} paragraph note(s) on "${slug}":\n`);
+    pnotes.forEach((n) => console.log(`  ¶${n.index}  “${n.excerpt}…”\n     → ${n.note}\n`));
+  }
+  if (comments.length) {
+    console.log(`\n💬 ${comments.length} bottom comment(s):\n`);
+    comments.forEach((c, i) => console.log(`  ${i + 1}. [${c.name}] ${c.text}\n`));
+  }
   process.exit(0);
 }
 
 if (mode === "clear") {
+  run(`firebase firestore:delete "articles/${slug}/reviewNotes" --recursive --force --project ${PROJECT}`);
   run(`firebase firestore:delete "articles/${slug}/comments" --recursive --force --project ${PROJECT}`);
-  console.log(`✓ cleared review notes on "${slug}".`);
+  console.log(`✓ cleared paragraph notes + comments on "${slug}".`);
   process.exit(0);
 }
 

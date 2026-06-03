@@ -685,5 +685,11 @@
         initToolsWidget();
         // Re-run after dynamic supplier rendering
         setTimeout(enhancePhoneNumbers, 1500);
+        // Per-paragraph review notes — preview/review channel only (never loaded on production)
+        if (/--review-/.test(location.hostname) || /[?&]review\b/.test(location.search)) {
+            var rn = document.createElement('script');
+            rn.src = '/assets/js/review-notes.js';
+            document.body.appendChild(rn);
+        }
     });
 })();
