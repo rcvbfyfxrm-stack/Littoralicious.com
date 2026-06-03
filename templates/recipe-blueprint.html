@@ -38,26 +38,117 @@
 
             <div class="article__content container rcp" data-recipe="{{SLUG}}" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — INTERACTIVE recipe. Keep it tight: thesis, the moves, scale, cook.
-                     Science lives in <details class="rcp-why"> toggles INSIDE steps, never in walls of text.
-                     Quantities use <span data-qty="500" data-unit="g">500 g</span> so the scaler rescales them live. -->
+                <!-- ════════════════════════════════════════════════════════════════════════
+                     BODY:BEGIN — THE BLUEPRINT (05).  ONE page · ONE slug · ONE [data-recipe] root.
+                     Two movements, joined by a single labelled .divider — never a second page:
+                        I.  THE STORY  — a real read: why this dish exists, and the one idea behind it.
+                        II. THE BUILD  — the executable recipe; the read continues inside the steps.
 
-                <p>One or two sentences: the dish, the problem most versions get wrong, the fix. No throat-clearing.</p>
+                     THE READ IS FIRST-CLASS. Someone who is NOT cooking today must still want to read
+                     it. Do not minimise the prose — earn the recipe. Hold all three pillars in every
+                     piece: Grandmother (why cook at all), Scientist (sourced mechanism), Yacht Chef
+                     (boat-proof execution).
 
+                     THREE TEACHING SLOTS, all ALWAYS VISIBLE (a skimmer who opens zero toggles still
+                     learns something new):
+                        · ONE learn-something fact   → a custom-labelled note  (verified + SOURCED, non-obvious)
+                        · ONE controlling idea        → the Key Point note       (the sentence they keep tomorrow)
+                        · ONE science-as-story line   → a Science note or science-box  (cause then effect)
+                     NO-DUPLICATE-FACT: the learn-something note, the rcp-story, and the science line
+                     must each carry a DIFFERENT fact. Deep chemistry is DEMOTED into per-step
+                     <details class="rcp-why"> with a <cite> — never a wall of prose.
+
+                     HISTORY IS LOAD-BEARING: it must explain a choice the recipe makes (this fat, this
+                     cut, this technique), opened in the Story and paid off in the close. Not decoration.
+
+                     FOCUS LAWS (the first law — never lose focus): open on the payoff, one idea per beat,
+                     no prose block past ~150 words without a re-hook, don't stack two callouts with no
+                     prose between them, close on ONE thing. British cooking spelling (flavour, colour,
+                     caramelise). Banned: delicious · elevated · curated · artisanal · superfood ·
+                     game-changer · hack. Write the headnote LAST, after you have cooked it.
+
+                     ENGINE CONTRACT — do not break (recipe.js drives all of this):
+                        · keep .rcp-ing and .rcp-step in STABLE order — ticks persist by DOM index;
+                          reordering lands saved ticks on the wrong rows.
+                        · every scalable number is <span data-qty="500" data-unit="g">500 g</span>;
+                          NEVER hand-set data-base (the engine stamps it). data-round="0" forces whole units.
+                        · .rcp-why / .rcp-ratio / .rcp-fold are native <details> — no JS, no persistence.
+                        · the .rcp-card galley PDF stays EXACTLY as-is — out of scope, never restyle it.
+                     ════════════════════════════════════════════════════════════════════════════════ -->
+
+                <!-- ── I. THE STORY ──────────────────────────────────────────────────────────── -->
+
+                <!-- HEADNOTE (write LAST · 80–150 words). Sentence one = the payoff: the sensory result
+                     or the one surprising fact — NOT "most X is dense/greasy". Then the single reason
+                     this version earns galley time. End on a half-line that pulls into the story.
+                     GOOD: "Pull it from the tin and the crust should crackle, then give to a steam-laced
+                     crumb." · BAD: "Focaccia is a popular Italian bread that many people enjoy." -->
+                <p>[The payoff in one image — <mark>the single phrase that sells it</mark>.] [One line on what fails in the usual version, and the move that fixes it.] [Half-line bridge into the story.]</p>
+
+                <!-- CONTROLLING IDEA — the one sentence they keep after the recipe is forgotten. One idea
+                     only (spin a second into another article). Everything below ladders to this line. -->
+                <div class="note note--key"><p><strong>The one idea:</strong> [the single governing principle — e.g. the dimples are <span class="highlight highlight--term">cisterns</span>; brine flashed to steam is what lifts the crumb].</p></div>
+
+                <!-- ORIGIN + LIVING TRADITION (the Grandmother beat · two short paragraphs of PROSE). History
+                     as a story, not a caption: etymology + place + ritual, then how it travelled or how the
+                     region varies it. Open the throughline you will pay off at the close. Make it
+                     load-bearing: it should explain a choice the recipe makes. It sits BETWEEN the two notes
+                     on purpose — prose between callouts so boxes never stack. -->
                 <div class="rcp-story">
                     <span class="rcp-story__kicker">Where it comes from</span>
-                    <p>Two or three vivid sentences of real history or culture &mdash; the etymology, the place, the ritual, the origin myth. This is the hook that makes it a recipe you <em>want to read</em>, not just cook. Keep it tight; let the science live in the step toggles.</p>
+                    <p>[Etymology · place · the ritual around it — vivid and specific, with <em>the dialect or foreign term</em> where it earns its place.]</p>
+                    <p>[How it travelled, or how one valley does it differently from the next — and the thread you will tie off at the end.]</p>
                 </div>
 
-                <div class="note note--key"><p><strong>The three moves:</strong> (1) … (2) … (3) … — each grounded in food science, sources in the steps.</p></div>
+                <!-- LEARN-SOMETHING (mandatory · ALWAYS VISIBLE · never a toggle). ONE verified, non-obvious
+                     fact tied to THIS dish: etymology · food archaeology · a trade-route / economic-history
+                     fact · the science-discovery story. Name the source inline (no "they say"). ROTATE the
+                     label across the corpus so it never feels moulded: "Did you know" / "The Number" /
+                     "The Story" / "Myth". MYTH variant: name the belief, overturn it with evidence, then
+                     RESTORE the real reason (pair with a Science note labelled "Mechanism") — never leave the
+                     cook empty-handed. This fact must DIFFER from the rcp-story and the science line below. -->
+                <div class="note" data-label="Did you know"><p>[One genuinely surprising, true fact — <mark>mark the jolt</mark> — with its source.] <cite>&mdash; Author, <em>Title</em></cite></p></div>
 
-                <!-- Ratio (the rule) -->
+                <!-- BRIDGE — one line of PROSE turning from "where it comes from" to "what is really
+                     happening", so the read flows and two callouts never sit back-to-back. -->
+                <p>[One sentence that pivots from the history into the mechanism — why the dish behaves as it does.]</p>
+
+                <!-- SCIENCE-AS-STORY — exactly ONE mechanism, surfaced as cause then effect (molecules with
+                     motive), no jargon dump. The DEEP version stays in the per-step Why toggles. Vary the
+                     vessel piece to piece: a Science note here, or a science-box (shown commented below).
+                     Optional re-hook anywhere above: a Reference pull-quote (one sourced cultural line),
+                     dropped right after a prose paragraph — never set against another callout. -->
+                <div class="note note--science"><p>[The one mechanism as a short narrative: what the molecule "wants", what happens because of it, and the result you taste — <mark>mark the pivot</mark>.]</p></div>
+                <!-- Alternative vessel (pick one, vary across the corpus):
+                <div class="science-box">
+                    <div class="science-box__label">Evidence</div>
+                    <div class="science-box__title">[The mechanism, named]</div>
+                    <div class="science-box__content"><p>[Two or three sentences, cause → effect.]</p></div>
+                </div> -->
+
+                <!-- ── THE HINGE — read → make, same page ────────────────────────────────────── -->
+                <div class="divider" id="build"><span class="divider__text">Now make it</span></div>
+
+                <!-- ── II. THE BUILD ─────────────────────────────────────────────────────────── -->
+
+                <!-- AT-A-GLANCE — orient the cook fast. Surface the make-ahead constraint HERE, not only in
+                     a bottom fold. (Use EITHER this rcp-stats strip OR a .quick-ref card per dish, never both.) -->
+                <dl class="rcp-stats">
+                    <div><dt>Active</dt><dd>[25 min]</dd></div>
+                    <div><dt>Total</dt><dd>[—] <small>[incl. cold rest]</small></dd></div>
+                    <div><dt>Yield</dt><dd>[10&ndash;12]</dd></div>
+                    <div><dt>Make-ahead</dt><dd>[the one holding fact]</dd></div>
+                </dl>
+
+                <!-- THE RATIO (house default) — the formula the chef memorises and rescales anything from
+                     (baker's % with flour at 100%, an appareil formula, etc.). Skip this block ONLY when the
+                     dish has no real governing ratio (a pure assembly). -->
                 <details class="rcp-ratio" open>
                     <summary>The ratio &mdash; memorise, rescale anything</summary>
-                    <div class="rcp-ratio__body"><code>Flour 100% · Water 64% · Salt 2% · …</code> — one line on why the numbers sit where they do.</div>
+                    <div class="rcp-ratio__body"><code>[Flour 100% &middot; Water 80% &middot; Salt 2.2% &middot; …]</code> &mdash; [one line on why the numbers sit where they do].</div>
                 </details>
 
-                <!-- Scaler -->
+                <!-- SCALER — default the base yield to 10–12 covers (crew/charter sizing). -->
                 <div class="rcp-scaler" data-base-yield="12" data-yield-unit="portions">
                     <span class="rcp-scaler__label">Scale</span>
                     <button data-scale="0.5">½&times;</button>
@@ -66,41 +157,57 @@
                     <span class="rcp-scaler__yield"><b data-yield>12</b> portions</span>
                 </div>
 
+                <!-- INGREDIENTS — listed in ORDER OF USE, grouped by sub-component. Every quantity is a live
+                     [data-qty]; audit the list against the method so nothing is orphaned. Keep row order stable. -->
                 <h2>Ingredients</h2>
-                <div class="rcp-group">Group</div>
+                <div class="rcp-group">[Sub-component]</div>
                 <ul class="rcp-ings">
-                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="500" data-unit="g">500 g</span></span><span class="rcp-ing__n">Ingredient</span> <span class="rcp-ing__note">note</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="500" data-unit="g">500 g</span></span><span class="rcp-ing__n">[Ingredient]</span> <span class="rcp-ing__note">[note]</span></label></li>
                 </ul>
 
+                <!-- METHOD — WOVEN steps: the read does NOT stop at the divider. 4–6 MAJOR steps OPEN with a
+                     ONE-LINE cultural or scientific micro-story (in <em>), then the instruction, then the deep
+                     Why one tap away. Keep the lead to a single line — never a free-standing essay between steps.
+                     GOOD lead: "<em>Genoa calls this the brine — salamoia — and it is the whole trick.</em>"
+                     BAD lead: a three-sentence history that stalls the cook mid-recipe. -->
                 <h2>Method</h2>
                 <div class="rcp-progress"><span data-progress-done>0</span>/<span data-progress-total>0</span> steps done<div class="rcp-progress__bar"><i data-progress-bar></i></div></div>
                 <ol class="rcp-steps">
                     <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
-                        <div class="rcp-step__body"><p><strong>Do the thing.</strong> Tight instruction with <span data-qty="640" data-unit="g">640 g</span> water.</p>
-                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">The mechanism in two lines. <cite>&mdash; Source</cite></div></details>
+                        <div class="rcp-step__body">
+                            <p><em>[One-line woven micro-story — the cultural or scientific aside, then stop.]</em></p>
+                            <p><strong>[Do the move.]</strong> [Tight instruction with <span data-qty="640" data-unit="g">640 g</span> water, worked to the <mark>doneness cue</mark>.]</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">[The deep mechanism in two lines — the part the curious cook taps for. <cite>&mdash; Source</cite>]</div></details>
                         </div></li>
+                    <!-- …more steps. Use a Warning note at its step ONLY for a true, costly failure mode. -->
                 </ol>
                 <div class="rcp-meta"><button data-recipe-reset>Reset ticks</button> &middot; progress saves on this device</div>
 
-                <!-- Galley card -->
+                <!-- GALLEY CARD — UNTOUCHED. Separate artifact; never restyle or re-path. -->
                 <a class="rcp-card" href="../print/{{SLUG}}-recipe-card.pdf" download>
                     <span><b>One-page galley card</b><span>The whole recipe on a single A4 &mdash; print, pin, cook.</span></span>
                     <span class="rcp-card__btn">Download PDF</span>
                 </a>
 
+                <!-- EXTRAS — off-critical-path depth in folds so the spine stays lean. -->
                 <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
-                    <table><tr><td>Move</td><td>What it does / how</td></tr></table>
+                    <table><tr><td>[Move]</td><td>[What it does / how]</td></tr></table>
                 </div></details>
 
                 <details class="rcp-fold"><summary>Troubleshooting</summary><div class="rcp-fold__body">
-                    <table><tr><td>Problem</td><td>Cause &rarr; fix</td></tr></table>
+                    <table><tr><td>[Problem]</td><td>[Cause &rarr; fix]</td></tr></table>
                 </div></details>
 
                 <details class="rcp-fold"><summary>Charter prep &amp; storage</summary><div class="rcp-fold__body">
-                    <p>Make-ahead, holding, freezing.</p>
+                    <p>[Make-ahead, holding temp, freezing — what survives a charter and what does not.]</p>
                 </div></details>
 
-                <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> named books / papers.</p>
+                <!-- THE CLOSE (ALWAYS VISIBLE — outside any fold). Pay off the throughline and hand the cook
+                     the ratio as a tool: restate it, then 2–3 riffs INCLUDING a cheaper/heartier crew-tier swap
+                     (cook once, serve two tiers). Close on ONE thing. -->
+                <div class="note note--action"><p><strong>Once you own the ratio</strong> [restate it in five words], the dish is yours: [2&ndash;3 riffs, one of them a leaner/heartier crew-tier swap]. [One line that ties off the history you opened.]</p></div>
+
+                <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> [named books / papers] &mdash; <cite>Author, <em>Title</em></cite>. <em>Tested at sea.</em></p>
 
                 <!-- BODY:END -->
 
