@@ -2078,3 +2078,108 @@ mark {
     }
 }
 
+
+/* ============================================================================
+   Interactive recipe components (.rcp-*) — powered by assets/js/recipe.js
+   Concise, focused, tactile. Uses the global design tokens.
+   ========================================================================== */
+.rcp { --rcp-line: var(--color-border, #e2e2e2); }
+
+/* Stats strip */
+.rcp-stats { display: flex; flex-wrap: wrap; gap: var(--space-4, 16px) var(--space-6, 24px);
+  padding: var(--space-3, 12px) 0; border-top: 2px solid var(--color-ink, #0a0a0a);
+  border-bottom: 1px solid var(--rcp-line); margin: var(--space-6, 24px) 0; }
+.rcp-stats div { font-family: var(--font-mono, "SF Mono"), monospace; }
+.rcp-stats dt { font-size: .62rem; text-transform: uppercase; letter-spacing: .1em; color: var(--color-salt, #94a3b8); margin-bottom: 2px; }
+.rcp-stats dd { font-size: .95rem; font-weight: 600; margin: 0; }
+.rcp-stats dd small { color: var(--color-salt, #94a3b8); font-weight: 400; }
+
+/* Ratio chip (the rule) */
+.rcp-ratio { border: 2px solid var(--color-sea, #2d4a5e); margin: var(--space-6, 24px) 0; }
+.rcp-ratio summary { cursor: pointer; list-style: none; padding: 10px 14px; font-size: .8rem;
+  text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--color-sea, #2d4a5e);
+  display: flex; align-items: center; gap: 8px; }
+.rcp-ratio summary::-webkit-details-marker { display: none; }
+.rcp-ratio summary::before { content: "▸"; transition: transform .15s; }
+.rcp-ratio[open] summary::before { transform: rotate(90deg); }
+.rcp-ratio__body { padding: 0 14px 12px; font-size: .9rem; line-height: 1.5; }
+.rcp-ratio__body code { font-family: var(--font-mono, monospace); background: #eef3f6; padding: 1px 5px; }
+
+/* Scaler */
+.rcp-scaler { display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  background: var(--color-subtle, #f4f6f7); border: 1px solid var(--rcp-line);
+  padding: 10px 14px; margin: var(--space-6, 24px) 0; position: sticky; top: 0; z-index: 5; }
+.rcp-scaler__label { font-size: .66rem; text-transform: uppercase; letter-spacing: .12em; color: var(--color-muted, #6b7280); }
+.rcp-scaler button[data-scale] { font: inherit; font-size: .82rem; cursor: pointer; padding: 5px 12px;
+  border: 1px solid var(--color-sea, #2d4a5e); background: #fff; color: var(--color-sea, #2d4a5e); font-weight: 600; }
+.rcp-scaler button[data-scale].active { background: var(--color-sea, #2d4a5e); color: #fff; }
+.rcp-scaler__yield { margin-left: auto; font-family: var(--font-mono, monospace); font-size: .82rem; color: var(--color-ink, #0a0a0a); }
+.rcp-scaler__yield b { color: var(--color-sea, #2d4a5e); }
+
+/* quantity tokens scale live */
+[data-qty] { font-family: var(--font-mono, monospace); font-size: .92em; color: var(--color-sea, #2d4a5e); white-space: nowrap; }
+
+/* Ingredients — tickable */
+.rcp-ings { list-style: none; padding: 0; margin: var(--space-4, 16px) 0; }
+.rcp-ing { border-bottom: 1px solid var(--rcp-line); }
+.rcp-ing label { display: flex; align-items: baseline; gap: 10px; padding: 8px 2px; cursor: pointer; }
+.rcp-ing input { margin: 0; flex: none; transform: translateY(1px); accent-color: var(--color-sea, #2d4a5e); }
+.rcp-ing__q { flex: none; min-width: 76px; }
+.rcp-ing__n { flex: 1; }
+.rcp-ing__note { color: var(--color-salt, #94a3b8); font-size: .82rem; font-style: italic; }
+.rcp-ing.done label { opacity: .45; text-decoration: line-through; text-decoration-color: var(--color-salt, #94a3b8); }
+.rcp-group { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700;
+  color: var(--color-sea, #2d4a5e); margin: var(--space-4, 16px) 0 4px; }
+
+/* Method — progress + tappable steps + science toggles */
+.rcp-progress { position: sticky; top: 46px; z-index: 4; background: var(--color-paper, #fafafa);
+  padding: 6px 0 8px; font-family: var(--font-mono, monospace); font-size: .72rem; color: var(--color-muted, #6b7280); }
+.rcp-progress__bar { height: 4px; background: var(--rcp-line); margin-top: 4px; }
+.rcp-progress__bar i { display: block; height: 100%; width: 0; background: var(--color-sea, #2d4a5e); transition: width .2s; }
+.rcp-steps { list-style: none; padding: 0; margin: 0; counter-reset: rcp; }
+.rcp-step { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rcp-line); counter-increment: rcp; }
+.rcp-step__check { flex: none; width: 26px; height: 26px; border: 2px solid var(--color-sea, #2d4a5e);
+  background: #fff; color: var(--color-sea, #2d4a5e); cursor: pointer; font-family: var(--font-mono, monospace);
+  font-size: .8rem; font-weight: 700; display: grid; place-items: center; border-radius: 50%; }
+.rcp-step__check::before { content: counter(rcp); }
+.rcp-step.done .rcp-step__check { background: var(--color-sea, #2d4a5e); color: #fff; }
+.rcp-step.done .rcp-step__check::before { content: "✓"; }
+.rcp-step__body { flex: 1; }
+.rcp-step__body > p { margin: 0; }
+.rcp-step.done .rcp-step__body { opacity: .5; }
+.rcp-why { margin-top: 5px; }
+.rcp-why summary { cursor: pointer; list-style: none; font-size: .74rem; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--color-sea, #2d4a5e); font-weight: 700; display: inline-flex; gap: 5px; align-items: center; }
+.rcp-why summary::-webkit-details-marker { display: none; }
+.rcp-why summary::before { content: "＋"; font-weight: 400; }
+.rcp-why[open] summary::before { content: "－"; }
+.rcp-why__body { font-size: .85rem; line-height: 1.5; color: var(--color-muted, #6b7280);
+  border-left: 2px solid var(--color-sea, #2d4a5e); padding: 4px 0 4px 12px; margin-top: 5px; }
+.rcp-why__body cite { font-style: normal; color: var(--color-sea, #2d4a5e); }
+
+/* Reset + meta row */
+.rcp-meta { display: flex; align-items: center; gap: 12px; font-size: .72rem; color: var(--color-salt, #94a3b8); margin-top: 8px; }
+.rcp-meta button { font: inherit; font-size: .72rem; cursor: pointer; background: none; border: none;
+  color: var(--color-sea, #2d4a5e); text-decoration: underline; padding: 0; }
+
+/* Collapsible extras (elevations / troubleshooting / charter) */
+.rcp-fold { border: 1px solid var(--rcp-line); margin: 10px 0; }
+.rcp-fold > summary { cursor: pointer; list-style: none; padding: 11px 14px; font-family: var(--font-serif, Georgia), serif;
+  font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.rcp-fold > summary::-webkit-details-marker { display: none; }
+.rcp-fold > summary::before { content: "▸"; color: var(--color-sea, #2d4a5e); transition: transform .15s; }
+.rcp-fold[open] > summary::before { transform: rotate(90deg); }
+.rcp-fold__body { padding: 0 14px 14px; }
+.rcp-fold__body table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.rcp-fold__body td { padding: 5px 8px; border-bottom: 1px solid var(--rcp-line); vertical-align: top; }
+.rcp-fold__body td:first-child { font-weight: 600; white-space: nowrap; }
+
+/* Galley card download */
+.rcp-card { display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  background: var(--color-sea, #2d4a5e); color: #fff; padding: 14px 18px; margin: var(--space-6, 24px) 0; text-decoration: none; }
+.rcp-card b { font-family: var(--font-serif, Georgia), serif; font-size: 1.05rem; }
+.rcp-card span { display: block; font-size: .8rem; opacity: .85; }
+.rcp-card .rcp-card__btn { border: 1px solid #fff; padding: 7px 14px; font-size: .74rem;
+  text-transform: uppercase; letter-spacing: .08em; font-weight: 700; white-space: nowrap; }
+
+@media (max-width: 600px) { .rcp-scaler__yield { margin-left: 0; width: 100%; } }

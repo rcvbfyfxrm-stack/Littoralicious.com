@@ -1,0 +1,42 @@
+name: Deploy drafts review channel
+
+# Rebuilds the site from data/articles.json (the "draft: true" flag drives the
+# draft manifest) and deploys to a fixed Firebase Hosting preview channel "drafts".
+# Flip a flag, push to main, and drafts.html reflects it automatically.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Weekly keep-alive: preview channels expire after 30 days of no deploy.
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  deploy-drafts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build (regenerates data/draft-articles.json from the draft flag)
+        run: |
+          npm ci || npm install
+          npm run build
+
+      - name: Deploy to the "drafts" preview channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
+          projectId: littoralicious-web-eceed
+          channelId: drafts
+          expires: 30d
