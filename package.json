@@ -13,6 +13,7 @@
     "preview": "npm run build && npm run serve",
     "review": "node tools/review.mjs",
     "notes": "node tools/review.mjs",
+    "newsletter": "node tools/newsletter.mjs",
     "deploy": "firebase deploy --only hosting",
     "publish": "npm run build && npm run validate && firebase deploy --only hosting"
   },

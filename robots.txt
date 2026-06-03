@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
 
-# Work-in-progress surfaces (not for indexing)
+# Work-in-progress + admin surfaces (not for indexing)
 Disallow: /drafts.html
+Disallow: /studio.html
+Disallow: /newsletter-preview.html
 Disallow: /data/draft-articles.json
 Disallow: /game/
 

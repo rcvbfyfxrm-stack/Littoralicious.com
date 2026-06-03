@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Newsletter Preview — LITTORALICIOUS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+    <style>
+        .np-wrap{max-width:680px;margin:0 auto;padding:var(--space-6) var(--space-4);}
+        .np-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-5);font-size:var(--text-sm);}
+        .np-bar a{color:var(--color-sea);text-decoration:none;}
+        .np-bar button{background:var(--color-sea);color:#fff;border:none;padding:.5em 1em;cursor:pointer;font-size:13px;}
+        .np-frame{border:1px solid var(--color-border);padding:var(--space-8);background:#fff;}
+        .np-frame .np-masthead{text-align:center;border-bottom:2px solid var(--color-ink);padding-bottom:var(--space-4);margin-bottom:var(--space-6);font-family:var(--font-serif);font-size:22px;letter-spacing:.12em;}
+        .np-hint{font-size:13px;color:var(--color-muted);margin-top:var(--space-4);}
+        code{background:var(--color-subtle);padding:1px 5px;}
+        .np-flash{color:#166534;font-size:13px;margin-left:.5em;}
+    </style>
+</head>
+<body>
+    <div class="np-wrap">
+        <div class="np-bar">
+            <a href="studio.html">← Studio</a>
+            <span id="np-subject" style="color:var(--color-muted);">Loading…</span>
+            <button id="np-copy" type="button">Copy email HTML</button><span class="np-flash" id="np-flash"></span>
+        </div>
+        <div class="np-frame">
+            <div class="np-masthead">LITTORALICIOUS</div>
+            <div id="np-body"><p style="color:var(--color-muted);">Building preview…</p></div>
+        </div>
+        <p class="np-hint">This is the teaser email subscribers receive (title, lede, the "in this piece" points, and a link
+            to the full article). To create it as a draft in Buttondown, run
+            <code>npm run newsletter -- <span id="np-slug">slug</span> --draft</code>, review it there, then send.</p>
+    </div>
+
+    <script>
+    (function () {
+        var ORIGIN = 'https://www.littoralicious.com';
+        var params = new URLSearchParams(location.search), slug = params.get('slug') || '';
+        var body = document.getElementById('np-body');
+        var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+        if (slug) document.getElementById('np-slug').textContent = slug;
+        if (!slug) { body.innerHTML = '<p>No <code>?slug=</code> given.</p>'; return; }
+
+        Promise.all([
+            fetch('data/articles.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }),
+            fetch('articles/' + slug + '.html', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : ''; })
+        ]).then(function (res) {
+            var data = res[0], html = res[1];
+            var cats = data.categories || {};
+            var a = (data.articles || []).find(function (x) { return x.slug === slug; }) || { title: slug };
+            var catLabel = (cats[a.category] && cats[a.category].name) || a.category || '';
+            // pull "in this piece" bullets from the article's summary-box
+            var bullets = [];
+            var doc = new DOMParser().parseFromString(html, 'text/html');
+            var sb = doc.querySelector('.summary-box');
+            if (sb) bullets = [].map.call(sb.querySelectorAll('li'), function (li) { return li.textContent.trim(); });
+            var url = ORIGIN + '/articles/' + slug + '.html';
+
+            var email =
+                '<p style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#64748b;margin:0 0 4px;">' + esc(catLabel) + (a.subtag ? ' · ' + esc(a.subtag) : '') + '</p>' +
+                '<h1 style="font-family:Georgia,serif;font-size:28px;line-height:1.2;margin:0 0 12px;">' + esc(a.title) + '</h1>' +
+                (a.description ? '<p style="font-size:17px;line-height:1.6;color:#333;margin:0 0 18px;">' + esc(a.description) + '</p>' : '') +
+                (bullets.length ? '<p style="font-weight:600;margin:0 0 6px;">In this piece</p><ul style="font-size:15px;line-height:1.6;color:#333;margin:0 0 18px;">' + bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' : '') +
+                '<p style="margin:24px 0;"><a href="' + url + '" style="background:#2d4a5e;color:#fff;text-decoration:none;padding:12px 22px;font-family:system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:.05em;">Read the full piece →</a></p>' +
+                '<hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;">' +
+                '<p style="font-size:13px;color:#94a3b8;">LITTORALICIOUS · Modern Science · Regional Recipes · From the Sea</p>';
+
+            body.innerHTML = email;
+            document.getElementById('np-subject').textContent = 'Subject: ' + a.title;
+            document.getElementById('np-copy').addEventListener('click', function () {
+                (navigator.clipboard ? navigator.clipboard.writeText(email) : Promise.reject()).then(function () {
+                    document.getElementById('np-flash').textContent = '✓ copied';
+                }).catch(function () { document.getElementById('np-flash').textContent = 'copy failed'; });
+            });
+        }).catch(function (e) { body.innerHTML = '<p>Could not build preview: ' + esc(e.message) + '</p>'; });
+    })();
+    </script>
+</body>
+</html>

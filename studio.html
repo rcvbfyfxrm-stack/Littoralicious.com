@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Studio — LITTORALICIOUS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+    <style>
+        .st-wrap{max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-4);}
+        .st-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);border-bottom:2px solid var(--color-ink);padding-bottom:var(--space-3);}
+        .st-stats{display:flex;gap:var(--space-5);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-muted);}
+        .st-stats b{color:var(--color-sea);font-size:var(--text-lg);}
+        .st-tools{display:flex;gap:var(--space-2);flex-wrap:wrap;margin:var(--space-5) 0;}
+        .st-tools input{flex:1;min-width:200px;padding:.5em .8em;border:1px solid var(--color-border);font:inherit;}
+        .st-tools button{background:none;border:1px solid var(--color-border);padding:.4em 1em;cursor:pointer;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-muted);}
+        .st-tools button.active{border-color:var(--color-sea);color:var(--color-sea);}
+        table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+        th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-salt);border-bottom:1px solid var(--color-border);padding:.5em .6em;}
+        td{padding:.7em .6em;border-bottom:1px solid var(--color-subtle);vertical-align:top;}
+        tr:hover td{background:var(--color-subtle);}
+        .st-title{font-family:var(--font-serif);font-size:var(--text-base);}
+        .st-badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:3px;}
+        .st-live{background:#dcfce7;color:#166534;}.st-draft{background:#fef9c3;color:#854d0e;}.st-feat{background:#dbeafe;color:#1e40af;margin-left:4px;}
+        .st-act a{color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);padding:.25em .6em;font-size:12px;margin-right:4px;white-space:nowrap;display:inline-block;}
+        .st-act a:hover{border-color:var(--color-sea);}
+        .st-note{font-size:13px;color:var(--color-muted);margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-border);}
+        code{background:var(--color-subtle);padding:1px 5px;font-size:.85em;}
+    </style>
+</head>
+<body>
+    <div class="st-wrap">
+        <div class="st-head">
+            <div>
+                <h1 style="font-family:var(--font-serif);margin:0;">Studio</h1>
+                <span style="color:var(--color-muted);font-size:var(--text-sm);">every article, one place</span>
+            </div>
+            <div class="st-stats">
+                <span><b id="st-total">0</b> total</span>
+                <span><b id="st-live">0</b> live</span>
+                <span><b id="st-draft">0</b> draft</span>
+            </div>
+        </div>
+
+        <div class="st-tools">
+            <input id="st-search" type="text" placeholder="Filter by title, category, tag…">
+            <button data-f="all" class="active">All</button>
+            <button data-f="live">Live</button>
+            <button data-f="draft">Draft</button>
+            <button data-f="featured">Featured</button>
+        </div>
+
+        <table>
+            <thead><tr><th>Article</th><th>Category</th><th>Date</th><th>Read</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="st-rows"><tr><td colspan="6" style="color:var(--color-muted);padding:var(--space-6);">Loading data/articles.json…</td></tr></tbody>
+        </table>
+
+        <p class="st-note">
+            <strong>Newsletter:</strong> click <em>Newsletter</em> to preview an article as an email. To create a Buttondown
+            draft, run <code>npm run newsletter -- &lt;slug&gt; --draft</code> (review it in Buttondown, then send). ·
+            <strong>Drafts</strong> are flagged <code>"draft": true</code> in <code>data/articles.json</code> and stay off the
+            homepage, sitemap and feed until promoted.
+        </p>
+    </div>
+
+    <script>
+    (function () {
+        var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
+        var filter = 'all', q = '', all = [];
+        var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+        fetch('data/articles.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (data) {
+            var cats = data.categories || {};
+            all = (data.articles || []).map(function (a) {
+                return {
+                    slug: a.slug, title: a.title || a.slug, date: a.date || '', read: a.read_time || '',
+                    cat: (cats[a.category] && cats[a.category].name) || a.category || '', subtag: a.subtag || '',
+                    draft: !!a.draft, featured: !!a.featured, tags: (a.tags || []).join(' ')
+                };
+            }).sort(function (x, y) { return String(y.date).localeCompare(String(x.date)); });
+            document.getElementById('st-total').textContent = all.length;
+            document.getElementById('st-live').textContent = all.filter(function (a) { return !a.draft; }).length;
+            document.getElementById('st-draft').textContent = all.filter(function (a) { return a.draft; }).length;
+            render();
+        }).catch(function (e) { rows.innerHTML = '<tr><td colspan="6">Could not load articles.json: ' + esc(e.message) + '</td></tr>'; });
+
+        function render() {
+            var list = all.filter(function (a) {
+                if (filter === 'live' && a.draft) return false;
+                if (filter === 'draft' && !a.draft) return false;
+                if (filter === 'featured' && !a.featured) return false;
+                if (q && (a.title + ' ' + a.cat + ' ' + a.tags + ' ' + a.subtag).toLowerCase().indexOf(q) === -1) return false;
+                return true;
+            });
+            if (!list.length) { rows.innerHTML = '<tr><td colspan="6" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
+            rows.innerHTML = list.map(function (a) {
+                var status = a.draft ? '<span class="st-badge st-draft">Draft</span>' : '<span class="st-badge st-live">Live</span>';
+                if (a.featured) status += '<span class="st-badge st-feat">★</span>';
+                return '<tr>' +
+                    '<td><div class="st-title">' + esc(a.title) + '</div><span style="color:var(--color-salt);font-size:12px;">' + esc(a.slug) + (a.subtag ? ' · ' + esc(a.subtag) : '') + '</span></td>' +
+                    '<td>' + esc(a.cat) + '</td><td style="white-space:nowrap;font-family:var(--font-mono);font-size:12px;">' + esc(a.date) + '</td>' +
+                    '<td>' + (a.read ? a.read + 'm' : '—') + '</td><td>' + status + '</td>' +
+                    '<td class="st-act"><a href="articles/' + a.slug + '.html" target="_blank">View</a>' +
+                    '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Newsletter</a></td>' +
+                    '</tr>';
+            }).join('');
+        }
+        search.addEventListener('input', function () { q = this.value.toLowerCase().trim(); render(); });
+        [].forEach.call(document.querySelectorAll('.st-tools button'), function (b) {
+            b.addEventListener('click', function () {
+                document.querySelectorAll('.st-tools button').forEach(function (x) { x.classList.remove('active'); });
+                b.classList.add('active'); filter = b.getAttribute('data-f'); render();
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
