@@ -24,11 +24,17 @@ where earned, `.term` for inline jargon, one takeaway to close.
 Before drafting any article/page, open the response with **two things**, in order:
 1. A compact **rules summary** (~150 words): the first law (never lose focus), mission, the
    three pillars, the DNA test, source rule, banned words, design tokens, editorial firewall.
-2. A **"Template fit:"** line naming one of the 12 templates with a one-line rationale
-   (e.g. *"Template fit: The Blueprint (05) — full recipe with science"*).
+2. A **"Template fit:"** line — **auto-select** the matching template (never ask which);
+   infer it from what the piece is and state it in one line (e.g. *"Template fit: The
+   Blueprint (05)"*). Then scaffold with `npm run new -- --template <name> …`.
 
-Then write. If the piece fits no template, stop and propose narrowing or splitting — never
-invent a format. (Skip the summary only on a tiny fix, or when Arnaud says to.)
+Then write — and **design it to captivate**: boxes (`summary-box`, `note--key/science/action/
+warning`, custom `note[data-label]`), highlighting (`<mark>` / `.highlight` / `.term`), pull-quotes,
+stat grids, labelled dividers. Build a **scannable spine** (boxes + bold lead-ins + h2s alone
+tell the whole story); never more than ~150 words of unbroken prose before a visual beat re-grabs
+the eye; vary the devices piece to piece. See DNA.md → *Captivating design*. If the piece fits no
+template, stop and propose narrowing or splitting — never invent a format. (Skip the summary only
+on a tiny fix, or when Arnaud says to.)
 
 **Template files.** Each of the 12 templates should be a file in `templates/` named for it
 (e.g. `templates/the-blueprint.html`), used via `npm run new -- --template the-blueprint`.

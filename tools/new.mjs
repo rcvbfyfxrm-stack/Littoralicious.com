@@ -34,7 +34,8 @@ const TEMPLATE_DEFAULTS = {
   "the-lab": { category: "the-method", subtag: "Lab Notes" },
   "recipe-blueprint": { category: "the-method", subtag: "Recipe Blueprint" },
 };
-const tmplName = args.template || "standard";
+const tmplName = args.template || inferTemplate(title, args.subtag || "");
+if (!args.template) console.log(`  auto-selected template: ${tmplName}  (override with --template <name>)`);
 const tmplFile = p("templates", `${tmplName}.html`);
 if (!exists(tmplFile)) die(`unknown template "${tmplName}" — see templates/  (run: ls templates)`);
 const DEF = TEMPLATE_DEFAULTS[tmplName] || {};
@@ -89,3 +90,23 @@ function parseArgs(a) {
   return o;
 }
 function die(m) { console.error("✗ " + m); process.exit(1); }
+
+// Infer the best-fit template from the title + subtag when --template is omitted.
+function inferTemplate(title, subtag) {
+  const s = `${title} ${subtag}`.toLowerCase();
+  const has = (...w) => w.some((x) => s.includes(x));
+  if (has("recipe", "blueprint", "cake", "bread", "dough", "pizza", "sauce", "braise", "roast", "crumble", "pudding", "soup", "bake")) return "recipe-blueprint";
+  if (has("port call", "port-call", "provisioning", "provision", "market", "supplier")) return "port-call";
+  if (has("technique", "beurre", "emulsif", "temper", "confit", "cure", "ferment", "method", "how to ")) return "the-method-technique";
+  if (has("ingredient", "deep-dive", "immortal", "the bulb", "the leaf")) return "shore-larder";
+  if (has("study", "evidence", "compound", "flavordb", "the fat index", "the salt index", "umami", "maillard", "science of")) return "the-evidence";
+  if (has("heritage", "history", "tradition", "origin of", "the first", "born")) return "littoral-heritage-article";
+  if (has("equipment", "review", "pacojet", "thermomix", "vitamix", "the locker", "gear")) return "the-locker";
+  if (has("tax", "career", "crew", "industry", "become a", "trade winds", "residency")) return "trade-winds";
+  if (has("galley", "efficiency", "mise", "station", "operations", "rotation", "tight ship")) return "tight-ship";
+  if (has("sourcing", "supply", "quota", "seasonal", "signal fire", "shortage", "window is closing")) return "signal-fire";
+  if (has("forecast", "horizon", "future", "trend", "macro", "outlook", "is coming")) return "the-horizon";
+  if (has("weekly brief", "monthly brief", "digest", "roundup", "six things")) return "weekly-brief";
+  if (has("the lab", "experiment", "trial", "measured", "tested against")) return "the-lab";
+  return "standard";
+}

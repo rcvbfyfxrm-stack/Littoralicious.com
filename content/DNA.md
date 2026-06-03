@@ -27,6 +27,38 @@ you haven't earned the next line yet.*
 **The focus test:** read it as a tired chef at 11 PM, mid-charter. If your eye drifts even
 once — cut, tighten, or add a hook. Ship only when it doesn't.
 
+## Captivating design — the toolkit
+
+Plain prose loses people. **Every article is designed to be read** — boxes, highlights, and
+visual beats that hold the eye the whole way down. Reach for these (all locked CSS, no new styling):
+
+**Boxes / callouts** (each auto-labels itself):
+- `<div class="summary-box"><strong>What you'll get</strong><ul>…</ul></div>` — the opening promise (📋).
+- `<div class="note note--key"><p>…</p></div>` → **Key Point** · `note--science` → **The Science** ·
+  `note--action` → **Takeaway** · `note--warning` → **Warning** · `note--quote` → pull-quote.
+- **Custom-labeled box** (clever, use it): `<div class="note" data-label="The Number"><p>…</p></div>`
+  — any label you invent: `data-label="Myth"`, `"At Sea"`, `"Field Test"`, `"In One Line"`.
+
+**Highlighting (surlignement)** — pull the eye to the words that matter:
+- `<mark>key phrase</mark>` or `<span class="highlight">…</span>` — yellow highlight on the
+  one phrase per section that must land. `<span class="term">jargon</span>` for inline defs.
+  Bold the lead-in of a paragraph so a skimmer still gets the point.
+
+**Visual blocks** (vary them so no two pieces feel identical):
+- The dark **Identity Card** (ingredient facts), the green **Science callout** (chemistry list),
+  the wheat **Pairing grid**, the **At-a-Glance** stats grid, labelled `<div class="divider">`s.
+- A **"one big number"** stat, a **before/after** two-column, a **myth-vs-mechanism** pair.
+
+**Clever patterns:**
+- **The scannable spine:** someone reading ONLY the boxes, `<mark>`s, bold lead-ins and `<h2>`s
+  should still get the entire argument. Build that skim-path on purpose.
+- **One hook per screen:** never more than ~150 words of unbroken prose before a box, highlight,
+  pull-quote, or divider re-grabs the eye.
+- **Vary the rhythm:** rotate which devices you use piece to piece — predictable = invisible.
+- Lead a section with the payoff, not the wind-up. Close on a single takeaway box.
+
+Design serves focus, never decoration. If a box doesn't earn attention, cut it.
+
 ## Mission
 
 **To Nurture.** From the Latin *nutrire* — to feed, nourish, and educate. Every recipe,
@@ -100,8 +132,12 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 ## The 12 templates — pick one, never invent
 
 Every piece must fit one existing template. If it doesn't fit, narrow scope or split — do
-not create a new format. State the template fit before drafting (e.g. *"Template fit: The
-Method (02) — Provoke → Instruct → Prove"*).
+not create a new format. **Auto-select the template** — infer it from what the article is
+(ingredient → Shore Larder, recipe → The Blueprint, technique → The Method, study → The
+Evidence, city → Port Call, gear → The Locker, career → Trade Winds, galley ops → Tight
+Ship, sourcing → Signal Fire, culture → Littoral Heritage, forecast → The Horizon, digest →
+Weekly Brief, experiment → The Lab). **Never ask which template** — pick it, state the fit in
+one line (e.g. *"Template fit: The Method (02)"*), and proceed.
 
 | # | Template | Section | Length | Use for |
 |---|---|---|---|---|
