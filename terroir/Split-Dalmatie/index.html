@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
 <!-- Port Call kit (existing — keeps card list, side map, vote) -->
-<link rel="stylesheet" href="../_assets/port-call/port-call-vars.css">
-<link rel="stylesheet" href="../_assets/port-call/port-call.css">
-  <link rel="stylesheet" href="../_assets/port-call/tcard.css">
+<link rel="stylesheet" href="../_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="../_assets/guide/guide-inventory.css">
+  <link rel="stylesheet" href="../_assets/guide/tcard.css">
 
 <!-- Leaflet (hero map + side map both use it) -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -262,9 +262,9 @@
   }
 
   /* tweak port-call kit colors so it sits on the cream paper */
-  .pcv-tier { background: transparent !important; }
-  .pcv-card { background: #fff; border: 1px solid var(--rule); }
-  .pcv-card.is-hover { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .terroir-tier { background: transparent !important; }
+  .terroir-card { background: #fff; border: 1px solid var(--rule); }
+  .terroir-card.is-hover { outline: 2px solid var(--gold); outline-offset: 2px; }
 
   /* === Extended palette (Venice parity) === */
   :root {
@@ -450,17 +450,17 @@
     <summary>
       <div>
         <div class="sfold__title">All addresses (full inventory)</div>
-        <div class="sfold__desc">Renderer-fed inventory — see "Tables — by tier" below for the curated read.</div>
+        <div class="sfold__desc">Renderer-fed inventory — see "Tables — by tier" below for the selected read.</div>
       </div>
       <span class="sfold__count">inventory</span>
       <span class="sfold__chev"></span>
     </summary>
     <div class="sfold__body">
-      <div class="pcv-berths" id="pcv-berths"></div>
-      <div class="pcv-tier" data-tier="notime" style="display:none"><div class="pcv-tier__list" id="pcv-list-notime"></div></div>
-      <div class="pcv-tier" data-tier="several" style="display:none"><div class="pcv-tier__list" id="pcv-list-several"></div></div>
-      <div class="pcv-tier" data-tier="plenty" style="display:none"><div class="pcv-tier__list" id="pcv-list-plenty"></div></div>
-      <p style="font-size:0.86em;color:#6b7280;font-style:italic;margin:8px 0 0 0">The full inventory is rendered into the hidden lists above so the existing port-call kit stays intact. Read the curated tier presentation below.</p>
+      <div class="terroir-berths" id="terroir-berths"></div>
+      <div class="terroir-tier" data-tier="notime" style="display:none"><div class="terroir-tier__list" id="terroir-list-notime"></div></div>
+      <div class="terroir-tier" data-tier="several" style="display:none"><div class="terroir-tier__list" id="terroir-list-several"></div></div>
+      <div class="terroir-tier" data-tier="plenty" style="display:none"><div class="terroir-tier__list" id="terroir-list-plenty"></div></div>
+      <p style="font-size:0.86em;color:#6b7280;font-style:italic;margin:8px 0 0 0">The full inventory is rendered into the hidden lists above so the existing port-call kit stays intact. Read the selected tier presentation below.</p>
     </div>
   </details>
 
@@ -844,7 +844,7 @@
     <summary>
       <div>
         <div class="sfold__title">Music</div>
-        <div class="sfold__desc">Festivals, klapa, listening bar &mdash; the honest note on Croatian electronic in 2026</div>
+        <div class="sfold__desc">Festivals, klapa, jazz, listening bar &mdash; and the honest note on Ultra</div>
       </div>
       <span class="sfold__count">5 entries</span>
       <span class="sfold__chev"></span>
@@ -891,8 +891,8 @@
       </article>
 
       <div class="alert">
-        <span class="alert-label">&#9888; Honest note on Croatian electronic 2026</span>
-        <strong>Ultra Europe</strong> (every July, Park Mladeži stadium + Hvar) remains one of Europe's three biggest electronic festivals — but it is mainstream EDM (David Guetta, Tiësto, Armin van Buuren), not underground. For serious melodic techno the Croatian underground lives 1h30 north at <strong>Tisno</strong>, on The Garden Resort site: <strong>Love International</strong>, the Defected weeks, Stop Making Sense, the whole June–August calendar. <strong>Dimensions Festival</strong> relocated from Pula's Fort Punta Christo to The Garden Resort Tisno for <strong>27–31 August 2026</strong> — the formative Croatian underground festival, now at its more sustainable home. Honest flag: <strong>Sonus Festival 2026</strong> at Pag/Zrće (had been scheduled 16–20 August at Papaya, Aquarius, Kalypso, Noa) was <strong>cancelled</strong>; Night Horizon Festival fills the same dates at the new LIFT Beach Club for those already booked into Novalja.
+        <span class="alert-label">&#9888; Honest note on Ultra Europe</span>
+        <strong>Ultra Europe</strong> — the techno-EDM festival held every July at Park Mladeži stadium and on Hvar — is one of Europe's three biggest electronic festivals (alongside Tomorrowland and Awakenings). But it's a mainstream EDM festival (David Guetta, Tiësto), not an underground scene. For serious melodic techno, head to Tisno (Garden Festival, Stop Making Sense, Defected, Love International — June–August) 1h30 north, which has the best Balkans underground scene since 2010.
       </div>
 
     </div>
@@ -911,8 +911,6 @@
     <div class="sfold__body">
 
       <div class="funfact"><strong>Diocletian's Palace is the largest Roman building still inhabited in the world.</strong> Built between 295 and 305 AD as the retirement palace-fortress of emperor Diocletian (ruled 305–313), 38,000 m², a 215 × 180 m rectangle. In the 7th century, fleeing the Avar-Slav invasions, the inhabitants of nearby Salona took refuge inside the walls &mdash; and never left. 3,000 people still live there today, in apartments interlocked between 4th-century columns. UNESCO 1979.</div>
-
-      <div class="funfact"><strong>The same Brač stone built Diocletian's Palace, the White House, and the Reichstag.</strong> The white limestone of <em>kamen Brač</em> — quarried on the Dalmatian island of Brač since Roman times — formed the entire 38,000 m² palace in 305 AD. Centuries later the same stone crossed the Atlantic to face the west façade of the <strong>White House in Washington</strong> (rebuilt 1817 after the British burned the original) and was used in the lower courses of the <strong>Reichstag</strong> in Berlin. The Pučišća quarry on Brač still operates today, and the stone-masonry school there still trains apprentices in the Roman cutting technique.</div>
 
       <article class="tcard tcard--culture" data-section="culture" data-venue-id="p-culture-palace" id="p-culture-palace">
         <div class="tcard__rank">#1</div>
@@ -1666,7 +1664,7 @@
 
 <script src="data.js"></script>
 <script>
-window.PCV_CONFIG = {
+window.TERROIR_CONFIG = {
   articleId:    'terroir-Split-Dalmatie',
   portName:     'Split',
   center:       [43.5081, 16.4402],
@@ -1674,7 +1672,7 @@ window.PCV_CONFIG = {
   cityRadiusKm: 80
 };
 </script>
-<script defer src="../_assets/port-call/port-call-render.js"></script>
+<script defer src="../_assets/guide/guide-render.js"></script>
 
 <!-- Single floating map — closed by default, opens via "Show map" toggle (state in localStorage) -->
 <aside class="terroir-mini" id="terroir-mini">
@@ -1688,11 +1686,11 @@ window.PCV_CONFIG = {
 
 <script>
 window.addEventListener('load', function () {
-  if (typeof L === 'undefined' || !window.PCV_DATA) return;
-  var data    = window.PCV_DATA;
+  if (typeof L === 'undefined' || !window.TERROIR_DATA) return;
+  var data    = window.TERROIR_DATA;
   var venues  = data.VENUES || [];
   var pColors = data.PRODUCT_COLORS || {};
-  var cfg     = window.PCV_CONFIG || { center: [0,0], zoom: 11 };
+  var cfg     = window.TERROIR_CONFIG || { center: [0,0], zoom: 11 };
 
   function colorFor(v) {
     var t = (v.productTags && v.productTags[0]) || '';
@@ -1745,8 +1743,8 @@ window.addEventListener('load', function () {
 <!-- Firebase compat (for terroir voting) -->
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script defer src="../_assets/port-call/votes.js"></script>
-<script defer src="../_assets/port-call/pin-hover.js"></script>
+<script defer src="../_assets/guide/votes.js"></script>
+<script defer src="../_assets/guide/pin-hover.js"></script>
 
 </body>
 </html>
