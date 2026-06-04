@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- ============================================================================
+     LITTORALICIOUS GALLEY CARD TEMPLATE — one-page A4 recipe card, rendered to PDF.
+     Pairs with the Blueprint article; lives at print/<slug>-recipe-card.html and is
+     rendered to print/<slug>-recipe-card.pdf (the article links to that PDF).
+     This scaffold mirrors the locked card design (see focaccia / hash-browns cards).
+
+     RENDER (headless Chrome to A4 PDF), then CONFIRM it is ONE page:
+       CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+       "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
+         --print-to-pdf="print/<slug>-recipe-card.pdf" \
+         "file://$PWD/print/<slug>-recipe-card.html"
+       pdfinfo print/<slug>-recipe-card.pdf | grep Pages     # MUST say 1
+
+     HARD RULE: it must fit ONE A4 page. These proportions are the comfortable lock;
+     if your content spills to 2 pages, tighten EVENLY (line-height, the *mm
+     paddings/margins, then sizes) until pdfinfo says 1 — do NOT drop content.
+     Keep the look: Georgia headers, SF Mono numbers, sea #2d4a5e; the coloured
+     blocks (blue done / purple sub-method / amber second-dish / wheat-sea origin).
+     ============================================================================ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Dish] &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt; line-height: 1.3; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 6mm 9mm 5mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 18.4pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8.3pt; color: #4a5568; line-height: 1.28; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band (standard) — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 2.4mm 0 0; padding: 1.7mm 2.6mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.4mm 0 0.9mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.3mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.6mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.28; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.32; }
+        .done strong { color: #2d4a5e; }
+
+        /* Purple sub-method block — a sauce / brine / appareil, with LETTERED (a, b, c) sub-steps. */
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.34; }
+        .sauce-block strong { color: #5b21b6; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 1mm; }
+
+        /* Amber second-dish / ratio block. Use for the RATIO, or for "one base, two dishes". */
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.9mm 2.8mm; margin: 2.2mm 0; font-size: 7.7pt; line-height: 1.34; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1.4mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.3; }
+        .troubleshoot td, .charter td { padding: 0.6mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>[Dish &mdash; short qualifier]</h1>
+    <p class="hook">[The one-line promise: the result, and the move that gets it.]</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>[10&ndash;12]</strong></span>
+        <span>Active: <strong>[min]</strong></span>
+        <span>Total: <strong>[time]</strong></span>
+        <span>Oven: <strong>[&deg;C]</strong> ([&deg;F])</span>
+        <span>Done: <strong>[the cue]</strong></span>
+    </div>
+</header>
+
+<!-- ORIGIN BAND (standard) — where it was BORN, how it's eaten AUTHENTICALLY, how it's used NOW.
+     One verified, non-obvious line per cell (etymology / the people / the ritual). No padding,
+     no banned words. This is the card's heritage line: a chef should learn where the dish comes
+     from and how it is properly used, not just how to make it. -->
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>[Place + the historical origin in one line &mdash; etymology / the people / the era. Use <em>foreign terms</em>.]</div>
+    <div><span class="o-label">Eaten, authentically</span>[How it is traditionally served and eaten in its home &mdash; the ritual, the pairing, the moment.]</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>[Its modern life &mdash; where it travelled, what it has become, what it pairs with today.]</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight only &middot; baker&rsquo;s % / volume in right column</p>
+        <!-- One .group-label per sub-component, each with its own table. Cols: name | weight | %/volume. -->
+        <div class="group-label">[Sub-component]</div>
+        <table>
+            <tr><td>[Ingredient] <span class="note">([note])</span></td><td>[500g]</td><td>[100%]</td></tr>
+        </table>
+
+        <!-- Amber block = the RATIO (house default): the formula to memorise and rescale from. -->
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; [base] = 100%</span>
+            <strong>[A 100% &middot; B nn% &middot; C nn%]</strong>. [One line on why the numbers sit where they do.]
+        </div>
+
+        <p class="equipment"><strong>Kit:</strong> [the pans, tools, probe &mdash; what the galley needs to hand].</p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>[Do the move.]</strong> [Tight instruction with the real numbers.]
+                <span class="why">[The mechanism in one line, for the curious cook. <cite>&mdash; Source</cite>]</span>
+            </li>
+            <!-- …more numbered steps. -->
+        </ol>
+
+        <!-- Purple block = a sauce / brine / appareil grouped out of the main steps, with LETTERED
+             sub-steps so the parent number never bleeds in (use the inline-styled a./b./c. pattern). -->
+        <div class="sauce-block">
+            <strong>[Sub-method name]</strong>
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 1mm; list-style: none;">
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 1mm;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">a.</span>[Step.]</li>
+            </ol>
+        </div>
+
+        <div class="done">
+            <strong>Done:</strong> [doneness cues &mdash; colour, internal temp, feel].<br>
+            <strong>Serve:</strong> [rest / cut / hold].
+        </div>
+
+        <!-- Amber SECOND-DISH block (use only when it earns it) — the SAME base made into ANOTHER
+             dish with a slight variation. A genuinely nice "two recipes from one" payoff. -->
+        <div class="subrecipe">
+            <span class="sub-label">One [base], two dishes &mdash; [the other dish]</span>
+            [The same base, the slight variation, the few extra moves that make a different dish.]
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul><li><strong>[Move]</strong> &mdash; [how]</li></ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul><li><strong>[Move]</strong> &mdash; [how]</li></ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Restaurant</div>
+            <ul><li><strong>[Move]</strong> &mdash; [how]</li></ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>[Problem]</td><td>[Cause &rarr; fix]</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>[Make-ahead]</td><td>[the route]</td></tr>
+            <tr><td>Never</td><td>[the one thing that ruins it]</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: [named books / papers]</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>

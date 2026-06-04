@@ -140,6 +140,14 @@
                     <div><dt>Make-ahead</dt><dd>[the one holding fact]</dd></div>
                 </dl>
 
+                <!-- GALLEY CARD (UNTOUCHED markup) — placed HIGH, right under the hinge + stats, so a reader
+                     who just wants the recipe grabs the one-page printable without scrolling the whole piece.
+                     Never restyle or re-path it. -->
+                <a class="rcp-card" href="../print/{{SLUG}}-recipe-card.pdf" download>
+                    <span><b>One-page galley card</b><span>The whole recipe on a single A4 &mdash; print, pin, cook.</span></span>
+                    <span class="rcp-card__btn">Download PDF</span>
+                </a>
+
                 <!-- THE RATIO (house default) — the formula the chef memorises and rescales anything from
                      (baker's % with flour at 100%, an appareil formula, etc.). Skip this block ONLY when the
                      dish has no real governing ratio (a pure assembly). -->
@@ -183,13 +191,11 @@
                 </ol>
                 <div class="rcp-meta"><button data-recipe-reset>Reset ticks</button> &middot; progress saves on this device</div>
 
-                <!-- GALLEY CARD — UNTOUCHED. Separate artifact; never restyle or re-path. -->
-                <a class="rcp-card" href="../print/{{SLUG}}-recipe-card.pdf" download>
-                    <span><b>One-page galley card</b><span>The whole recipe on a single A4 &mdash; print, pin, cook.</span></span>
-                    <span class="rcp-card__btn">Download PDF</span>
-                </a>
-
-                <!-- EXTRAS — off-critical-path depth in folds so the spine stays lean. -->
+                <!-- EXTRAS — off-critical-path depth in folds so the spine stays lean. DEVELOP these; they
+                     are where the obsessive cook goes, and collapsed-by-default means length is free.
+                     Take it further = several real variations + regional cousins (teach something).
+                     Troubleshooting = the actual failure modes, cause then fix. Charter = make-ahead,
+                     par-bake, freeze (dough AND baked), hold/refresh, scale-up, plus the galley reality. -->
                 <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
                     <table><tr><td>[Move]</td><td>[What it does / how]</td></tr></table>
                 </div></details>
