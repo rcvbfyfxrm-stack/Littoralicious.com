@@ -21,6 +21,12 @@
         .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
         .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
 
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 2.4mm 0 0; padding: 1.7mm 2.6mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
         .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
         h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
 
@@ -75,7 +81,7 @@
         .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
         .contact .sep { color: #cbd2da; }
         .spacer { flex: 1; min-height: 0; }
-        @media print { .done, .sauce-block, .subrecipe, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
     </style>
 </head>
 <body>
@@ -92,6 +98,12 @@
         <span>Done: <strong>deep gold</strong></span>
     </div>
 </header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>American diners &mdash; &ldquo;hashed brown potatoes&rdquo; defined by Maria Parloa, 1888 (<em>Kitchen Companion</em>); the name from French <em>hacher</em>, to chop. Europe&rsquo;s older cousin: Bernese <em>r&ouml;sti</em>, 17th c.</div>
+    <div><span class="o-label">Eaten, authentically</span>The diner breakfast plate &mdash; eggs, bacon, toast; in Switzerland a meal in itself, <em>r&ouml;sti</em> under fried eggs or <em>Z&uuml;rcher Geschnetzeltes</em>.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>A global breakfast staple; the same grated-potato base becomes <em>r&ouml;sti</em>, latkes, the skillet cake &mdash; crust over a tender middle, topped any way.</div>
+</div>
 
 <div class="main">
     <section class="ingredients">
@@ -149,6 +161,11 @@
 
         <div class="sauce-block">
             <strong>Efficiency &amp; service</strong> &mdash; one slab, not patties: grate in the processor, one squeeze, one press, one flip. Par-bake to pale-gold ahead, then finish-crisp to order &mdash; minutes to plate across a staggered crew breakfast.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One potato, two dishes &mdash; Bernese r&ouml;sti</span>
+            Same squeezed, dry potato &mdash; but skip the cornstarch and bake. Melt <strong>butter</strong> in a hot heavy skillet, press the potato into a <strong>cake</strong>, crisp covered <strong>8 min</strong>, slide onto a plate and <strong>invert back</strong> to crisp the second face. <em>The farmhouse original &mdash; no oven, one pan.</em>
         </div>
     </section>
 </div>

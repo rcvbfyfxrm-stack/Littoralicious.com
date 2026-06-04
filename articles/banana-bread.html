@@ -46,7 +46,7 @@
                 <div class="article__meta">
                     <span class="article__category">The Blueprint</span>
                     <time class="article__date">April 10, 2026</time>
-                    <span class="article__reading-time">8 min read</span>
+                    <span class="article__reading-time">7 min read</span>
                 </div>
                 <h1 class="article__title">Banana Bread: The Science-First Version</h1>
                 <p style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-salt); margin-bottom: var(--space-4);">The recipe you actually want to read</p>
@@ -55,372 +55,163 @@
                 </p>
             </header>
 
-            <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+            <div class="article__content container rcp" data-recipe="banana-bread" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <p>
-                    Most banana bread recipes waste the banana&rsquo;s potential. Raw mashed bananas dump water into your batter while leaving flavour on the table. This version concentrates the fruit by roasting, replaces plain melted butter with brown butter for Maillard depth, and adds white miso for umami that makes the sweetness sing. Every modification is backed by named research. Every measurement is tested.
-                </p>
+                <!-- ── I. THE STORY ──────────────────────────────────────────────── -->
 
-                <div class="note note--key"><p>Three modifications separate this from every other recipe: roasted bananas (concentrated flavour, less water), brown butter (Maillard depth), and white miso (umami that amplifies sweetness). All three work together.</p></div>
+                <p>A good banana loaf should hit you with <mark>banana you can smell from the next cabin</mark> &mdash; deep, almost rum-like &mdash; not the damp, pale, faintly gummy slab that overripe fruit and a wet batter usually give. The fix is not more banana. It is taking the water out of the fruit before it ever meets the flour, and letting one humble alkaline powder do two jobs at once.</p>
 
-                <!-- ── AT A GLANCE ────────────────────────────── -->
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-4); padding: var(--space-4) 0; border-top: 2px solid var(--color-ink); border-bottom: 1px solid var(--color-border); margin: var(--space-8) 0; text-align: center;">
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Yield</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">1 loaf</div>
-                        <div style="font-size: var(--text-xs); color: var(--color-salt);">10&ndash;12 slices</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Active</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">20 min</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Total</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">1 hr 30</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Oven</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">175&deg;C</div>
-                        <div style="font-size: var(--text-xs); color: var(--color-salt);">350&deg;F</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Done</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">95&deg;C</div>
-                        <div style="font-size: var(--text-xs); color: var(--color-salt);">203&deg;F</div>
-                    </div>
+                <div class="note note--key"><p><strong>The one idea:</strong> banana bread is a <span class="highlight highlight--term">quick bread</span> &mdash; it rises on chemistry, not yeast &mdash; so the bicarbonate of soda is the whole engine: it neutralises the fruit&rsquo;s acid <em>and</em> drives the browning. Concentrate the banana, respect the soda, and the rest is folding.</p></div>
+
+                <div class="rcp-story">
+                    <span class="rcp-story__kicker">Where it comes from</span>
+                    <p>Banana bread is a child of two American forces colliding in the 1930s. Bicarbonate of soda and baking powder had just become cheap, shelf-stable groceries, and the Depression had made throwing away a blackened banana unthinkable. Put the two together and you get the <em>quick bread</em> &mdash; a loaf leavened in minutes by chemistry instead of hours by yeast. The first known printed recipe ran in Pillsbury&rsquo;s <em>Balanced Recipes</em> in 1933, and within a decade it was in every Better Homes and United Fruit Company booklet in the country.</p>
+                    <p>That origin is not trivia &mdash; it dictates the build. There is no proving, no kneading, no gluten to develop; the goal is the opposite, a batter barely mixed so the crumb stays tender. And it is why the leavener is <em>soda</em>, not yeast: the recipe was designed around a ripe, acidic banana that the soda could neutralise and brown. Work with that chemistry rather than against it and the loaf does what it was invented to do.</p>
                 </div>
 
-                <p style="font-size: var(--text-sm); color: var(--color-muted);">
-                    <strong>Source:</strong> Adapted from Stella Parks (Serious Eats) + ChefSteps techniques<br>
-                    <strong>Key technique:</strong> Roasting bananas to concentrate sugars and reduce moisture
-                </p>
+                <div class="note" data-label="Did you know"><p>The banana your grandmother baked with is not the one you buy. Until the 1950s the world ate the <em>Gros Michel</em> &mdash; sweeter and more intensely aromatic &mdash; before Panama disease wiped out the commercial crop and the blander, ship-hardy <em>Cavendish</em> replaced it. The catch: <mark>artificial banana flavour was modelled on Gros Michel</mark>, which is why banana sweets taste &ldquo;more banana&rdquo; than a real banana does. <cite>&mdash; <em>TIME</em>, &ldquo;The Near-Extinction of Bananas,&rdquo; 2019; Britannica, <em>Gros Michel</em></cite></p></div>
 
-                <!-- ── DOWNLOAD PDF (prominent) ──────────────── -->
-                <a href="../print/banana-bread-recipe-card.pdf" download
-                   style="display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); background: var(--color-sea); color: var(--color-paper); padding: var(--space-4) var(--space-6); margin: var(--space-8) 0; text-decoration: none; border: 2px solid var(--color-sea);">
-                    <span>
-                        <span style="display: block; font-family: var(--font-serif); font-size: var(--text-lg); font-weight: 700; line-height: 1.1;">One-Page Galley Card</span>
-                        <span style="display: block; font-size: var(--text-sm); opacity: 0.88; margin-top: 2px;">Everything here on a single A4 &mdash; print, pin to the wall, keep in the galley binder.</span>
-                    </span>
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; white-space: nowrap; border: 1px solid var(--color-paper); padding: 8px 16px;">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download PDF
-                    </span>
-                </a>
+                <p>So the romance is in the fruit, but the loaf lives or dies on water &mdash; how much the banana carries in, and what the soda does once it gets there.</p>
 
-                <!-- ── INGREDIENTS ────────────────────────────── -->
+                <div class="note note--science"><p>A ripe banana is mildly acidic, and bicarbonate of soda is a base. Drop one into the other and you get two payoffs at once: the soda <em>neutralises</em> that acid, then &mdash; with the acid spent &mdash; the leftover alkalinity raises the batter&rsquo;s pH and <mark>accelerates the Maillard browning</mark> that gives the crust its nutty, caramel-edged colour. Too little soda and the loaf bakes pale and sour; too much and it tastes soapy and metallic.</p></div>
+
+                <div class="divider" id="build"><span class="divider__text">Now make it</span></div>
+
+                <!-- ── II. THE BUILD ─────────────────────────────────────────────── -->
+
+                <dl class="rcp-stats">
+                    <div><dt>Active</dt><dd>25 min</dd></div>
+                    <div><dt>Total</dt><dd>2 hr <small>incl. roasting &amp; cooling</small></dd></div>
+                    <div><dt>Yield</dt><dd>10&ndash;12 <small>2 loaves, 23&times;13 cm</small></dd></div>
+                    <div><dt>Make-ahead</dt><dd>roast the banana days ahead</dd></div>
+                </dl>
+
+                <a class="rcp-card" href="../print/banana-bread-recipe-card.pdf" download><span><b>One-page galley card</b><span>The whole recipe on a single A4 &mdash; print, pin, cook.</span></span><span class="rcp-card__btn">Download PDF</span></a>
+
+                <details class="rcp-ratio" open>
+                    <summary>The ratio &mdash; flour = 100%</summary>
+                    <div class="rcp-ratio__body"><code>Flour 100% &middot; Roasted banana 142% &middot; Sugar 83% &middot; Fat 42% &middot; Egg 42% &middot; Soda 1.25%</code> &mdash; banana outweighs the flour, which is why concentrating it (and trusting the soda) matters more than any single flavouring.</div>
+                </details>
+
+                <div class="rcp-scaler" data-base-yield="12" data-yield-unit="slices">
+                    <span class="rcp-scaler__label">Scale</span>
+                    <button data-scale="0.5">½&times;</button>
+                    <button data-scale="1" class="active">1&times;</button>
+                    <button data-scale="2">2&times;</button>
+                    <span class="rcp-scaler__yield"><b data-yield>12</b> slices &middot; 2 loaves</span>
+                </div>
+
                 <h2>Ingredients</h2>
+                <div class="rcp-group">Dry</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="480" data-unit="g">480 g</span></span><span class="rcp-ing__n">Plain flour</span> <span class="rcp-ing__note">spoon &amp; level</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="12" data-unit="g">12 g</span></span><span class="rcp-ing__n">Bicarbonate of soda</span> <span class="rcp-ing__note">fresh &mdash; the engine</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="8" data-unit="g">8 g</span></span><span class="rcp-ing__n">Fine sea salt</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="4" data-unit="g">4 g</span></span><span class="rcp-ing__n">Cinnamon</span> <span class="rcp-ing__note">optional, ground fresh</span></label></li>
+                </ul>
+                <div class="rcp-group">Brown butter, sugar &amp; miso</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="230" data-unit="g">230 g</span></span><span class="rcp-ing__n">Unsalted butter</span> <span class="rcp-ing__note">~200 g once browned</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="300" data-unit="g">300 g</span></span><span class="rcp-ing__n">Light brown sugar</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="100" data-unit="g">100 g</span></span><span class="rcp-ing__n">Caster sugar</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="60" data-unit="g">60 g</span></span><span class="rcp-ing__n">White (shiro) miso</span> <span class="rcp-ing__note">white only &mdash; red is too strong</span></label></li>
+                </ul>
+                <div class="rcp-group">Wet</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="4" data-unit="" data-round="0">4</span></span><span class="rcp-ing__n">Large eggs</span> <span class="rcp-ing__note">room temperature</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="20" data-unit="g">20 g</span></span><span class="rcp-ing__n">Vanilla extract</span> <span class="rcp-ing__note">real, not imitation</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="120" data-unit="g">120 g</span></span><span class="rcp-ing__n">Greek yoghurt</span> <span class="rcp-ing__note">full-fat &mdash; tang &amp; tenderness</span></label></li>
+                </ul>
+                <div class="rcp-group">Banana</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="900" data-unit="g">900 g</span></span><span class="rcp-ing__n">Very ripe bananas</span> <span class="rcp-ing__note">black-spotted &rarr; ~680 g roasted</span></label></li>
+                </ul>
+                <div class="rcp-group">Optional fold-ins</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="200" data-unit="g">200 g</span></span><span class="rcp-ing__n">Walnuts or pecans</span> <span class="rcp-ing__note">toasted</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="200" data-unit="g">200 g</span></span><span class="rcp-ing__n">Dark chocolate</span> <span class="rcp-ing__note">60&ndash;70%, chopped</span></label></li>
+                </ul>
 
-                <p style="font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-4);">
-                    Weight preferred &middot; US volume for when you can&rsquo;t scale
-                </p>
-
-                <h3>Dry</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Notes</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>All-purpose flour</td><td class="data">240g</td><td class="data">2 cups</td><td>Spoon and level if measuring by volume</td></tr>
-                            <tr><td>Baking soda</td><td class="data">6g</td><td class="data">1 tsp</td><td>Fresh &mdash; test in vinegar if unsure</td></tr>
-                            <tr><td>Fine sea salt</td><td class="data">4g</td><td class="data">&frac34; tsp</td><td></td></tr>
-                            <tr><td>Cinnamon (optional)</td><td class="data">2g</td><td class="data">1 tsp</td><td>Freshly ground preferred</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Brown Butter + Sugar</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Notes</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Unsalted butter</td><td class="data">115g</td><td class="data">1 stick</td><td>Will become ~100g after browning</td></tr>
-                            <tr><td>Light brown sugar</td><td class="data">150g</td><td class="data">&frac34; cup</td><td>Packed when measuring by cup</td></tr>
-                            <tr><td>Granulated sugar</td><td class="data">50g</td><td class="data">&frac14; cup</td><td></td></tr>
-                            <tr><td>White miso</td><td class="data">30g</td><td class="data">2 tbsp</td><td>Shiro (white) only &mdash; red is too strong</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Wet</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Notes</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Eggs, large</td><td class="data">&times;2</td><td class="data">&times;2</td><td>Room temperature</td></tr>
-                            <tr><td>Vanilla extract</td><td class="data">10g</td><td class="data">2 tsp</td><td>Real extract, not imitation</td></tr>
-                            <tr><td>Greek yogurt</td><td class="data">60g</td><td class="data">&frac14; cup</td><td>Full-fat preferred &mdash; adds tang + tenderness</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Banana</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Very ripe bananas</td><td class="data">450g</td><td class="data">~4 medium</td><td>Black-spotted minimum &rarr; ~340g after roasting</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Optional Fold-Ins</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Walnuts or pecans, toasted</td><td class="data">100g</td><td class="data">1 cup</td><td>Toast at 175&deg;C (350&deg;F), 8 min</td></tr>
-                            <tr><td>Dark chocolate chips</td><td class="data">100g</td><td class="data">2/3 cup</td><td>60&ndash;70% cacao preferred</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p style="font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-4);">
-                    <strong>Equipment:</strong> 23&times;13 cm (9&times;5&Prime;) loaf pan &middot; light-coloured saucepan &middot; digital scale &middot; instant-read thermometer
-                </p>
-
-                <!-- ── METHOD ─────────────────────────────────── -->
                 <h2>Method</h2>
-
-                <h3>Phase 1: Roast Bananas + Brown Butter <span style="font-weight: 400; color: var(--color-muted);">&mdash; 30 min, mostly hands-off</span></h3>
-
-                <ol>
-                    <li>
-                        <strong>Roast bananas.</strong> Preheat oven to 150&deg;C (300&deg;F). Place unpeeled bananas on a parchment-lined sheet pan. Roast until skins are completely black and flesh is jammy, <span class="data">25&ndash;30 minutes</span>. Set aside to cool.
-                    </li>
+                <div class="rcp-progress"><span data-progress-done>0</span>/<span data-progress-total>0</span> steps done<div class="rcp-progress__bar"><i data-progress-bar></i></div></div>
+                <ol class="rcp-steps">
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>The Depression cook salvaged a black banana; you go one further and drive the water out of it.</em></p>
+                        <p><strong>Roast the bananas whole.</strong> Heat the oven to 150&deg;C (300&deg;F). Lay the unpeeled <span data-qty="900" data-unit="g">900 g</span> bananas on a lined tray and roast until the skins are <mark>completely black and the flesh is jammy</mark>, 25&ndash;30 min. Cool, then peel and discard any pooled liquid &mdash; you want ~680 g of flesh.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Roasting drives off roughly a quarter of the banana&rsquo;s weight as water while caramelising its sugars &mdash; concentrated flavour, and a batter that won&rsquo;t bake gummy. Raw mashed banana dilutes everything. <cite>&mdash; Stella Parks, Serious Eats, 2017</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Butter is mostly water wrapped around milk solids; cook it and those solids turn to flavour.</em></p>
+                        <p><strong>Brown the butter.</strong> Melt the <span data-qty="230" data-unit="g">230 g</span> butter in a light-coloured pan over medium heat, swirling, until the milk solids at the base turn <mark>golden-brown and smell of toasted hazelnut</mark>, 6&ndash;8 min. Pull it off the heat at once and scrape every brown fleck into a bowl.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Past ~120&deg;C the water boils off and the milk solids brown by the Maillard reaction, building hundreds of nutty, toasty compounds plain melted butter never makes. A dark pan hides the colour change &mdash; use a light one. <cite>&mdash; McGee, <em>On Food and Cooking</em>, 2004</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>The umami trick: a savoury paste that makes a sweet thing taste sweeter.</em></p>
+                        <p><strong>Whisk in sugars &amp; miso.</strong> While the butter is still warm, whisk in the <span data-qty="300" data-unit="g">300 g</span> brown sugar, <span data-qty="100" data-unit="g">100 g</span> caster sugar and <span data-qty="60" data-unit="g">60 g</span> white miso until smooth and slightly cooled, about 2 min.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Shiro miso carries free glutamates &mdash; umami &mdash; which in a sweet batter doesn&rsquo;t read as savoury but amplifies perceived sweetness and depth. At this dose it is undetectable as miso. <cite>&mdash; ChefSteps, &ldquo;The Science of Miso,&rdquo; 2018</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Now the batter comes together &mdash; gently, because this is a quick bread, not a dough.</em></p>
+                        <p><strong>Build the wet, then the banana.</strong> Raise the oven to 175&deg;C (350&deg;F). Beat in the <span data-qty="4" data-unit="" data-round="0">4</span> eggs one at a time, then the <span data-qty="20" data-unit="g">20 g</span> vanilla and <span data-qty="120" data-unit="g">120 g</span> yoghurt. Mash the roasted banana roughly &mdash; a few lumps are good &mdash; and stir it through.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Black-spotted fruit is the point: a green banana is ~80% starch, but as it ripens amylase converts that starch to sucrose, glucose and fructose. There is no substitute for ripeness. <cite>&mdash; Ali Bouzari, <em>Ingredient</em>, 2016</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Every extra stir builds gluten you don&rsquo;t want &mdash; stop while you can still see flour.</em></p>
+                        <p><strong>Fold in the dry mix.</strong> Whisk the <span data-qty="480" data-unit="g">480 g</span> flour, <span data-qty="12" data-unit="g">12 g</span> soda, <span data-qty="8" data-unit="g">8 g</span> salt and <span data-qty="4" data-unit="g">4 g</span> cinnamon, then fold into the wet in two goes with a spatula &mdash; stop at <mark>just combined, a few flour streaks showing</mark>. Fold through nuts or chocolate if using.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">The soda meets the banana&rsquo;s acid and starts releasing gas immediately, so get it into the tin promptly; overmixing past this point develops gluten and tightens the crumb. <cite>&mdash; McGee, <em>On Food and Cooking</em>, 2004</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Colour lies on a banana loaf; only the centre temperature tells the truth.</em></p>
+                        <p><strong>Bake to temperature.</strong> Divide between two lined 23&times;13 cm tins. Bake at 175&deg;C (350&deg;F) for 50&ndash;60 min, tenting with foil at 45 min if the top darkens fast, until the centre reads <mark>95&deg;C (203&deg;F)</mark> and a skewer comes out with moist crumbs. Cool in the tin 15 min, then lift out and cool 30 min before slicing.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">A dark, domed top can sit over a raw, sunken middle &mdash; internal temperature is the only reliable test. Cutting before it cools compresses the still-setting crumb. <cite>&mdash; Stella Parks, Serious Eats, 2017</cite></div></details></div></li>
                 </ol>
+                <div class="rcp-meta"><button data-recipe-reset>Reset ticks</button> &middot; scaling &amp; progress save on this device</div>
 
-                <div class="science-box">
-                    <span class="science-box__label">Why roast?</span>
-                    <div class="science-box__content">
-                        Roasting evaporates ~25% of the banana&rsquo;s weight in water while caramelizing sugars through Maillard reaction. The result: concentrated banana flavour, less soggy bread. Raw bananas dump water into your batter and dilute everything.
-                        <br><em style="color: var(--color-sea);">&mdash; Stella Parks, Serious Eats, 2017</em>
-                    </div>
-                </div>
+                <div class="note" data-label="At the table"><p>Eat it the day after baking, when the banana has gone deeper still &mdash; a thick slice, toasted in a dry pan and spread with salted butter or a little brown-butter glaze. For crew breakfast it carries fruit and yoghurt; for guests, brûlée a cut slice with a thread of sugar and a blowtorch. It is the loaf the galley keeps wrapped on the counter and works through over three days.</p></div>
 
-                <div class="note note--action"><p>Use a light-coloured saucepan for browning butter. Dark pans hide the colour change and you will burn it. Watch the milk solids, not the foam.</p></div>
-
-                <ol start="2">
-                    <li>
-                        <strong>Brown the butter.</strong> Cut butter into tablespoons and place in a light-coloured saucepan over medium heat. Swirl occasionally. When milk solids at the bottom turn golden-brown and smell nutty, <span class="data">6&ndash;8 minutes</span>, pull off heat immediately.
-                    </li>
-                </ol>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why brown butter?</span>
-                    <div class="science-box__content">
-                        When butter is heated past its water evaporation point (~120&deg;C), the milk solids undergo Maillard reaction &mdash; the same process that browns bread crust and seared meat. This creates hundreds of new flavour compounds: nutty, caramelized, toasty notes that regular melted butter cannot provide. It&rsquo;s a technique, not an ingredient.
-                        <br><em style="color: var(--color-sea);">&mdash; Harold McGee, On Food and Cooking, 2004</em>
-                    </div>
-                </div>
-
-                <ol start="3">
-                    <li>
-                        <strong>Combine butter + sugars + miso.</strong> Pour brown butter into mixing bowl &mdash; scrape every brown bit. Add brown sugar, granulated sugar, and miso while butter is still warm. Whisk until combined and slightly cooled, <span class="data">2 minutes</span>.
-                    </li>
-                </ol>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why miso?</span>
-                    <div class="science-box__content">
-                        White (shiro) miso contains glutamates &mdash; the compounds responsible for umami. In sweet applications, umami doesn&rsquo;t make things taste savoury; it makes them taste <em>more</em>. It amplifies perceived sweetness and adds depth that sugar alone cannot achieve. 30g is undetectable as miso.
-                        <br><em style="color: var(--color-sea);">&mdash; ChefSteps, &ldquo;The Science of Miso,&rdquo; 2018</em>
-                    </div>
-                </div>
-
-                <div class="note note--warning"><p>Use shiro (white) miso only. Red or brown miso is too strong and will push the bread into savoury territory. At 30 g, white miso is completely undetectable as miso &mdash; it just makes everything taste more.</p></div>
-
-                <h3>Phase 2: Build the Batter <span style="font-weight: 400; color: var(--color-muted);">&mdash; 10 min</span></h3>
-
-                <ol start="4">
-                    <li><strong>Increase oven to 175&deg;C</strong> (350&deg;F). Line loaf pan with parchment, leaving overhang for easy removal.</li>
-                    <li><strong>Build wet mix.</strong> Add eggs one at a time to the butter-sugar mixture, beating well after each. Add vanilla and yogurt, mix until combined.</li>
-                    <li><strong>Add bananas.</strong> Peel roasted bananas, discard skins and any pooled liquid. Mash roughly &mdash; some chunks add texture. You want <span class="data">~340g</span> mashed. Stir into wet mix.</li>
-                </ol>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why ripeness matters</span>
-                    <div class="science-box__content">
-                        A green banana is ~80% starch. As it ripens, amylase enzymes convert starch to sugars &mdash; primarily sucrose, glucose, and fructose. Black-spotted bananas have maximum sugar conversion. Using underripe bananas = starchy, gummy bread. There is no substitute for ripeness.
-                        <br><em style="color: var(--color-sea);">&mdash; Ali Bouzari, Ingredient, 2016</em>
-                    </div>
-                </div>
-
-                <div class="note note--science"><p>A green banana is ~80% starch. Black-spotted bananas have maximum sugar conversion &mdash; amylase enzymes convert starch to sucrose, glucose, and fructose. There is no substitute for ripeness.</p></div>
-
-                <ol start="7">
-                    <li><strong>Fold in dry mix</strong> in two additions. Spatula. Stop at <em>just combined</em> &mdash; streaks of flour are perfect. Fold in nuts or chocolate if using.</li>
-                </ol>
-
-                <p style="background: var(--note-key); border-left: 3px solid var(--note-key-border); padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: var(--text-sm);">
-                    <strong>Checkpoint:</strong> Batter should be thick but scoopable, not pourable. If it seems too wet, the bananas had excess moisture &mdash; add 2 tbsp flour. Every fold develops gluten. Minimal agitation = tender crumb.
-                </p>
-
-                <h3>Phase 3: Bake <span style="font-weight: 400; color: var(--color-muted);">&mdash; 55&ndash;65 min</span></h3>
-
-                <ol start="8">
-                    <li><strong>Bake at 175&deg;C (350&deg;F)</strong> until deep golden brown. Tent with foil at 45 minutes if browning too fast.</li>
-                </ol>
-
-                <div style="background: var(--note-action); border-left: 3px solid var(--note-action-border); padding: var(--space-4) var(--space-6); margin: var(--space-6) 0;">
-                    <p style="margin: 0 0 var(--space-2) 0;"><strong style="color: var(--note-action-border);">Done when:</strong></p>
-                    <ul style="margin: 0; padding-left: var(--space-6); font-size: var(--text-sm);">
-                        <li>Internal temperature reaches <strong><span class="data">95&deg;C</span> (203&deg;F)</strong> at centre</li>
-                        <li>Toothpick comes out with moist crumbs, not wet batter</li>
-                        <li>Top is domed, cracked, and deep golden</li>
-                    </ul>
-                </div>
-
-                <ol start="9">
-                    <li><strong>Cool in pan 15 minutes</strong> &mdash; the structure sets. Lift out using parchment, cool on wire rack <span class="data">30 minutes</span> before slicing. Cutting too early compresses the crumb.</li>
-                </ol>
-
-                <div class="note note--key"><p>Internal temperature of 95&deg;C (203&deg;F) is the only reliable doneness test. Colour lies &mdash; a dark top can hide a raw centre. Use a thermometer.</p></div>
-
-                <!-- ── ELEVATION ──────────────────────────────── -->
-                <h2>Elevation</h2>
-
-                <p>The base recipe already includes all three key modifications. These go further.</p>
-
-                <h3 style="color: #059669;">Tier 1 &mdash; No Extra Time</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Modification</th><th>What It Does</th><th>How</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Espresso powder</strong></td><td>Deepens banana flavour without coffee taste</td><td class="data">1 tsp with dry mix</td></tr>
-                            <tr><td><strong>Dark brown sugar</strong></td><td>More molasses depth</td><td>Swap 1:1 for light brown</td></tr>
-                            <tr><td><strong>Sour cream</strong></td><td>Richer tang, denser crumb</td><td>Replace yogurt 1:1</td></tr>
-                        </tbody>
+                <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
+                    <table>
+                        <tr><td>Espresso powder</td><td>1 tsp into the dry mix &mdash; deepens the banana without reading as coffee</td></tr>
+                        <tr><td>Dark brown sugar</td><td>Swap 1:1 for the light brown &mdash; more molasses, more colour, slightly damper crumb</td></tr>
+                        <tr><td>Sour cream for yoghurt</td><td>Richer and denser, with the same acid for the soda to work on</td></tr>
+                        <tr><td>Tahini swirl</td><td>3 tbsp dragged across the top before baking &mdash; sesame against the banana</td></tr>
+                        <tr><td>Miso&ndash;brown-butter glaze</td><td>2 tbsp brown butter, 1 tbsp miso, icing sugar to a drizzle &mdash; the flavour echo, shining</td></tr>
+                        <tr><td>Brown-butter streusel</td><td>Flour, sugar, cold brown butter and salt rubbed to crumbs, scattered before baking &mdash; crunch on top</td></tr>
+                        <tr><td>Caribbean banana bread</td><td>The fruit&rsquo;s home turf: rum-soaked raisins, lime zest and a little allspice &mdash; closer to how the islands bake it</td></tr>
+                        <tr><td>Wholemeal swap</td><td>Replace 20% of the flour with stoneground wholemeal and add a splash more yoghurt &mdash; earthier, tighter</td></tr>
                     </table>
-                </div>
-
-                <h3 style="color: #d97706;">Tier 2 &mdash; Worth the Extra 10 Minutes</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Modification</th><th>What It Does</th><th>How</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Tahini swirl</strong></td><td>Richness, visual appeal, sesame notes</td><td>3 tbsp on top, drag knife through</td></tr>
-                            <tr><td><strong>Miso-brown butter glaze</strong></td><td>Shiny finish, flavour echo</td><td>2 tbsp BB, 1 tbsp miso, &frac12; cup icing sugar, cream to drizzle</td></tr>
-                            <tr><td><strong>Toast the nuts</strong></td><td>Developed flavour, better texture</td><td>175&deg;C (350&deg;F), 8 min until fragrant</td></tr>
-                        </tbody>
+                </div></details>
+                <details class="rcp-fold"><summary>One batter, two bakes &mdash; banana muffins</summary><div class="rcp-fold__body">
+                    <p>The same batter is a tray of muffins &mdash; the obvious move when you want individual crew breakfasts off one mix instead of a loaf you have to slice and ration.</p>
+                    <table>
+                        <tr><td>Fill</td><td>Line a muffin tray and fill each well two-thirds &mdash; one batch gives ~24 muffins</td></tr>
+                        <tr><td>Bake</td><td>175&deg;C (350&deg;F), 22&ndash;25 min, to the same 95&deg;C (203&deg;F) centre</td></tr>
+                        <tr><td>Top</td><td>A pinch of demerara before baking for a crackled lid, or the streusel above</td></tr>
+                        <tr><td>Why it works</td><td>More surface per gram means faster browning and a higher crust-to-crumb ratio &mdash; the same loaf, more edges</td></tr>
                     </table>
-                </div>
-
-                <h3 style="color: #7c3aed;">Tier 3 &mdash; Restaurant Level</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Modification</th><th>What It Does</th><th>How</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Brown butter streusel</strong></td><td>Crunch, visual appeal</td><td>&frac12; cup flour, &frac14; cup sugar, 3 tbsp cold BB, salt. Rub together, scatter before baking</td></tr>
-                            <tr><td><strong>Brul&eacute;ed slice</strong></td><td>Caramelized crust to order</td><td>Thin sugar layer on cut slice, torch</td></tr>
-                            <tr><td><strong>Freeze-dried banana powder</strong></td><td>Concentrated banana hit, textural contrast</td><td>Sprinkle on warm slices</td></tr>
-                        </tbody>
+                </div></details>
+                <details class="rcp-fold"><summary>Troubleshooting</summary><div class="rcp-fold__body">
+                    <table>
+                        <tr><td>Dense, tough crumb</td><td>Overmixed or too much flour &rarr; fold to just-combined; weigh the flour &mdash; a scooped cup can add 20%</td></tr>
+                        <tr><td>Gummy band near the base</td><td>Excess banana water &rarr; roast the fruit and pour off the pooled liquid before mashing</td></tr>
+                        <tr><td>Sunken middle</td><td>Under-baked or batter too wet &rarr; bake to a true 95&deg;C internal, not to colour</td></tr>
+                        <tr><td>Pale, sour-tasting</td><td>Too little soda, or oven too cool &rarr; weigh the soda and verify a true 175&deg;C with a probe</td></tr>
+                        <tr><td>Soapy, metallic taste</td><td>Too much soda &mdash; unreacted alkalinity &rarr; measure it; the banana&rsquo;s acid only neutralises so much</td></tr>
+                        <tr><td>Cracked too violently</td><td>Oven too hot &rarr; drop to 165&deg;C (325&deg;F); a single domed crack is normal and wanted</td></tr>
+                        <tr><td>Sticks to the tin</td><td>No sling &rarr; line with parchment and leave an overhang; it lifts out clean every time</td></tr>
                     </table>
-                </div>
-
-                <!-- ── CHARTER PREP ───────────────────────────── -->
-                <h2>Charter Prep &amp; Storage</h2>
-
-                <div class="note note--warning"><p>Freeze baked loaves, never raw batter. Baking soda loses its leavening power in the freezer and the loaf will not rise. Always bake first, then freeze sliced.</p></div>
-
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Component</th><th>How Far Ahead</th><th>Method</th></tr></thead>
-                        <tbody>
-                            <tr><td>Baked loaf (sliced)</td><td class="data">3 months</td><td>Slice cold. Vacuum seal (best) or plastic wrap + foil. Toast from frozen or thaw + oven 150&deg;C, 10 min.</td></tr>
-                            <tr><td>Roasted banana pur&eacute;e</td><td class="data">3 months</td><td>Roast in bulk, mash warm, portion 340g bags, freeze flat. Thaw overnight in fridge.</td></tr>
-                            <tr><td>Dry mix</td><td class="data">1 month</td><td>Airtight container, room temperature. Label with date.</td></tr>
-                            <tr><td>Brown butter</td><td class="data">2 weeks</td><td>Refrigerate. Re-melt gently before using.</td></tr>
-                            <tr><td>Toasted nuts</td><td class="data">2 weeks</td><td>Airtight, room temp. Or freeze 3 months.</td></tr>
-                        </tbody>
+                </div></details>
+                <details class="rcp-fold"><summary>Charter prep &amp; storage</summary><div class="rcp-fold__body">
+                    <p>The make-ahead is the roasted banana &mdash; do it on a provisioning day in bulk and the loaf is a 25-minute job any morning after. Freeze baked, never the raw batter: bicarbonate of soda loses its lift in the freezer and the loaf will sit flat.</p>
+                    <table>
+                        <tr><td>Roasted banana</td><td>Roast in bulk, mash warm, portion into ~340 g bags and freeze flat &mdash; 3 months; thaw overnight in the fridge</td></tr>
+                        <tr><td>Dry mix</td><td>Whisk and store airtight at room temp up to 1 month &mdash; label with the date</td></tr>
+                        <tr><td>Brown butter</td><td>Keeps 2 weeks in the fridge; re-melt gently before using</td></tr>
+                        <tr><td>Baked loaf, sliced</td><td>Slice cold, vacuum-seal or wrap, freeze 3 months; toast from frozen or refresh 10 min at 150&deg;C</td></tr>
+                        <tr><td>Hold at room temp</td><td>Best on days two and three, wrapped on the counter &mdash; better than the day it bakes</td></tr>
+                        <tr><td>Never freeze the batter</td><td>Soda dies in the freezer; bake first, then freeze</td></tr>
+                        <tr><td>Scale up</td><td>This batch is two loaves or ~24 muffins; double into four tins for a full crew-and-guests week</td></tr>
                     </table>
-                </div>
+                </div></details>
 
-                <h3>Shelf Life</h3>
-                <p style="font-family: var(--font-mono); font-size: var(--text-sm);">
-                    Room temp: 3 days &middot; Fridge: 1 week &middot; Freezer: 3 months
-                </p>
+                <div class="note note--action"><p><strong>Once the ratio is yours</strong> &mdash; flour 100, banana ~140, soda about 1.25 &mdash; the loaf bends to whatever you have: rum and lime for a Caribbean turn, a tahini swirl, or the same batter dropped into a muffin tray for crew breakfasts off one mix. Feeding guests, brûlée a slice to order; feeding crew, bake it plain and let days two and three do the work. The Depression cook reached for soda because it was cheap and turned a wasted banana into a loaf &mdash; respect that one powder and it still does both jobs, neutralising the fruit and browning the crust.</p></div>
 
-                <h3>Batch Scaling</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th></th><th>&times;1</th><th>&times;2</th><th>&times;4</th></tr></thead>
-                        <tbody>
-                            <tr><td>Bake temp</td><td class="data">175&deg;C</td><td class="data">175&deg;C</td><td class="data">165&deg;C</td></tr>
-                            <tr><td>Bake time</td><td class="data">55&ndash;65 min</td><td class="data">55&ndash;65 min</td><td class="data">60&ndash;70 min</td></tr>
-                            <tr><td>Note</td><td></td><td>Two pans side by side</td><td>Scale soda slightly under</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Alternative Formats</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Format</th><th>Bake Time</th><th>Best For</th></tr></thead>
-                        <tbody>
-                            <tr><td>Mini loaves (4&times;2&Prime;)</td><td class="data">35&ndash;40 min</td><td>Gifts, individual service</td></tr>
-                            <tr><td>Muffins (fill &frac23;)</td><td class="data">22&ndash;25 min</td><td>Crew breakfast, grab-and-go</td></tr>
-                            <tr><td>Sheet pan (half-sheet)</td><td class="data">25&ndash;30 min</td><td>Canap&eacute;s, petits fours</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ── TROUBLESHOOTING ────────────────────────── -->
-                <h2>Troubleshooting</h2>
-
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Problem</th><th>Cause</th><th>Fix</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Dense, tough</strong></td><td>Overmixed batter or too much flour</td><td>Fold gently until just combined. Weigh flour &mdash; scooping cups can add 20% more.</td></tr>
-                            <tr><td><strong>Gummy layer</strong></td><td>Excess moisture from bananas</td><td>Roast the bananas. Drain any pooled liquid after roasting.</td></tr>
-                            <tr><td><strong>Sunk middle</strong></td><td>Underbaked or batter too wet</td><td>Use thermometer. Must reach 95&deg;C internal.</td></tr>
-                            <tr><td><strong>Pale top</strong></td><td>Oven too low or wrong rack</td><td>Use middle rack. Verify oven temp with thermometer.</td></tr>
-                            <tr><td><strong>Cracked excessively</strong></td><td>Oven too hot</td><td>Reduce to 165&deg;C (325&deg;F). Some cracking is normal and expected.</td></tr>
-                            <tr><td><strong>Stuck to pan</strong></td><td>Insufficient greasing</td><td>Parchment sling is foolproof. Always use it.</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ── DOWNLOAD CARD ──────────────────────────── -->
-                <div style="background: var(--color-subtle); border: 2px solid var(--color-sea); padding: var(--space-6); margin: var(--space-12) 0; text-align: center;">
-                    <p style="font-family: var(--font-serif); font-size: var(--text-lg); margin-bottom: var(--space-2);">One-Page Galley Card</p>
-                    <p style="font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-4);">
-                        Everything above on a single A4 page. Print it, pin it to the wall, keep it in the galley binder.
-                    </p>
-                    <a href="../print/banana-bread-recipe-card.pdf" download
-                       style="display: inline-block; background: var(--color-sea); color: var(--color-paper); padding: var(--space-2) var(--space-6); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; font-weight: 600;">
-                        Download PDF
-                    </a>
-                </div>
-
-                <!-- ── SOURCES ────────────────────────────────── -->
-                <div class="article-sources">
-                    <strong>Sources &amp; Further Reading</strong>
-                    <ul style="font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-3);">
-                        <li><strong>Primary recipe:</strong> Stella Parks, <a href="https://www.seriouseats.com/the-food-lab-best-banana-bread-recipe" style="color: var(--color-sea); text-decoration: underline;">The Food Lab&rsquo;s Banana Bread</a>, Serious Eats</li>
-                        <li><strong>Brown butter science:</strong> Harold McGee, <em>On Food and Cooking</em>, 2004</li>
-                        <li><strong>Banana ripening:</strong> Ali Bouzari, <em>Ingredient</em>, 2016</li>
-                        <li><strong>Miso in baking:</strong> ChefSteps, &ldquo;The Science of Miso,&rdquo; 2018</li>
-                        <li><strong>Quick bread technique:</strong> Rose Levy Beranbaum, <em>The Cake Bible</em></li>
-                        <li><strong>Flavour pairings:</strong> Page &amp; Dornenburg, <em>The Flavor Bible</em></li>
-                    </ul>
-                </div>
-
-                <!-- Article Actions -->
-                <div class="article-actions">
-                    <button class="print-btn" data-action="print">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                        Print
-                    </button>
-                    <button class="download-btn" data-action="download">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Save PDF
-                    </button>
-                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> McGee, <em>On Food and Cooking</em>; Stella Parks, Serious Eats; Ali Bouzari, <em>Ingredient</em>; ChefSteps, &ldquo;The Science of Miso&rdquo;; Pillsbury, <em>Balanced Recipes</em> (1933); <em>TIME</em> &amp; Britannica on Gros Michel/Cavendish. <em>Tested at sea.</em></p>
 
                 <!-- Article Engagement -->
                 <div class="article-engagement">
@@ -540,6 +331,7 @@
     <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/community.js"></script>
+    <script src="../assets/js/recipe.js"></script>
 
 </body>
 </html>

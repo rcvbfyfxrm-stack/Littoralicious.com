@@ -46,7 +46,7 @@
                 <div class="article__meta">
                     <span class="article__category">The Blueprint</span>
                     <time class="article__date">April 22, 2026</time>
-                    <span class="article__reading-time">12 min read</span>
+                    <span class="article__reading-time">7 min read</span>
                 </div>
                 <h1 class="article__title">Chicken Soup: The Perfect Version</h1>
                 <p style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-salt); margin-bottom: var(--space-4);">The pot that makes the stock is not the pot that cooks the meat</p>
@@ -55,521 +55,185 @@
                 </p>
             </header>
 
-            <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+            <div class="article__content container rcp" data-recipe="chicken-soup-perfect" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <p>
-                    Most chicken soup recipes waste the bird. A whole chicken boiled with vegetables gives you tired meat and pale broth &mdash; both compromised by the same pot. This version separates the stock build from the protein cook, roasts the bones for Maillard depth, uses cold-water extraction to pull collagen cleanly, and finishes with umami seasoning that stays invisible. The chicken goes in tender. The broth goes in clear. The bowl tastes like more than the sum of its parts.
-                </p>
+                <!-- ── I. THE STORY ──────────────────────────────────────────────────────────── -->
 
-                <div class="note note--key" data-label="Core Principle"><p>The pot that makes the stock is not the pot that cooks the meat. Separate the stock build from the protein cook &mdash; the stock needs 3 hours at a bare simmer; the chicken needs 20 minutes of gentle poaching. Combining them ruins both.</p></div>
+                <p>A great bowl of chicken soup should <mark>cling to your lip and coat the spoon</mark> &mdash; broth with body, meat still juicy, both arriving clear rather than grey and tired. Almost every home version fails the same way: it cooks the bird and the broth in one pot, and ruins both. The fix is to split them &mdash; and the half-line that explains why runs all the way back to a 12th-century physician.</p>
 
-                <!-- ── AT A GLANCE ────────────────────────────── -->
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-4); padding: var(--space-4) 0; border-top: 2px solid var(--color-ink); border-bottom: 1px solid var(--color-border); margin: var(--space-8) 0; text-align: center;">
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Yield</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">2.5 L</div>
-                        <div style="font-size: var(--text-xs); color: var(--color-salt);">6 bowls</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Active</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">45 min</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Total</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">4 hr</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Simmer</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">85&ndash;90&deg;C</div>
-                        <div style="font-size: var(--text-xs); color: var(--color-salt);">Never boil</div>
-                    </div>
-                    <div>
-                        <div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted);">Thigh done</div>
-                        <div style="font-family: var(--font-mono); font-weight: 600;">74&deg;C</div>
-                        <div style="font-size: var(--text-xs); color: var(--color-salt);">165&deg;F</div>
-                    </div>
+                <div class="note note--key"><p><strong>The one idea:</strong> the pot that makes the stock is not the pot that cooks the meat. The bones want <span class="highlight highlight--term">three hours</span> at a bare simmer to give up their collagen; the meat wants twenty gentle minutes and no more. Build them apart, fold them together at the bowl.</p></div>
+
+                <div class="rcp-story">
+                    <span class="rcp-story__kicker">Where it comes from</span>
+                    <p>People call it <em>Jewish penicillin</em>, and that is older than it sounds. Moses Maimonides &mdash; the 12th-century physician of C&oacute;rdoba and Cairo &mdash; prescribed the broth of hens for respiratory complaints in his medical writings, drawing on a line of fowl-broth remedies that reach back through the Talmud to a second-century-BC Chinese text that called chicken a warming <em>yang</em> food. The dish we know best, though, was forged later in the Ashkenazi shtetls of Eastern Europe, where a single old hen had to feed a family: simmered slowly, skimmed, stretched into broth that wasted nothing.</p>
+                    <p>That history is a recipe instruction in disguise. A tough, hard-worked bird is rich in connective tissue, and connective tissue is exactly what a long, gentle simmer converts to the gelatin that gives the broth its body. The shtetl cook used an old laying hen because that was what she had; we reach for roasted carcasses, wings, and a handful of feet for the same reason &mdash; collagen is the whole point, and you cannot rush it out of the bones.</p>
                 </div>
 
-                <p style="font-size: var(--text-sm); color: var(--color-muted);">
-                    <strong>Source:</strong> Composite of Thomas Keller (<em>Bouchon</em>), Samin Nosrat (<em>Salt Fat Acid Heat</em>), J. Kenji L&oacute;pez-Alt (<em>The Food Lab</em>), and Harold McGee (<em>On Food and Cooking</em>).<br>
-                    <strong>Key technique:</strong> Cold-start stock from roasted bones + separately poached chicken folded in at service.
-                </p>
+                <div class="note" data-label="Did you know"><p>Chicken releases <mark>cysteine</mark> as it cooks &mdash; an amino acid close enough in structure to <em>acetylcysteine</em>, a drug prescribed to thin the mucus of bronchitis, that it appears to loosen congestion the same way. The folk remedy and the pharmacy reach for nearly the same molecule. <cite>&mdash; Rennard et al., <em>Chest</em>, 2000; Saketkhoo, <em>Chest</em>, 1978</cite></p></div>
 
-                <!-- ── DOWNLOAD PDF (prominent) ──────────────── -->
-                <a href="../print/chicken-soup-recipe-card.pdf" download
-                   style="display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); background: var(--color-sea); color: var(--color-paper); padding: var(--space-4) var(--space-6); margin: var(--space-8) 0; text-decoration: none; border: 2px solid var(--color-sea);">
-                    <span>
-                        <span style="display: block; font-family: var(--font-serif); font-size: var(--text-lg); font-weight: 700; line-height: 1.1;">One-Page Galley Card</span>
-                        <span style="display: block; font-size: var(--text-sm); opacity: 0.88; margin-top: 2px;">Everything here on a single A4 &mdash; print, pin to the wall, keep in the galley binder.</span>
-                    </span>
-                    <span style="display: inline-flex; align-items: center; gap: 8px; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; white-space: nowrap; border: 1px solid var(--color-paper); padding: 8px 16px;">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download PDF
-                    </span>
+                <p>That medicinal reputation finally met a laboratory, and what it found is a clue to why technique matters as much as ingredients.</p>
+
+                <div class="note note--science"><p>In 2000 a University of Nebraska team put real chicken soup through a chemotaxis assay and watched it <mark>slow the migration of neutrophils</mark> &mdash; the white cells whose rush to the airways drives the misery of a cold. The effect lived in the broth itself, not any single vegetable. A bowl that has given up its collagen and its dissolved proteins is doing more than comforting you; it is mildly anti-inflammatory, which is reason enough to extract it properly.</p></div>
+
+                <!-- ── THE HINGE ─────────────────────────────────────────────────────────────── -->
+                <div class="divider" id="build"><span class="divider__text">Now make it</span></div>
+
+                <!-- ── II. THE BUILD ─────────────────────────────────────────────────────────── -->
+
+                <dl class="rcp-stats">
+                    <div><dt>Active</dt><dd>45 min</dd></div>
+                    <div><dt>Total</dt><dd>4 hr <small>incl. 3 hr simmer</small></dd></div>
+                    <div><dt>Yield</dt><dd>10&ndash;12 <small>bowls</small></dd></div>
+                    <div><dt>Make-ahead</dt><dd>stock freezes 3 months</dd></div>
+                </dl>
+
+                <a class="rcp-card" href="../print/chicken-soup-perfect-recipe-card.pdf" download>
+                    <span><b>One-page galley card</b><span>The whole recipe on a single A4 &mdash; print, pin, cook.</span></span>
+                    <span class="rcp-card__btn">Download PDF</span>
                 </a>
 
-                <!-- ── INGREDIENTS ────────────────────────────── -->
+                <details class="rcp-ratio" open>
+                    <summary>The ratio &mdash; bones drive everything</summary>
+                    <div class="rcp-ratio__body"><code>Bones 100% &middot; Feet 15% &middot; Water 200% &middot; Salt by taste</code> &mdash; roughly 2 kg of carcasses to 4 L of cold water yields 2.5 L of stock that sets to jelly when chilled; the feet are the gelatin multiplier, not optional. Salt is never on the ratio &mdash; a stock you reduce will over-salt itself.</div>
+                </details>
+
+                <div class="rcp-scaler" data-base-yield="12" data-yield-unit="bowls">
+                    <span class="rcp-scaler__label">Scale</span>
+                    <button data-scale="0.5">½&times;</button>
+                    <button data-scale="1" class="active">1&times;</button>
+                    <button data-scale="2">2&times;</button>
+                    <span class="rcp-scaler__yield"><b data-yield>12</b> bowls</span>
+                </div>
+
                 <h2>Ingredients</h2>
+                <div class="rcp-group">Stock</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="2" data-unit="kg" data-round="1">2 kg</span></span><span class="rcp-ing__n">Chicken carcasses + wings</span> <span class="rcp-ing__note">roasted first</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="300" data-unit="g">300 g</span></span><span class="rcp-ing__n">Chicken feet, blanched</span> <span class="rcp-ing__note">the gelatin multiplier</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="4" data-unit="L" data-round="1">4 L</span></span><span class="rcp-ing__n">Cold water</span> <span class="rcp-ing__note">always cold</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="300" data-unit="g">300 g</span></span><span class="rcp-ing__n">Yellow onion, halved</span> <span class="rcp-ing__note">skin on, for colour</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="200" data-unit="g">200 g</span></span><span class="rcp-ing__n">Carrot</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="150" data-unit="g">150 g</span></span><span class="rcp-ing__n">Leek green tops</span> <span class="rcp-ing__note">save whites for the soup</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="100" data-unit="g">100 g</span></span><span class="rcp-ing__n">Celery</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="1" data-unit="head" data-round="0">1 head</span></span><span class="rcp-ing__n">Garlic, halved</span> <span class="rcp-ing__note">through the equator</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="30" data-unit="g">30 g</span></span><span class="rcp-ing__n">Parmigiano Reggiano rind</span> <span class="rcp-ing__note">glutamate depth</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="2" data-unit="" data-round="0">2</span></span><span class="rcp-ing__n">Bay leaves</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="5" data-unit="g">5 g</span></span><span class="rcp-ing__n">Black peppercorns</span> <span class="rcp-ing__note">whole</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="5" data-unit="g">5 g</span></span><span class="rcp-ing__n">Thyme</span> <span class="rcp-ing__note">on the stalk</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="10" data-unit="g">10 g</span></span><span class="rcp-ing__n">Parsley stems</span> <span class="rcp-ing__note">save leaves for finish</span></label></li>
+                </ul>
+                <div class="rcp-group">Chicken (poached separately)</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="800" data-unit="g">800 g</span></span><span class="rcp-ing__n">Bone-in, skin-on thighs</span> <span class="rcp-ing__note">forgiving, more flavour</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="400" data-unit="g">400 g</span></span><span class="rcp-ing__n">Bone-in breast</span> <span class="rcp-ing__note">optional, white-meat guests</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="10" data-unit="g">10 g</span></span><span class="rcp-ing__n">Fine sea salt</span> <span class="rcp-ing__note">for the poaching water</span></label></li>
+                </ul>
+                <div class="rcp-group">Soup vegetables (5 mm dice)</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="200" data-unit="g">200 g</span></span><span class="rcp-ing__n">Leek whites</span> <span class="rcp-ing__note">cleaned</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="200" data-unit="g">200 g</span></span><span class="rcp-ing__n">Carrot</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="150" data-unit="g">150 g</span></span><span class="rcp-ing__n">Celery</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="150" data-unit="g">150 g</span></span><span class="rcp-ing__n">Fennel bulb</span> <span class="rcp-ing__note">optional, anise depth</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="10" data-unit="g">10 g</span></span><span class="rcp-ing__n">Garlic, grated</span> <span class="rcp-ing__note">off the heat</span></label></li>
+                </ul>
+                <div class="rcp-group">Finish</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="15" data-unit="g">15 g</span></span><span class="rcp-ing__n">Fish sauce</span> <span class="rcp-ing__note">invisible umami</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="20" data-unit="g">20 g</span></span><span class="rcp-ing__n">Lemon juice</span> <span class="rcp-ing__note">at service, off heat</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="10" data-unit="g">10 g</span></span><span class="rcp-ing__n">Flat-leaf parsley, chopped</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="5" data-unit="g">5 g</span></span><span class="rcp-ing__n">Dill</span> <span class="rcp-ing__note">optional</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="20" data-unit="g">20 g</span></span><span class="rcp-ing__n">Schmaltz</span> <span class="rcp-ing__note">from the stock</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="200" data-unit="g">200 g</span></span><span class="rcp-ing__n">Egg noodles</span> <span class="rcp-ing__note">or matzo balls / rice / pastina</span></label></li>
+                </ul>
 
-                <p style="font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-4);">
-                    Weight preferred &middot; volume when you can&rsquo;t scale
-                </p>
-
-                <h3>Stock</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Notes</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Chicken carcasses + wings</td><td class="data">2 kg</td><td class="data">&mdash;</td><td>Roasted in oven before stock</td></tr>
-                            <tr><td>Chicken feet (blanched)</td><td class="data">300 g</td><td class="data">~6 feet</td><td><strong>The gelatin multiplier</strong> &mdash; do not skip</td></tr>
-                            <tr><td>Cold water</td><td class="data">4 L</td><td class="data">~1 gal</td><td>Cold. Always cold.</td></tr>
-                            <tr><td>Yellow onion, halved, skin on</td><td class="data">300 g</td><td class="data">2 medium</td><td>Skin adds colour</td></tr>
-                            <tr><td>Carrot</td><td class="data">200 g</td><td class="data">2 medium</td><td>Peeled, in thirds</td></tr>
-                            <tr><td>Leek green tops</td><td class="data">150 g</td><td class="data">2 leeks</td><td>Save whites for the soup</td></tr>
-                            <tr><td>Celery</td><td class="data">100 g</td><td class="data">2 ribs</td><td></td></tr>
-                            <tr><td>Garlic head, halved</td><td class="data">1 head</td><td class="data">&mdash;</td><td>Through the equator, skin on</td></tr>
-                            <tr><td>Parmigiano Reggiano rind</td><td class="data">30 g</td><td class="data">1 rind</td><td>Glutamate depth</td></tr>
-                            <tr><td>Bay leaves</td><td class="data">2</td><td class="data">&mdash;</td><td>Fresh if possible</td></tr>
-                            <tr><td>Black peppercorns</td><td class="data">5 g</td><td class="data">1 tsp</td><td>Whole</td></tr>
-                            <tr><td>Thyme sprigs</td><td class="data">5 g</td><td class="data">6 sprigs</td><td>On the stalk</td></tr>
-                            <tr><td>Parsley stems</td><td class="data">10 g</td><td class="data">&mdash;</td><td>Save leaves for finish</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Chicken <span style="font-weight: 400; color: var(--color-muted); font-size: var(--text-sm);">(poached separately)</span></h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Bone-in, skin-on thighs</td><td class="data">800 g</td><td class="data">~4 thighs</td><td>Thigh over breast &mdash; forgiving, more flavour</td></tr>
-                            <tr><td>Bone-in split breast (optional)</td><td class="data">400 g</td><td class="data">1 split</td><td>If guests prefer white meat</td></tr>
-                            <tr><td>Fine sea salt</td><td class="data">10 g</td><td class="data">2 tsp</td><td>For the poaching liquid</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Soup vegetables <span style="font-weight: 400; color: var(--color-muted); font-size: var(--text-sm);">(brunoise, 5 mm)</span></h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Leek whites</td><td class="data">200 g</td><td class="data">2 leeks</td><td>Half-moons, cleaned</td></tr>
-                            <tr><td>Carrot</td><td class="data">200 g</td><td class="data">2 medium</td><td>Even dice</td></tr>
-                            <tr><td>Celery</td><td class="data">150 g</td><td class="data">3 ribs</td><td>Even dice</td></tr>
-                            <tr><td>Fennel bulb (optional)</td><td class="data">150 g</td><td class="data">&frac12; bulb</td><td>Adds anise depth</td></tr>
-                            <tr><td>Garlic, grated</td><td class="data">10 g</td><td class="data">3 cloves</td><td>Added off heat</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Finish</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Fish sauce (Red Boat 40&deg;N)</td><td class="data">15 g</td><td class="data">1 tbsp</td><td><strong>Invisible umami</strong></td></tr>
-                            <tr><td>Fresh lemon juice</td><td class="data">20 g</td><td class="data">1 lemon</td><td>At service, off heat</td></tr>
-                            <tr><td>Flat-leaf parsley, chopped</td><td class="data">10 g</td><td class="data">3 tbsp</td><td></td></tr>
-                            <tr><td>Fresh dill (optional)</td><td class="data">5 g</td><td class="data">1 tbsp</td><td>Northern European register</td></tr>
-                            <tr><td>Schmaltz (from the stock)</td><td class="data">20 g</td><td class="data">1 tbsp</td><td>At the bowl, blooms aroma</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Starch <span style="font-weight: 400; color: var(--color-muted); font-size: var(--text-sm);">(pick one &mdash; cook separately)</span></h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr><th>Option</th><th>Amount</th><th>Method</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Egg noodles (pappardelle / kluski)</td><td class="data">200 g</td><td>Salted water, al dente, toss in schmaltz</td></tr>
-                            <tr><td>Matzo balls</td><td class="data">&times;8</td><td>Sub-recipe below</td></tr>
-                            <tr><td>Short-grain rice (arborio / calrose)</td><td class="data">200 g</td><td>Cooked separately in stock</td></tr>
-                            <tr><td>Orzo / pastina</td><td class="data">150 g</td><td>Salted water, al dente</td></tr>
-                            <tr><td>Fresh tortellini (brodo)</td><td class="data">250 g</td><td>Salted water, 3 min before service</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p style="font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-4);">
-                    <strong>Equipment:</strong> 8 L stockpot &middot; 4 L poaching pot &middot; 4 L soup pot &middot; fine-mesh strainer + cheesecloth / superbag &middot; shallow skimmer &middot; instant-read thermometer &middot; fat separator or tall narrow container for de-fatting
-                </p>
-
-                <div class="note note--science"><p>Chicken feet are roughly 70% collagen by dry weight &mdash; 300 g of feet added to a 4 L stock roughly doubles the gelatin content. A stock with feet sets to a firm jelly when chilled; without feet, only a soft wobble. That jelly is the mouth-feel that separates restaurant broth from home broth.</p></div>
-
-                <!-- ── METHOD ─────────────────────────────────── -->
                 <h2>Method</h2>
-
-                <h3>Phase 1: Roast the Bones <span style="font-weight: 400; color: var(--color-muted);">&mdash; 30 min, unattended</span></h3>
-
-                <ol>
-                    <li>
-                        <strong>Roast bones.</strong> Heat oven to 220&deg;C (425&deg;F). Arrange bones and wings in a single layer on a sheet pan. Roast until deep mahogany, <span class="data">25&ndash;30 minutes</span>, turning once at the halfway mark. Colour, not carbon.
-                    </li>
+                <div class="rcp-progress"><span data-progress-done>0</span>/<span data-progress-total>0</span> steps done<div class="rcp-progress__bar"><i data-progress-bar></i></div></div>
+                <ol class="rcp-steps">
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Raw bones give clean chicken broth; roasted bones give the smell of <strong>roast</strong> chicken &mdash; which is what memory expects from comfort.</em></p>
+                        <p><strong>Roast the bones.</strong> Heat the oven to 220&deg;C (425&deg;F). Spread <span data-qty="2" data-unit="kg" data-round="1">2 kg</span> carcasses and wings in one layer; roast <mark>to deep mahogany</mark>, 25&ndash;30 min, turning once. Colour, not carbon.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Roasting drives Maillard reactions on the surface proteins, building hundreds of nutty, toasted, meaty aromatics that do not exist in raw-bone stock. <cite>&mdash; McGee 2004, pp. 778&ndash;782</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>The feet are the shtetl thrift the recipe inherits &mdash; the part nobody else wanted, doing the heavy lifting.</em></p>
+                        <p><strong>Blanch the feet.</strong> Drop <span data-qty="300" data-unit="g">300 g</span> feet into rolling water for <span data-qty="60" data-unit="sec" data-round="0">60 sec</span>, shock in ice water; the yellow membrane peels in sheets. Trim the nails. They go into the stock raw.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Feet are roughly 70% collagen by dry weight &mdash; the highest connective-tissue ratio of any chicken part. 300 g doubles the gelatin of a 4 L stock without changing flavour. <cite>&mdash; Keller, <em>Bouchon</em>, 2004</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Cold water is the one rule you cannot shortcut &mdash; the temperature gradient does your sorting for you.</em></p>
+                        <p><strong>Deglaze and cold-cover.</strong> Bones into the 8 L pot; deglaze the roasting tray with a cup of water and scrape every brown fleck in. Cover with <strong>cold</strong> water by 5 cm &mdash; about <span data-qty="4" data-unit="L" data-round="1">4 L</span>. <mark>Never hot.</mark></p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Collagen hydrolyses to gelatin between 70&ndash;90&deg;C; the slow climb from cold lets soluble albumen coagulate and rise as skimmable scum, while a rolling boil would emulsify fat into a permanent cloud. <cite>&mdash; McGee 2004, pp. 599&ndash;605</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>This long, quiet simmer is the step the laboratory was measuring &mdash; it is where the anti-inflammatory broth is actually made.</em></p>
+                        <p><strong>Climb, skim, then aromatics; simmer 3 hr.</strong> Bring to a bare simmer over ~90 min, skimming the rising scum. Once it holds <mark>85&ndash;90&deg;C (185&ndash;195&deg;F)</mark> &mdash; bubbles breaking only occasionally &mdash; add the feet, vegetables, parmesan rind and aromatics. Simmer uncovered 2 hr 30&ndash;3 hr. Do not stir.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">A rolling boil emulsifies fat into micro-droplets that suspend permanently and turn the broth greasy and cloudy; a bare simmer extracts cleanly. The 2000 Nebraska assay found the anti-inflammatory activity in this non-particulate broth. <cite>&mdash; Rennard et al., <em>Chest</em> 118(4):1150&ndash;1157, 2000</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Press the solids and you undo three hours of patience in one squeeze.</em></p>
+                        <p><strong>Strain, chill, lift the fat cap.</strong> Pour through fine mesh lined with cheesecloth &mdash; <strong>do not press</strong>. Cool in an ice bath, then chill. Within 2 hr a firm cap of <span data-qty="80" data-unit="g">80 g</span> schmaltz sets on top; lift it off and jar it.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Pressing forces fine particulate through the cloth and clouds the broth; chilling separates the fat cleanly so you control exactly how much returns. <cite>&mdash; Keller, <em>Bouchon</em>, 2004</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>This is the move the whole article turns on: the meat leaves the broth alone.</em></p>
+                        <p><strong>Poach the chicken apart.</strong> Bare-simmer 2 L water + <span data-qty="10" data-unit="g">10 g</span> salt; add thighs skin-up. Hold a bare simmer, never boiling, <span data-qty="18" data-unit="min" data-round="0">18</span>&ndash;22 min (thigh) to <mark>74&deg;C (165&deg;F) internal</mark>; breast 14&ndash;16 min to 63&deg;C. Cool, pull into hand-sized pieces, hold in a little of the liquid.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Muscle proteins squeeze water out above 65&ndash;70&deg;C and contract hard past 75&deg;C; meat simmered in stock for hours turns to leathery thread. Poached gently and pulled, the fibres hold their juice. <cite>&mdash; McGee 2004, pp. 148&ndash;152; Nosrat 2017</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>Build the soup as layers, season at the end &mdash; a stock salted hard early becomes inedible once it reduces.</em></p>
+                        <p><strong>Sweat, combine, finish off heat.</strong> Sweat the diced leek, carrot, celery and fennel in <span data-qty="20" data-unit="g">20 g</span> schmaltz 8&ndash;10 min, no colour. Add to the warm stock, simmer 10 min; fold the pulled chicken in for the last 2 min only. Off the heat: grated garlic, <span data-qty="15" data-unit="g">15 g</span> fish sauce, <span data-qty="20" data-unit="g">20 g</span> lemon juice, parsley, dill. Taste, adjust salt.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Fish sauce carries up to 1,300 mg free glutamate per 100 g and the parmesan rind ~1,200 mg &mdash; both read as savoury depth, not as themselves. Citrus volatiles degrade with heat, so the lemon goes in last for a lifted finish. <cite>&mdash; L&oacute;pez-Alt, Serious Eats 2014; Nosrat 2017</cite></div></details></div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body"><p><em>The last discipline: the starch never touches the soup pot.</em></p>
+                        <p><strong>Assemble at the bowl.</strong> Cook noodles (or matzo balls) in <strong>separate</strong> salted water. Starch in a warm bowl, ladle the soup over, finish with a teaspoon of schmaltz that <mark>blooms aroma</mark> on the hot broth, black pepper and parsley.</p>
+                        <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">200 g of noodles held in stock for 30 min drink half the liquid and turn the broth starchy; assembled at the bowl, the broth stays clear and leftovers stay honest. <cite>&mdash; L&oacute;pez-Alt, Serious Eats 2014</cite></div></details></div></li>
                 </ol>
+                <div class="rcp-meta"><button data-recipe-reset>Reset ticks</button> &middot; scaling &amp; progress save on this device</div>
 
-                <div class="science-box">
-                    <span class="science-box__label">Why roast?</span>
-                    <div class="science-box__content">
-                        Roasting triggers Maillard reactions on the surface proteins of the bones and residual skin, creating hundreds of new aromatic compounds: nutty, toasted, meaty, caramelized notes that do not exist in raw-bone stock. Raw-bone stock tastes of clean chicken; roasted-bone stock tastes of <em>roast</em> chicken. For soup-as-comfort, the roasted version is what memory expects.
-                        <br><em style="color: var(--color-sea);">&mdash; Harold McGee, On Food and Cooking, 2004, pp. 778&ndash;782</em>
-                    </div>
-                </div>
+                <div class="note" data-label="At the table"><p>Ladle it over egg noodles, matzo balls, or short-grain rice cooked apart, with a lemon wedge on the saucer and the schmaltz blooming on top. It is the convalescent&rsquo;s bowl and the Friday-night starter both &mdash; in an Ashkenazi house the matzo-ball version is Shabbat and Passover itself, and across the boat it is the one thing crew and guests both want when the weather turns.</p></div>
 
-                <ol start="2">
-                    <li>
-                        <strong>Blanch feet.</strong> Bring a small pot of water to a rolling boil. Drop feet in for <span class="data">60 seconds</span>, shock in ice water. The yellow outer membrane peels off in sheets; trim the nails. Feet now go into the stock raw.
-                    </li>
-                </ol>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why feet?</span>
-                    <div class="science-box__content">
-                        Chicken feet are roughly 70% collagen by dry weight &mdash; the highest ratio of connective tissue to bone of any chicken part. 300 g of feet added to a 4 L stock roughly doubles the gelatin content without changing flavour. A stock with feet sets to a firm jelly when chilled; without feet, a soft wobble. That jelly is mouth-feel &mdash; the reason a restaurant chicken broth coats the lip and a home version does not.
-                        <br><em style="color: var(--color-sea);">&mdash; Thomas Keller, Bouchon, 2004</em>
-                    </div>
-                </div>
-
-                <h3>Phase 2: Build the Stock <span style="font-weight: 400; color: var(--color-muted);">&mdash; 3 hr, mostly unattended</span></h3>
-
-                <ol start="3">
-                    <li>
-                        <strong>Deglaze + cold-cover.</strong> Transfer roasted bones to the 8 L stockpot. Deglaze the sheet pan with a cup of water, scrape up every brown fleck, pour into the pot. Cover bones with <strong>cold</strong> water by 5 cm &mdash; about <span class="data">4 L</span>. Do not use hot water. Do not shortcut.
-                    </li>
-                </ol>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why cold water?</span>
-                    <div class="science-box__content">
-                        Collagen is a triple-helix protein that unwinds and hydrolyses into gelatin between 70&ndash;90&deg;C. Below that, inert. Above a rolling boil, the agitation emulsifies fat into micro-droplets that suspend permanently, muddying the broth. The slow climb from cold lets soluble proteins (albumen) coagulate and rise as scum you can skim, while collagen unwinds gently. The temperature gradient does the sorting for you.
-                        <br><em style="color: var(--color-sea);">&mdash; Harold McGee, On Food and Cooking, 2004, pp. 599&ndash;605</em>
-                    </div>
-                </div>
-
-                <ol start="4">
-                    <li>
-                        <strong>Climb slowly, skim ruthlessly.</strong> Bring to a bare simmer over medium heat &mdash; ~90 minutes for the climb is ideal. Scum rises as the water heats: coagulated albumen plus impurities. Skim every few minutes in the first 20 minutes, then every 15 minutes for the first hour. This is the difference between broth and consomm&eacute;-clear.
-                    </li>
-                    <li>
-                        <strong>Aromatics in.</strong> Once the pot holds a bare simmer &mdash; bubbles breaking only occasionally, never a rolling boil &mdash; add the feet, onions, carrots, leek tops, celery, garlic, parmesan rind, bay, peppercorns, thyme, and parsley stems.
-                    </li>
-                </ol>
-
-                <p style="background: var(--note-warning); border-left: 3px solid var(--note-warning-border); padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: var(--text-sm);">
-                    <strong>Never boil.</strong> A rolling boil emulsifies fat into the water &mdash; you will never get it out, and the broth will taste greasy and look cloudy. A bare simmer is <span class="data">85&ndash;90&deg;C (185&ndash;195&deg;F)</span>. Use a thermometer the first few times until your eye knows.
-                </p>
-
-                <ol start="6">
-                    <li>
-                        <strong>Simmer uncovered, 2 hr 30 min&ndash;3 hr</strong> from the moment the aromatics go in. Top up with hot water only if bones become exposed. Do not stir. Skim as needed.
-                    </li>
-                    <li>
-                        <strong>Strain without pressing.</strong> Pour through a fine-mesh strainer lined with cheesecloth or a superbag. <em>Do not press the solids</em> &mdash; pressing clouds the broth.
-                    </li>
-                    <li>
-                        <strong>Chill + lift the fat cap.</strong> Cool rapidly in an ice bath, stirring occasionally. Refrigerate. Within 2 hours a cap of pale-yellow fat (schmaltz) sets on top, firm enough to lift off with a spoon. Jar it. This is the cleanest stock you will ever make.
-                    </li>
-                </ol>
-
-                <div class="note note--action" data-label="Fat Cap Trick"><p>After chilling the stock, the pale-yellow fat cap (schmaltz) lifts off in a single sheet. Jar it &mdash; this is liquid gold. Use it to sweat the soup vegetables, toss the noodles, and finish each bowl with a teaspoon that blooms aroma on contact with hot broth.</p></div>
-
-                <h3>Phase 3: Poach the Chicken <span style="font-weight: 400; color: var(--color-muted);">&mdash; 25 min, parallel to stock</span></h3>
-
-                <ol start="9">
-                    <li>
-                        <strong>Bare-simmer poach.</strong> Bring 2 L water + 10 g salt to a bare simmer in the 4 L pot. Add thighs skin-side up. Maintain bare simmer &mdash; <em>never boiling</em> &mdash; for <span class="data">18&ndash;22 minutes</span> (thigh) or <span class="data">14&ndash;16 minutes</span> (breast).
-                    </li>
-                </ol>
-
-                <div style="background: var(--note-action); border-left: 3px solid var(--note-action-border); padding: var(--space-4) var(--space-6); margin: var(--space-6) 0;">
-                    <p style="margin: 0 0 var(--space-2) 0;"><strong style="color: var(--note-action-border);">Done when (internal):</strong></p>
-                    <ul style="margin: 0; padding-left: var(--space-6); font-size: var(--text-sm);">
-                        <li>Thigh: <strong><span class="data">74&deg;C</span> (165&deg;F)</strong></li>
-                        <li>Breast: <strong><span class="data">63&deg;C</span> (145&deg;F)</strong> pulled and carried (carries to 67&deg;C resting)</li>
-                    </ul>
-                </div>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why separate?</span>
-                    <div class="science-box__content">
-                        Chicken muscle proteins (the actomyosin complex) begin to squeeze water out above 65&ndash;70&deg;C and contract dramatically above 75&deg;C. Meat simmered <em>in</em> stock for 3 hours loses nearly all its internal water and turns leathery. Poached gently and pulled, the fibres stay below the squeeze-out threshold and hold their juices. The pot that builds the stock is not the pot that cooks the meat.
-                        <br><em style="color: var(--color-sea);">&mdash; McGee, pp. 148&ndash;152; Samin Nosrat, Salt Fat Acid Heat, 2017, pp. 45&ndash;51</em>
-                    </div>
-                </div>
-
-                <div class="note note--warning"><p>Chicken muscle proteins squeeze water out above 65&ndash;70&deg;C and contract dramatically above 75&deg;C. Meat simmered in stock for 3 hours loses nearly all its moisture and turns leathery. Poach gently and pull &mdash; never boil the meat into the stock.</p></div>
-
-                <ol start="10">
-                    <li>
-                        <strong>Pull into hand-sized pieces.</strong> Cool until handleable. Pull meat off the bones in pieces with character &mdash; not shredded to threads, not cubed. Hold in ~100 ml of the poaching liquid to keep moist. Save the rest of the poaching liquid as a light second broth.
-                    </li>
-                </ol>
-
-                <h3>Phase 4: The Soup <span style="font-weight: 400; color: var(--color-muted);">&mdash; 20 min</span></h3>
-
-                <ol start="11">
-                    <li>
-                        <strong>Warm the stock.</strong> In the 4 L soup pot over medium heat.
-                    </li>
-                    <li>
-                        <strong>Sweat the brunoise in schmaltz.</strong> 20 g schmaltz in a wide pan, leek whites + carrot + celery + fennel over medium heat until soft and sweet without colour, <span class="data">8&ndash;10 min</span>. Salt lightly (3&ndash;4 g).
-                    </li>
-                    <li>
-                        <strong>Combine + simmer 10 min.</strong> Vegetables into the stock. Simmer gently &mdash; enough for release, not long enough for disintegration.
-                    </li>
-                    <li>
-                        <strong>Chicken in, last 2 min.</strong> Pulled meat warms through. Do not simmer the meat further.
-                    </li>
-                    <li>
-                        <strong>Off heat: umami + acid.</strong> Grated garlic, fish sauce, lemon juice, parsley, dill. Taste. Adjust salt.
-                    </li>
-                </ol>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why fish sauce + parmesan?</span>
-                    <div class="science-box__content">
-                        Both deliver high free-glutamate concentrations &mdash; up to 1,300 mg/100 g in fish sauce, 1,200 mg/100 g in aged parmesan. Glutamate receptors on the tongue (T1R1/T1R3) amplify perceived flavour of everything around them. At 1 tbsp in 2.5 L, the fish sauce is undetectable as fish; the 30 g rind simmered three hours is undetectable as cheese. What registers is a rounder, deeper, more savoury broth. The &ldquo;how is this chicken soup so good?&rdquo; dimension.
-                        <br><em style="color: var(--color-sea);">&mdash; Kenji L&oacute;pez-Alt, Serious Eats, 2014; Ikeda Kikunae via McGee</em>
-                    </div>
-                </div>
-
-                <p style="background: var(--note-key); border-left: 3px solid var(--note-key-border); padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: var(--text-sm);">
-                    <strong>Seasoning protocol:</strong> Salt the stock lightly during simmer (~4 g / L baseline). Salt the sweating vegetables lightly (3&ndash;4 g). Final seasoning at the end, by taste. Layering builds flavour; salting heavily at the start makes a reduced stock inedible.
-                </p>
-
-                <div class="note note--science" data-label="Invisible Umami"><p>Fish sauce delivers up to 1,300 mg free glutamate per 100 g; aged parmesan delivers 1,200 mg/100 g. At 1 tbsp fish sauce in 2.5 L, neither is detectable as itself &mdash; what registers is a rounder, deeper, more savoury broth. The &ldquo;how is this chicken soup so good?&rdquo; dimension.</p></div>
-
-                <div class="science-box">
-                    <span class="science-box__label">Why acid at the finish?</span>
-                    <div class="science-box__content">
-                        Volatile citrus oils (limonene, citral) boil off between 170&ndash;180&deg;C and degrade above 60&deg;C over time. A lemon squeezed in an hour into the simmer yields dull, tired citrus. The same lemon squeezed in at service yields sharp, lifted citrus. Salt + fat + umami + acid is the four-corner seasoning grid &mdash; skip the acid and the soup tastes one-note no matter how good the stock.
-                        <br><em style="color: var(--color-sea);">&mdash; Samin Nosrat, Salt Fat Acid Heat, 2017, Chapter 3</em>
-                    </div>
-                </div>
-
-                <h3>Phase 5: The Bowl <span style="font-weight: 400; color: var(--color-muted);">&mdash; at service</span></h3>
-
-                <ol start="16">
-                    <li>
-                        <strong>Starch separately.</strong> Cook per Group E. <em>Never in the soup pot.</em>
-                    </li>
-                    <li>
-                        <strong>Assemble at the bowl.</strong> Starch in warm wide bowl. Ladle hot soup over &mdash; broth, vegetables, chicken. Finish with reserved schmaltz (it blooms the aroma), black pepper, parsley, lemon wedge on the saucer.
-                    </li>
-                </ol>
-
-                <p style="background: var(--note-warning); border-left: 3px solid var(--note-warning-border); padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: var(--text-sm);">
-                    <strong>Why at the bowl?</strong> Starch held in the broth pot absorbs and swells &mdash; 200 g of noodles in stock for 30 minutes drinks half the liquid and turns the broth starchy. Assembled at the bowl, the broth stays clear, the noodles bouncy, and leftovers honest.
-                </p>
-
-                <div class="note note--action" data-label="Assembly Rule"><p>Starch goes in the bowl, never in the soup pot. Noodles held in broth for 30 minutes drink half the liquid and turn the broth starchy. Assembled at the bowl, broth stays clear, noodles stay bouncy, and leftovers stay honest.</p></div>
-
-                <!-- ── ELEVATION ──────────────────────────────── -->
-                <h2>Elevation</h2>
-
-                <p>The base recipe already includes the core moves &mdash; roasted bones, cold start, feet, separate poach, fish sauce, parm rind, acid at the finish. These go further.</p>
-
-                <h3 style="color: #059669;">Tier 1 &mdash; No Extra Time</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Modification</th><th>What It Does</th><th>How</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Charred onion</strong></td><td>Bitter-sweet depth in the broth</td><td>Black-char an onion half in a dry pan before it joins the stock</td></tr>
-                            <tr><td><strong>Schmaltz at the bowl</strong></td><td>Aroma bloom as the fat hits hot broth</td><td class="data">1 tsp per bowl</td></tr>
-                            <tr><td><strong>White pepper + sesame oil</strong></td><td>Cantonese-style finish</td><td>Pinch of white pepper + 2 drops toasted sesame oil</td></tr>
-                        </tbody>
+                <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
+                    <table>
+                        <tr><td>Charred onion</td><td>Black-char an onion half in a dry pan before it joins the stock &mdash; bitter-sweet depth</td></tr>
+                        <tr><td>Double stock (remouillage)</td><td>Return the spent bones + feet to 2 L fresh cold water, simmer 2 hr, combine &mdash; body without reducing</td></tr>
+                        <tr><td>Toasted rice</td><td>Dry-toast 50 g rice until fragrant, simmer in the stock 25 min &mdash; nutty, silky</td></tr>
+                        <tr><td>Matzo balls</td><td>Whipped whites + a little baking powder + covered bare simmer = floaters; yolks-only uncovered = sinkers (house style: floater)</td></tr>
+                        <tr><td>Ginger &amp; scallion pivot</td><td>30 g sliced ginger + 4 scallions into the stock, finish with sesame oil + white pepper &mdash; a Cantonese register</td></tr>
+                        <tr><td>Consomm&eacute; en tasse</td><td>Clarify with an egg-white-and-mince raft, serve clear in an espresso cup &mdash; the restaurant amuse</td></tr>
                     </table>
-                </div>
-
-                <h3 style="color: #d97706;">Tier 2 &mdash; Worth the Extra Effort</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Modification</th><th>What It Does</th><th>How</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Double stock (remouillage)</strong></td><td>Concentrated body without reducing and thickening flavour</td><td>After straining, return bones + feet to pot with 2 L fresh cold water, simmer 2 hr, strain, combine</td></tr>
-                            <tr><td><strong>Toasted rice in stock</strong></td><td>Nutty depth, silky mouthfeel</td><td>Dry-toast 50 g rice until fragrant; simmer in stock 25 min; strain or leave</td></tr>
-                            <tr><td><strong>Matzo balls</strong></td><td>Classic Ashkenazi direction</td><td>Sub-recipe below</td></tr>
-                            <tr><td><strong>Ginger + scallion pivot</strong></td><td>Cantonese jook / chicken-and-rice register</td><td>30 g sliced ginger + 4 scallions into stock; finish with sesame oil + white pepper</td></tr>
-                        </tbody>
+                </div></details>
+                <details class="rcp-fold"><summary>One base, two dishes &mdash; the broth becomes pho</summary><div class="rcp-fold__body">
+                    <p>The same clear, gelatin-rich stock is the spine of a Vietnamese-leaning <em>ph&#7903;</em>-style bowl &mdash; reason enough to build a double batch and split it before the vegetables go in.</p>
+                    <table>
+                        <tr><td>Spice the broth</td><td>Toast 1 cinnamon stick, 3 star anise, 4 cloves, a thumb of charred ginger and a charred onion; steep in 1.5 L of the stock 30 min, strain</td></tr>
+                        <tr><td>Season</td><td>Push the fish sauce harder &mdash; 30&ndash;40 g per litre &mdash; plus a pinch of sugar; this broth wants to taste of itself, salty and clear</td></tr>
+                        <tr><td>Build</td><td>Cooked flat rice noodles in the bowl, the poached chicken sliced over, very hot broth poured to just cook it through</td></tr>
+                        <tr><td>Finish</td><td>Bean sprouts, Thai basil, coriander, lime, sliced chilli and hoisin on the side &mdash; built at the table, never in the pot</td></tr>
                     </table>
-                </div>
-
-                <h3 style="color: #7c3aed;">Tier 3 &mdash; Restaurant Level</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Modification</th><th>What It Does</th><th>How</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Consomm&eacute; clarification (raft)</strong></td><td>Crystal-clear broth</td><td>Sub-recipe below &mdash; egg-white + ground-meat raft</td></tr>
-                            <tr><td><strong>Chicken ballotine garnish</strong></td><td>Sliced rolled thigh, restaurant presentation</td><td>Debone thigh, roll with herbs, sous-vide 62&deg;C, sear, slice</td></tr>
-                            <tr><td><strong>Chicken skin cracklings</strong></td><td>Crunch, fat-salt finish on top</td><td>Render flat between trays at 160&deg;C until glass-crisp</td></tr>
-                            <tr><td><strong>Parmesan foam</strong></td><td>Umami cloud (brodo-tortellini style)</td><td>200 ml stock + 50 g parmesan, blitz, strain, charge in iSi</td></tr>
-                        </tbody>
+                    <p>The discipline is identical: stock made apart, protein cooked gently, starch and garnish assembled in the bowl. One extraction, two cuisines.</p>
+                </div></details>
+                <details class="rcp-fold"><summary>Troubleshooting</summary><div class="rcp-fold__body">
+                    <table>
+                        <tr><td>Cloudy broth</td><td>Boiled not simmered, or the solids were pressed &rarr; hold 85&ndash;90&deg;C, skim hard, never press the strainer</td></tr>
+                        <tr><td>Greasy broth</td><td>Fat emulsified by a rolling boil &rarr; chill and lift the fat cap, blot the surface; next time, bare simmer only</td></tr>
+                        <tr><td>Thin, no gelatin</td><td>No feet, raw not roasted, or too much water &rarr; add feet next time, or reduce this batch by 25% to concentrate</td></tr>
+                        <tr><td>Bitter broth</td><td>Over-simmered past 4 hr or scorched bones &rarr; dilute, or simmer a peeled raw potato 10 min to draw bitterness</td></tr>
+                        <tr><td>Dry, stringy chicken</td><td>Cooked in the stock or past 75&deg;C &rarr; poach apart next time; rescue now by shredding into schmaltz and broth</td></tr>
+                        <tr><td>Flat flavour</td><td>Under-salted, no umami anchor, no acid &rarr; salt first, fish sauce or parm rind second, lemon last</td></tr>
+                        <tr><td>Gluey bowl</td><td>Starch cooked in the soup pot &rarr; cook it separately; thin a ruined batch with extra stock</td></tr>
                     </table>
-                </div>
-
-                <h3>Sub-recipe: Matzo Balls <span style="font-weight: 400; color: var(--color-muted); font-size: var(--text-sm);">(Tier 2)</span></h3>
-
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Matzo meal</td><td class="data">120 g</td><td class="data">1 cup</td></tr>
-                            <tr><td>Eggs, separated</td><td class="data">&times;4</td><td class="data">&times;4</td></tr>
-                            <tr><td>Schmaltz, melted</td><td class="data">60 g</td><td class="data">4 tbsp</td></tr>
-                            <tr><td>Chicken stock</td><td class="data">60 g</td><td class="data">&frac14; cup</td></tr>
-                            <tr><td>Fine salt</td><td class="data">4 g</td><td class="data">&frac34; tsp</td></tr>
-                            <tr><td>Baking powder (for floaters)</td><td class="data">2 g</td><td class="data">&frac12; tsp</td></tr>
-                            <tr><td>Fresh dill, chopped</td><td class="data">5 g</td><td class="data">1 tbsp</td></tr>
-                        </tbody>
+                </div></details>
+                <details class="rcp-fold"><summary>Charter prep &amp; storage</summary><div class="rcp-fold__body">
+                    <p>The stock is the make-ahead, and it freezes better naked than built &mdash; vegetables go mealy and starch breaks structure in the freezer, so freeze the broth alone and assemble the bowl at reheat.</p>
+                    <table>
+                        <tr><td>Roasted bones</td><td>Freeze after roasting, up to 3 months &mdash; batch them when the butcher runs wings cheap</td></tr>
+                        <tr><td>Finished stock</td><td>5 days fridge / 3 months frozen, in 1 L portions with the fat cap left on as a seal</td></tr>
+                        <tr><td>Schmaltz</td><td>2 months fridge / 6 months frozen &mdash; strain and jar in small portions</td></tr>
+                        <tr><td>Poached chicken</td><td>3 days fridge, held in its poaching liquid; do not shred until service</td></tr>
+                        <tr><td>Brunoise vegetables</td><td>24 hr fridge, airtight under damp paper &mdash; no further</td></tr>
+                        <tr><td>Galley shortcut</td><td>Stock in 1 L vac-bags + 500 ml ice-cube trays, frozen flat; soup ready in 15 min, not 4 hr</td></tr>
+                        <tr><td>Never</td><td>Never freeze the built soup, and never refrigerate cooked noodles in the broth</td></tr>
                     </table>
-                </div>
+                    <p>On a moving boat the split build is a gift: the stock waits frozen, the poach is twenty quiet minutes, and a comfort bowl lands in the time it takes the weather to turn nasty.</p>
+                </div></details>
 
-                <p>
-                    Whisk yolks with schmaltz, stock, salt, dill, pepper. Whip whites to soft peaks; fold into yolks. Fold in matzo meal + baking powder. <strong>Chill 30 min</strong> (non-negotiable &mdash; the meal needs to hydrate). Wet hands; form 8 golf-ball-sized balls. Drop into bare-simmering salted water (<em>not</em> the soup &mdash; matzo clouds stock). Cover, <span class="data">30&ndash;40 min</span>, no peeking. Transfer to soup at service.
-                </p>
+                <div class="note note--action"><p><strong>Once you own the ratio</strong> &mdash; bones 100, water 200, feet for the jelly &mdash; the bowl is yours: spice it into pho, pivot it to a ginger-scallion jook, or clarify it to consomm&eacute; en tasse. Feeding crew, push the thigh-to-breast ratio toward the cheaper, more forgiving thighs and stretch the broth with a remouillage &mdash; the same pot, two tiers. The shtetl cook made medicine out of an old hen and patience; build the gelatin properly and you are doing the same thing Maimonides prescribed eight centuries ago.</p></div>
 
-                <p style="font-size: var(--text-sm); color: var(--color-muted);">
-                    <strong>Floater vs. sinker:</strong> Baking powder + whipped whites + covered simmer = floater. No baking powder + yolks-only + uncovered = sinker. House style is floater.
-                </p>
-
-                <h3>Sub-recipe: Consomm&eacute; Clarification <span style="font-weight: 400; color: var(--color-muted); font-size: var(--text-sm);">(Tier 3)</span></h3>
-
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <tbody>
-                            <tr><td>Finished stock, cold</td><td class="data">2 L</td></tr>
-                            <tr><td>Ground chicken (or minced wings)</td><td class="data">200 g</td></tr>
-                            <tr><td>Egg whites</td><td class="data">&times;3</td></tr>
-                            <tr><td>Mirepoix brunoise (onion / carrot / celery)</td><td class="data">150 g total</td></tr>
-                            <tr><td>Tomato paste</td><td class="data">15 g</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p>
-                    Whisk all except stock in a pot. Whisk in <em>cold</em> stock. Medium heat, stirring gently from the bottom every few minutes. As the stock heats, the raft forms and floats &mdash; capturing particulate and fat as it rises. Once the raft sets (~75&deg;C) stop stirring. Bare simmer. Cut a chimney with a ladle handle, simmer <span class="data">45 min</span>. Ladle the clarified broth out through the chimney, strain through a superbag. Crystal-clear consomm&eacute; with reinforced chicken flavour.
-                </p>
-
-                <!-- ── CHARTER PREP ───────────────────────────── -->
-                <h2>Charter Prep &amp; Storage</h2>
-
-                <p style="background: var(--note-warning); border-left: 3px solid var(--note-warning-border); padding: var(--space-3) var(--space-4); margin: var(--space-4) 0; font-size: var(--text-sm);">
-                    <strong>Freeze the stock naked.</strong> Stock with vegetables and starch in it freezes poorly &mdash; vegetables go mealy, starch breaks structure. Freeze the stock alone; build the soup at reheat.
-                </p>
-
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Component</th><th>How Far Ahead</th><th>Method</th></tr></thead>
-                        <tbody>
-                            <tr><td>Roasted bones</td><td class="data">3 months</td><td>Freeze after roasting; batch when the butcher runs wings cheap</td></tr>
-                            <tr><td>Finished stock</td><td class="data">5 d fridge / 3 mo frozen</td><td>1 L portions, fat cap intact (natural seal)</td></tr>
-                            <tr><td>Schmaltz</td><td class="data">2 mo fridge / 6 mo frozen</td><td>Strain through cheesecloth, jar in small portions</td></tr>
-                            <tr><td>Poached chicken</td><td class="data">3 d fridge</td><td>Hold in poaching liquid; do not shred until service</td></tr>
-                            <tr><td>Brunoise vegetables</td><td class="data">24 hr fridge</td><td>Airtight, damp paper towel &mdash; no further</td></tr>
-                            <tr><td>Matzo balls, cooked</td><td class="data">3 d / 1 mo frozen</td><td>Hold in stock or water; reheat gently</td></tr>
-                            <tr><td>Consomm&eacute; clarified</td><td class="data">5 d / 3 mo frozen</td><td>Sealed; gentle reheat only</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>The Galley Hack: Stock Cubes + Soup Bags</h3>
-                <p style="font-size: var(--text-sm);">
-                    After straining, portion stock into <span class="data">1 L</span> vacuum bags + <span class="data">500 ml</span> ice-cube trays. Freeze flat. Freeze cooked matzo balls on a tray, then bag. Freeze pulled chicken in 200 g portions with a splash of stock. Soup ready in 15 minutes, not 4 hours.
-                </p>
-                <p style="font-family: var(--font-mono); font-size: var(--text-sm);">
-                    <strong>Yield math:</strong> 2 kg bones + 300 g feet + 4 L water &rarr; 2.5 L finished stock + 80&ndash;100 g schmaltz
-                </p>
-
-                <div class="note note--key" data-label="Yield"><p>2 kg bones + 300 g feet + 4 L water = 2.5 L finished stock + 80&ndash;100 g schmaltz. Six generous bowls. Scale the bones and water, never the salt &mdash; always season by taste.</p></div>
-
-                <h3>Batch Scaling</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th></th><th>&times;1 (6 bowls)</th><th>&times;2 (12)</th><th>&times;4 (24, charter)</th></tr></thead>
-                        <tbody>
-                            <tr><td>Bones</td><td class="data">2 kg</td><td class="data">4 kg</td><td class="data">8 kg</td></tr>
-                            <tr><td>Feet</td><td class="data">300 g</td><td class="data">600 g</td><td class="data">1.2 kg</td></tr>
-                            <tr><td>Water</td><td class="data">4 L</td><td class="data">8 L</td><td class="data">14 L</td></tr>
-                            <tr><td>Simmer</td><td class="data">3 hr</td><td class="data">3 hr 30</td><td class="data">4 hr</td></tr>
-                            <tr><td>Fish sauce</td><td class="data">1 tbsp</td><td class="data">2 tbsp</td><td class="data">3&frac12; tbsp</td></tr>
-                            <tr><td>Salt</td><td colspan="3">By taste. Always. Never by multiplier.</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Service Formats</h3>
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Format</th><th>Build</th><th>Best For</th></tr></thead>
-                        <tbody>
-                            <tr><td>Classic bowl</td><td>Brunoise + pulled chicken + egg noodles + dill</td><td>Cold-weather lunch, comfort service</td></tr>
-                            <tr><td>Brodo with tortellini</td><td>Clarified stock + fresh tortellini, no vegetables</td><td>Italian plated starter</td></tr>
-                            <tr><td>Matzo ball bowl</td><td>Broth + 2 matzo balls + carrot coins + parsley</td><td>Convalescent, Sunday, Shabbat</td></tr>
-                            <tr><td>Pho direction</td><td>Stock + star anise + more fish sauce + rice noodles + herbs</td><td>Lunch pivot from same base</td></tr>
-                            <tr><td>Cantonese jook</td><td>Stock + rice cooked to porridge + ginger + scallion + white pepper</td><td>Breakfast, crew morale at sea</td></tr>
-                            <tr><td>Consomm&eacute; en tasse</td><td>Clarified, no garnish, espresso cup</td><td>Amuse-bouche, tableside</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ── TROUBLESHOOTING ────────────────────────── -->
-                <h2>Troubleshooting</h2>
-
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead><tr><th>Problem</th><th>Cause</th><th>Fix</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Cloudy broth</strong></td><td>Boiled not simmered / starchy veg added / strainer pressed</td><td>Skim more aggressively; never press solids; maintain 85&ndash;90&deg;C</td></tr>
-                            <tr><td><strong>Greasy broth</strong></td><td>Fat emulsified by a rolling boil</td><td>Chill and lift the fat cap; blot the surface with paper towel; next time, bare simmer only</td></tr>
-                            <tr><td><strong>Thin body, no gelatin</strong></td><td>No feet / no wings / raw not roasted / too much water</td><td>Feet next time; reduce current batch by 25% to concentrate</td></tr>
-                            <tr><td><strong>Bitter broth</strong></td><td>Over-simmered past 4 hr / liver pieces / scorched bones</td><td>Dilute; stir in a spoon of honey or simmer a peeled raw potato 10 min to absorb bitterness</td></tr>
-                            <tr><td><strong>Dry, stringy chicken</strong></td><td>Cooked with the stock / past 75&deg;C internal</td><td>Cook separately next time; rescue now by shredding and folding into schmaltz + broth</td></tr>
-                            <tr><td><strong>Flat flavour</strong></td><td>Under-salted / no umami anchor / no acid</td><td>Salt first, fish sauce or parm rind second, lemon last</td></tr>
-                            <tr><td><strong>Gluey bowl</strong></td><td>Starch cooked in the soup pot</td><td>Cook starch separately; for current service, thin with extra stock</td></tr>
-                            <tr><td><strong>Matzo balls dense</strong></td><td>Not chilled before forming / mix too dry / boiled hard</td><td>Chill 30 min minimum; loosen with 1 tbsp stock; covered bare simmer</td></tr>
-                            <tr><td><strong>Broth tastes of cardboard</strong></td><td>Bones under-roasted / vegetables over-cooked / fridge oxidation</td><td>Roast darker; cap vegetable simmer at 2.5 hr; use stock in 5 d or freeze</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ── DOWNLOAD CARD ──────────────────────────── -->
-                <div style="background: var(--color-subtle); border: 2px solid var(--color-sea); padding: var(--space-6); margin: var(--space-12) 0; text-align: center;">
-                    <p style="font-family: var(--font-serif); font-size: var(--text-lg); margin-bottom: var(--space-2);">One-Page Galley Card</p>
-                    <p style="font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-4);">
-                        Everything above on a single A4 page. Print it, pin it to the wall, keep it in the galley binder.
-                    </p>
-                    <a href="../print/chicken-soup-recipe-card.pdf" download
-                       style="display: inline-block; background: var(--color-sea); color: var(--color-paper); padding: var(--space-2) var(--space-6); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; font-weight: 600;">
-                        Download PDF
-                    </a>
-                </div>
-
-                <!-- ── SOURCES ────────────────────────────────── -->
-                <div class="article-sources">
-                    <strong>Sources &amp; Further Reading</strong>
-                    <ul style="font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-3);">
-                        <li><strong>Stock method:</strong> Thomas Keller, <em>Bouchon</em>, 2004 &mdash; the reference for chicken stock in the French tradition</li>
-                        <li><strong>Separate-cook logic:</strong> J. Kenji L&oacute;pez-Alt, <a href="https://www.seriouseats.com/the-food-lab-the-best-chicken-stock-recipe" style="color: var(--color-sea); text-decoration: underline;">&ldquo;The Food Lab: The Best Chicken Stock,&rdquo;</a> Serious Eats, 2014</li>
-                        <li><strong>Seasoning + acid:</strong> Samin Nosrat, <em>Salt Fat Acid Heat</em>, 2017, Chapters 1 and 3</li>
-                        <li><strong>Protein + gelatin science:</strong> Harold McGee, <em>On Food and Cooking</em>, 2004, pp. 148&ndash;152, 599&ndash;605, 778&ndash;782</li>
-                        <li><strong>Umami + glutamate:</strong> Ikeda Kikunae (1908) via McGee; Red Boat Fish Sauce technical data</li>
-                        <li><strong>Matzo ball tradition:</strong> Joan Nathan, <em>Jewish Cooking in America</em>, 1994</li>
-                        <li><strong>Consomm&eacute; clarification:</strong> Escoffier, <em>Le Guide Culinaire</em>, 1903; modernised in <em>The Professional Chef</em>, CIA</li>
-                    </ul>
-                </div>
-
-                <!-- Article Actions -->
-                <div class="article-actions">
-                    <button class="print-btn" data-action="print">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                        Print
-                    </button>
-                    <button class="download-btn" data-action="download">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Save PDF
-                    </button>
-                </div>
-
+                <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> Keller, <em>Bouchon</em>; Nosrat, <em>Salt Fat Acid Heat</em>; L&oacute;pez-Alt, <em>The Food Lab</em> / Serious Eats; McGee, <em>On Food and Cooking</em>; Rennard et al., <em>Chest</em> 118(4):1150&ndash;1157 (2000); Saketkhoo et al., <em>Chest</em> (1978); Maimonides, <em>On the Causes of Symptoms</em>. <em>Tested at sea.</em></p>
                 <!-- Article Engagement -->
                 <div class="article-engagement">
                     <div class="engagement-pulse" data-reactions="0" data-comments="0">
@@ -688,6 +352,7 @@
     <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/community.js"></script>
+    <script src="../assets/js/recipe.js"></script>
 
 </body>
 </html>
