@@ -1,0 +1,47 @@
+name: Deploy The World Affair (live)
+
+# Publishes the live Littoralicious site to Firebase Hosting whenever the
+# /theworldaffair gazette changes on main. The gazette is a standalone static
+# section that rides the hosting (like /game/), so a change there is safe to
+# push live. NOTE: Firebase Hosting deploys are whole-site — this publishes the
+# current state of main, not just /theworldaffair. Keep unfinished publication
+# work behind the draft flag (data/articles.json) or off main.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'theworldaffair/**'
+      - '.github/workflows/theworldaffair-deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Never run two live deploys at once; let an in-flight one finish.
+concurrency:
+  group: firebase-hosting-live
+  cancel-in-progress: false
+
+jobs:
+  deploy-live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build (regenerate draft manifest + data)
+        run: |
+          npm ci || npm install
+          npm run build
+
+      - name: Deploy to LIVE Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
+          projectId: littoralicious-web-eceed
+          channelId: live

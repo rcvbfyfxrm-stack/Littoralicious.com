@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The World Affair &mdash; Vendredi 22 Mai 2026</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+<title>The World Affair — Intelligence quotidienne</title>
+<meta name="description" content="The World Affair — la gazette NEXUS : 27 domaines d'actualité du lundi au vendredi, plus la synthèse de la semaine le samedi.">
+<style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
@@ -17,126 +17,118 @@ a:hover { color: #3a5a6a; }
 .masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
 .masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
 .masthead-title a { text-decoration: none; color: inherit; }
-.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; flex-wrap: wrap; }
 .masthead-dot { color: #c8c0b4; }
-.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
-.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
 .nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
 .nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
 .nav-link:first-child { border-left: 1px solid #c8c0b4; }
 .nav-link:hover { background: #e6e1d8; color: #1a1714; }
 .nav-link.active { background: #1a1714; color: #f4f1eb; }
 .page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 38px 0 22px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
 .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
-.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
-.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
-.flash-box ul { margin: 0; padding-left: 18px; }
-.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
-.flash-box li strong { color: #1a1714; }
-.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
-.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+/* hero */
+.hero { display: block; margin: 36px 0 8px; padding: 30px 30px 28px; background: #ede9e1; border-top: 3px solid #1a1714; border-bottom: 1px solid #c8c0b4; position: relative; transition: background 0.15s; }
+.hero:hover { background: #e6e1d8; }
+.hero-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #8b3a3a; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.kind-badge { font-size: 9px; letter-spacing: 1.5px; padding: 2px 8px; border: 1px solid #2d4a5e; color: #2d4a5e; border-radius: 2px; }
+.kind-badge.weekly { border-color: #8b3a3a; color: #8b3a3a; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; line-height: 1.15; color: #1a1714; margin-bottom: 10px; }
+.hero-summary { font-size: 14px; color: #4a4540; line-height: 1.7; font-style: italic; max-width: 720px; }
+.hero-meta { margin-top: 16px; font-size: 11px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.hero-arrow { position: absolute; bottom: 24px; right: 28px; font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: #2d4a5e; }
+/* recent grid */
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
 .hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
 .hub-card:hover { background: #ede9e1; }
-.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; color: #2d4a5e; }
 .hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
 .hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
 .hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
-.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
-.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
-.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
-.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
-.article-body { max-width: 780px; padding-bottom: 40px; }
-.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
-.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
-.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
-.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
-.article-body strong { color: #1a1714; }
-.article-body em { font-style: italic; }
-.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
-.article-body a:hover { color: #8b3a3a; }
-.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
-.article-body li { margin-bottom: 6px; line-height: 1.65; }
-.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
-.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
-.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
-.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
-.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
-.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
-.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
-.article-body tr:last-child td { border-bottom: none; }
-.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
-.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
-.bottom-nav a:nth-child(2) { text-align: right; }
-.bottom-nav a:hover { color: #1a1714; }
-.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
-.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
-.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
-@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
-@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+.all-archives { text-align: center; margin: 30px 0 10px; }
+.all-archives a { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 14px; color: #2d4a5e; text-transform: uppercase; letter-spacing: 1.5px; }
+.all-archives a:hover { color: #8b3a3a; }
+.empty { padding: 40px 0; text-align: center; color: #8a847a; font-style: italic; }
+.site-footer { text-align: center; padding: 24px; margin-top: 30px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-link { flex: 1 0 40%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .hero { padding: 24px 20px; } .hero-title { font-size: 28px; } .hero-arrow { display: none; } .page { padding: 0 16px; } }
 </style>
 </head>
-<body><header class="masthead">
+<body>
+<header class="masthead">
   <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
   <h1 class="masthead-title"><a href="index.html">The World Affair</a></h1>
-  <div class="masthead-meta">
-    <span>Vendredi 22 Mai 2026</span><span class="masthead-dot">&bull;</span>
-    <span>Edition N&deg;142</span><span class="masthead-dot">&bull;</span>
+  <div class="masthead-meta" id="masthead-meta">
+    <span>Intelligence quotidienne</span><span class="masthead-dot">&bull;</span>
     <span>NEXUS Intelligence</span>
   </div>
-  <div class="cluster-tag">Cluster du jour &middot; Mer &amp; Table</div>
-  <div class="masthead-version">v1.1 — daily</div>
-</header><nav class="nav-bar"><a class="nav-link active" href="2026-05-22.html">Premi&egrave;re Page</a><a class="nav-link" href="2026-05-22/synthese.html">Synth&egrave;se</a><a class="nav-link" href="archive.html">Archives</a><a class="nav-link" href="corrections.html">Corrections</a><a class="nav-link" href="standard.html">Standard</a></nav><div class="page"><div class="flash-box"><div class="flash-title">En 60 Secondes</div><ul>
-<li><strong>Maritime —</strong> Trois goulots obturés (Ormuz quasi nul, Bab el-Mandeb fragile, Suez à 40 %), Panama saturé : la carte des routes se résume à un seul conduit ouvert, et le carnet de commandes des chantiers grimpe au plus haut depuis 17 ans <a href="https://gcaptain.com/global-ship-order-book-hits-17-year-high-as-tanker-orders-surge/" target="_blank" rel="noopener">gCaptain, 2026-05</a>.</li>
-<li><strong>Gastronomie —</strong> La valeur fuit le milieu : Cheval Blanc 2025 sort à +20 % pendant que la restauration britannique perd 3,4 établissements nets par jour <a href="https://www.thedrinksbusiness.com/2026/02/hospitality-insolvencies-hit-3353-in-2025/" target="_blank" rel="noopener">The Drinks Business, 2026-02-17</a>.</li>
-<li><strong>Cuisine & Technique —</strong> L'avancée la plus actionnable n'est pas la plus spectaculaire : le protocole sous vide en deux phases (55 °C / 3 h, perte à la cuisson 11,47 %) bat la lactoferrine fermentée sur l'échelle de l'utile immédiat <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12111284/" target="_blank" rel="noopener">PMC, 2025</a>.</li>
-</ul>
-<hr></div><div class="section-divider"><span>3 rubriques du cluster &laquo; Mer &amp; Table &raquo;</span></div><div class="hub-grid"><a class="hub-card" href="2026-05-22/synthese.html">
-  <div class="hub-card-overline" style="color:#8b3a3a">Synth&egrave;se Quotidienne</div>
-  <div class="hub-card-title">Mer &amp; Table — Vendredi 22 Mai 2026</div>
-  <div class="hub-card-excerpt">&laquo; R&eacute;trospective, En 60 Secondes, l'urgent, trois histoires du jour, chiffres sourc&eacute;s, ce qui reste opaque. Lecture int&eacute;grale en quinze minutes. &raquo;</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-22/maritime.html">
-  <div class="hub-card-overline" style="color:#0277BD">Maritime</div>
-  <div class="hub-card-title">Ormuz à 5 % : quand un détroit devient néant</div>
-  <div class="hub-card-excerpt">&laquo; Trois goulots d'étranglement, trois logiques distinctes. Le détroit d'Ormuz est quasi fermé depuis fin février — la guerre Iran/Israël-États-Unis a réduit les transits à quelques unités par jour, et les primes d'assurance guerre ont rendu le passage commercialement insoutenable… &raquo;</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-22/gastronomie.html">
-  <div class="hub-card-overline" style="color:#C2185B">Gastronomie</div>
-  <div class="hub-card-title">Bordeaux 2025 : quand la rareté force la main des châteaux</div>
-  <div class="hub-card-excerpt">&laquo; Cette semaine, trois lignes de fracture se croisent dans l'assiette et dans le verre. Le marché du vin de Bordeaux traverse son moment de vérité : le millésime 2025, rare et brillant, oblige les châteaux à choisir entre défendre leurs marges ou sauver le système des primeurs.… &raquo;</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a><a class="hub-card" href="2026-05-22/cuisine-technique.html">
-  <div class="hub-card-overline" style="color:#4E342E">Cuisine &amp; Technique</div>
-  <div class="hub-card-title">Maillard accéléré : les ultrasons reconfigurent la bruniture</div>
-  <div class="hub-card-excerpt">&laquo; Cette semaine, trois axes se croisent avec une cohérence troublante. D'un côté, la fermentation de précision franchit un cap industriel concret : l'huile de levure à Knowsley, la lactoferrine de Vivici sur le marché américain. De l'autre, la science fondamentale du cuisinier —… &raquo;</div>
-  <span class="hub-card-arrow">&rarr;</span>
-</a></div><div class="bottom-nav"><a href="archive.html"><span class="bottom-nav-label">&larr; Archives</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a><a href="archive.html"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Edition N&deg;142 &mdash; v1.1 — daily</div>
-<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
-<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
-    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
-    <div>
-      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
-      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
-    </div>
-  </div>
-  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</header>
+<nav class="nav-bar">
+  <a class="nav-link active" href="index.html">Premi&egrave;re Page</a>
+  <a class="nav-link" href="archive.html">Archives</a>
+</nav>
+<div class="page">
+  <div id="hero"><div class="empty">Chargement de la derni&egrave;re &eacute;dition&hellip;</div></div>
+  <div class="section-divider" id="recent-divider" style="display:none;">&Eacute;ditions r&eacute;centes</div>
+  <div id="recent"></div>
+  <div class="all-archives"><a href="archive.html">Toutes les archives &rarr;</a></div>
 </div>
-<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<div class="site-footer" id="footer">The World Affair &mdash; NEXUS Intelligence</div>
 <script>
-(function(){
-  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
-  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
-  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
-  var selText="";
-  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
-  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
-  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
-  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
-  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
-  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
-  psRenderList();
+(function () {
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+  fetch('editions.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error('manifest ' + r.status); return r.json(); })
+    .then(function (data) {
+      var eds = (data.editions || []).slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
+      var heroEl = document.getElementById('hero');
+      if (!eds.length) { heroEl.innerHTML = '<div class="empty">Aucune &eacute;dition pour le moment.</div>'; return; }
+
+      var latest = eds[0];
+      var isWeekly = latest.kind === 'weekly';
+      var overlineLabel = isWeekly ? 'Synth&egrave;se de la semaine' : 'Derni&egrave;re &eacute;dition';
+      var badge = isWeekly ? '<span class="kind-badge weekly">Hebdo</span>' : '<span class="kind-badge">Quotidien</span>';
+      var metaBits = [];
+      if (latest.number) metaBits.push('Edition N&deg;' + esc(latest.number));
+      if (latest.cluster) metaBits.push('Cluster &middot; ' + esc(latest.cluster));
+
+      heroEl.outerHTML =
+        '<a class="hero" href="' + esc(latest.file) + '">' +
+          '<div class="hero-overline">' + overlineLabel + ' ' + badge + '</div>' +
+          '<div class="hero-title">' + esc(latest.weekday || latest.date) + '</div>' +
+          (latest.summary ? '<div class="hero-summary">' + esc(latest.summary) + '</div>' : '') +
+          (metaBits.length ? '<div class="hero-meta">' + metaBits.join(' &nbsp;&bull;&nbsp; ') + '</div>' : '') +
+          '<div class="hero-arrow">Lire &rarr;</div>' +
+        '</a>';
+
+      var mm = document.getElementById('masthead-meta');
+      mm.innerHTML =
+        '<span>' + esc(latest.weekday || latest.date) + '</span><span class="masthead-dot">&bull;</span>' +
+        (latest.number ? '<span>Edition N&deg;' + esc(latest.number) + '</span><span class="masthead-dot">&bull;</span>' : '') +
+        '<span>NEXUS Intelligence</span>';
+
+      var rest = eds.slice(1, 10);
+      if (rest.length) {
+        document.getElementById('recent-divider').style.display = '';
+        var html = '<div class="hub-grid">';
+        rest.forEach(function (e) {
+          var ov = e.kind === 'weekly' ? 'Synth&egrave;se hebdo' : 'Quotidien';
+          html += '<a class="hub-card" href="' + esc(e.file) + '">' +
+            '<div class="hub-card-overline">' + ov + (e.number ? ' &middot; N&deg;' + esc(e.number) : '') + '</div>' +
+            '<div class="hub-card-title">' + esc(e.weekday || e.date) + '</div>' +
+            (e.summary ? '<div class="hub-card-excerpt">' + esc(e.summary) + '</div>' : '') +
+            '<div class="hub-card-arrow">&rarr;</div>' +
+          '</a>';
+        });
+        html += '</div>';
+        document.getElementById('recent').innerHTML = html;
+      }
+
+      document.getElementById('footer').textContent = 'The World Affair — ' + eds.length + ' édition' + (eds.length > 1 ? 's' : '') + ' · NEXUS Intelligence';
+    })
+    .catch(function (err) {
+      document.getElementById('hero').innerHTML = '<div class="empty">Manifest indisponible (' + esc(err.message) + ').</div>';
+    });
 })();
 </script>
-</body></html>
+</body>
+</html>
