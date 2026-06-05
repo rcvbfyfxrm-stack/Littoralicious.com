@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <!-- Terroir guide kit -->
-<link rel="stylesheet" href="../_assets/guide/guide-vars.css">
-<link rel="stylesheet" href="../_assets/guide/guide-inventory.css">
-<link rel="stylesheet" href="../_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
@@ -271,23 +271,23 @@
   </summary>
   <div class="sfold__body">
     <ul class="sources"><li><a href='https://visitdubrovnik.hr/' target='_blank' rel='noopener'>Visit Dubrovnik — official tourist board</a></li><li><a href='https://tzdubrovnik.hr/' target='_blank' rel='noopener'>TZ Dubrovnik — events + šporki participating restaurants</a></li><li><a href='https://www.dubrovnik-festival.hr/' target='_blank' rel='noopener'>Dubrovnik Summer Festival — 77th edition programme</a></li><li><a href='https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R1469' target='_blank' rel='noopener'>EU PDO Reg 2020/1469 — Mali Ston oyster (Ostrea edulis)</a></li><li><a href='https://ich.unesco.org/en/RL/festivity-of-saint-blaise-the-patron-of-dubrovnik-00232' target='_blank' rel='noopener'>UNESCO ICH — Festivity of Saint Blaise (2009)</a></li><li><a href='https://ich.unesco.org/en/RL/klapa-multipart-singing-of-dalmatia-southern-croatia-00746' target='_blank' rel='noopener'>UNESCO ICH — Klapa multipart singing (2012)</a></li><li><a href='https://www.malistonoyster.com/' target='_blank' rel='noopener'>Mali Ston Oyster (malistonoyster.com)</a></li><li><a href='https://grgic-vina.com/' target='_blank' rel='noopener'>Grgić Vina — Mike Grgich's Pelješac winery</a></li><li><a href='https://saintshills.com/' target='_blank' rel='noopener'>Saints Hills — Dingač Sv. Lucija + Komarna Sv. Roko</a></li><li><a href='https://www.thedubrovniktimes.com/' target='_blank' rel='noopener'>The Dubrovnik Times — English-language local paper</a></li><li><a href='https://en.wikipedia.org/wiki/Republic_of_Ragusa' target='_blank' rel='noopener'>Wikipedia — Republic of Ragusa</a></li><li><a href='https://en.wikipedia.org/wiki/Siege_of_Dubrovnik' target='_blank' rel='noopener'>Wikipedia — Siege of Dubrovnik (1991–92)</a></li><li><a href='https://en.wikipedia.org/wiki/1667_Dubrovnik_earthquake' target='_blank' rel='noopener'>Wikipedia — 1667 Dubrovnik earthquake</a></li><li><a href='https://en.wikipedia.org/wiki/Plavac_mali' target='_blank' rel='noopener'>Wikipedia — Plavac Mali (and Crljenak Kaštelanski / Zinfandel)</a></li><li><a href='https://360dubrovnik.com/' target='_blank' rel='noopener'>Restaurant 360 Dubrovnik (official)</a></li></ul>
-    <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="../csv/Dubrovnik-Dalmatie.csv">data.csv</a></p>
+    <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="/terroir/Dubrovnik-Dalmatie/data.csv">data.csv</a></p>
   </div>
 </details>
 
 </div>
 
 <footer class="footer">
-  <a href="../../TheWorldAffair/terroir-map-en.html" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
+  <a href="/terroir/" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
   <br><br>
   42.6507, 18.0944
 </footer>
 
-<script src="../data/Dubrovnik-Dalmatie.js"></script>
+<script src="/terroir/Dubrovnik-Dalmatie/data.js"></script>
 <script>
 window.TERROIR_CONFIG = { articleId:'terroir-Dubrovnik-Dalmatie', portName:'Dubrovnik', center:[42.6507, 18.0944], zoom:13, cityRadiusKm:80 };
 </script>
-<script defer src="../_assets/guide/guide-render.js"></script>
+<script defer src="/terroir/_assets/guide/guide-render.js"></script>
 
 <!-- Single floating map — closed by default, opens via "Show map" toggle (state in localStorage) -->
 <aside class="terroir-mini" id="terroir-mini">
@@ -330,8 +330,8 @@ window.addEventListener('load', function () {
 <!-- Firebase compat (for terroir voting) -->
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script defer src="../_assets/guide/votes.js"></script>
-<script defer src="../_assets/guide/pin-hover.js"></script>
+<script defer src="/terroir/_assets/guide/votes.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
 
 </body>
 </html>

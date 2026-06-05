@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <!-- Terroir guide kit -->
-<link rel="stylesheet" href="../_assets/guide/guide-vars.css">
-<link rel="stylesheet" href="../_assets/guide/guide-inventory.css">
-<link rel="stylesheet" href="../_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
@@ -271,23 +271,23 @@
   </summary>
   <div class="sfold__body">
     <ul class="sources"><li><a href='https://guide.michelin.com/en/es/catalunya/restaurants' target='_blank' rel='noopener'>MICHELIN Guide Spain 2026 — Catalonia</a></li><li><a href='https://www.barcelonaturisme.com/' target='_blank' rel='noopener'>Visit Barcelona — official tourist office</a></li><li><a href='https://sagradafamilia.org/' target='_blank' rel='noopener'>Sagrada Família official</a></li><li><a href='https://sagradafamilia2026.org/' target='_blank' rel='noopener'>Sagrada Família 2026 centenary</a></li><li><a href='https://incavi.gencat.cat/' target='_blank' rel='noopener'>Consell Català de la Vinya i el Vi</a></li><li><a href='https://www.cava.wine/' target='_blank' rel='noopener'>DO Cava official</a></li><li><a href='https://www.doqpriorat.org/' target='_blank' rel='noopener'>DOQ Priorat official</a></li><li><a href='https://sonar.es/' target='_blank' rel='noopener'>Sónar Festival 2026</a></li><li><a href='https://www.primaverasound.com/' target='_blank' rel='noopener'>Primavera Sound 2026</a></li><li><a href='https://www.barcelona.cat/lamerce/en' target='_blank' rel='noopener'>La Mercè 2026 — bcn.cat</a></li></ul>
-    <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="../csv/Barcelona-Catalunya.csv">data.csv</a></p>
+    <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="/terroir/Barcelona-Catalunya/data.csv">data.csv</a></p>
   </div>
 </details>
 
 </div>
 
 <footer class="footer">
-  <a href="../../TheWorldAffair/terroir-map-en.html" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
+  <a href="/terroir/" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
   <br><br>
   41.3851, 2.1734
 </footer>
 
-<script src="../data/Barcelona-Catalunya.js"></script>
+<script src="/terroir/Barcelona-Catalunya/data.js"></script>
 <script>
 window.TERROIR_CONFIG = { articleId:'terroir-Barcelona-Catalunya', portName:'Barcelona', center:[41.3851, 2.1734], zoom:13, cityRadiusKm:80 };
 </script>
-<script defer src="../_assets/guide/guide-render.js"></script>
+<script defer src="/terroir/_assets/guide/guide-render.js"></script>
 
 <!-- Single floating map — closed by default, opens via "Show map" toggle (state in localStorage) -->
 <aside class="terroir-mini" id="terroir-mini">
@@ -330,8 +330,8 @@ window.addEventListener('load', function () {
 <!-- Firebase compat (for terroir voting) -->
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script defer src="../_assets/guide/votes.js"></script>
-<script defer src="../_assets/guide/pin-hover.js"></script>
+<script defer src="/terroir/_assets/guide/votes.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
 
 </body>
 </html>

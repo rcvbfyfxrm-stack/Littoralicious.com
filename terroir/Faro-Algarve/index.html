@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <!-- Terroir guide kit -->
-<link rel="stylesheet" href="../_assets/guide/guide-vars.css">
-<link rel="stylesheet" href="../_assets/guide/guide-inventory.css">
-<link rel="stylesheet" href="../_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
@@ -267,23 +267,23 @@
   </summary>
   <div class="sfold__body">
     <ul class="sources"><li><a href='https://www.vinhosdoalgarve.pt/' target='_blank' rel='noopener'>Comissão Vitivinícola do Algarve (official)</a></li><li><a href='https://www.visitalgarve.pt/' target='_blank' rel='noopener'>Visit Algarve — official tourist office</a></li><li><a href='https://guide.michelin.com/en/pt/algarve' target='_blank' rel='noopener'>MICHELIN Guide — Algarve 2026</a></li><li><a href='https://www.icnf.pt/' target='_blank' rel='noopener'>ICNF — Parque Natural da Ria Formosa</a></li><li><a href='https://tradicional.dgadr.gov.pt/en/categories/sea-salt/369-sal-de-tavira-flor-de-sal-de-tavira-dop-en' target='_blank' rel='noopener'>DGADR — Sal de Tavira / Flor de Sal de Tavira DOP</a></li><li><a href='https://tradicional.dgadr.gov.pt/en/categories/spirituous-beverages/other-categories-of-spirit-drinks/729-medronho-do-algarve-pgi' target='_blank' rel='noopener'>DGADR — Medronho do Algarve IGP</a></li><li><a href='https://www.algarvehistoryassociation.com/en/portuguese-history/algarve-history/55-the-earl-of-essex-and-the-bishop-s-library' target='_blank' rel='noopener'>Algarve History Association — Earl of Essex and the Bishop's Library</a></li><li><a href='https://festivalmed.cm-loule.pt/' target='_blank' rel='noopener'>Festival MED Loulé 2026</a></li></ul>
-    <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="../csv/Faro-Algarve.csv">data.csv</a></p>
+    <p style="font-size:0.82em;color:var(--ink-3);margin-top:14px;font-family:system-ui,sans-serif;">Raw data: <a href="/terroir/Faro-Algarve/data.csv">data.csv</a></p>
   </div>
 </details>
 
 </div>
 
 <footer class="footer">
-  <a href="../../TheWorldAffair/terroir-map-en.html" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
+  <a href="/terroir/" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
   <br><br>
   37.0194, -7.9322
 </footer>
 
-<script src="../data/Faro-Algarve.js"></script>
+<script src="/terroir/Faro-Algarve/data.js"></script>
 <script>
 window.TERROIR_CONFIG = { articleId:'terroir-Faro-Algarve', portName:'Faro', center:[37.0194, -7.9322], zoom:13, cityRadiusKm:80 };
 </script>
-<script defer src="../_assets/guide/guide-render.js"></script>
+<script defer src="/terroir/_assets/guide/guide-render.js"></script>
 
 <!-- Single floating map — closed by default, opens via "Show map" toggle (state in localStorage) -->
 <aside class="terroir-mini" id="terroir-mini">
@@ -326,8 +326,8 @@ window.addEventListener('load', function () {
 <!-- Firebase compat (for terroir voting) -->
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script defer src="../_assets/guide/votes.js"></script>
-<script defer src="../_assets/guide/pin-hover.js"></script>
+<script defer src="/terroir/_assets/guide/votes.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
 
 </body>
 </html>
