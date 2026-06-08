@@ -60,6 +60,24 @@
         .np-bul{font-size:14px;line-height:1.55;color:#444;margin:0 0 10px;padding-left:18px;}
         .np-read{display:inline-block;background:#2d4a5e;color:#fff;text-decoration:none;padding:9px 18px;font-family:system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;}
         .np-foot{font-size:12px;color:#94a3b8;margin-top:var(--space-4);}
+        /* reviewer auth + draft notes */
+        .st-auth{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;font-size:13px;margin:var(--space-4) 0;padding-bottom:var(--space-3);border-bottom:1px dashed var(--color-border);}
+        .st-auth input{padding:.4em .6em;border:1px solid var(--color-border);font:inherit;font-size:13px;}
+        .st-auth__who{color:#166534;font-family:var(--font-mono);}
+        .st-auth__msg{color:var(--color-muted);}
+        .st-link{background:none;border:none;color:var(--color-sea);cursor:pointer;font-size:13px;text-decoration:underline;padding:0;}
+        .st-act a[data-edit]{color:#854d0e;border-color:#e7d08a;}
+        .st-modal{position:fixed;inset:0;background:rgba(10,10,10,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:var(--space-4);}
+        .st-modal.open{display:flex;}
+        .st-modal__box{background:#fff;max-width:680px;width:100%;max-height:88vh;display:flex;flex-direction:column;border:1px solid var(--color-ink);}
+        .st-modal__head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-2);padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border);}
+        .st-modal__head h3{font-family:var(--font-serif);margin:0;font-size:var(--text-lg);}
+        .st-modal__sub{color:var(--color-salt);font-size:12px;font-family:var(--font-mono);}
+        .st-modal__body{padding:var(--space-5);overflow:auto;}
+        .st-modal__body textarea{width:100%;min-height:300px;padding:var(--space-3);border:1px solid var(--color-border);font:inherit;font-size:14px;line-height:1.65;resize:vertical;}
+        .st-modal__foot{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;padding:var(--space-4) var(--space-5);border-top:1px solid var(--color-border);}
+        .st-save-state{font-size:12px;color:var(--color-muted);margin-left:auto;font-family:var(--font-mono);}
+        .st-x{background:none;border:none;font-size:22px;cursor:pointer;color:var(--color-muted);line-height:1;}
     </style>
 </head>
 <body>
@@ -74,6 +92,21 @@
                 <span><b id="st-live">0</b> live</span>
                 <span><b id="st-draft">0</b> draft</span>
             </div>
+        </div>
+
+        <div class="st-auth" id="st-auth">
+            <span id="auth-out">
+                <input id="auth-email" type="email" placeholder="reviewer email" autocomplete="username" style="min-width:190px;">
+                <input id="auth-pass" type="password" placeholder="password" autocomplete="current-password">
+                <button class="st-btn" id="auth-signin" type="button">Sign in</button>
+                <button class="st-link" id="auth-create" type="button">Create login</button>
+                <button class="st-link" id="auth-reset" type="button">Reset</button>
+                <span class="st-auth__msg" id="auth-msg">First time? Type your reviewer email + a password, then <strong>Create login</strong>. After that, just Sign in. Notes sync across all your devices.</span>
+            </span>
+            <span id="auth-in" style="display:none;">
+                <span class="st-auth__who" id="auth-who"></span>
+                <button class="st-link" id="auth-signout" type="button">Sign out</button>
+            </span>
         </div>
 
         <div class="st-tools">
@@ -140,11 +173,35 @@
         </p>
     </div>
 
+    <!-- DRAFT NOTES MODAL -->
+    <div class="st-modal" id="notes-modal">
+        <div class="st-modal__box">
+            <div class="st-modal__head">
+                <div><h3 id="nm-title">Notes</h3><div class="st-modal__sub" id="nm-sub"></div></div>
+                <button class="st-x" id="nm-close" title="Close">&times;</button>
+            </div>
+            <div class="st-modal__body">
+                <p style="margin:0 0 var(--space-3);font-size:13px;color:var(--color-muted);">Review notes &amp; edit instructions for this draft. Saved to your reviewer account and synced to every device. To apply them, tell Claude &ldquo;apply my notes on <em>this draft</em>&rdquo; or hit <strong>Copy for Claude</strong> and paste.</p>
+                <textarea id="nm-text" placeholder="e.g. Tighten the opening. Add a sidebar on alum safety. Swap the pairing to an Empordà white. Cut the second story card…"></textarea>
+            </div>
+            <div class="st-modal__foot">
+                <button class="st-btn" id="nm-save" type="button">Save</button>
+                <button class="st-btn st-btn--ghost" id="nm-copy" type="button">Copy for Claude</button>
+                <a class="st-btn st-btn--ghost" id="nm-view" target="_blank" style="text-decoration:none;">Open draft</a>
+                <span class="st-save-state" id="nm-state"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
     <script>
     (function () {
         var ORIGIN = 'https://www.littoralicious.com';
         var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
-        var filter = 'all', q = '', all = [], byslug = {};
+        var filter = 'all', q = '', all = [], byslug = {}, notesMap = {};
         var bulletCache = {}; // slug -> array of bullets (lazy fetched)
         var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
 
@@ -197,7 +254,9 @@
                     '<td>' + esc(a.cat) + '</td><td style="white-space:nowrap;font-family:var(--font-mono);font-size:12px;">' + esc(a.date) + '</td>' +
                     '<td>' + (a.read ? a.read + 'm' : '—') + '</td><td>' + status + '</td>' +
                     '<td class="st-act"><a href="articles/' + a.slug + '.html" target="_blank">View</a>' +
-                    '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a></td>' +
+                    '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a>' +
+                    (a.draft ? '<a href="#" data-edit="' + esc(a.slug) + '">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' : '') +
+                    '</td>' +
                     '</tr>';
             }).join('');
         }
@@ -319,6 +378,112 @@
                 b.classList.add('active'); filter = b.getAttribute('data-f'); render();
             });
         });
+
+        // ====================================================================
+        // Reviewer auth + cross-device draft notes (Firestore)
+        // ====================================================================
+        var auth = (typeof firebase !== 'undefined' && firebase.auth) ? firebase.auth() : null;
+        var REVIEWERS = ['arnaudcallier@pm.me', 'arnaudcallier@icloud.com'];
+        var user = null, noteSlug = null, saveTimer = null;
+        var isReviewer = function (u) { return !!(u && u.email && REVIEWERS.indexOf(u.email.toLowerCase()) !== -1); };
+        var $ = function (id) { return document.getElementById(id); };
+
+        function setupAuth() {
+            if (!auth) { $('auth-msg').textContent = 'Auth unavailable (offline?).'; return; }
+            auth.onAuthStateChanged(function (u) {
+                user = u || null;
+                if (isReviewer(u)) {
+                    $('auth-out').style.display = 'none'; $('auth-in').style.display = 'inline';
+                    $('auth-who').textContent = 'Signed in · ' + u.email;
+                    loadNotesMap();
+                } else {
+                    $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
+                    if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
+                    notesMap = {}; render();
+                }
+            });
+            $('auth-signin').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(), p = $('auth-pass').value;
+                if (!e || !p) { $('auth-msg').textContent = 'Enter email and password.'; return; }
+                $('auth-msg').textContent = 'Signing in…';
+                auth.signInWithEmailAndPassword(e, p).catch(function (err) { $('auth-msg').textContent = err.message; });
+            });
+            $('auth-create').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(), p = $('auth-pass').value;
+                if (!e || p.length < 6) { $('auth-msg').textContent = 'Email + a password of at least 6 characters, then Create login.'; return; }
+                if (REVIEWERS.indexOf(e.toLowerCase()) === -1) { $('auth-msg').textContent = 'Only reviewer emails can edit notes: ' + REVIEWERS.join(', '); return; }
+                $('auth-msg').textContent = 'Creating login…';
+                auth.createUserWithEmailAndPassword(e, p).catch(function (err) {
+                    if (err.code === 'auth/email-already-in-use') { $('auth-msg').textContent = 'Login already exists — just Sign in (or Reset if you forgot).'; }
+                    else { $('auth-msg').textContent = err.message; }
+                });
+            });
+            $('auth-signout').addEventListener('click', function () { auth.signOut(); });
+            $('auth-reset').addEventListener('click', function () {
+                var e = $('auth-email').value.trim();
+                if (!e) { $('auth-msg').textContent = 'Type your email first, then click set / reset.'; return; }
+                auth.sendPasswordResetEmail(e).then(function () {
+                    $('auth-msg').textContent = 'Email sent to ' + e + '. Set your password there, then sign in.';
+                }).catch(function (err) { $('auth-msg').textContent = err.message; });
+            });
+        }
+
+        function loadNotesMap() {
+            if (!isReviewer(user)) return;
+            db.collection('draft-notes').get().then(function (snap) {
+                notesMap = {};
+                snap.forEach(function (doc) { var d = doc.data(); if (d && d.text && d.text.trim()) notesMap[doc.id] = true; });
+                render();
+            }).catch(function () { /* rules / network — leave map empty */ });
+        }
+
+        function openNotes(slug) {
+            if (!isReviewer(user)) { $('auth-msg').textContent = 'Sign in as a reviewer to edit notes.'; $('auth-email').focus(); return; }
+            var a = byslug[slug]; if (!a) return;
+            noteSlug = slug;
+            $('nm-title').textContent = a.title;
+            $('nm-sub').textContent = slug;
+            $('nm-view').href = 'articles/' + slug + '.html';
+            var ta = $('nm-text'); ta.value = 'Loading…'; ta.disabled = true;
+            $('nm-state').textContent = '';
+            $('notes-modal').classList.add('open');
+            db.collection('draft-notes').doc(slug).get().then(function (doc) {
+                ta.value = (doc.exists && doc.data().text) || ''; ta.disabled = false; ta.focus();
+            }).catch(function (err) { ta.value = ''; ta.disabled = false; $('nm-state').textContent = 'load: ' + (err.code || 'error'); });
+        }
+
+        function closeNotes() { $('notes-modal').classList.remove('open'); noteSlug = null; }
+
+        function saveNotes() {
+            if (!noteSlug || !isReviewer(user)) return;
+            var text = $('nm-text').value;
+            $('nm-state').textContent = 'saving…';
+            db.collection('draft-notes').doc(noteSlug).set({ text: text, updated: Date.now(), by: user.email }, { merge: true }).then(function () {
+                $('nm-state').textContent = 'saved · synced';
+                if (text.trim()) notesMap[noteSlug] = true; else delete notesMap[noteSlug];
+            }).catch(function (err) { $('nm-state').textContent = 'error: ' + (err.code || 'save failed'); });
+        }
+
+        rows.addEventListener('click', function (e) {
+            var t = e.target;
+            if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); }
+        });
+        $('nm-text').addEventListener('input', function () {
+            clearTimeout(saveTimer); $('nm-state').textContent = 'editing…';
+            saveTimer = setTimeout(saveNotes, 800);
+        });
+        $('nm-save').addEventListener('click', function () { clearTimeout(saveTimer); saveNotes(); });
+        $('nm-copy').addEventListener('click', function () {
+            var a = byslug[noteSlug] || {}, txt = 'Apply these notes to the draft "' + (a.title || noteSlug) + '" (' + noteSlug + '):\n\n' + $('nm-text').value;
+            (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {
+                $('nm-state').textContent = 'copied for Claude';
+            }).catch(function () { $('nm-state').textContent = 'copy failed'; });
+        });
+        $('nm-close').addEventListener('click', closeNotes);
+        $('notes-modal').addEventListener('click', function (e) { if (e.target === this) closeNotes(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNotes(); });
+
+        setupAuth();
     })();
     </script>
 </body>
