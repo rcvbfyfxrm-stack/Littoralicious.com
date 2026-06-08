@@ -1055,8 +1055,7 @@ mark {
 }
 
 .summary-box__title::before {
-    content: "📋";
-    font-size: var(--text-xl);
+    content: "";
 }
 
 .summary-box ul {

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
     <style>
-        .st-wrap{max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-4);}
+        .st-wrap{max-width:1180px;margin:0 auto;padding:var(--space-8) var(--space-4);}
         .st-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);border-bottom:2px solid var(--color-ink);padding-bottom:var(--space-3);}
         .st-stats{display:flex;gap:var(--space-5);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-muted);}
         .st-stats b{color:var(--color-sea);font-size:var(--text-lg);}
@@ -27,6 +27,39 @@
         .st-act a:hover{border-color:var(--color-sea);}
         .st-note{font-size:13px;color:var(--color-muted);margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-border);}
         code{background:var(--color-subtle);padding:1px 5px;font-size:.85em;}
+        .st-check{text-align:center;}
+        .st-check input{width:17px;height:17px;cursor:pointer;accent-color:var(--color-sea);}
+        th.st-cw{text-align:center;width:64px;}
+        /* selection panels */
+        .st-panels{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);margin-top:var(--space-8);}
+        @media (max-width:880px){.st-panels{grid-template-columns:1fr;}}
+        .st-panel{border:1px solid var(--color-border);background:#fff;}
+        .st-panel__head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);flex-wrap:wrap;padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border);background:var(--color-subtle);}
+        .st-panel__head h2{font-family:var(--font-serif);margin:0;font-size:var(--text-lg);}
+        .st-panel__count{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-sea);}
+        .st-panel__body{padding:var(--space-5);}
+        .st-pub-list{list-style:none;margin:0 0 var(--space-4);padding:0;}
+        .st-pub-list li{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);padding:.45em 0;border-bottom:1px solid var(--color-subtle);font-size:var(--text-sm);}
+        .st-pub-list li:last-child{border-bottom:none;}
+        .st-pub-list .s-stat{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-salt);white-space:nowrap;}
+        .st-cmd{background:#1a2a3a;color:#e8e0d4;font-family:var(--font-mono);font-size:12px;line-height:1.7;padding:var(--space-4);overflow-x:auto;white-space:pre-wrap;word-break:break-word;}
+        .st-empty{color:var(--color-muted);font-size:var(--text-sm);font-style:italic;}
+        .st-btn{background:var(--color-sea);color:#fff;border:none;padding:.5em 1em;cursor:pointer;font-size:13px;letter-spacing:.04em;}
+        .st-btn--ghost{background:none;border:1px solid var(--color-border);color:var(--color-muted);}
+        .st-flash{color:#166534;font-size:13px;margin-left:.5em;}
+        .st-subject{width:100%;padding:.5em .7em;border:1px solid var(--color-border);font:inherit;margin-bottom:var(--space-4);}
+        /* the email mock */
+        .np-frame{border:1px solid var(--color-border);padding:var(--space-6);background:#fff;}
+        .np-masthead{text-align:center;border-bottom:2px solid var(--color-ink);padding-bottom:var(--space-3);margin-bottom:var(--space-5);font-family:var(--font-serif);font-size:20px;letter-spacing:.12em;}
+        .np-intro{font-size:14px;color:#475569;margin:0 0 var(--space-5);}
+        .np-item{margin:0 0 var(--space-5);padding-bottom:var(--space-5);border-bottom:1px solid #e5e5e5;}
+        .np-item:last-child{border-bottom:none;}
+        .np-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#64748b;margin:0 0 4px;}
+        .np-title{font-family:Georgia,serif;font-size:21px;line-height:1.25;margin:0 0 8px;}
+        .np-lede{font-size:15px;line-height:1.6;color:#333;margin:0 0 10px;}
+        .np-bul{font-size:14px;line-height:1.55;color:#444;margin:0 0 10px;padding-left:18px;}
+        .np-read{display:inline-block;background:#2d4a5e;color:#fff;text-decoration:none;padding:9px 18px;font-family:system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;}
+        .np-foot{font-size:12px;color:#94a3b8;margin-top:var(--space-4);}
     </style>
 </head>
 <body>
@@ -34,7 +67,7 @@
         <div class="st-head">
             <div>
                 <h1 style="font-family:var(--font-serif);margin:0;">Studio</h1>
-                <span style="color:var(--color-muted);font-size:var(--text-sm);">every article, one place</span>
+                <span style="color:var(--color-muted);font-size:var(--text-sm);">every article, one place — choose what ships and what mails</span>
             </div>
             <div class="st-stats">
                 <span><b id="st-total">0</b> total</span>
@@ -52,37 +85,98 @@
         </div>
 
         <table>
-            <thead><tr><th>Article</th><th>Category</th><th>Date</th><th>Read</th><th>Status</th><th>Actions</th></tr></thead>
-            <tbody id="st-rows"><tr><td colspan="6" style="color:var(--color-muted);padding:var(--space-6);">Loading data/articles.json…</td></tr></tbody>
+            <thead><tr>
+                <th class="st-cw" title="Tick to queue for publishing">Publish</th>
+                <th class="st-cw" title="Tick to add to the newsletter">News</th>
+                <th>Article</th><th>Category</th><th>Date</th><th>Read</th><th>Status</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="st-rows"><tr><td colspan="8" style="color:var(--color-muted);padding:var(--space-6);">Loading data/articles.json…</td></tr></tbody>
         </table>
 
+        <div class="st-panels">
+            <!-- PUBLISH QUEUE -->
+            <div class="st-panel" id="pub-panel">
+                <div class="st-panel__head">
+                    <h2>Publish queue</h2>
+                    <span class="st-panel__count"><span id="pub-count">0</span> selected</span>
+                </div>
+                <div class="st-panel__body">
+                    <ul class="st-pub-list" id="pub-list"></ul>
+                    <p class="st-empty" id="pub-empty">Tick <strong>Publish</strong> on the articles you want to ship.</p>
+                    <p style="font-size:13px;color:var(--color-muted);margin:var(--space-4) 0 var(--space-2);">Run this to remove the draft flags and deploy:</p>
+                    <div class="st-cmd" id="pub-cmd">—</div>
+                    <button class="st-btn st-btn--ghost" id="pub-copy" type="button" style="margin-top:var(--space-3);">Copy command</button>
+                    <span class="st-flash" id="pub-flash"></span>
+                    <button class="st-btn st-btn--ghost" id="pub-clear" type="button" style="margin-top:var(--space-3);margin-left:var(--space-2);">Clear</button>
+                </div>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="st-panel" id="news-panel">
+                <div class="st-panel__head">
+                    <h2>Newsletter</h2>
+                    <span class="st-panel__count"><span id="news-count">0</span> articles</span>
+                </div>
+                <div class="st-panel__body">
+                    <input class="st-subject" id="news-subject" type="text" placeholder="Subject line — e.g. The Littoralicious Brief · June">
+                    <div class="np-frame" id="news-preview">
+                        <div class="np-masthead">LITTORALICIOUS</div>
+                        <p class="st-empty" style="margin:0;">Tick <strong>News</strong> on the articles you want to feature — the email builds here as you go.</p>
+                    </div>
+                    <div style="margin-top:var(--space-4);">
+                        <button class="st-btn" id="news-copy" type="button">Copy email HTML</button>
+                        <span class="st-flash" id="news-flash"></span>
+                        <button class="st-btn st-btn--ghost" id="news-clear" type="button" style="margin-left:var(--space-2);">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <p class="st-note">
-            <strong>Newsletter:</strong> click <em>Newsletter</em> to preview an article as an email. To create a Buttondown
-            draft, run <code>npm run newsletter -- &lt;slug&gt; --draft</code> (review it in Buttondown, then send). ·
-            <strong>Drafts</strong> are flagged <code>"draft": true</code> in <code>data/articles.json</code> and stay off the
-            homepage, sitemap and feed until promoted.
+            <strong>How this works.</strong> The two ticks are saved in this browser. <strong>Publish</strong> builds the command to
+            drop the <code>draft</code> flag and deploy. <strong>News</strong> assembles a live email digest above — copy the HTML
+            straight into Buttondown, or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off
+            the homepage, sitemap and feed until published.
         </p>
     </div>
 
     <script>
     (function () {
+        var ORIGIN = 'https://www.littoralicious.com';
         var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
-        var filter = 'all', q = '', all = [];
+        var filter = 'all', q = '', all = [], byslug = {};
+        var bulletCache = {}; // slug -> array of bullets (lazy fetched)
         var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+
+        // ---- persisted selections ----
+        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news';
+        var load = function (k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch (e) { return []; } };
+        var pub = new Set(load(PUB_KEY)), news = new Set(load(NEWS_KEY));
+        var save = function () {
+            localStorage.setItem(PUB_KEY, JSON.stringify([].slice.call(pub)));
+            localStorage.setItem(NEWS_KEY, JSON.stringify([].slice.call(news)));
+        };
+
         fetch('data/articles.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (data) {
             var cats = data.categories || {};
             all = (data.articles || []).map(function (a) {
                 return {
                     slug: a.slug, title: a.title || a.slug, date: a.date || '', read: a.read_time || '',
-                    cat: (cats[a.category] && cats[a.category].name) || a.category || '', subtag: a.subtag || '',
-                    draft: !!a.draft, featured: !!a.featured, tags: (a.tags || []).join(' ')
+                    cat: (cats[a.category] && cats[a.category].name) || a.category_label || a.category || '', subtag: a.subtag || '',
+                    draft: !!a.draft, featured: !!a.featured, tags: (a.tags || []).join(' '),
+                    lede: a.lede || a.description || ''
                 };
             }).sort(function (x, y) { return String(y.date).localeCompare(String(x.date)); });
+            all.forEach(function (a) { byslug[a.slug] = a; });
+            // prune selections for slugs that no longer exist
+            [].slice.call(pub).forEach(function (s) { if (!byslug[s]) pub.delete(s); });
+            [].slice.call(news).forEach(function (s) { if (!byslug[s]) news.delete(s); });
+            save();
             document.getElementById('st-total').textContent = all.length;
             document.getElementById('st-live').textContent = all.filter(function (a) { return !a.draft; }).length;
             document.getElementById('st-draft').textContent = all.filter(function (a) { return a.draft; }).length;
-            render();
-        }).catch(function (e) { rows.innerHTML = '<tr><td colspan="6">Could not load articles.json: ' + esc(e.message) + '</td></tr>'; });
+            render(); renderPublish(); renderNewsletter();
+        }).catch(function (e) { rows.innerHTML = '<tr><td colspan="8">Could not load articles.json: ' + esc(e.message) + '</td></tr>'; });
 
         function render() {
             var list = all.filter(function (a) {
@@ -92,19 +186,132 @@
                 if (q && (a.title + ' ' + a.cat + ' ' + a.tags + ' ' + a.subtag).toLowerCase().indexOf(q) === -1) return false;
                 return true;
             });
-            if (!list.length) { rows.innerHTML = '<tr><td colspan="6" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
+            if (!list.length) { rows.innerHTML = '<tr><td colspan="8" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
             rows.innerHTML = list.map(function (a) {
                 var status = a.draft ? '<span class="st-badge st-draft">Draft</span>' : '<span class="st-badge st-live">Live</span>';
-                if (a.featured) status += '<span class="st-badge st-feat">★</span>';
+                if (a.featured) status += '<span class="st-badge st-feat">&#9733;</span>';
                 return '<tr>' +
+                    '<td class="st-check"><input type="checkbox" data-pub="' + esc(a.slug) + '"' + (pub.has(a.slug) ? ' checked' : '') + '></td>' +
+                    '<td class="st-check"><input type="checkbox" data-news="' + esc(a.slug) + '"' + (news.has(a.slug) ? ' checked' : '') + '></td>' +
                     '<td><div class="st-title">' + esc(a.title) + '</div><span style="color:var(--color-salt);font-size:12px;">' + esc(a.slug) + (a.subtag ? ' · ' + esc(a.subtag) : '') + '</span></td>' +
                     '<td>' + esc(a.cat) + '</td><td style="white-space:nowrap;font-family:var(--font-mono);font-size:12px;">' + esc(a.date) + '</td>' +
                     '<td>' + (a.read ? a.read + 'm' : '—') + '</td><td>' + status + '</td>' +
                     '<td class="st-act"><a href="articles/' + a.slug + '.html" target="_blank">View</a>' +
-                    '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Newsletter</a></td>' +
+                    '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a></td>' +
                     '</tr>';
             }).join('');
         }
+
+        // ---- publish queue ----
+        function renderPublish() {
+            var slugs = all.filter(function (a) { return pub.has(a.slug); });
+            document.getElementById('pub-count').textContent = slugs.length;
+            var listEl = document.getElementById('pub-list'), emptyEl = document.getElementById('pub-empty'), cmdEl = document.getElementById('pub-cmd');
+            if (!slugs.length) {
+                listEl.innerHTML = ''; emptyEl.style.display = 'block'; cmdEl.textContent = '—'; return;
+            }
+            emptyEl.style.display = 'none';
+            listEl.innerHTML = slugs.map(function (a) {
+                return '<li><span>' + esc(a.title) + '</span><span class="s-stat">' + (a.draft ? 'draft → live' : 'already live') + '</span></li>';
+            }).join('');
+            var drafts = slugs.filter(function (a) { return a.draft; });
+            var cmd;
+            if (!drafts.length) {
+                cmd = '# all selected are already live — nothing to publish.';
+            } else {
+                cmd = '# 1) remove "draft": true for these slugs in data/articles.json:\n' +
+                    drafts.map(function (a) { return '#    - ' + a.slug; }).join('\n') +
+                    '\nnode tools/undraft.mjs ' + drafts.map(function (a) { return a.slug; }).join(' ') +
+                    '\n# 2) build, validate & deploy:\nnpm run publish';
+            }
+            cmdEl.textContent = cmd;
+        }
+
+        // ---- newsletter digest ----
+        function fetchBullets(slug) {
+            if (bulletCache[slug]) return Promise.resolve(bulletCache[slug]);
+            return fetch('articles/' + slug + '.html', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (html) {
+                var b = [];
+                try {
+                    var doc = new DOMParser().parseFromString(html, 'text/html');
+                    var sb = doc.querySelector('.summary-box');
+                    if (sb) b = [].map.call(sb.querySelectorAll('li'), function (li) { return li.textContent.trim(); });
+                } catch (e) {}
+                bulletCache[slug] = b; return b;
+            }).catch(function () { bulletCache[slug] = []; return []; });
+        }
+
+        function buildEmailHTML(items, subject) {
+            var monthIntro = subject || 'The latest from the galley';
+            var out = '<div class="np-masthead">LITTORALICIOUS</div>' +
+                '<p class="np-intro">' + esc(monthIntro) + '</p>';
+            out += items.map(function (it) {
+                var url = ORIGIN + '/articles/' + it.a.slug + '.html';
+                return '<div class="np-item">' +
+                    '<p class="np-kicker">' + esc(it.a.cat) + (it.a.subtag ? ' · ' + esc(it.a.subtag) : '') + '</p>' +
+                    '<h2 class="np-title">' + esc(it.a.title) + '</h2>' +
+                    (it.a.lede ? '<p class="np-lede">' + esc(it.a.lede) + '</p>' : '') +
+                    (it.bullets && it.bullets.length ? '<ul class="np-bul">' + it.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' : '') +
+                    '<a class="np-read" href="' + url + '">Read the full piece &rarr;</a>' +
+                    '</div>';
+            }).join('');
+            out += '<p class="np-foot">LITTORALICIOUS · Modern Science · Regional Recipes · From the Sea · <a href="' + ORIGIN + '">littoralicious.com</a></p>';
+            return out;
+        }
+
+        function renderNewsletter() {
+            var slugs = all.filter(function (a) { return news.has(a.slug); });
+            document.getElementById('news-count').textContent = slugs.length;
+            var prev = document.getElementById('news-preview');
+            if (!slugs.length) {
+                prev.innerHTML = '<div class="np-masthead">LITTORALICIOUS</div><p class="st-empty" style="margin:0;">Tick <strong>News</strong> on the articles you want to feature — the email builds here as you go.</p>';
+                return;
+            }
+            Promise.all(slugs.map(function (a) { return fetchBullets(a.slug).then(function (b) { return { a: a, bullets: b }; }); })).then(function (items) {
+                prev.innerHTML = buildEmailHTML(items, document.getElementById('news-subject').value.trim());
+            });
+        }
+
+        // ---- events ----
+        rows.addEventListener('change', function (e) {
+            var t = e.target;
+            if (t.hasAttribute && t.hasAttribute('data-pub')) {
+                var s = t.getAttribute('data-pub');
+                if (t.checked) pub.add(s); else pub.delete(s);
+                save(); renderPublish();
+            } else if (t.hasAttribute && t.hasAttribute('data-news')) {
+                var n = t.getAttribute('data-news');
+                if (t.checked) news.add(n); else news.delete(n);
+                save(); renderNewsletter();
+            }
+        });
+        document.getElementById('news-subject').addEventListener('input', renderNewsletter);
+
+        document.getElementById('pub-copy').addEventListener('click', function () {
+            var txt = document.getElementById('pub-cmd').textContent;
+            (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {
+                document.getElementById('pub-flash').textContent = 'copied';
+                setTimeout(function () { document.getElementById('pub-flash').textContent = ''; }, 1500);
+            }).catch(function () { document.getElementById('pub-flash').textContent = 'copy failed'; });
+        });
+        document.getElementById('pub-clear').addEventListener('click', function () {
+            pub.clear(); save(); render(); renderPublish();
+        });
+
+        document.getElementById('news-copy').addEventListener('click', function () {
+            var slugs = all.filter(function (a) { return news.has(a.slug); });
+            Promise.all(slugs.map(function (a) { return fetchBullets(a.slug).then(function (b) { return { a: a, bullets: b }; }); })).then(function (items) {
+                var html = buildEmailHTML(items, document.getElementById('news-subject').value.trim());
+                (navigator.clipboard ? navigator.clipboard.writeText(html) : Promise.reject()).then(function () {
+                    document.getElementById('news-flash').textContent = 'copied';
+                    setTimeout(function () { document.getElementById('news-flash').textContent = ''; }, 1500);
+                }).catch(function () { document.getElementById('news-flash').textContent = 'copy failed'; });
+            });
+        });
+        document.getElementById('news-clear').addEventListener('click', function () {
+            news.clear(); save(); render(); renderNewsletter();
+        });
+
         search.addEventListener('input', function () { q = this.value.toLowerCase().trim(); render(); });
         [].forEach.call(document.querySelectorAll('.st-tools button'), function (b) {
             b.addEventListener('click', function () {

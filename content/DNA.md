@@ -95,7 +95,7 @@ Then serious cooks who want the *why*. Write to a competent professional; never 
 - **Sourced, not asserted.** The blueprint signature: *"Three modifications. Five sources. One [dish]."*
 - **Tested at sea.** Practicality is the proof; sign-off *"Tested at sea."*
 - **Warm underneath the rigour.** Nurture, not flex.
-- No padding, no hype, no emoji. Respect the reader's competence.
+- No padding, no hype, **no emoji anywhere** — not in body, not in template chrome, not in box labels. Emoji read as AI and break the human-publication voice. Lean on the locked CSS components for visual beats instead. (Functional UI glyphs in a separate tool — ★/✓/⚠ in Port Call, crew-catalog — are tolerated; decorative emoji are not.) Respect the reader's competence.
 - **Spelling:** house style leans British for cooking terms (flavour, colour, caramelise).
 
 ### Source rule
@@ -142,7 +142,7 @@ one line (e.g. *"Template fit: The Method (02)"*), and proceed.
 | # | Template | Section | Length | Use for |
 |---|---|---|---|---|
 | 01 | Shore Larder | Larder | 12–18 min | Ingredient deep-dive |
-| 01b | Shore Larder Deep-Dive | Larder | 12–18 min | Extended ingredient piece (identity card + 9 sections) |
+| 01b | Shore Larder Deep-Dive | Larder | 14–22 min | MAX ingredient profile: 8-cell Identity Card (Species, Origin, Season, Flavour Profile, Key Compounds, Quality Tell, Conservation, Best For) → History (origin + how it developed in the culture) → Science → **Four Ways to Use It** (Traditional / Modern / Frontier / Poetic) → Pairing → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (if peculiar) → Galley Intel → Stories → Quick Reference. Several examples only where notable. |
 | 02 | The Method | Method | 8–15 min | Technique brief — Provoke → Instruct → Prove |
 | 03 | Littoral Heritage | Heritage | 10–20 min | Culture & history |
 | 04 | The Evidence | Evidence | 1–2 min | Single-study translation |

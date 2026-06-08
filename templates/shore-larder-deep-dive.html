@@ -38,7 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Ingredient Deep-Dive. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order: Summary box → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Poetic) → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (only if peculiar) → Yacht Galley Intel → Stories → Quick Reference → Takeaway → Sources. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. -->
 <!-- SUMMARY-BOX — the payoff up top. Three scannable lines: history, science, galley move. -->
 <div class="summary-box"><strong>What you'll get</strong><ul>
 <li><!-- one line: where this ingredient comes from and why it earned its place. --></li>
@@ -46,15 +46,18 @@
 <li><!-- one line: the galley move — how to buy, store, and deploy it at sea. --></li>
 </ul></div>
 
-<!-- IDENTITY CARD — keep verbatim; fill the slots for this ingredient. Add/remove slot <div>s as needed (4–5 typical). -->
+<!-- IDENTITY CARD — the at-a-glance profile. Keep the wrapper verbatim; fill every slot. 8 cells is the full set; drop a cell only if it genuinely doesn't apply (e.g. Species for a processed larder item). NO EMOJI anywhere. -->
 <div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-6) 0;">
     <h4 style="margin-top: 0; color: #c4a35a; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-4);">Identity Card</h4>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
         <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Species</span><strong>Genus species</strong><br><span style="color: #94a3b8;">Family / one-line note</span></div>
         <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Origin</span><strong>Place</strong><br><span style="color: #94a3b8;">Region, approx date</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Season</span><strong>When</strong><br><span style="color: #94a3b8;">Storage window</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Key Compounds</span><strong>Named molecules</strong></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Flavour Profile</span><strong style="color: #c4a35a;">Form &middot; Form &middot; Form &middot; Form</strong></div>
+        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Season</span><strong>Peak months</strong><br><span style="color: #94a3b8;">When it is best, by hemisphere if it matters</span></div>
+        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Flavour Profile</span><strong style="color: #c4a35a;">Note &middot; Note &middot; Note</strong><br><span style="color: #94a3b8;">primary taste + dominant aromatics, how it shifts cooked vs raw</span></div>
+        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Key Compounds</span><strong>Named molecules</strong><br><span style="color: #94a3b8;">the one that carries the aroma</span></div>
+        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Quality Tell</span><strong>The one signal</strong><br><span style="color: #94a3b8;">what a good specimen shows on sight/smell</span></div>
+        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Conservation</span><strong>How &amp; how long</strong><br><span style="color: #94a3b8;">storage form + window (&deg;C, days/months)</span></div>
+        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Best For</span><strong style="color: #c4a35a;">Its one job</strong><br><span style="color: #94a3b8;">the use it is unbeatable at</span></div>
     </div>
 </div>
 
@@ -99,6 +102,38 @@
 </div>
 <div class="note note--science" data-label="Health Evidence"><p>The health takeaway distilled — numbers, units, honest about the limits of the evidence.</p></div>
 
+<div class="divider"><span class="divider__text">Four Ways to Use It</span></div>
+
+<!-- THE USE SPECTRUM — the heart of the profile. ONE ingredient, four registers: how the tradition cooked it, the best the modern kitchen does, the frontier edge, and the poetic gesture. Each card: the move, then a concrete example. Give SEVERAL examples ONLY where they are genuinely notable — one sharp example beats three filler ones. Frontier/Poetic must stay defensible (real chemistry, real sensory logic), never gimmick. NO EMOJI. -->
+<h2>Four Ways to Use It: Traditional, Modern, Frontier, Poetic</h2>
+<p><strong>One ingredient, four registers:</strong> <!-- kicker: the through-line that connects how it was always used to how it could be used. --></p>
+
+<!-- TRADITIONAL — how the old kitchens actually deployed it (the canonical preparation, not a pairing). -->
+<div style="background: #f5deb3; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #92400e;">
+    <h4 style="margin-top: 0; color: #5c4033; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Traditional &mdash; how it was always used</h4>
+    <p style="font-size: var(--text-sm); color: #5c4033; margin-bottom: 0;">The canonical preparation, named and located. What the dish/technique is, the region that owns it, and the one rule the old cooks never broke. <em>Example only if notable:</em> name the classic dish and the move inside it that still holds.</p>
+</div>
+
+<!-- MODERN — the best contemporary technique: controlled, repeatable, the current professional default. -->
+<div style="background: #e2e5e9; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid var(--color-sea);">
+    <h4 style="margin-top: 0; color: var(--color-sea); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Modern &mdash; the best current technique</h4>
+    <p style="font-size: var(--text-sm); color: #333; margin-bottom: 0;">What precision tools changed: sous-vide window, controlled <span class="term">Maillard</span>, low-temperature infusion, the exact &deg;C/time that beats the traditional method on consistency. State the number. <em>Example:</em> the contemporary preparation a working galley should default to now, and why it wins.</p>
+</div>
+
+<!-- FRONTIER — the avant-garde edge (elBulli lineage): ferment, spherify, dehydrate, smoke, oil-infuse, enzyme-treat. Defensible, not theatre. -->
+<div style="background: #d4dce8; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #7c3aed;">
+    <h4 style="margin-top: 0; color: #5b21b6; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Frontier &mdash; the edge worth exploring</h4>
+    <p style="font-size: var(--text-sm); color: #3b3b5c; margin-bottom: 0;">The reinvention: fermentation, spherification, dehydration-to-powder, cold-smoke, fat-wash/oil infusion, enzymatic ageing &mdash; whatever the modernist lineage unlocked for this specific ingredient. Name the technique and the compound it manipulates. <em>Examples (no limit where each is genuinely interesting):</em> list the frontier moves that actually improve it, each with the reason it works.</p>
+</div>
+
+<!-- POETIC — the evocative, sensory, story-driven gesture. One dramatic move that makes a guest pause. -->
+<div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #059669;">
+    <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Poetic &mdash; the gesture that makes them pause</h4>
+    <p style="font-size: var(--text-sm); color: #1a3a2a; margin-bottom: 0;">The evocative use: the aroma released at the table, the single-bite memory, the way it carries a place or a season onto the plate. Sensory and emotional, but still true to the ingredient. <em>Example only if it earns it:</em> the one gesture worth the theatre.</p>
+</div>
+
+<div class="note note--key" data-label="The Through-Line"><p>The sentence that links all four registers — what stays constant about this ingredient whether a grandmother or a frontier kitchen is cooking it.</p></div>
+
 <div class="divider"><span class="divider__text">Pairing</span></div>
 
 <!-- TRADITIONAL PAIRING — cultures that already know. Wheat card grid. -->
@@ -128,9 +163,9 @@
 </div>
 <div class="note note--warning"><p>A handling caveat for one of the pairings — over-steeping, burning, intensity. Keep it practical.</p></div>
 
-<!-- MOLECULAR PAIRING — the compound bridge. Optional lead-in para, then the table. -->
-<h2>Molecular Pairing: [the bridge]</h2>
-<p><strong>The chemistry under it all:</strong> <!-- kicker: the dominant compound family that bridges across categories. --></p>
+<!-- MOLECULAR / FLAVOUR-COMPOUNDING — the compound bridge: how to build flavour with this ingredient by matching shared molecules (food-pairing principle). This is the "no limit" section: list the MOST INTERESTING bridges, as many as are genuinely surprising — quality of insight over row count. Each row earns its place. -->
+<h2>Flavour-Compounding: [the shared-molecule bridges]</h2>
+<p><strong>The chemistry under it all:</strong> <!-- kicker: the dominant compound family that bridges this ingredient across categories — the key to inventing pairings rather than borrowing them. --></p>
 <table style="width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--text-sm);">
     <thead>
         <tr style="border-bottom: 2px solid var(--color-ink);">
@@ -145,12 +180,42 @@
             <td style="padding: var(--space-2);">Foods sharing it</td>
             <td style="padding: var(--space-2);">The pairing it explains</td>
         </tr>
-        <!-- WRITER: 5 rows. Adjust column headers/count to fit (the tea piece used a 4-column Tea Type / Compound / Shared With / Bridge layout). -->
+        <!-- WRITER: NO ROW CAP. List every genuinely interesting shared-compound bridge — the more surprising-yet-true, the better. Cut any row that isn't notable. Adjust columns to fit (the tea piece used Tea Type / Compound / Shared With / Bridge). -->
     </tbody>
 </table>
 <div class="note note--key" data-label="Molecular Insight"><p>The headline insight from the table — the pairing that seems surprising but is chemically inevitable.</p></div>
 
 <div class="divider"><span class="divider__text">The Galley</span></div>
+
+<!-- QUALITY: GOOD vs BAD — the buying eye, made explicit. Two columns: what a good one shows, what a bad one shows. This is non-negotiable in every ingredient profile. -->
+<h2>Quality: How to Tell a Good One from a Bad One</h2>
+<p><strong>Trust your eyes, nose and hands first:</strong> <!-- kicker: the single most reliable quality tell for this ingredient, stated up front. --></p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+    <div style="background: #d1e7dd; padding: var(--space-5); border-left: 4px solid #059669;">
+        <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">A Good One</h4>
+        <ul style="margin-bottom: 0; font-size: var(--text-sm); color: #1a3a2a;">
+            <li><strong>Look:</strong> the colour/sheen/structure a fresh, well-handled specimen shows.</li>
+            <li><strong>Smell:</strong> the aroma marker — present and clean.</li>
+            <li><strong>Feel / sound:</strong> weight, firmness, snap, moisture — the tactile tell.</li>
+            <!-- WRITER: 3–4 positive signals, sense by sense. Concrete, checkable on the dock. -->
+        </ul>
+    </div>
+    <div style="background: #f0c0c0; padding: var(--space-5); border-left: 4px solid #b91c1c;">
+        <h4 style="margin-top: 0; color: #7f1d1d; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">A Bad One</h4>
+        <ul style="margin-bottom: 0; font-size: var(--text-sm); color: #5c1a1a;">
+            <li><strong>Look:</strong> the dullness/spotting/wilt/crystallisation that says past-it.</li>
+            <li><strong>Smell:</strong> the off-note — the compound of spoilage or rancidity, named.</li>
+            <li><strong>Feel / sound:</strong> the slack, the give, the wrong moisture.</li>
+            <!-- WRITER: mirror the good column, sense by sense. Name the spoilage mechanism where you can (oxidation, rancidity, over-fermentation). -->
+        </ul>
+    </div>
+</div>
+<div class="note note--warning" data-label="The Tell That Hides"><p>The one defect a vendor can mask — wax, wash, cold-counter lighting, added water — and how to catch it anyway.</p></div>
+
+<!-- CONSERVATION — include ONLY where this ingredient has a genuinely peculiar or non-obvious preservation technique (e.g. garlic confit's botulism rule, saffron in the dark, fresh herbs as oil cubes, salt-packing, oxygen control). Skip if storage is ordinary (that lives in Galley Intel below). -->
+<h2>Conservation: [the peculiar technique]</h2>
+<p><strong>Why ordinary storage fails it:</strong> <!-- kicker: the specific enemy — light, oxygen, ethylene, moisture, temperature — and the technique that defeats it. --></p>
+<div class="note note--action" data-label="The Method"><p>The exact preservation method, with numbers: form, medium, &deg;C, oxygen/light control, and the resulting shelf life. Name the failure mode it prevents — and any safety line (e.g. acidification, botulism risk) that must not be crossed.</p></div>
 
 <!-- HOW TO BUY — sourcing. Grey-card grid (3px coloured left borders), optional golden-rule para, warning note. -->
 <h2>How to Buy: [what to look for]</h2>
