@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Review — LITTORALICIOUS Studio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+    <style>
+        :root{--rv-bar-h:auto;--rv-ok:#166534;--rv-err:#b91c1c;--rv-flashbg:#fff3c4;--rv-hint:#fbfaf7;--rv-anno:#f6f9fb;--rv-card:#fbfdff;--rv-warnbg:#fef9c3;--rv-warnink:#854d0e;}
+
+        /* ---- top bar ---- */
+        .rv-bar{position:sticky;top:0;z-index:40;background:#fff;border-bottom:2px solid var(--color-ink);}
+        .rv-bar__in{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding:var(--space-3) var(--space-4);}
+        .rv-back{color:var(--color-muted);text-decoration:none;font-size:13px;border:1px solid var(--color-border);padding:.35em .8em;white-space:nowrap;}
+        .rv-back:hover{border-color:var(--color-sea);color:var(--color-sea);}
+        .rv-bar h1{font-family:var(--font-serif);font-size:var(--text-lg);margin:0;line-height:1.2;flex:1;min-width:160px;}
+        .rv-bar h1 small{display:block;font-family:var(--font-mono);font-size:11px;color:var(--color-salt);letter-spacing:.04em;font-weight:400;text-transform:none;}
+        .rv-bar__stat{font-family:var(--font-mono);font-size:13px;color:var(--color-muted);white-space:nowrap;}
+        .rv-bar__stat b{color:var(--color-sea);font-size:var(--text-lg);}
+        .rv-bar__live{color:var(--color-salt);text-decoration:none;font-size:12px;border:1px solid var(--color-border);padding:.35em .7em;white-space:nowrap;}
+        .rv-bar__live:hover{border-color:var(--color-sea);color:var(--color-sea);}
+
+        /* auth row */
+        .rv-auth{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;font-size:13px;padding:var(--space-2) var(--space-4);border-top:1px dashed var(--color-border);background:var(--color-subtle);}
+        .rv-auth input{padding:.4em .6em;border:1px solid var(--color-border);font:inherit;font-size:13px;}
+        .rv-auth__who{color:var(--rv-ok);font-family:var(--font-mono);}
+        .rv-auth__msg{color:var(--color-muted);}
+        .rv-link{background:none;border:none;color:var(--color-sea);cursor:pointer;font-size:13px;text-decoration:underline;padding:0;}
+        .rv-sync{font-family:var(--font-mono);font-size:11px;color:var(--color-salt);}
+        .rv-sync.on{color:var(--rv-ok);}
+
+        .rv-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:var(--space-6);padding:var(--space-6) var(--space-4) var(--space-8);align-items:start;}
+        @media (max-width:1000px){.rv-grid{grid-template-columns:1fr;}}
+
+        /* ---- the rendered article (reuses site styles) ---- */
+        .rv-doc{min-width:0;}
+        .rv-doc .article__content{max-width:none;margin:0;padding:0;}
+        .rv-doc .article__header{padding-left:0;padding-right:0;}
+        .rv-hint{font-size:12px;color:var(--color-muted);background:var(--rv-hint);border:1px solid var(--color-border);padding:.5em .8em;margin-bottom:var(--space-4);}
+        .rv-hint strong{color:var(--color-sea);}
+
+        .rv-anno{position:relative;transition:background .15s;}
+        .rv-anno:hover{background:var(--rv-hint);}
+        .rv-anno.rv-has{box-shadow:inset 3px 0 0 var(--color-sea);background:var(--rv-anno);}
+        .rv-anno.rv-flash{animation:rvflash 1.2s ease;}
+        @keyframes rvflash{0%{background:var(--rv-flashbg);}100%{background:transparent;}}
+        .rv-add{position:absolute;left:-2.4em;top:.1em;opacity:0;width:1.8em;height:1.8em;border-radius:50%;border:1px solid var(--color-border);background:#fff;color:var(--color-sea);cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;transition:opacity .15s,border-color .15s;}
+        .rv-anno:hover .rv-add,.rv-anno:focus-within .rv-add,.rv-add:focus{opacity:1;}
+        .rv-add:hover{border-color:var(--color-sea);background:var(--color-sea);color:#fff;}
+        .rv-add:focus-visible{outline:2px solid var(--color-sea);outline-offset:2px;opacity:1;}
+        .rv-chip{position:absolute;left:-2.5em;top:.1em;min-width:1.8em;height:1.8em;border-radius:50%;background:var(--color-sea);color:#fff;font-family:var(--font-mono);font-size:11px;display:none;align-items:center;justify-content:center;cursor:pointer;border:none;}
+        .rv-anno.rv-has .rv-chip{display:flex;}
+        .rv-anno.rv-has:hover .rv-add,.rv-anno.rv-has:focus-within .rv-add{opacity:1;left:-4.7em;}
+        @media (max-width:1000px){
+            .rv-add{position:static;opacity:1;width:auto;height:auto;border-radius:14px;padding:.3em .8em;margin:.3em 0;font-size:12px;min-height:34px;}
+            .rv-add::after{content:' note';}
+            .rv-chip{position:static;display:none !important;}
+        }
+
+        .rv-edit{margin:.6em 0 1em;border:1px solid var(--color-sea);background:var(--rv-anno);padding:var(--space-3);}
+        .rv-edit textarea{width:100%;border:1px solid var(--color-border);font:inherit;font-size:14px;padding:.5em;min-height:70px;resize:vertical;background:#fff;}
+        .rv-edit__row{display:flex;gap:var(--space-2);margin-top:var(--space-2);align-items:center;}
+        .rv-note{margin:.5em 0;border-left:3px solid var(--color-sea);background:var(--rv-card);padding:.5em .7em;font-size:14px;}
+        .rv-note__body{white-space:pre-wrap;line-height:1.5;color:var(--color-ink);}
+        .rv-note__meta{display:flex;gap:var(--space-3);margin-top:.35em;font-size:11px;color:var(--color-salt);font-family:var(--font-mono);align-items:center;}
+        .rv-note__by{margin-left:auto;font-style:italic;}
+        .rv-note__meta button{background:none;border:none;color:var(--color-salt);cursor:pointer;padding:0;font:inherit;text-transform:uppercase;letter-spacing:.05em;}
+        .rv-note__meta button:hover{color:var(--color-sea);}
+        .rv-note__meta button.rv-del:hover{color:var(--rv-err);text-decoration:underline;}
+
+        .rv-btn{background:var(--color-sea);color:#fff;border:none;padding:.45em 1em;cursor:pointer;font-size:13px;letter-spacing:.03em;}
+        .rv-btn--ghost{background:none;border:1px solid var(--color-border);color:var(--color-muted);}
+        .rv-btn--ghost:hover{border-color:var(--color-sea);color:var(--color-sea);}
+        .rv-btn:disabled{opacity:.5;cursor:not-allowed;}
+
+        .rv-side{border:1px solid var(--color-border);background:#fff;display:flex;flex-direction:column;}
+        @media (min-width:1001px){.rv-side{position:sticky;top:130px;max-height:calc(100vh - 150px);}}
+        .rv-side__head{padding:var(--space-4);border-bottom:1px solid var(--color-border);background:var(--color-subtle);}
+        .rv-side__head h2{font-family:var(--font-serif);margin:0;font-size:var(--text-lg);}
+        .rv-side__head p{margin:.2em 0 0;font-size:12px;color:var(--color-muted);}
+        .rv-overall{padding:var(--space-4);border-bottom:1px solid var(--color-subtle);}
+        .rv-overall label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--color-salt);margin-bottom:.3em;}
+        .rv-overall textarea{width:100%;border:1px solid var(--color-border);font:inherit;font-size:13px;padding:.5em;min-height:54px;resize:vertical;}
+        .rv-list{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1;}
+        .rv-list li{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-subtle);cursor:pointer;}
+        .rv-list li:hover{background:var(--color-subtle);}
+        .rv-list li:focus-visible{outline:2px solid var(--color-sea);outline-offset:-2px;}
+        .rv-list .rv-li__anchor{font-size:11px;color:var(--color-salt);font-style:italic;display:block;margin-bottom:.25em;line-height:1.4;}
+        .rv-list .rv-li__body{font-size:13px;line-height:1.5;color:var(--color-ink);white-space:pre-wrap;}
+        .rv-list .rv-li__orphan{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:.06em;background:var(--rv-warnbg);color:var(--rv-warnink);padding:1px 5px;border-radius:3px;margin-left:.4em;vertical-align:middle;font-style:normal;}
+        .rv-empty{padding:var(--space-6) var(--space-4);color:var(--color-muted);font-size:13px;font-style:italic;text-align:center;}
+        .rv-side__foot{padding:var(--space-3) var(--space-4);border-top:1px solid var(--color-border);display:flex;gap:var(--space-2);flex-wrap:wrap;align-items:center;}
+        .rv-flash{color:var(--rv-ok);font-size:12px;}
+
+        .rv-jump{display:none;}
+        @media (max-width:1000px){
+            .rv-jump{display:flex;position:fixed;right:var(--space-4);bottom:var(--space-4);z-index:50;background:var(--color-sea);color:#fff;border:none;border-radius:24px;padding:.6em 1.1em;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;align-items:center;gap:.4em;}
+        }
+        .rv-status{padding:var(--space-8) var(--space-4);text-align:center;color:var(--color-muted);}
+        .rv-status code{background:var(--color-subtle);padding:1px 5px;}
+    </style>
+</head>
+<body>
+    <div class="rv-bar">
+        <div class="rv-bar__in">
+            <a class="rv-back" href="studio.html">&larr; Studio</a>
+            <h1 id="rv-title">Loading…<small id="rv-slug"></small></h1>
+            <span class="rv-bar__stat"><b id="rv-count" aria-live="polite">0</b> notes</span>
+            <span class="rv-sync" id="rv-sync">offline</span>
+            <a class="rv-bar__live" id="rv-live" href="#" target="_blank" rel="noopener">Open published &nearr;</a>
+        </div>
+        <div class="rv-auth" id="rv-auth">
+            <span id="auth-out">
+                <input id="auth-email" type="email" placeholder="reviewer email" autocomplete="username" style="min-width:180px;">
+                <input id="auth-pass" type="password" placeholder="password" autocomplete="current-password">
+                <button class="rv-btn" id="auth-signin" type="button">Sign in</button>
+                <button class="rv-link" id="auth-create" type="button">Create login</button>
+                <button class="rv-link" id="auth-reset" type="button">Reset</button>
+                <span class="rv-auth__msg" id="auth-msg">Sign in with your reviewer email to load &amp; sync notes across every device.</span>
+            </span>
+            <span id="auth-in" style="display:none;">
+                <span class="rv-auth__who" id="auth-who"></span>
+                <button class="rv-link" id="auth-signout" type="button">Sign out</button>
+            </span>
+        </div>
+    </div>
+
+    <div class="rv-grid">
+        <div class="rv-doc" id="rv-doc">
+            <div class="rv-status">Loading article…</div>
+        </div>
+
+        <aside class="rv-side" id="rv-side">
+            <div class="rv-side__head">
+                <h2>Notes summary</h2>
+                <p>Hover any paragraph and hit <strong>+</strong> to add a note. Saved to your reviewer account and synced to every device.</p>
+            </div>
+            <div class="rv-overall">
+                <label for="rv-overall">Overall note</label>
+                <textarea id="rv-overall" placeholder="A line about the piece as a whole — verdict, big fix, what to do next…" disabled></textarea>
+            </div>
+            <ul class="rv-list" id="rv-list"></ul>
+            <div class="rv-empty" id="rv-empty">No notes yet.</div>
+            <div class="rv-side__foot">
+                <button class="rv-btn rv-btn--ghost" id="rv-copy" type="button">Copy summary</button>
+                <button class="rv-btn rv-btn--ghost" id="rv-download" type="button">Download .md</button>
+                <span class="rv-flash" id="rv-flash" aria-live="polite"></span>
+            </div>
+        </aside>
+    </div>
+
+    <button class="rv-jump" id="rv-jump" type="button" aria-label="Jump to notes summary">Notes (<span id="rv-jump-n">0</span>)</button>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script>
+    (function () {
+        'use strict';
+        var ORIGIN = 'https://www.littoralicious.com';
+        var REVIEWERS = ['arnaudcallier@pm.me', 'arnaudcallier@icloud.com'];
+        var FETCH_TIMEOUT = 8000;
+        var params = new URLSearchParams(location.search);
+        var slug = (params.get('slug') || '').trim();
+
+        var $ = function (id) { return document.getElementById(id); };
+        var docEl = $('rv-doc'), listEl = $('rv-list'), emptyEl = $('rv-empty');
+        var titleEl = $('rv-title'), slugEl = $('rv-slug'), liveEl = $('rv-live');
+        var overallEl = $('rv-overall'), syncEl = $('rv-sync');
+
+        var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+        function normText(el) { return (el.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
+        function hash(str) { var h = 5381, i = str.length; while (i) { h = (h * 33) ^ str.charCodeAt(--i); } return (h >>> 0).toString(36); }
+        function snippet(s, n) { s = (s || '').replace(/\s+/g, ' ').trim(); n = n || 110; return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+
+        if (!slug || !/^[a-z0-9-]+$/i.test(slug)) {
+            docEl.innerHTML = '<div class="rv-status">No article selected. Open this page from the <a href="studio.html">Studio</a> by clicking an article title.</div>';
+            return;
+        }
+        liveEl.href = ORIGIN + '/articles/' + slug + '.html';
+        slugEl.textContent = slug;
+
+        // ===================== Firebase wiring =====================
+        var hasFB = (typeof firebase !== 'undefined' && firebase.firestore && firebase.auth && typeof db !== 'undefined');
+        var auth = hasFB ? firebase.auth() : null;
+        var user = null, signedReviewer = false;
+        var unsubNotes = null, unsubDoc = null;
+        var isReviewer = function (u) { return !!(u && u.email && REVIEWERS.indexOf(u.email.toLowerCase()) !== -1); };
+        function notesCol() { return db.collection('draft-notes').doc(slug).collection('notes'); }
+        function slugDoc() { return db.collection('draft-notes').doc(slug); }
+        function setSync(on, label) { syncEl.textContent = label; syncEl.classList.toggle('on', !!on); }
+
+        // notes state (mirrors Firestore subcollection); each: {id, key, idx, anchor, body, by, ts}
+        var state = { notes: [], overall: '' };
+        var blocks = [], keyToBlock = {}, blocksReady = false;
+
+        // ---- load article (independent of auth) ----
+        function fetchArticle(url) {
+            var ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+            var t = ctl ? setTimeout(function () { ctl.abort(); }, FETCH_TIMEOUT) : null;
+            return fetch(url, { cache: 'no-cache', signal: ctl ? ctl.signal : undefined })
+                .then(function (r) { if (t) clearTimeout(t); if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); });
+        }
+        fetchArticle('articles/' + slug + '.html')
+            .then(function (html) { buildDoc(html); })
+            .catch(function (e) {
+                var msg = e && e.name === 'AbortError' ? 'request timed out' : (e && e.message) || 'load error';
+                docEl.innerHTML = '<div class="rv-status">Could not load <code>articles/' + esc(slug) + '.html</code><br><small>' + esc(msg) + '</small></div>';
+            });
+
+        function stripIds(node) { [].forEach.call(node.querySelectorAll('[id]'), function (n) { n.removeAttribute('id'); }); }
+
+        function buildDoc(html) {
+            var src = new DOMParser().parseFromString(html, 'text/html');
+            var pageTitle = (src.querySelector('.article__title') || {}).textContent || slug;
+            titleEl.firstChild.textContent = pageTitle.trim();
+            document.title = 'Review — ' + pageTitle.trim();
+
+            var content = src.querySelector('.article__content');
+            if (!content) {
+                docEl.innerHTML = '<div class="rv-status">This page has no standard article body to annotate (e.g. a catalog). <a href="' + esc(liveEl.href) + '" target="_blank" rel="noopener">Open it published</a> instead.</div>';
+                return;
+            }
+            ['script', 'style', '.article-engagement', '.article-reactions', '.article-share',
+             '.article-comments', '.article__nav', '.article-related', 'form', 'iframe']
+                .forEach(function (sel) { [].forEach.call(content.querySelectorAll(sel), function (n) { n.remove(); }); });
+            [].forEach.call(content.querySelectorAll('[onclick],[onload],[onerror]'), function (n) {
+                n.removeAttribute('onclick'); n.removeAttribute('onload'); n.removeAttribute('onerror');
+            });
+
+            var article = document.createElement('article');
+            article.className = 'article';
+            var hint = document.createElement('div');
+            hint.className = 'rv-hint';
+            hint.innerHTML = 'Hover a paragraph and click <strong>+</strong> to leave a note. Each note collects in the summary on the right and syncs to every device you sign in on.';
+            article.appendChild(hint);
+            var header = src.querySelector('.article__header');
+            if (header) {
+                [].forEach.call(header.querySelectorAll('script,style'), function (n) { n.remove(); });
+                var hClone = document.importNode(header, true); stripIds(hClone); article.appendChild(hClone);
+            }
+            var cClone = document.importNode(content, true); stripIds(cClone); article.appendChild(cClone);
+            docEl.innerHTML = ''; docEl.appendChild(article);
+
+            wireBlocks(article.querySelector('.article__content'));
+            blocksReady = true;
+            applyNotes();
+        }
+
+        var ANNO_SEL = 'p, h2, h3, h4, blockquote, li, figcaption';
+        function wireBlocks(content) {
+            var nodes = [].slice.call(content.querySelectorAll(ANNO_SEL));
+            var idx = 0, seen = {};
+            nodes.forEach(function (el) {
+                var txt = normText(el);
+                if (!txt) return;
+                el.classList.add('rv-anno');
+                var base = hash(txt) + '-' + txt.length;
+                var occ = seen[base] || 0; seen[base] = occ + 1;
+                var key = occ ? base + '#' + occ : base;
+                var block = { el: el, key: key, idx: idx++, text: txt, host: null };
+                blocks.push(block); keyToBlock[key] = block;
+                el.setAttribute('data-rv-key', key);
+
+                var add = document.createElement('button');
+                add.type = 'button'; add.className = 'rv-add';
+                add.setAttribute('aria-label', 'Add a note to this paragraph');
+                add.title = 'Add a note here'; add.textContent = '+';
+                add.addEventListener('click', function (ev) { ev.stopPropagation(); openEditor(block, null, null, add); });
+                var chip = document.createElement('button');
+                chip.type = 'button'; chip.className = 'rv-chip';
+                chip.setAttribute('aria-label', 'Notes on this paragraph'); chip.title = 'Notes on this paragraph';
+                chip.addEventListener('click', function (ev) { ev.stopPropagation(); openEditor(block, null, null, add); });
+                el.appendChild(add); el.appendChild(chip);
+            });
+        }
+
+        function notesForKey(key) { return state.notes.filter(function (n) { return n.key === key; }); }
+        function applyNotes() { if (blocksReady) { blocks.forEach(renderBlockNotes); } renderSummary(); }
+
+        function placeAfter(block, node, afterEl) {
+            if (afterEl) { afterEl.parentNode.insertBefore(node, afterEl.nextSibling); return; }
+            var el = block.el;
+            if (el.tagName === 'LI') el.appendChild(node);
+            else el.parentNode.insertBefore(node, el.nextSibling);
+        }
+
+        function renderBlockNotes(block) {
+            if (block.host) { block.host.remove(); block.host = null; }
+            var notes = notesForKey(block.key);
+            var chip = block.el.querySelector('.rv-chip');
+            if (chip) chip.textContent = notes.length;
+            block.el.classList.toggle('rv-has', notes.length > 0);
+            if (!notes.length) return;
+            var box = document.createElement('div'); box.className = 'rv-host';
+            notes.forEach(function (note) { box.appendChild(noteCard(note, block)); });
+            placeAfter(block, box, null); block.host = box;
+        }
+
+        function noteCard(note, block) {
+            var card = document.createElement('div'); card.className = 'rv-note';
+            var body = document.createElement('div'); body.className = 'rv-note__body'; body.textContent = note.body;
+            var meta = document.createElement('div'); meta.className = 'rv-note__meta';
+            var edit = document.createElement('button'); edit.type = 'button'; edit.textContent = 'Edit';
+            var del = document.createElement('button'); del.type = 'button'; del.className = 'rv-del'; del.textContent = 'Delete';
+            edit.addEventListener('click', function () { openEditor(block, note, card, edit); });
+            del.addEventListener('click', function () { deleteNote(note); });
+            meta.appendChild(edit); meta.appendChild(del);
+            if (note.by) { var by = document.createElement('span'); by.className = 'rv-note__by'; by.textContent = note.by.split('@')[0]; meta.appendChild(by); }
+            card.appendChild(body); card.appendChild(meta);
+            return card;
+        }
+
+        var openHost = null, lastOpener = null;
+        function openEditor(block, existing, afterEl, opener) {
+            if (!signedReviewer) { flash('sign in as a reviewer to add notes', true); $('auth-email').focus(); return; }
+            closeEditor();
+            lastOpener = opener || null;
+            var host = document.createElement('div'); host.className = 'rv-edit';
+            var ta = document.createElement('textarea'); ta.setAttribute('aria-label', 'Note text');
+            ta.placeholder = 'Your note on this paragraph…'; ta.value = existing ? existing.body : '';
+            var row = document.createElement('div'); row.className = 'rv-edit__row';
+            var save = document.createElement('button'); save.type = 'button'; save.className = 'rv-btn'; save.textContent = existing ? 'Update' : 'Save note';
+            var cancel = document.createElement('button'); cancel.type = 'button'; cancel.className = 'rv-btn rv-btn--ghost'; cancel.textContent = 'Cancel';
+            var hint = document.createElement('span'); hint.style.cssText = 'font-size:11px;color:var(--color-salt);margin-left:auto;'; hint.textContent = '⌘/Ctrl+Enter to save · Esc to cancel';
+            row.appendChild(save); row.appendChild(cancel); row.appendChild(hint);
+            host.appendChild(ta); host.appendChild(row);
+            placeAfter(block, host, afterEl);
+            openHost = host; ta.focus();
+
+            function commit() {
+                var val = ta.value.trim();
+                if (!val) { closeEditor(); return; }
+                if (val.length > 4900) val = val.slice(0, 4900);   // stay under the 5000 rule cap
+                if (existing) {
+                    notesCol().doc(existing.id).set({ text: val, updated: Date.now(), by: user.email }, { merge: true })
+                        .catch(function (e) { flash('save failed: ' + (e.code || 'error'), true); });
+                } else {
+                    notesCol().add({ text: val, anchorKey: block.key, anchor: snippet(block.text, 140), order: block.idx, by: user.email, created: Date.now(), updated: Date.now() })
+                        .catch(function (e) { flash('save failed: ' + (e.code || 'error'), true); });
+                }
+                closeEditor();   // onSnapshot will paint the note
+            }
+            save.addEventListener('click', commit);
+            cancel.addEventListener('click', closeEditor);
+            ta.addEventListener('keydown', function (e) {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); commit(); }
+                if (e.key === 'Escape') { e.preventDefault(); closeEditor(); }
+            });
+        }
+        function closeEditor() {
+            if (openHost) { openHost.remove(); openHost = null; }
+            if (lastOpener && document.contains(lastOpener)) { try { lastOpener.focus(); } catch (e) {} }
+            lastOpener = null;
+        }
+
+        function deleteNote(note) {
+            if (!signedReviewer) return;
+            notesCol().doc(note.id).delete().catch(function (e) { flash('delete failed: ' + (e.code || 'error'), true); });
+        }
+
+        // ---- summary ----
+        function orderedNotes() {
+            return state.notes.slice().sort(function (a, b) {
+                var ba = keyToBlock[a.key], bb = keyToBlock[b.key];
+                var ia = ba ? ba.idx : (typeof a.idx === 'number' ? a.idx : 1e9);
+                var ib = bb ? bb.idx : (typeof b.idx === 'number' ? b.idx : 1e9);
+                if (ia !== ib) return ia - ib;
+                return (a.ts || 0) - (b.ts || 0);
+            });
+        }
+        function renderSummary() {
+            var ordered = orderedNotes();
+            $('rv-count').textContent = state.notes.length;
+            $('rv-jump-n').textContent = state.notes.length;
+            if (!ordered.length) { listEl.innerHTML = ''; emptyEl.style.display = 'block'; return; }
+            emptyEl.style.display = 'none';
+            listEl.innerHTML = '';
+            ordered.forEach(function (note) {
+                var live = blocksReady ? keyToBlock[note.key] : null;
+                var li = document.createElement('li'); li.tabIndex = 0;
+                var anchor = document.createElement('span'); anchor.className = 'rv-li__anchor';
+                anchor.textContent = '“' + snippet(note.anchor, 90) + '”';
+                if (blocksReady && !live) { var tag = document.createElement('span'); tag.className = 'rv-li__orphan'; tag.textContent = 'text changed'; anchor.appendChild(tag); }
+                var body = document.createElement('span'); body.className = 'rv-li__body'; body.textContent = note.body;
+                li.appendChild(anchor); li.appendChild(body);
+                if (live) {
+                    li.addEventListener('click', function () { scrollToBlock(live); });
+                    li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToBlock(live); } });
+                }
+                listEl.appendChild(li);
+            });
+        }
+        function scrollToBlock(block) {
+            block.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            block.el.classList.remove('rv-flash'); void block.el.offsetWidth; block.el.classList.add('rv-flash');
+        }
+
+        // ---- overall note (debounced save to the slug doc's `overall` field) ----
+        var overallTimer = null;
+        overallEl.addEventListener('input', function () {
+            if (!signedReviewer) return;
+            clearTimeout(overallTimer);
+            overallTimer = setTimeout(function () {
+                slugDoc().set({ overall: overallEl.value, overallBy: user.email, overallUpdated: Date.now() }, { merge: true })
+                    .catch(function (e) { flash('overall save failed: ' + (e.code || 'error'), true); });
+            }, 600);
+        });
+
+        // ---- export ----
+        function buildMarkdown() {
+            var title = (titleEl.firstChild.textContent || slug).trim();
+            var lines = ['# Review notes — ' + title, '', '_' + slug + ' · ' + state.notes.length + ' note(s)_', ''];
+            if ((state.overall || '').trim()) { lines.push('## Overall', '', state.overall.trim(), ''); }
+            lines.push('## Paragraph notes', '');
+            var ordered = orderedNotes();
+            ordered.forEach(function (note, i) {
+                lines.push((i + 1) + '. **“' + snippet(note.anchor, 120) + '”**' + (blocksReady && !keyToBlock[note.key] ? '  _(text changed)_' : ''));
+                note.body.split('\n').forEach(function (l) { lines.push('   ' + l); });
+                lines.push('');
+            });
+            if (!ordered.length) lines.push('_No paragraph notes._');
+            return lines.join('\n');
+        }
+        function flash(msg, isErr) {
+            var f = $('rv-flash'); f.textContent = msg; f.style.color = isErr ? 'var(--rv-err)' : 'var(--rv-ok)';
+            setTimeout(function () { f.textContent = ''; }, 2200);
+        }
+        $('rv-copy').addEventListener('click', function () {
+            (navigator.clipboard ? navigator.clipboard.writeText(buildMarkdown()) : Promise.reject())
+                .then(function () { flash('copied'); }).catch(function () { flash('copy failed', true); });
+        });
+        $('rv-download').addEventListener('click', function () {
+            var blob = new Blob([buildMarkdown()], { type: 'text/markdown' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a'); a.href = url; a.download = slug + '-notes.md';
+            document.body.appendChild(a); a.click(); a.remove();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        });
+        $('rv-jump').addEventListener('click', function () { $('rv-side').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+
+        // ===================== auth + live sync =====================
+        function subscribe() {
+            unsubscribe();
+            setSync(true, 'syncing…');
+            unsubNotes = notesCol().onSnapshot(function (snap) {
+                state.notes = [];
+                snap.forEach(function (doc) {
+                    var d = doc.data() || {};
+                    state.notes.push({ id: doc.id, key: d.anchorKey || '', idx: typeof d.order === 'number' ? d.order : 1e9, anchor: d.anchor || '', body: d.text || '', by: d.by || '', ts: d.updated || d.created || 0 });
+                });
+                applyNotes();
+                setSync(true, 'synced · ' + state.notes.length);
+            }, function (err) { setSync(false, 'sync error'); flash('sync: ' + (err.code || 'error'), true); });
+            unsubDoc = slugDoc().onSnapshot(function (doc) {
+                var d = (doc.exists && doc.data()) || {};
+                state.overall = d.overall || '';
+                if (document.activeElement !== overallEl) overallEl.value = state.overall;
+            }, function () {});
+        }
+        function unsubscribe() {
+            if (unsubNotes) { unsubNotes(); unsubNotes = null; }
+            if (unsubDoc) { unsubDoc(); unsubDoc = null; }
+        }
+        function clearNotesUI() {
+            state.notes = []; state.overall = ''; overallEl.value = '';
+            if (blocksReady) blocks.forEach(renderBlockNotes);
+            renderSummary();
+        }
+
+        function setupAuth() {
+            if (!auth) { $('auth-msg').textContent = 'Sync unavailable (offline / Firebase not loaded).'; setSync(false, 'offline'); return; }
+            auth.onAuthStateChanged(function (u) {
+                user = u || null; signedReviewer = isReviewer(u);
+                if (signedReviewer) {
+                    $('auth-out').style.display = 'none'; $('auth-in').style.display = 'inline';
+                    $('auth-who').textContent = 'Signed in · ' + u.email;
+                    overallEl.disabled = false;
+                    subscribe();
+                } else {
+                    $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
+                    if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
+                    overallEl.disabled = true;
+                    unsubscribe(); clearNotesUI(); setSync(false, 'signed out');
+                }
+            });
+            $('auth-signin').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(), p = $('auth-pass').value;
+                if (!e || !p) { $('auth-msg').textContent = 'Enter email and password.'; return; }
+                $('auth-msg').textContent = 'Signing in…';
+                auth.signInWithEmailAndPassword(e, p).catch(function (err) { $('auth-msg').textContent = err.message; });
+            });
+            $('auth-create').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(), p = $('auth-pass').value;
+                if (!e || p.length < 6) { $('auth-msg').textContent = 'Email + a password of at least 6 characters, then Create login.'; return; }
+                if (REVIEWERS.indexOf(e.toLowerCase()) === -1) { $('auth-msg').textContent = 'Only reviewer emails can edit notes: ' + REVIEWERS.join(', '); return; }
+                $('auth-msg').textContent = 'Creating login…';
+                auth.createUserWithEmailAndPassword(e, p).catch(function (err) {
+                    if (err.code === 'auth/email-already-in-use') { $('auth-msg').textContent = 'Login already exists — just Sign in (or Reset if you forgot).'; }
+                    else { $('auth-msg').textContent = err.message; }
+                });
+            });
+            $('auth-signout').addEventListener('click', function () { auth.signOut(); });
+            $('auth-reset').addEventListener('click', function () {
+                var e = $('auth-email').value.trim();
+                if (!e) { $('auth-msg').textContent = 'Type your email first, then click Reset.'; return; }
+                auth.sendPasswordResetEmail(e).then(function () { $('auth-msg').textContent = 'Email sent to ' + e + '. Set your password there, then sign in.'; })
+                    .catch(function (err) { $('auth-msg').textContent = err.message; });
+            });
+        }
+        setupAuth();
+    })();
+    </script>
+</body>
+</html>
