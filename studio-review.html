@@ -187,7 +187,7 @@
         var hasFB = (typeof firebase !== 'undefined' && firebase.firestore && firebase.auth && typeof db !== 'undefined');
         var auth = hasFB ? firebase.auth() : null;
         var user = null, signedReviewer = false;
-        var unsubNotes = null, unsubDoc = null;
+        var unsubNotes = null, unsubDoc = null, writtenParaCount = -1;
         var isReviewer = function (u) { return !!(u && u.email && REVIEWERS.indexOf(u.email.toLowerCase()) !== -1); };
         function notesCol() { return db.collection('draft-notes').doc(slug).collection('notes'); }
         function slugDoc() { return db.collection('draft-notes').doc(slug); }
@@ -454,16 +454,26 @@
                 });
                 applyNotes();
                 setSync(true, 'synced · ' + state.notes.length);
+                maybeWriteParaCount(state.notes.length);   // denormalise count so the Studio list can show it
             }, function (err) { setSync(false, 'sync error'); flash('sync: ' + (err.code || 'error'), true); });
             unsubDoc = slugDoc().onSnapshot(function (doc) {
                 var d = (doc.exists && doc.data()) || {};
+                if (typeof d.paraCount === 'number') writtenParaCount = d.paraCount;
                 state.overall = d.overall || '';
                 if (document.activeElement !== overallEl) overallEl.value = state.overall;
             }, function () {});
         }
+        function maybeWriteParaCount(count) {
+            if (!signedReviewer || count === writtenParaCount) return;
+            // don't create an empty doc just to store 0 on first open; only write 0 to clear a previously-positive count
+            if (count === 0 && writtenParaCount <= 0) { writtenParaCount = 0; return; }
+            writtenParaCount = count;
+            slugDoc().set({ paraCount: count, paraUpdated: Date.now() }, { merge: true }).catch(function () {});
+        }
         function unsubscribe() {
             if (unsubNotes) { unsubNotes(); unsubNotes = null; }
             if (unsubDoc) { unsubDoc(); unsubDoc = null; }
+            writtenParaCount = -1;
         }
         function clearNotesUI() {
             state.notes = []; state.overall = ''; overallEl.value = '';
