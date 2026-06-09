@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/">
+<title>Lundi 9 Juin 2026 — The World Affair</title>
+<meta name="description" content="The World Affair — Lundi 9 Juin 2026. WWDC, SpaceX &amp; Marchés Sous Tension.">
+<style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; flex-wrap: wrap; }
+.masthead-dot { color: #c8c0b4; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; color: #2d4a5e; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; color: #2d4a5e; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 820px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; align-items: flex-start; } }
+@media print { .nav-bar, .bottom-nav { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 9 Juin 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;145</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; WWDC, SpaceX &amp; Marchés Sous Tension</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header>
+<nav class="nav-bar">
+  <a class="nav-link active" href="2026-06-09.html">Premi&egrave;re Page</a>
+  <a class="nav-link" href="index.html">Derni&egrave;re &Eacute;dition</a>
+  <a class="nav-link" href="archive.html">Archives</a>
+</nav>
+<div class="page">
+<!-- BEGIN CONTENT -->
+<div class="flash-box">
+  <div class="flash-title">En 60 Secondes — Les 7 faits du jour</div>
+  <ul>
+    <li><strong>Apple WWDC 2026 :</strong> Siri refondu avec l'IA générative sur iOS 27 et macOS Golden Gate — la mise à jour la plus ambitieuse depuis 2011. <a href="https://www.tech-connect.info/mobile/smartphones/wwdc-2026-annonces-ios-27-siri-ai-macos-golden-gate/">Tech-Connect</a></li>
+    <li><strong>SpaceX IPO J-3 :</strong> Introduction en bourse le 12 juin pour une valorisation de 1 750 à 2 000 milliards de dollars — l'événement financier de la semaine. <a href="https://neofa.com/fr/actualite-financiere-du-05-juin-2026/">NeoFA</a></li>
+    <li><strong>Megalodon :</strong> 5 500 dépôts GitHub compromis via faux workflows Actions — alerte maximale pour toutes les équipes DevSecOps. <a href="https://dcod.ch/2026/06/07/cybersecurite-les-13-actualites-majeures-du-7-juin-2026/">DCOD.ch</a></li>
+    <li><strong>Taïwan :</strong> La Chine lance une opération maritime spéciale au large de Taïwan, escalade des tensions dans le Pacifique. <a href="https://geopolitique-profonde.com/actualite/">Géopolitique Profonde</a></li>
+    <li><strong>Bitcoin :</strong> Correction à 62 518 $ (-1,7 %), 1,5 Md$ de positions liquidées depuis début juin — marché crypto en régime Risk-Off. <a href="https://start-in-blockchain.fr/bitcoin-chute-62000-dollars-juin-2026/">Start In Blockchain</a></li>
+    <li><strong>Tianwen-2 :</strong> La sonde chinoise s'insère en orbite autour de l'astéroïde Kamoʻoalewa — une première mondiale dans l'exploration spatiale. <a href="https://www.cite-espace.com/actualites-spatiales/le-spatial-en-2026/">Cité de l'Espace</a></li>
+    <li><strong>PSG Champion d'Europe :</strong> Deuxième Ligue des Champions pour Paris, victorieux à Budapest — le sport comme vecteur de rayonnement culturel et économique. <a href="https://lemediapositif.com/">Le Média Positif</a></li>
+  </ul>
+</div>
+
+<div class="article-header">
+  <div class="article-overline">Édition du jour</div>
+  <h2 class="article-title">WWDC révolutionne Siri, SpaceX entre en bourse et les marchés naviguent sous tension</h2>
+  <div class="article-date">Lundi 9 Juin 2026 · Édition N°145 · NEXUS Intelligence · 27 domaines</div>
+</div>
+
+<div class="article-body">
+
+<h2>Science &amp; Intelligence Artificielle</h2>
+<p><strong>Apple WWDC 2026 :</strong> Apple a dévoilé le 8 juin la refonte la plus ambitieuse de Siri depuis 2011, intégrant l'IA générative native dans toutes les applications d'iOS 27 et macOS Golden Gate. La démonstration a stupéfié la communauté tech par la fluidité des interactions multimodales. <a href="https://www.tech-connect.info/mobile/smartphones/wwdc-2026-annonces-ios-27-siri-ai-macos-golden-gate/">Tech-Connect</a></p>
+<p><strong>Agent4Science :</strong> Depuis avril 2026, la plateforme de l'Université de Chicago permet à 150 agents IA de publier, débattre et critiquer des articles scientifiques sans aucune intervention humaine. Une révolution épistémologique autant que technologique qui pose la question de la paternité des découvertes. <a href="https://www.france24.com/fr/sciences/20260424-intelligences-artificielles-feront-elles-decouvertes-scientifiques-a-notre-place-ia-agent-4-science">France 24</a></p>
+<p><strong>Empreinte écologique de l'IA :</strong> L'AFIS organise le 10 juin une conférence en ligne sur l'impact environnemental de l'IA générative, alors que la consommation des data centers mondiaux atteint des records historiques préoccupants. <a href="https://www.afis.org/Conference-en-ligne-Mercredi-10-juin-2026-a-20h00-Intelligence-artificielle">AFIS Science</a></p>
+
+<h2>Finance &amp; Marchés</h2>
+<p><strong>Emplois US :</strong> Les États-Unis ont créé 172 000 emplois en mai — plus du double des attentes — provoquant une hausse des taux et une pression sur le Nasdaq. Le marché se repositionne prudemment avant la décision BCE du 11 juin. <a href="https://proximite-courtage.fr/actualites/actualites-financieres-au-8-juin-2026/">Proximité Courtage</a></p>
+<p><strong>SpaceX IPO :</strong> L'introduction en bourse de SpaceX le 12 juin à une valorisation attendue de 1 750 à 2 000 milliards de dollars est l'événement financier du mois. Un signal structurant pour tout le secteur spatial privé. <a href="https://neofa.com/fr/actualite-financiere-du-05-juin-2026/">NeoFA</a></p>
+<p><strong>BCE :</strong> La Banque centrale européenne devrait remonter ses taux d'un quart de point lors de sa réunion du 11 juin. Le ton de Christine Lagarde sur la trajectoire future sera scruté avec attention par les investisseurs et les marchés de taux. <a href="https://www.cafedutrading.com/trading/chiffres-economiques-suivre">Café du Trading</a></p>
+
+<h2>Géopolitique</h2>
+<p><strong>Taïwan :</strong> La Chine a lancé une opération maritime spéciale au large de Taïwan, portant les tensions dans le détroit à un nouveau pic. La communauté internationale attend la réponse américaine et le positionnement de l'OTAN face à cette escalade délibérée. <a href="https://geopolitique-profonde.com/actualite/">Géopolitique Profonde</a></p>
+<p><strong>Soudan :</strong> Le conflit entre l'armée soudanaise et les Forces de soutien rapide a fait plus de 40 000 morts et provoqué 14 millions de déplacés. L'ONU qualifie la situation de pire crise humanitaire mondiale en 2026, devant l'Ukraine. <a href="https://ici.radio-canada.ca/info/long-format/2216111/dix-conflits-surveiller-monde-2026-perspectives">Radio-Canada</a></p>
+<p><strong>Moscou :</strong> Khalilur Rahman séjourne à Moscou du 7 au 9 juin à l'invitation de Sergueï Lavrov pour des discussions bilatérales dans un contexte de recomposition accélérée des alliances internationales post-Ukraine. <a href="https://france.news-pravda.com/world/2026/06/07/228517.html">Pravda France</a></p>
+
+<h2>Cybersécurité</h2>
+<p><strong>Megalodon :</strong> Une campagne sophistiquée baptisée Megalodon a compromis 5 500 dépôts GitHub en injectant de faux workflows GitHub Actions capables de dérober identifiants, clés CI/CD et tokens d'intégration continue. Alerte maximale pour toutes les équipes DevOps. <a href="https://dcod.ch/2026/06/07/cybersecurite-les-13-actualites-majeures-du-7-juin-2026/">DCOD.ch</a></p>
+<p><strong>Kali365 :</strong> Le FBI alerte sur un service de phishing clé en main exploitant l'authentification OAuth de Microsoft 365 pour contourner la double authentification et prendre le contrôle de comptes d'entreprise à grande échelle. <a href="https://www.it-connect.fr/actualites/actu-securite/">IT-Connect</a></p>
+<p><strong>Android :</strong> Les patchs de sécurité Android de juin 2026 corrigent 124 vulnérabilités dont un zero-day activement exploité (CVE-2025-48595). Mise à jour immédiate recommandée sur tous les appareils compatibles. <a href="https://dcod.ch/2026/06/02/cyberattaques-les-14-incidents-majeurs-du-2-juin-2026/">DCOD.ch</a></p>
+
+<h2>Privacy &amp; Liberté Numérique</h2>
+<p><strong>G7 données à Paris :</strong> Les autorités mondiales de protection des données se réunissent à Paris sous présidence CNIL du 23 au 26 juin. Un accord-cadre sur la gouvernance de l'IA et les flux transfrontaliers de données personnelles est attendu. <a href="https://www.cnil.fr/fr/actualites">CNIL</a></p>
+<p><strong>Cloud &amp; AI Development Act :</strong> Bruxelles dévoile un acte législatif orientant les marchés publics vers les solutions cloud européennes certifiées pour réduire la dépendance structurelle aux géants américains du numérique. <a href="https://jamespot.com/blog/securite-souverainete/cybersecurite-2026-tendances-resilience/">Jamespot</a></p>
+<p><strong>CNIL 2026 :</strong> La CNIL cible cette année le traitement des données dans le recrutement et le registre électoral unique, avec des contrôles renforcés sur les outils ATS utilisant l'IA générative pour présélectionner les candidats. <a href="https://www.cnil.fr/fr/actualites">CNIL</a></p>
+
+<h2>Santé</h2>
+<p><strong>Thérapie CAR-T :</strong> Les derniers essais cliniques de thérapies CAR-T montrent des résultats spectaculaires sur les cancers hématologiques réfractaires aux traitements classiques. La FDA et l'EMA ont accéléré leurs procédures d'approbation pour ces traitements révolutionnaires. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12704466/">NCBI PubMed</a></p>
+<p><strong>PFAS :</strong> Une étude alerte sur la contamination systémique aux polluants éternels PFAS dans l'eau potable et les aliments transformés. L'EFSA envisage de revoir ses seuils de tolérance à la baisse suite aux nouvelles données épidémiologiques. <a href="https://www.lanutrition.fr/">LaNutrition.fr</a></p>
+<p><strong>IA médicale :</strong> Les hôpitaux exploitent massivement les données patients pour l'anticipation des risques grâce à des modèles prédictifs capables de détecter des signaux faibles de pathologies chroniques avant l'apparition des premiers symptômes. <a href="https://www.has-sante.fr/jcms/p_4042337/fr/la-has-au-congres-de-medecine-generale-france-cmgf-wonca-du-30-juin-au-3-juillet-2026">HAS</a></p>
+
+<h2>Espace &amp; Énergie</h2>
+<p><strong>Tianwen-2 :</strong> La sonde spatiale chinoise Tianwen-2 réalise en juin son insertion orbitale autour de l'astéroïde géocroiseur Kamoʻoalewa — une première mondiale qui illustre l'ambition croissante de Pékin dans l'exploration du système solaire proche. <a href="https://www.cite-espace.com/actualites-spatiales/le-spatial-en-2026/">Cité de l'Espace</a></p>
+<p><strong>Ariane 6 VA269 :</strong> Le lancement VA269 d'Ariane 6 version 64 est prévu le 17 juin depuis Kourou. L'ESA compte sur cette série de tirs pour consolider l'autonomie d'accès européen à l'espace face à la montée en puissance de SpaceX. <a href="https://www.gifas.fr/press-summary/les-grands-rendez-vous-spatiaux-2026">GIFAS</a></p>
+<p><strong>Pesquet &amp; Prost chez Vast :</strong> La France signe le 6 juin un accord historique avec la société privée Vast pour un vol habité de Thomas Pesquet et Arnaud Prost, illustrant la privatisation croissante des missions spatiales habitées. <a href="https://reves-d-espace.com/">Rêves d'Espace</a></p>
+
+<h2>Culture</h2>
+<p><strong>PSG champion d'Europe :</strong> Le Paris Saint-Germain décroche son deuxième titre en Ligue des Champions à Budapest — une victoire historique qui renforce le rayonnement culturel et économique de Paris à l'échelle mondiale et légitime les investissements colossaux du club. <a href="https://lemediapositif.com/">Le Média Positif</a></p>
+<p><strong>Michael Jackson aux enchères :</strong> Une cinquantaine de costumes de scène et d'objets personnels de Michael Jackson ont été vendus aux enchères le 3 juin près de Paris pour environ 1 million d'euros, témoignant de la valeur marchande durable des grandes icônes de la culture populaire. <a href="https://accordissimo.com/notes-de-musicien/actualites-des-artistes-juin-2026/">Accordissimo</a></p>
+<p><strong>Fête de la Musique :</strong> Le 21 juin, l'Orchestre National de Jazz célèbre ses 40 ans dans la cour du Palais-Royal pour la Fête de la Musique, avec une programmation exceptionnelle en accès libre mêlant répertoire historique et créations contemporaines. <a href="https://fetedelamusique.culture.gouv.fr/">Fête de la Musique</a></p>
+
+<h2>Innovation</h2>
+<p><strong>VivaTech 2026 :</strong> Le salon VivaTech (17–20 juin) affiche 23 startups françaises dans le Top 100 mondial. L'IA sectorielle, les semi-conducteurs et la cybersécurité dominent une édition historiquement tournée vers la souveraineté technologique européenne. <a href="https://www.frenchweb.fr/vivatech-2026-le-salon-des-startups-se-voit-en-plateforme-de-souverainete-technologique-europeenne/461798">FrenchWeb</a></p>
+<p><strong>Mistral AI :</strong> Mistral AI figure parmi les 23 françaises du Top 100 VivaTech 2026, aux côtés de Pigment, Dust et Gladia. La société confirme son statut de champion européen de l'IA générative face aux géants américains et chinois. <a href="https://economiesetcie.com/vivatech-2026-startups-francaises/">Économies et Cie</a></p>
+<p><strong>Manta, grand gagnant IMT Starter 2026 :</strong> La plateforme SaaS IA pour la relation investisseur développée par Manta remporte le Trophée Start-Up Numérique 2026, confirmant l'IA agentique pour la finance comme secteur-clé de l'innovation française. <a href="https://www.maddyness.com/2026/06/01/imt-starter-devoile-les-5-start-up-les-plus-prometteuses-de-lannee-lors-de-sa-17e-edition-du-trophee-start-up-numerique/">Maddyness</a></p>
+
+<h2>Gastronomie</h2>
+<p><strong>Tous au Restaurant 2026 :</strong> L'opération revient du 1er au 14 juin avec sa formule phare : un menu acheté, un menu offert dans des centaines d'établissements gastronomiques — de Gilles Goujon à Hélène Darroze. Un événement qui démocratise la haute cuisine française sur tout le territoire. <a href="https://nouvellesgastronomiques.com/tous-au-restaurant-2026-votre-invite-est-notre-invite-du-1er-au-14-juin-2026/">Nouvelles Gastronomiques</a></p>
+<p><strong>World's 50 Best Restaurants 2026 :</strong> Le classement mondial est dévoilé en juin, redéfinissant les sommets de la haute gastronomie. Les chefs français défendent chèrement leur rang face à une compétition nordique et asiatique de plus en plus intense et créative. <a href="https://www.pariszigzag.fr/paris-au-quotidien/actualites-paris/tous-au-restaurant-2026/">Paris Zigzag</a></p>
+<p><strong>Salon du Livre de Cuisine :</strong> Les 13–14 juin dans le 15e arrondissement de Paris, chefs, éditeurs et gastronomes se retrouvent autour de la littérature culinaire et du patrimoine gastronomique français pour une édition exceptionnellement riche. <a href="https://www.lechef.com/le-salon-du-livre-de-cuisine-de-retour-a-paris-en-juin-2026/">Le Chef</a></p>
+
+<h2>Maritime</h2>
+<p><strong>Journée Mondiale des Océans :</strong> Le 8 juin, la Journée Mondiale des Océans 2026 appelle à réimaginer notre relation avec la mer. Le Baromètre Starfish 2026 alerte sur l'accélération de la dégradation malgré le traité haute mer BBNJ entré en vigueur en janvier. <a href="https://figaronautisme.meteoconsult.fr/actus-nautisme-lifestyle/2026-06-08/89010-journee-mondiale-des-oceans-2026-pourquoi-il-faut-reimaginer-notre-relation-avec-la-mer">Figaro Nautisme</a></p>
+<p><strong>UE &amp; Intelligence Océanique :</strong> La Commission européenne lance un programme de 92 millions d'euros pour positionner l'UE comme leader mondial de la surveillance maritime et de l'intelligence océanique, visant 35 % du marché global d'ici 2035. <a href="https://www.euronews.com/my-europe/2026/06/03/all-hands-on-deck-the-eus-92-million-bid-for-a-global-ocean-intelligence-network">Euronews</a></p>
+<p><strong>Vendée Arctique &amp; Cowes Classics :</strong> Le Vendée Arctique (lancé le 7 juin) et les Cowes Classics (4–7 juin) ouvrent la grande saison des régates 2026. Le retour des foilers génère un regain d'intérêt mondial pour la course hauturière et la voile de performance. <a href="https://figaronautisme.meteoconsult.fr/actus-nautisme-courses/2026-06-02/84568-calendrier-des-grandes-courses-a-la-voile-en-2026">Figaro Nautisme</a></p>
+
+<h2>Bonnes Nouvelles</h2>
+<p><strong>Diane Parry à Roland-Garros :</strong> La joueuse française bat la 6e mondiale et se qualifie pour les huitièmes de finale de Roland-Garros 2026, remettant le tennis féminin français sur le devant de la scène internationale avec panache et détermination. <a href="https://lemediapositif.com/">Le Média Positif</a></p>
+<p><strong>Carburants aviation durables :</strong> La production mondiale de SAF atteint 2,4 millions de tonnes en 2026, un record qui accélère sensiblement la décarbonation du transport aérien sur la trajectoire des accords de Paris et des engagements OACI. <a href="https://lemediapositif.com/">Le Média Positif</a></p>
+<p><strong>Hépatite B :</strong> Des chercheurs annoncent un traitement prometteur contre l'hépatite B chronique pouvant transformer la prise en charge des 300 millions de patients dans le monde. Les essais de phase III démarrent cet été dans plusieurs centres internationaux. <a href="https://www.bonnesnouvellesdujour.fr/">Bonnes Nouvelles du Jour</a></p>
+
+<h2>Podcasts</h2>
+<p><strong>IA et voix synthétiques :</strong> Les grandes plateformes de podcast intègrent des voix synthétiques indiscernables des originales, ouvrant un débat éthique intense sur la propriété intellectuelle des voix, la rémunération des créateurs et l'authenticité du média. <a href="https://www.sne.fr/evenement_sne/festival-vox-du-livre-audio-et-lecture-a-voix-haute/">SNE</a></p>
+<p><strong>Festival VOX — Désobéissances :</strong> La 5e édition du Festival VOX du livre audio explore le thème « Désobéissances » à la Maison de la Poésie le 4 juin, mêlant auteurs émergents et formats expérimentaux de lecture à voix haute et de performance sonore. <a href="https://www.sne.fr/evenement_sne/festival-vox-du-livre-audio-et-lecture-a-voix-haute/">SNE</a></p>
+<p><strong>Podcasts d'investigation :</strong> Face au déclin des revenus publicitaires classiques, les podcasts d'investigation migrent vers l'abonnement premium et les partenariats médias. Certains titres franchissent les 500 000 abonnés payants en Europe. <a href="https://www.profilculture-formation.com/actualite-culture">ProfilCulture</a></p>
+
+<h2>LLM &amp; Agents IA</h2>
+<p><strong>Claude Opus 4.8 en tête :</strong> Lancé le 28 mai 2026, Claude Opus 4.8 d'Anthropic reprend la première place du classement mondial des LLM à GPT-5.5. La course aux modèles frontières s'intensifie avec des capacités agentiques et de raisonnement sans précédent. <a href="https://digitiz.fr/classement-llm/">Digitiz</a></p>
+<p><strong>Gemini 3.5 Flash :</strong> Lancé le 19 mai, Gemini 3.5 Flash de Google révolutionne le segment intermédiaire des LLM avec un rapport performance/coût inédit. Les développeurs API migrent massivement vers cette offre qui casse les prix établis. <a href="https://www.leptidigital.fr/intelligence-artificielle-ia/meilleurs-modeles-ia-llm-55427/">LeptiDigital</a></p>
+<p><strong>Développeur agentique :</strong> Les entreprises se disputent les experts en architectures d'agents autonomes et LangChain — le profil le plus recherché du marché tech en 2026. L'IA agentique s'impose comme couche d'orchestration centrale dans les systèmes d'entreprise. <a href="https://www.free-work.com/fr/tech-it/blog/metiers-it/developpeur-ia-agentique-le-profil-tech-que-tout-le-monde-cherche">Free-Work</a></p>
+
+<h2>Crypto</h2>
+<p><strong>Bitcoin en correction :</strong> Le Bitcoin est passé brièvement sous les 62 000 $ dans la nuit du 3 au 4 juin. Plus de 1,5 milliard de dollars de positions longues ont été liquidées en 24 heures, touchant 208 000 traders dans un effet domino brutal. <a href="https://start-in-blockchain.fr/bitcoin-chute-62000-dollars-juin-2026/">Start In Blockchain</a></p>
+<p><strong>Marché crypto -17 % depuis mai :</strong> La capitalisation crypto globale recule de 2,8 à 2,32 billions de dollars depuis le sommet de mai. Ethereum tourne autour de 1 690 $, XRP et Solana cèdent environ 2 % chacun dans un marché en mode Risk-Off. <a href="https://journalducoin.com/bitcoin/etf-bitcoin-ethereum-entrees-capitaux-reprennent-timidement/">Journal du Coin</a></p>
+<p><strong>ETF Bitcoin :</strong> Le 4 juin marque une petite rupture dans la série de sorties des ETF Bitcoin cotés aux États-Unis, avec des entrées nettes symboliques de 3,2 M$ — potentiel signal d'un plancher de marché à surveiller. <a href="https://journalducoin.com/bitcoin/etf-bitcoin-ethereum-entrees-capitaux-reprennent-timidement/">Journal du Coin</a></p>
+
+<h2>Arts</h2>
+<p><strong>Michael Jackson aux enchères :</strong> Une vente exceptionnelle de 50 costumes de scène et objets personnels de Michael Jackson s'est tenue le 3 juin près de Paris pour environ 1 million d'euros, révélant la valeur marchande durable et transgénérationnelle des grandes icônes pop. <a href="https://accordissimo.com/notes-de-musicien/actualites-des-artistes-juin-2026/">Accordissimo</a></p>
+<p><strong>Souad Massi au Chatelet :</strong> La chanteuse algérienne Souad Massi présente son album « Zagate » au Théâtre du Chatelet le 18 juin — un concert world music attendu qui explore les frontières entre musique berbère, flamenco et jazz contemporain. <a href="https://www.franceinfo.fr/culture/musique/">Franceinfo Culture</a></p>
+<p><strong>We Love Green :</strong> Le festival éco-responsable We Love Green (5–7 juin) au Bois de Vincennes confirme son modèle zéro plastique avec bilan carbone publié — une référence internationale pour l'événementiel culturel durable. <a href="https://lametropole.com/2026/06/02/culture-quoi-faire-cette-semaine-du-2-juin-2026/">La Métropole</a></p>
+
+<h2>Seamanship</h2>
+<p><strong>Foudre en mer :</strong> Alors que les équipements électroniques prolifèrent à bord, la foudre devient une menace croissante pour les plaisanciers. Les experts recommandent des dispositifs de protection spécifiques et des procédures d'urgence rigoureusement actualisées. <a href="https://figaronautisme.meteoconsult.fr/actus-nautisme-lifestyle/2026-06-04/85136-foudre-en-mer-le-risque-invisible-qui-menace-de-plus-en-plus-les-plaisanciers">Figaro Nautisme</a></p>
+<p><strong>Bloc Marine 2026 :</strong> La nouvelle édition du Bloc Marine, référence indispensable pour la navigation côtière et hauturière, est disponible avec les dernières réglementations, cartes et informations météorologiques actualisées. <a href="https://figaronautisme.meteoconsult.fr/actus-nautisme-lifestyle/2026-06-05/83609-equipez-vous-de-la-nouvelle-edition-du-bloc-marine-incontournable-pour-vos-prochaines-navigations">Figaro Nautisme</a></p>
+<p><strong>Baromètre Starfish :</strong> Malgré le traité haute mer BBNJ entré en vigueur en janvier 2026, le Baromètre Starfish révèle une dégradation accélérée des écosystèmes marins. La pêche industrielle et la pollution plastique restent les vecteurs principaux de destruction. <a href="https://www.infosoir.com/info7881/actualite/barometre-starfish-2026-degradation-ocean.html">Infosoir</a></p>
+
+<h2>Techniques Culinaires</h2>
+<p><strong>Fermentation de précision :</strong> La fermentation de précision produit enzymes, pigments naturels et graisses avec une traçabilité et reproductibilité inédites. En 2026, la conversation réglementaire passe des premières approbations à la cohérence et à la vitesse des évaluations à l'échelle industrielle. <a href="https://www.proteinproductiontechnology.com/post/precision-fermentation-grows-up-six-predictions-shaping-food-tech-in-2026">PPTI News</a></p>
+<p><strong>Mycologie &amp; gastronomie :</strong> Le chef-bioengineer Vayu Hill-Maini de Stanford collabore avec Ramón Perisé (2 étoiles) pour transformer les déchets culinaires en ingrédients gastronomiques durables grâce à la fermentation fongique — un pont inédit entre science et haute cuisine. <a href="https://cen.acs.org/food/food-science/chef-scientist-vayu-hill-maini-fermentation/104/web/2026/04">ACS C&amp;EN</a></p>
+<p><strong>Omics et terroir microbien :</strong> Grâce à la métagénomique et à la métabolomique, des chercheurs reconstituent et contrôlent les consortiums microbiens responsables des saveurs spécifiques des fromages d'appellation. Le « terroir microbien » est désormais scientifiquement formalisé et reproductible. <a href="https://www.nature.com/articles/s41538-026-00740-8">npj Science of Food</a></p>
+
+<h2>Nutrition</h2>
+<p><strong>Index insulinémique :</strong> Certains aliments réputés sains font bondir l'insuline autant qu'une tranche de pain blanc, révèle l'index insulinémique. Le numéro de juin de LaNutrition.fr consacre un dossier complet à la maîtrise de la glycémie et à la révolution des stratégies alimentaires anti-diabète. <a href="https://www.lanutrition.fr/le-monde-de-la-nutrition-juin-2026">LaNutrition.fr</a></p>
+<p><strong>Lycopène :</strong> Le lycopène de la tomate cuite s'impose comme l'un des antioxydants les plus puissants dans la prévention cardiovasculaire. Les nutritionnistes recommandent une consommation régulière de concentrés et sauces cuites pour maximiser la biodisponibilité. <a href="https://www.lanutrition.fr/">LaNutrition.fr</a></p>
+<p><strong>PFAS dans l'alimentation :</strong> Les polluants éternels PFAS contaminent l'eau potable et les aliments à des niveaux qui suscitent une vive inquiétude. L'EFSA a ouvert une consultation publique sur la révision des seuils tolérables suite aux nouvelles données toxicologiques disponibles. <a href="https://www.lanutrition.fr/">LaNutrition.fr</a></p>
+
+<h2>Bien-être</h2>
+<p><strong>Mindfulness &amp; IA :</strong> Les nouvelles applications de bien-être utilisent l'IA générative pour personnaliser les séances de méditation selon les données biométriques de stress en temps réel. Le marché mondial du mental fitness atteint 25 milliards de dollars en 2026, en forte croissance. <a href="https://lemediapositif.com/">Le Média Positif</a></p>
+<p><strong>Immunothérapie et vieillissement actif :</strong> Les progrès en CAR-T permettent à des patients guéris de cancers avancés de retrouver une qualité de vie pleine. La notion de « survivant actif » transforme profondément les pratiques de médecine préventive et de bien-être post-cancer. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12704466/">NCBI PubMed</a></p>
+<p><strong>Silver économie :</strong> Le marché de la coordination des aidants familiaux est parmi les segments à plus fort taux de croissance en 2026. Des plateformes IA facilitent la gestion du parcours de soin des personnes âgées en perte d'autonomie, réduisant la charge des familles aidantes. <a href="https://www.entrepreneur.lcl.fr/articles/entrepreneurs-en-2026-quelles-sont-les-grandes-tendances">Entrepreneur LCL</a></p>
+
+<h2>Musique</h2>
+<p><strong>Fête de la Musique :</strong> Le 21 juin, l'Orchestre National de Jazz célèbre ses 40 ans dans la cour du Palais-Royal pour la Fête de la Musique — une édition exceptionnelle en accès libre mêlant répertoire historique et créations contemporaines inédites. <a href="https://fetedelamusique.culture.gouv.fr/">Fête de la Musique</a></p>
+<p><strong>Dexter Goldberg &amp; Moeun Son :</strong> Le pianiste Dexter Goldberg et le violoniste Moeun Son se produisent au Duc des Lombards en juin, incarnant la vitalité d'une nouvelle génération jazz parisienne dont les influences éclectiques renouvellent profondément le genre. <a href="https://accordissimo.com/notes-de-musicien/actualites-des-artistes-juin-2026/">Accordissimo</a></p>
+<p><strong>We Love Green :</strong> Le festival We Love Green s'affirme comme référence mondiale pour l'événementiel musical durable. Les artistes en tête d'affiche intègrent désormais systématiquement le bilan carbone dans leurs négociations contractuelles avec les organisateurs. <a href="https://lametropole.com/2026/06/02/culture-quoi-faire-cette-semaine-du-2-juin-2026/">La Métropole</a></p>
+
+<h2>Expériences</h2>
+<p><strong>VivaTech au grand public :</strong> Pour la première fois, VivaTech 2026 (17–20 juin) ouvre massivement ses portes au grand public avec des zones d'initiation à l'IA, la robotique et la réalité augmentée. 120 000 visiteurs sont attendus, dont un large public scolaire et familial. <a href="https://www.futura-sciences.com/tech/actualites/futur-innovation-vivatech-2026-innovation-ouverte-grand-public-notamment-jeunes-134973/">Futura Sciences</a></p>
+<p><strong>Vibe Coding Arena :</strong> EuraTechnologies accueille les 13–14 juin une compétition de « vibe coding » IA — programmation assistée par modèles génératifs — un format inédit qui attire développeurs, designers et artistes numériques du Nord de la France et au-delà. <a href="https://www.tech-connect.info/mobile/smartphones/wwdc-2026-annonces-ios-27-siri-ai-macos-golden-gate/">Tech-Connect</a></p>
+<p><strong>Paul Métayer :</strong> Paul Métayer, 26 ans, réalise un voyage solo Poitiers–Athènes–Poitiers en 80 jours à pied. Suivi par des milliers de personnes en ligne, son aventure low-tech inspire comme antidote à la surconnexion numérique et à l'accélération permanente. <a href="https://lemediapositif.com/">Le Média Positif</a></p>
+
+<h2>Entrepreneuriat</h2>
+<p><strong>Facturation électronique :</strong> La facturation électronique B2B devient obligatoire en France en 2026. Les très petites entreprises adoptent massivement les plateformes certifiées Chorus Pro pour se conformer à cette révolution administrative qui modernise le tissu économique français. <a href="https://www.initiative-france.fr/espace-info/entrepreneuriat/603-ce-qui-change-pour-les-entrepreneurs-en-2026.html">Initiative France</a></p>
+<p><strong>La « gazelle » française :</strong> L'entrepreneur de 2026 ressemble à une gazelle : agile, rentable et résilient. Fini l'hypercroissance au détriment de la profitabilité — les investisseurs exigent des fondamentaux solides et une démonstration de traction réelle dès le premier tour de table. <a href="https://www.dynamique-mag.com/article/lentrepreneur-de-2026-entre-mur-de-prudence-et-renaissance-circulaire">Dynamique Mag</a></p>
+<p><strong>Cybersécurité TPE :</strong> La cybersécurité packagée pour les très petites entreprises sans DSI est l'un des segments à plus fort taux de croissance en France, avec des offres clés en main adaptées aux budgets contraints des PME les plus exposées. <a href="https://propulsebyca.fr/actualites/tendances-entrepreneuriat">Propulse by CA</a></p>
+
+<h2>Design Culinaire</h2>
+<p><strong>IA et design assiette :</strong> Des chefs collaborent avec des algorithmes IA pour générer des associations de textures et de saveurs inédites. Le design culinaire s'inspire de la mode et de l'architecture pour repenser radicalement la présentation des plats en 2026. <a href="https://www.lechef.com/le-salon-du-livre-de-cuisine-de-retour-a-paris-en-juin-2026/">Le Chef</a></p>
+<p><strong>Bocaux d'art :</strong> Les bocaux de fermentation artisanale s'imposent comme objets de design dans les restaurants gastronomiques. Chefs et designers collaborent pour créer des contenants qui prolongent et amplifient l'expérience visuelle et sensorielle du repas. <a href="https://www.nature.com/articles/s41538-026-00740-8">npj Science of Food</a></p>
+<p><strong>World's 50 Best &amp; sobriété visuelle :</strong> Les assiettes du World's 50 Best 2026 témoignent d'un virage vers la naturalité et la sobriété esthétique. Moins de mousse et de gel, plus de textures brutes et de couleurs terreuses inspirées du monde végétal et minéral. <a href="https://www.pariszigzag.fr/paris-au-quotidien/actualites-paris/tous-au-restaurant-2026/">Paris Zigzag</a></p>
+
+<h2>Droit Maritime</h2>
+<p><strong>BBNJ en vigueur :</strong> Le traité international sur la haute mer BBNJ est entré en vigueur en janvier 2026, mais ses effets concrets sur la protection des écosystèmes marins tardent à se matérialiser selon le Baromètre Starfish 2026. La communauté scientifique appelle à des mécanismes de mise en œuvre plus contraignants. <a href="https://www.infosoir.com/info7881/actualite/barometre-starfish-2026-degradation-ocean.html">Infosoir</a></p>
+<p><strong>UE et données maritimes :</strong> Le programme de 92 M€ de la Commission européenne impose un cadre légal pour le partage des données de surveillance maritime entre États membres. La propriété et la souveraineté des données océaniques deviennent des enjeux géopolitiques majeurs. <a href="https://www.euronews.com/my-europe/2026/06/03/all-hands-on-deck-the-eus-92-million-bid-for-a-global-ocean-intelligence-network">Euronews</a></p>
+<p><strong>Détroit d'Ormuz :</strong> La montée des tensions autour du détroit d'Ormuz génère un débat juridique intense sur les droits de passage inoffensif et les règles d'engagement navales. Le cadre de la CNUDM est contesté par plusieurs États aux positions antagonistes. <a href="https://neofa.com/fr/actualite-financiere-du-05-juin-2026/">NeoFA</a></p>
+
+<h2>Poésie</h2>
+<p><strong>43e Marché de la Poésie :</strong> Le Marché de la Poésie a réuni plus de 400 éditeurs et revues du 3 au 7 juin place Saint-Sulpice à Paris — un événement majeur et populaire de la scène poétique francophone internationale, ouvert à tous les lecteurs sans distinction. <a href="https://www.marche-poesie.com/">Marché de la Poésie</a></p>
+<p><strong>Catherine Paquet :</strong> Le nouveau recueil de Catherine Paquet — miroir d'un monde en crise — a été sélectionné parmi les meilleures parutions poétiques de juin 2026 par le journal Le Devoir de Montréal. Un large spectre d'émotions traversé par une écriture précise et sensible. <a href="https://www.ledevoir.com/lire/985010/notre-selection-poesie-juin">Le Devoir</a></p>
+<p><strong>Recours au Poème #237 :</strong> La revue publie son numéro mai-juin 2026 sur la résistance et l'engagement politique, rassemblant 40 poètes de 15 pays en écho aux tensions géopolitiques mondiales et à la nécessité d'une parole poétique engagée. <a href="https://www.recoursaupoeme.fr/">Recours au Poème</a></p>
+
+<h2>Food Science</h2>
+<p><strong>Fermentation de précision :</strong> La fermentation de précision produit en 2026 des ingrédients fonctionnels — enzymes, vitamines, pigments et graisses — avec une traçabilité et une reproductibilité inédites, révolutionnant l'industrie agroalimentaire mondiale et la formulation des aliments santé. <a href="https://gfi.org/science/the-science-of-fermentation/">GFI</a></p>
+<p><strong>Terroir microbien :</strong> Grâce à la métagénomique et à la métabolomique, des chercheurs reconstituent et contrôlent les consortiums microbiens responsables des saveurs spécifiques des fromages d'appellation. Le « terroir microbien » est désormais une réalité scientifique formalisée et industriellement exploitable. <a href="https://www.nature.com/articles/s41538-026-00740-8">npj Science of Food</a></p>
+<p><strong>Future Food-Tech SF 2026 :</strong> La conférence de San Francisco a mis en lumière l'impact de l'IA sur la formulation alimentaire et l'urgence absolue d'un cadre réglementaire mondial pour les nouvelles protéines alternatives et ferments de précision en voie de commercialisation. <a href="https://www.greenqueen.com.hk/future-food-tech-san-francisco-2026-maha-fermentation-ai-regulation/">Green Queen</a></p>
+
+<h2>Connexions Cross-Domaines</h2>
+<p><strong>IA × Finance × Cybersécurité :</strong> La révolution agentique (Claude Opus 4.8, Gemini 3.5 Flash) propulse les valorisations des plateformes IA mais ouvre simultanément de nouvelles surfaces d'attaque critiques. Megalodon cible précisément les pipelines CI/CD des équipes qui développent ces mêmes outils. Les CISO et les CFO partagent désormais exactement le même tableau de risques systémiques.</p>
+<p><strong>Géopolitique × Maritime × Énergie :</strong> L'opération maritime chinoise autour de Taïwan perturbe les routes commerciales en mer de Chine et pousse le Brent vers 95–96 $. La surveillance maritime UE à 92 M€ prend un relief stratégique inédit. Silver (valeur refuge et demande industrielle SAF) bénéficie directement de cette double pression géopolitique et énergétique.</p>
+<p><strong>Santé × Nutrition × Bien-être :</strong> La couverture Zepbound par CVS répond à la demande croissante de GLP-1 alimentée par les études sur l'index insulinémique et la glycémie. L'IA médicale et la Silver économie forment un écosystème intégré autour des données de santé. Un marché que UNH, malgré ses ennuis réglementaires, reste le mieux positionné à capturer en 2026.</p>
+<p><strong>Food Science × Gastronomie × Design :</strong> La fermentation de précision et l'omics microbien transcendent les catégories traditionnelles — ils alimentent à la fois les cuisines 3 étoiles, les tendances de design (sobriété végétale, bocaux-sculptures) et l'innovation industrielle agroalimentaire. Une filière complète du laboratoire à l'assiette prend forme sous nos yeux.</p>
+
+<h2>Chiffres du Jour</h2>
+<table>
+  <thead>
+    <tr><th>Indicateur</th><th>Valeur</th><th>Variation</th><th>Note</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>S&amp;P 500</td><td>7 405,73</td><td>+0,30 %</td><td>Résilient malgré pression taux</td></tr>
+    <tr><td>Nasdaq</td><td>25 929,66</td><td>+0,86 %</td><td>WWDC &amp; LLM wave soutiennent</td></tr>
+    <tr><td>BTC/USD</td><td>62 518 $</td><td>-1,71 %</td><td>Correction — plancher 60K$ surveillé</td></tr>
+    <tr><td>ETH/USD</td><td>1 688 $</td><td>-0,30 %</td><td>Consolide ; ETF inflows reprennent timidement</td></tr>
+    <tr><td>VIX</td><td>~15,8</td><td>—</td><td>Zone neutre — pas de panique structurelle</td></tr>
+    <tr><td>Fear &amp; Greed</td><td>~35 (Fear)</td><td>&#8595;</td><td>Marché en mode défensif généralisé</td></tr>
+    <tr><td>Oil (Brent)</td><td>~95,50 $</td><td>+0,8 %</td><td>Tensions Ormuz + opération Taïwan</td></tr>
+    <tr><td>Gold</td><td>4 342 $</td><td>-0,49 %</td><td>Légère prise de bénéfices post-ATH</td></tr>
+    <tr><td>Silver</td><td>69,02 $</td><td>-0,20 %</td><td>Valeur refuge industrielle solide</td></tr>
+    <tr><td>EUR/USD</td><td>1,0820</td><td>±0</td><td>Stable ; BCE hawkish anticipée le 11/06</td></tr>
+    <tr><td>10Y UST</td><td>~4,72 %</td><td>+3 bp</td><td>Hausse post-emplois US en mai</td></tr>
+  </tbody>
+</table>
+
+<h2>Demain à Surveiller</h2>
+<ul>
+  <li><strong>BCE — Décision de taux (11 juin) :</strong> Hausse de 25 bp très probable. Le ton de Lagarde sur la trajectoire future sera déterminant pour les marchés de taux et les actifs risqués. Impact direct sur EQQB et l'ensemble du portefeuille.</li>
+  <li><strong>SpaceX IPO (12 juin) :</strong> L'événement financier de la semaine — valorisation attendue 1 750–2 000 Mds$. Signal de comparaison structurant direct pour RKLB et tout le secteur spatial privé.</li>
+  <li><strong>Conférence AFIS — IA &amp; Écologie (10 juin 20h) :</strong> Débat sur l'empreinte environnementale de l'IA générative avec Pierre Beyssac — un sujet qui va peser de plus en plus sur la réglementation des data centers.</li>
+  <li><strong>UNH DoJ Hearing (dans ~12 jours) :</strong> L'audience du DoJ maintient le risque sur le titre malgré l'upgrade BofA. Surveiller le niveau $420 comme déclencheur potentiel de TRIM partiel.</li>
+  <li><strong>FDA GLP-1 — LLY (dans ~18 jours) :</strong> Le verdict sur le nouveau traitement GLP-1 d'Eli Lilly pourrait constituer un catalyseur majeur pour le titre et l'ensemble du secteur santé et bien-être.</li>
+  <li><strong>CPI US (semaine du 10 juin) :</strong> Les données d'inflation américaines seront déterminantes pour calibrer les anticipations de baisses de taux Fed en 2026. Un chiffre élevé renforcerait la pression sur les actifs risqués.</li>
+  <li><strong>Tianwen-2 :</strong> Premiers retours scientifiques depuis l'orbite de Kamoʻoalewa attendus dans les prochains jours — une mission qui pourrait transformer notre compréhension de la formation des astéroïdes géocroiseurs.</li>
+</ul>
+
+</div>
+<!-- END CONTENT -->
+<div class="bottom-nav">
+  <a href="index.html"><span class="bottom-nav-label">Retour</span><span class="bottom-nav-title">Premi&egrave;re page &uarr;</span></a>
+  <a href="archive.html" style="text-align:right;"><span class="bottom-nav-label">Toutes les &eacute;ditions</span><span class="bottom-nav-title">Archives &rarr;</span></a>
+</div>
+</div>
+<div class="site-footer">The World Affair &mdash; Lundi 9 Juin 2026 &mdash; NEXUS Intelligence</div>
+</body>
+</html>
