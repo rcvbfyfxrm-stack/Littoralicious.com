@@ -5,8 +5,9 @@ name: Deploy Littoralicious (live)
 # whole-site, so this publishes the current state of the branch — the gazette,
 # studio, articles, terroir, everything. Keep unfinished publication work behind
 # the draft flag in data/articles.json (drafts stay off the homepage/sitemap/feed)
-# or off this branch. Requires the FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED
-# repo secret (create with `firebase init hosting:github`).
+# or off this branch. Auth: the FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED
+# repo Actions secret (a Firebase service-account JSON) — deployed via the
+# Firebase CLI directly (the old action-hosting-deploy@v0 has no Node 24 release).
 
 on:
   push:
@@ -25,9 +26,9 @@ jobs:
   deploy-live:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
 
@@ -37,9 +38,10 @@ jobs:
           npm run build
 
       - name: Deploy to LIVE Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
-          projectId: littoralicious-web-eceed
-          channelId: live
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          npx --yes firebase-tools@15 deploy --only hosting \
+            --project littoralicious-web-eceed --non-interactive
