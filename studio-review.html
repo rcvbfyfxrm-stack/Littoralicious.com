@@ -165,6 +165,11 @@
         var FETCH_TIMEOUT = 8000;
         var params = new URLSearchParams(location.search);
         var slug = (params.get('slug') || '').trim();
+        var tpl = (params.get('tpl') || '').trim();
+        var isTpl = !!tpl;
+        var ref = isTpl ? tpl : slug;                          // URL identifier
+        var docId = isTpl ? '_tpl_' + tpl : slug;              // Firestore doc id under draft-notes
+        var fetchPath = isTpl ? 'templates/' + tpl + '.html' : 'articles/' + slug + '.html';
 
         var $ = function (id) { return document.getElementById(id); };
         var docEl = $('rv-doc'), listEl = $('rv-list'), emptyEl = $('rv-empty');
@@ -176,12 +181,17 @@
         function hash(str) { var h = 5381, i = str.length; while (i) { h = (h * 33) ^ str.charCodeAt(--i); } return (h >>> 0).toString(36); }
         function snippet(s, n) { s = (s || '').replace(/\s+/g, ' ').trim(); n = n || 110; return s.length > n ? s.slice(0, n - 1) + '…' : s; }
 
-        if (!slug || !/^[a-z0-9-]+$/i.test(slug)) {
-            docEl.innerHTML = '<div class="rv-status">No article selected. Open this page from the <a href="studio.html">Studio</a> by clicking an article title.</div>';
+        if (!ref || !/^[a-z0-9-]+$/i.test(ref)) {
+            docEl.innerHTML = '<div class="rv-status">No article or template selected. Open this page from the <a href="studio.html">Studio</a>.</div>';
             return;
         }
-        liveEl.href = ORIGIN + '/articles/' + slug + '.html';
-        slugEl.textContent = slug;
+        if (isTpl) {
+            liveEl.href = fetchPath; liveEl.textContent = 'Open template ↗';
+            slugEl.textContent = 'template · ' + tpl;
+        } else {
+            liveEl.href = ORIGIN + '/articles/' + slug + '.html';
+            slugEl.textContent = slug;
+        }
 
         // ===================== Firebase wiring =====================
         var hasFB = (typeof firebase !== 'undefined' && firebase.firestore && firebase.auth && typeof db !== 'undefined');
@@ -189,8 +199,8 @@
         var user = null, signedReviewer = false;
         var unsubNotes = null, unsubDoc = null, writtenParaCount = -1;
         var isReviewer = function (u) { return !!(u && u.email && REVIEWERS.indexOf(u.email.toLowerCase()) !== -1); };
-        function notesCol() { return db.collection('draft-notes').doc(slug).collection('notes'); }
-        function slugDoc() { return db.collection('draft-notes').doc(slug); }
+        function notesCol() { return db.collection('draft-notes').doc(docId).collection('notes'); }
+        function slugDoc() { return db.collection('draft-notes').doc(docId); }
         function setSync(on, label) { syncEl.textContent = label; syncEl.classList.toggle('on', !!on); }
 
         // notes state (mirrors Firestore subcollection); each: {id, key, idx, anchor, body, by, ts}
@@ -204,20 +214,22 @@
             return fetch(url, { cache: 'no-cache', signal: ctl ? ctl.signal : undefined })
                 .then(function (r) { if (t) clearTimeout(t); if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); });
         }
-        fetchArticle('articles/' + slug + '.html')
+        fetchArticle(fetchPath)
             .then(function (html) { buildDoc(html); })
             .catch(function (e) {
                 var msg = e && e.name === 'AbortError' ? 'request timed out' : (e && e.message) || 'load error';
-                docEl.innerHTML = '<div class="rv-status">Could not load <code>articles/' + esc(slug) + '.html</code><br><small>' + esc(msg) + '</small></div>';
+                docEl.innerHTML = '<div class="rv-status">Could not load <code>' + esc(fetchPath) + '</code><br><small>' + esc(msg) + '</small></div>';
             });
 
         function stripIds(node) { [].forEach.call(node.querySelectorAll('[id]'), function (n) { n.removeAttribute('id'); }); }
 
         function buildDoc(html) {
             var src = new DOMParser().parseFromString(html, 'text/html');
-            var pageTitle = (src.querySelector('.article__title') || {}).textContent || slug;
-            titleEl.firstChild.textContent = pageTitle.trim();
-            document.title = 'Review — ' + pageTitle.trim();
+            var pageTitle = (src.querySelector('.article__title') || {}).textContent || ref;
+            pageTitle = pageTitle.trim();
+            if (isTpl || /\{\{.*\}\}/.test(pageTitle)) pageTitle = 'Template · ' + ref;   // templates carry {{TITLE}} placeholders
+            titleEl.firstChild.textContent = pageTitle;
+            document.title = 'Review — ' + pageTitle;
 
             var content = src.querySelector('.article__content');
             if (!content) {
@@ -412,8 +424,8 @@
 
         // ---- export ----
         function buildMarkdown() {
-            var title = (titleEl.firstChild.textContent || slug).trim();
-            var lines = ['# Review notes — ' + title, '', '_' + slug + ' · ' + state.notes.length + ' note(s)_', ''];
+            var title = (titleEl.firstChild.textContent || ref).trim();
+            var lines = ['# Review notes — ' + title, '', '_' + (isTpl ? 'template ' : '') + ref + ' · ' + state.notes.length + ' note(s)_', ''];
             if ((state.overall || '').trim()) { lines.push('## Overall', '', state.overall.trim(), ''); }
             lines.push('## Paragraph notes', '');
             var ordered = orderedNotes();
@@ -436,7 +448,7 @@
         $('rv-download').addEventListener('click', function () {
             var blob = new Blob([buildMarkdown()], { type: 'text/markdown' });
             var url = URL.createObjectURL(blob);
-            var a = document.createElement('a'); a.href = url; a.download = slug + '-notes.md';
+            var a = document.createElement('a'); a.href = url; a.download = ref + '-notes.md';
             document.body.appendChild(a); a.click(); a.remove();
             setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
         });

@@ -24,6 +24,15 @@
         a.st-title:hover{color:var(--color-sea);border-bottom-color:var(--color-sea);}
         .st-notes{display:inline-block;margin-left:6px;font-size:11px;font-family:var(--font-mono);color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);border-radius:3px;padding:0 5px;vertical-align:middle;}
         .st-notes:hover{border-color:var(--color-sea);}
+        .st-templates{margin-top:var(--space-8);border-top:2px solid var(--color-ink);padding-top:var(--space-5);}
+        .st-tpl-head{display:flex;align-items:baseline;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-4);}
+        .st-tpl-head h2{font-family:var(--font-serif);margin:0;font-size:var(--text-lg);}
+        .st-tpl-sub{color:var(--color-muted);font-size:var(--text-sm);}
+        .st-tpl-num{font-family:var(--font-mono);font-size:12px;color:var(--color-salt);text-align:center;}
+        a.st-tpl-name{font-family:var(--font-mono);font-size:13px;color:var(--color-ink);text-decoration:none;border-bottom:1px solid transparent;}
+        a.st-tpl-name:hover{color:var(--color-sea);border-bottom-color:var(--color-sea);}
+        span.st-tpl-name{font-family:var(--font-mono);font-size:13px;color:var(--color-salt);}
+        tr.st-tpl-helper td{background:var(--color-subtle);}
         .st-badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:3px;}
         .st-live{background:#dcfce7;color:#166534;}.st-draft{background:#fef9c3;color:#854d0e;}.st-feat{background:#dbeafe;color:#1e40af;margin-left:4px;}
         .st-act a{color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);padding:.25em .6em;font-size:12px;margin-right:4px;white-space:nowrap;display:inline-block;}
@@ -168,6 +177,17 @@
             </div>
         </div>
 
+        <div class="st-templates" id="tpl-section">
+            <div class="st-tpl-head">
+                <h2>Templates</h2>
+                <span class="st-tpl-sub">the fixed layouts every article is built from — open one to leave notes on it (synced like article notes)</span>
+            </div>
+            <table>
+                <thead><tr><th class="st-cw">#</th><th>Template</th><th>Section</th><th>For</th><th>Actions</th></tr></thead>
+                <tbody id="tpl-rows"></tbody>
+            </table>
+        </div>
+
         <p class="st-note">
             <strong>How this works.</strong> Click an article title (or <strong>Review</strong>) to open the studio reader and leave
             notes paragraph by paragraph — synced to every device you sign in on. <strong>Notes</strong> on a draft row opens the quick
@@ -266,6 +286,48 @@
                     (a.draft ? '<a href="#" data-edit="' + esc(a.slug) + '">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' : '') +
                     '</td>' +
                     '</tr>';
+            }).join('');
+        }
+
+        // ---- templates ----
+        var TEMPLATES = [
+            { id: 'shore-larder', n: '01', sec: 'Shore Larder', use: 'Ingredient deep-dive' },
+            { id: 'shore-larder-deep-dive', n: '01b', sec: 'Shore Larder', use: 'Extended deep-dive (identity card + 9 sections)' },
+            { id: 'the-method-technique', n: '02', sec: 'The Method', use: 'Technique brief — Provoke → Instruct → Prove' },
+            { id: 'littoral-heritage-article', n: '03', sec: 'Littoral Heritage', use: 'Culture & history' },
+            { id: 'the-evidence', n: '04', sec: 'The Evidence', use: 'Single-study translation' },
+            { id: 'recipe-blueprint', n: '05', sec: 'The Method', use: 'Full recipe with science (The Blueprint)' },
+            { id: 'signal-fire', n: '06', sec: 'The Bridge', use: 'Sourcing & supply intel' },
+            { id: 'the-horizon', n: '07', sec: 'The Bridge', use: 'Forecast & macro' },
+            { id: 'trade-winds', n: '08', sec: 'The Bridge', use: 'Career & industry / regional shifts' },
+            { id: 'tight-ship', n: '09', sec: 'The Method', use: 'Galley operations' },
+            { id: 'port-call', n: '10', sec: 'The Bridge', use: 'City provisioning guide (Quick Map text table)' },
+            { id: 'the-locker', n: '11', sec: 'The Method', use: 'Equipment review' },
+            { id: 'weekly-brief', n: '12', sec: 'The Bridge', use: 'Digest' },
+            { id: 'the-lab', n: '13', sec: 'The Method', use: 'Experimental / lab notes' },
+            { id: 'standard', n: '—', sec: 'Helper', use: 'Generic fallback article', helper: true },
+            { id: 'section', n: '—', sec: 'Helper', use: 'Builds the section index pages', helper: true, noReview: true },
+            { id: 'og-image', n: '—', sec: 'Helper', use: 'Social-image source', helper: true, noReview: true }
+        ];
+        function renderTemplates() {
+            var el = document.getElementById('tpl-rows');
+            if (!el) return;
+            el.innerHTML = TEMPLATES.map(function (t) {
+                var nc = paraMap['_tpl_' + t.id] || 0;
+                var reviewURL = 'studio-review.html?tpl=' + encodeURIComponent(t.id);
+                var badge = nc ? '<a class="st-notes" href="' + reviewURL + '" title="' + nc + ' note(s) — open to review">&#9998; ' + nc + '</a>' : '';
+                var name = t.noReview
+                    ? '<span class="st-tpl-name">' + esc(t.id) + '</span>'
+                    : '<a class="st-tpl-name" href="' + reviewURL + '" title="Open template — add notes">' + esc(t.id) + '</a>';
+                return '<tr' + (t.helper ? ' class="st-tpl-helper"' : '') + '>' +
+                    '<td class="st-tpl-num">' + esc(t.n) + '</td>' +
+                    '<td>' + name + badge + '</td>' +
+                    '<td>' + esc(t.sec) + '</td>' +
+                    '<td style="color:var(--color-muted);">' + esc(t.use) + '</td>' +
+                    '<td class="st-act">' +
+                    (t.noReview ? '' : '<a href="' + reviewURL + '">Review</a>') +
+                    '<a href="templates/' + t.id + '.html" target="_blank">View</a>' +
+                    '</td></tr>';
             }).join('');
         }
 
@@ -443,9 +505,9 @@
                 snap.forEach(function (doc) {
                     var d = doc.data() || {};
                     if (d.text && d.text.trim()) notesMap[doc.id] = true;
-                    if (d.paraCount) paraMap[doc.id] = d.paraCount;
+                    if (typeof d.paraCount === 'number' && d.paraCount > 0) paraMap[doc.id] = d.paraCount;  // numeric-only → safe to interpolate in badges
                 });
-                render();
+                render(); renderTemplates();
             }).catch(function () { /* rules / network — leave maps empty */ });
         }
 
@@ -496,6 +558,7 @@
         document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNotes(); });
 
         setupAuth();
+        renderTemplates();
     })();
     </script>
 </body>
