@@ -67,7 +67,19 @@
         function renderBerths() {
             const target = document.getElementById('terroir-berths');
             if (!target) return;
-            const berths = VENUES.filter(v => v.tier === 'berth_top').sort((a,b)=>a.priority-b.priority);
+            // The 3 blue "main tables" = the venues readers love most (♡ public counts);
+            // fall back to the editorial berth_top order until votes accumulate.
+            const fav = window.TerroirFav;
+            let berths;
+            if (fav && typeof fav.publicCount === 'function') {
+                const loved = VENUES.filter(v => fav.publicCount(v.id) > 0)
+                                    .sort((a, b) => fav.publicCount(b.id) - fav.publicCount(a.id));
+                const base = VENUES.filter(v => v.tier === 'berth_top').sort((a, b) => a.priority - b.priority);
+                const seen = {}; berths = [];
+                loved.concat(base).forEach(v => { if (!seen[v.id] && berths.length < 3) { seen[v.id] = 1; berths.push(v); } });
+            } else {
+                berths = VENUES.filter(v => v.tier === 'berth_top').sort((a, b) => a.priority - b.priority);
+            }
             target.innerHTML = berths.map((v, i) => {
                 const tags = (v.tags || []).map(t => '<span>' + escapeHTML(t) + '</span>').join('');
                 const meta = [];
@@ -401,6 +413,14 @@
         initMiniMap();
         initMiniMapPanel();
         subscribeVotes();
+
+        // Re-rank the blue top-3 by reader ♡ as favourites counts load / change.
+        (function hookFav(n) {
+            if (window.TerroirFav && window.TerroirFav.onChange) {
+                window.TerroirFav.onChange(renderBerths); renderBerths(); return;
+            }
+            if ((n || 0) < 40) setTimeout(function () { hookFav((n || 0) + 1); }, 150);
+        })(0);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
