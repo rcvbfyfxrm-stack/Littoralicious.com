@@ -305,6 +305,7 @@
             { id: 'the-locker', n: '11', sec: 'The Method', use: 'Equipment review' },
             { id: 'weekly-brief', n: '12', sec: 'The Bridge', use: 'Digest' },
             { id: 'the-lab', n: '13', sec: 'The Method', use: 'Experimental / lab notes' },
+            { id: 'terroir-guide', n: '—', sec: 'Terroir', use: 'Place guide — food culture, eat / drink / walk (bespoke; venues render from data.js)', view: 'terroir/Cadaques-CapdeCreus/', noReview: true },
             { id: 'standard', n: '—', sec: 'Helper', use: 'Generic fallback article', helper: true },
             { id: 'section', n: '—', sec: 'Helper', use: 'Builds the section index pages', helper: true, noReview: true },
             { id: 'og-image', n: '—', sec: 'Helper', use: 'Social-image source', helper: true, noReview: true }
@@ -326,7 +327,7 @@
                     '<td style="color:var(--color-muted);">' + esc(t.use) + '</td>' +
                     '<td class="st-act">' +
                     (t.noReview ? '' : '<a href="' + reviewURL + '">Review</a>') +
-                    '<a href="templates/' + t.id + '.html" target="_blank">View</a>' +
+                    '<a href="' + (t.view || ('templates/' + encodeURIComponent(t.id) + '.html')) + '" target="_blank">View</a>' +
                     '</td></tr>';
             }).join('');
         }
