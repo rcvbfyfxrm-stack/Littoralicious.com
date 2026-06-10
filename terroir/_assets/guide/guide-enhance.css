@@ -309,3 +309,17 @@
   .gx-clamp.is-clamped{ max-height:none !important; }
   .gx-clamp.is-clamped::after{ display:none; }
 }
+
+/* ============================================================================
+   10 · EXTRAS — reference appendix + Google-Maps links on place cards
+   (driven by guide-extras.js; also baked into Cadaqués)
+   ========================================================================== */
+.gx-appendix{ max-width:900px; margin:48px auto 0; padding:16px 24px 0;
+  border-top:1px solid var(--gx-rule); opacity:0.62; transition:opacity .25s ease; }
+.gx-appendix:hover{ opacity:1; }
+.gx-appendix__label{ font-family:var(--gx-mono); font-size:0.6em; letter-spacing:2px;
+  text-transform:uppercase; color:var(--gx-ink3); margin-bottom:6px; }
+.tcard__maps{ margin-top:8px; }
+.tcard__maps a, .cala-maps{ display:inline-block; margin-top:2px;
+  font-family:var(--gx-sans); font-size:0.84em; color:var(--gx-sea); border-bottom:1px solid var(--gx-sea); }
+.tcard__maps a:hover, .cala-maps:hover{ color:var(--gx-gold); border-color:var(--gx-gold); }
