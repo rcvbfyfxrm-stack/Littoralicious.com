@@ -4,8 +4,10 @@ Allow: /
 # Work-in-progress + admin surfaces (not for indexing)
 Disallow: /drafts.html
 Disallow: /studio.html
+Disallow: /studio-review.html
 Disallow: /newsletter-preview.html
 Disallow: /data/draft-articles.json
+Disallow: /templates/
 Disallow: /game/
 
 Sitemap: https://www.littoralicious.com/sitemap.xml
