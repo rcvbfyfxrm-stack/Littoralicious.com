@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <!-- Terroir guide kit -->
-<link rel="stylesheet" href="../_assets/guide/guide-vars.css">
-<link rel="stylesheet" href="../_assets/guide/guide-inventory.css">
-<link rel="stylesheet" href="../_assets/guide/tcard.css">
-<link rel="stylesheet" href="../_assets/guide/guide-enhance.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-enhance.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
@@ -171,16 +171,16 @@
 </div>
 
 <footer class="footer">
-  <a href="../" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
+  <a href="/terroir/" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
   <br><br>
   42.2887, 3.2766
 </footer>
 
-<script src="../data/Cadaques-CapdeCreus.js"></script>
+<script src="/terroir/data/Cadaques-CapdeCreus.js"></script>
 <script>
 window.TERROIR_CONFIG = { articleId:'terroir-Cadaques-CapdeCreus', portName:'Cadaqués', center:[42.2887, 3.2766], zoom:14, cityRadiusKm:40 };
 </script>
-<script defer src="../_assets/guide/guide-render.js"></script>
+<script defer src="/terroir/_assets/guide/guide-render.js"></script>
 
 <!-- Single floating map — closed by default, opens via "Show map" toggle (state in localStorage) -->
 <aside class="terroir-mini" id="terroir-mini">
@@ -223,10 +223,10 @@ window.addEventListener('load', function () {
 <!-- Firebase compat (for terroir voting) -->
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-<script defer src="../_assets/guide/guide-favourites.js"></script>
-<script defer src="../_assets/guide/guide-search.js"></script>
-<script defer src="../_assets/guide/guide-enhance.js"></script>
-<script defer src="../_assets/guide/pin-hover.js"></script>
+<script defer src="/terroir/_assets/guide/guide-favourites.js"></script>
+<script defer src="/terroir/_assets/guide/guide-search.js"></script>
+<script defer src="/terroir/_assets/guide/guide-enhance.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
 
 <script>
 /* Cadaqués — scoped: read-more folds + B&W photos (runs after the kit's reorder) */
@@ -255,9 +255,9 @@ window.addEventListener('load', function () {
   function placePhotos(){
     if(document.querySelector('.gx-photo')) return;
     var lead=document.querySelector('.lead'), soul=document.getElementById('soul'), hist=document.getElementById('history');
-    if(lead) lead.parentNode.insertBefore(fig('img/cadaques-bay.jpg','The whitewashed houses of Cadaqués climb from the bay to the hilltop church of Santa Maria.','Photo: Ylliab Photo &middot; CC BY 2.0 &middot; Wikimedia','gx-photo--bay'), lead.nextSibling);
-    if(soul) soul.parentNode.insertBefore(fig('img/portlligat.jpg','Fishermen&rsquo;s boats on the shore at Portlligat, the cove beside Cadaqués where Dalí built his house.','Photo: Olga Gairin &middot; CC BY-SA 3.0 &middot; Wikimedia','gx-photo--port'), soul.nextSibling);
-    if(hist) hist.parentNode.insertBefore(fig('img/cap-de-creus.jpg','The lighthouse of Cap de Creus on the wind-scoured schist at the easternmost point of mainland Spain.','Photo: Maria Planas Aulet &middot; CC BY-SA 3.0 &middot; Wikimedia','gx-photo--cape'), hist.nextSibling);
+    if(lead) lead.parentNode.insertBefore(fig('/terroir/Cadaques-CapdeCreus/img/cadaques-bay.jpg','The whitewashed houses of Cadaqués climb from the bay to the hilltop church of Santa Maria.','Photo: Ylliab Photo &middot; CC BY 2.0 &middot; Wikimedia','gx-photo--bay'), lead.nextSibling);
+    if(soul) soul.parentNode.insertBefore(fig('/terroir/Cadaques-CapdeCreus/img/portlligat.jpg','Fishermen&rsquo;s boats on the shore at Portlligat, the cove beside Cadaqués where Dalí built his house.','Photo: Olga Gairin &middot; CC BY-SA 3.0 &middot; Wikimedia','gx-photo--port'), soul.nextSibling);
+    if(hist) hist.parentNode.insertBefore(fig('/terroir/Cadaques-CapdeCreus/img/cap-de-creus.jpg','The lighthouse of Cap de Creus on the wind-scoured schist at the easternmost point of mainland Spain.','Photo: Maria Planas Aulet &middot; CC BY-SA 3.0 &middot; Wikimedia','gx-photo--cape'), hist.nextSibling);
   }
   function boot(){ wireFolds(); placePhotos(); }
   if(document.readyState==='complete') boot();
