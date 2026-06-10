@@ -41,7 +41,6 @@
         .sp-poster__hook{font-family:var(--font-serif);font-size:clamp(19px,3vw,27px);line-height:1.12;color:#141414;text-wrap:balance;}
         .sp-poster__sub{font-family:var(--font-serif);font-style:italic;font-size:clamp(13px,2vw,16px);line-height:1.22;color:#5a5a5a;margin-top:.3em;}
         .sp-poster__mark{font-family:var(--font-serif);font-size:10px;letter-spacing:.26em;color:#9a9a9a;margin-top:.6em;}
-        .sp-poster__type{position:absolute;top:var(--space-2);right:var(--space-2);z-index:2;background:#141414;color:#fafafa;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;}
         .sp-card__body{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-3);flex:1;}
         .sp-caption{font-size:14px;line-height:1.55;white-space:pre-wrap;color:var(--color-ink);}
         .sp-tags{font-family:var(--font-mono);font-size:11px;color:var(--color-sea);line-height:1.5;word-break:break-word;}
@@ -185,7 +184,7 @@
                 '<span class="sp-poster__mark">LITTORALICIOUS</span></div>';
             var photoDiv = photo ? '<div class="sp-poster__photo" style="background-image:url(\'' + encodeURI(photo) + '\')"></div>' : '';
             return '<div class="sp-poster' + (photo ? '' : ' no-photo') + '">' +
-                '<span class="sp-poster__type">' + esc(p.type) + '</span>' + photoDiv + text + '</div>';
+                photoDiv + text + '</div>';
         }
 
         function card(entry, p, s) {
@@ -327,11 +326,6 @@
                 // wordmark
                 ctx.fillStyle = MARK; ls(Math.round(W * 0.006)); ctx.font = Math.round(W * 0.019) + 'px ' + SERIF;
                 ctx.fillText('LITTORALICIOUS', x, H - pad); ls(0);
-                // type badge
-                var bw = Math.round(W * 0.17), bh = Math.round(W * 0.05), by = Math.round(H * 0.03);
-                ctx.fillStyle = INK; ctx.fillRect(W - pad - bw, by, bw, bh);
-                ctx.fillStyle = PAPER; ctx.textAlign = 'center'; ls(Math.round(W * 0.003)); ctx.font = '600 ' + Math.round(W * 0.02) + 'px ' + MONO;
-                ctx.fillText((p.type || '').toUpperCase(), W - pad - bw / 2, by + Math.round(bh * 0.68)); ls(0); ctx.textAlign = 'left';
                 done();
             }
             if (photo) {
