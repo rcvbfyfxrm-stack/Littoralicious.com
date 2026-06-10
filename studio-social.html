@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Social planner — LITTORALICIOUS Studio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+    <style>
+        :root{--sp-ok:#166534;--sp-err:#b91c1c;--sp-fav:#b08400;}
+        .sp-bar{position:sticky;top:0;z-index:40;background:#fff;border-bottom:2px solid var(--color-ink);}
+        .sp-bar__in{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding:var(--space-3) var(--space-4);}
+        .sp-back,.sp-tab{color:var(--color-muted);text-decoration:none;font-size:13px;border:1px solid var(--color-border);padding:.35em .8em;white-space:nowrap;background:none;cursor:pointer;}
+        .sp-back:hover,.sp-tab:hover{border-color:var(--color-sea);color:var(--color-sea);}
+        .sp-tab.active{border-color:var(--color-sea);color:var(--color-sea);}
+        .sp-bar h1{font-family:var(--font-serif);font-size:var(--text-lg);margin:0;line-height:1.2;flex:1;min-width:160px;}
+        .sp-bar h1 small{display:block;font-family:var(--font-mono);font-size:11px;color:var(--color-salt);font-weight:400;}
+        .sp-stat{font-family:var(--font-mono);font-size:13px;color:var(--color-muted);}
+        .sp-stat b{color:var(--color-sea);}
+        .sp-auth{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;font-size:13px;padding:var(--space-2) var(--space-4);border-top:1px dashed var(--color-border);background:var(--color-subtle);}
+        .sp-auth input{padding:.4em .6em;border:1px solid var(--color-border);font:inherit;font-size:13px;}
+        .sp-auth__who{color:var(--sp-ok);font-family:var(--font-mono);}
+        .sp-link{background:none;border:none;color:var(--color-sea);cursor:pointer;font-size:13px;text-decoration:underline;padding:0;}
+        .sp-wrap{max-width:1280px;margin:0 auto;padding:var(--space-6) var(--space-4) var(--space-8);}
+        .sp-status{padding:var(--space-8);text-align:center;color:var(--color-muted);}
+        .sp-status code{background:var(--color-subtle);padding:1px 5px;}
+
+        /* post cards */
+        .sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-5);}
+        .sp-card{border:1px solid var(--color-border);background:#fff;display:flex;flex-direction:column;overflow:hidden;}
+        .sp-card.fav{border-color:var(--sp-fav);box-shadow:inset 0 0 0 1px var(--sp-fav);}
+        /* the poster image (catchy phrase) */
+        .sp-poster{position:relative;aspect-ratio:1/1;background:linear-gradient(150deg,#2d4a5e,#1a2e3c);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:var(--space-4);background-size:cover;background-position:center;}
+        .sp-poster::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,40,.15),rgba(20,30,40,.65));pointer-events:none;}
+        .sp-poster.has-photo{background-color:#1a2e3c;}
+        .sp-poster > *{position:relative;z-index:1;}
+        .sp-poster__kick{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;}
+        .sp-poster__hook{font-family:var(--font-serif);font-size:clamp(20px,3.4vw,30px);line-height:1.15;text-wrap:balance;}
+        .sp-poster__mark{font-family:var(--font-serif);font-size:11px;letter-spacing:.22em;opacity:.85;}
+        .sp-poster__type{position:absolute;top:var(--space-3);right:var(--space-3);z-index:2;background:rgba(255,255,255,.92);color:#1a2e3c;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:3px;}
+        .sp-card__body{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-3);flex:1;}
+        .sp-caption{font-size:14px;line-height:1.55;white-space:pre-wrap;color:var(--color-ink);}
+        .sp-tags{font-family:var(--font-mono);font-size:11px;color:var(--color-sea);line-height:1.5;word-break:break-word;}
+        .sp-meta{display:flex;gap:var(--space-3);font-size:11px;color:var(--color-salt);font-family:var(--font-mono);flex-wrap:wrap;align-items:center;}
+        .sp-why{font-size:12px;color:var(--color-muted);font-style:italic;border-left:2px solid var(--color-border);padding-left:.6em;}
+        .sp-card__foot{margin-top:auto;display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap;border-top:1px solid var(--color-subtle);padding-top:var(--space-3);}
+        .sp-btn{background:none;border:1px solid var(--color-border);color:var(--color-muted);cursor:pointer;font-size:12px;padding:.35em .7em;border-radius:3px;}
+        .sp-btn:hover{border-color:var(--color-sea);color:var(--color-sea);}
+        .sp-btn--fav.on{background:var(--sp-fav);border-color:var(--sp-fav);color:#fff;}
+        .sp-btn--del:hover{border-color:var(--sp-err);color:var(--sp-err);}
+        .sp-btn--copy{margin-left:auto;}
+        .sp-slot{font-family:var(--font-mono);}
+
+        .sp-deleted{margin-top:var(--space-5);font-size:13px;color:var(--color-muted);}
+        .sp-deleted button{margin-left:.5em;}
+        .sp-flash{font-size:12px;color:var(--sp-ok);margin-left:.5em;}
+
+        /* schedule */
+        .sp-week{display:grid;grid-template-columns:repeat(7,minmax(140px,1fr));gap:var(--space-2);overflow-x:auto;}
+        .sp-day{border:1px solid var(--color-border);min-height:120px;display:flex;flex-direction:column;}
+        .sp-day__h{background:var(--color-subtle);border-bottom:1px solid var(--color-border);padding:.4em .6em;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--color-salt);display:flex;justify-content:space-between;}
+        .sp-slotcard{border-bottom:1px solid var(--color-subtle);padding:.5em .6em;}
+        .sp-slotcard:last-child{border-bottom:none;}
+        .sp-slotcard__t{font-family:var(--font-mono);font-size:11px;color:var(--color-sea);font-weight:600;}
+        .sp-slotcard__hook{font-family:var(--font-serif);font-size:13px;line-height:1.2;margin:.2em 0;}
+        .sp-slotcard__meta{font-size:10px;color:var(--color-salt);font-family:var(--font-mono);}
+        .sp-weeklabel{font-family:var(--font-serif);font-size:var(--text-lg);margin:var(--space-6) 0 var(--space-3);}
+        .sp-empty{color:var(--color-muted);font-style:italic;padding:var(--space-6) 0;}
+    </style>
+</head>
+<body>
+    <div class="sp-bar">
+        <div class="sp-bar__in">
+            <a class="sp-back" href="studio.html">&larr; Studio</a>
+            <h1 id="sp-title">Social planner<small id="sp-sub"></small></h1>
+            <span class="sp-stat" id="sp-stat"></span>
+            <a class="sp-tab" id="sp-tab-sched" href="studio-social.html">Weekly schedule</a>
+        </div>
+        <div class="sp-auth" id="sp-auth">
+            <span id="auth-out">
+                <input id="auth-email" type="email" placeholder="reviewer email" autocomplete="username" style="min-width:180px;">
+                <input id="auth-pass" type="password" placeholder="password" autocomplete="current-password">
+                <button class="sp-back" id="auth-signin" type="button">Sign in</button>
+                <button class="sp-link" id="auth-create" type="button">Create login</button>
+                <button class="sp-link" id="auth-reset" type="button">Reset</button>
+                <span id="auth-msg" style="color:var(--color-muted);">Sign in to keep favourites &amp; build your schedule (synced to every device).</span>
+            </span>
+            <span id="auth-in" style="display:none;">
+                <span class="sp-auth__who" id="auth-who"></span>
+                <button class="sp-link" id="auth-signout" type="button">Sign out</button>
+            </span>
+        </div>
+    </div>
+
+    <div class="sp-wrap" id="sp-main"><div class="sp-status">Loading…</div></div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script>
+    (function () {
+        'use strict';
+        var REVIEWERS = ['arnaudcallier@pm.me', 'arnaudcallier@icloud.com'];
+        var params = new URLSearchParams(location.search);
+        var slug = (params.get('slug') || '').trim();
+        var isArticle = !!slug && /^[a-z0-9-]+$/i.test(slug);
+        var $ = function (id) { return document.getElementById(id); };
+        var main = $('sp-main');
+        var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+
+        // optimal posting slots, ranked best-first (food/IG best practice)
+        var OPTIMAL = [
+            { day: 'Tue', time: '12:00', slot: 'weekday-midday' }, { day: 'Wed', time: '12:00', slot: 'weekday-midday' },
+            { day: 'Thu', time: '12:00', slot: 'weekday-midday' }, { day: 'Tue', time: '19:00', slot: 'weekday-evening' },
+            { day: 'Wed', time: '19:00', slot: 'weekday-evening' }, { day: 'Thu', time: '19:00', slot: 'weekday-evening' },
+            { day: 'Sat', time: '10:00', slot: 'weekend-morning' }, { day: 'Sun', time: '18:00', slot: 'weekend-evening' },
+            { day: 'Mon', time: '18:00', slot: 'weekday-evening' }, { day: 'Fri', time: '12:00', slot: 'weekday-midday' },
+            { day: 'Sat', time: '19:00', slot: 'weekend-evening' }, { day: 'Sun', time: '11:00', slot: 'weekend-morning' }
+        ];
+        var DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+        // ---- Firebase ----
+        var hasFB = (typeof firebase !== 'undefined' && firebase.firestore && firebase.auth && typeof db !== 'undefined');
+        var auth = hasFB ? firebase.auth() : null;
+        var FV = hasFB ? firebase.firestore.FieldValue : null;
+        var user = null, signedReviewer = false;
+        var isReviewer = function (u) { return !!(u && u.email && REVIEWERS.indexOf(u.email.toLowerCase()) !== -1); };
+        function socDoc(s) { return db.collection('draft-notes').doc('_social_' + s); }
+
+        var DATA = null;                 // social-posts.json
+        var sel = {};                    // slug -> { fav:Set, del:Set, photo:{} }
+        var unsub = [];
+
+        function getSel(s) { sel[s] = sel[s] || { fav: new Set(), del: new Set(), photo: {} }; return sel[s]; }
+
+        // ---- load content ----
+        fetch('data/social-posts.json', { cache: 'no-cache' })
+            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(function (d) { DATA = d; route(); })
+            .catch(function (e) {
+                main.innerHTML = '<div class="sp-status">No social posts yet (<code>data/social-posts.json</code> not found). Generate them from the Studio, then reload.<br><small>' + esc(e.message) + '</small></div>';
+            });
+
+        function route() {
+            if (isArticle) renderArticle(); else renderSchedule();
+        }
+
+        // ===================== PER-ARTICLE =====================
+        function renderArticle() {
+            var entry = DATA.articles && DATA.articles[slug];
+            $('sp-sub').textContent = slug;
+            if (!entry || !entry.posts || !entry.posts.length) {
+                main.innerHTML = '<div class="sp-status">No posts generated for <code>' + esc(slug) + '</code> yet.</div>';
+                $('sp-title').firstChild.textContent = 'Social planner — ';
+                return;
+            }
+            $('sp-title').firstChild.textContent = entry.title || slug;
+            document.title = 'Social — ' + (entry.title || slug);
+            paintArticle(entry);
+        }
+
+        function paintArticle(entry) {
+            var s = getSel(slug);
+            var live = entry.posts.filter(function (p) { return !s.del.has(p.id); });
+            $('sp-stat').innerHTML = '<b>' + s.fav.size + '</b> favourited · ' + live.length + ' shown';
+            var html = '<div class="sp-grid">' + live.map(function (p) { return card(entry, p, s); }).join('') + '</div>';
+            var delCount = entry.posts.length - live.length;
+            if (delCount) html += '<div class="sp-deleted">' + delCount + ' deleted on this article <button class="sp-btn" data-undel="1">Restore all</button></div>';
+            main.innerHTML = html;
+        }
+
+        function safeUrl(u) { u = (u || '').trim(); return /^https?:\/\/[^\s'"()<>\\`]+$/i.test(u) ? u : ''; }
+        function poster(entry, p, s) {
+            var photo = safeUrl(s.photo[p.id]);
+            var style = photo ? ' style="background-image:url(\'' + encodeURI(photo) + '\')"' : '';
+            return '<div class="sp-poster' + (photo ? ' has-photo' : '') + '"' + style + '>' +
+                '<span class="sp-poster__type">' + esc(p.type) + '</span>' +
+                '<span class="sp-poster__kick">' + esc(entry.cat || '') + '</span>' +
+                '<span class="sp-poster__hook">' + esc(p.hook) + '</span>' +
+                '<span class="sp-poster__mark">LITTORALICIOUS</span>' +
+                '</div>';
+        }
+
+        function card(entry, p, s) {
+            var on = s.fav.has(p.id);
+            return '<div class="sp-card' + (on ? ' fav' : '') + '" data-id="' + esc(p.id) + '">' +
+                poster(entry, p, s) +
+                '<div class="sp-card__body">' +
+                '<div class="sp-caption">' + esc(p.caption) + '</div>' +
+                '<div class="sp-tags">' + esc((p.hashtags || []).map(function (h) { return h[0] === '#' ? h : '#' + h; }).join(' ')) + '</div>' +
+                '<div class="sp-meta"><span class="sp-slot">' + esc(slotLabel(p.slot)) + '</span><span>·</span><span>' + esc(p.type) + '</span></div>' +
+                '<div class="sp-why">' + esc(p.why) + '</div>' +
+                '<div class="sp-card__foot">' +
+                '<button class="sp-btn sp-btn--fav' + (on ? ' on' : '') + '" data-fav="' + esc(p.id) + '">' + (on ? '♥ Favourited' : '♡ Favourite') + '</button>' +
+                '<button class="sp-btn" data-photo="' + esc(p.id) + '">Photo</button>' +
+                '<button class="sp-btn sp-btn--del" data-del="' + esc(p.id) + '">Delete</button>' +
+                '<button class="sp-btn sp-btn--copy" data-copy="' + esc(p.id) + '">Copy caption</button>' +
+                '</div></div></div>';
+        }
+
+        function slotLabel(slot) {
+            return ({ 'weekday-midday': 'Weekday midday', 'weekday-evening': 'Weekday evening', 'weekend-morning': 'Weekend morning', 'weekend-evening': 'Weekend evening' })[slot] || slot;
+        }
+
+        function needAuth() { if (!signedReviewer) { $('auth-msg').textContent = 'Sign in as a reviewer first.'; $('auth-email').focus(); return true; } return false; }
+
+        function toggleFav(id) {
+            if (needAuth()) return;
+            var s = getSel(slug), on = s.fav.has(id);
+            socDoc(slug).set({ fav: on ? FV.arrayRemove(id) : FV.arrayUnion(id) }, { merge: true }).catch(err);
+        }
+        function setDel(id, del) {
+            if (needAuth()) return;
+            var patch = {};
+            if (del) { patch.del = FV.arrayUnion(id); patch.fav = FV.arrayRemove(id); }   // deleting also unfavourites
+            else { patch.del = FV.arrayRemove(id); }
+            socDoc(slug).set(patch, { merge: true }).catch(err);
+        }
+        function restoreAll() {
+            if (needAuth()) return;
+            socDoc(slug).set({ del: [] }, { merge: true }).catch(err);
+        }
+        function addPhoto(id) {
+            if (needAuth()) return;
+            var cur = getSel(slug).photo[id] || '';
+            var url = prompt('Paste an image URL (https://…) for this post — leave blank to clear:', cur);
+            if (url === null) return;
+            url = url.trim();
+            if (url && !safeUrl(url)) { flash('needs a plain https:// image URL', true); return; }
+            var patch = {}; patch[id] = url || FV.delete();
+            socDoc(slug).set({ photo: patch }, { merge: true }).catch(err);
+        }
+        function copyCaption(entry, id) {
+            var p = (entry.posts || []).filter(function (x) { return x.id === id; })[0]; if (!p) return;
+            var txt = p.caption + '\n\n' + (p.hashtags || []).map(function (h) { return h[0] === '#' ? h : '#' + h; }).join(' ');
+            (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () { flash('caption copied'); }).catch(function () { flash('copy failed', true); });
+        }
+        function err(e) { flash('save failed: ' + (e && e.code || 'error'), true); }
+        function flash(msg, isErr) {
+            var st = $('sp-stat'); var prev = st.innerHTML;
+            st.innerHTML = '<span class="sp-flash" style="' + (isErr ? 'color:var(--sp-err)' : '') + '">' + esc(msg) + '</span>';
+            setTimeout(function () { route(); }, 1400);
+        }
+
+        // ===================== SCHEDULE =====================
+        function renderSchedule() {
+            $('sp-title').firstChild.textContent = 'Weekly schedule';
+            $('sp-sub').textContent = 'your favourited posts at optimal times';
+            $('sp-tab-sched').classList.add('active');
+            document.title = 'Social — weekly schedule';
+            if (!signedReviewer) { main.innerHTML = '<div class="sp-status">Sign in to load your favourited posts and build the schedule.</div>'; return; }
+            paintSchedule();
+        }
+
+        function collectFavs() {
+            var favs = [];
+            Object.keys(sel).forEach(function (s) {
+                var entry = DATA.articles && DATA.articles[s]; if (!entry) return;
+                getSel(s).fav.forEach(function (id) {
+                    var p = (entry.posts || []).filter(function (x) { return x.id === id; })[0];
+                    if (p && !getSel(s).del.has(id)) favs.push({ slug: s, title: entry.title || s, cat: entry.cat || '', post: p });
+                });
+            });
+            // stable order: by slug then post id
+            favs.sort(function (a, b) { return (a.slug + a.post.id).localeCompare(b.slug + b.post.id); });
+            return favs;
+        }
+
+        function scheduleFavs(favs) {
+            var usedByWeek = {}, out = [];
+            favs.forEach(function (f) {
+                var week = 0, idx = -1;
+                while (idx < 0) {
+                    usedByWeek[week] = usedByWeek[week] || {};
+                    for (var pass = 0; pass < 2 && idx < 0; pass++) {
+                        for (var i = 0; i < OPTIMAL.length; i++) {
+                            if (usedByWeek[week][i]) continue;
+                            if (pass === 0 && OPTIMAL[i].slot !== f.post.slot) continue;
+                            idx = i; break;
+                        }
+                    }
+                    if (idx < 0) { week++; if (week > 52) { week = 52; idx = 0; } }   // hard cap — never loop forever
+                }
+                usedByWeek[week][idx] = true;
+                out.push({ f: f, week: week, day: OPTIMAL[idx].day, time: OPTIMAL[idx].time });
+            });
+            return out;
+        }
+
+        function paintSchedule() {
+            var favs = collectFavs();
+            $('sp-stat').innerHTML = '<b>' + favs.length + '</b> favourited across articles';
+            if (!favs.length) { main.innerHTML = '<div class="sp-empty">No favourites yet. Open an article’s posts and tap ♡ Favourite — they’ll land here on a schedule.</div>'; return; }
+            var assigned = scheduleFavs(favs);
+            var weeks = {};
+            assigned.forEach(function (a) { (weeks[a.week] = weeks[a.week] || []).push(a); });
+            var html = '';
+            Object.keys(weeks).map(Number).sort(function (a, b) { return a - b; }).forEach(function (w) {
+                html += '<div class="sp-weeklabel">' + (w === 0 ? 'This week' : 'In ' + w + ' week' + (w > 1 ? 's' : '')) + '</div>';
+                html += '<div class="sp-week">' + DAYS.map(function (day) {
+                    var items = weeks[w].filter(function (a) { return a.day === day; }).sort(function (a, b) { return a.time.localeCompare(b.time); });
+                    return '<div class="sp-day"><div class="sp-day__h"><span>' + day + '</span><span>' + items.length + '</span></div>' +
+                        items.map(function (a) {
+                            return '<div class="sp-slotcard"><div class="sp-slotcard__t">' + esc(a.time) + ' · ' + esc(a.f.post.type) + '</div>' +
+                                '<div class="sp-slotcard__hook">' + esc(a.f.post.hook) + '</div>' +
+                                '<div class="sp-slotcard__meta">' + esc(a.f.title) + '</div></div>';
+                        }).join('') + '</div>';
+                }).join('') + '</div>';
+            });
+            main.innerHTML = html;
+        }
+
+        // ===================== auth + sync =====================
+        function subscribeAll() {
+            unsubAll();
+            if (isArticle) {
+                unsub.push(socDoc(slug).onSnapshot(function (d) { applyDoc(slug, d); route(); }, function () {}));
+            } else {
+                // schedule: read every _social_ doc
+                var schedTimer = null;
+                unsub.push(db.collection('draft-notes').onSnapshot(function (snap) {
+                    sel = {};
+                    snap.forEach(function (doc) { if (doc.id.indexOf('_social_') === 0) applyDoc(doc.id.slice('_social_'.length), doc); });
+                    clearTimeout(schedTimer); schedTimer = setTimeout(route, 120);   // batch rapid multi-doc updates
+                }, function () {}));
+            }
+        }
+        function applyDoc(s, doc) {
+            var d = (doc.exists && doc.data()) || {};
+            sel[s] = { fav: new Set(d.fav || []), del: new Set(d.del || []), photo: d.photo || {} };
+        }
+        function unsubAll() { unsub.forEach(function (u) { try { u(); } catch (e) {} }); unsub = []; }
+
+        function setupAuth() {
+            if (!auth) { $('auth-msg').textContent = 'Sync unavailable (offline).'; return; }
+            auth.onAuthStateChanged(function (u) {
+                user = u || null; signedReviewer = isReviewer(u);
+                if (signedReviewer) {
+                    $('auth-out').style.display = 'none'; $('auth-in').style.display = 'inline';
+                    $('auth-who').textContent = 'Signed in · ' + u.email;
+                    if (DATA) subscribeAll();
+                } else {
+                    $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
+                    if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
+                    unsubAll(); sel = {}; if (DATA) route();
+                }
+            });
+            $('auth-signin').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(), p = $('auth-pass').value;
+                if (!e || !p) { $('auth-msg').textContent = 'Enter email and password.'; return; }
+                auth.signInWithEmailAndPassword(e, p).catch(function (err) { $('auth-msg').textContent = err.message; });
+            });
+            $('auth-create').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(), p = $('auth-pass').value;
+                if (!e || p.length < 6) { $('auth-msg').textContent = 'Email + 6+ char password, then Create login.'; return; }
+                if (REVIEWERS.indexOf(e.toLowerCase()) === -1) { $('auth-msg').textContent = 'Reviewer emails only.'; return; }
+                auth.createUserWithEmailAndPassword(e, p).catch(function (err) {
+                    $('auth-msg').textContent = err.code === 'auth/email-already-in-use' ? 'Login exists — just Sign in.' : err.message;
+                });
+            });
+            $('auth-signout').addEventListener('click', function () { auth.signOut(); });
+            $('auth-reset').addEventListener('click', function () {
+                var e = $('auth-email').value.trim(); if (!e) { $('auth-msg').textContent = 'Type your email first.'; return; }
+                auth.sendPasswordResetEmail(e).then(function () { $('auth-msg').textContent = 'Reset email sent to ' + e + '.'; }).catch(function (err) { $('auth-msg').textContent = err.message; });
+            });
+        }
+
+        // article-mode click wiring needs to survive re-renders → delegate once on main
+        if (isArticle) {
+            main.addEventListener('click', function (e) {
+                var t = e.target; if (!t.getAttribute) return; var id;
+                if ((id = t.getAttribute('data-fav'))) toggleFav(id);
+                else if ((id = t.getAttribute('data-del'))) setDel(id, true);
+                else if (t.getAttribute('data-undel')) restoreAll();
+                else if ((id = t.getAttribute('data-photo'))) addPhoto(id);
+                else if ((id = t.getAttribute('data-copy'))) copyCaptionById(id);
+            });
+        }
+        function copyCaptionById(id) {
+            var entry = DATA.articles && DATA.articles[slug]; if (entry) copyCaption(entry, id);
+        }
+
+        setupAuth();
+    })();
+    </script>
+</body>
+</html>
