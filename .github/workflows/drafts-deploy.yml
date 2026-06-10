@@ -21,11 +21,11 @@ jobs:
   deploy-drafts:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Build (regenerates data/draft-articles.json from the draft flag)
         run: |
@@ -33,10 +33,10 @@ jobs:
           npm run build
 
       - name: Deploy to the "drafts" preview channel
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
-          projectId: littoralicious-web-eceed
-          channelId: drafts
-          expires: 30d
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          npx --yes firebase-tools@15 hosting:channel:deploy drafts --expires 30d \
+            --project littoralicious-web-eceed --non-interactive
