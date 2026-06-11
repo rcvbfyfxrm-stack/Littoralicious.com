@@ -20,15 +20,16 @@
   var RANK = {
     'DIV.lead': 1, 'DIV.funfact': 2, 'DIV.instructions': 3, 'DIV.alert': 4,
     'DIV#gx-search': 5, 'SECTION#soul': 6,
-    // I — the place
-    'SECTION#history': 10, 'SECTION#why-now': 11, 'SECTION#eat': 12, 'SECTION#drink': 13,
+    // I — the place  (publish-terroir guides emit these as <details>, GOLD as <section>; map both)
+    'SECTION#history': 10, 'DETAILS#history': 10, 'SECTION#why-now': 11, 'DETAILS#why-now': 11,
+    'SECTION#eat': 12, 'DETAILS#eat': 12, 'SECTION#drink': 13,
     // II — where to eat
     'DETAILS#tables': 20, 'DETAILS#three-tables': 21, 'DETAILS#tables-extended': 22,
     'DETAILS#dish': 23, 'DETAILS#bougie': 24,
     // III — calas & things to do
     'SECTION#calas': 30, 'DETAILS#calas': 30, 'SECTION#walk': 31, 'DETAILS#walks': 32,
     'DETAILS#coffee-gardens': 32.5, 'DETAILS#work': 33, 'DETAILS#culture': 34, 'SECTION#quartiers': 35,
-    'DETAILS#secret-gems': 36, 'DETAILS#gastronomy': 37, 'DETAILS#twentyfour': 38,
+    'DETAILS#secret-gems': 36, 'DETAILS#gastronomy': 37, 'DETAILS#twentyfour': 38, 'DETAILS#events': 38.5,
     // IV — drink & hear
     'DETAILS#drink': 40, 'DETAILS#bars': 40, 'DETAILS#music': 41,
     // V — go out
