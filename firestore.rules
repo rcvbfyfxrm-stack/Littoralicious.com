@@ -42,6 +42,28 @@ service cloud.firestore {
       }
     }
 
+    // ── Public: terroir guides — ♡ loves, legacy votes, reader comments ─────
+    // Unlisted, robots-blocked archive. Loves/votes are monotonic counter docs;
+    // kept open like articles/** above (same risk posture) so the ♡ counts +
+    // the vote-driven "blue top-3" actually work.
+    match /terroir_loves/{slug}            { allow read, write: if true; }
+    match /terroir_votes/{slug}/{doc=**}   { allow read, write: if true; }
+    match /terroir_inventory_votes/{slug}  { allow read, write: if true; }
+
+    // Reader comments: terroir_comments/<slug>/comments/<autoId> = {name, text, ts}.
+    // Read open; create only with validated shape; no client update/delete (moderate in console).
+    match /terroir_comments/{slug}/comments/{commentId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['name','text','ts'])
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() <= 40
+                    && request.resource.data.text is string
+                    && request.resource.data.text.size() >= 3
+                    && request.resource.data.text.size() <= 600
+                    && request.resource.data.ts == request.time;
+      allow update, delete: if false;
+    }
+
     // ── Default deny (no-op alongside the explicit allows above) ────────────
     match /{document=**} {
       allow read, write: if false;
