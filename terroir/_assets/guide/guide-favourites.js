@@ -118,7 +118,7 @@
   function toggle(id, card, btnEl) {
     var nowLoved = !favs[id];
     if (nowLoved) {
-      favs[id] = { name: cardName(card), section: cardSection(card), href: cardHref(card), ts: idStamp() };
+      favs[id] = { name: cardName(card), section: cardSection(card), href: cardHref(card), path: location.pathname, ts: idStamp() };
     } else {
       delete favs[id];
     }
@@ -259,6 +259,29 @@
           '</div></div>';
       }).join('');
     }
+    // favourites saved in OTHER guides — one atlas-wide tray (links jump across guides)
+    try {
+      var others = [];
+      for (var oi = 0; oi < localStorage.length; oi++) {
+        var ok = localStorage.key(oi);
+        if (ok.indexOf('terroir-fav:') !== 0 || ok === FAV_KEY) continue;
+        var oobj = {}; try { oobj = JSON.parse(localStorage.getItem(ok) || '{}'); } catch (e) {}
+        Object.keys(oobj).forEach(function (oid) {
+          var of = oobj[oid];
+          if (!of || !of.path) return;
+          var slug = (of.path.split('/terroir/')[1] || '').replace(/\/$/, '');
+          others.push({ name: of.name || oid, label: (slug.split('-')[0] || slug), url: of.path + (of.href || '') });
+        });
+      }
+      if (others.length) {
+        html += '<div class="gx-fav-tray__section">From other ports</div>';
+        html += others.map(function (o) {
+          return '<div class="gx-fav-row"><a class="gx-fav-row__main" href="' + esc(o.url) + '" style="text-decoration:none">' +
+            '<div class="gx-fav-row__name">' + esc(o.name) + '</div>' +
+            '<div class="gx-fav-row__meta">' + esc(o.label) + '</div></a></div>';
+        }).join('');
+      }
+    } catch (e) {}
     tray.innerHTML = html;
     tray.querySelectorAll('[data-jump]').forEach(function (el) {
       el.addEventListener('click', function () { jumpTo(el.getAttribute('data-jump'), el.getAttribute('data-fid')); });

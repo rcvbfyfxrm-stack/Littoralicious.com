@@ -46,10 +46,11 @@
   background:linear-gradient(to bottom, rgba(250,250,250,0) 0%, rgba(250,250,250,0.72) 52%, var(--gx-paper) 100%);
   pointer-events:none;
 }
-/* read-more: a glassy pill that sits on the fade so it clearly reads as "there's more" */
+/* read-more: a glassy pill. Default spacing is normal; the negative pull (so it sits ON
+   the fade) is applied ONLY when it follows a clamped block — story-folds have no fade. */
 .gx-more{
   display:flex; width:fit-content; align-items:center; gap:8px;
-  margin:-1.6em auto 20px; position:relative; z-index:1;
+  margin:14px auto 20px; position:relative; z-index:1;
   background:rgba(255,255,255,0.72); -webkit-backdrop-filter:blur(7px); backdrop-filter:blur(7px);
   border:1px solid var(--gx-sea); border-radius:30px; cursor:pointer; padding:8px 18px;
   font-family:var(--gx-mono); font-size:0.72em; letter-spacing:2px;
@@ -58,6 +59,8 @@
   transition:background .15s ease, color .15s ease;
 }
 .gx-more:hover{ color:#fff; background:var(--gx-sea); }
+/* only overlap the fade when the pill directly follows a clamped (faded) block */
+.gx-clamp.is-clamped + .gx-more{ margin-top:-1.6em; }
 .gx-more .gx-more__chev{ transition:transform .3s ease; font-size:0.9em; }
 .gx-more.is-open .gx-more__chev{ transform:rotate(180deg); }
 
@@ -323,3 +326,30 @@
 .tcard__maps a, .cala-maps{ display:inline-block; margin-top:2px;
   font-family:var(--gx-sans); font-size:0.84em; color:var(--gx-sea); border-bottom:1px solid var(--gx-sea); }
 .tcard__maps a:hover, .cala-maps:hover{ color:var(--gx-gold); border-color:var(--gx-gold); }
+
+/* ============================================================================
+   11 · COMMENTS — "Notes from readers" (guide-comments.js)
+   ========================================================================== */
+.gx-comments{ max-width:760px; margin:44px auto 0; padding:24px 24px 8px; border-top:1px solid var(--gx-rule); }
+.gx-comments .overline{ font-family:var(--gx-mono); font-size:0.72em; letter-spacing:4px; text-transform:uppercase; color:var(--gx-gold); margin-bottom:4px; }
+.gx-comments .subhead{ font-family:var(--gx-serif); font-style:italic; font-size:1.2em; color:var(--gx-ink2); margin-bottom:16px; }
+.gx-comments__form{ display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
+.gx-comments__name, .gx-comments__text{ font-family:var(--gx-sans); font-size:0.98em; color:var(--gx-ink); background:#fff;
+  border:1px solid var(--gx-rule); border-radius:8px; padding:10px 12px; width:100%; }
+.gx-comments__name:focus, .gx-comments__text:focus{ outline:0; border-color:var(--gx-sea); box-shadow:0 0 0 3px rgba(45,74,94,0.10); }
+.gx-comments__text{ resize:vertical; line-height:1.6; }
+.gx-comments__row{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.gx-comments__count{ font-family:var(--gx-mono); font-size:0.7em; color:var(--gx-ink3); }
+.gx-comments__post{ font-family:var(--gx-mono); font-size:0.72em; letter-spacing:2px; text-transform:uppercase; color:#fff;
+  background:var(--gx-sea); border:0; border-radius:30px; padding:9px 18px; cursor:pointer; }
+.gx-comments__post:hover{ background:#243c4d; }
+.gx-comments__post:disabled{ opacity:.6; cursor:default; }
+.gx-comments__msg{ font-family:var(--gx-sans); font-size:0.84em; color:var(--gx-sea); font-style:italic; min-height:1em; }
+.gx-comments__list{ display:flex; flex-direction:column; gap:14px; }
+.gx-comments__empty{ font-family:var(--gx-sans); font-style:italic; color:var(--gx-ink3); font-size:0.9em; }
+.gx-comments__item{ border-left:3px solid var(--gx-rule); padding:2px 0 2px 14px; }
+.gx-comments__meta{ display:flex; align-items:baseline; gap:10px; margin-bottom:3px; }
+.gx-comments__who{ font-family:var(--gx-serif); font-size:1.02em; color:var(--gx-ink); font-weight:600; }
+.gx-comments__when{ font-family:var(--gx-mono); font-size:0.62em; letter-spacing:1px; text-transform:uppercase; color:var(--gx-ink3); }
+.gx-comments__body{ font-family:var(--gx-sans); font-size:0.96em; line-height:1.6; color:var(--gx-ink2); margin:0; white-space:pre-wrap; }
+@media print{ .gx-comments__form{ display:none; } }

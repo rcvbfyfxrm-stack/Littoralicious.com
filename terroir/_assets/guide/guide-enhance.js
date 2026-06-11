@@ -30,7 +30,7 @@
     'DETAILS#coffee-gardens': 32.5, 'DETAILS#work': 33, 'DETAILS#culture': 34, 'SECTION#quartiers': 35,
     'DETAILS#secret-gems': 36, 'DETAILS#gastronomy': 37, 'DETAILS#twentyfour': 38,
     // IV — drink & hear
-    'DETAILS#drink': 40, 'DETAILS#music': 41,
+    'DETAILS#drink': 40, 'DETAILS#bars': 40, 'DETAILS#music': 41,
     // V — go out
     'SECTION#nightlife': 45, 'DETAILS#nightlife': 45,
     // VI — fast & real
