@@ -644,3 +644,6 @@ window.TERROIR_DATA = (function () {
 ];
     return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
+
+/* PHOTOS — verified CC images, placed by guide-extras.js */
+if (window.TERROIR_DATA) window.TERROIR_DATA.PHOTOS = [{"src": "/terroir/beaune-bourgogne/img/1-vista.jpg", "caption": "The glazed polychrome diamond-pattern tile roofs and half-timbered dormers of the Hospices de Beaune (Hotel-Dieu).", "credit": "Photo: Jebulon · Public domain · Wikimedia"}, {"src": "/terroir/beaune-bourgogne/img/2-human-food.jpg", "caption": "Crates of freshly picked harvest grapes stacked at the vineyard edge during the vendange near Santenay in the Cote de Beaune.", "credit": "Photo: JopkeB · CC BY-SA 4.0 · Wikimedia"}, {"src": "/terroir/beaune-bourgogne/img/3-texture.jpg", "caption": "Vineyard-clad slopes of the Cote de Beaune rising toward the Cote d'Or, with a stone wall and village rooftops below.", "credit": "Photo: Megan Mallen · CC BY 2.0 · Wikimedia"}];

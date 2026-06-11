@@ -805,3 +805,6 @@ window.TERROIR_DATA = (function () {
 ];
     return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
+
+/* PHOTOS — verified CC images, placed by guide-extras.js */
+if (window.TERROIR_DATA) window.TERROIR_DATA.PHOTOS = [{"src": "/terroir/Dubrovnik-Dalmatie/img/1-vista.jpg", "caption": "The walled Old Town of Dubrovnik jutting into the Adriatic, the full circuit of city walls and old harbour seen at dawn.", "credit": "Photo: Diego Delso, delso.photo · CC BY-SA 3.0 · Wikimedia"}, {"src": "/terroir/Dubrovnik-Dalmatie/img/2-human-food.jpg", "caption": "Shoppers and a produce stall at the morning market on Gundulic square (Gunduliceva poljana) in Dubrovnik's Old Town.", "credit": "Photo: Jorge Franganillo · CC BY 2.0 · Wikimedia"}, {"src": "/terroir/Dubrovnik-Dalmatie/img/3-texture.jpg", "caption": "The Minceta tower of Dubrovnik's city walls, its weathered round stonework rising above the ramparts toward the sea.", "credit": "Photo: Jules Verne Times Two (julesvernex2.com) · CC BY 4.0 · Wikimedia"}];

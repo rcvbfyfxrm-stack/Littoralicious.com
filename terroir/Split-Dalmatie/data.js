@@ -409,3 +409,6 @@ window.TERROIR_DATA = (function () {
     ];
     return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
+
+/* PHOTOS — verified CC images, placed by guide-extras.js */
+if (window.TERROIR_DATA) window.TERROIR_DATA.PHOTOS = [{"src": "/terroir/Split-Dalmatie/img/1-vista.jpg", "caption": "The Peristyle (Peristil) courtyard at the heart of Diocletian's Palace in Split, with its Roman columns and arcades.", "credit": "Photo: TimeTravelRome · CC BY 2.0 · Wikimedia"}, {"src": "/terroir/Split-Dalmatie/img/2-human-food.jpg", "caption": "Produce stalls at the Pazar, Split's open-air green market beside the eastern palace wall.", "credit": "Photo: Fighting Irish 1977 · CC BY 2.0 · Wikimedia"}, {"src": "/terroir/Split-Dalmatie/img/3-texture.jpg", "caption": "Marjan hill rising above the sea on the western edge of Split.", "credit": "Photo: Bernard Gagnon · CC BY-SA 4.0 · Wikimedia"}];

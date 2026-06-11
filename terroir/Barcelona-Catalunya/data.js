@@ -771,3 +771,6 @@ window.TERROIR_DATA = (function () {
 ];
     return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
+
+/* PHOTOS — verified CC images, placed by guide-extras.js */
+if (window.TERROIR_DATA) window.TERROIR_DATA.PHOTOS = [{"src": "/terroir/Barcelona-Catalunya/img/1-vista.jpg", "caption": "The neo-Gothic footbridge spanning Carrer del Bisbe in the Barri Gotic, beside the Palau de la Generalitat.", "credit": "Photo: Joe Mabel · CC BY-SA 4.0 · Wikimedia"}, {"src": "/terroir/Barcelona-Catalunya/img/2-human-food.jpg", "caption": "A fruit stall piled high with produce as shoppers and vendors crowd the aisle at the Mercat de la Boqueria.", "credit": "Photo: Benreis · CC BY-SA 3.0 · Wikimedia"}, {"src": "/terroir/Barcelona-Catalunya/img/3-texture.jpg", "caption": "An elevated view from the Sagrada Familia over the dense rooftops and chamfered street grid of the Eixample.", "credit": "Photo: Reda Kerbush · CC BY-SA 4.0 · Wikimedia"}];

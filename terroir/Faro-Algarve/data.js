@@ -706,3 +706,6 @@ window.TERROIR_DATA = (function () {
 ];
     return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
+
+/* PHOTOS — verified CC images, placed by guide-extras.js */
+if (window.TERROIR_DATA) window.TERROIR_DATA.PHOTOS = [{"src": "/terroir/Faro-Algarve/img/1-vista.jpg", "caption": "The Arco da Vila, the neoclassical gate into Faro's walled Cidade Velha, with stork nests on the bell tower above.", "credit": "Photo: Jules Verne Times Two · CC BY-SA 4.0 · Wikimedia"}, {"src": "/terroir/Faro-Algarve/img/2-human-food.jpg", "caption": "Fresh mackerel, mullet and conger on ice with handwritten price tags at the fish market of Olhao, the main fishing port on the Ria Formosa lagoon.", "credit": "Photo: muffinn · CC BY 2.0 · Wikimedia"}, {"src": "/terroir/Faro-Algarve/img/3-texture.jpg", "caption": "Aerial view of the salt-pan grid and tidal channels of the Ria Formosa Natural Park, looking toward the Ilha da Armona.", "credit": "Photo: Joao Domingos · CC BY-SA 3.0 · Wikimedia"}];

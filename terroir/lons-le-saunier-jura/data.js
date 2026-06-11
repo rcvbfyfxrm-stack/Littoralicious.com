@@ -695,3 +695,6 @@ window.TERROIR_DATA = (function () {
 ];
     return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
+
+/* PHOTOS — verified CC images, placed by guide-extras.js */
+if (window.TERROIR_DATA) window.TERROIR_DATA.PHOTOS = [{"src": "/terroir/lons-le-saunier-jura/img/1-vista.jpg", "caption": "The neoclassical Theatre de Lons-le-Saunier on the Place de la Liberte, with its Grand Cafe du Theatre frontage and flanking stone lions.", "credit": "Photo: Parrad.adrien · CC BY-SA 4.0 · Wikimedia"}, {"src": "/terroir/lons-le-saunier-jura/img/2-human-food.jpg", "caption": "Wheels of Comte ageing on wooden shelves in the Marcel Petite ripening cellar at Fort Saint-Antoine.", "credit": "Photo: Marie-Lan Tay Pamart · CC BY 4.0 · Wikimedia"}, {"src": "/terroir/lons-le-saunier-jura/img/3-texture.jpg", "caption": "The perched village of Chateau-Chalon on its limestone cliff above the Seille valley, with dry-stone terraces and the church tower.", "credit": "Photo: W. Bulach · CC BY-SA 4.0 · Wikimedia"}];
