@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-06-15/">
+<title>Washington d&eacute;branche Fable&nbsp;5 — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 15 Juin 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;150</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Tr&ecirc;ve &amp; Reflux</div>
+  <div class="masthead-version">v1.1 &mdash; quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-06-15.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00695C">Silicium &amp; Intelligence</div>
+  <h1 class="article-title">Washington d&eacute;branche Fable&nbsp;5</h1>
+  <div class="article-date">Lundi 15 Juin 2026 &mdash; Edition N&deg;150</div>
+</div><div class="article-body"><h2>&Eacute;dition du Jour</h2>
+<p>&Agrave; 17h21 heure de l'Est, le 12 juin, Anthropic a re&ccedil;u un ordre&nbsp;: couper l'acc&egrave;s &agrave; ses deux mod&egrave;les les plus puissants. Trois jours apr&egrave;s leur lancement, <strong>Fable&nbsp;5</strong> et <strong>Mythos&nbsp;5</strong> ont &eacute;t&eacute; suspendus &mdash; non par bug, non par scandale, mais par directive de contr&ocirc;le &agrave; l'export du gouvernement am&eacute;ricain, au nom de la s&eacute;curit&eacute; nationale, comme l'expose <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic</a>. Pendant qu'Ormuz s'ouvre, Washington ferme&nbsp;: c'est le contre-courant du jour. Et il pose une question qui d&eacute;passe un laboratoire&nbsp;: <strong>un fil commun</strong> relie cette suspension &agrave; la fronti&egrave;re du calcul &mdash; un mod&egrave;le frontière n'est plus un produit, c'est une arme strat&eacute;gique que l'&Eacute;tat peut d&eacute;brancher d'un fax.</p>
+<hr>
+<h2>Indicateurs Avanc&eacute;s</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>&Delta; vs &eacute;dition pr&eacute;c&eacute;dente</th><th>Source</th></tr></thead><tbody>
+<tr><td>Mod&egrave;les suspendus</td><td>Fable&nbsp;5, Mythos&nbsp;5</td><td>nouveau (12 juin)</td><td><a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic</a></td></tr>
+<tr><td>D&eacute;lai lancement &rarr; suspension</td><td>~3 jours</td><td>9-10 juin &rarr; 12 juin</td><td><a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank" rel="noopener">Fortune</a></td></tr>
+<tr><td>Heure de notification</td><td>17h21 ET</td><td>12 juin</td><td><a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic</a></td></tr>
+<tr><td>Motif invoqu&eacute;</td><td>S&eacute;curit&eacute; nationale</td><td>jailbreak pr&eacute;sum&eacute; de Fable&nbsp;5</td><td><a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank" rel="noopener">Fortune</a></td></tr>
+<tr><td>Autres mod&egrave;les Claude</td><td>Disponibles</td><td>non affect&eacute;s</td><td><a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic</a></td></tr>
+<tr><td>Agents de code (langages ex.)</td><td>m&eacute;taprogrammation</td><td>arXiv 2606.10933</td><td><a href="https://arxiv.org/abs/2606.10933" target="_blank" rel="noopener">arXiv</a></td></tr>
+</tbody></table>
+<hr>
+<h2>Les R&eacute;cits</h2>
+
+<h3>I. Trois jours de vie pour un mod&egrave;le fronti&egrave;re</h3>
+<p><strong>&#128994; Confirm&eacute;</strong></p>
+<p>Fable&nbsp;5 et Mythos&nbsp;5 ont &eacute;t&eacute; lanc&eacute;s les 9 et 10 juin. Le 12, ils &eacute;taient morts &mdash; du moins inaccessibles. La directive ordonne la suspension de tout acc&egrave;s par un ressortissant &eacute;tranger, y compris les employ&eacute;s &eacute;trangers d'Anthropic eux-m&ecirc;mes, d&eacute;taille <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic</a>. Plut&ocirc;t que de filtrer par nationalit&eacute;, le laboratoire a coup&eacute; pour tout le monde &mdash; un interrupteur g&eacute;n&eacute;ral pr&eacute;f&eacute;r&eacute; &agrave; un tamis impossible.</p>
+<p>Le motif&nbsp;? Selon la compr&eacute;hension d'Anthropic relay&eacute;e par <a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank" rel="noopener">Fortune</a>, le gouvernement croit qu'une m&eacute;thode de &laquo;&nbsp;jailbreak&nbsp;&raquo; de Fable&nbsp;5 a &eacute;t&eacute; d&eacute;couverte. Une faille de s&eacute;curit&eacute; sur un produit logiciel ne d&eacute;clenche pas, d'ordinaire, un acte de l'&Eacute;tat f&eacute;d&eacute;ral en quelques heures. Ici, si.</p>
+<p>Ce qui frappe, c'est la vitesse asym&eacute;trique&nbsp;: des ann&eacute;es pour entra&icirc;ner un mod&egrave;le, trois jours pour l'&eacute;teindre. La fronti&egrave;re du calcul vient de d&eacute;couvrir qu'elle a un disjoncteur, et que la main sur le disjoncteur n'est pas celle de l'ing&eacute;nieur.</p>
+<p><strong>Qui paie &middot; Qui profite&nbsp;:</strong> paient Anthropic et ses clients priv&eacute;s d'un outil&nbsp;; profitent les concurrents dont les mod&egrave;les frontière restent en ligne &mdash; et l'argument souverainet&eacute;.</p>
+<p><strong>Cons&eacute;quence op&eacute;rable (7-30j)&nbsp;:</strong> toute strat&eacute;gie produit b&acirc;tie sur un seul mod&egrave;le frontière doit pr&eacute;voir un plan de bascule&nbsp;; le risque r&eacute;glementaire est d&eacute;sormais op&eacute;rationnel, pas th&eacute;orique.</p>
+<p><strong>&#129300; Ce qui reste opaque&nbsp;:</strong> la nature exacte du jailbreak et ce que &laquo;&nbsp;d&eacute;couvert&nbsp;&raquo; signifie &mdash; exploit&eacute;, publi&eacute;, ou seulement soup&ccedil;onn&eacute;&nbsp;?</p>
+<hr>
+
+<h3>II. Quand l'export-control rattrape le logiciel</h3>
+<p><strong>&#128994; Confirm&eacute;</strong></p>
+<p>On contr&ocirc;lait l'export des puces&nbsp;; voici qu'on contr&ocirc;le l'export des <em>poids</em>. La suspension de Fable&nbsp;5 marque la premi&egrave;re fois qu'un mod&egrave;le frontière commercial est mis hors ligne par un m&eacute;canisme de contr&ocirc;le &agrave; l'export, et <a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank" rel="noopener">Fortune</a> souligne qu'Anthropic s'est conform&eacute; en d&eacute;sactivant pour <em>tous</em> les clients, le temps de comprendre.</p>
+<p>La logique est limpide et vertigineuse&nbsp;: si un mod&egrave;le est assez puissant pour inqui&eacute;ter la s&eacute;curit&eacute; nationale, alors il rel&egrave;ve du m&ecirc;me r&eacute;gime que la technologie de missile ou le mat&eacute;riel de cryptographie. Le code n'est plus de la parole&nbsp;; c'est une munition r&eacute;gul&eacute;e. Et un poids de mod&egrave;le, contrairement &agrave; une puce, se copie en un clic &mdash; ce qui rend le contr&ocirc;le aussi n&eacute;cessaire qu'illusoire.</p>
+<p>Pour l'&eacute;cosyst&egrave;me, le pr&eacute;c&eacute;dent compte plus que l'incident. Tout laboratoire am&eacute;ricain sait d&eacute;sormais qu'un lancement frontière peut &ecirc;tre annul&eacute; par d&eacute;cret en pleine semaine de sortie. Les autres mod&egrave;les Claude restent disponibles &mdash; mais le message, lui, ne se d&eacute;sactive pas.</p>
+<p><strong>Qui paie &middot; Qui profite&nbsp;:</strong> paient les d&eacute;veloppeurs internationaux soudain coup&eacute;s&nbsp;; profitent les fabricants de puces (NVDA) dont la valeur strat&eacute;gique se confirme, et les mod&egrave;les non vis&eacute;s.</p>
+<p><strong>Cons&eacute;quence op&eacute;rable (7-30j)&nbsp;:</strong> les entreprises &agrave; effectifs internationaux doivent cartographier leur exposition aux mod&egrave;les frontière soumis &agrave; restriction de nationalit&eacute;.</p>
+<p><strong>&#129300; Ce qui reste opaque&nbsp;:</strong> la dur&eacute;e &mdash; suspension temporaire le temps d'un correctif, ou nouveau r&eacute;gime permanent pour les mod&egrave;les frontière&nbsp;?</p>
+<hr>
+
+<h3>III. Pendant ce temps, les agents apprennent &agrave; s'adapter seuls</h3>
+<p><strong>&#128993; &Agrave; v&eacute;rifier</strong></p>
+<p>Loin du bruit r&eacute;glementaire, un pr&eacute;print dit quelque chose de plus profond sur ce que ces mod&egrave;les savent faire. Un papier (<a href="https://arxiv.org/abs/2606.10933" target="_blank" rel="noopener">arXiv 2606.10933</a>) teste six agents de code sur quatre langages de programmation &eacute;sot&eacute;riques &mdash; des langages qu'aucun n'a vraiment vus &agrave; l'entra&icirc;nement. Les meilleurs s'adaptent en construisant un mod&egrave;le de travail &agrave; partir des outils, des retours d'erreur et de l'&eacute;tat du workspace.</p>
+<p>La strat&eacute;gie la plus nette&nbsp;: la <strong>m&eacute;taprogrammation</strong> &mdash; &eacute;crire du code qui &eacute;crit du code, pour apprivoiser l'inconnu. D&eacute;tail saisissant&nbsp;: du code helper d&eacute;riv&eacute; d'Opus a nettement am&eacute;lior&eacute; Sonnet&nbsp;4.6 et GPT-5.4&nbsp;mini sur les m&ecirc;mes probl&egrave;mes, tandis que Haiku&nbsp;4.5 restait &agrave; la tra&icirc;ne. L'intelligence d'un mod&egrave;le se transmet&nbsp;: elle laisse des b&eacute;quilles dont les autres se saisissent.</p>
+<p>Le contraste avec le r&eacute;cit pr&eacute;c&eacute;dent est l'histoire enti&egrave;re&nbsp;: d'un c&ocirc;t&eacute;, l'&Eacute;tat d&eacute;branche des mod&egrave;les trop puissants&nbsp;; de l'autre, ces mod&egrave;les deviennent assez autonomes pour s'attaquer seuls &agrave; des terrains inconnus. La capacit&eacute; monte, le contr&ocirc;le se durcit &mdash; et l'&eacute;cart entre les deux est exactement l&agrave; o&ugrave; se jouera la prochaine d&eacute;cennie.</p>
+<p><strong>Qui paie &middot; Qui profite&nbsp;:</strong> profitent les d&eacute;veloppeurs qui d&eacute;l&egrave;guent l'adaptation aux agents&nbsp;; payent ceux qui croyaient un langage de niche &laquo;&nbsp;prot&eacute;g&eacute;&nbsp;&raquo; par sa raret&eacute;.</p>
+<p><strong>Cons&eacute;quence op&eacute;rable (7-30j)&nbsp;:</strong> tester un agent fort sur une base de code &laquo;&nbsp;exotique&nbsp;&raquo; interne avant de supposer qu'il &eacute;chouera&nbsp;; la m&eacute;taprogrammation change la donne.</p>
+<p><strong>&#129300; Ce qui reste opaque&nbsp;:</strong> r&eacute;sultat de pr&eacute;print non revu par les pairs, et sur le fil de la fen&ecirc;tre &mdash; &agrave; confirmer en conditions r&eacute;elles.</p>
+<hr>
+
+<h2>Signaux Faibles</h2>
+<ul>
+<li>La suspension par fax pose la question du &laquo;&nbsp;kill switch&nbsp;&raquo; des mod&egrave;les frontière&nbsp;: qui l'actionne, sous quel contr&ocirc;le judiciaire&nbsp;? (<a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic</a>).</li>
+<li>Premier pr&eacute;c&eacute;dent de mod&egrave;le commercial trait&eacute; comme techno &agrave; double usage&nbsp;: les juristes IA vont s'en emparer (<a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank" rel="noopener">Fortune</a>).</li>
+<li>La transmissibilit&eacute; de l'intelligence inter-mod&egrave;les (Opus &rarr; Sonnet) sugg&egrave;re une &eacute;conomie de &laquo;&nbsp;b&eacute;quilles&nbsp;&raquo; de capacit&eacute; partag&eacute;es (<a href="https://arxiv.org/abs/2606.10933" target="_blank" rel="noopener">arXiv</a>).</li>
+<li>Si la suspension dure, attendre une pression sur les revenus entreprise d'Anthropic et un report de la valeur vers les mod&egrave;les non restreints.</li>
+</ul>
+<p><strong>Pour Arnaud&nbsp;:</strong> Cet &eacute;pisode rappelle que la valeur de NVDA et de l'infra IA ne tient pas qu'&agrave; la demande &mdash; elle tient &agrave; qui contr&ocirc;le l'usage. Un mod&egrave;le d&eacute;branch&eacute; en trois jours, c'est un risque r&eacute;glementaire qui devient un facteur de march&eacute;. Pour GOOGL et les acteurs int&eacute;gr&eacute;s, l'avantage va &agrave; ceux qui ma&icirc;trisent toute la cha&icirc;ne, des puces aux poids.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Anthropic &mdash; D&eacute;claration sur l'acc&egrave;s &agrave; Fable&nbsp;5 et Mythos&nbsp;5</a></li>
+<li><a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank" rel="noopener">Fortune &mdash; Anthropic d&eacute;sactive Fable/Mythos sur contr&ocirc;le export (13 juin 2026)</a></li>
+<li><a href="https://arxiv.org/abs/2606.10933" target="_blank" rel="noopener">arXiv 2606.10933 &mdash; Frontier Coding Agents &amp; Metaprogramming</a></li>
+</ul></div><div class="bottom-nav"><a href="../2026-06-15.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Silicium &amp; Intelligence &mdash; v1.1 &mdash; quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
