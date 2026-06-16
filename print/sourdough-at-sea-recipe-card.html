@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <title>Sourdough at Sea &mdash; Littoralicious</title>
     <style>
-        @page { size: A4; margin: 0; }
+        @page { size: A4; margin: 8mm 9mm 6mm; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { box-sizing: border-box; height: 100%; }
+        html, body { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             font-size: 7.7pt; line-height: 1.3; color: #0a0a0a; background: #fff;
-            width: 210mm; height: 297mm; margin: 0 auto; padding: 6mm 9mm 5mm;
-            display: flex; flex-direction: column;
         }
         .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
         .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
@@ -80,8 +78,17 @@
         .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
         .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
         .contact .sep { color: #cbd2da; }
-        .spacer { flex: 1; min-height: 0; }
-        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+        .spacer { display: none; }
+        /* page 2 continuation header (print only) */
+        .cont { display: none; }
+        .cont .ct { font-family: Georgia, serif; font-size: 11pt; font-weight: 700; letter-spacing: -0.01em; }
+        .cont .cs { font-size: 6.2pt; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        @media print {
+            .cont { display: block; break-before: page; page-break-before: always; border-bottom: 2px solid #0a0a0a; padding-bottom: 2mm; margin-bottom: 3mm; }
+            .origin, .done, .sauce-block, .subrecipe, .ingredients, .elevation, .troubleshoot, .charter, .contact, .meta-bar { break-inside: avoid; page-break-inside: avoid; }
+            tr { break-inside: avoid; }
+            .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
     </style>
 </head>
 <body>
@@ -187,6 +194,10 @@
     </section>
 </div>
 
+<div class="cont">
+    <span class="ct">Sourdough at Sea</span><span class="cs">Continued &middot; Mastery, Fixes &amp; Storage</span>
+</div>
+
 <section class="elevation">
     <h2>Elevation</h2>
     <div class="elevation-grid">
@@ -240,8 +251,6 @@
         </table>
     </section>
 </div>
-
-<div class="spacer"></div>
 
 <div class="contact">
     <strong>Contact the Chef</strong>
