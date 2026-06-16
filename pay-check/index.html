@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#fafafa" />
-  <meta name="description" content="Pay Check — a free, anonymous salary calculator and cahier des charges for yacht chefs. Enter your vessel size and pay; see what the 2026 industry standard says you should earn, what the job should and shouldn't ask of you for that price, and what belongs in the package. From Littoralicious." />
+  <meta name="description" content="Pay Check — a free, anonymous salary calculator and cahier des charges for yacht chefs. Sole, head, sous or crew chef: enter your vessel size and pay; see what the 2026 industry standard says you should earn, what the job should and shouldn't ask for that price, what belongs in the package, and how to negotiate it. From Littoralicious." />
   <title>Pay Check &mdash; Yacht Chef Salary &amp; Cahier des Charges &mdash; Littoralicious</title>
   <link rel="icon" type="image/svg+xml" href="/assets/logo/favicon.svg" />
   <meta property="og:title" content="Pay Check — Yacht Chef Salary &amp; Cahier des Charges — Littoralicious" />
-  <meta property="og:description" content="Enter your vessel size and pay; see what the 2026 standard says you should earn, what the job should and shouldn't ask for that price, and what belongs in the package. Free, anonymous, prints to A4." />
+  <meta property="og:description" content="Sole, head, sous or crew chef — what you should earn in 2026, what the job should and shouldn't ask for that price, what belongs in the package, and how to negotiate it. Free, anonymous, prints to A4." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.littoralicious.com/pay-check/" />
   <style>
@@ -36,7 +36,7 @@
     .btn-primary{background:var(--sea);color:#fff}
     .btn-primary:hover{background:var(--sea-soft)}
 
-    .intro{font-size:14px;color:var(--sea-soft);max-width:70ch;margin-bottom:22px}
+    .intro{font-size:14px;color:var(--sea-soft);max-width:72ch;margin-bottom:22px}
     .intro b{color:var(--ink)}
 
     .grid{display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start}
@@ -51,13 +51,13 @@
     .field .val{font-family:var(--mono);font-size:13px;color:var(--ink);float:right;font-weight:400;text-transform:none;letter-spacing:0}
     input[type=range]{width:100%;accent-color:var(--sea)}
     input[type=number],select{width:100%;font-family:var(--sans);font-size:14px;padding:8px 10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
-    .seg{display:flex;border:1px solid var(--line)}
-    .seg button{flex:1;font-family:var(--sans);font-size:12.5px;padding:8px 4px;border:0;background:var(--card);color:var(--sea-soft);cursor:pointer;border-right:1px solid var(--line)}
+    .seg{display:flex;border:1px solid var(--line);flex-wrap:wrap}
+    .seg button{flex:1;font-family:var(--sans);font-size:12.5px;padding:8px 4px;border:0;background:var(--card);color:var(--sea-soft);cursor:pointer;border-right:1px solid var(--line);min-width:0}
     .seg button:last-child{border-right:0}
     .seg button.on{background:var(--sea);color:#fff}
     .row2{display:grid;grid-template-columns:1fr 90px;gap:8px}
+    .hide{display:none!important}
 
-    /* result */
     .verdict{padding:16px 18px;border-left:4px solid var(--sea);background:var(--subtle);margin-bottom:18px}
     .verdict.good{border-color:var(--good);background:var(--good-bg)}
     .verdict.warn{border-color:var(--warn);background:var(--warn-bg)}
@@ -70,7 +70,8 @@
     .bandbox{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end;padding:6px 0 16px;border-bottom:1px solid var(--line);margin-bottom:16px}
     .bignum{font-family:var(--mono);font-size:30px;font-weight:600;color:var(--sea);line-height:1}
     .bignum small{display:block;font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--salt);margin-bottom:4px;font-weight:400}
-    .tips{font-size:13px;color:var(--sea-soft);background:var(--subtle);border-left:3px solid var(--sea);padding:10px 12px;margin-bottom:16px}
+    .tips{font-size:13px;color:var(--sea-soft);background:var(--subtle);border-left:3px solid var(--sea);padding:10px 12px;margin-bottom:8px}
+    .rolenote{font-size:12px;color:var(--warn);margin-bottom:16px}
 
     .cdc{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     @media(max-width:680px){.cdc{grid-template-columns:1fr}}
@@ -80,6 +81,7 @@
     ul.ck.do li:before{content:"\2713";color:var(--good)}
     ul.ck.dont li:before{content:"\2715";color:var(--bad)}
     ul.ck.pkg li:before{content:"\25A1";color:var(--sea)}
+    ul.ck.neg li:before{content:"\2192";color:var(--sea)}
     ul.ck.flag li:before{content:"\26A0";color:var(--warn)}
     ul.ck li b{color:var(--ink)}
 
@@ -87,11 +89,10 @@
     footer.foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:11.5px;color:var(--salt);line-height:1.55}
     footer.foot b{color:var(--sea-soft)}
 
-    /* print A4 — the downloadable cahier des charges */
     .print-head{display:none}
     @media print{
-      @page{size:A4;margin:12mm 12mm 10mm}
-      body{background:#fff;font-size:10pt}
+      @page{size:A4;margin:11mm 12mm 9mm}
+      body{background:#fff;font-size:9.5pt}
       .app{max-width:none;padding:0}
       header.masthead,.intro,.controls,.masthead-actions,.btn{display:none!important}
       .print-head{display:block;border-bottom:2px solid #000;padding-bottom:5px;margin-bottom:10px}
@@ -99,11 +100,12 @@
       .print-head .ps{font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:#555}
       .print-head .pmeta{font-size:8.5pt;color:#333;margin-top:4px}
       .grid{display:block}
-      .card{border:0;padding:0;margin-bottom:10px}
+      .card{border:0;padding:0;margin-bottom:8px}
       .card h2{font-size:11pt}
       .cdc{gap:10px}
-      .verdict{break-inside:avoid}
-      ul.ck li{font-size:9pt;padding:2px 0 2px 16px}
+      .verdict,ul.ck li{break-inside:avoid}
+      ul.ck li{font-size:8.6pt;padding:2px 0 2px 15px}
+      h3{break-after:avoid}
       footer.foot{font-size:7.5pt}
       a{color:#000;text-decoration:none}
     }
@@ -129,12 +131,22 @@
     </div>
   </header>
 
-  <p class="intro">Enter your <b>vessel size</b> and what you are <b>paid</b>. This tells you what the <b>2026 industry standard</b> says you should earn, what the job should &mdash; and should not &mdash; ask of you for that price, and what belongs in the package. Built from current crew salary guides and the working-floor reality. <b>Anonymous, saved only on your device.</b></p>
+  <p class="intro">Whichever galley you run &mdash; <b>sole, head, sous or crew chef</b> &mdash; enter your <b>vessel size</b> and what you are <b>paid</b>. This shows what the <b>2026 industry standard</b> says you should earn, what the job should &mdash; and should not &mdash; ask of you for that price, what belongs in the package, and <b>how to negotiate it</b>. Built from current crew salary guides and the working-floor reality. <b>Anonymous, saved only on your device.</b></p>
 
   <div class="grid">
     <!-- ============ INPUTS ============ -->
     <section class="card controls">
       <h2>Your situation</h2>
+
+      <div class="field">
+        <label>Role</label>
+        <div class="seg" id="role">
+          <button data-v="sole" class="on">Sole</button>
+          <button data-v="head">Head</button>
+          <button data-v="sous">Sous</button>
+          <button data-v="crew">Crew</button>
+        </div>
+      </div>
 
       <div class="field">
         <label>Vessel length <span class="val"><span id="mOut">50</span> m</span></label>
@@ -146,15 +158,6 @@
         <div class="seg" id="mode">
           <button data-v="charter" class="on">Charter</button>
           <button data-v="private">Private</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Your galley</label>
-        <div class="seg" id="staff">
-          <button data-v="solo" class="on">Solo</button>
-          <button data-v="sous">+ Sous</button>
-          <button data-v="brigade">Lead brigade</button>
         </div>
       </div>
 
@@ -179,8 +182,8 @@
         </div>
       </div>
 
-      <div class="field">
-        <label>Doubling as</label>
+      <div class="field" id="dualField">
+        <label>Doubling as <span class="val">sole chef only</span></label>
         <div class="seg" id="dual">
           <button data-v="none" class="on">Chef only</button>
           <button data-v="stew">+ Stew</button>
@@ -209,13 +212,14 @@
       </div>
 
       <div class="bandbox">
-        <div class="bignum"><small>Standard base, your profile</small><span id="bandOut">&mdash;</span></div>
+        <div class="bignum"><small id="bandLabel">Standard base, your profile</small><span id="bandOut">&mdash;</span></div>
         <div class="bignum" style="font-size:20px;color:var(--ink)"><small>Mid / fair target</small><span id="targetOut">&mdash;</span></div>
       </div>
 
       <div class="tips" id="tipsLine"></div>
+      <div class="rolenote hide" id="roleNote"></div>
 
-      <h2 style="margin-top:6px">The cahier des charges</h2>
+      <h2 style="margin-top:14px">The cahier des charges</h2>
       <p style="font-size:13px;color:var(--sea-soft);margin-bottom:14px">What the job should ask of you for this number &mdash; and where it is over-asking.</p>
       <div class="cdc">
         <div>
@@ -231,13 +235,17 @@
       <h3>Belongs in the package</h3>
       <ul class="ck pkg" id="pkgList"></ul>
 
+      <h3>How to negotiate &amp; defend it</h3>
+      <p style="font-size:12.5px;color:var(--sea-soft);margin:-2px 0 8px">If a line below is missing from the payslip, here is what to ask for &mdash; and how.</p>
+      <ul class="ck neg" id="negList"></ul>
+
       <h3>Before you sign &mdash; red flags</h3>
       <ul class="ck flag" id="flagList"></ul>
     </section>
   </div>
 
   <footer class="foot">
-    <b>How this is worked out.</b> Base bands interpolate the 2026 superyacht crew salary guides (Foreland Marine, Yotspot, YPI&nbsp;CREW, Lighthouse, Yachtly) by vessel length, then adjust for programme, staffing, rotation, dual role and experience. Tips follow the MYBA convention (15&ndash;20% of the charter fee, split across crew). Scope and rest-hour notes follow the Maritime Labour Convention 2006 and anonymised crew reporting. Figures are a guide for negotiation, not financial advice &mdash; the package and itinerary move the real number. Companion read: <a href="/articles/what-yacht-chefs-earn-2026">What Yacht Chefs Actually Earn: A 2026 Pay Map</a>. &copy; Littoralicious &mdash; information wants to be free.
+    <b>How this is worked out.</b> Base bands interpolate the 2026 superyacht crew salary guides (Foreland Marine, Yotspot, YPI&nbsp;CREW, Lighthouse, Yachtly) by vessel length and role, then adjust for programme, rotation, experience and (for a sole chef) any second role. Tips follow the MYBA convention (15&ndash;20% of the charter fee, split across crew). Scope and rest-hour notes follow the Maritime Labour Convention 2006 and anonymised crew reporting. Figures are a guide for negotiation, not financial advice &mdash; the package and itinerary move the real number. Companion read: <a href="/articles/what-yacht-chefs-earn-2026">What Yacht Chefs Actually Earn: A 2026 Pay Map</a>. &copy; Littoralicious &mdash; information wants to be free.
   </footer>
 </div>
 
@@ -245,8 +253,8 @@
 (function(){
   "use strict";
   var $=function(s){return document.querySelector(s)};
-  var state={m:50,mode:"charter",staff:"solo",exp:"2to5",mich:false,rot:"no",dual:"none",sal:"",cur:"EUR"};
-  try{var saved=JSON.parse(localStorage.getItem("paycheck"));if(saved)Object.assign(state,saved)}catch(e){}
+  var state={role:"sole",m:50,mode:"charter",exp:"2to5",mich:false,rot:"no",dual:"none",sal:"",cur:"EUR"};
+  try{var saved=JSON.parse(localStorage.getItem("paycheck2"));if(saved)Object.assign(state,saved)}catch(e){}
 
   var ANCH=[{m:24,lo:3500,hi:5500},{m:34,lo:4500,hi:7000},{m:44,lo:6000,hi:8500},{m:54,lo:7000,hi:9500},{m:64,lo:7500,hi:12000},{m:80,lo:9000,hi:14000},{m:100,lo:11000,hi:18000}];
   function band(m){
@@ -254,130 +262,176 @@
     var last=ANCH[ANCH.length-1];if(m>=last.m)return{lo:last.lo,hi:last.hi};
     for(var i=0;i<ANCH.length-1;i++){var a=ANCH[i],b=ANCH[i+1];if(m>=a.m&&m<=b.m){var t=(m-a.m)/(b.m-a.m);return{lo:a.lo+(b.lo-a.lo)*t,hi:a.hi+(b.hi-a.hi)*t}}}
   }
+  function crewBand(m){var x=Math.max(24,Math.min(90,m));return{lo:3200+(x-24)*22,hi:4800+(x-24)*42}}
   var r100=function(n){return Math.round(n/100)*100};
   function sym(){return state.cur==="USD"?"$":"€"}
   function fmt(n){return sym()+Math.round(n).toLocaleString("en-US")}
 
   function compute(){
-    var b=band(state.m),lo=b.lo,hi=b.hi;
-    if(state.mode==="private"){lo*=1.15;hi*=1.15}          // private base premium offsets no tips
-    if(state.staff==="solo"){lo*=1.08;hi*=1.08}            // sole-charge premium
-    if(state.staff==="brigade"){lo*=1.05;hi*=1.05}         // leadership of a team
-    if(state.dual!=="none"){lo*=1.10;hi*=1.12}             // two roles = you are owed more
-    if(state.mich){lo*=1.05;hi*=1.05}
-    if(state.rot==="yes"){lo*=0.88;hi*=0.88}               // rotational monthly is lower (half the year)
+    var lo,hi;
+    if(state.role==="crew"){var cb=crewBand(state.m);lo=cb.lo;hi=cb.hi;}
+    else{var b=band(state.m);lo=b.lo;hi=b.hi;}
+    if(state.role==="sole"){lo*=1.08;hi*=1.08;if(state.dual!=="none"){lo*=1.10;hi*=1.12;}}
+    if(state.role==="head"&&state.m>=60){lo*=1.05;hi*=1.05;}
+    if(state.role==="sous"){lo*=0.66;hi*=0.66;if(lo<4000)lo=4000;if(hi<5200)hi=5200;}
+    var prem=state.role==="crew"?1.08:1.15;
+    if(state.mode==="private"){lo*=prem;hi*=prem;}
+    if(state.mich){lo*=1.05;hi*=1.05;}
+    if(state.rot==="yes"){lo*=0.88;hi*=0.88;}
     var pos=state.exp==="lt2"?0.15:state.exp==="5plus"?0.82:0.5;
-    var target=lo+(hi-lo)*pos;
-    return{lo:r100(lo),hi:r100(hi),target:r100(target)};
+    return{lo:r100(lo),hi:r100(hi),target:r100(lo+(hi-lo)*pos)};
   }
+
+  function roleName(){return state.role==="sole"?"Sole chef":state.role==="head"?"Head chef":state.role==="sous"?"Sous chef":"Crew chef"}
 
   function verdict(c){
     var raw=parseFloat(state.sal);
     if(!raw||raw<=0)return{cls:"",tag:"Enter your pay",line:"Add your monthly base on the left to see how it compares to the standard."};
-    var cur=raw; // same currency basis as bands
-    if(cur<c.lo*0.93){var gap=fmt(c.lo-cur);return{cls:"bad",tag:"Underpaid",line:"You are <b>"+gap+"/month below</b> the floor for this profile ("+fmt(c.lo)+"–"+fmt(c.hi)+"). That is roughly "+fmt((c.lo-cur)*12)+" a year. Bring this to your next review."}}
+    var cur=raw;
+    if(cur<c.lo*0.93){return{cls:"bad",tag:"Underpaid",line:"You are <b>"+fmt(c.lo-cur)+"/month below</b> the floor for a "+roleName().toLowerCase()+" on this profile ("+fmt(c.lo)+"–"+fmt(c.hi)+") — roughly "+fmt((c.lo-cur)*12)+" a year. Take this to a review, or a better boat."}}
     if(cur<c.lo){return{cls:"warn",tag:"Low end",line:"You sit just under the standard band of <b>"+fmt(c.lo)+"–"+fmt(c.hi)+"</b>. Fair for a first season; otherwise there is room to ask."}}
     if(cur<=c.hi){var into=Math.round((cur-c.lo)/(c.hi-c.lo)*100);return{cls:"good",tag:"At market",line:"You are <b>inside the standard band</b> ("+fmt(c.lo)+"–"+fmt(c.hi)+"), about "+into+"% up it. Make sure the package below is also there."}}
     return{cls:"good",tag:"Above market",line:"You are <b>above</b> the standard band ("+fmt(c.lo)+"–"+fmt(c.hi)+") — a strong seat, or a hard programme paying to keep you. Hold it."};
   }
 
   function cdc(c){
-    var L=state.m, charter=state.mode==="charter", solo=state.staff==="solo";
-    var doL=[],dont=[],pkg=[],flag=[];
+    var L=state.m, role=state.role, charter=state.mode==="charter";
+    var doL=[],dont=[],pkg=[],neg=[],flag=[];
 
-    // ---- always in scope
-    doL.push("<b>Guest &amp; crew meals to standard</b>, every service, to the boat's level");
-    doL.push("<b>Menu planning &amp; dietary management</b> — allergies, vegan, GLP-1, preference sheets");
-    doL.push("<b>Provisioning &amp; budgeting</b> — sourcing to standard, in port, on the boat's schedule");
-    doL.push("<b>Food safety &amp; a clean galley</b> — HACCP, stores rotation, temperature logs");
-    if(charter){
-      doL.push("<b>Charter service</b> — rolling breakfast, plated lunch, canapés, multi-course dinner");
-      doL.push("<b>Off-boat moments</b> — beach picnics, deck barbecues, the odd 15–18h day in a charter week");
-    }else{
-      doL.push("<b>Owner consistency</b> — holding the family's standard, learning their table over time");
+    // ---------- IN SCOPE by role ----------
+    if(role==="crew"){
+      doL.push("<b>Crew meals to a good standard</b>, every day — breakfast through dinner, plus night-watch food on passage");
+      doL.push("<b>Crew dietary &amp; morale</b> — balancing clean eaters and comfort food, nationality plates, the Friday treat");
+      doL.push("<b>Crew provisioning &amp; budget</b> — ordering, stores rotation, HACCP, a clean galley");
+      if(L>=55) doL.push("<b>Supporting the guest galley</b> when asked — prep, plating hands, holiday cover");
+    }else if(role==="sous"){
+      doL.push("<b>Run your sections &amp; mise</b> to the head chef's standard, service after service");
+      doL.push("<b>Cover the head chef</b> on their day off / leave — step up to the pass");
+      doL.push("<b>Crew meals &amp; prep</b>, ordering support, galley cleanliness and HACCP");
+      doL.push("<b>Dietary execution</b> — allergens, vegan, preference sheets, to the head's plan");
+    }else if(role==="head"){
+      doL.push("<b>Own the food</b> — menus, standard, guest &amp; crew, every service");
+      doL.push("<b>Run the galley team</b> — sous/crew chef, rota, training, the pass");
+      doL.push("<b>Provisioning, budget &amp; HACCP</b> at programme level; dietary management end to end");
+      if(charter) doL.push("<b>Charter service</b> — rolling breakfast, lunch, canapés, multi-course dinner, beach picnics");
+    }else{ // sole
+      doL.push("<b>Guest &amp; crew meals to standard</b>, every service, single-handed");
+      doL.push("<b>Menu planning &amp; dietary management</b> — allergies, vegan, GLP-1, preference sheets");
+      doL.push("<b>Provisioning, budgeting, HACCP</b> and a clean galley — all yours");
+      if(charter) doL.push("<b>Charter service</b> — rolling breakfast, plated lunch, canapés, dinner, the odd 15–18h day");
     }
-    if(L>=55) doL.push("<b>Provisioning ahead for remote / long legs</b> — freezer programme, dry-store depth");
+    if(L>=55 && role!=="crew") doL.push("<b>Provisioning ahead for remote / long legs</b> — freezer programme, dry-store depth");
 
-    // ---- push back (conditional)
-    if(solo && L>=50){
+    // ---------- PUSH BACK by role ----------
+    if(role==="sole" && L>=50){
       dont.push("<b>A two-person load alone.</b> Solo for up to 12 guests + crew on a "+Math.round(L)+"m charter is two jobs — you are owed a sous/crew chef <em>or</em> top-of-band pay.");
     }
-    if(state.dual!=="none"){
-      dont.push("<b>A second department on one salary.</b> Chef/"+(state.dual==="stew"?"stew":"deck")+" is two roles — your number should carry a premium; "+sym()+"3,500–4,500 hybrids are underpaid.");
+    if(role==="head" && charter && L>=55){
+      dont.push("<b>No galley team on a big charter boat.</b> A head chef title with no sous or crew chef under you at "+Math.round(L)+"m is a sole-chef load mislabelled — get the team, or sole-chef-plus pay.");
     }
-    if(state.dual==="deck"||state.dual!=="none"){
-      dont.push("<b>Teak, lines, tenders, watch-keeping.</b> Deck and bridge work are not chef duties — agree the exact line before you sign.");
+    if(role==="sous"){
+      dont.push("<b>Doing the head's job without the title.</b> If you run the pass and the menus, you are a head chef — be paid and titled as one.");
+      dont.push("<b>Crew-chef money for sous work.</b> A sous on a brigade sits above crew-chef pay; hold the line.");
+    }
+    if(role==="crew"){
+      dont.push("<b>Guest cooking on a crew wage.</b> Pulled onto guest service or charter plating? That is guest-chef work — it should lift your pay or your title.");
+    }
+    if(role==="sole"){
+      if(state.dual!=="none"){
+        dont.push("<b>A second department on one salary.</b> Chef/"+(state.dual==="stew"?"stew":"deck")+" is two roles — your number should carry a premium; "+sym()+"3,500–4,500 hybrids are underpaid.");
+      }else{
+        dont.push("<b>Creeping deck &amp; interior duties.</b> Lines, teak, service — “everyone pitches in” is fine in port, not as a hidden second job.");
+      }
     }else{
-      dont.push("<b>Creeping interior &amp; deck duties.</b> Polishing, service, lines — “everyone pitches in” is fine in port, not as a hidden second job.");
+      dont.push("<b>Department creep.</b> Deck, interior or stew duties are not a "+roleName().toLowerCase()+"'s job — agree the line before you sign.");
     }
     if(state.rot==="no" && L>=60){
       dont.push("<b>No rotation on a "+Math.round(L)+"m.</b> At 60m+ rotation is the standard — push for 2:2 or a rotation-after-a-year clause.");
     }
     dont.push("<b>14 days straight, no day off.</b> The MLC sets minimum rest hours — a relentless schedule with no break is a breach, not a badge.");
-    if(charter){
-      dont.push("<b>Tips held to season's end.</b> Ask for tips paid per charter; a vague “end of season” is how shares quietly shrink.");
-    }
+    if(charter) dont.push("<b>Tips held to season's end.</b> Ask for tips paid per charter; a vague “end of season” is how shares quietly shrink.");
     var raw=parseFloat(state.sal);
-    if(raw && raw<c.lo*0.93){
-      dont.push("<b>Staying at this number.</b> You are below the "+Math.round(L)+"m floor — bring this sheet to the next review, or to a better boat.");
-    }
+    if(raw && raw<c.lo*0.93) dont.push("<b>Staying at this number.</b> You are below the "+roleName().toLowerCase()+" floor here — bring this sheet to the next review, or to a better boat.");
 
-    // ---- package
-    pkg.push("Cabin + all food aboard (you bank almost all of base)");
-    pkg.push("Private medical insurance — with repatriation");
-    pkg.push("Flights — joining, leaving and leave");
-    pkg.push(state.rot==="yes"?"Rotation honoured in writing (equal time off)":"30+ days paid leave — your choice of dates where possible");
-    pkg.push("Tickets paid / renewed — STCW, ENG1, Food Safety");
-    if(state.mode==="private") pkg.push("13th month or annual bonus (common on private programmes)");
-    if(charter) pkg.push("Tips: 15–20% of the charter fee, split across crew");
-    if(L>=60 && state.rot==="no") pkg.push("A rotation path — expected at this size");
+    // ---------- PACKAGE (complete) ----------
+    pkg.push("<b>Private cabin</b> where the boat allows — or a shared-cabin reduction reflected in pay");
+    pkg.push("<b>All food aboard</b> — you bank almost all of base, no rent or food shop");
+    pkg.push("<b>Private medical insurance</b> — with repatriation cover");
+    pkg.push("<b>Flights</b> — joining, leaving and leave flights paid");
+    if(state.rot==="yes") pkg.push("<b>Rotation honoured in writing</b> — equal time off, defined pattern (2:2, 10:10…)");
+    else pkg.push("<b>30+ days paid leave</b> — your choice of dates where possible"+(L>=60?"; a rotation path at this size":""));
+    pkg.push("<b>Tickets paid / renewed</b> — STCW, ENG1, Food Safety, Ship's Cook");
+    if(state.mode==="private") pkg.push("<b>13th month or annual bonus</b> — common on private programmes");
+    if(charter) pkg.push("<b>Tips</b> — 15–20% of the charter fee, split across crew");
+    pkg.push("<b>Notice period &amp; severance</b> stated both ways in the contract");
+    pkg.push("<b>Clear pay terms</b> — currency, on a fixed day, gross/net spelled out");
 
-    // ---- red flags (always)
+    // ---------- NEGOTIATE / DEFEND ----------
+    neg.push("<b>Lead with the band, not a feeling.</b> “The 2026 standard for a "+roleName().toLowerCase()+" on a "+Math.round(L)+"m is "+fmt(c.lo)+"–"+fmt(c.hi)+" — here's where I sit.”");
+    if(raw && raw<c.lo) neg.push("<b>Below the band?</b> Ask for the floor now, or a dated 3-month review with a number attached — in writing.");
+    neg.push("<b>Shared cabin?</b> Ask for a single, or an accommodation bump to offset it.");
+    if(state.rot==="no"&&L>=60) neg.push("<b>No rotation at 60m+?</b> Trade for a higher base or extra leave, and a written rotation-after-a-year clause.");
+    if(charter) neg.push("<b>Tips vague?</b> Get “X% of the charter fee, paid per charter” into the contract — not “discretionary, end of season”.");
+    if(state.mode==="private") neg.push("<b>No 13th month?</b> Ask for a season-completion or loyalty bonus instead.");
+    neg.push("<b>Missing flights / medical / training?</b> Each is a line you can add or convert to an allowance — price it (see the package list).");
+    neg.push("<b>Get every promise in the contract.</b> Verbal is nothing; “we'll sort it later” is nothing. Sign the version that has it.");
+    neg.push("<b>Agree the scope line</b> — exactly what is and isn't yours — so the cahier above can't quietly grow.");
+
+    // ---------- RED FLAGS ----------
     flag.push("<b>Nothing in writing = nothing.</b> Get an MLC contract; do not board on a handshake.");
     flag.push("<b>Never pay to join a boat.</b> Fees for “visas”, “registration” or “background checks” are a scam.");
-    flag.push("<b>Never send your passport</b> to an unverified “agent” or for a job with no real detail.");
+    flag.push("<b>Never send your passport</b> to an unverified “agent” or a job with no real detail.");
     flag.push("<b>US itinerary?</b> Confirm your B1/B2; check the boat's flag state and who carries insurance.");
 
-    return{doL:doL,dont:dont,pkg:pkg,flag:flag};
+    return{doL:doL,dont:dont,pkg:pkg,neg:neg,flag:flag};
   }
 
-  function lis(arr){return arr.map(function(x){return "<li>"+x+"</li>"}).join("")}
+  function lis(a){return a.map(function(x){return "<li>"+x+"</li>"}).join("")}
 
   function render(){
     $("#mOut").textContent=state.m;
+    // dual-role only for sole chef
+    $("#dualField").classList.toggle("hide", state.role!=="sole");
+    if(state.role!=="sole") state.dual="none";
+
     var c=compute();
+    $("#bandLabel").textContent="Standard base · "+roleName();
     $("#bandOut").textContent=fmt(c.lo)+"–"+fmt(c.hi);
     $("#targetOut").textContent=fmt(c.target);
     var v=verdict(c),vb=$("#verdict");
     vb.className="verdict "+v.cls;$("#vTag").textContent=v.tag;$("#vLine").innerHTML=v.line;
-    // tips line
+
+    // tips line by role
     var tl=$("#tipsLine");
     if(state.mode==="charter"){
-      tl.style.display="";
-      tl.innerHTML="<b>Tips on top (charter):</b> typically "+sym()+"2,000–5,000+ per charter week, ~"+sym()+"40k over a Med season. Not counted above — bank it as upside, never as base.";
+      var share=state.role==="sole"||state.role==="head"?sym()+"2,000–5,000+":state.role==="sous"?sym()+"1,500–3,000":sym()+"1,000–2,000";
+      tl.innerHTML="<b>Tips on top (charter):</b> a "+roleName().toLowerCase()+"'s share runs about "+share+" per charter week (15–20% of the fee, split across crew). Not counted above — bank it as upside, never as base.";
     }else{
-      tl.style.display="";
-      tl.innerHTML="<b>Private programme:</b> no tips — which is why the base above already carries a premium. Trade-off: steadier routine, a table you get to know.";
+      tl.innerHTML="<b>Private programme:</b> no tips — which is why the base above carries a premium. Trade-off: a steadier routine and a table you get to know.";
     }
+    // role availability note
+    var rn=$("#roleNote");
+    if((state.role==="sous"||state.role==="crew")&&state.m<45){
+      rn.classList.remove("hide");
+      rn.innerHTML="⚠ A dedicated "+roleName().toLowerCase()+" is rare below ~45m — most smaller boats run a single sole chef who does both.";
+    }else{rn.classList.add("hide");}
+
     var d=cdc(c);
     $("#doList").innerHTML=lis(d.doL);
     $("#dontList").innerHTML=lis(d.dont);
     $("#pkgList").innerHTML=lis(d.pkg);
+    $("#negList").innerHTML=lis(d.neg);
     $("#flagList").innerHTML=lis(d.flag);
-    // print meta
-    var prog=state.mode==="charter"?"Charter":"Private";
-    var staff=state.staff==="solo"?"Solo chef":state.staff==="sous"?"Chef + sous":"Head of brigade";
-    var dual=state.dual==="none"?"":" · doubling as "+state.dual;
-    var rot=state.rot==="yes"?" · rotational":"";
-    $("#printMeta").innerHTML=Math.round(state.m)+"m · "+prog+" · "+staff+rot+dual+"  —  standard base "+fmt(c.lo)+"–"+fmt(c.hi)+"/mo (fair target "+fmt(c.target)+")"+(parseFloat(state.sal)>0?"  ·  you stated "+fmt(parseFloat(state.sal)):"");
-    try{localStorage.setItem("paycheck",JSON.stringify(state))}catch(e){}
-  }
 
-  // wire segmented controls
+    var prog=charterTxt();
+    $("#printMeta").innerHTML=roleName()+" · "+Math.round(state.m)+"m · "+prog+(state.rot==="yes"?" · rotational":"")+(state.role==="sole"&&state.dual!=="none"?" · doubling as "+state.dual:"")+"  —  standard base "+fmt(c.lo)+"–"+fmt(c.hi)+"/mo (fair target "+fmt(c.target)+")"+(parseFloat(state.sal)>0?"  ·  you stated "+fmt(parseFloat(state.sal)):"");
+    try{localStorage.setItem("paycheck2",JSON.stringify(state))}catch(e){}
+  }
+  function charterTxt(){return state.mode==="charter"?"Charter":"Private"}
+
   function seg(id,key){var box=$("#"+id);box.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;state[key]=b.getAttribute("data-v");[].forEach.call(box.children,function(c){c.classList.toggle("on",c===b)});render()});
-    // restore
     [].forEach.call(box.children,function(c){c.classList.toggle("on",c.getAttribute("data-v")===state[key])});}
-  seg("mode","mode");seg("staff","staff");seg("rot","rot");seg("dual","dual");
+  seg("role","role");seg("mode","mode");seg("rot","rot");seg("dual","dual");
 
   $("#m").value=state.m;$("#m").addEventListener("input",function(){state.m=+this.value;render()});
   $("#exp").value=state.exp;$("#exp").addEventListener("change",function(){state.exp=this.value;render()});
