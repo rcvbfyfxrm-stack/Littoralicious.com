@@ -1,7 +1,7 @@
 /**
  * Littoralicious — Tools Widget
  * Standalone, self-injecting button (bottom-right corner) that unfolds a
- * panel listing Galley Order, Menu Planner, Pairing Wheel.
+ * panel listing Galley Order, Menu Planner, Pay Check, Pairing Wheel.
  * Drop this script into any page; it auto-mounts on DOMContentLoaded and
  * guards against double-mount.
  */
@@ -190,6 +190,15 @@
             '<path d="M 9 11 H 15 M 9 14 H 15 M 9 17 H 13"/>' +
             '</svg>';
 
+        // Balance scale — fair pay / what you should earn.
+        const payIcon = '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M 12 4 V 20"/>' +
+            '<path d="M 8 20 H 16"/>' +
+            '<path d="M 5 7 H 19"/>' +
+            '<path d="M 5 7 L 3 11.5 H 7 Z"/>' +
+            '<path d="M 19 7 L 17 11.5 H 21 Z"/>' +
+            '</svg>';
+
         const wheelIcon = '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
             '<circle cx="12" cy="12" r="9"/>' +
             '<path d="M 12 3 L 12 21 M 3 12 L 21 12 M 5.6 5.6 L 18.4 18.4 M 18.4 5.6 L 5.6 18.4"/>' +
@@ -200,6 +209,7 @@
         const path = location.pathname.replace(/\/$/, '') || '/';
         const isGalley = /^\/galleyorder/i.test(path);
         const isMenu = /^\/menu/i.test(path);
+        const isPayCheck = /^\/pay-check/i.test(path);
         const hereAttr = (matches) => matches ? ' data-current="true" tabindex="-1"' : '';
 
         const html = '' +
@@ -229,6 +239,15 @@
                             '<span class="tools-widget-link-text">' +
                                 '<span class="tools-widget-link-title">Menu Planner</span>' +
                                 '<span class="tools-widget-link-desc">Charter menus · guest + crew · service order</span>' +
+                            '</span>' +
+                        '</a>' +
+                    '</li>' +
+                    '<li>' +
+                        '<a class="tools-widget-link" href="/pay-check/" role="menuitem"' + hereAttr(isPayCheck) + '>' +
+                            '<span class="tools-widget-link-icon">' + payIcon + '</span>' +
+                            '<span class="tools-widget-link-text">' +
+                                '<span class="tools-widget-link-title">Pay Check<span class="tools-widget-link-tag">new</span></span>' +
+                                '<span class="tools-widget-link-desc">What you should earn · workload scope · A4 cahier des charges</span>' +
                             '</span>' +
                         '</a>' +
                     '</li>' +
