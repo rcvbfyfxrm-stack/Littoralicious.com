@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sourdough at Sea &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt; line-height: 1.3; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 6mm 9mm 5mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 18.4pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8.3pt; color: #4a5568; line-height: 1.28; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 2.4mm 0 0; padding: 1.7mm 2.6mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.4mm 0 0.9mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.3mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.6mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.28; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.32; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.34; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.9mm 2.8mm; margin: 2.2mm 0; font-size: 7.7pt; line-height: 1.34; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1.4mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.3; }
+        .troubleshoot td, .charter td { padding: 0.6mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Sourdough at Sea &mdash; The Wild-Yeast Loaf</h1>
+    <p class="hook">A living culture, a long cold proof, a hot covered bake. The wild loaf made reliable on a moving galley &mdash; and the acidity that flavours it also makes it keep.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>2 loaves</strong> (10&ndash;12)</span>
+        <span>Active: <strong>40 min</strong></span>
+        <span>Total: <strong>2&ndash;3 days</strong></span>
+        <span>Oven: <strong>250&rarr;230&deg;C</strong> (covered)</span>
+        <span>Done: <strong>96&ndash;99&deg;C</strong> internal</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>The oldest leaven there is &mdash; wild yeast in flour and water, the <em>only</em> way to raise bread before industrial yeast in the 1860s. Egyptian loaves &gt;3,000 yrs ago; the name from Klondike prospectors who guarded the crock through winter.</div>
+    <div><span class="o-label">Eaten, authentically</span>The everyday country loaf of every grain culture &mdash; torn warm with oil or butter; San Francisco gave it a famous tang and a bacterium named for the city.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>The craft-bakery boule &mdash; and the chef&rsquo;s living culture, carried boat to boat down the dock. Crumb for brunch, toast, bruschetta; stale, it makes <em>panzanella</em> and ribollita.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">2 loaves &middot; weight</p>
+
+        <div class="group-label">Levain (night before)</div>
+        <table>
+            <tr><td>Mature starter <span class="note">(ripe)</span></td><td>20g</td></tr>
+            <tr><td>Bread flour</td><td>100g</td></tr>
+            <tr><td>Water <span class="note">(bottled / dechlor.)</span></td><td>100g</td></tr>
+        </table>
+
+        <div class="group-label">Final dough</div>
+        <table>
+            <tr><td>Bread flour <span class="note">(12&ndash;13%)</span></td><td>800g</td></tr>
+            <tr><td>Wholemeal / rye</td><td>100g</td></tr>
+            <tr><td>Water, cool <span class="note">(autolyse)</span></td><td>600g</td></tr>
+            <tr><td>Water <span class="note">(reserved, w/ salt)</span></td><td>50g</td></tr>
+            <tr><td>Fine sea salt</td><td>20g</td></tr>
+            <tr><td>Levain <span class="note">(all, at peak)</span></td><td>~200g</td></tr>
+        </table>
+
+        <div class="group-label">Shaping &amp; baking</div>
+        <table>
+            <tr><td>Rice flour <span class="note">(banneton)</span></td><td>30g</td></tr>
+            <tr><td>Semolina / flour <span class="note">(dust)</span></td><td>&mdash;</td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; flour = 100%</span>
+            <strong>Water 75% &middot; Levain 20% &middot; Salt 2%</strong>. Four numbers; everything above is one batch of them, scaled for two crew loaves. Learn them and you never need the recipe again.
+        </div>
+
+        <p class="equipment">
+            <strong>Kit:</strong> Dutch oven or combi/Rational &middot; 2 bannetons (or towel-lined bowls) &middot; lame / razor &middot; scale &middot; bench scraper &middot; mixing tub &middot; probe thermometer
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Build the levain.</strong> Night before: 20g starter + 100g flour + 100g water. 4&ndash;8 h until doubled and a spoonful <strong>floats</strong>.
+                <span class="why">A purpose-built levain gives a known, vigorous population at a known time; the float test reads enough gas to lift the loaf. <cite>&mdash; Robertson; Modernist Bread</cite></span>
+            </li>
+            <li>
+                <strong>Autolyse.</strong> Mix 800g bread + 100g wholemeal flour with 600g water to a shaggy mass &mdash; <strong>no levain, no salt</strong>. Rest 45 min.
+                <span class="why">Flour hydrates and gluten knits with no work; salt and acid now would tighten it too early. <cite>&mdash; McGee; L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Add levain, then salt.</strong> Pinch in the ~200g levain; dissolve 20g salt in the reserved 50g water and work through.
+                <span class="why">Dissolved salt spreads evenly and reins the yeast to a pace the long proof can ride. <cite>&mdash; Forkish</cite></span>
+            </li>
+            <li>
+                <strong>Bulk + 4 folds.</strong> 24&ndash;26&deg;C, ~4&ndash;5 h. Four stretch-and-folds in the first 2 h. Stop at ~40% risen, domed, jiggly.
+                <span class="why">Folds build aligned gluten that traps big bubbles &mdash; the open crumb. Judge by rise, not the clock; a warm galley halves it. <cite>&mdash; Robertson</cite></span>
+            </li>
+            <li>
+                <strong>Pre-shape &amp; shape.</strong> Cut in two, pre-shape, bench 25 min, shape taut boules, <strong>seam-up</strong> in rice-floured bannetons.
+                <span class="why">The rest stops tearing; a tight skin holds the loaf through proof and bake. Rice flour has no gluten, so it won&rsquo;t glue. <cite>&mdash; Forkish</cite></span>
+            </li>
+            <li>
+                <strong>Cold proof 12&ndash;36 h.</strong> Bag and into the fridge at 4&deg;C. Bake straight from cold, no warm-up.
+                <span class="why">Yeast crawls while bacteria build acid &mdash; deeper flavour, blistered crust, clean scoring; and it uncouples bake from proof so you fire to order. <cite>&mdash; Modernist Bread</cite></span>
+            </li>
+        </ol>
+
+        <div class="done">
+            <strong>Bake:</strong> preheat Dutch oven/combi <strong>250&deg;C</strong>. Turn out cold, <strong>score</strong> one slash, <strong>lid on 20 min</strong>; lid off, <strong>230&deg;C</strong>, 20&ndash;25 min to deep mahogany / <strong>96&ndash;99&deg;C</strong> internal. Cool <strong>&ge;2 h</strong> before cutting &mdash; the crumb sets as it cools.
+        </div>
+
+        <div class="sauce-block">
+            <strong>Keep it alive at sea</strong> &mdash; the catch is the water. Chlorine, chloramine and stripped water-maker product stall a culture &mdash; feed bottled spring water, or stand tap water uncovered overnight. Warm galley (26&ndash;30&deg;C) ferments fast (feed more, use cooler water); a cold fridge holds it dormant a week+ between feeds.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">Carry it anywhere &mdash; dehydrate</span>
+            Smear ripe starter <strong>paper-thin</strong> on parchment, dry <strong>below 40&deg;C</strong> (dehydrator, low oven, shaded deck), flake and <strong>vacuum-seal</strong>. Survives months and flights in a pocket; revive over two or three feeds. <em>Insurance against a crossing crew who bins your jar.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Stiff levain (60% water)</strong> &mdash; milder, sweeter</li>
+                <li><strong>Longer cold proof</strong> &mdash; more tang, to 36 h</li>
+                <li><strong>Tin + foil lid</strong> &mdash; when shaping or sea won&rsquo;t cooperate</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Country loaf</strong> &mdash; 20&ndash;30% wholemeal/rye, +water</li>
+                <li><strong>Seeded</strong> &mdash; 150g soaked seeds after the salt</li>
+                <li><strong>80&ndash;85% hydration</strong> &mdash; wilder, holier crumb</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>Olive &amp; rosemary</strong> laminated in the folds</li>
+                <li><strong>B&acirc;tard</strong> &mdash; more crust, easy sandwiches</li>
+                <li><strong>Discard</strong> &rarr; crackers, crumpets, blinis</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Dense, tight</td><td>Levain not ripe / under-proofed &rarr; float test; bulk to ~40% domed</td></tr>
+            <tr><td>Flat, spreads</td><td>Over-proofed / weak shape &rarr; catch bulk earlier, shape taut, proof &lt;36 h</td></tr>
+            <tr><td>Gummy centre</td><td>Pulled pale &rarr; bake to 96&ndash;99&deg;C; cool 2 h before cutting</td></tr>
+            <tr><td>Too sour</td><td>Levain old / fridge warm &rarr; use younger, stiffer levain; verify 4&deg;C</td></tr>
+            <tr><td>Pale, no spring</td><td>Pot/oven cool &rarr; true 250&deg;C, deeper score, lid on 20 min</td></tr>
+            <tr><td>Starter sluggish</td><td>Chlorine / water-maker water &rarr; bottled water, warm corner</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Bake to order</td><td>Hold shaped loaves 36 h at 4&deg;C; fire from cold as the table needs</td></tr>
+            <tr><td>Par-bake</td><td>Covered to pale (~25 min); finish 10&ndash;12 min at 230&deg;C at service</td></tr>
+            <tr><td>Frozen baked</td><td>1 mo wrapped; refresh 10 min at 180&deg;C from frozen &mdash; freezes better than yeasted</td></tr>
+            <tr><td>Room temp</td><td>Cut-face down, in cloth, 3&ndash;4 days &mdash; never the fridge (stales fastest)</td></tr>
+            <tr><td>Carry the culture</td><td>Dehydrate &amp; vacuum-seal &mdash; months, flights, pocket-sized</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: McGee &middot; Myhrvold (Modernist Bread) &middot; Robertson (Tartine) &middot; Forkish (Flour Water Salt Yeast)</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
