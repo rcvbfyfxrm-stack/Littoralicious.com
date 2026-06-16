@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yorkshire Pudding &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt; line-height: 1.3; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 6mm 9mm 5mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 18.4pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8.3pt; color: #4a5568; line-height: 1.28; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 2.4mm 0 0; padding: 1.7mm 2.6mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.4mm 0 0.9mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
+
+        .method ol { padding-left: 5mm; list-style: none; counter-reset: step; }
+        .method li { margin-bottom: 1.3mm; padding-left: 0.5mm; counter-increment: step; position: relative; }
+        .method li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.6mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.28; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.32; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.34; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.9mm 2.8mm; margin: 2.2mm 0; font-size: 7.7pt; line-height: 1.34; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1.4mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.3; }
+        .troubleshoot td, .charter td { padding: 0.6mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 34%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 30%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Yorkshire Pudding &mdash; The Science-First Version</h1>
+    <p class="hook">No raising agent &mdash; just steam. A thin rested batter into smoking-hot fat, a fierce oven, and a door you do not open.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>12</strong> (standard tin)</span>
+        <span>Active: <strong>10 min</strong></span>
+        <span>Total: <strong>1 hr</strong></span>
+        <span>Oven: <strong>230&rarr;220&deg;C</strong></span>
+        <span>Done: <strong>deep gold</strong>, 4&Prime; up</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>&ldquo;Dripping pudding&rdquo; of northern England, set under the spit to catch the fat. Named <em>Yorkshire pudding</em> by Hannah Glasse, 1747. Thrift: served first, with gravy, to fill bellies before the costly meat.</div>
+    <div><span class="o-label">Eaten, authentically</span>The Sunday roast's right hand &mdash; beef and dark gravy poured into the hollow. Traditionally a first course, sometimes sweet with syrup for afters.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>Roast partner; giant bowl Yorkshires for stew; <em>toad in the hole</em> over sausages; the popover and Dutch baby are its cousins.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">12 puddings &middot; weight</p>
+
+        <div class="group-label">Batter</div>
+        <table>
+            <tr><td>Eggs <span class="note">(~4 large, RT)</span></td><td>200g</td></tr>
+            <tr><td>Bread flour <span class="note">(strong, 12&ndash;13%)</span></td><td>200g</td></tr>
+            <tr><td>Whole milk</td><td>150g</td></tr>
+            <tr><td>Water <span class="note">(crisper than all milk)</span></td><td>50g</td></tr>
+            <tr><td>Fine sea salt</td><td>4g</td></tr>
+        </table>
+
+        <div class="group-label">For the tin</div>
+        <table>
+            <tr><td>Beef dripping <span class="note">(or goose fat / oil)</span></td><td>60g</td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; equal parts, by weight</span>
+            <strong>Egg 100% &middot; Flour 100% &middot; Liquid 100% &middot; Salt 2%</strong>. Equal weights of egg, flour and liquid &mdash; a thin batter the texture of single cream. The high liquid is the point: more water, more steam, more rise.
+        </div>
+
+        <p class="equipment">
+            <strong>Kit:</strong> 12-hole metal tin (or popover/muffin tin) &middot; whisk &middot; scale &middot; jug &middot; oven that holds a true 230&deg;C
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Mix &amp; rest.</strong> Whisk 200g eggs + 4g salt; whisk in 200g flour to a smooth paste; loosen with 150g milk + 50g water to a thin single-cream batter. Rest <strong>30 min</strong> (or overnight, fridge).
+                <span class="why">Resting hydrates the flour, relaxes gluten and settles bubbles &mdash; higher, more even rise. <cite>&mdash; McGee 2004</cite></span>
+            </li>
+            <li>
+                <strong>Smoke the fat.</strong> 5g dripping per hole. Oven <strong>230&deg;C (450&deg;F)</strong>; heat the tin inside until the fat shimmers and just smokes (~10 min).
+                <span class="why">The batter must hit fat hot enough to flash to steam and sear the base; lukewarm fat = greasy and sunken. <cite>&mdash; McGee; L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Fill fast.</strong> Pour cold batter into the smoking fat, each hole <strong>~halfway</strong>. It should sizzle. Straight back in.
+                <span class="why">Cold batter into hot fat = maximum thermal shock = maximum rise. Don't overfill. <cite>&mdash; L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Bake, no peeking.</strong> <strong>220&ndash;230&deg;C, 20&ndash;25 min</strong>, until towering, deep gold, crisp. <strong>Do not open the oven.</strong>
+                <span class="why">Opening drops the temperature; if the walls haven't set, the steam condenses and they collapse. <cite>&mdash; McGee 2004</cite></span>
+            </li>
+        </ol>
+
+        <div class="done">
+            <strong>Done:</strong> risen 2&ndash;3&times; the tin, deep golden, crisp-walled, hollow centre. <strong>Serve at once</strong> &mdash; they are steam, and they sink as they cool. Gravy at the table, not before.
+        </div>
+
+        <div class="sauce-block">
+            <strong>Time it to the roast</strong> &mdash; the only live step is the bake (make the batter the day before; it rises better for the wait). Start the puddings as the joint comes out to rest: ~25 min in, they land hot for carving.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One batter, two dishes &mdash; Toad in the Hole</span>
+            Brown <strong>8 sausages</strong> in the dripping in the hot tin (5&ndash;6 min). Fat smoking, pour the batter <strong>around</strong> them, bake <strong>220&deg;C, 30&ndash;35 min</strong> to risen and deep gold &mdash; no peeking. Onion gravy. <em>Same batter, one tray, supper.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Thyme / mustard / horseradish</strong> &mdash; whisked into the batter</li>
+                <li><strong>All-milk batter</strong> &mdash; richer, more tender</li>
+                <li><strong>Overnight rest</strong> &mdash; the easiest height gain there is</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Goose / duck fat</strong> &mdash; deeper savour, crisper shell</li>
+                <li><strong>Giant bowl Yorkshires</strong> &mdash; one big tin, 30&ndash;35 min</li>
+                <li><strong>Toad in the hole</strong> &mdash; same batter over sausages</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>Edible bowl</strong> for stew or bangers &amp; mash</li>
+                <li><strong>Dutch baby</strong> &mdash; sweet, lemon &amp; sugar</li>
+                <li><strong>Mini canap&eacute;</strong> &mdash; rare beef &amp; horseradish</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Didn't rise</td><td>Fat not smoking / oven cool / batter thick &rarr; smoke the fat, true 230&deg;C, thin to single cream</td></tr>
+            <tr><td>Rose then sank</td><td>Oven opened / pulled early &rarr; door shut; bake to deep gold and rigid</td></tr>
+            <tr><td>Greasy base</td><td>Fat not hot enough &rarr; it must sizzle on contact</td></tr>
+            <tr><td>Dense, tough</td><td>Overmixed / unrested / too thick &rarr; mix smooth, then rest 30 min</td></tr>
+            <tr><td>Sank on the plate</td><td>Served too slow &rarr; plate the second they're out</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Batter ahead</td><td>Rest up to 24 h at 4&deg;C &mdash; rises better; whisk before filling</td></tr>
+            <tr><td>Time to roast</td><td>Start as the joint rests; ~25 min &rarr; hot for carving</td></tr>
+            <tr><td>Re-crisp</td><td>3&ndash;4 min at 220&deg;C &mdash; never the microwave</td></tr>
+            <tr><td>Frozen baked</td><td>1 mo; crisp from frozen, 5 min at 220&deg;C</td></tr>
+            <tr><td>On a swell</td><td>Fill in the galley, slide in just before plating</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: McGee &middot; L&oacute;pez-Alt (Serious Eats) &middot; Glasse 1747 &middot; Royal Society of Chemistry 2008</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
