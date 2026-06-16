@@ -35,6 +35,11 @@
         tr.st-tpl-helper td{background:var(--color-subtle);}
         .st-badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:3px;}
         .st-live{background:#dcfce7;color:#166534;}.st-draft{background:#fef9c3;color:#854d0e;}.st-feat{background:#dbeafe;color:#1e40af;margin-left:4px;}
+        .st-ready{background:#dcfce7;color:#166534;margin-left:4px;font-weight:600;}
+        .st-act a.st-validate{color:#166534;border-color:#a7d8b5;}
+        .st-act a.st-validate:hover{border-color:#166534;background:#f0fdf4;}
+        .st-act a.st-validate.is-on{background:#166534;color:#fff;border-color:#166534;}
+        .st-act a.st-validate.is-on:hover{background:#13532b;}
         .st-act a{color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);padding:.25em .6em;font-size:12px;margin-right:4px;white-space:nowrap;display:inline-block;}
         .st-act a:hover{border-color:var(--color-sea);}
         .st-note{font-size:13px;color:var(--color-muted);margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-border);}
@@ -104,6 +109,7 @@
                 <span><b id="st-total">0</b> total</span>
                 <span><b id="st-live">0</b> live</span>
                 <span><b id="st-draft">0</b> draft</span>
+                <span title="Drafts you've validated as ready to publish"><b id="st-ready" style="color:#166534;">0</b> ready</span>
             </div>
         </div>
 
@@ -193,7 +199,9 @@
             <strong>How this works.</strong> Click an article title (or <strong>Review</strong>) to open the studio reader and leave
             notes paragraph by paragraph — synced to every device you sign in on. <strong>Notes</strong> on a draft row opens the quick
             whole-draft notepad instead. <strong>Posts</strong> opens the Instagram planner — favourite the ones you like and they land on the
-            <a href="studio-social.html">Social schedule</a> at optimal times. The two ticks are saved in this browser. <strong>Publish</strong> builds the command to
+            <a href="studio-social.html">Social schedule</a> at optimal times. The two ticks are saved in this browser.
+            <strong>Validate</strong> signs a reviewed draft off as ready: it shows a green <span class="st-badge st-ready">&#10003; Ready</span> badge,
+            syncs to every device you sign in on, and drops the piece into the publish queue. <strong>Publish</strong> builds the command to
             drop the <code>draft</code> flag and deploy. <strong>News</strong> assembles a live email digest above — copy the HTML
             straight into Buttondown, or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off
             the homepage, sitemap and feed until published.
@@ -228,7 +236,7 @@
     (function () {
         var ORIGIN = 'https://www.littoralicious.com';
         var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
-        var filter = 'all', q = '', all = [], byslug = {}, notesMap = {}, paraMap = {};
+        var filter = 'all', q = '', all = [], byslug = {}, notesMap = {}, paraMap = {}, validatedMap = {};
         var bulletCache = {}; // slug -> array of bullets (lazy fetched)
         var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
 
@@ -263,6 +271,7 @@
         }).catch(function (e) { rows.innerHTML = '<tr><td colspan="8">Could not load articles.json: ' + esc(e.message) + '</td></tr>'; });
 
         function render() {
+            document.getElementById('st-ready').textContent = all.filter(function (a) { return a.draft && validatedMap[a.slug]; }).length;
             var list = all.filter(function (a) {
                 if (filter === 'live' && a.draft) return false;
                 if (filter === 'draft' && !a.draft) return false;
@@ -274,6 +283,7 @@
             rows.innerHTML = list.map(function (a) {
                 var status = a.draft ? '<span class="st-badge st-draft">Draft</span>' : '<span class="st-badge st-live">Live</span>';
                 if (a.featured) status += '<span class="st-badge st-feat">&#9733;</span>';
+                if (a.draft && validatedMap[a.slug]) status += '<span class="st-badge st-ready" title="Validated — ready to publish">&#10003; Ready</span>';
                 return '<tr>' +
                     '<td class="st-check"><input type="checkbox" data-pub="' + esc(a.slug) + '"' + (pub.has(a.slug) ? ' checked' : '') + '></td>' +
                     '<td class="st-check"><input type="checkbox" data-news="' + esc(a.slug) + '"' + (news.has(a.slug) ? ' checked' : '') + '></td>' +
@@ -286,6 +296,7 @@
                     '<a href="studio-social.html?slug=' + encodeURIComponent(a.slug) + '">Posts</a>' +
                     '<a href="articles/' + a.slug + '.html" target="_blank">View</a>' +
                     '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a>' +
+                    (a.draft ? '<a href="#" class="st-validate' + (validatedMap[a.slug] ? ' is-on' : '') + '" data-validate="' + esc(a.slug) + '" title="' + (validatedMap[a.slug] ? 'Validated as ready to publish — click to revoke' : 'Mark this draft reviewed & ready to publish') + '">' + (validatedMap[a.slug] ? '&#10003; Validated' : 'Validate') + '</a>' : '') +
                     (a.draft ? '<a href="#" data-edit="' + esc(a.slug) + '">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' : '') +
                     '</td>' +
                     '</tr>';
@@ -337,7 +348,7 @@
 
         // ---- publish queue ----
         function renderPublish() {
-            var slugs = all.filter(function (a) { return pub.has(a.slug); });
+            var slugs = all.filter(function (a) { return pub.has(a.slug) || (a.draft && validatedMap[a.slug]); });
             document.getElementById('pub-count').textContent = slugs.length;
             var listEl = document.getElementById('pub-list'), emptyEl = document.getElementById('pub-empty'), cmdEl = document.getElementById('pub-cmd');
             if (!slugs.length) {
@@ -345,7 +356,8 @@
             }
             emptyEl.style.display = 'none';
             listEl.innerHTML = slugs.map(function (a) {
-                return '<li><span>' + esc(a.title) + '</span><span class="s-stat">' + (a.draft ? 'draft → live' : 'already live') + '</span></li>';
+                var v = validatedMap[a.slug] ? ' <span title="validated — ready to publish" style="color:#166534;">&#10003;</span>' : '';
+                return '<li><span>' + esc(a.title) + v + '</span><span class="s-stat">' + (a.draft ? 'draft → live' : 'already live') + '</span></li>';
             }).join('');
             var drafts = slugs.filter(function (a) { return a.draft; });
             var cmd;
@@ -473,7 +485,7 @@
                 } else {
                     $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
-                    notesMap = {}; paraMap = {}; render();
+                    notesMap = {}; paraMap = {}; validatedMap = {}; render(); renderPublish();
                 }
             });
             $('auth-signin').addEventListener('click', function () {
@@ -505,13 +517,14 @@
         function loadNotesMap() {
             if (!isReviewer(user)) return;
             db.collection('draft-notes').get().then(function (snap) {
-                notesMap = {}; paraMap = {};
+                notesMap = {}; paraMap = {}; validatedMap = {};
                 snap.forEach(function (doc) {
                     var d = doc.data() || {};
                     if (d.text && d.text.trim()) notesMap[doc.id] = true;
                     if (typeof d.paraCount === 'number' && d.paraCount > 0) paraMap[doc.id] = d.paraCount;  // numeric-only → safe to interpolate in badges
+                    if (d.validated === true) validatedMap[doc.id] = true;
                 });
-                render(); renderTemplates();
+                render(); renderTemplates(); renderPublish();
             }).catch(function () { /* rules / network — leave maps empty */ });
         }
 
@@ -532,6 +545,22 @@
 
         function closeNotes() { $('notes-modal').classList.remove('open'); noteSlug = null; }
 
+        // ---- validate: reviewer sign-off that a draft is ready to publish (synced) ----
+        function toggleValidate(slug) {
+            if (!isReviewer(user)) { $('auth-msg').textContent = 'Sign in as a reviewer to validate drafts.'; $('auth-email').focus(); return; }
+            var a = byslug[slug]; if (!a || !a.draft) return;
+            var next = !validatedMap[slug];
+            if (next) { validatedMap[slug] = true; pub.add(slug); } else { delete validatedMap[slug]; pub.delete(slug); }
+            save(); render(); renderPublish();   // optimistic
+            db.collection('draft-notes').doc(slug).set(
+                { validated: next, validatedBy: user.email, validatedAt: Date.now() }, { merge: true }
+            ).catch(function (err) {
+                if (next) { delete validatedMap[slug]; pub.delete(slug); } else { validatedMap[slug] = true; pub.add(slug); }
+                save(); render(); renderPublish();
+                $('auth-msg').textContent = 'Validate failed: ' + (err.code || 'error') + ' — try again.';
+            });
+        }
+
         function saveNotes() {
             if (!noteSlug || !isReviewer(user)) return;
             var text = $('nm-text').value;
@@ -545,6 +574,7 @@
         rows.addEventListener('click', function (e) {
             var t = e.target;
             if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); }
+            else if (t.hasAttribute && t.hasAttribute('data-validate')) { e.preventDefault(); toggleValidate(t.getAttribute('data-validate')); }
         });
         $('nm-text').addEventListener('input', function () {
             clearTimeout(saveTimer); $('nm-state').textContent = 'editing…';
