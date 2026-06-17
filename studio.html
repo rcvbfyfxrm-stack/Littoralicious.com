@@ -145,6 +145,7 @@
             <button data-f="all" class="active">All</button>
             <button data-f="live">Live</button>
             <button data-f="draft">Draft</button>
+            <button data-f="needs-review" title="Drafts you haven't validated yet — your pending review queue (sign in to sync your sign-offs)">Needs review</button>
             <button data-f="featured">Featured</button>
             <span class="st-tools__div" aria-hidden="true"></span>
             <button data-g="section" class="active" title="Group rows under each section, with a live/draft split">By section</button>
@@ -216,7 +217,8 @@
             whole-draft notepad instead. <strong>Posts</strong> opens the Instagram planner — favourite the ones you like and they land on the
             <a href="studio-social.html">Social schedule</a> at optimal times. The two ticks are saved in this browser.
             <strong>Validate</strong> signs a reviewed draft off as ready: it shows a green <span class="st-badge st-ready">&#10003; Ready</span> badge,
-            syncs to every device you sign in on, and drops the piece into the publish queue. <strong>Publish</strong> builds the command to
+            syncs to every device you sign in on, and drops the piece into the publish queue. The <strong>Needs review</strong> filter shows
+            exactly the drafts you have <em>not</em> validated yet — your pending review queue. <strong>Publish</strong> builds the command to
             drop the <code>draft</code> flag and deploy. <strong>News</strong> assembles a live email digest above — copy the HTML
             straight into Buttondown, or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off
             the homepage, sitemap and feed until published. Rows are grouped <strong>By section</strong> by default — each header shows that
@@ -293,6 +295,7 @@
             var list = all.filter(function (a) {
                 if (filter === 'live' && a.draft) return false;
                 if (filter === 'draft' && !a.draft) return false;
+                if (filter === 'needs-review' && !(a.draft && !validatedMap[a.slug])) return false;
                 if (filter === 'featured' && !a.featured) return false;
                 if (q && (a.title + ' ' + a.cat + ' ' + a.tags + ' ' + a.subtag).toLowerCase().indexOf(q) === -1) return false;
                 return true;
