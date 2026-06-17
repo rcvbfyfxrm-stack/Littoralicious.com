@@ -73,7 +73,8 @@
                         · every scalable number is <span data-qty="500" data-unit="g">500 g</span>;
                           NEVER hand-set data-base (the engine stamps it). data-round="0" forces whole units.
                         · .rcp-why / .rcp-ratio / .rcp-fold are native <details> — no JS, no persistence.
-                        · the .rcp-card galley PDF stays EXACTLY as-is — out of scope, never restyle it.
+                        · two .rcp-card galley PDFs (Metric + cups / lb-oz + cups) — same recipe; the cups
+                          column is identical in both. Cache-bust: append ?v=<YYYYMMDD> on every re-render.
                      ════════════════════════════════════════════════════════════════════════════════ -->
 
                 <!-- ── I. THE STORY ──────────────────────────────────────────────────────────── -->
@@ -140,12 +141,17 @@
                     <div><dt>Make-ahead</dt><dd>[the one holding fact]</dd></div>
                 </dl>
 
-                <!-- GALLEY CARD (UNTOUCHED markup) — placed HIGH, right under the hinge + stats, so a reader
-                     who just wants the recipe grabs the one-page printable without scrolling the whole piece.
-                     Never restyle or re-path it. -->
+                <!-- GALLEY CARDS — placed HIGH, right under the hinge + stats, so a reader who just wants
+                     the recipe grabs a one-page printable without scrolling. TWO variants, same recipe:
+                     Metric (grams + cups) and US (lb/oz + cups); the cups column is identical in both.
+                     Cache-bust: append ?v=<YYYYMMDD> to each href whenever you re-render the cards. -->
                 <a class="rcp-card" href="../print/{{SLUG}}-recipe-card.pdf" download>
-                    <span><b>One-page galley card</b><span>The whole recipe on a single A4 &mdash; print, pin, cook.</span></span>
-                    <span class="rcp-card__btn">Download PDF</span>
+                    <span><b>Galley card &middot; Metric</b><span>Grams + cups, one line &mdash; print, pin, cook.</span></span>
+                    <span class="rcp-card__btn">Metric + cups</span>
+                </a>
+                <a class="rcp-card" href="../print/{{SLUG}}-recipe-card-us.pdf" download>
+                    <span><b>Galley card &middot; US</b><span>Ounces + cups, one line &mdash; no scale needed.</span></span>
+                    <span class="rcp-card__btn">lb/oz + cups</span>
                 </a>
 
                 <!-- THE RATIO (house default) — the formula the chef memorises and rescales anything from

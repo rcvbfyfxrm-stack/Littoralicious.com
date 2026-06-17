@@ -5,6 +5,12 @@
      rendered to print/<slug>-recipe-card.pdf (the article links to that PDF).
      This scaffold mirrors the locked card design (see focaccia / hash-browns cards).
 
+     DUAL UNITS — build TWO cards per recipe (the cups column is identical in both):
+       print/<slug>-recipe-card.html      = Metric  (grams, right-aligned) + cups (left)
+       print/<slug>-recipe-card-us.html   = US      (lb/oz, right-aligned) + cups (left)
+     Cups use per-ingredient density (flour 125 g/cup, sugar 200, liquids 240 g/cup,
+     6 g salt = 1 tsp, eggs 50 g = 1). The article links BOTH PDFs as separate buttons.
+
      RENDER (headless Chrome to A4 PDF), then CONFIRM it is ONE page:
        CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
        "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
@@ -54,7 +60,7 @@
         .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
         .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
         .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
-        .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .ingredients td.vol, .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: left; color: #94a3b8; white-space: nowrap; padding-left: 2.4mm; letter-spacing: 0; }
         .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
         .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
 
@@ -135,11 +141,13 @@
 <div class="main">
     <section class="ingredients">
         <h2>Ingredients</h2>
-        <p class="ingredients-note">weight only &middot; baker&rsquo;s % / volume in right column</p>
-        <!-- One .group-label per sub-component, each with its own table. Cols: name | weight | %/volume. -->
+        <p class="ingredients-note">weight (right) &middot; cups / volume (left column)</p>
+        <!-- One .group-label per sub-component, each with its own table.
+             Cols: name | weight (right-aligned mono, td.data) | cups/volume (left-aligned, td.vol).
+             The weight differs per card (g vs lb/oz); the cups value is identical in both variants. -->
         <div class="group-label">[Sub-component]</div>
         <table>
-            <tr><td>[Ingredient] <span class="note">([note])</span></td><td>[500g]</td><td>[100%]</td></tr>
+            <tr><td>[Ingredient] <span class="note">([note])</span></td><td class="data">[200g]</td><td class="vol">[1&#8541; cups]</td></tr>
         </table>
 
         <!-- Amber block = the RATIO (house default): the formula to memorise and rescale from. -->
