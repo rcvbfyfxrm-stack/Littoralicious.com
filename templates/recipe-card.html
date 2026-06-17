@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <!-- ============================================================================
      LITTORALICIOUS GALLEY CARD TEMPLATE — one-page A4 recipe card, rendered to PDF.
+
+     LOCKED 2026-06-17 — CANONICAL GALLEY CARD (approved by Arnaud). Do NOT restyle,
+     re-scaffold, or regenerate without an explicit "unlock". Locked invariants:
+       · TWO cards/recipe: <slug>-recipe-card.html (Metric, grams) + -recipe-card-us.html
+         (US, lb/oz); the cups column is IDENTICAL in both.
+       · Ingredient table = name | weight (right-aligned mono) | cups/volume
+         (left-aligned, td.vol). Baker's % lives ONLY in the amber ratio box.
+       · Cups via per-ingredient density (flour 125 g/cup, sugar 200, brown 220,
+         liquids 240, oil 218, butter 227; salt 6 g/tsp, eggs 50 g = 1).
+       · Note line: "weight (g) · cups / volume in right column" (US: "weight (lb/oz) …").
+       · ONE A4 page — tighten EVENLY if it spills; never drop content.
      Pairs with the Blueprint article; lives at print/<slug>-recipe-card.html and is
      rendered to print/<slug>-recipe-card.pdf (the article links to that PDF).
      This scaffold mirrors the locked card design (see focaccia / hash-browns cards).
