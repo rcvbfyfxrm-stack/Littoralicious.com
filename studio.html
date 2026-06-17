@@ -40,6 +40,18 @@
         .st-act a.st-validate:hover{border-color:#166534;background:#f0fdf4;}
         .st-act a.st-validate.is-on{background:#166534;color:#fff;border-color:#166534;}
         .st-act a.st-validate.is-on:hover{background:#13532b;}
+        .st-tools__div{width:1px;align-self:stretch;background:var(--color-border);margin:0 4px;}
+        .st-section td{background:#f1efe9;border-top:2px solid var(--color-ink);padding:.5em .6em;}
+        .st-section:hover td{background:#f1efe9;}
+        .st-section__name{font-family:var(--font-serif);font-size:var(--text-base);color:var(--color-ink);font-weight:600;margin-right:.7em;}
+        .st-section__bar{display:inline-flex;width:120px;height:9px;vertical-align:middle;border:1px solid var(--color-border);background:#fff;overflow:hidden;margin-right:.7em;border-radius:2px;}
+        .st-section__bar i{display:block;height:100%;}
+        .st-section__bar .seg-live{background:#2e7d4f;}
+        .st-section__bar .seg-draft{background:#cf9b2e;}
+        .st-section__counts{font-family:var(--font-mono);font-size:12px;color:var(--color-muted);}
+        .st-section__counts .c-live{color:#166534;}
+        .st-section__counts .c-draft{color:#854d0e;}
+        .st-section__counts .c-ready{color:#166534;font-weight:600;}
         .st-act a{color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);padding:.25em .6em;font-size:12px;margin-right:4px;white-space:nowrap;display:inline-block;}
         .st-act a:hover{border-color:var(--color-sea);}
         .st-note{font-size:13px;color:var(--color-muted);margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-border);}
@@ -134,6 +146,9 @@
             <button data-f="live">Live</button>
             <button data-f="draft">Draft</button>
             <button data-f="featured">Featured</button>
+            <span class="st-tools__div" aria-hidden="true"></span>
+            <button data-g="section" class="active" title="Group rows under each section, with a live/draft split">By section</button>
+            <button data-g="date" title="Flat list, newest first">By date</button>
         </div>
 
         <table>
@@ -204,7 +219,9 @@
             syncs to every device you sign in on, and drops the piece into the publish queue. <strong>Publish</strong> builds the command to
             drop the <code>draft</code> flag and deploy. <strong>News</strong> assembles a live email digest above — copy the HTML
             straight into Buttondown, or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off
-            the homepage, sitemap and feed until published.
+            the homepage, sitemap and feed until published. Rows are grouped <strong>By section</strong> by default — each header shows that
+            section's live/draft split (green = live, amber = draft) so you can see at a glance where you're shipping vs. still drafting;
+            switch to <strong>By date</strong> for a flat newest-first list.
         </p>
     </div>
 
@@ -241,7 +258,8 @@
         var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
 
         // ---- persisted selections ----
-        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news';
+        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group';
+        var groupMode = (function () { try { return localStorage.getItem(GROUP_KEY) || 'section'; } catch (e) { return 'section'; } })();
         var load = function (k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch (e) { return []; } };
         var pub = new Set(load(PUB_KEY)), news = new Set(load(NEWS_KEY));
         var save = function () {
@@ -280,7 +298,44 @@
                 return true;
             });
             if (!list.length) { rows.innerHTML = '<tr><td colspan="8" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
-            rows.innerHTML = list.map(function (a) {
+            rows.innerHTML = groupMode === 'section' ? renderGrouped(list) : list.map(rowHtml).join('');
+        }
+
+        // counts per section across the WHOLE library, so the live/draft split stays true even when a filter is on
+        function sectionStats() {
+            var m = {};
+            all.forEach(function (a) {
+                var k = a.cat || '—';
+                var s = m[k] || (m[k] = { name: k, total: 0, live: 0, draft: 0, ready: 0 });
+                s.total++;
+                if (a.draft) { s.draft++; if (validatedMap[a.slug]) s.ready++; } else { s.live++; }
+            });
+            return m;
+        }
+
+        // grouped view: a section header (name + live/draft bar + counts) then that section's rows
+        function renderGrouped(list) {
+            var stats = sectionStats(), buckets = {};
+            list.forEach(function (a) { var k = a.cat || '—'; (buckets[k] || (buckets[k] = [])).push(a); });
+            var keys = Object.keys(buckets).sort(function (x, y) {
+                var tx = (stats[x] && stats[x].total) || 0, ty = (stats[y] && stats[y].total) || 0;
+                return ty !== tx ? ty - tx : x.localeCompare(y);
+            });
+            return keys.map(function (k) {
+                var s = stats[k] || { total: buckets[k].length, live: 0, draft: 0, ready: 0 };
+                var liveW = s.total ? Math.round(s.live / s.total * 100) : 0, draftW = 100 - liveW;
+                var bar = '<span class="st-section__bar" title="' + s.live + ' live / ' + s.draft + ' draft">' +
+                    '<i class="seg-live" style="width:' + liveW + '%"></i><i class="seg-draft" style="width:' + draftW + '%"></i></span>';
+                var counts = '<span class="st-section__counts"><span class="c-live">' + s.live + ' live</span> · ' +
+                    '<span class="c-draft">' + s.draft + ' draft</span>' +
+                    (s.ready ? ' · <span class="c-ready">' + s.ready + ' &#10003; ready</span>' : '') +
+                    ' <span style="color:var(--color-salt);">(' + s.total + ' total)</span></span>';
+                return '<tr class="st-section"><td colspan="8"><span class="st-section__name">' + esc(k) + '</span>' + bar + counts + '</td></tr>' +
+                    buckets[k].map(rowHtml).join('');
+            }).join('');
+        }
+
+        function rowHtml(a) {
                 var status = a.draft ? '<span class="st-badge st-draft">Draft</span>' : '<span class="st-badge st-live">Live</span>';
                 if (a.featured) status += '<span class="st-badge st-feat">&#9733;</span>';
                 if (a.draft && validatedMap[a.slug]) status += '<span class="st-badge st-ready" title="Validated — ready to publish">&#10003; Ready</span>';
@@ -300,7 +355,6 @@
                     (a.draft ? '<a href="#" data-edit="' + esc(a.slug) + '">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' : '') +
                     '</td>' +
                     '</tr>';
-            }).join('');
         }
 
         // ---- templates ----
@@ -458,10 +512,20 @@
         });
 
         search.addEventListener('input', function () { q = this.value.toLowerCase().trim(); render(); });
-        [].forEach.call(document.querySelectorAll('.st-tools button'), function (b) {
+        [].forEach.call(document.querySelectorAll('.st-tools button[data-f]'), function (b) {
             b.addEventListener('click', function () {
-                document.querySelectorAll('.st-tools button').forEach(function (x) { x.classList.remove('active'); });
+                document.querySelectorAll('.st-tools button[data-f]').forEach(function (x) { x.classList.remove('active'); });
                 b.classList.add('active'); filter = b.getAttribute('data-f'); render();
+            });
+        });
+        // group-by toggle — section (default) vs flat date list; persisted
+        document.querySelectorAll('.st-tools button[data-g]').forEach(function (x) { x.classList.toggle('active', x.getAttribute('data-g') === groupMode); });
+        [].forEach.call(document.querySelectorAll('.st-tools button[data-g]'), function (b) {
+            b.addEventListener('click', function () {
+                document.querySelectorAll('.st-tools button[data-g]').forEach(function (x) { x.classList.remove('active'); });
+                b.classList.add('active'); groupMode = b.getAttribute('data-g');
+                try { localStorage.setItem(GROUP_KEY, groupMode); } catch (e) {}
+                render();
             });
         });
 
