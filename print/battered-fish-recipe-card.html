@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battered Fish &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt; line-height: 1.3; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 6mm 9mm 5mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 18.4pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8.3pt; color: #4a5568; line-height: 1.28; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 2.4mm 0 0; padding: 1.7mm 2.6mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.4mm 0 0.9mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
+
+        .method ol { padding-left: 5mm; list-style: none; counter-reset: step; }
+        .method li { margin-bottom: 1.3mm; padding-left: 0.5mm; counter-increment: step; position: relative; }
+        .method li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.6mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.28; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.32; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.34; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.9mm 2.8mm; margin: 2.2mm 0; font-size: 7.7pt; line-height: 1.34; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1.4mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.3; }
+        .troubleshoot td, .charter td { padding: 0.6mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 34%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 30%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Battered Fish &mdash; The Science-First Version</h1>
+    <p class="hook">Shatter-crisp, lacy, never greasy &mdash; fish and chips by physics. Cold carbonated batter, rice flour for the shatter, oil hot enough to set it on contact.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>10</strong> portions</span>
+        <span>Active: <strong>30 min</strong></span>
+        <span>Total: <strong>40 min</strong></span>
+        <span>Oil: <strong>185&deg;C</strong> (365&deg;F)</span>
+        <span>Done: <strong>deep gold</strong>, crisp</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Sephardic Jewish fried fish (<em>pescado frito</em>) met the fried chip in industrial Britain; by the 1860s the &ldquo;chippy&rdquo; was born and fish and chips became the national working meal.</div>
+    <div><span class="o-label">Eaten, authentically</span>With thrice-cooked chips, mushy peas, malt vinegar and tartare &mdash; wrapped and eaten hot, the batter the star and the fish kept plain.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>The chippy classic, plus tacos, a burger, a butty; the same cold batter fries onion rings, sausages and veg.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">10 portions &middot; weight</p>
+
+        <div class="group-label">Fish</div>
+        <table>
+            <tr><td>White fish fillets <span class="note">(cod/haddock, skinless)</span></td><td>1.5kg</td></tr>
+            <tr><td>Plain flour <span class="note">(for dredging)</span></td><td>80g</td></tr>
+        </table>
+
+        <div class="group-label">Batter (mix at the last minute, cold)</div>
+        <table>
+            <tr><td>Plain flour</td><td>150g</td></tr>
+            <tr><td>Rice flour</td><td>150g</td></tr>
+            <tr><td>Baking powder</td><td>9g</td></tr>
+            <tr><td>Fine sea salt</td><td>6g</td></tr>
+            <tr><td>Cold lager / sparkling water <span class="note">(ice-cold)</span></td><td>380g</td></tr>
+            <tr><td>Vodka <span class="note">(cold, optional)</span></td><td>40g</td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio</span>
+            <strong>Flour 100% (half rice, half plain) &middot; cold beer ~130% &middot; baking powder 3% &middot; salt 2%</strong>. A thin coating batter &mdash; but the <em>cold</em> and the <em>fizz</em> matter as much as the numbers.
+        </div>
+
+        <p class="equipment">
+            <strong>Kit:</strong> deep pot / fryer &middot; probe or fry thermometer &middot; spider / slotted spoon &middot; rack to drain (not a plate) &middot; whisk
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Prep the fish.</strong> Pat very dry, cut into even 150g portions, salt lightly, keep cold.
+                <span class="why">Surface water repels batter and drops the oil temperature; even pieces fry evenly. <cite>&mdash; McGee 2004</cite></span>
+            </li>
+            <li>
+                <strong>Heat the oil to 185&deg;C</strong> (365&deg;F).
+                <span class="why">Hot enough to flash-set the crust and push steam OUT, so it fries crisp instead of soaking up fat. <cite>&mdash; McGee; L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Batter, last-minute &amp; cold.</strong> Whisk 150g plain + 150g rice flour, 9g baking powder, 6g salt; whisk in 380g ice-cold lager + 40g vodka to a thin batter. Leave it lumpy. Use now.
+                <span class="why">Cold + barely-mixed = low gluten = shatter, not bread; the CO2 escapes if it sits. Rice flour fries glassy; vodka suppresses gluten. <cite>&mdash; L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Dredge &amp; fry.</strong> Dust each piece in the 80g flour, dip in batter, let it drip, lower gently into the oil. Fry 4&ndash;6 min to deep gold; don&rsquo;t crowd.
+                <span class="why">The flour dredge gives the batter grip; crowding drops the oil temp and turns it greasy. <cite>&mdash; L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Drain, salt, serve.</strong> Onto a rack, salt at once, serve immediately.
+            </li>
+        </ol>
+
+        <div class="done">
+            <strong>Done:</strong> deep golden, lacy and crisp, the fish just flaking inside. <strong>Drain on a rack (not a plate), salt, serve at once</strong> &mdash; it softens as it steams under itself.
+        </div>
+
+        <div class="sauce-block">
+            <strong>Timing &amp; chips</strong> &mdash; the batter is the only live step; portion fish and blanch chips ahead. Par-fry the fish pale, then finish-crisp to order across a staggered crew dinner. Chips: blanch at 140&deg;C, crisp at 185&deg;C.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One batter, more than fish</span>
+            The same cold batter fries <strong>onion rings, battered sausage, halloumi, courgette</strong> &mdash; same dredge, same 185&deg;C oil. Make a double batch and run a fried spread.
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Vodka splash</strong> &mdash; crisper, drier crust</li>
+                <li><strong>Crisp lager</strong> &mdash; beats a heavy ale</li>
+                <li><strong>Ice the bowl</strong> &mdash; keep the batter cold</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>All-rice batter</strong> &mdash; gluten-free, extra-crisp</li>
+                <li><strong>Tempura-light</strong> &mdash; ice water, minimal mix</li>
+                <li><strong>Curry sauce / mushy peas</strong></li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>Scraps</strong> &mdash; fried batter bits, salted</li>
+                <li><strong>Tartare from scratch</strong></li>
+                <li><strong>Triple-cooked chips</strong></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Greasy</td><td>Oil too cool / batter sat &rarr; 185&deg;C, mix to order</td></tr>
+            <tr><td>Not crisp</td><td>Too much gluten / no rice flour / warm batter &rarr; keep cold, use rice flour</td></tr>
+            <tr><td>Batter slides off</td><td>Fish wet or no dredge &rarr; dry the fish, flour it first</td></tr>
+            <tr><td>Pale &amp; soft</td><td>Oil cool / pan crowded &rarr; fewer pieces, recover the heat</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Safety</h2>
+        <table>
+            <tr><td>Batter</td><td>Last-minute only &mdash; mix per service</td></tr>
+            <tr><td>Ahead</td><td>Portion fish; blanch chips; par-fry pale</td></tr>
+            <tr><td>Finish</td><td>Crisp to order, 185&deg;C</td></tr>
+            <tr><td>Fryer safety</td><td>Fill the pot &le; 1/3; never leave it; kill the heat in a swell</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: McGee &middot; L&oacute;pez-Alt (Serious Eats) &middot; British fish-and-chip history</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
