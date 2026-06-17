@@ -41,8 +41,11 @@
         .st-act a.st-validate.is-on{background:#166534;color:#fff;border-color:#166534;}
         .st-act a.st-validate.is-on:hover{background:#13532b;}
         .st-tools__div{width:1px;align-self:stretch;background:var(--color-border);margin:0 4px;}
+        .st-section{cursor:pointer;}
         .st-section td{background:#f1efe9;border-top:2px solid var(--color-ink);padding:.5em .6em;}
-        .st-section:hover td{background:#f1efe9;}
+        .st-section:hover td{background:#eae6dc;}
+        .st-section__caret{display:inline-block;width:1.1em;color:var(--color-salt);font-size:11px;}
+        .st-section__hint{font-family:var(--font-mono);font-size:11px;color:var(--color-salt);font-style:italic;margin-left:.6em;}
         .st-section__name{font-family:var(--font-serif);font-size:var(--text-base);color:var(--color-ink);font-weight:600;margin-right:.7em;}
         .st-section__bar{display:inline-flex;width:120px;height:9px;vertical-align:middle;border:1px solid var(--color-border);background:#fff;overflow:hidden;margin-right:.7em;border-radius:2px;}
         .st-section__bar i{display:block;height:100%;}
@@ -222,8 +225,9 @@
             drop the <code>draft</code> flag and deploy. <strong>News</strong> assembles a live email digest above — copy the HTML
             straight into Buttondown, or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off
             the homepage, sitemap and feed until published. Rows are grouped <strong>By section</strong> by default — each header shows that
-            section's live/draft split (green = live, amber = draft) so you can see at a glance where you're shipping vs. still drafting;
-            switch to <strong>By date</strong> for a flat newest-first list.
+            section's live/draft split (green = live, amber = draft) so you can see at a glance where you're shipping vs. still drafting.
+            Sections start <strong>folded</strong>; click a header to unfold it (your open/closed choice is remembered, and a search opens
+            everything). Inside each section, <strong>drafts sit on top</strong>, newest first. Switch to <strong>By date</strong> for a flat list.
         </p>
     </div>
 
@@ -260,10 +264,12 @@
         var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
 
         // ---- persisted selections ----
-        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group';
+        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group', EXPAND_KEY = 'litt.studio.expanded';
         var groupMode = (function () { try { return localStorage.getItem(GROUP_KEY) || 'section'; } catch (e) { return 'section'; } })();
         var load = function (k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch (e) { return []; } };
         var pub = new Set(load(PUB_KEY)), news = new Set(load(NEWS_KEY));
+        var expandedSecs = new Set(load(EXPAND_KEY));   // sections currently unfolded (default: all folded)
+        var saveExpanded = function () { try { localStorage.setItem(EXPAND_KEY, JSON.stringify([].slice.call(expandedSecs))); } catch (e) {} };
         var save = function () {
             localStorage.setItem(PUB_KEY, JSON.stringify([].slice.call(pub)));
             localStorage.setItem(NEWS_KEY, JSON.stringify([].slice.call(news)));
@@ -333,8 +339,17 @@
                     '<span class="c-draft">' + s.draft + ' draft</span>' +
                     (s.ready ? ' · <span class="c-ready">' + s.ready + ' &#10003; ready</span>' : '') +
                     ' <span style="color:var(--color-salt);">(' + s.total + ' total)</span></span>';
-                return '<tr class="st-section"><td colspan="8"><span class="st-section__name">' + esc(k) + '</span>' + bar + counts + '</td></tr>' +
-                    buckets[k].map(rowHtml).join('');
+                // drafts on top within the section, then newest first
+                var items = buckets[k].slice().sort(function (ra, rb) {
+                    if (ra.draft !== rb.draft) return ra.draft ? -1 : 1;
+                    return String(rb.date).localeCompare(String(ra.date));
+                });
+                var open = expandedSecs.has(k) || !!q;   // an active search forces every section open
+                var caret = '<span class="st-section__caret">' + (open ? '&#9662;' : '&#9656;') + '</span>';
+                var hint = open ? '' : '<span class="st-section__hint">' + items.length + ' article' + (items.length === 1 ? '' : 's') + ' — click to open</span>';
+                var head = '<tr class="st-section" data-sec-key="' + esc(k) + '" title="Click to fold / unfold"><td colspan="8">' +
+                    caret + '<span class="st-section__name">' + esc(k) + '</span>' + bar + counts + hint + '</td></tr>';
+                return head + (open ? items.map(rowHtml).join('') : '');
             }).join('');
         }
 
@@ -640,8 +655,15 @@
 
         rows.addEventListener('click', function (e) {
             var t = e.target;
-            if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); }
-            else if (t.hasAttribute && t.hasAttribute('data-validate')) { e.preventDefault(); toggleValidate(t.getAttribute('data-validate')); }
+            if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); return; }
+            if (t.hasAttribute && t.hasAttribute('data-validate')) { e.preventDefault(); toggleValidate(t.getAttribute('data-validate')); return; }
+            var sec = t.closest ? t.closest('tr.st-section') : null;
+            if (sec) {
+                var key = sec.getAttribute('data-sec-key');
+                if (key == null) return;
+                if (expandedSecs.has(key)) expandedSecs.delete(key); else expandedSecs.add(key);
+                saveExpanded(); render();
+            }
         });
         $('nm-text').addEventListener('input', function () {
             clearTimeout(saveTimer); $('nm-state').textContent = 'editing…';
