@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US · Carrot Cake &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.4pt;
+            line-height: 1.2;
+            color: #0a0a0a;
+            background: #fff;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 4.5mm 9mm 3mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 1.4mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 17pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 0.4mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8pt; color: #4a5568; line-height: 1.26; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 1.1mm; padding-top: 1.1mm; border-top: 1px solid #e2e2e2; font-size: 7.5pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.3mm 0 0; padding: 1.1mm 2.2mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.5pt; line-height: 1.24; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 1.3mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.9mm; margin-bottom: 1.3mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.1pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.1mm 0 0.4mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.3mm 1mm; vertical-align: top; line-height: 1.2; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.7pt; color: #6b7280; margin-top: 1.0mm; padding-top: 0.7mm; border-top: 1px solid #f0f0f0; line-height: 1.22; }
+
+        .method ol { padding-left: 5mm; counter-reset: step; list-style: none; }
+        .method li { margin-bottom: 0.7mm; padding-left: 0.5mm; counter-increment: step; position: relative; }
+        .method li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.45mm 0; padding: 0.55mm 0 0.55mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.26; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.2mm 2.4mm; margin-top: 1.3mm; font-size: 7.5pt; line-height: 1.26; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.2mm 2.4mm; margin-top: 1.3mm; font-size: 7.5pt; line-height: 1.27; }
+        .sauce-block strong { color: #5b21b6; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 0.6mm; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.2mm 2.4mm; margin: 1.3mm 0; font-size: 7.5pt; line-height: 1.27; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.2mm 2.3mm; margin-bottom: 1.1mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.1mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.6pt; line-height: 1.24; }
+        .elevation li { margin-bottom: 0.3mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 0.8mm; }
+        .bottom h2 { font-size: 7.5pt; padding-bottom: 0.7mm; margin-bottom: 0.9mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.26; }
+        .troubleshoot td, .charter td { padding: 0.3mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 0.7mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .footer a { color: #94a3b8; text-decoration: none; border-bottom: 1px dotted #cbd2da; }
+        .footer .colophon { display: flex; gap: 4mm; align-items: baseline; }
+        .contact { margin-top: 0.6mm; padding: 0.6mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact a:hover { color: #0a0a0a; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Moist Carrot Cake</h1>
+    <p class="hook">Macerated + pressed carrot. Toasted-walnut butter distributed through the crumb. Mascarpone-tempered cream cheese frosting that holds at galley temperature.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>12 portions</strong> (9&times;13&Prime; sheet)</span>
+        <span>Active: <strong>25 min</strong></span>
+        <span>Total: <strong>1 hr 40 min</strong></span>
+        <span>Oven: <strong>175&deg;C</strong> (350&deg;F)</span>
+        <span>Done: <strong>95&deg;C</strong> internal</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Medieval Europe, where sweet roots stood in for costly sugar &mdash; an English &ldquo;pudding in a Carret root&rdquo; appears by 1591; revived in WWII Britain under the Ministry of Food&rsquo;s <em>Dr Carrot</em>.</div>
+    <div><span class="o-label">Eaten, authentically</span>The ration-table cake: naturally sweetened with carrot when sugar ran short, eaten plain or sugar-dusted as a teacake &mdash; no frosting in sight.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>An American classic since the 1960s health-food revival; the cream-cheese frosting (Philadelphia, 1965) is its modern signature.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">Metric &middot; US volume in right column</p>
+
+        <div class="group-label">Maceration</div>
+        <table>
+            <tr><td>Carrots, peeled, grated</td><td>~5 med</td></tr>
+            <tr><td>Light brown sugar <span class="note">(for macerating)</span></td><td>2 tbsp</td></tr>
+            <tr><td>Fine sea salt <span class="note">(draw moisture)</span></td><td>&frac12; tsp</td></tr>
+        </table>
+
+        <div class="group-label">Dry</div>
+        <table>
+            <tr><td>All-purpose flour</td><td>2&frac14; cups</td></tr>
+            <tr><td>Baking soda</td><td>1 tsp</td></tr>
+            <tr><td>Baking powder</td><td>1&frac14; tsp</td></tr>
+            <tr><td>Cinnamon, ground</td><td>2 tsp</td></tr>
+            <tr><td>Ginger, ground</td><td>1 tsp</td></tr>
+            <tr><td>Nutmeg, fresh-grated</td><td>&frac14; tsp</td></tr>
+            <tr><td>Diamond kosher salt</td><td>1 tsp</td></tr>
+        </table>
+
+        <div class="group-label">Wet</div>
+        <table>
+            <tr><td>Light brown sugar</td><td>scant 1 cup</td></tr>
+            <tr><td>Granulated sugar</td><td>&frac12; cup</td></tr>
+            <tr><td>Neutral oil <span class="note">(grapeseed/sunflower)</span></td><td>scant 1 cup</td></tr>
+            <tr><td>Eggs, large <span class="note">(RT)</span></td><td>&times;3</td></tr>
+            <tr><td>Pure vanilla extract</td><td>1&frac12; tsp</td></tr>
+            <tr><td>Toasted-walnut butter <span class="note">(sub-recipe &darr;)</span></td><td>3 tbsp</td></tr>
+            <tr><td>Orange zest, microplaned</td><td>1 orange</td></tr>
+        </table>
+
+        <div class="group-label">Frosting</div>
+        <table>
+            <tr><td>Cream cheese, full-fat <span class="note">(cold)</span></td><td>12 oz</td></tr>
+            <tr><td>Mascarpone <span class="note">(cold)</span></td><td>&frac12; cup</td></tr>
+            <tr><td>Unsalted butter, soft <span class="note">(20&deg;C)</span></td><td>6 tbsp</td></tr>
+            <tr><td>Icing sugar, sifted</td><td>2&frac14; cups</td></tr>
+            <tr><td>Pure vanilla extract</td><td>1 tsp</td></tr>
+        </table>
+
+        <p class="equipment">
+            <strong>Kit:</strong> 23&times;33 cm (9&times;13&Prime;) pan &middot; food processor &middot; colander + towel &middot; scale &middot; thermometer &middot; stand mixer &middot; offset spatula &middot; parchment
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Macerate carrot.</strong> Toss 400g grated carrot with 30g brown sugar + 3g salt. Colander over bowl. Stand <strong>20 min</strong>.
+                <span class="why">Osmosis draws ~30% free water out of carrot cells &rarr; concentrated flavour, less soggy crumb. <cite>&mdash; McGee 2004</cite></span>
+            </li>
+            <li>
+                <strong>Press dry.</strong> Squeeze in clean towel. Target &le;280g pressed carrot. Reserve 40g liquid (optional glaze).
+            </li>
+        </ol>
+
+        <div class="subrecipe">
+            <span class="sub-label">Sub-recipe &mdash; Toasted walnut butter</span>
+            <strong>Raw walnut halves, 160g</strong> &middot; pinch fine salt (optional) &middot; <em>yields ~70g butter + 80g chopped garnish</em>
+            <ol style="counter-reset: sub; padding-left: 4mm; margin-top: 0.8mm; list-style: none;">
+                <li style="counter-increment: sub; position: relative; padding-left: 1mm; margin-bottom: 0.4mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.8pt; color: #92400e;">a.</span>
+                    Toast all 160g at <strong>165&deg;C (325&deg;F)</strong>, 10&ndash;12 min. Cool 5 min.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.4mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.8pt; color: #92400e;">b.</span>
+                    Split: <strong>80g &rarr; food processor</strong> 3&ndash;4 min &rarr; smooth butter (~70g). Use 60g in batter; 10g extra keeps 2 wk fridge.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.4mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.8pt; color: #92400e;">c.</span>
+                    <strong>Remaining 80g:</strong> rough chop for garnish.
+                </li>
+                <li style="position: relative; padding-left: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.8pt; color: #92400e;">d.</span>
+                    <em>Maillard furaneol + pyrazines in the fat phase &rarr; roasted note in every bite.</em> <cite>&mdash; L&oacute;pez-Alt / Modernist</cite>
+                </li>
+            </ol>
+        </div>
+
+        <ol style="counter-reset: step 2;">
+            <li>
+                <strong>Preheat 175&deg;C</strong> (350&deg;F). Butter + parchment 9&times;13&Prime; pan. Whisk all dry together.
+            </li>
+            <li>
+                <strong>Whisk wet.</strong> 190g brown sugar, 100g granulated, 200g oil, 150g eggs, vanilla, 60g walnut butter, orange zest. 1 min smooth.
+            </li>
+            <li>
+                <strong>Fold carrot into wet.</strong> 4 folds.
+            </li>
+            <li>
+                <strong>Add dry in 2 additions.</strong> Half &rarr; 6 strokes &rarr; second half &rarr; fold until just incorporated. Flour streaks fine. Tap pan twice. Bake <strong>28&ndash;34 min</strong>.
+                <span class="why">Soda reacts with brown sugar acidity immediately; powder activates on heat. Sequential lift prevents collapse before crumb sets. <cite>&mdash; McGee 2004</cite></span>
+            </li>
+        </ol>
+
+        <div class="done">
+            <strong>Done:</strong> Internal <strong>95&deg;C</strong> (203&deg;F). Top springs back. Edges pull from pan. Toothpick: moist crumbs only.<br>
+            <strong>Cool:</strong> 15 min in pan &rarr; wire rack. Frost only at &le;22&deg;C (at least 60 min).
+        </div>
+
+        <div class="sauce-block">
+            <strong>Frosting</strong> &mdash; mix while cake cools
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 1mm; list-style: none;">
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 0.6mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">a.</span>
+                    Paddle <strong>cold cream cheese</strong> 30 sec only. Add cold mascarpone, beat 20 sec.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.6mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">b.</span>
+                    Add softened butter, beat 60 sec. Sift icing sugar in 2 additions, mix to incorporate only.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.6mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">c.</span>
+                    Vanilla + pinch salt. Taste. If slack: refrigerate 15 min. <em>Mascarpone (60&ndash;75% fat) buffers frosting stability at 28&deg;C.</em> <cite>&mdash; ATK 2021</cite>
+                </li>
+                <li style="position: relative; padding-left: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">d.</span>
+                    <strong>Frost:</strong> Offset spatula, 1 cm layer. Scatter toasted walnuts + orange zest. Chill 30 min before slicing.
+                </li>
+            </ol>
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One batter, two dishes &mdash; spiced carrot tea-loaf</span>
+            The frosting-free original. Pour the same batter into <strong>two 900 g (2 lb) loaf tins</strong>, two-thirds full; bake <strong>175&deg;C, 45&ndash;55 min</strong> to 95&deg;C internal (foil at 35 min if browning). No frosting &mdash; glaze with the reserved carrot liquid + sugar, or leave plain. <em>Keeps 2&ndash;3 days at room temp, no cold chain &mdash; the smart passage bake and the crew tier.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Cardamom + white pepper</strong> &mdash; 1g + 0.5g in dry</li>
+                <li><strong>Miso in frosting</strong> &mdash; 10g white miso with butter</li>
+                <li><strong>Dark brown sugar swap</strong> &mdash; more molasses depth</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It (+15 min)</div>
+            <ul>
+                <li><strong>Carrot-liquid glaze</strong> &mdash; reduce 40g liquid + 20g sugar, brush warm cake</li>
+                <li><strong>Candied ginger</strong> &mdash; 50g diced, fold in at end</li>
+                <li><strong>Part brown butter</strong> &mdash; replace 100g oil with 85g browned</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Restaurant</div>
+            <ul>
+                <li><strong>Dehydrated carrot chips</strong> &mdash; mandoline + 65&deg;C / 2 hr, press into frosting</li>
+                <li><strong>Pineapple soak</strong> &mdash; 40g cold juice, brush warm cake</li>
+                <li><strong>Toasted coconut</strong> &mdash; 40g golden, press into fresh frosting</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Dense, wet crumb</td><td>Carrot not pressed. Target &le;280g. Squeeze in towel.</td></tr>
+            <tr><td>Frosting weeps</td><td>Cream cheese too warm or over-beaten. Start cold. 30 sec max on CC alone.</td></tr>
+            <tr><td>Sunk centre</td><td>Underbaked. Hit 95&deg;C internal. Lower oven to 165&deg;C if recurring.</td></tr>
+            <tr><td>Rubbery crumb</td><td>Overmixed. Count 12 strokes max after dry goes in.</td></tr>
+            <tr><td>Frosting too sweet</td><td>Add 10g cold cream cheese, mix 10 sec. Or pinch more salt.</td></tr>
+            <tr><td>Muddy spice</td><td>Stale spices. Replace if &gt;6 months old. Freshly grate nutmeg always.</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Freeze unfrosted</td><td>Always. Cream cheese frosting breaks on thaw.</td></tr>
+            <tr><td>Naked cake</td><td>Cling + foil. 2 mo freezer. Thaw overnight in fridge.</td></tr>
+            <tr><td>Frosted cake</td><td>3 d fridge. Cover loosely &mdash; no cling on frosting.</td></tr>
+            <tr><td>Walnut butter</td><td>2 wk fridge, jar. Stir if oil separates.</td></tr>
+            <tr><td>Pressed carrot</td><td>3 d fridge, airtight. Drain before using.</td></tr>
+            <tr><td>Scaling</td><td>&times;2 = two pans, same time. 8&Prime; rounds: 30&ndash;35 min. Muffins: 20&ndash;24 min.</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: McGee &middot; Parks (BraveTart) &middot; L&oacute;pez-Alt &middot; Modernist Cuisine &middot; America&rsquo;s Test Kitchen &middot; King Arthur Baking</span>
+    <span class="colophon">
+        <span>&mdash; The Blueprint</span>
+    </span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US · Focaccia &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt;
+            line-height: 1.23;
+            color: #0a0a0a;
+            background: #fff;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 4.5mm 9mm 3mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.8mm; margin-bottom: 1.9mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 17pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 0.4mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8pt; color: #4a5568; line-height: 1.26; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 1.5mm; padding-top: 1.5mm; border-top: 1px solid #e2e2e2; font-size: 7.6pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.7mm 0 0; padding: 1.4mm 2.4mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 1.9mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.2mm; margin-bottom: 1.8mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.6mm 0 0.6mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.45mm 1mm; vertical-align: top; line-height: 1.24; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 1.4mm; padding-top: 1.0mm; border-top: 1px solid #f0f0f0; line-height: 1.26; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.0mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.45mm 0; padding: 0.55mm 0 0.55mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.26; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.5mm 2.6mm; margin-top: 1.6mm; font-size: 7.6pt; line-height: 1.3; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.5mm 2.6mm; margin-top: 1.6mm; font-size: 7.6pt; line-height: 1.32; }
+        .sauce-block strong { color: #5b21b6; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 0.8mm; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.5mm 2.6mm; margin: 1.6mm 0; font-size: 7.6pt; line-height: 1.32; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.5mm 2.5mm; margin-bottom: 1.5mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.1mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 0.8mm; }
+        .bottom h2 { font-size: 7.6pt; padding-bottom: 0.9mm; margin-bottom: 1.2mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.26; }
+        .troubleshoot td, .charter td { padding: 0.45mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 0.7mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .footer a { color: #94a3b8; text-decoration: none; border-bottom: 1px dotted #cbd2da; }
+        .footer .colophon { display: flex; gap: 4mm; align-items: baseline; }
+        .contact { margin-top: 0.6mm; padding: 0.6mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact a:hover { color: #0a0a0a; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .us{display:block;font-size:6.2pt;color:#94a3b8;font-style:normal;letter-spacing:0;margin-top:0.1mm;}.ingredients td:nth-child(2){width:60px;white-space:normal;}</style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Focaccia</h1>
+    <p class="hook">80% hydration worked by coil folds. A 24&ndash;72 hr cold ferment for flavour you cannot fake with more yeast. A salamoia brine in the dimples for the crisp-tender Ligurian crust.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>12 portions</strong> (23&times;33 cm sheet)</span>
+        <span>Active: <strong>20 min</strong></span>
+        <span>Total: <strong>1&ndash;3 days</strong> (mostly cold ferment)</span>
+        <span>Oven: <strong>230&deg;C</strong> (450&deg;F)</span>
+        <span>Done: <strong>96&deg;C</strong> internal</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Liguria &mdash; Genoa. From the Roman <em>panis focacius</em>, bread of the hearth (<em>focus</em>); in dialect, <em>fugassa</em>.</div>
+    <div><span class="o-label">Eaten, authentically</span>Torn warm with oil; the Genoese breakfast &mdash; a wedge dunked in cappuccino; or split for a <em>panino</em> (mortadella; mozzarella + tomato).</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>A bakery staple worldwide; the same dough is the base for Roman <em>pizza in teglia</em> (below), topped a hundred ways.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">Weight only &middot; baker&rsquo;s % / volume in right column</p>
+
+        <div class="group-label">Dough</div>
+        <table>
+            <tr><td>Bread flour <span class="note">(12&ndash;13% protein)</span></td><td>4 cups</td><td>100%</td></tr>
+            <tr><td>Water, cool <span class="note">(18&ndash;20&deg;C)</span></td><td>1⅔ cups</td><td>80%</td></tr>
+            <tr><td>Extra-virgin olive oil</td><td>1⅞ tbsp</td><td>5%</td></tr>
+            <tr><td>Fine sea salt <span class="note">(add after autolyse)</span></td><td>1⅞ tsp</td><td>2.2%</td></tr>
+            <tr><td>Instant dried yeast</td><td>1 tsp</td><td>0.6%</td></tr>
+        </table>
+
+        <div class="group-label">Salamoia <span class="note">(dimple brine)</span></div>
+        <table>
+            <tr><td>Extra-virgin olive oil <span class="note">(best bottle)</span></td><td>2⅞ tbsp</td><td>3 tbsp</td></tr>
+            <tr><td>Warm water</td><td>2 tbsp</td><td>2 tbsp</td></tr>
+            <tr><td>Fine sea salt <span class="note">(dissolve first)</span></td><td>⅔ tsp</td><td>&frac34; tsp</td></tr>
+        </table>
+
+        <div class="group-label">Pan &amp; Finish</div>
+        <table>
+            <tr><td>Extra-virgin olive oil <span class="note">(pan)</span></td><td>2¼ tbsp</td><td>2&frac12; tbsp</td></tr>
+            <tr><td>Flaky finishing salt <span class="note">(Maldon)</span></td><td>½ tsp</td><td>to taste</td></tr>
+            <tr><td>Fresh rosemary <span class="note">(soak in oil)</span></td><td>½ tsp</td><td>2 sprigs</td></tr>
+        </table>
+
+        <p class="equipment">
+            <strong>Kit:</strong> 23&times;33 cm (9&times;13&Prime;) metal pan &middot; dough tub / lidded bowl &middot; scale &middot; thermometer &middot; bench scraper &middot; wet hands
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Mix + autolyse.</strong> Whisk 3g yeast into 500g flour. Add 400g cool water + 25g oil. Mix to a shaggy mass &mdash; <strong>hold the salt</strong>. Rest <strong>20 min</strong>.
+                <span class="why">Gluten hydrates faster without salt competing for water; the rest aligns the strands before any work. Salt added after tightens the network. <cite>&mdash; McGee 2004 / L&oacute;pez-Alt</cite></span>
+            </li>
+            <li>
+                <strong>Add salt.</strong> Sprinkle 11g over the dough; pinch + fold through 30 sec until worked in.
+            </li>
+            <li>
+                <strong>Coil folds &mdash; 4 over 2 hr.</strong> Wet hands, lift the centre until it stretches, let it tuck under. Rotate 90&deg;, repeat &times;4. Fold again at 30 / 60 / 90 min.
+                <span class="why">Folds build aligned gluten at 80% hydration where kneading fails &mdash; large irregular bubbles, the open custardy crumb. <cite>&mdash; Forkish 2012 / Modernist Bread</cite></span>
+            </li>
+            <li>
+                <strong>Cold ferment 24&ndash;72 hr.</strong> Straight to the fridge, covered. 48 hr is the sweet spot.
+                <span class="why">At 4&deg;C yeast crawls but amylase, protease + slow fermentation build sugars, extensibility + organic acids &rarr; nutty, complex flavour no same-day dough matches. <cite>&mdash; Modernist Bread / McGee</cite></span>
+            </li>
+            <li>
+                <strong>Pan + warm proof.</strong> 30g oil up the pan sides. Scrape dough in, stretch toward corners (rest 15 min, stretch again). Proof <strong>2&ndash;4 hr at 20&ndash;24&deg;C</strong> until doubled, filling the pan, wobbling like set custard.
+            </li>
+        </ol>
+
+        <div class="sauce-block">
+            <strong>Salamoia, Dimple &amp; Bake</strong>
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 1mm; list-style: none;">
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">a.</span>
+                    Dissolve 4g salt in 30g warm water, whisk in 40g oil 15 sec until cloudy. Spoon evenly over the dough &mdash; looks like too much, it is not.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">b.</span>
+                    <strong>Dimple:</strong> oiled fingertips straight down to the pan, all over, ~3 cm apart. Brine pools in the wells. Scatter rosemary + flaky salt.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">c.</span>
+                    Water carries salt <em>into</em> the dough + flashes to steam (lifts craters); oil left behind crisps the crust. <em>The whole Ligurian trick.</em> <cite>&mdash; Nosrat 2017</cite>
+                </li>
+                <li style="position: relative; padding-left: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">d.</span>
+                    <strong>Bake 230&deg;C (450&deg;F), 20&ndash;25 min,</strong> rotate at 15 min. Lift onto a rack within 1 min of the oven &mdash; left in the pan the crust steams soft.
+                </li>
+            </ol>
+        </div>
+
+        <div class="done">
+            <strong>Done:</strong> Deep golden-brown (pale = gummy). Internal <strong>96&deg;C</strong> (205&deg;F). Base crisp + browned from pan oil; whole sheet slides free.<br>
+            <strong>Serve:</strong> cool 15 min, cut warm. Never refrigerate baked focaccia &mdash; the crumb stales fast.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One dough, two dishes &mdash; pizza in teglia</span>
+            This dough is, near enough, Roman <strong>pizza in teglia</strong>. Take it through the same cold ferment, press into an oiled tray, dimple lightly. Spread <strong>raw</strong> crushed San Marzano (salt + oil); bake <strong>250&deg;C, 12&ndash;15 min</strong>; add torn, well-drained mozzarella the last <strong>4&ndash;5 min</strong>; basil off the heat. <em>The same dough also rolls into grissini.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Garlic-confit oil</strong> &mdash; swap the brine oil for it</li>
+                <li><strong>Cracked fennel + pepper</strong> &mdash; 2g on top before baking</li>
+                <li><strong>Lemon zest</strong> &mdash; microplaned over the hot crust</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It (+15 min)</div>
+            <ul>
+                <li><strong>Cherry tomato + oregano</strong> &mdash; halves pressed cut-side up into dimples</li>
+                <li><strong>Caramelised onion</strong> &mdash; 150g spread after dimpling</li>
+                <li><strong>Potato alla patatina</strong> &mdash; mandoline-thin, oiled, shingled on top</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Restaurant</div>
+            <ul>
+                <li><strong>Biga preferment</strong> &mdash; 150g flour + 75g water + pinch yeast, 12&ndash;16 hr</li>
+                <li><strong>Di Recco</strong> &mdash; two thin sheets, stracchino sealed between, bake hot</li>
+                <li><strong>20% whole-grain</strong> &mdash; swap 100g flour, add 20g water</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Dense, bready crumb</td><td>Under-proofed or baked too cold. Let it double + wobble at RT first.</td></tr>
+            <tr><td>Flat, no big bubbles</td><td>Over-proofed &mdash; gas collapsed. Catch at double, not triple.</td></tr>
+            <tr><td>Greasy, pale crust</td><td>Oil only, no brine; oven too cool. Use the salamoia. Verify a true 230&deg;C.</td></tr>
+            <tr><td>Gummy centre</td><td>Pulled too early on colour. Bake to deep brown + 96&deg;C. Cool 15 min.</td></tr>
+            <tr><td>Won&rsquo;t reach corners</td><td>Cold gluten too tight. Rest 15 min, stretch again. Two gentle beats one forced.</td></tr>
+            <tr><td>Sticks to pan</td><td>Too little pan oil. 30g up the sides is the floor; oiled metal releases clean.</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>The make-ahead</td><td>The cold ferment IS the prep. Mix on a provisioning day, bake when needed.</td></tr>
+            <tr><td>Folded dough</td><td>3 d cold ferment, fridge, covered. This is the recipe, not a shortcut.</td></tr>
+            <tr><td>Salamoia</td><td>Fresh is best. Re-emulsify hard before pouring.</td></tr>
+            <tr><td>Baked, whole</td><td>1 d RT loosely wrapped. Refresh 4 min / 180&deg;C to re-crisp.</td></tr>
+            <tr><td>Frozen</td><td>1 mo. Wrap cling + foil. Reheat 6&ndash;8 min / 200&deg;C from cold.</td></tr>
+            <tr><td>Never</td><td>Do not freeze proofed dough (gluten shreds); do not refrigerate baked.</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: McGee &middot; Myhrvold (Modernist Bread) &middot; Forkish (Flour Water Salt Yeast) &middot; Nosrat (Salt Fat Acid Heat) &middot; L&oacute;pez-Alt</span>
+    <span class="colophon">
+        <span>&mdash; The Blueprint</span>
+    </span>
+</footer>
+
+</body>
+</html>

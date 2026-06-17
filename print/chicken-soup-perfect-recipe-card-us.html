@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US · Chicken Soup &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.2pt;
+            line-height: 1.18;
+            color: #0a0a0a;
+            background: #fff;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 3.5mm 8.5mm 2.5mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.3mm; margin-bottom: 1.4mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 15pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 0.3mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.8pt; color: #4a5568; line-height: 1.25; }
+        .meta-bar { display: flex; gap: 4mm; margin-top: 1.3mm; padding-top: 1.3mm; border-top: 1px solid #e2e2e2; font-size: 7.4pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.5mm 0 0; padding: 1.3mm 2.3mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.6pt; line-height: 1.28; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.1pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 4.5mm; margin-bottom: 1.4mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.1mm; margin-bottom: 1.6mm; }
+
+        .ingredients-note { font-size: 6.4pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.8mm 0 1.2mm 0; }
+        .group-label { font-size: 7.1pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.1mm 0 0.4mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.5pt; }
+        .ingredients td { padding: 0.3mm 1mm; vertical-align: top; line-height: 1.22; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 40px; }
+        .ingredients td:nth-child(3) { font-size: 6.6pt; text-align: right; color: #6b7280; white-space: nowrap; width: 58px; padding-left: 1.6mm; }
+        .note { font-size: 6.6pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.6pt; color: #6b7280; margin-top: 1.2mm; padding-top: 0.9mm; border-top: 1px solid #f0f0f0; line-height: 1.24; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 0.7mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.4mm 0; padding: 0.5mm 0 0.5mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.6pt; font-style: italic; color: #4a5568; line-height: 1.24; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.2mm 2.5mm; margin-top: 1.2mm; font-size: 7.4pt; line-height: 1.28; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.2mm 2.5mm; margin-top: 1.2mm; font-size: 7.4pt; line-height: 1.3; }
+        .sauce-block strong { color: #5b21b6; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 0.7mm; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.2mm 2.5mm; margin: 1.2mm 0; font-size: 7.4pt; line-height: 1.3; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.4pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.2mm 2.4mm; margin-bottom: 1.1mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.6mm; }
+        .tier-label { font-weight: 700; font-size: 6.4pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.6pt; line-height: 1.24; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 0.5mm; }
+        .bottom h2 { font-size: 7.4pt; padding-bottom: 0.7mm; margin-bottom: 0.9mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.6pt; border-collapse: collapse; line-height: 1.24; }
+        .troubleshoot td, .charter td { padding: 0.3mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 34%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 30%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.4pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 0.6mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .footer a { color: #94a3b8; text-decoration: none; border-bottom: 1px dotted #cbd2da; }
+        .footer .colophon { display: flex; gap: 4mm; align-items: baseline; }
+        .contact { margin-top: 0.4mm; padding: 0.4mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact a:hover { color: #0a0a0a; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Chicken Soup</h1>
+    <p class="hook">Roasted bones and feet, cold-started for a broth that sets to jelly. The meat poached apart and folded in tender. Fish sauce and parmesan rind for umami that never shows itself.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>10&ndash;12 bowls</strong> (2.5 L stock)</span>
+        <span>Active: <strong>45 min</strong></span>
+        <span>Total: <strong>4 hr</strong> (3 hr simmer)</span>
+        <span>Simmer: <strong>85&ndash;90&deg;C</strong> (185&ndash;195&deg;F)</span>
+        <span>Thigh done: <strong>74&deg;C</strong> (165&deg;F)</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Ashkenazi Eastern Europe &mdash; the shtetl pot that stretched one old hen into broth. Older roots run through Maimonides&rsquo; 12th-c. <em>broth of hens</em> to a 2nd-c.-BC Chinese <em>yang</em> food.</div>
+    <div><span class="o-label">Eaten, authentically</span>Over egg noodles, matzo balls, or rice &mdash; the convalescent&rsquo;s bowl and the Friday-night starter; the matzo-ball version is Shabbat and Passover itself.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>The world&rsquo;s comfort broth: <em>brodo</em> with tortellini, Cantonese jook, and the same clear stock spiced into Vietnamese <em>ph&#7903;</em> (below).</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight preferred &middot; volume in right column</p>
+
+        <div class="group-label">Stock</div>
+        <table>
+            <tr><td>Chicken carcasses + wings <span class="note">(roasted)</span></td><td>100%</td></tr>
+            <tr><td>Chicken feet <span class="note">(blanched)</span></td><td>~6 feet</td></tr>
+            <tr><td>Cold water <span class="note">(always cold)</span></td><td>~1 gal</td></tr>
+            <tr><td>Yellow onion, halved <span class="note">(skin on)</span></td><td>2 med</td></tr>
+            <tr><td>Carrot</td><td>2 med</td></tr>
+            <tr><td>Leek green tops</td><td>2 leeks</td></tr>
+            <tr><td>Celery</td><td>2 ribs</td></tr>
+            <tr><td>Garlic head, halved</td><td>&mdash;</td></tr>
+            <tr><td>Parmigiano rind <span class="note">(glutamate)</span></td><td>1 rind</td></tr>
+            <tr><td>Bay &middot; peppercorns &middot; thyme &middot; parsley stems</td><td>&mdash;</td></tr>
+        </table>
+
+        <div class="group-label">Chicken <span class="note">(poached apart)</span></div>
+        <table>
+            <tr><td>Bone-in skin-on thighs</td><td>~4</td></tr>
+            <tr><td>Bone-in breast <span class="note">(optional)</span></td><td>1 split</td></tr>
+            <tr><td>Fine sea salt <span class="note">(poach water)</span></td><td>2 tsp</td></tr>
+        </table>
+
+        <div class="group-label">Soup &amp; Finish</div>
+        <table>
+            <tr><td>Leek white / carrot / celery <span class="note">(5mm)</span></td><td>&mdash;</td></tr>
+            <tr><td>Fennel <span class="note">(optional)</span></td><td>&frac12; bulb</td></tr>
+            <tr><td>Fish sauce <span class="note">(invisible umami)</span></td><td>1 tbsp</td></tr>
+            <tr><td>Lemon juice <span class="note">(at service)</span></td><td>1 lemon</td></tr>
+            <tr><td>Schmaltz <span class="note">(from the stock)</span></td><td>1 tbsp</td></tr>
+            <tr><td>Egg noodles <span class="note">(or matzo / rice)</span></td><td>&mdash;</td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; bones = 100%</span>
+            <strong>Bones 100 &middot; Feet 15 &middot; Water 200 &middot; Salt by taste</strong>. The feet are the gelatin multiplier &mdash; ~2 kg bones to 4 L cold water yields 2.5 L of stock that sets to jelly when chilled. Salt is never on the ratio; a stock you reduce over-salts itself.
+        </div>
+
+        <p class="equipment"><strong>Kit:</strong> 8 L stockpot &middot; 4 L poach pot &middot; 4 L soup pot &middot; fine mesh + cheesecloth / superbag &middot; skimmer &middot; instant-read probe &middot; fat separator</p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Roast the bones.</strong> 220&deg;C (425&deg;F), single layer, 25&ndash;30 min to deep mahogany, turning once. Colour, not carbon.
+                <span class="why">Maillard reactions build the smell of <em>roast</em> chicken &mdash; aromatics raw-bone stock never has. <cite>&mdash; McGee 2004, pp. 778&ndash;782</cite></span>
+            </li>
+            <li>
+                <strong>Blanch the feet.</strong> 60 sec rolling boil, shock in ice; the membrane peels in sheets, trim the nails. Into the stock raw.
+                <span class="why">Feet are ~70% collagen by dry weight &mdash; 300 g doubles a 4 L stock&rsquo;s gelatin without changing flavour. <cite>&mdash; Keller, Bouchon, 2004</cite></span>
+            </li>
+            <li>
+                <strong>Deglaze + cold-cover.</strong> Bones to the pot; scrape the roasting tray in with a cup of water. Cover with <strong>cold</strong> water by 5 cm (~4 L). Never hot.
+                <span class="why">Collagen hydrolyses 70&ndash;90&deg;C; the slow climb coagulates skimmable albumen instead of emulsifying fat into a cloud. <cite>&mdash; McGee 2004, pp. 599&ndash;605</cite></span>
+            </li>
+            <li>
+                <strong>Climb, skim, simmer 3 hr.</strong> ~90 min to a bare simmer, skimming. At <strong>85&ndash;90&deg;C</strong> add feet, vegetables, parm rind, aromatics. Uncovered 2 hr 30&ndash;3 hr. Don&rsquo;t stir.
+                <span class="why">A rolling boil emulsifies fat permanently. The 2000 Nebraska assay found the anti-inflammatory activity in this clear broth. <cite>&mdash; Rennard, Chest 118(4), 2000</cite></span>
+            </li>
+            <li>
+                <strong>Strain, chill, lift the fat cap.</strong> Through cheesecloth &mdash; <strong>do not press</strong>. Ice-bath, chill; lift the set schmaltz (~80 g) and jar it.
+            </li>
+            <li>
+                <strong>Poach the chicken apart.</strong> Bare-simmer 2 L water + 10 g salt; thighs skin-up 18&ndash;22 min to 74&deg;C (breast 14&ndash;16 min, 63&deg;C). Cool, pull into pieces.
+                <span class="why">Muscle squeezes water out past 65&ndash;70&deg;C; meat simmered in stock turns to thread. Pulled gentle, it stays juicy. <cite>&mdash; McGee 2004, pp. 148&ndash;152</cite></span>
+            </li>
+        </ol>
+
+        <div class="sauce-block">
+            <strong>Build the bowl &mdash; layers, seasoned last</strong>
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 1mm; list-style: none;">
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 0.9mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.4pt; color: #5b21b6;">a.</span>
+                    Sweat diced leek, carrot, celery, fennel in 20 g schmaltz 8&ndash;10 min, no colour. Salt lightly.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.9mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.4pt; color: #5b21b6;">b.</span>
+                    Into the warm stock; simmer 10 min. Fold the pulled chicken in the <strong>last 2 min only</strong>.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 0.9mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.4pt; color: #5b21b6;">c.</span>
+                    <strong>Off the heat:</strong> grated garlic, 15 g fish sauce, 20 g lemon juice, parsley, dill. Taste, adjust salt. <em>Citrus volatiles die with heat &mdash; lemon goes in last.</em> <cite>&mdash; Nosrat 2017</cite>
+                </li>
+                <li style="position: relative; padding-left: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.4pt; color: #5b21b6;">d.</span>
+                    <strong>Assemble:</strong> noodles cooked <strong>apart</strong> in the bowl, soup ladled over, a teaspoon of schmaltz to bloom the aroma.
+                </li>
+            </ol>
+        </div>
+
+        <div class="done">
+            <strong>Done:</strong> broth clear, gelatin-bodied (it should jelly when chilled); thigh 74&deg;C (165&deg;F), juicy not stringy; schmaltz blooming on top.<br>
+            <strong>Serve:</strong> over egg noodles / matzo balls / rice cooked separately, lemon wedge on the saucer. Never hold starch in the broth.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One base, two dishes &mdash; the broth becomes ph&#7903;</span>
+            The same clear, gelatin-rich stock spices into a Vietnamese-leaning <strong>ph&#7903;</strong>. Steep 1.5 L with toasted cinnamon, star anise, cloves, charred ginger + onion 30 min; strain. Push fish sauce to 30&ndash;40 g/L + a pinch of sugar. Build cooked rice noodles + sliced poached chicken in the bowl, pour very hot broth over; finish with sprouts, basil, lime, chilli at the table. <em>One extraction, two cuisines.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Charred onion</strong> &mdash; black-char a half in a dry pan before the stock</li>
+                <li><strong>Schmaltz at the bowl</strong> &mdash; 1 tsp blooms aroma on the hot broth</li>
+                <li><strong>White pepper + sesame oil</strong> &mdash; a Cantonese finish</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Double stock (remouillage)</strong> &mdash; spent bones + 2 L fresh water, 2 hr; combine</li>
+                <li><strong>Toasted rice</strong> &mdash; 50 g dry-toasted, simmered in the stock 25 min</li>
+                <li><strong>Matzo balls</strong> &mdash; whipped whites + baking powder + covered = floaters</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Restaurant</div>
+            <ul>
+                <li><strong>Consomm&eacute; raft</strong> &mdash; egg-white + mince clarification, crystal-clear</li>
+                <li><strong>Chicken ballotine</strong> &mdash; rolled thigh, sous-vide 62&deg;C, seared, sliced</li>
+                <li><strong>Skin cracklings</strong> &mdash; rendered glass-crisp at 160&deg;C on top</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Cloudy broth</td><td>Boiled not simmered / solids pressed. Hold 85&ndash;90&deg;C; never press.</td></tr>
+            <tr><td>Greasy broth</td><td>Fat emulsified by a boil. Chill, lift the fat cap; bare simmer only.</td></tr>
+            <tr><td>Thin, no gelatin</td><td>No feet / raw not roasted / too much water. Add feet; reduce 25%.</td></tr>
+            <tr><td>Dry, stringy chicken</td><td>Cooked in the stock / past 75&deg;C. Poach apart; rescue in schmaltz.</td></tr>
+            <tr><td>Flat flavour</td><td>No salt / umami / acid. Salt, then fish sauce or rind, then lemon.</td></tr>
+            <tr><td>Gluey bowl</td><td>Starch cooked in the pot. Cook it apart; thin with extra stock.</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>The make-ahead</td><td>The stock IS the prep. Freeze it naked, build the bowl at reheat.</td></tr>
+            <tr><td>Finished stock</td><td>5 d fridge / 3 mo frozen, 1 L portions, fat cap as a seal.</td></tr>
+            <tr><td>Schmaltz</td><td>2 mo fridge / 6 mo frozen. Strain, jar in small portions.</td></tr>
+            <tr><td>Poached chicken</td><td>3 d fridge in its poaching liquid; shred only at service.</td></tr>
+            <tr><td>Galley shortcut</td><td>Stock in vac-bags + cube trays, frozen flat. Soup in 15 min.</td></tr>
+            <tr><td>Never</td><td>Freeze the built soup, or hold cooked noodles in the broth.</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Keller (Bouchon) &middot; Nosrat (Salt Fat Acid Heat) &middot; L&oacute;pez-Alt (The Food Lab) &middot; McGee &middot; Rennard, Chest 2000</span>
+    <span class="colophon">
+        <span>&mdash; The Blueprint</span>
+    </span>
+</footer>
+
+</body>
+</html>
