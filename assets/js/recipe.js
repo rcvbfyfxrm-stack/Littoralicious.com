@@ -1,33 +1,31 @@
 /* Littoralicious — interactive recipe engine
- * Powers: live scaling, a Metric/US unit toggle (with per-ingredient
- * cup/tbsp/tsp conversion), tickable ingredients, step progress.
- * Zero dependencies. Opt-in via data attributes; pages without them are unaffected.
+ * Powers: live scaling, ALWAYS-ON dual measures (metric + US cups/tbsp/tsp),
+ * tickable ingredients, step progress. Zero dependencies. Opt-in via data
+ * attributes; pages without them are unaffected.
  *
  *   Scaler:    <div class="rcp-scaler" data-base-yield="12" data-yield-unit="portions"> … buttons [data-scale="2"] …
  *   Quantity:  <span data-qty="500" data-unit="g">500 g</span>   (data-round optional)
  *   Ingredient:<li class="rcp-ing"> … <span class="rcp-ing__n">Bread flour</span> …
  *   Steps:     <ol class="rcp-steps"><li class="rcp-step"> …
- * Scale + ticks persist per-article; the Metric/US choice persists globally.
+ * Scale + ticks persist per-article.
  *
- * US mode converts each quantity by the INGREDIENT'S density (read from the
- * ingredient name, or the words next to the quantity in a step) to cups / tbsp
- * / tsp — for galleys where the scale has died. Things you weigh anyway (meat,
- * fish) fall back to oz/lb. Temperatures carry both °C and °F in the prose.
+ * Every quantity shows BOTH the metric weight AND the US volume in the same
+ * place — e.g. "200 g (1⅝ cups)", "4 g (⅔ tsp)", "200 g (4 large)" — so a
+ * galley with a dead scale can always reach for cups. The US figure comes from
+ * the ingredient's density (read from its name); things you weigh anyway
+ * (meat, fish) show oz/lb. Temperatures carry both °C and °F in the prose.
  */
 (function () {
   "use strict";
   var root = document.querySelector("[data-recipe]");
   if (!root) return;
   var slug = root.getAttribute("data-recipe") || location.pathname;
-  var KEY = "rcp:" + slug, UNITS_KEY = "rcp:units";
+  var KEY = "rcp:" + slug;
   var store = load();
-  var units = loadUnits();
   var mult = store.scale || 1;
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
-  function loadUnits() { try { return localStorage.getItem(UNITS_KEY) === "us" ? "us" : "metric"; } catch (e) { return "metric"; } }
-  function saveUnits() { try { localStorage.setItem(UNITS_KEY, units); } catch (e) {} }
 
   /* ---- Density tables (grams per US cup / per tsp), specific keys first --- */
   var CUP = [
@@ -54,7 +52,10 @@
 
   /* ---- Quantities ------------------------------------------------------- */
   var qtys = [].slice.call(root.querySelectorAll("[data-qty]"));
-  qtys.forEach(function (el) { if (!el.hasAttribute("data-base")) el.setAttribute("data-base", el.getAttribute("data-qty")); });
+  qtys.forEach(function (el) {
+    if (!el.hasAttribute("data-base")) el.setAttribute("data-base", el.getAttribute("data-qty"));
+    if (!el.hasAttribute("data-name")) el.setAttribute("data-name", ingName(el));   // capture before innerHTML changes
+  });
 
   function fmtNum(n, round) {
     if (round != null && round !== "") { return (+n).toFixed(+round).replace(/\.0+$/, ""); }
@@ -65,7 +66,6 @@
   }
   var trim = function (x) { return String(x).replace(/\.0$/, ""); };
 
-  /* nearest nice cooking fraction → "1¾" style */
   var FR = [[0, ""], [0.125, "⅛"], [0.25, "¼"], [0.333, "⅓"], [0.375, "⅜"], [0.5, "½"], [0.625, "⅝"], [0.667, "⅔"], [0.75, "¾"], [0.875, "⅞"], [1, ""]];
   function frac(x) {
     if (x < 0) x = 0;
@@ -81,7 +81,7 @@
   function ingName(el) {
     var li = el.closest ? el.closest(".rcp-ing") : null;
     if (li) { var n = li.querySelector(".rcp-ing__n"); if (n) return n.textContent || ""; }
-    var t = "", sib = el.nextSibling, hops = 0;          // method step: read the words after the number
+    var t = "", sib = el.nextSibling, hops = 0;            // method step: read the words after the number
     while (sib && hops < 3) { t += " " + (sib.textContent || sib.nodeValue || ""); sib = sib.nextSibling; hops++; }
     return t;
   }
@@ -112,18 +112,18 @@
     return trim(Math.round(oz * 100) / 100) + " oz";
   }
   function metricText(val, unit, round) { return fmtNum(val, round) + (unit ? " " + unit : ""); }
-  function usText(el, val, unit, round) {
+  function usValue(name, val, unit) {
     if (unit === "g") {
-      var d = density(ingName(el));
+      var d = density(name);
       if (d) {
-        if (d.egg) { var n = Math.max(1, Math.round(val / 50)); return n + " large"; }
+        if (d.egg) { return Math.max(1, Math.round(val / 50)) + " large"; }
         if (d.cup) return volFromCup(val, d.cup);
         if (d.tsp) return volFromTsp(val, d.tsp);
       }
       return ozText(val);
     }
     if (unit === "ml") return volFromCup(val, 236.6);
-    return metricText(val, unit, round);          // counts (sprigs, squares…) unchanged
+    return "";                                              // counts (sprigs, squares…) — no US equivalent
   }
 
   function renderQtys() {
@@ -132,9 +132,11 @@
       if (isNaN(base)) return;
       var unit = el.getAttribute("data-unit") || "", round = el.getAttribute("data-round");
       var val = base * mult;
-      el.textContent = units === "us" ? usText(el, val, unit, round) : metricText(val, unit, round);
+      var m = metricText(val, unit, round);
+      var us = usValue(el.getAttribute("data-name") || "", val, unit);
+      el.innerHTML = us ? m + ' <span class="rcp-alt" style="color:var(--color-muted);font-weight:400">(' + us + ')</span>' : m;
     });
-    root.querySelectorAll(".rcp-scaler:not(.rcp-units)").forEach(function (sc) {
+    root.querySelectorAll(".rcp-scaler").forEach(function (sc) {
       var by = parseFloat(sc.getAttribute("data-base-yield")), yl = sc.querySelector("[data-yield]");
       if (yl && !isNaN(by)) yl.textContent = fmtNum(by * mult, "0");
     });
@@ -142,39 +144,20 @@
 
   /* ---- Scaling ---------------------------------------------------------- */
   function applyScale(m) { mult = m; store.scale = m; save(); renderQtys(); }
-  root.querySelectorAll(".rcp-scaler:not(.rcp-units) [data-scale]").forEach(function (btn) {
+  root.querySelectorAll(".rcp-scaler [data-scale]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var m = parseFloat(btn.getAttribute("data-scale")) || 1;
-      root.querySelectorAll(".rcp-scaler:not(.rcp-units) [data-scale]").forEach(function (b) { b.classList.toggle("active", b === btn); });
+      root.querySelectorAll(".rcp-scaler [data-scale]").forEach(function (b) { b.classList.toggle("active", b === btn); });
       applyScale(m);
     });
   });
   (function () {
-    var match = root.querySelector('.rcp-scaler:not(.rcp-units) [data-scale="' + mult + '"]');
-    root.querySelectorAll('.rcp-scaler:not(.rcp-units) [data-scale]').forEach(function (b) {
+    var match = root.querySelector('.rcp-scaler [data-scale="' + mult + '"]');
+    root.querySelectorAll('.rcp-scaler [data-scale]').forEach(function (b) {
       b.classList.toggle("active", b === match || (!match && parseFloat(b.getAttribute("data-scale")) === 1));
     });
   })();
-
-  /* ---- Units toggle (injected, reuses .rcp-scaler styling) -------------- */
-  (function () {
-    var anchor = root.querySelector(".rcp-scaler:not(.rcp-units)") || root.querySelector(".rcp-ings") || root.querySelector("h2");
-    if (!anchor || !anchor.parentNode) { renderQtys(); return; }
-    var box = document.createElement("div");
-    box.className = "rcp-scaler rcp-units";
-    box.innerHTML =
-      '<span class="rcp-scaler__label">Units</span>' +
-      '<button type="button" data-units="metric">Metric &middot; g</button>' +
-      '<button type="button" data-units="us">US &middot; cups</button>' +
-      '<span class="rcp-scaler__yield" style="opacity:.65;font-weight:400">no scale? switch to cups &middot; temps show &deg;C &amp; &deg;F</span>';
-    anchor.parentNode.insertBefore(box, anchor.nextSibling);
-    function paint() { box.querySelectorAll("[data-units]").forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-units") === units); }); }
-    box.querySelectorAll("[data-units]").forEach(function (b) {
-      b.addEventListener("click", function () { units = b.getAttribute("data-units"); saveUnits(); paint(); renderQtys(); });
-    });
-    paint();
-    renderQtys();
-  })();
+  renderQtys();
 
   /* ---- Tickable ingredients -------------------------------------------- */
   store.ing = store.ing || {};
