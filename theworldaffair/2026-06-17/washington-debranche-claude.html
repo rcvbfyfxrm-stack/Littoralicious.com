@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-06-17/">
+<title>Quand Washington débranche Claude — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 17 Juin 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;152</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Verrous Souverains</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-06-17.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00695C">Silicium & Intelligence</div>
+  <h1 class="article-title">Quand Washington débranche Claude</h1>
+  <div class="article-date">Mercredi 17 Juin 2026 &mdash; Edition N&deg;152</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Lundi 15 juin, des fonctionnaires fédéraux ont sommé Anthropic de couper l'accès à ses deux modèles de pointe — Mythos 5 et Fable 5, ce dernier lancé six jours plus tôt — pour <em>tout</em> ressortissant étranger, à l'intérieur comme à l'extérieur des États-Unis, au nom de la sécurité nationale. L'entreprise s'est exécutée et a dépêché ses dirigeants à la Maison-Blanche, avec un avertissement glacial : appliquée à l'industrie entière, cette règle « arrêterait purement et simplement le déploiement de tout nouveau modèle ». Au même moment, OpenAI dévoilait GPT-5.4, un million de tokens de contexte et un agent qui pilote seul un ordinateur ; les douanes chinoises éventraient des cartons de puces Nvidia dans leurs ports ; et environ un milliard de dollars de silicium avancé filtrait au marché noir, la B200 en tête des convoitises. Trois scènes, <strong>un fil commun</strong> : le calcul de frontière devient un bien stratégique que l'État rationne, frontière par frontière, comme on rationnait l'uranium.</p>
+<hr>
+<h2>Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody>
+<tr><td>Modèles Anthropic suspendus aux étrangers</td><td>2 (Mythos 5, Fable 5)</td><td>De « suspendus 3 j après lancement » à « interdiction ordonnée »</td><td><a href="https://www.washingtonpost.com/technology/2026/06/15/how-anthropic-lost-white-houses-trust-then-its-flagship-product/">Washington Post</a></td></tr>
+<tr><td>Fenêtre de contexte GPT-5.4</td><td>1 000 000 tokens</td><td>Saut générationnel, computer-use natif</td><td><a href="https://llm-stats.com/llm-updates">LLM-Stats</a></td></tr>
+<tr><td>Puces Nvidia avancées entrées en Chine au marché noir</td><td>~1 Md$</td><td>Pression douanière en hausse (H20, RTX Pro 6000D, H200)</td><td><a href="https://asiatimes.com/2026/06/nvidia-gpu-crackdown-hits-china-linked-southeast-asia-data-centers/">Asia Times</a></td></tr>
+<tr><td>Cours NVDA</td><td>~208 $ (16 juin)</td><td>+3 % le 15 juin · ~12 % sous l'ATH de 235 $</td><td><a href="https://www.cnbc.com/quotes/NVDA">CNBC</a></td></tr>
+<tr><td>Cours GOOGL</td><td>~373 $</td><td>Stable</td><td><a href="https://www.google.com/finance/beta/quote/GOOGL:NASDAQ">Google Finance</a></td></tr>
+<tr><td>Nasdaq Composite</td><td>26 376</td><td>−1,15 % (faiblesse des semis)</td><td><a href="https://www.cnbc.com/quotes/.IXIC">CNBC</a></td></tr>
+</tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le jour où l'État a coupé le courant à Claude</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Anthropic a débranché ses meilleurs modèles pour la moitié de la planète sur ordre de Washington. Le 15 juin, l'administration a exigé que Mythos 5 et Fable 5 — la nouvelle vitrine, mise en ligne le 9 juin — deviennent inaccessibles à tout ressortissant étranger, où qu'il se trouve, invoquant un risque de sécurité nationale. L'entreprise a obtempéré et fermé l'accès aux deux modèles, comme le <a href="https://www.washingtonpost.com/technology/2026/06/15/how-anthropic-lost-white-houses-trust-then-its-flagship-product/">Washington Post</a> l'a documenté heure par heure.</p>
+<p>Le geste est inédit par son périmètre : il ne s'agit plus de filtrer une API à la frontière, mais d'exclure une nationalité d'un produit logiciel partout dans le monde. Les dirigeants d'Anthropic ont fait le déplacement à la Maison-Blanche, où, selon <a href="https://www.businesstoday.in/technology/news/story/anthropic-and-white-house-officials-to-hold-discussions-around-claude-fable-5-ban-536943-2026-06-15">Business Today</a>, aucune résolution n'avait été trouvée au soir du 15. La société a posé l'argument qui dérange : généralisée, une telle norme « arrêterait purement et simplement le déploiement de tout nouveau modèle ».</p>
+<p>Ce n'est pas un accident isolé. L'édition précédente notait déjà que Washington avait suspendu Fable 5 et Mythos 5 trois jours après leur lancement ; l'épisode du 15 juin durcit la suspension en interdiction. Le <a href="https://www.washingtonpost.com/technology/2026/06/15/how-anthropic-lost-white-houses-trust-then-its-flagship-product/">récit du Post</a> raconte une confiance perdue : le laboratoire le plus prudent du secteur se retrouve traité comme un exportateur d'armement. La frontière du calcul a cessé d'être une métaphore.</p>
+<p><strong>Qui paie · Qui profite :</strong> Anthropic et ses utilisateurs internationaux paient l'accès coupé ; les concurrents moins exposés et les hyperscalers maison (Amazon, premier bailleur d'Anthropic) profitent du flou réglementaire.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Surveiller si la règle « frontier = export-controlled » s'étend à OpenAI et Google ; un précédent transformerait tout lancement de modèle en procédure d'exportation.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le risque précis invoqué — capacité cyber, bio, autonomie agentique ? — n'a pas été rendu public, et nul ne sait si la coupure est permanente ou tactique.</p>
+<hr>
+<h3>II. Le chatbot est mort, vive l'agent</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>GPT-5.4 ne répond plus : il agit. OpenAI a dévoilé GPT-5.4 et sa déclinaison Pro avec une fenêtre de contexte d'un million de tokens, un usage natif de l'ordinateur et l'exécution autonome de chaînes de tâches multi-étapes à travers plusieurs logiciels, comme le recense <a href="https://llm-stats.com/llm-updates">LLM-Stats</a>. Le modèle quitte la fenêtre de dialogue pour devenir une couche logicielle qui clique, navigue et enchaîne.</p>
+<p>Le détail qui compte, c'est le million de tokens couplé au computer-use : un agent peut désormais tenir en tête une base de code entière ou un dossier complet tout en manipulant l'interface. On passe du correcteur au collègue. Cette bascule de l'assistant vers l'<a href="https://llm-stats.com/llm-updates">opérateur autonome</a> redéfinit la valeur : ce n'est plus le texte produit qui se facture, mais le travail accompli.</p>
+<p>Le timing dialogue avec le Récit I. Pendant que Washington traite les modèles de frontière comme des munitions, OpenAI rend ces mêmes modèles capables d'exécuter seuls des opérations sur des machines tierces — exactement la capacité agentique que les régulateurs redoutent. Plus l'agent devient autonome, plus l'État voudra tenir l'interrupteur.</p>
+<p><strong>Pour Arnaud :</strong> GOOGL (~373 $) joue cette manche par Gemini et la stack Vertex/agents ; la thèse longue n'est pas le chatbot mais la couche d'exécution facturée à la tâche. AMZN profite des deux côtés via Bedrock et son adossement à Anthropic. Le risque réglementaire du Récit I est le revers de la même médaille agentique.</p>
+<p><strong>Qui paie · Qui profite :</strong> Les éditeurs SaaS facturant au siège paient la commoditisation ; les fournisseurs de la couche agent et du compute (NVDA, GOOGL, AMZN) profitent de la consommation à la tâche.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Tester GPT-5.4 Pro sur un workflow réel pour mesurer le taux de complétion autonome ; c'est l'indicateur qui précède toute repricing du SaaS.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> La fiabilité réelle en bout de chaîne — un agent qui réussit 90 % des étapes échoue une tâche sur dix, et le coût de l'erreur non supervisée reste non chiffré.</p>
+<hr>
+<h3>III. Le goulot d'étranglement s'appelle silicium</h3>
+<p><strong>🟢 Confirmé</strong></p>
+<p>Pour environ un milliard de dollars, des puces Nvidia ont franchi clandestinement la frontière chinoise, la B200 trônant en tête du marché noir. Les douanes chinoises ont intensifié l'inspection des cartons dans leurs ports, ciblant H20, RTX Pro 6000D et H200, selon <a href="https://asiatimes.com/2026/06/nvidia-gpu-crackdown-hits-china-linked-southeast-asia-data-centers/">Asia Times</a>. Le contrôle se joue désormais quai par quai, container par container.</p>
+<p>Côté américain, l'étau s'est resserré début juin : le Commerce a confirmé que les licences d'exportation s'appliquent aux filiales d'entreprises chinoises même hors de Chine, comme l'a rapporté <a href="https://www.aljazeera.com/economy/2026/6/1/us-says-ban-on-ai-chip-shipments-applies-to-chinese-firms-outside-china">Al Jazeera</a>. La règle suit l'entreprise, pas le territoire — une extraterritorialité qui transforme les data centers d'Asie du Sud-Est en zones grises surveillées.</p>
+<p>Le marché a entendu le message : le Nasdaq a cédé 1,15 % sur la faiblesse des semis, à 26 376 points, et NVDA évolue ~12 % sous son record de 235 $. La même logique gouverne les trois récits du jour — modèle, agent, puce sont devenus des biens dont l'État dose la circulation. Le silicium n'est plus un composant ; c'est une frontière physique que l'on inspecte à la main.</p>
+<p><strong>Pour Arnaud :</strong> NVDA (~208 $, +3 % le 15 juin) reste l'actif tenu en otage par cette politique : la demande de B200 est si forte qu'elle alimente un marché noir, mais le risque géopolitique plafonne le multiple. Résultats Q2 FY27 le 26 août — le catalyseur où l'on saura si les contrôles mordent vraiment les ventes. EQQB encaisse mécaniquement la volatilité des semis ; PLTR, adossé à la demande gouvernementale et souveraine, joue l'autre face du même thème « Verrous Souverains ».</p>
+<p><strong>Qui paie · Qui profite :</strong> Les data centers liés à la Chine et les contrebandiers paient le risque ; les fonderies hors-Chine conformes et les opérateurs « souverains » certifiés profitent de la prime à la conformité.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Pister les communiqués Commerce sur l'extension des licences aux filiales ; tout élargissement déplace la prime de risque sur l'ensemble de la chaîne semis.</p>
+<p><strong>🤔 Ce qui reste opaque :</strong> Le volume réel détourné — le « ~1 Md$ » est une estimation, et personne ne sait quelle part de la capacité chinoise tourne déjà sur du matériel de contrebande.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>La doctrine « interdire à tous les étrangers » appliquée à un produit logiciel mondial crée un précédent transposable à n'importe quel lancement de modèle — <a href="https://www.businesstoday.in/technology/news/story/anthropic-and-white-house-officials-to-hold-discussions-around-claude-fable-5-ban-536943-2026-06-15">Business Today</a>.</li>
+<li>Six jours seulement séparent le lancement de Fable 5 (9 juin) de son interdiction (15 juin) : le cycle réglementaire devient plus rapide que le cycle produit — <a href="https://www.washingtonpost.com/technology/2026/06/15/how-anthropic-lost-white-houses-trust-then-its-flagship-product/">Washington Post</a>.</li>
+<li>Le couplage 1 M tokens + computer-use rapproche l'agent du seuil d'autonomie que les régulateurs citent comme « risque de sécurité nationale » — convergence des Récits I et II, <a href="https://llm-stats.com/llm-updates">LLM-Stats</a>.</li>
+<li>L'extraterritorialité des licences (filiales hors Chine) annonce une surveillance accrue des data centers d'Asie du Sud-Est — <a href="https://asiatimes.com/2026/06/nvidia-gpu-crackdown-hits-china-linked-southeast-asia-data-centers/">Asia Times</a>.</li>
+<li>Un marché noir capable d'absorber ~1 Md$ de B200 signale que la demande chinoise dépasse de loin l'offre légale autorisée — <a href="https://www.aljazeera.com/economy/2026/6/1/us-says-ban-on-ai-chip-shipments-applies-to-chinese-firms-outside-china">Al Jazeera</a>.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.washingtonpost.com/technology/2026/06/15/how-anthropic-lost-white-houses-trust-then-its-flagship-product/">Washington Post — How Anthropic lost the White House's trust, then its flagship product (15 juin 2026)</a></li>
+<li><a href="https://www.businesstoday.in/technology/news/story/anthropic-and-white-house-officials-to-hold-discussions-around-claude-fable-5-ban-536943-2026-06-15">Business Today — Anthropic and White House officials to hold discussions around Claude Fable 5 ban (15 juin 2026)</a></li>
+<li><a href="https://llm-stats.com/llm-updates">LLM-Stats — LLM Updates (GPT-5.4 / GPT-5.4 Pro)</a></li>
+<li><a href="https://asiatimes.com/2026/06/nvidia-gpu-crackdown-hits-china-linked-southeast-asia-data-centers/">Asia Times — Nvidia GPU crackdown hits China-linked Southeast Asia data centers (juin 2026)</a></li>
+<li><a href="https://www.aljazeera.com/economy/2026/6/1/us-says-ban-on-ai-chip-shipments-applies-to-chinese-firms-outside-china">Al Jazeera — US says ban on AI chip shipments applies to Chinese firms outside China (1 juin 2026)</a></li>
+</ul></div><div class="bottom-nav"><a href="../2026-06-17.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
