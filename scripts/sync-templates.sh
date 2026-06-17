@@ -19,6 +19,9 @@ if [ "${1:-}" = "--install-hook" ]; then
   cat > "$HOOK" <<'HK'
 #!/usr/bin/env bash
 # Auto-sync templates to the Studio whenever a commit touches templates/.
+gd="$(git rev-parse --git-dir)"
+# No-op during rebase/merge/cherry-pick (HEAD is detached → the push would be bogus).
+if [ -d "$gd/rebase-merge" ] || [ -d "$gd/rebase-apply" ] || [ -f "$gd/MERGE_HEAD" ] || [ -f "$gd/CHERRY_PICK_HEAD" ]; then exit 0; fi
 if git diff-tree --no-commit-id --name-only -r HEAD | grep -q '^templates/'; then
   branch="$(git rev-parse --abbrev-ref HEAD)"
   echo "[post-commit] templates changed -> pushing origin/$branch (Studio will update)…"
