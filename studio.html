@@ -78,6 +78,10 @@
         .st-empty{color:var(--color-muted);font-size:var(--text-sm);font-style:italic;}
         .st-btn{background:var(--color-sea);color:#fff;border:none;padding:.5em 1em;cursor:pointer;font-size:13px;letter-spacing:.04em;}
         .st-btn--ghost{background:none;border:1px solid var(--color-border);color:var(--color-muted);}
+        .st-btn--danger{background:none;border:1px solid #e4b4b4;color:#b91c1c;}
+        .st-btn--danger:hover{background:#b91c1c;color:#fff;border-color:#b91c1c;}
+        .st-btn--danger:disabled{opacity:.4;cursor:not-allowed;}
+        .st-btn--danger:disabled:hover{background:none;color:#b91c1c;border-color:#e4b4b4;}
         .st-flash{color:#166534;font-size:13px;margin-left:.5em;}
         .st-subject{width:100%;padding:.5em .7em;border:1px solid var(--color-border);font:inherit;margin-bottom:var(--space-4);}
         /* the email mock */
@@ -246,6 +250,7 @@
                 <button class="st-btn" id="nm-save" type="button">Save</button>
                 <button class="st-btn st-btn--ghost" id="nm-copy" type="button">Copy for Claude</button>
                 <a class="st-btn st-btn--ghost" id="nm-view" target="_blank" style="text-decoration:none;">Open draft</a>
+                <button class="st-btn st-btn--danger" id="nm-delete" type="button" title="Delete this note permanently">Delete note</button>
                 <span class="st-save-state" id="nm-state"></span>
             </div>
         </div>
@@ -617,11 +622,12 @@
             $('nm-title').textContent = a.title;
             $('nm-sub').textContent = slug;
             $('nm-view').href = 'articles/' + slug + '.html';
-            var ta = $('nm-text'); ta.value = 'Loading…'; ta.disabled = true;
+            var ta = $('nm-text'); ta.value = 'Loading…'; ta.disabled = true; $('nm-delete').disabled = true;
             $('nm-state').textContent = '';
             $('notes-modal').classList.add('open');
             db.collection('draft-notes').doc(slug).get().then(function (doc) {
                 ta.value = (doc.exists && doc.data().text) || ''; ta.disabled = false; ta.focus();
+                $('nm-delete').disabled = !((ta.value || '').trim() || notesMap[slug]);
             }).catch(function (err) { ta.value = ''; ta.disabled = false; $('nm-state').textContent = 'load: ' + (err.code || 'error'); });
         }
 
@@ -653,6 +659,23 @@
             }).catch(function (err) { $('nm-state').textContent = 'error: ' + (err.code || 'save failed'); });
         }
 
+        function deleteNotes() {
+            if (!noteSlug || !isReviewer(user)) return;
+            var slug = noteSlug, a = byslug[slug] || {};
+            if (!(($('nm-text').value || '').trim()) && !notesMap[slug]) { $('nm-state').textContent = 'no note to delete'; return; }
+            if (!window.confirm('Delete your note on "' + (a.title || slug) + '"? This cannot be undone.')) return;
+            clearTimeout(saveTimer);
+            $('nm-state').textContent = 'deleting…';
+            var clearVal = (typeof firebase !== 'undefined' && firebase.firestore && firebase.firestore.FieldValue) ? firebase.firestore.FieldValue.delete() : '';
+            db.collection('draft-notes').doc(slug).set({ text: clearVal, updated: Date.now(), by: user.email }, { merge: true }).then(function () {
+                delete notesMap[slug];
+                $('nm-text').value = ''; $('nm-delete').disabled = true;
+                $('nm-state').textContent = 'deleted';
+                render();
+                setTimeout(closeNotes, 600);
+            }).catch(function (err) { $('nm-state').textContent = 'error: ' + (err.code || 'delete failed'); });
+        }
+
         rows.addEventListener('click', function (e) {
             var t = e.target;
             if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); return; }
@@ -667,9 +690,11 @@
         });
         $('nm-text').addEventListener('input', function () {
             clearTimeout(saveTimer); $('nm-state').textContent = 'editing…';
+            $('nm-delete').disabled = !((this.value || '').trim() || notesMap[noteSlug]);
             saveTimer = setTimeout(saveNotes, 800);
         });
         $('nm-save').addEventListener('click', function () { clearTimeout(saveTimer); saveNotes(); });
+        $('nm-delete').addEventListener('click', deleteNotes);
         $('nm-copy').addEventListener('click', function () {
             var a = byslug[noteSlug] || {}, txt = 'Apply these notes to the draft "' + (a.title || noteSlug) + '" (' + noteSlug + '):\n\n' + $('nm-text').value;
             (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {
