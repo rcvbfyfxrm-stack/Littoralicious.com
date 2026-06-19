@@ -143,5 +143,16 @@ export function replaceBetween(html, name, inner) {
   return { html: out, changed, found: true };
 }
 
+// ---- article body between the BODY:BEGIN/END markers (newer templates) ------
+// Markers carry trailing guidance text in real templates: `<!-- BODY:BEGIN — Technique. … -->`.
+export const BODY_RE = /(<!--\s*BODY:BEGIN[\s\S]*?-->)([\s\S]*?)(<!--\s*BODY:END[\s\S]*?-->)/i;
+export const hasBodyMarkers = (html) => BODY_RE.test(html);
+export function articleInner(html) { const m = html.match(BODY_RE); return m ? m[2].trim() : ""; }
+// Replace the inner body, tolerating a new body that includes the markers itself.
+export function spliceBody(html, newInner) {
+  const inner = String(newInner).replace(/^\s*<!--\s*BODY:BEGIN[\s\S]*?-->/i, "").replace(/<!--\s*BODY:END[\s\S]*?-->\s*$/i, "").trim();
+  return html.replace(BODY_RE, (_m, a, _mid, b) => `${a}\n${inner}\n${b}`);
+}
+
 export const log = (...m) => console.log(...m);
 export const warn = (...m) => console.warn("  WARN ", ...m);

@@ -10,6 +10,7 @@
     "check": "node tools/build.mjs --check",
     "validate": "node tools/validate.mjs",
     "lint": "node tools/lint.mjs",
+    "draft": "node tools/draft.mjs",
     "rewrite": "node tools/rewrite.mjs",
     "serve": "python3 -m http.server 8080",
     "preview": "npm run build && npm run serve",

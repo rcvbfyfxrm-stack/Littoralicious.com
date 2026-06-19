@@ -71,7 +71,7 @@ async function listQueued() {
 }
 
 // ---- body extraction / splicing --------------------------------------------
-const BODY_RE = /(<!--\s*BODY:BEGIN\s*-->)([\s\S]*?)(<!--\s*BODY:END\s*-->)/i;
+const BODY_RE = /(<!--\s*BODY:BEGIN[\s\S]*?-->)([\s\S]*?)(<!--\s*BODY:END[\s\S]*?-->)/i;
 function articleBody(html) {
   const m = html.match(BODY_RE);
   if (m) return { body: m[1] + m[2] + m[3], inner: m[2].trim(), hasMarkers: true };
@@ -107,7 +107,7 @@ if (flags.has("--apply")) {
   if (!bodyFile || !exists(bodyFile)) die(`--apply needs a file with the new body HTML (got: ${bodyFile || "nothing"})`);
   const html = read(file);
   if (!BODY_RE.test(html)) die(`articles/${slug}.html has no <!-- BODY:BEGIN -->/<!-- BODY:END --> markers — can't splice safely.\n  Add the markers around the body, or rewrite the file by hand.`);
-  const newInner = read(bodyFile).replace(/^\s*<!--\s*BODY:BEGIN\s*-->/i, "").replace(/<!--\s*BODY:END\s*-->\s*$/i, "").trim();
+  const newInner = read(bodyFile).replace(/^\s*<!--\s*BODY:BEGIN[\s\S]*?-->/i, "").replace(/<!--\s*BODY:END[\s\S]*?-->\s*$/i, "").trim();
 
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
   const bak = `${REWRITE_DIR}/${slug}.${stamp}.bak.html`;
