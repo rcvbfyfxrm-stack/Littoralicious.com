@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-06-19/">
+<title>Passages & Failles — Vendredi — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #8b3a3a; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Vendredi 19 Juin 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;154</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Passages & Failles</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-06-19.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">Synthèse</div>
+  <h1 class="article-title">Passages & Failles — Vendredi</h1>
+  <div class="article-date">Vendredi 19 Juin 2026 &mdash; Edition N&deg;154</div>
+</div><div class="article-body"><h2>En 60 Secondes</h2>
+<p>Le détroit d'Ormuz a rouvert au commerce le 18 juin — sept navires l'ont franchi, le brut est repassé sous 80 dollars, et la prime de guerre s'est évaporée des métaux : l'argent a perdu 7 % en une séance. Mais la détente géopolitique n'a pas adouci la Fed : pour sa première réunion, Kevin Warsh a livré un dot plot hawkish, et la crypto a saigné 111 millions de dollars de sorties d'ETF. Pendant ce temps, le code se fissurait — Microsoft a colmaté près de 200 failles en un seul mardi — tandis que le ciel battait des records, Ariane plaçant 36 satellites d'un coup. Passages qui se rouvrent, failles qui se multiplient : voilà la journée.</p>
+<hr>
+<h2>L'Urgent</h2>
+<p>Deux horloges tournent et il faut les regarder ensemble. La première est géopolitique : le blocus naval iranien doit être totalement levé le <strong>19 juillet</strong>, terme inscrit dans l'accord en quatorze points. La seconde est financière : RKLB entre au Nasdaq-100 le <strong>lundi 22 juin</strong>, dans trois jours — le seul catalyseur daté et mécanique du portefeuille cette semaine. Entre les deux, un marché qui digère une Fed plus dure que prévu et un dollar au plus haut depuis fin mars.</p>
+<hr>
+<h2>Les Récits du Jour — à travers les 9 beats</h2>
+<h3>I. Ormuz rouvre, la mer garde ses mines</h3>
+<p>Le mémorandum Trump-Pezeshkian a rendu le détroit au commerce : pas de péage iranien pour 60 jours, reprise des ventes de pétrole, blocus en voie de levée. Sept navires sont passés jeudi (<a href="https://gcaptain.com/maritime-industry-demands-clarity-on-hormuz-reopening-as-mine-risks-persist/" target="_blank" rel="noopener">gCaptain</a>). Mais INTERTANKO réclame des consignes claires : les mines n'ont pas été draguées, et le métier avance à l'estime. <em>(Mer & Navigation, Pouvoir & Frontières)</em></p>
+<h3>II. La première Fed de Warsh ne fait pas de cadeau</h3>
+<p>Taux maintenus à 3,50-3,75 %, mais 9 des 18 membres anticipent désormais des taux plus élevés en 2026 (<a href="https://www.bloomberg.com/news/articles/2026-06-17/asian-stocks-bonds-to-fall-on-hawkish-fed-signals-markets-wrap" target="_blank" rel="noopener">Bloomberg</a>). Le « Warsh put » n'existe pas. Le 10 ans US grimpe à 4,46 %, l'EUR/USD tombe à ~1,15. <em>(Marchés & Capital)</em></p>
+<h3>III. La crypto décroche du rallye actions</h3>
+<p>Les ETF spot ont rendu 111 M$ combinés (BTC −82, ETH −29), même IBIT et ARKB dans le rouge (<a href="https://www.coindesk.com/tech/2026/06/18/live-markets-bitcoin-and-ether-etfs-lost-usd111-million-combined-as-rate-cut-hopes-died" target="_blank" rel="noopener">CoinDesk</a>). BTC ~63 900 $, ETH ~1 741 $ : la crypto baisse pendant que les actions montent. Découplage à surveiller. <em>(Marchés & Capital)</em></p>
+<h3>IV. Deux cents brèches en un mardi</h3>
+<p>Microsoft signe son plus gros Patch Tuesday depuis 2003 : 198-208 CVE, 6 zero-days dont une exploitée (<a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-6-zero-days-200-flaws/" target="_blank" rel="noopener">BleepingComputer</a>). En parallèle, le gang « The Gentlemen » cache 1 570 victimes derrière une vitrine de 332 (<a href="https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/" target="_blank" rel="noopener">Krebs</a>). <em>(Pouvoir & Frontières)</em></p>
+<h3>V. Ariane bat son record, le solaire vise le trône</h3>
+<p>36 satellites Amazon Leo en orbite, charge utile record d'Ariane, premiers boosters P160C (+10 %) (<a href="https://newsroom.arianespace.com/arianespace-successfully-launches-36-additional-amazon-leo-satellites-with-an-ariane-64-equipped-with-advanced-boosters/" target="_blank" rel="noopener">Arianespace</a>). Au sol, BNEF voit le solaire premier mondial d'ici 2032 et le stockage ×17. <em>(Ciel & Énergie)</em></p>
+<h3>VI. La science médicale avance, sobrement</h3>
+<p>Les agonistes GLP-1 sont associés à −41 % de cancers liés à l'obésité sur 2 ans (<a href="https://jamanetwork.com/journals/jamaoncology/article-abstract/2837870" target="_blank" rel="noopener">JAMA Oncology</a>, n=86 632, HR 0,83) — un signal de plus pour la franchise obésité de Lilly. Côté hépatite B, le bepirovirsen atteint 20 % de guérison fonctionnelle vs 0 % placebo (<a href="https://www.nejm.org/doi/abs/10.1056/NEJMoa2515131" target="_blank" rel="noopener">NEJM</a>). <em>(Corps & Longévité)</em></p>
+<h3>VII. À table, la France rafle tout — et l'IA stagne au labo</h3>
+<p>La France signe son record historique aux Decanter World Wine Awards (254 médailles de haut niveau, 5 Best in Show pour la Bourgogne, <a href="https://www.decanter.com/decanter-awards/decanter-world-wine-awards-2026-results-revealed-global-wine-quality-reaches-new-heights/" target="_blank" rel="noopener">Decanter</a>). Côté silicium, le LifeSciBench d'OpenAI douche les ardeurs : 36,1 % de réussite seulement (<a href="https://www.techtimes.com/articles/318638/20260618/openai-life-science-benchmark-reveals-ai-passes-only-1-3-scientific-research-tasks.htm" target="_blank" rel="noopener">TechTimes</a>). <em>(Table & Terroir, Silicium & Intelligence)</em></p>
+<h3>VIII. Bonne nouvelle : les mangroves repartent</h3>
+<p>Premier rebond net en quatre décennies : sur 16 ans, les gains de mangroves dépassent les pertes, le déclin net tombe à ~1 % (étude <a href="https://www.plantsci.cam.ac.uk/news/global-mangrove-forests-recovering-offering-hopeful-sign-climate-and-coastal-resilience" target="_blank" rel="noopener">Science</a>). En Europe, 603 barrages retirés ont reconnecté 3 700 km de rivières. <em>(Bonnes Nouvelles)</em></p>
+<hr>
+<h2>Chiffres du Jour</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ / Niveau</th><th>Source</th></tr></thead><tbody>
+<tr><td>S&amp;P 500</td><td>7 500,58</td><td>+1,08 %</td><td><a href="https://www.bloomberg.com/news/articles/2026-06-17/asian-stocks-bonds-to-fall-on-hawkish-fed-signals-markets-wrap" target="_blank" rel="noopener">Bloomberg</a></td></tr>
+<tr><td>Nasdaq Composite</td><td>26 517,93</td><td>+1,91 %</td><td><a href="https://www.bloomberg.com/news/articles/2026-06-17/asian-stocks-bonds-to-fall-on-hawkish-fed-signals-markets-wrap" target="_blank" rel="noopener">Bloomberg</a></td></tr>
+<tr><td>Bitcoin (BTC)</td><td>~ 63 900 $</td><td>−1,3 % (24 h)</td><td><a href="https://www.coindesk.com/price/bitcoin" target="_blank" rel="noopener">CoinDesk</a></td></tr>
+<tr><td>Ethereum (ETH)</td><td>~ 1 741 $</td><td>−1,3 % (24 h)</td><td><a href="https://fortune.com/article/price-of-ethereum-06-18-2026/" target="_blank" rel="noopener">Fortune</a></td></tr>
+<tr><td>VIX</td><td>~ 16,75</td><td>−9,16 % (apaisement)</td><td><a href="https://www.bloomberg.com/news/articles/2026-06-17/asian-stocks-bonds-to-fall-on-hawkish-fed-signals-markets-wrap" target="_blank" rel="noopener">Bloomberg</a></td></tr>
+<tr><td>Fear &amp; Greed (CNN)</td><td>37</td><td>Peur (vs 33 le 10 juin)</td><td><a href="https://www.cnn.com/markets/fear-and-greed" target="_blank" rel="noopener">CNN</a></td></tr>
+<tr><td>Brent</td><td>&lt; 78 $/bbl</td><td>−2 %+, plus bas depuis mars</td><td><a href="https://www.cnbc.com/amp/2026/06/18/strait-hormuz-reopening-shipping-oil.html" target="_blank" rel="noopener">CNBC</a></td></tr>
+<tr><td>Or (spot)</td><td>~ 4 210 $/oz</td><td>−2,4 % (détente + Fed)</td><td><a href="https://tradingeconomics.com/commodity/gold" target="_blank" rel="noopener">Trading Economics</a></td></tr>
+<tr><td>Argent (spot)</td><td>~ 65,32 $/oz</td><td>−7,0 % (unwind violent)</td><td><a href="https://www.tradingview.com/symbols/XAGUSD/" target="_blank" rel="noopener">TradingView</a></td></tr>
+<tr><td>EUR/USD</td><td>~ 1,15</td><td>plus bas depuis fin mars</td><td><a href="https://tradingeconomics.com/euro-area/currency" target="_blank" rel="noopener">Trading Economics</a></td></tr>
+<tr><td>US 10 ans</td><td>4,46 %</td><td>élevé (Fed hawkish)</td><td><a href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank" rel="noopener">Trading Economics</a></td></tr>
+</tbody></table>
+<hr>
+<h2>Pour Arnaud — la lecture du portefeuille</h2>
+<p>La journée est un grand écart entre soulagement et resserrement. La détente sur Ormuz a fait dégonfler la prime de guerre : <strong>l'argent perd 7 %</strong> en séance (ACTION) — le mouvement le plus brutal du portefeuille, à surveiller pour une stabilisation avant tout arbitrage. À l'inverse, la Fed de Warsh maintient la pression sur les actifs sensibles aux taux : <strong>BTC, ETH et PLTR</strong> restent contraints. Le catalyseur daté de la semaine reste <strong>RKLB</strong> (entrée Nasdaq-100 lundi 22 juin, ACTION) : achats passifs mécaniques en vue. Les valeurs IA/cloud (NVDA, GOOGL, AMZN) profitent du rallye chips sans risque événementiel proche (CLEAR), tandis que <strong>TSLA</strong> (livraisons début juillet) et <strong>UNH</strong> (résultats mi-juillet) approchent de leurs prints binaires (WATCH). Avec ~45,9 K$ de liquidités, la séance offre moins une opportunité d'achat franc qu'un moment d'observation : laisser l'unwind des métaux trouver son plancher, garder la poudre sèche pour l'après-22 juin.</p>
+<hr>
+<h2>Ce qui reste opaque</h2>
+<ul>
+<li>Combien de mines restent actives dans les chenaux d'Ormuz — le risque non coté qui pourrait tout inverser.</li>
+<li>Si la Fed de Warsh tient sa ligne hawkish ou plie devant un ralentissement — la trajectoire des taux gouverne la crypto et les valeurs de croissance.</li>
+<li>L'ampleur réelle de l'exposition cyber : « The Gentlemen » cache 1 570 victimes derrière 332 affichées — les statistiques publiques sous-estiment d'un facteur 4 à 5.</li>
+<li>Si la chaîne lithium/minéraux suivra le ×17 du stockage sans flambée des prix.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.bloomberg.com/news/articles/2026-06-17/asian-stocks-bonds-to-fall-on-hawkish-fed-signals-markets-wrap" target="_blank" rel="noopener">Bloomberg — Hawkish Fed, markets wrap, 17-18 juin 2026</a></li>
+<li><a href="https://www.coindesk.com/tech/2026/06/18/live-markets-bitcoin-and-ether-etfs-lost-usd111-million-combined-as-rate-cut-hopes-died" target="_blank" rel="noopener">CoinDesk — BTC & ETH ETFs lost $111M combined, 18 juin 2026</a></li>
+<li><a href="https://www.cnbc.com/amp/2026/06/18/strait-hormuz-reopening-shipping-oil.html" target="_blank" rel="noopener">CNBC — Strait of Hormuz reopening, 18 juin 2026</a></li>
+<li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-june-2026-patch-tuesday-fixes-6-zero-days-200-flaws/" target="_blank" rel="noopener">BleepingComputer — June 2026 Patch Tuesday</a></li>
+<li><a href="https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/" target="_blank" rel="noopener">Krebs on Security — The Gentlemen, 10 juin 2026</a></li>
+<li><a href="https://newsroom.arianespace.com/arianespace-successfully-launches-36-additional-amazon-leo-satellites-with-an-ariane-64-equipped-with-advanced-boosters/" target="_blank" rel="noopener">Arianespace — 36 Amazon Leo satellites, 17 juin 2026</a></li>
+<li><a href="https://about.bnef.com/insights/clean-energy/bloombergnefs-new-energy-outlook-2026-transition-to-newer-technologies-expanded-electrification-to-strengthen-nations-energy-security/" target="_blank" rel="noopener">BloombergNEF — New Energy Outlook 2026</a></li>
+<li><a href="https://jamanetwork.com/journals/jamaoncology/article-abstract/2837870" target="_blank" rel="noopener">JAMA Oncology — GLP-1 & obesity-related cancer</a></li>
+<li><a href="https://www.decanter.com/decanter-awards/decanter-world-wine-awards-2026-results-revealed-global-wine-quality-reaches-new-heights/" target="_blank" rel="noopener">Decanter — World Wine Awards 2026</a></li>
+<li><a href="https://www.plantsci.cam.ac.uk/news/global-mangrove-forests-recovering-offering-hopeful-sign-climate-and-coastal-resilience" target="_blank" rel="noopener">Science / Univ. Cambridge — Global mangrove forests recovering</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-06-19.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Synthèse &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
