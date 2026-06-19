@@ -450,6 +450,28 @@ h4 { font-size: var(--text-lg); }
 }
 
 /* --------------------------------------------------------------------------
+   LIGHT-MODE COLOURED BOXES — calm the saturated inline fills
+   Articles hard-code fairly saturated pastel box fills inline. On a bright
+   phone screen these glare and the text is tiring to read. The site's own
+   design intent (see annotation palette) is a *faint* tint + a coloured left
+   border. Here we soften the inline fills to that faint level. This is the
+   base rule; the dark-mode block below overrides it (later source + matching
+   specificity), so dark mode still gets the dark panel treatment.
+   -------------------------------------------------------------------------- */
+.article__content div[style*="background: #e2e5e9"],
+.article__content div[style*="background:#e2e5e9"] { background: #f3f5f7 !important; }
+.article__content div[style*="background: #d4dce8"],
+.article__content div[style*="background:#d4dce8"] { background: #eef2f8 !important; }
+.article__content div[style*="background: #d1e7dd"],
+.article__content div[style*="background:#d1e7dd"] { background: #ecf5f0 !important; }
+.article__content div[style*="background: #c8cfe0"],
+.article__content div[style*="background:#c8cfe0"] { background: #eef1f8 !important; }
+.article__content div[style*="background: #f5deb3"],
+.article__content div[style*="background:#f5deb3"] { background: #f8f1e1 !important; }
+.article__content div[style*="background: #f0c0c0"],
+.article__content div[style*="background:#f0c0c0"] { background: #f8ecec !important; }
+
+/* --------------------------------------------------------------------------
    DARK-MODE COLOURED BOXES — readability fix (phones auto-apply dark mode)
    Articles hard-code light pastel box fills inline (e.g. #d1e7dd, #f5deb3).
    In dark mode the page text turns light, so those bright boxes glared and
