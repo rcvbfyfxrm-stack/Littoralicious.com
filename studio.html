@@ -232,6 +232,7 @@
             section's live/draft split (green = live, amber = draft) so you can see at a glance where you're shipping vs. still drafting.
             Sections start <strong>folded</strong>; click a header to unfold it (your open/closed choice is remembered, and a search opens
             everything). Inside each section, <strong>drafts sit on top</strong>, newest first. Switch to <strong>By date</strong> for a flat list.
+            The <strong>Draft</strong> and <strong>Needs review</strong> filters always drop the section grouping and list every draft flat, newest produced first &mdash; a clean review queue.
         </p>
     </div>
 
@@ -312,7 +313,9 @@
                 return true;
             });
             if (!list.length) { rows.innerHTML = '<tr><td colspan="8" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
-            rows.innerHTML = groupMode === 'section' ? renderGrouped(list) : list.map(rowHtml).join('');
+            // Review queue (Draft / Needs review): flat list of all drafts, newest produced first, no section grouping.
+            var reviewView = (filter === 'draft' || filter === 'needs-review');
+            rows.innerHTML = (groupMode === 'section' && !reviewView) ? renderGrouped(list) : list.map(rowHtml).join('');
         }
 
         // counts per section across the WHOLE library, so the live/draft split stays true even when a filter is on
