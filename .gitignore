@@ -7,6 +7,9 @@ package-lock.json
 firebase-debug.log
 *-debug.log
 
+# rewrite round-trip scratch (briefs + pre-rewrite backups)
+.rewrite/
+
 # build scratch / recovery staging
 _live-reference/
 *.live.html

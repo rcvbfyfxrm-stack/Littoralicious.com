@@ -144,9 +144,11 @@
             <ul class="rv-list" id="rv-list"></ul>
             <div class="rv-empty" id="rv-empty">No notes yet.</div>
             <div class="rv-side__foot">
+                <button class="rv-btn" id="rv-rewrite" type="button" style="display:none;" title="Bundle these notes and queue this draft for a rewrite">Request rewrite &rarr;</button>
                 <button class="rv-btn rv-btn--ghost" id="rv-copy" type="button">Copy summary</button>
                 <button class="rv-btn rv-btn--ghost" id="rv-download" type="button">Download .md</button>
                 <span class="rv-flash" id="rv-flash" aria-live="polite"></span>
+                <span class="rv-rw-status" id="rv-rw-status" style="flex-basis:100%;font-family:var(--font-mono);font-size:11px;color:var(--color-salt);"></span>
             </div>
         </aside>
     </div>
@@ -454,6 +456,43 @@
         });
         $('rv-jump').addEventListener('click', function () { $('rv-side').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 
+        // ---- request rewrite (bundle notes -> the PUBLIC doc the CLI reads) ----
+        // The private draft-notes store needs a reviewer token the CLI can't get,
+        // so on request we mirror the notes into articles/<slug>/_rewrite/request
+        // (public read) + append the slug to articles/_rewrite-queue. Then:
+        //   npm run rewrite -- <slug>            builds the brief
+        //   npm run rewrite -- <slug> --apply …  splices the rewrite + re-lints + flips status.
+        var rewriteBtn = $('rv-rewrite'), rwStatusEl = $('rv-rw-status'), unsubReq = null;
+        function reqDoc() { return db.collection('articles').doc(slug).collection('_rewrite').doc('request'); }
+        function queueDoc() { return db.collection('articles').doc('_rewrite-queue'); }
+        function fmtAgo(ms) { if (!ms) return ''; var s = Math.round((Date.now() - ms) / 1000); if (s < 60) return 'just now'; var m = Math.round(s / 60); if (m < 60) return m + 'm ago'; var h = Math.round(m / 60); if (h < 24) return h + 'h ago'; return Math.round(h / 24) + 'd ago'; }
+        function paintReqStatus(d) {
+            if (!rwStatusEl) return;
+            if (!d || !d.status) { rwStatusEl.textContent = ''; return; }
+            if (d.status === 'rewritten') {
+                rwStatusEl.innerHTML = 'Rewritten ✓ ' + esc(fmtAgo(d.rewrittenAt)) + ' — <button class="rv-link" id="rv-reload" type="button">reload to re-review</button>';
+                var rb = $('rv-reload'); if (rb) rb.addEventListener('click', function () { location.reload(); });
+            } else if (d.status === 'queued') {
+                rwStatusEl.textContent = 'Queued for rewrite · ' + fmtAgo(d.requestedAt) + ' — run:  npm run rewrite -- ' + slug;
+            } else { rwStatusEl.textContent = ''; }
+        }
+        if (rewriteBtn) rewriteBtn.addEventListener('click', function () {
+            if (!signedReviewer) { flash('sign in as a reviewer first', true); return; }
+            var ordered = orderedNotes();
+            if (!ordered.length && !(state.overall || '').trim()) { flash('leave a note or an overall first', true); return; }
+            rewriteBtn.disabled = true;
+            reqDoc().set({
+                status: 'queued', requestedBy: user.email, requestedAt: Date.now(),
+                overall: state.overall || '', count: ordered.length,
+                notes: ordered.map(function (n) { return { order: (typeof n.idx === 'number' ? n.idx : 0), anchor: n.anchor || '', anchorKey: n.key || '', text: n.body || '' }; }),
+                markdown: buildMarkdown()
+            }).then(function () {
+                return queueDoc().set({ slugs: firebase.firestore.FieldValue.arrayUnion(slug), updated: Date.now() }, { merge: true });
+            }).then(function () { flash('queued for rewrite'); })
+              .catch(function (e) { flash('queue failed: ' + (e.code || 'error'), true); })
+              .then(function () { rewriteBtn.disabled = false; });
+        });
+
         // ===================== auth + live sync =====================
         function subscribe() {
             unsubscribe();
@@ -474,6 +513,10 @@
                 state.overall = d.overall || '';
                 if (document.activeElement !== overallEl) overallEl.value = state.overall;
             }, function () {});
+            if (!isTpl) {
+                if (unsubReq) { unsubReq(); }
+                unsubReq = reqDoc().onSnapshot(function (doc) { paintReqStatus(doc.exists ? doc.data() : null); }, function () {});
+            }
         }
         function maybeWriteParaCount(count) {
             if (!signedReviewer || count === writtenParaCount) return;
@@ -485,6 +528,7 @@
         function unsubscribe() {
             if (unsubNotes) { unsubNotes(); unsubNotes = null; }
             if (unsubDoc) { unsubDoc(); unsubDoc = null; }
+            if (unsubReq) { unsubReq(); unsubReq = null; }
             writtenParaCount = -1;
         }
         function clearNotesUI() {
@@ -501,11 +545,14 @@
                     $('auth-out').style.display = 'none'; $('auth-in').style.display = 'inline';
                     $('auth-who').textContent = 'Signed in · ' + u.email;
                     overallEl.disabled = false;
+                    if (!isTpl && rewriteBtn) rewriteBtn.style.display = '';
                     subscribe();
                 } else {
                     $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
                     overallEl.disabled = true;
+                    if (rewriteBtn) rewriteBtn.style.display = 'none';
+                    if (rwStatusEl) rwStatusEl.textContent = '';
                     unsubscribe(); clearNotesUI(); setSync(false, 'signed out');
                 }
             });
