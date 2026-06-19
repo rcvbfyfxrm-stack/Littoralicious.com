@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Instagram Drop — The Sapiens Method · LITTORALICIOUS</title>
+    <style>
+        :root{
+            --paper:#fafafa; --card:#fff; --ink:#0a0a0a; --sea:#2d4a5e; --sea-dk:#1f3543;
+            --salt:#94a3b8; --muted:#5b6470; --border:#e6e3dd; --subtle:#f1efe9;
+            --feed:#2d4a5e; --carousel:#7a5230; --reel:#5b3a6e;
+            --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+            --mono:ui-monospace,'SF Mono',Menlo,monospace;
+        }
+        *{box-sizing:border-box;}
+        body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+        a{color:var(--sea);}
+        .wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+        .label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--salt);}
+
+        /* masthead */
+        header.mast{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30;}
+        .mast__in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1240px;margin:0 auto;}
+        .mast__brand{font-family:var(--serif);font-weight:700;letter-spacing:.18em;font-size:18px;}
+        .mast__brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--salt);font-weight:400;margin-top:2px;}
+        .mast__back{font-family:var(--mono);font-size:12px;text-decoration:none;border:1px solid var(--border);padding:.45em .9em;color:var(--muted);}
+        .mast__back:hover{border-color:var(--sea);color:var(--sea);}
+
+        /* hero */
+        .hero{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+        .hero h1{font-family:var(--serif);font-size:clamp(34px,6vw,60px);line-height:1.04;margin:.2em 0 .3em;max-width:18ch;letter-spacing:-.01em;}
+        .hero p.sub{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 18px;}
+        .hero .src{font-family:var(--mono);font-size:12.5px;color:var(--muted);}
+        .hero .src a{text-decoration:none;border-bottom:1px solid var(--sea);}
+        .hero .stat-row{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;}
+        .hero .stat b{font-family:var(--serif);font-size:30px;color:var(--sea);display:block;line-height:1;}
+        .hero .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--salt);}
+
+        /* playbook */
+        .play{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:38px 0;}
+        @media(max-width:780px){.play{grid-template-columns:1fr;}}
+        .play .pc{background:var(--card);border:1px solid var(--border);padding:22px;}
+        .play .pc h3{font-family:var(--serif);margin:.2em 0 .5em;font-size:18px;}
+        .play .pc ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);}
+        .play .pc li{margin:.35em 0;}
+
+        /* filter */
+        .filter{position:sticky;top:62px;z-index:20;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;display:flex;gap:8px;flex-wrap:wrap;}
+        .pill{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.45em 1em;cursor:pointer;}
+        .pill.on{border-color:var(--sea);color:#fff;background:var(--sea);}
+        .pill .n{opacity:.7;margin-left:.4em;}
+
+        /* cards */
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:22px;padding:30px 0 10px;}
+        .drop{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+        .mock{position:relative;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:
+            linear-gradient(135deg,#26201b 0%,#3a3128 48%,#211d18 100%);}
+        .mock::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 7px);pointer-events:none;}
+        .mock .card-cover{background:#fbfaf7;color:#0a0a0a;padding:26px 22px;max-width:88%;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+        .mock .hook{font-family:var(--serif);font-size:25px;line-height:1.12;letter-spacing:-.01em;}
+        .mock .subhook{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--sea);margin-top:12px;text-transform:uppercase;}
+        .mock .corner{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.55);}
+        .mock .tcorner{position:absolute;right:12px;top:12px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.4);padding:3px 7px;text-transform:uppercase;}
+        .drop[data-type="feed"] .tcorner{background:rgba(45,74,94,.55);}
+        .drop[data-type="carousel"] .tcorner{background:rgba(122,82,48,.6);}
+        .drop[data-type="reel"] .tcorner{background:rgba(91,58,110,.6);}
+
+        .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px;}
+        .seg{}
+        .seg .h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}
+        .seg .h .label{margin:0;}
+        .copy{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.3em .7em;cursor:pointer;}
+        .copy:hover{border-color:var(--sea);color:var(--sea);}
+        .caption{font-size:14px;white-space:pre-wrap;color:#222;background:var(--subtle);border-left:3px solid var(--sea);padding:11px 13px;}
+        .tags{font-family:var(--mono);font-size:12px;color:var(--sea);word-spacing:.1em;line-height:1.7;}
+        .brief{font-size:13px;color:var(--muted);}
+        .brief ol{margin:.3em 0;padding-left:18px;}
+        .intel{border:1px dashed var(--border);background:#f9fbfc;padding:11px 13px;font-size:12.5px;}
+        .intel .row{display:flex;gap:8px;padding:3px 0;}
+        .intel .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:46px;padding-top:2px;}
+        .intel .v{color:var(--muted);flex:1;}
+
+        /* cadence */
+        .cadence{padding:44px 0 20px;border-top:1px solid var(--border);margin-top:30px;}
+        .cadence h2,.section-h{font-family:var(--serif);font-size:26px;margin:0 0 18px;}
+        .week{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--subtle);font-size:15px;flex-wrap:wrap;}
+        .week .wk{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:74px;}
+        .week .d{color:#222;}
+        .week .d em{color:var(--salt);font-style:normal;font-family:var(--mono);font-size:11px;}
+
+        footer{border-top:2px solid var(--ink);margin-top:40px;padding:26px 0 50px;font-size:13px;color:var(--muted);}
+        footer a{font-weight:600;text-decoration:none;}
+
+        .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:.7em 1.2em;opacity:0;pointer-events:none;transition:.25s;z-index:50;}
+        .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    </style>
+</head>
+<body>
+    <header class="mast">
+        <div class="mast__in">
+            <div class="mast__brand">LITTORALICIOUS<small>Instagram Drop Brief</small></div>
+            <a class="mast__back" href="studio-social.html">&larr; Social planner</a>
+        </div>
+    </header>
+
+    <div class="wrap">
+        <section class="hero">
+            <div class="label">The Bridge · Instagram drop</div>
+            <h1>Understand first, act later.</h1>
+            <p class="sub">elBulli reopened this summer &mdash; as a museum, not a kitchen. Nine posts that turn that contradiction, the Sapiens method, and the printed Bullipedia into a thumb-stopping reason to read the piece, then into a galley habit a chef can use.</p>
+            <p class="src">Source: <a href="https://www.littoralicious.com/articles/elbulli-sapiens-method.html" target="_blank" rel="noopener">The Sapiens Method: How elBulli Turned a Kitchen Into an Encyclopedia</a> &middot; draft &middot; <span id="src-note">hold posting until published</span></p>
+            <div class="stat-row">
+                <div class="stat"><b id="n-total">9</b><span>posts</span></div>
+                <div class="stat"><b id="n-feed">4</b><span>feed</span></div>
+                <div class="stat"><b id="n-carousel">3</b><span>carousel</span></div>
+                <div class="stat"><b id="n-reel">2</b><span>reel</span></div>
+                <div class="stat"><b>5</b><span>week cadence</span></div>
+            </div>
+        </section>
+
+        <section class="play">
+            <div class="pc">
+                <div class="label">Algorithm 2026</div>
+                <h3>Build for the save</h3>
+                <ul>
+                    <li>Saves &gt; likes &mdash; frameworks &amp; lists, not pretty plates.</li>
+                    <li>First second decides a reel: hard cut, silent text, motion.</li>
+                    <li>Carousels reach ~1.4&times; &mdash; 5&ndash;6 slides each.</li>
+                    <li>Reply to comments in full sentences; provoke the DM.</li>
+                </ul>
+            </div>
+            <div class="pc">
+                <div class="label">Frameworks used</div>
+                <h3>One angle per post</h3>
+                <ul>
+                    <li><strong>Curiosity gap</strong> &mdash; name the topic, withhold the how.</li>
+                    <li><strong>Contrarian claim</strong> (Godin) &mdash; &ldquo;open, stoves cold&rdquo;.</li>
+                    <li><strong>Specific number</strong> (Hormozi) &mdash; 20+ books, 1846, 69.</li>
+                    <li><strong>Stakes</strong> &mdash; the midnight provisioning scramble.</li>
+                </ul>
+            </div>
+            <div class="pc">
+                <div class="label">Timing</div>
+                <h3>US-EU bridge</h3>
+                <ul>
+                    <li>Culinary: Tue 8 PM EST / Sat 9 AM EST.</li>
+                    <li>Manifesto: Mon&ndash;Wed 11 AM EST.</li>
+                    <li>Post when US East 10 AM overlaps Europe 4 PM.</li>
+                    <li>~2 drops/week over 5 weeks (schedule below).</li>
+                </ul>
+            </div>
+        </section>
+
+        <nav class="filter" id="filter">
+            <button class="pill on" data-f="all">All <span class="n">9</span></button>
+            <button class="pill" data-f="feed">Feed <span class="n">4</span></button>
+            <button class="pill" data-f="carousel">Carousel <span class="n">3</span></button>
+            <button class="pill" data-f="reel">Reel <span class="n">2</span></button>
+        </nav>
+
+        <section class="grid" id="grid"></section>
+
+        <section class="cadence">
+            <h2>Posting cadence</h2>
+            <div id="cadence"></div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="wrap">
+            Drop brief for <a href="https://www.littoralicious.com/articles/elbulli-sapiens-method.html" target="_blank" rel="noopener">The Sapiens Method</a>
+            &middot; post as <strong>@littoralicious</strong> &middot; hold until the article is published.
+            <span style="display:block;margin-top:8px;color:var(--salt);font-family:var(--mono);font-size:11px;">LITTORALICIOUS &middot; Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">copied</div>
+
+    <script>
+    const POSTS = [
+      { id:0, hook:"Open. Stoves Cold.", subhook:"elBulli, summer 2026", type:"feed", drop:"Tue 8 PM EST · 2 AM CET",
+        caption:"elBulli opens its doors again on 1 May 2026 and will not cook you a single thing. The doors at Cala Montjoi swing open for the season (1 May to 12 October), but the kitchen poured its last plate on 30 July 2011 and has never served food since. What you walk through now is elBulli1846 — the old restaurant turned museum, 69 installations across nearly 4,000 m2, billed as the first restaurant on earth made into a museum. The most influential kitchen ever no longer sells a menu. It sells a method. Why a chef would close at the top, and what he built instead, is the whole story. The full piece is on Littoralicious @littoralicious — link in bio.",
+        tags:["yachtchef","superyachtchef","elbulli","ferranadria","costabrava","gastronomy","culinaryarts","fooddesign","calamontjoi","chefslife"],
+        brief:"On-image: <strong>OPEN. STOVES COLD.</strong> in black Georgia serif on a clean white card, sub-line ‘elBulli, summer 2026’. Pair with a B&amp;W shot of the empty Cala Montjoi cove or a dark, unlit dining room. No people, no food.",
+        why:"Contradiction in the first five words opens a curiosity gap, anchored to the exact 2026 season and the 2011 closure.",
+        fact:"elBulli closed at its peak — voted World's Best Restaurant a record five times (2002, 2006–2009). — World's 50 Best" },
+
+      { id:1, hook:"World's Best. Closed Anyway.", subhook:"Then sold a method, not a menu", type:"carousel", drop:"Sat 9 AM EST · 3 PM CET",
+        caption:"It was named the world's best restaurant and Ferran Adria shut it on purpose. The last dinner went out 30 July 2011, and elBulli has stayed dark as a restaurant ever since — no relaunch, no comeback service. The site now runs two lives: a seasonal museum (elBulli1846, open 1 May to 12 October 2026) and, off-season, a research lab called elBulliDNA. What replaced the menu is a system called Sapiens, motto 'understand first, act later' — and it turns out it maps almost exactly onto how you should plan a charter week. That overlap is the part worth your ten minutes. The full piece is on Littoralicious @littoralicious — link in bio.",
+        tags:["yachtchef","superyachtchef","charterseason","ferranadria","elbulli","sapiensmethod","galleylife","menuplanning","gastronomy","chefmindset"],
+        brief:"6 slides — 1) cover ‘World's Best. Closed Anyway.’ 2) ‘30 July 2011 — the last dinner. No relaunch since.’ 3) ‘Two lives now: elBulli1846 museum / elBulliDNA lab.’ 4) ‘What replaced the menu: a method called Sapiens.’ 5) ‘Motto: understand first, act later.’ 6) ‘It maps onto your charter week → read it. @littoralicious’.",
+        why:"Leads with the conflict of closing at the peak; the 2011 date plus the Sapiens-to-charter link sets the stakes for a working chef.",
+        fact:"elBulli served ~8,000 diners a season against an estimated 2 million requests. — elBullifoundation" },
+
+      { id:2, hook:"Understand first, act later", subhook:"The rule behind 20+ books", type:"feed", drop:"Wed 8 PM EST · 2 AM CET",
+        caption:"Ferran Adria's whole method fits in four words: understand first, act later.\n\nBefore elBulli created a single dish, the team built an honest map of everything known about a subject — and everything NOT known. Science, history, the trade's own language, culture, all of it. That map is now the Bullipedia: printed volumes near 500 pages each, more than 20 published of a planned 50.\n\nThe loop they ran to get there is the part you can steal for a charter week. It starts with one quiet question most of us skip at midnight.\n\nThe full piece is on Littoralicious — link in bio. @littoralicious",
+        tags:["yachtchef","superyachtchef","galleylife","charterchef","ferranadria","elbulli","culinarymethod","cheflife","mise"],
+        brief:"On-image: <strong>Understand first, act later.</strong> black serif on white, sub ‘the rule behind 20+ books’. B&amp;W: a tall stack of thick books, or a hand resting on an open notebook.",
+        why:"Striking specific number (20+ of 50 books) plus a four-word method as the cover line; curiosity gap on the loop.",
+        fact:"The Sapiens book, 'Connecting Knowledge', runs 568 pages. — elBullifoundation" },
+
+      { id:3, hook:"Keep the argument alive", subhook:"Why elBulli never settled", type:"reel", drop:"Mon 11 AM EST · 5 PM CET",
+        caption:"elBulli built its method to keep disagreement alive on purpose.\n\nMost kitchens chase one right answer and lock it in. The Sapiens method does the opposite: it studies a dish in full context, never in isolation, and deliberately refuses to let the work harden into dogma. That's how a kitchen became an encyclopedia instead of a fixed recipe file.\n\nThe spark was one line from chef Jacques Maximin in the 1980s — creativity is not copying — and it re-routed everything Adria did next.\n\nRead how it translates to your galley on Littoralicious — link in bio. @littoralicious",
+        tags:["yachtchef","superyachtchef","cheflife","ferranadria","elbulli","creativityinthekitchen","galleylife","culinaryhistory"],
+        brief:"Reel 0–2s: hard cut to ‘creativity is not copying’ in white on black, silence. 2–8s: captions — most kitchens lock one answer; Sapiens keeps arguing. 8–15s: the no-dogma payoff + ‘read how it maps to your galley’. Silent-friendly subtitles throughout.",
+        why:"Counterintuitive claim (a method built to preserve disagreement) plus a named, dated spark.",
+        fact:"The spark: Jacques Maximin's line 'creativity is not copying', heard by Adrià on the Côte d'Azur in the 1980s. — elBulli chronology" },
+
+      { id:4, hook:"Your provisioning list is wrong", subhook:"Build it from the gaps", type:"feed", drop:"Tue 8 PM EST · 2 AM CET",
+        caption:"Your provisioning order should be the last thing you write, not the first.\n\nFerran Adria's Sapiens method has one move that fixes the midnight scramble: classify everything you know about the week until the gaps show themselves. That gap list IS your order. Split fixed from flexible first (allergies, charter dates, guest count, the owner's hard no's), then read the cruising ground (what's landing at the port, what the sea state allows). What's left unaccounted for is exactly what you buy.\n\nWe broke the full loop down for a single charter week. The full piece is on Littoralicious — link in bio. @littoralicious",
+        tags:["yachtchef","superyachtchef","galleylife","charterweek","provisioning","ferranadria","elbulli","crewlife"],
+        brief:"On-image: <strong>Your provisioning list is wrong</strong>, sub ‘build it from the gaps’. B&amp;W: a marked-up provisioning list on a clipboard, or a half-empty market crate.",
+        why:"Contrarian claim that reframes a daily chore and promises a concrete fix.",
+        fact:"Sapiens runs a six-step loop: Order, Contextualise, Classify, Imagine, Create, Understand. — elBullifoundation / ProFuturo" },
+
+      { id:5, hook:"Cook once, serve two tiers", subhook:"Guest plate first, crew derived", type:"carousel", drop:"Sat 9 AM EST · 3 PM CET",
+        caption:"Design the charter week as one system, not seven separate dinners, and the crew meal stops being a second shift.\n\nThat's systems theory, the spine of Adria's Sapiens loop: study nothing in isolation, make every dish relate to the others. Build the guest plate first, then derive the heartier crew version off the same theme. One prep, two services. It's the same logic that turned a closed restaurant into elBulli1846 — a working method, written down so creativity comes from understanding, not re-searching at midnight.\n\nThe full loop, applied to a real week, is on Littoralicious — link in bio. @littoralicious",
+        tags:["yachtchef","superyachtchef","crewmeal","galleylife","mealprep","charterseason","systemsthinking","cookonce"],
+        brief:"5 slides — 1) cover ‘Cook once, serve two tiers’. 2) ‘Systems theory: nothing in isolation.’ 3) ‘Build the guest plate first.’ 4) ‘Derive the heartier crew version.’ 5) ‘One prep, two services → @littoralicious’.",
+        why:"Save-worthy technique stated as the payoff; named method gives authority + a gap about the full loop.",
+        fact:"elBulli spent ~6 months a year closed, doing nothing but creating in its Barcelona taller. — elBullifoundation" },
+
+      { id:6, hook:"The Wikipedia That Isn't", subhook:"20+ printed books, no website", type:"reel", drop:"Wed 11 AM EST · 5 PM CET",
+        caption:"elBulli's encyclopedia has more than 20 volumes published and you cannot read a word of it online. The plan in 2012 was a free 'gastronomic Wikipedia'; it was scrapped. What launched in 2013 instead is the Bullipedia — printed books, around 500 pages each, with roughly 50 planned, sold through elBulliStore. The method behind it runs a six-step loop (order, contextualise, classify, imagine, create, understand) and deliberately keeps disagreement alive so the work never hardens into dogma. The reason a yacht chef should care: that same loop turns a blank charter week into one system instead of a midnight scramble. The full piece is on Littoralicious @littoralicious — link in bio.",
+        tags:["yachtchef","superyachtchef","bullipedia","elbulli","culinaryscience","ferranadria","menudesign","galleylife","foodknowledge","chefslife"],
+        brief:"Reel 0–2s: ‘The Wikipedia that isn't’ over a B&amp;W shelf of heavy books. 2–10s: 20+ printed volumes, ~500 pages each, no website; the 2012 online plan was scrapped. 10–15s: the six-step loop + ‘turns a blank week into one system’.",
+        why:"Counterintuitive number (20+ books, zero website) defeats the assumption it's a site; clean curiosity gap.",
+        fact:"The Bullipedia launched in 2013; the originally announced free online encyclopedia was abandoned. — elBullifoundation" },
+
+      { id:7, hook:"Creativity Is Not Copying", subhook:"The line that rerouted Adria", type:"feed", drop:"Sun 9 AM EST · 3 PM CET",
+        caption:"Four words from another chef rebuilt elBulli: \"creativity is not copying.\"\n\nJacques Maximin said it in the 1980s, and it knocked Ferran Adria off the path of refining other people's dishes for good. The whole apparatus that followed, the Sapiens method and the 20-plus printed Bullipedia volumes, traces back to that one sentence.\n\nThe difference between cooking from memory and cooking from understanding decides what lands on the pass at 0200. We break down what Maximin actually unlocked, and how to build the same habit into your own galley, on Littoralicious. @littoralicious — link in bio.",
+        tags:["yachtchef","superyacht","chefmindset","elbulli","ferranadria","creativity","galleylife","cheflife"],
+        brief:"On-image: <strong>Creativity is not copying</strong>, sub ‘the line that rerouted Adrià’. B&amp;W: a single plated dish, or a chef's hand mid-motion — restrained, editorial.",
+        why:"Four-word provocation that doubles as the founding spark; origin-story curiosity gap.",
+        fact:"Adrià was 21 when he first staged at elBulli in 1983; by 1987 he ran the kitchen. — elBulli chronology" },
+
+      { id:8, hook:"Stop Re-Searching At Midnight", subhook:"Build the book once", type:"carousel", drop:"Wed 11 AM EST · 5 PM CET",
+        caption:"elBulli stopped serving food in 2011 and spent the next decade writing 500-page books about it instead.\n\nThat is the lesson hiding in the Bullipedia: 20-plus printed volumes of a planned 50, the output of a method whose motto is \"understand first, act later.\" The point was never to relaunch the restaurant. It was to make every answer findable once, so nobody starts from zero again.\n\nYour galley encyclopedia does the same job: write the technique down once and creativity stops being a 0200 panic. How to start one, drawn straight from the Sapiens loop, is on Littoralicious. @littoralicious — link in bio.",
+        tags:["yachtchef","superyacht","galley","miseenplace","chefslife","bullipedia","elbulli","foodscience","charterlife"],
+        brief:"5 slides — 1) ‘Stop re-searching at midnight’. 2) ‘elBulli closed in 2011 — then wrote 500-page books for a decade.’ 3) ‘The point: make every answer findable once.’ 4) ‘Your galley encyclopedia does the same.’ 5) ‘Start one — link in bio @littoralicious’.",
+        why:"Opens on relatable pain tied to a stark fact (closed 2011, wrote books for a decade); promises a concrete fix.",
+        fact:"elBulli1846 holds 69 installations across nearly 4,000 m². — elBullifoundation" },
+    ];
+
+    const CADENCE = [
+      ["Week 1","Open. Stoves Cold.","then Understand first, act later"],
+      ["Week 2","World's Best. Closed Anyway.","then Your provisioning list is wrong"],
+      ["Week 3","The Wikipedia That Isn't","then Cook once, serve two tiers"],
+      ["Week 4","Creativity Is Not Copying","then Keep the argument alive"],
+      ["Week 5","Stop Re-Searching At Midnight",""],
+    ];
+
+    const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+    const TYPE_LABEL = {feed:"Feed post",carousel:"Carousel",reel:"Reel"};
+    const grid = document.getElementById('grid');
+
+    grid.innerHTML = POSTS.map(p => {
+      const tags = p.tags.map(t=>'#'+t).join(' ');
+      return `<article class="drop" data-type="${p.type}">
+        <div class="mock">
+          <span class="tcorner">${TYPE_LABEL[p.type]}</span>
+          <div class="card-cover">
+            <div class="hook">${esc(p.hook)}</div>
+            ${p.subhook?`<div class="subhook">${esc(p.subhook)}</div>`:''}
+          </div>
+          <span class="corner">LITTORALICIOUS</span>
+        </div>
+        <div class="body">
+          <div class="seg">
+            <div class="h"><span class="label">Caption</span><button class="copy" data-copy="cap-${p.id}">Copy</button></div>
+            <div class="caption" id="cap-${p.id}">${esc(p.caption)}</div>
+          </div>
+          <div class="seg">
+            <div class="h"><span class="label">Hashtags</span><button class="copy" data-copy="tag-${p.id}">Copy</button></div>
+            <div class="tags" id="tag-${p.id}">${esc(tags)}</div>
+          </div>
+          <div class="seg">
+            <div class="h"><span class="label">Visual brief</span></div>
+            <div class="brief">${p.brief}</div>
+          </div>
+          <div class="intel">
+            <div class="row"><span class="k">Drop</span><span class="v">${esc(p.drop)}</span></div>
+            <div class="row"><span class="k">Why</span><span class="v">${esc(p.why)}</span></div>
+            <div class="row"><span class="k">Fact</span><span class="v">${esc(p.fact)}</span></div>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+
+    document.getElementById('cadence').innerHTML = CADENCE.map(w =>
+      `<div class="week"><span class="wk">${w[0]}</span><span class="d">${esc(w[1])}${w[2]?` <em>${esc(w[2])}</em>`:''}</span></div>`
+    ).join('');
+
+    // filter
+    document.getElementById('filter').addEventListener('click', e => {
+      const b = e.target.closest('.pill'); if(!b) return;
+      document.querySelectorAll('.pill').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+      const f = b.getAttribute('data-f');
+      document.querySelectorAll('.drop').forEach(d => { d.style.display = (f==='all'||d.dataset.type===f)?'':'none'; });
+    });
+
+    // copy + toast
+    const toast = document.getElementById('toast');
+    let tt;
+    document.getElementById('grid').addEventListener('click', e => {
+      const b = e.target.closest('.copy'); if(!b) return;
+      const el = document.getElementById(b.getAttribute('data-copy'));
+      const text = el.id.startsWith('tag-') ? el.textContent : el.textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+        .then(()=>{ toast.textContent='copied'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); })
+        .catch(()=>{ toast.textContent='copy failed'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); });
+    });
+    </script>
+</body>
+</html>
