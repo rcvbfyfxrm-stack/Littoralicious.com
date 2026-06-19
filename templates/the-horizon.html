@@ -51,41 +51,42 @@
 <!-- THESIS: one paragraph. State the shift you are forecasting and why it matters to a working galley. No hedging, no question framing. -->
 <p>One-paragraph thesis: name the macro shift, the timeframe, and the stake for the galley. Delete and rewrite.</p>
 
-<!-- KEY CLAIM: the forecast in one sentence, with the confidence level stated honestly (e.g. "likely", "watching"). -->
-<div class="note note--key"><p>The forecast in a single sentence — the call you are making, with an honest read on confidence and the evidence behind it.</p></div>
-
-<h2>At a glance</h2>
-<!-- KICKER: one-line value promise under the h2. -->
-<p>The three numbers that anchor everything below — read these first. <!-- one-line kicker --></p>
-<!-- AT A GLANCE: the macro numbers anchoring the forecast (price, tonnage, %, dates). SF Mono data per DNA. Replace each cell; keep 3–4 stats. Source each figure below. -->
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0; padding: var(--space-6); border: 1px solid var(--color-border, #e5e5e5);">
-    <div>
-        <div style="font-family: var(--font-mono); font-size: var(--text-2xl); color: var(--color-sea, #2d4a5e);">00%</div>
-        <div style="font-size: var(--text-xs); color: var(--color-salt); text-transform: uppercase; letter-spacing: 0.05em;">Metric label</div>
+<!-- SIGNATURE BLOCK — MANDATORY. The Forecast Scorecard is what owns The Horizon and what separates it from Signal Fire. Pin it right under the thesis. It folds the old "key claim" note (the call) and the "at a glance" stat grid into one object — do NOT also keep a separate one-sentence forecast note above; this IS the call. The "Falsifies if" footer is the forecast-only honesty beat: the single observable that, if it appears, kills the call. No present-tense template can carry it. Keep it. -->
+<div class="forecast-scorecard">
+    <span class="board-eyebrow">Forecast</span>
+    <div class="forecast-scorecard__grid">
+        <div><span class="forecast-scorecard__num">The call</span><span class="forecast-scorecard__label">direction + magnitude, one line</span></div>
+        <div><span class="forecast-scorecard__num">20XX</span><span class="forecast-scorecard__label">horizon date</span></div>
+        <div><span class="forecast-scorecard__num">Watching</span><span class="forecast-scorecard__label">confidence (likely / watching / firm)</span></div>
     </div>
-    <div>
-        <div style="font-family: var(--font-mono); font-size: var(--text-2xl); color: var(--color-sea, #2d4a5e);">0.0×</div>
-        <div style="font-size: var(--text-xs); color: var(--color-salt); text-transform: uppercase; letter-spacing: 0.05em;">Metric label</div>
-    </div>
-    <div>
-        <div style="font-family: var(--font-mono); font-size: var(--text-2xl); color: var(--color-sea, #2d4a5e);">20XX</div>
-        <div style="font-size: var(--text-xs); color: var(--color-salt); text-transform: uppercase; letter-spacing: 0.05em;">Horizon date</div>
-    </div>
+    <p class="forecast-scorecard__falsify"><strong>Falsifies if:</strong> the one observable that, if it appears, kills this call.</p>
 </div>
+<!-- WRITER: This scorecard replaces the old hand-rolled "At a glance" stat grid AND the separate "key claim" note — they duplicated each other. State confidence honestly (watching / likely / firm), never "certain". The falsify line is non-negotiable: a forecast you cannot disprove is not a forecast. -->
+
 
 <h2>The signals</h2>
 <!-- KICKER: one-line value promise under the h2. -->
 <p>Three independent lines of evidence pointing the same way — and where each one comes from. <!-- one-line kicker --></p>
 <!-- THE SIGNALS: the observable evidence the forecast rests on. One named source per signal — journal, dataset, named report, documented experience. No "studies show". -->
 <p>The handful of observable signals pointing the same direction, each tied to a named, traceable source. Watch the <span class="term">basis</span> — the gap between the futures price and what you actually pay dockside. <!-- define jargon inline so the reader never leaves the page --></p>
-<ul>
-    <li>Signal — what is moving, the figure, and the source (named study / dataset / report).</li>
-    <li>Signal — second independent line of evidence, sourced.</li>
-    <li>Signal — third, ideally a different kind of source (market, science, field).</li>
-</ul>
+
+<!-- SIGNATURE — the Signal Ledger. Numbered, sourced, and each line points AT the call: this is what makes the forecast legible, not a vibe. Each "-> points to" says how that signal nudges the direction. SCIENCE = HIGHEST BAR: name the source per line (study / dataset / named report / documented experience), grade it where it is load-bearing ("Design · n = 00 · Strength: moderate"). No "studies show" without a name. -->
+<ol class="signal-ledger">
+    <li>What is moving, the figure, and the named source. <span class="signal-ledger__points">&rarr; points to: how it nudges the call.</span></li>
+    <li>A second independent line of evidence, sourced. <span class="signal-ledger__points">&rarr; points to: the direction it adds.</span></li>
+    <li>A third, a different kind of source (market / science / field). <span class="signal-ledger__points">&rarr; points to: what it confirms or complicates.</span></li>
+</ol>
+<!-- WRITER: Three is the floor for a forecast — one signal is an anecdote. Each line carries its own source; grade the load-bearing one inline. -->
 
 <!-- SCIENCE: the mechanism behind the signal, inline, where it bites. -->
-<div class="note note--science"><p>The mechanism that links the signal to the shift — the biological, climatic, or market driver, stated plainly.</p></div>
+<div class="note note--science"><p>The mechanism that links the signals to the shift — the biological, climatic, or market driver, stated plainly. Where a figure here is load-bearing, grade it: <em>Design &middot; n = 00 &middot; Strength: moderate</em>.</p></div>
+
+<!-- PROSE BRIDGE: a single line so the pull-quote does not stack on the science note. -->
+<p>One sentence carrying the reader from the mechanism into the call — the pivot the pull-quote then lands.</p>
+
+<!-- OPTIONAL "Who Paid" note — include ONLY when a signal's sourcing or the money behind it is load-bearing (an industry dataset, a funded outlook, a body with a stake in the call). Otherwise fold "independently sourced" into the ledger line and DELETE this. Follow-the-money is the Scientist pillar:
+<div class="note note--science" data-label="Who Paid"><p>Funder &middot; conflict &middot; whether it colours the signal.</p></div>
+-->
 
 <!-- PULL-QUOTE: one striking line to re-hook the eye at the mid-point. -->
 <div class="note note--quote"><p>The one sharp line a chef would repeat to the captain — the forecast distilled to a sentence they remember.</p></div>
@@ -108,6 +109,14 @@
 <!-- ACTION: the practical "do this" move. -->
 <div class="note note--action"><p>The single move to make this week — the provisioning, menu, or holding change that gets ahead of the shift.</p></div>
 
+<!-- PROSE BRIDGE: a line so the nurture beat does not stack on the action note. -->
+<p>Then translate the wallet into the table — the part the guest actually meets.</p>
+
+<!-- NURTURE / ON THE PLATE (Bridge, recommended): earns its place here because a macro shift only matters once it reaches a plate. Wallet-deep -> cook-deep. -->
+<div class="note note--quote" data-label="On the Plate"><p>What the shift means for the people you actually feed — the dish that stays, the one that gets dearer, the swap a guest never notices. Name it.</p></div>
+
+<!-- PROSE BRIDGE: a line so the action list does not stack on the nurture note. -->
+<p>The moves that get you there, in order:</p>
 <ul>
     <li>Action — what to do now, before the shift lands.</li>
     <li>Action — the substitution or provisioning hedge, with the why.</li>
@@ -116,6 +125,12 @@
 
 <!-- WARNING: the failure mode to avoid. -->
 <div class="note note--warning"><p>The trap — the overreaction or wrong hedge that costs more than the shift itself.</p></div>
+
+<!-- PROSE BRIDGE: a line so the watch list does not stack on the warning. -->
+<p>You do not need a terminal to track this. Two or three readings tell you which way it broke:</p>
+
+<!-- TRANSFERABLE SKILL — Watch list. The indicators a chef can read without a Bloomberg, and the specific number that flips the call. This is the forecast's living edge: it tells the reader how to be their own analyst between briefs. -->
+<div class="note" data-label="Watch list"><p>The two or three indicators a chef can track without a terminal — a dockside price, a landings report, a port notice — and the specific reading that flips the call from watching to firm.</p></div>
 
 <h2>Sources</h2>
 <!-- KICKER: one-line value promise under the h2. -->

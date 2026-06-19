@@ -98,8 +98,16 @@
     Placeholder — define the concept; cite the statute / standard / source by name. The <span class="term">flag state</span> sets the baseline.
 </p>
 
-<!-- FOCUS: note--science — the mechanism of the rule, inline where it bites. -->
-<div class="note note--science"><p><!-- Why the rule works the way it does: the day-count maths, the treaty logic, the enforcement trigger — named and sourced. -->Placeholder science note — the mechanism behind the rule, with the number that drives it.</p></div>
+<!-- FOCUS: note--science — the mechanism of the rule, inline where it bites.
+     HIGH BAR: name the mechanism AND its threshold, and cite them to a
+     named statute / standard / convention — not "the rules say". The
+     reader must be able to look it up. (e.g. "183 days under [named
+     treaty Art. X]", "MLC 2006 minimum", "[flag] Merchant Shipping
+     Notice MSN 0000"). No threshold without a named source. -->
+<div class="note note--science"><p><!-- Why the rule works the way it does: the day-count maths / treaty logic / enforcement trigger, the exact threshold, and the named statute or standard it lives in. -->Placeholder science note — the mechanism, the exact threshold number, and the named statute / convention / standard it comes from (cite it so a reader can verify).</p></div>
+
+<p>One line of prose restating what that mechanism means for the chef reading this — so the key rule below lands on its own, not stacked on the science note.</p>
+<!-- WRITER: a single sentence bridging the mechanism into its plain-language consequence. -->
 
 <div class="note note--key"><p><!-- Restate the single most important rule in one tight sentence. -->Placeholder key note — the rule that changes everything if misread.</p></div>
 
@@ -151,64 +159,65 @@
     </p>
 </div>
 
+<!-- ============================================================
+     THE COMPARISON RACK — the Trade Winds SIGNATURE. This is the
+     object no other Bridge template owns: the situation broken into
+     accent-coded cases / hubs / pay bands, side by side. REQUIRED:
+     at least ONE of the three racks below (cases, hubs, bands) must
+     ship in every Trade Winds piece — that is what makes it a Trade
+     Winds piece and not a generic essay. Drop the racks you don't
+     need; you may not drop all three.
+     WRITER LOCK: use these classes (.tw-case-grid / .tw-hub-grid /
+     .tw-band-ladder); never hand-roll a grid here. Hand-rolled inline
+     grids are how gradient panels crept into live articles. Per-case
+     accent = inline --tw-accent only (a single colour var, lock-safe).
+     ============================================================ -->
+
 <h3>The Lighter Comparison Set</h3>
-<!-- Card grid for the secondary cases that need a paragraph each, not a
-     full section. Reuse this exact grid (region cards, coloured left
-     border per case). Add or remove cards to match the real spread. -->
-<div style="display: grid; gap: var(--space-3); margin: var(--space-6) 0;">
-    <div style="background: #e2e5e9; padding: var(--space-4) var(--space-6); border-left: 4px solid #1a1a1a;">
-        <strong style="font-size: var(--text-sm);">Case A (cite the rule)</strong>
-        <p style="font-size: var(--text-sm); color: var(--color-muted); margin: var(--space-1) 0 0;">Placeholder — the test, the catch, and what crew must do.</p>
-    </div>
-    <div style="background: #e2e5e9; padding: var(--space-4) var(--space-6); border-left: 4px solid #d32f2f;">
-        <strong style="font-size: var(--text-sm);">Case B (cite the rule)</strong>
-        <p style="font-size: var(--text-sm); color: var(--color-muted); margin: var(--space-1) 0 0;">Placeholder — the test, the catch, and what crew must do.</p>
-    </div>
-    <div style="background: #e2e5e9; padding: var(--space-4) var(--space-6); border-left: 4px solid #059669;">
-        <strong style="font-size: var(--text-sm);">Case C (cite the rule)</strong>
-        <p style="font-size: var(--text-sm); color: var(--color-muted); margin: var(--space-1) 0 0;">Placeholder — the test, the catch, and what crew must do.</p>
-    </div>
+<!-- Card grid for the secondary cases that need a paragraph each, not
+     a full section. Match the accent to the case via --tw-accent. Add
+     or remove cards to match the real spread. -->
+<div class="tw-case-grid">
+    <div class="tw-case-grid__card" style="--tw-accent:#1a1a1a;"><strong>Case A (cite the rule)</strong><p>Placeholder — the test, the catch, and what crew must do.</p></div>
+    <div class="tw-case-grid__card" style="--tw-accent:#d32f2f;"><strong>Case B (cite the rule)</strong><p>Placeholder — the test, the catch, and what crew must do.</p></div>
+    <div class="tw-case-grid__card" style="--tw-accent:#059669;"><strong>Case C (cite the rule)</strong><p>Placeholder — the test, the catch, and what crew must do.</p></div>
 </div>
 
-<!-- OPTIONAL: hubs / training-centres grid for hub-led pieces (where
-     to train, where to base, where the work is). Reuse verbatim;
-     min-width auto-fit columns, coloured top border per hub. -->
+<p>One line of prose bridging the cases above into where that work and training actually sits — so the next rack reads as a continuation, not a stacked block.</p>
+<!-- WRITER: a single sentence so the case rack and the hub rack don't run together; name the connective logic (where these rules send crew to base or qualify). -->
+
+<!-- Part of the signature RACK: hubs / training-centres grid for hub-led
+     pieces (where to train, where to base, where the work is). Use this
+     rack OR the case rack OR the band ladder — at least one is required.
+     WRITER LOCK: .tw-hub-grid only; never hand-roll. Top accent per hub
+     via --tw-accent (single colour var, lock-safe). -->
 <h3>Where the Work / Training Lives</h3>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); margin: var(--space-6) 0;">
-    <div style="background: #d4dce8; padding: var(--space-4); border-top: 3px solid var(--color-sea);">
-        <strong style="font-size: var(--text-sm); color: var(--color-sea);">Hub One</strong>
-        <p style="font-size: var(--text-xs); color: var(--color-muted); margin: var(--space-1) 0 0;">Placeholder — named centres/agencies, what it's known for, season.</p>
-    </div>
-    <div style="background: #d4dce8; padding: var(--space-4); border-top: 3px solid #1e3a5f;">
-        <strong style="font-size: var(--text-sm); color: #1e3a5f;">Hub Two</strong>
-        <p style="font-size: var(--text-xs); color: var(--color-muted); margin: var(--space-1) 0 0;">Placeholder — named centres/agencies, what it's known for, season.</p>
-    </div>
-    <div style="background: #d4dce8; padding: var(--space-4); border-top: 3px solid #d97706;">
-        <strong style="font-size: var(--text-sm); color: #d97706;">Hub Three</strong>
-        <p style="font-size: var(--text-xs); color: var(--color-muted); margin: var(--space-1) 0 0;">Placeholder — named centres/agencies, what it's known for, season.</p>
-    </div>
+<div class="tw-hub-grid">
+    <div class="tw-hub-grid__hub" style="--tw-accent:var(--color-sea);"><strong>Hub One</strong><p>Placeholder — named centres/agencies, what it's known for, season.</p></div>
+    <div class="tw-hub-grid__hub" style="--tw-accent:#1e3a5f;"><strong>Hub Two</strong><p>Placeholder — named centres/agencies, what it's known for, season.</p></div>
+    <div class="tw-hub-grid__hub" style="--tw-accent:#d97706;"><strong>Hub Three</strong><p>Placeholder — named centres/agencies, what it's known for, season.</p></div>
 </div>
 
-<!-- OPTIONAL: money / tier ladder — reuse when the piece maps pay,
-     cost, or seniority bands. Each row = a stat block + explainer.
-     Darkest row reserved for the top tier. -->
+<p>One line of prose carrying the reader from where the work lives into what it pays — so the band ladder lands as the rack's payoff, not another stacked box.</p>
+<!-- WRITER: a single sentence; the pivot from geography to money. -->
+
+<!-- Part of the signature RACK: money / tier ladder — use when the piece
+     maps pay, cost, or seniority bands. Each row = a stat block +
+     explainer. Top tier = .tw-band-ladder__row--top (the dark-card row).
+     WRITER LOCK: .tw-band-ladder only; never hand-roll the flex rows. -->
 <h3>The Money / The Bands</h3>
-<div style="display: grid; gap: var(--space-3); margin: var(--space-6) 0;">
-    <div style="display: flex; align-items: center; gap: var(--space-4); background: #e2e5e9; padding: var(--space-4); border-left: 4px solid #94a3b8;">
-        <div style="min-width: 80px;">
-            <span style="font-size: var(--text-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.05em;">Band</span><br>
-            <strong style="font-size: var(--text-lg); color: var(--color-ink);">$X-XK</strong>
-        </div>
-        <div style="font-size: var(--text-sm); color: var(--color-muted);">Placeholder — what this band means and what it demands.</div>
-    </div>
-    <div style="display: flex; align-items: center; gap: var(--space-4); background: #1a2a3a; padding: var(--space-4); border-left: 4px solid #c4a35a;">
-        <div style="min-width: 80px;">
-            <span style="font-size: var(--text-xs); color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Top</span><br>
-            <strong style="font-size: var(--text-lg); color: #c4a35a;">$X-XK+</strong>
-        </div>
-        <div style="font-size: var(--text-sm); color: #c8c0b4;">Placeholder — the ceiling and what it takes to reach it.</div>
-    </div>
+<div class="tw-band-ladder">
+    <div class="tw-band-ladder__row"><div class="tw-band-ladder__amount"><span>Band</span><strong>$X&ndash;XK</strong></div><div class="tw-band-ladder__note">Placeholder — what this band means and what it demands.</div></div>
+    <div class="tw-band-ladder__row tw-band-ladder__row--top"><div class="tw-band-ladder__amount"><span>Top</span><strong>$X&ndash;XK+</strong></div><div class="tw-band-ladder__note">Placeholder — the ceiling and what it takes to reach it.</div></div>
 </div>
+
+<p>One line of prose on where these numbers actually come from — the source behind the band figures — so the follow-the-money note reads as earned, not bolted on.</p>
+<!-- WRITER: a single sentence bridging the band ladder into the funding note below; name your pay-data source (a named salary survey, recruiter's published rates, MLC minimums). -->
+
+<!-- FOLLOW-MONEY — REQUIRED when pay/cost is load-bearing here. The
+     Scientist pillar: say who collected the figures and whether their
+     interest colours them. Grade the data inline. -->
+<div class="note note--science" data-label="Where the figures come from"><p><!-- name the source of the band numbers, who paid for / publishes it, and whether that interest inflates or deflates them. -->Placeholder — source of the pay data &middot; who publishes it (recruiter / survey / union) &middot; the bias it carries. Evidence: survey type &middot; n = 00 &middot; Strength: strong / moderate / self-reported.</p></div>
 
 <h2>The Practical Path</h2>
 <!-- FOCUS: value kicker — the do-this section starts here. -->

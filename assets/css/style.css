@@ -450,6 +450,67 @@ h4 { font-size: var(--text-lg); }
 }
 
 /* --------------------------------------------------------------------------
+   DARK-MODE COLOURED BOXES — readability fix (phones auto-apply dark mode)
+   Articles hard-code light pastel box fills inline (e.g. #d1e7dd, #f5deb3).
+   In dark mode the page text turns light, so those bright boxes glared and
+   the text inside lost contrast. Here we retint any LIGHT inline box fill to
+   a calm dark panel and force readable light text — the coloured left border
+   still carries the category cue. Dark hero boxes (#1a…, gradients) and
+   theme-aware var() fills are left untouched.
+   Covers both the OS setting and the manual [data-theme="dark"] toggle.
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+    .article__content div[style*="background: #d"],
+    .article__content div[style*="background:#d"],
+    .article__content div[style*="background: #e"],
+    .article__content div[style*="background:#e"],
+    .article__content div[style*="background: #f"],
+    .article__content div[style*="background:#f"],
+    .article__content div[style*="background: #c"],
+    .article__content div[style*="background:#c"],
+    .article__content div[style*="background: #9"],
+    .article__content div[style*="background:#9"] {
+        background: #16202b !important;
+    }
+    .article__content div[style*="background: #d"] *:not(mark):not(a),
+    .article__content div[style*="background:#d"] *:not(mark):not(a),
+    .article__content div[style*="background: #e"] *:not(mark):not(a),
+    .article__content div[style*="background:#e"] *:not(mark):not(a),
+    .article__content div[style*="background: #f"] *:not(mark):not(a),
+    .article__content div[style*="background:#f"] *:not(mark):not(a),
+    .article__content div[style*="background: #c"] *:not(mark):not(a),
+    .article__content div[style*="background:#c"] *:not(mark):not(a),
+    .article__content div[style*="background: #9"] *:not(mark):not(a),
+    .article__content div[style*="background:#9"] *:not(mark):not(a) {
+        color: #e8e4dc !important;
+    }
+}
+[data-theme="dark"] .article__content div[style*="background: #d"],
+[data-theme="dark"] .article__content div[style*="background:#d"],
+[data-theme="dark"] .article__content div[style*="background: #e"],
+[data-theme="dark"] .article__content div[style*="background:#e"],
+[data-theme="dark"] .article__content div[style*="background: #f"],
+[data-theme="dark"] .article__content div[style*="background:#f"],
+[data-theme="dark"] .article__content div[style*="background: #c"],
+[data-theme="dark"] .article__content div[style*="background:#c"],
+[data-theme="dark"] .article__content div[style*="background: #9"],
+[data-theme="dark"] .article__content div[style*="background:#9"] {
+    background: #16202b !important;
+}
+[data-theme="dark"] .article__content div[style*="background: #d"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#d"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #e"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#e"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #f"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#f"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #c"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#c"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #9"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#9"] *:not(mark):not(a) {
+    color: #e8e4dc !important;
+}
+
+/* --------------------------------------------------------------------------
    SECTION DIVIDERS — Old Journal Style
    -------------------------------------------------------------------------- */
 .divider {
