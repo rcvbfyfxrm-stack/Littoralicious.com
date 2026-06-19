@@ -114,6 +114,23 @@
         .st-modal__foot{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap;padding:var(--space-4) var(--space-5);border-top:1px solid var(--color-border);}
         .st-save-state{font-size:12px;color:var(--color-muted);margin-left:auto;font-family:var(--font-mono);}
         .st-x{background:none;border:none;font-size:22px;cursor:pointer;color:var(--color-muted);line-height:1;}
+        /* photo picker */
+        .pho{position:fixed;inset:0;background:rgba(10,10,10,.6);display:none;align-items:center;justify-content:center;z-index:60;padding:var(--space-4);}
+        .pho.open{display:flex;}
+        .pho__box{background:#fff;max-width:760px;width:100%;max-height:86vh;display:flex;flex-direction:column;border:1px solid var(--color-ink);}
+        .pho__head{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-border);}
+        .pho__head h3{font-family:var(--font-serif);margin:0;font-size:var(--text-base);}
+        .pho__head input{flex:1;padding:.45em .7em;border:1px solid var(--color-border);font:inherit;font-size:14px;}
+        .pho__hint{font-size:11px;color:var(--color-salt);font-family:var(--font-mono);padding:6px var(--space-4) var(--space-2);}
+        .pho__hint code{background:var(--color-subtle);padding:0 4px;}
+        .pho__grid{overflow:auto;padding:var(--space-3) var(--space-4) var(--space-4);display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
+        .pho__item{cursor:pointer;border:1px solid var(--color-border);background:var(--color-subtle);overflow:hidden;text-align:left;padding:0;font:inherit;}
+        .pho__item:hover{border-color:var(--color-sea);}
+        .pho__item img{display:block;width:100%;height:88px;object-fit:cover;background:#eee;filter:grayscale(1);}
+        .pho__item .nm{display:block;font-family:var(--font-mono);font-size:10px;color:var(--color-muted);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .pho__item .gp{font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:var(--color-salt);}
+        .pho__empty{padding:var(--space-6);text-align:center;color:var(--color-muted);font-size:13px;font-style:italic;}
+        .pho__x{margin-left:auto;background:none;border:none;font-size:22px;cursor:pointer;color:var(--color-muted);line-height:1;}
     </style>
 </head>
 <body>
@@ -250,10 +267,24 @@
             <div class="st-modal__foot">
                 <button class="st-btn" id="nm-save" type="button">Save</button>
                 <button class="st-btn st-btn--ghost" id="nm-copy" type="button">Copy for Claude</button>
+                <button class="st-btn st-btn--ghost" id="nm-photo" type="button" title="Search the photo library and add one to this draft">Add photo</button>
                 <a class="st-btn st-btn--ghost" id="nm-view" target="_blank" style="text-decoration:none;">Open draft</a>
                 <button class="st-btn st-btn--danger" id="nm-delete" type="button" title="Delete this note permanently">Delete note</button>
                 <span class="st-save-state" id="nm-state"></span>
             </div>
+        </div>
+    </div>
+
+    <!-- PHOTO PICKER -->
+    <div class="pho" id="pho-modal">
+        <div class="pho__box">
+            <div class="pho__head">
+                <h3>Add photo</h3>
+                <input id="pho-search" type="text" placeholder="Search photos by name…" autocomplete="off">
+                <button class="pho__x" id="pho-close" title="Close">&times;</button>
+            </div>
+            <div class="pho__hint">Click a photo to record it in this draft&rsquo;s note as <code>Add photo: …</code> &mdash; Claude inserts it on the next edit. New images go in <code>assets/photos/</code> (then run <code>node tools/photos.mjs</code>).</div>
+            <div class="pho__grid" id="pho-grid"></div>
         </div>
     </div>
 
@@ -698,6 +729,51 @@
         });
         $('nm-save').addEventListener('click', function () { clearTimeout(saveTimer); saveNotes(); });
         $('nm-delete').addEventListener('click', deleteNotes);
+
+        // ---- photo picker: search the photo library, record the pick into the draft note ----
+        var photoLib = null, photoLoaded = false;
+        function loadPhotoLib() {
+            if (photoLoaded) return Promise.resolve(photoLib);
+            return fetch('data/photo-library.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : { photos: [] }; })
+                .then(function (d) { photoLib = (d && d.photos) || []; photoLoaded = true; return photoLib; })
+                .catch(function () { photoLib = []; photoLoaded = true; return photoLib; });
+        }
+        function renderPhotoGrid(q) {
+            var grid = $('pho-grid'); q = (q || '').toLowerCase().trim();
+            var list = (photoLib || []).filter(function (p) { return !q || (p.name + ' ' + p.path + ' ' + p.group).toLowerCase().indexOf(q) !== -1; });
+            if (!list.length) { grid.innerHTML = '<div class="pho__empty">No photos match. Drop images in <code>assets/photos/</code>, then run <code>node tools/photos.mjs</code>.</div>'; return; }
+            grid.innerHTML = list.map(function (p) {
+                return '<button class="pho__item" type="button" data-path="' + esc(p.path) + '">' +
+                    '<img loading="lazy" src="' + esc(p.path) + '" alt="">' +
+                    '<span class="nm">' + esc(p.name) + ' <span class="gp">' + esc(p.group) + '</span></span></button>';
+            }).join('');
+        }
+        function openPhotoPicker() {
+            if (!noteSlug || !isReviewer(user)) { $('auth-msg').textContent = 'Sign in as a reviewer to add photos.'; return; }
+            $('pho-modal').classList.add('open');
+            $('pho-search').value = '';
+            $('pho-grid').innerHTML = '<div class="pho__empty">Loading photos…</div>';
+            loadPhotoLib().then(function () { renderPhotoGrid(''); $('pho-search').focus(); });
+        }
+        function closePhotoPicker() { $('pho-modal').classList.remove('open'); }
+        function insertPhoto(path) {
+            var ta = $('nm-text'); if (ta.disabled) return;
+            var line = 'Add photo: ' + path + ' — caption: ';
+            var v = ta.value, s = (ta.selectionStart != null) ? ta.selectionStart : v.length;
+            var pre = v.slice(0, s), post = v.slice(s);
+            if (pre && !/\n$/.test(pre)) pre += '\n';
+            ta.value = pre + line + post;
+            var caret = pre.length + line.length;
+            closePhotoPicker();
+            ta.focus(); try { ta.setSelectionRange(caret, caret); } catch (e) {}
+            ta.dispatchEvent(new Event('input', { bubbles: true }));   // enables Delete + schedules autosave
+        }
+        $('nm-photo').addEventListener('click', openPhotoPicker);
+        $('pho-close').addEventListener('click', closePhotoPicker);
+        $('pho-modal').addEventListener('click', function (e) { if (e.target === this) closePhotoPicker(); });
+        $('pho-search').addEventListener('input', function () { renderPhotoGrid(this.value); });
+        $('pho-grid').addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('.pho__item'); if (b) insertPhoto(b.getAttribute('data-path')); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && $('pho-modal').classList.contains('open')) { e.stopPropagation(); closePhotoPicker(); } }, true);
         $('nm-copy').addEventListener('click', function () {
             var a = byslug[noteSlug] || {}, txt = 'Apply these notes to the draft "' + (a.title || noteSlug) + '" (' + noteSlug + '):\n\n' + $('nm-text').value;
             (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () {
