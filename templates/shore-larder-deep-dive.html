@@ -46,6 +46,12 @@
 <li><!-- one line: the galley move — how to buy, store, and deploy it at sea. --></li>
 </ul></div>
 
+<!-- AT-A-GLANCE JUMP-STRIP — this is a 16-min read; a single divider-row of anchors so a tired scanner never loses the spine. Keep the markup; the labels map 1:1 to the h2 dividers below. NO EMOJI. -->
+<nav class="divider" aria-label="On this page" style="font-size: var(--text-sm);">
+    <span class="divider__text"><a href="#history">History</a> &middot; <a href="#science">Science</a> &middot; <a href="#four-ways">Four Ways</a> &middot; <a href="#pairing">Pairing</a> &middot; <a href="#galley">Galley</a> &middot; <a href="#stories">Stories</a></span>
+</nav>
+<!-- WRITER: leave as-is. The id="" hooks are added on the section dividers/h2s below — do not rename one without the other. -->
+
 <!-- IDENTITY CARD — the at-a-glance profile. Keep the wrapper verbatim; fill every slot. 8 cells is the full set; drop a cell only if it genuinely doesn't apply (e.g. Species for a processed larder item). NO EMOJI anywhere. -->
 <div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-6) 0;">
     <h4 style="margin-top: 0; color: #c4a35a; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-4);">Identity Card</h4>
@@ -61,7 +67,7 @@
     </div>
 </div>
 
-<div class="divider"><span class="divider__text">History</span></div>
+<div class="divider" id="history"><span class="divider__text">History</span></div>
 
 <!-- ORIGIN STORY — where it comes from, deep history. 2–3 short paras, then a key note. -->
 <h2>Origin: [the place / the leaf / the bulb]</h2>
@@ -79,7 +85,22 @@
 <p>Close on the present: the modern form or technique chefs reach for now — note how <span class="term">oxidation</span> reshaped it in transit.</p>
 <div class="note note--science"><p>The mechanism behind the journey — what temperature/oxidation/fermentation actually changes. State it plainly.</p></div>
 
-<div class="divider"><span class="divider__text">The Science</span></div>
+<!-- HERITAGE TIMELINE — slim dated lineage ribbon, capping the History arc in one scannable strip. 3–5 stops. Every date sourced (archaeology, dated record, named figure) — no round-number guesses dressed as fact. -->
+<p>Laid end to end, that arc is short enough to read on one line:</p>
+<div class="heritage-timeline">
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">c. 0000</span><span class="heritage-timeline__label">first cultivation / wild ancestor — the dated origin</span></div>
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">c. 0000</span><span class="heritage-timeline__label">the spread or status shift — trade route, conquest, dish</span></div>
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">0000</span><span class="heritage-timeline__label">the named record / figure that pins it</span></div>
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">0000</span><span class="heritage-timeline__label">the modern form chefs reach for now</span></div>
+</div>
+<!-- WRITER: 3–5 stops, oldest to newest. Each date must be defensible and land in Sources. Drop a stop rather than invent one. -->
+
+<!-- TWO SCHOOLS — the cross-cultural split, the culture/distinctiveness beat. One sourced line on how two traditions diverge on this ingredient (model: West dry-ages beef / Japan koji-ages it), then one sentence on each treatment. Keep it true — a real, citable divergence, not a tidy invention. -->
+<p>That one lineage is not the only one. Trace the ingredient sideways instead of forward and two kitchens split on it:</p>
+<div class="note note--quote" data-label="Two Schools"><p>The split, in one line: name the two traditions and what each does differently with this ingredient. <strong>One:</strong> the first school's treatment, one sentence. <strong>The other:</strong> the contrasting treatment, one sentence — same ingredient, opposite logic.</p></div>
+<!-- WRITER: a documented cross-cultural divergence (region/house named), each side sourced. If you can't cite both, make this a WRITER prompt rather than force a half-true split. -->
+
+<div class="divider" id="science"><span class="divider__text">The Science</span></div>
 
 <!-- THE SCIENCE — the core. Green compound box + inline science note. Add a second green box for health evidence if warranted. -->
 <h2>The Science: [the one-line claim]</h2>
@@ -92,20 +113,38 @@
     </ul>
 </div>
 <div class="note note--science"><p>The single most important molecular takeaway from the box above — name the <span class="term">volatile compound</span> that carries the aroma, in one or two sentences.</p></div>
-<!-- OPTIONAL second green box for Health Evidence — keep only if the ingredient has a real research base. -->
+
+<!-- OPTIONAL — Health Evidence. Include this green box ONLY if the ingredient has a real, sourced research base; otherwise DELETE this whole block. If you keep it, open with a one-line prose bridge first so it does not stack on the note above. -->
+<!-- WRITER (optional): one sentence on what the research actually weighs in on, then this box: -->
+<!--
+<p><strong>What the evidence weighs:</strong> the single health claim worth making here, in one line.</p>
 <div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-4) 0; border-left: 4px solid #059669;">
     <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Health Evidence</h4>
     <ul style="margin-bottom: 0; font-size: var(--text-sm);">
         <li><strong>Effect:</strong> the finding, with numbers/units, then <em>evidence strength.</em></li>
-        <!-- WRITER: each claim sourced and rated. No "studies show" without naming the study in Sources. -->
     </ul>
 </div>
-<div class="note note--science" data-label="Health Evidence"><p>The health takeaway distilled — numbers, units, honest about the limits of the evidence.</p></div>
+-->
+<!-- Each claim sourced and rated. No "studies show" without naming the study in Sources. Do NOT add a second science note after this box — the box is the takeaway. -->
 
-<div class="divider"><span class="divider__text">Four Ways to Use It</span></div>
+<div class="divider" id="four-ways"><span class="divider__text">Four Ways to Use It</span></div>
 
 <!-- THE USE SPECTRUM — the heart of the profile. ONE ingredient, four registers: how the tradition cooked it, the best the modern kitchen does, the frontier edge, and the poetic gesture. Each card: the move, then a concrete example. Give SEVERAL examples ONLY where they are genuinely notable — one sharp example beats three filler ones. Frontier/Poetic must stay defensible (real chemistry, real sensory logic), never gimmick. NO EMOJI. -->
+<!-- ====================================================================== -->
+<!-- DISTINCTIVENESS LOCK — "Four Ways to Use It" is what makes this the    -->
+<!-- DEEP-DIVE and not a standard Shore Larder. A piece shipped (koji)      -->
+<!-- WITHOUT it. MANDATORY: never publish a deep-dive without Four Ways +   -->
+<!-- the register ladder below. The four cards (Traditional/Modern/Frontier -->
+<!-- /Poetic) and the ladder are NON-NEGOTIABLE. Do not delete either.      -->
+<!-- ====================================================================== -->
 <h2>Four Ways to Use It: Traditional, Modern, Frontier, Poetic</h2>
+<!-- REGISTER LADDER — the four-kitchen journey, unmistakable at a glance, directly under the h2. Locked .register-ladder. Keep verbatim; this is the template's signature object. -->
+<div class="register-ladder">
+    <div class="register-ladder__stop register-ladder__stop--trad">Traditional<span>how it was always used</span></div>
+    <div class="register-ladder__stop register-ladder__stop--modern">Modern<span>the best current technique</span></div>
+    <div class="register-ladder__stop register-ladder__stop--frontier">Frontier<span>the edge worth exploring</span></div>
+    <div class="register-ladder__stop register-ladder__stop--poetic">Poetic<span>the gesture that makes them pause</span></div>
+</div>
 <p><strong>One ingredient, four registers:</strong> <!-- kicker: the through-line that connects how it was always used to how it could be used. --></p>
 
 <!-- TRADITIONAL — how the old kitchens actually deployed it (the canonical preparation, not a pairing). -->
@@ -113,6 +152,11 @@
     <h4 style="margin-top: 0; color: #5c4033; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Traditional &mdash; how it was always used</h4>
     <p style="font-size: var(--text-sm); color: #5c4033; margin-bottom: 0;">The canonical preparation, named and located. What the dish/technique is, the region that owns it, and the one rule the old cooks never broke. <em>Example only if notable:</em> name the classic dish and the move inside it that still holds.</p>
 </div>
+
+<!-- THE HAND — MANDATORY traditions beat: name the specific person / house / village / region that owns the canonical preparation, sourced (model: koji's three-century tane-koji houses in Kyoto). Not "an old tradition" — a named lineage with a citation. -->
+<p>A canonical preparation always has a keeper. Name them:</p>
+<div class="note" data-label="The Hand"><p>One sourced sentence naming the people who actually keep this preparation alive — the house, family, village or guild, with the place and how long they have held it. Make it specific enough that it lands in Sources.</p></div>
+<!-- WRITER: name names. If you cannot cite a specific lineage, say which region holds the canonical method and source that — but never publish a vague "traditionally". -->
 
 <!-- MODERN — the best contemporary technique: controlled, repeatable, the current professional default. -->
 <div style="background: #e2e5e9; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid var(--color-sea);">
@@ -134,7 +178,7 @@
 
 <div class="note note--key" data-label="The Through-Line"><p>The sentence that links all four registers — what stays constant about this ingredient whether a grandmother or a frontier kitchen is cooking it.</p></div>
 
-<div class="divider"><span class="divider__text">Pairing</span></div>
+<div class="divider" id="pairing"><span class="divider__text">Pairing</span></div>
 
 <!-- TRADITIONAL PAIRING — cultures that already know. Wheat card grid. -->
 <h2>Traditional Pairing: [the framing]</h2>
@@ -149,11 +193,13 @@
     </div>
 </div>
 
+<p>Those are the safe pairings — the ones a culture arrives at by repetition. The interesting ones start where that logic is pushed.</p>
+
 <!-- PULL-QUOTE — re-hook the eye at the mid-point, between what's known and what's unexpected. -->
 <div class="note note--quote"><p>One striking line — the sentence that reframes the whole ingredient and earns the second half.</p></div>
 
-<!-- POETIC PAIRING — the unexpected. Purple bordered list (list-style:none). -->
-<h2>Poetic Pairing: [the unexpected]</h2>
+<!-- THE UNEXPECTED PAIRING — the bold cross-category matches. Purple bordered list (list-style:none). RENAMED from "Poetic Pairing" so the word "Poetic" only ever means the register up in Four Ways — here it is simply the unexpected. The three-register pairing logic + the Flavour-Compounding table below are EXCLUSIVE to this deep-dive template; a standard Shore Larder drops both. Keep them here. -->
+<h2>The Unexpected Pairing: [the framing]</h2>
 <p><strong>The bold move:</strong> <!-- kicker: why these unexpected matches still obey the chemistry. --></p>
 <div style="background: #d4dce8; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #7c3aed;">
     <ul style="margin: 0; font-size: var(--text-sm); list-style: none; padding: 0;">
@@ -161,6 +207,7 @@
         <!-- WRITER: 5 items. Last <li> drops margin-bottom. Bold the pairing, then explain. Bold but plausible — no gimmicks. -->
     </ul>
 </div>
+<p>One of those will bite if you treat it like the others. The caveat:</p>
 <div class="note note--warning"><p>A handling caveat for one of the pairings — over-steeping, burning, intensity. Keep it practical.</p></div>
 
 <!-- MOLECULAR / FLAVOUR-COMPOUNDING — the compound bridge: how to build flavour with this ingredient by matching shared molecules (food-pairing principle). This is the "no limit" section: list the MOST INTERESTING bridges, as many as are genuinely surprising — quality of insight over row count. Each row earns its place. -->
@@ -172,6 +219,7 @@
             <th style="text-align: left; padding: var(--space-2);">Compound</th>
             <th style="text-align: left; padding: var(--space-2);">Shared With</th>
             <th style="text-align: left; padding: var(--space-2);">Why It Matters</th>
+            <th style="text-align: left; padding: var(--space-2);">Strength</th>
         </tr>
     </thead>
     <tbody>
@@ -179,13 +227,14 @@
             <td style="padding: var(--space-2);"><strong>Compound name</strong></td>
             <td style="padding: var(--space-2);">Foods sharing it</td>
             <td style="padding: var(--space-2);">The pairing it explains</td>
+            <td style="padding: var(--space-2); font-family: var(--font-mono);">strong</td>
         </tr>
-        <!-- WRITER: NO ROW CAP. List every genuinely interesting shared-compound bridge — the more surprising-yet-true, the better. Cut any row that isn't notable. Adjust columns to fit (the tea piece used Tea Type / Compound / Shared With / Bridge). -->
+        <!-- WRITER: NO ROW CAP. List every genuinely interesting shared-compound bridge — the more surprising-yet-true, the better. Cut any row that isn't notable. Adjust the first three columns to fit (the tea piece used Tea Type / Compound / Shared With / Bridge) but ALWAYS keep the Strength column. Strength = how well the shared-molecule link is documented, in SF Mono: "strong" (measured in both foods, peer-reviewed), "moderate" (one side measured / inferred), "speculative" (plausible chemistry, untested). A pro must be able to separate proven bridges from hopeful ones at a glance. -->
     </tbody>
 </table>
 <div class="note note--key" data-label="Molecular Insight"><p>The headline insight from the table — the pairing that seems surprising but is chemically inevitable.</p></div>
 
-<div class="divider"><span class="divider__text">The Galley</span></div>
+<div class="divider" id="galley"><span class="divider__text">The Galley</span></div>
 
 <!-- QUALITY: GOOD vs BAD — the buying eye, made explicit. Two columns: what a good one shows, what a bad one shows. This is non-negotiable in every ingredient profile. -->
 <h2>Quality: How to Tell a Good One from a Bad One</h2>
@@ -210,6 +259,7 @@
         </ul>
     </div>
 </div>
+<p>Both columns assume an honest counter. The trouble is the defect a seller has already hidden:</p>
 <div class="note note--warning" data-label="The Tell That Hides"><p>The one defect a vendor can mask — wax, wash, cold-counter lighting, added water — and how to catch it anyway.</p></div>
 
 <!-- CONSERVATION — include ONLY where this ingredient has a genuinely peculiar or non-obvious preservation technique (e.g. garlic confit's botulism rule, saffron in the dark, fresh herbs as oil cubes, salt-packing, oxygen control). Skip if storage is ordinary (that lives in Galley Intel below). -->
@@ -239,10 +289,11 @@
         <!-- WRITER: 4–5 items. Galley-specific: storage, batch-prep recipe, shortcuts, provisioning maths. Last <li> drops margin-bottom. -->
     </ul>
 </div>
+<p>The one move from that list worth doing once and drawing on all week:</p>
 <div class="note note--action" data-label="Galley Batch Prep"><p>One repeatable batch-prep or technique with exact quantities, temperature, time, and shelf life.</p></div>
 
-<!-- THE STORIES — the warmth. Stacked coloured cards, each a self-contained anecdote. -->
-<h2>The Stories</h2>
+<!-- THE STORIES — the warmth. Stacked coloured cards, each a self-contained anecdote. MANDATORY in this template: a deep-dive without Stories is a spec sheet. Never drop this section. -->
+<h2 id="stories">The Stories</h2>
 <p><strong>The warmth:</strong> <!-- kicker: one line on why this ingredient is worth caring about, not just measuring. --></p>
 <div style="display: grid; gap: var(--space-4); margin: var(--space-6) 0;">
     <div style="background: #f5deb3; padding: var(--space-4); border-left: 4px solid #d97706;">
@@ -251,6 +302,10 @@
     </div>
     <!-- WRITER: 3–4 cards, rotate background + matching text colour (wheat/#5c4033, blue #d4dce8/#3b3b5c, green #d1e7dd/#1a3a2a, red #f0c0c0/#5c1a1a). -->
 </div>
+
+<!-- NURTURE NOTE — MANDATORY food-facing close (label "At the Table" per the canon). The single line a chef can actually say to a guest, drawn from the Stories above — sourced, not invented, the human version of one fact. This is the warmth pillar made usable at the pass. -->
+<div class="note note--quote" data-label="At the Table"><p>The one tableside sentence — what a chef tells the guest about this ingredient that turns a plate into a story. Pull it straight from a sourced anecdote above; never fabricate the line. (<em>e.g. name the place, the season, or the hands, in a sentence a guest remembers.</em>)</p></div>
+<!-- WRITER: must trace to a real story/source above. If you have no sourced line worth saying aloud, fix the Stories — don't invent one here. -->
 
 <!-- QUICK REFERENCE — dark recap card with stat grid + italic chef's note. -->
 <div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-8) 0;">

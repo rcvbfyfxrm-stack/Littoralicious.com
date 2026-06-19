@@ -78,9 +78,32 @@
     <a href="#bottom">Bottom Line</a>
 </nav>
 
-<!-- Port reality: one paragraph of fact that defines the constraint. -->
+<!-- Port reality: one paragraph of fact that defines the constraint. This single
+     funfact IS the port's vitals in a line — it carries the constraint so the
+     Quick Map table can carry the geography. Do not add a second vitals box (the
+     id-card) directly under it: that stacks two summaries of the same fact. -->
 <div class="pc-funfact"><strong>[The single hard fact about this port]</strong> &mdash; <!-- WRITER: the geography/logistics constraint that shapes every supplier decision (no roads / ferry-only / island / tides). Sourced number where you have one. --> placeholder reality line.</div>
 
+<!-- OPTIONAL — Port Card (.id-card). Include ONLY if this port's vitals genuinely
+     need a scannable five-row grid that the funfact above and the Quick Map below
+     do NOT already carry (rare); otherwise DELETE. If used, it must NOT sit flush
+     against the funfact — put it after the Quick Map, and drop any row that merely
+     repeats the funfact (the constraint) or the Bottom Line (the avoid window).
+<div class="id-card"><h4 class="id-card__title">Port Card</h4><div class="id-card__grid">
+  <div><span class="id-card__label">Lifeline</span><strong class="id-card__value">the fresh-food artery — the road/ferry/cargo line everything aboard travels on</strong></div>
+  <div><span class="id-card__label">Day-one stop</span><strong class="id-card__value">where to go first on arrival — the market, the agent, the wholesale run</strong></div>
+  <div><span class="id-card__label">Agent lead time</span><strong class="id-card__value">hours/days the agent needs the written brief before arrival</strong></div>
+</div></div>
+-->
+
+<!-- ============================================================
+     LOCKED: the TEXT Quick-Map table below is the ONLY map.
+     NEVER add a Leaflet / #pcv-map graphic map here — that is the
+     Terroir system, a separate publication. If a visual locator is
+     wanted, use a [GLANCE] count grid (berths / suppliers / minutes
+     to wholesale / ferry days-per-week) — a data block, never a
+     graphic map.
+============================================================ -->
 <h2 id="quick-map">Quick Map</h2>
 <p class="pc-kicker"><!-- WRITER: one line — the whole port at a glance, by minutes from the berth. --> Where everything is, in minutes from the dock.</p>
 <!-- ============================================================
@@ -134,8 +157,19 @@
 <p><strong>Port type: [one-line classification].</strong> <!-- WRITER: the defining constraint and how everything fresh actually reaches the boat (boat / portage / cargo ferry / air freight). --> placeholder. The supply runs on <span class="term">portage</span> — every box is carried, not driven.</p>
 <div class="pc-pullq">[The one sentence a tired chef should remember. The constraint, stated flat.]</div>
 <p><!-- WRITER: how the supplier game flows from that constraint — where the bulk lives vs the fresh, and why. Numbers/prices where sourced. --> placeholder.</p>
-<div class="note note--science"><p><!-- WRITER: the mechanism that makes the constraint bite — e.g. why a 30-minute ferry leg warms a chilled load past the safe-hold line, or why tides gate the tender window. The compound, the temperature, the number. --> placeholder — why the leg, not the distance, is what spoils the load.</p></div>
+<div class="note note--science"><p><!-- WRITER: MANDATORY — one traceable claim built around ONE hard figure with a NAMED source. Lead with the bare number so a chef can repeat it at the pass, then the mechanism: e.g. "5°C — the cold-chain line. An open-deck chilled load drifts past it on a 30-min ferry leg, and Vibrio doubles roughly every 1–2 h above it while Listeria monocytogenes still grows down to ~0°C (FDA Fish & Fishery Products Hazards Guide, 4th ed.)." Name the compound/pathogen, the °C, the agency + year. NEVER "studies show" without a name. One box, one figure — do not split into a second science note. --> placeholder — the one number, its mechanism, and its named source, in a line a chef repeats at the pass.</p></div>
 <p><strong>Two things to brief your yacht agent on, in writing, [lead time] before arrival:</strong> (1) [full provision list with brand specs]; (2) [dietary requirements / wine preferences]. During [peak events], brief [longer lead] ahead.</p>
+
+<h2 id="cook-this-port">Cook This Port</h2>
+<p class="pc-kicker"><!-- WRITER: one line — the one thing this coast does better than anywhere, and when. --> Before you decide where to buy, decide what to put on the card.</p>
+<!-- COOK THIS PORT — the culture beat that answers WHAT to cook before WHERE to
+     buy. This is the biggest gap in a pure-logistics guide: the sibling cook-the-port
+     essays prove the appetite. Locked .cook-this-port. Anchor the speciality name
+     with <mark>, the local word with .term. Keep both halves tight and sourced. -->
+<div class="cook-this-port">
+    <div><span class="cook-this-port__label">The catch / crop</span><p>The one ingredient this coast does better than anywhere, at its <mark>peak window</mark>. <!-- WRITER: name the speciality and put <mark> on it; give the real peak window (months) and the line of provenance — why HERE, not the next port. The local word for it goes in .term. --> Local word: <span class="term">term</span>.</p></div>
+    <div><span class="cook-this-port__label">Serve it</span><p><!-- WRITER: two concrete ways to put it on the guest menu (the traditional treatment + one for a yacht service), then the price-vs-import reality — what it costs landed here at peak vs flying it in elsewhere, with a number. --> Two ways to put it on the guest menu, plus the price-vs-import reality.</p></div>
+</div>
 
 <h2 id="agents">Agents, Logistics &amp; [Water Taxi / Cargo Ferry]</h2>
 <p class="pc-kicker"><!-- WRITER: one line — why the agent is the first call, not the last. --> The first call before arrival, and the channel that moves your boxes.</p>
@@ -163,7 +197,9 @@
 <p class="pc-kicker"><!-- WRITER: one line — the standard run that feeds the boat. --> Where the fresh actually comes from, and the run that brings it aboard.</p>
 <!-- Fish hall / produce / direct supply / on-island butcher. The funfact below
      captures the repeatable supply pattern (the run, the cut-off, the portage). -->
-<p class="sr-section-note"><!-- WRITER: optional one-liner orienting the reader to how these picks float by use-rating, if rating JS is wired for this city. --> placeholder note.</p>
+<!-- OPTIONAL — <p class="sr-section-note">…</p>: one line on how these picks float
+     by use-rating, ONLY if rating JS is wired for this city; otherwise DELETE. Never
+     leave it flush above the funfact as an empty pre-placed box. -->
 <div class="pc-funfact"><strong>[The repeatable supply pattern.]</strong> <!-- WRITER: the standard run — van/ferry/walk, where to load, the cut-off hour, the portage leg, the typical cost band. --> placeholder.</div>
 
 <details class="pfold top" id="p-market-fish">
@@ -180,8 +216,17 @@
 </details>
 <!-- Repeat pfold for: produce / direct-supply grower, on-island butcher, mainland
      wholesale / hypermarket. Mark the lead pick in each cluster with class "top". -->
-<div class="note note--quote"><p><!-- WRITER: one striking line that re-hooks the eye mid-piece — the truth about provisioning this port, said the way a chef would say it. --> placeholder — the line a chef remembers about this port.</p></div>
 <div class="note note--action"><p><!-- WRITER: the move at the market — what to buy on the day, what to never put on a printed menu, the substitute to name. --> placeholder — buy on the day, name a substitute before you print.</p></div>
+
+<!-- One line bridges the practical move into the relationship beat: the buying is
+     half the job; getting the local box at the local price is the other half. -->
+<p><!-- WRITER: one sentence handing off from "what to buy" to "how the stall treats you" — the regular gets the back stock, the tourist gets the mark-up. --> But the box only comes off the back shelf if the stall reads you as a chef who cooks here, not a tourist passing through.</p>
+
+<!-- NURTURE / WARMTH BEAT (MANDATORY) — "At the Stall". The relationship layer a
+     logistics guide never shows: the words and the etiquette that get a yacht chef
+     the local box at the local price. Locked note--quote, label "At the Stall".
+     Must earn its place — real, specific, sourced to the port's own language. -->
+<div class="note note--quote" data-label="At the Stall"><p><!-- WRITER: the 4–6 local words (please/thank you/"for the boat"/"what's freshest today") plus ONE custom that signals you cook here, not pass through — and the etiquette that opens the back stock at the back-stock price. Real and specific to this port; warm but useful. Name the words in their language. --> The handful of local words and the one custom that turn a chef from a tourist into a regular — and get the box at the local price.</p></div>
 
 <h2 id="specialty">Specialty Shops &amp; Wine</h2>
 <p class="pc-kicker"><!-- WRITER: one line — the things worth a special trip and a case order. --> The cheese, the case, the bakery — what's worth the lead time.</p>
@@ -212,6 +257,13 @@
 
 <h2 id="watchouts">⚠ Watch-outs by Season &amp; Event</h2>
 <p class="pc-kicker"><!-- WRITER: one line — the few dates that break a charter day. --> The windows that produce every horror story — and the move for each.</p>
+
+<!-- TRADITION BEAT — "The Calendar". The festival that strips the shelves IS the
+     festival that defines the town: pair each seasonal window to what it means
+     CULTURALLY and OPERATIONALLY in the same breath. This turns a watch-out list
+     from a warning into a reason to care about the port. Locked note[data-label]. -->
+<div class="note" data-label="The Calendar"><p><!-- WRITER: 3–4 lines, each pairing one seasonal window to both meanings at once — the saint's day / harvest / regatta that empties the market is also what the town lives for. e.g. "Mid-Aug feast — the whole coast eats the same dish for three days; the fish hall sells out by 09:00 and shuts for two. Order it as a guest special, not a staple." Real, sourced where you can. --> Each window means something to the town and something to your provisioning run — name both.</p></div>
+
 <!-- The few that actually break the day. In the live build these render from a data
      file into #wo-list; in the skeleton, list them inline as a short ol so a writer
      can fill them without the JS. Keep severity language: "breaks the day" / "annoying". -->

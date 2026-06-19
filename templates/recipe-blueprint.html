@@ -110,6 +110,25 @@
                     <p>[How it travelled, or how one valley does it differently from the next — and the thread you will tie off at the end.]</p>
                 </div>
 
+                <!-- OPTIONAL — INCLUDE ONLY IF IT EARNS A SCAN; OTHERWISE LEAVE DELETED. Designated dishes ONLY:
+                     uncomment the dark Origin Card below ONLY when the dish carries a REAL legal designation
+                     (focaccia di Recco IGP, a PDO cheese, a DOP oil). It is the tradition object: who guards the
+                     name, where it may legally be made, the one rule that defines the genuine article. NOT for a
+                     generic regional dish — that history lives in the prose above; do not invent a status. If you
+                     do uncomment it, add a one-line prose bridge after it so it never stacks against the
+                     learn-something note below.
+                <div class="id-card id-card--origin">
+                    <h4 class="id-card__title">Origin</h4>
+                    <div class="id-card__grid">
+                        <div><span class="id-card__label">Born</span><strong class="id-card__value">[place / era]</strong></div>
+                        <div><span class="id-card__label">Of necessity</span><strong class="id-card__value">[the need it met]</strong></div>
+                        <div><span class="id-card__label">Protection</span><strong class="id-card__value">[IGP / PDO / DOP — the real designation, or delete this card]</strong></div>
+                        <div><span class="id-card__label">Authorised zone</span><strong class="id-card__value">[the only place it may legally be made]</strong></div>
+                        <div><span class="id-card__label">The defining rule</span><strong class="id-card__value">[the one rule that makes it genuine — e.g. no leavening, single thin sheet]</strong></div>
+                    </div>
+                </div>
+                -->
+
                 <!-- LEARN-SOMETHING (mandatory · ALWAYS VISIBLE · never a toggle). ONE verified, non-obvious
                      fact tied to THIS dish: etymology · food archaeology · a trade-route / economic-history
                      fact · the science-discovery story. Name the source inline (no "they say"). ROTATE the
@@ -128,7 +147,9 @@
                      vessel piece to piece: a Science note here, or a science-box (shown commented below).
                      Optional re-hook anywhere above: a Reference pull-quote (one sourced cultural line),
                      dropped right after a prose paragraph — never set against another callout. -->
-                <div class="note note--science"><p>[The one mechanism as a short narrative: what the molecule "wants", what happens because of it, and the result you taste — <mark>mark the pivot</mark>.]</p></div>
+                <div class="note note--science"><p>[The one mechanism as a short narrative: what the molecule "wants", what happens because of it, and the result you taste — anchored to ONE measured number from a primary paper (a hydration %, a <span class="term">starch-gelatinisation</span> onset in °C, a crumb-set temperature) — <mark>mark the pivot</mark>.] <cite>&mdash; Author, <em>Journal</em>, year. DOI: 10.0000/xxxxx</cite></p></div>
+                <!-- WRITER: SCIENCE = highest bar. The number here MUST come from a PRIMARY peer-reviewed source — a journal article, lab paper, or systematic review with year + DOI. A reference book (McGee, Modernist) may support but NEVER replaces it. One measured fact, not a vague "the starch sets" — give the actual °C or % and cite where it was measured. This fact must DIFFER from the rcp-story and the learn-something note. -->
+
                 <!-- Alternative vessel (pick one, vary across the corpus):
                 <div class="science-box">
                     <div class="science-box__label">Evidence</div>
@@ -212,6 +233,17 @@
                      Troubleshooting = the actual failure modes, cause then fix. Charter = make-ahead,
                      par-bake, freeze (dough AND baked), hold/refresh, scale-up, plus the galley reality. -->
                 <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
+                    <!-- FAMILY TREE (first sub-block · the Grandmother beat) — the named regional/historical cousins
+                         of this dish BEFORE the modern riffs, dialect term in <em>. Model: focaccia's cousins are
+                         fougassa (Provence) / hogaza (Castile) / fugassa (Liguria). Teach the lineage; one true line
+                         each on what makes that cousin distinct. Then the modern variations table below it. -->
+                    <div class="rcp-group">The family tree</div>
+                    <table>
+                        <tr><td><em>[Cousin — dialect term]</em></td><td>[region · the one thing that makes it distinct]</td></tr>
+                        <tr><td><em>[Cousin — dialect term]</em></td><td>[region · the one thing that makes it distinct]</td></tr>
+                        <tr><td><em>[Cousin — dialect term]</em></td><td>[region · the one thing that makes it distinct]</td></tr>
+                    </table>
+                    <div class="rcp-group">Modern variations</div>
                     <table><tr><td>[Move]</td><td>[What it does / how]</td></tr></table>
                 </div></details>
 
@@ -219,14 +251,39 @@
                     <table><tr><td>[Problem]</td><td>[Cause &rarr; fix]</td></tr></table>
                 </div></details>
 
+                <!-- DONE WHEN (always visible · the Yacht-Chef beat) — senses, not the clock. A galley timer lies on
+                     a swell-tilted oven; the cook reads the dish. Give 2–3 finish cues across different senses. -->
+                <div class="note" data-label="Done when"><p>[Finger-dent in the crumb springs back · 96 °C in the centre · crust deep-golden and crackles when pressed.]</p></div>
+                <!-- WRITER: 2–3 senses-not-clock cues — touch / internal temp / sound or colour. No "bake 35 min"; the timing lives in the steps. These are how the cook KNOWS, on a moving boat. -->
+
                 <details class="rcp-fold"><summary>Charter prep &amp; storage</summary><div class="rcp-fold__body">
+                    <!-- PROVISIONING AT SEA (first sub-block · the Yacht-Chef / culture beat) — the sourcing reality before
+                         the make-ahead notes. What grade to specify, the one thing worth carrying in the dry store vs
+                         buying in port, and the substitution that survives a charter when the right thing is unavailable. -->
+                    <div class="rcp-group">Provisioning at sea</div>
+                    <table>
+                        <tr><td>Flour</td><td>[protein % to specify — e.g. 12–13% for structure; the brand that holds]</td></tr>
+                        <tr><td>Oil</td><td>[grade — e.g. early-harvest EVOO for finish vs a cheaper pomace for the tin]</td></tr>
+                        <tr><td>Carry vs source in port</td><td>[the one ingredient worth carrying from home vs what to buy fresh dockside]</td></tr>
+                        <tr><td>The charter-proof swap</td><td>[the substitution that survives when the right thing isn't aboard — and what it costs you]</td></tr>
+                    </table>
                     <p>[Make-ahead, holding temp, freezing — what survives a charter and what does not.]</p>
                 </div></details>
 
                 <!-- THE CLOSE (ALWAYS VISIBLE — outside any fold). Pay off the throughline and hand the cook
                      the ratio as a tool: restate it, then 2–3 riffs INCLUDING a cheaper/heartier crew-tier swap
                      (cook once, serve two tiers). Close on ONE thing. -->
-                <div class="note note--action"><p><strong>Once you own the ratio</strong> [restate it in five words], the dish is yours: [2&ndash;3 riffs, one of them a leaner/heartier crew-tier swap]. [One line that ties off the history you opened.]</p></div>
+                <div class="note note--action"><p><strong>Once you own the ratio</strong> [restate it in five words], the dish is yours: [2&ndash;3 riffs]. <strong>Cook once, serve two tiers:</strong> [the MANDATORY concrete crew swap — same dish, name the cheaper-cut/heartier substitution and what changes — e.g. guest gets the IGP single sheet, crew gets the same dough baked thick with a pantry cheese, half the oil]. [One line that ties off the history you opened.]</p></div>
+                <!-- WRITER: the cook-once-serve-two-tiers swap is NON-OPTIONAL. Name the actual cheaper cut or heartier version of THIS dish — not a generic "scale it down". Guest tier and crew tier from one cook. -->
+
+                <!-- BRIDGE — one line of PROSE turning from the tool (the ratio) to the table, so the close note and
+                     the nurture note never sit back-to-back. -->
+                <p>[One sentence handing the dish from the cook to the table — from "now it's yours" to how it is shared.]</p>
+
+                <!-- NURTURE NOTE (MANDATORY · fixed slot · the warmest beat) — the serving culture: how it is actually
+                     eaten, torn, shared, dunked; who you feed and why. Not "serve warm" — the human ritual. This is
+                     the Grandmother pillar closing the piece. One or two lines, real feeling, never filler. -->
+                <div class="note note--quote" data-label="At the Table"><p>[How it is really eaten — torn by hand, dunked, passed down the crew table; the moment it makes, and who you are feeding when you make it.]</p></div>
 
                 <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> [named books / papers] &mdash; <cite>Author, <em>Title</em></cite>. <em>Tested at sea.</em></p>
 
