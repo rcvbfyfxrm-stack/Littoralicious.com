@@ -46,6 +46,7 @@
     <main>
         <header class="article-header">
             <div class="container">
+                <!-- Set this eyebrow to the section name: Shore Larder / The Method / Littoral Heritage / The Evidence / The Bridge. -->
                 <span class="article-header__category">Section</span>
                 <h1 class="article-header__title">{{TITLE}}</h1>
                 <p style="max-width: 60ch; color: var(--color-muted); margin-top: var(--space-4);">
@@ -53,6 +54,20 @@
                 </p>
             </div>
         </header>
+
+        <!-- SECTION ORIENTATION — seed per section so the page is not a CMS default. Fill the box with what the section is FOR, and link the one best entry-point in "Start here". -->
+        <section class="container" style="padding-top: var(--space-8);">
+            <div class="summary-box">
+                <strong>What you'll find here</strong>
+                <ul>
+                    <li>One line: what this section is for, and who it serves.</li>
+                    <li>One line: the kind of piece it collects — ingredient / technique / culture / study / dispatch.</li>
+                    <li>One line: how to read it — newest first, or start with the door-in below.</li>
+                </ul>
+            </div>
+            <p style="color: var(--color-muted); margin-top: var(--space-6);">New here? Start with one piece, not the whole list.</p>
+            <div class="note note--key" data-label="Start here"><p>Link the single best entry-point article in this section, with one line on why it is the door in.</p></div>
+        </section>
 
         <!-- Published Articles -->
         <section class="container" style="padding: var(--space-12) 0;">

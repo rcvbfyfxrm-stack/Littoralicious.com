@@ -10,7 +10,25 @@
   .tag{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,sans-serif;
        font-size:23px;letter-spacing:.14em;text-transform:uppercase;color:#555}
   .nurture{font-style:italic;font-size:31px;color:#2d4a5e;margin-top:30px}
+
+  /* --- PER-ARTICLE VARIANT (.og--article) — token-ready, design-lock-safe ----
+     Default render above is the brand plate. The variant below is for a future
+     per-article OG pipeline (render this file per article with the TITLE /
+     CATEGORY / NUMBER tokens filled, then point lib.mjs's og:image at the
+     per-article PNG). Section is signalled by the CATEGORY eyebrow text, NOT by
+     colour — the design lock is monochrome + sea (#2d4a5e), so we do not add
+     five bright accents. Keep ink #0a0a0a, sea #2d4a5e, salt #555, paper #fafafa. */
+  .og--article{align-items:flex-start;justify-content:center;padding:90px;text-align:left}
+  .og--article .accent-bar{position:absolute;top:30px;left:30px;width:140px;height:6px;background:#2d4a5e}
+  .og--article .eyebrow{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,sans-serif;
+       font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:#2d4a5e;margin:40px 0 26px}
+  .og--article .title{font-size:60px;line-height:1.1;color:#0a0a0a;max-width:18ch;margin:0}
+  .og--article .number-chip{margin-top:30px;font-family:'SF Mono',SFMono-Regular,Consolas,Menlo,monospace;
+       font-size:28px;letter-spacing:.04em;color:#2d4a5e;border:1px solid #dcdcdc;padding:8px 16px;display:inline-block}
+  .og--article .brand{position:absolute;bottom:74px;left:90px;font-size:24px;letter-spacing:.14em;color:#555}
 </style></head><body>
+
+  <!-- DEFAULT RENDER — the brand plate (one shared og-image.png for the whole site). -->
   <div class="og">
     <div class="frame"></div>
     <svg class="flame" width="128" height="128" viewBox="0 0 100 100">
@@ -24,4 +42,20 @@
     <div class="tag">Modern Science &middot; Regional Recipes &middot; From the Sea</div>
     <div class="nurture">One purpose: Nurture.</div>
   </div>
+
+  <!-- PER-ARTICLE VARIANT — to ship per-article share cards: (1) render this block
+       (not the brand plate) per article with the tokens filled; (2) emit a per-article
+       PNG; (3) point lib.mjs's og:image / twitter:image at it instead of the static
+       og-image.png. The {{NUMBER}} chip is optional — drop the element when the piece
+       has no single headline figure. Until that pipeline exists, the brand plate above
+       is the live share card.
+  <div class="og og--article">
+    <div class="frame"></div>
+    <div class="accent-bar"></div>
+    <div class="eyebrow">{{CATEGORY}}</div>
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="number-chip">{{NUMBER}}</div>
+    <div class="brand">LITTORALICIOUS</div>
+  </div>
+  -->
 </body></html>
