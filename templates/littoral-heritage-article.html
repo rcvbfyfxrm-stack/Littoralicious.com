@@ -41,7 +41,7 @@
                 <!-- BODY:BEGIN — Heritage. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
 <!-- BODY:BEGIN -->
 
-<!-- LITTORAL HERITAGE (03) — Culture & history. Section rhythm: the dish/place → the people & why it began → the method that carries the tradition → what is fixed vs negotiable → why it endures → on board → pairing → sources. Keep all three pillars (grandmother / scientist / yacht chef). Science inline. Sourced, not asserted. British cooking spelling. Banned: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. -->
+<!-- LITTORAL HERITAGE (03) — Culture & history. Rhythm: Origin (+ Origin Card) -> Heritage Timeline -> the people (Whose Hands) -> method + mechanism -> Two Schools -> the Tradition Ledger (Element | The Rule | Why It Holds) -> why it endures -> on board -> pairing -> sources. SIGNATURE = the Heritage Timeline ribbon (the ONLY template that shows time passing) + the Origin Card + the Tradition Ledger; these make the SHELL signal heritage so it never reads like a Shore Larder deep-dive. MANDATORY food-facing beats: Whose Hands (warmth) + a sourced lineage. Keep all three pillars (grandmother / scientist / yacht chef). Science inline; history sourced to named records, documented fact kept distinct from legend. British cooking spelling. Banned: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. -->
 
 <div class="summary-box">
     <strong>What you'll get</strong>
@@ -58,15 +58,37 @@
 <p>One-line placeholder: name the dish, the coastline/town, and the single material fact that explains why it exists.</p>
 <!-- The opening: tie the dish to its place. Why HERE — geography, poverty, what the sea gave for free, what was scarce. The condition that made the dish inevitable. 2–3 short paras of real history. -->
 
-<div class="note note--key">
-    <p>One-line placeholder: the decision the coastline forced — what they had, what they lacked, and the dish that resolved it.</p>
+<!-- ORIGIN CARD — the heritage signature card (a relabelled Identity Card). The scannable spine of the founding story: where it was born, the need it met, the constraint that fixed its form, the first hands, who guards it now. The prose carries the detail; this card is the skim-path. -->
+<div class="id-card id-card--origin">
+    <h4 class="id-card__title">Origin</h4>
+    <div class="id-card__grid">
+        <div><span class="id-card__label">Born</span><strong class="id-card__value">coastline + rough era</strong></div>
+        <div><span class="id-card__label">Of necessity</span><strong class="id-card__value">the hunger or surplus that made it</strong></div>
+        <div><span class="id-card__label">The constraint</span><strong class="id-card__value">poverty / preservation / what the sea gave free</strong></div>
+        <div><span class="id-card__label">First cooked by</span><strong class="id-card__value">fishing families / market women / monks</strong></div>
+        <div><span class="id-card__label">Now defended by</span><strong class="id-card__value">PDO / town / named house</strong></div>
+    </div>
 </div>
-<!-- Key Point at the founding constraint. The hinge the whole tradition turns on. -->
+<!-- WRITER: one traceable fact per cell, no invented dates. "Of necessity" carries the founding constraint the whole tradition turns on — what they had, what they lacked, the dish that resolved it. -->
+
+<p>Those founding facts have dates. Here is how the tradition moved through them.</p>
+
+<!-- HERITAGE TIMELINE — THE SIGNATURE of this template: the only Littoralicious format that shows time passing. A slim dated ribbon of the dish/tradition's lineage between Origin and The People. MANDATORY — it is what makes a Heritage piece unmistakable at a glance and stops it reading like a Shore Larder deep-dive. -->
+<div class="heritage-timeline">
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">c. 0000</span><span class="heritage-timeline__label">first record / origin — the dated beginning</span></div>
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">c. 0000</span><span class="heritage-timeline__label">the spread or turning point — trade, conquest, a named dish</span></div>
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">0000</span><span class="heritage-timeline__label">codified / protected / written down</span></div>
+    <div class="heritage-timeline__stop"><span class="heritage-timeline__date">Today</span><span class="heritage-timeline__label">who keeps it, and what threatens it</span></div>
+</div>
+<!-- WRITER: 3-5 dated stops, each a real sourced event. SF Mono dates are automatic. This time-axis is the device no other template carries. -->
 
 <h2>The People</h2>
 <p><strong>Whose hands:</strong> one-line kicker — the constraint that shaped every later cook.</p>
 <p>One-line placeholder: who cooked it first and what their constraint was.</p>
 <!-- The grandmother pillar. Fishing families, market women, a named tradition (anonymise any private-source names). Whose hands, whose kitchen, what they could and couldn't afford. Keep it warm, keep it true. -->
+
+<!-- WHOSE HANDS — MANDATORY nurture beat (food-facing). The LIVING lineage: not just who cooked it first, but who keeps it alive now, and the table it belongs to. The warmth pillar made structural. -->
+<div class="note note--quote" data-label="Whose Hands"><p>The named family, guild, market stall, or village that still makes it the old way — and the table it belongs to. One warm, true, sourced line: who you would learn it from if you sailed in tomorrow.</p></div>
 
 <div class="divider"><span class="divider__text">The Method</span></div>
 
@@ -80,26 +102,34 @@
 </div>
 <!-- The failure mode. The move that looks harmless and isn't. -->
 
+<p>That failure is not superstition — the tradition is encoding a mechanism.</p>
+
 <div class="note note--science" data-label="The Mechanism">
     <p>One-line placeholder: the compound/temperature/reaction that explains why the traditional move is correct — the grandmothers were right, here is why. Name the <span class="term">placeholder compound</span> and its °C window.</p>
 </div>
 <!-- Inline science note. Name the compound, the °C window, the denaturation/oxidation threshold. Sourced or clearly framed as mechanism, never "studies show". -->
+
+<p>Strip the chemistry away and one line of the tradition remains.</p>
 
 <div class="note note--quote">
     <p>One-line placeholder: a single striking line — the tradition reduced to one truth that re-hooks the eye.</p>
 </div>
 <!-- Mid-piece pull-quote. One line, no padding, lands between the mechanism and the rules. -->
 
+<p>This coast is not the only one to claim the dish.</p>
+<!-- OPTIONAL — TWO SCHOOLS: a cross-cultural split, one sourced line, only where a real one exists (one coast cures it, the next port smokes it). Cultural tension is what holds a serious reader. DELETE this bridge line + the box if there is no genuine divergence — never invent one. -->
+<div class="note" data-label="Two Schools"><p>How a neighbouring coast or culture does the same thing differently — two named treatments, one sentence each, both sourced. The disagreement is the depth.</p></div>
+
 <h2>What's Fixed, What's Not</h2>
 <p><strong>The non-negotiables:</strong> one-line kicker — what you can change and what you must never.</p>
-<!-- The tradition table: element → traditional rule → why it matters. Copy the wrapper + data-table verbatim; fill rows with the dish's non-negotiables and the reason each one holds. 3–5 rows. -->
+<!-- THE TRADITION LEDGER — the heritage-specific named table. Lock the three columns (Element | The Rule | Why It Holds); this is the device that separates a Heritage piece from a Shore Larder profile. 3-5 rows: the dish's non-negotiables and why each one survives. -->
 <div style="overflow-x: auto; margin: var(--space-6) 0;">
     <table class="data-table">
         <thead>
             <tr>
                 <th>Element</th>
-                <th>Traditional</th>
-                <th>Why It Matters</th>
+                <th>The Rule</th>
+                <th>Why It Holds</th>
             </tr>
         </thead>
         <tbody>
@@ -143,6 +173,8 @@
 </div>
 <!-- Keep the pairing tight: regional logic, one or two named producers, the flavour/mineral reason. -->
 
+<p>Pour it, and the whole tradition comes down to one thing.</p>
+
 <div class="note note--key" data-label="The One Thing">
     <p>One-line placeholder: the single takeaway the chef keeps — the constraint is the dish, hold it. Tested at sea.</p>
 </div>
@@ -152,7 +184,7 @@
     <strong>Sources</strong>
     <p>One-line placeholder: named regional culinary documentation, books, or studies behind the history and the mechanism — no "they say".</p>
 </div>
-<!-- Every claim traceable. Name the tradition, the place, and any study underpinning the temperature/chemistry note. -->
+<!-- HIGH BAR — every claim traceable. History: named historians, archaeology, primary records (a dated cookbook, a guild charter, a parish account); distinguish documented fact from legend and say which is which. Mechanism: a PRIMARY paper (journal, year) for the temperature/chemistry, never a reference book alone. -->
 
 <!-- BODY:END -->
                 <!-- BODY:END -->
