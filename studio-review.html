@@ -100,6 +100,23 @@
         }
         .rv-status{padding:var(--space-8) var(--space-4);text-align:center;color:var(--color-muted);}
         .rv-status code{background:var(--color-subtle);padding:1px 5px;}
+        /* inline photo picker */
+        .rv-pho{position:fixed;inset:0;background:rgba(10,10,10,.6);display:none;align-items:center;justify-content:center;z-index:80;padding:var(--space-4);}
+        .rv-pho.open{display:flex;}
+        .rv-pho__box{background:#fff;max-width:760px;width:100%;max-height:86vh;display:flex;flex-direction:column;border:1px solid var(--color-ink);}
+        .rv-pho__head{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-border);}
+        .rv-pho__head h3{font-family:var(--font-serif);margin:0;font-size:var(--text-base);}
+        .rv-pho__head input{flex:1;padding:.45em .7em;border:1px solid var(--color-border);font:inherit;font-size:14px;}
+        .rv-pho__hint{font-size:11px;color:var(--color-salt);font-family:var(--font-mono);padding:6px var(--space-4) var(--space-2);}
+        .rv-pho__hint code{background:var(--color-subtle);padding:0 4px;}
+        .rv-pho__grid{overflow:auto;padding:var(--space-3) var(--space-4) var(--space-4);display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
+        .rv-pho__item{cursor:pointer;border:1px solid var(--color-border);background:var(--color-subtle);overflow:hidden;text-align:left;padding:0;font:inherit;}
+        .rv-pho__item:hover{border-color:var(--color-sea);}
+        .rv-pho__item img{display:block;width:100%;height:88px;object-fit:cover;background:#eee;filter:grayscale(1);}
+        .rv-pho__item .nm{display:block;font-family:var(--font-mono);font-size:10px;color:var(--color-muted);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .rv-pho__item .gp{font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:var(--color-salt);}
+        .rv-pho__empty{padding:var(--space-6);text-align:center;color:var(--color-muted);font-size:13px;font-style:italic;}
+        .rv-pho__x{margin-left:auto;background:none;border:none;font-size:22px;cursor:pointer;color:var(--color-muted);line-height:1;}
     </style>
 </head>
 <body>
@@ -339,8 +356,10 @@
             var row = document.createElement('div'); row.className = 'rv-edit__row';
             var save = document.createElement('button'); save.type = 'button'; save.className = 'rv-btn'; save.textContent = existing ? 'Update' : 'Save note';
             var cancel = document.createElement('button'); cancel.type = 'button'; cancel.className = 'rv-btn rv-btn--ghost'; cancel.textContent = 'Cancel';
+            var photoB = document.createElement('button'); photoB.type = 'button'; photoB.className = 'rv-btn rv-btn--ghost'; photoB.textContent = 'Add photo';
+            photoB.addEventListener('click', function () { openPhotoPicker(ta); });
             var hint = document.createElement('span'); hint.style.cssText = 'font-size:11px;color:var(--color-salt);margin-left:auto;'; hint.textContent = '⌘/Ctrl+Enter to save · Esc to cancel';
-            row.appendChild(save); row.appendChild(cancel); row.appendChild(hint);
+            row.appendChild(save); row.appendChild(cancel); row.appendChild(photoB); row.appendChild(hint);
             host.appendChild(ta); host.appendChild(row);
             placeAfter(block, host, afterEl);
             openHost = host; ta.focus();
@@ -580,6 +599,59 @@
                     .catch(function (err) { $('auth-msg').textContent = err.message; });
             });
         }
+        // ---- inline photo picker: anchors a photo to the paragraph note being edited ----
+        var photoLib = null, photoLoaded = false, photoTarget = null, photoModal = null;
+        function buildPhotoModal() {
+            if (photoModal) return photoModal;
+            var m = document.createElement('div'); m.className = 'rv-pho'; m.id = 'rv-pho';
+            m.innerHTML = '<div class="rv-pho__box">' +
+                '<div class="rv-pho__head"><h3>Add photo</h3>' +
+                '<input id="rv-pho-search" type="text" placeholder="Search photos by name…" autocomplete="off">' +
+                '<button class="rv-pho__x" id="rv-pho-close" title="Close">&times;</button></div>' +
+                '<div class="rv-pho__hint">Click a photo to drop <code>Add photo: …</code> into this paragraph&rsquo;s note, then Save. New images: <code>assets/photos/</code> + <code>node tools/photos.mjs</code>.</div>' +
+                '<div class="rv-pho__grid" id="rv-pho-grid"></div></div>';
+            document.body.appendChild(m);
+            m.addEventListener('click', function (e) { if (e.target === m) closePhotoPicker(); });
+            m.querySelector('#rv-pho-close').addEventListener('click', closePhotoPicker);
+            m.querySelector('#rv-pho-search').addEventListener('input', function () { renderPhotoGrid(this.value); });
+            m.querySelector('#rv-pho-grid').addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('.rv-pho__item'); if (b) insertPhoto(b.getAttribute('data-path')); });
+            photoModal = m; return m;
+        }
+        function loadPhotoLib() {
+            if (photoLoaded) return Promise.resolve(photoLib);
+            return fetch('data/photo-library.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : { photos: [] }; })
+                .then(function (d) { photoLib = (d && d.photos) || []; photoLoaded = true; return photoLib; })
+                .catch(function () { photoLib = []; photoLoaded = true; return photoLib; });
+        }
+        function renderPhotoGrid(q) {
+            var grid = document.getElementById('rv-pho-grid'); q = (q || '').toLowerCase().trim();
+            var list = (photoLib || []).filter(function (p) { return !q || (p.name + ' ' + p.path + ' ' + p.group).toLowerCase().indexOf(q) !== -1; });
+            if (!list.length) { grid.innerHTML = '<div class="rv-pho__empty">No photos match. Drop images in <code>assets/photos/</code>, then run <code>node tools/photos.mjs</code>.</div>'; return; }
+            grid.innerHTML = list.map(function (p) {
+                return '<button class="rv-pho__item" type="button" data-path="' + esc(p.path) + '">' +
+                    '<img loading="lazy" src="' + esc(p.path) + '" alt="">' +
+                    '<span class="nm">' + esc(p.name) + ' <span class="gp">' + esc(p.group) + '</span></span></button>';
+            }).join('');
+        }
+        function openPhotoPicker(targetTextarea) {
+            photoTarget = targetTextarea; buildPhotoModal();
+            photoModal.classList.add('open');
+            var se = document.getElementById('rv-pho-search'); se.value = '';
+            document.getElementById('rv-pho-grid').innerHTML = '<div class="rv-pho__empty">Loading photos…</div>';
+            loadPhotoLib().then(function () { renderPhotoGrid(''); se.focus(); });
+        }
+        function closePhotoPicker() { if (photoModal) photoModal.classList.remove('open'); }
+        function insertPhoto(path) {
+            var ta = photoTarget; if (!ta) return;
+            var line = 'Add photo: ' + path + ' — caption: ';
+            var v = ta.value, s = (ta.selectionStart != null) ? ta.selectionStart : v.length;
+            var pre = v.slice(0, s), post = v.slice(s);
+            if (pre && !/\n$/.test(pre)) pre += '\n';
+            ta.value = pre + line + post; var caret = pre.length + line.length;
+            closePhotoPicker(); ta.focus(); try { ta.setSelectionRange(caret, caret); } catch (e) {}
+        }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && photoModal && photoModal.classList.contains('open')) { e.stopPropagation(); closePhotoPicker(); } }, true);
+
         setupAuth();
     })();
     </script>
