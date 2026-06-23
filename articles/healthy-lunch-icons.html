@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Healthy Lunch Icons — Wraps · Greens · Protein Counters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4efe3;
+  --paper-2: #ede7d6;
+  --paper-edge: #d8cfb8;
+  --ink: #1f1a13;
+  --ink-soft: #4a4034;
+  --ink-faint: #80766a;
+  --accent: #8b3a2a;
+  --accent-soft: #c4a78d;
+  --rule: #b8ad95;
+  --jade: #5d6f55;
+  --gold: #b58a47;
+  --blue: #2e5d6e;
+  --shadow: 0 1px 3px rgba(31,26,19,0.06), 0 6px 18px rgba(31,26,19,0.04);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+  font-family: 'Cormorant Garamond', serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ---------- Masthead ---------- */
+.masthead { padding: 48px 24px 24px; text-align: center; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.masthead .kicker { font-family: 'Inter', sans-serif; font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.masthead h1 { font-family: 'Marcellus', serif; font-weight: 400; font-size: clamp(26px, 5vw, 42px);
+  letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 12px; }
+.masthead .sub { font-style: italic; color: var(--ink-soft); font-size: 17px; margin: 0 auto 14px; max-width: 600px; }
+.masthead .meta { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); }
+.masthead .meta .sep { margin: 0 9px; color: var(--accent-soft); }
+
+/* ---------- Mobile-style top menu ---------- */
+.topnav { position: sticky; top: 0; z-index: 50; background: rgba(244,239,227,0.96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule); padding: 11px 0 11px; box-shadow: 0 1px 0 rgba(31,26,19,0.04); }
+.topnav-scroll { display: flex; gap: 9px; align-items: center; overflow-x: auto; padding: 0 16px; scrollbar-width: none;
+  max-width: 1100px; margin: 0 auto; -webkit-overflow-scrolling: touch; }
+.topnav-scroll::-webkit-scrollbar { display: none; }
+.tab { flex: 0 0 auto; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 500; letter-spacing: 0.04em;
+  padding: 8px 16px; border: 1px solid var(--rule); border-radius: 100px; background: var(--paper-2); color: var(--ink-soft);
+  cursor: pointer; white-space: nowrap; transition: all 0.14s ease; }
+.tab:hover { border-color: var(--accent-soft); }
+.tab.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.tab.nutri { margin-left: 4px; border-style: dashed; color: var(--jade); border-color: var(--jade); }
+.tab.nutri.on { background: var(--jade); color: var(--paper); border-color: var(--jade); }
+
+/* ---------- Section intro ---------- */
+.lede { max-width: 760px; margin: 30px auto 4px; padding: 0 22px; color: var(--ink-soft); font-size: 17.5px; }
+.lede strong { color: var(--ink); }
+.confidence-note { max-width: 760px; margin: 14px auto 0; padding: 12px 18px; font-family: 'Inter', sans-serif;
+  font-size: 12px; line-height: 1.6; color: var(--ink-faint); background: var(--paper-2); border-left: 2px solid var(--accent-soft); }
+
+/* ---------- Card grid ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px;
+  padding: 26px 22px 90px; max-width: 1180px; margin: 0 auto; }
+.card { position: relative; background: var(--paper-2); border: 1px solid var(--paper-edge); border-radius: 5px;
+  padding: 20px 22px 16px; box-shadow: var(--shadow); transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease; }
+.card:hover { transform: translateY(-2px); border-color: var(--accent-soft); box-shadow: 0 2px 4px rgba(31,26,19,0.08), 0 10px 28px rgba(31,26,19,0.07); }
+.card.hide { display: none; }
+.card .id { font-family: 'Inter', sans-serif; font-size: 9.5px; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+.card h3 { font-family: 'Marcellus', serif; font-weight: 400; font-size: 20px; margin: 0 0 4px; letter-spacing: 0.03em; line-height: 1.25; }
+.card .anchor { font-style: italic; font-size: 14px; color: var(--ink-soft); margin: 0 0 11px; line-height: 1.4; }
+.card .dishes { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 12px; line-height: 1.55; }
+.card .dishes .dot { color: var(--accent-soft); margin: 0 3px; }
+.card .dishes .sig { color: var(--ink); font-weight: 600; font-style: italic; }
+.card .dishes .sig::before { content: '★ '; color: var(--gold); font-style: normal; }
+
+/* nutrition category tags */
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 10px; }
+.tag { font-family: 'Inter', sans-serif; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 3px 9px; background: var(--paper); border: 1px solid var(--rule); color: var(--ink-soft); border-radius: 100px; }
+.tag[data-c="healthy"]       { color: var(--jade);   border-color: var(--jade); }
+.tag[data-c="high-protein"]  { color: var(--accent); border-color: var(--accent-soft); background: rgba(139,58,42,0.05); }
+.tag[data-c="low-carb"]      { color: var(--gold);   border-color: var(--gold); background: rgba(181,138,71,0.07); }
+.tag[data-c="gut-friendly"]  { color: var(--blue);   border-color: var(--blue); background: rgba(46,93,110,0.06); }
+.tag[data-c="low-calorie"]   { color: #6b5b8a;       border-color: #6b5b8a; background: rgba(107,91,138,0.06); }
+
+/* macros (revealed by Nutrition toggle) */
+.macros { display: none; margin: 0 0 12px; padding: 11px 13px; background: var(--paper); border: 1px dashed var(--rule); border-radius: 4px;
+  font-family: 'Inter', sans-serif; }
+body.show-nutri .macros { display: block; }
+.macros .row { display: flex; justify-content: space-between; gap: 8px; }
+.macros .m { text-align: center; flex: 1; }
+.macros .m b { display: block; font-size: 16px; color: var(--ink); font-weight: 600; }
+.macros .m span { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
+.macros .approx { font-size: 9.5px; color: var(--ink-faint); margin-top: 8px; text-align: center; letter-spacing: 0.08em; }
+
+/* recipe */
+details.recipe { border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 4px; }
+details.recipe summary { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 7px; font-weight: 600; }
+details.recipe summary::-webkit-details-marker { display: none; }
+details.recipe summary::before { content: '✚'; font-size: 13px; color: var(--accent-soft); }
+details.recipe[open] summary::before { content: '–'; }
+.recipe-body { margin-top: 12px; }
+.recipe-body .rtitle { font-family: 'Marcellus', serif; font-size: 15px; letter-spacing: 0.02em; margin: 0 0 3px; }
+.recipe-body .serves { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 9px; }
+.recipe-body h4 { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin: 10px 0 5px; }
+.recipe-body ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+.recipe-body ol { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+.recipe-body li { margin-bottom: 3px; }
+
+footer { text-align: center; padding: 28px 22px 50px; border-top: 1px solid var(--rule);
+  font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: var(--ink-faint); }
+footer .src { display: block; margin-top: 8px; font-size: 10.5px; }
+footer a { color: var(--blue); text-decoration: none; }
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; padding: 20px 14px 70px; }
+  .masthead { padding: 36px 18px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">Crew Menu Themes · Catalogue §21</div>
+  <h1>Healthy Lunch Icons</h1>
+  <p class="sub">The new-wave health-bar register — cold summer wraps, honest greens, and protein counters. Fast, photogenic, no nap afterwards.</p>
+  <div class="meta">9 menus<span class="sep">·</span>High-confidence only<span class="sep">·</span>Tap a category to filter</div>
+</div>
+
+<nav class="topnav">
+  <div class="topnav-scroll" id="tabs">
+    <button class="tab active" data-f="all">All</button>
+    <button class="tab" data-f="healthy">Healthy</button>
+    <button class="tab" data-f="high-protein">High-Protein</button>
+    <button class="tab" data-f="low-carb">Low-Carb</button>
+    <button class="tab" data-f="gut-friendly">Gut-Friendly</button>
+    <button class="tab" data-f="low-calorie">Low-Calorie</button>
+    <button class="tab nutri" id="nutriToggle">⊙ Nutrition</button>
+  </div>
+</nav>
+
+<p class="lede">Nine touchstones from the chains that defined the look — anchored to real places, never a vague diet. Each card carries its nutrition categories, an approximate macro panel (tap <strong>Nutrition</strong> above), and one signature recipe scaled for crew.</p>
+<div class="confidence-note"><strong>Why only nine.</strong> This page shows the menus verified against current brand menus (NUDES, Honest Greens, Flax&nbsp;&amp;&nbsp;Kale, LEON, Federal Café). The two lighter-confidence entries from §21 — Teresa Carles &amp; Mamá Campo — are held back until their live menus are re-checked.</div>
+
+<main class="grid" id="grid">
+
+  <!-- 981 -->
+  <article class="card" data-cats="healthy high-protein">
+    <div class="id">981 · NUDES · Barcelona &amp; Madrid</div>
+    <h3>NUDES Health-Bar</h3>
+    <p class="anchor">Neutral-tone health bar, silver light, grab-and-go.</p>
+    <p class="dishes"><span class="sig">Chicken-club sandwich</span><span class="dot">·</span>spicy-chicken sandwich<span class="dot">·</span>5-egg salad sandwich<span class="dot">·</span>rice-paper wraps<span class="dot">·</span>açaí bowl<span class="dot">·</span>protein shake</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~520</b><span>kcal</span></div><div class="m"><b>38g</b><span>protein</span></div><div class="m"><b>42g</b><span>carb</span></div><div class="m"><b>22g</b><span>fat</span></div></div><div class="approx">approx · per chicken-club sandwich</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Chicken-Club Sandwich</p><p class="serves">Serves 4</p>
+      <h4>Build</h4><ul>
+        <li>500 g poached chicken breast, shredded</li>
+        <li>3 tbsp Greek-yogurt caesar (yogurt, anchovy, lemon, parmesan, garlic)</li>
+        <li>8 rashers crisped bacon · 2 baby gem, shredded</li>
+        <li>30 g sun-dried tomatoes · 3 tbsp basil pesto</li>
+        <li>8 slices sourdough or artisan loaf, toasted</li></ul>
+      <h4>Method</h4><ol>
+        <li>Fold shredded chicken through the yogurt-caesar; season.</li>
+        <li>Smear pesto on the base slice, pile chicken, bacon, gem, dried tomato.</li>
+        <li>Close, press, cut on the diagonal. Serve with a lemon-dressed side salad.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 982 -->
+  <article class="card" data-cats="healthy high-protein low-calorie gut-friendly">
+    <div class="id">982 · NUDES · Rice-paper bar</div>
+    <h3>NUDES Summer-Wrap Counter</h3>
+    <p class="anchor">Cold, translucent, no-cook lunch in a heatwave.</p>
+    <p class="dishes"><span class="sig">Build-your-own rice-paper rolls</span><span class="dot">·</span>poached chicken / prawn / black-pepper tofu<span class="dot">·</span>mango<span class="dot">·</span>avocado<span class="dot">·</span>Thai herbs<span class="dot">·</span>peanut-hoisin &amp; chili-yogurt dips</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="low-calorie">Low-Calorie</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~310</b><span>kcal</span></div><div class="m"><b>22g</b><span>protein</span></div><div class="m"><b>38g</b><span>carb</span></div><div class="m"><b>6g</b><span>fat</span></div></div><div class="approx">approx · 3 prawn rolls + dip</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Summer Rice-Paper Rolls + Peanut-Hoisin Dip</p><p class="serves">Serves 4 · 12 rolls</p>
+      <h4>Rolls</h4><ul>
+        <li>12 rice-paper rounds</li>
+        <li>300 g cooked prawns (or poached chicken / pressed tofu)</li>
+        <li>100 g rice vermicelli, cooked &amp; cooled</li>
+        <li>1 mango + 1 avocado + 1 cucumber, julienned</li>
+        <li>Mint, coriander, Thai basil · butter lettuce</li></ul>
+      <h4>Dip</h4><ul><li>3 tbsp peanut butter · 2 tbsp hoisin · 1 tbsp lime · splash water · chili to taste</li></ul>
+      <h4>Method</h4><ol>
+        <li>Dip each round in warm water 5 sec until pliable; lay on a damp cloth.</li>
+        <li>Lower third: herbs, lettuce, vermicelli, protein, mango, avo, cucumber.</li>
+        <li>Fold sides in, roll tight. Whisk the dip smooth. Serve cold.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 983 -->
+  <article class="card" data-cats="healthy high-protein gut-friendly">
+    <div class="id">983 · NUDES · Juice &amp; dessert counter</div>
+    <h3>NUDES Protein-Sweet Bar</h3>
+    <p class="anchor">Post-swim, clean, no refined sugar.</p>
+    <p class="dishes"><span class="sig">Açaí-granola bowl</span><span class="dot">·</span>chia pudding<span class="dot">·</span>Greek-yogurt parfait<span class="dot">·</span>banana-protein smoothie<span class="dot">·</span>cold-pressed juices</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~340</b><span>kcal</span></div><div class="m"><b>18g</b><span>protein</span></div><div class="m"><b>40g</b><span>carb</span></div><div class="m"><b>12g</b><span>fat</span></div></div><div class="approx">approx · per chia-açaí bowl</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Overnight Chia-Açaí Bowl</p><p class="serves">Serves 4</p>
+      <h4>Night before</h4><ul>
+        <li>6 tbsp chia seeds · 500 ml milk of choice · 1 tsp vanilla · 1 tbsp maple</li></ul>
+      <h4>To serve</h4><ul>
+        <li>200 g frozen açaí (or blended frozen berries + banana)</li>
+        <li>Greek yogurt · granola · fresh berries · banana · peanut butter drizzle</li></ul>
+      <h4>Method</h4><ol>
+        <li>Whisk chia, milk, vanilla, maple; chill overnight until set.</li>
+        <li>Blend açaí with a splash of milk to a thick sorbet.</li>
+        <li>Layer chia, açaí, yogurt; top with granola, fruit, peanut drizzle.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 984 -->
+  <article class="card" data-cats="healthy high-protein low-carb gut-friendly">
+    <div class="id">984 · Honest Greens · Serrano, Madrid</div>
+    <h3>Honest-Greens Market Plate</h3>
+    <p class="anchor">Chef-driven real food, open green-tiled kitchen.</p>
+    <p class="dishes"><span class="sig">Market plate — chipotle chicken / rare beef / tuna tataki / falafel / tofu</span><span class="dot">·</span>pesto green salad<span class="dot">·</span>sourdough &amp; herbed butter</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="low-carb">Low-Carb</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~560</b><span>kcal</span></div><div class="m"><b>45g</b><span>protein</span></div><div class="m"><b>30g</b><span>carb</span></div><div class="m"><b>26g</b><span>fat</span></div></div><div class="approx">approx · chipotle-chicken plate, no bread</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Chipotle Chicken + Pesto Green Salad</p><p class="serves">Serves 4</p>
+      <h4>Chicken</h4><ul>
+        <li>4 chicken thighs · 1 tbsp chipotle paste · 1 tbsp olive oil · lime · garlic · oregano</li></ul>
+      <h4>Salad</h4><ul>
+        <li>Mixed leaves, baby gem · cucumber · radish · pumpkin seeds</li>
+        <li>Pesto dressing: 2 tbsp pesto + 1 tbsp olive oil + 1 tbsp lemon + 1 tbsp water</li></ul>
+      <h4>Method</h4><ol>
+        <li>Marinate chicken 30 min in chipotle, oil, lime, garlic, oregano.</li>
+        <li>Sear hot then finish in a 200°C oven ~12 min; rest, slice.</li>
+        <li>Loosen the pesto, toss the leaves, plate the chicken alongside. (Sourdough optional — skip for low-carb.)</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 985 -->
+  <article class="card" data-cats="healthy high-protein gut-friendly low-calorie">
+    <div class="id">985 · Honest Greens · Garden bowls</div>
+    <h3>Honest-Greens Garden Bowl</h3>
+    <p class="anchor">Eight bowls chalked on the wall — pick your colour.</p>
+    <p class="dishes">Spicy kale<span class="dot">·</span>ginger-honey goat cheese<span class="dot">·</span><span class="sig">peanut-chili lentils</span><span class="dot">·</span>sesame greens<span class="dot">·</span>wild-coconut quinoa<span class="dot">·</span>avocado super-green</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span><span class="tag" data-c="low-calorie">Low-Calorie</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~480</b><span>kcal</span></div><div class="m"><b>22g</b><span>protein</span></div><div class="m"><b>52g</b><span>carb</span></div><div class="m"><b>18g</b><span>fat</span></div></div><div class="approx">approx · peanut-chili lentil bowl</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Peanut-Chili Lentils + Sesame Greens</p><p class="serves">Serves 4</p>
+      <h4>Bowl</h4><ul>
+        <li>250 g cooked puy lentils · 200 g cooked quinoa</li>
+        <li>2 handfuls kale, massaged with lemon &amp; salt</li>
+        <li>Tenderstem broccoli, blanched · pickled red onion · coriander</li></ul>
+      <h4>Peanut-chili sauce</h4><ul>
+        <li>2 tbsp peanut butter · 1 tbsp soy · 1 tsp chili crisp · 1 tbsp lime · 1 tsp honey · water</li>
+        <li>Sesame greens dressing: 1 tbsp toasted sesame oil + 1 tsp rice vinegar + sesame seeds</li></ul>
+      <h4>Method</h4><ol>
+        <li>Whisk the peanut-chili sauce; fold half through warm lentils.</li>
+        <li>Toss greens in the sesame dressing.</li>
+        <li>Build the bowl: quinoa, kale, lentils, greens; spoon over remaining sauce, scatter seeds.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 986 -->
+  <article class="card" data-cats="healthy high-protein gut-friendly">
+    <div class="id">986 · Honest Greens · Warm register</div>
+    <h3>Honest-Greens Warm Bowl</h3>
+    <p class="anchor">Comfort that still feels clean.</p>
+    <p class="dishes"><span class="sig">Roasted chicken + sweet potato + tahini</span><span class="dot">·</span>slow-roast pork<span class="dot">·</span>charred greens<span class="dot">·</span>brown rice<span class="dot">·</span>roasted-veg medley</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~590</b><span>kcal</span></div><div class="m"><b>42g</b><span>protein</span></div><div class="m"><b>48g</b><span>carb</span></div><div class="m"><b>22g</b><span>fat</span></div></div><div class="approx">approx · chicken &amp; sweet-potato bowl</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Roast Chicken, Sweet Potato &amp; Tahini-Lemon</p><p class="serves">Serves 4</p>
+      <h4>Bowl</h4><ul>
+        <li>4 chicken thighs, roasted with smoked paprika</li>
+        <li>2 sweet potatoes, cubed &amp; roasted · 200 g brown rice, cooked</li>
+        <li>Tenderstem &amp; kale, charred in a dry pan</li></ul>
+      <h4>Tahini-lemon</h4><ul><li>3 tbsp tahini · 2 tbsp lemon · 1 small garlic, grated · water to drizzle · salt</li></ul>
+      <h4>Method</h4><ol>
+        <li>Roast chicken &amp; sweet potato at 200°C until caramelised (~25 min).</li>
+        <li>Char the greens hard in a hot dry pan.</li>
+        <li>Bowl up over brown rice; flood with tahini-lemon.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 987 -->
+  <article class="card" data-cats="healthy high-protein gut-friendly">
+    <div class="id">987 · Flax &amp; Kale · Barcelona &amp; Madrid</div>
+    <h3>Flax &amp; Kale Flexitarian</h3>
+    <p class="anchor">Flexitarian flagship — 80% plant + blue-fish, rooftop terrace.</p>
+    <p class="dishes">Al-pastor tacos<span class="dot">·</span>buddha bowl<span class="dot">·</span><span class="sig">salmon poke bowl</span><span class="dot">·</span>kombucha<span class="dot">·</span>cold-pressed juice</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~520</b><span>kcal</span></div><div class="m"><b>34g</b><span>protein</span></div><div class="m"><b>45g</b><span>carb</span></div><div class="m"><b>20g</b><span>fat</span></div></div><div class="approx">approx · salmon poke bowl</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Salmon Poke Bowl</p><p class="serves">Serves 4</p>
+      <h4>Bowl</h4><ul>
+        <li>500 g sashimi-grade salmon, cubed</li>
+        <li>Marinade: 3 tbsp soy · 1 tbsp sesame oil · 1 tsp rice vinegar · 1 tsp grated ginger</li>
+        <li>300 g sushi or brown rice · edamame · cucumber · avocado · radish · nori</li>
+        <li>Top: pickled ginger · spring onion · sesame · sriracha-yogurt</li></ul>
+      <h4>Method</h4><ol>
+        <li>Toss salmon in the marinade 10 min (no longer — it firms).</li>
+        <li>Cool the rice to room temp; arrange toppings in lanes.</li>
+        <li>Crown with salmon; drizzle sriracha-yogurt, scatter sesame &amp; nori.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 989 -->
+  <article class="card" data-cats="healthy high-protein low-carb">
+    <div class="id">989 · Federal Café · Madrid &amp; Barcelona</div>
+    <h3>Federal Café Aussie-Lunch</h3>
+    <p class="anchor">Aussie-Catalan light, plants on the sill.</p>
+    <p class="dishes"><span class="sig">Smashed-avo toast &amp; poached eggs</span><span class="dot">·</span>halloumi-quinoa salad<span class="dot">·</span>grilled-chicken super-bowl<span class="dot">·</span>flat white</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="low-carb">Low-Carb</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~440</b><span>kcal</span></div><div class="m"><b>20g</b><span>protein</span></div><div class="m"><b>34g</b><span>carb</span></div><div class="m"><b>26g</b><span>fat</span></div></div><div class="approx">approx · smashed avo + 2 poached eggs</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Smashed Avocado &amp; Poached Eggs on Sourdough</p><p class="serves">Serves 4</p>
+      <h4>Build</h4><ul>
+        <li>3 ripe avocados · juice of 1 lime · chili flakes · salt</li>
+        <li>8 eggs · splash of vinegar (poaching water)</li>
+        <li>8 slices sourdough, toasted · feta · radish · coriander · dukkah</li></ul>
+      <h4>Method</h4><ol>
+        <li>Smash avocado with lime, chili and salt — keep it chunky.</li>
+        <li>Poach eggs in barely-simmering vinegared water ~3 min for runny yolks.</li>
+        <li>Pile avo on toast, crown with eggs, crumble feta, scatter radish, coriander &amp; dukkah.</li></ol>
+    </div></details>
+  </article>
+
+  <!-- 990 -->
+  <article class="card" data-cats="healthy high-protein gut-friendly">
+    <div class="id">990 · LEON · London</div>
+    <h3>LEON Naturally-Fast</h3>
+    <p class="anchor">Fast-food speed, real-food spine.</p>
+    <p class="dishes"><span class="sig">Grilled-chicken &amp; rice box</span><span class="dot">·</span>fish-finger wrap<span class="dot">·</span>falafel mezze box<span class="dot">·</span>baked-not-fried fries<span class="dot">·</span>superfood salad</p>
+    <div class="tags"><span class="tag" data-c="healthy">Healthy</span><span class="tag" data-c="high-protein">High-Protein</span><span class="tag" data-c="gut-friendly">Gut-Friendly</span></div>
+    <div class="macros"><div class="row"><div class="m"><b>~540</b><span>kcal</span></div><div class="m"><b>44g</b><span>protein</span></div><div class="m"><b>52g</b><span>carb</span></div><div class="m"><b>14g</b><span>fat</span></div></div><div class="approx">approx · grilled-chicken brown-rice box</div></div>
+    <details class="recipe"><summary>Recipe</summary><div class="recipe-body">
+      <p class="rtitle">Grilled Chicken &amp; Brown-Rice Box</p><p class="serves">Serves 4</p>
+      <h4>Box</h4><ul>
+        <li>4 chicken breasts, butterflied · 1 tbsp olive oil · garlic · lemon · thyme</li>
+        <li>300 g brown rice, cooked with a bay leaf</li>
+        <li>Slaw: white cabbage, carrot, lemon-yogurt · cherry tomatoes · cucumber</li></ul>
+      <h4>Garlic-lemon drizzle</h4><ul><li>3 tbsp Greek yogurt · 1 garlic, grated · 1 tbsp lemon · parsley</li></ul>
+      <h4>Method</h4><ol>
+        <li>Marinate chicken in oil, garlic, lemon, thyme; griddle ~4 min/side, rest, slice.</li>
+        <li>Fork the brown rice; dress the slaw.</li>
+        <li>Box up rice, chicken, slaw, tomato &amp; cucumber; spoon over garlic-lemon.</li></ol>
+    </div></details>
+  </article>
+
+</main>
+
+<footer>
+  Crew Menu Themes — Catalogue §21 · Modern Healthy Icons · v1.2 · 2026-06-23
+  <span class="src">Anchors verified against current brand menus —
+    <a href="https://www.honestgreens.com/en/menu/">Honest Greens</a> ·
+    <a href="https://genhackmagazine.com/spain/nudes-el-nuevo-hot-spot-saludable-en-espana/">NUDES</a> ·
+    <a href="https://www.barcelonafoodexperience.com/blog/best-healthy-restaurants-barcelona">Flax &amp; Kale</a>.
+    Macros are kitchen estimates, not lab values.</span>
+</footer>
+
+<script>
+  var tabs = document.getElementById('tabs');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab');
+    if (!btn) return;
+
+    if (btn.id === 'nutriToggle') {
+      btn.classList.toggle('on');
+      document.body.classList.toggle('show-nutri');
+      return;
+    }
+
+    Array.prototype.forEach.call(tabs.querySelectorAll('.tab:not(.nutri)'), function (t) { t.classList.remove('active'); });
+    btn.classList.add('active');
+    var f = btn.getAttribute('data-f');
+    cards.forEach(function (c) {
+      var show = (f === 'all') || (c.getAttribute('data-cats').split(' ').indexOf(f) !== -1);
+      c.classList.toggle('hide', !show);
+    });
+  });
+</script>
+</body>
+</html>
