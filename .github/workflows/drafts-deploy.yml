@@ -2,11 +2,19 @@ name: Deploy drafts review channel
 
 # Rebuilds the site from data/articles.json (the "draft: true" flag drives the
 # draft manifest) and deploys to a fixed Firebase Hosting preview channel "drafts".
-# Flip a flag, push to main, and drafts.html reflects it automatically.
+# Flip a flag, push to rebuild/publishing-system, and drafts.html reflects it automatically.
 
 on:
   push:
-    branches: [main]
+    branches: [rebuild/publishing-system]
+    paths:
+      - 'data/**'
+      - 'articles/**'
+      - 'assets/**'
+      - 'drafts.html'
+      - 'studio.html'
+      - 'studio-review.html'
+      - '.github/workflows/drafts-deploy.yml'
   workflow_dispatch:
   schedule:
     # Weekly keep-alive: preview channels expire after 30 days of no deploy.

@@ -11,7 +11,7 @@ model — no per-draft branches, no manual JSON editing.
 3. **`drafts.html`** fetches `data/draft-articles.json` at runtime and renders one card
    per draft, each linking to the article (`?draft=1`).
 4. A **GitHub Action** (`.github/workflows/drafts-deploy.yml`) runs the build and deploys
-   to a fixed Firebase Hosting **preview channel `drafts`** on every push to `main`
+   to a fixed Firebase Hosting **preview channel `drafts`** on every push to `rebuild/publishing-system`
    (plus a weekly keep-alive so the 30-day channel never lapses).
 5. **Review notes** live in Firestore at `draft-notes/{slug}/notes/{id}` and update live
    via `onSnapshot`. They are gated to a **reviewer email allowlist** in `firestore.rules`.
@@ -28,7 +28,7 @@ The flag *is* the auto-update: flip it, push, the page reflects it. No branch me
    account JSON as the repo secret **`FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED`**.
 4. **Authorize the channel domain (if the sign-in popup is blocked):** Firebase console →
    Authentication → Settings → Authorized domains → add the `--drafts` channel `*.web.app` host.
-5. **Push to `main`.** The Action deploys and prints the channel URL
+5. **Push to `rebuild/publishing-system`.** The Action deploys and prints the channel URL
    (`https://littoralicious-web-eceed--drafts-<hash>.web.app/drafts.html`). Bookmark it.
 
 ## Privacy model (read this)
