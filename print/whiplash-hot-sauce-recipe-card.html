@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Focaccia &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt;
+            line-height: 1.17;
+            color: #0a0a0a;
+            background: #fff;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 3.4mm 9mm 1.6mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.8mm; margin-bottom: 1.9mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 17pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 0.4mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8pt; color: #4a5568; line-height: 1.26; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 1.5mm; padding-top: 1.5mm; border-top: 1px solid #e2e2e2; font-size: 7.6pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.7mm 0 0; padding: 1.4mm 2.4mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 0.9mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.2mm; margin-bottom: 1.8mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.9mm 0 0.4mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.45mm 1mm; vertical-align: top; line-height: 1.18; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 1.4mm; padding-top: 1.0mm; border-top: 1px solid #f0f0f0; line-height: 1.26; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.0mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.25mm 0; padding: 0.3mm 0 0.3mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.7pt; font-style: italic; color: #4a5568; line-height: 1.18; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.5mm 2.6mm; margin-top: 0.9mm; font-size: 7.6pt; line-height: 1.3; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.5mm 2.6mm; margin-top: 0.9mm; font-size: 7.6pt; line-height: 1.32; }
+        .sauce-block strong { color: #5b21b6; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 0.8mm; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.5mm 2.6mm; margin: 0.9mm 0; font-size: 7.6pt; line-height: 1.32; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.5mm 2.5mm; margin-bottom: 1.5mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.1mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 0.8mm; }
+        .bottom h2 { font-size: 7.6pt; padding-bottom: 0.7mm; margin-bottom: 0.8mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.26; }
+        .troubleshoot td, .charter td { padding: 0.45mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 0.7mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .footer a { color: #94a3b8; text-decoration: none; border-bottom: 1px dotted #cbd2da; }
+        .footer .colophon { display: flex; gap: 4mm; align-items: baseline; }
+        .contact { margin-top: 0.6mm; padding: 0.6mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact a:hover { color: #0a0a0a; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:6.8pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.4mm;letter-spacing:0;}</style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Whiplash Hot Sauce</h1>
+    <p class="hook">A lacto-fermented Scotch bonnet sauce stacked for umami &mdash; fruit first, then a building lash. The ferment turns the chilli&rsquo;s pain into flavour; miso, shiitake and fish sauce give the heat something to stand on.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>~700 ml</strong></span>
+        <span>Active: <strong>40 min</strong></span>
+        <span>Total: <strong>5&ndash;10 days</strong> (mostly ferment)</span>
+        <span>Heat: <strong>Scotch bonnet ~150k SHU</strong></span>
+        <span>Keeps: <strong>6 mo</strong> fridge</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Every great chilli sauce is fermented &mdash; Korea&rsquo;s <em>gochujang</em>, Sichuan <em>doubanjiang</em>, Louisiana oak-aged mash. The Scotch bonnet is the Caribbean cousin of the habanero.</div>
+    <div><span class="o-label">Eaten, authentically</span>A few drops on everything &mdash; eggs, grilled fish, rice and beans. The condiment the crew steals from the galley.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>Craft fermented hot sauces are a shelf staple; the <em>umami stack</em> &mdash; miso + shiitake + fish sauce &mdash; is the modern edge.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight (g) &middot; cups / volume in right column</p>
+
+        <div class="group-label">The ferment <span class="note">(Day 1)</span></div>
+        <table>
+            <tr><td>Scotch bonnet chillies <span class="note">(stems off)</span></td><td class="data">400g</td><td class="vol">~3 cups</td></tr>
+            <tr><td>Red Fresno / ripe red pepper</td><td class="data">150g</td><td class="vol">~1 cup</td></tr>
+            <tr><td>Carrot <span class="note">(peeled)</span></td><td class="data">120g</td><td class="vol">~1 cup</td></tr>
+            <tr><td>Garlic <span class="note">(peeled)</span></td><td class="data">40g</td><td class="vol">~¼ cup</td></tr>
+            <tr><td>Fresh ginger <span class="note">(peeled)</span></td><td class="data">30g</td><td class="vol">~3 tbsp</td></tr>
+            <tr><td>Fine sea salt <span class="note">(2% &mdash; weigh it)</span></td><td class="data">15g</td><td class="vol">2½ tsp</td></tr>
+            <tr><td>Filtered water <span class="note">(to cover)</span></td><td class="data">250g</td><td class="vol">1 cup</td></tr>
+        </table>
+
+        <div class="group-label">The umami stack <span class="note">(blending day)</span></div>
+        <table>
+            <tr><td>Dried shiitake</td><td class="data">15g</td><td class="vol">~4 caps</td></tr>
+            <tr><td>Kombu <span class="note">(optional)</span></td><td class="data">5g</td><td class="vol">1 piece</td></tr>
+            <tr><td>Warm water <span class="note">(soak; keep liquor)</span></td><td class="data">100g</td><td class="vol">~⅖ cup</td></tr>
+            <tr><td>White miso <span class="note">(shiro)</span></td><td class="data">60g</td><td class="vol">3 tbsp</td></tr>
+            <tr><td>Fish sauce</td><td class="data">25g</td><td class="vol">1⅔ tbsp</td></tr>
+            <tr><td>Rice vinegar</td><td class="data">30g</td><td class="vol">2 tbsp</td></tr>
+            <tr><td>Lemon juice <span class="note">(add last)</span></td><td class="data">40g</td><td class="vol">2¾ tbsp</td></tr>
+            <tr><td>Honey or palm sugar</td><td class="data">20g</td><td class="vol">1 tbsp</td></tr>
+            <tr><td>Toasted sesame oil <span class="note">(finish)</span></td><td class="data">10g</td><td class="vol">2¼ tsp</td></tr>
+        </table>
+
+        <p class="equipment">
+            <strong>Kit:</strong> fermentation jar + glass weight &middot; blender &middot; pH strips &middot; nitrile gloves &middot; funnel &middot; squeeze or glass bottles
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Pack the ferment.</strong> Gloves on. Roughly chop the chillies, pepper, carrot, garlic + ginger; weigh, add <strong>15g salt (2%)</strong>, toss. Pack tight into a jar, pour over 250g water to submerge, weight everything <strong>under the brine</strong>.
+                <span class="why">2% salt selects for <em>Lactobacillus</em> and shuts out spoilage; anything above the brine grows mould. Submersion is the whole safety margin. <cite>&mdash; Katz, Art of Fermentation</cite></span>
+            </li>
+            <li>
+                <strong>Ferment 5&ndash;10 days</strong> at 18&ndash;24&deg;C, out of sun; &ldquo;burp&rdquo; the jar daily as it bubbles. Ready when the brine has <strong>clouded + turned pleasantly sour</strong>, the raw rasp gone.
+                <span class="why">Lactobacilli convert sugars to lactic acid (pH toward 3.4), generating free glutamate + fruity esters; the harsh top note of raw capsicum rounds out. <cite>&mdash; McGee 2004</cite></span>
+            </li>
+            <li>
+                <strong>Wake the umami.</strong> Soak the shiitake + kombu in 100g warm water 30 min. Lift out, <strong>keep the dark liquor</strong>; squeeze the mushrooms, discard tough stems.
+                <span class="why">Dried shiitake carry <em>guanylate</em>, kombu <em>glutamate</em>. Soaking, not boiling, draws them out clean &mdash; the liquor is concentrated savour. </span>
+            </li>
+            <li>
+                <strong>Blend.</strong> Drain the ferment (reserve the brine). Blend the fermented veg, soaked shiitake, miso, fish sauce, vinegar, honey + the shiitake liquor to a <strong>glass-smooth pour</strong>; loosen with reserved brine.
+                <span class="why">Glutamate (miso, kombu) + a nucleotide (shiitake guanylate, fish-sauce inosinate) reads as up to ~8&times; more savoury than either alone. <cite>&mdash; Yamaguchi 1967</cite></span>
+            </li>
+            <li>
+                <strong>Acidify + finish.</strong> Blend in the lemon <strong>last</strong>, then check the pH: it must read <strong>below 3.8</strong> (more vinegar if not). Stir in the sesame oil off the blade. Bottle.
+                <span class="why">Below pH 4.0 no <em>C. botulinum</em> grows, so an acidified raw sauce keeps live + bright; lemon last preserves the fresh top note. <cite>&mdash; US FDA 21 CFR 114</cite></span>
+            </li>
+        </ol>
+
+        <div class="sauce-block">
+            <strong>Build your heat &mdash; pick a tier</strong>
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 1mm; list-style: none;">
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">1.</span>
+                    <strong>Crew</strong> (~30k SHU) &mdash; red Fresno + one habanero. A sauce the whole crew can pour.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">2.</span>
+                    <strong>Standard</strong> (~150k) &mdash; all Scotch bonnet. The fruit-forward signature most people call perfect.
+                </li>
+                <li style="position: relative; padding-left: 1mm; margin-bottom: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">3.</span>
+                    <strong>Whiplash</strong> (~300k) &mdash; half bonnet, half <em>Fatalii</em>. The Fatalii&rsquo;s citrus snap <em>is</em> the whiplash.
+                </li>
+                <li style="position: relative; padding-left: 1mm;">
+                    <span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">4.</span>
+                    <strong>Brutal</strong> (1M+) &mdash; add ghost or 7-pot to the bonnet base, a drop at a time, gloves on. Don&rsquo;t chase the reaper.
+                </li>
+            </ol>
+        </div>
+
+        <div class="done">
+            <strong>Done:</strong> pleasantly sour, glossy, <strong>pH below 3.8</strong> (check with strips). <br>
+            <strong>Serve:</strong> a few drops &mdash; it <em>builds</em>, so warn the table. Fat and dairy (not water) cut the burn.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One sauce, two ways</span>
+            <strong>Smoked Whiplash:</strong> blister half the chillies black under a flame before fermenting &mdash; Maillard depth behind the heat. <strong>Yuzu Whiplash:</strong> swap the lemon for yuzu juice; the floral citrus rhymes with the bonnet&rsquo;s own top note. <em>Both keep the same ferment-then-stack backbone.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Bonito pinch</strong> &mdash; steep in the warm soak for more inosinate</li>
+                <li><strong>Extra shiitake</strong> &mdash; the guanylate is the depth</li>
+                <li><strong>Black garlic</strong> &mdash; swap for raw, for sweet umami</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Blister the chillies</strong> &mdash; smoke behind the burn</li>
+                <li><strong>Yuzu for lemon</strong> &mdash; floral citrus lift</li>
+                <li><strong>Spoon of gochujang</strong> &mdash; body + a second ferment</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Restaurant</div>
+            <ul>
+                <li><strong>Oak-age 4&ndash;6 wk</strong> &mdash; like every great mash, it rounds</li>
+                <li><strong>Fatalii / ghost tier</strong> &mdash; the citrus-lash strong build</li>
+                <li><strong>Koji-cure a portion</strong> &mdash; deeper glutamate still</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>White film on brine</td><td>Kahm yeast &mdash; harmless; skim it. Fuzzy/coloured mould &rarr; breached the brine; bin it.</td></tr>
+            <tr><td>Flat, not deep</td><td>Under-fermented or no shiitake. More days, or more soaked mushroom.</td></tr>
+            <tr><td>Brutal, one-note heat</td><td>Skipped the ferment. No shortcut &mdash; the week is what makes flavour.</td></tr>
+            <tr><td>Separates in the bottle</td><td>Normal for a raw sauce &mdash; shake. A little more sesame + a harder blend tightens it.</td></tr>
+            <tr><td>Too thick</td><td>Loosen with reserved brine, not water &mdash; keep the acidity.</td></tr>
+            <tr><td>Too sharp</td><td>A touch more honey rounds the acid without killing the heat.</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>The make-ahead</td><td>Start the ferment at the dock; it needs only a daily burp, best by mid-charter.</td></tr>
+            <tr><td>Bottled, raw</td><td>6 mo fridge below pH 3.8; deepens the first month.</td></tr>
+            <tr><td>Shelf-stable gift</td><td>Heat the blend to 80&deg;C / 1 min, bottle into sterilised glass.</td></tr>
+            <tr><td>Service</td><td>Decant into small squeeze bottles for the line.</td></tr>
+            <tr><td>Safety</td><td>Never bottle above pH 4.0 to keep unrefrigerated.</td></tr>
+            <tr><td>Handling</td><td>Gloves with the raw chillies; capsaicin finds your eyes hours later.</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Caterina (TRPV1, 1997) &middot; Yamaguchi (umami synergy, 1967) &middot; McGee &middot; Katz (Art of Fermentation) &middot; US FDA (acidified foods)</span>
+    <span class="colophon">
+        <span>&mdash; The Blueprint</span>
+    </span>
+</footer>
+
+</body>
+</html>
