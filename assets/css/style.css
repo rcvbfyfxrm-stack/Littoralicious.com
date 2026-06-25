@@ -1119,47 +1119,6 @@ mark {
     cursor: help;
 }
 
-/* Hover-to-reveal definition pop-up for important/complex words (pure CSS) */
-.term[data-definition] { position: relative; }
-.term[data-definition]:hover::after,
-.term[data-definition]:focus::after {
-    content: attr(data-definition);
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 9px);
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: 260px;
-    padding: 0.55rem 0.7rem;
-    background: #1a2a3a;
-    color: #f4f1ea;
-    font-weight: 400;
-    font-size: 0.8rem;
-    font-family: var(--font-sans, sans-serif);
-    line-height: 1.45;
-    letter-spacing: 0;
-    text-transform: none;
-    text-align: left;
-    white-space: normal;
-    border-radius: 5px;
-    box-shadow: 0 6px 18px rgba(26, 42, 58, 0.22);
-    z-index: 60;
-    pointer-events: none;
-}
-.term[data-definition]:hover::before,
-.term[data-definition]:focus::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 4px);
-    transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-top-color: #1a2a3a;
-    z-index: 60;
-    pointer-events: none;
-}
-@media (max-width: 600px) { .term[data-definition]:hover::after, .term[data-definition]:focus::after { max-width: 200px; } }
-
 /* Summary box at end of article */
 .summary-box {
     margin: var(--space-8) 0;
