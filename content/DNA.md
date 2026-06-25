@@ -103,6 +103,17 @@ Then serious cooks who want the *why*. Write to a competent professional; never 
 Every claim traceable: peer-reviewed journals, named books, documented experience. No
 "they say." No "studies show" without naming the study. Funding/conflicts disclosed.
 
+**Trusted reference sources** (named, for the *why* behind a claim): primary peer-reviewed
+journals first; then standard references — McGee *On Food and Cooking*, the **elBulli Bullipedia**
+(elbullifoundation.com/bullipedia), Belitz *Food Chemistry*, FlavorDB. A reference book supports
+but never replaces a primary source for a health or science claim.
+
+### The re-angle rule
+
+When asked to draft an article, if a **stronger Littoralicious-core angle** exists on the subject,
+**propose the re-angle first and ask before changing focus** — never silently repurpose the
+brief. The reader's request is the floor; a better angle is offered, not imposed.
+
 ### Banned words
 
 delicious · yummy · mouthwatering · elevated · curated · artisanal (as marketing) ·
