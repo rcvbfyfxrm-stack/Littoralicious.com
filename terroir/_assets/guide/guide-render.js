@@ -64,6 +64,16 @@
         VENUES.forEach(v => { voteCounts[v.id] = 0; });
 
         // ---------- Render top-3 berths
+        // ---------- Gem Standard (foodie-culture upgrade) — additive; renders only if the field exists
+        var DRINK_COLORS = { wine:'#7b1e3b', spirit:'#b45309', aperitif:'#ca8a04', coffee:'#6b4226', beer:'#b8860b', cider:'#9a7b1e', other:'#5a5a5a' };
+        function gemChip(v){ if(!v.signal_chip) return ''; var c=v.signal_chip, label=(typeof c==='string')?c:(c.label||c.full||''); if(!label) return ''; var full=(typeof c==='object'&&c.full)?c.full:label; return '<span class="terroir-card__chip" title="'+escapeHTML(full)+'">'+escapeHTML(label)+'</span>'; }
+        function gemCosign(v){ var c=v.signal_chip; return (c&&typeof c==='object'&&c.cosign)?'<div class="terroir-card__cosign">'+escapeHTML(c.cosign)+'</div>':''; }
+        function gemDrinkType(v){ if(!v.type_of_drink) return ''; var t=String(v.type_of_drink).toLowerCase(), col=DRINK_COLORS[t]||DRINK_COLORS.other; return '<span class="terroir-card__drinktype" style="background:'+col+'">'+escapeHTML(t)+'</span>'; }
+        function gemPerson(v){ return v.person?'<div class="terroir-card__person">'+escapeHTML(v.person)+'</div>':''; }
+        function gemSignature(v){ return v.signature?'<div class="terroir-card__signature"><span class="tsig">&#9733;</span> '+escapeHTML(v.signature)+'</div>':''; }
+        function gemVerdict(v){ return v.verdict?'<div class="terroir-card__verdict">'+escapeHTML(v.verdict)+'</div>':''; }
+        function gemCaveat(v){ return v.caveat?'<div class="terroir-card__caveat"><span class="tcav">Heads up</span> '+escapeHTML(v.caveat)+'</div>':''; }
+
         function renderBerths() {
             const target = document.getElementById('terroir-berths');
             if (!target) return;
@@ -93,10 +103,13 @@
                 return '<div class="terroir-berth" id="venue-' + v.id + '" data-venue-id="' + v.id + '">' +
                     '<span class="terroir-berth__rank">#' + (i+1) + ' &middot; ' + escapeHTML(v.short || v.name) + '</span>' +
                     (v.badge ? '<span class="terroir-berth__badge">' + escapeHTML(v.badge) + '</span>' : '') +
-                    '<div class="terroir-berth__name">' + escapeHTML(v.name) + nbhd + '</div>' +
+                    '<div class="terroir-berth__name">' + escapeHTML(v.name) + gemChip(v) + nbhd + '</div>' +
+                    gemCosign(v) + gemPerson(v) + gemSignature(v) +
                     (products ? '<div class="terroir-berth__products">' + products + '</div>' : '') +
                     '<div class="terroir-berth__tags">' + tags + '</div>' +
+                    gemVerdict(v) +
                     '<p class="terroir-berth__why">' + escapeHTML(v.why) + '</p>' +
+                    gemCaveat(v) +
                     '<div class="terroir-berth__meta">' + meta.map(m => '<div>' + m + '</div>').join('') + '</div>' +
                     '</div>';
             }).join('');
@@ -123,10 +136,13 @@
                 '<div class="terroir-card__rank">#' + rank + '</div>' +
                 '<div class="terroir-card__body">' +
                     '<div class="terroir-card__cat">' + (CAT_LABELS[v.cat] || v.cat) + '</div>' +
-                    '<div class="terroir-card__name">' + escapeHTML(v.name) + badge + offCity + nbhdInline + '</div>' +
+                    '<div class="terroir-card__name">' + escapeHTML(v.name) + badge + gemChip(v) + gemDrinkType(v) + offCity + nbhdInline + '</div>' +
+                    gemCosign(v) + gemPerson(v) + gemSignature(v) +
                     (products ? '<div class="terroir-card__products">' + products + '</div>' : '') +
                     (tags ? '<div class="terroir-card__tags">' + tags + '</div>' : '') +
+                    gemVerdict(v) +
                     '<div class="terroir-card__why">' + escapeHTML(v.why) + '</div>' +
+                    gemCaveat(v) +
                     '<div class="terroir-card__meta">' + meta.join('') + '</div>' +
                 '</div>' +
                 '<div class="terroir-card__vote">' +

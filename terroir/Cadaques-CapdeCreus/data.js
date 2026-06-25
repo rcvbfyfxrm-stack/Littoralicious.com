@@ -29,7 +29,16 @@ window.TERROIR_DATA = (function () {
   "address": "Riera de Sant Vicenç s/n, 17488 Cadaqués, Girona",
   "phone": "+34 972 258 482",
   "hours": "Dinner, in the 18th-century courtyard",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Compartir+Cadaqués+Cadaqués"
+  "maps": "https://www.google.com/maps/search/?api=1&query=Compartir+Cadaqués+Cadaqués",
+  "verdict": "elBulli-trained refinement on the harbour — book it for the rice, not for a casual lunch.",
+  "signature": "The whole-table tasting menu, anchored by an Empordà seafood rice.",
+  "person": "The Disfrutar trio — Casañas, Castro & Xatruch; elBulli alumni.",
+  "signal_chip": {
+   "label": "Michelin",
+   "full": "Michelin Guide listed · 2 Soles Repsol",
+   "cosign": "the elBulli line on the water — the one we'd book first"
+  },
+  "caveat": "Seasonal — closes in deep winter; confirm dates before a winter trip."
  },
  {
   "id": "v02-casa-anita",
@@ -56,7 +65,11 @@ window.TERROIR_DATA = (function () {
   "address": "Carrer Miquel Rosset 16, 17488 Cadaqués, Girona",
   "phone": "+34 972 258 471",
   "hours": "Lunch or early dinner, summer",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Anita+Cadaqués"
+  "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Anita+Cadaqués",
+  "verdict": "The village institution Dalí drank at — you order what they recite, not what you planned.",
+  "signature": "House-salted Cadaqués anchovies, grilled Roses prawns, then the ice cream churned on site.",
+  "person": "Run by the Mota family since the 1960s — founder Ana Mota.",
+  "caveat": "Cash only, shared tables, no menu card — the order is recited aloud."
  },
  {
   "id": "v03-restaurant-cap-de-creus",
@@ -83,7 +96,11 @@ window.TERROIR_DATA = (function () {
   "address": "Carretera Cap de Creus s/n (Far de Cap de Creus), 17488 Cadaqués, Girona",
   "phone": "—",
   "hours": "Lunch for the view; sunrise here is the first on the Iberian mainland",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Restaurant+Cap+de+Creus+Cadaqués"
+  "maps": "https://www.google.com/maps/search/?api=1&query=Restaurant+Cap+de+Creus+Cadaqués",
+  "verdict": "Seven curries above a Catalan cove at the edge of the mainland — the unlikely one that works.",
+  "signature": "One of the seven curries (the vindaloo) with samosas and chutney.",
+  "person": "Opened 1991 by British biologist Chris Little, in a former Civil Guard barracks.",
+  "caveat": "Single-track road shared with buses — slow; seasonal hours, confirm first."
  },
  {
   "id": "v04-es-baluard",
