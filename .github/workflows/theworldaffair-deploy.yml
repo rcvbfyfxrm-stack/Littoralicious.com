@@ -43,5 +43,19 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
         run: |
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
-          npx --yes firebase-tools@15 deploy --only hosting \
-            --project littoralicious-web-eceed --non-interactive
+          set +e
+          out=$(npx --yes firebase-tools@15 deploy --only hosting \
+            --project littoralicious-web-eceed --non-interactive 2>&1)
+          code=$?
+          printf '%s\n' "$out"
+          if [ $code -ne 0 ]; then
+            # Benign no-op: a push that doesn't change the SERVED output (e.g. a
+            # draft-only or non-hosted-file commit) yields a version identical to
+            # what's already live, and Firebase refuses to re-release it. Nothing
+            # to deploy = success. Any OTHER error is a real failure.
+            if printf '%s' "$out" | grep -q "is the current active version"; then
+              echo "::notice::Hosting content unchanged (version already live) — no-op deploy treated as success."
+              exit 0
+            fi
+            exit $code
+          fi
