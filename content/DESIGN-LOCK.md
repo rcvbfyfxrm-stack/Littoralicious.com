@@ -115,6 +115,11 @@
    update this file. Don't fork the look.
 6. Banned words (DNA): delicious · elevated · curated · artisanal · superfood · game-changer · hack. No emoji
    (functional ★/✓/⚠ glyphs tolerated).
+7. **Never use a bright box fill.** Use the theme-aware locked classes (`note--*`, `summary-box`) — they auto-dim
+   in dark mode and stay faint in light. If you must use an inline `style="background: #…"`, only the colour CUE
+   matters; the stylesheet now lays a paper veil over every light inline fill (`#a..`–`#f..`) in light mode and
+   retints it to a dark panel in dark mode, so it can never glare on a phone. Don't fight this with inline
+   `!important`, and don't add hex-by-hex overrides to the CSS — the rule is structural and covers all colours.
 
 *Reference draft using the full set: `_drafts/draft-the-pairing-does-the-healing.html`.*
 

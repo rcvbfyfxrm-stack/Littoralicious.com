@@ -450,26 +450,32 @@ h4 { font-size: var(--text-lg); }
 }
 
 /* --------------------------------------------------------------------------
-   LIGHT-MODE COLOURED BOXES — calm the saturated inline fills
-   Articles hard-code fairly saturated pastel box fills inline. On a bright
-   phone screen these glare and the text is tiring to read. The site's own
-   design intent (see annotation palette) is a *faint* tint + a coloured left
-   border. Here we soften the inline fills to that faint level. This is the
-   base rule; the dark-mode block below overrides it (later source + matching
-   specificity), so dark mode still gets the dark panel treatment.
+   LIGHT-MODE COLOURED BOXES — calm EVERY light inline fill (structural)
+   Articles hard-code pastel/saturated box fills inline (e.g. #f5deb3, #d4a843,
+   #fef3c7). On a bright phone screen these glare and tire the eye. The site's
+   own design intent (see annotation palette) is a *faint* tint + a coloured
+   left border. Rather than enumerate every colour — new articles always pick
+   fresh ones and the glare creeps back — we lay a translucent paper veil over
+   ANY light inline fill (leading hex #a..–#f.., spaced or not). The hue
+   survives: it just drops to the faint-tint level, and the coloured left
+   border still carries the category cue. Dark hero fills (#0../#1../#2../#3..
+   leads, gradients, and var() tints) are deliberately NOT matched, so they
+   stay solid. New light fills are covered automatically — no list to keep up.
+   The dark-mode blocks below take over (later source) so dark reading still
+   gets the dark-panel treatment. NEVER replace this with a hex-by-hex list.
    -------------------------------------------------------------------------- */
-.article__content div[style*="background: #e2e5e9"],
-.article__content div[style*="background:#e2e5e9"] { background: #f3f5f7 !important; }
-.article__content div[style*="background: #d4dce8"],
-.article__content div[style*="background:#d4dce8"] { background: #eef2f8 !important; }
-.article__content div[style*="background: #d1e7dd"],
-.article__content div[style*="background:#d1e7dd"] { background: #ecf5f0 !important; }
-.article__content div[style*="background: #c8cfe0"],
-.article__content div[style*="background:#c8cfe0"] { background: #eef1f8 !important; }
-.article__content div[style*="background: #f5deb3"],
-.article__content div[style*="background:#f5deb3"] { background: #f8f1e1 !important; }
-.article__content div[style*="background: #f0c0c0"],
-.article__content div[style*="background:#f0c0c0"] { background: #f8ecec !important; }
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+    .article__content div[style*="background: #a"], .article__content div[style*="background:#a"],
+    .article__content div[style*="background: #b"], .article__content div[style*="background:#b"],
+    .article__content div[style*="background: #c"], .article__content div[style*="background:#c"],
+    .article__content div[style*="background: #d"], .article__content div[style*="background:#d"],
+    .article__content div[style*="background: #e"], .article__content div[style*="background:#e"],
+    .article__content div[style*="background: #f"], .article__content div[style*="background:#f"] {
+        /* 68% paper veil painted over the inline background-color (external
+           !important beats the inline shorthand's implicit image:none) */
+        background-image: linear-gradient(rgba(250,250,250,0.68), rgba(250,250,250,0.68)) !important;
+    }
+}
 
 /* --------------------------------------------------------------------------
    DARK-MODE COLOURED BOXES — readability fix (phones auto-apply dark mode)
@@ -482,51 +488,69 @@ h4 { font-size: var(--text-lg); }
    Covers both the OS setting and the manual [data-theme="dark"] toggle.
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
+    .article__content div[style*="background: #a"],
+    .article__content div[style*="background:#a"],
+    .article__content div[style*="background: #b"],
+    .article__content div[style*="background:#b"],
+    .article__content div[style*="background: #c"],
+    .article__content div[style*="background:#c"],
     .article__content div[style*="background: #d"],
     .article__content div[style*="background:#d"],
     .article__content div[style*="background: #e"],
     .article__content div[style*="background:#e"],
     .article__content div[style*="background: #f"],
     .article__content div[style*="background:#f"],
-    .article__content div[style*="background: #c"],
-    .article__content div[style*="background:#c"],
     .article__content div[style*="background: #9"],
     .article__content div[style*="background:#9"] {
         background: #16202b !important;
+        background-image: none !important;
     }
+    .article__content div[style*="background: #a"] *:not(mark):not(a),
+    .article__content div[style*="background:#a"] *:not(mark):not(a),
+    .article__content div[style*="background: #b"] *:not(mark):not(a),
+    .article__content div[style*="background:#b"] *:not(mark):not(a),
+    .article__content div[style*="background: #c"] *:not(mark):not(a),
+    .article__content div[style*="background:#c"] *:not(mark):not(a),
     .article__content div[style*="background: #d"] *:not(mark):not(a),
     .article__content div[style*="background:#d"] *:not(mark):not(a),
     .article__content div[style*="background: #e"] *:not(mark):not(a),
     .article__content div[style*="background:#e"] *:not(mark):not(a),
     .article__content div[style*="background: #f"] *:not(mark):not(a),
     .article__content div[style*="background:#f"] *:not(mark):not(a),
-    .article__content div[style*="background: #c"] *:not(mark):not(a),
-    .article__content div[style*="background:#c"] *:not(mark):not(a),
     .article__content div[style*="background: #9"] *:not(mark):not(a),
     .article__content div[style*="background:#9"] *:not(mark):not(a) {
         color: #e8e4dc !important;
     }
 }
+[data-theme="dark"] .article__content div[style*="background: #a"],
+[data-theme="dark"] .article__content div[style*="background:#a"],
+[data-theme="dark"] .article__content div[style*="background: #b"],
+[data-theme="dark"] .article__content div[style*="background:#b"],
+[data-theme="dark"] .article__content div[style*="background: #c"],
+[data-theme="dark"] .article__content div[style*="background:#c"],
 [data-theme="dark"] .article__content div[style*="background: #d"],
 [data-theme="dark"] .article__content div[style*="background:#d"],
 [data-theme="dark"] .article__content div[style*="background: #e"],
 [data-theme="dark"] .article__content div[style*="background:#e"],
 [data-theme="dark"] .article__content div[style*="background: #f"],
 [data-theme="dark"] .article__content div[style*="background:#f"],
-[data-theme="dark"] .article__content div[style*="background: #c"],
-[data-theme="dark"] .article__content div[style*="background:#c"],
 [data-theme="dark"] .article__content div[style*="background: #9"],
 [data-theme="dark"] .article__content div[style*="background:#9"] {
     background: #16202b !important;
+    background-image: none !important;
 }
+[data-theme="dark"] .article__content div[style*="background: #a"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#a"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #b"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#b"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #c"] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#c"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background: #d"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background:#d"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background: #e"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background:#e"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background: #f"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background:#f"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #c"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#c"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background: #9"] *:not(mark):not(a),
 [data-theme="dark"] .article__content div[style*="background:#9"] *:not(mark):not(a) {
     color: #e8e4dc !important;
