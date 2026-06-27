@@ -23,6 +23,7 @@
     // I — the place  (publish-terroir guides emit these as <details>, GOLD as <section>; map both)
     'SECTION#history': 10, 'DETAILS#history': 10, 'SECTION#why-now': 11, 'DETAILS#why-now': 11,
     'SECTION#eat': 12, 'DETAILS#eat': 12, 'SECTION#drink': 13,
+    'SECTION#money-sits': 13.5, 'DETAILS#money-sits': 13.5,
     // II — where to eat
     'DETAILS#tables': 20, 'DETAILS#three-tables': 21, 'DETAILS#tables-extended': 22,
     'DETAILS#dish': 23, 'DETAILS#bougie': 24,
