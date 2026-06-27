@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/theworldaffair/{{DATE}}/">
-<title>{{TITLE}} — The World Affair</title>
+<base href="/theworldaffair/">
+<title>Samedi 27 Juin 2026 — The World Affair</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,7 +64,7 @@ a:hover { color: #3a5a6a; }
 .article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
 .article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
 .article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
-.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; } /* ink, not blood-red: the old #8b3a3a painted EVERY 2nd column red — a quantum-fidelity / evidence table read like a stock ticker. Directional red now lives only in the .twa-tape dashboard. */
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
 .article-body tr:last-child td { border-bottom: none; }
 .bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
 .bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
@@ -75,71 +75,22 @@ a:hover { color: #3a5a6a; }
 .site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
 @media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
 @media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
-
-/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
-   hex, scoped under .article-body so they win over the generic table rules.
-   The routine emits the matching component HTML into the article body. ===== */
-/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
-.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
-.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
-.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
-.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
-.article-body .twa-emap td.twa-emap-g { text-align: center; }
-.article-body .twa-emap tr:last-child td { border-bottom: none; }
-.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
-.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
-.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
-.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
-/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
-.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
-.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
-.article-body .twa-cuibono .c:last-child { border-right: none; }
-.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
-.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
-/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
-.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
-.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
-.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
-.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
-/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
-.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
-.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
-.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
-.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
-.article-body .twa-tape tr:last-child td { border-bottom: none; }
-.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
-.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
-.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
-.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
-.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
-.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
-.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
-
-/* Confiance — per-récit estimative tag (replaces the colour-dot badge). Monochrome. */
-.article-body .twa-conf { margin: 16px 0 18px; padding-top: 7px; border-top: 1px solid #b5ad9f; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.55; }
-.article-body .twa-conf-v { font-size: 11px; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 700; color: #1a1714; }
-.article-body .twa-conf-c { margin-left: 11px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6a645c; }
-.article-body .twa-conf-r { display: block; margin-top: 3px; font-size: 11px; font-style: italic; color: #8a847a; }
-/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
-.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
-.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
 </style>
 </head>
 <body><header class="masthead">
   <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
-  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <h1 class="masthead-title"><a href="index.html">The World Affair</a></h1>
   <div class="masthead-meta">
-    <span>{{WEEKDAY}}</span><span class="masthead-dot">&bull;</span>
-    <span>Edition N&deg;{{NUMBER}}</span><span class="masthead-dot">&bull;</span>
+    <span>Samedi 27 Juin 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;158</span><span class="masthead-dot">&bull;</span>
     <span>NEXUS Intelligence</span>
   </div>
-  <div class="cluster-tag">Cluster du jour &middot; {{CLUSTER}}</div>
-  <div class="masthead-version">{{VERSION}}</div>
-</header><nav class="nav-bar"><a class="nav-link" href="../{{DATE}}.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
-  <div class="article-overline" style="color:{{DOMAIN_COLOR}}">{{DOMAIN}}</div>
-  <h1 class="article-title">{{TITLE}}</h1>
-  <div class="article-date">Vendredi 22 Mai 2026 &mdash; Edition N&deg;{{NUMBER}}</div>
-</div><div class="article-body">{{BODY}}</div><div class="bottom-nav"><a href="../{{DATE}}.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; {{VERSION}}</div>
+  <div class="cluster-tag">Cluster du jour &middot; Lignes de Surchauffe</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link active" href="2026-06-27.html">Premi&egrave;re Page</a><a class="nav-link" href="2026-06-27/synthese.html">Synth&egrave;se</a><a class="nav-link" href="archive.html">Archives</a></nav><div class="page"><div class="flash-box"><div class="flash-title">En 60 Secondes</div><ul><li><strong>Hormuz, le jour d'après —</strong> l'OMI suspend l'évacuation de plus de 11 000 marins bloqués dans le Golfe après la frappe sur l'<em>Ever Lovely</em>, le jour même de la Journée du marin <a href="https://www.imo.org/en/mediacentre/pressbriefings/pages/statement-on-the-attack-in-strait-of-hormuz-evacuation-plan-pause.aspx">OMI, 25 juin 2026</a></li>
+<li><strong>Le Congrès dit non, la Maison-Blanche hausse les épaules —</strong> le Sénat adopte 50-48 la résolution sur les pouvoirs de guerre, première fois que les deux chambres ordonnent à un président de quitter une guerre <a href="https://www.aljazeera.com/news/2026/6/24/us-senate-approves-iran-war-powers-resolution-what-that-means-for-trump">Al Jazeera, 24 juin 2026</a></li>
+<li><strong>Le meilleur trimestre de l'histoire d'une puce, et l'action plonge —</strong> Micron publie 41,5 Md$ et 84,9 % de marge avec sa HBM4 vendue jusqu'en 2027, mais le titre chute de plus de 5 % <a href="https://www.globenewswire.com/news-release/2026/06/24/3317151/14450/en/micron-technology-inc-reports-record-results-for-the-third-quarter-of-fiscal-2026.html">GlobeNewswire, 24 juin 2026</a></li></ul>
+<hr></div><div class="section-divider"><span>3 rubriques du cluster « Lignes de Surchauffe »</span></div><div class="hub-grid"><a class="hub-card" href="2026-06-27/synthese.html"><div class="hub-card-overline" style="color:#8b3a3a">Synthèse Quotidienne</div><div class="hub-card-title">Lignes de Surchauffe — Samedi</div><div class="hub-card-excerpt">« Trois systèmes franchissent leur point de rupture le même jour — un détroit, un marché, un réseau : le fil de la surchauffe, en sept histoires et dix chiffres. »</div><span class="hub-card-arrow">→</span></a><a class="hub-card" href="2026-06-27/sirik-guerre-procuration-porte-conteneurs.html"><div class="hub-card-overline" style="color:#6A1B9A">Pouvoir &amp; Frontières</div><div class="hub-card-title">Sirik, ou la guerre par procuration d'un porte-conteneurs</div><div class="hub-card-excerpt">« Une cargaison de Singapour touchée au large d'Oman, et un cessez-le-feu vieux d'une semaine vole en éclats : à Sirik, la guerre se gagne désormais par drones interposés. »</div><span class="hub-card-arrow">→</span></a><a class="hub-card" href="2026-06-27/degrisement-ia-725-milliards-inflation-4-pourcent.html"><div class="hub-card-overline" style="color:#1565C0">Marchés &amp; Capital</div><div class="hub-card-title">Le dégrisement de l'IA : 725 milliards face à une inflation à 4 %</div><div class="hub-card-excerpt">« Micron publie des résultats record, bondit, puis chute : le marché a cessé de récompenser les bonnes nouvelles. »</div><span class="hub-card-arrow">→</span></a><a class="hub-card" href="2026-06-27/golfech-canicule-eteint-nucleaire-reseau-europeen.html"><div class="hub-card-overline" style="color:#283593">Ciel &amp; Énergie</div><div class="hub-card-title">Golfech à l'arrêt : la canicule qui éteint le nucléaire</div><div class="hub-card-excerpt">« Le réacteur n'est pas tombé en panne : on l'a éteint parce que la rivière qui le refroidit était devenue trop chaude. »</div><span class="hub-card-arrow">→</span></a></div><div class="bottom-nav"><a href="archive.html"><span class="bottom-nav-label">&larr; Archives</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a><a href="archive.html"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Edition N&deg;158 &mdash; v1.1 — quotidien</div>
 <div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
 <div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
   <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
