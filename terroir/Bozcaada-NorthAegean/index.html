@@ -238,7 +238,7 @@ window.addEventListener('load', function () {
       '<figcaption>'+cap+' <span class="gx-photo__credit">'+credit+'</span></figcaption>';
     return f;
   }
-  function placePhotos(){ /* no Bozcaada photos yet */ }
+  function placePhotos(){if(document.querySelector('.gx-photo'))return;var lead=document.querySelector('.lead'),soul=document.getElementById('soul'),calas=document.getElementById('calas');if(lead)lead.parentNode.insertBefore(fig('/terroir/Bozcaada-NorthAegean/img/bozcaada-town.jpg','The harbour town under its Genoese-Ottoman castle, on the island the Greeks called Tenedos.','Filanca / Wikimedia Commons &middot; CC BY-SA 3.0'),lead.nextSibling);if(soul)soul.parentNode.insertBefore(fig('/terroir/Bozcaada-NorthAegean/img/bozcaada-vineyard.jpg','A vineyard road through the island&rsquo;s defining crop &mdash; nearly half of Bozcaada is dry-farmed under vine by the meltem.','Raicem / Wikimedia Commons &middot; CC BY-SA 4.0'),soul.nextSibling);if(calas)calas.parentNode.insertBefore(fig('/terroir/Bozcaada-NorthAegean/img/bozcaada-castle.jpg','The fortress Mehmet II rebuilt in 1455, guarding the harbour and the strait.','Kad&#305; Kad&#305; / Wikimedia Commons &middot; CC BY 2.0'),calas);}
   function boot(){ wireFolds(); placePhotos(); }
   if(document.readyState==='complete') boot();
   else window.addEventListener('load', boot);
