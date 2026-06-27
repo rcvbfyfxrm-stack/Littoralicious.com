@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bozcaada (Tenedos), North Aegean &mdash; Terroir Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<!-- Terroir guide kit -->
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-enhance.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  :root { --paper:#fafafa; --paper-2:#f2efe8; --ink:#0a0a0a; --ink-2:#3a3a3a; --ink-3:#6a6a6a; --rule:#d7d2c4; --sea:#2d4a5e; --color-subtle:#ede9de; --gold:#8a6a2e; --amber:#a86a2f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  body { font-family:Georgia,serif; background:var(--paper); color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+  .hero { padding:56px 20px 32px; text-align:center; border-bottom:2px solid var(--ink); }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:3.4em; letter-spacing:8px; font-weight:900; line-height:1; }
+  .hero .region { font-family:system-ui,sans-serif; color:var(--ink-2); font-size:0.86em; margin-top:14px; letter-spacing:3px; text-transform:uppercase; }
+  .hero .philosophy { color:var(--sea); margin-top:22px; font-style:italic; font-family:'Playfair Display',serif; max-width:620px; margin-left:auto; margin-right:auto; }
+  .hero .date { font-family:'JetBrains Mono',monospace; color:var(--ink-3); font-size:0.68em; margin-top:18px; letter-spacing:2px; text-transform:uppercase; }
+  .hero .lang-switch { margin-top:22px; }
+  .hero .lang-switch a { display:inline-block; padding:4px 10px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; border:1px solid var(--rule); color:var(--ink-3); margin:0 3px; }
+  .hero .lang-switch a.active { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .quicknav { position:sticky; top:0; z-index:100; background:rgba(250,250,250,0.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--rule); padding:10px 16px; text-align:center; overflow-x:auto; white-space:nowrap; font-family:system-ui,sans-serif; }
+  .quicknav a { display:inline-block; color:var(--ink-2); font-size:0.7em; text-transform:uppercase; letter-spacing:2px; padding:6px 10px; }
+  .quicknav a:hover { color:var(--sea); }
+  .quicknav .sep { color:var(--rule); margin:0 2px; }
+  .container { max-width:820px; margin:0 auto; padding:0 18px 60px; }
+  .instructions { font-family:system-ui,sans-serif; text-align:center; color:var(--ink-3); font-size:0.8em; padding:14px 0 8px; font-style:italic; }
+  .instructions strong { color:var(--sea); font-style:normal; font-weight:500; }
+  .lead { font-size:1.02em; line-height:1.8; margin:22px 0 18px; }
+  .lead::first-letter { font-family:'Playfair Display',serif; font-size:3.4em; float:left; line-height:0.9; padding:6px 10px 0 0; color:var(--sea); font-weight:900; }
+  .lead a, .prose a { border-bottom:1px dotted var(--sea); color:var(--sea); }
+  .funfact { background:#fbf9f0; border-left:3px solid var(--sea); padding:14px 20px; margin:20px auto; font-size:0.94rem; font-style:italic; line-height:1.65; max-width:65ch; }
+  .funfact::before { content:'FUN FACT · '; font-family:'JetBrains Mono',monospace; font-style:normal; font-size:0.7rem; letter-spacing:0.15em; color:var(--sea); font-weight:700; margin-right:6px; }
+  .funfact strong { color:var(--ink); font-style:normal; font-weight:600; }
+  .alert { background:#fff6e8; border-left:4px solid var(--amber); padding:14px 18px; margin:18px 0; font-size:0.92em; line-height:1.65; font-family:system-ui,sans-serif; }
+  .alert .alert-label { color:var(--amber); font-weight:600; font-size:0.8em; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; display:block; }
+  .alert a { border-bottom:1px dotted var(--amber); color:var(--amber); }
+  .prose { margin:32px 0; }
+  .prose .overline { font-family:'JetBrains Mono',monospace; font-size:0.72em; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+  .prose .subhead { font-family:'Playfair Display',serif; font-style:italic; font-size:1.2em; color:var(--ink-2); margin-bottom:14px; }
+  .prose p { font-size:1em; line-height:1.8; }
+  .prose ul { list-style:none; padding:0; }
+  .prose ul li { padding:10px 0; border-bottom:1px dashed var(--rule); font-size:0.96em; line-height:1.7; color:var(--ink-2); }
+  .prose ul li strong { color:var(--ink); font-weight:600; }
+  details.sfold { border-top:1px solid var(--rule); margin-top:18px; }
+  details.sfold > summary { list-style:none; cursor:pointer; padding:18px 0 10px; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:14px; }
+  details.sfold > summary::-webkit-details-marker { display:none; }
+  .sfold__title { font-family:'Playfair Display',serif; font-size:1.3em; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+  .sfold__desc { font-family:system-ui,sans-serif; color:var(--ink-3); font-size:0.82em; font-style:italic; margin-top:3px; }
+  .sfold__count { font-family:'JetBrains Mono',monospace; font-size:0.68em; color:var(--sea); background:var(--paper-2); border:1px solid var(--rule); padding:4px 10px; border-radius:14px; letter-spacing:0.8px; text-transform:uppercase; }
+  .sfold__chev { color:var(--sea); font-family:'Playfair Display',serif; font-size:1.4em; transition:transform 0.2s; width:18px; text-align:center; }
+  details.sfold[open] > summary .sfold__chev { transform:rotate(45deg); }
+  details.sfold > summary .sfold__chev::before { content:"+"; }
+  .sfold__body { padding:6px 0 14px; }
+  ul.sources { list-style:none; padding:0; }
+  ul.sources li { padding:8px 0; border-bottom:1px dashed var(--rule); font-size:0.88em; font-family:system-ui,sans-serif; }
+  ul.sources li a { color:var(--sea); border-bottom:1px dotted var(--sea); }
+  .footer { text-align:center; color:var(--ink-3); font-size:0.8em; padding:50px 0 20px; border-top:2px solid var(--ink); margin-top:40px; }
+
+  /* === Extended palette + Venice-parity sections === */
+  :root {
+    --brown-red: #7a3530; --brown-deep: #5b3a26; --indigo: #3a3a6a;
+    --green: #3a6a45; --purple: #5a3a6a; --teal: #2a6a6a;
+    --beige: #8a7350; --mustard: #a07a20; --muted-red: #8a3a3a;
+  }
+  .tier-sub { font-family: 'Playfair Display', Georgia, serif; font-size: 0.9em; color: var(--sea); letter-spacing: 3px; text-transform: uppercase; margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 1px dashed var(--rule); }
+  details.pfold { background: #fff; border: 1px solid var(--rule); border-left-width: 3px; margin: 8px 0; }
+  details.pfold > summary { list-style: none; cursor: pointer; padding: 12px 16px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; }
+  details.pfold > summary::-webkit-details-marker { display: none; }
+  details.pfold > summary:hover { background: var(--color-subtle); }
+  .pfold__name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.05em; color: var(--ink); font-weight: 700; }
+  .pfold__hook { font-family: system-ui, sans-serif; color: var(--ink-3); font-size: 0.8em; margin-top: 3px; line-height: 1.45; }
+  .pfold__hook em { color: var(--sea-2); font-style: italic; }
+  .pfold__chev { color: var(--ink-3); font-family: 'Playfair Display', Georgia, serif; font-size: 1.15em; line-height: 1; transition: transform 0.2s; width: 18px; text-align: center; }
+  details.pfold[open] > summary .pfold__chev { transform: rotate(45deg); }
+  details.pfold > summary .pfold__chev::before { content: "+"; }
+  .pfold__body { padding: 4px 16px 16px; border-top: 1px solid var(--rule); font-size: 0.92em; }
+  .pfold__desc { color: var(--ink); line-height: 1.7; margin-bottom: 12px; }
+  .pfold__recog { font-style: italic; color: var(--ink-2); font-size: 0.86em; margin-bottom: 8px; }
+  .pfold__meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px 14px; background: var(--paper); border-top: 1px dashed var(--rule); padding: 10px 0 0; font-family: system-ui, sans-serif; font-size: 0.82em; color: var(--ink-2); }
+  .pfold__meta strong { display: block; font-size: 0.78em; color: var(--sea); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; font-weight: 500; }
+  details.pfold--restaurant { border-left-color: var(--brown-red); }
+  details.pfold--bougie { border-left-color: var(--gold); background: #fcf8ee; }
+  details.pfold--bar { border-left-color: var(--amber); }
+  details.pfold--music { border-left-color: var(--purple); }
+  details.pfold--market { border-left-color: var(--teal); }
+  details.pfold--cafe { border-left-color: var(--beige); }
+  details.pfold--walk { border-left-color: var(--green); }
+  details.pfold--culture { border-left-color: var(--indigo); }
+  details.pfold--producer { border-left-color: var(--brown-deep); }
+  details.pfold--dish { border-left-color: var(--mustard); background: #fcf7e4; }
+  details.pfold--avoid { border-left-color: var(--muted-red); background: #fbecec; }
+  details.pfold--event { border-left-color: var(--indigo); }
+  .three-tables { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 14px 0 4px; }
+  @media (max-width: 760px) { .three-tables { grid-template-columns: 1fr; } }
+  .tt-col { background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--sea); padding: 18px 14px; }
+  .tt-col h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 0.95em; color: var(--sea); text-align: center; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .tt-col .subtitle { font-family: system-ui, sans-serif; text-align: center; color: var(--ink-3); font-size: 0.72em; margin-bottom: 12px; font-style: italic; }
+  .tt-col ol { list-style: none; counter-reset: tt-c; padding: 0; }
+  .tt-col li { counter-increment: tt-c; padding: 9px 0; border-bottom: 1px dashed var(--rule); font-size: 0.84em; line-height: 1.45; color: var(--ink); position: relative; padding-left: 24px; }
+  .tt-col li::before { content: counter(tt-c); position: absolute; left: 0; top: 9px; color: var(--sea); font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.92em; }
+  .tt-col li:last-child { border-bottom: none; }
+  .tt-col li a { color: var(--ink); border-bottom: 1px dotted var(--sea); }
+  .tt-col li .meta { font-family: system-ui, sans-serif; display: block; color: var(--ink-3); font-size: 0.82em; margin-top: 2px; font-style: italic; }
+  .timeline { background: #fff; border: 1px solid var(--rule); padding: 12px 18px; margin: 14px 0 4px; }
+  .timeline .slot { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .timeline .slot:last-child { border-bottom: none; }
+  .timeline .time { font-family: 'JetBrains Mono', monospace; color: var(--sea); font-size: 0.78em; letter-spacing: 1.5px; text-transform: uppercase; }
+  .timeline .plan { font-size: 0.92em; line-height: 1.65; color: var(--ink); }
+  .timeline .plan a { color: var(--ink); border-bottom: 1px dotted var(--sea); }
+  table.calendar { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 0.82em; background: #fff; border: 1px solid var(--rule); }
+  table.calendar thead { background: var(--paper-2); }
+  table.calendar th { font-family: 'Playfair Display', Georgia, serif; color: var(--sea); font-weight: 700; text-align: left; padding: 10px 10px; border-bottom: 2px solid var(--rule); font-size: 0.92em; letter-spacing: 1px; text-transform: uppercase; }
+  table.calendar td { padding: 9px 10px; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+  table.calendar td.month { color: var(--sea); font-weight: 600; font-family: 'Playfair Display', Georgia, serif; }
+  .follow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+  .follow-card { background: #fff; border: 1px solid var(--rule); border-left: 3px solid var(--indigo); padding: 12px 14px; }
+  .follow-card .handle { font-family: 'JetBrains Mono', monospace; font-size: 0.88em; color: var(--indigo); font-weight: 500; }
+  .follow-card .why { font-family: system-ui, sans-serif; color: var(--ink-3); font-size: 0.78em; margin-top: 4px; line-height: 1.5; }
+  ul.plain { list-style: none; padding: 0; margin: 10px 0; }
+  ul.plain li { padding: 8px 0; color: var(--ink-2); font-size: 0.92em; line-height: 1.65; border-bottom: 1px dashed var(--rule); }
+  ul.plain li strong { color: var(--ink); }
+  .map-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 7px 14px; background: var(--paper); color: var(--sea); border: 1px solid var(--sea); font-family: system-ui, sans-serif; font-size: 0.76em; font-weight: 500; }
+  .map-link:hover { background: var(--sea); color: var(--paper); }
+
+</style>
+<style id="cadaques-readability">/* bigger, calmer reading type */body{font-size:1.0em;}.lead{font-size:1.16em;line-height:1.86;}.prose p{font-size:1.1em;line-height:1.86;}.prose .subhead{font-size:1.3em;}#soul .soul__body{font-size:1.17em;line-height:1.95;}.cala-list p{font-size:1.0em;}.tcard__body{font-size:0.98em;line-height:1.72;}.gx-lede{font-family:Georgia,serif;font-size:1.2em;line-height:1.62;color:var(--ink);margin:2px 0 4px;}/* read-more fold */.gx-fold{overflow:hidden;transition:max-height .5s ease;}.gx-fold.is-folded{max-height:0;}/* B&W Leica-Q2M photos */.gx-photo{max-width:900px;margin:32px auto;padding:0 24px;}.gx-photo img{width:100%;height:auto;display:block;border:1px solid var(--rule);filter:grayscale(1) contrast(1.14) brightness(1.02);}.gx-photo figcaption{font-family:Inter,system-ui,sans-serif;font-size:0.86em;color:var(--ink-3);margin-top:9px;font-style:italic;line-height:1.5;}.gx-photo__credit{font-family:"JetBrains Mono",monospace;font-style:normal;font-size:0.8em;opacity:.7;letter-spacing:.3px;}.gx-appendix{max-width:900px;margin:48px auto 0;padding:16px 24px 0;border-top:1px solid var(--rule);opacity:0.62;transition:opacity .25s ease;}.gx-appendix:hover{opacity:1;}.gx-appendix__label{font-family:"JetBrains Mono",monospace;font-size:0.6em;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;}.gx-appendix .sfold{font-size:0.9em;}@media print{.gx-fold.is-folded{max-height:none;}.gx-foldbtn{display:none;}}</style>
+</head>
+<body>
+<div class="hero"><h1>Bozcaada</h1><div class="region">Tenedos &middot; North Aegean</div><div class="philosophy">&ldquo;A forty-square-kilometre island of wind and vine in the mouth of the Dardanelles, where the <em>meltem</em> that bends the low gobelet vines also scours the air clear &mdash; a single three-thousand-year-old crop ringed by a sea the colour of slate before rain.&rdquo;</div></div>
+<div class="gx-etymon"><b>The name</b> <em>In antiquity the island was <strong>Tenedos</strong> &mdash; named in Virgil&rsquo;s <em>Aeneid</em> as the bay where the Achaean fleet hid to sell Troy the wooden horse; its ancient coins were stamped with bunches of grapes and a double-headed axe. The Turkish <strong>Bozcaada</strong> &mdash; &ldquo;grey island&rdquo; &mdash; came later.</em></div>
+<nav class="quicknav"><a href="#history">History</a><span class="sep">&middot;</span><a href="#eat">Eat</a><span class="sep">&middot;</span><a href="#tables">Tables</a><span class="sep">&middot;</span><a href="#calas">Calas</a><span class="sep">&middot;</span><a href="#walks">Walks</a><span class="sep">&middot;</span><a href="#coffee-gardens">Coffee</a><span class="sep">&middot;</span><a href="#culture">Culture</a><span class="sep">&middot;</span><a href="#drink">Drink</a><span class="sep">&middot;</span><a href="#bars">Bars</a><span class="sep">&middot;</span><a href="#sources">Sources</a></nav>
+<div class="container">
+<div class="lead"><p><strong>Bozcaada is a wind-raked wine island in the mouth of the Dardanelles</strong> &mdash; between a third and a half of it under vine, worked without irrigation on a heritage three thousand years old. In May 2026 National Geographic named it the only Turkish entry on its list of the best places in the world for food right now, praising the millennia-old winemaking and an Aegean table drawn straight from the strait. The plate carries both halves of the island&rsquo;s record, Greek and Turkish &mdash; and the wine is its own pre-phylloxera grapes, not the international clones that replaced them everywhere else.</p></div>
+<div class="funfact"><strong>A pre-phylloxera wine island.</strong> The root louse that levelled almost every vineyard on Earth in the nineteenth century did not reach Bozcaada until the 1940s &mdash; so the island still grows its own grapes: the delicate <em>&Ccedil;avu&#351;</em>, the high-acid <em>Vasilaki</em> grown nowhere else, and the dark, tannic <em>Karalahna</em>.</div>
+<div class="instructions"><strong>How to read this:</strong> click any section to unfold &middot; tap the &hearts; on any place to keep it in your favourites &middot; hover a place name (or tap &ldquo;Show map&rdquo;) to fly the map to it &middot; every place links to Google Maps.</div>
+<div class="alert"><span class="alert-label">August &amp; the off-season</span> This is not a year-round island &mdash; almost three-quarters of the registered population leaves for the mainland in winter, and much of the food scene shutters with them. Come late May&ndash;June or the first week of September; avoid August, when the beds fill and Ayazma beach crowds. Plan around the season, or you will find the kitchens dark.</div>
+<section id="soul" class="soul"><div class="overline">THE SOUL OF THE PLACE</div><div class="subhead">What the place is, underneath</div><p class="soul__body">Bozcaada is a forty-square-kilometre island of wind and vine in the mouth of the Dardanelles, where the <em>meltem</em> blows so steadily that vegetation grows low and hard against it. The constant breeze is the whole argument: it dries the morning off the grapes before disease can take hold, so the vines are trained <em>gobelet</em>-style, knuckled close to the dusty ground, unsprayed. Between a third and a half of the island lies under vine &mdash; you are never quite reading a landscape here so much as reading a single three-thousand-year-old crop, raked by salt air and ringed by a sea the colour of slate before rain.</p><p class="soul__body" style="margin-top:18px;"><strong style="font-family:'JetBrains Mono',monospace;font-size:0.6em;letter-spacing:2px;text-transform:uppercase;color:#2d4a5e;display:block;margin-bottom:6px;">The quintessence</strong>You are standing on a pre-phylloxera wine island. The root louse that levelled almost every vineyard on Earth in the nineteenth century did not reach Bozcaada until the 1940s, and the vines here are still the island&rsquo;s own grapes, not the famous international ones: &Ccedil;avu&#351;, the delicate table grape; Vasilaki, the high-acid white grown nowhere else; the dark, tannic Karalahna with the lighter Kuntra for red. This is not the polished Tuscan-clone Aegean of the brochures. It is the older, stranger one those clones replaced.</p></section>
+<section id="history" class="prose"><div class="overline">HISTORY &amp; TERROIR</div><div class="subhead">Where it comes from</div><p class="gx-lede">In antiquity the island was Tenedos &mdash; named in Virgil&rsquo;s <em>Aeneid</em> as the bay where the Achaean fleet hid to sell Troy the wooden horse; its coins were stamped with grapes and a double-headed axe.</p><div class="gx-fold is-folded" data-fold-label="Read the full story"><p>After Byzantine, Genoese and Venetian hands, the island and its castle were taken and rebuilt in 1455 by Sultan Mehmet II. Under the 1923 Treaty of Lausanne, Tenedos and Imbros were the only Aegean islands left to Turkey and explicitly exempted from the Greek&ndash;Turkish population exchange. Yet the Greek Orthodox community that had made the island&rsquo;s wine for centuries fell from roughly 5,420 in 1912 to about 22 by 2000 &mdash; and the first Turkish-Muslim winery, &Ccedil;aml&#305;ba&#287;, was founded in 1925 in a former Greek shop. The plate you eat today carries both halves of that record.</p></div></section>
+<section id="why-now" class="prose"><div class="overline">WHY NOW</div><div class="subhead">The right moment</div><p>Come in the <strong>first week of September</strong> for the <em>ba&#287; bozumu</em>, the grape-harvest festival the municipality has run since the mid-1990s, when tractors and donkeys carry visitors out to a different vineyard each day to pick and crush &mdash; the one moment the &Ccedil;avu&#351; grape, too delicate to travel, is actually in your hand. Failing that, come <strong>late May&ndash;June</strong>: warm, uncrowded, the cellar doors open. Avoid August, when the beds fill and Ayazma beach crowds. And know this is not a year-round island &mdash; almost three-quarters of the registered population leaves in winter, and the kitchens go dark with them.</p></section>
+<section id="eat" class="prose"><div class="overline">WHAT TO EAT</div><div class="subhead">The canon</div><p class="gx-lede">Bozcaada eats off two heritages at once &mdash; the grilled squid and raw fish of a fishing island, and the fried dumplings, dried-vegetable dolma and syrup-soaked Rum sweets of the Greek community that shaped it.</p><div class="gx-fold is-folded" data-fold-label="Read the full story"><p>The island treatment of squid is grilled, not battered &mdash; laid over coals the way they cook it at <span data-pin="v04-asmali-meyhane">Asmal&#305; Meyhane</span> (founded 1950) under the vine canopy that names the <em>meyhane</em>, where raw fish with torn basil is the quieter signature. The dumpling to know is <em>ada mant&#305;s&#305;</em>, fried before it is sauced, hand-pleated at the counter of <span data-pin="v05-dort-hanimeli">D&ouml;rt Han&#305;meli</span>. From the <span data-pin="v07-wednesday-market">Wednesday producers&rsquo; market</span> in the castle square comes the island&rsquo;s calling-card preserve, <em>domates re&ccedil;eli</em> &mdash; tomato jam against a wedge of &Ccedil;anakkale goat cheese, the salt cutting the sugar. And the desserts date the table: <em>mafi&#351;</em>, the bow-shaped Rum <em>tatl&#305;s&#305;</em> fried light and soaked in syrup, older than the Republic-era wineries down the road.</p></div></section>
+<section id="drink" class="prose"><div class="overline">WHAT TO DRINK</div><div class="subhead">The island&rsquo;s own grapes</div><p class="gx-lede">Wine is the island&rsquo;s whole argument, made from four indigenous grapes &mdash; &Ccedil;avu&#351; and Vasilaki for white, Karalahna and Kuntra for red &mdash; that grow essentially nowhere else.</p><div class="gx-fold is-folded" data-fold-label="Read the full story"><p><span data-pin="v02-corvus">Corvus</span> put Bozcaada back on the world wine map in 2002; its &Ccedil;avu&#351; white argues a snacking grape can carry a serious dry wine, and Jancis Robinson scored its Corpus red the highest Turkish mark in her tasting. <span data-pin="v08-talay">Talay</span>, family-run since 1948, and &Ccedil;aml&#305;ba&#287;, the island&rsquo;s first Muslim winery from 1925, work the native vines in a plainer, working-cellar key; <span data-pin="v06-amadeus">Amadeus</span>, run by the island-born Austrian Oliver Gareis, pours its Grillo white himself at the cellar door. The fixed partner to the meze, though, is <em>rak&#305;</em> &mdash; not an island product, but the anise spirit poured under the vine while the raw fish and squid come out in waves. The wine is the souvenir; the rak&#305; is the meal.</p></div></section><section id="money-sits" class="prose"><div class="overline">WHERE THE MONEY SITS</div><div class="subhead">What funds the table</div><p class="gx-lede">Wine is the engine, but tourism is the till &mdash; and the gap between them is the whole story of the island&rsquo;s plate.</p><div class="gx-fold is-folded" data-fold-label="Read the full story"><p>Almost half the island is planted to vine, worked without irrigation, near-organic, on a three-thousand-year heritage &mdash; but commercial wine fights a labour shortage, high alcohol tax and distant drinking cities, so many islanders make wine in small batches for themselves rather than for sale. The real cash is no longer in the bottle; it is in the day-tripper &mdash; over 1.5 million visitors a year, summer occupancy near ninety per cent. A chef&rsquo;s money is well spent at source: at the cellar door, on GI-registered &Ccedil;avu&#351; table grapes, on the island&rsquo;s young-fig and almond produce. It is wasted on the harbour-front group-tour tables that exist for volume, not for the kitchen. The seam of value is the home-batch wine and the GI grape &mdash; the things too small or too taxed to scale, which is exactly why the tour buses never touch them.</p></div></section>
+<details class="sfold" id="tables" open><summary><div><div class="sfold__title">The Tables</div><div class="sfold__desc">The full inventory &mdash; click a card for detail.</div></div><span class="sfold__count">16 entries</span><span class="sfold__chev"></span></summary><div class="sfold__body"><div class="terroir-berths" id="terroir-berths"></div>
+<details class="sfold" id="three-tables" open><summary><div><div class="sfold__title">The full table</div><div class="sfold__desc">Every venue &mdash; click a card for detail</div></div><span class="sfold__count">12 entries</span><span class="sfold__chev"></span></summary><div class="sfold__body"><div class="terroir-tier" data-tier="several" style="display:none"><div class="terroir-tier__list" id="terroir-list-several"></div></div><div class="terroir-tier" data-tier="plenty" style="display:none"><div class="terroir-tier__list" id="terroir-list-plenty"></div></div><div class="terroir-tier" data-tier="notime" style="display:none"><div class="terroir-tier__list" id="terroir-list-notime"></div></div></div></details>
+<details class="sfold" id="calas" hidden></details>
+<section id="avoid" class="prose"><div class="overline">BEFORE YOU GO</div><div class="subhead">Getting there, and the one honest warning</div><p>There is no airport. The short ferry runs from Geyikli (Y&uuml;kyeri &#304;skelesi) to Bozcaada in about thirty minutes, hourly through the day with a late 23:00 sailing in season; from &Ccedil;anakkale it is roughly 60&nbsp;km by road, turning off before Ezine for Geyikli. A summer-only seabus runs from &Ccedil;anakkale city but takes no vehicles.</p><blockquote class="pullquote">Come for the wine and the grilled squid, in season &mdash; not in winter, when the island empties and the kitchens go dark.</blockquote></section>
+<div class="gx-appendix"><div class="gx-appendix__label">Reference &amp; logistics</div><details class="sfold" id="sources"><summary><div><div class="sfold__title">Sources</div><div class="sfold__desc">Named, checkable</div></div><span class="sfold__chev"></span></summary><div class="sfold__body"><div class="prose"><p>National Geographic, <em>Best of the World 2026</em> food list (28 May 2026), corroborated by <em>H&uuml;rriyet Daily News</em>. &middot; <em>Daily Sabah</em> travel desk (the mixed Greek-Turkish table; Asmal&#305; Meyhane, est. 1950). &middot; Pale Ruby Wine, Turquazz and Terroirjourney (indigenous grapes, gobelet training, the Talay / &Ccedil;aml&#305;ba&#287; / Corvus histories, Jancis Robinson&rsquo;s 17/20 score). &middot; Wikipedia, &ldquo;Tenedos&rdquo; and &ldquo;Bozcaada&rdquo; (the <em>Aeneid</em>, Treaty of Lausanne, 1455 Ottoman capture, visitor figures). &middot; Katie Parla, &ldquo;Back in Bozcaada&rdquo; (the labour / tax economics; &Ccedil;i&ccedil;ek Pastanesi; Amadeus and the Grillo). &middot; Lonely Planet (Corvus, Amadeus). &middot; MDPI, <em>J. Fungi</em> 11(5):373 (2025) &mdash; Bozcaada &Ccedil;avu&#351;u GI, 2020. &middot; TripAdvisor / RestaurantGuru (venue ranks). &middot; Gesta&#351; / Moovit (Geyikli&ndash;Bozcaada ferry).</p></div></div></details></div>
+
+</div>
+
+<footer class="footer">
+  <a href="/terroir/" style="border-bottom:1px solid currentColor;">← All Terroir cities</a>
+  <br><br>
+  42.2887, 3.2766
+</footer>
+
+<script src="/terroir/data/Bozcaada-NorthAegean.js"></script>
+<script>
+window.TERROIR_CONFIG = { articleId:'terroir-Bozcaada-NorthAegean', portName:'Bozcaada', center:[39.8338, 26.0700], zoom:14, cityRadiusKm:20 };
+</script>
+<script defer src="/terroir/_assets/guide/guide-render.js"></script>
+<script defer src="/terroir/_assets/guide/guide-search.js"></script>
+
+<!-- Single floating map — closed by default, opens via "Show map" toggle (state in localStorage) -->
+<aside class="terroir-mini" id="terroir-mini">
+  <div class="terroir-mini__head">
+    <span>Map of this guide</span>
+    <button id="terroir-mini-close" aria-label="Close map" title="Close map">×</button>
+  </div>
+  <div class="terroir-mini__map" id="terroir-mini-map"></div>
+</aside>
+<button class="terroir-mini-toggle" id="terroir-mini-toggle">Show map</button>
+
+<script>
+window.addEventListener('load', function () {
+  if (typeof L === 'undefined' || !window.TERROIR_DATA) return;
+  var data    = window.TERROIR_DATA;
+  var venues  = data.VENUES || [];
+  var pColors = data.PRODUCT_COLORS || {};
+  var cfg     = window.TERROIR_CONFIG || { center: [0,0], zoom: 11 };
+  function colorFor(v) { var t = (v.productTags && v.productTags[0]) || ''; return pColors[t] || (data.COLORS||{})[v.cat] || '#444'; }
+  var map = L.map('terroir-mini-map', { zoomControl:true, scrollWheelZoom:true, doubleClickZoom:true, touchZoom:true, dragging:true, attributionControl:false }).setView(cfg.center, cfg.zoom);
+  window.__terroirMap = map;
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom:19, subdomains:'abcd', attribution:'&copy; OSM &copy; CARTO' }).addTo(map);
+  var markers = {};
+  venues.forEach(function (v) {
+    if (!v.lat || !v.lng) return;
+    var c = colorFor(v);
+    var icon = L.divIcon({ className:'', html:'<div style="background:'+c+';width:13px;height:13px;border-radius:50%;border:2px solid #1a2a3a;box-shadow:0 0 0 1px rgba(255,255,255,0.6),0 1px 4px rgba(0,0,0,0.4);"></div>', iconSize:[15,15], iconAnchor:[7,7] });
+    var marker = L.marker([v.lat, v.lng], { icon: icon, riseOnHover: true });
+    marker.bindTooltip(v.name, { direction:'right', offset:[10,0] });
+    var why = v.why ? v.why.slice(0,200) + (v.why.length>200?'…':'') : '';
+    marker.bindPopup('<em>'+((data.CAT_LABELS||{})[v.cat]||v.cat)+(v.neighborhood?' · '+v.neighborhood:'')+'</em><b>'+v.name+'</b>'+(why?'<span style="color:#c8c0b4;display:block;margin-bottom:6px;">'+why+'</span>':'')+'<a href="#venue-'+v.id+'" onclick="document.getElementById(\'venue-'+v.id+'\') && document.getElementById(\'venue-'+v.id+'\').scrollIntoView({behavior:\'smooth\',block:\'center\'});">Read full entry →</a>'+(v.maps?'<br><a href="'+v.maps+'" target="_blank" rel="noopener">Open in Google Maps →</a>':''));
+    marker.addTo(map);
+    markers[v.id] = marker;
+  });
+  window.__terroirMarkers = markers;
+  try { var pts = venues.filter(function (v) { return v.lat && v.lng; }).map(function (v) { return [v.lat, v.lng]; }); if (pts.length) map.fitBounds(pts, { padding:[22,22], maxZoom:14 }); } catch (e) {}
+});
+</script>
+
+<!-- Firebase compat (for terroir voting) -->
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="/terroir/_assets/guide/guide-favourites.js"></script>
+<script defer src="/terroir/_assets/guide/guide-enhance.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
+
+<script>
+(function(){
+  function wireFolds(){
+    var folds=document.querySelectorAll('.gx-fold.is-folded');
+    for(var i=0;i<folds.length;i++){ (function(fold){
+      if(fold.__wired) return; fold.__wired=true;
+      var label=fold.getAttribute('data-fold-label')||'Read more';
+      var btn=document.createElement('button'); btn.className='gx-more gx-foldbtn';
+      btn.innerHTML=label+' <span class="gx-more__chev">\u25be</span>';
+      fold.parentNode.insertBefore(btn,fold);
+      btn.addEventListener('click',function(){
+        var open=fold.classList.toggle('is-folded')===false;
+        btn.classList.toggle('is-open',open);
+        btn.firstChild.textContent=(open?'Show less':label)+' ';
+      });
+    })(folds[i]); }
+  }
+  function fig(src,cap,credit,cls){
+    var f=document.createElement('figure'); f.className='gx-photo '+cls;
+    f.innerHTML='<img src="'+src+'" alt="'+cap.replace(/<[^>]+>/g,'')+'" loading="lazy">'+
+      '<figcaption>'+cap+' <span class="gx-photo__credit">'+credit+'</span></figcaption>';
+    return f;
+  }
+  function placePhotos(){ /* no Bozcaada photos yet */ }
+  function boot(){ wireFolds(); placePhotos(); }
+  if(document.readyState==='complete') boot();
+  else window.addEventListener('load', boot);
+})();
+</script>
+<script defer src="/terroir/_assets/guide/guide-extras.js"></script>
+<script defer src="/terroir/_assets/guide/guide-comments.js"></script>
+</body>
+</html>
