@@ -20,10 +20,11 @@
   html { scroll-behavior:smooth; scroll-padding-top:80px; }
   body { font-family:Georgia,serif; background:var(--paper); color:var(--ink); line-height:1.6; }
   a { color:inherit; text-decoration:none; }
-  .hero { padding:56px 20px 32px; text-align:center; border-bottom:2px solid var(--ink); }
-  .hero h1 { font-family:'Playfair Display',serif; font-size:3.4em; letter-spacing:8px; font-weight:900; line-height:1; }
-  .hero .region { font-family:system-ui,sans-serif; color:var(--ink-2); font-size:0.86em; margin-top:14px; letter-spacing:3px; text-transform:uppercase; }
-  .hero .philosophy { color:var(--sea); margin-top:22px; font-style:italic; font-family:'Playfair Display',serif; max-width:620px; margin-left:auto; margin-right:auto; }
+  .hero { padding:64px 24px 6px; text-align:center; border-bottom:none; display:flex; flex-direction:column; align-items:center; }
+.hero::after { content:''; order:3; display:block; width:52px; height:2px; background:var(--sea); margin:34px 0 0; }
+  .hero h1 { order:0; font-family:'Playfair Display',serif; font-size:clamp(3em,8.5vw,5.4em); letter-spacing:.5px; font-weight:700; line-height:.92; color:var(--ink); margin:0; }
+  .hero .region { order:-1; font-family:'JetBrains Mono',monospace; color:var(--sea); font-size:0.72em; margin:0 0 18px; letter-spacing:4px; text-transform:uppercase; }
+  .hero .philosophy { order:1; color:var(--ink-2); margin:26px 0 0; font-style:italic; font-family:Georgia,serif; font-size:1.2em; line-height:1.55; max-width:600px; }
   .hero .date { font-family:'JetBrains Mono',monospace; color:var(--ink-3); font-size:0.68em; margin-top:18px; letter-spacing:2px; text-transform:uppercase; }
   .hero .lang-switch { margin-top:22px; }
   .hero .lang-switch a { display:inline-block; padding:4px 10px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; border:1px solid var(--rule); color:var(--ink-3); margin:0 3px; }
@@ -137,7 +138,7 @@
 </head>
 <body>
 
-<div class="terroir-topnav" style="max-width:900px;margin:0 auto;padding:13px 24px 0;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:1.6px;"><a href="/" style="color:#2d4a5e;text-decoration:none;">Littoralicious</a><span style="color:#c3bdb1;">/</span><a href="/terroir/" style="color:#2d4a5e;text-decoration:none;">Terroir</a><span style="flex:1;min-width:8px;"></span><span style="font-family:Marcellus,Georgia,serif;font-style:italic;text-transform:none;letter-spacing:.01em;color:#8a8377;font-size:0.95rem;">Finally, a guide that gives a f*rk.</span></div>
+<div class="terroir-topnav" style="max-width:900px;margin:0 auto;padding:13px 24px 0;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:1.6px;"><a href="/" style="color:#2d4a5e;text-decoration:none;">Littoralicious</a><span style="color:#c3bdb1;">/</span><a href="/terroir/" style="color:#2d4a5e;text-decoration:none;">Terroir</a><span style="flex:1;min-width:8px;"></span><span style="font-family:Marcellus,Georgia,serif;font-style:italic;text-transform:none;letter-spacing:.01em;color:#2d4a5e;font-size:1.02rem;">Finally, a guide that gives a f*rk.</span></div>
 <div class="hero">
   <h1>Barcelona</h1>
   <div class="region">Catalunya &middot; Spain</div>
