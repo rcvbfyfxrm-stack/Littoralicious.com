@@ -41,7 +41,7 @@ for (const page of ["index.html", "the-method.html", "shore-larder.html",
 }
 
 // 4) Core assets the templates reference must exist.
-for (const asset of ["assets/css/style.css", "assets/js/main.js", "assets/logo/favicon.svg", "assets/logo/logo.svg"])
+for (const asset of ["assets/css/style.css?v=4ec33c16", "assets/js/main.js", "assets/logo/favicon.svg", "assets/logo/logo.svg"])
   if (!exists(p(asset))) E(`referenced asset missing: ${asset}`);
 
 // 5) robots.txt sanity: don't disallow pages that don't exist; sitemap must exist.

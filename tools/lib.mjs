@@ -2,6 +2,7 @@
 // Pure Node (no dependencies). Single source of truth = data/articles.json + article HTML bodies.
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 export const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 export const ORIGIN = "https://www.littoralicious.com";
@@ -11,6 +12,18 @@ export const FEED_LIMIT = 28;
 export const p = (...x) => path.join(ROOT, ...x);
 export const read = (f) => fs.readFileSync(f, "utf8");
 export const exists = (f) => fs.existsSync(f);
+
+// ---- cache-busting -----------------------------------------------------------
+// The stylesheet is served `immutable, max-age=1yr`, so a returning phone keeps
+// whatever it cached until the URL changes. Derive a short hash of the live CSS
+// and append it as ?v= — every CSS edit auto-busts, no manual version bump, so a
+// brightness/contrast fix actually reaches readers' screens. See firebase.json.
+export const ASSET_VER = (() => {
+  try {
+    return crypto.createHash("md5").update(read(p("assets", "css", "style.css")))
+      .digest("hex").slice(0, 8);
+  } catch { return "0"; }
+})();
 
 // ---- data/articles.json -----------------------------------------------------
 export function loadArticles() {
@@ -124,7 +137,7 @@ export function articleHead(a) {
     `    <meta name="twitter:description" content="${escAttr(a.lede)}">`,
     `    <meta name="twitter:image" content="${ORIGIN}/assets/logo/og-image.png">`,
     `    <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="${ORIGIN}/feed.xml">`,
-    `    <link rel="stylesheet" href="../assets/css/style.css">`,
+    `    <link rel="stylesheet" href="../assets/css/style.css?v=${ASSET_VER}">`,
     `    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">`,
     `    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n    </script>`,
   ].join("\n");
