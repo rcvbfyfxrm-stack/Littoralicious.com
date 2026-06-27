@@ -1,5 +1,8 @@
 # Littoralicious — Editorial DNA
 
+> **Inherits `NEXUS/OS/HOUSE-STANDARD.md` + the cross-vault `OS/ATTENTION-PLAYBOOK.md`** (focus engine + make-every-post-unique distinctiveness engine + pre-publish checklist) — inherited, not re-pasted; localise only the devices. The repo `content/ATTENTION-PLAYBOOK.md` mirrors it for the auto-draft routine.
+
+
 > The source of truth your writing agents read before drafting. Voice + templates are
 > canon (from Arnaud's stated rules); the workflow section reflects the 2026-06 rebuild.
 
