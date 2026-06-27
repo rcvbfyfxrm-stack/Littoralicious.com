@@ -144,6 +144,7 @@ salience* and *appropriateness/consistency*, not fixed feelings.
 
 ## VI. The Littoralicious checklist (apply to every draft)
 1. **Payoff in the first 40 seconds** — `summary-box` promise + a lede that transitions, not summarises.
+1b. **Opening order (no stacked boxes).** Lead: `summary-box` (the promise) → ONE short prose hook → `note[data-label='The two-minute version']` → `glance`/body. Never stack two boxes back-to-back — a line of prose must sit between the promise and the TL;DR (DNA: one idea per block, SIGNAL only).
 2. **The spine test** — boxes + `<mark>`s + bold lead-ins + h2s alone tell the whole argument (the scannable spine).
 3. **But/therefore** — no "and then" between sections; each seam re-opens a small gap.
 4. **One idea per block; SIGNAL only** — no stacked boxes (Gestalt + load). Highlight/pull-quote/big-number used
