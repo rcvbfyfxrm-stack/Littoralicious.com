@@ -161,8 +161,222 @@ window.TERROIR_DATA = (function () {
     {"id": "p-work-kahverengi", "name": "Kahverengi Roastery", "start": [39.8325, 26.0682]}
   ];
   const LANDMARKS = [
-    {"id": "l-bozcaada-castle", "name": "Bozcaada Castle (Kale)", "coords": [39.8355, 26.0762], "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Castle"},
-    {"id": "l-ayazma-beach", "name": "Ayazma Beach", "coords": [39.8080, 26.0430], "maps_url": "https://www.google.com/maps/search/?api=1&query=Ayazma+Beach+Bozcaada"}
-  ];
+ {
+  "id": " b-ayazma",
+  "name": "Ayazma",
+  "coords": [
+   39.8129,
+   26.0076
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Ayazma+Bozcaada"
+ },
+ {
+  "id": "b-habbele",
+  "name": "Habbele (Poyraz Liman&#305;)",
+  "coords": [
+   39.8228,
+   25.9923
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Habbele+%28Poyraz+Liman%26%23305%3B%29+Bozcaada"
+ },
+ {
+  "id": "b-sulubahce",
+  "name": "Sulubah&ccedil;e",
+  "coords": [
+   39.8141,
+   25.9945
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Sulubah%26ccedil%3Be+Bozcaada"
+ },
+ {
+  "id": "b-akvaryum",
+  "name": "Akvaryum (Aquarium Cove)",
+  "coords": [
+   39.7914,
+   26.0603
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Akvaryum+%28Aquarium+Cove%29+Bozcaada"
+ },
+ {
+  "id": "b-cayir",
+  "name": "&Ccedil;ay&#305;r",
+  "coords": [
+   39.8406,
+   26.0308
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=%26Ccedil%3Bay%26%23305%3Br+Bozcaada"
+ },
+ {
+  "id": "b-tuzburnu",
+  "name": "Tuzburnu",
+  "coords": [
+   39.802,
+   26.0786
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Tuzburnu+Bozcaada"
+ },
+ {
+  "id": "l-cult-castle",
+  "name": "Bozcaada Castle (Tenedos Fortress)",
+  "coords": [
+   39.8332,
+   26.0676
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Castle+%28Tenedos+Fortress%29+Bozcaada"
+ },
+ {
+  "id": "l-cult-church",
+  "name": "Church of St Mary &mdash; Kimisis Theotokou",
+  "coords": [
+   39.8338,
+   26.0662
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Church+of+St+Mary+%26mdash%3B+Kimisis+Theotokou+Bozcaada"
+ },
+ {
+  "id": "l-cult-rum",
+  "name": "The Rum (Greek) Quarter",
+  "coords": [
+   39.8338,
+   26.0658
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Rum+%28Greek%29+Quarter+Bozcaada"
+ },
+ {
+  "id": "l-cult-windmills",
+  "name": "The Stone Windmills (Yel De&#287;irmenleri)",
+  "coords": [
+   39.8395,
+   26.0686
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Stone+Windmills+%28Yel+De%26%23287%3Birmenleri%29+Bozcaada"
+ },
+ {
+  "id": "l-cult-polente",
+  "name": "Polente Lighthouse",
+  "coords": [
+   39.8294,
+   25.9908
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Polente+Lighthouse+Bozcaada"
+ },
+ {
+  "id": "l-cult-monastery",
+  "name": "Ayazma Monastery &amp; Holy Spring",
+  "coords": [
+   39.8033,
+   26.0533
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Ayazma+Monastery+%26amp%3B+Holy+Spring+Bozcaada"
+ },
+ {
+  "id": "l-cult-museum",
+  "name": "Bozcaada Local History Museum",
+  "coords": [
+   39.8336,
+   26.0651
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Local+History+Museum+Bozcaada"
+ },
+ {
+  "id": "w-goztepe",
+  "name": "G&ouml;ztepe &mdash; the panorama",
+  "coords": [
+   39.834,
+   26.052
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=G%26ouml%3Bztepe+%26mdash%3B+the+panorama+Bozcaada"
+ },
+ {
+  "id": "w-ramparts",
+  "name": "The castle ramparts",
+  "coords": [
+   39.835,
+   26.073
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+castle+ramparts+Bozcaada"
+ },
+ {
+  "id": "w-vineyards",
+  "name": "The vineyard country",
+  "coords": [
+   39.8302,
+   26.0261
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+vineyard+country+Bozcaada"
+ },
+ {
+  "id": "w-polente",
+  "name": "Polente at sunset",
+  "coords": [
+   39.8364,
+   25.9636
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Polente+at+sunset+Bozcaada"
+ },
+ {
+  "id": "w-ayazma",
+  "name": "The Ayazma plane-tree walk",
+  "coords": [
+   39.8138,
+   26.0146
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Ayazma+plane-tree+walk+Bozcaada"
+ },
+ {
+  "id": "p-cof-cinaralti",
+  "name": "&Ccedil;&#305;naralt&#305; Caf&eacute;",
+  "coords": [
+   39.8327,
+   26.0718
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=%26Ccedil%3B%26%23305%3Bnaralt%26%23305%3B+Caf%26eacute%3B+Bozcaada"
+ },
+ {
+  "id": "p-cof-shelter",
+  "name": "Coffee Shelter",
+  "coords": [
+   39.8338,
+   26.0712
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee+Shelter+Bozcaada"
+ },
+ {
+  "id": "p-cof-vasil",
+  "name": "Vasil Coffee &amp; Bakery",
+  "coords": [
+   39.8338,
+   26.0712
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Vasil+Coffee+%26amp%3B+Bakery+Bozcaada"
+ },
+ {
+  "id": "p-gas-route",
+  "name": "The wine route",
+  "coords": [
+   39.8302,
+   26.0261
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+wine+route+Bozcaada"
+ },
+ {
+  "id": "p-gas-festival",
+  "name": "Ba&#287; Bozumu &mdash; the harvest festival",
+  "coords": [
+   39.832,
+   26.067
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Ba%26%23287%3B+Bozumu+%26mdash%3B+the+harvest+festival+Bozcaada"
+ },
+ {
+  "id": "p-gas-market",
+  "name": "The Wednesday produce market",
+  "coords": [
+   39.832,
+   26.069
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Wednesday+produce+market+Bozcaada"
+ }
+];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
 })();
