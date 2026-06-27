@@ -5,6 +5,8 @@
 > Built 2026-06-25 from five web-grounded research passes. **Held to our own honesty bar: each claim flags
 > solid science vs. craft-lore vs. folklore.** Pairs with `DNA.md` and `DESIGN-LOCK.md`.
 
+> **Canonical cross-vault version: `NEXUS/OS/ATTENTION-PLAYBOOK.md`** (the focus engine + the full distinctiveness engine + per-project device table). This is the Littoralicious working copy the auto-draft routine reads; it inherits the OS canon and localises the devices. Keep them in sync.
+
 ## The one-sentence synthesis
 **Attention is held by lowering the cost of the *next* line and raising the reward for taking it** — cut
 extraneous load, win the eye with a few sparing salient beats, open a small closeable curiosity gap, carry the
@@ -160,3 +162,25 @@ salience* and *appropriateness/consistency*, not fixed feelings.
 
 *Length honesty:* long-form loses people — most won't finish 17 minutes. Prefer a ruthless **8–12 min** with a
 hard spine, or give skimmers a "two-minute version" block up top so the depth is opt-in.
+
+---
+
+## MAKE EVERY POST UNIQUE (the distinctiveness engine — apply every run)
+Focus keeps the reader on this post; distinctiveness makes it unmistakably ours and unlike our own past work.
+**Sameness is the slow death of a publication.** Engineer it on four axes:
+
+1. **Unique angle (vs the category)** — before drafting, write ONE sentence: *what does this give that the mainstream
+   doesn't?* (the DNA test). Generic sentence → generic post → kill it. Angle-finders: the honest grade (say what's
+   only a B); follow-the-mechanism/the-money (name the study, the cost, the reaction); the first-hand test ("we ran
+   it"); the reframe (the part everyone skips); the galley/at-sea constraint lens (the moat).
+2. **One ownable move** — each post is built around a single quotable thing: one arresting number, one myth busted,
+   one field-test result, one coined frame, or one small technique sketch (only when a technique warrants it).
+3. **Rotate the devices (vs your own last 3–5 posts — run a sameness audit)** — voice stays constant; everything
+   else rotates so two posts never feel the same: **hook type** (contrarian · big number · scene · myth · field-test
+   · historical hinge — never the same opener twice running), **template/structure**, **which signature block leads**
+   (stat grid vs id-card vs timeline), and **rhythm/section count**. Vary it deliberately.
+4. **Fixed identity (recognition)** — never vary the wordmark, the voice, the design lock, or the signatures
+   ("Tested at sea.", the evidence grade). Vary content; never vary identity.
+
+**Add to the pre-publish checklist (top three):** (0a) unique-angle sentence written first · (0b) one ownable move
+chosen · (0c) sameness audit passed vs the last 3–5 drafts in articles.json.
