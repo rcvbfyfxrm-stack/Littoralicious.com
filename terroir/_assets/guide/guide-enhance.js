@@ -38,7 +38,7 @@
     // VI — fast & real
     'DETAILS#street-food': 50, 'DETAILS#burger-kebab': 51, 'DETAILS#ethnic-restaurants': 52,
     // before you go
-    'SECTION#avoid': 60, 'DETAILS#avoid': 61, 'DETAILS#follow': 62,
+    'SECTION#avoid': 60, 'DETAILS#avoid': 61, 'DETAILS#avoid-traps': 61.5, 'DETAILS#follow': 62,
     'DETAILS#seasonal': 63, 'DETAILS#sources': 64
   };
 
