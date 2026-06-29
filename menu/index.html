@@ -744,6 +744,43 @@ a { color: var(--color-sea); }
 .diet-chip.active { background: var(--color-sea) !important; border-color: var(--color-sea) !important; color: #fff !important; }
 .diet-chip.active .count { opacity: 0.7; }
 /* ===== DISCOVER-BAND ===== */
+/* FULL-INDEX */
+.index-wrap{padding:6px 20px 26px}
+.idx-group{margin-top:22px;break-inside:avoid}
+.idx-cz{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-sea);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--color-border)}
+.idx-cz span{color:var(--color-salt);margin-left:6px}
+.idx-list{list-style:none;margin:0;padding:0;columns:280px 4;column-gap:28px}
+.idx-list li{font-family:var(--font-serif);font-size:14px;color:var(--color-ink);line-height:1.5;cursor:pointer;break-inside:avoid;padding:1px 0}
+.idx-list li:hover{color:var(--color-sea);text-decoration:underline;text-underline-offset:2px}
+.idx-list li .pl{color:var(--color-salt);font-style:italic;font-size:12px}
+/* MY-WEEK */
+.myweek{margin-top:22px;border:1px solid var(--color-border);background:var(--color-paper);padding:13px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.myweek__lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-sea)}
+.myweek__count{font-family:var(--font-mono);font-size:11px;color:var(--color-salt)}
+.myweek__chips{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:140px}
+.mw-chip{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-sans);font-size:12.5px;color:var(--color-ink);padding:4px 4px 4px 10px;border:1px solid var(--color-border);background:var(--color-subtle)}
+.mw-chip button{border:none;background:none;cursor:pointer;color:var(--color-salt);font-size:15px;line-height:1;padding:0 3px}
+.mw-chip button:hover{color:var(--color-sea)}
+.myweek__actions{display:flex;align-items:center;gap:12px;margin-left:auto}
+.mw-build{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 16px;background:var(--color-ink);color:var(--color-paper);border:1px solid var(--color-ink);cursor:pointer}
+.mw-build:hover{background:var(--color-sea);border-color:var(--color-sea)}
+.mw-clear{font-family:var(--font-mono);font-size:11px;color:var(--color-sea);background:none;border:none;cursor:pointer}
+.deal__save{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--color-sea);background:none;border:none;cursor:pointer;padding:0}
+.deal__save:hover{text-decoration:underline;text-underline-offset:3px}
+.wk-ov{position:fixed;inset:0;background:rgba(10,10,10,.5);z-index:200;display:none;overflow:auto;padding:30px 16px}
+.wk-ov.open{display:block}
+.wk-sheet{max-width:1040px;margin:0 auto;background:var(--color-paper);border:1px solid var(--color-border);padding:34px 30px;position:relative}
+.wk-ov__close{position:absolute;top:14px;right:18px;border:none;background:none;font-size:26px;line-height:1;color:var(--color-salt);cursor:pointer}
+.wk-head{text-align:center;margin-bottom:6px}
+.wk-head h2{font-family:var(--font-serif);font-weight:700;font-size:28px;margin:6px 0 2px;color:var(--color-ink)}
+.wk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;margin-top:20px}
+.wk-day{border:1px solid var(--color-border);padding:16px 18px}
+.wk-day__num{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-sea)}
+.wk-day h3{font-family:var(--font-serif);font-weight:700;font-size:19px;margin:5px 0 2px;color:var(--color-ink)}
+.wk-day__anchor{font-family:var(--font-sans);font-size:12px;color:var(--color-muted);margin:0 0 12px}
+.wk-day .deal__list{gap:9px}
+.wk-actions{text-align:center;margin-top:24px}
+@media print{ body.printing-week{background:#fff} body.printing-week>*:not(.wk-ov){display:none!important} body.printing-week .wk-ov{position:static;background:#fff;padding:0;display:block;overflow:visible} body.printing-week .wk-sheet{border:none;max-width:none;padding:0} body.printing-week .wk-ov__close,body.printing-week .wk-actions{display:none!important} }
 .deal__rule{width:54px;height:1px;background:var(--color-sea);opacity:.5;margin:20px auto}
 .deal__list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .deal__list li{margin:0}
@@ -1187,6 +1224,15 @@ a { color: var(--color-sea); }
       <p>Eleven hundred-odd touchstones from the world’s tables. Let one find you — or follow a thread you’d never have pulled.</p>
     </div>
     <div class="deal" id="deal"></div>
+    <div class="myweek" id="myweek" hidden>
+      <span class="myweek__lab">My week</span>
+      <span class="myweek__count" id="myweek-count"></span>
+      <div class="myweek__chips" id="myweek-chips"></div>
+      <div class="myweek__actions">
+        <button class="mw-clear" id="myweek-clear">Clear</button>
+        <button class="mw-build" id="myweek-build">Build the week →</button>
+      </div>
+    </div>
     <div class="next-steps">
       <button class="step-card" data-reveal="week">
         <span class="step-card__over">Want more?</span>
@@ -1345,11 +1391,19 @@ a { color: var(--color-sea); }
 </div>
 </details>
 </div></section>
+<section class="catalog-section"><div class="catalog-section__inner">
+<details class="catalog-details" id="index-details">
+<summary><div><h3>The Full Index</h3><p>every theme by category — the whole thesaurus</p></div></summary>
+<div class="catalog-details__body"><div class="index-wrap" id="index-wrap"></div></div>
+</details>
+</div></section>
 </section><!--/explore STEP-FLOW-->
 
 <div class="modal-bg" id="modal-bg">
   <div class="modal" id="modal"></div>
 </div>
+
+<div class="wk-ov" id="wk-ov"><div class="wk-sheet" id="wk-sheet"></div></div>
 
 <footer class="litto-footer"><div class="litto-footer__inner">
   <div>
@@ -2160,7 +2214,7 @@ function renderDeal(){
       <p class="deal__meta">${alg.length?'contains '+alg.join(' · '):'no major allergens'}</p>
       <div class="deal__actions">
         <button class="deal__roll" id="deal-roll">↻ Deal another</button>
-        <button class="deal__open" data-reveal-week="1">See the full week →</button>
+        <button class="deal__save" data-fav="${day}">${(getFav().indexOf(day)>=0)?'✓ In my week':'+ Save to my week'}</button>
       </div>
     </div>`;
 }
@@ -2222,7 +2276,7 @@ function clearCollectionSilently(){
 
 document.getElementById('collections').addEventListener('click',e=>{ const b=e.target.closest('.coll-card'); if(b) activateCollection(b.dataset.key); });
 document.getElementById('lens-rail').addEventListener('click',e=>{ const b=e.target.closest('.lens-card'); if(b) activateLens(b.dataset.lens); });
-document.getElementById('deal').addEventListener('click',e=>{ if(e.target.closest('#deal-roll')){ renderDeal(); return; } if(e.target.closest('[data-reveal-week]')){ const s=document.getElementById('planner-v5'); if(s){ s.hidden=false; s.scrollIntoView({behavior:'smooth',block:'start'}); } } });
+document.getElementById('deal').addEventListener('click',e=>{ if(e.target.closest('#deal-roll')){ renderDeal(); return; } const sv=e.target.closest('[data-fav]'); if(sv){ addFav(sv.dataset.fav); sv.textContent='✓ In my week'; } });
 document.querySelector('.deal-modes')&&document.querySelector('.deal-modes').addEventListener('click',e=>{ const b=e.target.closest('[data-mode]'); if(!b) return; DEAL_MODE=b.dataset.mode; document.querySelectorAll('.deal-modes .dm').forEach(x=>x.classList.toggle('active',x===b)); renderDeal(); });
 document.addEventListener('click',e=>{ if(e.target.id==='coll-clear') clearCollection(); });
 (function(){ const f=document.querySelector('.filters'); if(!f) return;
@@ -2230,7 +2284,64 @@ document.addEventListener('click',e=>{ if(e.target.id==='coll-clear') clearColle
   f.addEventListener('input',()=>clearCollectionSilently(), true);
 })();
 
-renderDeal(); renderCollections(); renderLenses();
+
+// ===== MY-WEEK =====
+const FAV_KEY='litto-menu-week'; let _favMem=null;
+function _menus(){ return Object.assign({}, window.__POOLS||{}, (typeof EXTRA_MENUS!=='undefined'?EXTRA_MENUS:{})); }
+function getFav(){ if(_favMem!==null) return _favMem.slice(); try{ _favMem=JSON.parse(localStorage.getItem(FAV_KEY))||[]; }catch(e){ _favMem=[]; } return _favMem.slice(); }
+function saveFav(a){ _favMem=a.slice(); try{ localStorage.setItem(FAV_KEY,JSON.stringify(a)); }catch(e){} renderFavTray(); }
+function addFav(k){ const a=getFav(); if(a.indexOf(k)<0){ a.push(k); saveFav(a); } }
+function delFav(k){ saveFav(getFav().filter(x=>x!==k)); }
+function renderFavTray(){
+  const tray=document.getElementById('myweek'); if(!tray) return;
+  const favs=getFav(), P=_menus();
+  if(!favs.length){ tray.hidden=true; return; }
+  tray.hidden=false;
+  const c=document.getElementById('myweek-count'); if(c) c.textContent=favs.length+(favs.length===1?' menu':' menus');
+  const chips=document.getElementById('myweek-chips');
+  if(chips) chips.innerHTML=favs.map(k=>{ const D=P[k]; return `<span class="mw-chip">${D?D.theme:k}<button data-del="${k}" title="Remove">×</button></span>`; }).join('');
+}
+function buildWeek(){
+  const favs=getFav(), P=_menus();
+  if(!favs.length) return;
+  const days=favs.map((k,i)=>{ const D=P[k]; if(!D) return '';
+    const courses=[].concat((D.cn||[]).slice(0,1),(D.pc||[]).slice(0,2),(D.lp||[]).slice(0,1),(D.st||[]).slice(0,1),(D.pf||[]).slice(0,1));
+    const dishes=courses.map(d=>`<li><span class="d-name">${toTitle(d.name)}</span>${d.detail?`<span class="d-sub">${_ing(d.detail)}</span>`:''}</li>`).join('');
+    const alg=[...new Set(courses.reduce((a,d)=>a.concat(d.allergens||[]),[]))];
+    return `<article class="wk-day"><div class="wk-day__num">Day ${i+1}${D.role?' · '+D.role:''}</div><h3>${D.theme}</h3><p class="wk-day__anchor">${(D.anchors&&D.anchors[0])||D.subtitle||''}</p><ul class="deal__list">${dishes}</ul>${alg.length?`<p class="deal__meta">contains ${alg.join(' · ')}</p>`:''}</article>`;
+  }).join('');
+  document.getElementById('wk-sheet').innerHTML=`<button class="wk-ov__close" id="wk-close">×</button><div class="wk-head"><p class="deal__eyebrow">Littoralicious · The Galley</p><h2>My Charter Week</h2><p class="wk-day__anchor" style="text-align:center">${favs.length} ${favs.length===1?'menu':'menus'} · one mise, two decks</p></div><div class="wk-grid">${days}</div><div class="wk-actions"><button class="mw-build" id="wk-print">Print this week</button></div>`;
+  document.getElementById('wk-ov').classList.add('open');
+}
+document.addEventListener('click',e=>{
+  const del=e.target.closest('[data-del]'); if(del){ delFav(del.dataset.del); return; }
+  if(e.target.id==='myweek-build'){ buildWeek(); return; }
+  if(e.target.id==='myweek-clear'){ saveFav([]); return; }
+  if(e.target.id==='wk-close'||e.target.id==='wk-ov'){ const o=document.getElementById('wk-ov'); if(o) o.classList.remove('open'); return; }
+  if(e.target.id==='wk-print'){ document.body.classList.add('printing-week'); window.print(); setTimeout(()=>document.body.classList.remove('printing-week'),500); return; }
+});
+
+renderDeal(); renderCollections(); renderLenses(); renderFavTray();
+
+// ===== FULL-INDEX =====
+function renderIndex(){
+  const wrap=document.getElementById('index-wrap'); if(!wrap||wrap.dataset.done) return;
+  const order=Object.keys(CUISINE_LABELS);
+  const byC={}; THEMES.forEach(t=>{ (byC[t.cuisine]=byC[t.cuisine]||[]).push(t); });
+  const seen={}; const cz=order.concat(Object.keys(byC).filter(k=>order.indexOf(k)<0));
+  let html='';
+  cz.forEach(c=>{ if(seen[c]) return; seen[c]=1; const arr=byC[c]; if(!arr||!arr.length) return;
+    arr.sort((a,b)=>a.name.localeCompare(b.name));
+    html+=`<div class="idx-group"><h4 class="idx-cz">${CUISINE_LABELS[c]||c}<span>${arr.length}</span></h4><ul class="idx-list">`+
+      arr.map(t=>`<li data-id="${t.id}">${t.name.replace(/-/g,' ')}${t.country?` <span class="pl">${t.country}</span>`:''}</li>`).join('')+`</ul></div>`;
+  });
+  wrap.innerHTML=html; wrap.dataset.done='1';
+}
+(function(){ const wrap=document.getElementById('index-wrap');
+  if(wrap) wrap.addEventListener('click',e=>{ const li=e.target.closest('li[data-id]'); if(li) openModal(THEMES.find(t=>t.id===Number(li.dataset.id))); });
+})();
+renderIndex();
+
 
 // ===== DIET-FILTER logic =====
 const DIET_MEAT = /\b(beef|steak|veal|vitello|veau|boeuf|bœuf|pork|porc|cerdo|lamb|agneau|cordero|mutton|chicken|poulet|pollo|doro|poussin|duck|canard|magret|turkey|dinde|quail|caille|rabbit|lapin|venison|game|boar|bacon|ham|jambon|jam[oó]n|prosciutto|pancetta|lardo|speck|coppa|chorizo|sausage|saucisse|salami|merguez|sobrasada|mortadella|bresaola|carne|carnitas|cochinita|pibil|al pastor|kebab|shawarma|gyro|doner|brisket|ribeye|sirloin|oxtail|tripe|tongue|liver|foie|p[aâ]t[eé]|rillette|gizzard|sweetbread|wagyu|bone broth|gelatin|gelatine|meatball|bolognese|rag[uù]|carbonnade|osso ?buco|cordon bleu)\b/i;
