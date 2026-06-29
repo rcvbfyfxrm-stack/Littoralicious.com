@@ -1382,6 +1382,13 @@ a { color: var(--color-sea); }
     <span class="filter-label">Tag</span>
   </div>
 
+  <div class="filter-row" id="sort-row">
+    <span class="filter-label">Sort</span>
+    <button class="chip sort-chip active" data-sort="featured">Featured</button>
+    <button class="chip sort-chip" data-sort="loved">★ Most loved</button>
+    <button class="chip sort-chip" data-sort="az">A–Z</button>
+  </div>
+
   <div class="filter-row" id="diet-row">
     <span class="filter-label">Dietary</span>
   </div>
@@ -1474,7 +1481,9 @@ const state = {
   collTest: null,    // collection predicate fn
   collKey: null,
   lens: null,        // healthy sub-lens
-  diets: new Set()   // special-diet constraints (persistent)
+  diets: new Set(),  // special-diet constraints (persistent)
+  sort: null,        // null=featured | 'loved' | 'az'
+  cap: null          // top-N cap (Most loved collection)
 };
 
 
@@ -1643,14 +1652,18 @@ function applyFilters() {
 }
 
 function render() {
-  const filtered = applyFilters();
+  let filtered = applyFilters();
+  if (state.sort === 'loved') { const saved = savedCuisines(); filtered = filtered.slice().sort((a,b)=>popScore(b,saved)-popScore(a,saved) || a.name.localeCompare(b.name)); }
+  else if (state.sort === 'az') filtered = filtered.slice().sort((a,b)=>a.name.localeCompare(b.name));
+  const total = filtered.length;
+  if (state.cap) filtered = filtered.slice(0, state.cap);
   const grid = document.getElementById('grid');
   if (filtered.length === 0) {
     grid.innerHTML = '<div class="empty">No themes match — try removing a filter.</div>';
   } else {
     grid.innerHTML = filtered.map(cardHTML).join('');
   }
-  document.getElementById('results-meta').textContent = `${filtered.length} of ${THEMES.length}`;
+  document.getElementById('results-meta').textContent = state.cap ? `top ${filtered.length} of ${total}` : `${total} of ${THEMES.length}`;
 }
 
 // Chip handlers
@@ -2141,6 +2154,19 @@ function toTitle(s){
     return w.charAt(0).toUpperCase()+w.slice(1);
   }).join(' ');
 }
+const LOVED_CUISINES={'european-mediterranean':3,'asian':3,'iconic-yachty':3,'owner-icons':3,'americas':2,'levantine-mena':2,'healthy-modern':2,'littoral-regional':1,'counter-deli':1,'functional-modern':1,'northern-european':1};
+const TONE2CUISINE={italian:'european-mediterranean',french:'european-mediterranean',greek:'european-mediterranean',spanish:'european-mediterranean',mexican:'americas',american:'americas',japanese:'asian',vietnamese:'asian',thai:'asian',nordic:'northern-european',moroccan:'levantine-mena',lebanese:'levantine-mena',peruvian:'americas',healthy:'healthy-modern',functional:'functional-modern'};
+function savedCuisines(){ const out=new Set(); try{ const favs=(typeof getFav==='function')?getFav():[]; const P=(typeof _menus==='function')?_menus():{}; favs.forEach(k=>{ const m=P[k]; if(m&&TONE2CUISINE[m.tone]) out.add(TONE2CUISINE[m.tone]); }); }catch(e){} return out; }
+function popScore(t, saved){ let s=0; const tg=t.tags||[];
+  if(tg.indexOf('Owner-grade')>=0) s+=4;
+  if(tg.indexOf('Iconic-yachty')>=0) s+=4;
+  if(tg.indexOf('Pop-up-homage')>=0) s+=2;
+  if(tg.indexOf('Blue-Zone')>=0||tg.indexOf('Functional')>=0) s+=1;
+  s+=LOVED_CUISINES[t.cuisine]||0;
+  if(t.difficulty===2) s+=1;
+  if(saved && saved.has(t.cuisine)) s+=3;
+  return s;
+}
 function themeLenses(t){
   if (t.lens && t.lens.length) return t.lens;
   const s=(t.subcategory||'').toLowerCase(), tg=t.tags||[], out=new Set();
@@ -2176,6 +2202,7 @@ const LENSES=[
 ]
 
 const COLLECTIONS=[
+ {key:'loved',over:'Ranked by the room',title:'Most loved',blurb:'The crowd-pleasers — owner-grade, iconic, and the cuisines guests ask for time and again.',test:t=>true,sort:'loved',cap:80},
  {key:'yacht',over:'The canon',title:'Yachty classics',blurb:"The legendary tables — Club 55, Le Sirenuse, Eden Roc, S\u00e9n\u00e9quier. The Core and Pinnacle dishes every owner already loves, done right.",test:t=>t.cuisine==='iconic-yachty'||t.cuisine==='owner-icons'},
  {key:'trending',over:'Of the moment',title:'On trend',blurb:"The dishes everyone's chasing right now — viral cafe brunches, modern bowls, the Ottolenghi register.",test:t=>['pop-up-homage','healthy-modern','counter-deli','ugly-delicious'].includes(t.cuisine)||(t.tags||[]).some(x=>x==='Pop-up-homage'||x==='Ottolenghi-register')},
  {key:'frontier',over:'Where food is heading',title:'Frontier',blurb:'The cutting edge — longevity science, single-ingredient obsessions, the new functional cooking.',test:t=>['functional-modern','single-ingredient'].includes(t.cuisine)||(t.tags||[]).some(x=>x==='Functional'||x==='Single-ingredient')},
@@ -2220,8 +2247,8 @@ function renderDeal(){
 }
 function renderCollections(){
   document.getElementById('collections').innerHTML=COLLECTIONS.map(c=>{
-    const n=THEMES.filter(c.test).length;
-    return `<button class="coll-card" data-key="${c.key}"><span class="coll-card__over">${c.over}</span><span class="coll-card__title">${c.title}</span><span class="coll-card__blurb">${c.blurb}</span><span class="coll-card__count">${n} ideas</span></button>`;
+    const n=c.cap?('Top '+c.cap):(THEMES.filter(c.test).length+' ideas');
+    return `<button class="coll-card" data-key="${c.key}"><span class="coll-card__over">${c.over}</span><span class="coll-card__title">${c.title}</span><span class="coll-card__blurb">${c.blurb}</span><span class="coll-card__count">${n}</span></button>`;
   }).join('');
 }
 function renderLenses(){
@@ -2257,7 +2284,9 @@ function activateCollection(key){
   const c=COLLECTIONS.find(x=>x.key===key); if(!c) return;
   resetManualFilters();
   state.lens=null; state.collKey=key; state.collTest=c.test;
-  document.querySelectorAll('.lens-chip').forEach(x=>x.classList.remove('active'));
+  state.sort=c.sort||null; state.cap=c.cap||null;
+  document.querySelectorAll('.lens-card').forEach(x=>x.classList.remove('active'));
+  if(typeof syncSortChips==='function') syncSortChips();
   openLibrary(c.title, c.blurb); render();
 }
 function activateLens(key){
@@ -2270,8 +2299,9 @@ function activateLens(key){
 }
 function clearCollection(){ clearCollectionSilently(); render(); }
 function clearCollectionSilently(){
-  state.collTest=null; state.collKey=null; state.lens=null; hideBanner();
+  state.collTest=null; state.collKey=null; state.lens=null; state.sort=null; state.cap=null; hideBanner();
   document.querySelectorAll('.lens-card').forEach(c=>c.classList.remove('active'));
+  if(typeof syncSortChips==='function') syncSortChips();
 }
 
 document.getElementById('collections').addEventListener('click',e=>{ const b=e.target.closest('.coll-card'); if(b) activateCollection(b.dataset.key); });
@@ -2384,6 +2414,9 @@ function renderDietChips(){
   });
 }
 renderDietChips();
+// sort control (popularity)
+function syncSortChips(){ document.querySelectorAll('.sort-chip').forEach(b=>b.classList.toggle('active', (b.dataset.sort==='featured'&&!state.sort)||b.dataset.sort===state.sort)); }
+document.querySelectorAll('.sort-chip').forEach(b=>b.addEventListener('click',()=>{ state.sort=(b.dataset.sort==='featured')?null:b.dataset.sort; if(state.sort!=='loved') state.cap=null; syncSortChips(); render(); }));
 
 // progressive reveal: idea -> week -> repertoire
 (function(){
