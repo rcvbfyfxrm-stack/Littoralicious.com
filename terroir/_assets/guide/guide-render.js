@@ -173,6 +173,37 @@
             {key:'story', label:'The Story', lead:'Cult rooms where a dish or a century was born \u2014 go for the tale as much as the plate.'},
             {key:'quickbites', label:'Quick Bites', lead:'The honest fast plate \u2014 top-ranked burgers and kebab, no white tablecloth.'}
         ];
+        function renderCardCompact(v, rank) {
+            var badge = v.badge ? '<span class="badge">' + escapeHTML(v.badge) + '</span>' : '';
+            var sig = v.signature ? '<div class="tcm__sig"><span class="tsig">\u2605</span> ' + escapeHTML(v.signature) + '</div>' : '';
+            var products = productPills(v.productTags);
+            var tags = (v.tags || []).map(function (t) { return '<span>' + escapeHTML(t) + '</span>'; }).join('');
+            var meta = [];
+            if (v.neighborhood) meta.push('<div class="terroir-card__meta-row"><span>Neighborhood</span><span>' + escapeHTML(v.neighborhood) + '</span></div>');
+            if (v.address) meta.push('<div class="terroir-card__meta-row"><span>Address</span><span>' + escapeHTML(v.address) + '</span></div>');
+            if (v.phone)   meta.push('<div class="terroir-card__meta-row"><span>Phone</span><span><a href="' + telHref(v.phone) + '">' + escapeHTML(v.phone) + '</a></span></div>');
+            if (v.hours)   meta.push('<div class="terroir-card__meta-row"><span>Hours</span><span>' + escapeHTML(v.hours) + '</span></div>');
+            if (v.web)     meta.push('<div class="terroir-card__meta-row"><span>Web</span><span><a href="' + escapeHTML(v.web) + '" target="_blank" rel="noopener">' + escapeHTML(v.web.replace(/^https?:\/\//,'').replace(/\/$/,'')) + '</a></span></div>');
+            if (v.maps)    meta.push('<div class="terroir-card__meta-row"><span>Maps</span><span><a href="' + escapeHTML(v.maps) + '" target="_blank" rel="noopener">Open in Google Maps \u2192</a></span></div>');
+            return '<details class="terroir-card terroir-card--fold gx-favable" id="venue-' + v.id + '" data-venue-id="' + v.id + '" data-cat="' + v.cat + '">' +
+                '<summary class="tcm">' +
+                    '<span class="tcm__top">' +
+                        '<span class="tcm__rank">#' + rank + '</span>' +
+                        '<span class="tcm__name">' + escapeHTML(v.name) + '</span>' + badge + gemChip(v) + gemSubcat(v) + gemMoneyEats(v) +
+                        '<span class="tcm__chev" aria-hidden="true"></span>' +
+                    '</span>' +
+                    sig +
+                '</summary>' +
+                '<div class="terroir-card__body">' +
+                    gemCosign(v) + gemPerson(v) + gemVerdict(v) +
+                    (v.why ? '<div class="terroir-card__why">' + escapeHTML(v.why) + '</div>' : '') +
+                    gemCaveat(v) +
+                    (products ? '<div class="terroir-card__products">' + products + '</div>' : '') +
+                    (tags ? '<div class="terroir-card__tags">' + tags + '</div>' : '') +
+                    '<div class="terroir-card__meta">' + meta.join('') + '</div>' +
+                '</div>' +
+            '</details>';
+        }
         function renderCategories() {
             const box = document.querySelector('#tables .sfold__body'); if (!box) return;
             let html = '';
@@ -185,9 +216,28 @@
                     '<div class="terroir-cat__head"><h3 class="terroir-cat__title">'+escapeHTML(c.label)+'</h3>' +
                     '<div class="terroir-cat__lead">'+escapeHTML(c.lead)+'</div>' +
                     '<span class="terroir-cat__count">'+list.length+'</span></div>' +
-                    '<div class="terroir-tier__list">' + list.map(function(v,i){return renderCard(v,i+1);}).join('') + '</div></div>';
+                    '<div class="terroir-tier__list">' + list.map(function(v,i){return renderCardCompact(v,i+1);}).join('') + '</div></div>';
             });
             box.innerHTML = html;
+        }
+        function wireVenueLinks() {
+            function openVenue(id) {
+                var el = document.getElementById('venue-' + id);
+                if (!el) return false;
+                if (el.tagName === 'DETAILS') el.open = true;
+                var box = el.closest('details.sfold'); if (box) box.open = true;
+                el.classList.add('is-flash');
+                setTimeout(function () { el.classList.remove('is-flash'); }, 1500);
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return true;
+            }
+            document.addEventListener('click', function (e) {
+                var a = e.target.closest && e.target.closest('a[href^="#venue-"]');
+                if (!a) return;
+                var id = a.getAttribute('href').replace('#venue-', '');
+                if (openVenue(id)) { e.preventDefault(); try { history.replaceState(null, '', '#venue-' + id); } catch (x) {} }
+            });
+            if (location.hash.indexOf('#venue-') === 0) setTimeout(function () { openVenue(location.hash.replace('#venue-', '')); }, 350);
         }
         function renderAll() {
             const useCat = VENUES.some(function(v){return v.category;});
@@ -196,6 +246,7 @@
             wireVoteButtons();
             wireScrollSpy();
             wireHoverHighlight();
+            wireVenueLinks();
         }
 
         // ---------- Voting (Firestore + localStorage)

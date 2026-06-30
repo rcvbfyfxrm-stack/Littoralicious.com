@@ -237,3 +237,26 @@
 .terroir-card__chiprow{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0 3px}
 .terroir-card__subcat{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:#eef1f3;color:#2d4a5e;padding:3px 8px;border-radius:3px}
 .terroir-card__money{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;background:#fbf3df;color:#9a6a00;border:1px solid #ecdcae;padding:3px 8px;border-radius:3px}
+
+/* ===== compact, expandable venue cards (digest mode) 2026-07 ===== */
+.terroir-card--fold{display:block!important;grid-template-columns:none!important;border:1px solid #e6e8eb;border-radius:6px;margin:0 0 8px;background:#fff;overflow:hidden}
+.terroir-card--fold[open]{border-color:#c8d2da}
+.terroir-card--fold>summary{list-style:none;cursor:pointer;padding:11px 14px;transition:background .12s}
+.terroir-card--fold>summary:hover{background:#f7f9fa}
+.terroir-card--fold>summary::-webkit-details-marker{display:none}
+.tcm__top{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.tcm__rank{font-family:'JetBrains Mono',monospace;font-size:11px;color:#9aa0a6}
+.tcm__name{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.08em;color:#1a1a1a;letter-spacing:.1px}
+.tcm__sig{font-size:0.88em;color:#56626c;margin-top:5px}
+.tcm__sig .tsig{color:#b8860b}
+.tcm__chev{margin-left:auto;align-self:center;width:8px;height:8px;border-right:2px solid #b6bdc4;border-bottom:2px solid #b6bdc4;transform:rotate(45deg);transition:transform .15s}
+.terroir-card--fold[open] .tcm__chev{transform:rotate(-135deg)}
+.terroir-card--fold>.terroir-card__body{padding:4px 14px 15px;border-top:1px solid #f1f3f5;margin-top:3px}
+.terroir-card--fold .terroir-card__verdict{margin-top:9px}
+.terroir-card--fold.gx-favable .gx-fav{top:11px;right:38px}
+/* click-to-open flash when you follow a venue-name link */
+.terroir-card.is-flash{animation:tcFlash 1.5s ease}
+@keyframes tcFlash{0%{box-shadow:0 0 0 3px rgba(45,74,94,.0)}18%{box-shadow:0 0 0 3px rgba(45,74,94,.35);border-color:#2d4a5e}100%{box-shadow:0 0 0 3px rgba(45,74,94,0)}}
+/* shortlist names read as links into the cards */
+.three-tables a{border-bottom:1px solid rgba(45,74,94,.25)}
+.three-tables a:hover{border-bottom-color:#2d4a5e;color:#2d4a5e}

@@ -25,7 +25,7 @@
     'SECTION#eat': 12, 'DETAILS#eat': 12, 'SECTION#drink': 13, 'DETAILS#drink-place': 13,
     'SECTION#money-sits': 13.5, 'DETAILS#money-sits': 13.5,
     // II — where to eat
-    'DETAILS#tables': 20, 'DETAILS#three-tables': 21, 'DETAILS#tables-extended': 22,
+    'DETAILS#tables': 20, 'DETAILS#three-tables': 19.5, 'DETAILS#tables-extended': 22,
     'DETAILS#dish': 23, 'DETAILS#bougie': 24,
     // III — calas & things to do
     'SECTION#calas': 30, 'DETAILS#calas': 30, 'SECTION#walk': 31, 'DETAILS#walks': 32,
@@ -159,12 +159,29 @@
     if (hero && hero.nextSibling) hero.parentNode.insertBefore(div, hero.nextSibling);
   }
 
+  function clampSoul() {
+    var soul = document.querySelector('.soul');
+    if (!soul || soul.__clamped) return;
+    if (soul.scrollHeight < 560) return;
+    soul.__clamped = true;
+    soul.classList.add('is-clamped');
+    var btn = document.createElement('button');
+    btn.className = 'gx-more';
+    btn.innerHTML = 'Show more <span class="gx-more__chev">\u25be</span>';
+    soul.parentNode.insertBefore(btn, soul.nextSibling);
+    btn.addEventListener('click', function () {
+      var open = soul.classList.toggle('is-clamped') === false;
+      btn.classList.toggle('is-open', open);
+      btn.firstChild.textContent = open ? 'Show less ' : 'Show more ';
+    });
+  }
   function boot() {
     grids();
     revealInventory();
     etymology();
     reorder();
     setTimeout(clampLead, 60);
+    setTimeout(clampSoul, 80);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
