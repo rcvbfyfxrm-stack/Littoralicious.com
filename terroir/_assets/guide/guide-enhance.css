@@ -353,3 +353,8 @@
 .gx-comments__when{ font-family:var(--gx-mono); font-size:0.62em; letter-spacing:1px; text-transform:uppercase; color:var(--gx-ink3); }
 .gx-comments__body{ font-family:var(--gx-sans); font-size:0.96em; line-height:1.6; color:var(--gx-ink2); margin:0; white-space:pre-wrap; }
 @media print{ .gx-comments__form{ display:none; } }
+
+/* ===== constrain guide photos (were unbounded / too tall) 2026-06 ===== */
+.gx-photo{max-width:620px;margin:26px auto}
+.gx-photo img{width:100%;max-height:360px;object-fit:cover;border-radius:5px;display:block}
+.gx-photo figcaption{font-size:0.8em;color:var(--ink-mut,#6b7280);margin-top:6px;line-height:1.45}

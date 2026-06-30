@@ -1,4 +1,4 @@
-/* Terroir — Barcelona — gem-standard rebuild (2026-06-27) */
+/* Terroir — Barcelona — gem-standard + category rebuild (2026-06) */
 window.TERROIR_DATA = (function () {
   const COLORS = {"berth":"#c4a35a","market":"#d97706","shop":"#059669","mainland":"#7c3aed","logistics":"#2d4a5e"};
   const CAT_LABELS = {"berth":"Signature","market":"Market / Direct","shop":"Restaurant / Bar","mainland":"Out of town","logistics":"Logistics"};
@@ -39,7 +39,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "the elBulli creative team, now topping the list their old kitchen once ruled"
   },
   "section": "Three-star tables",
-  "sectionRank": 1
+  "sectionRank": 1,
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false
  },
  {
   "id": "v02-lasarte",
@@ -76,7 +79,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "held all three every year since"
   },
   "section": "Three-star tables",
-  "sectionRank": 1
+  "sectionRank": 1,
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false
  },
  {
   "id": "v03-enigma",
@@ -113,7 +119,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "promoted from one star to two in November 2025; the only Adria table left in Barcelona"
   },
   "section": "Michelin and modern",
-  "sectionRank": 2
+  "sectionRank": 2,
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false
  },
  {
   "id": "v04-cocina-hermanos-torres",
@@ -150,7 +159,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "a rare top table that earns the sustainability nod too — and the one we'd actually send a chef to study"
   },
   "section": "Three-star tables",
-  "sectionRank": 1
+  "sectionRank": 1,
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false
  },
  {
   "id": "v05-mont-bar",
@@ -187,7 +199,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "and the rare two-star we'd send a chef to eat at a counter for under EUR 200"
   },
   "section": "Michelin and modern",
-  "sectionRank": 2
+  "sectionRank": 2,
+  "category": "creme",
+  "subcat": "Counter dining",
+  "money_eats": true
  },
  {
   "id": "v06-aleia",
@@ -224,7 +239,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "The rare Barcelona two-star to send a cook to for its Cadiz register — sherry, piriñaca, almadraba tuna — not the Modernista address."
   },
   "section": "Michelin and modern",
-  "sectionRank": 2
+  "sectionRank": 2,
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false
  },
  {
   "id": "v07-bar-ca-ete",
@@ -261,7 +279,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "A 50 Best Discovery entry — the academy's curated recommendation guide, not one of the ranked 50 Best awards."
   },
   "section": "Tapas, vermut and cava bars",
-  "sectionRank": 4
+  "sectionRank": 4,
+  "category": "authentique",
+  "subcat": "Tapas",
+  "money_eats": true
  },
  {
   "id": "v08-cinc-sentits",
@@ -298,7 +319,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "and the rare two-star here with no culinary-school lineage behind it"
   },
   "section": "Michelin and modern",
-  "sectionRank": 2
+  "sectionRank": 2,
+  "category": "creme",
+  "subcat": "Catalan fine dining",
+  "money_eats": false
  },
  {
   "id": "v09-can-culleretes",
@@ -334,7 +358,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "Documented to 1786 and Guinness-cited — the date isn't a marketing flourish."
   },
   "section": "Traditional houses",
-  "sectionRank": 3
+  "sectionRank": 3,
+  "category": "authentique",
+  "subcat": "Catalan classic",
+  "money_eats": false
  },
  {
   "id": "v10-7-portes-set-portes",
@@ -370,7 +397,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "the room is the real heirloom — reserve a salon, not just a table"
   },
   "section": "Traditional houses",
-  "sectionRank": 3
+  "sectionRank": 3,
+  "category": "story",
+  "subcat": "Paella",
+  "money_eats": false
  },
  {
   "id": "v11-quimet-quimet",
@@ -407,7 +437,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "a century-old bodega that never added a chair or a reservation book, and we'd still send you"
   },
   "section": "Tapas, vermut and cava bars",
-  "sectionRank": 4
+  "sectionRank": 4,
+  "category": "authentique",
+  "subcat": "Montaditos",
+  "money_eats": false
  },
  {
   "id": "v12-la-cova-fumada",
@@ -444,7 +477,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "the recipe every other bomba in the city traces back to"
   },
   "section": "Tapas, vermut and cava bars",
-  "sectionRank": 4
+  "sectionRank": 4,
+  "category": "story",
+  "subcat": "Seafood tapas",
+  "money_eats": true
  },
  {
   "id": "v13-el-xampanyet",
@@ -481,7 +517,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "and one of the few survivors still bottling and pouring its own xampanyet, not just selling someone else's bottles"
   },
   "section": "Tapas, vermut and cava bars",
-  "sectionRank": 4
+  "sectionRank": 4,
+  "category": "story",
+  "subcat": "Cava bar",
+  "money_eats": false
  },
  {
   "id": "v14-els-pescadors",
@@ -517,7 +556,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "a Poblenou institution we'd send a chef to before any beachfront paella house"
   },
   "section": "Seafood and the harbour",
-  "sectionRank": 5
+  "sectionRank": 5,
+  "category": "authentique",
+  "subcat": "Seafood",
+  "money_eats": true
  },
  {
   "id": "v15-suculent",
@@ -554,7 +596,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "the Guide lists the room; we would send you for the tartare alone"
   },
   "section": "Michelin and modern",
-  "sectionRank": 2
+  "sectionRank": 2,
+  "category": "authentique",
+  "subcat": "Catalan classic",
+  "money_eats": true
  },
  {
   "id": "v16-mercat-de-la-boqueria",
@@ -591,7 +636,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "the bar counters at the back, not the Rambla front, are the reason to come"
   },
   "section": "Markets",
-  "sectionRank": 6
+  "sectionRank": 6,
+  "category": "authentique",
+  "subcat": "Market",
+  "money_eats": false
  },
  {
   "id": "v17-mercat-de-sant-antoni",
@@ -628,7 +676,10 @@ window.TERROIR_DATA = (function () {
    "cosign": "a civic rebuild that kept Rovira i Trias's 1882 ironwork rather than gutting it"
   },
   "section": "Markets",
-  "sectionRank": 6
+  "sectionRank": 6,
+  "category": "authentique",
+  "subcat": "Market",
+  "money_eats": true
  },
  {
   "id": "v18-codorn-u",
@@ -664,7 +715,155 @@ window.TERROIR_DATA = (function () {
    "cosign": "Puig i Cadafalch was Gaudí's contemporary, and it shows — we'd ride the train twice"
   },
   "section": "Cava country",
-  "sectionRank": 7
+  "sectionRank": 7,
+  "category": "story",
+  "subcat": "Cava",
+  "money_eats": false
+ },
+ {
+  "id": "vq-bacoa-kiosko-little-bacoa",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 60,
+  "badge": "Burger",
+  "name": "Bacoa (Kiosko / Little Bacoa)",
+  "short": "Bacoa (Kiosko / Little Bacoa)",
+  "lat": 41.3836,
+  "lng": 2.1834,
+  "tags": [],
+  "productTags": [
+   "Burger"
+  ],
+  "why": "El Born gourmet-burger pioneer since 2010; stone-grilled patties, small counter, order and queue.",
+  "address": "Av. del Marquès de l'Argentera, 1, El Born / La Ribera, 08003 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bacoa+(Kiosko+%2F+Little+Bacoa)+Barcelona",
+  "category": "quickbites",
+  "subcat": "Burger",
+  "money_eats": false,
+  "verdict": "It is the lead entry in Time Out Barcelona's burger guide and won the magazine's 2010 Best Sandwich award, but the independent 15-seat 2010 pioneer is now flagged closed and the brand survives as an AmRest-owned mini-chain (the operator of Burger King and Pizza Hut Spain).",
+  "signature": "The house Bacoa: stone-grilled patty, smoked bacon, manchego, cheddar, pickles, artisan mustard, smoky char.",
+  "caveat": "A small counter spot with no reservations, so expect a queue. Time Out flags the original \"Little Bacoa\" (Colomines, 2) as closed; the still-open Born door is the Kiosko on Av. del Marquès de l'Argentera, 1, which is AmRest-run rather than the independent original.",
+  "person": "Brad Ainsworth",
+  "signal_chip": {
+   "label": "Time Out top",
+   "full": "Time Out Barcelona, 'The best burgers in the city' guide — Bacoa is the lead entry, its three locations opening the list; also Time Out Barcelona 'Best Sandwich' award winner, 2010.",
+   "cosign": "Time Out credits founder Brad Ainsworth as the man who brought the gourmet burger to Barcelona, stone-grilled for an inimitable smoky flavour."
+  }
+ },
+ {
+  "id": "vq-bar-canyi",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 61,
+  "badge": "Burger",
+  "name": "Bar Canyí",
+  "short": "Bar Canyí",
+  "lat": 41.3804,
+  "lng": 2.1601,
+  "tags": [],
+  "productTags": [
+   "Burger"
+  ],
+  "why": "Sant Antoni bar from the 1-Michelin-star Slow & Low team; bomba from €7, ~€30 a head; Tue-Sat, no bookings",
+  "address": "Carrer de Sepúlveda, 107, Sant Antoni / L'Eixample, 08015 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Cany%C3%AD+Barcelona",
+  "category": "quickbites",
+  "subcat": "Burger",
+  "money_eats": true,
+  "verdict": "The Infatuation Barcelona's standalone review (May 2025) calls its oxtail-pickle-kimchi burger \"might just be the juiciest thing we've ever had\" — Michelin-pedigree cooking from the Slow & Low team at barri-bar prices, bombas from €7.",
+  "signature": "The oxtail, pickle and kimchi burger — slow-cooked oxtail, kimchi crunch, juice-soaked bun",
+  "caveat": "No bookings (\"no fem reserves\") and it fills fast; small Sant Antoni counter bar, Tue-Sat lunch and dinner only (closed Sun-Mon). Not a cheap bite — tapas ~€3.50-15, bomba from €7, reckon ~€30 a head (can run to €60).",
+  "person": "Francesc Beltri & Nicolás de la Vega (chefs/owners; also run 1-Michelin-star Slow & Low)",
+  "signal_chip": {
+   "label": "Infatuation",
+   "full": "The Infatuation Barcelona — standalone review of Bar Canyí (May 2025)",
+   "cosign": "from the team behind 1-Michelin-star Slow & Low"
+  }
+ },
+ {
+  "id": "vq-la-real-hamburgueseria",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 62,
+  "badge": "Burger",
+  "name": "La Real Hamburgueseria",
+  "short": "La Real Hamburgueseria",
+  "lat": 41.3939,
+  "lng": 2.1632,
+  "tags": [],
+  "productTags": [
+   "Burger"
+  ],
+  "why": "Eixample burger spot two blocks off Passeig de Gracia; cheddar cream baked into the brioche bun",
+  "address": "Carrer de València 285, Dreta de l'Eixample, 08009 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Real+Hamburgueseria+Barcelona",
+  "category": "quickbites",
+  "subcat": "Burger",
+  "money_eats": false,
+  "verdict": "The Infatuation reviewed it as a standalone Barcelona spot in Jan 2025, calling it \"some of the cheesiest burgers Barcelona has ever seen\" — a cheese-forward gourmet burger, not a ranked best-of.",
+  "signature": "The La Real: beef under cheddar, with housemade cheddar cream baked into the brioche bun.",
+  "caveat": "Casual sit-down, not a takeaway counter; pricey on The Infatuation's scale and relentlessly rich — the cheese is the whole point, not a light bite.",
+  "person": "Isabelle Kliger",
+  "signal_chip": {
+   "label": "Infatuation",
+   "full": "The Infatuation Barcelona — standalone review by Isabelle Kliger, 16 Jan 2025 (no numbered ranking position)",
+   "cosign": "The Infatuation"
+  }
+ },
+ {
+  "id": "vq-la-royale",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 63,
+  "badge": "Burger",
+  "name": "La Royale",
+  "short": "La Royale",
+  "lat": 41.3996,
+  "lng": 2.1227,
+  "tags": [],
+  "productTags": [
+   "Burger"
+  ],
+  "why": "~€30 a head; Royale Premium = 220g Japanese wagyu + Stilton; Tue–Sun, closed Mon; uptown Sarrià",
+  "address": "Plaça del Camp, 5, Sarrià-Sant Gervasi, 08022 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Royale+Barcelona",
+  "category": "quickbites",
+  "subcat": "Burger",
+  "money_eats": false,
+  "verdict": "An uptown Sarrià gourmet burger bar with recipes credited to Michelin-starred Paco Pérez; the Royale Premium is a 220g Japanese-wagyu patty with Stilton, and a meal runs around €30 a head — not a cheap quick-bite.",
+  "signature": "Royale Premium: 220g Japanese wagyu, melting Stilton, lettuce, spring onion, pickle, Royale sauce.",
+  "caveat": "Not a cheap quick-bite — around €30 a head, closer to €50 with one of its signature gin and tonics; sit-down with a terrace (delivery available, not takeaway-only); closed Mondays.",
+  "person": "Paco Pérez — Michelin-starred chef credited by Time Out Barcelona as the author of La Royale's burger recipes",
+  "signal_chip": {
+   "label": "Time Out",
+   "full": "Included in Time Out Barcelona's 'The best burgers in the city' — an unranked collection of around two dozen spots, published Sep 2017; no numbered position",
+   "cosign": "Time Out Barcelona"
+  }
+ },
+ {
+  "id": "vq-musta-shawarma",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 64,
+  "badge": "Doner",
+  "name": "Musta Shawarma",
+  "short": "Musta Shawarma",
+  "lat": 41.4013,
+  "lng": 2.1559,
+  "tags": [],
+  "productTags": [
+   "Doner"
+  ],
+  "why": "Lower Gràcia, Carrer de Mozart 4; open daily ~13:00–00:30; mains roughly €1–9.",
+  "address": "Carrer de Mozart, 4, 08012 Barcelona (lower Gràcia, near Casa Fuster)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Musta+Shawarma+Barcelona",
+  "category": "quickbites",
+  "subcat": "Doner",
+  "money_eats": true,
+  "verdict": "Guía Repsol named it among four Barcelona kebab favorites in 2018, but no Time Out, Eater or OAD kebab ranking exists to corroborate the call.",
+  "signature": "Spit-shaved lamb shawarma slicked with mild tahina, lettuce, tomato and onion in soft pita.",
+  "caveat": "Minimal seating — a few bar stools and tiny tables — takeaway-first Gràcia counter; the only quality signal is Guía Repsol's favorites list, not a dedicated top-tier kebab ranking.",
+  "person": "Mustafa Chreiki (Syrian owner; opened Musta in 2013 after about 7 years at nearby La Caravana on the same street)"
  }
 ];
   const NEIGHBORHOODS = [
@@ -962,19 +1161,19 @@ window.TERROIR_DATA = (function () {
 ];
   const PHOTOS = [
  {
-  "src": "/terroir/Barcelona-Catalunya/img/1-vista.jpg",
-  "caption": "The neo-Gothic footbridge spanning Carrer del Bisbe in the Barri Gotic, beside the Palau de la Generalitat.",
-  "credit": "Photo: Joe Mabel · CC BY-SA 4.0 · Wikimedia"
+  "src": "/terroir/Barcelona-Catalunya/img/cat-1-vermut-hour-as-a-communa.jpg",
+  "caption": "Vermut hour as a communal ritual (the Catalan Sunday aperitif, not a staged terrace)",
+  "credit": "GinaQA · CC BY-SA 3.0"
  },
  {
-  "src": "/terroir/Barcelona-Catalunya/img/2-human-food.jpg",
-  "caption": "A fruit stall piled high with produce as shoppers and vendors crowd the aisle at the Mercat de la Boqueria.",
-  "credit": "Photo: Benreis · CC BY-SA 3.0 · Wikimedia"
+  "src": "/terroir/Barcelona-Catalunya/img/cat-2-the-boqueria-counters-fr.jpg",
+  "caption": "The Boqueria counters from the inside (greengrocer stalls, not the Rambla entrance)",
+  "credit": "Böhringer Friedrich · CC BY-SA 2.5"
  },
  {
-  "src": "/terroir/Barcelona-Catalunya/img/3-texture.jpg",
-  "caption": "An elevated view from the Sagrada Familia over the dense rooftops and chamfered street grid of the Eixample.",
-  "credit": "Photo: Reda Kerbush · CC BY-SA 4.0 · Wikimedia"
+  "src": "/terroir/Barcelona-Catalunya/img/cat-3-a-barcelona-tapas-pintxo.jpg",
+  "caption": "A Barcelona tapas/pintxos bar spread on the counter",
+  "credit": "Elemaki (José Porras) · CC BY 3.0"
  }
 ];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS };

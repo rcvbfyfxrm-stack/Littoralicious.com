@@ -73,6 +73,8 @@
         function gemSignature(v){ return v.signature?'<div class="terroir-card__signature"><span class="tsig">&#9733;</span> '+escapeHTML(v.signature)+'</div>':''; }
         function gemVerdict(v){ return v.verdict?'<div class="terroir-card__verdict">'+escapeHTML(v.verdict)+'</div>':''; }
         function gemCaveat(v){ return v.caveat?'<div class="terroir-card__caveat"><span class="tcav">Heads up</span> '+escapeHTML(v.caveat)+'</div>':''; }
+        function gemSubcat(v){ return v.subcat?'<span class="terroir-card__subcat">'+escapeHTML(v.subcat)+'</span>':''; }
+        function gemMoneyEats(v){ return v.money_eats?'<span class="terroir-card__money" title="Where the smart local money eats">&#8364; money eats here</span>':''; }
 
         function renderBerths() {
             const target = document.getElementById('terroir-berths');
@@ -137,6 +139,7 @@
                 '<div class="terroir-card__body">' +
                     '<div class="terroir-card__cat">' + (CAT_LABELS[v.cat] || v.cat) + '</div>' +
                     '<div class="terroir-card__name">' + escapeHTML(v.name) + badge + gemChip(v) + gemDrinkType(v) + offCity + nbhdInline + '</div>' +
+                    ((gemSubcat(v)||gemMoneyEats(v)) ? '<div class="terroir-card__chiprow">' + gemSubcat(v) + gemMoneyEats(v) + '</div>' : '') +
                     gemCosign(v) + gemPerson(v) + gemSignature(v) +
                     (products ? '<div class="terroir-card__products">' + products + '</div>' : '') +
                     (tags ? '<div class="terroir-card__tags">' + tags + '</div>' : '') +
@@ -164,11 +167,32 @@
             if (!target) return;
             target.innerHTML = list.map((v, i) => renderCard(v, i + 1)).join('');
         }
+        const CATEGORIES = [
+            {key:'creme', label:'La Cr\u00e8me de la Cr\u00e8me', lead:'The best tables in the city \u2014 book ahead, dress for it, expect the bill.'},
+            {key:'authentique', label:'L\u2019Authentique', lead:'Where Barcelona actually eats \u2014 old houses, market counters, the smart-money rooms.'},
+            {key:'story', label:'The Story', lead:'Cult rooms where a dish or a century was born \u2014 go for the tale as much as the plate.'},
+            {key:'quickbites', label:'Quick Bites', lead:'The honest fast plate \u2014 top-ranked burgers and kebab, no white tablecloth.'}
+        ];
+        function renderCategories() {
+            const box = document.querySelector('#tables .sfold__body'); if (!box) return;
+            let html = '';
+            CATEGORIES.forEach(function(c){
+                const list = VENUES.filter(function(v){return v.category===c.key;}).slice().sort(function(a,b){
+                    const va=voteCounts[a.id]||0, vb=voteCounts[b.id]||0; if(vb!==va) return vb-va; return (a.priority||99)-(b.priority||99);
+                });
+                if(!list.length) return;
+                html += '<div class="terroir-cat" id="cat-'+c.key+'">' +
+                    '<div class="terroir-cat__head"><h3 class="terroir-cat__title">'+escapeHTML(c.label)+'</h3>' +
+                    '<div class="terroir-cat__lead">'+escapeHTML(c.lead)+'</div>' +
+                    '<span class="terroir-cat__count">'+list.length+'</span></div>' +
+                    '<div class="terroir-tier__list">' + list.map(function(v,i){return renderCard(v,i+1);}).join('') + '</div></div>';
+            });
+            box.innerHTML = html;
+        }
         function renderAll() {
-            renderBerths();
-            renderTier('notime');
-            renderTier('several');
-            renderTier('plenty');
+            const useCat = VENUES.some(function(v){return v.category;});
+            if (useCat) { renderCategories(); }
+            else { renderBerths(); renderTier('notime'); renderTier('several'); renderTier('plenty'); }
             wireVoteButtons();
             wireScrollSpy();
             wireHoverHighlight();
