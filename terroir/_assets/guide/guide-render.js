@@ -207,17 +207,27 @@
         }
         function renderCategories() {
             const box = document.querySelector('#tables .sfold__body'); if (!box) return;
-            let html = '';
-            CATEGORIES.forEach(function(c){
+            const GROUPS = [
+                {key:'grande', label:'Les Grandes Tables', lead:'Haute gastronomy \u2014 the ambitious kitchens, the tasting menus, the splurge.'},
+                {key:'petite', label:'Les Petites Tables', lead:'Character over ambition, and every bit as interesting \u2014 where the city actually eats.'}
+            ];
+            const GROUP_OF = {creme:'grande', rising:'grande', authentique:'petite', story:'petite', cult:'petite', quickbites:'petite'};
+            function catBlock(c){
                 const list = VENUES.filter(function(v){return v.category===c.key;}).slice().sort(function(a,b){
                     const va=voteCounts[a.id]||0, vb=voteCounts[b.id]||0; if(vb!==va) return vb-va; return (a.priority||99)-(b.priority||99);
                 });
-                if(!list.length) return;
-                html += '<div class="terroir-cat" id="cat-'+c.key+'">' +
-                    '<div class="terroir-cat__head"><h3 class="terroir-cat__title">'+escapeHTML(c.label)+'</h3>' +
+                if(!list.length) return '';
+                return '<div class="terroir-cat" id="cat-'+c.key+'">' +
+                    '<div class="terroir-cat__head"><h4 class="terroir-cat__title">'+escapeHTML(c.label)+'</h4>' +
                     '<div class="terroir-cat__lead">'+escapeHTML(c.lead)+'</div>' +
                     '<span class="terroir-cat__count">'+list.length+'</span></div>' +
                     '<div class="terroir-tier__list">' + list.map(function(v,i){return renderCardCompact(v,i+1);}).join('') + '</div></div>';
+            }
+            let html = '';
+            GROUPS.forEach(function(g){
+                const inner = CATEGORIES.filter(function(c){return (GROUP_OF[c.key]||'petite')===g.key;}).map(catBlock).join('');
+                if(!inner) return;
+                html += '<div class="terroir-group"><div class="terroir-group__title">'+escapeHTML(g.label)+'</div><div class="terroir-group__lead">'+escapeHTML(g.lead)+'</div></div>' + inner;
             });
             box.innerHTML = html;
         }

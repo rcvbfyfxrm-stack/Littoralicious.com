@@ -260,3 +260,11 @@
 /* shortlist names read as links into the cards */
 .three-tables a{border-bottom:1px solid rgba(45,74,94,.25)}
 .three-tables a:hover{border-bottom-color:#2d4a5e;color:#2d4a5e}
+
+/* ===== Grandes / Petites tables — two-tier grouping (2026-07) ===== */
+.terroir-group{margin:40px 0 8px;border-bottom:2px solid #2d4a5e;padding-bottom:9px}
+.terroir-group:first-of-type{margin-top:6px}
+.terroir-group__title{font-family:'Playfair Display',Georgia,serif;font-size:1.95em;line-height:1.04;color:#1a1a1a;letter-spacing:.3px}
+.terroir-group__lead{font-size:0.95em;color:#6b7280;margin-top:5px;font-style:italic;max-width:66ch}
+.terroir-cat__head{border-top:1px solid #e6e8eb;padding-top:10px;margin:26px 0 14px}
+.terroir-cat__title{font-size:1.28em}
