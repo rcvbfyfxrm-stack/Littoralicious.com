@@ -52,6 +52,17 @@
         .dr-noteform button { font: inherit; font-size: 0.76rem; cursor: pointer; border: 1px solid var(--color-sea, #2d4a5e); background: var(--color-sea, #2d4a5e); color: #fff; padding: 5px 14px; }
         .dr-locked { font-size: 0.78rem; color: var(--color-salt, #94a3b8); font-style: italic; padding: 6px 0; }
         .dr-empty { color: var(--color-salt, #94a3b8); font-size: 0.8rem; }
+
+        /* ── Readiness board: rank by rewrite activity + traffic-light code ── */
+        .dr-legend { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; font-family: var(--font-mono, monospace); font-size: 0.72rem; color: var(--color-muted, #6b7280); margin: 12px 0 0; }
+        .dr-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+        .dr-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .dr-dot--ready { background: #059669; } .dr-dot--review { background: #d97706; } .dr-dot--raw { background: #94a3b8; }
+        .dr-card--ready { border-top-color: #059669; } .dr-card--review { border-top-color: #d97706; } .dr-card--raw { border-top-color: #94a3b8; }
+        .dr-rank { font-family: var(--font-mono, monospace); font-size: 0.74rem; color: var(--color-salt, #94a3b8); font-weight: 700; }
+        .dr-pill { display: inline-block; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; font-weight: 700; font-family: var(--font-mono, monospace); }
+        .dr-pill--ready { background: #e7f5ef; color: #047857; } .dr-pill--review { background: #fdf2e2; color: #b45309; } .dr-pill--raw { background: #f1f1ef; color: #6b7280; }
+        .dr-card__stat { font-family: var(--font-mono, monospace); font-size: 0.68rem; color: var(--color-salt, #94a3b8); }
     </style>
 </head>
 <body>
@@ -69,6 +80,13 @@
         </header>
         <div class="dr-meta" id="meta">Loading drafts…</div>
         <div class="dr-banner" id="authbanner">Sign in with an authorised account to read and leave review notes. The draft list is visible to all; notes are private to the review team.</div>
+
+        <div class="dr-legend">
+            <span><i class="dr-dot dr-dot--ready"></i> Rewritten &middot; ready to publish</span>
+            <span><i class="dr-dot dr-dot--review"></i> In review / queued for rewrite</span>
+            <span><i class="dr-dot dr-dot--raw"></i> Untouched</span>
+            <span style="color: var(--color-salt, #94a3b8);">&mdash; ranked by amount of rewriting, most-rewritten first</span>
+        </div>
 
         <div class="dr-grid" id="grid"></div>
     </div>
@@ -190,24 +208,66 @@
             .then(function (data) {
                 var drafts = (data && data.drafts) || [];
                 meta.textContent = drafts.length + " draft" + (drafts.length === 1 ? "" : "s") +
-                    " · manifest " + (data._generated_at || "?") + " · auto-rebuilt on every publish";
+                    " · manifest " + (data._generated_at || "?") + " · ranked by rewrite activity";
                 if (!drafts.length) { grid.innerHTML = '<p class="dr-empty">No drafts flagged in articles.json.</p>'; return; }
-                grid.innerHTML = drafts.map(function (d) {
-                    var href = d.file ? d.file.replace(/\.html$/, "") : "#"; // cleanUrls
-                    return '<article class="dr-card">' +
-                        '<div class="dr-card__cat">' + esc(d.category_label || d.category || "Draft") + '</div>' +
-                        '<h3 class="dr-card__title"><a href="' + esc(d.file || "#") + '">' + esc(d.title || d.slug) + '</a></h3>' +
-                        (d.lede ? '<p class="dr-card__lede">' + esc(d.lede) + '</p>' : '') +
-                        '<div class="dr-card__row">' +
-                        (d.read_time ? '<span>' + esc(d.read_time) + ' min</span>' : '') +
-                        (d.added ? '<span>' + esc(d.added) + '</span>' : '') +
-                        '<a href="' + esc(href) + '?draft=1" class="dr-card__count">Open draft →</a></div>' +
-                        '<div class="dr-notes" data-notes-for="' + esc(d.slug) + '"></div>' +
-                        '</article>';
-                }).join("");
-                document.querySelectorAll("[data-notes-for]").forEach(function (el) {
-                    wireNotes(el.getAttribute("data-notes-for"), el);
-                });
+                grid.innerHTML = '<p class="dr-empty">Ranking by rewrite activity…</p>';
+
+                // Public read of each draft's mirrored rewrite request (status / notes / rewrite count).
+                // articles/{slug}/_rewrite/request is world-readable per firestore.rules.
+                function reviewOf(slug) {
+                    return db.collection("articles").doc(slug).collection("_rewrite").doc("request").get()
+                        .then(function (doc) {
+                            if (!doc.exists) return { status: "none", rewrites: 0, notes: 0, overall: false, ts: 0 };
+                            var x = doc.data() || {};
+                            return {
+                                status: x.status || "none",
+                                rewrites: x.rewrites != null ? x.rewrites : (x.status === "rewritten" ? 1 : 0),
+                                notes: (x.notes && x.notes.length) || 0,
+                                overall: !!(x.overall && String(x.overall).trim()),
+                                ts: x.rewrittenAt || x.requestedAt || 0
+                            };
+                        })
+                        .catch(function () { return { status: "none", rewrites: 0, notes: 0, overall: false, ts: 0 }; });
+                }
+                function tone(rv) { if (rv.status === "rewritten") return "ready"; if (rv.status === "queued" || rv.notes > 0 || rv.overall) return "review"; return "raw"; }
+                var PILL = { ready: "Rewritten · ready", review: "In review", raw: "Untouched" };
+
+                Promise.all(drafts.map(function (d) { return reviewOf(d.slug).then(function (rv) { d._rv = rv; return d; }); }))
+                    .then(function (list) {
+                        var srank = { rewritten: 2, queued: 1, none: 0 };
+                        list.sort(function (a, b) {
+                            return (b._rv.rewrites - a._rv.rewrites) ||          // most-rewritten first
+                                   (srank[b._rv.status] - srank[a._rv.status]) ||  // then by review status
+                                   (b._rv.notes - a._rv.notes) ||                  // then most-reviewed
+                                   (b._rv.ts - a._rv.ts);                          // then most-recent
+                        });
+                        grid.innerHTML = list.map(function (d, i) {
+                            var rv = d._rv, t = tone(rv);
+                            var href = d.file ? d.file.replace(/\.html$/, "") : "#"; // cleanUrls
+                            var stat = [];
+                            if (rv.rewrites) stat.push("&times;" + rv.rewrites + " rewrite" + (rv.rewrites === 1 ? "" : "s"));
+                            if (rv.notes) stat.push(rv.notes + " note" + (rv.notes === 1 ? "" : "s"));
+                            if (!rv.rewrites && rv.overall) stat.push("overall note");
+                            return '<article class="dr-card dr-card--' + t + '">' +
+                                '<div class="dr-card__row" style="margin-bottom:6px;">' +
+                                '<span class="dr-rank">#' + (i + 1) + '</span>' +
+                                '<span class="dr-pill dr-pill--' + t + '">' + PILL[t] + '</span>' +
+                                (stat.length ? '<span class="dr-card__stat dr-card__count">' + stat.join(" · ") + '</span>' : '') +
+                                '</div>' +
+                                '<div class="dr-card__cat">' + esc(d.category_label || d.category || "Draft") + '</div>' +
+                                '<h3 class="dr-card__title"><a href="' + esc(d.file || "#") + '">' + esc(d.title || d.slug) + '</a></h3>' +
+                                (d.lede ? '<p class="dr-card__lede">' + esc(d.lede) + '</p>' : '') +
+                                '<div class="dr-card__row">' +
+                                (d.read_time ? '<span>' + esc(d.read_time) + ' min</span>' : '') +
+                                (d.added ? '<span>' + esc(d.added) + '</span>' : '') +
+                                '<a href="' + esc(href) + '?draft=1" class="dr-card__count">Open draft →</a></div>' +
+                                '<div class="dr-notes" data-notes-for="' + esc(d.slug) + '"></div>' +
+                                '</article>';
+                        }).join("");
+                        document.querySelectorAll("[data-notes-for]").forEach(function (el) {
+                            wireNotes(el.getAttribute("data-notes-for"), el);
+                        });
+                    });
             })
             .catch(function (e) {
                 meta.textContent = "";

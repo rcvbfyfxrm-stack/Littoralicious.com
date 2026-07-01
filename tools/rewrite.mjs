@@ -49,10 +49,18 @@ async function getRequest(s) {
   return decodeReq((await r.json()).fields);
 }
 async function patchStatus(s, status) {
-  const url = `${BASE}/${REQ_PATH(s)}?key=${APIKEY}&updateMask.fieldPaths=status&updateMask.fieldPaths=rewrittenAt`;
+  // Increment a persistent rewrite counter so the drafts board can rank by
+  // "amount of rewriting" (most-rewritten first). Read-then-write is fine here:
+  // rewrites are serial, one CLI at a time.
+  let rewrites = 1;
+  try {
+    const g = await fetch(`${BASE}/${REQ_PATH(s)}?key=${APIKEY}`);
+    if (g.ok) { const f = (await g.json()).fields || {}; rewrites = (Number(f.rewrites && f.rewrites.integerValue) || 0) + 1; }
+  } catch { /* first rewrite, or offline — default to 1 */ }
+  const url = `${BASE}/${REQ_PATH(s)}?key=${APIKEY}&updateMask.fieldPaths=status&updateMask.fieldPaths=rewrittenAt&updateMask.fieldPaths=rewrites`;
   const r = await fetch(url, {
     method: "PATCH", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ fields: { status: { stringValue: status }, rewrittenAt: { integerValue: String(Date.now()) } } }),
+    body: JSON.stringify({ fields: { status: { stringValue: status }, rewrittenAt: { integerValue: String(Date.now()) }, rewrites: { integerValue: String(rewrites) } } }),
   });
   if (!r.ok) console.warn(`  (couldn't update request status: ${r.status} — re-review still works)`);
 }
