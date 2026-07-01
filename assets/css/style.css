@@ -104,36 +104,38 @@ html {
    Research shows color-coding improves retention by ~11.5% (PMC 2022)
    -------------------------------------------------------------------------- */
 :root {
-    /* Annotation palette - softened fills (the 4px left border carries the
-       colour code; the background is only a faint tint so callouts do not
-       glare on a phone in a dark room). */
-    --note-key: #f8f4e6;           /* Faint warm - key points */
-    --note-key-border: #c79a12;
-    --note-science: #eef3f5;       /* Faint cool - evidence/data */
-    --note-science-border: #4f8c9b;
-    --note-action: #eef4ee;        /* Faint green - practical takeaways */
-    --note-action-border: #429646;
-    --note-warning: #f7ecec;       /* Faint rose - warnings/cautions */
-    --note-warning-border: #b5362a;
-    --note-quote: #f3eff5;         /* Faint lavender - quotes/references */
-    --note-quote-border: #6e2f8a;
+    /* Annotation palette - fills are near-tintless and the accent borders are
+       DESATURATED (muted, not vivid). Lightening the fills alone still read as
+       "too bright" on a phone because the loud part was the saturated border +
+       highlight, not the near-white background. Colour code is preserved, just
+       calmer. */
+    --note-key: #f7f5ef;           /* Whisper warm - key points */
+    --note-key-border: #b39a54;    /* Muted ochre */
+    --note-science: #f0f3f4;       /* Whisper cool - evidence/data */
+    --note-science-border: #6f96a0; /* Muted teal */
+    --note-action: #f0f3f0;        /* Whisper green - practical takeaways */
+    --note-action-border: #6f9c74; /* Muted sage */
+    --note-warning: #f5efee;       /* Whisper rose - warnings/cautions */
+    --note-warning-border: #b06f66; /* Muted terracotta */
+    --note-quote: #f2f0f3;         /* Whisper lavender - quotes/references */
+    --note-quote-border: #8a6d90;  /* Muted mauve */
 
-    /* Inline highlights - softened so a paragraph of marks stays readable */
-    --highlight-key: #fbf0b3;      /* Soft yellow highlight */
-    --highlight-term: #d6ebf4;     /* Soft blue highlight for terms */
+    /* Inline highlights - desaturated so a paragraph of marks never glares */
+    --highlight-key: #f1e9cf;      /* Soft wheat highlight */
+    --highlight-term: #e5edf1;     /* Soft blue highlight for terms */
 }
 
 [data-theme="dark"] {
-    --note-key: #3d3200;
-    --note-key-border: #d4a816;
-    --note-science: #1a3a44;
-    --note-science-border: #5c9ead;
-    --note-action: #1b3d1e;
-    --note-action-border: #4caf50;
-    --note-warning: #3d1a1a;
-    --note-warning-border: #e57373;
-    --note-quote: #2d1f33;
-    --note-quote-border: #ba68c8;
+    --note-key: #33290a;
+    --note-key-border: #b8952e;    /* Muted so the border does not glow */
+    --note-science: #172f37;
+    --note-science-border: #567f8a;
+    --note-action: #172f19;
+    --note-action-border: #5f8a63;
+    --note-warning: #331717;
+    --note-warning-border: #b56a6a;
+    --note-quote: #26192b;
+    --note-quote-border: #9a6aa4;
 
     --highlight-key: #5c5200;
     --highlight-term: #1a4a5c;
