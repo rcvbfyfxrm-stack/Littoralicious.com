@@ -431,12 +431,14 @@
             activeId = id;
         }
 
-        function focusVenue(id, scrollTo) {
+        function focusVenue(id, scrollTo) { // open-on-focus
             setActive(id);
-            if (scrollTo) {
-                const card = document.getElementById('venue-' + id);
-                if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            var card = document.getElementById('venue-' + id);
+            if (card) {
+                if (card.tagName === 'DETAILS') card.open = true;
+                var box = card.closest && card.closest('details.sfold'); if (box) box.open = true;
             }
+            if (scrollTo && card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function wireScrollSpy() {

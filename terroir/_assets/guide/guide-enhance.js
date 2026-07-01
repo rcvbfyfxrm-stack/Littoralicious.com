@@ -30,9 +30,9 @@
     // III — calas & things to do
     'SECTION#calas': 30, 'DETAILS#calas': 30, 'SECTION#walk': 31, 'DETAILS#walks': 32,
     'DETAILS#coffee-gardens': 32.5, 'DETAILS#work': 33, 'DETAILS#culture': 34, 'SECTION#quartiers': 35,
-    'DETAILS#secret-gems': 36, 'DETAILS#gastronomy': 37, 'DETAILS#twentyfour': 38, 'DETAILS#events': 38.5,
+    'DETAILS#secret-gems': 36, 'DETAILS#gastronomy': 37, 'DETAILS#curiosities': 38.7, 'DETAILS#twentyfour': 38, 'DETAILS#events': 38.5,
     // IV — drink & hear
-    'DETAILS#drink': 40, 'DETAILS#bars': 40, 'DETAILS#music': 41,
+    'DETAILS#drink': 40, 'DETAILS#bars': 40, 'DETAILS#music': 41, 'DETAILS#underground': 41.5,
     // V — go out
     'SECTION#nightlife': 45, 'DETAILS#nightlife': 45,
     // VI — fast & real

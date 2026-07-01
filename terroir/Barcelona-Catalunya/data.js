@@ -1,4 +1,4 @@
-/* Terroir — Barcelona — gem-standard + category rebuild (2026-06) */
+/* Terroir — Barcelona — gem-standard + category + deepened (2026-07) */
 window.TERROIR_DATA = (function () {
   const COLORS = {"berth":"#c4a35a","market":"#d97706","shop":"#059669","mainland":"#7c3aed","logistics":"#2d4a5e"};
   const CAT_LABELS = {"berth":"Signature","market":"Market / Direct","shop":"Restaurant / Bar","mainland":"Out of town","logistics":"Logistics"};
@@ -864,6 +864,451 @@ window.TERROIR_DATA = (function () {
   "signature": "Spit-shaved lamb shawarma slicked with mild tahina, lettuce, tomato and onion in soft pita.",
   "caveat": "Minimal seating — a few bar stools and tiny tables — takeaway-first Gràcia counter; the only quality signal is Guía Repsol's favorites list, not a dedicated top-tier kebab ranking.",
   "person": "Mustafa Chreiki (Syrian owner; opened Musta in 2013 after about 7 years at nearby La Caravana on the same street)"
+ },
+ {
+  "id": "vn-abac",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 40,
+  "badge": "MICHELIN",
+  "name": "ABaC",
+  "short": "ABaC",
+  "lat": 41.4114,
+  "lng": 2.1356,
+  "tags": [
+   "One of Barcelona's four three-MICHELIN-star tables on Tibidabo — Jordi Cruz's single avant-garde tasting menu."
+  ],
+  "productTags": [
+   "Fine dining"
+  ],
+  "why": "One of Barcelona's four three-MICHELIN-star tables on Tibidabo — Jordi Cruz's single avant-garde tasting menu.",
+  "address": "Avinguda del Tibidabo, 1, 08022 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=ABaC+Barcelona",
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false,
+  "verdict": "One of Barcelona's four three-MICHELIN-star kitchens — a single ~€295 avant-garde tasting menu from Jordi Cruz that buys technical spectacle over ingredient luxury, holding the third star since 2017.",
+  "signature": "Aqua Mirabilis — a dessert reimagining a 1709 eau de cologne in citrus, flower and herb.",
+  "caveat": "Not for value or spontaneity: ~€295 before a ~€140 wine pairing, up by Tibidabo roughly 30 minutes by taxi from the centre, and a 2025 Fine Dining Journal review (7.5/10) called the service polished but the ambition faded from its 2021 peak. Book weeks ahead.",
+  "person": "Jordi Cruz",
+  "signal_chip": {
+   "label": "★★★ MICHELIN",
+   "full": "Three MICHELIN stars, MICHELIN Guide España 2026 (third star held since 2017)",
+   "cosign": "MICHELIN Guide España 2026"
+  }
+ },
+ {
+  "id": "vn-moments",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 41,
+  "badge": "MICHELIN",
+  "name": "Moments",
+  "short": "Moments",
+  "lat": 41.3914,
+  "lng": 2.1653,
+  "tags": [
+   "One-MICHELIN-star, Ruscalleda-lineage Catalan haute cuisine inside the Mandarin Oriental, led by Raül Balam."
+  ],
+  "productTags": [
+   "Catalan haute cuisine"
+  ],
+  "why": "One-MICHELIN-star, Ruscalleda-lineage Catalan haute cuisine inside the Mandarin Oriental, led by Raül Balam.",
+  "address": "Passeig de Gràcia 38-40 (inside Mandarin Oriental), Eixample, 08007 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Moments+Barcelona",
+  "category": "creme",
+  "subcat": "Catalan haute cuisine",
+  "money_eats": false,
+  "verdict": "Demoted from two MICHELIN stars to one at the November 2024 gala after roughly a decade at two, it now reads as polished, classical Ruscalleda-lineage Catalan fine dining rather than avant-garde risk.",
+  "signature": "Carnaroli paella cooked al dente, with shrimp and an intense prawn-head bisque.",
+  "caveat": "Not the two-star destination the brief claims — MICHELIN pulled the second star at the 26 November 2024 gala, and it is one star in both the 2025 and 2026 guides. Expect Ruscalleda-heritage refinement inside a luxury hotel, not cutting-edge invention; closed Sunday and Monday (official site lists dinner Tuesday–Saturday — confirm Saturday-lunch claims before relying on them).",
+  "person": "Raül Balam Ruscalleda, executive chef, with his mother Carme Ruscalleda — the most Michelin-starred female chef in the world (seven stars at her peak across Sant Pau, Sant Pau Tokyo and Moments) — as gastronomic adviser.",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "One MICHELIN star in Guía Michelin España 2025 and 2026 — down from two stars, held roughly 2013–2024, removed at the Nov 2024 gala",
+   "cosign": "MICHELIN Guide"
+  }
+ },
+ {
+  "id": "vn-via-veneto",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 42,
+  "badge": "MICHELIN",
+  "name": "Via Veneto",
+  "short": "Via Veneto",
+  "lat": 41.3956,
+  "lng": 2.1407,
+  "tags": [
+   "Barcelona's old-guard one-star, open since 1967; its pressed-duck ritual came from Paris's Tour d'Argent."
+  ],
+  "productTags": [
+   "Fine dining"
+  ],
+  "why": "Barcelona's old-guard one-star, open since 1967; its pressed-duck ritual came from Paris's Tour d'Argent.",
+  "address": "Carrer de Ganduxer, 10, Sarrià-Sant Gervasi, 08021 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Via+Veneto+Barcelona",
+  "category": "creme",
+  "subcat": "Fine dining",
+  "money_eats": false,
+  "verdict": "Holds one MICHELIN star and has served its pressed-duck, Belle Époque classicism since 1967 — the old-guard haute cuisine the elBulli generation reacted against, not the lab food they pioneered.",
+  "signature": "Pressed roast duck carved tableside, served two ways in its own jus",
+  "caveat": "Not avant-garde and not cheap: grande-maison formality and prices, and the kitchen now runs a contemporary menu beside the classics — come for the tradition and the duck ritual, not invention.",
+  "person": "David Andrés (executive chef); owner Josep Monje — Salvador Dalí was one of the restaurant's longtime regulars — brought the duck press from Paris's Tour d'Argent.",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "One MICHELIN Star — MICHELIN Guide (2026 listing; held for decades)",
+   "cosign": "MICHELIN Guide"
+  }
+ },
+ {
+  "id": "vn-dos-palillos",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 43,
+  "badge": "MICHELIN",
+  "name": "Dos Palillos",
+  "short": "Dos Palillos",
+  "lat": 41.3832,
+  "lng": 2.1672,
+  "tags": [
+   "Ex-elBulli chef Albert Raurich's one-MICHELIN-star Asian-Spanish tasting counter in El Raval, Barcelona."
+  ],
+  "productTags": [
+   "Asian-Spanish fine dining"
+  ],
+  "why": "Ex-elBulli chef Albert Raurich's one-MICHELIN-star Asian-Spanish tasting counter in El Raval, Barcelona.",
+  "address": "Carrer d'Elisabets, 9, El Raval (Ciutat Vella), 08001 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Dos+Palillos+Barcelona",
+  "category": "creme",
+  "subcat": "Asian-Spanish fine dining",
+  "money_eats": false,
+  "verdict": "Holds a current one-MICHELIN-star rating not for a dining room but for a small open-kitchen counter where former elBulli head chef Albert Raurich runs Spanish tapas through a Japanese-led Asian lens as a surprise tasting menu.",
+  "signature": "Steamer of shiitake-and-scallion gyoza with black sesame, dipped in soy — a tasting-menu signature",
+  "caveat": "The starred meal is the small open-kitchen counter — surprise tasting menu only, no a la carte, fixed seating times, and it books out; the entrance sake bar is a separate, no-reservations space with a short menu, not the same experience.",
+  "person": "Albert Raurich (chef-owner; former head chef at elBulli until 2007, opened Dos Palillos in 2008 with sommelier-partner Tamae Imachi)",
+  "signal_chip": {
+   "label": "1 MICHELIN★",
+   "full": "One MICHELIN star, MICHELIN Guide España — held in the current/2025 guide and for over a decade (sources differ on the first year, 2012 or 2013)",
+   "cosign": "MICHELIN Guide"
+  }
+ },
+ {
+  "id": "vn-cal-pep",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 44,
+  "badge": "LOCAL",
+  "name": "Cal Pep",
+  "short": "Cal Pep",
+  "lat": 41.3834,
+  "lng": 2.1827,
+  "tags": [
+   "A small seafood counter open since 1989, no written menu — you eat what Pep's cooks plate at the bar."
+  ],
+  "productTags": [
+   "Seafood tapas"
+  ],
+  "why": "A small seafood counter open since 1989, no written menu — you eat what Pep's cooks plate at the bar.",
+  "address": "Plaça de les Olles, 8, El Born / La Ribera, Ciutat Vella, 08003 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Cal+Pep+Barcelona",
+  "category": "authentique",
+  "subcat": "Seafood tapas",
+  "money_eats": false,
+  "verdict": "A no-menu, no-bookings seafood counter open since 1989 where Pep's cooks pick your plates — touristy now, but the molten tortilla and tuna tartare still draw a queue before the doors open.",
+  "signature": "Oozing, molten-centred Spanish tortilla finished with aioli and chorizo",
+  "caveat": "Not a place to linger or budget tightly: the counter takes no bookings (only a small back dining room does), lines form before opening, it is heavily touristed, the market-priced seafood can climb fast, and you cede all menu choice to the cooks.",
+  "person": "Josep 'Pep' Manubens Figueres, chef-owner (per The World's 50 Best Discovery)",
+  "signal_chip": {
+   "label": "50 Best",
+   "full": "Listed on The World's 50 Best Discovery (50 Best's curated directory, not the live annual ranking); the same page claims it once reached No. 31 on the main list — single source, no year given, hedged. Also listed by OAD Guides and reviewed by The Infatuation.",
+   "cosign": "The World's 50 Best Restaurants (Discovery)"
+  }
+ },
+ {
+  "id": "vn-el-vaso-de-oro",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 45,
+  "badge": "LOCAL",
+  "name": "El Vaso de Oro",
+  "short": "El Vaso de Oro",
+  "lat": 41.3803,
+  "lng": 2.1879,
+  "tags": [
+   "A 1962 standing cervecería in Barceloneta pouring its own Fort beer; order the solomillo con foie."
+  ],
+  "productTags": [
+   "Tapas"
+  ],
+  "why": "A 1962 standing cervecería in Barceloneta pouring its own Fort beer; order the solomillo con foie.",
+  "address": "Carrer de Balboa, 6, La Barceloneta, 08003 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=El+Vaso+de+Oro+Barcelona",
+  "category": "authentique",
+  "subcat": "Tapas",
+  "money_eats": true,
+  "verdict": "Time Out Barcelona gives this 1962 Barceloneta cervecería a full 5/5, and the order the local crowd reaches for is the solomillo con foie, not the tapas.",
+  "signature": "Solomillo con foie: seared beef fillet under a slice of hot, melting foie gras",
+  "caveat": "Not a sit-down dinner: no reservations, only a few stools, elbow-to-elbow at the bar, and Barceloneta's tourist crowds mean queues. The house Fort beer is, per the venue's own history, brewed at a microbrewery in L'Hospitalet rather than on the premises.",
+  "person": "Run today by Gabriel Fort, whose family lends its name to the house Fort beer; the bar opened in 1962 under owners named Gabriel and Glòria, but sources do not confirm the founders' surname.",
+  "signal_chip": {
+   "label": "Time Out 5/5",
+   "full": "Time Out Barcelona — 5/5, 'one of Barceloneta's great classic tapas bars, complete with uniformed waiters' (review by Albert i Dúnia Riera, dated 18 June 2019)",
+   "cosign": "Time Out Barcelona"
+  }
+ },
+ {
+  "id": "vn-bar-mut",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 46,
+  "badge": "DRINK",
+  "name": "Bar Mut",
+  "short": "Bar Mut",
+  "lat": 41.3973177,
+  "lng": 2.1613001,
+  "tags": [
+   "Opened June 2005; the name puns on \"vermut\"; 300-plus wines behind a cramped marble standing bar."
+  ],
+  "productTags": [
+   "Wine bar / market tapas"
+  ],
+  "why": "Opened June 2005; the name puns on \"vermut\"; 300-plus wines behind a cramped marble standing bar.",
+  "address": "Carrer de Pau Claris, 192, L'Eixample, 08037 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Mut+Barcelona",
+  "category": "authentique",
+  "subcat": "Wine bar / market tapas",
+  "money_eats": true,
+  "verdict": "More refined and more expensive than Barcelona's standing-bar tapas classics: a wine-first Eixample room open since June 2005 whose 300-plus-bottle list backs a daily chalkboard of market tapas.",
+  "signature": "Huevos fritos: runny poached egg, prawn, matchstick fried potato and chorizo sauce on a montadito.",
+  "caveat": "Not quick and not budget-friendly; the cramped marble standing bar takes reservations but fills fast, and the bill climbs with every glass.",
+  "person": "Kim (also written Quim) Díaz, founder — opened Bar Mut on 30 June 2005 as a vermut bar (the name puns on \"vermut\"); confirmed in a 2025 ARA interview marking the bar's 20th anniversary.",
+  "signal_chip": {
+   "label": "Infatuation",
+   "full": "The Infatuation (Barcelona) carries a full review: a classic, cramped Eixample wine bar priced $$$$ with no numeric score; the write-up warns it is neither quick nor budget-friendly but praises the wine-with-tapas pairing. (No verbatim quote — the original card's quotation was not in the review.)",
+   "cosign": "The Infatuation Barcelona"
+  }
+ },
+ {
+  "id": "vn-cerveceria-catalana",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 47,
+  "badge": "LOCAL",
+  "name": "Cervecería Catalana",
+  "short": "Cervecería Catalana",
+  "lat": 41.3924,
+  "lng": 2.1608,
+  "tags": [
+   "Among Barcelona's most-reviewed tapas bars, and the kitchen still holds at tourist volume."
+  ],
+  "productTags": [
+   "Tapas"
+  ],
+  "why": "Among Barcelona's most-reviewed tapas bars, and the kitchen still holds at tourist volume.",
+  "address": "Carrer de Mallorca, 236, L'Eixample (near Rambla de Catalunya), 08008 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADa+Catalana+Barcelona",
+  "category": "authentique",
+  "subcat": "Tapas",
+  "money_eats": false,
+  "verdict": "A high-turnover Eixample tapas hall whose a-la-plancha classics and montaditos hold up at tourist volume, but it takes no reservations and typically runs 30–60 minute queues — a visitors' room, not where the trade eats.",
+  "signature": "Montadito de solomillo con foie — seared beef tenderloin and warm foie gras on toasted bread.",
+  "caveat": "Not a local secret but a tourist-facing, no-reservations hall where 30–60 minute street queues are routine; the cooking holds at volume, but the room is for visitors, not the trade. Owned by Grupo La Flauta (same group as Ciutat Comtal); no single chef or founder name is web-verifiable, so none is claimed. The \"Time Out / The Infatuation featured\" framing did not verify — neither guide's current best-tapas roundup lists it, and no Guía Repsol Solete was found.",
+  "signal_chip": {
+   "label": "OAD #27 BCN",
+   "full": "Ranked by OAD Guides (Opinionated About Dining), a survey of serious diners and chefs: #27 in Barcelona, #423 Casual worldwide, #169 in Spain (page undated; verified July 2026).",
+   "cosign": "OAD / Opinionated About Dining, the diner-survey guide founded by Steve Plotnicki"
+  }
+ },
+ {
+  "id": "vn-bar-tomas-el-tomas-de-sarria",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 48,
+  "badge": "LOCAL",
+  "name": "Bar Tomás (El Tomás de Sarrià)",
+  "short": "Bar Tomás (El Tomás de Sarrià)",
+  "lat": 41.3996,
+  "lng": 2.1213,
+  "tags": [
+   "A plain Sarrià bar open since 1929 whose allioli-and-hot-oil bravas Time Out rates among Barcelona's best."
+  ],
+  "productTags": [
+   "Bravas"
+  ],
+  "why": "A plain Sarrià bar open since 1929 whose allioli-and-hot-oil bravas Time Out rates among Barcelona's best.",
+  "address": "Carrer Major de Sarrià 49, 08017 Barcelona (Sarrià-Sant Gervasi)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Tom%C3%A1s+(El+Tom%C3%A1s+de+Sarri%C3%A0)+Barcelona",
+  "category": "authentique",
+  "subcat": "Bravas",
+  "money_eats": true,
+  "verdict": "The reason to climb up to Sarrià is the bravas: craggy hand-cut fried potato wedges under a garlic allioli cut with a separate hot oil, not the usual spicy tomato sauce, which Time Out ranks among Barcelona's best.",
+  "signature": "Patatas bravas: craggy fried potato wedges under garlicky allioli streaked with chili-hot oil",
+  "caveat": "Not a destination for the room: a plain, cramped stand-up bar in uptown Sarrià, all function over ambience; it's closed Sundays (Monday–Saturday only) and you'll likely queue for a plate that now pulls as many tourists as locals.",
+  "signal_chip": {
+   "label": "Time Out BCN",
+   "full": "Time Out Barcelona calls its allioli-led patatas bravas the best in the city, noting the sauce sits closer to a garlicky allioli than the usual spicy brava sauce (verified Jul 2026).",
+   "cosign": "Time Out Barcelona"
+  }
+ },
+ {
+  "id": "vn-els-quatre-gats",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 49,
+  "badge": "STORY",
+  "name": "Els Quatre Gats",
+  "short": "Els Quatre Gats",
+  "lat": 41.38634,
+  "lng": 2.17319,
+  "tags": [
+   "Picasso's first solo show hung here (1899-1900); he drew its menu cover, inside Puig i Cadafalch's Casa Martí."
+  ],
+  "productTags": [
+   "Modernista café / Catalan classic"
+  ],
+  "why": "Picasso's first solo show hung here (1899-1900); he drew its menu cover, inside Puig i Cadafalch's Casa Martí.",
+  "address": "Carrer de Montsió, 3 bis, Barri Gòtic, 08002 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Els+Quatre+Gats+Barcelona",
+  "category": "story",
+  "subcat": "Modernista café / Catalan classic",
+  "money_eats": false,
+  "verdict": "A BCIN-listed national-heritage landmark you come for Puig i Cadafalch's modernista room (café opened 1897, building 1895-96) and the Picasso history, not for cooking that ranks among Barcelona's best.",
+  "signature": "Canelons 4 Gats: the house meat cannelloni gratinated under béchamel, the kitchen's self-declared specialty.",
+  "caveat": "Not where Barcelona's chefs eat: the room outclasses the plate, prices run high, and the crowd skews tourist.",
+  "person": "Pablo Picasso — held his first solo exhibition here (the café dates it 1899; the Museu Picasso and many art historians say February 1900) and drew the café's menu cover.",
+  "signal_chip": {
+   "label": "Gencat BCIN",
+   "full": "Casa Martí (Puig i Cadafalch, 1895-96) is listed as a Bé Cultural d'Interès Nacional (BCIN) in the Catalan heritage register.",
+   "cosign": "Generalitat de Catalunya — Direcció General del Patrimoni Cultural (BCIN)"
+  }
+ },
+ {
+  "id": "vn-bar-marsella",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 50,
+  "badge": "STORY",
+  "name": "Bar Marsella",
+  "short": "Bar Marsella",
+  "lat": 41.37938,
+  "lng": 2.16878,
+  "tags": [
+   "Reputedly Barcelona's oldest bar (1820); the city bought its building in 2013 to save it."
+  ],
+  "productTags": [
+   "Absinthe bar"
+  ],
+  "why": "Reputedly Barcelona's oldest bar (1820); the city bought its building in 2013 to save it.",
+  "address": "Carrer de Sant Pau, 65, El Raval, 08001 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Marsella+Barcelona",
+  "category": "story",
+  "subcat": "Absinthe bar",
+  "money_eats": false,
+  "verdict": "The draw is the reputedly-1820 absinthe bar the city council saved in 2013 by buying its building, not a meal — there is no kitchen, only marble tables and the absinthe ritual.",
+  "signature": "Absinthe, sugar cube balanced on a fork, iced water poured till the glass clouds milky",
+  "caveat": "Not a restaurant and not for dinner — no food served, cash-leaning, heavily touristed, faded and unrenovated; opens evenings only and is known not to keep its posted hours (sources disagree on the exact open time and which day it closes), so go late and check ahead.",
+  "person": "Josep Lamiel, third-generation owner; the Lamiel family has run the bar for over a century (confirmed by Barcelona Metropolitan).",
+  "signal_chip": {
+   "label": "City-saved",
+   "full": "Listed as a city point of interest by Barcelona City Council (meet.barcelona); in 2013 the council used its right of first refusal to buy the whole building (~EUR 1.1M) after 10,000+ signatures, saving the reputedly-1820 absinthe bar from closure.",
+   "cosign": "Barcelona City Council (meet.barcelona)"
+  }
+ },
+ {
+  "id": "vn-caelum",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 51,
+  "badge": "MICHELIN",
+  "name": "Caelum",
+  "short": "Caelum",
+  "lat": 41.38298,
+  "lng": 2.17369,
+  "tags": [
+   "Convent-made sweets and hot chocolate in a candlelit basement built over medieval baths."
+  ],
+  "productTags": [
+   "Convent sweets cafe"
+  ],
+  "why": "Convent-made sweets and hot chocolate in a candlelit basement built over medieval baths.",
+  "address": "Carrer de la Palla, 8, Ciutat Vella, 08002 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Caelum+Barcelona",
+  "category": "story",
+  "subcat": "Convent sweets cafe",
+  "money_eats": false,
+  "verdict": "Not a restaurant but a cloistered-convent sweets cafe: you eat nun-made marzipan and monastery hot chocolate in a candlelit basement set among the remains of the Gothic Quarter's medieval baths.",
+  "signature": "Thick nun-made hot chocolate with convent marzipan and Santa Teresa egg-yolk yemas",
+  "caveat": "Not a meal: only convent sweets, chocolate and tea, so don't come for lunch. The candlelit basement has few tables and fills fast, and the stones below are unsettled ground — variously described as a medieval Jewish women's mikveh or older public/Roman baths.",
+  "signal_chip": {
+   "label": "Time Out",
+   "full": "Listed in Time Out Barcelona's El Gotic shopping guide (2017) — an editorial listing, not a starred pick or award.",
+   "cosign": "Time Out"
+  }
+ },
+ {
+  "id": "vn-london-bar",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 52,
+  "badge": "STORY",
+  "name": "London Bar",
+  "short": "London Bar",
+  "lat": 41.3783,
+  "lng": 2.1722,
+  "tags": [
+   "A 1910 modernista bar on Barcelona's official Ruta del Modernisme, with a circus trapeze overhead."
+  ],
+  "productTags": [
+   "Modernista cocktail bar"
+  ],
+  "why": "A 1910 modernista bar on Barcelona's official Ruta del Modernisme, with a circus trapeze overhead.",
+  "address": "Carrer Nou de la Rambla, 34, Ciutat Vella (El Raval), 08001 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=London+Bar+Barcelona",
+  "category": "story",
+  "subcat": "Modernista cocktail bar",
+  "money_eats": false,
+  "verdict": "Come for the carved-mirror modernista room and the circus trapeze hung from the ceiling, not for the food — this is a landmark to drink in, not a kitchen.",
+  "signature": "A Negroni or Corpse Reviver No. 2 from the house list, drunk under the trapeze.",
+  "caveat": "Not a meal and not a hidden local secret: it opens evenings only, from around 19:30, and is closed Tuesdays; there is little real food, and the crowd runs tourist-heavy. It is also a 2018 revival — the bar closed in 2017 and the Raluy circus family reopened it, so it is not an unbroken century under one owner — and while the name says 1909 (when the premises were bought), the doors actually opened on 23 June 1910.",
+  "person": "Carlos Raluy, of the historic Raluy circus family (Circ Històric Raluy), who inherited the bar and reopened it in 2018",
+  "signal_chip": {
+   "label": "Modernisme",
+   "full": "Listed on Barcelona's official Ruta del Modernisme (a City Council heritage initiative): a preserved modernista bar with its original carved-mirror cabinet and coloured-marble counter intact; opened 1910.",
+   "cosign": "Ruta del Modernisme de Barcelona (official Barcelona City Council route)"
+  }
+ },
+ {
+  "id": "vn-pastisseria-escriba-antiga-c",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 53,
+  "badge": "STORY",
+  "name": "Pastisseria Escribà (Antiga Casa Figueras)",
+  "short": "Pastisseria Escribà (Antiga Casa Figueras)",
+  "lat": 41.3813,
+  "lng": 2.1722,
+  "tags": [
+   "A 1902 Ros i Güell modernista shopfront on La Rambla, run as a patisserie by the Escribà family since 1986."
+  ],
+  "productTags": [
+   "Patisserie"
+  ],
+  "why": "A 1902 Ros i Güell modernista shopfront on La Rambla, run as a patisserie by the Escribà family since 1986.",
+  "address": "La Rambla, 83, Ciutat Vella, 08002 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Pastisseria+Escrib%C3%A0+(Antiga+Casa+Figueras)+Barcelona",
+  "category": "story",
+  "subcat": "Patisserie",
+  "money_eats": false,
+  "verdict": "The listed 1902 modernista room, not the pastry, is why you stop — order a cremadet, take in the Ros i Güell mosaics, and expect a counter, not a meal.",
+  "signature": "Cremadet — crisp puff pastry filled with lemon-scented crema catalana, caramelized to a brittle top.",
+  "caveat": "It sits on the most tourist-trodden stretch of La Rambla, beside La Boqueria, and prices match the postcard. The Escribà \"1906\" is the family's founding elsewhere (their Gran Via shop); they only took over this shopfront in 1986, and the building's own \"1820\" medallion belongs to the earlier Figueras pasta business. It's a pastry counter with a small pavement terrace, not a restaurant — and La Rambla pavement works have caused intermittent closures (it reopened 3 December 2025 but was due to shut again around mid-January 2026), so check before a special trip.",
+  "person": "Christian Escribà",
+  "signal_chip": {
+   "label": "Ruta Modern",
+   "full": "On Barcelona's official Ruta del Modernisme and listed by Barcelona City Council (meet.barcelona); the 1902 modernista shopfront directed by Antoni Ros i Güell, with mosaics, stained glass and stucco.",
+   "cosign": "Barcelona City Council / Ruta del Modernisme de Barcelona"
+  }
  }
 ];
   const NEIGHBORHOODS = [
