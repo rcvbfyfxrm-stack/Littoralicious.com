@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Instagram Drop — Taking a Hard Shot Without Flinching · LITTORALICIOUS</title>
+    <style>
+        :root{
+            --paper:#fafafa; --card:#fff; --ink:#0a0a0a; --sea:#2d4a5e; --sea-dk:#1f3543;
+            --salt:#94a3b8; --muted:#5b6470; --border:#e6e3dd; --subtle:#f1efe9;
+            --feed:#2d4a5e; --carousel:#7a5230; --reel:#5b3a6e;
+            --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+            --mono:ui-monospace,'SF Mono',Menlo,monospace;
+        }
+        *{box-sizing:border-box;}
+        body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+        a{color:var(--sea);}
+        .wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+        .label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--salt);}
+        header.mast{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30;}
+        .mast__in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1240px;margin:0 auto;}
+        .mast__brand{font-family:var(--serif);font-weight:700;letter-spacing:.18em;font-size:18px;}
+        .mast__brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--salt);font-weight:400;margin-top:2px;}
+        .mast__back{font-family:var(--mono);font-size:12px;text-decoration:none;border:1px solid var(--border);padding:.45em .9em;color:var(--muted);}
+        .mast__back:hover{border-color:var(--sea);color:var(--sea);}
+        .hero{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+        .hero h1{font-family:var(--serif);font-size:clamp(34px,6vw,60px);line-height:1.04;margin:.2em 0 .3em;max-width:18ch;letter-spacing:-.01em;}
+        .hero p.sub{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 18px;}
+        .hero .src{font-family:var(--mono);font-size:12.5px;color:var(--muted);}
+        .hero .src a{text-decoration:none;border-bottom:1px solid var(--sea);}
+        .hero .stat-row{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;}
+        .hero .stat b{font-family:var(--serif);font-size:30px;color:var(--sea);display:block;line-height:1;}
+        .hero .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--salt);}
+        .play{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:38px 0;}
+        @media(max-width:780px){.play{grid-template-columns:1fr;}}
+        .play .pc{background:var(--card);border:1px solid var(--border);padding:22px;}
+        .play .pc h3{font-family:var(--serif);margin:.2em 0 .5em;font-size:18px;}
+        .play .pc ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);}
+        .play .pc li{margin:.35em 0;}
+        .filter{position:sticky;top:62px;z-index:20;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;display:flex;gap:8px;flex-wrap:wrap;}
+        .pill{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.45em 1em;cursor:pointer;}
+        .pill.on{border-color:var(--sea);color:#fff;background:var(--sea);}
+        .pill .n{opacity:.7;margin-left:.4em;}
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:22px;padding:30px 0 10px;}
+        .drop{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+        .mock{position:relative;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(135deg,#26201b 0%,#3a3128 48%,#211d18 100%);}
+        .mock::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 7px);pointer-events:none;}
+        .mock .card-cover{background:#fbfaf7;color:#0a0a0a;padding:26px 22px;max-width:88%;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+        .mock .hook{font-family:var(--serif);font-size:25px;line-height:1.12;letter-spacing:-.01em;}
+        .mock .subhook{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--sea);margin-top:12px;text-transform:uppercase;}
+        .mock .corner{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.55);}
+        .mock .tcorner{position:absolute;right:12px;top:12px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.4);padding:3px 7px;text-transform:uppercase;}
+        .drop[data-type="feed"] .tcorner{background:rgba(45,74,94,.55);}
+        .drop[data-type="carousel"] .tcorner{background:rgba(122,82,48,.6);}
+        .drop[data-type="reel"] .tcorner{background:rgba(91,58,110,.6);}
+        .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px;}
+        .seg .h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}
+        .seg .h .label{margin:0;}
+        .copy{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.3em .7em;cursor:pointer;}
+        .copy:hover{border-color:var(--sea);color:var(--sea);}
+        .caption{font-size:14px;white-space:pre-wrap;color:#222;background:var(--subtle);border-left:3px solid var(--sea);padding:11px 13px;}
+        .tags{font-family:var(--mono);font-size:12px;color:var(--sea);word-spacing:.1em;line-height:1.7;}
+        .brief{font-size:13px;color:var(--muted);}
+        .brief ol{margin:.3em 0;padding-left:18px;}
+        .intel{border:1px dashed var(--border);background:#f9fbfc;padding:11px 13px;font-size:12.5px;}
+        .intel .row{display:flex;gap:8px;padding:3px 0;}
+        .intel .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:46px;padding-top:2px;}
+        .intel .v{color:var(--muted);flex:1;}
+        .cadence{padding:44px 0 20px;border-top:1px solid var(--border);margin-top:30px;}
+        .cadence h2,.section-h{font-family:var(--serif);font-size:26px;margin:0 0 18px;}
+        .week{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--subtle);font-size:15px;flex-wrap:wrap;}
+        .week .wk{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:74px;}
+        .week .d{color:#222;}
+        .week .d em{color:var(--salt);font-style:normal;font-family:var(--mono);font-size:11px;}
+        footer{border-top:2px solid var(--ink);margin-top:40px;padding:26px 0 50px;font-size:13px;color:var(--muted);}
+        footer a{font-weight:600;text-decoration:none;}
+        .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:.7em 1.2em;opacity:0;pointer-events:none;transition:.25s;z-index:50;}
+        .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    </style>
+</head>
+<body>
+    <header class="mast">
+        <div class="mast__in">
+            <div class="mast__brand">LITTORALICIOUS<small>Instagram Drop Brief</small></div>
+            <a class="mast__back" href="../studio-social.html">&larr; Social planner</a>
+        </div>
+    </header>
+    <div class="wrap">
+        <section class="hero">
+            <div class="label">The Method · Instagram drop</div>
+            <h1>The burn is an alarm, not flavour</h1>
+            <p class="sub">A nine-post drop that reframes the sting of a neat spirit as a TRPV1 heat-alarm your own body heat sets off. It hands yacht chefs one ownable move — chill the mouth, not the bottle — and grades every claim honestly, Grade-A science from Grade-C ritual.</p>
+            <p class="src">Source: <a href="https://www.littoralicious.com/articles/taking-a-shot" target="_blank" rel="noopener">Taking a Hard Shot Without Flinching</a> &middot; live &middot; post as <span>@littoralicious</span></p>
+            <div class="stat-row">
+                <div class="stat"><b>9</b><span>posts</span></div>
+                <div class="stat"><b>4</b><span>feed</span></div>
+                <div class="stat"><b>3</b><span>carousel</span></div>
+                <div class="stat"><b>2</b><span>reel</span></div>
+                <div class="stat"><b>5</b><span>week cadence</span></div>
+            </div>
+        </section>
+        <section class="play">
+            <div class="pc"><div class="label">Algorithm 2026</div><h3>Build for the save</h3><ul>
+                <li>Saves &gt; likes &mdash; frameworks &amp; rules, not pretty plates.</li>
+                <li>First second decides a reel: hard cut, silent text, motion.</li>
+                <li>Carousels reach ~1.4&times; &mdash; 5&ndash;6 slides each.</li>
+                <li>Reply to comments in full sentences; provoke the DM.</li></ul></div>
+            <div class="pc"><div class="label">Voice &amp; honesty</div><h3>Three pillars, sourced</h3><ul>
+                <li>Grandmother &middot; Scientist &middot; Yacht Chef &mdash; hold all three.</li>
+                <li>No emoji. Numbers beat adjectives. British spellings.</li>
+                <li>Every fact carries its named source and year.</li>
+                <li>Grade-A science and Grade-C craft named honestly.</li></ul></div>
+            <div class="pc"><div class="label">Timing</div><h3>US-EU bridge</h3><ul>
+                <li>Culinary: Tue 8 PM EST / Sat 9 AM EST.</li>
+                <li>Technique/manifesto: Mon&ndash;Wed 11 AM EST.</li>
+                <li>Post when US East 10 AM overlaps Europe 4 PM.</li>
+                <li>~2 drops/week over 5 weeks (schedule below).</li></ul></div>
+        </section>
+        <nav class="filter" id="filter">
+            <button class="pill on" data-f="all">All <span class="n">9</span></button>
+            <button class="pill" data-f="feed">Feed <span class="n">4</span></button>
+            <button class="pill" data-f="carousel">Carousel <span class="n">3</span></button>
+            <button class="pill" data-f="reel">Reel <span class="n">2</span></button>
+        </nav>
+        <section class="grid" id="grid"></section>
+        <section class="cadence"><h2>Posting cadence</h2><div id="cadence"></div></section>
+    </div>
+    <footer><div class="wrap">
+        Drop brief for <a href="https://www.littoralicious.com/articles/taking-a-shot" target="_blank" rel="noopener">Taking a Hard Shot Without Flinching</a>
+        &middot; post as <strong>@littoralicious</strong> &middot; the article is live.
+        <span style="display:block;margin-top:8px;color:var(--salt);font-family:var(--mono);font-size:11px;">LITTORALICIOUS &middot; Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+    </div></footer>
+    <div class="toast" id="toast">copied</div>
+    <script>
+    const POSTS = [{"hook":"The burn is not flavour. It is an alarm.","subhook":"TRPV1 · the false alarm","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","caption":"That sting when a neat spirit hits the back of your mouth is not the taste of the drink. It is a smoke detector going off.\n\nThe receptor is called TRPV1. It normally waits for real heat, around 42 C, before it fires. Ethanol resets its trigger down to about 34 C, which is the temperature of your own mouth.\n\nSo you are not tasting the whisky. You are feeling your own tissue set off a false burn.\n\nThe fix is to deny the alarm a threshold: cold, one breath, one fast swallow. Chill your mouth, not just the bottle.\n\nThe receptor science is Grade A. The full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","foodscience","tastescience","mixology","drinkscience","neatpour","littoralicious"],"brief":"On-image text: \u003cstrong\u003eTHE BURN IS NOT FLAVOUR\u003c/strong\u003e (large serif), sub-line in mono: \"it's a heat alarm — TRPV1\". B&W image direction: tight macro of a single neat pour catching hard side light in a heavy tumbler, condensation beading, near-black liquid on a cool grey ground, high-contrast graphite grain.","why":"Brunson epiphany bridge — one new belief (the burn is a false alarm, not taste) reframes a familiar experience and pulls the reader to the article to rebuild the rest.","fact":"Ethanol lowers TRPV1's heat-activation threshold from about 42 C (108 F) to about 34 C (93 F), so warm mouth tissue itself fires the burn. — Trevisani et al., Nature Neuroscience, 2002"},{"hook":"How to take a hard shot without flinching","subhook":"four moves, in order","type":"carousel","drop":"Wed 11 AM EST · 5 PM CET","caption":"You do not need to be tougher. You need to give the alarm nothing to trigger on.\n\nTRPV1 fires on heat, so cool the tissue and it goes quiet. Dropping the tongue to about 25 C can abolish a moderate capsaicin burn; warm it and the same burn intensifies.\n\nThe ritual is four moves, in order. Cold glass. Chill the mouth. One breath out. One fast swallow, no swirl.\n\nSwirling is where people lose it — it coats warm tissue and holds the spirit against the receptor.\n\nThis is sound inference, not a clinical trial, and we say so. The full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","bartender","foodscience","sensoryscience","mixology","drinkscience","chefslife","littoralicious"],"brief":"6 slides. 1) Cover: \"Take a hard shot without flinching\" + mono sub \"deny the alarm a threshold\". 2) \"The burn is a heat alarm — TRPV1, reset to 34 C\". 3) \"Step 1 — Cold glass, colder pour\". 4) \"Step 2 — Chill your MOUTH: 3-second ice-water hold\". 5) \"Step 3 — One breath out, then swallow fast\". 6) \"Step 4 — No swirl. Grade-A science, ritual is honest inference\". Keep each slide to one line of on-image text, B&W numbered plates.","why":"Hormozi value equation — a numbered, save-able framework raises perceived value while lowering effort, which is what earns the carousel save in the 2026 feed.","fact":"Cooling the tongue to about 25 C (77 F) can abolish a moderate capsaicin burn; warming intensifies it. — Green, Chemical Senses, 1986"},{"hook":"Chill your mouth, not the bottle. Three seconds.","subhook":"the 3-second ice-water hold","type":"reel","drop":"Tue 8 PM EST · 2 AM CET","caption":"Everyone chills the bottle. Almost no one chills the part that actually feels the burn.\n\nTRPV1, the burn receptor, calms when the tissue is cold. In tests a 5 C mouth-rinse beat a 20 C one, and a 5 percent ethanol rinse was no better than water.\n\nSo before a hard pour: hold a mouthful of ice water for three seconds, spit, then take the shot cold and fast.\n\nYou are not numbing yourself. You are lowering the tissue below the alarm's new trigger.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","mixology","bartender","drinkscience","foodscience","littoralicious"],"brief":"0-2s: hard cut to hands dropping ice into a glass of water, silent, big on-screen text \u003cstrong\u003eCHILL YOUR MOUTH — NOT THE BOTTLE\u003c/strong\u003e. 2-8s: cut to a 3-2-1 counter over someone holding water, then spitting; caption \"5 C beats 20 C\". 8-15s: cold pour, one fast swallow, no flinch; end card \"one breath · one swallow · no swirl\". Silent, text-driven, high motion on every cut.","why":"Godin purple cow — \"chill your mouth, not the bottle\" is the one remarkable, ownable move worth passing on, which is what makes a reel travel past the first second.","fact":"A 5 C (41 F) mouth-rinse beats a 20 C (68 F) one for burn; a 5% ethanol rinse is no better than water. — Nasrawi & Pangborn, Physiology & Behavior, 1990"},{"hook":"Your home freezer cannot freeze a 40% spirit.","subhook":"freezing point -27 C","type":"feed","drop":"Sat 9 AM EST · 3 PM CET","caption":"Chase the cold and you hit a wall. A 40 percent ABV spirit will not freeze in a home freezer; its freezing point is about -27 C.\n\nThat matters, because cold is your main brake on the burn. The colder the liquid, the less TRPV1 fires.\n\nSo the play is not to freeze the spirit solid. It is to get it as cold as your freezer allows, then chill the tissue it lands on.\n\nBottle in the freezer overnight. Mouth chilled for three seconds. Then one fast swallow.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","drinkscience","foodscience","mixology","galleylife","littoralicious"],"brief":"On-image text: \u003cstrong\u003e-27 C\u003c/strong\u003e huge, mono sub \"where a 40% spirit finally freezes\". B&W image direction: frost-rimed bottle pulled from a freezer, ice crystals on glass but liquid still moving, cold hard light, deep blacks and a single bright specular highlight.","why":"Kahneman anchoring — the -27 C figure corrects a common intuition (\"my freezer freezes vodka\") and the surprise anchor holds attention long enough to deliver the mechanism.","fact":"A 40% ABV spirit will not freeze in a home freezer; its freezing point is about -27 C (-17 F). — physical-chemistry tables"},{"hook":"Ginger, vinegar, wheatgrass: same burn, same fix.","subhook":"one receptor, every shot","type":"carousel","drop":"Tue 11 AM EST · 5 PM CET","caption":"This is not only about spirits. Any shot that bites is talking to the same receptor.\n\nA ginger shot bites because its pungent compounds bind TRPV1, the way chilli's capsaicin does. Apple-cider vinegar, wheatgrass and a bitter amaro all lean on the same alarm.\n\nSo the same ritual carries across. Cold, chilled mouth, one breath, one fast swallow.\n\nThe trigger is shared. The fix is portable.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","wellnessshot","gingershot","foodscience","drinkscience","nutrition","littoralicious"],"brief":"5 slides. 1) Cover: \"Same burn. Same fix.\" + mono \"one receptor: TRPV1\". 2) \"Ginger — pungent compounds bind TRPV1\". 3) \"Apple-cider vinegar & wheatgrass — same alarm\". 4) \"Bitter amaro — same alarm\". 5) \"The fix travels: cold · chilled mouth · one breath · one swallow\". B&W flat-lay of four shot glasses, each labelled, single object per slide.","why":"Cialdini commitment & consistency — once the reader accepts the mechanism for whisky, showing it applies to ginger and vinegar makes them apply the rule everywhere and return to the source.","fact":"A ginger shot bites for the same reason: its pungent compounds bind TRPV1 like capsaicin. — Yin et al., British Journal of Pharmacology, 2019"},{"hook":"A smoother shot is the same dose, brake removed.","subhook":"count the dose, not the taste","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","caption":"Here is the honest part. Taking the burn away does not change the alcohol. It only removes the warning.\n\nFlavour-masked drinks that hide the burn are linked to more alcohol-related injury, at an adjusted odds ratio of 6.25.\n\nSo use this to drink better, not more. One US standard drink is 14 g of alcohol whether it stings or not.\n\nCount it. And never take a shot just because you dislike the taste.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","drinkaware","foodscience","drinkscience","harmreduction","littoralicious"],"brief":"On-image text: \u003cstrong\u003eSMOOTHER IS NOT SAFER\u003c/strong\u003e, mono sub \"same 14 g — brake removed\". B&W image direction: a shot glass beside a small ruler or measure, stark tabletop, no styling, documentary tone; restrained, sober framing to match the honesty of the message.","why":"Cialdini authority through candour — volunteering the risk (odds ratio 6.25) instead of hiding it builds the trust that makes every other claim in the drop believable.","fact":"Flavour-masked drinks that hide the burn are linked to more alcohol-related injury (adjusted odds ratio 6.25). — Albers et al., American Journal of Public Health, 2015"},{"hook":"Milk kills a chilli fire. It does nothing here.","subhook":"casein vs ethanol","type":"reel","drop":"Tue 8 PM EST · 2 AM CET","caption":"The old chilli trick fails on spirits, and the reason is chemistry.\n\nMilk puts out a chilli fire because casein grabs oil-soluble capsaicin and drags it off the receptor. Ethanol is water-soluble, so milk has almost nothing to hold.\n\nReaching for milk after a hard shot is treating the wrong kind of burn.\n\nCold water and a chilled mouth do the real work. Temperature, not dairy.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","foodscience","kitchenscience","mixology","drinkscience","littoralicious"],"brief":"0-2s: hard cut, glass of milk pushed across frame, big text \u003cstrong\u003eMILK WON'T HELP\u003c/strong\u003e. 2-8s: split diagram in motion — \"casein grabs capsaicin (oil)\" vs \"ethanol = water-soluble\", arrows animating. 8-15s: hand swaps milk for ice water; end card \"temperature, not dairy\". Silent, on-screen text carries it.","why":"Kahneman System 1 correction — overturning an intuitive, automatic habit (reach for milk) creates the jolt of surprise that stops the scroll and earns the explanation.","fact":"Milk puts out a chilli fire because casein grabs oil-soluble capsaicin; ethanol is water-soluble, so milk does little. — Nolden, Lenart & Hayes, Physiology & Behavior, 2019"},{"hook":"2 C hides the burn. 60 C amplifies it.","subhook":"cold brakes, heat accelerates","type":"carousel","drop":"Wed 11 AM EST · 5 PM CET","caption":"Temperature is not a detail here. It is the whole control panel.\n\nIn an alcohol solution, 2 C masks the pungency and 60 C amplifies it. Same spirit, opposite experience, set by heat alone.\n\nThat is why a warm neat pour feels like a punch and a freezer-cold one slides. You are moving the tissue toward or away from the alarm's trigger.\n\nCold is the brake. Warmth is the accelerator. Choose on purpose.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","foodscience","sensoryscience","mixology","drinkscience","tastescience","littoralicious"],"brief":"5 slides. 1) Cover: \"Temperature is the whole game\" + mono \"2 C vs 60 C\". 2) \"2 C — pungency masked\". 3) \"60 C — pungency amplified\". 4) \"Same spirit. Opposite experience.\". 5) \"Cold is the brake · warmth is the accelerator\". B&W with a single rising thermometer motif per slide, one number each.","why":"Kahneman anchoring and contrast — the 2 C versus 60 C pairing frames temperature as a lever the reader controls, and the sharp contrast makes the principle stick.","fact":"In an alcohol solution, 2 C (36 F) masks pungency and 60 C (140 F) amplifies it. — Sizer & Harris, Chemical Senses, 1985"},{"hook":"Grade-A science. Grade-C ritual. We label which.","subhook":"Grade A vs Grade C","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","caption":"We will not sell you certainty we do not have.\n\nThe receptor is well mapped. TRPV1 is the same channel that makes chilli feel hot, and it opens to noxious heat around 43 C. That part is Grade A.\n\nThe assembled ritual — cold plus one breath plus one fast swallow — is sound inference built on that science. It is not a clinical trial, and we grade it lower on purpose.\n\nKnowing which claim is which is the whole point of reading here.\n\nThe full piece is on Littoralicious @littoralicious — link in bio.","tags":["yachtchef","superyachtcrew","foodscience","evidencebased","sciencecommunication","drinkscience","littoralicious"],"brief":"On-image text: \u003cstrong\u003eGRADE A\u003c/strong\u003e over \u003cstrong\u003eGRADE C\u003c/strong\u003e stacked, mono sub \"receptor: proven · ritual: inference\". B&W image direction: two-tone split frame, a clean lab-style receptor diagram on one half and a plain shot glass on the other, honest and unglamorous, hard editorial contrast.","why":"Cialdini authority through transparency — openly grading a claim down (A for the receptor, C for the ritual) signals credibility and makes the reader trust the publication over louder, unqualified accounts.","fact":"TRPV1 is the same channel that makes chilli feel hot; it opens to noxious heat around 43 C (109 F). — Caterina et al., Nature, 1997"}];
+    const CADENCE = [["Week 1 — Launch the reframe","The burn is not flavour. It is an alarm.","How to take a hard shot without flinching"],["Week 2 — Ownable move","Chill your mouth, not the bottle. Three seconds.","Your home freezer cannot freeze a 40% spirit."],["Week 3 — Generalise it","Ginger, vinegar, wheatgrass: same burn, same fix.","Milk kills a chilli fire. It does nothing here."],["Week 4 — The lever","2 C hides the burn. 60 C amplifies it.","A smoother shot is the same dose, brake removed."],["Week 5 — Trust close","Grade-A science. Grade-C ritual. We label which.",""]];
+
+    const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+    const TYPE_LABEL = {feed:"Feed post",carousel:"Carousel",reel:"Reel"};
+    const grid = document.getElementById('grid');
+    grid.innerHTML = POSTS.map((p,i) => {
+      const tags = p.tags.map(t=>'#'+t).join(' ');
+      return `<article class="drop" data-type="${p.type}">
+        <div class="mock">
+          <span class="tcorner">${TYPE_LABEL[p.type]}</span>
+          <div class="card-cover"><div class="hook">${esc(p.hook)}</div>${p.subhook?`<div class="subhook">${esc(p.subhook)}</div>`:''}</div>
+          <span class="corner">LITTORALICIOUS</span>
+        </div>
+        <div class="body">
+          <div class="seg"><div class="h"><span class="label">Caption</span><button class="copy" data-copy="cap-${i}">Copy</button></div><div class="caption" id="cap-${i}">${esc(p.caption)}</div></div>
+          <div class="seg"><div class="h"><span class="label">Hashtags</span><button class="copy" data-copy="tag-${i}">Copy</button></div><div class="tags" id="tag-${i}">${esc(tags)}</div></div>
+          <div class="seg"><div class="h"><span class="label">Visual brief</span></div><div class="brief">${p.brief}</div></div>
+          <div class="intel">
+            <div class="row"><span class="k">Drop</span><span class="v">${esc(p.drop)}</span></div>
+            <div class="row"><span class="k">Why</span><span class="v">${esc(p.why)}</span></div>
+            <div class="row"><span class="k">Fact</span><span class="v">${esc(p.fact)}</span></div>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+    document.getElementById('cadence').innerHTML = CADENCE.map(w =>
+      `<div class="week"><span class="wk">${esc(w[0])}</span><span class="d">${esc(w[1])}${w[2]?` <em>${esc(w[2])}</em>`:''}</span></div>`
+    ).join('');
+    document.getElementById('filter').addEventListener('click', e => {
+      const b = e.target.closest('.pill'); if(!b) return;
+      document.querySelectorAll('.pill').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+      const f = b.getAttribute('data-f');
+      document.querySelectorAll('.drop').forEach(d => { d.style.display = (f==='all'||d.dataset.type===f)?'':'none'; });
+    });
+    const toast = document.getElementById('toast'); let tt;
+    document.getElementById('grid').addEventListener('click', e => {
+      const b = e.target.closest('.copy'); if(!b) return;
+      const el = document.getElementById(b.getAttribute('data-copy'));
+      (navigator.clipboard ? navigator.clipboard.writeText(el.textContent) : Promise.reject())
+        .then(()=>{ toast.textContent='copied'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); })
+        .catch(()=>{ toast.textContent='copy failed'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); });
+    });
+    </script>
+</body>
+</html>

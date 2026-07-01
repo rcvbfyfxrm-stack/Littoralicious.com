@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Instagram Drop — One Dial, Every Grain · LITTORALICIOUS</title>
+    <style>
+        :root{
+            --paper:#fafafa; --card:#fff; --ink:#0a0a0a; --sea:#2d4a5e; --sea-dk:#1f3543;
+            --salt:#94a3b8; --muted:#5b6470; --border:#e6e3dd; --subtle:#f1efe9;
+            --feed:#2d4a5e; --carousel:#7a5230; --reel:#5b3a6e;
+            --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+            --mono:ui-monospace,'SF Mono',Menlo,monospace;
+        }
+        *{box-sizing:border-box;}
+        body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+        a{color:var(--sea);}
+        .wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+        .label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--salt);}
+        header.mast{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30;}
+        .mast__in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1240px;margin:0 auto;}
+        .mast__brand{font-family:var(--serif);font-weight:700;letter-spacing:.18em;font-size:18px;}
+        .mast__brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--salt);font-weight:400;margin-top:2px;}
+        .mast__back{font-family:var(--mono);font-size:12px;text-decoration:none;border:1px solid var(--border);padding:.45em .9em;color:var(--muted);}
+        .mast__back:hover{border-color:var(--sea);color:var(--sea);}
+        .hero{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+        .hero h1{font-family:var(--serif);font-size:clamp(34px,6vw,60px);line-height:1.04;margin:.2em 0 .3em;max-width:18ch;letter-spacing:-.01em;}
+        .hero p.sub{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 18px;}
+        .hero .src{font-family:var(--mono);font-size:12.5px;color:var(--muted);}
+        .hero .src a{text-decoration:none;border-bottom:1px solid var(--sea);}
+        .hero .stat-row{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;}
+        .hero .stat b{font-family:var(--serif);font-size:30px;color:var(--sea);display:block;line-height:1;}
+        .hero .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--salt);}
+        .play{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:38px 0;}
+        @media(max-width:780px){.play{grid-template-columns:1fr;}}
+        .play .pc{background:var(--card);border:1px solid var(--border);padding:22px;}
+        .play .pc h3{font-family:var(--serif);margin:.2em 0 .5em;font-size:18px;}
+        .play .pc ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);}
+        .play .pc li{margin:.35em 0;}
+        .filter{position:sticky;top:62px;z-index:20;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;display:flex;gap:8px;flex-wrap:wrap;}
+        .pill{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.45em 1em;cursor:pointer;}
+        .pill.on{border-color:var(--sea);color:#fff;background:var(--sea);}
+        .pill .n{opacity:.7;margin-left:.4em;}
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:22px;padding:30px 0 10px;}
+        .drop{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+        .mock{position:relative;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(135deg,#26201b 0%,#3a3128 48%,#211d18 100%);}
+        .mock::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 7px);pointer-events:none;}
+        .mock .card-cover{background:#fbfaf7;color:#0a0a0a;padding:26px 22px;max-width:88%;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+        .mock .hook{font-family:var(--serif);font-size:25px;line-height:1.12;letter-spacing:-.01em;}
+        .mock .subhook{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--sea);margin-top:12px;text-transform:uppercase;}
+        .mock .corner{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.55);}
+        .mock .tcorner{position:absolute;right:12px;top:12px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.4);padding:3px 7px;text-transform:uppercase;}
+        .drop[data-type="feed"] .tcorner{background:rgba(45,74,94,.55);}
+        .drop[data-type="carousel"] .tcorner{background:rgba(122,82,48,.6);}
+        .drop[data-type="reel"] .tcorner{background:rgba(91,58,110,.6);}
+        .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px;}
+        .seg .h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}
+        .seg .h .label{margin:0;}
+        .copy{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.3em .7em;cursor:pointer;}
+        .copy:hover{border-color:var(--sea);color:var(--sea);}
+        .caption{font-size:14px;white-space:pre-wrap;color:#222;background:var(--subtle);border-left:3px solid var(--sea);padding:11px 13px;}
+        .tags{font-family:var(--mono);font-size:12px;color:var(--sea);word-spacing:.1em;line-height:1.7;}
+        .brief{font-size:13px;color:var(--muted);}
+        .brief ol{margin:.3em 0;padding-left:18px;}
+        .intel{border:1px dashed var(--border);background:#f9fbfc;padding:11px 13px;font-size:12.5px;}
+        .intel .row{display:flex;gap:8px;padding:3px 0;}
+        .intel .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:46px;padding-top:2px;}
+        .intel .v{color:var(--muted);flex:1;}
+        .cadence{padding:44px 0 20px;border-top:1px solid var(--border);margin-top:30px;}
+        .cadence h2,.section-h{font-family:var(--serif);font-size:26px;margin:0 0 18px;}
+        .week{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--subtle);font-size:15px;flex-wrap:wrap;}
+        .week .wk{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:74px;}
+        .week .d{color:#222;}
+        .week .d em{color:var(--salt);font-style:normal;font-family:var(--mono);font-size:11px;}
+        footer{border-top:2px solid var(--ink);margin-top:40px;padding:26px 0 50px;font-size:13px;color:var(--muted);}
+        footer a{font-weight:600;text-decoration:none;}
+        .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:.7em 1.2em;opacity:0;pointer-events:none;transition:.25s;z-index:50;}
+        .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    </style>
+</head>
+<body>
+    <header class="mast">
+        <div class="mast__in">
+            <div class="mast__brand">LITTORALICIOUS<small>Instagram Drop Brief</small></div>
+            <a class="mast__back" href="../studio-social.html">&larr; Social planner</a>
+        </div>
+    </header>
+    <div class="wrap">
+        <section class="hero">
+            <div class="label">The Method · Instagram drop</div>
+            <h1>One dial, every grain.</h1>
+            <p class="sub">This drop turns a steam oven's fixed physics into a working system: 100% steam, 100 C, every grain, every time. It hands yacht chefs one laminated card where only water ratio and minutes ever change.</p>
+            <p class="src">Source: <a href="https://www.littoralicious.com/articles/grains-in-a-steam-oven" target="_blank" rel="noopener">One Dial, Every Grain</a> &middot; live &middot; post as <span>@littoralicious</span></p>
+            <div class="stat-row">
+                <div class="stat"><b>9</b><span>posts</span></div>
+                <div class="stat"><b>4</b><span>feed</span></div>
+                <div class="stat"><b>3</b><span>carousel</span></div>
+                <div class="stat"><b>2</b><span>reel</span></div>
+                <div class="stat"><b>5</b><span>week cadence</span></div>
+            </div>
+        </section>
+        <section class="play">
+            <div class="pc"><div class="label">Algorithm 2026</div><h3>Build for the save</h3><ul>
+                <li>Saves &gt; likes &mdash; frameworks &amp; rules, not pretty plates.</li>
+                <li>First second decides a reel: hard cut, silent text, motion.</li>
+                <li>Carousels reach ~1.4&times; &mdash; 5&ndash;6 slides each.</li>
+                <li>Reply to comments in full sentences; provoke the DM.</li></ul></div>
+            <div class="pc"><div class="label">Voice &amp; honesty</div><h3>Three pillars, sourced</h3><ul>
+                <li>Grandmother &middot; Scientist &middot; Yacht Chef &mdash; hold all three.</li>
+                <li>No emoji. Numbers beat adjectives. British spellings.</li>
+                <li>Every fact carries its named source and year.</li>
+                <li>Grade-A science and Grade-C craft named honestly.</li></ul></div>
+            <div class="pc"><div class="label">Timing</div><h3>US-EU bridge</h3><ul>
+                <li>Culinary: Tue 8 PM EST / Sat 9 AM EST.</li>
+                <li>Technique/manifesto: Mon&ndash;Wed 11 AM EST.</li>
+                <li>Post when US East 10 AM overlaps Europe 4 PM.</li>
+                <li>~2 drops/week over 5 weeks (schedule below).</li></ul></div>
+        </section>
+        <nav class="filter" id="filter">
+            <button class="pill on" data-f="all">All <span class="n">9</span></button>
+            <button class="pill" data-f="feed">Feed <span class="n">4</span></button>
+            <button class="pill" data-f="carousel">Carousel <span class="n">3</span></button>
+            <button class="pill" data-f="reel">Reel <span class="n">2</span></button>
+        </nav>
+        <section class="grid" id="grid"></section>
+        <section class="cadence"><h2>Posting cadence</h2><div id="cadence"></div></section>
+    </div>
+    <footer><div class="wrap">
+        Drop brief for <a href="https://www.littoralicious.com/articles/grains-in-a-steam-oven" target="_blank" rel="noopener">One Dial, Every Grain</a>
+        &middot; post as <strong>@littoralicious</strong> &middot; the article is live.
+        <span style="display:block;margin-top:8px;color:var(--salt);font-family:var(--mono);font-size:11px;">LITTORALICIOUS &middot; Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+    </div></footer>
+    <div class="toast" id="toast">copied</div>
+    <script>
+    const POSTS = [{"hook":"One dial that never moves cooks every grain","type":"reel","drop":"Mon 11 AM EST · 5 PM CET","subhook":"100% steam · 100 C · every time","caption":"A steam oven has one honest setting for grains: 100% steam, 100 C (212 F). You never touch it again.\n\nSaturated steam cannot get hotter than boiling water. The only way to cook grains genuinely faster is a pressure cooker at about 120 C (250 F) — Modernist Cuisine, 2011.\n\nSo the whole craft collapses to two variables: how much water, and how many minutes. The dial is a decision the physics already made.\n\nSteam is not hotter than a pot. It is evener — no scorching, no stirring, batches cooking in parallel.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["yachtchef","superyachtchef","combioven","steamoven","foodscience","cheftips","cooking","littoralicious"],"brief":"\u003cstrong\u003eSilent, on-screen text, motion.\u003c/strong\u003e 0-2s: hard cut on a hand slamming the oven door shut, big cover text ONE DIAL. 2-8s: the dial turns to 100C, then a hand tapes over it so it cannot move, text IT NEVER MOVES. 8-15s: a grid of six different grains steaming in parallel, text WATER + MINUTES. THAT IS IT.","why":"Godin's Purple Cow — a single dial that never moves is the one remarkable, ownable idea people repeat and save.","fact":"Saturated steam is pinned at 100 C (212 F); the only way to cook grains genuinely faster is a pressure cooker at about 120 C (250 F). — Modernist Cuisine, 2011"},{"hook":"The grain card that replaces every rice recipe","type":"carousel","drop":"Tue 8 PM EST · 2 AM CET","subhook":"Only water and minutes change","caption":"Laminate one card. Tape it inside the dry store. Every grain lives on it.\n\nThe oven stays at 100% steam, 100 C. Only two columns ever change: water ratio and time.\n\nHigher-amylose grains drink more water — the ratio a grain needs rises with its amylose content, Saleh et al., 2017.\n\nWhite rice runs 1:1.5, not the stovetop 1:2, because a sealed cavity barely evaporates. That ratio is a starting point (Grade C) — calibrate it to your oven.\n\nSave this and build your own card. The full piece is on Littoralicious. @littoralicious — link in bio.","tags":["galleychef","steamoven","ricecooking","foodscience","cheftips","mealprep","foodie","littoralicious"],"brief":"6 slides. 1) Cover: \u003cstrong\u003eTHE GRAIN CARD\u003c/strong\u003e in big serif over a B&W laminated card taped to steel. 2) Rule 1: the dial never moves — 100% steam, 100 C. 3) Rule 2: only water ratio and minutes change. 4) A two-column table — white rice 1:1.5, basmati, brown, quinoa (starting points). 5) Why 1:1.5 not 1:2 — a sealed cavity barely evaporates. 6) Grade C: calibrate to your oven. Save this.","why":"Cialdini's reciprocity — give a working, laminatable tool for free and readers feel owed a save and a follow.","fact":"The water ratio a grain needs rises with its amylose content. — Saleh et al., Quality Assurance and Safety of Crops & Foods, 2017"},{"hook":"Steam gives up 540 times more energy than water","type":"feed","drop":"Sat 9 AM EST · 3 PM CET","subhook":"That is why it never scorches","caption":"A pot heats from one hot spot on the bottom. Steam heats from everywhere at once.\n\nSteam works by condensing on each grain and releasing the latent heat of vaporisation — about 2,257 kJ/kg, roughly 540 times the energy the same water gives up cooling one degree, thermodynamic data.\n\nThat is why there is no scorching and no stirring. The heat arrives on every surface in parallel.\n\nEven beats hotter. A calm cavity finishes a full hotel pan the same as a single cup.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["yachtchef","combioven","kitchenscience","foodscience","cooking","cheftips","foodie","littoralicious"],"brief":"On-image text: \u003cstrong\u003e540x\u003c/strong\u003e huge, with a small line steam vs water, per degree. B&W macro of condensation beading on individual rice grains, shallow depth of field, a curl of steam entering top-left, graphite paper texture.","why":"Kahneman's cognitive ease — one vivid number reframes the mental model so 'even beats hotter' feels obviously true.","fact":"Steam condenses on the grain and releases about 2,257 kJ/kg of latent heat, roughly 540 times the energy the same water gives up cooling one degree. — thermodynamic data"},{"hook":"Grain length is a lie. Amylose decides texture","type":"carousel","drop":"Wed 11 AM EST · 5 PM CET","subhook":"Separate vs sticky, explained","caption":"Chefs blame grain length for sticky rice. Length is not the cause.\n\nTexture is set by amylose, not grain length: high-amylose grains cook separate, low-amylose waxy grains cook sticky — FAO / Juliano classification, 1993.\n\nThat is why a long basmati can still turn gluey and a short rice can stay loose. Read the starch, not the shape.\n\nIt also tells you the water: more amylose, more water, a longer time on the card.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["galleylife","ricecooking","foodscience","kitchenscience","cheftips","cooking","foodie","littoralicious"],"brief":"6 slides. 1) Cover: \u003cstrong\u003eIT WAS NEVER THE LENGTH\u003c/strong\u003e over a B&W of one long and one short grain side by side. 2) You were told: long = fluffy, short = sticky. 3) The truth: amylose sets texture — FAO/Juliano, 1993. 4) High amylose = separate. Low amylose (waxy) = sticky. 5) So basmati can go gluey, short rice can stay loose. 6) Read the starch, set the water. Save this.","why":"Brunson's epiphany bridge — break a false belief (length) and install the true cause (amylose) inside one scroll.","fact":"Texture is set by amylose, not grain length: high-amylose grains cook separate, low-amylose (waxy) cook sticky. — FAO / Juliano classification, 1993"},{"hook":"Salting rice water does not toughen it","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","subhook":"The folklore is wrong by eight times","caption":"You were told salt in the water makes rice tough. It does not.\n\nNaCl only meaningfully slows gelatinisation around 6-9% — far above the roughly 1% you actually season with, Chiotelli, Pilosio & Le Meste, Biopolymers, 2002.\n\nYou would need eight times more salt than anyone eats before the starch noticed. Season the water like you mean it.\n\nFlavour goes in from the first minute, not after. One less bland pan at service.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["yachtchef","ricecooking","foodscience","cheftips","cookingtips","cooking","homecooking","littoralicious"],"brief":"On-image text: \u003cstrong\u003eSALT IT\u003c/strong\u003e bold, with a struck-through line toughens rice underneath. B&W of salt falling into water frozen mid-air over a steel pan, high contrast, graphite grain.","why":"Cialdini's authority — a named peer-reviewed citation overturns kitchen folklore more reliably than any opinion.","fact":"NaCl only meaningfully slows gelatinisation around 6-9%, far above the ~1% you season with. — Chiotelli, Pilosio & Le Meste, Biopolymers, 2002"},{"hook":"Cooked rice can poison a guest. Cool it fast","type":"reel","drop":"Tue 11 AM EST · 5 PM CET","subhook":"Bacillus cereus survives the cook","caption":"The danger with rice is not the cook. It is the hold.\n\nCooked rice carries Bacillus cereus spores that survive cooking and make a heat-stable toxin if held warm — cool fast and reheat once to a 74 C (165 F) core, UK Food Standards Agency / FDA Food Code.\n\nAt sea this is the whole game: par-cook, spread thin, blast-chill fast, then regenerate with steam to a 74 C core.\n\nReheat once. Never hold warm on the pass for two hours.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["superyachtchef","galleychef","foodsafety","foodscience","mealprep","cheftips","cooking","littoralicious"],"brief":"\u003cstrong\u003eSilent, captions burned in.\u003c/strong\u003e 0-2s: hard cut on a probe reading 74 C, cover text 74 C OR NOTHING. 2-8s: rice spread thin on a tray sliding into a blast chiller, text COOL FAST. 8-15s: steam regen, then the probe hits the core, text REHEAT ONCE.","why":"Kahneman's loss aversion — fear of poisoning a guest is a stronger save-trigger than any promise of better rice.","fact":"Cooked rice carries Bacillus cereus spores that survive cooking and make a heat-stable toxin if held warm — cool fast and reheat once to a 74 C (165 F) core. — UK Food Standards Agency / FDA Food Code"},{"hook":"Rice is not done until 76 C inside","type":"feed","drop":"Wed 11 AM EST · 5 PM CET","subhook":"Onset 58, complete 78","caption":"Doneness in rice is a temperature, not a guess.\n\nRice starch gelatinises across a range: onset about 58-64 C (136-148 F), complete near 76-78 C (169-172 F) — Woo et al., Journal of Food Science, 2015.\n\nBelow the top of that range the centre is still chalky. That is the number your steam and your minutes are chasing.\n\nThis part is Grade A science. The exact ratios on your card are Grade C starting points — an honest difference worth keeping straight.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["yachtchef","steamoven","foodscience","kitchenscience","cheftips","cooking","foodie","littoralicious"],"brief":"On-image text: \u003cstrong\u003e76-78 C = DONE\u003c/strong\u003e with a small line 58 C onset · 78 C complete. B&W cross-section of a single rice grain with a thermometer probe entering, graphite hatching, cool paper ground.","why":"Cialdini's authority — a precise sourced range signals expertise and earns the save over vague 'until tender'.","fact":"Rice starch gelatinises across a range: onset about 58-64 C (136-148 F), complete near 76-78 C (169-172 F). — Woo et al., Journal of Food Science, 2015"},{"hook":"Cook rice once at dawn. Serve it all week","type":"carousel","drop":"Tue 8 PM EST · 2 AM CET","subhook":"The par-cook and regen loop","caption":"Service rice should never be cooked to order. It should be regenerated.\n\nPar-cook at 100% steam, spread it thin, blast-chill fast, then regenerate with steam to a 74 C core when the ticket lands.\n\nThis is not just speed. Cooked rice carries Bacillus cereus spores that survive cooking and make a heat-stable toxin if held warm — cool fast and reheat once to a 74 C (165 F) core, UK Food Standards Agency / FDA Food Code.\n\nOne batch at dawn, portioned, becomes six calm services. No hot-holding, no stirring, no scorched pan.\n\nSave the loop. The full piece is on Littoralicious. @littoralicious — link in bio.","tags":["superyachtchef","galleylife","mealprep","foodsafety","combioven","cheftips","cooking","littoralicious"],"brief":"6 slides. 1) Cover: \u003cstrong\u003eONE BATCH, SIX SERVICES\u003c/strong\u003e over a B&W hotel pan of rice. 2) Step 1: par-cook at 100% steam, 100 C. 3) Step 2: spread thin on a tray. 4) Step 3: blast-chill fast (safety, not just speed). 5) Step 4: regen with steam to a 74 C core. 6) Why: B. cereus toxin if held warm — reheat once. Save this.","why":"Hormozi's value equation — cutting time and effort on every service raises the perceived value of one saved framework.","fact":"Cooked rice carries Bacillus cereus spores that survive cooking and make a heat-stable toxin if held warm — cool fast and reheat once to a 74 C (165 F) core. — UK Food Standards Agency / FDA Food Code"},{"hook":"Grade A science, Grade C ratios. We label both","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","subhook":"Honest is the only setting","caption":"Not every line in a method deserves the same trust. So we grade them.\n\nGrade A: saturated steam is pinned at 100 C (212 F) — a steam oven is not hotter than boiling water, only more even, Modernist Cuisine, 2011. That is physics.\n\nGrade C: the exact water ratio and minutes for each grain. Those are practitioner starting points, calibrated to your oven, not laws.\n\nA method that hides the difference is selling you certainty it does not have. This one does not.\n\nThe full piece is on Littoralicious. @littoralicious — link in bio.","tags":["yachtchef","foodscience","kitchenscience","steamoven","cheftips","cooking","foodie","littoralicious"],"brief":"On-image split card: \u003cstrong\u003eGRADE A / GRADE C\u003c/strong\u003e, with physics under one side and practice under the other. B&W of the laminated grain card with its two columns circled in graphite pencil, cool paper ground.","why":"Cialdini's trust-through-candour — openly admitting the Grade C limit makes the Grade A claims more believable, not less.","fact":"A steam oven is not hotter than boiling water, only more even: saturated steam is pinned at 100 C (212 F). — Modernist Cuisine, 2011"}];
+    const CADENCE = [["Week 1","One dial that never moves cooks every grain (reel)","The grain card that replaces every rice recipe (carousel)"],["Week 2","Steam gives up 540 times more energy than water (feed)","Grain length is a lie. Amylose decides texture (carousel)"],["Week 3","Salting rice water does not toughen it (feed)","Cooked rice can poison a guest. Cool it fast (reel)"],["Week 4","Rice is not done until 76 C inside (feed)","Cook rice once at dawn. Serve it all week (carousel)"],["Week 5","Grade A science, Grade C ratios. We label both (feed)",""]];
+
+    const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+    const TYPE_LABEL = {feed:"Feed post",carousel:"Carousel",reel:"Reel"};
+    const grid = document.getElementById('grid');
+    grid.innerHTML = POSTS.map((p,i) => {
+      const tags = p.tags.map(t=>'#'+t).join(' ');
+      return `<article class="drop" data-type="${p.type}">
+        <div class="mock">
+          <span class="tcorner">${TYPE_LABEL[p.type]}</span>
+          <div class="card-cover"><div class="hook">${esc(p.hook)}</div>${p.subhook?`<div class="subhook">${esc(p.subhook)}</div>`:''}</div>
+          <span class="corner">LITTORALICIOUS</span>
+        </div>
+        <div class="body">
+          <div class="seg"><div class="h"><span class="label">Caption</span><button class="copy" data-copy="cap-${i}">Copy</button></div><div class="caption" id="cap-${i}">${esc(p.caption)}</div></div>
+          <div class="seg"><div class="h"><span class="label">Hashtags</span><button class="copy" data-copy="tag-${i}">Copy</button></div><div class="tags" id="tag-${i}">${esc(tags)}</div></div>
+          <div class="seg"><div class="h"><span class="label">Visual brief</span></div><div class="brief">${p.brief}</div></div>
+          <div class="intel">
+            <div class="row"><span class="k">Drop</span><span class="v">${esc(p.drop)}</span></div>
+            <div class="row"><span class="k">Why</span><span class="v">${esc(p.why)}</span></div>
+            <div class="row"><span class="k">Fact</span><span class="v">${esc(p.fact)}</span></div>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+    document.getElementById('cadence').innerHTML = CADENCE.map(w =>
+      `<div class="week"><span class="wk">${esc(w[0])}</span><span class="d">${esc(w[1])}${w[2]?` <em>${esc(w[2])}</em>`:''}</span></div>`
+    ).join('');
+    document.getElementById('filter').addEventListener('click', e => {
+      const b = e.target.closest('.pill'); if(!b) return;
+      document.querySelectorAll('.pill').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+      const f = b.getAttribute('data-f');
+      document.querySelectorAll('.drop').forEach(d => { d.style.display = (f==='all'||d.dataset.type===f)?'':'none'; });
+    });
+    const toast = document.getElementById('toast'); let tt;
+    document.getElementById('grid').addEventListener('click', e => {
+      const b = e.target.closest('.copy'); if(!b) return;
+      const el = document.getElementById(b.getAttribute('data-copy'));
+      (navigator.clipboard ? navigator.clipboard.writeText(el.textContent) : Promise.reject())
+        .then(()=>{ toast.textContent='copied'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); })
+        .catch(()=>{ toast.textContent='copy failed'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); });
+    });
+    </script>
+</body>
+</html>

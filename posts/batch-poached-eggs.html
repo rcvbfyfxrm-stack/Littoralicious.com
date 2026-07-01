@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Instagram Drop — Two Eggs, Two Temperatures · LITTORALICIOUS</title>
+    <style>
+        :root{
+            --paper:#fafafa; --card:#fff; --ink:#0a0a0a; --sea:#2d4a5e; --sea-dk:#1f3543;
+            --salt:#94a3b8; --muted:#5b6470; --border:#e6e3dd; --subtle:#f1efe9;
+            --feed:#2d4a5e; --carousel:#7a5230; --reel:#5b3a6e;
+            --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+            --mono:ui-monospace,'SF Mono',Menlo,monospace;
+        }
+        *{box-sizing:border-box;}
+        body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+        a{color:var(--sea);}
+        .wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+        .label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--salt);}
+        header.mast{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30;}
+        .mast__in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 24px;max-width:1240px;margin:0 auto;}
+        .mast__brand{font-family:var(--serif);font-weight:700;letter-spacing:.18em;font-size:18px;}
+        .mast__brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--salt);font-weight:400;margin-top:2px;}
+        .mast__back{font-family:var(--mono);font-size:12px;text-decoration:none;border:1px solid var(--border);padding:.45em .9em;color:var(--muted);}
+        .mast__back:hover{border-color:var(--sea);color:var(--sea);}
+        .hero{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+        .hero h1{font-family:var(--serif);font-size:clamp(34px,6vw,60px);line-height:1.04;margin:.2em 0 .3em;max-width:18ch;letter-spacing:-.01em;}
+        .hero p.sub{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 18px;}
+        .hero .src{font-family:var(--mono);font-size:12.5px;color:var(--muted);}
+        .hero .src a{text-decoration:none;border-bottom:1px solid var(--sea);}
+        .hero .stat-row{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;}
+        .hero .stat b{font-family:var(--serif);font-size:30px;color:var(--sea);display:block;line-height:1;}
+        .hero .stat span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--salt);}
+        .play{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:38px 0;}
+        @media(max-width:780px){.play{grid-template-columns:1fr;}}
+        .play .pc{background:var(--card);border:1px solid var(--border);padding:22px;}
+        .play .pc h3{font-family:var(--serif);margin:.2em 0 .5em;font-size:18px;}
+        .play .pc ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);}
+        .play .pc li{margin:.35em 0;}
+        .filter{position:sticky;top:62px;z-index:20;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;display:flex;gap:8px;flex-wrap:wrap;}
+        .pill{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.45em 1em;cursor:pointer;}
+        .pill.on{border-color:var(--sea);color:#fff;background:var(--sea);}
+        .pill .n{opacity:.7;margin-left:.4em;}
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:22px;padding:30px 0 10px;}
+        .drop{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+        .mock{position:relative;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(135deg,#26201b 0%,#3a3128 48%,#211d18 100%);}
+        .mock::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 7px);pointer-events:none;}
+        .mock .card-cover{background:#fbfaf7;color:#0a0a0a;padding:26px 22px;max-width:88%;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+        .mock .hook{font-family:var(--serif);font-size:25px;line-height:1.12;letter-spacing:-.01em;}
+        .mock .subhook{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--sea);margin-top:12px;text-transform:uppercase;}
+        .mock .corner{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.55);}
+        .mock .tcorner{position:absolute;right:12px;top:12px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.4);padding:3px 7px;text-transform:uppercase;}
+        .drop[data-type="feed"] .tcorner{background:rgba(45,74,94,.55);}
+        .drop[data-type="carousel"] .tcorner{background:rgba(122,82,48,.6);}
+        .drop[data-type="reel"] .tcorner{background:rgba(91,58,110,.6);}
+        .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px;}
+        .seg .h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}
+        .seg .h .label{margin:0;}
+        .copy{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--muted);padding:.3em .7em;cursor:pointer;}
+        .copy:hover{border-color:var(--sea);color:var(--sea);}
+        .caption{font-size:14px;white-space:pre-wrap;color:#222;background:var(--subtle);border-left:3px solid var(--sea);padding:11px 13px;}
+        .tags{font-family:var(--mono);font-size:12px;color:var(--sea);word-spacing:.1em;line-height:1.7;}
+        .brief{font-size:13px;color:var(--muted);}
+        .brief ol{margin:.3em 0;padding-left:18px;}
+        .intel{border:1px dashed var(--border);background:#f9fbfc;padding:11px 13px;font-size:12.5px;}
+        .intel .row{display:flex;gap:8px;padding:3px 0;}
+        .intel .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:46px;padding-top:2px;}
+        .intel .v{color:var(--muted);flex:1;}
+        .cadence{padding:44px 0 20px;border-top:1px solid var(--border);margin-top:30px;}
+        .cadence h2,.section-h{font-family:var(--serif);font-size:26px;margin:0 0 18px;}
+        .week{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--subtle);font-size:15px;flex-wrap:wrap;}
+        .week .wk{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);min-width:74px;}
+        .week .d{color:#222;}
+        .week .d em{color:var(--salt);font-style:normal;font-family:var(--mono);font-size:11px;}
+        footer{border-top:2px solid var(--ink);margin-top:40px;padding:26px 0 50px;font-size:13px;color:var(--muted);}
+        footer a{font-weight:600;text-decoration:none;}
+        .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:.7em 1.2em;opacity:0;pointer-events:none;transition:.25s;z-index:50;}
+        .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    </style>
+</head>
+<body>
+    <header class="mast">
+        <div class="mast__in">
+            <div class="mast__brand">LITTORALICIOUS<small>Instagram Drop Brief</small></div>
+            <a class="mast__back" href="../studio-social.html">&larr; Social planner</a>
+        </div>
+    </header>
+    <div class="wrap">
+        <section class="hero">
+            <div class="label">The Method · Instagram drop</div>
+            <h1>Decide the texture, then pick the temperature</h1>
+            <p class="sub">This drop turns one article into a batch-poaching playbook for the pass: two proteins, two set points, two make-ahead lines. It arms yacht chefs to serve 100 clean eggs to order without a rolling boil or a lucky vortex.</p>
+            <p class="src">Source: <a href="https://www.littoralicious.com/articles/batch-poached-eggs" target="_blank" rel="noopener">Two Eggs, Two Temperatures</a> &middot; live &middot; post as <span>@littoralicious</span></p>
+            <div class="stat-row">
+                <div class="stat"><b>9</b><span>posts</span></div>
+                <div class="stat"><b>4</b><span>feed</span></div>
+                <div class="stat"><b>3</b><span>carousel</span></div>
+                <div class="stat"><b>2</b><span>reel</span></div>
+                <div class="stat"><b>3</b><span>week cadence</span></div>
+            </div>
+        </section>
+        <section class="play">
+            <div class="pc"><div class="label">Algorithm 2026</div><h3>Build for the save</h3><ul>
+                <li>Saves &gt; likes &mdash; frameworks &amp; rules, not pretty plates.</li>
+                <li>First second decides a reel: hard cut, silent text, motion.</li>
+                <li>Carousels reach ~1.4&times; &mdash; 5&ndash;6 slides each.</li>
+                <li>Reply to comments in full sentences; provoke the DM.</li></ul></div>
+            <div class="pc"><div class="label">Voice &amp; honesty</div><h3>Three pillars, sourced</h3><ul>
+                <li>Grandmother &middot; Scientist &middot; Yacht Chef &mdash; hold all three.</li>
+                <li>No emoji. Numbers beat adjectives. British spellings.</li>
+                <li>Every fact carries its named source and year.</li>
+                <li>Grade-A science and Grade-C craft named honestly.</li></ul></div>
+            <div class="pc"><div class="label">Timing</div><h3>US-EU bridge</h3><ul>
+                <li>Culinary: Tue 8 PM EST / Sat 9 AM EST.</li>
+                <li>Technique/manifesto: Mon&ndash;Wed 11 AM EST.</li>
+                <li>Post when US East 10 AM overlaps Europe 4 PM.</li>
+                <li>~2 drops/week over 3 weeks (schedule below).</li></ul></div>
+        </section>
+        <nav class="filter" id="filter">
+            <button class="pill on" data-f="all">All <span class="n">9</span></button>
+            <button class="pill" data-f="feed">Feed <span class="n">4</span></button>
+            <button class="pill" data-f="carousel">Carousel <span class="n">3</span></button>
+            <button class="pill" data-f="reel">Reel <span class="n">2</span></button>
+        </nav>
+        <section class="grid" id="grid"></section>
+        <section class="cadence"><h2>Posting cadence</h2><div id="cadence"></div></section>
+    </div>
+    <footer><div class="wrap">
+        Drop brief for <a href="https://www.littoralicious.com/articles/batch-poached-eggs" target="_blank" rel="noopener">Two Eggs, Two Temperatures</a>
+        &middot; post as <strong>@littoralicious</strong> &middot; the article is live.
+        <span style="display:block;margin-top:8px;color:var(--salt);font-family:var(--mono);font-size:11px;">LITTORALICIOUS &middot; Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+    </div></footer>
+    <div class="toast" id="toast">copied</div>
+    <script>
+    const POSTS = [{"hook":"No single water bath sits in two places at once","subhook":"the method, not the shortcut","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","caption":"A firm poached white and a custard yolk are not one dish cooked well. They are two different set points, and no single pot holds both.\n\nThe white only firms near 80 C. The yolk turns to custard near 65 C. Ask one bath to do both jobs and you get a loose white or a chalky yolk, every time.\n\nSo batch poaching is not about cooking faster. It is about cooking ahead: choose the texture first, then pick the line.\n\nThe protein science here is Grade A. The make-ahead line is practitioner standard, and we say which is which.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["poachedeggs","yachtchef","foodscience","sousvide","eggcookery","superyachtchef","modernistcuisine","littoralicious","cheftechnique","breakfast"],"brief":"On-image text top third: \u003cstrong\u003eONE BATH. TWO JOBS. PICK ONE.\u003c/strong\u003e with 80 C and 63 C set on opposite sides of a single pot. Direction: B&W overhead of a single deep pot on a gimballed galley stove, faint steam, high-contrast graphite tones on a cool paper background, no props competing for the eye.","why":"Kahneman contrast/anchoring — framing two set points against one impossible bath makes the whole decision legible in a single beat, so the reader anchors on the method not the mess.","fact":"Egg white only fully firms near 80 C (176 F) because ovalbumin, 54% of the white, sets that high, while ovotransferrin sets around 65 C (149 F). — Donovan et al., J. Sci. Food & Agriculture, 1975"},{"hook":"A firm white wants 80 C, a custard yolk 63 C","subhook":"the two-temperature map","type":"carousel","drop":"Tue 8 PM EST · 2 AM CET","caption":"Save this as your set-point map. Six slides, one rule per slide, and you never guess an egg again.\n\nThe white needs about 80 C to hold a shape. The yolk locks to custard near 65 C and goes firm near 70 C. Those numbers do not meet in the middle.\n\nOnce you can see the gap, the make-ahead line writes itself: poach short and hold, or hold the whole egg in shell at 63 C.\n\nEverything on these slides is sourced and graded, so you know what is chemistry and what is craft.\n\nThe full map is on Littoralicious @littoralicious — link in bio.","tags":["eggcookery","poachedeggs","sousvide","foodscience","yachtchef","chefsofinstagram","modernistcuisine","littoralicious","mealprep","brunch"],"brief":"6 slides. 1) Cover: \u003cstrong\u003eTWO EGGS, TWO TEMPERATURES\u003c/strong\u003e. 2) The white: sets near 80 C, why low-temp poach stays loose. 3) The yolk: custard 65 C, firm 70 C. 4) The gap: no bath holds both. 5) Line A make-ahead poach + hold. 6) Line B onsen in shell 63 C + the offer. Direction: B&W diagram style, mono labels, one thermometer glyph per slide.","why":"Godin's 'make it worth saving' — a numbered set-point map is a reference object, not a pretty plate, so it earns the save that carousels convert at roughly 1.4x reach.","fact":"The yolk sets before the bulk of the white, thickening to a custard around 65 C (149 F) and setting near 70 C (158 F). — McGee, On Food and Cooking, 2004"},{"hook":"Drain the thin white and skip the vortex entirely","subhook":"the strainer trick, scaled","type":"reel","drop":"Wed 11 AM EST · 5 PM CET","caption":"The swirling-vortex trick works for one egg and falls apart at twenty. The strainer does the same job and scales to 100.\n\nCrack each egg into a slotted spoon or fine strainer. The loose, watery white drains away in seconds. What is left holds together the moment it hits the water.\n\nNo spinning, no wispy feathers, no one-at-a-time bottleneck on a busy pass.\n\nThis one is craft, not chemistry, and we mark it that way in the piece.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["poachedeggs","chefhack","yachtchef","eggcookery","galleylife","superyachtchef","cheftok","littoralicious","kitchentips","brunch"],"brief":"0-2s: hard cut, silent on-screen text \u003cstrong\u003eSTOP SWIRLING THE WATER\u003c/strong\u003e over an egg cracking into a strainer, thin white already draining. 2-8s: side-by-side, feathery mess vs clean drained egg sliding in whole. 8-15s: three eating in a row into a bare simmer, caption 'scales to 100'. Silent, bold captions throughout, B&W.","why":"Brunson hook-story-offer — the first second kills a familiar habit ('stop swirling'), which forces the stop-scroll that decides a reel before the payoff even lands.","fact":"Yolk texture is a function of time and temperature together, not one magic degree, so the '63.5 C exactly or it is ruined' rule is a myth. — Vega & Mercade-Prieto, Food Biophysics, 2011"},{"hook":"Feathering is not your technique. It is the egg's age","subhook":"read the pH, not the pan","type":"feed","drop":"Sat 9 AM EST · 3 PM CET","caption":"You blame your hands for wispy poached eggs. It is usually the egg.\n\nAs an egg ages its white turns alkaline and the thin white thins further, spreading into feathers the second it hits water. No amount of swirling fixes chemistry.\n\nStraining off that thin white lets even older stores poach clean, which matters when provisioning ran a week ago and the market is a day away.\n\nOnesourced fact per post, always graded, so you can trust the reasoning under the trick.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["poachedeggs","foodscience","yachtchef","eggcookery","provisioning","superyachtchef","chefsofinstagram","littoralicious","galleylife","breakfast"],"brief":"On-image text: \u003cstrong\u003eOLD EGG? STRAIN IT.\u003c/strong\u003e small mono line 'freshness is a pH problem'. Direction: B&W close crop of a hand holding a cracked egg over a fine strainer, thin white running off, tight focus, graphite tones on cool paper.","why":"Cialdini authority — attributing a visible failure to a measurable cause (pH) and prescribing one fix builds credibility that a plated photo cannot, deepening trust in the brand's grading.","fact":"An onsen hold at 63 C (145 F) for 45–60 minutes gives a custard yolk and is effectively self-pasteurising. — Modernist Cuisine, 2011"},{"hook":"Two lines to the pass: hold cold, or hold in shell","subhook":"cook ahead, plate to order","type":"carousel","drop":"Tue 8 PM EST · 2 AM CET","caption":"Service does not fail on skill. It fails on timing. Here are the only two batch lines you need.\n\nLine one, classic firm white: poach short, ice-shock, hold cold, then reheat to order in a 66 C tray. You get shape and speed.\n\nLine two, custard yolk: hold the whole egg in shell at 63 C for 45 to 60 minutes. It waits for you.\n\nBoth mean the same thing at the pass — the egg is decided before the ticket lands. That is the whole point of poaching ahead.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["mealprep","poachedeggs","yachtchef","sousvide","eggcookery","superyachtchef","servicelife","littoralicious","chefsofinstagram","brunch"],"brief":"5 slides. 1) Cover \u003cstrong\u003eCOOK AHEAD, NOT FASTER\u003c/strong\u003e. 2) Line A: poach short → ice → hold cold → 66 C reheat. 3) Line B: 63 C in shell, 45–60 min. 4) At the pass: decided before the ticket. 5) When to pick which + offer. Direction: B&W flow-arrow layout, mono step labels, one icon per step.","why":"Hormozi value equation — naming exactly two decision paths cuts perceived effort and time-delay to near zero, which is what makes a working chef save and actually deploy it.","fact":"Egg white only fully firms near 80 C (176 F) because ovalbumin, 54% of the white, sets that high. — Donovan et al., J. Sci. Food & Agriculture, 1975"},{"hook":"63 C in the shell for an hour. Then you own breakfast","subhook":"onsen, self-pasteurising","type":"reel","drop":"Wed 11 AM EST · 5 PM CET","caption":"The onsen egg is the calmest thing in a morning service. It cooks in the shell while you do everything else.\n\nHold whole eggs at 63 C for 45 to 60 minutes. The yolk turns to custard, the white stays just-set, and the hold is long enough to pasteurise as it goes.\n\nNo timing panic, no re-poaching, no shells cracking in a boil. Crack to order over toast or rice.\n\nThe temperature is Grade-A science; the exact minutes are a craft window, and we say so.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["onsentamago","sousvide","poachedeggs","yachtchef","eggcookery","modernistcuisine","superyachtchef","littoralicious","breakfast","cheftok"],"brief":"0-2s: hard cut, on-screen \u003cstrong\u003e63 C · 60 MIN · IN THE SHELL\u003c/strong\u003e over an egg lowering into a circulator bath. 2-8s: timer jump-cut, egg cracked open, yolk floods slow like custard. 8-15s: plated over rice, text 'waits for the ticket'. Silent, bold mono captions, B&W with one warm yolk as the only tonal break.","why":"Kahneman cognitive ease — a single fixed recipe (63 C / 60 min / in shell) removes decision load, and the effortless rule is what gets remembered and re-shared.","fact":"The yolk thickens to a custard around 65 C (149 F) and sets near 70 C (158 F). — McGee, On Food and Cooking, 2004"},{"hook":"A rolling boil shreds the white. Poach at a bare 82 C","subhook":"180 F, never 212 F","type":"feed","drop":"Mon 11 AM EST · 5 PM CET","caption":"The most common poaching mistake is heat you can see. Big bubbles mean turbulence, and turbulence tears the white apart.\n\nHold the water at a bare 82 C simmer, the point where bubbles barely break the surface. A full rolling boil at 100 C does the shredding for you.\n\nLower water, calmer white, cleaner edge. It is the single change that fixes most home poaching before you touch the egg.\n\nThis is textbook thermodynamics, Grade A, not a preference.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["poachedeggs","foodscience","eggcookery","yachtchef","chefsofinstagram","cookingtips","modernistcuisine","littoralicious","breakfast","kitchenscience"],"brief":"On-image text: \u003cstrong\u003e82 C, NOT 100 C\u003c/strong\u003e mono line 'bare simmer beats rolling boil'. Direction: B&W split frame, left a violent rolling boil, right a still surface with one small bubble, thermometer reading between them, high contrast on cool paper.","why":"Kahneman loss aversion — 'a boil shreds your white' frames the mistake as a loss the reader is actively causing, which drives the save harder than a positive tip would.","fact":"An onsen hold at 63 C (145 F) for 45–60 minutes is effectively self-pasteurising. — Modernist Cuisine, 2011"},{"hook":"The 60 C, three-minute egg rule is unsafe through a shell","subhook":"know which number is which","type":"carousel","drop":"Tue 8 PM EST · 2 AM CET","caption":"Half the sous-vide egg advice online is quoting a number meant for liquid egg, not a whole one. On a boat with guests, that gap matters.\n\nThe 60 C for 3.5 minutes figure is for liquid egg. Through an intact shell it does not pasteurise safely.\n\nThe honest in-shell numbers are slower: a bare runny egg needs about 57 C for 75 minutes, or the 63 C onsen hold that pasteurises as it cooks.\n\nWe grade every claim so you serve confidently, not hopefully.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["foodsafety","sousvide","poachedeggs","yachtchef","eggcookery","superyachtchef","modernistcuisine","littoralicious","servicelife","kitchenscience"],"brief":"6 slides. 1) Cover \u003cstrong\u003eKNOW WHICH NUMBER YOU ARE QUOTING\u003c/strong\u003e. 2) The myth: 60 C / 3.5 min. 3) That is LIQUID egg only. 4) In shell, runny: 57 C / 75 min. 5) In shell, onsen: 63 C, self-pasteurising. 6) Serve confidently + offer. Direction: B&W, one bold number per slide, a small cross-out on the myth slide.","why":"Cialdini authority + Godin — correcting a widely repeated unsafe figure with a graded source positions the brand as the trustworthy reference chefs bookmark for guest-safety calls.","fact":"The '63.5 C exactly or it is ruined' rule is a myth because yolk texture depends on time and temperature together. — Vega & Mercade-Prieto, Food Biophysics, 2011"},{"hook":"There is no magic degree. There is a texture you choose","subhook":"kill the 63.5 C dogma","type":"feed","drop":"Sat 9 AM EST · 3 PM CET","caption":"Somewhere along the way sous-vide chat decided 63.5 C was sacred, and everyone started chasing a decimal.\n\nYolk texture is a function of time and temperature together, not one exact number. Hold longer at a touch lower, or shorter at a touch higher, and you land the same custard.\n\nWhich frees you: stop guarding a decimal and start choosing the mouthfeel you actually want on the plate.\n\nDecide the texture first. The line, and the number, follow from that.\n\nThe full method is on Littoralicious @littoralicious — link in bio.","tags":["sousvide","eggcookery","poachedeggs","foodscience","yachtchef","modernistcuisine","superyachtchef","littoralicious","chefsofinstagram","kitchenscience"],"brief":"On-image text: \u003cstrong\u003e63.5 C IS NOT SACRED\u003c/strong\u003e mono line 'time and temperature, together'. Direction: B&W of a thermometer with the decimal digit crossed out in graphite, shallow focus, cool paper background, nothing else in frame.","why":"Godin purple cow — taking the contrarian stance against a beloved rule ('63.5 is not sacred') is the ownable, argument-provoking move that lifts a technique post above sameness.","fact":"The yolk sets near 70 C (158 F) and turns to custard around 65 C (149 F), so texture is a range you steer, not a point. — McGee, On Food and Cooking, 2004"}];
+    const CADENCE = [["Weeks 1-2 · Establish the method","No single water bath sits in two places at once (feed, Mon)","A firm white wants 80 C, a custard yolk 63 C (carousel, Tue)"],["Weeks 3-4 · Prove the craft","Drain the thin white and skip the vortex (reel, Wed)","Two lines to the pass: hold cold, or hold in shell (carousel, Tue)"],["Week 5 · Own the argument","The 60 C three-minute rule is unsafe through a shell (carousel, Tue)","There is no magic degree, there is a texture you choose (feed, Sat)"]];
+
+    const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+    const TYPE_LABEL = {feed:"Feed post",carousel:"Carousel",reel:"Reel"};
+    const grid = document.getElementById('grid');
+    grid.innerHTML = POSTS.map((p,i) => {
+      const tags = p.tags.map(t=>'#'+t).join(' ');
+      return `<article class="drop" data-type="${p.type}">
+        <div class="mock">
+          <span class="tcorner">${TYPE_LABEL[p.type]}</span>
+          <div class="card-cover"><div class="hook">${esc(p.hook)}</div>${p.subhook?`<div class="subhook">${esc(p.subhook)}</div>`:''}</div>
+          <span class="corner">LITTORALICIOUS</span>
+        </div>
+        <div class="body">
+          <div class="seg"><div class="h"><span class="label">Caption</span><button class="copy" data-copy="cap-${i}">Copy</button></div><div class="caption" id="cap-${i}">${esc(p.caption)}</div></div>
+          <div class="seg"><div class="h"><span class="label">Hashtags</span><button class="copy" data-copy="tag-${i}">Copy</button></div><div class="tags" id="tag-${i}">${esc(tags)}</div></div>
+          <div class="seg"><div class="h"><span class="label">Visual brief</span></div><div class="brief">${p.brief}</div></div>
+          <div class="intel">
+            <div class="row"><span class="k">Drop</span><span class="v">${esc(p.drop)}</span></div>
+            <div class="row"><span class="k">Why</span><span class="v">${esc(p.why)}</span></div>
+            <div class="row"><span class="k">Fact</span><span class="v">${esc(p.fact)}</span></div>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+    document.getElementById('cadence').innerHTML = CADENCE.map(w =>
+      `<div class="week"><span class="wk">${esc(w[0])}</span><span class="d">${esc(w[1])}${w[2]?` <em>${esc(w[2])}</em>`:''}</span></div>`
+    ).join('');
+    document.getElementById('filter').addEventListener('click', e => {
+      const b = e.target.closest('.pill'); if(!b) return;
+      document.querySelectorAll('.pill').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+      const f = b.getAttribute('data-f');
+      document.querySelectorAll('.drop').forEach(d => { d.style.display = (f==='all'||d.dataset.type===f)?'':'none'; });
+    });
+    const toast = document.getElementById('toast'); let tt;
+    document.getElementById('grid').addEventListener('click', e => {
+      const b = e.target.closest('.copy'); if(!b) return;
+      const el = document.getElementById(b.getAttribute('data-copy'));
+      (navigator.clipboard ? navigator.clipboard.writeText(el.textContent) : Promise.reject())
+        .then(()=>{ toast.textContent='copied'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); })
+        .catch(()=>{ toast.textContent='copy failed'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); });
+    });
+    </script>
+</body>
+</html>
