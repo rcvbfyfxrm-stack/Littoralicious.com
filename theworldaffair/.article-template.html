@@ -115,11 +115,13 @@ a:hover { color: #3a5a6a; }
 .article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
 .article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
 
-/* Confiance — per-récit estimative tag (replaces the colour-dot badge). Monochrome. */
-.article-body .twa-conf { margin: 16px 0 18px; padding-top: 7px; border-top: 1px solid #b5ad9f; font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.55; }
-.article-body .twa-conf-v { font-size: 11px; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 700; color: #1a1714; }
-.article-body .twa-conf-c { margin-left: 11px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6a645c; }
-.article-body .twa-conf-r { display: block; margin-top: 3px; font-size: 11px; font-style: italic; color: #8a847a; }
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
 /* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
 .article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
 .article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
