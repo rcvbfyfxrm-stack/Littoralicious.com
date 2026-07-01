@@ -1,4 +1,4 @@
-/* Terroir — Barcelona — gem-standard + category + deepened (2026-07) */
+/* Terroir — Barcelona — gem + category + deepened + cult (2026-07) */
 window.TERROIR_DATA = (function () {
   const COLORS = {"berth":"#c4a35a","market":"#d97706","shop":"#059669","mainland":"#7c3aed","logistics":"#2d4a5e"};
   const CAT_LABELS = {"berth":"Signature","market":"Market / Direct","shop":"Restaurant / Bar","mainland":"Out of town","logistics":"Logistics"};
@@ -1308,6 +1308,419 @@ window.TERROIR_DATA = (function () {
    "label": "Ruta Modern",
    "full": "On Barcelona's official Ruta del Modernisme and listed by Barcelona City Council (meet.barcelona); the 1902 modernista shopfront directed by Antoni Ros i Güell, with mosaics, stained glass and stucco.",
    "cosign": "Barcelona City Council / Ruta del Modernisme de Barcelona"
+  }
+ },
+ {
+  "id": "vc-casa-gispert",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 20,
+  "badge": "SINCE 1851",
+  "name": "Casa Gispert",
+  "short": "Casa Gispert",
+  "lat": 41.384093,
+  "lng": 2.181889,
+  "tags": [
+   "Roasting nuts over oak since 1851 in a back-shop oven it calls Europe's oldest of its kind still working."
+  ],
+  "productTags": [
+   "Nuts & dried fruit"
+  ],
+  "why": "The nuts roasted over oak in a back-of-shop wood oven the shop dates to its 1851 founding and calls the oldest of its kind still working in Europe, bought by weight over the counter in El Born. Roasting nuts over oak since 1851 in a back-shop oven it calls Europe's oldest of its kind still working.",
+  "address": "Carrer dels Sombrerers, 23, El Born (La Ribera), Ciutat Vella, 08003 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Gispert+Barcelona",
+  "category": "cult",
+  "subcat": "Nuts & dried fruit",
+  "money_eats": true,
+  "verdict": "A working wood-fired nut roastery rather than a souvenir shop: the nuts are roasted on the premises and weighed by hand at the counter, not pre-bagged.",
+  "signature": "Nuts roasted whole over oak in the wood oven, almonds and hazelnuts the house classics, warm and smoky, weighed by hand.",
+  "caveat": "A merchant, not a cafe: no seats and nothing to drink, you buy nuts by weight to take away, and it shuts Sundays; expect tight quarters and often a queue at the counter.",
+  "person": "Run since 2013 by Enric Comelles and Gemma Marín; the shop passed from the Gispert family (E & A Gispert, from 1911) to the Margenat brothers in 1993.",
+  "signal_chip": {
+   "label": "Since 1851",
+   "full": "Roasting nuts over oak since its 1851 founding, in what the shop calls the oldest wood oven of its kind still working in Europe; awarded Le Coq d'Or in 1999 by Les Gourmands Associés de la France for the best roasted nuts in Europe.",
+   "cosign": "Le Coq d'Or 1999, Les Gourmands Associés de la France"
+  }
+ },
+ {
+  "id": "vc-granja-m-viader",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 21,
+  "badge": "SINCE 1870",
+  "name": "Granja M. Viader",
+  "short": "Granja M. Viader",
+  "lat": 41.3826,
+  "lng": 2.17,
+  "tags": [
+   "Raval granja trading since 1870, reputed birthplace of Cacaolat (patented 1931), still in Viader-family hands."
+  ],
+  "productTags": [
+   "Granja / Xocolateria (chocolate a la taza)"
+  ],
+  "why": "Cacaolat — Spain's cold cocoa-milk drink, tasted by the Viaders at a wedding during Budapest's 1931 International Fair, then reworked and patented back home in December 1931 (reputedly the world's first industrially made chocolate milk) — is, by the family's account, born of this granja, which five generations have kept pouring thick chocolate and mel i mató rather than reinventing itself. Raval granja trading since 1870, reputed birthplace of Cacaolat (patented 1931), still in Viader-family hands.",
+  "address": "Carrer d'en Xuclà, 4-6, 08001 Barcelona (El Raval)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Granja+M.+Viader+Barcelona",
+  "category": "cult",
+  "subcat": "Granja / Xocolateria (chocolate a la taza)",
+  "money_eats": true,
+  "verdict": "The reputed birthplace of Cacaolat still pours a spoon-thick, cream-capped suizo in a wood-panelled room little changed in generations — but it closes Sundays, Mondays and every midday, so it is easy to miss.",
+  "signature": "The suizo: spoon-thick hot chocolate under a cold cap of fresh whipped cream, melindros to dip.",
+  "caveat": "Closed Sundays and Mondays, and every day at midday (roughly 13:15–17:00); a small wood-panelled room where tourist queues form. Note that the bottled Cacaolat brand long ago left the family — now owned by the Damm group — so what you drink here is the house chocolate, not the commercial bottle.",
+  "person": "Joan Viader Roger patented Cacaolat in December 1931; the granja is run today by his descendant Mercè Casademunt Viader and her son Marc — the fourth and fifth generations of the Viader family.",
+  "signal_chip": {
+   "label": "Since 1870",
+   "full": "Barcelona granja trading since 1870 (opened as a dairy by Rafaela Coma; Viader family from c.1904); reputed birthplace of Cacaolat, patented December 1931",
+   "cosign": "Guía Repsol Solete"
+  }
+ },
+ {
+  "id": "vc-flash-flash",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 22,
+  "badge": "CULT",
+  "name": "Flash Flash",
+  "short": "Flash Flash",
+  "lat": 41.3966,
+  "lng": 2.1523,
+  "tags": [
+   "Open since 1970: fifty-plus tortillas under the black-and-white 'Flash Flash girl' murals."
+  ],
+  "productTags": [
+   "Tortilla"
+  ],
+  "why": "The cult object is the room itself: Federico Correa and Alfonso Mila's white leather banquettes and the life-size black-and-white 'Flash Flash girl' - silhouettes of model Karin Leiz copied from Leopoldo Pomes's photographs - a 1970 design largely intact, beneath which Barcelonans have eaten fifty-plus versions of the Spanish omelette for over half a century. Open since 1970: fifty-plus tortillas under the black-and-white 'Flash Flash girl' murals.",
+  "address": "Carrer de la Granada del Penedes 25, Sant Gervasi-Galvany, 08006 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Flash+Flash+Barcelona",
+  "category": "cult",
+  "subcat": "Tortilla",
+  "money_eats": false,
+  "verdict": "You come for the near-intact 1970 room and its Karin Leiz wall images, not for cooking that beats a good neighbourhood bar: the tortillas are competent rather than revelatory and, at roughly EUR 20-30 a head, priced above a corner-bar omelette.",
+  "signature": "The tortilla de patatas de toda la vida, the plain classic among fifty-plus versions",
+  "caveat": "Uptown in residential Sant Gervasi-Galvany, off the tourist trail; pricey for what is essentially an omelette (roughly EUR 20-30 a head, under EUR 35 per Guia Repsol); takes no reservations, first-come-first-served, so arrive early. Not a gourmet destination.",
+  "person": "Leopoldo Pomes (1931-2019), photographer and co-founder, who shot the images of model Karin Leiz behind the black-and-white 'Flash Flash girl' silhouettes that still line the walls; the interior itself was designed by architects Federico Correa and Alfonso Mila.",
+  "signal_chip": {
+   "label": "Soletes",
+   "full": "Named a Guia Repsol Solete, the guide's seal for beloved, good-value casual eateries",
+   "cosign": "Guia Repsol"
+  }
+ },
+ {
+  "id": "vc-la-bombeta",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 23,
+  "badge": "CULT",
+  "name": "La Bombeta",
+  "short": "La Bombeta",
+  "lat": 41.3799,
+  "lng": 2.1889,
+  "tags": [
+   "Decades-old Barceloneta counter reportedly frying 1,000+ bombas a day — brusque service included."
+  ],
+  "productTags": [
+   "Bombas"
+  ],
+  "why": "The bomba — a fried potato-and-meat ball under garlic aioli and a guarded, inherited salsa brava — is what Barceloneta lines up for, and La Bombeta has turned out the same handed-down recipe for decades, reportedly more than a thousand a day at its busiest, with regulars folding the famously brusque service into the ritual rather than holding it against the place. Decades-old Barceloneta counter reportedly frying 1,000+ bombas a day — brusque service included.",
+  "address": "Carrer de la Maquinista, 3, 08003 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Bombeta+Barcelona",
+  "category": "cult",
+  "subcat": "Bombas",
+  "money_eats": true,
+  "verdict": "The bomba holds its crust and carries genuine chilli heat, and the inherited house recipe outclasses the tourist-strip imitations nearby — but this is a rough, brusque neighbourhood counter, not a place you come to for comfort or warm service.",
+  "signature": "The bomba: a crisp, deep-fried potato-and-meat ball under garlic aioli and a guarded brava with real chilli heat — order a pair.",
+  "caveat": "Possibly cash-only (reports vary; some recent visitors say cards are now taken), little English spoken, service curt by repute rather than warm, and closed Wednesdays; expect a queue at peak.",
+  "person": "María José Otero — the bar's proprietor for some 40 years (Time Out; some sources spell it María Jesús) — who says La Bombeta was \"the second to make bombas in Barcelona,\" after La Cova Fumada, cooking a recipe passed down by the previous owners and kept under lock and key.",
+  "signal_chip": {
+   "label": "Cult classic",
+   "full": "Spanish-food writer Gerry Dawes titled his 2019 write-up 'An Iconic Place for Bombas' and 'Another of Those Joints Whose Awful Waiters Make a Place Unforgettable' (gerrydawesspain.com); also listed among Barcelona's best bombas by Time Out. No Guia Repsol Soletes found.",
+   "cosign": "Gerry Dawes, Spanish-food writer; Time Out Barcelona"
+  }
+ },
+ {
+  "id": "vc-can-paixano-la-xampanyeria",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 24,
+  "badge": "SINCE 1969",
+  "name": "Can Paixano (La Xampanyeria)",
+  "short": "Can Paixano (La Xampanyeria)",
+  "lat": 41.383,
+  "lng": 2.1834,
+  "tags": [
+   "Standing-room cava bar by Port Vell since 1969: pink cava by the glass for about a euro, no seats."
+  ],
+  "productTags": [
+   "Cava & sausage"
+  ],
+  "why": "The cult object is the house pink cava, poured by the glass for barely more than a euro; regulars have crowded in to drink it standing at the counter since 1969, with not a stool in the place. Standing-room cava bar by Port Vell since 1969: pink cava by the glass for about a euro, no seats.",
+  "address": "Carrer de la Reina Cristina, 7, Ciutat Vella (Port Vell), 08003 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Can+Paixano+(La+Xampanyeria)+Barcelona",
+  "category": "cult",
+  "subcat": "Cava & sausage",
+  "money_eats": true,
+  "verdict": "A glass of the house cava still costs barely over a euro and there is nowhere to sit — you drink it standing at the counter or not at all.",
+  "signature": "The deep-pink house cava (Rosat) by the glass, with a warm grilled botifarra bocadillo",
+  "caveat": "Cash is easiest; standing-only, no table service and no reservations. Open Mon–Sat, most crowded roughly 7–10:30pm, closed Sundays.",
+  "signal_chip": {
+   "label": "Since 1969",
+   "full": "Pouring its own Berenguer Ramon cava to a standing-room crowd since 1969",
+   "cosign": "barcelona-life.com; casamona.com"
+  }
+ },
+ {
+  "id": "vc-morro-fi",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 25,
+  "badge": "SINCE 2007",
+  "name": "Morro Fi",
+  "short": "Morro Fi",
+  "lat": 41.3832961,
+  "lng": 2.1550374,
+  "tags": [
+   "A 2007 bar-crawl blog turned tiny Eixample vermuteria, credited with reviving Barcelona's vermut hour."
+  ],
+  "productTags": [
+   "Vermut bar"
+  ],
+  "why": "The house vermut — bottled for them by the historic Reus winery De Muller, poured over ice and drunk standing beside a thick potato chip topped with a pickled mussel and a row of tinned conservas — is the ritual that food critics, not just regulars, credit with helping revive Barcelona's hora del vermut. A 2007 bar-crawl blog turned tiny Eixample vermuteria, credited with reviving Barcelona's vermut hour.",
+  "address": "Carrer del Consell de Cent 171, 08015 Barcelona (La Nova Esquerra de l'Eixample, corner of Comte Borrell)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Morro+Fi+Barcelona",
+  "category": "cult",
+  "subcat": "Vermut bar",
+  "money_eats": true,
+  "verdict": "A tiny standing-room vermuteria that turned a 2007 bar-crawl blog into the template most new-wave Barcelona vermut bars now copy; if you want a seat or a quiet drink, this is the wrong bar.",
+  "signature": "House De Muller-bottled vermut over ice, with a thick potato chip crowned by a pickled mussel, plus banderillas and tinned conservas.",
+  "caveat": "Room for barely fifteen inside — standing-only, no reservations, packed at vermut hour; expect to drink out on the pavement.",
+  "signal_chip": {
+   "label": "Since 2007",
+   "full": "Began as a Barcelona bar-crawl/aperitiu blog in 2007; the first bar opened at Consell de Cent 171 in 2011, and its own De Muller-bottled house vermut and conservas line followed from 2012.",
+   "cosign": "The Infatuation credits Morro Fi with leading Barcelona's vermut renaissance; Culinary Backstreets profiled its role in the new-wave vermut scene."
+  }
+ },
+ {
+  "id": "vc-bar-bodega-quimet",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 26,
+  "badge": "CULT",
+  "name": "Bar Bodega Quimet",
+  "short": "Bar Bodega Quimet",
+  "lat": 41.4035,
+  "lng": 2.1515,
+  "tags": [
+   "1954 Gràcia bodega of marble and hydraulic tile, preserved by the Montero brothers, pouring barrel vermut."
+  ],
+  "productTags": [
+   "Vermut bar"
+  ],
+  "why": "Barrel-poured house vermut chased with a tin of Cantabrian anchovies, berberecho cockles or razor clams on white marble tables — the weekend-midday ritual Gràcia has kept since 1954, and that the Montero brothers, on taking over in 2010, chose to preserve rather than modernise. 1954 Gràcia bodega of marble and hydraulic tile, preserved by the Montero brothers, pouring barrel vermut.",
+  "address": "Carrer de Vic, 23, Gràcia, 08006 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Bodega+Quimet+Barcelona",
+  "category": "cult",
+  "subcat": "Vermut bar",
+  "money_eats": true,
+  "verdict": "A genuinely preserved 1954 Gràcia vermut bodega — barrel vermut and tinned conservas at bar prices, the room the Monteros kept rather than gutted, and not the Poble-sec Quimet & Quimet.",
+  "signature": "Barrel-poured house vermut, chased with a tin of Cantabrian anchovies or berberecho cockles.",
+  "caveat": "A small marble-tabled room that fills fast at the weekend vermut hour; the card leans on tins and cold variados over a full hot kitchen.",
+  "person": "David Montero (co-owner and chef, runs it with brother Carlos since taking over in 2010; per Ara)",
+  "signal_chip": {
+   "label": "Solete",
+   "full": "Listed as a Solete in the Guía Repsol — the guide's mark for characterful, unpretentious everyday spots worth the trip.",
+   "cosign": "Guía Repsol"
+  }
+ },
+ {
+  "id": "vc-can-cisa-bar-brutal",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 27,
+  "badge": "SINCE 2013",
+  "name": "Can Cisa / Bar Brutal",
+  "short": "Can Cisa / Bar Brutal",
+  "lat": 41.3847742,
+  "lng": 2.1799363,
+  "tags": [
+   "A wine shop of some 300 organic and biodynamic bottles feeding a cramped natural-wine tapas bar."
+  ],
+  "productTags": [
+   "Natural wine"
+  ],
+  "why": "The cult object is the wine: you pull one of the Can Cisa shop's roughly 300 organic and biodynamic bottles and drink it in the cramped bar at close to shop price, a rite for Barcelona's natural-wine crowd since 2013. A wine shop of some 300 organic and biodynamic bottles feeding a cramped natural-wine tapas bar.",
+  "address": "Carrer de la Princesa 14 (bar entrance on Carrer Barra de Ferro 1), El Born – La Ribera, 08003 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Can+Cisa+%2F+Bar+Brutal+Barcelona",
+  "category": "cult",
+  "subcat": "Natural wine",
+  "money_eats": false,
+  "verdict": "The natural-wine list is among the deepest and most low-intervention in Barcelona; the short seasonal tapas menu is honest but plays second fiddle to what's in the glass.",
+  "signature": "Chicken gizzards with ponzu and watercress, tender, tangy, gently offal-funky, with a chilled natural red.",
+  "caveat": "No longer the walk-in free-for-all it once was: lunch and dinner tables must be booked with a bank card (about €20 per person no-show fee), and walk-ins are for drinks only; the bar is tiny and the El Born street is touristy.",
+  "person": "Venetian twins Max and Stefano Colombo of Xemei (Poble Sec) run the small kitchen; the bar was co-founded with natural-wine distributor Joan Valencia of Cuvée 3000 and Catalan winemaker Joan Ramón Escoda.",
+  "signal_chip": {
+   "label": "Since 2013",
+   "full": "Opened 2013 as one of the pioneers of Barcelona's natural-wine (vin vivant) scene, on the El Born / La Ribera edge",
+   "cosign": "Listed on The World's 50 Best Discovery"
+  }
+ },
+ {
+  "id": "vc-la-confiteria",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 28,
+  "badge": "SINCE 1912",
+  "name": "La Confiteria",
+  "short": "La Confiteria",
+  "lat": 41.375374,
+  "lng": 2.167974,
+  "tags": [
+   "A 1912 modernista sweet shop, its fittings preserved, now pouring vermut and gin where pastries once sat."
+  ],
+  "productTags": [
+   "Vermut & cocktails"
+  ],
+  "why": "The cult object is the room itself: a 1912 confectioner's whose modernista façade, hydraulic-tile floor, marble-and-timber counter and acid-etched glass cabinets were preserved and restored when it became a bar, so locals now take vermut and gin where jars of chocolates and pastries once sat. A 1912 modernista sweet shop, its fittings preserved, now pouring vermut and gin where pastries once sat.",
+  "address": "Carrer de Sant Pau, 128, 08001 Barcelona (El Raval, by Avinguda del Paral·lel)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Confiteria+Barcelona",
+  "category": "cult",
+  "subcat": "Vermut & cocktails",
+  "money_eats": false,
+  "verdict": "Among the few Barcelona bars whose modernista fittings are the original 1912 confectioner's, restored rather than reproduced — come for the room and a vermut, not a full meal.",
+  "signature": "House vermut from Reus, macerated in the old basement obrador, poured beneath the original glass chandeliers.",
+  "caveat": "No longer a sweet shop — the cabinets hold gin and vermut, not pastries; it's drinks-led with a short list of premium tapas (foie, confits, cured meats), opens only from late afternoon into the small hours (not a daytime vermut spot), and can get crowded, especially at Sunday vermouth hour with live music.",
+  "person": "Run today by Grup Confiteria — partners Lito and Enric, who took over and restored the room in the mid-2010s (sources give 2015 or 2017); the original confectioner's was founded by the Pujadas family in 1912, per the preserved business ledger cited in local heritage listings.",
+  "signal_chip": {
+   "label": "Since 1912",
+   "full": "Opened as a confectioner's in 1912–13 per its preserved business ledger; listed as an emblematic establishment by Barcelona City Council and on the city's Ruta del Modernisme, with its modernista shopfront and interior kept and restored.",
+   "cosign": "Barcelona City Council 'establiments emblemàtics' guide (guia.barcelona.cat) + Ruta del Modernisme de Barcelona"
+  }
+ },
+ {
+  "id": "vc-els-sortidors-del-parlament",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 29,
+  "badge": "SINCE 2012",
+  "name": "Els Sortidors del Parlament",
+  "short": "Els Sortidors del Parlament",
+  "lat": 41.3776,
+  "lng": 2.1615,
+  "tags": [
+   "A 250m2 former motorbike workshop in Sant Antoni pouring wine at shop prices over upturned barrels."
+  ],
+  "productTags": [
+   "Bodega"
+  ],
+  "why": "The cult object is the shop-shelf-to-barrel ritual: you pull a bottle off the retail wall, pay a small corkage, and drink it over an upturned wine barrel inside a former motorbike garage, with the house vermut de grifo and cheese-and-conserves boards as the everyday order. A 250m2 former motorbike workshop in Sant Antoni pouring wine at shop prices over upturned barrels.",
+  "address": "Carrer del Parlament 53, Sant Antoni (L'Eixample), 08015 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Els+Sortidors+del+Parlament+Barcelona",
+  "category": "cult",
+  "subcat": "Bodega",
+  "money_eats": true,
+  "verdict": "A bottle here costs its wine-shop shelf price plus a flat ~4 euro corkage rather than a restaurant markup, so you drink further up the list for the same money than at a table-service wine bar on the same street.",
+  "signature": "House vermut de grifo over an upturned barrel, plus the cured-cheese and Catalan conserves board.",
+  "caveat": "Closed Tuesdays (open Mondays); small and busy at weekends; shop bottles carry a ~4 euro corkage on top of the shelf price.",
+  "signal_chip": {
+   "label": "Since 2012",
+   "full": "A December 12, 2012 Barcelona Sights post flagged it as a new bodega on Carrer del Parlament, pouring wine at shop prices plus a small de-corking fee inside a former ~250m2 motorbike workshop; the operating company Els Sortidors del Parlament SL was later constituted in January 2017.",
+   "cosign": "Barcelona Sights blog (Dec 2012); BELLE Barcelone (Jul 2013); Time Out Barcelona"
+  }
+ },
+ {
+  "id": "vc-bodega-la-palma",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 30,
+  "badge": "SINCE 1935",
+  "name": "Bodega La Palma",
+  "short": "Bodega La Palma",
+  "lat": 41.3829,
+  "lng": 2.1794,
+  "tags": [
+   "Gothic Quarter cellar pouring barrel wine since it turned bodega around 1940 — a grocery from 1935"
+  ],
+  "productTags": [
+   "Bodega (barrel wine & vermut)"
+  ],
+  "why": "Wine poured straight from the barrel and a house vermut (described by thecitytrail as \"subtly-spiced and not over-bearing\"), served at marble tables in a cellar that has held the same Gothic Quarter corner for more than 80 years — the barrel-and-vermut ritual locals keep returning for, on a corner where, by neighbourhood account, artists and poets once gathered. Gothic Quarter cellar pouring barrel wine since it turned bodega around 1940 — a grocery from 1935",
+  "address": "Carrer de la Palma de Sant Just, 7, Ciutat Vella, 08002 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bodega+La+Palma+Barcelona",
+  "category": "cult",
+  "subcat": "Bodega (barrel wine & vermut)",
+  "money_eats": true,
+  "verdict": "A genuine survivor rather than a nostalgia act: more than 80 years on it still pours barrel wine and homemade vermut at its original marble tables and preserved bar.",
+  "signature": "Homemade vermut, cool and subtly spiced, with a glass of barrel wine and a slice of potato tortilla",
+  "caveat": "Small, much-loved cellar that fills fast, especially evenings — reservations advised; the kitchen runs to tapas and small Catalan plates, not a formal restaurant.",
+  "person": "Albert Rial and Judith Giménez, the neighbours who took over the bodega to keep its historic feel while updating the kitchen (per thecitytrail and Plateselector).",
+  "signal_chip": {
+   "label": "Since 1935",
+   "full": "A grocery from 1935 that turned barrel-wine bodega around 1940; 80+ years on the same Gothic Quarter corner, renamed 'La Bodega de la Señora Maria' in 1987.",
+   "cosign": "Featured by Culinary Backstreets ('Gothic Pillar', 10 Jun 2021)"
+  }
+ },
+ {
+  "id": "vc-bar-la-plata",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 31,
+  "badge": "SINCE 1945",
+  "name": "Bar La Plata",
+  "short": "Bar La Plata",
+  "lat": 41.3807,
+  "lng": 2.1817,
+  "tags": [
+   "One marble-counter room, four tapas, unchanged since 1945."
+  ],
+  "productTags": [
+   "Fried fish & vermut"
+  ],
+  "why": "The cult object is the pescadito frito — small whole fish fried crisp — chased with house vermut or Penedès wine straight from the barrel, and it has drawn Barcelonins to the same marble counter and the same four tapas since 1945. One marble-counter room, four tapas, unchanged since 1945.",
+  "address": "Carrer de la Mercè, 28, 08002 Barcelona (Barri Gòtic)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+La+Plata+Barcelona",
+  "category": "cult",
+  "subcat": "Fried fish & vermut",
+  "money_eats": true,
+  "verdict": "A ritual, not a meal: the same four tapas since 1945 — fried fish, anchovies, butifarra and tomato-onion salad — eaten mostly standing at a marble counter, with no printed menu and no choice beyond those four, though the roughly €2.50–3.50 plates and barrel wine reward the crush.",
+  "signature": "Pescadito frito — small whole fish fried hot and crisp, about €2.50–3.50, with house vermut or wine from the barrel.",
+  "caveat": "No reservations, no printed menu, only four tapas, and mostly standing in one small, packed room; closed Sundays.",
+  "person": "Josep \"Pepito\" Marjanet & Joaquima \"Quimeta\" Planas — founders (1945); still family-run",
+  "signal_chip": {
+   "label": "Since 1945",
+   "full": "The same four tapas — small fried fish, anchovies, butifarra sausage and a tomato-onion-olive salad — served from one marble-countered Gothic Quarter room since 1945.",
+   "cosign": "Ferran Adrià (El Bulli) calls it 'a magical place'; Anthony Bourdain filmed it for his CNN travel show."
+  }
+ },
+ {
+  "id": "vc-can-recasens",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 32,
+  "badge": "SINCE 1906",
+  "name": "Can Recasens",
+  "short": "Can Recasens",
+  "lat": 41.4024,
+  "lng": 2.1997,
+  "tags": [
+   "A 1906 Poblenou xarcuteria turned candlelit celler of piled meat-and-cheese boards and wine."
+  ],
+  "productTags": [
+   "Cured meats & cheese boards"
+  ],
+  "why": "The cult object is the piled board of Catalan and Iberian embutits and cheese, plus the warm melted-cheese tostas, eaten by candlelight with honest, reasonably priced wine in the back room of a 1906 Poblenou xarcuteria — a neighbourhood ritual people queue in the street for on weekends. A 1906 Poblenou xarcuteria turned candlelit celler of piled meat-and-cheese boards and wine.",
+  "address": "Rambla del Poblenou, 102, Sant Martí, 08005 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Can+Recasens+Barcelona",
+  "category": "cult",
+  "subcat": "Cured meats & cheese boards",
+  "money_eats": true,
+  "verdict": "Come for shared boards of cured meat and cheese and a warm brie-and-boletus tosta with fair-priced wine by candlelight; skip it if you want a quick, quiet, or walk-in dinner, because the kitchen is evening-only and opens around 8pm.",
+  "signature": "A shared board of Catalan and Iberian embutits and cheese, then the warm brie-and-boletus tosta.",
+  "caveat": "No lunch most weekdays — the kitchen is evening-only, opening around 8pm; weekends fill fast, so reserve or expect the street queue, and the rooms are dim and tight.",
+  "person": "Jaume Recasens — credited with adding ham and sausages to a corner of the family butcher shop and, with his sister Teresa, turning it into today's shop-restaurant; single-source (bcnrestaurantes.com), not corroborated by the civic listings.",
+  "signal_chip": {
+   "label": "Since 1906",
+   "full": "The Recasens family opened their Poblenou xarcuteria (butcher-delicatessen) in 1906, in a corner Modernista building that still keeps its original rosettes and hydraulic tiles.",
+   "cosign": "Ajuntament de Barcelona commerce listing; founding year also per the facarospauls Barcelona guide and bcnrestaurantes.com"
   }
  }
 ];
