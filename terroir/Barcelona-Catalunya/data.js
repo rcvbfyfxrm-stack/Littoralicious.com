@@ -1,4 +1,4 @@
-/* Terroir — Barcelona — gem + category + deepened + cult (2026-07) */
+/* Terroir — Barcelona — gem + category + deepened + cult + rising (2026-07) */
 window.TERROIR_DATA = (function () {
   const COLORS = {"berth":"#c4a35a","market":"#d97706","shop":"#059669","mainland":"#7c3aed","logistics":"#2d4a5e"};
   const CAT_LABELS = {"berth":"Signature","market":"Market / Direct","shop":"Restaurant / Bar","mainland":"Out of town","logistics":"Logistics"};
@@ -1722,6 +1722,321 @@ window.TERROIR_DATA = (function () {
    "full": "The Recasens family opened their Poblenou xarcuteria (butcher-delicatessen) in 1906, in a corner Modernista building that still keeps its original rosettes and hydraulic tiles.",
    "cosign": "Ajuntament de Barcelona commerce listing; founding year also per the facarospauls Barcelona guide and bcnrestaurantes.com"
   }
+ },
+ {
+  "id": "vr-kamikaze",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 30,
+  "badge": "NEW STAR 26",
+  "name": "Kamikaze",
+  "short": "Kamikaze",
+  "lat": 41.3908,
+  "lng": 2.1543,
+  "tags": [
+   "Opened as a vermutería on 8 July 2022; won a first Michelin star in the 2026 Guía España."
+  ],
+  "productTags": [
+   "Japanese-Mediterranean (japomediterránea) tasting menu, Catalan nods"
+  ],
+  "why": "Chef Enric Buendía — ex-Disfrutar and ex-Mugaritz — turned a Japanese vermutería he co-founded in 2022 into one of the most talked-about young tables of Barcelona's Japan-meets-Mediterranean wave, a self-styled \"silent revolution\" (revolución silenciosa) that won a first Michelin star in the 2026 guide. Opened as a vermutería on 8 July 2022; won a first Michelin star in the 2026 Guía España.",
+  "address": "Carrer del Rosselló 197, L'Antiga Esquerra de l'Eixample, 08036 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Kamikaze+Barcelona",
+  "category": "rising",
+  "subcat": "Japanese-Mediterranean (japomediterránea) tasting menu, Catalan nods",
+  "money_eats": false,
+  "verdict": "A three-year-old, 28-seat Eixample restaurant — small dining rooms, no à la carte — that climbed from vermutería to a first Michelin star in the 2026 guide on tasting menus starting around €75, the accessible-value entry to Barcelona's new-star class.",
+  "signature": "Cabracho a la plancha glossed in ponzu butter — smoky, citric, silky; the house \"plato estrella.\"",
+  "caveat": "Tiny and now tasting-menu-only: 28 seats, six staff, no à la carte — a roughly 11-course \"Classics\" from about €75 or a longer seasonal \"Kamikaze\" menu up to about €95 — so it books out and the menu rotates seasonally (recent standouts: sea-urchin mochi, natto catalán); it no longer works as the casual vermut stop it began as, and co-founder Aritz Ribalta has since left the project.",
+  "person": "Enric Buendía leads the kitchen — an alumnus of three-star Disfrutar and of Mugaritz. He co-founded Kamikaze in 2022 with fellow ex-Disfrutar cook Aritz Ribalta (rendered \"Arístides\" in some early press; since departed for personal reasons) and Camila Delani, who now runs front-of-house.",
+  "signal_chip": {
+   "label": "New star 26",
+   "full": "First MICHELIN star, Guía España 2026 — one of 25 new one-stars awarded at the 25 Nov 2025 gala in Málaga (SOHRLIN Andalucía), barely three years after opening as a vermutería.",
+   "cosign": "MICHELIN Guide 2026"
+  }
+ },
+ {
+  "id": "vr-glug",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 31,
+  "badge": "RISING",
+  "name": "Glug",
+  "short": "Glug",
+  "lat": 41.3868,
+  "lng": 2.1461,
+  "tags": [
+   "Chef-couple's long-bar wine canteen; Catalan-Italian small plates, wines on tap, new 2026 Michelin Bib."
+  ],
+  "productTags": [
+   "Natural-wine bar / Catalan-Italian"
+  ],
+  "why": "The natural-wine crowd's canteen since June 2024: a chef-couple with real pedigree, a long bar where cooks hand you plates, wine poured from dispensers, and — under 18 months in — a Michelin Bib Gourmand that turned an insider haunt into a booking scramble. Chef-couple's long-bar wine canteen; Catalan-Italian small plates, wines on tap, new 2026 Michelin Bib.",
+  "address": "Carrer de Viladomat 289, Esquerra de l'Eixample, 08029 Barcelona — opposite the Sant Jordi swimming pool",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Glug+Barcelona",
+  "category": "rising",
+  "subcat": "Natural-wine bar / Catalan-Italian",
+  "money_eats": true,
+  "verdict": "Glug earned a Bib Gourmand in the 2026 Michelin Guide España barely 18 months after its June 2024 opening — a genuine, cross-verified fast-track, not hype.",
+  "signature": "Onion soup with Comté-filled \"buttons\" — French comfort rebuilt with Catalan-Italian nerve.",
+  "caveat": "Tiny (about 38 seats, mostly at the bar) with erratic hours (closed Tue/Wed, several days dinner-only), so seats go fast now the Bib landed; and the headline \"620-plus\" wine count is unverified — Michelin and Star Wine List describe the list as smaller, nearer 280 references.",
+  "person": "Chef-couple Iván García (ex-Aürt, the Michelin-starred Barcelona restaurant, and Bib-Gourmand Direkte Boqueria) and Beatrice Casella of Turin (ex-Hisop; runs pastry and the wine program) — named best emerging chefs (\"Cuiner 2024\") at Gastronomic Forum Barcelona, four months after opening.",
+  "signal_chip": {
+   "label": "New Bib 2026",
+   "full": "New Bib Gourmand, 2026 MICHELIN Guide España — a first-time entry roughly 17-18 months after opening",
+   "cosign": "MICHELIN Guide España 2026 (corroborated by Ara)"
+  }
+ },
+ {
+  "id": "vr-oniric",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 32,
+  "badge": "RISING",
+  "name": "Oníric",
+  "short": "Oníric",
+  "lat": 41.4079,
+  "lng": 2.1577,
+  "tags": [
+   "Six-table Gràcia room from two Atempo alumni that earned a 2026 Michelin Bib within about two years."
+  ],
+  "productTags": [
+   "Modern Catalan / bistronomic tasting menu"
+  ],
+  "why": "Opened in early 2024, it landed a new Michelin Bib Gourmand in the 2026 guide (announced November 2025) and was flagged by Time Out as one of Barcelona's best new restaurants; with only around six tables a service, the calendar fills weeks out. Six-table Gràcia room from two Atempo alumni that earned a 2026 Michelin Bib within about two years.",
+  "address": "Carrer de Rabassa 37, Gràcia, 08024 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=On%C3%ADric+Barcelona",
+  "category": "rising",
+  "subcat": "Modern Catalan / bistronomic tasting menu",
+  "money_eats": true,
+  "verdict": "One of Barcelona's strongest sub-€50 tasting menus — a modern-Catalan room that earned a Michelin Bib Gourmand within roughly two years of opening.",
+  "signature": "Conger-eel buñuelos bathed in green curry, coconut and tamarind — crisp, fragrant, deliberately risky.",
+  "caveat": "Tiny (roughly six tables), so it books out weeks ahead; the full Somni tasting menu must be requested at booking and requires the whole table, and the ~€24-26 Herrén bargain is weekday-lunch only.",
+  "person": "Chef Jonatan Izquierdo runs the kitchen — previously at Barcelona's three-Michelin-star Disfrutar and Ourense's one-star Nova — with front-of-house partner Laura Humanes (ex-Moments, ex-Baló); both passed through Jordi Cruz's two-star Atempo.",
+  "signal_chip": {
+   "label": "Bib 2026",
+   "full": "New Bib Gourmand in the 2026 MICHELIN Guide España (announced Nov 2025) — earned within about two years of opening, one of ~5 Catalan additions",
+   "cosign": "MICHELIN Guide España 2026"
+  }
+ },
+ {
+  "id": "vr-besta",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 33,
+  "badge": "RISING",
+  "name": "Besta",
+  "short": "Besta",
+  "lat": 41.3878,
+  "lng": 2.1568,
+  "tags": [
+   "Galician-Catalan neo-bistro welding Atlantic and Mediterranean seafood across two shifting product calendars."
+  ],
+  "productTags": [
+   "Galician-Catalan neo-bistro (Atlantic-Mediterranean seafood)"
+  ],
+  "why": "One of the genuine breakout openings of Barcelona's post-2020 wave: an early Forbes \"one to watch\" (2021), later a favourable The Infatuation review (2025) and a place on World of Mouth's 30 Best Barcelona, still carried in the Michelin Guide selection with a durable, hard-to-book following five years on. Galician-Catalan neo-bistro welding Atlantic and Mediterranean seafood across two shifting product calendars.",
+  "address": "Carrer d'Aribau 106, Esquerra de l'Eixample, 08036 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Besta+Barcelona",
+  "category": "rising",
+  "subcat": "Galician-Catalan neo-bistro (Atlantic-Mediterranean seafood)",
+  "money_eats": false,
+  "verdict": "Still in the Michelin Guide's Barcelona selection five years after opening, yet without a star or Bib, its pull is the shifting Galician-Catalan seafood, not a distinction.",
+  "signature": "Chargrilled Galician baby squid on a bed of plump Catalan fava beans",
+  "caveat": "No Michelin star or Bib despite the buzz; the tasting menus (9 courses ~€78, 12 passes ~€95) change constantly so no single plate is guaranteed, tables book out well ahead, and it is closed Monday-Tuesday.",
+  "person": "Galician chef Manu Núñez — behind the Raval tapas bar Arume, with early apprenticeships at El Amparo (Madrid) and Casa Solla (Pontevedra) and a Top Chef Spain contestant (2017) — with Catalan chef Carles Ramon.",
+  "signal_chip": {
+   "label": "Hot List '21",
+   "full": "Forbes' 'The 10 Hottest Restaurants in Barcelona for 2021' called Besta 'definitely one to watch'; corroborated by a favourable The Infatuation review (2025) and a place on World of Mouth's 30 Best Barcelona. This is an early press nod, NOT a Michelin distinction (Michelin lists Besta as a Selected/Plate restaurant, no star or Bib) and NOT a World's 50 Best 'One To Watch'.",
+   "cosign": "On World of Mouth's 30 Best Barcelona (curator-recommended); positively reviewed by The Infatuation, 2025. Note: an earlier 'cited by the Disfrutar chefs' claim could not be verified and was dropped."
+  }
+ },
+ {
+  "id": "vr-direkte",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 34,
+  "badge": "RISING",
+  "name": "Direkte",
+  "short": "Direkte",
+  "lat": 41.3893,
+  "lng": 2.1516,
+  "tags": [
+   "Barcelona's cult Boqueria counter reopened as an 18-seat Japanese-style Eixample bar in summer 2025."
+  ],
+  "productTags": [
+   "Asian-Catalan tasting counter"
+  ],
+  "why": "Muñío's tiny counter behind La Boqueria was a seven-year cult; his \"surprise\" summer-2025 relocation to a bigger Japanese-style bar in the Eixample was covered as a major move by the Catalan food press (ElNacional called it \"the most famous restaurant in La Boqueria\") and closely watched by Michelin star-tippers. Barcelona's cult Boqueria counter reopened as an 18-seat Japanese-style Eixample bar in summer 2025.",
+  "address": "Carrer de París 200, l'Antiga Esquerra de l'Eixample, 08008 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Direkte+Barcelona",
+  "category": "rising",
+  "subcat": "Asian-Catalan tasting counter",
+  "money_eats": true,
+  "verdict": "The seven-year Boqueria cult moved up in the world without losing the plot: an 18-seat Eixample counter whose surprise Catalan-Asian menus (78-104 euros) carry one Repsol Sol and a MICHELIN Guide listing — but, contrary to widespread assumption, no star.",
+  "signature": "Smoked matcha cheesecake, sublimely runny inside, green-tea bitterness cut with cream",
+  "caveat": "Just 18 seats and surprise menus that shift with the market, with a waiting list running weeks out — book well ahead, and don't arrive expecting a Michelin star: it holds a Repsol Sol and a Guide listing, not a star.",
+  "person": "Chef-owner Arnau Muñío — former head chef at Carles Abellán's Michelin-starred Comerç 24 (per Guía Repsol and Cuina.cat), who then ran his own Direkte counter inside La Boqueria for seven years (2018-2025) before the surprise move to the Eixample.",
+  "signal_chip": {
+   "label": "1 Repsol Sol",
+   "full": "One Sol, Guía Repsol; listed but not starred in the MICHELIN Guide — a seven-year La Boqueria cult counter that relocated to the Eixample in summer 2025.",
+   "cosign": "Guía Repsol + MICHELIN Guide"
+  }
+ },
+ {
+  "id": "vr-sartoria-panatieri",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 35,
+  "badge": "RISING",
+  "name": "Sartoria Panatieri",
+  "short": "Sartoria Panatieri",
+  "lat": 41.4078,
+  "lng": 2.1611,
+  "tags": [
+   "50 Top Pizza's Best Pizzeria in Europe 2023 — milling its own flour and curing its own 'nduja."
+  ],
+  "productTags": [
+   "New-wave Neapolitan pizza, Catalan-sourced (farm-to-pizza)"
+  ],
+  "why": "The de facto face of Barcelona's new pizza generation, built on a verifiable \"farm-to-pizza\" obsession — own flour blends, in-house cured charcuterie and cheeses — that carried it to the top of Europe's rankings; a large Instagram following (reported ~95K, exact count unverified) only corroborates the ranking, it is not the signal. 50 Top Pizza's Best Pizzeria in Europe 2023 — milling its own flour and curing its own 'nduja.",
+  "address": "Carrer de l'Encarnació 51, 08024 Barcelona (Gràcia); second location at Carrer de Provença 330, 08037 Barcelona (Eixample).",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Sartoria+Panatieri+Barcelona",
+  "category": "rising",
+  "subcat": "New-wave Neapolitan pizza, Catalan-sourced (farm-to-pizza)",
+  "money_eats": true,
+  "verdict": "50 Top Pizza crowned it Best Pizzeria in Europe and 3rd Best in the World in 2023, and it still held tied-#3 in Europe and #20 in the World in 2025.",
+  "signature": "The 2023 Pizza of the Year: roasted cherry-tomato sauce, mozzarella and basil hollandaise on a blistered long-fermented crust.",
+  "caveat": "Not a new discovery: it opened in 2018 and is now the two-site Grupo Sartoria, past its 2023 peak (Europe #1 / World #3, slid to World #20 in 2025), heavily hyped and tourist-thronged — book well ahead or expect queues.",
+  "person": "Rafa Panatieri (Brazil-born, Italian Pisa/Calabria roots) and Jorge Sastre, who met cooking at Roca Moo — Joan Roca's restaurant inside Hotel Omm — and opened their own pizzeria in 2018 at Encarnació 51; Panatieri also passed through Nectari and El Celler de Can Roca.",
+  "signal_chip": {
+   "label": "Euro #1 2023",
+   "full": "50 Top Pizza 2023 — Best Pizzeria in Europe, 3rd Best Pizzeria in the World, and Pizza of the Year (Latteria Sorrentina Award).",
+   "cosign": "50 Top Pizza (official, 2023); still #20 World and tied #3 Europe in the 2025 guide (Time Out, Fine Dining Lovers)."
+  }
+ },
+ {
+  "id": "vr-berbena",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 36,
+  "badge": "RISING",
+  "name": "Berbena",
+  "short": "Berbena",
+  "lat": 41.3986,
+  "lng": 2.1517,
+  "tags": [
+   "Tiny Gràcia room where Mediterranean produce meets Lima and Tokyo; a Michelin Bib Gourmand."
+  ],
+  "productTags": [
+   "Seasonal Mediterranean with Asian & South American accents"
+  ],
+  "why": "So sought-after it runs two nightly seatings (7pm and 9:30pm) in a room of barely two dozen seats and takes card-deposit reservations — a policy that sparked a public spat with writer Quim Monzó — while press from ARA to Culinary Backstreets treats it as one of Gràcia's hardest tables. Tiny Gràcia room where Mediterranean produce meets Lima and Tokyo; a Michelin Bib Gourmand.",
+  "address": "Carrer de Minerva 6, Gràcia, 08006 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Berbena+Barcelona",
+  "category": "rising",
+  "subcat": "Seasonal Mediterranean with Asian & South American accents",
+  "money_eats": true,
+  "verdict": "Berbena holds the Michelin Bib Gourmand in the 2026 Guide España (first awarded 2020) — value cooking so in demand it runs two seatings a night in a room seating barely two dozen.",
+  "signature": "Tomato tartare loosened with soy and ginger — cold, bright, umami-deep.",
+  "caveat": "Opened 29 December 2018, so it is on the edge of the wave rather than genuinely new (one source says 2019); the room is tiny, books out well ahead, and the credit-card-deposit policy rubs some diners the wrong way.",
+  "person": "Carles Pérez de Rozas Canut, who runs the room with his wife Becca; Hofmann-schooled in Barcelona, with kitchen stints at Michel Bras (France), Ryugin (Tokyo) and Central (Lima) behind him.",
+  "signal_chip": {
+   "label": "Bib Gourmand",
+   "full": "Michelin Bib Gourmand, 2026 Guide España (first awarded 2020)",
+   "cosign": "Michelin Guide Spain 2026"
+  }
+ },
+ {
+  "id": "vr-cruix",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 37,
+  "badge": "RISING",
+  "name": "Cruix",
+  "short": "Cruix",
+  "lat": 41.3789,
+  "lng": 2.1498,
+  "tags": [
+   "Value fine-dining rice room in the Eixample; Miquel Pardo's crispy-socarrat paella under a Michelin Bib."
+  ],
+  "productTags": [
+   "Value fine-dining / neo-Catalan rice"
+  ],
+  "why": "Holds a Michelin Bib Gourmand in the 2026 Guía Michelin España and is widely cited as a defining value-fine-dining room of Barcelona's new-wave rice cooking, its sharing paella a repeat critic and traveller favourite. Value fine-dining rice room in the Eixample; Miquel Pardo's crispy-socarrat paella under a Michelin Bib.",
+  "address": "C/ d'Entença 57, 08015 Barcelona (Nova Esquerra de l'Eixample)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Cruix+Barcelona",
+  "category": "rising",
+  "subcat": "Value fine-dining / neo-Catalan rice",
+  "money_eats": true,
+  "verdict": "The best-value serious tasting-menu kitchen in the Nova Esquerra de l'Eixample, anchored by rice finished with a lacquered, crackling socarrat.",
+  "signature": "Thin-spread paella lacquered to a crackling, toasted socarrat; plus a golden fried cod churro.",
+  "caveat": "Opened November 2017, so it predates the strict new-generation window; small, informal room that books out roughly a week ahead, and menu prices have crept upward.",
+  "person": "Miquel Pardo (b. 1989, Onda, Castellón), who trained at Jordi Cruz's ABaC, Rafa Peña's Gresca, Ricard Camarena's Canalla Bistro and Albert Adrià's Heart Ibiza before opening Cruix in November 2017.",
+  "signal_chip": {
+   "label": "Bib Gourmand",
+   "full": "Michelin Bib Gourmand — 2026 Guía Michelin España",
+   "cosign": "MICHELIN Guide"
+  }
+ },
+ {
+  "id": "vr-la-mundana",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 38,
+  "badge": "RISING",
+  "name": "La Mundana",
+  "short": "La Mundana",
+  "lat": 41.3811,
+  "lng": 2.1357,
+  "tags": [
+   "2015 Sants vermutería turned Bib Gourmand gastro-bar; the bravas and Asian calamares are the reason."
+  ],
+  "productTags": [
+   "Gastro-vermutería (Mediterranean-France-Japan sharing plates)"
+  ],
+  "why": "A Sants vermouth bar reborn in 2015 as a gastro-vermutería that became a template for Barcelona's neighborhood gastro-bar wave — still packed a decade on (it celebrated ten years in 2025), carrying a Michelin Bib Gourmand and a heavyweight two-chef pedigree behind the counter. 2015 Sants vermutería turned Bib Gourmand gastro-bar; the bravas and Asian calamares are the reason.",
+  "address": "Carrer del Vallespir, 93, Sants-Montjuïc, 08014 Barcelona, Spain",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Mundana+Barcelona",
+  "category": "rising",
+  "subcat": "Gastro-vermutería (Mediterranean-France-Japan sharing plates)",
+  "money_eats": true,
+  "verdict": "A Bib Gourmand vermutería where the bravas and Asian calamares carry the room — order Michelin's two named \"must\" plates and you will understand the queue, or the hype was misjudged.",
+  "signature": "The Mundana patatas bravas and the crisp, golden Asian-style calamares — Michelin's two named must-orders, both built for sharing",
+  "caveat": "Verified but not a rising star: its November 2015 opening makes it the most established name on this list, and the Bib is a long-held, continuing distinction rather than a new-2026 award — the buzz is steady-institution, not new-arrival heat. The tightly-packed dining room is loud and cramped.",
+  "person": "Alain Guiard (trained at Can Fabes, Carme Ruscalleda's Sant Pau, ABaC, Mandarin Oriental and Alain Ducasse in Paris; opened the Santa Burg burger project in 2011) with Marc Martín (chef de partie at ABaC and Hisop in Barcelona, then Roka and El Viajante in London, where he picked up the Asian technique). Both pedigrees web-verified.",
+  "signal_chip": {
+   "label": "Bib Gourmand",
+   "full": "Michelin Bib Gourmand, Guía España — currently held and listed in the 2026 Barcelona Bib Gourmand selection (a continuing distinction, not a new-2026 award)",
+   "cosign": "MICHELIN Guide Spain, guide.michelin.com, 2026"
+  }
+ },
+ {
+  "id": "vr-11-nudos",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 39,
+  "badge": "RISING",
+  "name": "11 Nudos",
+  "short": "11 Nudos",
+  "lat": 41.3759,
+  "lng": 2.149,
+  "tags": [
+   "Rooftop of the old Les Arenes bullring: 360-degree Galician-Atlantic tapas above Placa d'Espanya."
+  ],
+  "productTags": [
+   "Galician-Atlantic rooftop tapas & Nordés-gin cocktails"
+  ],
+  "why": "Its following is view-driven, not chef-driven: opened 10 May 2023 on the domed roof of the former Les Arenes bullring, 27 m above Placa d'Espanya with 360-degree sunset views, and marketed hard by backer Grupo Osborne around its Nordes gin brand (verified: Foodie Culture Barcelona, Gastronomistas, Osborne, Nordes). Rooftop of the old Les Arenes bullring: 360-degree Galician-Atlantic tapas above Placa d'Espanya.",
+  "address": "Arenas de Barcelona (rooftop terrace), Gran Via de les Corts Catalanes 373–385, Placa d'Espanya, Nova Esquerra de l'Eixample, 08015 Barcelona",
+  "maps": "https://www.google.com/maps/search/?api=1&query=11+Nudos+Barcelona",
+  "category": "rising",
+  "subcat": "Galician-Atlantic rooftop tapas & Nordés-gin cocktails",
+  "money_eats": false,
+  "verdict": "A view-and-terrace destination, not a rising-star kitchen: no Michelin star, no Bib Gourmand, no 50 Best or One To Watch, and no \"best new restaurant\" press nod as of mid-2026 — it fails the top-tier-signal bar entirely.",
+  "signature": "Caldeirada brioche — warm Galician mollusc-and-shellfish stew tucked into soft brioche",
+  "caveat": "Hyped beyond the plate: you are paying for the 360-degree sunset over the old bullring, not new-generation cooking. A corporate Osborne/Nordes venue with no name-chef project, capable but not distinctive food, and terrace tables that run pricey for what lands.",
+  "person": "No name-chef project. A corporate venue of Grupo Osborne (the sherry and Nordes-gin house, est. 1772); restaurant director Maria Jose Gonzalez. No celebrated kitchen pedigree — do not mistake it for a chef-led newcomer (source: Foodie Culture Barcelona)."
  }
 ];
   const NEIGHBORHOODS = [

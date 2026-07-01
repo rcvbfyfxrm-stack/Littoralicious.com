@@ -169,6 +169,7 @@
         }
         const CATEGORIES = [
             {key:'creme', label:'La Cr\u00e8me de la Cr\u00e8me', lead:'The best tables in the city \u2014 book ahead, dress for it, expect the bill.'},
+            {key:'rising', label:'Rising Stars', lead:'The new guard \u2014 buzzy young kitchens chasing recognition, opened in the last few years.'},
             {key:'authentique', label:'L\u2019Authentique', lead:'Where Barcelona actually eats \u2014 old houses, market counters, the smart-money rooms.'},
             {key:'story', label:'The Story', lead:'Cult rooms where a dish or a century was born \u2014 go for the tale as much as the plate.'},
             {key:'cult', label:'Local cult favourites', lead:'The humble institutions locals are devoted to \u2014 cash, queues, and a cult object worth both.'},
