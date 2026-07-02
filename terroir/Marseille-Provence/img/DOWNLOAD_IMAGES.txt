@@ -1,0 +1,26 @@
+Images required for this guide — download from Wikimedia Commons:
+
+1. vieux-port.jpg
+   File: "Vieux port de Marseille.jpg"
+   URL: https://commons.wikimedia.org/wiki/File:Vieux_port_de_Marseille.jpg
+   License: CC BY-SA 2.5
+   Note: Download at original resolution (must be ≥1200px wide)
+
+2. vallon-des-auffes.jpg
+   File: "Vallon des Auffes (1).JPG"
+   URL: https://commons.wikimedia.org/wiki/File:Vallon_des_Auffes_(1).JPG
+   Author: Rémi Jouan
+   License: CC BY-SA 3.0
+   Note: Download at original resolution (must be ≥1200px wide)
+
+3. calanque-en-vau.jpg
+   File: "Calanque d'En-Vau depuis belvedere.jpg"
+   URL: https://commons.wikimedia.org/wiki/File:Calanque_d'En-Vau_depuis_belvedere.jpg
+   License: CC BY-SA 3.0
+   Note: Download at original resolution (must be ≥1200px wide)
+
+Download command (run from project root):
+  cd terroir/Marseille-Provence/img/
+  curl -L "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_port_de_Marseille.jpg?width=1600" -o vieux-port.jpg
+  curl -L "https://commons.wikimedia.org/wiki/Special:FilePath/Vallon_des_Auffes_(1).JPG?width=1600" -o vallon-des-auffes.jpg
+  curl -L "https://commons.wikimedia.org/wiki/Special:FilePath/Calanque_d'En-Vau_depuis_belvedere.jpg?width=1600" -o calanque-en-vau.jpg
