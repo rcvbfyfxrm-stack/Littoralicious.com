@@ -213,6 +213,10 @@
                 {key:'petite', label:'Les Petites Tables', lead:'Character over ambition, and every bit as interesting \u2014 where the city actually eats.'}
             ];
             const GROUP_OF = {creme:'grande', rising:'grande', authentique:'petite', story:'petite', cult:'petite', quickbites:'petite'};
+            var _D = (typeof window!=='undefined' && window.TERROIR_DATA) || {};
+            const CATS = _D.CATEGORIES || CATEGORIES;
+            const GRPS = (_D.GROUPS !== undefined) ? _D.GROUPS : (_D.CATEGORIES ? [] : GROUPS);
+            const GOF = _D.GROUP_OF || GROUP_OF;
             function catBlock(c){
                 const list = VENUES.filter(function(v){return v.category===c.key;}).slice().sort(function(a,b){
                     const va=voteCounts[a.id]||0, vb=voteCounts[b.id]||0; if(vb!==va) return vb-va; return (a.priority||99)-(b.priority||99);
@@ -225,11 +229,15 @@
                     '<div class="terroir-tier__list">' + list.map(function(v,i){return renderCardCompact(v,i+1);}).join('') + '</div></div>';
             }
             let html = '';
-            GROUPS.forEach(function(g){
-                const inner = CATEGORIES.filter(function(c){return (GROUP_OF[c.key]||'petite')===g.key;}).map(catBlock).join('');
-                if(!inner) return;
-                html += '<div class="terroir-group"><div class="terroir-group__title">'+escapeHTML(g.label)+'</div><div class="terroir-group__lead">'+escapeHTML(g.lead)+'</div></div>' + inner;
-            });
+            if (!GRPS.length) {
+                html = CATS.map(catBlock).join('');
+            } else {
+                GRPS.forEach(function(g){
+                    const inner = CATS.filter(function(c){return (GOF[c.key]||'petite')===g.key;}).map(catBlock).join('');
+                    if(!inner) return;
+                    html += '<div class="terroir-group"><div class="terroir-group__title">'+escapeHTML(g.label)+'</div><div class="terroir-group__lead">'+escapeHTML(g.lead)+'</div></div>' + inner;
+                });
+            }
             box.innerHTML = html;
         }
         function wireVenueLinks() {
