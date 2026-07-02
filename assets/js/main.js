@@ -559,15 +559,12 @@
             }
         `;
 
-        const cutlerySvg = '<svg viewBox="0 0 64 64" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-            '<path d="M 10 33 C 10 22, 22 18, 32 18 C 43 18, 54 23, 54 33 C 54 43, 43 47, 32 47 C 22 47, 10 44, 10 33 Z" opacity="0.55"/>' +
-            '<path d="M 18 33 C 18 26, 25 24, 32 24 C 39 24, 46 26, 46 33 C 46 39, 39 41, 32 41 C 25 41, 18 39, 18 33" opacity="0.4"/>' +
-            '<path d="M 8 6 L 10 8 L 36 36 L 40 42 L 44 50"/>' +
-            '<path d="M 32 32 L 42 44 L 38 38 Z" fill="currentColor" opacity="0.18"/>' +
-            '<path d="M 9 7 L 12 10" stroke-width="2.3"/>' +
-            '<path d="M 56 6 L 54 8 L 28 36 L 24 42 L 20 50"/>' +
-            '<path d="M 56 6 L 53 2 M 56 6 L 57 2 M 56 6 L 60 4"/>' +
-            '<path d="M 55 7 L 52 10" stroke-width="2.3"/>' +
+        // Naïve-art spoon — the Spoon Lab "logo". Confident hand-drawn lines, a touch of folk asymmetry.
+        const spoonSvg = '<svg viewBox="0 0 64 64" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M32 7 C 21 7, 15.5 17, 18 26 C 19.6 32.8, 26 36.5, 32 36.5 C 38 36.5, 44.4 32.8, 46 26 C 48.5 17, 43 7, 32 7 Z"/>' +
+            '<path d="M33 36.5 C 33.4 44, 31.4 50.5, 34 58.5"/>' +
+            '<path d="M26 13.5 C 23.4 17.5, 23.4 23, 26 26.8" stroke-width="1.7" opacity="0.55"/>' +
+            '<circle cx="39" cy="16" r="1.1" fill="currentColor" stroke="none" opacity="0.5"/>' +
             '</svg>';
 
         const galleyIcon = '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
@@ -582,6 +579,12 @@
             '<path d="M 9 11 H 15 M 9 14 H 15 M 9 17 H 13"/>' +
             '</svg>';
 
+        // Terroir — a map-pin: guides that send you to a place.
+        const terroirIcon = '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M 12 21 C 12 21, 5 14.5, 5 9.5 A 7 7 0 0 1 19 9.5 C 19 14.5, 12 21, 12 21 Z"/>' +
+            '<circle cx="12" cy="9.5" r="2.3"/>' +
+            '</svg>';
+
         const wheelIcon = '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
             '<circle cx="12" cy="12" r="9"/>' +
             '<path d="M 12 3 L 12 21 M 3 12 L 21 12 M 5.6 5.6 L 18.4 18.4 M 18.4 5.6 L 5.6 18.4"/>' +
@@ -590,14 +593,14 @@
 
         const html = '' +
             '<button class="tools-widget-btn" type="button" id="lit-tools-btn" ' +
-                'aria-label="Open Littoralicious tools" aria-expanded="false" aria-controls="lit-tools-panel" ' +
-                'title="Littoralicious tools — galley order, menu planner, pairing">' +
-                cutlerySvg +
+                'aria-label="Open the Spoon Lab" aria-expanded="false" aria-controls="lit-tools-panel" ' +
+                'title="The Spoon Lab — galley order, menu planner, terroir guides">' +
+                spoonSvg +
             '</button>' +
             '<div class="tools-widget-panel" id="lit-tools-panel" role="menu" aria-labelledby="lit-tools-btn">' +
                 '<div class="tools-widget-panel-header">' +
                     '<p class="tools-widget-panel-eyebrow">Littoralicious</p>' +
-                    '<h3 class="tools-widget-panel-title">The Tools</h3>' +
+                    '<h3 class="tools-widget-panel-title">The Spoon Lab</h3>' +
                 '</div>' +
                 '<ul class="tools-widget-list">' +
                     '<li>' +
@@ -615,6 +618,15 @@
                             '<span class="tools-widget-link-text">' +
                                 '<span class="tools-widget-link-title">Menu Planner</span>' +
                                 '<span class="tools-widget-link-desc">Charter menus · guest + crew · service order</span>' +
+                            '</span>' +
+                        '</a>' +
+                    '</li>' +
+                    '<li>' +
+                        '<a class="tools-widget-link" href="/terroir/" role="menuitem">' +
+                            '<span class="tools-widget-link-icon">' + terroirIcon + '</span>' +
+                            '<span class="tools-widget-link-text">' +
+                                '<span class="tools-widget-link-title">Terroir</span>' +
+                                '<span class="tools-widget-link-desc">Food-culture guides to ports &amp; coasts · eat, drink, walk</span>' +
                             '</span>' +
                         '</a>' +
                     '</li>' +
