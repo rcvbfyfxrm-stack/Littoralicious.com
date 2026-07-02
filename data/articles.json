@@ -2,6 +2,46 @@
   "dispatches": [],
   "articles": [
     {
+      "slug": "guacamole-browning",
+      "title": "The Guacamole That Does Not Brown",
+      "date": "2026-07-02",
+      "category": "the-evidence",
+      "subtag": "Food Science",
+      "tags": [
+        "food-science",
+        "avocado",
+        "enzymatic-browning",
+        "make-ahead",
+        "charter-prep"
+      ],
+      "read_time": 2,
+      "featured": false,
+      "draft": true,
+      "lede": "The lime is not just for taste. Drop the pH under four and the enzyme that turns guacamole grey stops working."
+    },
+    {
+      "slug": "miso-from-scratch",
+      "title": "Miso From Scratch: Koji, Salt, and Time",
+      "date": "2026-07-02",
+      "category": "the-method",
+      "subtag": "Technique",
+      "tags": [
+        "technique",
+        "fermentation",
+        "koji",
+        "miso",
+        "umami",
+        "food-science"
+      ],
+      "read_time": 12,
+      "featured": false,
+      "draft": true,
+      "category_label": "The Method",
+      "file": "articles/miso-from-scratch.html",
+      "url": "https://www.littoralicious.com/articles/miso-from-scratch.html",
+      "lede": "Buy a paste and you buy someone else’s decisions. Build it from koji and you control the salt, the sweetness, and how much glutamate the mould sets free."
+    },
+    {
       "slug": "menu-agent",
       "title": "The Menu Agent: Turn Any AI Into a Superyacht Menu Designer",
       "date": "2026-07-01",
@@ -18,7 +58,11 @@
       "read_time": 19,
       "featured": false,
       "draft": true,
-      "description": "A ~985-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, a self-improving palette memory so no two cards repeat, a non-overridable validation gate, and a one-page card you print from any browser."
+      "description": "A ~985-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, a self-improving palette memory so no two cards repeat, a non-overridable validation gate, and a one-page card you print from any browser.",
+      "category_label": "The Method",
+      "file": "articles/menu-agent.html",
+      "url": "https://www.littoralicious.com/articles/menu-agent.html",
+      "lede": "A ~985-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, a self-improving palette memory so no two cards repeat, a non-overridable validation gate, and a one-page card you print from any browser."
     },
     {
       "slug": "batch-poached-eggs",
@@ -35,7 +79,11 @@
       ],
       "read_time": 12,
       "featured": false,
-      "description": "A firm poached white needs ~80°C; a custard yolk locks at ~63°C — so no single bath does both. The protein chemistry and the make-ahead poach-shock-hold-reheat line that plates a hundred eggs."
+      "description": "A firm poached white needs ~80°C; a custard yolk locks at ~63°C — so no single bath does both. The protein chemistry and the make-ahead poach-shock-hold-reheat line that plates a hundred eggs.",
+      "category_label": "The Method",
+      "file": "articles/batch-poached-eggs.html",
+      "url": "https://www.littoralicious.com/articles/batch-poached-eggs.html",
+      "lede": "A firm poached white needs ~80°C; a custard yolk locks at ~63°C — so no single bath does both. The protein chemistry and the make-ahead poach-shock-hold-reheat line that plates a hundred eggs."
     },
     {
       "slug": "grains-in-a-steam-oven",
@@ -52,7 +100,11 @@
       ],
       "read_time": 12,
       "featured": false,
-      "description": "One setpoint for every grain: 100% steam, 100°C. Vary only the water ratio and the minutes. A grain-by-grain reference table, the science of one dial, and the par-cook-and-regenerate line for service."
+      "description": "One setpoint for every grain: 100% steam, 100°C. Vary only the water ratio and the minutes. A grain-by-grain reference table, the science of one dial, and the par-cook-and-regenerate line for service.",
+      "category_label": "The Method",
+      "file": "articles/grains-in-a-steam-oven.html",
+      "url": "https://www.littoralicious.com/articles/grains-in-a-steam-oven.html",
+      "lede": "One setpoint for every grain: 100% steam, 100°C. Vary only the water ratio and the minutes. A grain-by-grain reference table, the science of one dial, and the par-cook-and-regenerate line for service."
     },
     {
       "slug": "taking-a-shot",
@@ -69,7 +121,11 @@
       ],
       "read_time": 11,
       "featured": false,
-      "description": "The burn of a neat spirit is not flavour but a heat alarm ethanol resets to your own mouth temperature — and the cold, breath and one-swallow technique that switches it off, honest about where the evidence stops."
+      "description": "The burn of a neat spirit is not flavour but a heat alarm ethanol resets to your own mouth temperature — and the cold, breath and one-swallow technique that switches it off, honest about where the evidence stops.",
+      "category_label": "The Method",
+      "file": "articles/taking-a-shot.html",
+      "url": "https://www.littoralicious.com/articles/taking-a-shot.html",
+      "lede": "The burn of a neat spirit is not flavour but a heat alarm ethanol resets to your own mouth temperature — and the cold, breath and one-swallow technique that switches it off, honest about where the evidence stops."
     },
     {
       "slug": "msg-honestly",
@@ -90,7 +146,11 @@
       "read_time": 8,
       "featured": false,
       "draft": true,
-      "description": "Few ingredients carry a worse reputation on weaker evidence than monosodium glutamate. It is the most-studied way to cut a dish's sodium without flattening it &mdash; and the science that condemned it never held up. Here is what glutamate actually is, the salt it saves on a long charter, and the one honest caveat worth keeping."
+      "description": "Few ingredients carry a worse reputation on weaker evidence than monosodium glutamate. It is the most-studied way to cut a dish's sodium without flattening it &mdash; and the science that condemned it never held up. Here is what glutamate actually is, the salt it saves on a long charter, and the one honest caveat worth keeping.",
+      "category_label": "The Evidence",
+      "file": "articles/msg-honestly.html",
+      "url": "https://www.littoralicious.com/articles/msg-honestly.html",
+      "lede": "Few ingredients carry a worse reputation on weaker evidence than monosodium glutamate. It is the most-studied way to cut a dish's sodium without flattening it &mdash; and the science that condemned it never held up. Here is what glutamate actually is, the salt it saves on a long charter, and the one honest caveat worth keeping."
     },
     {
       "slug": "the-pairing-does-the-healing",
@@ -473,7 +533,7 @@
       "title": "Sea Urchin: The Candy of the Sea",
       "date": "2026-06-05",
       "category": "shore-larder",
-      "subtag": "Shore Larder",
+      "subtag": "Ingredient Deep-Dive",
       "tags": [
         "sea-urchin",
         "uni",
