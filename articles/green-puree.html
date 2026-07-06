@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- ===============================================================================
+     LOCKED 2026-06-17 — CANONICAL RECIPE BLUEPRINT (approved by Arnaud).
+     REVISED 2026-06-19 (Arnaud-approved unlock) — ADDITIVE depth layers only; the liked
+       structure + galley-card engine are unchanged. Added: optional Origin Card (designated
+       dishes), primary-paper science bar, family-tree lineage, Done-when senses cues, mandatory
+       cook-once-serve-two-tiers crew swap, and the At-the-Table nurture close. Provisioning-at-sea
+       is OPTIONAL — only when sourcing is the dish's special angle. Re-LOCKED at this revision.
+     Do NOT restyle, re-scaffold, or regenerate without an explicit "unlock".
+     Invariants: recipe.js drives always-on DUAL units (metric + US inline, no toggle);
+     TWO galley-card buttons — "Metric + cups" (green-puree-recipe-card.pdf) and
+     "lb/oz + cups" (green-puree-recipe-card-us.pdf), with ?v=<YYYYMMDD> cache-bust;
+     the ENGINE CONTRACT further down stands. Pairs with the LOCKED galley-card
+     template (templates/recipe-card.html).
+     =============================================================================== -->
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A bright, spoon-coating green purée that stays green from pass to plate. The whole trick is a hard blanch, a hard chill, and never letting acid near it until the last second.">
+    <title>The Green Purée: Holding the Colour — LITTORALICIOUS</title>
+    <link rel="canonical" href="https://www.littoralicious.com/articles/green-puree.html">
+    <meta property="og:title" content="The Green Purée: Holding the Colour — LITTORALICIOUS">
+    <meta property="og:description" content="A bright, spoon-coating green purée that stays green from pass to plate. The whole trick is a hard blanch, a hard chill, and never letting acid near it until the last second.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.littoralicious.com/articles/green-puree.html">
+    <meta property="og:site_name" content="Littoralicious">
+    <meta property="og:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Green Purée: Holding the Colour">
+    <meta name="twitter:description" content="A bright, spoon-coating green purée that stays green from pass to plate. The whole trick is a hard blanch, a hard chill, and never letting acid near it until the last second.">
+    <meta name="twitter:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
+    <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
+    <link rel="stylesheet" href="../assets/css/style.css?v=c2e0f1a2">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "The Green Purée: Holding the Colour",
+  "headline": "The Green Purée: Holding the Colour",
+  "description": "A bright, spoon-coating green purée that stays green from pass to plate. The whole trick is a hard blanch, a hard chill, and never letting acid near it until the last second.",
+  "datePublished": "2026-07-06",
+  "author": {
+    "@type": "Organization",
+    "name": "Littoralicious"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Littoralicious",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.littoralicious.com/assets/logo/logo.svg"
+    }
+  },
+  "image": "https://www.littoralicious.com/assets/logo/og-image.png",
+  "mainEntityOfPage": "https://www.littoralicious.com/articles/green-puree.html"
+}
+    </script>
+</head>
+<body>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../shore-larder.html">Shore Larder</a>
+                    <a href="../the-method.html">The Method</a>
+                    <a href="../littoral-heritage.html">Heritage</a>
+                    <a href="../the-evidence.html">The Evidence</a>
+                    <a href="../the-bridge.html">The Bridge</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">Recipe Blueprint</span>
+                    <time class="article__date">2026-07-06</time>
+                    <span class="article__reading-time">9 min read</span>
+                </div>
+                <h1 class="article__title">The Green Purée: Holding the Colour</h1>
+                <p class="article__lede">A bright, spoon-coating green purée that stays green from pass to plate. The whole trick is a hard blanch, a hard chill, and never letting acid near it until the last second.</p>
+            </header>
+
+            <div class="article__content container rcp" data-recipe="green-puree" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <!-- ════════════════════════════════════════════════════════════════════════
+                     BODY:BEGIN — THE BLUEPRINT (05).  ONE page · ONE slug · ONE [data-recipe] root.
+                     Two movements, joined by a single labelled .divider — never a second page:
+                        I.  THE STORY  — a real read: why this dish exists, and the one idea behind it.
+                        II. THE BUILD  — the executable recipe; the read continues inside the steps.
+
+                     THE READ IS FIRST-CLASS. Someone who is NOT cooking today must still want to read
+                     it. Do not minimise the prose — earn the recipe. Hold all three pillars in every
+                     piece: Grandmother (why cook at all), Scientist (sourced mechanism), Yacht Chef
+                     (boat-proof execution).
+
+                     THREE TEACHING SLOTS, all ALWAYS VISIBLE (a skimmer who opens zero toggles still
+                     learns something new):
+                        · ONE learn-something fact   → a custom-labelled note  (verified + SOURCED, non-obvious)
+                        · ONE controlling idea        → the Key Point note       (the sentence they keep tomorrow)
+                        · ONE science-as-story line   → a Science note or science-box  (cause then effect)
+                     NO-DUPLICATE-FACT: the learn-something note, the rcp-story, and the science line
+                     must each carry a DIFFERENT fact. Deep chemistry is DEMOTED into per-step
+                     <details class="rcp-why"> with a <cite> — never a wall of prose.
+
+                     HISTORY IS LOAD-BEARING: it must explain a choice the recipe makes (this fat, this
+                     cut, this technique), opened in the Story and paid off in the close. Not decoration.
+
+                     FOCUS LAWS (the first law — never lose focus): open on the payoff, one idea per beat,
+                     no prose block past ~150 words without a re-hook, don't stack two callouts with no
+                     prose between them, close on ONE thing. British cooking spelling (flavour, colour,
+                     caramelise). Banned: delicious · elevated · curated · artisanal · superfood ·
+                     game-changer · hack. Write the headnote LAST, after you have cooked it.
+
+                     ENGINE CONTRACT — do not break (recipe.js drives all of this):
+                        · keep .rcp-ing and .rcp-step in STABLE order — ticks persist by DOM index;
+                          reordering lands saved ticks on the wrong rows.
+                        · every scalable number is <span data-qty="500" data-unit="g">500 g</span>;
+                          NEVER hand-set data-base (the engine stamps it). data-round="0" forces whole units.
+                        · .rcp-why / .rcp-ratio / .rcp-fold are native <details> — no JS, no persistence.
+                        · two .rcp-card galley PDFs (Metric + cups / lb-oz + cups) — same recipe; the cups
+                          column is identical in both. Cache-bust: append ?v=<YYYYMMDD> on every re-render.
+                     ════════════════════════════════════════════════════════════════════════════════ -->
+
+                <!-- ── I. THE STORY ──────────────────────────────────────────────────────────── -->
+
+                <!-- HEADNOTE (write LAST · 80–150 words). Sentence one = the payoff: the sensory result
+                     or the one surprising fact — NOT "most X is dense/greasy". Then the single reason
+                     this version earns galley time. End on a half-line that pulls into the story.
+                     GOOD: "Pull it from the tin and the crust should crackle, then give to a steam-laced
+                     crumb." · BAD: "Focaccia is a popular Italian bread that many people enjoy." -->
+                <p>Spoon it under a piece of fish and it should read grass-green in the plate light &mdash; <mark>vivid, glossy, alive</mark> &mdash; not the tired army-green most pur&eacute;es turn by service. The colour is chemistry, not luck: a hard fast blanch, an ice bath that stops it dead, and no acid until the plate. Get those three and one batch feeds both ends of the boat. First the why, then the build.</p>
+
+                <!-- CONTROLLING IDEA — the one sentence they keep after the recipe is forgotten. One idea
+                     only (spin a second into another article). Everything below ladders to this line. -->
+                <div class="note note--key"><p><strong>The one idea:</strong> a green purée stays green by keeping <span class="highlight highlight--term">acid and heat</span> away from the chlorophyll &mdash; blanch hard and brief, chill hard and fast, and hold the lemon until the last second.</p></div>
+
+                <!-- ORIGIN + LIVING TRADITION (the Grandmother beat · two short paragraphs of PROSE). History
+                     as a story, not a caption: etymology + place + ritual, then how it travelled or how the
+                     region varies it. Open the throughline you will pay off at the close. Make it
+                     load-bearing: it should explain a choice the recipe makes. It sits BETWEEN the two notes
+                     on purpose — prose between callouts so boxes never stack. -->
+                <div class="rcp-story">
+                    <span class="rcp-story__kicker">Where it comes from</span>
+                    <p>The French kitchen named the whole move two hundred years ago: <em>blanchir &agrave; grande eau</em> &mdash; blanch in a great volume of water &mdash; then <em>rafra&icirc;chir</em>, refresh in ice. It is the first thing taught on the garde-manger station, and it exists for one reason: cooks watched greens slide from bright to drab the moment they were cooked slow, covered, or held, and worked out that speed and cold were the only defence.</p>
+                    <p>Every green purée on a restaurant pass &mdash; the <em>pur&eacute;e d&rsquo;&eacute;pinards</em> under the sole, the pea purée beside the lamb &mdash; is built on that discipline. What changes from kitchen to kitchen is only the enrichment: butter in France, a little cream, a handful of parmesan on the Italian side. The colour rule never changes, and it is the thread this recipe is built around.</p>
+                </div>
+
+                <!-- OPTIONAL — INCLUDE ONLY IF IT EARNS A SCAN; OTHERWISE LEAVE DELETED. Designated dishes ONLY:
+                     uncomment the dark Origin Card below ONLY when the dish carries a REAL legal designation
+                     (focaccia di Recco IGP, a PDO cheese, a DOP oil). It is the tradition object: who guards the
+                     name, where it may legally be made, the one rule that defines the genuine article. NOT for a
+                     generic regional dish — that history lives in the prose above; do not invent a status. If you
+                     do uncomment it, add a one-line prose bridge after it so it never stacks against the
+                     learn-something note below.
+                <div class="id-card id-card--origin">
+                    <h4 class="id-card__title">Origin</h4>
+                    <div class="id-card__grid">
+                        <div><span class="id-card__label">Born</span><strong class="id-card__value">[place / era]</strong></div>
+                        <div><span class="id-card__label">Of necessity</span><strong class="id-card__value">[the need it met]</strong></div>
+                        <div><span class="id-card__label">Protection</span><strong class="id-card__value">[IGP / PDO / DOP — the real designation, or delete this card]</strong></div>
+                        <div><span class="id-card__label">Authorised zone</span><strong class="id-card__value">[the only place it may legally be made]</strong></div>
+                        <div><span class="id-card__label">The defining rule</span><strong class="id-card__value">[the one rule that makes it genuine — e.g. no leavening, single thin sheet]</strong></div>
+                    </div>
+                </div>
+                -->
+
+                <!-- LEARN-SOMETHING (mandatory · ALWAYS VISIBLE · never a toggle). ONE verified, non-obvious
+                     fact tied to THIS dish: etymology · food archaeology · a trade-route / economic-history
+                     fact · the science-discovery story. Name the source inline (no "they say"). ROTATE the
+                     label across the corpus so it never feels moulded: "Did you know" / "The Number" /
+                     "The Story" / "Myth". MYTH variant: name the belief, overturn it with evidence, then
+                     RESTORE the real reason (pair with a Science note labelled "Mechanism") — never leave the
+                     cook empty-handed. This fact must DIFFER from the rcp-story and the science line below. -->
+                <div class="note" data-label="Did you know"><p>Frozen peas are often greener and sweeter than the &lsquo;fresh&rsquo; peas at the market. <mark>Freezing is the edge here, not the enemy.</mark> Peas are blanched within hours of picking, which halts the enzymes that turn their sugar to starch and dull their colour; a &lsquo;fresh&rsquo; pod sitting three days on a stall has been quietly doing both. <cite>&mdash; H. McGee, <em>On Food and Cooking</em></cite></p></div>
+
+                <!-- BRIDGE — one line of PROSE turning from "where it comes from" to "what is really
+                     happening", so the read flows and two callouts never sit back-to-back. -->
+                <p>That drift from green to drab has a name and a cause, and once you can see it you can stop it.</p>
+
+                <!-- SCIENCE-AS-STORY — exactly ONE mechanism, surfaced as cause then effect (molecules with
+                     motive), no jargon dump. The DEEP version stays in the per-step Why toggles. Vary the
+                     vessel piece to piece: a Science note here, or a science-box (shown commented below).
+                     Optional re-hook anywhere above: a Reference pull-quote (one sourced cultural line),
+                     dropped right after a prose paragraph — never set against another callout. -->
+                <div class="note note--science"><p>Chlorophyll is green because it holds a single magnesium ion at its centre. Heat and acid knock that ion out and swap in hydrogen, turning the molecule into olive-brown <span class="term">pheophytin</span> &mdash; the army-green of overcooked veg. In blanched green peas the loss follows first-order kinetics and <mark>speeds up sharply as the water turns acidic</mark>, from pH 7.5 down toward 5.5. That is why a big neutral pot and a cold bath hold the colour, and why a squeeze of lemon destroys it. <cite>&mdash; Koca, Karadeniz &amp; Burdurlu, <em>Food Chemistry</em>, 2007. DOI: 10.1016/j.foodchem.2005.09.079</cite></p></div>
+                <!-- WRITER: SCIENCE = highest bar. The number here MUST come from a PRIMARY peer-reviewed source — a journal article, lab paper, or systematic review with year + DOI. A reference book (McGee, Modernist) may support but NEVER replaces it. One measured fact, not a vague "the starch sets" — give the actual °C or % and cite where it was measured. This fact must DIFFER from the rcp-story and the learn-something note. -->
+
+                <!-- Alternative vessel (pick one, vary across the corpus):
+                <div class="science-box">
+                    <div class="science-box__label">Evidence</div>
+                    <div class="science-box__title">[The mechanism, named]</div>
+                    <div class="science-box__content"><p>[Two or three sentences, cause → effect.]</p></div>
+                </div> -->
+
+                <!-- ── THE HINGE — read → make, same page ────────────────────────────────────── -->
+                <div class="divider" id="build"><span class="divider__text">Now make it</span></div>
+
+                <!-- ── II. THE BUILD ─────────────────────────────────────────────────────────── -->
+
+                <!-- AT-A-GLANCE — orient the cook fast. Surface the make-ahead constraint HERE, not only in
+                     a bottom fold. (Use EITHER this rcp-stats strip OR a .quick-ref card per dish, never both.) -->
+                <dl class="rcp-stats">
+                    <div><dt>Active</dt><dd>20 min</dd></div>
+                    <div><dt>Total</dt><dd>30 min <small>incl. ice bath</small></dd></div>
+                    <div><dt>Yield</dt><dd>10&ndash;12 <small>as a base or side</small></dd></div>
+                    <div><dt>Make-ahead</dt><dd>holds 1 day on ice; brightest same service</dd></div>
+                </dl>
+
+                <!-- GALLEY CARDS — placed HIGH, right under the hinge + stats, so a reader who just wants
+                     the recipe grabs a one-page printable without scrolling. TWO variants, same recipe:
+                     Metric (grams + cups) and US (lb/oz + cups); the cups column is identical in both.
+                     Cache-bust: append ?v=<YYYYMMDD> to each href whenever you re-render the cards. -->
+                <a class="rcp-card" href="../print/green-puree-recipe-card.pdf" download>
+                    <span><b>Galley card &middot; Metric</b><span>Grams + cups, one line &mdash; print, pin, cook.</span></span>
+                    <span class="rcp-card__btn">Metric + cups</span>
+                </a>
+                <a class="rcp-card" href="../print/green-puree-recipe-card-us.pdf" download>
+                    <span><b>Galley card &middot; US</b><span>Ounces + cups, one line &mdash; no scale needed.</span></span>
+                    <span class="rcp-card__btn">lb/oz + cups</span>
+                </a>
+
+                <!-- THE RATIO (house default) — the formula the chef memorises and rescales anything from
+                     (baker's % with flour at 100%, an appareil formula, etc.). Skip this block ONLY when the
+                     dish has no real governing ratio (a pure assembly). -->
+                <details class="rcp-ratio" open>
+                    <summary>The ratio &mdash; memorise, rescale anything</summary>
+                    <div class="rcp-ratio__body"><code>Blanched greens 100% &middot; Cold butter 12% &middot; Parmesan 8% &middot; Blanch water to loosen</code> &mdash; the butter is for gloss and body, the parmesan for savour and salt; keep the added liquid low or the purée goes slack and pale.</div>
+                </details>
+
+                <!-- SCALER — default the base yield to 10–12 covers (crew/charter sizing). -->
+                <div class="rcp-scaler" data-base-yield="12" data-yield-unit="portions">
+                    <span class="rcp-scaler__label">Scale</span>
+                    <button data-scale="0.5">½&times;</button>
+                    <button data-scale="1" class="active">1&times;</button>
+                    <button data-scale="2">2&times;</button>
+                    <span class="rcp-scaler__yield"><b data-yield>12</b> portions</span>
+                </div>
+
+                <!-- INGREDIENTS — listed in ORDER OF USE, grouped by sub-component. Every quantity is a live
+                     [data-qty]; audit the list against the method so nothing is orphaned. Keep row order stable. -->
+                <h2>Ingredients</h2>
+                <div class="rcp-group">For the blanch</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="3" data-unit="L">3 L</span></span><span class="rcp-ing__n">Water</span> <span class="rcp-ing__note">a big pot, hard boil</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="30" data-unit="g">30 g</span></span><span class="rcp-ing__n">Fine sea salt</span> <span class="rcp-ing__note">1% of the water</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="400" data-unit="g">400 g</span></span><span class="rcp-ing__n">Baby spinach</span> <span class="rcp-ing__note">or frozen leaf spinach</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="300" data-unit="g">300 g</span></span><span class="rcp-ing__n">Frozen peas</span> <span class="rcp-ing__note">as good as fresh here</span></label></li>
+                </ul>
+                <div class="rcp-group">To finish</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="80" data-unit="g">80 g</span></span><span class="rcp-ing__n">Unsalted butter</span> <span class="rcp-ing__note">cold, diced</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="50" data-unit="g">50 g</span></span><span class="rcp-ing__n">Parmesan</span> <span class="rcp-ing__note">finely grated</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="60" data-unit="g">60 g</span></span><span class="rcp-ing__n">Reserved blanch water</span> <span class="rcp-ing__note">hot, from the pot</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="2" data-unit="g" data-round="0">2 g</span></span><span class="rcp-ing__n">Flaky salt</span> <span class="rcp-ing__note">to taste</span></label></li>
+                </ul>
+
+                <!-- METHOD — WOVEN steps: the read does NOT stop at the divider. 4–6 MAJOR steps OPEN with a
+                     ONE-LINE cultural or scientific micro-story (in <em>), then the instruction, then the deep
+                     Why one tap away. Keep the lead to a single line — never a free-standing essay between steps.
+                     GOOD lead: "<em>Genoa calls this the brine — salamoia — and it is the whole trick.</em>"
+                     BAD lead: a three-sentence history that stalls the cook mid-recipe. -->
+                <h2>Method</h2>
+                <div class="rcp-progress"><span data-progress-done>0</span>/<span data-progress-total>0</span> steps done<div class="rcp-progress__bar"><i data-progress-bar></i></div></div>
+                <ol class="rcp-steps">
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>The garde-manger rule: a great volume of water, well salted, kept at a hard rolling boil.</em></p>
+                            <p><strong>Blanch, and keep it moving.</strong> Bring the <span data-qty="3" data-unit="L">3 L</span> water to a rolling boil and add the <span data-qty="30" data-unit="g">30 g</span> salt. Drop the <span data-qty="300" data-unit="g">300 g</span> peas for 2&ndash;3 min, lift them out, then plunge the <span data-qty="400" data-unit="g">400 g</span> spinach for 30&ndash;45 seconds &mdash; just until it collapses and turns <mark>vivid green</mark>.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">A large, salted, hard-boiling volume dilutes the acids the greens release and returns to the boil fast, so the water stays near neutral and the heat is brief &mdash; both keep chlorophyll from tipping to pheophytin. <cite>&mdash; Koca et al. 2007; McGee 2004</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>The refresh &mdash; rafra&icirc;chir &mdash; is not optional; the cold is what locks the colour.</em></p>
+                            <p><strong>Ice-bath, hard.</strong> Have a bowl of heavily iced water ready. Plunge the peas and spinach straight in and leave until fully cold to the touch, with no residual warmth.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Pheophytin forms with heat; stop the heat instantly and you stop the browning. Carryover warmth in a drained colander is enough to dull the batch &mdash; the ice is what freezes the colour in place. <cite>&mdash; Koca et al. 2007</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>Water left in the greens is the difference between glossy and grey.</em></p>
+                            <p><strong>Wring it bone-dry.</strong> Squeeze the spinach hard in a clean cloth until no more water runs, and drain the peas well. Reserve <span data-qty="60" data-unit="g">60 g</span> of the hot blanch water before it cools.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Every gram of trapped water dilutes the purée, thins the gloss and pales the colour. Control the liquid and you control the sheen. <cite>&mdash; Modernist Cuisine</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>Blend cold and blend fast &mdash; a long, warm spin is where colour dies.</em></p>
+                            <p><strong>Blend to a gloss.</strong> Put the greens, the <span data-qty="60" data-unit="g">60 g</span> reserved water and the cold <span data-qty="80" data-unit="g">80 g</span> butter in a high-speed blender and run hard for about 60 seconds to a glossy purée. Add the <span data-qty="50" data-unit="g">50 g</span> parmesan, blend to combine, then pass through a fine sieve for a <mark>mirror-smooth</mark> finish.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Cold butter emulsifies into the water and vegetable fibre for sheen and body without breaking; a short, hard blend keeps friction from warming the mix; the sieve pulls out the fibre that reads as grain on the tongue. <cite>&mdash; Modernist Cuisine; McGee 2004</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>One rule outranks all the others: no acid until the plate.</em></p>
+                            <p><strong>Season, and hold cold.</strong> Salt to taste with the flaky salt. To hold, spread thin in a tray set over ice and press cling film to the surface. At service, warm it briefly and gently &mdash; a quick turn in a pan or a warm bain, never a boil &mdash; and add lemon only on the plate, if at all.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Warming and holding both cost colour with time; the shorter and cooler you keep it before the plate, the greener it stays. <cite>&mdash; Koca et al. 2007</cite></div></details>
+                            <div class="note note--warning"><p><strong>Acid is the one that ruins it.</strong> A squeeze of lemon or a splash of vinegar stirred into the warm base displaces the magnesium in seconds and turns the whole batch army-green. Dress at the last moment, or acidulate only what sits on the plate &mdash; never the batch.</p></div>
+                        </div></li>
+                </ol>
+                <div class="rcp-meta"><button data-recipe-reset>Reset ticks</button> &middot; progress saves on this device</div>
+
+                <!-- EXTRAS — off-critical-path depth in folds so the spine stays lean. DEVELOP these; they
+                     are where the obsessive cook goes, and collapsed-by-default means length is free.
+                     Take it further = several real variations + regional cousins (teach something).
+                     Troubleshooting = the actual failure modes, cause then fix. Charter = make-ahead,
+                     par-bake, freeze (dough AND baked), hold/refresh, scale-up, plus the galley reality. -->
+                <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
+                    <!-- FAMILY TREE (first sub-block · the Grandmother beat) — the named regional/historical cousins
+                         of this dish BEFORE the modern riffs, dialect term in <em>. Model: focaccia's cousins are
+                         fougassa (Provence) / hogaza (Castile) / fugassa (Liguria). Teach the lineage; one true line
+                         each on what makes that cousin distinct. Then the modern variations table below it. -->
+                    <div class="rcp-group">The family tree</div>
+                    <table>
+                        <tr><td><em>Pur&eacute;e d&rsquo;&eacute;pinards</em></td><td>France &middot; the garde-manger benchmark &mdash; blanched spinach mounted with butter or a little cream</td></tr>
+                        <tr><td><em>Palak</em></td><td>North India &middot; the opposite school &mdash; spinach cooked down long with aromatics, colour traded on purpose for depth</td></tr>
+                        <tr><td><em>Pesto</em> (blanched-basil method)</td><td>Liguria &middot; the same blanch-and-shock borrowed to hold basil bright green in the sauce</td></tr>
+                    </table>
+                    <div class="rcp-group">Modern variations</div>
+                    <table>
+                        <tr><td>Pea-forward</td><td>Lean it to peas for a sweeter, brighter base under white fish</td></tr>
+                        <tr><td>Herb lift</td><td>Blanch a handful of parsley or watercress with the spinach for a sharper green</td></tr>
+                        <tr><td>Vegan</td><td>Swap butter for cold olive oil and the parmesan for a spoon of white miso &mdash; same gloss, same salt-and-savour</td></tr>
+                    </table>
+                </div></details>
+
+                <details class="rcp-fold"><summary>Troubleshooting</summary><div class="rcp-fold__body">
+                    <table>
+                        <tr><td>Army-green, not grass-green</td><td>Cooked too long, held hot, or acid added early &rarr; shorter blanch, harder ice bath, no acid in the batch</td></tr>
+                        <tr><td>Grainy on the tongue</td><td>Not passed, or the parmesan clumped &rarr; push through a fine sieve; add the cheese off the boil</td></tr>
+                        <tr><td>Slack and pale</td><td>Greens not squeezed, or too much liquid &rarr; wring drier and cut the added water</td></tr>
+                        <tr><td>Dull after holding</td><td>Reheated too long or held warm &rarr; keep it cold until service, then warm briefly only</td></tr>
+                    </table>
+                </div></details>
+
+                <!-- DONE WHEN (always visible · the Yacht-Chef beat) — senses, not the clock. A galley timer lies on
+                     a swell-tilted oven; the cook reads the dish. Give 2–3 finish cues across different senses. -->
+                <div class="note" data-label="Done when"><p>It coats the back of a spoon and holds a clean edge &middot; the colour reads grass-green, not olive &middot; the surface is glossy and the tongue finds no grain.</p></div>
+                <!-- WRITER: 2–3 senses-not-clock cues — touch / internal temp / sound or colour. No "bake 35 min"; the timing lives in the steps. These are how the cook KNOWS, on a moving boat. -->
+
+                <details class="rcp-fold"><summary>Charter prep &amp; storage</summary><div class="rcp-fold__body">
+                    <div class="rcp-group">Provisioning at sea</div>
+                    <table>
+                        <tr><td>Frozen peas &amp; leaf spinach</td><td>The always-aboard heroes: blanched at harvest, so greener and sweeter than tired market veg &mdash; keep a bag of each in the freezer and this dish is never off the menu</td></tr>
+                    </table>
+                    <p>Because the colour rule rewards frozen over tired-fresh, this is a dish you can always build. Blanched, shocked and squeezed, the greens hold a day in the fridge before blending. The finished purée keeps its colour best served the same day; spread thin over ice it survives a service, but a batch left warm in a bain will drift olive within the hour. It freezes acceptably as a base &mdash; blend, freeze flat in a bag, and re-loosen warm with a little water, expecting a touch less shine.</p>
+                </div></details>
+
+                <!-- THE CLOSE (ALWAYS VISIBLE — outside any fold). Pay off the throughline and hand the cook
+                     the ratio as a tool: restate it, then 2–3 riffs INCLUDING a cheaper/heartier crew-tier swap
+                     (cook once, serve two tiers). Close on ONE thing. -->
+                <div class="note note--action"><p><strong>Once you own the ratio</strong> &mdash; greens, cold butter, parmesan &mdash; the base is yours: swing it to peas for white fish, to watercress for something sharper, to olive oil and miso for a vegan plate. <strong>Cook once, serve two tiers:</strong> pass the guest portion through a fine sieve and quenelle it under the fish; for the crew, skip the sieve, fold the blanched peas back in whole and loosen with more blanch water into a green soup or a mash over bread &mdash; same pot, two plates. Keep the acid off both until the last second, and the colour is the first thing either table sees.</p></div>
+                <!-- WRITER: the cook-once-serve-two-tiers swap is NON-OPTIONAL. Name the actual cheaper cut or heartier version of THIS dish — not a generic "scale it down". Guest tier and crew tier from one cook. -->
+
+                <!-- BRIDGE — one line of PROSE turning from the tool (the ratio) to the table, so the close note and
+                     the nurture note never sit back-to-back. -->
+                <p>Because that is what a green purée is really for &mdash; it is the colour on the plate before anyone has taken a bite.</p>
+
+                <!-- NURTURE NOTE (MANDATORY · fixed slot · the warmest beat) — the serving culture: how it is actually
+                     eaten, torn, shared, dunked; who you feed and why. Not "serve warm" — the human ritual. This is
+                     the Grandmother pillar closing the piece. One or two lines, real feeling, never filler. -->
+                <div class="note note--quote" data-label="At the Table"><p>A swipe of true green under a piece of fish tells a guest someone cared before they have tasted a thing; a bowl of the same, looser and warm with bread, tells a tired crew the same. Grey purée says the cook gave up somewhere between the pot and the pass. Feed both ends of the boat something that looks alive.</p></div>
+
+                <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> Koca, N., Karadeniz, F. &amp; Burdurlu, H. S. &lsquo;Effect of pH on chlorophyll degradation and colour loss in blanched green peas&rsquo;, <em>Food Chemistry</em> 100(2), 2007, 609&ndash;615. DOI: 10.1016/j.foodchem.2005.09.079. Supporting: H. McGee, <em>On Food and Cooking</em> (2004); <em>Modernist Cuisine</em> (2011). <em>Tested at sea.</em></p>
+
+                <!-- BODY:END -->
+
+                <!-- Article Engagement -->
+                <div class="article-engagement">
+                    <div class="engagement-pulse" data-reactions="0" data-comments="0">
+                        <span class="engagement-pulse__text">Be the first to join the conversation</span>
+                    </div>
+                    <div class="article-reactions" data-article-id="green-puree">
+                        <p class="reactions-prompt">Have you cooked this? Share your result or a question.</p>
+                        <div class="reactions-grid"></div>
+                        <div class="sentiment-bar"></div>
+                    </div>
+                    <div class="article-share">
+                        <span class="share-label">Share:</span>
+                        <button class="share-btn" data-share="twitter" title="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="linkedin" title="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="copy" title="Copy link">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
+                    </div>
+                    <div class="article-comments">
+                        <h3 class="comments-title">Join the conversation <span class="comments-title__count"></span></h3>
+                        <div class="comments-sort">
+                            <button class="comments-sort__btn active" data-sort="newest">Newest</button>
+                            <button class="comments-sort__btn" data-sort="most-agreed">Most agreed</button>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <div class="comment-form__row">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                    <input type="email" name="email" placeholder="Email (optional)">
+                                </div>
+                                <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" maxlength="2000" required></textarea>
+                                <div class="comment-form__footer">
+                                    <label class="comment-form__subscribe">
+                                        <input type="checkbox" name="subscribe" checked>
+                                        <span>Subscribe to the newsletter</span>
+                                    </label>
+                                    <span class="comment-form__char-count"></span>
+                                    <button type="submit">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comments-list"></div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__newsletter">
+                <form class="footer-newsletter-form newsletter-form"
+                      action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
+                      method="post" target="popupwindow">
+                    <label for="footer-email">Get the monthly brief</label>
+                    <div class="footer-newsletter-form__row">
+                        <input type="email" name="email" id="footer-email" placeholder="your@email.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved. Information wants to be free.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/community.js"></script>
+    <script src="../assets/js/recipe.js"></script>
+</body>
+</html>
