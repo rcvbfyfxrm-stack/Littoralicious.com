@@ -1,0 +1,106 @@
+name: The World Affair — weekly recap
+
+# Autonomous WEEKLY recap on GitHub's own infrastructure (off the write-blocking
+# cloud egress proxy). Saturdays: SONNET 5 harvests the week + writes the recap,
+# OPUS 4.8 supervises, then the workflow commits, pushes and deploys to Firebase.
+# Companion to theworldaffair-autopublish.yml (the Mon/Wed/Fri daily editions that
+# cover all 9 beats). Same auth: prefers ANTHROPIC_API_KEY (no cap), falls back to
+# CLAUDE_CODE_OAUTH_TOKEN. Spec = theworldaffair/.twa-recap-spec.md.
+
+on:
+  schedule:
+    - cron: '0 1 * * 6'   # 01:00 UTC Saturday — after the week's Mon/Wed/Fri editions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: twa-weekly
+  cancel-in-progress: false
+
+jobs:
+  recap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check for a Claude auth secret
+        id: guard
+        env:
+          OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          APIKEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$OAUTH" ] && [ -z "$APIKEY" ]; then
+            echo "::notice::No Claude auth secret set — add ANTHROPIC_API_KEY (preferred) or CLAUDE_CODE_OAUTH_TOKEN. Skipping."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout live branch
+        if: steps.guard.outputs.go == 'true'
+        uses: actions/checkout@v5
+        with:
+          ref: rebuild/publishing-system
+          fetch-depth: 0
+
+      - name: Setup Node
+        if: steps.guard.outputs.go == 'true'
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install Claude Code
+        if: steps.guard.outputs.go == 'true'
+        run: npm i -g @anthropic-ai/claude-code
+
+      - name: Write the recap — SONNET 5 (harvest week + write)
+        if: steps.guard.outputs.go == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          claude -p "You are the WRITER producing today's The World Affair WEEKLY RECAP inside a GitHub Actions checkout of branch rebuild/publishing-system. The repo is ALREADY checked out here — do NOT clone. Read theworldaffair/.twa-recap-spec.md (your recap instructions) AND theworldaffair/.twa-magazine-spec.md (shared standards) AND theworldaffair/.front-template.html and theworldaffair/.article-template.html. Then execute the recap spec STEP 0 through STEP 5: harvest the last 7 days of daily editions from editions.json + the files, refresh via WebSearch, select the week's 7-10 biggest stories across ALL 9 beats, and WRITE the front page theworldaffair/$(date +%F).html plus la-semaine.html (and preferably histoire-de-la-semaine.html) under theworldaffair/$(date +%F)/, and update theworldaffair/editions.json (kind: weekly). Do NOT run STEP 6 / any git command — leave files on disk. Obey the LOI EDITORIALE, the T3-floor rule, and emit the .twa-verdict typographic stamp — never emoji." \
+            --model claude-sonnet-5 \
+            --dangerously-skip-permissions
+
+      - name: Supervise — OPUS 4.8 (editor-in-chief review + fix)
+        if: steps.guard.outputs.go == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          claude -p "You are the OPUS EDITOR-IN-CHIEF supervising today's WEEKLY RECAP that a Sonnet writer just produced in this checkout. Do NOT clone, do NOT run git. Standards = theworldaffair/.twa-recap-spec.md + theworldaffair/.twa-magazine-spec.md. Read them, then read the files just written: theworldaffair/$(date +%F).html and everything under theworldaffair/$(date +%F)/. Audit hard against: the LOI EDITORIALE (payoff-first, one idea per section, never lose attention); is this genuinely the BEST-OF the whole week across all 9 beats, not a rehash of one day?; the T3-floor rule (no wire-only 'Confirme' — downgrade or cut; upgrade verdicts the week firmed up); every load-bearing claim has an inline <a href> source; the .twa-verdict typographic stamps are used and there is ZERO emoji; the Chiffres de la Semaine table shows real weekly moves; 'A surveiller' and 'L'Angle Mort' earn their place; tight literary French. FIX problems by EDITING the files directly — tighten prose, correct verdicts, add missing sources or cut unsourced claims, delete any emoji, sharpen flat headlines. Improve surgically; do not regenerate wholesale. Ensure it is publish-ready. Do NOT run git." \
+            --model claude-opus-4-8 \
+            --dangerously-skip-permissions
+
+      - name: Commit + push the recap
+        if: steps.guard.outputs.go == 'true'
+        run: |
+          DATE=$(date +%F)
+          git config user.name "NEXUS World Affair"
+          git config user.email "nexus-bot@users.noreply.github.com"
+          git add theworldaffair/
+          if git diff --cached --quiet; then
+            echo "::error::No recap files produced — aborting before deploy."
+            exit 1
+          fi
+          git commit -m "World Affair: weekly recap $DATE (Sonnet write · Opus supervise)"
+          git push origin HEAD:rebuild/publishing-system
+
+      - name: Deploy to live Firebase Hosting
+        if: steps.guard.outputs.go == 'true'
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          npm ci || npm install
+          npm run build
+          set +e
+          out=$(npx --yes firebase-tools@15 deploy --only hosting --project littoralicious-web-eceed --non-interactive 2>&1)
+          code=$?; printf '%s\n' "$out"
+          if [ $code -ne 0 ] && printf '%s' "$out" | grep -q "is the current active version"; then
+            echo "::notice::Hosting unchanged — no-op deploy treated as success."; exit 0
+          fi
+          exit $code
