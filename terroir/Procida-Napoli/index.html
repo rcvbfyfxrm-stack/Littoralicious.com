@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Procida, Bay of Naples — Terroir Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<!-- Terroir guide kit -->
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-enhance.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  :root { --paper:#fafafa; --paper-2:#f2efe8; --ink:#0a0a0a; --ink-2:#3a3a3a; --ink-3:#6a6a6a; --rule:#d7d2c4; --sea:#2d4a5e; --color-subtle:#ede9de; --gold:#8a6a2e; --amber:#a86a2f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  body { font-family:Georgia,serif; background:var(--paper); color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+  .hero { padding:64px 24px 6px; text-align:center; border-bottom:none; display:flex; flex-direction:column; align-items:center; }
+  .hero::after { content:''; order:3; display:block; width:52px; height:2px; background:var(--sea); margin:34px 0 0; }
+  .hero h1 { order:0; font-family:'Playfair Display',serif; font-size:clamp(3em,8.5vw,5.4em); letter-spacing:.5px; font-weight:700; line-height:.92; color:var(--ink); margin:0; }
+  .hero .region { order:-1; font-family:'JetBrains Mono',monospace; color:var(--sea); font-size:0.72em; margin:0 0 18px; letter-spacing:4px; text-transform:uppercase; }
+  .hero .philosophy { order:1; color:var(--ink-2); margin:26px 0 0; font-style:italic; font-family:Georgia,serif; font-size:1.2em; line-height:1.55; max-width:600px; }
+  .hero .date { font-family:'JetBrains Mono',monospace; color:var(--ink-3); font-size:0.68em; margin-top:18px; letter-spacing:2px; text-transform:uppercase; }
+  .quicknav { position:sticky; top:0; z-index:100; background:rgba(250,250,250,0.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--rule); padding:10px 16px; text-align:center; overflow-x:auto; white-space:nowrap; font-family:system-ui,sans-serif; }
+  .quicknav a { display:inline-block; color:var(--ink-2); font-size:0.7em; text-transform:uppercase; letter-spacing:2px; padding:6px 10px; }
+  .quicknav a:hover { color:var(--sea); }
+  .quicknav .sep { color:var(--rule); margin:0 2px; }
+  .container { max-width:820px; margin:0 auto; padding:0 18px 60px; }
+  .instructions { font-family:system-ui,sans-serif; text-align:center; color:var(--ink-3); font-size:0.8em; padding:14px 0 8px; font-style:italic; }
+  .instructions strong { color:var(--sea); font-style:normal; font-weight:500; }
+  .lead { font-size:1.02em; line-height:1.8; margin:22px 0 18px; }
+  .lead::first-letter { font-family:'Playfair Display',serif; font-size:3.4em; float:left; line-height:0.9; padding:6px 10px 0 0; color:var(--sea); font-weight:900; }
+  .lead a, .prose a { border-bottom:1px dotted var(--sea); color:var(--sea); }
+  .funfact { background:#fbf9f0; border-left:3px solid var(--sea); padding:14px 20px; margin:20px auto; font-size:0.94rem; font-style:italic; line-height:1.65; max-width:65ch; }
+  .funfact::before { content:'FUN FACT · '; font-family:'JetBrains Mono',monospace; font-style:normal; font-size:0.7rem; letter-spacing:0.15em; color:var(--sea); font-weight:700; margin-right:6px; }
+  .funfact strong { color:var(--ink); font-style:normal; font-weight:600; }
+  .alert { background:#fff6e8; border-left:4px solid var(--amber); padding:14px 18px; margin:18px 0; font-size:0.92em; line-height:1.65; font-family:system-ui,sans-serif; }
+  .alert .alert-label { color:var(--amber); font-weight:600; font-size:0.8em; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; display:block; }
+  .alert a { border-bottom:1px dotted var(--amber); color:var(--amber); }
+  .prose { margin:32px 0; }
+  .prose .overline { font-family:'JetBrains Mono',monospace; font-size:0.72em; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+  .prose .subhead { font-family:'Playfair Display',serif; font-style:italic; font-size:1.2em; color:var(--ink-2); margin-bottom:14px; }
+  .prose p { font-size:1em; line-height:1.8; }
+  .prose ul { list-style:none; padding:0; }
+  .prose ul li { padding:10px 0; border-bottom:1px dashed var(--rule); font-size:0.96em; line-height:1.7; color:var(--ink-2); }
+  .prose ul li strong { color:var(--ink); font-weight:600; }
+  details.sfold { border-top:1px solid var(--rule); margin-top:18px; }
+  details.sfold > summary { list-style:none; cursor:pointer; padding:18px 0 10px; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:14px; }
+  details.sfold > summary::-webkit-details-marker { display:none; }
+  .sfold__title { font-family:'Playfair Display',serif; font-size:1.3em; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+  .sfold__desc { font-family:system-ui,sans-serif; color:var(--ink-3); font-size:0.82em; font-style:italic; margin-top:3px; }
+  .sfold__count { font-family:'JetBrains Mono',monospace; font-size:0.68em; color:var(--sea); background:var(--paper-2); border:1px solid var(--rule); padding:4px 10px; border-radius:14px; letter-spacing:0.8px; text-transform:uppercase; }
+  .sfold__chev { color:var(--sea); font-family:'Playfair Display',serif; font-size:1.4em; transition:transform 0.2s; width:18px; text-align:center; }
+  details.sfold[open] > summary .sfold__chev { transform:rotate(45deg); }
+  details.sfold > summary .sfold__chev::before { content:"+"; }
+  .sfold__body { padding:6px 0 14px; }
+  ul.sources { list-style:none; padding:0; }
+  ul.sources li { padding:8px 0; border-bottom:1px dashed var(--rule); font-size:0.88em; font-family:system-ui,sans-serif; }
+  ul.sources li a { color:var(--sea); border-bottom:1px dotted var(--sea); }
+  .footer { text-align:center; color:var(--ink-3); font-size:0.8em; padding:50px 0 20px; border-top:2px solid var(--ink); margin-top:40px; }
+
+  /* === Extended palette === */
+  :root {
+    --brown-red: #7a3530; --brown-deep: #5b3a26; --indigo: #3a3a6a;
+    --green: #3a6a45; --purple: #5a3a6a; --teal: #2a6a6a;
+    --beige: #8a7350; --mustard: #a07a20; --muted-red: #8a3a3a;
+  }
+  .tier-sub { font-family:'Playfair Display',Georgia,serif; font-size:0.9em; color:var(--sea); letter-spacing:3px; text-transform:uppercase; margin:18px 0 8px; padding-bottom:4px; border-bottom:1px dashed var(--rule); }
+  details.pfold { background:#fff; border:1px solid var(--rule); border-left-width:3px; margin:8px 0; }
+  details.pfold > summary { list-style:none; cursor:pointer; padding:12px 16px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:12px; }
+  details.pfold > summary::-webkit-details-marker { display:none; }
+  details.pfold > summary:hover { background:var(--color-subtle); }
+  .pfold__name { font-family:'Playfair Display',Georgia,serif; font-size:1.05em; color:var(--ink); font-weight:700; }
+  .pfold__hook { font-family:system-ui,sans-serif; color:var(--ink-3); font-size:0.8em; margin-top:3px; line-height:1.45; }
+  .pfold__hook em { color:var(--sea); font-style:italic; }
+  .pfold__chev { color:var(--ink-3); font-family:'Playfair Display',Georgia,serif; font-size:1.15em; line-height:1; transition:transform 0.2s; width:18px; text-align:center; }
+  details.pfold[open] > summary .pfold__chev { transform:rotate(45deg); }
+  details.pfold > summary .pfold__chev::before { content:"+"; }
+  .pfold__body { padding:4px 16px 16px; border-top:1px solid var(--rule); font-size:0.92em; }
+  .pfold__desc { color:var(--ink); line-height:1.7; margin-bottom:12px; }
+  .pfold__recog { font-style:italic; color:var(--ink-2); font-size:0.86em; margin-bottom:8px; }
+  .pfold__meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:8px 14px; background:var(--paper); border-top:1px dashed var(--rule); padding:10px 0 0; font-family:system-ui,sans-serif; font-size:0.82em; color:var(--ink-2); }
+  .pfold__meta strong { display:block; font-size:0.78em; color:var(--sea); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:2px; font-weight:500; }
+  details.pfold--restaurant { border-left-color:var(--brown-red); }
+  details.pfold--bar { border-left-color:var(--amber); }
+  details.pfold--cafe { border-left-color:var(--beige); }
+  details.pfold--culture { border-left-color:var(--indigo); }
+  details.pfold--producer { border-left-color:var(--brown-deep); }
+  details.pfold--dish { border-left-color:var(--mustard); background:#fcf7e4; }
+  details.pfold--walk { border-left-color:var(--green); }
+  details.pfold--market { border-left-color:var(--teal); }
+  .three-tables { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin:14px 0 4px; }
+  @media (max-width:760px) { .three-tables { grid-template-columns:1fr; } }
+  .tt-col { background:#fff; border:1px solid var(--rule); border-top:3px solid var(--sea); padding:18px 14px; }
+  .tt-col h3 { font-family:'Playfair Display',Georgia,serif; font-size:0.95em; color:var(--sea); text-align:center; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:4px; }
+  .tt-col .subtitle { font-family:system-ui,sans-serif; text-align:center; color:var(--ink-3); font-size:0.72em; margin-bottom:12px; font-style:italic; }
+  .tt-col ol { list-style:none; counter-reset:tt-c; padding:0; }
+  .tt-col li { counter-increment:tt-c; padding:9px 0; border-bottom:1px dashed var(--rule); font-size:0.84em; line-height:1.45; color:var(--ink); position:relative; padding-left:24px; }
+  .tt-col li::before { content:counter(tt-c); position:absolute; left:0; top:9px; color:var(--sea); font-family:'Playfair Display',serif; font-weight:700; font-size:0.92em; }
+  .tt-col li:last-child { border-bottom:none; }
+  .tt-col li a { color:var(--ink); border-bottom:1px dotted var(--sea); }
+  .tt-col li .meta { font-family:system-ui,sans-serif; display:block; color:var(--ink-3); font-size:0.82em; margin-top:2px; font-style:italic; }
+  .timeline { background:#fff; border:1px solid var(--rule); padding:12px 18px; margin:14px 0 4px; }
+  .timeline .slot { display:grid; grid-template-columns:110px 1fr; gap:16px; padding:13px 0; border-bottom:1px solid var(--rule); }
+  .timeline .slot:last-child { border-bottom:none; }
+  .timeline .time { font-family:'JetBrains Mono',monospace; color:var(--sea); font-size:0.78em; letter-spacing:1.5px; text-transform:uppercase; }
+  .timeline .plan { font-size:0.92em; line-height:1.65; color:var(--ink); }
+  .timeline .plan a { color:var(--ink); border-bottom:1px dotted var(--sea); }
+  .map-link { display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:7px 14px; background:var(--paper); color:var(--sea); border:1px solid var(--sea); font-family:system-ui,sans-serif; font-size:0.76em; font-weight:500; }
+  .map-link:hover { background:var(--sea); color:var(--paper); }
+</style>
+<style id="procida-readability">
+  body { font-size:1.0em; }
+  .lead { font-size:1.16em; line-height:1.86; }
+  .prose p { font-size:1.1em; line-height:1.86; }
+  .prose .subhead { font-size:1.3em; }
+  #soul .soul__body { font-size:1.17em; line-height:1.95; }
+  .tcard__body { font-size:0.98em; line-height:1.72; }
+  .gx-lede { font-family:Georgia,serif; font-size:1.2em; line-height:1.62; color:var(--ink); margin:2px 0 4px; }
+  .gx-fold { overflow:hidden; transition:max-height .5s ease; }
+  .gx-fold.is-folded { max-height:0; }
+  /* B&W photos */
+  .gx-photo { max-width:900px; margin:32px auto; padding:0 24px; }
+  .gx-photo img { width:100%; height:auto; display:block; border:1px solid var(--rule); filter:grayscale(1) contrast(1.14) brightness(1.02); }
+  .gx-photo figcaption { font-family:Inter,system-ui,sans-serif; font-size:0.86em; color:var(--ink-3); margin-top:9px; font-style:italic; line-height:1.5; }
+  .gx-photo__credit { font-family:'JetBrains Mono',monospace; font-style:normal; font-size:0.8em; opacity:.7; letter-spacing:.3px; }
+  .gx-appendix { max-width:900px; margin:48px auto 0; padding:16px 24px 0; border-top:1px solid var(--rule); opacity:0.62; transition:opacity .25s ease; }
+  .gx-appendix:hover { opacity:1; }
+  .gx-appendix__label { font-family:'JetBrains Mono',monospace; font-size:0.6em; letter-spacing:2px; text-transform:uppercase; color:var(--ink-3); margin-bottom:6px; }
+  .gx-appendix .sfold { font-size:0.9em; }
+  @media print { .gx-fold.is-folded { max-height:none; } .gx-foldbtn { display:none; } }
+</style>
+</head>
+<body>
+
+<script src="/terroir/data/Procida-Napoli.js"></script>
+<script>
+window.TERROIR_CONFIG = {
+  articleId:    "procida-napoli",
+  portName:     "Procida",
+  center:       [40.7590, 14.0265],
+  zoom:         14,
+  cityRadiusKm: 2.5
+};
+</script>
+<script defer src="/terroir/_assets/guide/guide-render.js"></script>
+
+<div class="hero">
+  <div class="region">Bay of Naples &middot; Campania</div>
+  <h1>Procida</h1>
+  <p class="philosophy">A fishing island that resisted the mainland's pace, stacked its houses in volcanic pastels above a working harbour, and named its lemons after bread — because the pith is so sweet, you eat the whole thing.</p>
+  <div class="date">Updated July 2025 &middot; 12 places &middot; 4 neighbourhoods</div>
+</div>
+
+<nav class="quicknav" aria-label="Section navigation">
+  <a href="#terroir-berths">Top picks</a><span class="sep">·</span>
+  <a href="#soul">Soul</a><span class="sep">·</span>
+  <a href="#eat">Eat</a><span class="sep">·</span>
+  <a href="#drink">Drink</a><span class="sep">·</span>
+  <a href="#caffe">Caffè</a><span class="sep">·</span>
+  <a href="#spiagge">Coast</a><span class="sep">·</span>
+  <a href="#market">Lemon</a><span class="sep">·</span>
+  <a href="#dish">The dish</a><span class="sep">·</span>
+  <a href="#walk">Walks</a><span class="sep">·</span>
+  <a href="#money-sits">Economics</a>
+</nav>
+
+<div class="container">
+
+  <p class="instructions">
+    <strong>How this works:</strong> Top picks are verified by locals and co-signed with real credibility. Hover a venue name to see it on the map. Every entry has a <em>caveat</em> — who it's not for.
+  </p>
+
+  <!-- Rendered top-tier berths (by guide-render.js) -->
+  <div id="terroir-berths"></div>
+
+  <!-- Opening lead -->
+  <p class="lead">
+    Procida sits 4 kilometres off the Campanian coast, technically part of the Flegrean archipelago, practically a world apart from the ferry terminals of Naples that deliver it to the mainland in 35 minutes. The island has no road that goes anywhere except back to where it started. Its lemons have a white pith thick enough to eat in slices and sweet enough that locals call the variety <em>limone pane</em> — lemon-bread. Its wines come from volcanic soils in the Campi Flegrei DOC: Falanghina with an iodine edge from the ash, Piedirosso grown on centenarian ungrafted vines. In 2022, Italy named Procida its Capital of Culture — and the journalists who came all went back to Naples with a kilo of lemons under their arm, which is the correct response.
+  </p>
+
+  <!-- B&W Photo 1 — injected after .lead by placePhotos() -->
+
+  <!-- THE SOUL -->
+  <section id="soul" class="prose">
+    <div class="overline">The Soul of the Place</div>
+    <div class="subhead">What the island is, underneath the colour</div>
+    <p class="soul__body">
+      Procida is an island of fishermen who stayed when everyone else left for Naples, built their houses in colours the tourists now photograph obsessively — ochre, terracotta, pale yellow, the particular washed-out coral of a morning after rain — and worked the Bay of Naples with boats painted the same colours as the houses, as if the sea and the village were parts of the same argument. The island is 4 square kilometres and about 10,000 people: a density that produces the particular quality of a place where everyone knows when the catch was good and when it wasn't, where the bar conversation at 7 am carries news the newspaper won't have until afternoon.
+    </p>
+    <blockquote class="pullquote" style="border-left:3px solid var(--sea);padding:14px 20px;margin:22px 0;font-style:italic;color:var(--ink-2);font-size:1.08em;line-height:1.6;">
+      The most genuine island in the Bay of Naples. Come before it becomes the next Positano.
+      <cite style="display:block;margin-top:8px;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:1px;color:var(--ink-3);">The New York Times Travel &middot; 2023</cite>
+    </blockquote>
+    <p class="soul__body" style="margin-top:18px;">
+      <strong style="font-family:'JetBrains Mono',monospace;font-size:0.6em;letter-spacing:2px;text-transform:uppercase;color:var(--sea);display:block;margin-bottom:6px;">The quintessence</strong>
+      On a clear Tuesday morning in May, a boat unloads its catch at Corricella while the bar on the quay opens its shutters and puts the espresso machine on. Maria at Caracal&eacute; walks down to see what's available. This is the rhythm. The island doesn't perform it for visitors; it simply continues whether you're watching or not. That quality of continuation — of a place existing in its own time — is what people mean when they say Procida is the last real island in the Bay.
+    </p>
+  </section>
+
+  <!-- B&W Photo 2 — injected after #soul by placePhotos() -->
+
+  <!-- EAT -->
+  <details class="sfold" id="eat" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Eat</div>
+        <div class="sfold__desc">Seafood straight from the bay — no detour inland, no import</div>
+      </div>
+      <span class="sfold__count">6 places</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div id="terroir-list-several"></div>
+
+      <div class="alert" style="margin-top:18px;">
+        <span class="alert-label">The tourist trap pattern</span>
+        Every harbour-front restaurant in Marina Grande with a laminated menu in four languages charges €40+ per head for food that photographs better than it tastes. The rule: if there's a hawker at the door, keep walking.
+      </div>
+    </div>
+  </details>
+
+  <!-- DRINK -->
+  <details class="sfold" id="drink" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Drink</div>
+        <div class="sfold__desc">Volcanic wines from the Campi Flegrei DOC and the aperitivo hour</div>
+      </div>
+      <span class="sfold__count">2 places</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <article class="tcard tcard--producer" style="margin-top:10px;">
+        <span class="tcard__type">Volcanic Wine</span>
+        <span class="tcard__name">Campi Flegrei DOC — the terroir glass</span>
+        <div class="tcard__hook">Falanghina &amp; Piedirosso from volcanic soils on centenarian ungrafted vines</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">DOC since 1994</span>
+          <span class="tcard__chip">Phlegraean Fields</span>
+          <span class="tcard__chip">Ungrafted vines</span>
+        </div>
+        <div class="tcard__body">
+          <p>The Campi Flegrei DOC covers the volcanic arc stretching from Pozzuoli to Cuma, soils laid down by the Phlegraean Fields caldera system still active today. The Falanghina grown here — on volcanic ash and pumice — carries an iodine-saline edge absent from the mainland plantings. The Piedirosso (locally called <em>Per' e Palummo</em>, dove's foot) grows on ungrafted, pre-phylloxera rootstocks in pockets of the arc where the volcanic subsoil poisoned the root louse. These are not show-off wines; they are working wines, made in small quantities, and the best way to encounter them is a glass at <span data-pin="v04-il-cantinone">Il Cantinone</span> before dinner.</p>
+          <p style="margin-top:10px;"><strong>Falanghina dei Campi Flegrei:</strong> straw-gold, dry, mineral — iodine and white almond, good acid, short finish. <strong>Piedirosso:</strong> light garnet, wild cherry, volcanic smoke, grippy but not heavy. Both under €15 at the wine bar; under €8 at the producer's gate.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--bar" style="margin-top:10px;">
+        <span class="tcard__type">Evening ritual</span>
+        <span class="tcard__name">The Corricella aperitivo</span>
+        <div class="tcard__hook">A limoncello spritz at the quay-edge bar, facing west, 7:15 pm</div>
+        <div class="tcard__body">
+          <p>The sun drops behind Ischia around 7:30 pm in summer and Corricella harbour goes amber for twenty minutes. There is a bar with plastic chairs at the water's edge — <span data-pin="v09-bar-corricella-aperitivo">Bar Corricella</span> — that sells cold Peroni and a limoncello spritz made with island limoncello. The drink is basic; the light is extraordinary; this is the combination the island offers. No booking, no menu, no dress code. Get there at 7:15 and face west.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <!-- CAFFÈ -->
+  <details class="sfold" id="caffe" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Caffè</div>
+        <div class="sfold__desc">Naples-strength espresso and the island pastries that justify the early alarm</div>
+      </div>
+      <span class="sfold__count">3 stops</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div id="terroir-list-notime"></div>
+
+      <article class="tcard tcard--cafe" style="margin-top:12px;">
+        <span class="tcard__type">The morning sequence</span>
+        <span class="tcard__name">How to spend the first hour on Procida</span>
+        <div class="tcard__body">
+          <p>Off the ferry, cross the piazza to <span data-pin="v03-bar-cavaliere">Bar Cavaliere</span>: ristretto at the counter (€1.10). Walk to <span data-pin="v10-pasticceria-isoladoro">Isola d'Oro</span> for a <em>lingua di bue</em> (€1.80). Then walk the length of the harbour to the Corricella path and descend to the water. The first hour frames everything that follows. Do not check into the hotel first.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <!-- COAST / SPIAGGE -->
+  <details class="sfold" id="spiagge" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Coast</div>
+        <div class="sfold__desc">Volcanic beaches, the Vivara reserve, and Corricella at low tide</div>
+      </div>
+      <span class="sfold__count">4 spots</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <!-- B&W Photo 3 — injected before #spiagge by placePhotos() -->
+
+      <article class="tcard tcard--walk">
+        <span class="tcard__rank">#1</span>
+        <span class="tcard__type">Harbour</span>
+        <span class="tcard__name">Corricella <span class="tcard__label">Iconic</span></span>
+        <div class="tcard__hook">The horseshoe harbour of stacked pastel houses — the view everyone comes to Procida for</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">On foot from Marina Grande</span>
+          <span class="tcard__chip">25 min walk</span>
+          <span class="tcard__chip tcard__chip--time">Best at 7 am or sunset</span>
+        </div>
+        <div class="tcard__body">
+          <p>Corricella is the old fishing harbour on the island's western face, accessible only on foot or by small water taxi. The houses — ochre, terracotta, daffodil, the washed coral that appears in every photograph — are stacked directly against the volcanic cliff, each floor cantilevered above the one below. The quay is narrow enough that the morning catch unloads within three metres of the first café table. Come before 8 am when the fishing boats are still in; come at sunset when the colours go amber and the ferries from Naples are still an hour away.</p>
+          <p style="margin-top:10px;"><strong>The descent path:</strong> starts at Piazza dei Martiri in Marina Grande, passes the church of Santa Maria delle Grazie, and ends at the quay via 140 steps. The sharpest view of the stacked houses is from the top of the final staircase, looking back.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--walk">
+        <span class="tcard__rank">#2</span>
+        <span class="tcard__type">Beach</span>
+        <span class="tcard__name">Spiaggia della Chiaiolella <span class="tcard__label">Sandy</span></span>
+        <div class="tcard__hook">The island's only sand beach — sheltered, family-friendly, 300 m of Tyrrhenian water</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">Bus from Marina Grande</span>
+          <span class="tcard__chip tcard__chip--time">Morning for calm water</span>
+        </div>
+        <div class="tcard__body">
+          <p>On the island's sheltered south-western crescent, Chiaiolella has the only proper sandy beach: 300 metres of warm Tyrrhenian water, equipment hire, and the small marina behind it with yachts and the bridge to Vivara. Less dramatic than the volcanic rocks at Ciraccio, more family-facing, and the beach bar makes a decent granita.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--walk">
+        <span class="tcard__rank">#3</span>
+        <span class="tcard__type">Nature Reserve</span>
+        <span class="tcard__name">Isola di Vivara <span class="tcard__label">Protected</span></span>
+        <div class="tcard__hook">30-hectare volcanic islet, nature reserve, 360° Bay of Naples panorama — accessible by a single bridge</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">Bridge from Chiaiolella</span>
+          <span class="tcard__chip tcard__chip--time">Spring for migrating birds</span>
+          <span class="tcard__chip tcard__chip--access">Entry by arrangement</span>
+        </div>
+        <div class="tcard__body">
+          <p>Vivara is a crescent-shaped volcanic islet connected to Procida's south-western tip by a narrow footbridge. A protected nature reserve since 2002, uninhabited, with a path to the ruins of the old hunting lodge at the summit. The 360° view from the top takes in the entire Bay of Naples arc — Ischia, Capri visible on a clear day, Vesuvius to the east. Migratory birds use the island as a rest stop in spring. Entry is by prior arrangement; check with the Procida municipality office on arrival.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--walk">
+        <span class="tcard__rank">#4</span>
+        <span class="tcard__type">Volcanic Rock</span>
+        <span class="tcard__name">Spiaggia di Ciraccio</span>
+        <div class="tcard__hook">Black volcanic rock beach with sea caves — the wildest swimming on the island</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">West coast</span>
+          <span class="tcard__chip tcard__chip--time">Early morning or late afternoon</span>
+        </div>
+        <div class="tcard__body">
+          <p>Procida's most dramatic swimming: black volcanic tufa rock shelving into clear water, sea caves along the base of the cliff, and a small beach of dark sand. Not a sand beach — bring shoes. The water clarity at the cave mouths is exceptional; the snorkelling is good. One beach bar at the top of the steps, basic, adequate.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <!-- MARKET / LEMON -->
+  <details class="sfold" id="market" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Lemon &amp; Market</div>
+        <div class="sfold__desc">The limone pane De.Co., island produce, and what to carry home</div>
+      </div>
+      <span class="sfold__count">4 things to buy</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <article class="tcard tcard--producer">
+        <span class="tcard__type">De.Co. Designation</span>
+        <span class="tcard__name">Limone di Procida — the limone pane</span>
+        <div class="tcard__hook">A municipal-designation lemon whose thick white pith is sweet enough to eat raw — not a garnish, an ingredient</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">De.Co. Municipal Designation</span>
+          <span class="tcard__chip">Peak: March–June</span>
+          <span class="tcard__chip tcard__chip--price">€3–5 / kg at source</span>
+        </div>
+        <div class="tcard__body">
+          <p>The <em>limone pane</em> — 'bread lemon' — is a variety unique to Procida and Ischia protected by a De.Co. (denominazione comunale d'origine) municipal designation: not a European IGP or DOP, but a local protection that reserves the name for fruit grown on the island. What distinguishes it from Amalfi and Sorrento lemons is the pith: 1–2 cm of white albedo that is not bitter but faintly sweet, with none of the astringency that makes mainland lemon pith inedible. Islanders slice it like fruit and eat it with salt. The rind is used in pastry glazes and granita; the juice in the local limoncello; the whole lemon is dried and sold as a scent.</p>
+          <p style="margin-top:10px;"><strong>Where to buy:</strong> Roadside crates near <span data-pin="v11-limone-stand">Via Libertà</span> (March–June); the market stalls at Marina Grande on Tuesday and Friday mornings; the limoncello shops on Via Roma that bottle their own. The supermarket lemons are not the same variety — buy from the crates.</p>
+          <p style="margin-top:10px;"><strong>What to carry home:</strong> A kilo of limoni pane (hand luggage if flying; they bruise in checked bags). A bottle of Procida limoncello — the better producers use peel only, infuse at least 30 days, and the result is opaque and citrus-thick rather than the clear-green tourist-grade product. Ask at <span data-pin="v04-il-cantinone">Il Cantinone</span> which bottle they stock.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--market">
+        <span class="tcard__type">Market Morning</span>
+        <span class="tcard__name">Via Roma market — Tue &amp; Fri</span>
+        <div class="tcard__hook">The island's twice-weekly produce market: lemons, fish, island tomatoes</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">Tuesday &amp; Friday</span>
+          <span class="tcard__chip tcard__chip--time">7:00–13:00</span>
+          <span class="tcard__chip tcard__chip--price">€ only</span>
+        </div>
+        <div class="tcard__body">
+          <p>The market runs along Via Roma on Tuesday and Friday mornings and is where the island feeds itself rather than its visitors: limoni pane from the garden-wall sellers, morning fish from the auction surplus, the particular small tomatoes grown in volcanic soil that are the base of every local sauce. Worth being at before 9 am; most of it is gone by noon.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <!-- THE DISH -->
+  <details class="sfold" id="dish" open>
+    <summary>
+      <div>
+        <div class="sfold__title">The Dish</div>
+        <div class="sfold__desc">What the island puts on the table — and the one version to seek out</div>
+      </div>
+      <span class="sfold__count">4 dishes</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <details class="pfold pfold--dish" open>
+        <summary>
+          <div>
+            <div class="pfold__name">Polipo alla Luciana</div>
+            <div class="pfold__hook">Octopus braised in the Neapolitan manner — capers, olives, tomato, low heat — <em>the signature of the island table</em></div>
+          </div>
+          <span class="pfold__chev"></span>
+        </summary>
+        <div class="pfold__body">
+          <p class="pfold__desc">The polipo alla luciana — named for the Luciana fishermen's quarter of Naples — is made correctly only with a whole octopus, braised long and slow in a covered terracotta pot with vine tomatoes, Gaeta olives, capers from Pantelleria, garlic, and a splash of local white wine. The cooking draws the octopus's own juices into the sauce; the result is dark, sweet-sharp, wine-fragrant. At <span data-pin="v02-caracale">Caracal&eacute;</span>, where Maria rewrites the board every morning, the version is made with smaller octopus (more tender, faster braised) and arrives in its cooking liquid with a piece of island bread for the sauce.</p>
+          <p class="pfold__recog">The signature: <em>ink-dark, Campania tomato sweet, capers sharp — ladle it over the bread and eat it before it cools.</em></p>
+          <div class="pfold__meta">
+            <div><strong>Price</strong>€14–18 as a main</div>
+            <div><strong>Where</strong>Caracal&eacute;, Corricella</div>
+            <div><strong>Timing</strong>Lunch; order from the board (not the menu)</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pfold pfold--dish" open>
+        <summary>
+          <div>
+            <div class="pfold__name">Spaghetti alle Vongole</div>
+            <div class="pfold__hook">Clams from the bay, olive oil, parsley — no cream, no apology</div>
+          </div>
+          <span class="pfold__chev"></span>
+        </summary>
+        <div class="pfold__body">
+          <p class="pfold__desc">The version at <span data-pin="v01-la-conchiglia">La Conchiglia</span> is made with clams pulled from the bay that morning, spaghetti cooked two minutes short of done and finished in the clam broth, Campania olive oil, a fistful of flat parsley, no other flavour. The colour of the pasta is the colour of sea brine; the heat of the plate is the heat of the cliff the restaurant sits on. The test of a vongole: does the broth stand alone as something you'd drink from the bowl? At La Conchiglia, it does.</p>
+          <div class="pfold__meta">
+            <div><strong>Price</strong>€16–20</div>
+            <div><strong>Where</strong>La Conchiglia, Corricella cliff</div>
+            <div><strong>Book</strong>Ahead; book the terrace specifically</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pfold pfold--dish" open>
+        <summary>
+          <div>
+            <div class="pfold__name">Frittura di Paranza</div>
+            <div class="pfold__hook">Mixed small-fish fry from the morning catch — transparent batter, hot oil, eat immediately</div>
+          </div>
+          <span class="pfold__chev"></span>
+        </summary>
+        <div class="pfold__body">
+          <p class="pfold__desc">The <em>paranza</em> is the day's mixed small catch — whatever the trawl brought up that wasn't sold at auction: tiny squid, baby soles, small shrimp, the occasional whitebait. Floured lightly, fried in very hot oil, salted at the moment it hits the plate. The test: no oil on the paper beneath it, and the batter so thin you can see the fish through it. Eat within three minutes of arrival; this is one of the very few dishes that genuinely cannot wait.</p>
+          <div class="pfold__meta">
+            <div><strong>Price</strong>€12–16</div>
+            <div><strong>Where</strong>La Conchiglia, Osteria Terra Murata (lunch)</div>
+            <div><strong>Caveat</strong>Only order when you can see other tables eating it; if none, order something slower</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pfold pfold--dish" open>
+        <summary>
+          <div>
+            <div class="pfold__name">Lingua di Bue al Limone</div>
+            <div class="pfold__hook">A fried-dough pastry glazed in limone pane sugar — the island sweet the mainland doesn't know</div>
+          </div>
+          <span class="pfold__chev"></span>
+        </summary>
+        <div class="pfold__body">
+          <p class="pfold__desc">The <em>lingua di bue</em> (ox tongue — for the shape, not the ingredient) is a pastry particular to the island: a strip of enriched dough deep-fried until blistered and hollow, then dipped in a glaze made from limone pane zest, sugar, and egg white. The pith's sweetness comes through in the glaze; the fry gives it a brittle shell that collapses when you bite. At <span data-pin="v10-pasticceria-isoladoro">Pasticceria Isola d'Oro</span>, these are made before 7 am and are gone by 9. Buy two; they cool fast and lose the crunch.</p>
+          <div class="pfold__meta">
+            <div><strong>Price</strong>€1.80–2.20 each</div>
+            <div><strong>Where</strong>Pasticceria Isola d'Oro, Piazza dei Martiri</div>
+            <div><strong>Timing</strong>Before 9 am or risk finding none</div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <!-- WALKS & CULTURE -->
+  <details class="sfold" id="walk" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Walks &amp; Culture</div>
+        <div class="sfold__desc">Terra Murata, the lemon-garden interior, the Vivara path</div>
+      </div>
+      <span class="sfold__count">4 routes</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+
+      <article class="tcard tcard--culture">
+        <span class="tcard__type">Culture</span>
+        <span class="tcard__name">Palazzo d'Avalos &amp; Terra Murata <span class="tcard__label">Culture 2022</span></span>
+        <div class="tcard__hook">A Bourbon prison turned cultural space on the island's highest point — the story of Procida's other history</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">10 min walk up from Sancio Cattolico</span>
+          <span class="tcard__chip tcard__chip--access">Check opening times</span>
+        </div>
+        <div class="tcard__body">
+          <p>The medieval citadel of Terra Murata crowns the island's volcanic basalt at 90 metres. At its centre, the Palazzo d'Avalos was for centuries a Bourbon prison — Elba for the less important prisoners, the island's darkest chapter. When Procida became Italian Capital of Culture 2022, the Palazzo became the programme's centrepiece: exhibitions, performances, and the opening of parts of the former prison complex to the public. The structure is still being developed as a cultural space; check with the tourism office on arrival for current programming.</p>
+          <p style="margin-top:10px;"><strong>The Abbey of San Michele Arcangelo</strong> next door has a Luca Giordano ceiling painting that requires a short wait but rewards it: ring the bell, a monk appears, you're shown to the nave. The south-facing terrace of Terra Murata at its viewpoint: Ischia right, Vesuvius ahead across the bay, the Sorrentine peninsula on clear days.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--walk">
+        <span class="tcard__type">Walk</span>
+        <span class="tcard__name">The lemon garden interior</span>
+        <div class="tcard__hook">Walled pergolato gardens, limone pane under cane frames, the island's agricultural interior almost nobody visits</div>
+        <div class="tcard__meta">
+          <span class="tcard__chip">Via Libertà → Via Salvo d'Acquisto</span>
+          <span class="tcard__chip tcard__chip--time">March–May for scent</span>
+        </div>
+        <div class="tcard__body">
+          <p>Between the tourist-facing harbours, Procida's interior is a dense grid of walled lemon gardens under the pergolato system: cane frames on iron supports, the trees trained to grow horizontally under the canopy to protect the fruit from the Tyrrhenian wind and summer sun that would harden the pith. The walk from Via Libertà through the garden district to the high path above Chiaiolella takes 30 minutes and in spring the scent reaches you before the trees are visible. In summer the fruit hangs green and heavy; the harvest is winter through spring.</p>
+        </div>
+      </article>
+
+      <article class="tcard tcard--walk">
+        <span class="tcard__type">Film location</span>
+        <span class="tcard__name">Il Postino — where the film was made</span>
+        <div class="tcard__hook">Massimo Troisi's last film was shot almost entirely on Procida in 1994 — the island of cinema</div>
+        <div class="tcard__body">
+          <p><em>Il Postino</em> (1994) — Michael Radford's film with Massimo Troisi, shot on location here in the months before Troisi died — used Corricella, the Vivara bridge, and the Terra Murata citadel as its principal locations. The film made Procida internationally visible; the island is quieter than Capri or Positano partly because the film's audience had the good sense to come quietly. There are no official tours; the locations are simply the island. The bar in Corricella where the postman cycles to meets the fishing quay; the Vivara bridge is unchanged.</p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <!-- MONEY SITS -->
+  <details class="sfold" id="money-sits" open>
+    <summary>
+      <div>
+        <div class="sfold__title">How the Money Sits</div>
+        <div class="sfold__desc">Insider economics — what a day actually costs on Procida</div>
+      </div>
+      <span class="sfold__count">the real arithmetic</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="three-tables">
+        <div class="tt-col">
+          <h3>Tight</h3>
+          <div class="subtitle">~€35–45 per person per day</div>
+          <ol>
+            <li>
+              Ristretto at Bar Cavaliere counter
+              <span class="meta">€1.10 standing</span>
+            </li>
+            <li>
+              Lingua di bue from Isola d'Oro
+              <span class="meta">€1.80 each</span>
+            </li>
+            <li>
+              Focacceria Procidana — focaccia + beer
+              <span class="meta">€6–8 total</span>
+            </li>
+            <li>
+              Limoni pane kilo from Via Libertà crate
+              <span class="meta">€3–5</span>
+            </li>
+            <li>
+              Dinner at Caracalè — polipo + house wine carafe
+              <span class="meta">€22–28 per head</span>
+            </li>
+          </ol>
+        </div>
+        <div class="tt-col">
+          <h3>Comfortable</h3>
+          <div class="subtitle">~€70–90 per person per day</div>
+          <ol>
+            <li>
+              Bar Cavaliere terrace breakfast
+              <span class="meta">€4–6</span>
+            </li>
+            <li>
+              Lunch at Ristorante Crescenzo — zuppa di pesce
+              <span class="meta">€22–28</span>
+            </li>
+            <li>
+              Aperitivo at Bar Corricella + Vivara walk
+              <span class="meta">€5 + free</span>
+            </li>
+            <li>
+              Dinner at La Conchiglia — book the terrace
+              <span class="meta">€35–45 per head</span>
+            </li>
+            <li>
+              Campi Flegrei DOC by the glass at Il Cantinone
+              <span class="meta">€5–7 per glass</span>
+            </li>
+          </ol>
+        </div>
+        <div class="tt-col">
+          <h3>The Trap</h3>
+          <div class="subtitle">what to avoid paying</div>
+          <ol>
+            <li>
+              Harbour-front restaurants with four-language laminated menus
+              <span class="meta">€40+ pp for food that doesn't justify it</span>
+            </li>
+            <li>
+              "Limoncello" bottles at the ferry terminal gift shop
+              <span class="meta">Not island production; buy from Via Roma</span>
+            </li>
+            <li>
+              Terrace coffee markup at tourist cafés
+              <span class="meta">Same coffee, 2× the price of the counter</span>
+            </li>
+            <li>
+              Taxi boat that "offers" to take you to Corricella
+              <span class="meta">€8–12 for a 25-min walk; do the walk</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top:18px;">
+        <div class="slot">
+          <div class="time">7:00 am</div>
+          <div class="plan">Ristretto at <a href="#venue-v03-bar-cavaliere">Bar Cavaliere</a> counter. Pick up a <em>lingua di bue</em> at Isola d'Oro next door. Walk to the Corricella path.</div>
+        </div>
+        <div class="slot">
+          <div class="time">8:00 am</div>
+          <div class="plan">Descend to Corricella before the tourist boats arrive. The fishing boats are in; the light is still low and oblique. No photographs do it justice — put the phone down for ten minutes.</div>
+        </div>
+        <div class="slot">
+          <div class="time">12:30 pm</div>
+          <div class="plan">Lunch at <a href="#venue-v02-caracale">Caracalè</a> at the Corricella quay — arrive before 12:30 or wait. Order from the board. Polipo alla luciana if it's there.</div>
+        </div>
+        <div class="slot">
+          <div class="time">3:00 pm</div>
+          <div class="plan">Walk Terra Murata. Ring the abbey bell. Stay at the south-facing viewpoint for ten minutes. Then descend to the lemon garden route through Via Libertà.</div>
+        </div>
+        <div class="slot">
+          <div class="time">7:15 pm</div>
+          <div class="plan">Aperitivo at the water-edge bar in Corricella. Face west. The light lasts twenty minutes. Then walk to <a href="#venue-v04-il-cantinone">Il Cantinone</a> for a glass of Falanghina before dinner.</div>
+        </div>
+        <div class="slot">
+          <div class="time">8:30 pm</div>
+          <div class="plan">Dinner at <a href="#venue-v01-la-conchiglia">La Conchiglia</a> if you booked — climb the fifty steps. Or <a href="#venue-v06-la-lampara">La Lampara</a> walk-in for pesce all'acqua pazza.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- GETTING THERE -->
+  <details class="sfold" id="logistics" open>
+    <summary>
+      <div>
+        <div class="sfold__title">Logistics</div>
+        <div class="sfold__desc">Ferries, season, what to know before the boat</div>
+      </div>
+      <span class="sfold__count">essentials</span>
+      <span class="sfold__chev"></span>
+    </summary>
+    <div class="sfold__body">
+      <div class="prose">
+        <p><strong>Getting there:</strong> Ferry from Naples Molo Beverello (Caremar, SNAV) — 35 min hydrofoil (aliscafo) or 50 min ferry. Also from Pozzuoli (20 min) and Ischia. Hydrofoils run frequently in summer; check schedules as services reduce in winter. Tickets at the terminal or online via Caremar/SNAV sites.</p>
+        <p style="margin-top:12px;"><strong>No cars:</strong> Vehicles require a permit for island residents only in summer; tourists cannot bring cars. Scooter hire available at Marina Grande (€25–35/day). The island is 4 km² and fully walkable; most places are 15–30 min on foot. The bus (L1, L2) covers the main routes.</p>
+        <p style="margin-top:12px;"><strong>When to come:</strong> April–June is ideal: lemon harvest, migrating birds on Vivara, low crowds, warm enough to swim from mid-May. July–August is hot, full, and the ferry queues are long. September is good. October–March: quiet, some restaurants close, the island reverts to itself.</p>
+        <p style="margin-top:12px;"><strong>Stay:</strong> The island has no large hotels; accommodation is B&amp;Bs, small guesthouses, and the odd agriturismo in the lemon gardens. Book 3–4 months ahead for summer weekends. Marina Grande for ferry access; Chiaiolella for quiet and beach proximity.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- SOURCES -->
+  <div class="gx-appendix">
+    <div class="gx-appendix__label">Sources &amp; references</div>
+    <details class="sfold" open>
+      <summary>
+        <div>
+          <div class="sfold__title">Sources</div>
+          <div class="sfold__desc">What this guide draws on</div>
+        </div>
+        <span class="sfold__chev"></span>
+      </summary>
+      <div class="sfold__body">
+        <ul class="sources">
+          <li>Procida — Italian Capital of Culture 2022 (Capitale Italiana della Cultura 2022) · <em>Official programme documentation</em></li>
+          <li>Gambero Rosso · <em>Regional guide references, cited in venue entries</em></li>
+          <li>Condé Nast Traveller · <em>Procida coverage, 2022–2023</em></li>
+          <li>The New York Times Travel · <em>"Procida: Italy's Most Authentic Island?" 2023</em></li>
+          <li>Campi Flegrei DOC · <em>Consorzio Tutela Vini Campi Flegrei — DOC regulations and variety documentation</em></li>
+          <li>De.Co. Limone di Procida · <em>Municipal designation records, Comune di Procida</em></li>
+          <li>Vivara Nature Reserve · <em>Area Marina Protetta documentation</em></li>
+          <li><em>Il Postino</em> (1994) · <em>Michael Radford / Massimo Troisi — film location documentation</em></li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="footer">
+    <p>Littoralicious &middot; Terroir Guide &middot; Procida, Bay of Naples</p>
+    <p style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:0.85em;color:var(--ink-3);">terroir-draft · July 2025 · unverified photos pending manual download</p>
+  </div>
+
+</div><!-- .container -->
+
+<!-- Leaflet mini-map (mirrors Venice vg-mini) -->
+<div class="terroir-mini" id="terroir-mini">
+  <div class="terroir-mini__head">
+    <span>Procida</span>
+    <button id="terroir-mini-close" title="Close map">&times;</button>
+  </div>
+  <div class="terroir-mini__map" id="terroir-mini-map"></div>
+</div>
+<button class="terroir-mini-toggle" id="terroir-mini-toggle">Map</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var mini = document.getElementById('terroir-mini');
+  var toggle = document.getElementById('terroir-mini-toggle');
+  var closeBtn = document.getElementById('terroir-mini-close');
+  if (mini && toggle && closeBtn) {
+    mini.classList.add('is-visible');
+    closeBtn.addEventListener('click', function(){
+      mini.classList.add('is-user-closed');
+      toggle.classList.add('is-visible');
+    });
+    toggle.addEventListener('click', function(){
+      mini.classList.remove('is-user-closed');
+      toggle.classList.remove('is-visible');
+    });
+  }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (typeof L === 'undefined' || typeof window.TERROIR_DATA === 'undefined') return;
+  var data    = window.TERROIR_DATA;
+  var venues  = data.VENUES || [];
+  var pColors = data.PRODUCT_COLORS || {};
+  var cfg     = window.TERROIR_CONFIG || { center:[40.759,14.0265], zoom:14 };
+  function colorFor(v){ var t=(v.productTags&&v.productTags[0])||''; return pColors[t]||(data.COLORS||{})[v.cat]||'#444'; }
+  var map = L.map('terroir-mini-map', { zoomControl:true, scrollWheelZoom:true, doubleClickZoom:true, touchZoom:true, dragging:true, attributionControl:false }).setView(cfg.center, cfg.zoom);
+  window.__terroirMap = map;
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom:19, subdomains:'abcd', attribution:'&copy; OSM &copy; CARTO' }).addTo(map);
+  var markers = {};
+  venues.forEach(function(v){
+    if (!v.lat || !v.lng) return;
+    var c = colorFor(v);
+    var icon = L.divIcon({ className:'', html:'<div style="background:'+c+';width:13px;height:13px;border-radius:50%;border:2px solid #1a2a3a;box-shadow:0 0 0 1px rgba(255,255,255,0.6),0 1px 4px rgba(0,0,0,0.4);"></div>', iconSize:[15,15], iconAnchor:[7,7] });
+    var marker = L.marker([v.lat,v.lng], { icon:icon, riseOnHover:true });
+    marker.bindTooltip(v.name, { direction:'right', offset:[10,0] });
+    var why = v.why ? v.why.slice(0,200)+(v.why.length>200?'…':'') : '';
+    marker.bindPopup('<em>'+((data.CAT_LABELS||{})[v.cat]||v.cat)+(v.neighborhood?' · '+v.neighborhood:'')+'</em><b>'+v.name+'</b>'+(why?'<span style="color:#c8c0b4;display:block;margin-bottom:6px;">'+why+'</span>':'')+'<a href="#venue-'+v.id+'" onclick="document.getElementById(\'venue-'+v.id+'\')&&document.getElementById(\'venue-'+v.id+'\').scrollIntoView({behavior:\'smooth\',block:\'center\'});">Read full entry →</a>'+(v.maps?'<br><a href="'+v.maps+'" target="_blank" rel="noopener">Open in Google Maps →</a>':''));
+    marker.addTo(map);
+    markers[v.id]=marker;
+  });
+  window.__terroirMarkers = markers;
+  try { var pts=venues.filter(function(v){return v.lat&&v.lng;}).map(function(v){return[v.lat,v.lng];}); if(pts.length) map.fitBounds(pts,{padding:[22,22],maxZoom:15}); } catch(e){}
+});
+</script>
+
+<!-- Firebase compat (for terroir voting) -->
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="/terroir/_assets/guide/guide-favourites.js"></script>
+<script defer src="/terroir/_assets/guide/guide-enhance.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
+
+<script>
+/* Procida — scoped: read-more folds + B&W photos */
+(function(){
+  function wireFolds(){
+    var folds=document.querySelectorAll('.gx-fold.is-folded');
+    for(var i=0;i<folds.length;i++){ (function(fold){
+      if(fold.__wired) return; fold.__wired=true;
+      var label=fold.getAttribute('data-fold-label')||'Read more';
+      var btn=document.createElement('button'); btn.className='gx-more gx-foldbtn';
+      btn.innerHTML=label+' <span class="gx-more__chev">▾</span>';
+      fold.parentNode.insertBefore(btn,fold);
+      btn.addEventListener('click',function(){
+        var open=fold.classList.toggle('is-folded')===false;
+        btn.classList.toggle('is-open',open);
+        btn.firstChild.textContent=(open?'Show less':label)+' ';
+      });
+    })(folds[i]); }
+  }
+  function fig(src,cap,credit,cls){
+    var f=document.createElement('figure'); f.className='gx-photo '+cls;
+    f.innerHTML='<img src="'+src+'" alt="'+cap.replace(/<[^>]+>/g,'')+'" loading="lazy">'+
+      '<figcaption>'+cap+' <span class="gx-photo__credit">'+credit+'</span></figcaption>';
+    return f;
+  }
+  function placePhotos(){
+    if(document.querySelector('.gx-photo')) return;
+    var lead=document.querySelector('.lead');
+    var soul=document.getElementById('soul');
+    var spiagge=document.getElementById('spiagge');
+    /* Photo 1: after lead — Corricella harbour, the iconic stacked pastel houses */
+    if(lead) lead.parentNode.insertBefore(
+      fig('/terroir/Procida-Napoli/img/procida-corricella.jpg',
+          'The stacked pastel houses of Corricella harbour at dawn — ochre, terracotta, washed coral against volcanic rock.',
+          'Photo: pending CC download &middot; Wikimedia Commons',
+          'gx-photo--corricella'),
+      lead.nextSibling);
+    /* Photo 2: after soul — Terra Murata rising above the bay */
+    if(soul) soul.parentNode.insertBefore(
+      fig('/terroir/Procida-Napoli/img/procida-terra-murata.jpg',
+          'Terra Murata, the medieval citadel on Procida&rsquo;s volcanic basalt ridge, rising 90 metres above the Bay of Naples.',
+          'Photo: pending CC download &middot; Wikimedia Commons',
+          'gx-photo--terramura'),
+      soul.nextSibling);
+    /* Photo 3: inside #spiagge section — Vivara or lemon gardens */
+    if(spiagge) {
+      var body=spiagge.querySelector('.sfold__body');
+      if(body) body.insertBefore(
+        fig('/terroir/Procida-Napoli/img/procida-vivara.jpg',
+            'The Vivara islet bridge from Chiaiolella — a volcanic crescent protected as a nature reserve, connected to Procida by a single footbridge.',
+            'Photo: pending CC download &middot; Wikimedia Commons',
+            'gx-photo--vivara'),
+        body.firstChild);
+    }
+  }
+  function boot(){ wireFolds(); placePhotos(); }
+  if(document.readyState==='complete') boot();
+  else window.addEventListener('load', boot);
+})();
+</script>
+<script defer src="/terroir/_assets/guide/guide-extras.js"></script>
+<script defer src="/terroir/_assets/guide/guide-comments.js"></script>
+</body>
+</html>
