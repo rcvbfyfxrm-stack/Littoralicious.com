@@ -38,8 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Digest. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
-<!-- BODY:BEGIN — Weekly Brief (Digest). 3–5 min. Top promise -> short intro -> [Since last week] carry-over -> 3–5 linked items (kicker + heading + 2–3 lines + source) -> supply line + [From the dock] warmth -> [Watching next] open loop -> closing takeaway + sign-off. Science inline, every claim sourced. SIGNATURE = the serial-thread frame: the "Since last week" carry-over near the top + the "Watching next" open loop at the close. Together they make this read as a CONTINUING weekly conversation — the one thing no present- or future-tense forecast template carries. Keep it tight: do not over-box; never stack two callouts; sources inline. British cooking spelling, sign off "Tested at sea." -->
+<!-- BODY:BEGIN — Weekly Brief (Digest). 3–5 min. Top promise -> short intro -> [Since last week] carry-over -> 3–5 linked items (kicker + heading + 2–3 lines + ONE note + source) -> supply line + [From the dock] warmth -> [Watching next] open loop -> closing takeaway + sign-off. Science inline, every claim sourced. SIGNATURE = the serial-thread frame: the "Since last week" carry-over near the top + the "Watching next" open loop at the close. Together they make this read as a CONTINUING weekly conversation — the one thing no present- or future-tense forecast template carries. NOTE ROTATION: every item carries exactly one note (note--science / note--action / note--warning / note--key, rotating); no two consecutive items use the same note type. Keep it tight: do not over-box; never stack two callouts; sources inline. British cooking spelling, sign off "Tested at sea." -->
 
 <!-- TOP PROMISE: the payoff in three scannable lines. The reader sees what this week's digest changes before reading on. -->
 <div class="summary-box"><strong>What you'll get</strong><ul>
@@ -61,7 +60,7 @@
 
 <div class="divider"><span class="divider__text">This week</span></div>
 
-<!-- ITEMS: 3–5 of these blocks. Each = a one-line kicker under the heading + 2–3 lines of prose + one sourced line. Lead the heading with a concrete subject, not a teaser. -->
+<!-- ITEMS: 3–5 of these blocks. Each = a one-line kicker under the heading + 2–3 lines of prose + exactly ONE note + one sourced line. Lead the heading with a concrete subject, not a teaser. Notes rotate science -> action -> warning -> key -> science; no two consecutive items use the same note type. The mid-piece pull-quote is a re-hook, not an item note — it does not count in the rotation. -->
 
 <h2>Item one — concrete subject</h2>
 <!-- KICKER: one line stating the value of this item before the detail lands. -->
@@ -87,15 +86,17 @@
 <div class="note note--warning"><p>The failure mode this item warns against — the mistake that costs you a service, in one line.</p></div>
 <p><strong>Source:</strong> Author/outlet, <em>Title</em>, year — citation.</p>
 
-<!-- OPTIONAL items four and five — same shape (kicker + prose + source). Delete if fewer than five. Keep total to 3–5 so the brief stays 3–5 min. -->
+<!-- OPTIONAL items four and five — same shape (kicker + prose + ONE note + source). The rotation continues: item four = note--key, item five = note--science; no two consecutive items use the same note type. Delete whole blocks if fewer than five; keep total to 3–5 so the brief stays 3–5 min. -->
 <h2>Item four — concrete subject (optional)</h2>
 <p>The one-line reason this item matters in the galley.</p>
 <p>Two to three sentences. Finding, mechanism/number, galley consequence.</p>
+<div class="note note--key"><p>The load-bearing line of this item — what it changes on the next charter, in one sentence.</p></div>
 <p><strong>Source:</strong> Author/outlet, <em>Title</em>, year — citation.</p>
 
 <h2>Item five — concrete subject (optional)</h2>
 <p>The one-line reason this item matters in the galley.</p>
 <p>Two to three sentences. Finding, mechanism/number, galley consequence.</p>
+<div class="note note--science"><p>The mechanism in one line — the compound, temperature, or reaction that makes this item true.</p></div>
 <p><strong>Source:</strong> Author/outlet, <em>Title</em>, year — citation.</p>
 
 <div class="divider"><span class="divider__text">On the slips</span></div>
@@ -115,6 +116,9 @@
 
 <div class="divider"><span class="divider__text">The one thing</span></div>
 
+<!-- One line of prose so the closing note--key below does not stack on the "From the dock" note above the divider. -->
+<p>The week folds down to a single line.</p>
+
 <!-- CLOSING single-takeaway: a final note--key carrying the one line to keep. Restate the through-line, do not add a new argument. -->
 <div class="note note--key"><p>The one thing to keep from this week — the through-line restated as a single move, not a summary.</p></div>
 
@@ -128,7 +132,6 @@
 <p><em>Tested at sea.</em></p>
 
 <!-- BODY:END -->
-                <!-- BODY:END -->
 
                 <!-- Article Engagement -->
                 <div class="article-engagement">

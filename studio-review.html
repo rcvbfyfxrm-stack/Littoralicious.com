@@ -83,6 +83,11 @@
         .rv-overall{padding:var(--space-4);border-bottom:1px solid var(--color-subtle);}
         .rv-overall label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--color-salt);margin-bottom:.3em;}
         .rv-overall textarea{width:100%;border:1px solid var(--color-border);font:inherit;font-size:13px;padding:.5em;min-height:54px;resize:vertical;}
+        .rv-overall__row{display:flex;gap:var(--space-2);margin-top:var(--space-2);align-items:center;}
+        .rv-overall__state{font-size:11px;font-family:var(--font-mono);color:var(--color-salt);}
+        .rv-overall__state.ok{color:var(--rv-ok);}
+        .rv-overall__state.err{color:var(--rv-err);}
+        .rv-overall__state.warn{color:var(--rv-warnink);}
         .rv-list{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1;}
         .rv-list li{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-subtle);cursor:pointer;}
         .rv-list li:hover{background:var(--color-subtle);}
@@ -152,11 +157,15 @@
         <aside class="rv-side" id="rv-side">
             <div class="rv-side__head">
                 <h2>Notes summary</h2>
-                <p>Hover any paragraph and hit <strong>+</strong> to add a note. Saved to your reviewer account and synced to every device.</p>
+                <p>Hover any paragraph and hit <strong>+</strong> to add a note. The overall note below saves on this device as you type and syncs when you're signed in.</p>
             </div>
             <div class="rv-overall">
-                <label for="rv-overall">Overall note</label>
-                <textarea id="rv-overall" placeholder="A line about the piece as a whole — verdict, big fix, what to do next…" disabled></textarea>
+                <label for="rv-overall">Overall note — the whole piece</label>
+                <textarea id="rv-overall" placeholder="Your verdict on the piece as a whole — saves on this device as you type; sign in to sync it everywhere."></textarea>
+                <div class="rv-overall__row">
+                    <button class="rv-btn" id="rv-overall-save" type="button">Save</button>
+                    <span class="rv-overall__state" id="rv-overall-state" aria-live="polite"></span>
+                </div>
             </div>
             <ul class="rv-list" id="rv-list"></ul>
             <div class="rv-empty" id="rv-empty">No notes yet.</div>
@@ -432,16 +441,44 @@
             block.el.classList.remove('rv-flash'); void block.el.offsetWidth; block.el.classList.add('rv-flash');
         }
 
-        // ---- overall note (debounced save to the slug doc's `overall` field) ----
-        var overallTimer = null;
+        // ---- overall note: local-first, then synced ----
+        // Every keystroke is written to localStorage FIRST (nothing is ever lost,
+        // signed in or not), then pushed to Firestore when a reviewer session exists.
+        // The Save button / Cmd+Enter / blur / tab-hide all flush the pending push.
+        var OV_KEY = 'litt.rv.overall.' + docId;
+        var overallTimer = null, ovStateEl = $('rv-overall-state');
+        function ovLocal() { try { return JSON.parse(localStorage.getItem(OV_KEY) || 'null'); } catch (e) { return null; } }
+        function ovLocalSet(text, synced) { try { localStorage.setItem(OV_KEY, JSON.stringify({ text: text, t: Date.now(), synced: !!synced })); } catch (e) {} }
+        function ovState(msg, cls) { if (!ovStateEl) return; ovStateEl.textContent = msg; ovStateEl.className = 'rv-overall__state' + (cls ? ' ' + cls : ''); }
+        function ovPush() {
+            var text = overallEl.value;
+            if (!signedReviewer) { ovState('saved on this device — sign in to sync', 'warn'); return; }
+            ovState('saving…');
+            slugDoc().set({ overall: text, overallBy: user.email, overallUpdated: Date.now(), lastWorked: Date.now() }, { merge: true })
+                .then(function () { ovLocalSet(text, true); ovState('synced ✓', 'ok'); })
+                .catch(function (e) { ovState('sync failed: ' + (e.code || 'error') + ' — kept on this device', 'err'); });
+        }
+        function ovFlush() { if (overallTimer) { clearTimeout(overallTimer); overallTimer = null; ovPush(); } }
         overallEl.addEventListener('input', function () {
-            if (!signedReviewer) return;
+            ovLocalSet(overallEl.value, false);
+            state.overall = overallEl.value;
+            ovState(signedReviewer ? 'editing…' : 'saved on this device — sign in to sync', signedReviewer ? '' : 'warn');
             clearTimeout(overallTimer);
-            overallTimer = setTimeout(function () {
-                slugDoc().set({ overall: overallEl.value, overallBy: user.email, overallUpdated: Date.now() }, { merge: true })
-                    .catch(function (e) { flash('overall save failed: ' + (e.code || 'error'), true); });
-            }, 600);
+            overallTimer = setTimeout(function () { overallTimer = null; ovPush(); }, 600);
         });
+        overallEl.addEventListener('blur', ovFlush);
+        overallEl.addEventListener('keydown', function (e) { if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); clearTimeout(overallTimer); overallTimer = null; ovPush(); } });
+        $('rv-overall-save').addEventListener('click', function () { clearTimeout(overallTimer); overallTimer = null; ovPush(); });
+        document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') ovFlush(); });
+        window.addEventListener('beforeunload', ovFlush);
+        // boot: restore whatever this device holds, so the box is never silently empty
+        (function () {
+            var boot = ovLocal();
+            if (boot && boot.text) {
+                overallEl.value = boot.text; state.overall = boot.text;
+                if (!boot.synced) ovState('restored from this device — unsynced', 'warn');
+            }
+        })();
 
         // ---- export ----
         function buildMarkdown() {
@@ -529,8 +566,19 @@
             unsubDoc = slugDoc().onSnapshot(function (doc) {
                 var d = (doc.exists && doc.data()) || {};
                 if (typeof d.paraCount === 'number') writtenParaCount = d.paraCount;
-                state.overall = d.overall || '';
-                if (document.activeElement !== overallEl) overallEl.value = state.overall;
+                var remote = d.overall || '', local = ovLocal();
+                var localNewer = local && !local.synced && (local.t || 0) > (d.overallUpdated || 0) && (local.text || '') !== remote;
+                if (localNewer) {
+                    state.overall = local.text;
+                    if (document.activeElement !== overallEl) overallEl.value = local.text;
+                    ovState('this device has a newer unsynced note — hit Save to sync it', 'warn');
+                } else {
+                    state.overall = remote;
+                    if (document.activeElement !== overallEl) {
+                        overallEl.value = remote;
+                        if (remote) { ovLocalSet(remote, true); ovState('synced ✓', 'ok'); }
+                    }
+                }
             }, function () {});
             if (!isTpl) {
                 if (unsubReq) { unsubReq(); }
@@ -542,7 +590,7 @@
             // don't create an empty doc just to store 0 on first open; only write 0 to clear a previously-positive count
             if (count === 0 && writtenParaCount <= 0) { writtenParaCount = 0; return; }
             writtenParaCount = count;
-            slugDoc().set({ paraCount: count, paraUpdated: Date.now() }, { merge: true }).catch(function () {});
+            slugDoc().set({ paraCount: count, paraUpdated: Date.now(), lastWorked: Date.now() }, { merge: true }).catch(function () {});
         }
         function unsubscribe() {
             if (unsubNotes) { unsubNotes(); unsubNotes = null; }
@@ -551,7 +599,16 @@
             writtenParaCount = -1;
         }
         function clearNotesUI() {
-            state.notes = []; state.overall = ''; overallEl.value = '';
+            state.notes = [];
+            // On an explicit sign-out, clear the device copy too so reviewer notes
+            // don't linger in a shared browser. (A page load with no session still
+            // restores from local via the boot block — that path is for the owner.)
+            var synced = ovLocal();
+            if (synced && synced.synced) { try { localStorage.removeItem(OV_KEY); } catch (e) {} }
+            var local = ovLocal();
+            state.overall = (local && local.text) || '';
+            overallEl.value = state.overall;
+            if (local && local.text && !local.synced) ovState('unsynced note kept on this device', 'warn'); else ovState('', '');
             if (blocksReady) blocks.forEach(renderBlockNotes);
             renderSummary();
         }
@@ -563,13 +620,11 @@
                 if (signedReviewer) {
                     $('auth-out').style.display = 'none'; $('auth-in').style.display = 'inline';
                     $('auth-who').textContent = 'Signed in · ' + u.email;
-                    overallEl.disabled = false;
                     if (!isTpl && rewriteBtn) rewriteBtn.style.display = '';
                     subscribe();
                 } else {
                     $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
-                    overallEl.disabled = true;
                     if (rewriteBtn) rewriteBtn.style.display = 'none';
                     if (rwStatusEl) rwStatusEl.textContent = '';
                     unsubscribe(); clearNotesUI(); setSync(false, 'signed out');

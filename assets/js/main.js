@@ -21,15 +21,18 @@
             : 'light';
     }
 
-    function setTheme(theme) {
+    // Applies the theme; persists ONLY on explicit user action (persist=true),
+    // so a value merely derived from prefers-color-scheme never blocks the
+    // OS-change listener below.
+    function setTheme(theme, persist) {
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem(THEME_KEY, theme);
+        if (persist) localStorage.setItem(THEME_KEY, theme);
     }
 
     function toggleTheme() {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
-        setTheme(next);
+        setTheme(next, true);
     }
 
     // Initialize theme on load
@@ -42,7 +45,7 @@
         }
     });
 
-    // Expose toggle function globally for theme toggle button
+    // Expose toggle function globally — no toggle button exists yet; awaits a UI toggle.
     window.toggleTheme = toggleTheme;
 
     // ==========================================================================
@@ -174,8 +177,10 @@
     // ==========================================================================
 
     function initExternalLinks() {
+        const host = window.location.hostname;
         document.querySelectorAll('a[href^="http"]').forEach((link) => {
-            if (!link.hostname.includes(window.location.hostname)) {
+            const internal = link.hostname === host || link.hostname.endsWith('.' + host);
+            if (!internal) {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             }
@@ -196,10 +201,20 @@
 
                 const emailInput = form.querySelector('input[type="email"]');
                 const button = form.querySelector('button[type="submit"]');
-                const statusEl = form.parentElement.querySelector('[class*="status"]');
+                let statusEl = form.parentElement.querySelector('[class*="status"]');
                 const email = emailInput?.value;
 
                 if (!email) return;
+
+                // Footer forms ship no status element — create one after the
+                // button so feedback is visible without CSS changes.
+                if (!statusEl && button) {
+                    statusEl = document.createElement('span');
+                    statusEl.className = 'newsletter-signup__status';
+                    statusEl.style.fontSize = '.8em';
+                    statusEl.style.marginLeft = '.5em';
+                    button.insertAdjacentElement('afterend', statusEl);
+                }
 
                 button.textContent = 'Subscribing...';
                 button.disabled = true;
@@ -362,7 +377,7 @@
         a.rel = 'noopener';
         a.title = 'Chat on WhatsApp';
         a.setAttribute('aria-label', 'Chat on WhatsApp');
-        a.innerHTML = '<span aria-hidden="true">💬</span> WhatsApp';
+        a.textContent = 'WhatsApp';
         return a;
     }
 
@@ -408,7 +423,7 @@
 
     // ==========================================================================
     // Tools Widget — naively-drawn cutlery button (bottom-right) that unfolds
-    // the Littoralicious tools (Galley Order, Menu Planner, Pairing Wheel)
+    // the Littoralicious tools (Galley Order, Menu Planner, Pay Check, Pairing Wheel)
     // ==========================================================================
     function initToolsWidget() {
         // The Spoon Lab lives in assets/js/tools-widget.js so publication

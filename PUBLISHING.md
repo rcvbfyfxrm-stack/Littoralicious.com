@@ -24,13 +24,23 @@ npm run publish            # build → validate → firebase deploy
 If `validate` finds a problem (missing file, broken link, duplicate slug, missing
 sitemap) it **stops and deploys nothing**, and tells you exactly what to fix.
 
+**The gated draft loop** (how a draft actually reaches live): write (or `npm run draft` for an
+agent brief) → `npm run lint` (the editorial gate: emoji, banned words, headline rules, spine) →
+annotate in the Studio → `npm run rewrite -- <slug>` builds the notes-driven rewrite brief and
+`--apply` splices the new body → `node tools/undraft.mjs <slug>` promotes to live, and **blocks**
+while the draft has lint errors or a rewrite still queued → `npm run publish`.
+
 ## What each command does
 
 | Command | Does |
 |---------|------|
 | `npm run new -- …` | scaffolds `articles/<slug>.html` + adds a draft entry to `articles.json` |
 | `npm run build` | regenerates homepage cards, category pages (opt-in), `sitemap.xml`, `feed.xml`, `draft-articles.json` |
-| `npm run validate` | fails loudly on drift before you deploy |
+| `npm run lint` | editorial gate — DNA voice laws (emoji, banned words, headlines, summary-box, spine) |
+| `npm run draft` / `npm run rewrite` | agent drafting brief / notes→rewrite brief; `--apply` splices the body + re-lints |
+| `node tools/undraft.mjs <slug>` | gated promotion to live — blocked by lint errors or a queued rewrite |
+| `npm run review -- <slug>` | deploys the draft to the Firebase preview channel; `--notes` reads review notes |
+| `npm run validate` | structure gate — fails loudly on drift before you deploy |
 | `npm run preview` | build + local server |
 | `npm run publish` | build → validate → `firebase deploy` |
 

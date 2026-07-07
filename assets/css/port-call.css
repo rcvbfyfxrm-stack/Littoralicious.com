@@ -1,0 +1,6 @@
+/* LITTORALICIOUS — Port Call (shim).
+   The Port Call styles were consolidated into port-call-content.css — one
+   file to maintain. This shim exists only because the live articles link
+   port-call.css alongside port-call-content.css; loading both is harmless
+   (identical rules, same order). Do not add rules here. */
+@import url("port-call-content.css");

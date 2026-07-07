@@ -38,8 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Equipment. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
-<!-- BODY:BEGIN -->
+                <!-- BODY:BEGIN — Template 11, THE LOCKER: equipment verdicts. Fill each slot on locked blocks only (summary-box, .glance, note--key/--science/--action/--warning/--quote, article-toc, article-sources); never hand-roll a card. Spine: job → glance stats → claim → test → verdict → alternatives. -->
 
                 <!-- Top promise: the payoff in three scannable lines. The reader sees the verdict-shape before reading on. -->
                 <div class="summary-box">
@@ -50,6 +49,9 @@
                         <li>A clear buy / skip / buy-only-if call, tested at sea over real charters.</li>
                     </ul>
                 </div>
+
+                <!-- One-line prose bridge — the summary never butts onto the ToC box. -->
+                <p>One sentence naming the kit, its price bracket, and the question this review settles.</p>
 
                 <!-- Table of Contents: keep the review's section order. Update labels/anchors to match this piece. -->
                 <div class="article-toc">
@@ -66,8 +68,8 @@
 
                 <!-- Section 1: THE JOB. Open with the galley problem this gear is meant to solve — space, swell, holding temp, provisioning. Name the tool and what it competes against. -->
                 <h2 id="job">The Job It Has to Do</h2>
-                <p class="kicker"><em>Judge the kit against the task, not the brochure &mdash; here's the task.</em></p>
-                <!-- WRITER kicker: one line on why this section matters, in the reader's terms. -->
+                <p class="kicker">Judge the kit against the task, not the brochure &mdash; here's the task.</p>
+                <!-- WRITER kicker: every h2 carries one — a single line on why the section matters, in the reader's terms. Plain text, no emphasis markup; the class does the styling. -->
 
                 <p>One sentence on the constraint at sea that creates the need for this tool, and what chefs currently do without it.</p>
                 <!-- WRITER: define the task precisely (the temperature, the volume, the swell condition). The gear is judged against the job, not against its brochure. -->
@@ -76,29 +78,19 @@
                     <p><strong>The job:</strong> One line stating exactly what success looks like for this piece of kit in a moving 4 m&sup2; galley.</p>
                 </div>
 
-                <!-- Section 2: AT A GLANCE stats grid. Reuse this inline-styled block verbatim; swap the labels/values. Keep it to the numbers that decide a purchase: price, footprint, draw, weight, noise. -->
+                <!-- Section 2: AT A GLANCE. Locked .glance stat grid — swap the numbers/labels only, never restyle. 3-5 cells max, the numbers that decide a purchase: price, footprint, draw, weight, noise. -->
                 <h2 id="spec">At a Glance</h2>
-                <p class="kicker"><em>The handful of numbers a chef actually weighs against locker space and the generator.</em></p>
+                <p class="kicker">The handful of numbers a chef actually weighs against locker space and the generator.</p>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0; border: 1px solid var(--color-border); padding: var(--space-4);">
-                    <div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Price</div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">&euro;000</div>
-                    </div>
-                    <div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Footprint</div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">00 &times; 00 cm</div>
-                    </div>
-                    <div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Power draw</div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">000 W</div>
-                    </div>
-                    <div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-sea);">Weight</div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xl); color: var(--color-ink);">0.0 kg</div>
-                    </div>
+                <div class="glance">
+                    <div class="glance__cell"><span class="glance__num">&euro;000</span><span class="glance__label">Price</span></div>
+                    <div class="glance__cell"><span class="glance__num">00 &times; 00 cm</span><span class="glance__label">Footprint</span></div>
+                    <div class="glance__cell"><span class="glance__num">000 W</span><span class="glance__label">Power</span></div>
+                    <div class="glance__cell"><span class="glance__num">0.0 kg</span><span class="glance__label">Weight</span></div>
                 </div>
-                <!-- WRITER: 3-5 stats only. Use the metrics a chef actually weighs against galley space and the generator. Metric units, imperial in parens if needed. -->
+                <!-- WRITER: metric units, imperial in parens if needed. Only the metrics a chef weighs against galley space and the generator. -->
+
+                <p>One line reading the grid for the buyer: the number that decides the purchase, and the one the brochure buries.</p>
 
                 <div class="note note--action">
                     <p><strong>Quick check:</strong> One line on whether these numbers clear your <span class="term">power budget</span> &mdash; the amps the generator can spare before the AC trips.</p>
@@ -106,7 +98,7 @@
 
                 <!-- Section 3: THE CLAIM. State what the maker promises, plus the mechanism — why it should work (the compound, the temperature, the reaction). Science inline, not a sidebar. -->
                 <h2 id="claim">What It Claims</h2>
-                <p class="kicker"><em>The maker's promise, and the physics that would have to hold for it to be true.</em></p>
+                <p class="kicker">The maker's promise, and the physics that would have to hold for it to be true.</p>
 
                 <p>One line on the manufacturer's headline claim and the physical mechanism behind it.</p>
                 <!-- WRITER: explain the working principle so the chef understands WHY it should deliver — then we can test whether it does. -->
@@ -119,7 +111,7 @@
 
                 <!-- Section 4: HOW WE TESTED IT. The proof. Describe the protocol honestly: how many trials, over what period, in what conditions. This is the "Tested at sea" core. -->
                 <h2 id="test">How We Tested It</h2>
-                <p class="kicker"><em>Real charters, counted trials, honest about what we couldn't control.</em></p>
+                <p class="kicker">Real charters, counted trials, honest about what we couldn't control.</p>
 
                 <p>One line describing the test setup: the dish or task, the number of runs, the charter conditions, the period.</p>
                 <!-- WRITER: be specific and honest about uncertainty. "Worked 14 of 16 trials," not false certainty. Note sea state, ambient temp, and what it was run against. -->
@@ -149,7 +141,7 @@
 
                 <!-- Section 5: THE VERDICT. A clear, direct call. Worth the space and the spend, or not — and for whom. -->
                 <h2 id="verdict">The Verdict</h2>
-                <p class="kicker"><em>The unambiguous call &mdash; buy, skip, or buy-only-if &mdash; and the chef it's right for.</em></p>
+                <p class="kicker">The unambiguous call &mdash; buy, skip, or buy-only-if &mdash; and the chef it's right for.</p>
 
                 <p>One direct sentence: buy it, skip it, or buy it only if [condition].</p>
                 <!-- WRITER: the verdict must be unambiguous and tied to galley reality — space, budget, frequency of use. Warm but honest. -->
@@ -160,7 +152,7 @@
 
                 <!-- Section 6: ALTERNATIVES / WHEN NOT TO. Name the competitors and the cases where the cheaper, smaller, or simpler option wins. -->
                 <h2 id="alternatives">Alternatives &amp; When Not To</h2>
-                <p class="kicker"><em>When the cheaper, smaller, or simpler kit quietly wins.</em></p>
+                <p class="kicker">When the cheaper, smaller, or simpler kit quietly wins.</p>
 
                 <p>One line framing the trade-off between this tool and the alternatives below.</p>
                 <!-- WRITER: name real alternatives. State plainly when a chef should NOT buy this (small galley, low usage, simpler kit already aboard). -->
@@ -175,12 +167,15 @@
                     <p><strong>Bottom line:</strong> One line a tired chef can act on at 11 PM mid-charter &mdash; the single decision rule for this purchase. Tested at sea.</p>
                 </div>
 
-                <!-- Closing single-takeaway: the one thing the reader keeps after the page closes. -->
+                <!-- Closing single-takeaway: the one thing the reader keeps after the page closes. One-line prose bridge first — never two boxes butted together. -->
+                <p>Whatever you decide at the till, leave with this:</p>
+
                 <div class="note note--key">
                     <p><strong>The one thing:</strong> The single sentence that settles it &mdash; if you remember nothing else about this kit, remember this.</p>
                 </div>
 
-                <!-- Sources: every contested claim traceable. Reuse this block; list named makers, manuals, and any study cited inline. -->
+                <!-- Sources: every contested claim traceable. Locked .article-sources block; list named makers, manuals, and any study cited inline. One-line prose bridge in first. -->
+                <p>Every number above traces to a name:</p>
                 <div class="article-sources">
                     <p><strong>Sources</strong></p>
                     <p>
@@ -190,7 +185,6 @@
                     </p>
                 </div>
 
-                <!-- BODY:END -->
                 <!-- BODY:END -->
 
                 <!-- Article Engagement -->

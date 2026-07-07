@@ -52,18 +52,18 @@
 </nav>
 <!-- WRITER: leave as-is. The id="" hooks are added on the section dividers/h2s below — do not rename one without the other. -->
 
-<!-- IDENTITY CARD — the at-a-glance profile. Keep the wrapper verbatim; fill every slot. 8 cells is the full set; drop a cell only if it genuinely doesn't apply (e.g. Species for a processed larder item). NO EMOJI anywhere. -->
-<div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-6) 0;">
-    <h4 style="margin-top: 0; color: #c4a35a; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-4);">Identity Card</h4>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Species</span><strong>Genus species</strong><br><span style="color: #94a3b8;">Family / one-line note</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Origin</span><strong>Place</strong><br><span style="color: #94a3b8;">Region, approx date</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Season</span><strong>Peak months</strong><br><span style="color: #94a3b8;">When it is best, by hemisphere if it matters</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Flavour Profile</span><strong style="color: #c4a35a;">Note &middot; Note &middot; Note</strong><br><span style="color: #94a3b8;">primary taste + dominant aromatics, how it shifts cooked vs raw</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Key Compounds</span><strong>Named molecules</strong><br><span style="color: #94a3b8;">the one that carries the aroma</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Quality Tell</span><strong>The one signal</strong><br><span style="color: #94a3b8;">what a good specimen shows on sight/smell</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Conservation</span><strong>How &amp; how long</strong><br><span style="color: #94a3b8;">storage form + window (&deg;C, days/months)</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Best For</span><strong style="color: #c4a35a;">Its one job</strong><br><span style="color: #94a3b8;">the use it is unbeatable at</span></div>
+<!-- IDENTITY CARD — the at-a-glance profile. LOCKED .id-card markup: keep the wrapper verbatim, one .id-card__row per fact, fill every slot. 8 rows is the full set; drop a row only if it genuinely doesn't apply (e.g. Species for a processed larder item). The trailing muted text after each __value is the one-line gloss — keep it short. NO EMOJI anywhere. -->
+<div class="id-card">
+    <h4 class="id-card__title">Identity Card</h4>
+    <div class="id-card__grid">
+        <div class="id-card__row"><span class="id-card__label">Species</span><span class="id-card__value">Genus species</span> Family / one-line note</div>
+        <div class="id-card__row"><span class="id-card__label">Origin</span><span class="id-card__value">Place</span> Region, approx date</div>
+        <div class="id-card__row"><span class="id-card__label">Season</span><span class="id-card__value">Peak months</span> When it is best, by hemisphere if it matters</div>
+        <div class="id-card__row"><span class="id-card__label">Flavour Profile</span><span class="id-card__value">Note &middot; Note &middot; Note</span> primary taste + dominant aromatics, how it shifts cooked vs raw</div>
+        <div class="id-card__row"><span class="id-card__label">Key Compounds</span><span class="id-card__value">Named molecules</span> the one that carries the aroma</div>
+        <div class="id-card__row"><span class="id-card__label">Quality Tell</span><span class="id-card__value">The one signal</span> what a good specimen shows on sight/smell</div>
+        <div class="id-card__row"><span class="id-card__label">Conservation</span><span class="id-card__value">How &amp; how long</span> storage form + window (&deg;C, days/months)</div>
+        <div class="id-card__row"><span class="id-card__label">Best For</span><span class="id-card__value">Its one job</span> the use it is unbeatable at</div>
     </div>
 </div>
 
@@ -147,34 +147,27 @@
 </div>
 <p><strong>One ingredient, four registers:</strong> <!-- kicker: the through-line that connects how it was always used to how it could be used. --></p>
 
-<!-- TRADITIONAL — how the old kitchens actually deployed it (the canonical preparation, not a pairing). -->
-<div style="background: #f5deb3; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #92400e;">
-    <h4 style="margin-top: 0; color: #5c4033; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Traditional &mdash; how it was always used</h4>
-    <p style="font-size: var(--text-sm); color: #5c4033; margin-bottom: 0;">The canonical preparation, named and located. What the dish/technique is, the region that owns it, and the one rule the old cooks never broke. <em>Example only if notable:</em> name the classic dish and the move inside it that still holds.</p>
-</div>
+<!-- TRADITIONAL — how the old kitchens actually deployed it (the canonical preparation, not a pairing). Locked note[data-label="Traditional"]; the register name lives in the label, not a hand-rolled card. -->
+<div class="note" data-label="Traditional"><p>The canonical preparation, named and located. What the dish/technique is, the region that owns it, and the one rule the old cooks never broke. <em>Example only if notable:</em> name the classic dish and the move inside it that still holds.</p></div>
 
 <!-- THE HAND — MANDATORY traditions beat: name the specific person / house / village / region that owns the canonical preparation, sourced (model: koji's three-century tane-koji houses in Kyoto). Not "an old tradition" — a named lineage with a citation. -->
 <p>A canonical preparation always has a keeper. Name them:</p>
 <div class="note" data-label="The Hand"><p>One sourced sentence naming the people who actually keep this preparation alive — the house, family, village or guild, with the place and how long they have held it. Make it specific enough that it lands in Sources.</p></div>
 <!-- WRITER: name names. If you cannot cite a specific lineage, say which region holds the canonical method and source that — but never publish a vague "traditionally". -->
 
-<!-- MODERN — the best contemporary technique: controlled, repeatable, the current professional default. -->
-<div style="background: #e2e5e9; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid var(--color-sea);">
-    <h4 style="margin-top: 0; color: var(--color-sea); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Modern &mdash; the best current technique</h4>
-    <p style="font-size: var(--text-sm); color: #333; margin-bottom: 0;">What precision tools changed: sous-vide window, controlled <span class="term">Maillard</span>, low-temperature infusion, the exact &deg;C/time that beats the traditional method on consistency. State the number. <em>Example:</em> the contemporary preparation a working galley should default to now, and why it wins.</p>
-</div>
+<p>That lineage set the rule. Precision tools then rewrote how tightly it can be held:</p>
+<!-- MODERN — the best contemporary technique: controlled, repeatable, the current professional default. Locked note--action[data-label="Modern"] — the register a galley should default to. -->
+<div class="note note--action" data-label="Modern"><p>What precision tools changed: sous-vide window, controlled <span class="term">Maillard</span>, low-temperature infusion, the exact &deg;C/time that beats the traditional method on consistency. State the number. <em>Example:</em> the contemporary preparation a working galley should default to now, and why it wins.</p></div>
 
-<!-- FRONTIER — the avant-garde edge (elBulli lineage): ferment, spherify, dehydrate, smoke, oil-infuse, enzyme-treat. Defensible, not theatre. -->
-<div style="background: #d4dce8; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #7c3aed;">
-    <h4 style="margin-top: 0; color: #5b21b6; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Frontier &mdash; the edge worth exploring</h4>
-    <p style="font-size: var(--text-sm); color: #3b3b5c; margin-bottom: 0;">The reinvention: fermentation, spherification, dehydration-to-powder, cold-smoke, fat-wash/oil infusion, enzymatic ageing &mdash; whatever the modernist lineage unlocked for this specific ingredient. Name the technique and the compound it manipulates. <em>Examples (no limit where each is genuinely interesting):</em> list the frontier moves that actually improve it, each with the reason it works.</p>
-</div>
+<p>Push past the default and the ingredient starts behaving like a material to be re-engineered:</p>
+<!-- FRONTIER — the avant-garde edge (elBulli lineage): ferment, spherify, dehydrate, smoke, oil-infuse, enzyme-treat. Defensible, not theatre. Locked note--science[data-label="Frontier"] — name the technique AND the compound it manipulates. -->
+<div class="note note--science" data-label="Frontier"><p>The reinvention: fermentation, spherification, dehydration-to-powder, cold-smoke, fat-wash/oil infusion, enzymatic ageing &mdash; whatever the modernist lineage unlocked for this specific ingredient. Name the technique and the compound it manipulates. <em>Examples (no limit where each is genuinely interesting):</em> list the frontier moves that actually improve it, each with the reason it works.</p></div>
 
-<!-- POETIC — the evocative, sensory, story-driven gesture. One dramatic move that makes a guest pause. -->
-<div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #059669;">
-    <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Poetic &mdash; the gesture that makes them pause</h4>
-    <p style="font-size: var(--text-sm); color: #1a3a2a; margin-bottom: 0;">The evocative use: the aroma released at the table, the single-bite memory, the way it carries a place or a season onto the plate. Sensory and emotional, but still true to the ingredient. <em>Example only if it earns it:</em> the one gesture worth the theatre.</p>
-</div>
+<p>Strip away the chemistry and one register is left — the one aimed at the guest, not the plate:</p>
+<!-- POETIC — the evocative, sensory, story-driven gesture. One dramatic move that makes a guest pause. Locked note--quote[data-label="Poetic"]. -->
+<div class="note note--quote" data-label="Poetic"><p>The evocative use: the aroma released at the table, the single-bite memory, the way it carries a place or a season onto the plate. Sensory and emotional, but still true to the ingredient. <em>Example only if it earns it:</em> the one gesture worth the theatre.</p></div>
+
+<p>Four registers, one ingredient — and a single thread runs through all of them:</p>
 
 <div class="note note--key" data-label="The Through-Line"><p>The sentence that links all four registers — what stays constant about this ingredient whether a grandmother or a frontier kitchen is cooking it.</p></div>
 
@@ -213,25 +206,28 @@
 <!-- MOLECULAR / FLAVOUR-COMPOUNDING — the compound bridge: how to build flavour with this ingredient by matching shared molecules (food-pairing principle). This is the "no limit" section: list the MOST INTERESTING bridges, as many as are genuinely surprising — quality of insight over row count. Each row earns its place. -->
 <h2>Flavour-Compounding: [the shared-molecule bridges]</h2>
 <p><strong>The chemistry under it all:</strong> <!-- kicker: the dominant compound family that bridges this ingredient across categories — the key to inventing pairings rather than borrowing them. --></p>
-<table style="width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--text-sm);">
+<!-- Locked .data-table. The Strength column is MANDATORY (never drop it) and uses td.data for the SF Mono tier. Wide table scrolls inside its own overflow container so the page body never scrolls sideways. -->
+<div style="overflow-x: auto;">
+<table class="data-table">
     <thead>
-        <tr style="border-bottom: 2px solid var(--color-ink);">
-            <th style="text-align: left; padding: var(--space-2);">Compound</th>
-            <th style="text-align: left; padding: var(--space-2);">Shared With</th>
-            <th style="text-align: left; padding: var(--space-2);">Why It Matters</th>
-            <th style="text-align: left; padding: var(--space-2);">Strength</th>
+        <tr>
+            <th>Compound</th>
+            <th>Shared With</th>
+            <th>Why It Matters</th>
+            <th>Strength</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="border-bottom: 1px solid var(--color-border);">
-            <td style="padding: var(--space-2);"><strong>Compound name</strong></td>
-            <td style="padding: var(--space-2);">Foods sharing it</td>
-            <td style="padding: var(--space-2);">The pairing it explains</td>
-            <td style="padding: var(--space-2); font-family: var(--font-mono);">strong</td>
+        <tr>
+            <td><strong>Compound name</strong></td>
+            <td>Foods sharing it</td>
+            <td>The pairing it explains</td>
+            <td class="data">strong</td>
         </tr>
-        <!-- WRITER: NO ROW CAP. List every genuinely interesting shared-compound bridge — the more surprising-yet-true, the better. Cut any row that isn't notable. Adjust the first three columns to fit (the tea piece used Tea Type / Compound / Shared With / Bridge) but ALWAYS keep the Strength column. Strength = how well the shared-molecule link is documented, in SF Mono: "strong" (measured in both foods, peer-reviewed), "moderate" (one side measured / inferred), "speculative" (plausible chemistry, untested). A pro must be able to separate proven bridges from hopeful ones at a glance. -->
+        <!-- WRITER: NO ROW CAP. List every genuinely interesting shared-compound bridge — the more surprising-yet-true, the better. Cut any row that isn't notable. Adjust the first three columns to fit (the tea piece used Tea Type / Compound / Shared With / Bridge) but ALWAYS keep the Strength column. Strength = how well the shared-molecule link is documented, in SF Mono via td.data: "strong" (measured in both foods, peer-reviewed), "moderate" (one side measured / inferred), "speculative" (plausible chemistry, untested). A pro must be able to separate proven bridges from hopeful ones at a glance. -->
     </tbody>
 </table>
+</div>
 <div class="note note--key" data-label="Molecular Insight"><p>The headline insight from the table — the pairing that seems surprising but is chemically inevitable.</p></div>
 
 <div class="divider" id="galley"><span class="divider__text">The Galley</span></div>
@@ -239,26 +235,20 @@
 <!-- QUALITY: GOOD vs BAD — the buying eye, made explicit. Two columns: what a good one shows, what a bad one shows. This is non-negotiable in every ingredient profile. -->
 <h2>Quality: How to Tell a Good One from a Bad One</h2>
 <p><strong>Trust your eyes, nose and hands first:</strong> <!-- kicker: the single most reliable quality tell for this ingredient, stated up front. --></p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
-    <div style="background: #d1e7dd; padding: var(--space-5); border-left: 4px solid #059669;">
-        <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">A Good One</h4>
-        <ul style="margin-bottom: 0; font-size: var(--text-sm); color: #1a3a2a;">
-            <li><strong>Look:</strong> the colour/sheen/structure a fresh, well-handled specimen shows.</li>
-            <li><strong>Smell:</strong> the aroma marker — present and clean.</li>
-            <li><strong>Feel / sound:</strong> weight, firmness, snap, moisture — the tactile tell.</li>
-            <!-- WRITER: 3–4 positive signals, sense by sense. Concrete, checkable on the dock. -->
-        </ul>
-    </div>
-    <div style="background: #f0c0c0; padding: var(--space-5); border-left: 4px solid #b91c1c;">
-        <h4 style="margin-top: 0; color: #7f1d1d; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">A Bad One</h4>
-        <ul style="margin-bottom: 0; font-size: var(--text-sm); color: #5c1a1a;">
-            <li><strong>Look:</strong> the dullness/spotting/wilt/crystallisation that says past-it.</li>
-            <li><strong>Smell:</strong> the off-note — the compound of spoilage or rancidity, named.</li>
-            <li><strong>Feel / sound:</strong> the slack, the give, the wrong moisture.</li>
-            <!-- WRITER: mirror the good column, sense by sense. Name the spoilage mechanism where you can (oxidation, rancidity, over-fermentation). -->
-        </ul>
-    </div>
-</div>
+<!-- Locked note--key[data-label="Signs of Quality"] then note--warning[data-label="Signs of Decline"], joined by the one-line prose bridge below — never the two boxes bare-stacked. Notes may carry a sense-by-sense ul (as shore-larder.html does). -->
+<div class="note note--key" data-label="Signs of Quality"><ul>
+    <li><strong>Look:</strong> the colour/sheen/structure a fresh, well-handled specimen shows.</li>
+    <li><strong>Smell:</strong> the aroma marker — present and clean.</li>
+    <li><strong>Feel / sound:</strong> weight, firmness, snap, moisture — the tactile tell.</li>
+    <!-- WRITER: 3–4 positive signals, sense by sense. Concrete, checkable on the dock. -->
+</ul></div>
+<p>Read the same three senses the other way and the decline announces itself:</p>
+<div class="note note--warning" data-label="Signs of Decline"><ul>
+    <li><strong>Look:</strong> the dullness/spotting/wilt/crystallisation that says past-it.</li>
+    <li><strong>Smell:</strong> the off-note — the compound of spoilage or rancidity, named.</li>
+    <li><strong>Feel / sound:</strong> the slack, the give, the wrong moisture.</li>
+    <!-- WRITER: mirror the quality note, sense by sense. Name the spoilage mechanism where you can (oxidation, rancidity, over-fermentation). -->
+</ul></div>
 <p>Both columns assume an honest counter. The trouble is the defect a seller has already hidden:</p>
 <div class="note note--warning" data-label="The Tell That Hides"><p>The one defect a vendor can mask — wax, wash, cold-counter lighting, added water — and how to catch it anyway.</p></div>
 
@@ -303,31 +293,32 @@
     <!-- WRITER: 3–4 cards, rotate background + matching text colour (wheat/#5c4033, blue #d4dce8/#3b3b5c, green #d1e7dd/#1a3a2a, red #f0c0c0/#5c1a1a). -->
 </div>
 
+<p>Those stories only earn their place if one line survives to the pass:</p>
 <!-- NURTURE NOTE — MANDATORY food-facing close (label "At the Table" per the canon). The single line a chef can actually say to a guest, drawn from the Stories above — sourced, not invented, the human version of one fact. This is the warmth pillar made usable at the pass. -->
 <div class="note note--quote" data-label="At the Table"><p>The one tableside sentence — what a chef tells the guest about this ingredient that turns a plate into a story. Pull it straight from a sourced anecdote above; never fabricate the line. (<em>e.g. name the place, the season, or the hands, in a sentence a guest remembers.</em>)</p></div>
 <!-- WRITER: must trace to a real story/source above. If you have no sourced line worth saying aloud, fix the Stories — don't invent one here. -->
 
-<!-- QUICK REFERENCE — dark recap card with stat grid + italic chef's note. -->
-<div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-8) 0;">
-    <h4 style="margin-top: 0; color: #c4a35a; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-4);">Quick Reference</h4>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
-        <div><span style="color: #94a3b8; font-size: var(--text-xs); text-transform: uppercase;">Label</span><br>Short answer.</div>
-        <!-- WRITER: 4 stat cells (Best Season / Best With / Avoid With / Storage, or For-Smoke/For-Roast etc.). -->
+<p>Strip the whole dossier back to what a busy service actually reaches for, and it fits on one card:</p>
+<!-- QUICK REFERENCE — recap card as the LOCKED .id-card (dark navy/gold), for dossier gravitas: the closing spec block echoes the opening Identity Card while the short profiles stay in notes. 4 stat rows + the chef's note as an italic close. -->
+<div class="id-card">
+    <h4 class="id-card__title">Quick Reference</h4>
+    <div class="id-card__grid">
+        <div class="id-card__row"><span class="id-card__label">Label</span><span class="id-card__value">Short answer</span></div>
+        <!-- WRITER: 4 stat rows (Best Season / Best With / Avoid With / Storage, or For-Smoke/For-Roast etc.). -->
     </div>
-    <p style="margin: var(--space-4) 0 0; font-style: italic; color: #c4a35a; font-size: var(--text-sm);">
-        Chef's note: the one-sentence working philosophy for this ingredient — the discipline to carry into the galley.
-    </p>
+    <p><em>Chef's note: the one-sentence working philosophy for this ingredient — the discipline to carry into the galley.</em></p>
 </div>
 
+<p>Above all of it, one decision outranks the rest:</p>
 <!-- CLOSING TAKEAWAY — the single thing the reader keeps. Title it by content. -->
 <div class="note note--key" data-label="The One Thing"><p>The one decision that changes how this ingredient lands on the plate — stated flatly, no hedging. Tested at sea.</p></div>
 
-<!-- SOURCES — named, traceable. Every claim above must land here. -->
-<div style="margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-border); font-size: var(--text-sm); color: var(--color-muted);">
-    <strong>Sources:</strong><br>
-    Author, A. "Title." <em>Journal / Book</em>, year.<br>
-    <!-- WRITER: list every source — peer-reviewed journals, named books, FlavorDB. No "studies show" without the citation here. -->
-    FlavorDB &mdash; <a href="https://cosylab.iiitd.edu.in/flavordb/" style="color: var(--color-sea);">cosylab.iiitd.edu.in/flavordb</a>
+<!-- SOURCES — named, traceable, LOCKED .article-sources markup. Every claim above must land here. -->
+<div class="article-sources">
+    <strong>Sources</strong>
+    <p>Author, A. "Title." <em>Journal / Book</em>, year.</p>
+    <!-- WRITER: one <p> per source — peer-reviewed journals, named books, FlavorDB. No "studies show" without the citation here. -->
+    <p>FlavorDB &mdash; <a href="https://cosylab.iiitd.edu.in/flavordb/">cosylab.iiitd.edu.in/flavordb</a></p>
 </div>
                 <!-- BODY:END -->
 

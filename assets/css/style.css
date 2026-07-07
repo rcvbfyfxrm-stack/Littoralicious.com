@@ -287,6 +287,15 @@ h4 { font-size: var(--text-lg); }
     margin-left: 0.1em;
 }
 
+/* Kicker — the one-line value promise under an h2 (used across the template trames) */
+.kicker {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+    margin: 0.1em 0 0.9em;
+}
+
 /* --------------------------------------------------------------------------
    LAYOUT
    -------------------------------------------------------------------------- */
@@ -458,7 +467,9 @@ h4 { font-size: var(--text-lg); }
    own design intent (see annotation palette) is a *faint* tint + a coloured
    left border. Rather than enumerate every colour — new articles always pick
    fresh ones and the glare creeps back — we lay a translucent paper veil over
-   ANY light inline fill (leading hex #a..–#f.., spaced or not). The hue
+   ANY light inline fill (leading hex #a..–#f.., spaced or not, case-
+   insensitive via the attr-selector i flag — #F5DEB3 is as loud as #f5deb3).
+   The hue
    survives: it just drops to the faint-tint level, and the coloured left
    border still carries the category cue. Dark hero fills (#0../#1../#2../#3..
    leads, gradients, and var() tints) are deliberately NOT matched, so they
@@ -467,12 +478,12 @@ h4 { font-size: var(--text-lg); }
    gets the dark-panel treatment. NEVER replace this with a hex-by-hex list.
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
-    .article__content div[style*="background: #a"], .article__content div[style*="background:#a"],
-    .article__content div[style*="background: #b"], .article__content div[style*="background:#b"],
-    .article__content div[style*="background: #c"], .article__content div[style*="background:#c"],
-    .article__content div[style*="background: #d"], .article__content div[style*="background:#d"],
-    .article__content div[style*="background: #e"], .article__content div[style*="background:#e"],
-    .article__content div[style*="background: #f"], .article__content div[style*="background:#f"] {
+    .article__content div[style*="background: #a" i], .article__content div[style*="background:#a" i],
+    .article__content div[style*="background: #b" i], .article__content div[style*="background:#b" i],
+    .article__content div[style*="background: #c" i], .article__content div[style*="background:#c" i],
+    .article__content div[style*="background: #d" i], .article__content div[style*="background:#d" i],
+    .article__content div[style*="background: #e" i], .article__content div[style*="background:#e" i],
+    .article__content div[style*="background: #f" i], .article__content div[style*="background:#f" i] {
         /* 68% paper veil painted over the inline background-color (external
            !important beats the inline shorthand's implicit image:none) */
         background-image: linear-gradient(rgba(250,250,250,0.68), rgba(250,250,250,0.68)) !important;
@@ -490,71 +501,71 @@ h4 { font-size: var(--text-lg); }
    Covers both the OS setting and the manual [data-theme="dark"] toggle.
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
-    .article__content div[style*="background: #a"],
-    .article__content div[style*="background:#a"],
-    .article__content div[style*="background: #b"],
-    .article__content div[style*="background:#b"],
-    .article__content div[style*="background: #c"],
-    .article__content div[style*="background:#c"],
-    .article__content div[style*="background: #d"],
-    .article__content div[style*="background:#d"],
-    .article__content div[style*="background: #e"],
-    .article__content div[style*="background:#e"],
-    .article__content div[style*="background: #f"],
-    .article__content div[style*="background:#f"],
-    .article__content div[style*="background: #9"],
-    .article__content div[style*="background:#9"] {
+    .article__content div[style*="background: #a" i],
+    .article__content div[style*="background:#a" i],
+    .article__content div[style*="background: #b" i],
+    .article__content div[style*="background:#b" i],
+    .article__content div[style*="background: #c" i],
+    .article__content div[style*="background:#c" i],
+    .article__content div[style*="background: #d" i],
+    .article__content div[style*="background:#d" i],
+    .article__content div[style*="background: #e" i],
+    .article__content div[style*="background:#e" i],
+    .article__content div[style*="background: #f" i],
+    .article__content div[style*="background:#f" i],
+    .article__content div[style*="background: #9" i],
+    .article__content div[style*="background:#9" i] {
         background: #16202b !important;
         background-image: none !important;
     }
-    .article__content div[style*="background: #a"] *:not(mark):not(a),
-    .article__content div[style*="background:#a"] *:not(mark):not(a),
-    .article__content div[style*="background: #b"] *:not(mark):not(a),
-    .article__content div[style*="background:#b"] *:not(mark):not(a),
-    .article__content div[style*="background: #c"] *:not(mark):not(a),
-    .article__content div[style*="background:#c"] *:not(mark):not(a),
-    .article__content div[style*="background: #d"] *:not(mark):not(a),
-    .article__content div[style*="background:#d"] *:not(mark):not(a),
-    .article__content div[style*="background: #e"] *:not(mark):not(a),
-    .article__content div[style*="background:#e"] *:not(mark):not(a),
-    .article__content div[style*="background: #f"] *:not(mark):not(a),
-    .article__content div[style*="background:#f"] *:not(mark):not(a),
-    .article__content div[style*="background: #9"] *:not(mark):not(a),
-    .article__content div[style*="background:#9"] *:not(mark):not(a) {
+    .article__content div[style*="background: #a" i] *:not(mark):not(a),
+    .article__content div[style*="background:#a" i] *:not(mark):not(a),
+    .article__content div[style*="background: #b" i] *:not(mark):not(a),
+    .article__content div[style*="background:#b" i] *:not(mark):not(a),
+    .article__content div[style*="background: #c" i] *:not(mark):not(a),
+    .article__content div[style*="background:#c" i] *:not(mark):not(a),
+    .article__content div[style*="background: #d" i] *:not(mark):not(a),
+    .article__content div[style*="background:#d" i] *:not(mark):not(a),
+    .article__content div[style*="background: #e" i] *:not(mark):not(a),
+    .article__content div[style*="background:#e" i] *:not(mark):not(a),
+    .article__content div[style*="background: #f" i] *:not(mark):not(a),
+    .article__content div[style*="background:#f" i] *:not(mark):not(a),
+    .article__content div[style*="background: #9" i] *:not(mark):not(a),
+    .article__content div[style*="background:#9" i] *:not(mark):not(a) {
         color: #e8e4dc !important;
     }
 }
-[data-theme="dark"] .article__content div[style*="background: #a"],
-[data-theme="dark"] .article__content div[style*="background:#a"],
-[data-theme="dark"] .article__content div[style*="background: #b"],
-[data-theme="dark"] .article__content div[style*="background:#b"],
-[data-theme="dark"] .article__content div[style*="background: #c"],
-[data-theme="dark"] .article__content div[style*="background:#c"],
-[data-theme="dark"] .article__content div[style*="background: #d"],
-[data-theme="dark"] .article__content div[style*="background:#d"],
-[data-theme="dark"] .article__content div[style*="background: #e"],
-[data-theme="dark"] .article__content div[style*="background:#e"],
-[data-theme="dark"] .article__content div[style*="background: #f"],
-[data-theme="dark"] .article__content div[style*="background:#f"],
-[data-theme="dark"] .article__content div[style*="background: #9"],
-[data-theme="dark"] .article__content div[style*="background:#9"] {
+[data-theme="dark"] .article__content div[style*="background: #a" i],
+[data-theme="dark"] .article__content div[style*="background:#a" i],
+[data-theme="dark"] .article__content div[style*="background: #b" i],
+[data-theme="dark"] .article__content div[style*="background:#b" i],
+[data-theme="dark"] .article__content div[style*="background: #c" i],
+[data-theme="dark"] .article__content div[style*="background:#c" i],
+[data-theme="dark"] .article__content div[style*="background: #d" i],
+[data-theme="dark"] .article__content div[style*="background:#d" i],
+[data-theme="dark"] .article__content div[style*="background: #e" i],
+[data-theme="dark"] .article__content div[style*="background:#e" i],
+[data-theme="dark"] .article__content div[style*="background: #f" i],
+[data-theme="dark"] .article__content div[style*="background:#f" i],
+[data-theme="dark"] .article__content div[style*="background: #9" i],
+[data-theme="dark"] .article__content div[style*="background:#9" i] {
     background: #16202b !important;
     background-image: none !important;
 }
-[data-theme="dark"] .article__content div[style*="background: #a"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#a"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #b"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#b"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #c"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#c"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #d"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#d"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #e"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#e"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #f"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#f"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background: #9"] *:not(mark):not(a),
-[data-theme="dark"] .article__content div[style*="background:#9"] *:not(mark):not(a) {
+[data-theme="dark"] .article__content div[style*="background: #a" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#a" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #b" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#b" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #c" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#c" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #d" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#d" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #e" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#e" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #f" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#f" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background: #9" i] *:not(mark):not(a),
+[data-theme="dark"] .article__content div[style*="background:#9" i] *:not(mark):not(a) {
     color: #e8e4dc !important;
 }
 
@@ -664,58 +675,72 @@ h4 { font-size: var(--text-lg); }
     max-width: var(--max-width-prose);
 }
 
-/* Featured Article */
-.article-card--featured {
-    padding: var(--space-8);
-    background: var(--color-subtle);
-    border-bottom: none;
-}
-
-.article-card--featured .article-card__title {
-    font-size: var(--text-2xl);
-}
-
 /* --------------------------------------------------------------------------
    ARTICLE PAGE
+   Every template + article uses the .article__* (double-underscore) family;
+   the .article-header__* family is the original design these alias to. Both
+   are styled identically so the header is never left on bare element styles.
    -------------------------------------------------------------------------- */
-.article-header {
+.article-header,
+.article__header {
     padding: var(--space-16) 0 var(--space-8);
     text-align: center;
     border-bottom: 1px solid var(--color-border);
     margin-bottom: var(--space-8);
 }
 
-.article-header__category {
+.article-header__category,
+.article__category {
     font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--color-sea);
+}
+/* the original standalone-category variant sat above the title as a block */
+.article-header__category {
+    display: block;
     margin-bottom: var(--space-4);
 }
 
-.article-header__title {
+.article-header__title,
+.article__title {
     font-family: var(--font-serif);
     font-size: var(--text-3xl);
     font-weight: 400;
     line-height: var(--leading-tight);
-    max-width: 18ch;
+    max-width: 24ch;
     margin: 0 auto var(--space-6);
 }
 
-.article-header__meta {
+.article__lede {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-lg);
+    line-height: var(--leading-normal);
+    color: var(--color-muted);
+    max-width: 48ch;
+    margin: 0 auto var(--space-6);
+}
+
+.article-header__meta,
+.article__meta {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: var(--space-4);
     font-size: var(--text-sm);
     color: var(--color-muted);
 }
 
-.article-header__meta span::before {
+.article-header__meta span::before,
+.article__meta span::before,
+.article__meta time::before {
     content: '·';
     margin-right: var(--space-4);
 }
 
-.article-header__meta span:first-child::before {
+.article-header__meta span:first-child::before,
+.article__meta > :first-child::before {
     display: none;
 }
 
@@ -752,16 +777,6 @@ h4 { font-size: var(--text-lg); }
     color: var(--color-muted);
 }
 
-.dispatch__source {
-    margin-top: var(--space-3);
-    font-size: var(--text-xs);
-    color: var(--color-salt);
-}
-
-.dispatch__source a {
-    text-decoration: underline;
-}
-
 /* --------------------------------------------------------------------------
    SCIENCE CALLOUT — Technical Data Boxes
    -------------------------------------------------------------------------- */
@@ -791,32 +806,9 @@ h4 { font-size: var(--text-lg); }
     line-height: var(--leading-normal);
 }
 
-/* Data Table */
-.data-table {
-    width: 100%;
-    margin: var(--space-6) 0;
-    border-collapse: collapse;
-    font-size: var(--text-sm);
-}
-
-.data-table th,
-.data-table td {
-    padding: var(--space-3) var(--space-4);
-    text-align: left;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.data-table th {
-    font-weight: 600;
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-muted);
-}
-
-.data-table td.data {
-    font-family: var(--font-mono);
-}
+/* Data tables: single consolidated .data-table definition lives further down
+   ("Data tables - improved readability"). The duplicate that sat here was
+   dead weight — every rule was superseded by the later block — and was removed. */
 
 /* --------------------------------------------------------------------------
    FOOTER
@@ -945,23 +937,6 @@ h4 { font-size: var(--text-lg); }
     background: var(--color-subtle);
     color: var(--color-ink);
     border-color: var(--color-salt);
-}
-
-/* Newsletter status feedback */
-.newsletter-status {
-    font-size: var(--text-sm);
-    margin-top: var(--space-2);
-    min-height: 1.5em;
-    transition: opacity 0.3s ease;
-}
-
-.newsletter-status--success {
-    color: var(--color-sea);
-    font-weight: 500;
-}
-
-.newsletter-status--error {
-    color: #b44;
 }
 
 @media (max-width: 768px) {
@@ -1163,10 +1138,6 @@ mark {
     gap: var(--space-2);
 }
 
-.summary-box__title::before {
-    content: "";
-}
-
 .summary-box ul {
     margin: 0;
     padding-left: var(--space-6);
@@ -1311,6 +1282,39 @@ mark {
 .data-table .num {
     font-family: var(--font-mono);
     text-align: right;
+}
+
+/* td.data — the SF Mono data cell used across articles + the Deep-Dive Strength
+   column (preserved from the merged block; .num and .data are distinct classes) */
+.data-table td.data {
+    font-family: var(--font-mono);
+}
+
+/* --- Galley Plan — Tight Ship signature station-map. Wraps ONE .data-table
+   and gives it a distinct silhouette: heavy ink rails top + bottom, a mono
+   caption rail, tighter cells. Flat — no radius, no gradients. --- */
+.galley-plan {
+    border-top: 2px solid var(--color-ink);
+    border-bottom: 2px solid var(--color-ink);
+    margin: var(--space-6) 0;
+}
+
+.galley-plan__title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-salt);
+    padding: 0.4em 0;
+}
+
+.galley-plan .data-table {
+    margin: 0;
+}
+
+.galley-plan .data-table th,
+.galley-plan .data-table td {
+    padding: var(--space-2) var(--space-3);
 }
 
 /* Marginal notes - for additional context */
@@ -1529,40 +1533,6 @@ mark {
 
 .engagement-pulse__text {
     font-weight: 500;
-}
-
-/* --- Engagement Summary (clickable stats row) --- */
-
-.engagement-summary {
-    display: flex;
-    align-items: center;
-    gap: var(--space-6);
-    padding: var(--space-4) 0;
-    margin-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.engagement-summary__stat {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-sm);
-    color: var(--color-muted);
-    cursor: pointer;
-    transition: color var(--transition-fast);
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: var(--font-sans);
-}
-
-.engagement-summary__stat:hover {
-    color: var(--color-ink);
-}
-
-.engagement-summary__stat svg {
-    width: 16px;
-    height: 16px;
 }
 
 /* --- Reactions Section --- */
@@ -1951,25 +1921,6 @@ mark {
     text-decoration: underline;
 }
 
-/* Featured comment (Top Chef's Take) */
-.comment--featured {
-    background: var(--color-subtle);
-    padding: var(--space-6);
-    margin-bottom: var(--space-4);
-    border-bottom: none;
-    border-left: 3px solid var(--color-sea);
-}
-
-.comment__featured-badge {
-    font-family: var(--font-sans);
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-sea);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-}
-
 /* New comment animation */
 .comment--new {
     background: var(--color-subtle);
@@ -2162,11 +2113,6 @@ mark {
         display: none;
     }
 
-    .engagement-summary {
-        flex-wrap: wrap;
-        gap: var(--space-3);
-    }
-
     .comment-form__row {
         flex-direction: column;
     }
@@ -2179,10 +2125,6 @@ mark {
     .comment--reply {
         margin-left: var(--space-3);
         padding-left: var(--space-3);
-    }
-
-    .comment--featured {
-        padding: var(--space-4);
     }
 }
 
@@ -2320,6 +2262,10 @@ mark {
 .id-card__label { display: block; color: #94a3b8; font-size: var(--text-xs);
   text-transform: uppercase; letter-spacing: 0.1em; }
 .id-card__value { color: #c4a35a; font-weight: 700; }
+/* one fact per cell — the Deep-Dive's 8-cell dossier uses .id-card__row inside .id-card__grid */
+.id-card__row { display: block; }
+.id-card__row .id-card__value,
+.id-card__row strong { display: block; margin-top: var(--space-1); }
 .id-card--origin .id-card__title { color: #c4a35a; }
 
 /* --- At-a-Glance — light mid-piece stat grid (scannable numbers) ----------- */
@@ -2459,3 +2405,18 @@ mark {
 .tw-band-ladder__amount strong { display: block; font-size: var(--text-lg); color: var(--color-ink); }
 .tw-band-ladder__row--top .tw-band-ladder__amount strong { color: #c4a35a; }
 .tw-band-ladder__note { font-size: var(--text-sm); color: var(--color-muted); }
+
+/* --------------------------------------------------------------------------
+   ACCESSIBILITY — reduced motion. When the reader opts out of motion,
+   animations collapse to .01ms (one iteration), so interactive figures MUST
+   be designed to show their complete FINAL frame — never a mid-animation
+   state — with no information carried by motion alone.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -4,7 +4,7 @@
 //   node tools/new.mjs --slug pizza-napoletana --title "Pizza Napoletana" \
 //        --category the-method --subtag "Recipe Blueprint" --template recipe-blueprint
 import fs from "node:fs";
-import { ROOT, p, read, exists, loadArticles, articleHead, esc } from "./lib.mjs";
+import { ROOT, p, read, exists, loadArticlesRaw, articleHead, esc } from "./lib.mjs";
 
 const args = parseArgs(process.argv.slice(2));
 const slug = (args.slug || "").trim();
@@ -12,8 +12,11 @@ const title = (args.title || "").trim();
 if (!slug || !title) die("usage: node tools/new.mjs --slug <slug> --title \"<title>\" [--category <cat>] [--subtag \"<subtag>\"] [--template <name>] [--read <min>] [--lede \"<one line>\"]");
 if (!/^[a-z0-9][a-z0-9-]*$/.test(slug)) die(`bad slug "${slug}" — use lowercase-with-dashes`);
 
-const { data, cats } = loadArticles();
-if (data.articles.some((a) => a.slug === slug)) die(`slug "${slug}" already exists in data/articles.json`);
+// PRISTINE data only — this file is serialised back to data/articles.json, so it
+// must never carry the derived fields loadArticles() attaches to its clones.
+const data = loadArticlesRaw();
+const cats = data.categories || {};
+if ((data.articles || []).some((a) => a.slug === slug)) die(`slug "${slug}" already exists in data/articles.json`);
 const articleFile = p("articles", `${slug}.html`);
 if (exists(articleFile)) die(`articles/${slug}.html already exists`);
 
@@ -98,7 +101,8 @@ function inferTemplate(title, subtag) {
   if (has("recipe", "blueprint", "cake", "bread", "dough", "pizza", "sauce", "braise", "roast", "crumble", "pudding", "soup", "bake")) return "recipe-blueprint";
   if (has("port call", "port-call", "provisioning", "provision", "market", "supplier")) return "port-call";
   if (has("technique", "beurre", "emulsif", "temper", "confit", "cure", "ferment", "method", "how to ")) return "the-method-technique";
-  if (has("ingredient", "deep-dive", "immortal", "the bulb", "the leaf")) return "shore-larder";
+  if (has("deep dive", "deep-dive")) return "shore-larder-deep-dive";
+  if (has("ingredient", "immortal", "the bulb", "the leaf")) return "shore-larder";
   if (has("study", "evidence", "compound", "flavordb", "the fat index", "the salt index", "umami", "maillard", "science of")) return "the-evidence";
   if (has("heritage", "history", "tradition", "origin of", "the first", "born")) return "littoral-heritage-article";
   if (has("equipment", "review", "pacojet", "thermomix", "vitamix", "the locker", "gear")) return "the-locker";
@@ -108,5 +112,7 @@ function inferTemplate(title, subtag) {
   if (has("forecast", "horizon", "future", "trend", "macro", "outlook", "is coming")) return "the-horizon";
   if (has("weekly brief", "monthly brief", "digest", "roundup", "six things")) return "weekly-brief";
   if (has("the lab", "experiment", "trial", "measured", "tested against")) return "the-lab";
+  console.warn("\n  ⚠ No template matched — narrow the scope or split the piece (DNA: never invent a format).");
+  console.warn("    Scaffolding on 'standard' as a fallback.\n");
   return "standard";
 }

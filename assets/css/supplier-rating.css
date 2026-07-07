@@ -1,0 +1,6 @@
+/* LITTORALICIOUS — Supplier rating (shim).
+   The supplier-rating styles (.sr-* and the cau pills they sit beside) were
+   consolidated into port-call-content.css — one file to maintain. This shim
+   exists only because port-call-venice.html links supplier-rating.css as a
+   separate sheet. Do not add rules here. */
+@import url("port-call-content.css");

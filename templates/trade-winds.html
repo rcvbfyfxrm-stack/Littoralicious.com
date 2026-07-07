@@ -59,17 +59,13 @@
     <li><!-- The one move that protects you this season. -->Placeholder — the practical step that proves compliance.</li>
 </ul></div>
 
-<!-- OPTIONAL: disclaimer / context box. Use ONLY when the topic
+<!-- OPTIONAL: disclaimer / context note. Use ONLY when the topic
      carries legal, financial, or safety stakes (tax, contracts,
-     visas). Delete this WHOLE block — lead line + box — for a purely informational piece. -->
+     visas). Delete this WHOLE block — lead line + note — for a purely
+     informational piece. LOCK: note--warning[data-label] only; never
+     a hand-rolled inline-styled panel. -->
 <p>Before the detail, the ground rules — because on this topic, getting it wrong carries a real cost.</p>
-<div style="background: #f5deb3; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #ffc107;">
-    <h4 style="margin-top: 0; color: #856404; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Disclaimer</h4>
-    <p style="margin-bottom: 0; font-size: var(--text-sm); color: #856404;">
-        <!-- One short caveat: this is general info, not advice; rules vary by nationality / flag / contract; consult a qualified specialist. -->
-        Placeholder disclaimer line — scope the stakes and point to a named professional.
-    </p>
-</div>
+<div class="note note--warning" data-label="Disclaimer"><p><!-- One short caveat: this is general info, not advice; rules vary by nationality / flag / contract; consult a qualified specialist. -->Placeholder disclaimer line — scope the stakes and point to a named professional.</p></div>
 
 <h2>The Situation</h2>
 <!-- FOCUS: value kicker — one line that promises why this section earns the reader's eye. -->
@@ -118,12 +114,13 @@
     Placeholder — define the second concept with the exact thresholds that bite. Watch the <span class="term">183-day rule</span> here.
 </p>
 
-<!-- OPTIONAL: structured exemption / requirement box, reused verbatim.
+<!-- OPTIONAL: structured exemption / requirement note, reused verbatim.
      Use the ordered list when the criteria are a numbered legal test;
-     swap <ol> for <ul> for a non-ordered checklist of requirements. -->
-<div style="background: #c8cfe0; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #1e3a5f;">
-    <h4 style="margin-top: 0; color: #1e3a5f; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">The Criteria — Box Heading</h4>
-    <ol style="margin-bottom: 0; font-size: var(--text-sm);">
+     swap <ol> for <ul> for a non-ordered checklist of requirements.
+     LOCK: note--key[data-label] only; never a hand-rolled inline-styled
+     panel. Rename the label to match the actual test if needed. -->
+<div class="note note--key" data-label="The Criteria">
+    <ol>
         <li><strong>Criterion one</strong> — placeholder: what it means and the trap inside it.</li>
         <li><strong>Criterion two</strong> — placeholder: the threshold or document required.</li>
         <li><strong>Criterion three</strong> — placeholder: when it does or doesn't apply to crew.</li>
@@ -261,12 +258,16 @@
 <div class="divider"><span class="divider__text">The One Thing</span></div>
 <div class="note note--key"><p><!-- The single sentence the reader should carry off the page — the decisive rule or move, no hedging. -->Placeholder closing key note — the one rule that protects you, stated plainly.</p></div>
 
-<!-- CLOSING SOURCE NOTE — reuse verbatim. Replace text only.
-     Honours the DNA source rule + "Tested at sea." sign-off. -->
-<div style="margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-border); font-size: var(--text-sm); color: var(--color-muted);">
-    <strong>Note:</strong> <!-- date-stamp the rules, name your sources, point readers to current verification, sign off "Tested at sea." -->
-    Placeholder — reflects general principles as of [date]; verify current rules with a named specialist. Tested at sea.
+<!-- CLOSING SOURCES — LOCKED .article-sources markup, reused verbatim.
+     Replace text only. Date-stamp the rules, name every source (statute /
+     convention / survey / recruiter), point readers to current
+     verification. Honours the DNA source rule; sign off "Tested at sea." -->
+<div class="article-sources">
+    <strong>Sources</strong>
+    <p><!-- named statutes / conventions / surveys + the date the rules were checked; point to a named specialist for current verification. -->Placeholder — reflects general principles as of [date]; named sources here; verify current rules with a named specialist.</p>
 </div>
+
+<p><em>Tested at sea.</em></p>
                 <!-- BODY:END -->
 
                 <!-- Article Engagement -->

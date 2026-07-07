@@ -17,18 +17,15 @@
 // ({ overall, notes:[{order,anchor,text}] }), so the loop is testable with no network.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
-import { p, read, exists, loadArticles } from "./lib.mjs";
+import { p, read, exists, loadArticles, firebaseWebConfig } from "./lib.mjs";
 
 const args = process.argv.slice(2);
 const flags = new Set(args.filter((a) => a.startsWith("--")));
 const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
 const slug = args.find((a) => !a.startsWith("--") && a !== opt("--apply") && a !== opt("--notes-file"));
 
-// ---- Firestore REST (same project/key pattern as tools/review.mjs) ----------
-const cfg = read(p("assets/js/firebase-config.js"));
-const grab = (k) => (cfg.match(new RegExp(`${k}:\\s*['"]([^'"]+)['"]`)) || [])[1];
-const PROJECT = grab("projectId") || "littoralicious-web-eceed";
-const APIKEY = grab("apiKey");
+// ---- Firestore REST (shared config scraper in lib.mjs) -----------------------
+const { projectId: PROJECT, apiKey: APIKEY } = firebaseWebConfig();
 const BASE = `https://firestore.googleapis.com/v1/projects/${PROJECT}/databases/(default)/documents`;
 const REQ_PATH = (s) => `articles/${s}/_rewrite/request`;
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="When to stop whisking, when to salt, what heat does to the white before the yolk — the egg, decoded dish by dish.">
     <title>Eggs: What Every Dish Asks of Them — LITTORALICIOUS</title>
     <link rel="canonical" href="https://www.littoralicious.com/articles/eggs-every-dish.html">
@@ -17,7 +18,7 @@
     <meta name="twitter:description" content="When to stop whisking, when to salt, what heat does to the white before the yolk — the egg, decoded dish by dish.">
     <meta name="twitter:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
     <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
-    <link rel="stylesheet" href="../assets/css/style.css?v=4ec33c16">
+    <link rel="stylesheet" href="../assets/css/style.css?v=e0d1257a">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
     <script type="application/ld+json">
 {
@@ -119,6 +120,222 @@
 
 <h2>The Science: two foods, three set points</h2>
 <p><strong>The payoff:</strong> the white and the yolk are different foods that coagulate at different temperatures &mdash; master the three numbers and every egg dish becomes one dial.</p>
+
+<figure class="sketch-figure" id="egg-watch">
+    <div class="sketch-figure__plate">
+        <canvas class="sketch-figure__canvas" id="egg-watch-canvas" role="img" aria-label="Animated pencil cross-section of an egg in a water bath: as the temperature climbs, the white sets from the shell inward and the yolk is the last thing left moving."></canvas>
+    </div>
+    <div class="sketch-figure__scrub">
+        <label for="egg-watch-temp">Heat</label>
+        <input type="range" id="egg-watch-temp" min="50" max="85" step="0.5" value="50">
+        <output id="egg-watch-readout" for="egg-watch-temp">50.0&thinsp;&deg;C</output>
+    </div>
+    <figcaption class="sketch-figure__caption"><b>Moving = liquid. Still = set.</b> The white locks first, from the outside in; the yolk trembles on alone through the 63&nbsp;&deg;C window, then sets last and softest. Drag the heat &mdash; or let it cook.</figcaption>
+</figure>
+<script src="../assets/js/litto-sketch.js"></script>
+<script>
+(function () {
+    'use strict';
+    var canvas = document.getElementById('egg-watch-canvas');
+    if (!canvas || !window.LittoSketch) return;
+    var INK = '#131312', PAPER = '#F6F5F1';
+    var W = 720, H = 500, TAU = Math.PI * 2;
+    var TH = { x: 96, bulbY: 392, bulbR: 26, tubeTop: 70, tubeW: 16 };
+    var EGG = { cx: 430, cy: 250, rx: 188, ry: 152, yr: 70, yoff: 36 };
+    var T_LO = 50, T_HI = 85, WHITE_LO = 62, YOLK_LO = 66;
+
+    function clamp01(v) { return Math.min(Math.max(v, 0), 1); }
+    function phase(r, from, span) { return clamp01((r - from) / span); }
+
+    // deterministic seeds — the figure draws identically on every visit
+    var s = 99;
+    function rnd() { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }
+    var SEEDS = [];
+    for (var i = 0; i < 330; i++) {
+        var a = rnd() * TAU, rr = Math.sqrt(rnd());
+        SEEDS.push({ x: EGG.cx + Math.cos(a) * rr * EGG.rx, y: EGG.cy + Math.sin(a) * rr * EGG.ry,
+                     ang: rnd() * Math.PI, ph: rnd() * 6.28, ph2: rnd() * 6.28, len: 3.6 + rnd() * 3 });
+    }
+
+    function addEll(ctx, cx, cy, rx, ry) { ctx.moveTo(cx + rx, cy); ctx.ellipse(cx, cy, rx, ry, 0, 0, TAU); }
+    function addCirc(ctx, cx, cy, r) { ctx.moveTo(cx + r, cy); ctx.arc(cx, cy, r, 0, TAU); }
+    function arcEll(ctx, cx, cy, rx, ry, lw, frac) {
+        if (frac <= 0) return;
+        ctx.lineWidth = lw; ctx.beginPath();
+        ctx.ellipse(cx, cy, rx, ry, 0, -Math.PI / 2, -Math.PI / 2 + frac * TAU);
+        ctx.stroke();
+    }
+    function hatch(ctx, spacing, both) {
+        ctx.lineWidth = 1; ctx.strokeStyle = INK; ctx.lineCap = 'round';
+        for (var k = -H; k < W; k += spacing) { ctx.beginPath(); ctx.moveTo(k, 0); ctx.lineTo(k + H, H); ctx.stroke(); }
+        if (both) for (var j = 0; j < W + H; j += spacing) { ctx.beginPath(); ctx.moveTo(j, 0); ctx.lineTo(j - H, H); ctx.stroke(); }
+    }
+    function liquid(ctx, t, amp) {
+        ctx.lineWidth = 1.15; ctx.strokeStyle = INK; ctx.lineCap = 'round';
+        for (var i = 0; i < SEEDS.length; i++) {
+            var p = SEEDS[i];
+            var x = p.x + Math.sin(t * 0.9 + p.ph) * amp, y = p.y + Math.cos(t * 0.8 + p.ph2) * amp;
+            var dx = Math.cos(p.ang) * p.len, dy = Math.sin(p.ang) * p.len;
+            ctx.beginPath(); ctx.moveTo(x - dx, y - dy); ctx.lineTo(x + dx, y + dy); ctx.stroke();
+        }
+    }
+
+    function drawEgg(ctx, T, t, r) {
+        var rOut = phase(r, 0, .30), rShell = phase(r, .08, .30), rYolk = phase(r, .22, .30), ink = phase(r, .55, .45);
+        var yC = { cx: EGG.cx, cy: EGG.cy + EGG.yoff, r: EGG.yr };
+        var whiteSet = clamp01((T - 60) / 5), yolkSet = clamp01((T - YOLK_LO) / (73 - YOLK_LO));
+        // the set-front converges onto the YOLK's centre, not the shell's — otherwise a
+        // liquid lens survives above the yolk at full set
+        var wf = 1 - whiteSet, fRx = yC.r + (EGG.rx - yC.r) * wf, fRy = yC.r + (EGG.ry - yC.r) * wf;
+        var fCy = EGG.cy + whiteSet * EGG.yoff;
+        var yf = (1 - yolkSet) * yC.r, wob = (1 - yolkSet) * 2.2 * Math.sin(t * 1.1);
+        ctx.strokeStyle = INK;
+        if (ink > 0.01) {
+            ctx.save(); ctx.globalAlpha = ink;
+            if (whiteSet > 0.001) {
+                ctx.save(); ctx.beginPath(); addEll(ctx, EGG.cx, EGG.cy, EGG.rx, EGG.ry); addEll(ctx, EGG.cx, fCy, fRx, fRy);
+                ctx.clip('evenodd'); hatch(ctx, 8, true); ctx.restore();
+            }
+            ctx.save(); ctx.beginPath(); addEll(ctx, EGG.cx, fCy, fRx, fRy); addCirc(ctx, yC.cx, yC.cy, yC.r);
+            ctx.clip('evenodd'); liquid(ctx, t, 1.9); ctx.restore();
+            if (yolkSet > 0.001) {
+                ctx.save(); ctx.beginPath(); addCirc(ctx, yC.cx, yC.cy, yC.r); addCirc(ctx, yC.cx, yC.cy, yf);
+                ctx.clip('evenodd'); hatch(ctx, 13, true); ctx.restore();
+            }
+            if (yf > 1) {
+                ctx.save(); ctx.beginPath();
+                ctx.moveTo(yC.cx + yf, yC.cy + wob * 0.3); ctx.ellipse(yC.cx, yC.cy + wob * 0.3, yf, yf + wob * 0.5, 0, 0, TAU);
+                ctx.clip(); liquid(ctx, t * 1.15, 2.5); ctx.restore();
+            }
+            // steam — grows with heat
+            var hi = Math.max(0, (T - 52) / 33); ctx.lineWidth = 1.3; ctx.lineCap = 'round';
+            for (var i = 0; i < 5; i++) {
+                var x0 = EGG.cx - 120 + i * 60, ph = t * 1.2 + i * 1.4;
+                ctx.beginPath(); ctx.moveTo(x0, EGG.cy + EGG.ry + 30);
+                ctx.bezierCurveTo(x0 + Math.sin(ph) * 9 * hi, EGG.cy + EGG.ry + 8,
+                                  x0 - Math.sin(ph + 1) * 9 * hi, EGG.cy + EGG.ry - 14,
+                                  x0 + Math.sin(ph + 2) * 7 * hi, EGG.cy + EGG.ry - 36 * hi);
+                ctx.stroke();
+            }
+            if (wf > 0.03 && wf < 0.97) arcEll(ctx, EGG.cx, fCy, fRx, fRy, 2.0, 1);
+            ctx.restore();
+        }
+        // outlines draw themselves on, clockwise from the top
+        arcEll(ctx, EGG.cx, EGG.cy, EGG.rx, EGG.ry, 2.6, rOut);
+        arcEll(ctx, EGG.cx, EGG.cy, EGG.rx - 5, EGG.ry - 5, 1, rShell);
+        arcEll(ctx, yC.cx, yC.cy + wob * 0.3, yC.r, yC.r, 2.2, rYolk);
+    }
+
+    function drawThermo(ctx, T, t, r) {
+        var rTh = phase(r, .34, .30), ink = phase(r, .55, .45);
+        if (rTh <= 0) return;
+        var x = TH.x, top = TH.tubeTop - 14, bottom = TH.bulbY + TH.bulbR + 34;
+        ctx.save();
+        if (rTh < 1) { ctx.beginPath(); ctx.rect(x - 60, top, 130, (bottom - top) * rTh); ctx.clip(); }
+        ctx.lineWidth = 2.4; ctx.strokeStyle = INK; ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(x - TH.tubeW / 2, TH.tubeTop); ctx.lineTo(x - TH.tubeW / 2, TH.bulbY - 8);
+        ctx.arc(x, TH.bulbY, TH.bulbR, Math.PI * 0.78, Math.PI * 0.22, false);
+        ctx.lineTo(x + TH.tubeW / 2, TH.tubeTop); ctx.arc(x, TH.tubeTop, TH.tubeW / 2, 0, Math.PI, true);
+        ctx.stroke();
+        var tubeBot = TH.bulbY - 6, tubeRange = tubeBot - TH.tubeTop;
+        var frac = (T - T_LO) / (T_HI - T_LO), merc = TH.tubeTop + (1 - frac) * tubeRange;
+        ctx.fillStyle = INK;
+        ctx.beginPath(); ctx.arc(x, TH.bulbY, TH.bulbR - 4, 0, TAU); ctx.fill();
+        ctx.fillRect(x - TH.tubeW / 2 + 4, merc, TH.tubeW - 8, tubeBot - merc);
+        ctx.lineWidth = 1.2;
+        for (var tt = 55; tt <= 85; tt += 5) {
+            var yy = TH.tubeTop + (1 - (tt - T_LO) / (T_HI - T_LO)) * tubeRange;
+            ctx.beginPath(); ctx.moveTo(x + TH.tubeW / 2 + 2, yy); ctx.lineTo(x + TH.tubeW / 2 + 9, yy); ctx.stroke();
+        }
+        [WHITE_LO, YOLK_LO].forEach(function (tw) {
+            var yy = TH.tubeTop + (1 - (tw - T_LO) / (T_HI - T_LO)) * tubeRange;
+            ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x - TH.tubeW / 2 - 9, yy); ctx.lineTo(x - TH.tubeW / 2 - 2, yy); ctx.stroke();
+        });
+        if (ink > 0.01) {
+            ctx.globalAlpha = ink;
+            var wy = TH.tubeTop + (1 - ((WHITE_LO + YOLK_LO) / 2 - T_LO) / (T_HI - T_LO)) * tubeRange;
+            var inWin = T >= WHITE_LO && T <= YOLK_LO;
+            var pr = 9 + (inWin ? 3 * (0.5 + 0.5 * Math.sin(t * 4)) : 0);
+            ctx.lineWidth = inWin ? 2.4 : 1.4; ctx.strokeStyle = INK;
+            ctx.beginPath(); ctx.arc(x + TH.tubeW / 2 + 26, wy, pr, 0, TAU); ctx.stroke();
+            ctx.fillStyle = INK; ctx.font = '600 22px Georgia, serif'; ctx.textAlign = 'center';
+            ctx.fillText(Math.round(T) + '°', x, TH.bulbY + TH.bulbR + 26);
+            ctx.font = "11px 'SF Mono', ui-monospace, monospace";
+            ctx.fillText('63°', x + TH.tubeW / 2 + 26, wy - 14);
+        }
+        ctx.restore();
+    }
+
+    // the unattended 10-second story: rise, linger in the window, overshoot, reset
+    function easeSweep(u) { return u < .5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2; }
+    function tempAt(sec) {
+        var c = sec % 10;
+        if (c < 3) return 50 + easeSweep(c / 3) * 12;
+        if (c < 5.5) return 62 + ((c - 3) / 2.5) * 4;
+        if (c < 8) return 66 + easeSweep((c - 5.5) / 2.5) * 19;
+        return 85 - easeSweep((c - 8) / 2) * 35;
+    }
+    // rising-leg inverse, so the sweep resumes smoothly from a scrubbed temperature
+    function sweepClockFor(T) {
+        if (T <= 62) return Math.max(0, (T - 50) / 12) * 3;
+        if (T <= 66) return 3 + ((T - 62) / 4) * 2.5;
+        return 5.5 + Math.min(1, (T - 66) / 19) * 2.5;
+    }
+
+    var slider = document.getElementById('egg-watch-temp');
+    var readout = document.getElementById('egg-watch-readout');
+    var lastShown = null;
+    // Move the thumb unless the SLIDER itself is being dragged (already moved
+    // natively). A canvas drag or the sim must write it back, else the thumb
+    // desyncs — permanently under reduced motion where the sim never re-runs.
+    function syncUI(T, fromSlider) {
+        if (!fromSlider && document.activeElement !== slider) slider.value = T;
+        var shown = Math.round(T * 2) / 2;
+        if (shown !== lastShown) { lastShown = shown; readout.textContent = shown.toFixed(1) + ' °C'; }
+    }
+
+    // ?figT=63 freezes the figure at a temperature — used for headless PNG export
+    var frozen = parseFloat(new URLSearchParams(location.search).get('figT'));
+    var isStatic = window.LittoSketch.reduced || !isNaN(frozen);
+    var T0 = !isNaN(frozen) ? Math.min(Math.max(frozen, T_LO), T_HI) : (isStatic ? 63 : 50);
+    var fig = window.LittoSketch.attach(canvas, {
+        width: W, height: H, revealDuration: 2.2, staticFrame: !isNaN(frozen),
+        state: { T: T0, simT: isStatic ? sweepClockFor(T0) : 0.4 },
+        simulate: function (st, dt) { st.simT += dt; st.T = tempAt(st.simT); syncUI(st.T, false); },
+        draw: function (ctx, st) {
+            ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
+            drawThermo(ctx, st.T, st.t, st.reveal);
+            drawEgg(ctx, st.T, st.t, st.reveal);
+        }
+    });
+    if (isStatic) syncUI(T0, false);
+
+    function userSet(T, fromSlider) {
+        T = Math.min(Math.max(T, T_LO), T_HI);
+        fig.state.T = T;
+        fig.state.simT = sweepClockFor(T);
+        fig.hold(4);
+        syncUI(T, !!fromSlider);
+        if (fig.reduced) fig.invalidate();
+    }
+    slider.addEventListener('input', function () { userSet(parseFloat(this.value), true); });
+
+    var dragging = false;
+    canvas.addEventListener('pointerdown', function (e) {
+        dragging = true; canvas.setPointerCapture(e.pointerId);
+        var rect = canvas.getBoundingClientRect();
+        userSet(T_LO + ((e.clientX - rect.left) / rect.width) * (T_HI - T_LO));
+    });
+    canvas.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        var rect = canvas.getBoundingClientRect();
+        userSet(T_LO + ((e.clientX - rect.left) / rect.width) * (T_HI - T_LO));
+    });
+    canvas.addEventListener('pointerup', function () { dragging = false; });
+    canvas.addEventListener('pointercancel', function () { dragging = false; });
+})();
+</script>
 <div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #059669;">
     <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Key Compounds</h4>
     <ul style="margin-bottom: 0; font-size: var(--text-sm);">

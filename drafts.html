@@ -114,10 +114,11 @@
             return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
         // ---- Auth ----
-        signinBtn.onclick = function () {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider).catch(function (e) { alert("Sign-in failed: " + e.message); });
-        };
+        // Same email/password reviewer session as the rest of the Studio (auth state is
+        // shared across pages on this origin) — the old Google popup signed you into an
+        // account that wasn't on the reviewer allowlist and every note read was denied.
+        signinBtn.onclick = function () { location.href = "studio.html#signin"; };
+        signinBtn.textContent = "Sign in via Studio";
         signoutBtn.onclick = function () { auth.signOut(); };
 
         auth.onAuthStateChanged(function (user) {
@@ -140,8 +141,15 @@
         });
 
         // ---- Notes (Firestore: draft-notes/{slug}/notes/{id}) ----
+        // No orderBy: the review page writes numeric `created`, this page wrote Firestore
+        // `createdAt` timestamps — orderBy on either field EXCLUDES the other's notes.
+        // Fetch all, sort client-side on whichever stamp a note carries.
         function notesRef(slug) {
-            return db.collection("draft-notes").doc(slug).collection("notes").orderBy("createdAt", "asc");
+            return db.collection("draft-notes").doc(slug).collection("notes");
+        }
+        function noteMillis(n) {
+            if (n.createdAt && n.createdAt.toMillis) return n.createdAt.toMillis();
+            return n.created || n.updated || 0;
         }
         function wireNotes(slug, container) {
             if (listeners[slug]) { listeners[slug](); delete listeners[slug]; }
@@ -155,14 +163,17 @@
             listeners[slug] = notesRef(slug).onSnapshot(function (snap) {
                 if (snap.empty) { listEl.className = "dr-notelist dr-empty"; listEl.textContent = "No notes yet."; return; }
                 listEl.className = "dr-notelist";
-                listEl.innerHTML = snap.docs.map(function (d) {
+                var docs = snap.docs.slice().sort(function (a, b) { return noteMillis(a.data()) - noteMillis(b.data()); });
+                listEl.innerHTML = docs.map(function (d) {
                     var n = d.data();
-                    var when = n.createdAt && n.createdAt.toDate ? n.createdAt.toDate().toISOString().slice(0, 16).replace("T", " ") : "";
+                    var ms = noteMillis(n);
+                    var when = ms ? new Date(ms).toISOString().slice(0, 16).replace("T", " ") : "";
+                    var section = n.section || (n.anchor ? '“' + n.anchor.slice(0, 60) + (n.anchor.length > 60 ? '…' : '') + '”' : "");
                     return '<div class="dr-note ' + (n.resolved ? "resolved" : "") + '">' +
-                        '<div class="dr-note__head"><span class="dr-note__author">' + esc(n.author || n.email || "?") + '</span>' +
+                        '<div class="dr-note__head"><span class="dr-note__author">' + esc(n.author || (n.by || n.email || "?").split("@")[0]) + '</span>' +
                         '<span>' + esc(when) + '</span>' +
                         '<button class="dr-note__resolve" data-id="' + d.id + '" data-slug="' + esc(slug) + '" data-res="' + (n.resolved ? "1" : "0") + '">' + (n.resolved ? "reopen" : "resolve") + '</button></div>' +
-                        '<div class="dr-note__text">' + esc(n.text) + (n.section ? '<span class="dr-note__section">' + esc(n.section) + '</span>' : "") + '</div></div>';
+                        '<div class="dr-note__text">' + esc(n.text) + (section ? '<span class="dr-note__section">' + esc(section) + '</span>' : "") + '</div></div>';
                 }).join("");
                 listEl.querySelectorAll(".dr-note__resolve").forEach(function (b) {
                     b.onclick = function () {
@@ -188,6 +199,7 @@
             btn.onclick = function () {
                 var text = ta.value.trim();
                 if (!text) return;
+                if (text.length > 4900) text = text.slice(0, 4900);   // stay under the 5000-char Firestore rule cap
                 btn.disabled = true;
                 db.collection("draft-notes").doc(slug).collection("notes").add({
                     author: currentUser.displayName || (currentUser.email || "").split("@")[0],
@@ -195,7 +207,8 @@
                     text: text,
                     section: sec.value.trim() || null,
                     resolved: false,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    created: Date.now(), updated: Date.now(), by: currentUser.email || ""   // studio-review schema, so both boards see it
                 }).then(function () { ta.value = ""; sec.value = ""; })
                   .catch(function (e) { alert("Could not post note: " + e.message); })
                   .finally(function () { btn.disabled = false; });

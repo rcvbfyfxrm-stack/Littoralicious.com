@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // tools/validate.mjs — fail loudly BEFORE you deploy. Catches the exact drift
 // that made the old site advertise articles whose HTML wasn't there.
+import fs from "node:fs";
 import { p, read, exists, loadArticles, live, esc } from "./lib.mjs";
 
 const errors = [];
@@ -45,7 +46,21 @@ for (const page of ["index.html", "the-method.html", "shore-larder.html",
 for (const asset of ["assets/css/style.css", "assets/js/main.js", "assets/logo/favicon.svg", "assets/logo/logo.svg"])
   if (!exists(p(asset.split("?")[0]))) E(`referenced asset missing: ${asset}`);
 
-// 5) robots.txt sanity: don't disallow pages that don't exist; sitemap must exist.
+// 5) TEMPLATE self-check: every full-page template (contains {{HEAD}}) must carry
+//    EXACTLY one BODY:BEGIN and one BODY:END marker — doubled markers make the
+//    scaffolder and the rewrite splicer target the wrong block.
+if (exists(p("templates"))) {
+  for (const t of fs.readdirSync(p("templates")).filter((f) => f.endsWith(".html")).sort()) {
+    const tmpl = read(p("templates", t));
+    if (!tmpl.includes("{{HEAD}}")) continue;
+    const begins = (tmpl.match(/<!--\s*BODY:BEGIN/gi) || []).length;
+    const ends = (tmpl.match(/<!--\s*BODY:END/gi) || []).length;
+    if (begins !== 1 || ends !== 1)
+      E(`templates/${t}: must have exactly one BODY:BEGIN and one BODY:END marker (found ${begins} BEGIN / ${ends} END)`);
+  }
+}
+
+// 6) robots.txt sanity: don't disallow pages that don't exist; sitemap must exist.
 if (exists(p("robots.txt"))) {
   const robots = read(p("robots.txt"));
   if (/Sitemap:/i.test(robots) && !exists(p("sitemap.xml"))) E("robots.txt references a Sitemap but sitemap.xml is missing — run build");
