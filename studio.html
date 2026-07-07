@@ -41,6 +41,16 @@
         .st-act a.st-validate.is-on{background:#166534;color:#fff;border-color:#166534;}
         .st-act a.st-validate.is-on:hover{background:#13532b;}
         .st-tools__div{width:1px;align-self:stretch;background:var(--color-border);margin:0 4px;}
+        /* production pipeline strip */
+        .st-pipe{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:var(--space-4) 0 0;}
+        .st-pipe__stage{background:#fff;border:1px solid var(--color-border);padding:.45em .9em;cursor:pointer;font-size:12px;color:var(--color-muted);display:inline-flex;align-items:baseline;gap:.45em;}
+        .st-pipe__stage b{font-family:var(--font-mono);font-size:var(--text-base);color:var(--color-sea);font-weight:600;}
+        .st-pipe__stage:hover{border-color:var(--color-sea);color:var(--color-sea);}
+        .st-pipe__stage.active{border-color:var(--color-sea);color:var(--color-sea);box-shadow:inset 0 0 0 1px var(--color-sea);}
+        .st-pipe__stage.zero{opacity:.45;}
+        .st-pipe__arrow{color:var(--color-salt);font-size:12px;}
+        .st-work{display:inline-block;margin-left:6px;font-family:var(--font-mono);font-size:10px;color:var(--color-salt);white-space:nowrap;}
+        .st-work b{color:var(--color-sea);font-weight:600;}
         .st-section{cursor:pointer;}
         .st-section td{background:#f1efe9;border-top:2px solid var(--color-ink);padding:.5em .6em;}
         .st-section:hover td{background:#eae6dc;}
@@ -165,6 +175,8 @@
             </span>
         </div>
 
+        <div class="st-pipe" id="st-pipe" title="Your production line — click a stage to see exactly those articles"></div>
+
         <div class="st-tools">
             <input id="st-search" type="text" placeholder="Filter by title, category, tag…">
             <button data-f="all" class="active">All</button>
@@ -173,7 +185,8 @@
             <button data-f="needs-review" title="Drafts you haven't validated yet — your pending review queue (sign in to sync your sign-offs)">Needs review</button>
             <button data-f="featured">Featured</button>
             <span class="st-tools__div" aria-hidden="true"></span>
-            <button data-g="section" class="active" title="Group rows under each section, with a live/draft split">By section</button>
+            <button data-g="work" title="Most worked on first — ranked by your notes, rewrites and recent activity (sign in to rank)">Most worked</button>
+            <button data-g="section" title="Group rows under each section, with a live/draft split">By section</button>
             <button data-g="date" title="Flat list, newest first">By date</button>
         </div>
 
@@ -237,20 +250,21 @@
         </div>
 
         <p class="st-note">
-            <strong>How this works.</strong> Click an article title (or <strong>Review</strong>) to open the studio reader and leave
-            notes paragraph by paragraph — synced to every device you sign in on. <strong>Notes</strong> on a draft row opens the quick
-            whole-draft notepad instead. <strong>Posts</strong> opens the Instagram planner — favourite the ones you like and they land on the
-            <a href="studio-social.html">Social schedule</a> at optimal times. The two ticks are saved in this browser.
-            <strong>Validate</strong> signs a reviewed draft off as ready: it shows a green <span class="st-badge st-ready">&#10003; Ready</span> badge,
-            syncs to every device you sign in on, and drops the piece into the publish queue. The <strong>Needs review</strong> filter shows
-            exactly the drafts you have <em>not</em> validated yet — your pending review queue. <strong>Publish</strong> builds the command to
-            drop the <code>draft</code> flag and deploy. <strong>News</strong> assembles a live email digest above — copy the HTML
-            straight into Buttondown, or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off
-            the homepage, sitemap and feed until published. Rows are grouped <strong>By section</strong> by default — each header shows that
-            section's live/draft split (green = live, amber = draft) so you can see at a glance where you're shipping vs. still drafting.
-            Sections start <strong>folded</strong>; click a header to unfold it (your open/closed choice is remembered, and a search opens
-            everything). Inside each section, <strong>drafts sit on top</strong>, newest first. Switch to <strong>By date</strong> for a flat list.
-            The <strong>Draft</strong> and <strong>Needs review</strong> filters always drop the section grouping and list every draft flat, newest produced first &mdash; a clean review queue.
+            <strong>How this works.</strong> The strip at the top is your <strong>production line</strong>:
+            Fresh drafts &rarr; In review &rarr; Rewrite queued &rarr; Ready &rarr; Live — click a stage to see exactly those pieces,
+            click it again to clear. The default view is <strong>Most worked</strong>: whatever you have poured notes, rewrites and
+            recent attention into sits on top, so you always resume where you left off (sign in to feed the ranking).
+            Click an article title (or <strong>Review</strong>) to open the studio reader and leave notes paragraph by paragraph.
+            <strong>Notes</strong> on <em>any</em> row — live or draft — opens the whole-article notepad: it saves on this device
+            with every keystroke and syncs to every device once you're signed in, so nothing you type can be lost.
+            <strong>Posts</strong> opens the Instagram planner — favourite the ones you like and they land on the
+            <a href="studio-social.html">Social schedule</a> at optimal times.
+            <strong>Validate</strong> signs a reviewed draft off as ready: green <span class="st-badge st-ready">&#10003; Ready</span> badge,
+            synced everywhere, straight into the publish queue. <strong>Publish</strong> builds the command to drop the
+            <code>draft</code> flag and deploy; <strong>News</strong> assembles a live email digest — copy the HTML into Buttondown,
+            or run <code>npm run newsletter -- &lt;slug&gt; --draft</code> for a single piece. Drafts stay off the homepage, sitemap and feed
+            until published. <strong>By section</strong> groups rows under each section with its live/draft split;
+            <strong>By date</strong> is a flat list, newest first.
         </p>
     </div>
 
@@ -298,12 +312,14 @@
         var ORIGIN = 'https://www.littoralicious.com';
         var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
         var filter = 'all', q = '', all = [], byslug = {}, notesMap = {}, paraMap = {}, validatedMap = {};
+        var workMap = {}, queuedSet = {};   // slug -> work signals from Firestore; slugs queued for rewrite (public doc)
         var bulletCache = {}; // slug -> array of bullets (lazy fetched)
-        var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+        var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
 
         // ---- persisted selections ----
-        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group', EXPAND_KEY = 'litt.studio.expanded';
-        var groupMode = (function () { try { return localStorage.getItem(GROUP_KEY) || 'section'; } catch (e) { return 'section'; } })();
+        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group.v2', EXPAND_KEY = 'litt.studio.expanded';
+        // v2 key: the default view is now "Most worked" — what you're actively shaping sits on top
+        var groupMode = (function () { try { return localStorage.getItem(GROUP_KEY) || 'work'; } catch (e) { return 'work'; } })();
         var load = function (k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch (e) { return []; } };
         var pub = new Set(load(PUB_KEY)), news = new Set(load(NEWS_KEY));
         var expandedSecs = new Set(load(EXPAND_KEY));   // sections currently unfolded (default: all folded)
@@ -331,8 +347,20 @@
             document.getElementById('st-total').textContent = all.length;
             document.getElementById('st-live').textContent = all.filter(function (a) { return !a.draft; }).length;
             document.getElementById('st-draft').textContent = all.filter(function (a) { return a.draft; }).length;
-            render(); renderPublish(); renderNewsletter();
+            render(); renderPublish(); renderNewsletter(); loadQueue();
         }).catch(function (e) { rows.innerHTML = '<tr><td colspan="8">Could not load articles.json: ' + esc(e.message) + '</td></tr>'; });
+
+        // ---- work score: how much shaping an article has received (notes, overall, validation, rewrites, recency) ----
+        function scoreOf(slug) {
+            var w = workMap[slug], s = w ? w.score : 0;
+            return s + (queuedSet[slug] ? 5 : 0);
+        }
+        function byWork(x, y) {
+            var d = scoreOf(y.slug) - scoreOf(x.slug);
+            if (d) return d;
+            if (x.draft !== y.draft) return x.draft ? -1 : 1;
+            return String(y.date).localeCompare(String(x.date));
+        }
 
         function render() {
             document.getElementById('st-ready').textContent = all.filter(function (a) { return a.draft && validatedMap[a.slug]; }).length;
@@ -341,13 +369,36 @@
                 if (filter === 'draft' && !a.draft) return false;
                 if (filter === 'needs-review' && !(a.draft && !validatedMap[a.slug])) return false;
                 if (filter === 'featured' && !a.featured) return false;
+                if (filter === 'untouched' && !(a.draft && scoreOf(a.slug) === 0 && !validatedMap[a.slug])) return false;
+                if (filter === 'noted' && !(a.draft && scoreOf(a.slug) > 0 && !validatedMap[a.slug] && !queuedSet[a.slug])) return false;
+                if (filter === 'queued' && !queuedSet[a.slug]) return false;
+                if (filter === 'ready' && !(a.draft && validatedMap[a.slug])) return false;
                 if (q && (a.title + ' ' + a.cat + ' ' + a.tags + ' ' + a.subtag).toLowerCase().indexOf(q) === -1) return false;
                 return true;
             });
+            renderPipe();
             if (!list.length) { rows.innerHTML = '<tr><td colspan="8" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
-            // Review queue (Draft / Needs review): flat list of all drafts, newest produced first, no section grouping.
-            var reviewView = (filter === 'draft' || filter === 'needs-review');
+            // Review-queue filters: flat list, most-worked first (equal-work → newest first), no section grouping.
+            var reviewView = (filter === 'draft' || filter === 'needs-review' || filter === 'untouched' || filter === 'noted' || filter === 'queued' || filter === 'ready');
+            if (reviewView || groupMode === 'work') list = list.slice().sort(byWork);
             rows.innerHTML = (groupMode === 'section' && !reviewView) ? renderGrouped(list) : list.map(rowHtml).join('');
+        }
+
+        // ---- the production line: draft → noted → rewrite → ready → live ----
+        function renderPipe() {
+            var el = document.getElementById('st-pipe'); if (!el) return;
+            var drafts = all.filter(function (a) { return a.draft; });
+            var stages = [
+                { key: 'untouched', label: 'Fresh drafts', n: drafts.filter(function (a) { return scoreOf(a.slug) === 0 && !validatedMap[a.slug]; }).length, hint: 'No notes yet — start reading here' },
+                { key: 'noted', label: 'In review', n: drafts.filter(function (a) { return scoreOf(a.slug) > 0 && !validatedMap[a.slug] && !queuedSet[a.slug]; }).length, hint: 'You left notes — finish them or queue a rewrite' },
+                { key: 'queued', label: 'Rewrite queued', n: all.filter(function (a) { return queuedSet[a.slug]; }).length, hint: 'Bundled notes waiting for: npm run rewrite -- <slug>' },
+                { key: 'ready', label: 'Ready', n: drafts.filter(function (a) { return validatedMap[a.slug]; }).length, hint: 'Validated — sitting in the publish queue below' },
+                { key: 'live', label: 'Live', n: all.length - drafts.length, hint: 'Published on the site' }
+            ];
+            el.innerHTML = stages.map(function (s, i) {
+                return (i ? '<span class="st-pipe__arrow" aria-hidden="true">&rarr;</span>' : '') +
+                    '<button type="button" class="st-pipe__stage' + (filter === s.key ? ' active' : '') + (s.n ? '' : ' zero') + '" data-pf="' + s.key + '" title="' + s.hint + '"><b>' + s.n + '</b>' + s.label + '</button>';
+            }).join('');
         }
 
         // counts per section across the WHOLE library, so the live/draft split stays true even when a filter is on
@@ -379,9 +430,11 @@
                     '<span class="c-draft">' + s.draft + ' draft</span>' +
                     (s.ready ? ' · <span class="c-ready">' + s.ready + ' &#10003; ready</span>' : '') +
                     ' <span style="color:var(--color-salt);">(' + s.total + ' total)</span></span>';
-                // drafts on top within the section, then newest first
+                // drafts on top within the section, most-worked first, then newest
                 var items = buckets[k].slice().sort(function (ra, rb) {
                     if (ra.draft !== rb.draft) return ra.draft ? -1 : 1;
+                    var d = scoreOf(rb.slug) - scoreOf(ra.slug);
+                    if (d) return d;
                     return String(rb.date).localeCompare(String(ra.date));
                 });
                 var open = expandedSecs.has(k) || !!q;   // an active search forces every section open
@@ -393,10 +446,20 @@
             }).join('');
         }
 
+        function workBadge(a) {
+            var w = workMap[a.slug], bits = [];
+            if (w && w.para) bits.push('<b>&#9998;' + w.para + '</b>');
+            if (w && w.hasNote) bits.push('note');
+            if (w && w.hasOverall) bits.push('overall');
+            if (queuedSet[a.slug]) bits.push('rewrite&#8599;');
+            return bits.length ? '<span class="st-work" title="Work on this piece: paragraph notes · whole-article note · overall verdict · rewrite queued">' + bits.join(' · ') + '</span>' : '';
+        }
+
         function rowHtml(a) {
                 var status = a.draft ? '<span class="st-badge st-draft">Draft</span>' : '<span class="st-badge st-live">Live</span>';
                 if (a.featured) status += '<span class="st-badge st-feat">&#9733;</span>';
                 if (a.draft && validatedMap[a.slug]) status += '<span class="st-badge st-ready" title="Validated — ready to publish">&#10003; Ready</span>';
+                status += workBadge(a);
                 return '<tr>' +
                     '<td class="st-check"><input type="checkbox" data-pub="' + esc(a.slug) + '"' + (pub.has(a.slug) ? ' checked' : '') + '></td>' +
                     '<td class="st-check"><input type="checkbox" data-news="' + esc(a.slug) + '"' + (news.has(a.slug) ? ' checked' : '') + '></td>' +
@@ -410,7 +473,7 @@
                     '<a href="articles/' + a.slug + '.html" target="_blank">View</a>' +
                     '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a>' +
                     (a.draft ? '<a href="#" class="st-validate' + (validatedMap[a.slug] ? ' is-on' : '') + '" data-validate="' + esc(a.slug) + '" title="' + (validatedMap[a.slug] ? 'Validated as ready to publish — click to revoke' : 'Mark this draft reviewed & ready to publish') + '">' + (validatedMap[a.slug] ? '&#10003; Validated' : 'Validate') + '</a>' : '') +
-                    (a.draft ? '<a href="#" data-edit="' + esc(a.slug) + '">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' : '') +
+                    '<a href="#" data-edit="' + esc(a.slug) + '" title="Whole-article note — saves on this device instantly, syncs when signed in">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' +
                     '</td>' +
                     '</tr>';
         }
@@ -569,6 +632,15 @@
             news.clear(); save(); render(); renderNewsletter();
         });
 
+        // pipeline stage chips act as filters
+        document.getElementById('st-pipe').addEventListener('click', function (e) {
+            var b = e.target.closest ? e.target.closest('[data-pf]') : null; if (!b) return;
+            var key = b.getAttribute('data-pf');
+            filter = (filter === key) ? 'all' : key;   // click again to clear
+            document.querySelectorAll('.st-tools button[data-f]').forEach(function (x) { x.classList.toggle('active', x.getAttribute('data-f') === filter); });
+            render();
+        });
+
         search.addEventListener('input', function () { q = this.value.toLowerCase().trim(); render(); });
         [].forEach.call(document.querySelectorAll('.st-tools button[data-f]'), function (b) {
             b.addEventListener('click', function () {
@@ -607,7 +679,9 @@
                 } else {
                     $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
-                    notesMap = {}; paraMap = {}; validatedMap = {}; render(); renderPublish();
+                    if (unsubNotes) { unsubNotes(); unsubNotes = null; }
+                    clearLocalNotes();   // don't leave reviewer notes in a shared browser
+                    notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; render(); renderTemplates(); renderPublish();
                 }
             });
             $('auth-signin').addEventListener('click', function () {
@@ -636,22 +710,58 @@
             });
         }
 
+        // work signals: how much shaping each piece has received, plus recency
+        function workOf(d) {
+            var para = (typeof d.paraCount === 'number' && d.paraCount > 0) ? d.paraCount : 0;
+            var hasNote = !!(d.text && String(d.text).trim());
+            var hasOverall = !!(d.overall && String(d.overall).trim());
+            var s = 3 * para + (hasNote ? 4 : 0) + (hasOverall ? 4 : 0) + (d.validated === true ? 3 : 0);
+            var last = Math.max(d.lastWorked || 0, d.updated || 0, d.overallUpdated || 0, d.paraUpdated || 0, d.validatedAt || 0);
+            if (last) { var age = Date.now() - last; s += age < 3 * 864e5 ? 6 : age < 7 * 864e5 ? 4 : age < 21 * 864e5 ? 2 : 0; }
+            return { score: s, last: last, para: para, hasNote: hasNote, hasOverall: hasOverall };
+        }
+        function bumpWork(slug, patch) {
+            var w = workMap[slug] || (workMap[slug] = { score: 0, last: 0, para: 0 });
+            w.last = Date.now(); if (patch) { for (var k in patch) w[k] = patch[k]; }
+            w.score = 3 * (w.para || 0) + (w.hasNote ? 4 : 0) + (w.hasOverall ? 4 : 0) + (validatedMap[slug] ? 3 : 0) + 6;
+            render(); renderPublish();
+        }
+        var unsubNotes = null;
         function loadNotesMap() {
             if (!isReviewer(user)) return;
-            db.collection('draft-notes').get().then(function (snap) {
-                notesMap = {}; paraMap = {}; validatedMap = {};
+            if (unsubNotes) { unsubNotes(); unsubNotes = null; }
+            unsubNotes = db.collection('draft-notes').onSnapshot(function (snap) {
+                notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {};
                 snap.forEach(function (doc) {
                     var d = doc.data() || {};
+                    if (doc.id.indexOf('_social_') === 0) return;   // social planner state, not review work
                     if (d.text && d.text.trim()) notesMap[doc.id] = true;
                     if (typeof d.paraCount === 'number' && d.paraCount > 0) paraMap[doc.id] = d.paraCount;  // numeric-only → safe to interpolate in badges
                     if (d.validated === true) validatedMap[doc.id] = true;
+                    workMap[doc.id] = workOf(d);
                 });
                 render(); renderTemplates(); renderPublish();
-            }).catch(function () { /* rules / network — leave maps empty */ });
+            }, function () { /* rules / network — leave maps empty */ });
+        }
+        // rewrite queue is a public doc — readable signed-out, so ranking degrades gracefully
+        function loadQueue() {
+            db.collection('articles').doc('_rewrite-queue').get().then(function (doc) {
+                queuedSet = {};
+                ((doc.exists && doc.data() || {}).slugs || []).forEach(function (s) { queuedSet[s] = true; });
+                render(); renderPublish();
+            }).catch(function () {});
+        }
+
+        // Notes are local-first: every keystroke lands in localStorage immediately, so
+        // closing the modal, losing the network, or being signed out can never lose text.
+        function noteLsKey(slug) { return 'litt.st.note.' + slug; }
+        function noteLocal(slug) { try { return JSON.parse(localStorage.getItem(noteLsKey(slug)) || 'null'); } catch (e) { return null; } }
+        function noteLocalSet(slug, text, synced) { try { localStorage.setItem(noteLsKey(slug), JSON.stringify({ text: text, t: Date.now(), synced: !!synced })); } catch (e) {} }
+        function clearLocalNotes() {
+            try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf('litt.st.note.') === 0) localStorage.removeItem(k); }); } catch (e) {}
         }
 
         function openNotes(slug) {
-            if (!isReviewer(user)) { $('auth-msg').textContent = 'Sign in as a reviewer to edit notes.'; $('auth-email').focus(); return; }
             var a = byslug[slug]; if (!a) return;
             noteSlug = slug;
             $('nm-title').textContent = a.title;
@@ -660,13 +770,35 @@
             var ta = $('nm-text'); ta.value = 'Loading…'; ta.disabled = true; $('nm-delete').disabled = true;
             $('nm-state').textContent = '';
             $('notes-modal').classList.add('open');
+            var local = noteLocal(slug);
+            if (!isReviewer(user)) {
+                ta.value = (local && local.text) || ''; ta.disabled = false; ta.focus();
+                $('nm-state').textContent = 'notes save on this device — sign in to sync everywhere';
+                $('nm-delete').disabled = !(ta.value || '').trim();
+                return;
+            }
             db.collection('draft-notes').doc(slug).get().then(function (doc) {
-                ta.value = (doc.exists && doc.data().text) || ''; ta.disabled = false; ta.focus();
+                var remote = (doc.exists && doc.data().text) || '';
+                var remoteT = (doc.exists && (doc.data().updated || 0)) || 0;
+                var useLocal = local && !local.synced && (local.t || 0) > remoteT && (local.text || '') !== remote;
+                if (slug !== noteSlug) return;   // modal moved on
+                ta.value = useLocal ? local.text : remote;
+                ta.disabled = false; ta.focus();
+                if (useLocal) $('nm-state').textContent = 'this device has a newer unsynced note — Save to sync it';
                 $('nm-delete').disabled = !((ta.value || '').trim() || notesMap[slug]);
-            }).catch(function (err) { ta.value = ''; ta.disabled = false; $('nm-state').textContent = 'load: ' + (err.code || 'error'); });
+            }).catch(function (err) {
+                if (slug !== noteSlug) return;
+                ta.value = (local && local.text) || ''; ta.disabled = false;
+                $('nm-state').textContent = 'load: ' + (err.code || 'error') + (ta.value ? ' — showing this device’s copy' : '');
+            });
         }
 
-        function closeNotes() { $('notes-modal').classList.remove('open'); noteSlug = null; }
+        function closeNotes() {
+            // flush any pending autosave BEFORE forgetting which slug we're on — closing
+            // the modal within the debounce window used to silently discard the text
+            if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; if (noteSlug) saveNotes(); }
+            $('notes-modal').classList.remove('open'); noteSlug = null;
+        }
 
         // ---- validate: reviewer sign-off that a draft is ready to publish (synced) ----
         function toggleValidate(slug) {
@@ -676,7 +808,7 @@
             if (next) { validatedMap[slug] = true; pub.add(slug); } else { delete validatedMap[slug]; pub.delete(slug); }
             save(); render(); renderPublish();   // optimistic
             db.collection('draft-notes').doc(slug).set(
-                { validated: next, validatedBy: user.email, validatedAt: Date.now() }, { merge: true }
+                { validated: next, validatedBy: user.email, validatedAt: Date.now(), lastWorked: Date.now() }, { merge: true }
             ).catch(function (err) {
                 if (next) { delete validatedMap[slug]; pub.delete(slug); } else { validatedMap[slug] = true; pub.add(slug); }
                 save(); render(); renderPublish();
@@ -685,25 +817,37 @@
         }
 
         function saveNotes() {
-            if (!noteSlug || !isReviewer(user)) return;
-            var text = $('nm-text').value;
+            if (!noteSlug) return;
+            var slug = noteSlug, text = $('nm-text').value;
+            noteLocalSet(slug, text, false);   // device copy first — never lost
+            if (!isReviewer(user)) { $('nm-state').textContent = 'saved on this device — sign in to sync'; return; }
             $('nm-state').textContent = 'saving…';
-            db.collection('draft-notes').doc(noteSlug).set({ text: text, updated: Date.now(), by: user.email }, { merge: true }).then(function () {
-                $('nm-state').textContent = 'saved · synced';
-                if (text.trim()) notesMap[noteSlug] = true; else delete notesMap[noteSlug];
-            }).catch(function (err) { $('nm-state').textContent = 'error: ' + (err.code || 'save failed'); });
+            db.collection('draft-notes').doc(slug).set({ text: text, updated: Date.now(), by: user.email, lastWorked: Date.now() }, { merge: true }).then(function () {
+                noteLocalSet(slug, text, true);
+                if (slug === noteSlug) $('nm-state').textContent = 'saved · synced';
+                if (text.trim()) notesMap[slug] = true; else delete notesMap[slug];
+                bumpWork(slug, { hasNote: !!text.trim() });
+            }).catch(function (err) { if (slug === noteSlug) $('nm-state').textContent = 'sync failed: ' + (err.code || 'error') + ' — kept on this device'; });
         }
 
         function deleteNotes() {
-            if (!noteSlug || !isReviewer(user)) return;
+            if (!noteSlug) return;
             var slug = noteSlug, a = byslug[slug] || {};
             if (!(($('nm-text').value || '').trim()) && !notesMap[slug]) { $('nm-state').textContent = 'no note to delete'; return; }
             if (!window.confirm('Delete your note on "' + (a.title || slug) + '"? This cannot be undone.')) return;
-            clearTimeout(saveTimer);
+            clearTimeout(saveTimer); saveTimer = null;
+            if (!isReviewer(user)) {
+                noteLocalSet(slug, '', true);
+                $('nm-text').value = ''; $('nm-delete').disabled = true;
+                $('nm-state').textContent = 'deleted from this device';
+                setTimeout(closeNotes, 600);
+                return;
+            }
             $('nm-state').textContent = 'deleting…';
             var clearVal = (typeof firebase !== 'undefined' && firebase.firestore && firebase.firestore.FieldValue) ? firebase.firestore.FieldValue.delete() : '';
             db.collection('draft-notes').doc(slug).set({ text: clearVal, updated: Date.now(), by: user.email }, { merge: true }).then(function () {
                 delete notesMap[slug];
+                noteLocalSet(slug, '', true);
                 $('nm-text').value = ''; $('nm-delete').disabled = true;
                 $('nm-state').textContent = 'deleted';
                 render();
@@ -724,11 +868,12 @@
             }
         });
         $('nm-text').addEventListener('input', function () {
+            if (noteSlug) noteLocalSet(noteSlug, this.value, false);   // instant device copy, every keystroke
             clearTimeout(saveTimer); $('nm-state').textContent = 'editing…';
             $('nm-delete').disabled = !((this.value || '').trim() || notesMap[noteSlug]);
-            saveTimer = setTimeout(saveNotes, 800);
+            saveTimer = setTimeout(function () { saveTimer = null; saveNotes(); }, 800);
         });
-        $('nm-save').addEventListener('click', function () { clearTimeout(saveTimer); saveNotes(); });
+        $('nm-save').addEventListener('click', function () { clearTimeout(saveTimer); saveTimer = null; saveNotes(); });
         $('nm-delete').addEventListener('click', deleteNotes);
 
         // ---- photo picker: search the photo library, record the pick into the draft note ----

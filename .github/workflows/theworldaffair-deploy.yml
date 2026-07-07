@@ -37,6 +37,29 @@ jobs:
           npm ci || npm install
           npm run build
 
+      - name: Validate (structure gate — blocks a broken deploy)
+        run: npm run validate
+
+      - name: Deploy Firestore rules (repo rules == live rules)
+        # Studio note-saving depends on the repo's firestore.rules being the ones
+        # actually deployed; hosting-only deploys let them drift. Non-fatal so a
+        # missing IAM permission can never block the site deploy — but it is
+        # surfaced as a warning to fix.
+        continue-on-error: true
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          # No `|| echo` here: a real non-zero exit must surface the step as a
+          # (non-blocking, thanks to continue-on-error) FAILURE — a buried
+          # ::warning:: on a green check would hide rules drift on the DB's only
+          # access-control boundary. If this fails, grant the service account
+          # 'Firebase Rules Admin' or run: firebase deploy --only firestore:rules
+          echo "::warning::If this step fails, live firestore.rules have NOT been updated — deploy them manually."
+          npx --yes firebase-tools@15 deploy --only firestore:rules \
+            --project littoralicious-web-eceed --non-interactive
+
       - name: Deploy to LIVE Firebase Hosting
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED }}

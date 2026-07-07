@@ -1,0 +1,831 @@
+/* ==========================================================================
+   LITTORALICIOUS — Port Call component set
+   The full stylesheet for the Port Call provisioning guides
+   (port-call-venice, port-call-st-barth, provisioning-miami-ftl,
+   preview-port-call) and templates/port-call.html.
+
+   CONSOLIDATION: port-call.css and supplier-rating.css are thin @import
+   shims onto THIS file, kept only because the live articles link all three.
+   Everything Port Call lives here — one file to maintain.
+
+   Litto language only: design tokens from style.css (--color-*, --note-*,
+   --font-*), Georgia / SF Mono stacks, flat fills, no rounded content
+   blocks, no gradients, muted accents from the locked callout palette.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   QUICK NAV — inline anchor strip under the lede ("the readable map")
+   -------------------------------------------------------------------------- */
+.pc-quicknav {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    line-height: 2.1;
+    margin: var(--space-6) 0;
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pc-quicknav a {
+    color: var(--color-sea);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.pc-quicknav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.pc-quicknav a.warn {
+    color: var(--note-warning-border);
+}
+
+.pc-quicknav .sep {
+    color: var(--color-salt);
+    margin: 0 var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   KICKER — the one-line value promise under an h2 (Port Call variant)
+   -------------------------------------------------------------------------- */
+.pc-kicker {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+    margin: 0.1em 0 0.9em;
+}
+
+/* --------------------------------------------------------------------------
+   FUNFACT — the one-line port-reality bar (the constraint, stated flat)
+   -------------------------------------------------------------------------- */
+.pc-funfact {
+    border-left: 3px solid var(--color-sea);
+    background: var(--color-subtle);
+    padding: var(--space-3) var(--space-4);
+    margin: var(--space-6) 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+
+.pc-funfact strong {
+    font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   QUICK MAP — the locked TEXT table (never a graphic in the body skeleton)
+   -------------------------------------------------------------------------- */
+.pc-quickmap {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    font-size: var(--text-sm);
+    border-top: 2px solid var(--color-ink);
+}
+
+.pc-quickmap th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pc-quickmap td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+    line-height: var(--leading-normal);
+}
+
+/* --------------------------------------------------------------------------
+   PULL QUOTE — the one sentence a tired chef should remember
+   -------------------------------------------------------------------------- */
+.pc-pullq {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    color: var(--color-sea);
+    border-left: 2px solid var(--color-sea);
+    padding: var(--space-2) var(--space-6);
+    margin: var(--space-8) 0;
+}
+
+/* --------------------------------------------------------------------------
+   THREE BERTHS — the captain's shortlist. 3-col grid, 1 col under 640px.
+   .pc-berths / .pc-berth / .pc-berth__sub are the Miami–FTL aliases.
+   -------------------------------------------------------------------------- */
+.three-berths,
+.pc-berths {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+.tb-col,
+.pc-berth {
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    padding: var(--space-4);
+}
+
+.tb-col h3,
+.tb-col h4,
+.pc-berth h3,
+.pc-berth h4 {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: var(--leading-snug);
+    margin: 0 0 var(--space-2);
+}
+
+.tb-col .subtitle,
+.pc-berth__sub {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tb-col .subtitle a,
+.pc-berth__sub a {
+    color: var(--color-sea);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.tb-col ol,
+.pc-berth ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tb-col ol li,
+.pc-berth ol li {
+    margin: 0;
+}
+
+.tb-col .meta,
+.pc-berth .meta {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+    .three-berths,
+    .pc-berths {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   MAP LINK — the small mono "open in Google Maps" link
+   -------------------------------------------------------------------------- */
+.map-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--color-sea);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-sea);
+    white-space: nowrap;
+}
+
+.map-link:hover {
+    border-bottom-style: solid;
+}
+
+/* --------------------------------------------------------------------------
+   SFOLD — section-level accordion (a whole guide section per fold).
+   Heavy ink top rail = the section boundary; serif title + muted deck;
+   mono count chip on the right. Chevron span lives in the markup.
+   -------------------------------------------------------------------------- */
+.sfold {
+    border-top: 2px solid var(--color-ink);
+    margin: var(--space-8) 0;
+}
+
+.sfold > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+}
+
+.sfold > summary::-webkit-details-marker {
+    display: none;
+}
+
+.sfold > summary:hover .sfold__title {
+    color: var(--color-sea);
+}
+
+.sfold__titlewrap {
+    flex: 1;
+    min-width: 0;
+}
+
+.sfold__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    transition: color var(--transition-fast);
+}
+
+.sfold__desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: var(--leading-normal);
+    margin-top: var(--space-1);
+}
+
+.sfold__count {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-salt);
+    border: 1px solid var(--color-border);
+    padding: 2px 8px;
+    white-space: nowrap;
+}
+
+.sfold__chev {
+    flex: none;
+    align-self: center;
+    font-size: 11px;
+    color: var(--color-salt);
+    transition: transform var(--transition-fast);
+}
+
+.sfold[open] > summary .sfold__chev {
+    transform: rotate(90deg);
+}
+
+.sfold__body {
+    padding: 0 0 var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   PFOLD — one supplier per accordion. Mono 13px summary, paper fill when
+   open. Modifiers: .top = the lead pick (sea rail), .warn = caution entry
+   (terracotta rail), .cult = cultural reference, not chef-grade (mauve rail).
+   -------------------------------------------------------------------------- */
+.pfold {
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    margin: var(--space-3) 0;
+}
+
+.pfold > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.pfold > summary::-webkit-details-marker {
+    display: none;
+}
+
+.pfold > summary:hover .pfold__name {
+    color: var(--color-sea);
+}
+
+.pfold__name {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: color var(--transition-fast);
+}
+
+.pfold__hook {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    margin-top: 2px;
+}
+
+.pfold__chev {
+    flex: none;
+    font-size: 10px;
+    color: var(--color-salt);
+    transition: transform var(--transition-fast);
+}
+
+.pfold[open] > summary .pfold__chev {
+    transform: rotate(90deg);
+}
+
+.pfold[open] > summary {
+    background: var(--color-subtle);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pfold__body {
+    padding: var(--space-4);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+
+.pfold__body p {
+    margin: 0 0 var(--space-3);
+}
+
+.pfold__body p:last-child {
+    margin-bottom: 0;
+}
+
+.pfold__recog {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-sm);
+    color: var(--color-sea);
+    margin-bottom: var(--space-3);
+}
+
+.pfold__meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-2) var(--space-4);
+    margin: var(--space-3) 0;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+    word-break: break-word;
+}
+
+.pfold__meta strong {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-salt);
+    margin-bottom: 1px;
+}
+
+.pfold.top  { border-left: 3px solid var(--color-sea); }
+.pfold.warn { border-left: 3px solid var(--note-warning-border); }
+.pfold.cult { border-left: 3px solid var(--note-quote-border); }
+
+/* --------------------------------------------------------------------------
+   CAU — small caution pills, inline next to the claim they qualify.
+   Muted callout tones only: high = terracotta, med = ochre, info = teal.
+   The workaround lives in data-fix and surfaces on hover/focus.
+   -------------------------------------------------------------------------- */
+.cau {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    border: 1px solid var(--color-border);
+    background: var(--color-subtle);
+    color: var(--color-muted);
+    padding: 1px 8px;
+    margin: 0 2px;
+    vertical-align: baseline;
+    cursor: help;
+}
+
+.cau--high {
+    background: var(--note-warning);
+    border-color: var(--note-warning-border);
+    color: var(--note-warning-border);
+}
+
+.cau--med {
+    background: var(--note-key);
+    border-color: var(--note-key-border);
+    color: var(--note-key-border);
+}
+
+.cau--info {
+    background: var(--note-science);
+    border-color: var(--note-science-border);
+    color: var(--note-science-border);
+}
+
+.cau[data-fix]:hover::after,
+.cau[data-fix]:focus::after {
+    content: attr(data-fix);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    z-index: 30;
+    width: min(340px, 78vw);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   SUPPLIER RATING — the one-line note above rated supplier sections
+   (the thumbs UI itself is injected by supplier-rating.js)
+   -------------------------------------------------------------------------- */
+.sr-section-note {
+    font-size: var(--text-xs);
+    font-style: italic;
+    color: var(--color-muted);
+    margin: var(--space-2) 0 var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   WATCH-OUT CARDS — rendered into #wo-list from the port's data file.
+   Severity carries the left rail: high = terracotta, medium = ochre.
+   -------------------------------------------------------------------------- */
+.wo-card {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-salt);
+    background: var(--color-paper);
+    padding: var(--space-4);
+    margin: 0 0 var(--space-3);
+}
+
+.wo-card.sev-high {
+    border-left-color: var(--note-warning-border);
+    background: var(--note-warning);
+}
+
+.wo-card.sev-medium {
+    border-left-color: var(--note-key-border);
+    background: var(--note-key);
+}
+
+/* JS default when a watch-out has no explicit severity */
+.wo-card.sev-info {
+    border-left-color: var(--color-border);
+    background: var(--color-subtle);
+}
+
+.wo-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.wo-title {
+    font-weight: 700;
+    font-size: var(--text-sm);
+}
+
+.wo-sev {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    white-space: nowrap;
+}
+
+.sev-high .wo-sev   { color: var(--note-warning-border); }
+.sev-medium .wo-sev { color: var(--note-key-border); }
+
+.wo-when {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-muted);
+    margin-top: 2px;
+}
+
+.wo-what {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    margin: var(--space-2) 0 0;
+}
+
+.wo-fix {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+}
+
+.wo-fix b {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-sea);
+    margin-bottom: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE MAP (Leaflet) — the in-body map wrapper + category legend.
+   The map itself is a progressive enhancement; the TEXT Quick Map above it
+   stays the canonical map. Dot colours reuse the locked muted palette.
+   -------------------------------------------------------------------------- */
+.pcv-map-wrap {
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+    margin: var(--space-6) 0;
+}
+
+.pcv-map-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pcv-map-head strong {
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    font-weight: 400;
+}
+
+.pcv-map-head span {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+}
+
+#pcv-map {
+    width: 100%;
+    height: 380px;
+    background: var(--color-subtle);
+}
+
+.pcv-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.pcv-legend button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--color-ink);
+    background: var(--color-paper);
+    border: 1px solid var(--color-border);
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.pcv-legend button:hover {
+    border-color: var(--color-sea);
+}
+
+.pcv-legend button.off,
+.pcv-legend button[aria-pressed="false"] {
+    opacity: 0.4;
+}
+
+/* category dots — functional legend glyphs, muted tones from :root */
+.dot-berth, .dot-market, .dot-shop, .dot-mainland, .dot-logistics {
+    display: inline-block;
+    flex: none;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.dot-berth     { background: var(--color-sea); }
+.dot-market    { background: var(--note-action-border); }
+.dot-shop      { background: var(--note-key-border); }
+.dot-mainland  { background: var(--note-quote-border); }
+.dot-logistics { background: var(--color-salt); }
+
+/* --------------------------------------------------------------------------
+   MINI MAP — the fixed right-side foldable panel that mirrors the body map.
+   Hidden under 980px (no room next to the prose column).
+   -------------------------------------------------------------------------- */
+.pcv-mini {
+    position: fixed;
+    top: 96px;
+    right: var(--space-4);
+    z-index: 40;
+    width: 300px;
+    border: 1px solid var(--color-border);
+    background: var(--color-paper);
+}
+
+.pcv-mini__handle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    background: var(--color-subtle);
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-2) var(--space-3);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.pcv-mini__handle:hover {
+    color: var(--color-ink);
+}
+
+.pcv-mini.is-collapsed #pcv-mini-body {
+    display: none;
+}
+
+.pcv-mini.is-collapsed .pcv-mini__handle {
+    border-bottom: 0;
+}
+
+.pcv-mini__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+}
+
+.pcv-mini__head strong {
+    font-size: var(--text-xs);
+}
+
+.pcv-mini__head span {
+    font-size: 10px;
+    color: var(--color-muted);
+}
+
+#pcv-mini-map {
+    width: 100%;
+    height: 220px;
+    background: var(--color-subtle);
+}
+
+.pcv-mini__active {
+    padding: var(--space-2) var(--space-3);
+    font-size: 10px;
+    color: var(--color-muted);
+    line-height: 1.5;
+}
+
+.pcv-mini__active b {
+    display: block;
+    font-size: 11px;
+    color: var(--color-ink);
+}
+
+@media (max-width: 979px) {
+    .pcv-mini {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   PREVIEW PAGE — the Port Call index (preview-port-call.html):
+   feature strip + port cards (live / coming)
+   -------------------------------------------------------------------------- */
+.pc-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+.pc-feat {
+    border-top: 2px solid var(--color-ink);
+    padding: var(--space-3) 0;
+}
+
+.pc-feat .icon {
+    font-size: var(--text-lg);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+
+.pc-feat .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-sea);
+    margin-bottom: var(--space-1);
+}
+
+.pc-feat .body {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: var(--leading-normal);
+}
+
+.pc-ports {
+    display: grid;
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+.pc-port-card {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-border);
+    background: var(--color-paper);
+    padding: var(--space-4) var(--space-6);
+}
+
+.pc-port-card.live   { border-left-color: var(--color-sea); }
+.pc-port-card.coming { border-left-color: var(--color-salt); }
+
+.pc-port-card .status {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    padding: 1px 8px;
+    margin-bottom: var(--space-2);
+}
+
+.pc-port-card.live .status {
+    color: var(--color-sea);
+    border-color: var(--color-sea);
+}
+
+.pc-port-card h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-1);
+}
+
+.pc-port-card .place {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    margin-bottom: var(--space-2);
+}
+
+.pc-port-card p {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: var(--leading-normal);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   PRINT — maps are interactive-only; the text Quick Map carries the geography
+   -------------------------------------------------------------------------- */
+@media print {
+    .pcv-mini,
+    .pcv-map-wrap {
+        display: none !important;
+    }
+
+    .pfold,
+    .wo-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

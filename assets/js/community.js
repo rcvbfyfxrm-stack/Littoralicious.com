@@ -49,11 +49,15 @@
 
     function buildAvatarHTML(name, photoURL) {
         if (photoURL) {
-            return '<img class="comment__avatar" src="' + escapeHtml(photoURL) + '" alt="" loading="lazy">';
+            return '<img class="comment__sticker" src="' + escapeHtml(photoURL) + '" alt="" loading="lazy">';
         }
         const initial = (name || '?').charAt(0).toUpperCase();
         const color = getAvatarColor(name || '');
-        return '<span class="comment__avatar comment__avatar--initial" style="background:' + color + '">' + escapeHtml(initial) + '</span>';
+        // .comment__sticker sizing targets an <img>; the initial-letter span needs
+        // inline flex centering to fill the same 28px circle.
+        return '<span class="comment__sticker" style="background:' + color +
+            ';display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600;line-height:1">' +
+            escapeHtml(initial) + '</span>';
     }
 
     function resizeImage(file, maxSize) {
@@ -116,6 +120,14 @@
     // Article Reactions
     // ======================================================================
 
+    function buildReactionChipHTML(type, glyph, label) {
+        return '<button type="button" class="reaction-chip" data-reaction="' + type + '">' +
+            '<span class="reaction-chip__emoji">' + glyph + '</span>' +
+            '<span class="reaction-chip__label">' + label + '</span>' +
+            '<span class="reaction-chip__count reaction-count--' + type + '"></span>' +
+            '</button>';
+    }
+
     async function initReactions() {
         const section = document.querySelector('.article-reactions');
         if (!section) return;
@@ -123,12 +135,28 @@
         const slug = section.dataset.articleId;
         if (!slug) return;
 
+        // Articles ship an empty .reactions-grid — render the styled chips into it.
+        const grid = section.querySelector('.reactions-grid');
+        const sentimentEl = section.querySelector('.sentiment-bar');
+        if (grid && !grid.querySelector('[data-reaction]')) {
+            grid.innerHTML =
+                buildReactionChipHTML('agree', '&#10003;', 'Agree') +
+                buildReactionChipHTML('disagree', '&#10005;', 'Disagree');
+        }
+
         const agreeBtn = section.querySelector('[data-reaction="agree"]');
         const disagreeBtn = section.querySelector('[data-reaction="disagree"]');
         const agreeCountEl = section.querySelector('.reaction-count--agree');
         const disagreeCountEl = section.querySelector('.reaction-count--disagree');
         const barFill = section.querySelector('.article-reactions__bar-fill');
         const statsEl = section.querySelector('.article-reactions__stats');
+
+        if (!agreeBtn || !disagreeBtn) {
+            // Render impossible — hide the dead containers rather than leave empty markup.
+            if (grid) grid.style.display = 'none';
+            if (sentimentEl) sentimentEl.style.display = 'none';
+            return;
+        }
 
         const docRef = db.collection('articles').doc(slug);
 
@@ -142,11 +170,34 @@
         }
 
         function render(d) {
-            if (agreeCountEl) agreeCountEl.textContent = d.agrees || 0;
-            if (disagreeCountEl) disagreeCountEl.textContent = d.disagrees || 0;
-            const total = (d.agrees || 0) + (d.disagrees || 0);
+            const agrees = d.agrees || 0;
+            const disagrees = d.disagrees || 0;
+            const total = agrees + disagrees;
+            // .reaction-chip__count:empty is hidden by CSS — leave blank at zero.
+            if (agreeCountEl) agreeCountEl.textContent = agrees > 0 ? String(agrees) : '';
+            if (disagreeCountEl) disagreeCountEl.textContent = disagrees > 0 ? String(disagrees) : '';
+
+            if (sentimentEl) {
+                if (total > 0) {
+                    const pos = Math.round((agrees / total) * 100);
+                    sentimentEl.innerHTML =
+                        '<div class="sentiment-bar__track">' +
+                            '<div class="sentiment-bar__fill sentiment-bar__fill--positive" style="width:' + pos + '%"></div>' +
+                            '<div class="sentiment-bar__fill sentiment-bar__fill--negative" style="width:' + (100 - pos) + '%"></div>' +
+                        '</div>' +
+                        '<div class="sentiment-bar__legend">' +
+                            '<span class="sentiment-bar__stat sentiment-bar__stat--positive">' + agrees + ' agree</span>' +
+                            '<span class="sentiment-bar__stat">' + total + (total === 1 ? ' chef reacted' : ' chefs reacted') + '</span>' +
+                            '<span class="sentiment-bar__stat sentiment-bar__stat--negative">' + disagrees + ' disagree</span>' +
+                        '</div>';
+                } else {
+                    sentimentEl.innerHTML = '<p class="sentiment-bar__empty">No reactions yet. Be the first.</p>';
+                }
+            }
+
+            // Legacy elements (hidden by current CSS, kept in sync if present)
             if (barFill && total > 0) {
-                barFill.style.width = Math.round(((d.agrees || 0) / total) * 100) + '%';
+                barFill.style.width = Math.round((agrees / total) * 100) + '%';
             }
             if (statsEl && total > 0) {
                 statsEl.textContent = total + (total === 1 ? ' chef reacted' : ' chefs reacted');
@@ -416,7 +467,8 @@
     }
 
     function updatePulse(slug, commentCount) {
-        const pulseEl = document.querySelector('.community-pulse__count');
+        const pulseEl = document.querySelector('.engagement-pulse__text')
+            || document.querySelector('.community-pulse__count');
         if (!pulseEl) return;
         // Count unique authors (approximate via comment count)
         if (commentCount > 0) {
@@ -446,7 +498,22 @@
 
         // Comment form
         const form = commentsSection.querySelector('.comment-form form');
+        let updateCharCount = function () {};
         if (form) {
+            // Character counter ("N / 2000", warn state near the limit)
+            const commentField = form.querySelector('textarea[name="comment"]');
+            const charCountEl = form.querySelector('.comment-form__char-count');
+            if (commentField && charCountEl) {
+                const max = commentField.maxLength > 0 ? commentField.maxLength : 2000;
+                updateCharCount = function () {
+                    const len = commentField.value.length;
+                    charCountEl.textContent = len + ' / ' + max;
+                    charCountEl.classList.toggle('comment-form__char-count--warn', len >= max - 200);
+                };
+                commentField.addEventListener('input', updateCharCount);
+                updateCharCount();
+            }
+
             // Photo upload preview
             let pendingPhoto = null;
             const photoInput = form.querySelector('input[name="photo"]');
@@ -544,6 +611,7 @@
                     }
 
                     form.reset();
+                    updateCharCount();
                     pendingPhoto = null;
                     if (photoPreview) photoPreview.style.backgroundImage = '';
                     submitBtn.textContent = 'Posted!';

@@ -144,7 +144,9 @@ salience* and *appropriateness/consistency*, not fixed feelings.
 
 ---
 
-## VI. The Littoralicious checklist (apply to every draft)
+## VI. The 16-gate pre-publish checklist (apply to every draft)
+
+*16 gates in all: the 13 focus gates below (1–12, with 1b) + the 3 distinctiveness gates (0a–0c, run first — see the distinctiveness engine at the end).*
 1. **Payoff in the first 40 seconds** — `summary-box` promise + a lede that transitions, not summarises.
 1b. **Opening order (no stacked boxes).** Lead: `summary-box` (the promise) → ONE short prose hook → `note[data-label='The two-minute version']` → `glance`/body. Never stack two boxes back-to-back — a line of prose must sit between the promise and the TL;DR (DNA: one idea per block, SIGNAL only).
 2. **The spine test** — boxes + `<mark>`s + bold lead-ins + h2s alone tell the whole argument (the scannable spine).
@@ -182,5 +184,5 @@ Focus keeps the reader on this post; distinctiveness makes it unmistakably ours 
 4. **Fixed identity (recognition)** — never vary the wordmark, the voice, the design lock, or the signatures
    ("Tested at sea.", the evidence grade). Vary content; never vary identity.
 
-**Add to the pre-publish checklist (top three):** (0a) unique-angle sentence written first · (0b) one ownable move
-chosen · (0c) sameness audit passed vs the last 3–5 drafts in articles.json.
+**Gates 0a–0c of the 16-gate pre-publish checklist (run these first, before gate 1):** (0a) unique-angle sentence
+written first · (0b) one ownable move chosen · (0c) sameness audit passed vs the last 3–5 drafts in articles.json.

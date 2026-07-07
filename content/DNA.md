@@ -36,7 +36,7 @@ Plain prose loses people. **Every article is designed to be read** — boxes, hi
 visual beats that hold the eye the whole way down. Reach for these (all locked CSS, no new styling):
 
 **Boxes / callouts** (each auto-labels itself):
-- `<div class="summary-box"><strong>What you'll get</strong><ul>…</ul></div>` — the opening promise (📋).
+- `<div class="summary-box"><strong>What you'll get</strong><ul>…</ul></div>` — the opening promise.
 - `<div class="note note--key"><p>…</p></div>` → **Key Point** · `note--science` → **The Science** ·
   `note--action` → **Takeaway** · `note--warning` → **Warning** · `note--quote` → pull-quote.
 - **Custom-labeled box** (clever, use it): `<div class="note" data-label="The Number"><p>…</p></div>`
@@ -105,6 +105,9 @@ Then serious cooks who want the *why*. Write to a competent professional; never 
 
 Every claim traceable: peer-reviewed journals, named books, documented experience. No
 "they say." No "studies show" without naming the study. Funding/conflicts disclosed.
+**The evidence bar:** every science claim rests on a **primary peer-reviewed source** with a
+visible **Evidence Grade** in a `citation-card` (dual grade — absorption · clinical — where
+relevant); reference books (McGee, Modernist) may support but never stand alone.
 
 ### Banned words
 
@@ -132,7 +135,7 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 | **The Evidence** | Food science proper — compounds, mechanisms, research. |
 | **The Bridge** | Essays, forecasts, supply intel, manifesto — cooking at sea meets the wider world. |
 
-## The 12 templates — pick one, never invent
+## The 14 templates (12 named formats + the Deep-Dive variant + the standard fallback) — pick one, never invent
 
 Every piece must fit one existing template. If it doesn't fit, narrow scope or split — do
 not create a new format. **Auto-select the template** — infer it from what the article is
@@ -159,6 +162,16 @@ one line (e.g. *"Template fit: The Method (02)"*), and proceed.
 | 12 | Weekly Brief | Bridge | 3–5 min | Digest |
 | 13 | The Lab | Method | varies | Experimental / lab notes |
 
+**Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Deep-Dive, Heritage,
+Port Call) must open with the two-minute-version block so depth is opt-in.
+
+**Warmth is mandatory in food-facing templates** (Shore Larder, Deep-Dive, Heritage,
+Blueprint, Evidence, Method): every piece carries at least one tradition/people beat — the
+Grandmother pillar must be visible, not implied.
+
+Social posts have their own canon: `content/SOCIAL-POSTS.md` (max 3 posts per article, every
+post teaches — substance before volume).
+
 Manifesto / framework pieces use **The Bridge** category with a Method or Signal Fire
 structure — there is no free-form essay format.
 
@@ -169,6 +182,8 @@ Refined light **journal**. Tokens: paper `#fafafa`, ink `#0a0a0a`, sea `#2d4a5e`
 scale (1.333). No gradients, no rounded corners on content blocks, no stock photography,
 monochrome images. Metric units (Fahrenheit in parens). The sealed CSS is
 `assets/css/style.css` — match the latest file, never improvise the look.
+Motion serves focus, never decoration — the only sanctioned animation is the
+technical-pencil draw-on figure (see DESIGN-LOCK Motion).
 
 ## Off-brand / forbidden
 

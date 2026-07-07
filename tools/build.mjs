@@ -6,12 +6,13 @@
 //              data/draft-articles.json. Never touches hand-written prose.
 import fs from "node:fs";
 import {
-  ROOT, ORIGIN, HOMEPAGE_LIMIT, FEED_LIMIT, p, read, exists,
+  ROOT, ORIGIN, HOMEPAGE_LIMIT, FEED_LIMIT, ASSET_VER, p, read, exists,
   loadArticles, live, drafts, homepageCard, dispatchCard, replaceBetween,
   esc, log, warn,
 } from "./lib.mjs";
 
 const CHECK = process.argv.includes("--check");
+const QUIET = process.argv.includes("--quiet"); // suppress per-page "wrote" lines (summary + warnings stay)
 let drift = 0;
 const writeFile = (rel, next) => {
   const f = p(rel);
@@ -21,7 +22,7 @@ const writeFile = (rel, next) => {
   if (CHECK) { warn(`${rel} is out of date — run \`npm run build\` and commit.`); return; }
   fs.mkdirSync(require_dir(f), { recursive: true });
   fs.writeFileSync(f, next);
-  log(`  wrote  ${rel}`);
+  if (!QUIET) log(`  wrote  ${rel}`);
 };
 const require_dir = (f) => f.slice(0, f.lastIndexOf("/"));
 
@@ -111,6 +112,52 @@ if (CHECK) {
 } else {
   writeFile("data/draft-articles.json", draftJson.replace('"STAMP"', `"${new Date().toISOString().replace(/\.\d+Z$/, "Z")}"`));
 }
+
+// 6) ARTICLE HEADS — two idempotent per-file rewrites, applied in one pass:
+//    a) CACHE-BUST: assets are served immutable (firebase.json), so an article
+//       pinning a stale style.css ?v= hash never shows returning readers a CSS
+//       fix. Refresh every articles/*.html to the current ASSET_VER.
+//    b) DRAFT PRIVACY: every draft:true entry's page must carry
+//       <meta name="robots" content="noindex, nofollow">; every live entry's
+//       page must NOT (inserted after the viewport meta; removed when promoted).
+// Matches the stylesheet link with OR without an existing ?v= hash, so an
+// unversioned link (e.g. a hand-made article) also gets stamped, not just refreshed.
+const CSS_BUST_RE = /assets\/css\/style\.css(?:\?v=[a-z0-9]+)?/g;
+const ROBOTS_TAG = `<meta name="robots" content="noindex, nofollow">`;
+const ROBOTS_RE = /[ \t]*<meta\s+name=["']robots["']\s+content=["']noindex[^"']*["']\s*\/?>[ \t]*\r?\n?/gi;
+const entryBySlug = new Map(articles.map((a) => [a.slug, a]));
+let busted = 0, headStale = 0;
+for (const name of fs.readdirSync(p("articles")).filter((n) => n.endsWith(".html")).sort()) {
+  const rel = `articles/${name}`;
+  const before = read(p(rel));
+  let html = before;
+
+  // a) cache-bust (all article files, registered or not)
+  const bustTo = `assets/css/style.css?v=${ASSET_VER}`;
+  const bustedHtml = html.replace(CSS_BUST_RE, bustTo);
+  if (bustedHtml !== html) { busted++; html = bustedHtml; }
+
+  // b) draft privacy (registered entries only)
+  const entry = entryBySlug.get(name.replace(/\.html$/, ""));
+  if (entry) {
+    const stripped = html.replace(ROBOTS_RE, "");
+    if (entry.draft) {
+      if (/<meta\s+name=["']viewport["'][^>]*>/i.test(stripped))
+        html = stripped.replace(/(<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n    ${ROBOTS_TAG}`);
+      else if (!stripped.includes(ROBOTS_TAG)) {
+        warn(`${rel}: no viewport meta — inserting robots noindex after <head>.`);
+        html = stripped.replace(/(<head[^>]*>)/i, `$1\n    ${ROBOTS_TAG}`);
+      }
+    } else html = stripped; // live: the tag must be absent
+  }
+
+  if (html === before) continue;
+  headStale++;
+  if (CHECK) continue;
+  fs.writeFileSync(p(rel), html);
+}
+if (CHECK && headStale) { drift += headStale; warn(`${headStale} article head(s) out of date (cache-bust/robots) — run \`npm run build\`.`); }
+if (!CHECK && headStale) log(`  article heads · ${headStale} file(s) refreshed (${busted} cache-bust → ?v=${ASSET_VER}, robots noindex synced to draft flags)`);
 
 // ---- summary ----------------------------------------------------------------
 log("");

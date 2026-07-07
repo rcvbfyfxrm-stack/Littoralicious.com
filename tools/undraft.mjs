@@ -11,6 +11,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { firebaseWebConfig } from "./lib.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const FILE = path.join(ROOT, "data", "articles.json");
@@ -36,9 +37,7 @@ function lintPasses(slug) {
 // ── gate 2: is a rewrite still queued? (reads the PUBLIC request doc the Studio
 //    writes — no auth needed; fails OPEN on a network error so you're never
 //    locked out offline) ──────────────────────────────────────────────────────
-const cfg = fs.readFileSync(path.join(ROOT, "assets/js/firebase-config.js"), "utf8");
-const PROJECT = (cfg.match(/projectId:\s*['"]([^'"]+)['"]/) || [])[1] || "littoralicious-web-eceed";
-const APIKEY = (cfg.match(/apiKey:\s*['"]([^'"]+)['"]/) || [])[1];
+const { projectId: PROJECT, apiKey: APIKEY } = firebaseWebConfig();
 async function rewriteStatus(slug) {
   try {
     const url = `https://firestore.googleapis.com/v1/projects/${PROJECT}/databases/(default)/documents/articles/${slug}/_rewrite/request?key=${APIKEY}`;

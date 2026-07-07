@@ -38,7 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Ingredient Deep-Dive. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+                <!-- BODY:BEGIN — Template 01, the SHORT ingredient profile: the fast, warm FIELD PROFILE. Target 8-12 min read preferred (the laboratory dossier — dark Identity Card, register ladder, molecular compound table — is shore-larder-deep-dive, Template 01b; if the piece wants those, write the deep-dive instead). Spine: summary-box → The Cook's Reason (note--quote, the signature opening) → vital-signs .glance → prose sections on locked blocks only. NEVER hand-roll a card. -->
 <!-- TOP PROMISE — one summary-box, the payoff in three scannable lines. The reader sees what they walk away with. -->
 <div class="summary-box"><strong>What you'll get</strong><ul>
     <li><!-- payoff 1: the one buying signal that separates good from bad -->One signal that tells a good specimen from a tired one, on sight.</li>
@@ -46,22 +46,35 @@
     <li><!-- payoff 3: the at-sea move — storage or batch-prep that survives a charter -->A storage and batch-prep routine that holds through a charter.</li>
 </ul></div>
 
-<!-- IDENTITY CARD — dark hero card. Fill in: species/kingdom, origin, season, key compounds, flavour profile. Keep 5 cells. -->
-<div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-6) 0;">
-    <h4 style="margin-top: 0; color: #c4a35a; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-4);">Identity Card</h4>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Species</span><strong>Binomial name here</strong><br><span style="color: #94a3b8;">Family / classification</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Origin</span><strong>Region here</strong><br><span style="color: #94a3b8;">Place + rough date</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Season</span><strong>Harvest window</strong><br><span style="color: #94a3b8;">Storage life</span></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Key Compounds</span><strong>Named molecules here</strong></div>
-        <div><span style="color: #94a3b8; display: block; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">Flavour Profile</span><strong style="color: #c4a35a;">Profile across forms/states</strong></div>
-    </div>
+<!-- One-line prose bridge — the promise never butts straight onto the opening quote. -->
+<p>Before the numbers, the reason anyone bothers.</p>
+
+<!-- THE COOK'S REASON — MANDATORY, and FIRST. The short profile's signature opening: warmth leads. Why a grandmother or a chef actually reaches for this, and who they feed it to. Locked note--quote, data-label "The Cook's Reason". -->
+<div class="note note--quote" data-label="The Cook's Reason"><p>The warm, human, sourced reason a cook keeps this in the larder — who it feeds, the table it belongs to, the feeling it carries. One or two lines. Real insight, not filler.</p></div>
+<!-- WRITER: This is the Grandmother pillar, made structural and made the opening move — it is what separates this fast field profile from the deep-dive dossier. Name the person and the table — a nonna's Sunday pot, the watch keeper fed at 0300, the guest who asks for it by name. Keep it true and specific; if you can't make it land, cut it to one honest line rather than pad it. No banned words (delicious, elevated, etc.). -->
+
+<p>Now the vital signs — the four numbers this whole profile hangs on:</p>
+
+<!-- VITAL SIGNS — locked .glance grid, 4 cells, SF Mono numbers automatic. This REPLACES the deep-dive's dark Identity Card: the short profile opens on scannable field numbers, not a dossier. Do NOT rebuild an Identity Card here. -->
+<div class="glance">
+    <div class="glance__cell"><span class="glance__num">00%</span><span class="glance__label">Key compound, by mass</span></div>
+    <div class="glance__cell"><span class="glance__num">00&deg;C</span><span class="glance__label">Frees the flavour</span></div>
+    <div class="glance__cell"><span class="glance__num">000&deg;C</span><span class="glance__label">Destroys it past</span></div>
+    <div class="glance__cell"><span class="glance__num">00 d</span><span class="glance__label">Storage half-life</span></div>
 </div>
+<!-- WRITER: Four real, sourced numbers a chef can scan in a second — concentration, the temperature that releases it, the temperature that wrecks it, how fast it fades in storage. Swap a cell for a truer vital sign (season window, price per kg) if it earns the space; delete any cell you cannot fill with a true number rather than printing 000. Every figure must trace to a named source below. -->
 
-<!-- Read the card in one line, then earn the next box with prose. This bridge MUST stay so the dark Identity Card never butts straight into another box. -->
-<p>That card is the specimen on the counter. The rest of this is how to choose it, why it tastes of what it tastes of, and how to keep it alive through a charter.</p>
+<p>Name the specimen in one prose line here — binomial and family, with <span class="term">cultivar</span> where the named variety carries the flavour — then get on with how to choose it, why it tastes of what it tastes of, and how to keep it alive through a charter.</p>
 
-<!-- OPTIONAL ORIGIN CARD — the tradition object. A second dark card to print ONLY when the ingredient carries a lineage strong enough to fix in the reader's mind (a PDO cheese, a named-region salt, a dish-defining cultivar). The "Where It Comes From" section below already carries the origin in prose — so add this card only when the lineage is the headline, and ALWAYS keep a line of prose between it and the Identity Card above and the Nurture Note below (never three boxes in a row). If the lineage is thin, leave this DELETED. Locked .id-card--origin class.
+<div class="divider"><span class="divider__text">Where It Comes From</span></div>
+
+<!-- ORIGIN STORY — where it comes from, earliest cultivation/use, archaeology. 2-3 paragraphs, dated and sourced. -->
+<h2>Origin: [Place / Botanical Backstory]</h2>
+<p class="kicker"><!-- kicker: the one-line value of knowing where it began -->Know its wild origin and you know how it wants to be treated.</p>
+<p>Wild origin, first gathering/cultivation, earliest dated evidence — one traceable fact per claim.</p>
+<p>Second beat: spread through early civilisations, what it meant (food, medicine, currency).</p>
+
+<!-- OPTIONAL ORIGIN CARD — the tradition object. Print ONLY when the ingredient carries a lineage strong enough to fix in the reader's mind (a PDO cheese, a named-region salt, a dish-defining cultivar) — this section's prose already carries the origin, so add the card only when the lineage IS the headline. If you print it, keep a one-line prose bridge between it and the note--key below (never two boxes stacked). If the lineage is thin, leave this DELETED. Locked .id-card--origin class.
 <div class="id-card id-card--origin">
     <h4 class="id-card__title">Origin</h4>
     <div class="id-card__grid">
@@ -72,19 +85,7 @@
         <div><span class="id-card__label">Now defended by</span><strong class="id-card__value">PDO / region / house</strong></div>
     </div>
 </div>
-WRITER: "Born" = where + rough era; "Of necessity" = the hunger or shortage that made it; "The constraint" = the climate/poverty/preservation problem that fixed its form; "First cooked by" = the hands (peasants, monks, fishermen); "Now defended by" = the PDO/region/house that guards it today. One traceable fact per cell, no invented dates. If you print this card, write a one-line prose bridge under it before the Nurture Note. -->
-
-<!-- NURTURE NOTE — MANDATORY, food-facing. The Cook's Reason: why a grandmother or a chef actually reaches for this, and who they feed it to. Staged above the fold so the warmth leads, instead of being stranded in the Stories grid at the bottom. Locked note--quote, data-label "The Cook's Reason". -->
-<div class="note note--quote" data-label="The Cook's Reason"><p>The warm, human, sourced reason a cook keeps this in the larder — who it feeds, the table it belongs to, the feeling it carries. One or two lines. Real insight, not filler.</p></div>
-<!-- WRITER: This is the Grandmother pillar, made structural. Name the person and the table — a nonna's Sunday pot, the watch keeper fed at 0300, the guest who asks for it by name. Keep it true and specific; if you can't make it land, cut it to one honest line rather than pad it. No banned words (delicious, elevated, etc.). -->
-
-<div class="divider"><span class="divider__text">Where It Comes From</span></div>
-
-<!-- ORIGIN STORY — where it comes from, earliest cultivation/use, archaeology. 2-3 paragraphs, dated and sourced. -->
-<h2>Origin: [Place / Botanical Backstory]</h2>
-<p><!-- kicker: the one-line value of knowing where it began -->Know its wild origin and you know how it wants to be treated.</p>
-<p>Wild origin, first gathering/cultivation, earliest dated evidence — one traceable fact per claim. Define the botanical group with <span class="term">cultivar</span> where the named variety carries the flavour.</p>
-<p>Second beat: spread through early civilisations, what it meant (food, medicine, currency).</p>
+WRITER: "Born" = where + rough era; "Of necessity" = the hunger or shortage that made it; "The constraint" = the climate/poverty/preservation problem that fixed its form; "First cooked by" = the hands (peasants, monks, fishermen); "Now defended by" = the PDO/region/house that guards it today. One traceable fact per cell, no invented dates. -->
 
 <!-- note--key — pull the single most striking origin fact. Verbatim component; blank the content. -->
 <div class="note note--key"><p>One arresting, sourced fact from the origin story — the line a tired chef remembers.</p></div>
@@ -93,7 +94,7 @@ WRITER: "Born" = where + rough era; "Of necessity" = the hunger or shortage that
 
 <!-- THE JOURNEY — how it travelled and shifted status (peasant → luxury, feared → embraced). 3-4 paragraphs. -->
 <h2>The Journey: [From X to Y]</h2>
-<p><!-- kicker: the value of the status-reversal story for the cook today -->The status flip explains why it is cheap, prized, or feared on your dock right now.</p>
+<p class="kicker"><!-- kicker: the value of the status-reversal story for the cook today -->The status flip explains why it is cheap, prized, or feared on your dock right now.</p>
 <p>How it moved across regions and centuries; the class/status reversal.</p>
 <p>The pivotal cuisine or figure that rehabilitated or championed it (name the book/person/technique).</p>
 <p>Where it stands now — the modern form or reinvention.</p>
@@ -103,17 +104,20 @@ WRITER: "Born" = where + rough era; "Of necessity" = the hunger or shortage that
 
 <div class="divider"><span class="divider__text">Why It Works</span></div>
 
-<!-- THE SCIENCE — the mechanism inline. Green callout(s) list the chemistry. Add a prose paragraph for the headline reaction. -->
+<!-- THE SCIENCE — the mechanism inline, on the locked .science-box (label / title / content). One box, 2-3 compound lines; add a prose paragraph for the headline reaction. -->
 <h2>The Science: [The Mechanism / Why It Works]</h2>
-<p><!-- kicker: the value of the mechanism for the cook's next decision -->Get the mechanism and you stop guessing at temperature and timing.</p>
+<p class="kicker"><!-- kicker: the value of the mechanism for the cook's next decision -->Get the mechanism and you stop guessing at temperature and timing.</p>
 
-<div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #059669;">
-    <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">[Chemistry of Each Form / Nutritional Profile]</h4>
-    <ul style="margin-bottom: 0; font-size: var(--text-sm);">
-        <li><strong>Compound / form</strong> &mdash; the reaction or property, with mechanism (enzyme, temperature, reaction).</li>
-        <li><strong>Compound / form</strong> &mdash; one line, science inline, evidence strength noted.</li>
-        <li><strong>Compound / form</strong> &mdash; one line.</li>
-    </ul>
+<div class="science-box">
+    <div class="science-box__label">The Chemistry</div>
+    <div class="science-box__title">[Chemistry of Each Form / Nutritional Profile]</div>
+    <div class="science-box__content">
+        <ul>
+            <li><strong>Compound / form</strong> &mdash; the reaction or property, with mechanism (enzyme, temperature, reaction).</li>
+            <li><strong>Compound / form</strong> &mdash; one line, science inline, evidence strength noted.</li>
+            <li><strong>Compound / form</strong> &mdash; one line.</li>
+        </ul>
+    </div>
 </div>
 
 <p>A prose paragraph for the single biggest scientific point (e.g. the headline reaction or <span class="term">umami</span> synergy), in plain language with numbers.</p>
@@ -124,10 +128,9 @@ WRITER: "Born" = where + rough era; "Of necessity" = the hunger or shortage that
 <!-- Bridge from flavour mechanism to health. Keeps the next box off the one above. -->
 <p>The same compound that carries the flavour does something measurable to the body. Here is what holds up.</p>
 
-<!-- HEALTH EVIDENCE — green callout, now HIGH BAR. The lead claim MUST carry ONE measured fact and stand on a PRIMARY peer-reviewed paper (journal + year + DOI), graded inline. A reference book (McGee, Modernist) may support but NEVER replaces the citation. -->
-<div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-4) 0; border-left: 4px solid #059669;">
-    <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Health Evidence</h4>
-    <ul style="margin-bottom: 0; font-size: var(--text-sm);">
+<!-- HEALTH EVIDENCE — locked note--science, data-label "Health Evidence". HIGH BAR: the lead claim MUST carry ONE measured fact and stand on a PRIMARY peer-reviewed paper (journal + year + DOI), graded inline. A reference book (McGee, Modernist) may support but NEVER replaces the citation. -->
+<div class="note note--science" data-label="Health Evidence">
+    <ul>
         <li><strong>Claim:</strong> the finding with ONE measured number, traced to a named paper. <em>Author (Year), Journal. DOI: 10.0000/xxxxx. Design &middot; n = 00 &middot; Strength: strong / moderate / observational / in vitro.</em></li>
         <li><strong>Claim:</strong> finding + number. <em>Author (Year), Journal. DOI. Strength tier.</em></li>
     </ul>
@@ -141,57 +144,62 @@ WRITER: "Born" = where + rough era; "Of necessity" = the hunger or shortage that
 <div class="note note--science" data-label="Where It Really Comes From"><p>Top growing/landing region today vs the label/marketing claim &middot; price band per kg &middot; what a yacht actually pays through an agent. State where the bulk truly originates, not the romantic origin on the packaging.</p></div>
 <!-- WRITER: Follow the money. If the "Italian" / "wild" / "artisan" label hides a different real source, say so plainly with the actual region and a price. The yacht-pays figure is the Yacht-Chef pillar checking the Scientist's claim against the invoice. -->
 
-<!-- OPTIONAL WHO PAID — include ONLY when a cited study above is industry-funded or the provenance claim is contested; otherwise leave DELETED, never an empty box. If you print it, keep it apart from the note above and the glance below — a line of prose on either side, not a third stacked callout.
+<!-- OPTIONAL WHO PAID — include ONLY when a cited study above is industry-funded or the provenance claim is contested; otherwise leave DELETED, never an empty box. If you print it, keep it a line of prose apart from the note above, not a stacked callout.
 <div class="note note--science" data-label="Who Paid"><p>Funder of the load-bearing study &middot; declared conflict &middot; whether it colours the claim.</p></div>
 WRITER: The DNA's follow-the-money rule, on the page not in a comment — but only when there is funding worth flagging. -->
 
-<!-- GLANCE — light mid-piece stat grid; the scannable-numbers device, before the closing Quick Reference. Three or four hard figures: the key compound %, the °C that frees or destroys it, the storage half-life. Lead into it with the prose line below so it doesn't stack on the note above. Locked .glance class, SF Mono numbers are automatic. -->
-<p>Strip the chemistry down to the four numbers a chef actually works to:</p>
-<div class="glance">
-    <div class="glance__cell"><span class="glance__num">00%</span><span class="glance__label">Key compound, by mass</span></div>
-    <div class="glance__cell"><span class="glance__num">00&deg;C</span><span class="glance__label">Frees the flavour</span></div>
-    <div class="glance__cell"><span class="glance__num">000&deg;C</span><span class="glance__label">Destroys it past</span></div>
-    <div class="glance__cell"><span class="glance__num">00 d</span><span class="glance__label">Storage half-life</span></div>
-</div>
-<!-- WRITER: Four real, sourced numbers a chef can scan in a second — concentration, the temperature that releases it, the temperature that wrecks it, and how fast it fades in storage. Every figure must trace to a named source below. Delete any cell you cannot fill with a true number rather than printing 000. -->
+<!-- NO second stat grid here — the vital-signs .glance at the top of the piece is the ONLY number grid in this short profile. If a figure matters, it belongs up there or in prose. (The deep-dive is where a second grid can earn its space.) -->
 
 <div class="divider"><span class="divider__text">What Every Cuisine Found</span></div>
 
-<!-- TRADITIONAL PAIRING — wheat-toned grid of classic pairings, each with the molecular reason. Keep 4-6 cells. -->
+<!-- TRADITIONAL PAIRING — locked .data-table, columns Pairing | Region | Why it works. Keep 4-6 rows, each with the molecular reason in the last column. -->
 <h2>Traditional Pairing: [The Universal Connector / What Every Culture Figured Out]</h2>
-<p><!-- kicker: the value of the classic pairing as a safe default -->These are the pairings you can serve blind — chemistry already proved them.</p>
+<p class="kicker"><!-- kicker: the value of the classic pairing as a safe default -->These are the pairings you can serve blind — chemistry already proved them.</p>
 
-<div style="background: #f5deb3; padding: var(--space-6); margin: var(--space-6) 0;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
-        <div style="border-left: 3px solid #92400e; padding-left: var(--space-3);">
-            <strong>Ingredient + Partner</strong><br>
-            <span style="color: #5c4033;">Cuisine + the chemical reason this pairing is inevitable.</span>
-        </div>
-        <div style="border-left: 3px solid #92400e; padding-left: var(--space-3);">
-            <strong>Ingredient + Partner</strong><br>
-            <span style="color: #5c4033;">Cuisine + reason.</span>
-        </div>
-        <div style="border-left: 3px solid #92400e; padding-left: var(--space-3);">
-            <strong>Ingredient + Partner</strong><br>
-            <span style="color: #5c4033;">Cuisine + reason.</span>
-        </div>
-        <div style="border-left: 3px solid #92400e; padding-left: var(--space-3);">
-            <strong>Ingredient + Partner</strong><br>
-            <span style="color: #5c4033;">Cuisine + reason.</span>
-        </div>
-    </div>
+<div style="overflow-x: auto; margin: var(--space-6) 0;">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Pairing</th>
+                <th>Region</th>
+                <th>Why it works</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ingredient + partner</td>
+                <td>Cuisine / region</td>
+                <td>The chemical reason this pairing is inevitable.</td>
+            </tr>
+            <tr>
+                <td>Ingredient + partner</td>
+                <td>Cuisine / region</td>
+                <td>Reason, one line.</td>
+            </tr>
+            <tr>
+                <td>Ingredient + partner</td>
+                <td>Cuisine / region</td>
+                <td>Reason, one line.</td>
+            </tr>
+            <tr>
+                <td>Ingredient + partner</td>
+                <td>Cuisine / region</td>
+                <td>Reason, one line.</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
-<!-- POETIC PAIRING — violet-toned bordered list of unexpected, defensible pairings. 4-5 items. -->
+<!-- POETIC PAIRING — locked plain note, data-label "The Poetic Pairing". 4-5 unexpected but defensible pairings, each with its molecular logic. -->
 <h2>Poetic Pairing: The Unexpected</h2>
-<p><!-- kicker: the value of the surprising pairing — a plate guests remember -->The pairings that read wrong on paper and land on the plate.</p>
+<p class="kicker"><!-- kicker: the value of the surprising pairing — a plate guests remember -->The pairings that read wrong on paper and land on the plate.</p>
 
-<div style="background: #d4dce8; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #7c3aed;">
-    <ul style="margin: 0; font-size: var(--text-sm); list-style: none; padding: 0;">
-        <li style="margin-bottom: var(--space-3); padding-left: var(--space-4); border-left: 2px solid #7c3aed;"><strong style="color: #5b21b6;">Ingredient + Surprising Partner</strong> &mdash; the molecular logic that makes the surprise work.</li>
-        <li style="margin-bottom: var(--space-3); padding-left: var(--space-4); border-left: 2px solid #7c3aed;"><strong style="color: #5b21b6;">Ingredient + Surprising Partner</strong> &mdash; why it works, with an application.</li>
-        <li style="margin-bottom: var(--space-3); padding-left: var(--space-4); border-left: 2px solid #7c3aed;"><strong style="color: #5b21b6;">Ingredient + Surprising Partner</strong> &mdash; reason + dish.</li>
-        <li style="padding-left: var(--space-4); border-left: 2px solid #7c3aed;"><strong style="color: #5b21b6;">Ingredient + Surprising Partner</strong> &mdash; reason + dish.</li>
+<div class="note" data-label="The Poetic Pairing">
+    <ul>
+        <li><strong>Ingredient + surprising partner</strong> &mdash; the molecular logic that makes the surprise work.</li>
+        <li><strong>Ingredient + surprising partner</strong> &mdash; why it works, with an application.</li>
+        <li><strong>Ingredient + surprising partner</strong> &mdash; reason + dish.</li>
+        <li><strong>Ingredient + surprising partner</strong> &mdash; reason + dish.</li>
     </ul>
 </div>
 
@@ -199,44 +207,37 @@ WRITER: The DNA's follow-the-money rule, on the page not in a comment — but on
 
 <div class="divider"><span class="divider__text">At the Dock</span></div>
 
-<!-- HOW TO BUY — grey cards, one per variety/grade, each with a coloured left border. Quality signals included. -->
+<!-- HOW TO BUY — locked note--action, data-label "How to Buy": one tight ul, one li per variety/grade, buying signals inline. 3-4 items. -->
 <h2>How to Buy: What to Look For</h2>
-<p><!-- kicker: the value of buying right — most of the result is decided here -->Most of the eating quality is decided before it reaches your knife.</p>
+<p class="kicker"><!-- kicker: the value of buying right — most of the result is decided here -->Most of the eating quality is decided before it reaches your knife.</p>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); margin: var(--space-6) 0;">
-    <div style="background: #e2e5e9; padding: var(--space-4); border-left: 3px solid var(--color-sea);">
-        <strong style="font-size: var(--text-sm); color: var(--color-sea);">Variety / Grade</strong>
-        <p style="font-size: var(--text-sm); color: #333; margin: var(--space-1) 0 0;">What it is, what it's good for, and the specific quality signals to check.</p>
-    </div>
-    <div style="background: #e2e5e9; padding: var(--space-4); border-left: 3px solid #059669;">
-        <strong style="font-size: var(--text-sm); color: #059669;">Variety / Grade</strong>
-        <p style="font-size: var(--text-sm); color: #333; margin: var(--space-1) 0 0;">Description + buying signals.</p>
-    </div>
-    <div style="background: #e2e5e9; padding: var(--space-4); border-left: 3px solid #d97706;">
-        <strong style="font-size: var(--text-sm); color: #d97706;">Variety / Grade</strong>
-        <p style="font-size: var(--text-sm); color: #333; margin: var(--space-1) 0 0;">Description + buying signals.</p>
-    </div>
-    <div style="background: #e2e5e9; padding: var(--space-4); border-left: 3px solid #7c3aed;">
-        <strong style="font-size: var(--text-sm); color: #7c3aed;">Variety / Grade</strong>
-        <p style="font-size: var(--text-sm); color: #333; margin: var(--space-1) 0 0;">Description + buying signals.</p>
-    </div>
+<div class="note note--action" data-label="How to Buy">
+    <ul>
+        <li><strong>Variety / grade</strong> &mdash; what it is, what it's good for, and the specific quality signals to check.</li>
+        <li><strong>Variety / grade</strong> &mdash; description + buying signals.</li>
+        <li><strong>Variety / grade</strong> &mdash; description + buying signals.</li>
+        <li><strong>Variety / grade</strong> &mdash; description + buying signals.</li>
+    </ul>
 </div>
+
+<!-- One-line prose bridge — flip from what to buy to what to hand back; keeps the warning off the box above. -->
+<p>And the flip side — the specimen you hand straight back:</p>
 
 <!-- note--warning — the one mistake to avoid when selecting/handling. -->
 <div class="note note--warning"><p>The single rejection rule: what a bad specimen looks/smells like, and what to avoid.</p></div>
 
 <div class="divider"><span class="divider__text">Tested at Sea</span></div>
 
-<!-- YACHT GALLEY INTEL — the at-sea section. Blue callout list: storage, batch-prep, shortcuts, provisioning. Numbers + °C. -->
+<!-- YACHT GALLEY INTEL — the at-sea section on the locked note--action, data-label "Galley Intel": storage, batch-prep, shortcuts, provisioning. Numbers + °C. -->
 <h2>Yacht Galley Intel</h2>
-<p><!-- kicker: the value of the at-sea section — survives the real galley -->What survives a 4 m² galley, a swell, and a week without a market.</p>
+<p class="kicker"><!-- kicker: the value of the at-sea section — survives the real galley -->What survives a 4 m² galley, a swell, and a week without a market.</p>
 
-<div style="background: #e2e5e9; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid var(--color-sea);">
-    <ul style="margin: 0; font-size: var(--text-sm);">
-        <li style="margin-bottom: var(--space-2);"><strong>Storage:</strong> how long, where, in what — the provisioning reality.</li>
-        <li style="margin-bottom: var(--space-2);"><strong>Batch prep:</strong> a make-ahead with exact temperature and time, plus shelf life.</li>
-        <li style="margin-bottom: var(--space-2);"><strong>Shortcut:</strong> the acceptable compromise for crew meals vs guest service.</li>
-        <li style="margin-bottom: var(--space-2);"><strong>Form to keep aboard:</strong> the shelf-stable version worth the space.</li>
+<div class="note note--action" data-label="Galley Intel">
+    <ul>
+        <li><strong>Storage:</strong> how long, where, in what &mdash; the provisioning reality.</li>
+        <li><strong>Batch prep:</strong> a make-ahead with exact temperature and time, plus shelf life.</li>
+        <li><strong>Shortcut:</strong> the acceptable compromise for crew meals vs guest service.</li>
+        <li><strong>Form to keep aboard:</strong> the shelf-stable version worth the space.</li>
         <li><strong>Provisioning tip:</strong> what to always carry and why.</li>
     </ul>
 </div>
@@ -249,49 +250,41 @@ WRITER: The DNA's follow-the-money rule, on the page not in a comment — but on
 
 <div class="divider"><span class="divider__text">The Stories</span></div>
 
-<!-- THE STORIES — folklore/history cards in a single-column grid, each a coloured-border panel. 3-4 stories. KEEP this section ABOVE the closing Quick Reference card (its current position): the warmth-forward variant lands the tales on the way out, then closes hard on the at-a-glance card and the one thing. Do not move it below Quick Reference. -->
+<!-- THE STORIES — told as PROSE, not cards: 3-4 short sourced tales, each a paragraph opening on a strong headline phrase. The warmth-forward variant lands the tales on the way out; the prose also keeps the closing run from stacking box on box. KEEP this section ABOVE the closing Quick Reference (do not move it below). -->
 <h2>The Stories</h2>
-<p><!-- kicker: the value of the stories — the line that sells the dish tableside -->The tales worth telling at the pass — each one sourced, none invented.</p>
+<p class="kicker"><!-- kicker: the value of the stories — the line that sells the dish tableside -->The tales worth telling at the pass — each one sourced, none invented.</p>
 
-<div style="display: grid; gap: var(--space-4); margin: var(--space-6) 0;">
-    <div style="background: #f5deb3; padding: var(--space-4); border-left: 4px solid #d97706;">
-        <strong style="font-size: var(--text-sm);">[Story headline]</strong>
-        <p style="font-size: var(--text-sm); margin: var(--space-1) 0 0; color: #5c4033;">A short, sourced tale — myth, history, or science behind a belief.</p>
-    </div>
-    <div style="background: #d4dce8; padding: var(--space-4); border-left: 4px solid #7c3aed;">
-        <strong style="font-size: var(--text-sm);">[Story headline]</strong>
-        <p style="font-size: var(--text-sm); margin: var(--space-1) 0 0; color: #3b3b5c;">A short, sourced tale.</p>
-    </div>
-    <div style="background: #d1e7dd; padding: var(--space-4); border-left: 4px solid #059669;">
-        <strong style="font-size: var(--text-sm);">[Story headline]</strong>
-        <p style="font-size: var(--text-sm); margin: var(--space-1) 0 0; color: #1a3a2a;">A short, sourced tale.</p>
-    </div>
+<p><strong>[Story headline].</strong> A short, sourced tale &mdash; myth, history, or the science behind a belief. Two or three sentences, told, not listed.</p>
+<p><strong>[Story headline].</strong> A short, sourced tale.</p>
+<p><strong>[Story headline].</strong> A short, sourced tale.</p>
+
+<!-- One-line prose bridge — land the tales, then pin the card. Never let Quick Reference butt onto the last story. -->
+<p>Stories told; here is the card to pin above the bench.</p>
+
+<!-- QUICK REFERENCE — locked note--key, data-label "Quick Reference": compact ul, four essentials + the chef's-note discipline line. Replaces the old dark closing card — do NOT rebuild it. -->
+<div class="note note--key" data-label="Quick Reference">
+    <ul>
+        <li><strong>Best season</strong> &mdash; when it is at its best.</li>
+        <li><strong>Best with</strong> &mdash; top partners.</li>
+        <li><strong>Avoid with</strong> &mdash; what kills it (or "nothing").</li>
+        <li><strong>Storage</strong> &mdash; per form, with timings.</li>
+        <li><em>Chef's note:</em> the one-line discipline that sums up how to treat this ingredient with respect.</li>
+    </ul>
 </div>
 
-<!-- QUICK REFERENCE — closing dark card: 4-cell at-a-glance grid + an italic chef's note in gold. -->
-<div style="background: #1a2a3a; color: #e8e0d4; padding: var(--space-8); margin: var(--space-8) 0;">
-    <h4 style="margin-top: 0; color: #c4a35a; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-4);">Quick Reference</h4>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
-        <div><span style="color: #94a3b8; font-size: var(--text-xs); text-transform: uppercase;">Best Season</span><br>When at its best.</div>
-        <div><span style="color: #94a3b8; font-size: var(--text-xs); text-transform: uppercase;">Best With</span><br>Top partners.</div>
-        <div><span style="color: #94a3b8; font-size: var(--text-xs); text-transform: uppercase;">Avoid With</span><br>What kills it (or "nothing").</div>
-        <div><span style="color: #94a3b8; font-size: var(--text-xs); text-transform: uppercase;">Storage</span><br>Per form, with timings.</div>
-    </div>
-    <p style="margin: var(--space-4) 0 0; font-style: italic; color: #c4a35a; font-size: var(--text-sm);">
-        Chef's note: the one-line discipline that sums up how to treat this ingredient with respect.
-    </p>
-</div>
+<!-- One-line prose bridge — keeps the two note--key blocks apart. -->
+<p>And if the card washes overboard, keep this much:</p>
 
 <!-- CLOSING SINGLE-TAKEAWAY — note--key titled by content. The one thing the reader keeps. -->
 <div class="note note--key" data-label="The one thing"><p><!-- the single sentence to remember about this ingredient -->If you remember one thing: the single rule that decides whether this ingredient works on the plate.</p></div>
 
-<!-- SOURCES — named, traceable references (DNA source rule). Journal/book + author + year; FlavorDB where relevant. -->
-<div style="margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-border); font-size: var(--text-sm); color: var(--color-muted);">
-    <strong>Sources:</strong><br>
-    Author, X. "Paper title." <em>Journal</em>, year.<br>
-    Author, X. "Paper title." <em>Journal</em>, year.<br>
-    Author, X. "Book title." Publisher, year.<br>
-    FlavorDB &mdash; <a href="https://cosylab.iiitd.edu.in/flavordb/" style="color: var(--color-sea);">cosylab.iiitd.edu.in/flavordb</a>
+<!-- One-line prose bridge into the sources — the takeaway never butts onto the reference block. -->
+<p>Every number above traces to a name:</p>
+
+<!-- SOURCES — locked .article-sources block (DNA source rule): journal/book + author + year; FlavorDB where relevant. -->
+<div class="article-sources">
+    <strong>Sources</strong>
+    <p>Author, X. "Paper title." <em>Journal</em>, year, DOI. &middot; Author, X. "Paper title." <em>Journal</em>, year, DOI. &middot; Author, X. "Book title." Publisher, year. &middot; FlavorDB &mdash; <a href="https://cosylab.iiitd.edu.in/flavordb/">cosylab.iiitd.edu.in/flavordb</a></p>
 </div>
 
 <!-- Sign-off: end the piece on the DNA mark "Tested at sea." -->

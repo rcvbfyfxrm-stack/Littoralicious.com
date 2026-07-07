@@ -26,8 +26,17 @@ export const ASSET_VER = (() => {
 })();
 
 // ---- data/articles.json -----------------------------------------------------
+// loadArticlesRaw(): the PRISTINE parsed file — the only thing writers may
+// serialise back to data/articles.json (never the decorated copy below).
+export function loadArticlesRaw() {
+  return JSON.parse(read(p("data", "articles.json")));
+}
+
+// loadArticles(): a decorated WORKING COPY for readers (build/lint/validate…).
+// Derived fields (category_label/file/url/lede/read_time) are attached to
+// CLONES so the canonical data is never polluted and re-serialised.
 export function loadArticles() {
-  const data = JSON.parse(read(p("data", "articles.json")));
+  const data = structuredClone(loadArticlesRaw());
   const cats = data.categories || {};
   const catName = (key) =>
     (cats[key] && cats[key].name) || String(key || "").replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
@@ -36,10 +45,20 @@ export function loadArticles() {
     a.category_label = catName(a.category);
     a.file = `articles/${a.slug}.html`;
     a.url = `${ORIGIN}/articles/${a.slug}.html`;
-    a.lede = a.description || extractLede(a.slug) || "";
+    a.lede = a.description || a.lede || extractLede(a.slug) || "";
     a.read_time = a.read_time || declaredReadTime(a.slug) || estimateReadTime(a.slug) || null;
   }
   return { data, cats, catName, articles };
+}
+
+// ---- Firebase web config (assets/js/firebase-config.js) ---------------------
+// Single scraper for the committed web config — used by review/rewrite/undraft
+// to talk to Firestore REST with the public web API key.
+export function firebaseWebConfig() {
+  let cfg = "";
+  try { cfg = read(p("assets", "js", "firebase-config.js")); } catch { /* missing config — defaults below */ }
+  const grab = (k) => (cfg.match(new RegExp(`${k}:\\s*['"]([^'"]+)['"]`)) || [])[1];
+  return { projectId: grab("projectId") || "littoralicious-web-eceed", apiKey: grab("apiKey") };
 }
 
 export const live = (articles) =>

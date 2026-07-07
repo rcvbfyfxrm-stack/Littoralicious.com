@@ -5,7 +5,7 @@
 //   node tools/review.mjs <slug> --clear  delete the review notes once you've applied them (needs firebase auth)
 // You leave notes by typing them into the comment box at the bottom of the preview article.
 import { execSync } from "node:child_process";
-import { p, read, exists } from "./lib.mjs";
+import { p, exists, firebaseWebConfig } from "./lib.mjs";
 
 const CHANNEL = "review";
 const slug = process.argv[2];
@@ -13,11 +13,8 @@ const mode = process.argv.includes("--notes") ? "notes"
           : process.argv.includes("--clear") ? "clear" : "deploy";
 if (!slug || slug.startsWith("--")) die("usage: node tools/review.mjs <slug> [--notes | --clear]");
 
-// project + web api key from the committed firebase config
-const cfg = read(p("assets/js/firebase-config.js"));
-const grab = (k) => (cfg.match(new RegExp(`${k}:\\s*['"]([^'"]+)['"]`)) || [])[1];
-const PROJECT = grab("projectId") || "littoralicious-web-eceed";
-const APIKEY = grab("apiKey");
+// project + web api key from the committed firebase config (shared scraper in lib.mjs)
+const { projectId: PROJECT, apiKey: APIKEY } = firebaseWebConfig();
 const base = `https://firestore.googleapis.com/v1/projects/${PROJECT}/databases/(default)/documents`;
 
 const sv = (f) => f && (f.stringValue ?? f.integerValue ?? f.booleanValue ?? f.timestampValue ?? "");
@@ -37,11 +34,11 @@ if (mode === "notes") {
     process.exit(0);
   }
   if (pnotes.length) {
-    console.log(`\n📝 ${pnotes.length} paragraph note(s) on "${slug}":\n`);
+    console.log(`\n${pnotes.length} paragraph note(s) on "${slug}":\n`);
     pnotes.forEach((n) => console.log(`  ¶${n.index}  “${n.excerpt}…”\n     → ${n.note}\n`));
   }
   if (comments.length) {
-    console.log(`\n💬 ${comments.length} bottom comment(s):\n`);
+    console.log(`\n${comments.length} bottom comment(s):\n`);
     comments.forEach((c, i) => console.log(`  ${i + 1}. [${c.name}] ${c.text}\n`));
   }
   process.exit(0);
@@ -57,7 +54,7 @@ if (mode === "clear") {
 // deploy mode
 if (!exists(p("articles", `${slug}.html`))) die(`articles/${slug}.html does not exist`);
 console.log("Building…");
-run(`node ${p("tools/build.mjs")} --quiet || node ${p("tools/build.mjs")}`);
+run(`node ${p("tools/build.mjs")} --quiet`);
 console.log(`Deploying "${slug}" to the "${CHANNEL}" preview channel…`);
 const out = run(`firebase hosting:channel:deploy ${CHANNEL} --expires 7d --project ${PROJECT}`, true);
 const m = out.match(/Channel URL[^:]*:\s*(https:\/\/\S+)/);

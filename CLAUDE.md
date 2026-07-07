@@ -7,11 +7,11 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
 ## Before you start
 
 1. Read **`content/DNA.md`** — mission (Nurture), the three pillars (Grandmother /
-   Scientist / Yacht Chef), the DNA test, voice, banned words, sections, and the 12 templates.
+   Scientist / Yacht Chef), the DNA test, voice, banned words, sections, and the 14 templates.
 2. **Match the design lock.** The look is sealed in `assets/css/style.css` (refined light
    journal; Georgia serif + system sans; paper `#fafafa`, ink `#0a0a0a`, sea `#2d4a5e`).
    Copy markup from the most recent equivalent file — never improvise the look.
-3. **Never invent an article template.** Pick one of the 12 fixed templates (see DNA.md);
+3. **Never invent an article template.** Pick one of the 14 fixed templates (see DNA.md);
    fill the body only.
 
 ## Writing editorial — rules-first
@@ -36,11 +36,13 @@ the eye; vary the devices piece to piece. See DNA.md → *Captivating design*. I
 template, stop and propose narrowing or splitting — never invent a format. (Skip the summary only
 on a tiny fix, or when Arnaud says to.)
 
-**Template files.** Each of the 12 templates should be a file in `templates/` named for it
-(e.g. `templates/the-blueprint.html`), used via `npm run new -- --template the-blueprint`.
-Today `recipe-blueprint.html` ≈ The Blueprint (05), `standard.html` is a generic fallback,
-and `section.html` builds the section index pages. Add the remaining canonical bodies as
-files — keep the masthead, footer, head-generation, and tokens identical; vary only the BODY.
+**Template files.** All 14 template bodies exist in `templates/`, each named for its format
+and used via `npm run new -- --template <name>`: `shore-larder`, `shore-larder-deep-dive`,
+`the-method-technique`, `littoral-heritage-article`, `the-evidence`, `recipe-blueprint`
+(= The Blueprint, 05), `signal-fire`, `the-horizon`, `trade-winds`, `tight-ship`,
+`port-call`, `the-locker`, `weekly-brief`, `the-lab`. Shell helpers (not article types):
+`standard.html` (generic fallback), `section.html` (section index pages), `og-image.html`.
+Keep the masthead, footer, head-generation, and tokens identical across them; vary only the BODY.
 
 ## How publishing works (the whole job)
 
@@ -68,13 +70,24 @@ npm run publish            # build → validate → firebase deploy
 - A new article's `<head>` (title, canonical, Open Graph, Twitter, JSON-LD Recipe/Article)
   is generated from its `articles.json` entry — don't hand-write it.
 
+**Pipeline tools** (the automated draft → gate → live loop): `tools/draft.mjs` scaffolds an
+article and writes a drafting brief (template structure + DNA + source) for an agent, then
+`--apply` splices the written body and lints it. `tools/rewrite.mjs` is the annotate→rewrite
+half: it bundles Studio review notes into a rewrite brief, `--apply` splices the new body and
+re-lints. `tools/undraft.mjs` is the gated promotion to live — a draft is blocked while it has
+lint errors or a queued rewrite (atomic: one blocked slug blocks the whole batch; `--force`
+overrides loudly). `tools/review.mjs` deploys a draft to the Firebase preview channel and reads
+back review notes. `npm run lint` is the editorial gate (emoji, banned words, headline rules,
+summary-box, spine, British spelling) — distinct from `npm run validate`, the structure gate.
+CI (the live deploy Action) runs `npm run validate` and deploys `firestore.rules` before hosting.
+
 ## Repository map
 
 ```
 data/articles.json     SINGLE SOURCE OF TRUTH (one entry per article)
 articles/<slug>.html   article bodies (you write the BODY; head is generated)
-tools/*.mjs            build · validate · new · lib   (build-time only, not deployed)
-templates/*.html       fixed article + section templates  (not deployed)
+tools/*.mjs            build · validate · lint · new · draft · rewrite · undraft · review · lib  (not deployed)
+templates/*.html       fixed article + section templates  (DEPLOYED — the Studio reads them live)
 content/DNA.md         editorial DNA  (not deployed)
 assets/css/style.css   the sealed design system
 assets/js/             main.js (site behaviour) · community.js (Firestore comments) · firebase-config.js
@@ -90,8 +103,9 @@ galleyorder/ menu/ game/   live tools on the site (see below) — NOT publicatio
   Firestore backs the on-page comments (`community.js`). Deploy: `npm run publish`.
 - **One branch is the truth and deploys: `main`.** No drafts branch, no parallel worktrees
   for published state. Use the `draft` flag for work in progress.
-- `firebase.json` deploys the site but ignores build-time files (`tools/`, `templates/`,
-  `scripts/`, `*.md`, `content/`, `data/draft-articles.json`).
+- `firebase.json` deploys the site but ignores build-time files (`tools/`, `scripts/`,
+  `content/`, `*.md`). **`templates/` and `data/draft-articles.json` DO deploy** — the
+  Studio reads both from the live site; don't add them to the ignore list.
 
 ## The tools stay on the site
 

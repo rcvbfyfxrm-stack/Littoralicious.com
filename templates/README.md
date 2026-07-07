@@ -14,7 +14,10 @@ breaks, a one-line value kicker under each `<h2>`, `note--quote` pull-quotes to 
 inline `term` definitions, and a closing takeaway. Keep these when you write — they are what
 stop the reader's eye from drifting. Fill the placeholders; don't strip the structure.
 
-## The 12 templates (+ shell helpers)
+The `<h2>` kicker is the styled `p.kicker` beat (one-line value promise under the heading), and
+Tight Ship's station-map table wraps in `.galley-plan` — both locked in `content/DESIGN-LOCK.md`.
+
+## The 14 templates (+ shell helpers)
 
 | `--template` | # | Section | For |
 |---|---|---|---|

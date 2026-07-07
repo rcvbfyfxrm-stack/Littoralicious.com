@@ -25,7 +25,7 @@
         <div class="container">
             <div class="masthead__inner">
                 <div class="masthead__brand">
-                    <a href="/" class="masthead__logo"><img src="assets/logo/logo.svg" alt="" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <a href="/" class="masthead__logo"><img src="assets/logo/logo.svg" alt="" aria-hidden="true" width="60" height="60" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
                     <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
                     <div class="masthead__description">
                         <div class="masthead__description-main">Sailing Around The Plate</div>
@@ -67,6 +67,8 @@
                 <button class="search-filter" data-filter="Littoral Heritage" style="background: none; border: 1px solid var(--color-border); padding: 4px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; color: var(--color-muted); font-family: var(--font-sans); transition: all 150ms ease;">Heritage</button>
                 <button class="search-filter" data-filter="The Evidence" style="background: none; border: 1px solid var(--color-border); padding: 4px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; color: var(--color-muted); font-family: var(--font-sans); transition: all 150ms ease;">The Evidence</button>
                 <button class="search-filter" data-filter="The Bridge" style="background: none; border: 1px solid var(--color-border); padding: 4px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; color: var(--color-muted); font-family: var(--font-sans); transition: all 150ms ease;">The Bridge</button>
+                <button class="search-filter" data-filter="Port Call" style="background: none; border: 1px solid var(--color-border); padding: 4px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; color: var(--color-muted); font-family: var(--font-sans); transition: all 150ms ease;">Port Call</button>
+                <button class="search-filter" data-filter="Trade Winds" style="background: none; border: 1px solid var(--color-border); padding: 4px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; color: var(--color-muted); font-family: var(--font-sans); transition: all 150ms ease;">Trade Winds</button>
             </div>
             <p id="search-count" style="text-align: center; font-size: var(--text-xs); color: var(--color-salt); margin-top: var(--space-2); display: none;"></p>
         </section>
@@ -175,18 +177,22 @@
         </div>
     </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-    <script src="assets/js/firebase-config.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script defer src="assets/js/firebase-config.js"></script>
     <script src="assets/js/main.js?v=20260703-simmer"></script>
     <script>
-    // Load chef count on homepage
-    if (typeof db !== 'undefined') {
-        db.collection('chefs').get().then(function(snap) {
-            var el = document.getElementById('home-chef-count');
-            if (el && snap.size > 0) el.textContent = '(' + snap.size + ')';
-        }).catch(function() {});
-    }
+    // Load chef count on homepage.
+    // Firebase SDK + config are deferred; DOMContentLoaded fires after deferred
+    // scripts execute, so `db` is available here (guard kept for CDN failures).
+    window.addEventListener('DOMContentLoaded', function() {
+        if (typeof db !== 'undefined') {
+            db.collection('chefs').get().then(function(snap) {
+                var el = document.getElementById('home-chef-count');
+                if (el && snap.size > 0) el.textContent = '(' + snap.size + ')';
+            }).catch(function() {});
+        }
+    });
 
     // Article search and filter
     (function() {

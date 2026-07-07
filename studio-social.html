@@ -46,6 +46,25 @@
         .sp-tags{font-family:var(--font-mono);font-size:11px;color:var(--color-sea);line-height:1.5;word-break:break-word;}
         .sp-meta{display:flex;gap:var(--space-3);font-size:11px;color:var(--color-salt);font-family:var(--font-mono);flex-wrap:wrap;align-items:center;}
         .sp-why{font-size:12px;color:var(--color-muted);font-style:italic;border-left:2px solid var(--color-border);padding-left:.6em;}
+        .sp-fact{font-size:13px;line-height:1.5;color:var(--color-ink);border-left:2px solid var(--color-sea);padding-left:.6em;}
+        .sp-fact b{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-sea);display:block;margin-bottom:.15em;}
+        .sp-brief{font-size:11px;font-family:var(--font-mono);color:var(--color-salt);line-height:1.5;}
+        /* photo picker (library-backed) */
+        .pho{position:fixed;inset:0;background:rgba(10,10,10,.6);display:none;align-items:center;justify-content:center;z-index:80;padding:var(--space-4);}
+        .pho.open{display:flex;}
+        .pho__box{background:#fff;max-width:760px;width:100%;max-height:86vh;display:flex;flex-direction:column;border:1px solid var(--color-ink);}
+        .pho__head{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-border);}
+        .pho__head h3{font-family:var(--font-serif);margin:0;font-size:var(--text-base);}
+        .pho__head input{flex:1;padding:.45em .7em;border:1px solid var(--color-border);font:inherit;font-size:14px;}
+        .pho__url{display:flex;gap:var(--space-2);padding:6px var(--space-4) var(--space-2);font-size:12px;align-items:center;color:var(--color-salt);}
+        .pho__url input{flex:1;padding:.35em .6em;border:1px solid var(--color-border);font:inherit;font-size:12px;}
+        .pho__grid{overflow:auto;padding:var(--space-3) var(--space-4) var(--space-4);display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}
+        .pho__item{cursor:pointer;border:1px solid var(--color-border);background:var(--color-subtle);overflow:hidden;text-align:left;padding:0;font:inherit;}
+        .pho__item:hover{border-color:var(--color-sea);}
+        .pho__item img{display:block;width:100%;height:88px;object-fit:cover;background:#eee;filter:grayscale(1);}
+        .pho__item .nm{display:block;font-family:var(--font-mono);font-size:10px;color:var(--color-muted);padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .pho__empty{padding:var(--space-6);text-align:center;color:var(--color-muted);font-size:13px;font-style:italic;}
+        .pho__x{margin-left:auto;background:none;border:none;font-size:22px;cursor:pointer;color:var(--color-muted);line-height:1;}
         .sp-card__foot{margin-top:auto;display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap;border-top:1px solid var(--color-subtle);padding-top:var(--space-3);}
         .sp-btn{background:none;border:1px solid var(--color-border);color:var(--color-muted);cursor:pointer;font-size:12px;padding:.35em .7em;border-radius:3px;}
         .sp-btn:hover{border-color:var(--color-sea);color:var(--color-sea);}
@@ -110,7 +129,7 @@
         var isArticle = !!slug && /^[a-z0-9-]+$/i.test(slug);
         var $ = function (id) { return document.getElementById(id); };
         var main = $('sp-main');
-        var esc = function (s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; };
+        var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
 
         // optimal posting slots, ranked best-first (food/IG best practice)
         var OPTIMAL = [
@@ -173,7 +192,14 @@
             main.innerHTML = html;
         }
 
-        function safeUrl(u) { u = (u || '').trim(); return /^https?:\/\/[^\s'"()<>\\`]+$/i.test(u) ? u : ''; }
+        // same-origin repo paths (photo library) or plain https URLs; repo paths also
+        // survive the canvas PNG export, which external hosts often block via CORS
+        function safeUrl(u) {
+            u = (u || '').trim();
+            if (/^https?:\/\/[^\s'"()<>\\`]+$/i.test(u)) return u;
+            if (/^(assets|terroir)\/[A-Za-z0-9_\-./]+$/.test(u) && u.indexOf('..') === -1) return u;
+            return '';
+        }
         function poster(entry, p, s) {
             var photo = safeUrl(s.photo[p.id]);
             var sub = (p.subhook || '').trim();
@@ -192,9 +218,11 @@
             return '<div class="sp-card' + (on ? ' fav' : '') + '" data-id="' + esc(p.id) + '">' +
                 poster(entry, p, s) +
                 '<div class="sp-card__body">' +
+                (p.fact ? '<div class="sp-fact"><b>A chef learns</b>' + esc(p.fact) + '</div>' : '') +
                 '<div class="sp-caption">' + esc(p.caption) + '</div>' +
                 '<div class="sp-tags">' + esc((p.hashtags || []).map(function (h) { return h[0] === '#' ? h : '#' + h; }).join(' ')) + '</div>' +
                 '<div class="sp-meta"><span class="sp-slot">' + esc(slotLabel(p.slot)) + '</span><span>·</span><span>' + esc(p.type) + '</span></div>' +
+                (p.brief ? '<div class="sp-brief">ART — ' + esc(p.brief) + '</div>' : '') +
                 '<div class="sp-why">' + esc(p.why) + '</div>' +
                 '<div class="sp-card__foot">' +
                 '<button class="sp-btn sp-btn--fav' + (on ? ' on' : '') + '" data-fav="' + esc(p.id) + '">' + (on ? '♥ Favourited' : '♡ Favourite') + '</button>' +
@@ -228,16 +256,74 @@
             if (needAuth()) return;
             socDoc(slug).set({ del: [] }, { merge: true }).catch(err);
         }
-        function addPhoto(id) {
+        function setPhoto(id, url) {
             if (needAuth()) return;
-            var cur = getSel(slug).photo[id] || '';
-            var url = prompt('Paste an image URL (https://…) for this post — leave blank to clear:', cur);
-            if (url === null) return;
-            url = url.trim();
-            if (url && !safeUrl(url)) { flash('needs a plain https:// image URL', true); return; }
+            url = (url || '').trim();
+            if (url && !safeUrl(url)) { flash('needs a repo photo or a plain https:// image URL', true); return; }
             var patch = {}; patch[id] = url || FV.delete();
             socDoc(slug).set({ photo: patch }, { merge: true }).catch(err);
         }
+
+        // ---- photo picker: the B&W library first, external URL as fallback ----
+        var photoLib = null, photoLoaded = false, photoTarget = null, photoModal = null;
+        function loadPhotoLib() {
+            if (photoLoaded) return Promise.resolve(photoLib);
+            return fetch('data/photo-library.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : { photos: [] }; })
+                .then(function (d) { photoLib = (d && d.photos) || []; photoLoaded = true; return photoLib; })
+                .catch(function () { photoLib = []; photoLoaded = true; return photoLib; });
+        }
+        var photoOpener = null;
+        function buildPhotoModal() {
+            if (photoModal) return photoModal;
+            var m = document.createElement('div'); m.className = 'pho';
+            m.setAttribute('role', 'dialog'); m.setAttribute('aria-modal', 'true'); m.setAttribute('aria-label', 'Choose a photo for this post');
+            m.innerHTML = '<div class="pho__box">' +
+                '<div class="pho__head"><h3>Post photo</h3>' +
+                '<input id="pho-search" type="text" placeholder="Search the photo library…" autocomplete="off">' +
+                '<button class="pho__x" id="pho-close" title="Close">&times;</button></div>' +
+                '<div class="pho__url"><span>or URL:</span><input id="pho-url" type="text" placeholder="https://…">' +
+                '<button class="sp-btn" id="pho-url-set" type="button">Use</button>' +
+                '<button class="sp-btn" id="pho-clear" type="button" title="Remove the photo from this post">Clear</button></div>' +
+                '<div class="pho__grid" id="pho-grid"></div></div>';
+            document.body.appendChild(m);
+            m.addEventListener('click', function (e) { if (e.target === m) closePhotoPicker(); });
+            m.querySelector('#pho-close').addEventListener('click', closePhotoPicker);
+            m.querySelector('#pho-search').addEventListener('input', function () { renderPhotoGrid(this.value); });
+            m.querySelector('#pho-url-set').addEventListener('click', function () {
+                setPhoto(photoTarget, m.querySelector('#pho-url').value); closePhotoPicker();
+            });
+            m.querySelector('#pho-clear').addEventListener('click', function () { setPhoto(photoTarget, ''); closePhotoPicker(); });
+            m.querySelector('#pho-grid').addEventListener('click', function (e) {
+                var b = e.target.closest && e.target.closest('.pho__item');
+                if (b) { setPhoto(photoTarget, b.getAttribute('data-path')); closePhotoPicker(); }
+            });
+            photoModal = m; return m;
+        }
+        function renderPhotoGrid(q) {
+            var grid = document.getElementById('pho-grid'); q = (q || '').toLowerCase().trim();
+            var list = (photoLib || []).filter(function (p) { return !q || (p.name + ' ' + p.path + ' ' + (p.group || '')).toLowerCase().indexOf(q) !== -1; });
+            if (!list.length) { grid.innerHTML = '<div class="pho__empty">No photos match. Drop images in <code>assets/photos/</code>, then run <code>node tools/photos.mjs</code> — or paste a URL above.</div>'; return; }
+            grid.innerHTML = list.map(function (p) {
+                return '<button class="pho__item" type="button" data-path="' + esc(p.path) + '">' +
+                    '<img loading="lazy" src="' + esc(p.path) + '" alt=""><span class="nm">' + esc(p.name) + '</span></button>';
+            }).join('');
+        }
+        function addPhoto(id) {
+            if (needAuth()) return;
+            photoTarget = id;
+            photoOpener = (document.activeElement && document.activeElement.focus) ? document.activeElement : null;
+            buildPhotoModal().classList.add('open');
+            var se = document.getElementById('pho-search'); se.value = '';
+            document.getElementById('pho-url').value = getSel(slug).photo[id] || '';
+            document.getElementById('pho-grid').innerHTML = '<div class="pho__empty">Loading photos…</div>';
+            loadPhotoLib().then(function () { renderPhotoGrid(''); se.focus(); });
+        }
+        function closePhotoPicker() {
+            if (photoModal) photoModal.classList.remove('open');
+            if (photoOpener && document.contains(photoOpener)) { try { photoOpener.focus(); } catch (e) {} }
+            photoOpener = null;
+        }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && photoModal && photoModal.classList.contains('open')) closePhotoPicker(); });
         function copyCaption(entry, id) {
             var p = (entry.posts || []).filter(function (x) { return x.id === id; })[0]; if (!p) return;
             var txt = p.caption + '\n\n' + (p.hashtags || []).map(function (h) { return h[0] === '#' ? h : '#' + h; }).join(' ');
