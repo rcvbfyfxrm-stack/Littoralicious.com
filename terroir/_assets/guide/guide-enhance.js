@@ -18,6 +18,17 @@
   'use strict';
 
   var RANK = {
+    'DIV.etymon': 9,
+    'DETAILS#story-box': 13.7,
+    'DETAILS#quartiers': 35,
+    'DETAILS#landmarks': 34.6,
+    'DETAILS#hotel-bars': 32.75,
+    'DETAILS#natural-wine': 40.3,
+    'DETAILS#listening': 41.7,
+    'DETAILS#around': 46,
+    'DETAILS#provisioning': 37.5,
+    'DETAILS#st-tropez': 44.5,
+    'DETAILS#linger': 33,  // +terroir gold sections
     'DIV.lead': 1, 'DIV.funfact': 2, 'DIV.instructions': 3, 'DIV.alert': 4,
     'DIV#gx-search': 5, 'SECTION#soul': 6,
     // I — the place  (publish-terroir guides emit these as <details>, GOLD as <section>; map both)

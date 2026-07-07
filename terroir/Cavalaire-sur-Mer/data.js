@@ -1,40 +1,18 @@
 /* Terroir — Cavalaire-sur-Mer — generated Cavalaire-sur-Mer */
 window.TERROIR_DATA = (function () {
-  const COLORS = {"berth":"#c4a35a","market":"#d97706","shop":"#059669","wine":"#7c2d12","mainland":"#7c3aed","logistics":"#2d4a5e"};
-  const CAT_LABELS = {"berth":"Signature","market":"Market","shop":"Restaurant / Bar","wine":"Winery","mainland":"Out of town","logistics":"Logistics"};
-  const PRODUCT_COLORS = {"Michelin":"#7f1d1d","Seafood":"#3b82f6","Wine":"#7c2d12","Rosé":"#e8b4b8","Provençal":"#a16207","Bar":"#7c3aed","Bistro":"#1f2937","Café":"#6b4226"};
-  const CATEGORIES = [
- {
-  "key": "tables",
-  "label": "The tables",
-  "lead": "The proper restaurants worth booking."
- },
- {
-  "key": "local",
-  "label": "Local & everyday",
-  "lead": "Where locals actually eat — honest, unfussy, good value."
- },
- {
-  "key": "beach",
-  "label": "Beach tables",
-  "lead": "The beach places worth the sand and the seafront markup."
- }
-];
-  const GROUPS = [];
-  const GROUP_OF = {};
   const VENUES = [
  {
   "id": "v-la-palmeraie-chateau-de-valmer",
   "cat": "shop",
-  "tier": "plenty",
+  "tier": "berth_top",
   "priority": 1,
-  "badge": "1 MICHELIN S",
+  "badge": "1 MICHELIN STAR · ",
   "name": "La Palmeraie — Château de Valmer",
   "short": "La Palmeraie — Château de Valmer",
   "lat": 43.1889,
   "lng": 6.5776,
   "tags": [
-   "A grove of hundred-year-old palms, an organic potager, and a Burgundy chef who trained under Lameloise, Meneau and Marcon before bringing a Michelin star to a garden table just back from Gigaro beach."
+   "Provençal gastronomy · 1 Michelin star (Relais & Châteaux)"
   ],
   "productTags": [
    "Provençal gastronomy · 1 Michelin star (Relais & Châteaux)"
@@ -42,7 +20,7 @@ window.TERROIR_DATA = (function () {
   "why": "A grove of hundred-year-old palms, an organic potager, and a Burgundy chef who trained under Lameloise, Meneau and Marcon before bringing a Michelin star to a garden table just back from Gigaro beach.",
   "address": "Château de Valmer, 81 boulevard de Gigaro, 83420 La Croix-Valmer, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Palmeraie+%E2%80%94+Ch%C3%A2teau+de+Valmer+Cavalaire-sur-Mer",
-  "category": "tables",
+  "category": "grande",
   "subcat": "Provençal gastronomy · 1 Michelin star (Relais & Châteaux)",
   "money_eats": false,
   "verdict": "A one-star Relais & Châteaux dining room under a grove of century-old palms above Gigaro, where Alexandre Fabris builds three Provençal set menus — one entirely vegetarian — around vegetables, herbs and flowers just-picked from the estate's organic potager. Confirmed one star in the 2026 Michelin Guide France, and open only for the summer season.",
@@ -58,15 +36,15 @@ window.TERROIR_DATA = (function () {
  {
   "id": "v-vista-lily-of-the-valley",
   "cat": "shop",
-  "tier": "plenty",
+  "tier": "berth_top",
   "priority": 2,
-  "badge": "GAULT&MILLAU",
+  "badge": "GAULT&MILLAU 13/20",
   "name": "Vista — Lily of the Valley",
   "short": "Vista — Lily of the Valley",
   "lat": 43.1826,
   "lng": 6.5798,
   "tags": [
-   "Ducasse and Savoy trained his hands; the Gigaro hillside gave him the light. Vincent Maillard's Vista isn't a temple of haute cuisine — it's a five-star terrace above the sea where Provence arrives sun-warmed, priced for the view, honest about being exactly that."
+   "Mediterranean · five-star hotel restaurant"
   ],
   "productTags": [
    "Mediterranean · five-star hotel restaurant"
@@ -74,7 +52,7 @@ window.TERROIR_DATA = (function () {
   "why": "Ducasse and Savoy trained his hands; the Gigaro hillside gave him the light. Vincent Maillard's Vista isn't a temple of haute cuisine — it's a five-star terrace above the sea where Provence arrives sun-warmed, priced for the view, honest about being exactly that.",
   "address": "Lily of the Valley, Colline Saint-Michel, Bd Abel Faivre, Quartier de Gigaro (Plage de Gigaro), 83420 La Croix-Valmer, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Vista+%E2%80%94+Lily+of+the+Valley+Cavalaire-sur-Mer",
-  "category": "tables",
+  "category": "petite",
   "subcat": "Mediterranean · five-star hotel restaurant",
   "money_eats": false,
   "verdict": "Order the Sisteron lamb shoulder braised with savory (€98, to share) and you'll taste why Gault&Millau gives it 13/20 (2026); à la carte runs roughly €25–150 a plate at a five-star hotel table with a sea-facing terrace — not a Michelin star it doesn't hold.",
@@ -90,15 +68,15 @@ window.TERROIR_DATA = (function () {
  {
   "id": "v-les-saisonniers",
   "cat": "shop",
-  "tier": "plenty",
+  "tier": "berth_top",
   "priority": 3,
-  "badge": "GAULT&MILLAU",
+  "badge": "GAULT&MILLAU + MIC",
   "name": "Les Saisonniers",
   "short": "Les Saisonniers",
   "lat": 43.2071,
   "lng": 6.5688,
   "tags": [
-   "The sleeper. Two pastry chefs who spent years inside Cheval Blanc's three-star Vague d'Or under Arnaud Donckele — and winters at Vauxion's two-star Sarkara — walked out of the palace to cook a short Mediterranean carte in a village room above the municipal pool. No seafront, no spectacle: pumpkin tartlet under goat-cheese ice cream, squid stuffed with ratatouille, mushroom ravioli, a weekend brunch of house-made pastries. You go for the hands, not the horizon."
+   "Modern Mediterranean / village neo-bistro"
   ],
   "productTags": [
    "Modern Mediterranean / village neo-bistro"
@@ -106,7 +84,7 @@ window.TERROIR_DATA = (function () {
   "why": "The sleeper. Two pastry chefs who spent years inside Cheval Blanc's three-star Vague d'Or under Arnaud Donckele — and winters at Vauxion's two-star Sarkara — walked out of the palace to cook a short Mediterranean carte in a village room above the municipal pool. No seafront, no spectacle: pumpkin tartlet under goat-cheese ice cream, squid stuffed with ratatouille, mushroom ravioli, a weekend brunch of house-made pastries. You go for the hands, not the horizon.",
   "address": "Boulevard de Tahiti (Les Palmiers II), 83420 La Croix-Valmer — in the village, above the municipal pool",
   "maps": "https://www.google.com/maps/search/?api=1&query=Les+Saisonniers+Cavalaire-sur-Mer",
-  "category": "tables",
+  "category": "grande",
   "subcat": "Modern Mediterranean / village neo-bistro",
   "money_eats": true,
   "verdict": "Three-star-trained pastry precision at village-bistro prices (~€45-60 a head), on a short, market-driven carte that turns with the season. Order the pumpkin tartlet under goat-cheese ice cream or the ratatouille-stuffed squid. Wrong choice only if you need a sea view or a table open all week.",
@@ -124,13 +102,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 4,
-  "badge": "GAULT&MILLAU",
+  "badge": "GAULT&MILLAU: THE ",
   "name": "Le Parc — L'Hôtel du Parc",
   "short": "Le Parc — L'Hôtel du Parc",
   "lat": 43.186937,
   "lng": 6.5383919,
   "tags": [
-   "Cavalaire has beaches, a marina, and — until recently — nowhere the guides bothered to sit down. Then the old Hôtel du Parc was reborn Tuscan-style, and Jean-Brice Ruffroy set up a bistronomic table under the pines. It's the one address in town the guides actually notice."
+   "bistronomic hotel table"
   ],
   "productTags": [
    "bistronomic hotel table"
@@ -138,7 +116,7 @@ window.TERROIR_DATA = (function () {
   "why": "Cavalaire has beaches, a marina, and — until recently — nowhere the guides bothered to sit down. Then the old Hôtel du Parc was reborn Tuscan-style, and Jean-Brice Ruffroy set up a bistronomic table under the pines. It's the one address in town the guides actually notice.",
   "address": "7 avenue du Fleuriste, 83240 Cavalaire-sur-Mer, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Parc+%E2%80%94+L'H%C3%B4tel+du+Parc+Cavalaire-sur-Mer",
-  "category": "tables",
+  "category": "grande",
   "subcat": "bistronomic hotel table",
   "money_eats": false,
   "verdict": "In a town with no Michelin table, this is the one credible sit-down. Chef Jean-Brice Ruffroy, a veteran of starred kitchens, runs a bistronomic carte off named Provençal produce — Provence asparagus, Sisteron lamb, Perthuis potatoes — and the pêche du jour, served in the dining room or on the terrace over the park. Falsifiable: if you sit down and the menu isn't built on that named local sourcing plus a daily catch, this card is wrong.",
@@ -156,13 +134,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 5,
-  "badge": "GAULT&MILLAU",
+  "badge": "GAULT&MILLAU 12/20",
   "name": "La Pinède Plage",
   "short": "La Pinède Plage",
   "lat": 43.1757,
   "lng": 6.5877,
   "tags": [
-   "Feet near the sand, the Îles d'Or on the horizon, octopus under lemon confit."
+   "private-beach Mediterranean seafood"
   ],
   "productTags": [
    "private-beach Mediterranean seafood"
@@ -194,7 +172,7 @@ window.TERROIR_DATA = (function () {
   "lat": 43.1840552,
   "lng": 6.5985997,
   "tags": [
-   "Dinner with your feet in the sand at the far, unhurried end of Gigaro — a Provençal homecoming Arthur and Sarah named for his grandfather."
+   "Beach restaurant, pieds dans l'eau (contemporary Provençal + grilled fish)"
   ],
   "productTags": [
    "Beach restaurant, pieds dans l'eau (contemporary Provençal + grilled fish)"
@@ -215,13 +193,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 7,
-  "badge": "LITTLE WEEKE",
+  "badge": "LITTLE WEEKENDS · ",
   "name": "Tamaris Beach",
   "short": "Tamaris Beach",
   "lat": 43.1752,
   "lng": 6.5343,
   "tags": [
-   "The tonnelle de paille is the roof and the lapping water is the soundtrack — you order the fish because it was landed nearby, not because the kitchen is reaching for anything."
+   "private-beach lunch restaurant"
   ],
   "productTags": [
    "private-beach lunch restaurant"
@@ -246,13 +224,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 8,
-  "badge": "PUDLOWSKI, 2",
+  "badge": "PUDLOWSKI, 2022",
   "name": "Maurin des Maures",
   "short": "Maurin des Maures",
   "lat": 43.158,
   "lng": 6.473,
   "tags": [
-   "An old workmen's bar-tabac from the 1920s on the Corniche des Maures, still run by the white-moustached Dédé — the man whose bouillabaisse, Pudlowski says, once made Jacques Chirac, the presidential neighbour along the coast at Brégançon, salivate. The sea-view dining room looks straight out over the Bay of Rayol to the isles of Levant, Port-Cros and Bagaud (a second terrace faces the village); reserve, and call ahead the day before for the pot."
+   "Provençal bistrot / coast institution"
   ],
   "productTags": [
    "Provençal bistrot / coast institution"
@@ -284,7 +262,7 @@ window.TERROIR_DATA = (function () {
   "lat": 43.17086,
   "lng": 6.535284,
   "tags": [
-   "On the Nouveau Port at Cavalaire the masts click in the wind and the terraces sit almost at the waterline. Among them is the table you eat at when you want Provence on the plate — pissaladière, a proper aïoli, a daube of beef cheek — and the boats for a view, with no badge on the door to do the talking."
+   "Provençal port table"
   ],
   "productTags": [
    "Provençal port table"
@@ -305,13 +283,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 10,
-  "badge": "LITTLE WEEKE",
+  "badge": "LITTLE WEEKENDS — ",
   "name": "Le Grand Bleu — Hôtel de la Calanque",
   "short": "Le Grand Bleu — Hôtel de la Calanque",
   "lat": 43.1686,
   "lng": 6.5451,
   "tags": [
-   "Come for the drop-to-the-sea view over the Cron calanque."
+   "Cliffside seafood terrace"
   ],
   "productTags": [
    "Cliffside seafood terrace"
@@ -342,7 +320,7 @@ window.TERROIR_DATA = (function () {
   "lat": 43.1878,
   "lng": 6.579,
   "tags": [
-   "Founded in 1964 under Gigaro's centenary parasol pines and reborn with a broad sea-view terrace in 2019, the kitchen answers to the season and local fishermen — not to any guide."
+   "Seaside seasonal table"
   ],
   "productTags": [
    "Seaside seasonal table"
@@ -368,7 +346,7 @@ window.TERROIR_DATA = (function () {
   "lat": 43.1554,
   "lng": 6.4806,
   "tags": [
-   "A botanical garden of the world's Mediterranean coasts — and lunch on a terrace in the middle of it."
+   "Garden café / botanical-garden lunch"
   ],
   "productTags": [
    "Garden café / botanical-garden lunch"
@@ -389,13 +367,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 13,
-  "badge": "SIBLING OF V",
+  "badge": "SIBLING OF VISTA, ",
   "name": "La Brigantine — Lily of the Valley beach club",
   "short": "La Brigantine — Lily of the Valley beach club",
   "lat": 43.1818,
   "lng": 6.5895,
   "tags": [
-   "Where the Gigaro sand runs out into the umbrella pines, the Lily of the Valley drops a table to sea level and cooks Italy — from the northern lakes down to Sicily — beside a wood-fired oven."
+   "Italian beach-club table"
   ],
   "productTags": [
    "Italian beach-club table"
@@ -421,13 +399,13 @@ window.TERROIR_DATA = (function () {
   "cat": "shop",
   "tier": "plenty",
   "priority": 14,
-  "badge": "\"BEST MOJITO",
+  "badge": "\"BEST MOJITOS IN T",
   "name": "Ô Petit Bar",
   "short": "Ô Petit Bar",
   "lat": 43.1729,
   "lng": 6.5338,
   "tags": [
-   "For the drink, not the dinner: a small harbour bar the port actually uses for its sundown apéro, with an open view over the marina and — per the travel blog Little Weekends — the best mojitos around, poured evenings until 1am."
+   "Port apéro & cocktail bar"
   ],
   "productTags": [
    "Port apéro & cocktail bar"
@@ -447,8 +425,283 @@ window.TERROIR_DATA = (function () {
    "full": "The curated travel guide Little Weekends singles it out in its Cavalaire-sur-Mer address list, verbatim: \"Ô Petit Bar est un bar convivial où l'on vient savourer de délicieux cocktails (dont les meilleurs mojitos de la région) tout en bénéficiant d'une vue imprenable sur le port.\" It is a blog mention, not a formal ranking — no Michelin/50 Best applies to a port bar this size.",
    "cosign": "Little Weekends, Cavalaire-sur-Mer city guide (littleweekends.fr, accessed 2026)"
   }
+ },
+ {
+  "id": "v-la-voile-la-reserve-ramatuelle",
+  "cat": "shop",
+  "tier": "several",
+  "priority": 15,
+  "badge": "MICHELIN TWO STARS",
+  "name": "La Voile - La Reserve Ramatuelle",
+  "short": "La Voile - La Reserve Ramatuelle",
+  "neighborhood": "Ramatuelle (La Reserve, hills above Pampelonne)",
+  "tags": [
+   "Two MICHELIN Stars, light Mediterranean",
+   "Ramatuelle"
+  ],
+  "productTags": [
+   "fine-dining",
+   "mediterranean",
+   "seafood"
+  ],
+  "why": "La Reserve Ramatuelle is Michel Reybier's clifftop hotel above Pampelonne, and its restaurant is the peninsula's long-standing benchmark for light, health-minded fine dining. The one real thing to learn: chef Eric Canino trained with Michel Guerard, the man who invented 'cuisine minceur' in the 1970s, and that low-fat, produce-first philosophy is exactly why the plates here read as clarity rather than richness. Verified fact: La Voile holds two MICHELIN stars in the 2026 Guide.",
+  "address": "Chemin de la Quessine, 83350 Ramatuelle",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Voile+-+La+Reserve+Ramatuelle+Cavalaire-sur-Mer+Var",
+  "category": "grande",
+  "subcat": "Two MICHELIN Stars, light Mediterranean",
+  "money_eats": false,
+  "verdict": "This is the most decorated kitchen on the Saint-Tropez peninsula and it earns the fireworks by subtraction rather than excess, cooking in the wellness lineage that shaped it. Falsifiable claim: La Voile holds two MICHELIN stars in the 2026 MICHELIN Guide France.",
+  "signature": "Whatever garden-and-day-boat course is running, the crudites and vegetable plates, then a line-caught fish; Canino built his name on making a tomato or a courgette taste like the whole coastline.",
+  "person": "Eric Canino",
+  "caveat": "Price and booking: hotel-restaurant, menu-led prices well into three figures; dinner reservations essential and summer books solid. It closes out of season, so a winter visit finds it dark.",
+  "hook": "The peninsula's high altar of clear, olive-oil cooking, in a room that seems to float between the umbrella pines and the sea.",
+  "signal_chip": {
+   "label": "MICHELIN TWO STARS",
+   "full": "Two MICHELIN Stars, MICHELIN Guide France 2026",
+   "cosign": "Chef Eric Canino, in the Michel Guerard 'cuisine minceur' lineage"
+  }
+ },
+ {
+  "id": "v-bello-visto",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 16,
+  "badge": "MICHELIN BIB GOURM",
+  "name": "Bello Visto",
+  "short": "Bello Visto",
+  "neighborhood": "Gassin (perched village ramparts)",
+  "tags": [
+   "MICHELIN Bib Gourmand, ramparts terrace",
+   "Gassin"
+  ],
+  "productTags": [
+   "bib-gourmand",
+   "provencal",
+   "sea-view"
+  ],
+  "why": "Gassin is one of France's officially classified 'plus beaux villages,' a hill fort above the vineyards, and Bello Visto sits right on its ramparts (the 'Barri') over the Gulf of Saint-Tropez. The real thing to learn: the MICHELIN Bib Gourmand exists specifically to flag good cooking at moderate prices, and Bello Visto is a textbook case, chef-owner Sylvain Humbert and his wife Laurence running a small hotel-restaurant with a terroir-driven Provencal card. Verified fact: Bib Gourmand plus two Gault&Millau toques.",
+  "address": "Place deis Barri, old village, 83580 Gassin",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bello+Visto+Cavalaire-sur-Mer+Var",
+  "category": "petite",
+  "subcat": "MICHELIN Bib Gourmand, ramparts terrace",
+  "money_eats": true,
+  "verdict": "This is where value and view collide: a family chef-owner cooking real Provencal at menu prices that undercut everything starred nearby. Falsifiable claim: it holds a MICHELIN Bib Gourmand and two Gault&Millau toques, with set menus running roughly 39 to 54 euros.",
+  "signature": "The seasonal Provencal mains and the day's fish and octopus preparations; ask for the day's suggestion and sit on the rampart terrace at sunset, not inside.",
+  "person": "Sylvain Humbert",
+  "caveat": "Booking: the famous view means the terrace tables are fought over, so reserve and request outside. It is a small village hotel-restaurant, not a scene, which is exactly the appeal.",
+  "hook": "Arguably the best-value serious meal on the peninsula, eaten on Gassin's medieval ramparts with the whole gulf laid out below.",
+  "signal_chip": {
+   "label": "MICHELIN BIB GOURM",
+   "full": "MICHELIN Bib Gourmand (value distinction) and two Gault&Millau toques",
+   "cosign": "Chef-owner Sylvain and Laurence Humbert; ramparts terrace over the Gulf of Saint-Tropez"
+  }
+ },
+ {
+  "id": "v-la-verdoyante",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 17,
+  "badge": "MICHELIN GUIDE LIS",
+  "name": "La Verdoyante",
+  "short": "La Verdoyante",
+  "neighborhood": "Gassin (in the vineyards below the village)",
+  "tags": [
+   "Family Provencal, garrigue cooking",
+   "Gassin"
+  ],
+  "productTags": [
+   "provencal",
+   "garrigue",
+   "vineyard-view"
+  ],
+  "why": "La Verdoyante occupies a former rustic farmhouse in the vineyards below hilltop Gassin, terrace open over the domaines and the gulf. The real thing to learn: 'garrigue' is the low, aromatic scrubland of thyme, rosemary and juniper that carpets these hills, and it is literally what the kitchen means when the food is said to taste of the place. Verified fact: it has been run by the Mouret family since 1979, appears in the MICHELIN Guide, and ranks #3 of 24 Gassin restaurants on TripAdvisor with 630+ reviews and a 2024 Travelers' Choice award.",
+  "address": "866 chemin vicinal de Coste-Brigade, 83580 Gassin",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Verdoyante+Cavalaire-sur-Mer+Var",
+  "category": "petite",
+  "subcat": "Family Provencal, garrigue cooking",
+  "money_eats": true,
+  "verdict": "The anti-Saint-Tropez table: no scene, no DJ, just seasonal Provencal in a green fold of vineyard run by the same family for over four decades. Falsifiable claim: the Mouret family has held it since 1979 and it is listed in the MICHELIN Guide.",
+  "signature": "Whatever is built on the day's garden and herbs, the kitchen leans hard into thyme-and-rosemary garrigue flavours, plus classics like fish soup and bourride; the panoramic terrace over the domaines is the reason to book lunch.",
+  "person": "",
+  "caveat": "Seasonal (roughly spring to autumn) and it is out among the vineyards, so you need a car. Honesty by negation: comfort and setting over cutting-edge cooking.",
+  "hook": "A former farmhouse folded into the vines below Gassin, where one family has cooked garrigue-scented Provencal since 1979.",
+  "signal_chip": {
+   "label": "MICHELIN GUIDE LIS",
+   "full": "In the MICHELIN Guide; #3 of 24 in Gassin on TripAdvisor, 630+ reviews, Travelers' Choice 2024",
+   "cosign": "Mouret family, same owners since 1979"
+  }
+ },
+ {
+  "id": "v-la-forge",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 18,
+  "badge": "REGIONAL PRESS PIC",
+  "name": "La Forge",
+  "short": "La Forge",
+  "neighborhood": "Ramatuelle (perched village centre)",
+  "tags": [
+   "Village Italian, sea-view terrace",
+   "Ramatuelle"
+  ],
+  "productTags": [
+   "italian",
+   "fresh-pasta",
+   "village"
+  ],
+  "why": "La Forge sits in a former forge in the medieval centre of Ramatuelle, with a panoramic terrace toward the sea. The real thing to learn: much of the 'Italian' food on this coast is French-Provencal in disguise, so a kitchen actually run by natives of Le Marche and the Lake Maggiore side of Piedmont, cooking their own regions with homemade pasta and bread, is genuinely rarer here than a Michelin star. Verified detail: regional critics Jacques Gantie and Gilles Pudlowski single it out as the village's standout Italian, led by chef Paolo Amadori with Francesca Alessi.",
+  "address": "Rue Victor Leon, 83350 Ramatuelle",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Forge+Cavalaire-sur-Mer+Var",
+  "category": "petite",
+  "subcat": "Village Italian, sea-view terrace",
+  "money_eats": false,
+  "verdict": "Ramatuelle village's most convincing non-French table: a chef from Le Marche and a Piedmont-Lake-Maggiore host who cook Italy straight, from a panoramic terrace in an old forge. Falsifiable claim: it is run by chef Paolo Amadori and Francesca Alessi, both Italian-born, not a French 'trattoria' concept.",
+  "signature": "Fresh house-made pasta and bread and the day's Italian fish; the kitchen cooks regional Italy, so order whatever is most Italian and least generic Cote d'Azur.",
+  "person": "Paolo Amadori",
+  "caveat": "Price and booking: this is village-near-Saint-Tropez pricing and summer-busy, and the good terrace tables need reserving. Honest cooking, not a bargain.",
+  "hook": "Serious Italian cooking in the heart of the perched village of Ramatuelle, run by an actual Italian couple rather than a Riviera pastiche.",
+  "signal_chip": {
+   "label": "REGIONAL PRESS PIC",
+   "full": "Highlighted by critics Jacques Gantie and Gilles Pudlowski as Ramatuelle village's standout Italian",
+   "cosign": "Chef Paolo Amadori (Le Marche) and Francesca Alessi (Lake Maggiore, Piedmont)"
+  }
+ },
+ {
+  "id": "v-la-brigantine",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 19,
+  "badge": "PRAISED BY GILLES ",
+  "name": "La Brigantine",
+  "short": "La Brigantine",
+  "neighborhood": "La Croix-Valmer (Gigaro beach)",
+  "tags": [
+   "Beach trattoria, Gigaro sand",
+   "La Croix-Valmer"
+  ],
+  "productTags": [
+   "italian",
+   "beach",
+   "pasta"
+  ],
+  "why": "La Brigantine is a chic trattoria on Gigaro beach in La Croix-Valmer, part of the Lily of the Valley hotel group, with Breton chef Charley Bouhier cooking Italian from the northern lakes to Sicily. The real thing to learn: Gigaro is the peninsula's quiet counter-Pampelonne, a low-key sand-and-pine cove that is the trailhead for the sentier du littoral coastal path. Verified detail: critic Gilles Pudlowski praises it warmly, and its 2026 season opens on 12 February, far earlier than a summer-only beach table.",
+  "address": "Boulevard de Gigaro, 83420 La Croix-Valmer",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Brigantine+Cavalaire-sur-Mer+Var",
+  "category": "petite",
+  "subcat": "Beach trattoria, Gigaro sand",
+  "money_eats": false,
+  "verdict": "The rare beach restaurant where the food is not an afterthought, backed by the Lily of the Valley group so the kitchen has real muscle, and warmly rated by critic Pudlowski. Falsifiable claim: chef Charley Bouhier, a Breton, cooks Italian here, and its 2026 season opens on 12 February, far earlier than a typical beach restaurant.",
+  "signature": "The house focaccia, fresh pasta and Italian-fish plates; it sits on Gigaro, the peninsula's calm western shore, rather than glitzy Pampelonne, so you get the sea and the cooking without the scrum.",
+  "person": "Charley Bouhier",
+  "caveat": "Price and season: beach-restaurant tariffs (roughly 70 to 150 euros a head) for what is, at heart, lunch by the sea; book the sea-front tables, and note it is seasonal.",
+  "hook": "Feet-near-the-sand Italian on the quiet Gigaro beach, cooked by a Breton chef who takes his pasta seriously.",
+  "signal_chip": {
+   "label": "PRAISED BY GILLES ",
+   "full": "Warmly reviewed by critic Gilles Pudlowski; part of the Lily of the Valley group",
+   "cosign": "Chef Charley Bouhier"
+  }
+ },
+ {
+  "id": "v-l-auberge-de-l-oumede",
+  "cat": "shop",
+  "tier": "plenty",
+  "priority": 20,
+  "badge": "TRIPADVISOR LISTED",
+  "name": "L'Auberge de l'Oumede",
+  "short": "L'Auberge de l'Oumede",
+  "neighborhood": "Ramatuelle (vineyards, near Pampelonne)",
+  "tags": [
+   "Vineyard auberge, quiet dinner",
+   "Ramatuelle"
+  ],
+  "productTags": [
+   "provencal",
+   "vineyard",
+   "quiet"
+  ],
+  "why": "L'Auberge de l'Oumede is a small Provencal charm-residence set in the vineyards of Ramatuelle, a short drive from the Pampelonne beaches and Saint-Tropez, prized above all for its calm and its vine-facing terrace about 2 km from the beach. The real thing to learn: on this peninsula, a genuinely quiet table in high summer is scarcer and arguably more valuable than an ambitious one. Verified fact: for 2026 it opens daily from 1 May to 4 October.",
+  "address": "833 Chemin de l'Oumede, 83350 Ramatuelle",
+  "maps": "https://www.google.com/maps/search/?api=1&query=L'Auberge+de+l'Oumede+Cavalaire-sur-Mer+Var",
+  "category": "petite",
+  "subcat": "Vineyard auberge, quiet dinner",
+  "money_eats": false,
+  "verdict": "Honesty by negation: the appeal here is the setting, a small Provencal auberge among the vines with a terrace, pool and real quiet, and the food is good rather than transcendent. Falsifiable claim: it opens only for the season, daily from 1 May to 4 October 2026.",
+  "signature": "The Provencal dinner on the vineyard terrace at dusk; come for the setting and a bottle of local Cotes de Provence rose rather than any single show-stopping dish.",
+  "person": "",
+  "caveat": "Honest value warning: several guests find the cooking good-not-exceptional for the prices (starters 30 euros-plus, mains 50 euros-plus). Seasonal, book ahead, and remember it is really a small hotel that also serves dinner.",
+  "hook": "A hushed vineyard hideaway in the Ramatuelle vines, minutes from Pampelonne but a world away from the noise.",
+  "signal_chip": {
+   "label": "TRIPADVISOR LISTED",
+   "full": "Small vineyard auberge; open daily 1 May to 4 October 2026; mixed value reviews",
+   "cosign": ""
+  }
  }
 ];
+  const COLORS = {
+ "berth": "#c4a35a",
+ "market": "#d97706",
+ "shop": "#059669",
+ "wine": "#7c2d12",
+ "mainland": "#7c3aed",
+ "logistics": "#2d4a5e"
+};
+  const CAT_LABELS = {
+ "berth": "Signature",
+ "market": "Market",
+ "shop": "Restaurant / Bar",
+ "wine": "Winery",
+ "mainland": "Out of town",
+ "logistics": "Logistics"
+};
+  const PRODUCT_COLORS = {
+ "Michelin": "#7f1d1d",
+ "Seafood": "#3b82f6",
+ "Wine": "#7c2d12",
+ "Rosé": "#e8b4b8",
+ "Provençal": "#a16207",
+ "Bar": "#7c3aed",
+ "Bistro": "#1f2937",
+ "Café": "#6b4226"
+};
+  const CATEGORIES = [
+ {
+  "key": "grande",
+  "label": "Les Grandes Tables",
+  "lead": "The starred and destination tables of the Golfe."
+ },
+ {
+  "key": "petite",
+  "label": "Les Petites Tables",
+  "lead": "The honest local rooms and Provençal bistros."
+ },
+ {
+  "key": "local",
+  "label": "Local favourites",
+  "lead": "Where Cavalaire actually eats."
+ },
+ {
+  "key": "beach",
+  "label": "Beach clubs & the sand",
+  "lead": "Lunch with your feet in the Med."
+ }
+];
+  const GROUPS = [
+ {
+  "key": "grande",
+  "label": "Les Grandes Tables",
+  "lead": "The splurge and the destination tables."
+ },
+ {
+  "key": "petite",
+  "label": "Les Petites Tables",
+  "lead": "Character over ambition."
+ }
+];
+  const GROUP_OF = {
+ "grande": "grande",
+ "petite": "petite",
+ "local": "petite"
+};
   const NEIGHBORHOODS = [];
   const WALKS = [];
   const WORK_SPOTS = [];
