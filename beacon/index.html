@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fafafa" />
+  <meta name="description" content="Beacon — the Littoralicious concept lab. Every food business ever opened is one of two ideas: the classic restaurant and the hole in the wall. First principles, the real cost anatomies, and a ladder for building a concept from the core." />
+  <title>Beacon — Littoralicious</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/favicon.svg" />
+  <meta property="og:title" content="Beacon — the food business, reduced to first principles" />
+  <meta property="og:description" content="One sells an occasion. The other sells a thing. Every format ever tried is a mutation of the two — and every concept worth building starts by choosing its equation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.littoralicious.com/beacon/" />
+  <style>
+    :root {
+      --color-paper: #fafafa;
+      --color-ink: #0a0a0a;
+      --color-sea: #2d4a5e;
+      --color-muted: #6b7280;
+      --color-border: #e2e2e2;
+      --color-soft: #f1f0ec;
+      --font-serif: Georgia, 'Times New Roman', serif;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-mono: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-serif);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    /* ---------- masthead (Spoon Lab tool idiom) ---------- */
+    .masthead {
+      border-bottom: 2px solid var(--color-ink);
+      background: var(--color-paper);
+    }
+    .masthead-row {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .masthead-home-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .masthead-home-link:hover { color: var(--color-sea); }
+    .masthead-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .masthead-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+    }
+
+    /* ---------- night hero: a beacon is only visible at night ---------- */
+    .hero {
+      background: var(--color-ink);
+      color: var(--color-paper);
+      overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 52px 20px 44px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-art { width: 200px; height: 240px; }
+    .hero-art svg { width: 100%; height: 100%; overflow: visible; }
+    .beam {
+      transform-origin: 100px 52px;
+      animation: beam-sweep 11s ease-in-out infinite alternate;
+    }
+    @keyframes beam-sweep {
+      from { transform: rotate(-14deg); }
+      to   { transform: rotate(14deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { .beam { animation: none; } }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9fb3c0;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(40px, 6vw, 58px);
+      letter-spacing: 0.14em;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .hero-thesis {
+      font-size: clamp(18px, 2.4vw, 22px);
+      line-height: 1.5;
+      max-width: 560px;
+      color: #e8e6e1;
+    }
+    .hero-thesis b { color: var(--color-paper); font-weight: 700; }
+    .hero-sub {
+      margin-top: 16px;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #9aa5ad;
+      max-width: 560px;
+    }
+    @media (max-width: 720px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 20px; padding: 40px 20px 36px; }
+      .hero-art { width: 150px; height: 180px; margin: 0 auto; }
+    }
+
+    /* ---------- shared section chrome ---------- */
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+    section.block { padding: 52px 0 8px; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 34px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      letter-spacing: -0.005em;
+    }
+    .block p { max-width: 700px; margin-bottom: 16px; }
+    .block p b { font-weight: 700; }
+    mark {
+      background: rgba(45, 74, 94, 0.12);
+      color: inherit;
+      padding: 0 3px;
+    }
+    .src {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--color-muted);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    /* ---------- the five questions ---------- */
+    .axes { list-style: none; max-width: 760px; margin: 26px 0 8px; border-top: 1px solid var(--color-ink); }
+    .axes li {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 14px 2px;
+      border-bottom: 1px solid var(--color-border);
+      align-items: baseline;
+    }
+    .axes .k {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+      font-weight: 500;
+    }
+    .axes .q { font-size: 16.5px; line-height: 1.5; }
+    .axes .q em { font-style: italic; }
+    @media (max-width: 560px) { .axes li { grid-template-columns: 1fr; gap: 4px; } }
+    .cluster-note {
+      max-width: 760px;
+      margin: 26px 0 20px;
+      border: 1px solid var(--color-ink);
+      box-shadow: 3px 3px 0 rgba(10, 10, 10, 0.08);
+      padding: 20px 24px;
+      background: var(--color-paper);
+    }
+    .cluster-note .n-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .cluster-note p { margin-bottom: 10px; }
+    .cluster-note p:last-child { margin-bottom: 0; }
+
+    /* ---------- the two archetypes ---------- */
+    .arche-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 30px 0 10px;
+    }
+    @media (max-width: 760px) { .arche-grid { grid-template-columns: 1fr; } }
+    .arche {
+      border: 1px solid var(--color-ink);
+      box-shadow: 4px 4px 0 rgba(10, 10, 10, 0.08);
+      background: var(--color-paper);
+      display: flex;
+      flex-direction: column;
+    }
+    .arche-art {
+      border-bottom: 1px solid var(--color-ink);
+      background: var(--color-soft);
+      padding: 18px 18px 10px;
+    }
+    .arche-art svg { width: 100%; height: auto; display: block; color: var(--color-ink); }
+    .arche-head { padding: 18px 22px 0; }
+    .arche-kicker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+      margin-bottom: 4px;
+    }
+    .arche h3 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .arche-sells { font-size: 15.5px; font-style: italic; color: #3a3a3a; margin-bottom: 4px; }
+    .arche-body { padding: 8px 22px 22px; display: flex; flex-direction: column; gap: 14px; }
+    .arche-eq {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      letter-spacing: 0.02em;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: 10px 14px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .arche dl { display: flex; flex-direction: column; gap: 12px; }
+    .arche dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+      margin-bottom: 3px;
+    }
+    .arche dd { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.6; color: #333; }
+    .arche dd b { color: var(--color-ink); }
+
+    /* ---------- mutations ledger ---------- */
+    .ledger { list-style: none; max-width: 800px; margin: 26px 0 8px; border-top: 1px solid var(--color-ink); }
+    .ledger li {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 18px;
+      padding: 13px 2px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .ledger .f {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 15.5px;
+      line-height: 1.4;
+    }
+    .ledger .m { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.6; color: #333; }
+    .ledger .m b { color: var(--color-ink); }
+    @media (max-width: 560px) { .ledger li { grid-template-columns: 1fr; gap: 3px; } }
+
+    /* ---------- the ladder ---------- */
+    .ladder { list-style: none; counter-reset: rung; max-width: 740px; margin: 26px 0 8px; }
+    .ladder li {
+      counter-increment: rung;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .ladder li::before {
+      content: counter(rung);
+      font-family: var(--font-serif);
+      font-size: 30px;
+      line-height: 1;
+      color: var(--color-sea);
+      border-right: 1px solid var(--color-ink);
+      padding-right: 16px;
+      text-align: right;
+    }
+    .ladder h4 { font-family: var(--font-serif); font-size: 17.5px; font-weight: 700; margin-bottom: 4px; }
+    .ladder p { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.6; color: #333; max-width: 620px; }
+    .ladder .mono { font-family: var(--font-mono); font-size: 12px; }
+
+    /* ---------- études ---------- */
+    .etude-note { font-family: var(--font-sans); font-size: 13.5px; color: var(--color-muted); max-width: 700px; margin-bottom: 8px; }
+    .etudes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin: 26px 0 10px;
+    }
+    @media (max-width: 860px) { .etudes { grid-template-columns: 1fr; } }
+    .etude {
+      border: 1px solid var(--color-ink);
+      box-shadow: 3px 3px 0 rgba(10, 10, 10, 0.08);
+      padding: 20px 20px 18px;
+      background: var(--color-paper);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .etude .e-arch {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-paper);
+      background: var(--color-sea);
+      padding: 3px 8px;
+      align-self: flex-start;
+    }
+    .etude h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 700; line-height: 1.2; }
+    .etude .e-line { font-size: 14.5px; font-style: italic; color: #3a3a3a; }
+    .etude dl { display: flex; flex-direction: column; gap: 9px; margin-top: 2px; }
+    .etude dt {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-sea);
+      margin-bottom: 2px;
+    }
+    .etude dd { font-family: var(--font-sans); font-size: 13px; line-height: 1.55; color: #333; }
+    .etude .e-eq { font-family: var(--font-mono); font-size: 11.5px; background: var(--color-soft); padding: 7px 10px; overflow-x: auto; white-space: nowrap; }
+
+    /* ---------- simmering close ---------- */
+    .simmer-close {
+      margin: 56px 0 0;
+      border-top: 2px solid var(--color-ink);
+      background: var(--color-soft);
+    }
+    .simmer-close-inner { max-width: 880px; margin: 0 auto; padding: 44px 20px 52px; }
+    .simmer-close h2 { margin-bottom: 12px; }
+    .simmer-close p { max-width: 640px; margin-bottom: 14px; }
+    .simmer-actions { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+    .simmer-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-ink);
+      border: 1px solid var(--color-ink);
+      background: var(--color-paper);
+      padding: 12px 26px;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 rgba(10, 10, 10, 0.10);
+      transition: background 120ms ease, color 120ms ease, transform 120ms ease;
+    }
+    .simmer-actions a:hover, .simmer-actions a:focus-visible {
+      background: var(--color-sea);
+      color: var(--color-paper);
+      transform: translate(-1px, -1px);
+      outline: none;
+    }
+    .simmer-small { font-family: var(--font-sans); font-size: 12px; color: var(--color-muted); margin-top: 14px; }
+
+    footer.site {
+      border-top: 1px solid var(--color-border);
+      background: var(--color-paper);
+    }
+    footer.site .wrap {
+      padding: 22px 20px 30px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.06em;
+      color: var(--color-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    footer.site a { color: var(--color-muted); text-decoration: none; }
+    footer.site a:hover { color: var(--color-sea); }
+
+    @media print {
+      .hero { background: none; color: var(--color-ink); }
+      .hero-thesis, .hero-sub { color: var(--color-ink); }
+      .hero-eyebrow { color: var(--color-sea); }
+      .hero-art { display: none; }
+      .masthead-home-link, .simmer-actions, footer.site { display: none !important; }
+      body { font-size: 12px; }
+      .arche, .etude, .cluster-note { box-shadow: none; break-inside: avoid; }
+      section.block { padding: 24px 0 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-row">
+    <a href="/" class="masthead-home-link">&larr;&nbsp;Littoralicious</a>
+    <div class="masthead-title" data-simmer-anchor>Beacon</div>
+    <div class="masthead-tag">The Spoon Lab &middot; Concept Lab</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-art" aria-hidden="true">
+      <!-- Naïve-art lighthouse, sibling of the Spoon Lab spoon: confident hand-drawn
+           lines, folk asymmetry. The beam sweeps; reduced-motion stills it. -->
+      <svg viewBox="0 0 200 240" fill="none" stroke="#fafafa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- sweeping beam -->
+        <g class="beam" opacity="0.5" stroke-width="1.6">
+          <path d="M 110 48 L 196 22" />
+          <path d="M 110 56 L 196 66" />
+          <path d="M 196 22 L 196 66" stroke-width="0.8" opacity="0.5" />
+        </g>
+        <!-- lamp room -->
+        <path d="M 88 40 L 90 58 H 112 L 113 40 Z" />
+        <path d="M 86 40 L 100.5 27 L 115 40" />
+        <circle cx="100.5" cy="49" r="4.2" fill="#fafafa" stroke="none" opacity="0.9" />
+        <!-- gallery -->
+        <path d="M 83 58 H 118" stroke-width="3" />
+        <!-- tower, slightly askew on purpose -->
+        <path d="M 88 62 C 87 100, 82 150, 76 196 L 126 196 C 119 149, 114.5 100, 113.5 62 Z" />
+        <!-- bands -->
+        <path d="M 85.5 92 C 96 95, 106 95, 115.5 92" stroke-width="1.5" opacity="0.6" />
+        <path d="M 82.5 128 C 95 132, 107 132, 119 128" stroke-width="1.5" opacity="0.6" />
+        <path d="M 79.5 163 C 95 168, 108 168, 122.5 163" stroke-width="1.5" opacity="0.6" />
+        <!-- door -->
+        <path d="M 94 196 C 94 184, 108 184, 108 196" stroke-width="1.6" />
+        <!-- rocks -->
+        <path d="M 56 206 C 68 196, 84 204, 100 202 C 118 200, 132 206, 146 202" stroke-width="1.8" />
+        <!-- sea -->
+        <path d="M 30 218 C 44 213, 56 222, 72 218 M 96 221 C 112 216, 126 224, 142 219 M 156 214 C 164 211, 172 216, 180 213" stroke-width="1.4" opacity="0.55" />
+        <!-- stars -->
+        <circle cx="42" cy="52" r="1.1" fill="#fafafa" stroke="none" opacity="0.6" />
+        <circle cx="63" cy="26" r="1.1" fill="#fafafa" stroke="none" opacity="0.45" />
+        <circle cx="152" cy="96" r="1.1" fill="#fafafa" stroke="none" opacity="0.5" />
+        <circle cx="170" cy="140" r="1.1" fill="#fafafa" stroke="none" opacity="0.4" />
+      </svg>
+    </div>
+    <div>
+      <p class="hero-eyebrow">Littoralicious &middot; The Spoon Lab</p>
+      <h1>BEACON</h1>
+      <p class="hero-thesis">Every food business ever opened is one of two ideas. <b>One sells an occasion. The other sells a thing.</b> Learn the two equations — and what kills each — before you build your own.</p>
+      <p class="hero-sub">The Spoon Lab's concept bench: the food business taken back to first principles, then rebuilt — one honest concept at a time.</p>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="block wrap">
+    <p class="eyebrow">The method</p>
+    <h2>Understand first. Act later.</h2>
+    <p>When Ferran Adri&agrave;'s team sets out to understand something, they do not brainstorm. They define, classify, compare, map the system, trace its history — a methodology called <b>Sapiens</b>, built by Adri&agrave; and the elBullifoundation team after the restaurant closed, out of its old habit of questioning everything. Their volume answering <em>&ldquo;What is cooking?&rdquo;</em> runs five hundred pages. Their rule: understand first, act later.<span class="src">&nbsp;metodologiasapiens.com</span></p>
+    <p>Beacon points that discipline at one question: <mark><b>what is a restaurant, really?</b></mark> Strip away the formats, the trends, the franchise decks — what is irreducibly there?</p>
+  </section>
+
+  <section class="block wrap">
+    <p class="eyebrow">The decomposition</p>
+    <h2>Five questions. Only five.</h2>
+    <p>Feeding people for money always answers the same five questions. Everything else — cuisine, d&eacute;cor, branding — is surface.</p>
+    <ul class="axes">
+      <li><span class="k">Sell</span><span class="q">What do you sell — <em>a thing</em>, or <em>an occasion</em>?</span></li>
+      <li><span class="k">Room</span><span class="q">Where is it eaten — in a room you pay for, or wherever the guest carries it?</span></li>
+      <li><span class="k">Hands</span><span class="q">Who serves — a paid front-of-house layer, or your own hand across the counter?</span></li>
+      <li><span class="k">Range</span><span class="q">How wide is the menu — forty dishes that bend to any table, or one thing repeated ten thousand times?</span></li>
+      <li><span class="k">Price</span><span class="q">What is the guest actually paying for — the two hours, or the thing in their hand?</span></li>
+    </ul>
+    <div class="cluster-note">
+      <span class="n-label">Why there are only two shapes</span>
+      <p>The five answers are not independent — <b>they cluster</b>. Choose <em>occasion</em> and you are forced to buy the room, the crew and the wide menu. Choose <em>the thing</em> and you may delete all three.</p>
+      <p>That clustering is why food service has two stable shapes and not a smooth continuum: every cost you delete must be replaced by volume, and every point of volume you give up must be replaced by check-building.</p>
+    </div>
+  </section>
+
+  <section class="block wrap">
+    <p class="eyebrow">The two archetypes</p>
+    <h2>The classic restaurant, and the hole in the wall.</h2>
+    <p>The stakes first: about 26% of independent restaurants fail in their first year, and ~60% are gone within three.<span class="src">&nbsp;Parsa et&nbsp;al., Cornell Quarterly, 2005</span> The two ideas fail differently — so know which one you are building.</p>
+    <div class="arche-grid">
+
+      <article class="arche">
+        <div class="arche-art" aria-hidden="true">
+          <!-- Classic restaurant façade: awning, big window, door, a table set outside. -->
+          <svg viewBox="0 0 220 170" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- sign plaque -->
+            <path d="M 62 14 H 158 V 30 H 62 Z" />
+            <path d="M 72 22 H 104 M 112 22 H 148" stroke-width="1.3" opacity="0.55" />
+            <!-- awning -->
+            <path d="M 30 38 L 190 38 L 182 56 L 38 56 Z" />
+            <path d="M 58 39 L 62 55 M 88 39 L 91 55 M 118 39 L 120 55 M 148 39 L 149 55" stroke-width="1.2" opacity="0.5" />
+            <path d="M 38 56 C 42 62, 50 62, 54 56 M 54 56 C 58 62, 66 62, 70 56 M 70 56 C 74 62, 82 62, 86 56 M 86 56 C 90 62, 98 62, 102 56 M 102 56 C 106 62, 114 62, 118 56 M 118 56 C 122 62, 130 62, 134 56 M 134 56 C 138 62, 146 62, 150 56 M 150 56 C 154 62, 162 62, 166 56 M 166 56 C 170 62, 178 62, 182 56" stroke-width="1.4" />
+            <!-- façade -->
+            <path d="M 36 62 L 36 148 M 184 62 L 184 148" />
+            <!-- window with mullions + curtain -->
+            <path d="M 48 74 H 118 V 132 H 48 Z" />
+            <path d="M 83 74 V 132 M 48 103 H 118" stroke-width="1.2" opacity="0.6" />
+            <path d="M 50 120 C 60 114, 72 114, 81 120 M 85 120 C 95 114, 107 114, 116 120" stroke-width="1.2" opacity="0.55" />
+            <!-- hanging lamp in window -->
+            <path d="M 100 74 V 84 M 95 89 A 5.5 5.5 0 0 1 105 89 Z" stroke-width="1.3" opacity="0.7" />
+            <!-- door -->
+            <path d="M 136 148 V 78 C 136 72, 168 72, 168 78 V 148" />
+            <circle cx="162" cy="114" r="1.6" fill="currentColor" stroke="none" />
+            <!-- pavement table for two -->
+            <path d="M 6 148 V 122 M 2 122 H 30 M 16 122 V 148" transform="translate(6,0)" stroke-width="1.6" />
+            <path d="M 2 128 C 6 126, 8 126, 10 128 M 34 128 C 38 126, 40 126, 42 128" transform="translate(4,0)" stroke-width="1.3" opacity="0.7" />
+            <!-- ground -->
+            <path d="M 0 148 H 220" stroke-width="1.8" />
+          </svg>
+        </div>
+        <div class="arche-head">
+          <p class="arche-kicker">Archetype A</p>
+          <h3>The Classic Restaurant</h3>
+          <p class="arche-sells">You sell an occasion. The food is the pretext; hospitality is the product.</p>
+        </div>
+        <div class="arche-body">
+          <div class="arche-eq">revenue&nbsp;=&nbsp;seats&nbsp;&times;&nbsp;turns&nbsp;&times;&nbsp;average&nbsp;check</div>
+          <dl>
+            <div>
+              <dt>What the guest rents</dt>
+              <dd><b>Time</b> — a two-hour slot of seat-hours that perish the moment they go unsold. <b>Space</b> — the room, the light, the right neighbours. <b>A repertoire</b> — a menu wide enough that the table of six all get what they want. Delivered by a <b>crew</b> whose entire job is the transfer of care.</dd>
+            </div>
+            <div>
+              <dt>The cost anatomy</dt>
+              <dd>Food 28&ndash;35% of sales. Labour 28&ndash;35% — the waiter layer is most of the difference from fast food. Occupancy 6&ndash;10%, rent alone ideally under 6%. What's left over: <b>a median 2.8% pre-tax</b>, against a ~5% historical norm. <span class="src">NRA 2025 Operations Abstract</span> The whole business lives in a three-point sliver between four giant cost blocks.</dd>
+            </div>
+            <div>
+              <dt>What kills it</dt>
+              <dd><b>Rent ratchets against a fixed room</b> — Union Square Cafe, thirty years one of New York's most loved rooms, was pushed out of its home in 2015 by a reported triple-rent lease ask. <b>Empty seats</b> — costs are fixed and seat-hours perish; a slow Tuesday is inventory thrown away. And the summit is no shelter: Noma, five times the world's best, announced in 2023 it would close as a regular restaurant — in Redzepi's words, financially and emotionally <em>&ldquo;it just doesn't work.&rdquo;</em> Pushed to its extreme, the archetype snaps.</dd>
+            </div>
+            <div>
+              <dt>What makes it great</dt>
+              <dd>The room as theatre, a crew that remembers your name, an evening that bends to the table. <b>Hospitality is a moat no better recipe can cross</b> — and it scales: Balthazar turns as many as ~1,500 covers on a big day, two hundred of them steak frites.</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="arche">
+        <div class="arche-art" aria-hidden="true">
+          <!-- Hole in the wall: a hatch, a cook, steam, a one-line menu board, a queue. No seats. -->
+          <svg viewBox="0 0 220 170" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- flipped-up awning flap -->
+            <path d="M 34 52 L 120 46 L 128 62 L 40 66 Z" />
+            <path d="M 56 51 L 60 64 M 82 49.5 L 85 63 M 106 48 L 108 62" stroke-width="1.1" opacity="0.5" />
+            <!-- hatch opening -->
+            <path d="M 42 66 H 126 V 118 H 42 Z" />
+            <!-- cook: head, cap, shoulders -->
+            <circle cx="76" cy="88" r="8.5" stroke-width="1.7" />
+            <path d="M 68 84 C 70 78, 82 78, 84 84" stroke-width="1.5" />
+            <path d="M 62 118 C 62 104, 90 104, 90 118" stroke-width="1.7" />
+            <!-- pan + steam -->
+            <path d="M 98 106 H 116 M 116 106 L 121 103" stroke-width="1.7" />
+            <path d="M 104 98 C 102 93, 106 91, 104 86 M 111 98 C 109 93, 113 91, 111 86" stroke-width="1.2" opacity="0.6" />
+            <!-- counter ledge -->
+            <path d="M 36 118 H 132" stroke-width="3" />
+            <path d="M 42 118 V 148 M 126 118 V 148" />
+            <!-- one-line menu board -->
+            <path d="M 138 70 H 178 V 92 H 138 Z" stroke-width="1.6" />
+            <path d="M 144 81 H 172" stroke-width="1.3" opacity="0.6" />
+            <!-- the queue: three folk figures -->
+            <circle cx="152" cy="116" r="6" stroke-width="1.6" />
+            <path d="M 145 148 C 145 132, 159 132, 159 148" stroke-width="1.6" />
+            <circle cx="176" cy="119" r="5.5" stroke-width="1.5" opacity="0.8" />
+            <path d="M 170 148 C 170 133, 182 133, 182 148" stroke-width="1.5" opacity="0.8" />
+            <circle cx="198" cy="121" r="5" stroke-width="1.4" opacity="0.6" />
+            <path d="M 193 148 C 193 135, 203 135, 203 148" stroke-width="1.4" opacity="0.6" />
+            <!-- ground -->
+            <path d="M 0 148 H 220" stroke-width="1.8" />
+          </svg>
+        </div>
+        <div class="arche-head">
+          <p class="arche-kicker">Archetype B</p>
+          <h3>The Hole in the Wall</h3>
+          <p class="arche-sells">You sell one perfected thing, handed over fast. The queue is the dining room.</p>
+        </div>
+        <div class="arche-body">
+          <div class="arche-eq">revenue&nbsp;=&nbsp;units&nbsp;&times;&nbsp;price&nbsp;&times;&nbsp;hours</div>
+          <dl>
+            <div>
+              <dt>What the guest buys</dt>
+              <dd><b>The thing itself.</b> The room barely exists — El Califa de Le&oacute;n in Mexico City is ~100 square feet, half of it grill, no chairs, four tacos on the menu; in 2024 it became the first taco stand ever to earn a Michelin star. Repetition is the technology; the open counter is the trust mechanism.</dd>
+            </div>
+            <div>
+              <dt>The cost anatomy</dt>
+              <dd>Everything A pays for is deleted. Front-of-house: <b>0%</b> — the cook is the service. One product means near-zero waste and surgical purchasing, so food cost can run far above restaurant norms: Jay Fai packs 300&ndash;400&nbsp;g of hand-picked crab into one Bangkok omelette,<span class="src">&nbsp;Nation Thailand</span> because nothing else is being paid for. A Singapore hawker stall's median rent: about S$1,250 a month. <span class="src">Singapore MSE, parliamentary data</span></dd>
+            </div>
+            <div>
+              <dt>What kills it</dt>
+              <dd><b>Inflation against a price promise</b> — the New York dollar slice was a price, not a dish; it broke to $1.50 in 2023.<span class="src">&nbsp;Crain's New York</span> <b>The owner's body</b> — the product is a person, and mastery does not delegate. <b>Footfall</b> — with no check to build, location is oxygen. And fame cuts both ways: Hawker Chan scaled his S$2 chicken rice to 30+ outlets; the original stall lost its star.<span class="src">&nbsp;Michelin Guide, 2016&ndash;21</span></dd>
+            </div>
+            <div>
+              <dt>What makes it great</dt>
+              <dd><b>Narrowness is mastery, and capacity — not demand — is the ceiling.</b> Franklin Barbecue has sold out of brisket every single day since 2009; selling out is the model, not the failure. Michelin keeps ratifying the archetype: a S$2 plate of chicken rice, a nine-seat ramen counter (Tsuta, 2015), a taco stand with no chairs.</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="block wrap">
+    <p class="eyebrow">The map</p>
+    <h2>Everything else is a mutation.</h2>
+    <p>Test any format against the five questions and it lands on the axis between A and B. Formats come and go; none has yet survived a third answer to <em>what is being sold</em>.</p>
+    <ul class="ledger">
+      <li><span class="f">Food truck</span><span class="m"><b>B minus the fixed rent</b> — the hole moves to the demand. Franklin Barbecue began as a roadside trailer in 2009 and graduated to brick within a year: the truck is B's larval stage.</span></li>
+      <li><span class="f">Fast casual</span><span class="m"><b>B wearing A's ingredients.</b> Counter order, no waiters, one product in permutations; the deleted service layer is spent on inputs instead. Chipotle ran a 26.2% restaurant-level margin in 2023 — that is B's cost anatomy with corporate purchasing power. <span class="src">Chipotle IR</span></span></li>
+      <li><span class="f">Diner &middot; brasserie</span><span class="m"><b>A run at B's tempo</b> — full room and crew, but high turns, tight repertoire, counter seating.</span></li>
+      <li><span class="f">Cafeteria &middot; buffet</span><span class="m"><b>A minus the crew</b> — the guest self-serves a wide repertoire; the service layer is deleted but the room, the breadth and its waste remain.</span></li>
+      <li><span class="f">Ghost kitchen</span><span class="m"><b>B minus even the wall</b> — and the dining room's cost reappears as the platform's 15&ndash;30% commission,<span class="src">&nbsp;published platform tiers</span> paid to someone else's landlord. With no room and no visible cook, neither archetype's moat survives: see the 2022&ndash;24 collapse (Kitchen United, Reef, MrBeast Burger).</span></li>
+      <li><span class="f">Automat &middot; vending</span><span class="m"><b>B minus the human.</b> Horn &amp; Hardart's automats were at their peak the largest restaurant chain in the world; the last one closed in 1991, beaten by fast food — B <em>with</em> a human beat B without one. The format survives only where nothing else can exist: stations, airports, 3&nbsp;a.m.</span></li>
+      <li><span class="f">Chef's counter &middot; omakase</span><span class="m"><b>The poles, fused.</b> One repertoire and ten seats (B's body) — but the guest rents a master's time by the minute, prepaid (A's bundle, compressed). Push both archetypes to their extremes and they curl around and meet at a ten-seat counter: proof that A and B are the two poles of one axis, not separate boxes.</span></li>
+    </ul>
+  </section>
+
+  <section class="block wrap">
+    <p class="eyebrow">Building from the core</p>
+    <h2>The concept ladder.</h2>
+    <p>Understanding first — now the acting. Five rungs, in order, each one a gate.</p>
+    <ol class="ladder">
+      <li><div><h4>Choose your equation.</h4><p><span class="mono">seats &times; turns &times; check</span>, or <span class="mono">units &times; price &times; hours</span>. Not a mood — an arithmetic. Which one will feed you, in your town, at your prices? Answer with numbers, not adjectives.</p></div></li>
+      <li><div><h4>Choose the one thing.</h4><p>For B: the dish you could repeat ten thousand times and still love — repetition is the product. For A: the occasion you can promise every single table, every night. Either way it must fit in one hand or one sentence.</p></div></li>
+      <li><div><h4>Strip.</h4><p>Whatever does not serve the one thing is quietly eating your margin. Every menu line, seat, gadget and printed card must fight for its life. The archetypes are pure because deletion is what makes them profitable.</p></div></li>
+      <li><div><h4>Close the numbers.</h4><p>Rule-of-thumb walls: prime cost (food + labour) under ~65% of sales, occupancy under ~10% — and whatever survives is your salary. If the equation only closes at full capacity, seven days a week, it does not close.</p></div></li>
+      <li><div><h4>Say it in one sentence.</h4><p><em>&ldquo;X, done perfectly, for Y, at Z.&rdquo;</em> If the sentence needs a second sentence, it is not a concept yet — it is two concepts, and each is subsidising the other's confusion.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="block wrap">
+    <p class="eyebrow">&Eacute;tudes</p>
+    <h2>Three concepts, developed from the core.</h2>
+    <p class="etude-note">Sketched with the ladder to show the method at work — &eacute;tudes, not business plans. Numbers are illustrative; a real concept closes them against a real street.</p>
+    <div class="etudes">
+
+      <article class="etude">
+        <span class="e-arch">Archetype B</span>
+        <h3>La Plancha</h3>
+        <p class="e-line">A quayside hatch. Sardines off the plank, on bread, in your hand.</p>
+        <div class="e-eq">units &times; price &times; hours &middot; capacity-capped</div>
+        <dl>
+          <div><dt>The one thing</dt><dd>Grilled-to-order sardines on toasted pan de coca, salt, lemon, one green sauce. Nothing else. The plancha faces the queue — the cooking is the marketing.</dd></div>
+          <div><dt>Why it stands</dt><dd>One SKU, near-zero waste, no front-of-house, fish bought by eye each morning. Sell-out by 15:00 is the design, not the risk.</dd></div>
+          <div><dt>Where it dies</dt><dd>Seasonality — the equation must close in eight months, not twelve. And a price promise it cannot keep if the catch spikes: price the promise, not the fish.</dd></div>
+        </dl>
+      </article>
+
+      <article class="etude">
+        <span class="e-arch">Archetype A</span>
+        <h3>Slack Tide</h3>
+        <p class="e-line">Eighteen seats. One menu. No choices. Two sittings a night.</p>
+        <div class="e-eq">18 seats &times; 2 turns &times; fixed check</div>
+        <dl>
+          <div><dt>The one thing</dt><dd>The occasion, kept; the option value, deleted. One table-d'h&ocirc;te menu that changes weekly — A's room and care with B's waste profile inside it.</dd></div>
+          <div><dt>Why it stands</dt><dd>A fixed check makes revenue a known number by Tuesday. One menu collapses the brigade, the waste and the repertoire cost that grind classic rooms down to a 2.8% median.</dd></div>
+          <div><dt>Where it dies</dt><dd>The rent ratchet, like every A. And monotony: if the weekly menu stops turning, the neighbourhood stops returning. The room must earn regulars, not tourists.</dd></div>
+        </dl>
+      </article>
+
+      <article class="etude">
+        <span class="e-arch">The poles, fused</span>
+        <h3>Eight</h3>
+        <p class="e-line">Eight stools around the stove. One sitting. The cook serves.</p>
+        <div class="e-eq">8 seats &times; 1 sitting &times; prepaid</div>
+        <dl>
+          <div><dt>The one thing</dt><dd>Access to the cooking itself — A's time-and-care bundle compressed onto B's counter. Prepaid, like the omakase economy, so a no-show is not a catastrophe.</dd></div>
+          <div><dt>Why it stands</dt><dd>Zero front-of-house, zero menu breadth, total intimacy: the two archetypes' strengths without either's overhead.</dd></div>
+          <div><dt>Where it dies</dt><dd>The owner's body — eight seats of mastery do not delegate and never take a night off. And at this scale two empty stools is a 25% hole in the night.</dd></div>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<div class="simmer-close">
+  <div class="simmer-close-inner">
+    <p class="eyebrow">Simmering</p>
+    <h2>This lab is under construction — on purpose.</h2>
+    <p>Two ideas, five questions, a ladder between them — that is the core. What Beacon becomes next is decided by the people who use it: more &eacute;tudes? A worksheet that walks you down the ladder? Real-number templates for closing an equation against a real street?</p>
+    <p><b>Tell me what you'd want — and what doesn't work.</b> It all goes into the pot.</p>
+    <div class="simmer-actions">
+      <a href="https://wa.me/33695903520?text=Spoon%20Lab%20%C2%B7%20Beacon%20%E2%80%94%20" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:arnaudcallier@pm.me?subject=Spoon%20Lab%20%C2%B7%20Beacon">Email</a>
+    </div>
+    <p class="simmer-small">Both land directly with Arnaud — chef, and the one holding the spoon.</p>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>&copy; 2026 Littoralicious &middot; The Spoon Lab</span>
+    <span><a href="/">littoralicious.com</a> &middot; <a href="/contact.html">contact</a></span>
+  </div>
+</footer>
+
+<script src="/assets/js/tools-widget.js?v=20260703-simmer" defer></script>
+</body>
+</html>
