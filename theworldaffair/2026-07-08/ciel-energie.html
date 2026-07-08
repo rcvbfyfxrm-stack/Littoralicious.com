@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-08/">
+<title>Quatre Réacteurs, Zéro Gendarme — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 8 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;161</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Vigies Aveugles</div>
+  <div class="masthead-version">v1.1 &mdash; quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-08.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#283593">Ciel &amp; Énergie</div>
+  <h1 class="article-title">Quatre R&eacute;acteurs, Z&eacute;ro Gendarme</h1>
+  <div class="article-date">Mercredi &mdash; Edition N&deg;161</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Quatre. C'est le nombre de micro-réacteurs devenus critiques en un mois aux États-Unis — un record obtenu en réécrivant en secret 750 pages des propres règles de sûreté du ministère de l'Énergie. Au même moment, à l'autre bout de la chaîne spatiale, le directeur financier d'un concurrent de SpaceX affirme que l'entreprise de Musk ne vend plus de places sur ses fusées au-delà de 2028 — un vide qui s'installe non pas dans l'électricité mais dans les sièges de lancement, et dont SpaceX elle-même refuse de parler. Et sous la canicule de fin juin, la Belgique a battu un record de prix historique pendant que la France bridait jusqu'à 12&#160;% de son parc nucléaire et que le Royaume-Uni contournait discrètement ses propres règles de marché pour éviter un incident réseau. Le fil commun : la course à l'énergie et à l'espace avance plus vite que les instances censées la surveiller — quand elles n'ont pas simplement été mises de côté.</p>
+<hr>
+<h2>Le Tape</h2>
+<table class="twa-tape"><thead><tr><th>Instrument</th><th>Niveau</th><th>&Delta;</th><th>Position 52&#160;sem.</th><th>R&eacute;gime</th></tr></thead><tbody>
+<tr><td>Uranium spot (U3O8)</td><td class="twa-lvl">85,85&#160;$/lb</td><td class="twa-down">-15,4&#160;% ▼</td><td><span class="twa-pctbar"></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Repli apr&egrave;s pic</td></tr>
+<tr><td>Demande pointe PJM (pr&eacute;vision)</td><td class="twa-lvl">166&#160;304&#160;MW</td><td class="twa-up">+0,4&#160;% ▲</td><td><span class="twa-pctbar"></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Tension r&eacute;seau US</td></tr>
+<tr><td>Prix spot quart-horaire, Belgique</td><td class="twa-lvl">1&#160;038,25&#160;&euro;/MWh</td><td class="twa-up">record ▲</td><td><span class="twa-pctbar"></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Choc canicule</td></tr>
+<tr><td>Curtailment nucl&eacute;aire fran&ccedil;ais (EDF)</td><td class="twa-lvl">jusqu'&agrave; 12&#160;% du parc</td><td class="twa-down">bridage ▼</td><td><span class="twa-pctbar"></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Contrainte thermique</td></tr>
+<tr><td>Cadence criticit&eacute;s r&eacute;acteurs DOE</td><td class="twa-lvl">4 en 30 jours</td><td class="twa-up">record programme ▲</td><td><span class="twa-pctbar"></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Sprint r&eacute;glementaire</td></tr>
+<tr><td>Charge utile cumul&eacute;e Transporter/Bandwagon</td><td class="twa-lvl">1&#160;800+ (20 missions)</td><td class="twa-up">+81 (T-17) ▲</td><td><span class="twa-pctbar"></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Raret&eacute; annonc&eacute;e 2028+</td></tr>
+</tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le régulateur nucléaire relégué au rang de spectateur</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">sources gouvernementales + ONG opposées · T0/T3</span></p>
+<p>Quatre réacteurs miniatures devenus critiques en un mois : Antares Nuclear le 4 juin, Valar Atomics le 18, Deployable Energy le 30, et Aalo Atomics le 4 juillet à 00h20, heure des Rocheuses, dans l'ancien caisson de confinement de l'Experimental Breeder Reactor-II à l'Idaho National Laboratory. Le secrétaire à l'Énergie Chris Wright a lui-même revendiqué la performance : « nous avons dépassé cette demande et livré quatre ! » L'unité d'Aalo a tourné à 30&#160;MWth/10&#160;MWe dans une campagne d'essais ; l'entreprise vise un « Pod » modulaire de cinq unités de 10&#160;MWe explicitement pensé pour alimenter des centres de données d'intelligence artificielle, avec un partenariat actif avec Microsoft et Nvidia sur le permitting assisté par IA.</p>
+<p>Le véhicule réglementaire qui permet cette vitesse est le décret présidentiel 14301, qui laisse le Bureau de l'énergie nucléaire du DOE autoriser et superviser ces réacteurs largement en dehors du cadre traditionnel de la Nuclear Regulatory Commission — reléguée à un rôle consultatif. C'est contesté : l'Union of Concerned Scientists affirme que le DOE a réécrit en secret ses directives de sûreté et de sécurité nucléaires pour permettre cette cadence, supprimant environ 750 pages d'exigences de sécurité, de protection des nappes phréatiques, environnementales et de tenue de registres, et relevant le seuil d'exposition aux radiations qui déclenche une enquête formelle en cas d'accident. Des élus démocrates de la commission Énergie et Commerce de la Chambre accusent le DOE d'avoir « influencé illégalement » la NRC et rompu le pare-feu légal vieux de cinquante ans qui sépare les deux agences. Rien de tout cela ne conteste la physique de la criticité elle-même — un état instrumenté, vérifiable — le désaccord porte sur l'appareil de sûreté qui l'entoure.</p>
+<p><strong>De l'autre côté du trade :</strong> le gendarme perdant est la NRC elle-même, reléguée en simple consultant ; les fabricants de réacteurs modulaires ayant choisi la voie longue — Westinghouse, GE-Hitachi, NuScale — se retrouvent distancés. Gagnants déclarés : quatre start-ups et les hyperscalers en quête d'électricité colocalisée pour leurs centres de données IA.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> Radiant Nuclear, cinquième entreprise de la filière, doit tester son propre réacteur dans le même caisson EBR-II après avoir reçu son premier lot de combustible TRISO le 1er juillet — à surveiller comme cinquième criticité potentielle.</p>
+<p><strong>L'autre lecture :</strong> le DOE dirait que la criticité est un état physique instrumenté, indépendant de tout narratif politique — c'est vrai. Mais cela ne répond pas à l'accusation centrale : que les garde-fous entourant cet état ont été démontés pour tenir un calendrier symbolique fixé au 4 juillet.</p>
+<p><strong>Verdict :</strong> la physique ne ment pas, mais la vitesse à laquelle on l'a atteinte a un prix que personne n'a encore payé.</p>
+<p><strong>Ce qui reste opaque :</strong> aucune donnée indépendante du DOE et des entreprises elles-mêmes ne permet de mesurer l'ampleur réelle du risque accru pour les communautés proches des sites d'essai.</p>
+<p><strong>À dire au dîner :</strong> l'agence censée surveiller la sûreté nucléaire américaine a été reléguée au rang de spectatrice pour que quatre start-ups puissent fêter le 4 juillet en avance.</p>
+<hr>
+<h3>II. SpaceX ferme discrètement la porte du covoiturage spatial</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">source unique concurrente · T3</span></p>
+<p>Quatre-vingt-un satellites lancés le 7 juillet sur la dix-septième mission Transporter de SpaceX — et, le même jour, à la conférence Spacetide, le directeur financier de Rocket Lab affirme que SpaceX ne prend plus de réservations sur ce programme au-delà de fin 2028, début 2029. « Il n'y a plus la même conviction que Falcon&#160;9 sera disponible pour le marché marchand au-delà de ce qui a déjà été engagé sur le manifeste (…) depuis trois à six mois, le terme que j'utiliserais pour décrire les conversations avec les clients sur l'accès à Falcon&#160;9 serait anxiété », a déclaré Adam Spice.</p>
+<p>La revendication est corroborée par un comportement, pas seulement par des mots : les intégrateurs de covoiturage Exolaunch et SEOPS auraient commencé à acheter des vols Falcon&#160;9 dédiés plutôt que de compter sur des créneaux Transporter ouverts — une couverture plus coûteuse qui n'a de sens que si la rareté est réelle. SpaceX n'a ni confirmé ni infirmé l'échéance précise de 2028-2029 ; son propre communiqué de lancement s'est contenté d'un langage générique. Starlink pèse désormais 61&#160;% des revenus 2025 de SpaceX (11,4&#160;Md$), ce qui expliquerait la préférence croissante pour ses propres charges utiles plutôt que pour des clients tiers ; Neutron, la fusée concurrente de Rocket Lab, a vu son vol inaugural repoussé à fin 2026.</p>
+<p><strong>De l'autre côté du trade :</strong> les missions universitaires et gouvernementales de petits satellites, dépendantes de créneaux de covoiturage bon marché, sont poussées vers des vols dédiés plus chers sans alternative volée — Neutron n'a pas encore décollé. Gagnant déclaré : Rocket Lab, qui a un intérêt direct à amplifier l'inquiétude qu'il rapporte lui-même.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> les opérateurs de petits satellites dépendant de Transporter devraient sécuriser leurs créneaux 2027-2028 dans les prochaines semaines, avant que la rareté annoncée ne devienne un fait de marché.</p>
+<p><strong>L'autre lecture :</strong> ce pourrait n'être qu'une manœuvre commerciale de Rocket Lab pour pré-vendre Neutron — la source, unique et intéressée, ne dément jamais totalement ce risque. Mais le comportement observé (réservations de vols dédiés par Exolaunch et SEOPS) est un fait, pas une déclaration, et il coûte cher à des entreprises qui n'ont aucun intérêt à mentir sur leur propre stratégie d'achat.</p>
+<p><strong>Verdict :</strong> quand des intégrateurs commencent à payer plus cher pour éviter un programme, c'est que la pénurie qu'on leur promet a déjà commencé.</p>
+<p><strong>Ce qui reste opaque :</strong> SpaceX n'a jamais confirmé ni infirmé la date précise de 2028-2029 ; l'entreprise reste silencieuse sur ses propres arbitrages internes.</p>
+<p><strong>À dire au dîner :</strong> le programme qui a construit le monopole de SpaceX sur le lancement des petits satellites est peut-être en train de devenir la victime de son propre succès ailleurs.</p>
+<hr>
+<h3>III. La Belgique a payé son électricité plus cher qu'en pleine guerre du gaz</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">données opérateurs réseau · T1/T3</span></p>
+<p>1&#160;038,25&#160;€ le mégawattheure : c'est le prix record atteint en Belgique le 23 juin, quand la canicule a frappé l'Europe et les États-Unis au même moment. En France, EDF a bridé jusqu'à 12&#160;% de son parc nucléaire — Golfech, Bugey, Nogent — faute de pouvoir rejeter suffisamment d'eau de refroidissement. Aux États-Unis, l'opérateur du réseau du mid-Atlantic PJM a anticipé une pointe de demande de 166&#160;304&#160;MW, dépassant son record historique de 2006 (165&#160;563&#160;MW). Au Royaume-Uni, l'opérateur NESO a réduit ses exports transmanche et mer du Nord plutôt que d'émettre un avertissement public, lors d'un épisode de fréquence tombée sous 49,8&#160;Hz le 23 juin — une manœuvre qui, selon l'analyste réseau Watt-Logic, a nécessité une dérogation à ses propres limites de marché sur les interconnexions.</p>
+<p><strong>De l'autre côté du trade :</strong> les consommateurs industriels européens paient la facture du pic ; les opérateurs d'interconnexion ont dû improviser un contournement réglementaire pour éviter un incident réseau plus grave.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> si la vague de chaleur se prolonge en juillet, comme l'anticipe Bloomberg, attendre de nouveaux bridages nucléaires français et de nouveaux pics de prix belges et néerlandais dans les deux à trois semaines.</p>
+<p><strong>L'autre lecture :</strong> un opérateur dirait que le système a, in fine, tenu — aucun blackout n'a eu lieu, seulement des restrictions préventives. Vrai, mais NESO a dû enfreindre discrètement ses propres limites de marché pour y parvenir, ce qui n'est pas le signe d'une marge confortable.</p>
+<p><strong>Verdict :</strong> le réseau électrique européen a tenu de justesse, au prix d'un contournement réglementaire que peu de médias ont relevé.</p>
+<p><strong>Ce qui reste opaque :</strong> l'ampleur exacte de la dérogation NESO, et si Bruxelles l'a formellement validée après coup plutôt que dans l'urgence.</p>
+<p><strong>À dire au dîner :</strong> la Belgique a payé son électricité plus cher en un quart d'heure fin juin que jamais de toute son histoire de marché — record battu par la chaleur, pas par la guerre.</p>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Amazon Leo (Project Kuiper) dépasse les 390 satellites en orbite, le 2 juillet — la FCC avait déjà assoupli le délai de déploiement d'Amazon en juin.</li>
+<li>Voyager Technologies annonce le rachat d'Astrobotic pour 300&#160;M$ (2 juin) ; la clôture, attendue « début juillet », n'a pas été confirmée à ce jour.</li>
+<li>La Chine dépasse 1&#160;242&#160;GW de capacité solaire installée fin mars, +31,3&#160;% sur un an, selon la National Energy Administration.</li>
+<li>SpaceX valorisée 2,8&#160;billions de dollars après ses débuts en bourse, mi-juin — le contexte qui pèse sur l'arbitrage rideshare/Starlink du récit II.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/" target="_blank" rel="noopener">Power Magazine — quatrième criticité DOE, 6 juillet 2026</a></li>
+<li><a href="https://www.ans.org/news/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/" target="_blank" rel="noopener">ANS Nuclear Newswire — bilan du Reactor Pilot Program</a></li>
+<li><a href="https://www.energy.gov/ne/us-department-energy-reactor-pilot-program" target="_blank" rel="noopener">energy.gov — Reactor Pilot Program (source primaire)</a></li>
+<li><a href="https://www.ucs.org/about/news/breaking-news-discovery-rewritten-nuclear-safety-security-directives-department-energy" target="_blank" rel="noopener">Union of Concerned Scientists — directives de sûreté réécrites</a></li>
+<li><a href="https://democrats-energycommerce.house.gov/media/press-releases/ec-democrats-department-energy-illegally-influencing-nrc-and-undermining" target="_blank" rel="noopener">Commission Énergie &amp; Commerce (Démocrates) — accusation contre le DOE</a></li>
+<li><a href="https://spacenews.com/spacex-launches-transporter-17-amid-concerns-about-rideshare-programs-future/" target="_blank" rel="noopener">SpaceNews — anxiété autour du programme Transporter</a></li>
+<li><a href="https://www.space.com/space-exploration/launches-spacecraft/spacex-falcon-9-transporter-17-rideshare-launch-81-satellites" target="_blank" rel="noopener">Space.com — lancement Transporter-17</a></li>
+<li><a href="https://montelnews.com/news/71fed808-f624-4bc4-8b9b-b4db6a863f70/43c-heat-cuts-6-of-french-nuclear-capacity-more-curbs-possible" target="_blank" rel="noopener">Montel News — bridage nucléaire français</a></li>
+<li><a href="https://www.utilitydive.com/news/heat-wave-tests-power-grid-pjm-anticipates-new-record/824329/" target="_blank" rel="noopener">Utility Dive — record de demande PJM</a></li>
+<li><a href="https://www.marketscale.com/industries/energy/europes-power-grid-buckles-under-record-heat-outages-nuclear-cuts-and-soaring-prices" target="_blank" rel="noopener">Marketscale — prix record en Belgique</a></li>
+<li><a href="https://watt-logic.com/2026/07/02/neso-cutting-exports-during-a-low-frequency-event-may-come-back-to-bite-us-in-winter/" target="_blank" rel="noopener">Watt-Logic — dérogation NESO</a></li>
+<li><a href="https://carboncredits.com/uranium-prices-today/" target="_blank" rel="noopener">carboncredits.com — prix spot de l'uranium</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-07-08.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 &mdash; quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
