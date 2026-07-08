@@ -42,26 +42,42 @@
             '    display: flex;' +
             '    align-items: center;' +
             '    justify-content: center;' +
-            '    width: 48px;' +
-            '    height: 48px;' +
-            '    background: var(--color-paper, #fafafa);' +
+            '    width: 56px;' +
+            '    height: 56px;' +
+            '    background: none;' +
+            '    border: none;' +
+            '    padding: 2px;' +
             '    color: var(--color-ink, #0a0a0a);' +
-            '    border: 1px solid var(--color-ink, #0a0a0a);' +
             '    cursor: pointer;' +
-            '    padding: 6px;' +
-            '    box-shadow: 2px 2px 0 rgba(10, 10, 10, 0.08);' +
-            '    transition: transform 180ms ease, box-shadow 180ms ease;' +
+            '    transition: transform 200ms ease;' +
             '}' +
-            '.tools-widget-btn:hover,' +
+            '.tools-widget-btn svg {' +
+            '    width: 100%;' +
+            '    height: 100%;' +
+            '    animation: spoon-glow 2.8s ease-in-out infinite;' +
+            '}' +
+            '@keyframes spoon-glow {' +
+            '    0%, 100% { opacity: 0.72; filter: drop-shadow(0 1px 2px rgba(10, 10, 10, 0.22)); }' +
+            '    50% { opacity: 1; filter: drop-shadow(0 1px 2px rgba(10, 10, 10, 0.22)) drop-shadow(0 0 6px rgba(45, 74, 94, 0.5)); }' +
+            '}' +
+            '@media (prefers-reduced-motion: reduce) {' +
+            '    .tools-widget-btn svg { animation: none; opacity: 1; filter: drop-shadow(0 1px 2px rgba(10, 10, 10, 0.22)); }' +
+            '}' +
+            '.tools-widget-btn:hover { transform: translateY(-2px) rotate(-5deg); }' +
+            '.tools-widget-btn:hover svg,' +
+            '.tools-widget-btn:focus-visible svg,' +
+            '.tools-widget[data-open="true"] .tools-widget-btn svg {' +
+            '    animation: none;' +
+            '    opacity: 1;' +
+            '    filter: drop-shadow(0 1px 2px rgba(10, 10, 10, 0.22)) drop-shadow(0 0 7px rgba(45, 74, 94, 0.55));' +
+            '}' +
             '.tools-widget-btn:focus-visible {' +
-            '    transform: translate(-1px, -1px);' +
-            '    box-shadow: 3px 3px 0 rgba(10, 10, 10, 0.14);' +
-            '    outline: none;' +
+            '    outline: 2px solid var(--color-sea, #2d4a5e);' +
+            '    outline-offset: 4px;' +
+            '    border-radius: 50%;' +
             '}' +
-            '.tools-widget-btn svg { width: 100%; height: 100%; }' +
             '.tools-widget[data-open="true"] .tools-widget-btn {' +
             '    color: var(--color-sea, #2d4a5e);' +
-            '    background: var(--color-paper, #fafafa);' +
             '}' +
             '.tools-widget-panel {' +
             '    position: absolute;' +
@@ -207,12 +223,7 @@
             '    color: #fafafa;' +
             '    outline: none;' +
             '}' +
-            '[data-theme="dark"] .tools-widget-btn {' +
-            '    background: var(--color-paper, #1a1a1a);' +
-            '    color: var(--color-paper, #fafafa);' +
-            '    border-color: var(--color-paper, #fafafa);' +
-            '    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);' +
-            '}' +
+            '[data-theme="dark"] .tools-widget-btn { color: var(--color-paper, #fafafa); }' +
             '[data-theme="dark"] .tools-widget-panel {' +
             '    background: var(--color-paper, #1a1a1a);' +
             '    border-color: var(--color-paper, #fafafa);' +
@@ -220,17 +231,18 @@
             '@media print { .tools-widget { display: none !important; } }' +
             '@media (max-width: 480px) {' +
             '    .tools-widget { right: 12px; bottom: 12px; }' +
-            '    .tools-widget-btn { width: 44px; height: 44px; }' +
+            '    .tools-widget-btn { width: 50px; height: 50px; }' +
             '    .tools-widget-panel { min-width: 272px; bottom: 56px; }' +
             '}';
 
-        // Naïve-art spoon — the Spoon Lab "logo". Confident hand-drawn lines,
-        // a touch of folk asymmetry; tap it to open the lab.
-        var spoonSvg = '<svg viewBox="0 0 64 64" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-            '<path d="M32 7 C 21 7, 15.5 17, 18 26 C 19.6 32.8, 26 36.5, 32 36.5 C 38 36.5, 44.4 32.8, 46 26 C 48.5 17, 43 7, 32 7 Z"/>' +
-            '<path d="M33 36.5 C 33.4 44, 31.4 50.5, 34 58.5"/>' +
-            '<path d="M26 13.5 C 23.4 17.5, 23.4 23, 26 26.8" stroke-width="1.7" opacity="0.55"/>' +
-            '<circle cx="39" cy="16" r="1.1" fill="currentColor" stroke="none" opacity="0.5"/>' +
+        // The spoon — a real teaspoon, no box around it: filled egg-shaped
+        // bowl, slender neck, long handle flaring into a rounded end. Tilted
+        // like it was just set down; a soft breathing glow does the flashing.
+        var spoonSvg = '<svg viewBox="0 0 64 64" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<g transform="rotate(-14 32 32)">' +
+            '<path d="M32 6 C 27.2 6, 24.5 10.6, 24.5 15.7 C 24.5 21.4, 27.9 25.6, 32 25.6 C 36.1 25.6, 39.5 21.4, 39.5 15.7 C 39.5 10.6, 36.8 6, 32 6 Z"/>' +
+            '<path d="M31 25.4 C 31.4 32.5, 30.9 40, 30 47.8 C 29.5 52.2, 30.2 58, 32.2 58 C 34.2 58, 34.9 52.2, 34.4 47.8 C 33.5 40, 33 32.5, 33.4 25.5 Z"/>' +
+            '</g>' +
             '</svg>';
 
         var galleyIcon = '<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
