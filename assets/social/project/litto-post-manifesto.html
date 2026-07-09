@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #0a0a0a; --paper: #fafafa; --sea: #2d4a5e;
+    --salt: #94a3b8; --border: #d4d4d4; --muted: #6b7280;
+  }
+  html, body { width: 1080px; height: 1350px; }
+  body {
+    background: var(--paper);
+    font-family: Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex; padding: 96px 100px;
+  }
+  .plate {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+  }
+  .mark { width: 96px; height: 96px; margin-bottom: 64px; }
+  .kicker {
+    font-family: 'SF Mono', SFMono-Regular, Menlo, monospace;
+    font-size: 20px; text-transform: uppercase; letter-spacing: 0.34em;
+    color: var(--sea); margin-bottom: 60px; margin-left: 0.34em;
+  }
+  .statement {
+    font-size: 78px; font-weight: 400; line-height: 1.24;
+    color: var(--ink); letter-spacing: 0.005em; max-width: 15ch;
+  }
+  .statement em { font-style: italic; color: var(--sea); }
+  .rule {
+    width: 120px; height: 1px; background: var(--border);
+    margin: 70px 0 58px;
+  }
+  .body {
+    font-size: 30px; line-height: 1.62; color: var(--muted);
+    max-width: 26ch; font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <div class="plate">
+    <svg class="mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#0a0a0a" stroke-width="1"/>
+      <path d="M 50 15 C 42 30, 35 40, 35 55 C 35 72, 50 82, 50 82 C 50 82, 65 72, 65 55 C 65 40, 58 30, 50 15 Z" fill="none" stroke="#0a0a0a" stroke-width="2"/>
+      <path d="M 50 35 C 46 45, 43 52, 43 60 C 43 70, 50 75, 50 75 C 50 75, 57 70, 57 60 C 57 52, 54 45, 50 35 Z" fill="#0a0a0a"/>
+      <path d="M 35 82 C 40 78, 45 86, 50 82 C 55 78, 60 86, 65 82" fill="none" stroke="#2d4a5e" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div class="kicker">The Project</div>
+    <div class="statement">Where the science of cooking meets the flavour of a <em>coastline</em>.</div>
+    <div class="rule"></div>
+    <div class="body">A journal for yacht chefs and curious cooks — rigorous, tested, and rooted in place.</div>
+  </div>
+</body>
+</html>
