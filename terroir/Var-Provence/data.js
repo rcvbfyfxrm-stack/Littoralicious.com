@@ -1237,6 +1237,22 @@ window.TERROIR_DATA = (function () {
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Calanque+de+Figuerolles+%2F+du+Mugel+(La+Ciotat)+The+Var"
  }
 ];
-  const PHOTOS = [];
+  const PHOTOS = [
+ {
+  "src": "/terroir/Var-Provence/img/ph-1-saint-tropez-port-boats.jpg",
+  "caption": "The working port under the glamour — pointus still tied to the old quay.",
+  "credit": "Paul Signac · Public domain · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Var-Provence/img/ph-2-porquerolles-plage-notre.jpg",
+  "caption": "Car-free Porquerolles — one of the Îles d'Or the state bought to save.",
+  "credit": "Jean-pierre olivier · CC BY-SA 4.0 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Var-Provence/img/ph-3-gorges-du-verdon.jpg",
+  "caption": "The Verdon's turquoise gorge, an hour inland from the coast crush.",
+  "credit": "Dirk Beyer · CC BY-SA 3.0 · Wikimedia Commons"
+ }
+];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, CATEGORIES, GROUPS, GROUP_OF, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS };
 })();

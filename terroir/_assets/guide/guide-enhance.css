@@ -364,3 +364,11 @@
 /* ===== show-more clamp on the long soul intro 2026-07 ===== */
 .soul.is-clamped{max-height:460px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
 .soul + .gx-more{margin-top:-6px}
+
+/* ===== interactive band map ===== */
+.band-nav{position:sticky;top:0;z-index:40;display:flex;gap:7px;flex-wrap:wrap;align-items:center;max-width:900px;margin:0 auto 10px;padding:11px 24px;background:rgba(250,250,248,0.94);backdrop-filter:saturate(1.1) blur(9px);border-bottom:1px solid var(--gx-rule);}
+.band-nav__chip{font-family:var(--gx-mono);font-size:0.68rem;letter-spacing:0.4px;text-transform:uppercase;text-decoration:none;color:var(--gx-ink2);background:#fff;border:1px solid var(--gx-rule);padding:6px 12px;border-radius:22px;white-space:nowrap;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+.band-nav__chip:hover,.band-nav__chip:focus{color:#fff;background:var(--gx-sea);border-color:var(--gx-sea);}
+.gx-band{scroll-margin-top:66px;}
+.quicknav{display:none !important;}
+@media(max-width:640px){.band-nav{padding:9px 16px;gap:6px;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;}.band-nav__chip{font-size:0.64rem;padding:5px 10px;}}
