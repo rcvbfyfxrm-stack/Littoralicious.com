@@ -1350,6 +1350,27 @@ window.TERROIR_DATA = (function () {
   const WALKS = [];
   const WORK_SPOTS = [];
   const LANDMARKS = [];
-  const PHOTOS = [];
+  const PHOTOS = [
+ {
+  "src": "/terroir/Paris/img/ph-1-cafe-de-flore-paris.jpg",
+  "caption": "A Left Bank café-comptoir — the city's public living room, not a staged terrace.",
+  "credit": "Celette · CC BY-SA 4.0 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Paris/img/ph-2-louvre-pyramid-cour-napo.jpg",
+  "caption": "The Cour Napoléon — Pei's pyramid dropped into a 16th-century courtyard.",
+  "credit": "Benh LIEU SONG · CC BY 2.5 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Paris/img/ph-3-seine-ile-de-la-cite-par.jpg",
+  "caption": "The island where the very idea of dining out was first imagined.",
+  "credit": "DXR · CC BY-SA 3.0 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Paris/img/ph-4-marche-d-aligre-paris.jpg",
+  "caption": "The market from the seller's side, where the chefs do their morning rounds.",
+  "credit": "Mbzt · CC BY 3.0 · Wikimedia Commons"
+ }
+];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, CATEGORIES, GROUPS, GROUP_OF, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS };
 })();

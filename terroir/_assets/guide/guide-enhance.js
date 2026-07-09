@@ -22,7 +22,7 @@
     'DETAILS#story-box': 13.7,
     'DETAILS#quartiers': 35,
     'DETAILS#landmarks': 34.6,
-    'DETAILS#hotel-bars': 32.75,
+    'DETAILS#hotel-bars': 40.7,
     'DETAILS#natural-wine': 40.3,
     'DETAILS#listening': 41.7,
     'DETAILS#around': 46,
@@ -54,20 +54,20 @@
   };
 
   var BANDS = {
-    place: ['I', 'The place', 'Where it comes from, when to come, what to eat & drink'],
-    eat:   ['II', 'Where to eat', 'The full inventory, the tiers, the canon dishes'],
-    do:    ['III', 'Calas & things to do', 'Coves, walks, cafés to sit a while, culture, the districts'],
-    drink: ['IV', 'Where to drink & hear music', 'The wine & vermut counters, the living soundtrack'],
-    out:   ['V', 'Go out', 'Where the night actually happens'],
-    fast:  ['VI', 'Fast & real', 'Street food and the honest cheap plate'],
-    close: ['', 'Before you go', 'What to skip, who to follow, the calendar, the receipts']
+    place:  ['', 'L\u2019\u00c2me du lieu', 'The soul, the terroir, when to come, what to eat & drink'],
+    eat:    ['', 'Les Tables', 'The grandes and the petites \u2014 where the place actually eats'],
+    do:     ['', 'Fl\u00e2ner', 'The squares, the walks, the good coffee, the gardens, the little beauties'],
+    drink:  ['', 'Boire & sortir', 'The natural wine, the bars, the hi-fi, a drink in the grand hotels, the night'],
+    around: ['', 'Autour', 'The nature and the villages worth the drive'],
+    fast:   ['', 'Sur le pouce', 'The honest cheap plate, no ceremony'],
+    close:  ['', 'Pratique', 'What to skip, who to follow, the calendar, the sources']
   };
   function actOf(rank) {
-    if (rank >= 10 && rank < 20) return 'place';
-    if (rank >= 20 && rank < 30) return 'eat';
+    if (rank >= 6 && rank < 19.5) return 'place';
+    if (rank >= 19.5 && rank < 30) return 'eat';
     if (rank >= 30 && rank < 40) return 'do';
-    if (rank >= 40 && rank < 45) return 'drink';
-    if (rank === 45) return 'out';
+    if (rank >= 40 && rank < 45.5) return 'drink';
+    if (rank >= 45.5 && rank < 50) return 'around';
     if (rank >= 50 && rank < 60) return 'fast';
     if (rank >= 60 && rank < 100) return 'close';
     return null;
@@ -87,7 +87,7 @@
   /* ----- 1 · reorder + bands ----- */
   function reorder() {
     var box = container(); if (!box) return;
-    var kids = Array.prototype.slice.call(box.children).filter(function (n) { return n.nodeType === 1 && !n.classList.contains('gx-band'); });
+    var kids = Array.prototype.slice.call(box.children).filter(function (n) { return n.nodeType === 1 && !n.classList.contains('gx-band') && !n.classList.contains('band-nav'); });
     var ranked = kids.map(function (el, i) {
       var k = keyOf(el);
       var r = (k && RANK.hasOwnProperty(k)) ? RANK[k] : (200 + i);
@@ -99,19 +99,35 @@
     ranked.forEach(function (item) {
       var act = actOf(item.r);
       if (act && act !== lastAct && BANDS[act]) {
-        box.appendChild(makeBand(BANDS[act]));
+        box.appendChild(makeBand(BANDS[act], act));
         lastAct = act;
       } else if (act) { lastAct = act; }
       box.appendChild(item.el);
     });
   }
-  function makeBand(b) {
+  function makeBand(b, act) {
     var d = document.createElement('div');
     d.className = 'gx-band';
+    if (act) d.id = 'band-' + act;
     d.innerHTML = (b[0] ? '<span class="gx-band__num">' + b[0] + '</span>' : '') +
       '<span class="gx-band__title">' + b[1] + '</span>' +
       '<span class="gx-band__sub">' + b[2] + '</span>';
     return d;
+  }
+  function bandNav() {
+    var box = container(); if (!box || box.querySelector('.band-nav')) return;
+    var bands = box.querySelectorAll(':scope > .gx-band');
+    if (bands.length < 2) return;
+    var nav = document.createElement('nav');
+    nav.className = 'band-nav'; nav.setAttribute('aria-label', 'Sections of this guide');
+    Array.prototype.forEach.call(bands, function (b) {
+      var t = b.querySelector('.gx-band__title'); if (!t) return;
+      var a = document.createElement('a');
+      a.className = 'band-nav__chip'; a.href = '#' + b.id; a.textContent = t.textContent;
+      a.addEventListener('click', function (e) { e.preventDefault(); b.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      nav.appendChild(a);
+    });
+    box.insertBefore(nav, box.firstChild);
   }
 
   /* ----- 2 · dish / small-card grids ----- */
@@ -191,6 +207,7 @@
     revealInventory();
     etymology();
     reorder();
+    bandNav();
     setTimeout(clampLead, 60);
     setTimeout(clampSoul, 80);
   }

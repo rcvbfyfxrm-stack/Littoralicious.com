@@ -752,6 +752,27 @@ window.TERROIR_DATA = (function () {
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Cap+Lardier+%26+the+Gigaro+coves+(Sentier+du+Littoral)+Cavalaire-sur-Mer"
  }
 ];
-  const PHOTOS = [];
+  const PHOTOS = [
+ {
+  "src": "/terroir/Cavalaire-sur-Mer/img/ph-1-cavalaire-sur-mer.jpg",
+  "caption": "The bay from above — a whitewashed town climbing from the sand.",
+  "credit": "dronepicr · CC BY 2.0 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Cavalaire-sur-Mer/img/ph-2-cap-lardier-var.jpg",
+  "caption": "The Cap Lardier sentier — protected, undeveloped shore you reach on foot.",
+  "credit": "Johan N · CC BY-SA 3.0 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Cavalaire-sur-Mer/img/ph-3-gigaro-la-croix-valmer-b.jpg",
+  "caption": "Gigaro, where the coastal path into the wild begins.",
+  "credit": "dronepicr · CC BY 2.0 · Wikimedia Commons"
+ },
+ {
+  "src": "/terroir/Cavalaire-sur-Mer/img/ph-4-massif-des-maures.jpg",
+  "caption": "The cork-oak Maures behind the town — chestnut country, not just coast.",
+  "credit": "No machine-readable author provided. Civodule assumed (based on copyright claims). · CC BY-SA 3.0 · Wikimedia Commons"
+ }
+];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, CATEGORIES, GROUPS, GROUP_OF, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS };
 })();
