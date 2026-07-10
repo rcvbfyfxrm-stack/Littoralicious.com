@@ -63,6 +63,15 @@
         .dr-pill { display: inline-block; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; font-weight: 700; font-family: var(--font-mono, monospace); }
         .dr-pill--ready { background: #e7f5ef; color: #047857; } .dr-pill--review { background: #fdf2e2; color: #b45309; } .dr-pill--raw { background: #f1f1ef; color: #6b7280; }
         .dr-card__stat { font-family: var(--font-mono, monospace); font-size: 0.68rem; color: var(--color-salt, #94a3b8); }
+
+        /* ── Discard: reviewer-only soft-delete synced via draft-notes/{slug}.discarded ── */
+        .dr-discard, .dr-restore { font-family: var(--font-mono, monospace); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; background: none; border: 1px solid var(--color-border, #e2e2e2); color: var(--color-muted, #6b7280); padding: 3px 9px; cursor: pointer; border-radius: 2px; }
+        .dr-discard:hover { border-color: #b91c1c; color: #b91c1c; }
+        .dr-restore { border-color: #047857; color: #047857; }
+        .dr-discard[disabled] { opacity: 0.4; cursor: not-allowed; }
+        .dr-discardbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 26px 0 4px; padding-top: 16px; border-top: 1px dashed var(--color-border, #e2e2e2); font-family: var(--font-mono, monospace); font-size: 0.72rem; color: var(--color-muted, #6b7280); }
+        .dr-discardbar button { font-family: var(--font-mono, monospace); font-size: 0.68rem; background: none; border: 1px solid var(--color-border, #e2e2e2); color: var(--color-sea, #2d4a5e); padding: 3px 10px; cursor: pointer; border-radius: 2px; }
+        .dr-card--discarded { opacity: 0.62; border-top-color: #b91c1c; }
     </style>
 </head>
 <body>
@@ -134,10 +143,11 @@
                 signoutBtn.style.display = "none";
                 banner.style.display = "";
             }
-            // re-render notes regions to reflect auth state
-            document.querySelectorAll("[data-notes-for]").forEach(function (el) {
+            // re-render to reflect auth state (review notes + discard controls)
+            if (rankedList) { loadDiscards().then(paint); }
+            else { document.querySelectorAll("[data-notes-for]").forEach(function (el) {
                 wireNotes(el.getAttribute("data-notes-for"), el);
-            });
+            }); }
         });
 
         // ---- Notes (Firestore: draft-notes/{slug}/notes/{id}) ----
@@ -216,13 +226,111 @@
         }
         function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
 
+        // ---- Discard (reviewer-only soft-delete, synced via draft-notes/{slug}.discarded) ----
+        // Static hosting can't delete repo files from the browser, so "discard" hides the draft
+        // from every reviewer's board via Firestore and is fully restorable. To also remove the
+        // underlying file, run the repo-side cleanup with the exported discard list.
+        var rankedList = null;          // sorted drafts (with _rv), set once the manifest loads
+        var discardedSet = new Set();   // slugs the reviewer has discarded
+        var showDiscarded = false;
+        var metaBase = "";
+
+        function tone(rv) { if (rv.status === "rewritten") return "ready"; if (rv.status === "queued" || rv.notes > 0 || rv.overall) return "review"; return "raw"; }
+        var PILL = { ready: "Rewritten · ready", review: "In review", raw: "Untouched" };
+
+        function loadDiscards() {
+            if (!currentUser || !rankedList) { discardedSet = new Set(); return Promise.resolve(); }
+            return Promise.all(rankedList.map(function (d) {
+                return db.collection("draft-notes").doc(d.slug).get()
+                    .then(function (doc) { return (doc.exists && doc.data() && doc.data().discarded) ? d.slug : null; })
+                    .catch(function () { return null; });
+            })).then(function (slugs) { discardedSet = new Set(slugs.filter(Boolean)); });
+        }
+
+        function setDiscarded(slug, val) {
+            if (!currentUser) { alert("Sign in via the Studio to discard drafts."); return; }
+            if (val) discardedSet.add(slug); else discardedSet.delete(slug);
+            paint();  // optimistic
+            var FV = firebase.firestore.FieldValue;
+            var patch = val
+                ? { discarded: true, discardedAt: FV.serverTimestamp(), discardedBy: currentUser.email || "" }
+                : { discarded: FV.delete(), discardedAt: FV.delete(), discardedBy: FV.delete() };
+            db.collection("draft-notes").doc(slug).set(patch, { merge: true })
+              .catch(function (e) {
+                  if (val) discardedSet.delete(slug); else discardedSet.add(slug);   // revert on failure
+                  paint(); alert("Could not update discard: " + e.message);
+              });
+        }
+
+        function cardHtml(d, rank, discarded) {
+            var rv = d._rv, t = tone(rv);
+            var href = d.file ? d.file.replace(/\.html$/, "") : "#";   // cleanUrls
+            var stat = [];
+            if (rv.rewrites) stat.push("&times;" + rv.rewrites + " rewrite" + (rv.rewrites === 1 ? "" : "s"));
+            if (rv.notes) stat.push(rv.notes + " note" + (rv.notes === 1 ? "" : "s"));
+            if (!rv.rewrites && rv.overall) stat.push("overall note");
+            var action = discarded
+                ? '<button class="dr-restore" data-restore="' + esc(d.slug) + '">Restore</button>'
+                : '<button class="dr-discard" data-discard="' + esc(d.slug) + '"' + (currentUser ? '' : ' disabled title="Sign in via the Studio to discard"') + '>Discard</button>';
+            return '<article class="dr-card dr-card--' + t + (discarded ? ' dr-card--discarded' : '') + '">' +
+                '<div class="dr-card__row" style="margin-bottom:6px;">' +
+                (discarded ? '' : '<span class="dr-rank">#' + rank + '</span>') +
+                '<span class="dr-pill dr-pill--' + t + '">' + PILL[t] + '</span>' +
+                (stat.length ? '<span class="dr-card__stat dr-card__count">' + stat.join(" · ") + '</span>' : '') +
+                '</div>' +
+                '<div class="dr-card__cat">' + esc(d.category_label || d.category || "Draft") + '</div>' +
+                '<h3 class="dr-card__title"><a href="' + esc(d.file || "#") + '">' + esc(d.title || d.slug) + '</a></h3>' +
+                (d.lede ? '<p class="dr-card__lede">' + esc(d.lede) + '</p>' : '') +
+                '<div class="dr-card__row">' +
+                (d.read_time ? '<span>' + esc(d.read_time) + ' min</span>' : '') +
+                (d.added ? '<span>' + esc(d.added) + '</span>' : '') +
+                '<a href="' + esc(href) + '?draft=1">Open draft →</a>' +
+                '<span class="dr-card__count">' + action + '</span></div>' +
+                (discarded ? '' : '<div class="dr-notes" data-notes-for="' + esc(d.slug) + '"></div>') +
+                '</article>';
+        }
+
+        function paint() {
+            if (!rankedList) return;
+            var oldBar = document.getElementById("discardbar"); if (oldBar) oldBar.remove();
+            var oldDg = document.getElementById("discardgrid"); if (oldDg) oldDg.remove();
+
+            var active = rankedList.filter(function (d) { return !discardedSet.has(d.slug); });
+            var gone = rankedList.filter(function (d) { return discardedSet.has(d.slug); });
+            grid.innerHTML = active.length
+                ? active.map(function (d, i) { return cardHtml(d, i + 1, false); }).join("")
+                : '<p class="dr-empty">Every draft is discarded. Use “Show” below to restore.</p>';
+
+            if (currentUser && gone.length) {
+                var bar = document.createElement("div");
+                bar.id = "discardbar"; bar.className = "dr-discardbar";
+                bar.innerHTML = '<span>' + gone.length + ' discarded draft' + (gone.length === 1 ? '' : 's') + ' — hidden from the board</span>' +
+                    '<button id="toggle-discarded">' + (showDiscarded ? 'Hide' : 'Show') + '</button>';
+                grid.parentNode.insertBefore(bar, grid.nextSibling);
+                if (showDiscarded) {
+                    var dg = document.createElement("div");
+                    dg.id = "discardgrid"; dg.className = "dr-grid"; dg.style.marginTop = "12px";
+                    dg.innerHTML = gone.map(function (d) { return cardHtml(d, 0, true); }).join("");
+                    bar.parentNode.insertBefore(dg, bar.nextSibling);
+                }
+                document.getElementById("toggle-discarded").onclick = function () { showDiscarded = !showDiscarded; paint(); };
+            }
+
+            document.querySelectorAll("[data-notes-for]").forEach(function (el) { wireNotes(el.getAttribute("data-notes-for"), el); });
+            document.querySelectorAll("[data-discard]").forEach(function (b) { b.onclick = function () { setDiscarded(b.getAttribute("data-discard"), true); }; });
+            document.querySelectorAll("[data-restore]").forEach(function (b) { b.onclick = function () { setDiscarded(b.getAttribute("data-restore"), false); }; });
+
+            meta.textContent = metaBase + (currentUser && gone.length ? " · " + gone.length + " discarded" : "");
+        }
+
         // ---- Load draft manifest ----
         fetch("data/draft-articles.json", { cache: "no-cache" })
             .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
             .then(function (data) {
                 var drafts = (data && data.drafts) || [];
-                meta.textContent = drafts.length + " draft" + (drafts.length === 1 ? "" : "s") +
+                metaBase = drafts.length + " draft" + (drafts.length === 1 ? "" : "s") +
                     " · manifest " + (data._generated_at || "?") + " · ranked by rewrite activity";
+                meta.textContent = metaBase;
                 if (!drafts.length) { grid.innerHTML = '<p class="dr-empty">No drafts flagged in articles.json.</p>'; return; }
                 grid.innerHTML = '<p class="dr-empty">Ranking by rewrite activity…</p>';
 
@@ -243,9 +351,6 @@
                         })
                         .catch(function () { return { status: "none", rewrites: 0, notes: 0, overall: false, ts: 0 }; });
                 }
-                function tone(rv) { if (rv.status === "rewritten") return "ready"; if (rv.status === "queued" || rv.notes > 0 || rv.overall) return "review"; return "raw"; }
-                var PILL = { ready: "Rewritten · ready", review: "In review", raw: "Untouched" };
-
                 Promise.all(drafts.map(function (d) { return reviewOf(d.slug).then(function (rv) { d._rv = rv; return d; }); }))
                     .then(function (list) {
                         var srank = { rewritten: 2, queued: 1, none: 0 };
@@ -255,32 +360,8 @@
                                    (b._rv.notes - a._rv.notes) ||                  // then most-reviewed
                                    (b._rv.ts - a._rv.ts);                          // then most-recent
                         });
-                        grid.innerHTML = list.map(function (d, i) {
-                            var rv = d._rv, t = tone(rv);
-                            var href = d.file ? d.file.replace(/\.html$/, "") : "#"; // cleanUrls
-                            var stat = [];
-                            if (rv.rewrites) stat.push("&times;" + rv.rewrites + " rewrite" + (rv.rewrites === 1 ? "" : "s"));
-                            if (rv.notes) stat.push(rv.notes + " note" + (rv.notes === 1 ? "" : "s"));
-                            if (!rv.rewrites && rv.overall) stat.push("overall note");
-                            return '<article class="dr-card dr-card--' + t + '">' +
-                                '<div class="dr-card__row" style="margin-bottom:6px;">' +
-                                '<span class="dr-rank">#' + (i + 1) + '</span>' +
-                                '<span class="dr-pill dr-pill--' + t + '">' + PILL[t] + '</span>' +
-                                (stat.length ? '<span class="dr-card__stat dr-card__count">' + stat.join(" · ") + '</span>' : '') +
-                                '</div>' +
-                                '<div class="dr-card__cat">' + esc(d.category_label || d.category || "Draft") + '</div>' +
-                                '<h3 class="dr-card__title"><a href="' + esc(d.file || "#") + '">' + esc(d.title || d.slug) + '</a></h3>' +
-                                (d.lede ? '<p class="dr-card__lede">' + esc(d.lede) + '</p>' : '') +
-                                '<div class="dr-card__row">' +
-                                (d.read_time ? '<span>' + esc(d.read_time) + ' min</span>' : '') +
-                                (d.added ? '<span>' + esc(d.added) + '</span>' : '') +
-                                '<a href="' + esc(href) + '?draft=1" class="dr-card__count">Open draft →</a></div>' +
-                                '<div class="dr-notes" data-notes-for="' + esc(d.slug) + '"></div>' +
-                                '</article>';
-                        }).join("");
-                        document.querySelectorAll("[data-notes-for]").forEach(function (el) {
-                            wireNotes(el.getAttribute("data-notes-for"), el);
-                        });
+                        rankedList = list;
+                        loadDiscards().then(paint);
                     });
             })
             .catch(function (e) {
