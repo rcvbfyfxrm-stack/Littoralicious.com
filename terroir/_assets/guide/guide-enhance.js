@@ -1,5 +1,5 @@
 /* ============================================================================
-   TERROIR KIT — STRUCTURE / ENHANCE
+   TERROIR KIT — STRUCTURE / ENHANCE  [LOCKED 2026-07-09 — Flaner band taxonomy + interactive band-nav + inline make-or-break + inline gem callouts. Template-wide; do not change without an explicit unlock from Arnaud.]
    Re-sequences a guide into the reading spine Arnaud asked for, adds the "act"
    bands, clamps the intro behind a Read-more, lays dishes 2–3 to a row, and
    reveals the full table inventory. All progressive enhancement — if this file
