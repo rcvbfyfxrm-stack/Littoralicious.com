@@ -106,11 +106,12 @@
                     '<span class="terroir-berth__rank">#' + (i+1) + ' &middot; ' + escapeHTML(v.short || v.name) + '</span>' +
                     (v.badge ? '<span class="terroir-berth__badge">' + escapeHTML(v.badge) + '</span>' : '') +
                     '<div class="terroir-berth__name">' + escapeHTML(v.name) + gemChip(v) + nbhd + '</div>' +
+                    (v.hook ? '<div class="terroir-berth__hook">' + escapeHTML(v.hook) + '</div>' : '') +
                     gemCosign(v) + gemPerson(v) + gemSignature(v) +
                     (products ? '<div class="terroir-berth__products">' + products + '</div>' : '') +
                     '<div class="terroir-berth__tags">' + tags + '</div>' +
                     gemVerdict(v) +
-                    '<p class="terroir-berth__why">' + escapeHTML(v.why) + '</p>' +
+                    (v.why ? '<p class="terroir-berth__why">' + escapeHTML(v.why) + '</p>' : '') +
                     gemCaveat(v) +
                     '<div class="terroir-berth__meta">' + meta.map(m => '<div>' + m + '</div>').join('') + '</div>' +
                     '</div>';
@@ -140,11 +141,12 @@
                     '<div class="terroir-card__cat">' + (CAT_LABELS[v.cat] || v.cat) + '</div>' +
                     '<div class="terroir-card__name">' + escapeHTML(v.name) + badge + gemChip(v) + gemDrinkType(v) + offCity + nbhdInline + '</div>' +
                     ((gemSubcat(v)||gemMoneyEats(v)) ? '<div class="terroir-card__chiprow">' + gemSubcat(v) + gemMoneyEats(v) + '</div>' : '') +
+                    (v.hook ? '<div class="terroir-card__hook">' + escapeHTML(v.hook) + '</div>' : '') +
                     gemCosign(v) + gemPerson(v) + gemSignature(v) +
                     (products ? '<div class="terroir-card__products">' + products + '</div>' : '') +
                     (tags ? '<div class="terroir-card__tags">' + tags + '</div>' : '') +
                     gemVerdict(v) +
-                    '<div class="terroir-card__why">' + escapeHTML(v.why) + '</div>' +
+                    (v.why ? '<div class="terroir-card__why">' + escapeHTML(v.why) + '</div>' : '') +
                     gemCaveat(v) +
                     '<div class="terroir-card__meta">' + meta.join('') + '</div>' +
                 '</div>' +
@@ -194,6 +196,7 @@
                         '<span class="tcm__name">' + escapeHTML(v.name) + '</span>' + badge + gemChip(v) + gemSubcat(v) + gemMoneyEats(v) +
                         '<span class="tcm__chev" aria-hidden="true"></span>' +
                     '</span>' +
+                    (v.hook ? '<div class="tcm__hook">' + escapeHTML(v.hook) + '</div>' : '') +
                     sig +
                 '</summary>' +
                 '<div class="terroir-card__body">' +

@@ -17,7 +17,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Provençal gastronomy · 1 Michelin star (Relais & Châteaux)"
   ],
-  "why": "A grove of hundred-year-old palms, an organic potager, and a Burgundy chef who trained under Lameloise, Meneau and Marcon before bringing a Michelin star to a garden table just back from Gigaro beach.",
+  "why": "Château de Valmer is no invented backdrop: it is a 19th-century wine estate producing its own AOC Côtes de Provence rosé, where the dining room sits inside a botanical park of listed palms and the restaurant runs only when the summer estate opens its doors.",
   "address": "Château de Valmer, 81 boulevard de Gigaro, 83420 La Croix-Valmer, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Palmeraie+%E2%80%94+Ch%C3%A2teau+de+Valmer+Cavalaire-sur-Mer",
   "category": "grande",
@@ -49,7 +49,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Mediterranean · five-star hotel restaurant"
   ],
-  "why": "Ducasse and Savoy trained his hands; the Gigaro hillside gave him the light. Vincent Maillard's Vista isn't a temple of haute cuisine — it's a five-star terrace above the sea where Provence arrives sun-warmed, priced for the view, honest about being exactly that.",
+  "why": "Vista is the gastronomic table of Lily of the Valley, the Philippe Starck-designed wellness resort that opened on the Gigaro hillside in 2019 — a hotel built around fitness and longevity, which is why even its fine-dining leans light and sun-first rather than rich.",
   "address": "Lily of the Valley, Colline Saint-Michel, Bd Abel Faivre, Quartier de Gigaro (Plage de Gigaro), 83420 La Croix-Valmer, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Vista+%E2%80%94+Lily+of+the+Valley+Cavalaire-sur-Mer",
   "category": "petite",
@@ -81,7 +81,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Modern Mediterranean / village neo-bistro"
   ],
-  "why": "The sleeper. Two pastry chefs who spent years inside Cheval Blanc's three-star Vague d'Or under Arnaud Donckele — and winters at Vauxion's two-star Sarkara — walked out of the palace to cook a short Mediterranean carte in a village room above the municipal pool. No seafront, no spectacle: pumpkin tartlet under goat-cheese ice cream, squid stuffed with ratatouille, mushroom ravioli, a weekend brunch of house-made pastries. You go for the hands, not the horizon.",
+  "why": "It is the couple's first place of their own — Florent Manini and Anna Thillaye left the security of a Saint-Tropez palace kitchen to gamble on a small village room, which is why the carte stays short and personal rather than palace-formal.",
   "address": "Boulevard de Tahiti (Les Palmiers II), 83420 La Croix-Valmer — in the village, above the municipal pool",
   "maps": "https://www.google.com/maps/search/?api=1&query=Les+Saisonniers+Cavalaire-sur-Mer",
   "category": "grande",
@@ -113,7 +113,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "bistronomic hotel table"
   ],
-  "why": "Cavalaire has beaches, a marina, and — until recently — nowhere the guides bothered to sit down. Then the old Hôtel du Parc was reborn Tuscan-style, and Jean-Brice Ruffroy set up a bistronomic table under the pines. It's the one address in town the guides actually notice.",
+  "why": "The old Hôtel du Parc was gutted and reborn as a Tuscan-style villa-hotel, and this bistronomic table under the pines came with the reinvention — the town's first credible sit-down grew out of a hotel makeover, not a chef arriving cold.",
   "address": "7 avenue du Fleuriste, 83240 Cavalaire-sur-Mer, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Parc+%E2%80%94+L'H%C3%B4tel+du+Parc+Cavalaire-sur-Mer",
   "category": "grande",
@@ -177,7 +177,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Beach restaurant, pieds dans l'eau (contemporary Provençal + grilled fish)"
   ],
-  "why": "Dinner with your feet in the sand at the far, unhurried end of Gigaro — a Provençal homecoming Arthur and Sarah named for his grandfather.",
+  "why": "Arthur and Sarah ran an earlier 'Le Marius' at the port for two years before moving in 2012 to this Gigaro beach — the very sand where the couple's own story began, so the homecoming is theirs as much as the grandfather's.",
   "address": "Plage de Gigaro, 83420 La Croix-Valmer (Golfe de Saint-Tropez, near Cavalaire-sur-Mer)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Marius+%C3%A0+la+plage+Cavalaire-sur-Mer",
   "category": "beach",
@@ -235,7 +235,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Provençal bistrot / coast institution"
   ],
-  "why": "An old workmen's bar-tabac from the 1920s on the Corniche des Maures, still run by the white-moustached Dédé — the man whose bouillabaisse, Pudlowski says, once made Jacques Chirac, the presidential neighbour along the coast at Brégançon, salivate. The sea-view dining room looks straight out over the Bay of Rayol to the isles of Levant, Port-Cros and Bagaud (a second terrace faces the village); reserve, and call ahead the day before for the pot.",
+  "why": "It began as a 1920s workmen's bar-tabac on the Corniche des Maures, and Pudlowski tells that Dédé's bouillabaisse once made Jacques Chirac — the presidential neighbour just along the coast at Fort de Brégançon — salivate; the dining room looks straight out over the Bay of Rayol to the isles of Levant, Port-Cros and Bagaud.",
   "address": "Avenue du Touring Club (Bd du TCF), 83820 Le Rayol-Canadel-sur-Mer, Var — tel. 04 94 05 60 11",
   "maps": "https://www.google.com/maps/search/?api=1&query=Maurin+des+Maures+Cavalaire-sur-Mer",
   "category": "local",
@@ -351,7 +351,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Garden café / botanical-garden lunch"
   ],
-  "why": "A botanical garden of the world's Mediterranean coasts — and lunch on a terrace in the middle of it.",
+  "why": "The Domaine du Rayol garden it sits inside was designed from 1989 by landscape gardener Gilles Clément — father of the 'jardin en mouvement' — and is owned by the Conservatoire du littoral, so your lunch is folded into a protected work of botanical art, not a hotel lawn.",
   "address": "Domaine du Rayol – Le Jardin des Méditerranées, Avenue Jacques Chirac (ex-Avenue des Belges), 83820 Rayol-Canadel-sur-Mer, Var",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Caf%C3%A9+des+Jardiniers+%E2%80%94+Domaine+du+Rayol+Cavalaire-sur-Mer",
   "category": "local",
@@ -444,7 +444,7 @@ window.TERROIR_DATA = (function () {
    "mediterranean",
    "seafood"
   ],
-  "why": "La Reserve Ramatuelle is Michel Reybier's clifftop hotel above Pampelonne, and its restaurant is the peninsula's long-standing benchmark for light, health-minded fine dining. The one real thing to learn: chef Eric Canino trained with Michel Guerard, the man who invented 'cuisine minceur' in the 1970s, and that low-fat, produce-first philosophy is exactly why the plates here read as clarity rather than richness. Verified fact: La Voile holds two MICHELIN stars in the 2026 Guide.",
+  "why": "La Réserve Ramatuelle is the clifftop hotel of Michel Reybier — the industrialist behind Cos d'Estournel — and Canino's cooking descends from Michel Guérard, who invented 'cuisine minceur' in the 1970s to make fine dining light; that spa-hotel provenance is why the plates read as clarity, not richness.",
   "address": "Chemin de la Quessine, 83350 Ramatuelle",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Voile+-+La+Reserve+Ramatuelle+Cavalaire-sur-Mer+Var",
   "category": "grande",
@@ -479,7 +479,7 @@ window.TERROIR_DATA = (function () {
    "provencal",
    "sea-view"
   ],
-  "why": "Gassin is one of France's officially classified 'plus beaux villages,' a hill fort above the vineyards, and Bello Visto sits right on its ramparts (the 'Barri') over the Gulf of Saint-Tropez. The real thing to learn: the MICHELIN Bib Gourmand exists specifically to flag good cooking at moderate prices, and Bello Visto is a textbook case, chef-owner Sylvain Humbert and his wife Laurence running a small hotel-restaurant with a terroir-driven Provencal card. Verified fact: Bib Gourmand plus two Gault&Millau toques.",
+  "why": "Gassin is one of France's officially classified 'plus beaux villages,' a hill fort ringed by its old defensive walk, and the restaurant sits right on that rampart — the 'Barri' — so the view down the Gulf of Saint-Tropez is medieval fortification put to work.",
   "address": "Place deis Barri, old village, 83580 Gassin",
   "maps": "https://www.google.com/maps/search/?api=1&query=Bello+Visto+Cavalaire-sur-Mer+Var",
   "category": "petite",
@@ -514,7 +514,7 @@ window.TERROIR_DATA = (function () {
    "garrigue",
    "vineyard-view"
   ],
-  "why": "La Verdoyante occupies a former rustic farmhouse in the vineyards below hilltop Gassin, terrace open over the domaines and the gulf. The real thing to learn: 'garrigue' is the low, aromatic scrubland of thyme, rosemary and juniper that carpets these hills, and it is literally what the kitchen means when the food is said to taste of the place. Verified fact: it has been run by the Mouret family since 1979, appears in the MICHELIN Guide, and ranks #3 of 24 Gassin restaurants on TripAdvisor with 630+ reviews and a 2024 Travelers' Choice award.",
+  "why": "The one thing to learn here is the word 'garrigue' — the low, aromatic scrubland of thyme, rosemary and juniper that carpets these hills; it is literally what the kitchen means when the food is said to taste of the place.",
   "address": "866 chemin vicinal de Coste-Brigade, 83580 Gassin",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Verdoyante+Cavalaire-sur-Mer+Var",
   "category": "petite",
@@ -549,7 +549,7 @@ window.TERROIR_DATA = (function () {
    "fresh-pasta",
    "village"
   ],
-  "why": "La Forge sits in a former forge in the medieval centre of Ramatuelle, with a panoramic terrace toward the sea. The real thing to learn: much of the 'Italian' food on this coast is French-Provencal in disguise, so a kitchen actually run by natives of Le Marche and the Lake Maggiore side of Piedmont, cooking their own regions with homemade pasta and bread, is genuinely rarer here than a Michelin star. Verified detail: regional critics Jacques Gantie and Gilles Pudlowski single it out as the village's standout Italian, led by chef Paolo Amadori with Francesca Alessi.",
+  "why": "The one thing to learn: much of the 'Italian' food on this coast is French-Provençal in disguise, so a kitchen genuinely run by natives cooking their own home regions — with pasta and bread made in-house — is rarer along this shore than a Michelin star.",
   "address": "Rue Victor Leon, 83350 Ramatuelle",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Forge+Cavalaire-sur-Mer+Var",
   "category": "petite",
@@ -584,7 +584,7 @@ window.TERROIR_DATA = (function () {
    "beach",
    "pasta"
   ],
-  "why": "La Brigantine is a chic trattoria on Gigaro beach in La Croix-Valmer, part of the Lily of the Valley hotel group, with Breton chef Charley Bouhier cooking Italian from the northern lakes to Sicily. The real thing to learn: Gigaro is the peninsula's quiet counter-Pampelonne, a low-key sand-and-pine cove that is the trailhead for the sentier du littoral coastal path. Verified detail: critic Gilles Pudlowski praises it warmly, and its 2026 season opens on 12 February, far earlier than a summer-only beach table.",
+  "why": "The one thing to learn is Gigaro itself: the peninsula's quiet counter-Pampelonne, a low-key sand-and-pine cove that also serves as the trailhead for the sentier du littoral coastal path out toward the wild capes.",
   "address": "Boulevard de Gigaro, 83420 La Croix-Valmer",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Brigantine+Cavalaire-sur-Mer+Var",
   "category": "petite",
