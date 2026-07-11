@@ -17,7 +17,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Haute cuisine végétale"
   ],
-  "why": "Passard put down the knife on red meat in 2001 and picked up a trowel; a quarter-century on, the cooks behind two of the city's most-loved bistros, Septime and Le Servan, came up through his kitchen.",
+  "why": "Passard put down the knife on red meat back in 2001 and picked up a trowel — a full generation before the plant world caught up with him. He is largely self-taught, having learned the grill under Alain Senderens at L'Archestrate, the very address he later took over and renamed.",
   "address": "84 rue de Varenne, 75007 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=L'Arp%C3%A8ge+Paris",
   "category": "creme",
@@ -49,7 +49,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Haute cuisine - 3-star tasting"
   ],
-  "why": "Donckele already held three stars on the Riviera. He came to the Samaritaine and did it again in seven months - this time making the sauce the main course.",
+  "why": "Before Paris, Donckele spent two decades earning three stars at La Vague d'Or in Saint-Tropez — a Riviera career he walked away from to open in the LVMH-owned Samaritaine, the reborn Art Nouveau department store on the Seine.",
   "address": "Cheval Blanc Paris, 8 Quai du Louvre, 75001 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Pl%C3%A9nitude+-+Cheval+Blanc+Paris+Paris",
   "category": "creme",
@@ -81,7 +81,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Haute cuisine classique"
   ],
-  "why": "The old royal mint on the Left Bank, one floor up: six salons hung with contemporary art on loan from the Pinault Collection, the Seine in the windows, and a truffle-and-artichoke soup that has been Guy Savoy's signature for decades.",
+  "why": "Six salons hung with contemporary art on loan from François Pinault's collection, floor-to-ceiling windows over the Seine, and a private lift up into the old royal mint — Savoy negotiated the whole piano nobile of the Monnaie de Paris as his dining room in 2015.",
   "address": "11 quai de Conti, 75006 Paris, France (Monnaie de Paris / Hotel de la Monnaie)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Guy+Savoy+Paris",
   "category": "creme",
@@ -113,7 +113,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Haute cuisine (Franco-Japanese)"
   ],
-  "why": "A boy in Nagano, son of a kaiseki cook, watched a documentary about French cuisine on Japanese television and decided that would be his life. He moved to France in 1998, cooked for years under Gilles Goujon and then Alain Ducasse, and opened his own small room off the rue Coq-Héron in 2011. In January 2020 he became the first Japanese chef to hold three MICHELIN stars in France — a rank he still holds in 2026. The crisp-vegetable \"garden\" under a cloud of lemon foam took five years to perfect: nothing here is casual, and nothing is left to chance.",
+  "why": "A boy in Nagano, son of a kaiseki cook, watched a documentary about French cuisine on Japanese television and decided that would be his life. He moved to France in 1998 and cooked for years under Gilles Goujon and then Alain Ducasse before opening his own small room off the rue Coq-Héron in 2011.",
   "address": "5 rue Coq-Héron, 75001 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Kei+Paris",
   "category": "creme",
@@ -145,7 +145,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Produce-driven haute cuisine (counter tasting)"
   ],
-  "why": "Bruno Verjus never trained in a kitchen — he was a medical student, an entrepreneur in China, a photographer, a radio food critic — and only late did he teach himself to cook and open Table by the Marche d'Aligre. From a wave-shaped counter you watch him plate the day's produce himself. No a la carte, no hiding: just the 'Couleur du jour' and whatever the tide and the fields sent. The world put him at No. 3, then No. 8 — either way, in the top ten.",
+  "why": "Verjus came to the stove only in his mid-fifties, after lives as a medical student, an entrepreneur in China, a photographer and a radio food critic, opening Table by the Marché d'Aligre in 2013 — the market he still shops each morning before service.",
   "address": "3 rue de Prague, 75012 Paris, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Table+by+Bruno+Verjus+Paris",
   "category": "creme",
@@ -177,7 +177,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Haute cuisine"
   ],
-  "why": "Ten years at three stars, not one demotion — while Paris's top tables keep trading places, the George V's dining room does not move.",
+  "why": "Le Squer is Breton, and it shows: his cooking leans hard to the sea and to a disciplined, almost architectural classicism rather than fireworks — the plainest food you can serve at this altitude, and the hardest to fake.",
   "address": "31 Avenue George V, 75008 Paris, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Cinq+Paris",
   "category": "creme",
@@ -209,7 +209,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Plant-forward gastronomy"
   ],
-  "why": "A sabre champion who quit the piste for the pass. Before Manon Fleury cooked for anyone, she fenced for France — and something of that discipline survives at Datil, where the meal begins not with butter and luxury but with a bouillon of potato peelings, and ends with a tea steeped from plum stones. Nothing is thrown away, no one shouts across the line, and the animal on the plate has been reduced to a whisper. It is the table that made \"sustainable\" stop sounding like an apology.",
+  "why": "Before Manon Fleury cooked for anyone she fenced sabre for France, and something of that discipline survives here in a hierarchy-free, women-led brigade where no one shouts across the line. It is the table that made 'sustainable' stop sounding like an apology.",
   "address": "13 rue des Gravilliers, 75003 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Datil+Paris",
   "category": "rising",
@@ -337,7 +337,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Weekday breakfast & lunch day kitchen - Franco-Levantine-Japanese"
   ],
-  "why": "She left law and finance; he had cooked at Daniel Boulud's Daniel in New York and Gordon Ramsay's Savoy Grill in London. They married, took a small mint-green-fronted room near the Aligre market, and chose to shut the kitchen by mid-afternoon - breakfast and lunch, weekdays only. Then Moko's miso-and-black-sesame cookies turned it into one of the hardest weekday tables in Paris.",
+  "why": "She left law and finance; he had cooked at Daniel Boulud's Daniel in New York and Gordon Ramsay's Savoy Grill in London. They married and took a small mint-green-fronted room near the Aligre market, choosing to close the shutters by mid-afternoon — then Moko's cookies did the rest.",
   "address": "5 rue Saint-Bernard, 75011 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Mokonuts+Paris",
   "category": "rising",
@@ -369,7 +369,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Franco-Filipino neo-bistro"
   ],
-  "why": "Two sisters born in Manila to a French father took over a gritty 1980s bar on rue Saint-Maur in 2014, kept its counter and hand-painted ceiling, and now cook Passard-and-Barbot technique beneath it: blood-sausage wontons drowned in sweet chili, mussels sharp with chili and Thai basil, cuttlefish with green mango. French bones, a quiet Filipino accent.",
+  "why": "Two sisters born in Manila to a French father took over a gritty 1980s bar on rue Saint-Maur in 2014 and kept its zinc counter and hand-painted ceiling intact — French bones, a quiet Filipino accent laid over three-star technique.",
   "address": "32 rue Saint-Maur, 75011 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Servan+Paris",
   "category": "cult",
@@ -433,7 +433,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Basque bistrot / canteen"
   ],
-  "why": "Push through the door on rue Malar and Stephane Jego's baritone reaches you before the food does — this is not a quiet restaurant and never pretends to be. A decade at Yves Camdeborde's La Regalade, one of bistronomie's founding kitchens, shaped him before he took over this Basque canteen in 2002 and ran it like a rugby scrum: red banquettes packed elbow to elbow, wild game roasting through the cold months, and a rice pudding that lands as a vat with its own caramel and nougatine, yours to assemble. You come out full, a little deafened, and grinning.",
+  "why": "Stéphane Jégo spent a decade at Yves Camdeborde's La Régalade, one of bistronomie's founding kitchens, before taking over this Basque canteen in 2002 and running it like a rugby scrum — his baritone reaching you before the food does, and you come out full, a little deafened, and grinning.",
   "address": "27 rue Malar, 75007 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Chez+L'Ami+Jean+Paris",
   "category": "authentique",
@@ -465,7 +465,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bistrot · natural wine"
   ],
-  "why": "Up a quiet Belleville side street, an Argentine cook named Raquel Carena has worked the same handful of covers since 1987 — no printed menu, just a chalkboard of brains, pig's ears and braised things that other Paris chefs, Pierre Hermé among them, come to eat on their own time.",
+  "why": "Raquel Carena is an Argentine who never trained in a kitchen and has worked this same handful of Belleville covers since 1987; her partner Philippe 'Pinuche' Pinoteau, an early natural-wine believer, has curated the cellar beside her since 1992.",
   "address": "3 rue Jouye-Rouve, 75020 Paris (Belleville, 20e)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Baratin+Paris",
   "category": "authentique",
@@ -497,7 +497,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bistrot classique"
   ],
-  "why": "The dino-classic bistrot Anthony Bourdain called one of France's best on No Reservations - Sarawak-pepper steak au poivre, complimentary gougeres, Paris-Brest (Time Out / The Infatuation).",
+  "why": "Bertrand Auboyneau was a finance man before he opened Paul Bert in 1997 with his wife Gwenaëlle Cadoret, building it into a standard-bearer for vigneron wine and unreconstructed bistro cooking under head chef Thierry Laurent.",
   "address": "18 rue Paul Bert, 75011 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Bistrot+Paul+Bert+Paris",
   "category": "authentique",
@@ -529,7 +529,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Neo-bistro / natural wine"
   ],
-  "why": "A bar opened in 1902 two doors from the Cirque d'Hiver and once frequented by its performers, where a 1920s Sarreguemines ceramic frieze of clowns and Augustes now wraps one of Paris's sharpest natural-wine bistros. History you can sit inside.",
+  "why": "The bar opened in 1902 two doors from the Cirque d'Hiver and was once the drinking hole of its acrobats and clowns; the 1920s Sarreguemines ceramic frieze that wraps the room is why circus performers, then chefs, kept coming back. History you can sit inside.",
   "address": "114 rue Amelot, 75011 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Clown+Bar+Paris",
   "category": "authentique",
@@ -561,7 +561,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bistrot parisien classique"
   ],
-  "why": "Marthe Allard carried her Burgundy mother-cook recipes to Paris in 1932; the house later earned two Michelin stars, largely on the strength of one duck perfected by her daughter-in-law Fernande. Alain Ducasse bought the room in 2013 and swore not to alter its DNA — so the Challans duck with olives still comes out of the same preserved kitchen, generations after the Allard women made it famous.",
+  "why": "Marthe Allard carried her Burgundy mother-cook recipes to Paris in 1932 and built the house; Alain Ducasse bought the room in 2013 and swore not to touch its DNA, so it still cooks out of the same preserved, tiled kitchen the Allard women ran.",
   "address": "41 rue Saint-André-des-Arts, 75006 Paris (also entrance at 1 rue de l'Éperon)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Allard+Paris",
   "category": "authentique",
@@ -593,7 +593,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bistrot classique"
   ],
-  "why": "The kind of room that no longer gets built: 1964, a menu still written by hand, and the lights out every Saturday and Sunday.",
+  "why": "Founded in 1964 by a patron named Georges, the room stayed in the same family for nearly fifty years until Jean-Gabriel de Bueil and Dominique Paul took it over in 2010 as its self-appointed guardians — changing, deliberately, nothing.",
   "address": "1 rue du Mail, 75002 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Chez+Georges+Paris",
   "category": "authentique",
@@ -625,7 +625,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bouillon"
   ],
-  "why": "Founded in 1896 to pour cheap broth into working Paris — 130 years on you still squeeze onto a shared table under globe lamps, in a Belle Époque hall whose décor the state classified as a monument historique in 1989.",
+  "why": "Brothers Frédéric and Camille Chartier opened it in 1896 to pour cheap broth into working Paris; the Joulie family has run it since 2007, still feeding hundreds a day at the same paper-covered communal tables.",
   "address": "7 rue du Faubourg Montmartre, 75009 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Bouillon+Chartier+Paris",
   "category": "story",
@@ -689,7 +689,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Grande table historique · Palais-Royal"
   ],
-  "why": "Napoléon is said to have courted Joséphine here; Victor Hugo kept to a fixed order of vermicelli and lamb; Colette, who lived just above the restaurant in the Palais-Royal, was carried down on a chair to dine in her last years — and brass plaques still name their seats. Open under the Palais-Royal arcades since 1784 as the Café de Chartres, the room reopened 12 May 2026 under Paris Society and chef Bruno Doucet, with a new 150-seat terrace spilling into the garden.",
+  "why": "Napoléon is said to have courted Joséphine at these tables; Victor Hugo kept to a fixed order of vermicelli and lamb; Colette, who lived upstairs in the Palais-Royal, was carried down on a chair to dine in her last years. It has traded here as the Café de Chartres since 1784.",
   "address": "17 Rue de Beaujolais, 75001 Paris, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Grand+V%C3%A9four+Paris",
   "category": "story",
@@ -721,7 +721,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Historic grand brasserie"
   ],
-  "why": "The 1901 Belle Époque dining room above Gare de Lyon — gilt, crystal chandeliers, and 41 painted panels, classified a monument historique in 1972. Theatre first; solid brasserie cooking second.",
+  "why": "",
   "address": "Place Louis Armand, 75012 Paris (1st floor, Gare de Lyon, Hall 1)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Train+Bleu+Paris",
   "category": "story",
@@ -753,7 +753,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Historic Alsatian brasserie"
   ],
-  "why": "Step in off rue de la Bastille and the room opens under a floral glass dome: the oldest Alsatian brasserie in Paris, 1864, where the choucroute still arrives by the mound and the house swears it poured the city its first beer on tap.",
+  "why": "",
   "address": "5-7 rue de la Bastille, 75004 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Bofinger+Paris",
   "category": "story",
@@ -785,7 +785,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Grande brasserie Art Deco (Montparnasse)"
   ],
-  "why": "Opening night, 20 December 1927: more than 2,000 guests pushed in through ice and rain, drank all 1,200 bottles of champagne dry by midnight, and kept going until Police-Secours was called at 5 a.m. to clear the last of them. Twenty-seven artists had painted the pillars; nearly a century on — past Simenon and Josephine Baker, Hemingway, Sartre and Beauvoir — you still eat under them.",
+  "why": "Opening night, 20 December 1927: more than 2,000 guests pushed in through ice and rain, drank all 1,200 bottles of champagne dry by midnight, and kept going until Police-Secours was called at 5 a.m. to clear them. Simenon, Josephine Baker, Hemingway, Sartre and Beauvoir all ate here after.",
   "address": "102 boulevard du Montparnasse, 75014 Paris, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Coupole+Paris",
   "category": "story",
@@ -817,7 +817,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Old-Paris crémerie-restaurant"
   ],
-  "why": "Eat at the shared tables that once fed Rimbaud, Joyce and Hemingway, in a room Woody Allen borrowed whole for Midnight in Paris. A crémerie since 1845, a restaurant since 1890, its Belle Epoque dining room has barely changed in over a century.",
+  "why": "A crémerie since 1845 and a restaurant since 1890, its shared tables once fed Rimbaud, Joyce and Hemingway; Woody Allen borrowed the room whole for Midnight in Paris, and little in it has changed in over a century.",
   "address": "41 rue Monsieur-le-Prince, 75006 Paris, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Polidor+Paris",
   "category": "story",
@@ -848,7 +848,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Falafel window - Marais Jewish quarter"
   ],
-  "why": "The green window on rue des Rosiers, the Marais's old Jewish street, since 1979: you pay before you reach the front, and the pita comes back overstuffed with six falafel balls dyed green by their own herbs.",
+  "why": "Founded in 1979 by Isaac and Daisy Peretz and still run by the family, it turned rue des Rosiers — the Marais's old Jewish street — into falafel's Paris address; Lenny Kravitz's endorsement is taped in the window.",
   "address": "34 rue des Rosiers, 75004 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=L'As+du+Fallafel+Paris",
   "category": "cult",
@@ -880,7 +880,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Sandwicherie / griddled sandwiches"
   ],
-  "why": "The man is the show. Alain started griddling oversized sandwiches from a stall in the covered Marche des Enfants Rouges around 2005, then took over a counter a few doors away on rue Charlot, still building each order by hand while a line forms out the door.",
+  "why": "The man is the show: Alain started griddling oversized sandwiches from a stall inside the covered Marché des Enfants Rouges around 2005, then took over his own counter a few doors away on rue Charlot, still building every order by hand.",
   "address": "26 rue Charlot, 75003 Paris (shop, near the Marche des Enfants Rouges where the stall originated)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Chez+Alain+Miam+Miam+Paris",
   "category": "cult",
@@ -911,7 +911,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "No-reservations seafood bar"
   ],
-  "why": "Septime's seafood sibling, opened next door in 2013 and named for the Québécois clam-juice cocktail: the morning's deliveries from Saint-Jean-de-Luz, Concarneau and the Île d'Yeu set the menu, and no reservation will save you a seat. First-come, first-served, all catch, no ceremony.",
+  "why": "Named for the Québécois clam-juice cocktail, it lives or dies by the morning's deliveries — the boats at Saint-Jean-de-Luz, Concarneau and the Île d'Yeu write the day's menu, and whatever they didn't send simply isn't on.",
   "address": "80 rue de Charonne, 75011 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Clamato+Paris",
   "category": "cult",
@@ -943,7 +943,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bouillon — the 19th-century workers' canteen, revived"
   ],
-  "why": "The 2017 revival that dragged the cheap 19th-century bouillon — the Duval-era broth-house born in the 1850s to feed the workers of Les Halles, the 'belly of Paris' — back onto the boulevard: French classics under 14 EUR, a 300-seat room by the Moulin Rouge, and a queue that has never quite stopped.",
+  "why": "The bouillon is a genuine Paris institution — the cheap, fast broth-house born in the 1850s under Pierre-Louis Duval to feed the workers of Les Halles — that had all but died out until the Moussié brothers revived the format here in 2017.",
   "address": "22 boulevard de Clichy, 75018 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Bouillon+Pigalle+Paris",
   "category": "cult",
@@ -977,7 +977,7 @@ window.TERROIR_DATA = (function () {
    "plant-based",
    "kitchen-garden"
   ],
-  "why": "The honest catch: the famous rôtisserie and the old hot-cold egg are gone — this is a purist's bet, not the crowd-pleasing Arpège of the 2000s, and some diners miss the animal register. Verified fact: Passard removed all animal protein bar honey on 21 July 2025, a first for a French three-star. What it teaches — 'plant-based' at this altitude is about a grower's obsession, not a diet.",
+  "why": "The honest catch: the famous rôtisserie and the old hot-cold egg are gone, and some diners plainly miss the animal register — this is a purist's bet, not the crowd-pleasing Arpège of the 2000s. What it teaches: 'plant-based' at this altitude is about a grower's obsession, not a diet.",
   "address": "84 rue de Varenne, 75007 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Arp%C3%A8ge+Paris",
   "category": "creme",
@@ -1012,7 +1012,7 @@ window.TERROIR_DATA = (function () {
    "classic-haute",
    "set-lunch-value"
   ],
-  "why": "Le Squer is Breton and it shows — his cooking leans to the sea and to a disciplined, almost architectural classicism rather than fireworks. Verified fact: the Four Seasons George V renewed six Michelin stars in the 2026 guide — Le Cinq (3), L'Orangerie (2) and Le George (1). The lesson — at a true palace, consistency is the luxury you're paying for.",
+  "why": "Le Squer is Breton and it shows — his cooking leans to the sea and to a disciplined, almost architectural classicism rather than fireworks. The lesson: at a true palace, the consistency is the luxury you're paying for, not the surprise.",
   "address": "31 avenue George V, 75008 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Cinq+%E2%80%93+Four+Seasons+George+V+Paris",
   "category": "creme",
@@ -1047,7 +1047,7 @@ window.TERROIR_DATA = (function () {
    "classic-haute",
    "truffle"
   ],
-  "why": "A chef change at a three-star palace is where stars usually wobble; Épicure's held, which tells you the Bristol's kitchen bench runs deep. Verified fact: Faye succeeded Fréchon (25 years at the hotel) in spring 2024 and Épicure retained three stars in 2026. The teaching point — a great restaurant is a system, not a single genius.",
+  "why": "Fréchon had run this kitchen for twenty-five years, so his 2024 handover to Faye was the kind of change that usually costs a star. The teaching point: a great restaurant is a system, not a single genius — and the Bristol's bench proved deep enough to hold.",
   "address": "112 rue du Faubourg Saint-Honoré, 75008 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=%C3%89picure+%E2%80%93+Le+Bristol+Paris",
   "category": "creme",
@@ -1082,7 +1082,7 @@ window.TERROIR_DATA = (function () {
    "deconstruction",
    "grand-dessert"
   ],
-  "why": "The bankruptcy story is the key to the cooking — a man who lost everything for cooking too ambitiously simply carried on cooking too ambitiously. Verified fact: he declared bankruptcy in Saint-Étienne in 1996, reopened in Paris the same year, regained two stars in 1997 and the third in 1998, and has held three stars there since. The teaching point — 'complex' is a style you either lean into or leave; Gagnaire is the purest test of your own taste in the city.",
+  "why": "The bankruptcy is the key to the cooking: a man who lost everything for cooking too ambitiously simply carried on cooking too ambitiously. The teaching point — 'complex' is a style you either lean into or leave, and Gagnaire is the purest test of your own taste in the city.",
   "address": "6 rue Balzac, 75008 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Pierre+Gagnaire+Paris",
   "category": "creme",
@@ -1117,7 +1117,7 @@ window.TERROIR_DATA = (function () {
    "carte-blanche",
    "winding-down"
   ],
-  "why": "The self-taught Basque 'punk' chef spent two decades making avenue Parmentier a pilgrimage, and has already taken over the Petit Grill Basque in Saint-Jean-de-Luz (since 2024), where he cooks plainer Franco-Basque bistrot food. Verified fact: he announced the wind-down of Le Chateaubriand for around the turn of 2026 and staged a run of farewell four-hands dinners in December 2025; as of mid-2026 the room was still operating. The lesson — landmark restaurants are mortal; the movement outlives the room, but the room does not.",
+  "why": "The self-taught Basque 'punk' spent two decades making avenue Parmentier a pilgrimage, and has already taken over the Petit Grill Basque in Saint-Jean-de-Luz (since 2024), where he cooks plainer Franco-Basque food. The lesson: the movement outlives the room, but the room does not.",
   "address": "129 avenue Parmentier, 75011 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Chateaubriand+Paris",
   "category": "authentique",
@@ -1152,7 +1152,7 @@ window.TERROIR_DATA = (function () {
    "sandwich",
    "bistro"
   ],
-  "why": "A bistro around the corner from Place Vendôme where the jewellers and suits come down for lunch. A true jambon-beurre is only three things — a fresh baguette, good butter, jambon de Paris — which is exactly why nothing can hide here, and Time Out has named it the best sandwich in the world. The classic runs about €6; the Spécial adds fresh goat cheese and olive oil.",
+  "why": "A true jambon-beurre is only three things — a fresh baguette, good butter, jambon de Paris — which is exactly why nothing can hide in it, and why a plain one from a working bistro can out-rank any showpiece.",
   "address": "8 rue des Capucines, 75002 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Petit+Vend%C3%B4me+Paris",
   "category": "cult",
@@ -1187,7 +1187,7 @@ window.TERROIR_DATA = (function () {
    "crêpe",
    "cider"
   ],
-  "why": "Rue du Montparnasse is Paris's Little Brittany — Bretons stepped off the trains at Gare Montparnasse and never left, and the street is still lined end to end with crêperies. Josselin is the benchmark of the block: a lace-edged buckwheat galette cooked on the billig, cider poured into a ceramic bolée. Learn the one rule here — galette is savoury buckwheat, crêpe is sweet wheat.",
+  "why": "Rue du Montparnasse is Paris's Little Brittany: Bretons stepped off the trains at Gare Montparnasse and never left, and the street is lined end to end with crêperies. Learn the one rule here — galette is savoury buckwheat, crêpe is sweet wheat.",
   "address": "67 rue du Montparnasse, 75014 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Cr%C3%AAperie+de+Josselin+Paris",
   "category": "cult",
@@ -1221,7 +1221,7 @@ window.TERROIR_DATA = (function () {
    "steak-frites",
    "secret-sauce"
   ],
-  "why": "One question at the door — 'how would you like it?' — and no menu at all. The formula is a walnut-and-lettuce salad, then contrefilet sliced into a guarded herb-butter sauce and served in two waves so the second helping arrives hot, with matchstick frites. Learn the one thing that trips up everyone: this is not the same house as Le Relais de Venise near Porte Maillot — both descend from Paul Gineste de Saurs's 1959 original, but Marie-Paule Burrus's Relais de l'Entrecôte is a separate dynasty with its own Left Bank, Marbeuf and Montparnasse rooms, and the sauce recipe has never been published.",
+  "why": "Both this house and the separately-run Relais de Venise near Porte Maillot descend from Paul Gineste de Saurs's 1959 original, but Marie-Paule Burrus's Relais de l'Entrecôte is its own dynasty with Left Bank, Marbeuf and Montparnasse rooms — and the herb-butter sauce recipe has never been published.",
   "address": "20 rue Saint-Benoît, 75006 Paris (also 15 rue Marbeuf 8e, 101 bd du Montparnasse 14e)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Relais+de+l'Entrec%C3%B4te+Paris",
   "category": "cult",
@@ -1256,7 +1256,7 @@ window.TERROIR_DATA = (function () {
    "crêpe",
    "cider"
   ],
-  "why": "The modern counterpoint to Josselin, from Bertrand Larcher, who opened Tokyo's first crêperie in 1995 before bringing the idea home to Cancale and the Marais. Same buckwheat galette, but with IGP Breton flour, Cancale oysters and Jean-Yves Bordier butter — the sourcing is the entire point. It sits on rue Vieille du Temple and, unlike a traditional crêperie, takes bookings.",
+  "why": "Bertrand Larcher opened Tokyo's first crêperie in 1995, then brought the idea home — first to Cancale, then the Marais — so the galette here arrives filtered through a decade of Japanese sourcing discipline, right down to the Cancale oysters.",
   "address": "109 rue Vieille du Temple, 75003 Paris",
   "maps": "https://www.google.com/maps/search/?api=1&query=Breizh+Caf%C3%A9+Paris",
   "category": "cult",
@@ -1360,11 +1360,6 @@ window.TERROIR_DATA = (function () {
   "src": "/terroir/Paris/img/ph-2-louvre-pyramid-cour-napo.jpg",
   "caption": "The Cour Napoléon — Pei's pyramid dropped into a 16th-century courtyard.",
   "credit": "Benh LIEU SONG · CC BY 2.5 · Wikimedia Commons"
- },
- {
-  "src": "/terroir/Paris/img/ph-3-seine-ile-de-la-cite-par.jpg",
-  "caption": "The island where the very idea of dining out was first imagined.",
-  "credit": "DXR · CC BY-SA 3.0 · Wikimedia Commons"
  },
  {
   "src": "/terroir/Paris/img/ph-4-marche-d-aligre-paris.jpg",

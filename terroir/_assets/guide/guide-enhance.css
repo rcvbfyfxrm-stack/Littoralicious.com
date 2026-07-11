@@ -372,3 +372,14 @@
 .gx-band{scroll-margin-top:66px;}
 .quicknav{display:none !important;}
 @media(max-width:640px){.band-nav{padding:9px 16px;gap:6px;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;}.band-nav__chip{font-size:0.64rem;padding:5px 10px;}}
+
+/* ===== Pratique = a discreet appendix at the end, off to the side, not the core read ===== */
+#band-close{opacity:.72;margin-top:64px;padding-top:22px;border-top:1px dashed var(--gx-rule);}
+#band-close .gx-band__title{font-size:1.05em;color:var(--gx-ink3);font-weight:600;}
+#band-close .gx-band__sub{font-size:0.82em;}
+#band-close ~ details.sfold, #band-close ~ .sfold{max-width:660px;margin-left:auto;margin-right:auto;opacity:.66;filter:grayscale(.35);transition:opacity .2s ease;}
+#band-close ~ details.sfold:hover, #band-close ~ .sfold:hover{opacity:.95;filter:grayscale(0);}
+#band-close ~ details.sfold .sfold__title{font-size:0.98em;}
+#band-close ~ details.sfold .sfold__desc{font-size:0.8em;}
+.band-nav__chip[href="#band-close"]{opacity:.7;font-size:0.62rem;}
+@media(max-width:640px){#band-close ~ details.sfold{max-width:none;}}

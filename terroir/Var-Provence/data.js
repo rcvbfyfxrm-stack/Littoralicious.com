@@ -17,7 +17,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Three-star gastronomic"
   ],
-  "why": "You do not stumble into La Vague d'Or. You book weeks out, drive to the pine-shaded edge of the Bouillabaisse beach where Saint-Tropez begins, and eat sauces that read more like poetry than seasoning while the Gulf of Saint-Tropez does the talking below. Arnaud Donckele has held three Michelin stars here since 2013 — the Var's headline table, and the reason people cross the peninsula.",
+  "why": "The house is a summer transplant of the Cheval Blanc mothership at the Vendée coast — Bernard Arnault's LVMH hotel arm — dropped onto the Bouillabaisse beach at the very edge of town where the peninsula road first meets the water.",
   "address": "Cheval Blanc St-Tropez, Plage de la Bouillabaisse, 83990 Saint-Tropez, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Vague+d'Or+%E2%80%94+Cheval+Blanc+St-Tropez+The+Var",
   "category": "grande",
@@ -49,7 +49,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Three-star gastronomique — marine & vegetable"
   ],
-  "why": "Ten years as another man's second, then the whole sky at once: in March 2024 the Castellet went from no stars to three in a single morning, and Fabien Ferré — 35, marjoram on his squid — became the youngest three-star chef in France.",
+  "why": "",
   "address": "Hôtel & Spa du Castellet, 3001 Route des Hauts du Camp, 83330 Le Castellet, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Table+du+Castellet+The+Var",
   "category": "grande",
@@ -81,7 +81,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Two-star Provençal / gastronomique"
   ],
-  "why": "Above the umbrella pines, under white sails snapping in the wind, the Mediterranean laid flat below — and the plate that arrives is somehow weightless: olive oil, a garden's worth of vegetables, a fish that tasted the sea an hour ago. Canino learned lightness from Michel Guérard, and here he turned it into an ode to the Var rather than to butter.",
+  "why": "Canino carries the cuisine-minceur line direct from Michel Guérard, the chef who invented the idea of lightness as haute cuisine — training he later sharpened under Guy Martin at Le Grand Véfour.",
   "address": "Chemin de la Quessine (route de l'Escalet), 83350 Ramatuelle, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Voile+%E2%80%94+La+R%C3%A9serve+de+Ramatuelle+The+Var",
   "category": "grande",
@@ -113,7 +113,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Gastronomique · 1★ Michelin"
   ],
-  "why": "A Guadeloupean chef opened opposite the Toulon opera and, four months later, handed the navy town its first Michelin star since 2001 — with the artichoke, not the fillet, as the argument.",
+  "why": "Shanael is a contraction of the Denons' children's names; Anthony cooked through Ducasse's Louis XV, Le Meurice and the Plaza Athénée and already held stars at Chantilly and in Paris before betting the family on a Toulon back street.",
   "address": "10 rue Molière, 83000 Toulon (place de l'Opéra, Vieux Toulon)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Shanael+The+Var",
   "category": "grande",
@@ -177,7 +177,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Michelin one-star · Mediterranean seafront gastronomy"
   ],
-  "why": "From the rooftop the Estérel's red rock drops into the sea and the Île d'Or sits out on the water — the tower-topped islet locals say inspired Hergé's \"Black Island\" for Tintin. Dinner runs vegetable-and-sea forward: mackerel used nose-to-tail, oysters from Tamaris just up the coast. One star since 2019, and it held through the 2025 change of chef — José Bailly out, Alexandre Baule in, with meat back on the card.",
+  "why": "From the rooftop you look straight out at the Île d'Or, the tower-topped islet that locals say gave Hergé the model for Tintin's \"Black Island.\"",
   "address": "90 boulevard de la 36ème Division du Texas, 83530 Saint-Raphaël (Boulouris)",
   "maps": "https://www.google.com/maps/search/?api=1&query=R%C3%A9cif+%E2%80%94+H%C3%B4tel+Les+Roches+Rouges+The+Var",
   "category": "grande",
@@ -209,7 +209,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Michelin Guide-listed island table — grilled langouste and whole fish to share"
   ],
-  "why": "The island's grand old house at the end of a pine track — reached only by the estate's shuttle — where a whole fish or a langouste is carried to the terrace to be shared, and Provence is written into every plate.",
+  "why": "The mas is the old estate house of Porquerolles' western tip, an outpost of the Sainte-Anne domain at the end of a pine track the estate still keeps private.",
   "address": "Le Mas du Langoustier, Pointe du Langoustier, 83400 Île de Porquerolles, Hyères, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Mas+du+Langoustier+The+Var",
   "category": "grande",
@@ -330,7 +330,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Village bistrot — Leroy original closed (2019)"
   ],
-  "why": "The everyday Leroy bistrot off rue des Commerçants since 1992 — liquidated and struck off the register in 2019; only an unverified successor may still trade under the name.",
+  "why": "Christophe Leroy built a small Riviera empire off this one bistrot, then lost it: after the 2019 liquidation he was convicted of concealed work in 2021, banned from running a business for a decade, and now cooks at a café-gallery in Paris.",
   "address": "7 rue des Commerçants (registered/Pudlowski-cited address of the now-closed original; 11 per an unverified Groupon listing), 83990 Saint-Tropez, Var — old town near Place aux Herbes",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Table+du+March%C3%A9+The+Var",
   "category": "local",
@@ -388,7 +388,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Bandol AOC · organic & biodynamic Mourvèdre estate"
   ],
-  "why": "The name means \"brown earth,\" and that is the surface: limestone pebbles in brown Trias clay. But the real story is underground — beneath the terraces lies the blue, fissured Triassic limestone, while the ageing galleries are cut straight into the rock as the vines step down toward the Mediterranean.",
+  "why": "Founder Georges Delille was a Paris sommelier who bought the land in 1963 and cut the ageing galleries straight into the Triassic rock; his son Reynald bottled the first Terrebrune vintage in 1980.",
   "address": "724 chemin de la Tourelle, 83190 Ollioules, Var",
   "maps": "https://www.google.com/maps/search/?api=1&query=Domaine+de+Terrebrune+The+Var",
   "category": "vineyard",
@@ -420,7 +420,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Côtes de Provence wine estate with sculpture park and Michelin-starred table"
   ],
-  "why": "A Templar estate turned wine-and-art domaine in the Var hills — vines threaded with some sixty monumental sculptures, and a Michelin-starred kitchen at the end of the walk.",
+  "why": "The estate was a Knights Templar commanderie from the 13th century; industrialist Philippe Austruy bought it in 2001 and threaded the vines with a permanent collection of monumental sculpture.",
   "address": "1204 chemin de la Commanderie de Peyrassol, RN7, 83340 Flassans-sur-Issole, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Commanderie+de+Peyrassol+The+Var",
   "category": "vineyard",
@@ -765,7 +765,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Two-star Mediterranean · cuisine-santé / kitchen-garden"
   ],
-  "why": "Take the all-vegetable tasting menu, not the à la carte fish. If the beetroot cooked in seawater doesn't read as more precise and more surprising than the spiced tuna, the cuisine-santé claim is only a garnish — but it will. Canino trained under Michel Guérard (and later Guy Martin at Le Grand Véfour), and the vegetables are where that lineage is legible: light, exact, nothing hidden behind butter.",
+  "why": "One name worth untangling: Philippe Starck designed La Réserve à la Plage, the group's separate Pampelonne beach club — not this restaurant, whose buildings are Jean-Michel Wilmotte's. Treat any \"Starck\" billing here as adjacency, not authorship.",
   "address": "La Réserve Ramatuelle, Chemin de la Quessine, 83350 Ramatuelle, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Voile+%E2%80%94+La+R%C3%A9serve+Ramatuelle+Var+Provence",
   "category": "grande",
@@ -799,7 +799,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Beach club · Mediterranean × Southeast Asian"
   ],
-  "why": "The Saint-Tropez gulf's first Alléno table — a beach club, not a temple. Order the yellowtail tartare with peanuts and Thai basil ice cream, and the sea bass crudo marinated in baijiu with green papaya; if they don't out-plate every rival club on the bay, the 18-star name wrote a cheque the sand couldn't cash.",
+  "why": "Alléno is the most Michelin-decorated chef alive; this is his first-ever beach club, reached by a complimentary eight-minute COMO speedboat across the gulf from the port of Saint-Tropez.",
   "address": "COMO Le Beauvallon, 4086 route du Littoral, 83310 Grimaud, France (Beauvallon, on the northern shore of the Gulf of Saint-Tropez, between Port Grimaud and Sainte-Maxime; reached by a complimentary eight-minute COMO speedboat from the port of Saint-Tropez)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Beauvallon+Sur+Mer+by+Yannick+All%C3%A9no+Var+Provence",
   "category": "grande",
@@ -828,7 +828,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Provençal gastronomy (Var hinterland)"
   ],
-  "why": "Order the agneau de Provence — savory-herb crust, candied sweet potato, tart mulberries in a blueberry-cut jus, a dusting of gomasio — or the seven-course Sentiers Méditerranéens (€195), and Quentin André's case for the arrière-pays lands: this is not coastal Riviera gloss but Tourves baby vegetables, Saint-Raphaël line-caught fish and Vidauban poultry cooked with restraint. If the star ever reads as resort-hotel decoration rather than earned, that lamb is where you'll catch the lie — or fail to.",
+  "why": "Quentin André cut his teeth under Pierre Gagnaire — Les Airelles, Le Balzac, Sketch — before serving as Christophe Schmitt's second here and taking the pass in 2024.",
   "address": "Terre Blanche Hôtel Spa Golf Resort, 3100 Route de Bagnols-en-Forêt, 83440 Tourrettes, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Faventia+%E2%80%94+Terre+Blanche+Var+Provence",
   "category": "grande",
@@ -862,7 +862,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Table gastronomique — Méditerranée & potager varois, sur les hauteurs de Gassin"
   ],
-  "why": "A clubby hillside terrace that reads the whole gulf of Saint-Tropez in one sweep, with Jimmy Coutel — a Var native, born in Saint-Raphaël, who won his star elsewhere in 2017 — cooking a vegetable-forward Mediterranean menu to match. Come for the chef, the terroir and the view; do not come for a Michelin star, because Le Belrose does not currently hold one.",
+  "why": "Coutel is a gardener's son, born in Saint-Raphaël; the old Villa Belrose star ran under Thierry Thiercelin from 1998 to 2014 and lapsed after 2019, long before he arrived.",
   "address": "Althoff Villa Belrose, Boulevard des Crêtes (RD98a), 83580 Gassin, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Belrose+%E2%80%94+Althoff+Villa+Belrose+Var+Provence",
   "category": "grande",
@@ -896,7 +896,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Michelin 1★ · vegetable-forward gastronomic (dinner only)"
   ],
-  "why": "The one Saint-Tropez grande table where a courgette or a grilled oyster is asked to carry the plate rather than a slab of caviar. Falsifiable test: if the star is pulled, the menu turns meat-heavy, or the room stops running dinner-only, this verdict is wrong. As of the 2026 MICHELIN Guide France it holds one star, Colinet is still in the pass, and the \"Originel\" menu is genuinely 100% plant-based. Come for restraint and Provençal produce; skip it if you want a red-meat-and-oligarch-wine-list night.",
+  "why": "The restaurant is named for the writer Colette, who kept a small house next door; chef Philippe Colinet sources the whole menu from the market gardeners, fishermen and oyster growers of the gulf.",
   "address": "Hôtel Sezz Saint-Tropez, 151 route des Salins, 83990 Saint-Tropez, Var",
   "maps": "https://www.google.com/maps/search/?api=1&query=Colette+%E2%80%94+H%C3%B4tel+Sezz+Var+Provence",
   "category": "grande",
@@ -930,7 +930,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Haute cuisine — clifftop Provençal seafood"
   ],
-  "why": "A Robuchon-schooled local came home to cook. Nans Gaillard, born in La Ciotat and shaped on the Breton quays of Guilvinec, sends out blue lobster and pigeon from an interwar auberge hung over the drop — the Gulf of La Ciotat, the Île Verte and the Bec de l'Aigle rock laid out below, pines leaning into the frame. One MICHELIN star, held in the current guide. Not the grandest dining room on the coast, and it doesn't pretend to be; few tables anywhere buy you this particular cliff.",
+  "why": "Nans Gaillard grew up under this cliff in La Ciotat, trained at Robuchon's pass and on the Breton quays of Guilvinec, then came home to cook — the star landed about seventeen months after he opened in 2013.",
   "address": "126 Corniche du Liouquet, 13600 La Ciotat, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=La+Table+de+Nans+Var+Provence",
   "category": "grande",
@@ -964,7 +964,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Gastronomic country inn"
   ],
-  "why": "Alain Ducasse's 18th-century abbey inn in Provence Verte, where his home-grown protege Nicolas Pierantoni cooks a Provence that mostly walks in from the potager: he sources close to the entire menu locally, much of it from the property's own kitchen garden, working with market gardeners and farmers he speaks to daily.",
+  "why": "Nicolas Pierantoni was raised in La Celle village, joined the inn's 1999 opening team, was sent by Ducasse to train under Franck Cerutti at Monaco's Louis XV, and came home to take the head-chef post in 2016.",
   "address": "10 Place du General de Gaulle, 83170 La Celle, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Hostellerie+de+l'Abbaye+de+la+Celle+Var+Provence",
   "category": "grande",
@@ -998,7 +998,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Truffle temple — 1 MICHELIN star"
   ],
-  "why": "A single-obsession pilgrimage: truffle threads every course of the fixed seasonal menu, amuse-bouche to dessert. Falsifiable claim — there is no non-truffle tasting path here (even the vegetarian menu is truffle-built); if you don't love the tuber, this is the wrong temple, and no clever à la carte will save you.",
+  "why": "The house was built by Clément Bruno — \"le pape de la truffe,\" who died in 2026 — and is now run by his sons Benjamin at the stove and Samuel in the room; its signature is a whole potato baked and buried under grated tuber.",
   "address": "2350 route des Arcs, Campagne Mariette, 83510 Lorgues, Var, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Chez+Bruno+Var+Provence",
   "category": "unique",
@@ -1032,7 +1032,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Legendary Pampelonne beach club (Provençal)"
   ],
-  "why": "Come for the myth, not the Michelin — there is no star here and never has been. The kitchen does one thing well: unfussy Provençal built on its own farm — the raw-vegetable basket, a whole grilled sea bass, a strawberry tart. Judge it as gastronomy and you leave disappointed and lighter of wallet; judge it as the first restaurant on Pampelonne, still run by the family that fed Bardot's crew in 1955, and it is the one table on this coast worth the trip for the place alone.",
+  "why": "It began as a wooden shack with no electricity; to feed the film crew in 1955 Geneviève de Colmont borrowed a Saint-Tropez baker's oven to roast the beef, and the family creed is still that the guest is not a king but a friend.",
   "address": "43 Boulevard Patch, Plage de Pampelonne, 83350 Ramatuelle, Var (Côte d'Azur), France",
   "maps": "https://www.google.com/maps/search/?api=1&query=Club+55+Var+Provence",
   "category": "unique",
@@ -1066,7 +1066,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Historic hotel table — market Mediterranean, Ponche quarter"
   ],
-  "why": "In the 2026 MICHELIN Guide it is listed with no star: book it expecting a rosette and you will be let down. What you are actually buying is the most storied address in Saint-Tropez's old fishermen's quarter and a terrace hung over the gulf, with Simon Pinault's market-Mediterranean cooking in the kitchen since concept chef Thomas Danigo moved on in 2025.",
+  "why": "One of the smallest five-star hotels in Saint-Tropez, grown from a 1930s fisherman's bar where Bardot, Vadim and Romy Schneider once stayed, folded into the old La Ponche fishing quarter below the citadel.",
   "address": "Hôtel La Ponche, 5 rue des Remparts (restaurant at 4 place du Revelen), 83990 Saint-Tropez, France",
   "maps": "https://www.google.com/maps/search/?api=1&query=H%C3%B4tel+La+Ponche+Var+Provence",
   "category": "unique",
@@ -1100,7 +1100,7 @@ window.TERROIR_DATA = (function () {
   "productTags": [
    "Cuisine du Sud-Ouest — roadside family institution"
   ],
-  "why": "Order almost nothing and you still eat like a lord: the waiter lands four family-size terrines on the table — duck pâté, potted goose rillettes, pâté de campagne and a country head-cheese — and you carve as much as you want before a single main arrives. The foie gras is a paid supplement (reported around €20), not a sliver of garnish. Falsifiable claim: if the terrines don't come to your table in tubs to help yourself, this isn't the place its regulars have eaten at for sixty years.",
+  "why": "It's a converted filling station — the old pump still stuck outside, plastic patio chairs — run by the third-generation Raynal family since 1962, twenty minutes inland from the yachts, and the Saint-Tropez set makes the drive anyway.",
   "address": "2 Place de l'Église (le Village, RD 98), 83310 La Môle, Var, France · +33 4 94 49 57 01",
   "maps": "https://www.google.com/maps/search/?api=1&query=Auberge+de+la+M%C3%B4le+Var+Provence",
   "category": "unique",

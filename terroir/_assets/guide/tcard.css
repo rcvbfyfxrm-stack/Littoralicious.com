@@ -256,3 +256,6 @@
 .terroir-card__drinktype { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; vertical-align: middle; }
 .terroir-card__caveat, .terroir-berth__caveat { margin: 6px 0 2px; padding: 4px 9px; background: rgba(138,106,46,0.08); border-left: 2px solid var(--gold, #8a6a2e); font-size: 0.85em; color: var(--ink-2, #3a3a3a); line-height: 1.45; }
 .terroir-card__caveat .tcav, .terroir-berth__caveat .tcav { font-family: 'JetBrains Mono', monospace; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold, #8a6a2e); margin-right: 5px; }
+/* short "what it is" description line on cards */
+.tcm__hook,.terroir-berth__hook,.terroir-card__hook{font-family:Georgia,serif;font-style:italic;font-size:0.93em;color:var(--ink-2,#3a3a3a);line-height:1.45;margin:3px 0 2px;}
+.tcm__hook{margin-top:4px;}
