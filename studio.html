@@ -36,6 +36,9 @@
         .st-badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:3px;}
         .st-live{background:#dcfce7;color:#166534;}.st-draft{background:#fef9c3;color:#854d0e;}.st-feat{background:#dbeafe;color:#1e40af;margin-left:4px;}
         .st-ready{background:#dcfce7;color:#166534;margin-left:4px;font-weight:600;}
+        .st-photos{background:#eef2ff;color:#3730a3;margin-left:4px;}
+        .st-act a[data-photos]{color:#3730a3;border-color:#c7d2fe;}
+        .st-act a[data-photos].is-on{background:#eef2ff;color:#3730a3;border-color:#a5b4fc;}
         .st-act a.st-validate{color:#166534;border-color:#a7d8b5;}
         .st-act a.st-validate:hover{border-color:#166534;background:#f0fdf4;}
         .st-act a.st-validate.is-on{background:#166534;color:#fff;border-color:#166534;}
@@ -188,6 +191,7 @@
             <button data-f="needs-review" title="Drafts you haven't validated yet — your pending review queue (sign in to sync your sign-offs)">Needs review</button>
             <button data-f="featured">Featured</button>
             <button data-f="discarded" title="Drafts you discarded — hidden everywhere else on this page. Open here to Restore.">Discarded</button>
+            <button data-f="own-photos" title="Articles you've marked to add your own photos to">My photos</button>
             <span class="st-tools__div" aria-hidden="true"></span>
             <button data-g="work" title="Most worked on first — ranked by your notes, rewrites and recent activity (sign in to rank)">Most worked</button>
             <button data-g="section" title="Group rows under each section, with a live/draft split">By section</button>
@@ -317,6 +321,7 @@
         var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
         var filter = 'all', q = '', all = [], byslug = {}, notesMap = {}, paraMap = {}, validatedMap = {};
         var discardedMap = {};   // slug -> true; reviewer discarded this draft (synced via draft-notes/{slug}.discarded)
+        var ownPhotosMap = {};   // slug -> true; you'll supply your own photos for this article (draft-notes/{slug}.ownPhotos)
         var workMap = {}, queuedSet = {};   // slug -> work signals from Firestore; slugs queued for rewrite (public doc)
         var bulletCache = {}; // slug -> array of bullets (lazy fetched)
         var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
@@ -380,9 +385,16 @@
                 discBtn.textContent = nDiscarded ? 'Discarded (' + nDiscarded + ')' : 'Discarded';
                 discBtn.style.display = (nDiscarded || filter === 'discarded') ? '' : 'none';
             }
+            var nOwnPhotos = vis.filter(function (a) { return ownPhotosMap[a.slug]; }).length;
+            var photoBtn = document.querySelector('.st-tools button[data-f="own-photos"]');
+            if (photoBtn) {
+                photoBtn.textContent = nOwnPhotos ? 'My photos (' + nOwnPhotos + ')' : 'My photos';
+                photoBtn.style.display = (nOwnPhotos || filter === 'own-photos') ? '' : 'none';
+            }
             var list = all.filter(function (a) {
                 if (filter === 'discarded') return !!discardedMap[a.slug];
                 if (discardedMap[a.slug]) return false;   // hidden from every other view
+                if (filter === 'own-photos') return !!ownPhotosMap[a.slug];
                 if (filter === 'live' && a.draft) return false;
                 if (filter === 'draft' && !a.draft) return false;
                 if (filter === 'needs-review' && !(a.draft && !validatedMap[a.slug])) return false;
@@ -477,6 +489,7 @@
                 var status = a.draft ? '<span class="st-badge st-draft">Draft</span>' : '<span class="st-badge st-live">Live</span>';
                 if (a.featured) status += '<span class="st-badge st-feat">&#9733;</span>';
                 if (a.draft && validatedMap[a.slug]) status += '<span class="st-badge st-ready" title="Validated — ready to publish">&#10003; Ready</span>';
+                if (ownPhotosMap[a.slug]) status += '<span class="st-badge st-photos" title="You will add your own photos to this article">My photos</span>';
                 status += workBadge(a);
                 return '<tr>' +
                     '<td class="st-check"><input type="checkbox" data-pub="' + esc(a.slug) + '"' + (pub.has(a.slug) ? ' checked' : '') + '></td>' +
@@ -492,6 +505,7 @@
                     '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a>' +
                     (a.draft ? '<a href="#" class="st-validate' + (validatedMap[a.slug] ? ' is-on' : '') + '" data-validate="' + esc(a.slug) + '" title="' + (validatedMap[a.slug] ? 'Validated as ready to publish — click to revoke' : 'Mark this draft reviewed & ready to publish') + '">' + (validatedMap[a.slug] ? '&#10003; Validated' : 'Validate') + '</a>' : '') +
                     '<a href="#" data-edit="' + esc(a.slug) + '" title="Whole-article note — saves on this device instantly, syncs when signed in">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' +
+                    '<a href="#" class="st-photos-btn' + (ownPhotosMap[a.slug] ? ' is-on' : '') + '" data-photos="' + esc(a.slug) + '" title="' + (ownPhotosMap[a.slug] ? "Marked: you'll add your own photos — click to clear" : "Mark: you'll add your own photos to this article when you want") + '">' + (ownPhotosMap[a.slug] ? '&#10003; My photos' : 'My photos') + '</a>' +
                     (a.draft ? '<a href="#" class="st-discard' + (discardedMap[a.slug] ? ' is-on' : '') + '" data-discard="' + esc(a.slug) + '" title="' + (discardedMap[a.slug] ? 'Discarded — hidden from the Studio; click to restore' : 'Discard this draft — hide it from the Studio everywhere (restorable, never deletes the file)') + '">' + (discardedMap[a.slug] ? 'Restore' : 'Discard') + '</a>' : '') +
                     '</td>' +
                     '</tr>';
@@ -700,7 +714,7 @@
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
                     if (unsubNotes) { unsubNotes(); unsubNotes = null; }
                     clearLocalNotes();   // don't leave reviewer notes in a shared browser
-                    notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; discardedMap = {}; render(); renderTemplates(); renderPublish();
+                    notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; discardedMap = {}; ownPhotosMap = {}; render(); renderTemplates(); renderPublish();
                 }
             });
             $('auth-signin').addEventListener('click', function () {
@@ -750,7 +764,7 @@
             if (!isReviewer(user)) return;
             if (unsubNotes) { unsubNotes(); unsubNotes = null; }
             unsubNotes = db.collection('draft-notes').onSnapshot(function (snap) {
-                notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; discardedMap = {};
+                notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; discardedMap = {}; ownPhotosMap = {};
                 snap.forEach(function (doc) {
                     var d = doc.data() || {};
                     if (doc.id.indexOf('_social_') === 0) return;   // social planner state, not review work
@@ -758,6 +772,7 @@
                     if (typeof d.paraCount === 'number' && d.paraCount > 0) paraMap[doc.id] = d.paraCount;  // numeric-only → safe to interpolate in badges
                     if (d.validated === true) validatedMap[doc.id] = true;
                     if (d.discarded === true) discardedMap[doc.id] = true;
+                    if (d.ownPhotos === true) ownPhotosMap[doc.id] = true;
                     workMap[doc.id] = workOf(d);
                 });
                 render(); renderTemplates(); renderPublish();
@@ -854,6 +869,24 @@
             });
         }
 
+        // ---- own photos: flag that you'll add your own photos to this article (synced) ----
+        function togglePhotos(slug) {
+            if (!isReviewer(user)) { $('auth-msg').textContent = 'Sign in as a reviewer to flag your own photos.'; $('auth-email').focus(); return; }
+            var a = byslug[slug]; if (!a) return;
+            var next = !ownPhotosMap[slug];
+            if (next) ownPhotosMap[slug] = true; else delete ownPhotosMap[slug];
+            render();   // optimistic
+            var FV = (typeof firebase !== 'undefined' && firebase.firestore && firebase.firestore.FieldValue) ? firebase.firestore.FieldValue : null;
+            var patch = next
+                ? { ownPhotos: true, ownPhotosBy: user.email, ownPhotosAt: Date.now(), lastWorked: Date.now() }
+                : { ownPhotos: (FV ? FV.delete() : false), ownPhotosAt: (FV ? FV.delete() : 0), ownPhotosBy: (FV ? FV.delete() : '') };
+            db.collection('draft-notes').doc(slug).set(patch, { merge: true }).catch(function (err) {
+                if (next) { delete ownPhotosMap[slug]; } else { ownPhotosMap[slug] = true; }
+                render();
+                $('auth-msg').textContent = 'Photo flag failed: ' + (err.code || 'error') + ' — try again.';
+            });
+        }
+
         function saveNotes() {
             if (!noteSlug) return;
             var slug = noteSlug, text = $('nm-text').value;
@@ -898,6 +931,7 @@
             if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); return; }
             if (t.hasAttribute && t.hasAttribute('data-validate')) { e.preventDefault(); toggleValidate(t.getAttribute('data-validate')); return; }
             if (t.hasAttribute && t.hasAttribute('data-discard')) { e.preventDefault(); toggleDiscard(t.getAttribute('data-discard')); return; }
+            if (t.hasAttribute && t.hasAttribute('data-photos')) { e.preventDefault(); togglePhotos(t.getAttribute('data-photos')); return; }
             var sec = t.closest ? t.closest('tr.st-section') : null;
             if (sec) {
                 var key = sec.getAttribute('data-sec-key');
