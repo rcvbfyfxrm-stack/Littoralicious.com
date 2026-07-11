@@ -113,6 +113,8 @@
         .st-auth__msg{color:var(--color-muted);}
         .st-link{background:none;border:none;color:var(--color-sea);cursor:pointer;font-size:13px;text-decoration:underline;padding:0;}
         .st-act a[data-edit]{color:#854d0e;border-color:#e7d08a;}
+        .st-act a[data-discard]{color:#b91c1c;border-color:#e7a3a3;}
+        .st-act a[data-discard].is-on{color:#047857;border-color:#8fd0b6;}
         .st-modal{position:fixed;inset:0;background:rgba(10,10,10,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:var(--space-4);}
         .st-modal.open{display:flex;}
         .st-modal__box{background:#fff;max-width:680px;width:100%;max-height:88vh;display:flex;flex-direction:column;border:1px solid var(--color-ink);}
@@ -185,6 +187,7 @@
             <button data-f="draft">Draft</button>
             <button data-f="needs-review" title="Drafts you haven't validated yet — your pending review queue (sign in to sync your sign-offs)">Needs review</button>
             <button data-f="featured">Featured</button>
+            <button data-f="discarded" title="Drafts you discarded — hidden everywhere else on this page. Open here to Restore.">Discarded</button>
             <span class="st-tools__div" aria-hidden="true"></span>
             <button data-g="work" title="Most worked on first — ranked by your notes, rewrites and recent activity (sign in to rank)">Most worked</button>
             <button data-g="section" title="Group rows under each section, with a live/draft split">By section</button>
@@ -313,6 +316,7 @@
         var ORIGIN = 'https://www.littoralicious.com';
         var rows = document.getElementById('st-rows'), search = document.getElementById('st-search');
         var filter = 'all', q = '', all = [], byslug = {}, notesMap = {}, paraMap = {}, validatedMap = {};
+        var discardedMap = {};   // slug -> true; reviewer discarded this draft (synced via draft-notes/{slug}.discarded)
         var workMap = {}, queuedSet = {};   // slug -> work signals from Firestore; slugs queued for rewrite (public doc)
         var bulletCache = {}; // slug -> array of bullets (lazy fetched)
         var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
@@ -364,8 +368,21 @@
         }
 
         function render() {
-            document.getElementById('st-ready').textContent = all.filter(function (a) { return a.draft && validatedMap[a.slug]; }).length;
+            // discarded drafts are removed from every view except the Discarded filter
+            var vis = all.filter(function (a) { return !discardedMap[a.slug]; });
+            document.getElementById('st-total').textContent = vis.length;
+            document.getElementById('st-live').textContent = vis.filter(function (a) { return !a.draft; }).length;
+            document.getElementById('st-draft').textContent = vis.filter(function (a) { return a.draft; }).length;
+            document.getElementById('st-ready').textContent = vis.filter(function (a) { return a.draft && validatedMap[a.slug]; }).length;
+            var nDiscarded = all.length - vis.length;
+            var discBtn = document.querySelector('.st-tools button[data-f="discarded"]');
+            if (discBtn) {
+                discBtn.textContent = nDiscarded ? 'Discarded (' + nDiscarded + ')' : 'Discarded';
+                discBtn.style.display = (nDiscarded || filter === 'discarded') ? '' : 'none';
+            }
             var list = all.filter(function (a) {
+                if (filter === 'discarded') return !!discardedMap[a.slug];
+                if (discardedMap[a.slug]) return false;   // hidden from every other view
                 if (filter === 'live' && a.draft) return false;
                 if (filter === 'draft' && !a.draft) return false;
                 if (filter === 'needs-review' && !(a.draft && !validatedMap[a.slug])) return false;
@@ -388,13 +405,13 @@
         // ---- the production line: draft → noted → rewrite → ready → live ----
         function renderPipe() {
             var el = document.getElementById('st-pipe'); if (!el) return;
-            var drafts = all.filter(function (a) { return a.draft; });
+            var drafts = all.filter(function (a) { return a.draft && !discardedMap[a.slug]; });
             var stages = [
                 { key: 'untouched', label: 'Fresh drafts', n: drafts.filter(function (a) { return scoreOf(a.slug) === 0 && !validatedMap[a.slug]; }).length, hint: 'No notes yet — start reading here' },
                 { key: 'noted', label: 'In review', n: drafts.filter(function (a) { return scoreOf(a.slug) > 0 && !validatedMap[a.slug] && !queuedSet[a.slug]; }).length, hint: 'You left notes — finish them or queue a rewrite' },
-                { key: 'queued', label: 'Rewrite queued', n: all.filter(function (a) { return queuedSet[a.slug]; }).length, hint: 'Bundled notes waiting for: npm run rewrite -- <slug>' },
+                { key: 'queued', label: 'Rewrite queued', n: all.filter(function (a) { return queuedSet[a.slug] && !discardedMap[a.slug]; }).length, hint: 'Bundled notes waiting for: npm run rewrite -- <slug>' },
                 { key: 'ready', label: 'Ready', n: drafts.filter(function (a) { return validatedMap[a.slug]; }).length, hint: 'Validated — sitting in the publish queue below' },
-                { key: 'live', label: 'Live', n: all.length - drafts.length, hint: 'Published on the site' }
+                { key: 'live', label: 'Live', n: all.filter(function (a) { return !a.draft && !discardedMap[a.slug]; }).length, hint: 'Published on the site' }
             ];
             el.innerHTML = stages.map(function (s, i) {
                 return (i ? '<span class="st-pipe__arrow" aria-hidden="true">&rarr;</span>' : '') +
@@ -475,6 +492,7 @@
                     '<a href="newsletter-preview.html?slug=' + encodeURIComponent(a.slug) + '" target="_blank">Email</a>' +
                     (a.draft ? '<a href="#" class="st-validate' + (validatedMap[a.slug] ? ' is-on' : '') + '" data-validate="' + esc(a.slug) + '" title="' + (validatedMap[a.slug] ? 'Validated as ready to publish — click to revoke' : 'Mark this draft reviewed & ready to publish') + '">' + (validatedMap[a.slug] ? '&#10003; Validated' : 'Validate') + '</a>' : '') +
                     '<a href="#" data-edit="' + esc(a.slug) + '" title="Whole-article note — saves on this device instantly, syncs when signed in">Notes' + (notesMap[a.slug] ? ' &bull;' : '') + '</a>' +
+                    (a.draft ? '<a href="#" class="st-discard' + (discardedMap[a.slug] ? ' is-on' : '') + '" data-discard="' + esc(a.slug) + '" title="' + (discardedMap[a.slug] ? 'Discarded — hidden from the Studio; click to restore' : 'Discard this draft — hide it from the Studio everywhere (restorable, never deletes the file)') + '">' + (discardedMap[a.slug] ? 'Restore' : 'Discard') + '</a>' : '') +
                     '</td>' +
                     '</tr>';
         }
@@ -682,7 +700,7 @@
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
                     if (unsubNotes) { unsubNotes(); unsubNotes = null; }
                     clearLocalNotes();   // don't leave reviewer notes in a shared browser
-                    notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; render(); renderTemplates(); renderPublish();
+                    notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; discardedMap = {}; render(); renderTemplates(); renderPublish();
                 }
             });
             $('auth-signin').addEventListener('click', function () {
@@ -732,13 +750,14 @@
             if (!isReviewer(user)) return;
             if (unsubNotes) { unsubNotes(); unsubNotes = null; }
             unsubNotes = db.collection('draft-notes').onSnapshot(function (snap) {
-                notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {};
+                notesMap = {}; paraMap = {}; validatedMap = {}; workMap = {}; discardedMap = {};
                 snap.forEach(function (doc) {
                     var d = doc.data() || {};
                     if (doc.id.indexOf('_social_') === 0) return;   // social planner state, not review work
                     if (d.text && d.text.trim()) notesMap[doc.id] = true;
                     if (typeof d.paraCount === 'number' && d.paraCount > 0) paraMap[doc.id] = d.paraCount;  // numeric-only → safe to interpolate in badges
                     if (d.validated === true) validatedMap[doc.id] = true;
+                    if (d.discarded === true) discardedMap[doc.id] = true;
                     workMap[doc.id] = workOf(d);
                 });
                 render(); renderTemplates(); renderPublish();
@@ -817,6 +836,24 @@
             });
         }
 
+        // ---- discard: reviewer hides a draft they don't want (synced, restorable, never deletes the file) ----
+        function toggleDiscard(slug) {
+            if (!isReviewer(user)) { $('auth-msg').textContent = 'Sign in as a reviewer to discard drafts.'; $('auth-email').focus(); return; }
+            var a = byslug[slug]; if (!a || !a.draft) return;
+            var next = !discardedMap[slug];
+            if (next) { discardedMap[slug] = true; pub.delete(slug); news.delete(slug); } else { delete discardedMap[slug]; }
+            save(); render(); renderPublish(); renderNewsletter();   // optimistic
+            var FV = (typeof firebase !== 'undefined' && firebase.firestore && firebase.firestore.FieldValue) ? firebase.firestore.FieldValue : null;
+            var patch = next
+                ? { discarded: true, discardedBy: user.email, discardedAt: Date.now(), lastWorked: Date.now() }
+                : { discarded: (FV ? FV.delete() : false), discardedAt: (FV ? FV.delete() : 0), discardedBy: (FV ? FV.delete() : '') };
+            db.collection('draft-notes').doc(slug).set(patch, { merge: true }).catch(function (err) {
+                if (next) { delete discardedMap[slug]; } else { discardedMap[slug] = true; }
+                save(); render(); renderPublish(); renderNewsletter();
+                $('auth-msg').textContent = 'Discard failed: ' + (err.code || 'error') + ' — try again.';
+            });
+        }
+
         function saveNotes() {
             if (!noteSlug) return;
             var slug = noteSlug, text = $('nm-text').value;
@@ -860,6 +897,7 @@
             var t = e.target;
             if (t.hasAttribute && t.hasAttribute('data-edit')) { e.preventDefault(); openNotes(t.getAttribute('data-edit')); return; }
             if (t.hasAttribute && t.hasAttribute('data-validate')) { e.preventDefault(); toggleValidate(t.getAttribute('data-validate')); return; }
+            if (t.hasAttribute && t.hasAttribute('data-discard')) { e.preventDefault(); toggleDiscard(t.getAttribute('data-discard')); return; }
             var sec = t.closest ? t.closest('tr.st-section') : null;
             if (sec) {
                 var key = sec.getAttribute('data-sec-key');
