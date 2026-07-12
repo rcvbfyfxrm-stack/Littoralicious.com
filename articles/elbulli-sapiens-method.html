@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="elBulli has not served dinner since 2011, yet each summer its cliffside building reopens as a museum — open now for the 2026 season. The legacy worth stealing was never the foam: it is the Sapiens method of Ferran Adrià — understand first, act later — and the Bullipedia it produces. A plain-terms guide, and how to run the method on a charter week.">
     <title>The Sapiens Method: How elBulli Turned a Kitchen Into an Encyclopedia — LITTORALICIOUS</title>
     <link rel="canonical" href="https://www.littoralicious.com/articles/elbulli-sapiens-method.html">
@@ -43,6 +44,32 @@
   "mainEntityOfPage": "https://www.littoralicious.com/articles/elbulli-sapiens-method.html"
 }
     </script>
+    <style>
+        /* Scoped photo-figure component — B&W documentary photographs from elBulli1846.
+           Kept in-article (not in the shared locked style.css) so the departure from the
+           pencil-plate house style stays contained to this piece. */
+        .photo-figure { margin: var(--space-8) 0; }
+        .photo-figure img {
+            display: block; width: 100%; height: auto;
+            filter: grayscale(100%);
+            border: 1px solid color-mix(in srgb, var(--color-muted) 28%, transparent);
+        }
+        .photo-figure figcaption {
+            margin-top: 0.7rem;
+            font-family: var(--font-serif); font-style: italic;
+            font-size: 0.85rem; line-height: 1.55;
+            color: var(--color-muted); text-align: center;
+            max-width: 60ch; margin-left: auto; margin-right: auto;
+        }
+        .photo-duo {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: var(--space-6); align-items: start;
+        }
+        .photo-duo .photo-figure { margin: 0; }
+        @media (max-width: 640px) {
+            .photo-duo { grid-template-columns: 1fr; gap: var(--space-8); }
+        }
+    </style>
 </head>
 <body>
 
@@ -77,6 +104,11 @@
                 <p class="article__lede">elBulli has not served dinner since 2011, yet each summer its cliffside building reopens as a museum — open now for the 2026 season. The legacy worth stealing was never the foam: it is the Sapiens method of Ferran Adrià — understand first, act later — and the Bullipedia it produces. A plain-terms guide, and how to run the method on a charter week.</p>
             </header>
 
+            <figure class="photo-figure container" style="max-width: 78ch; margin-left: auto; margin-right: auto;">
+                <img src="../assets/photos/elbulli/elbulli-15.jpg" alt="A metal plaque headed 'EL PLACER' at elBulli1846, mapping a classificatory method and a historical method into a single diagram of connected nodes.">
+                <figcaption>The method itself, in metal. «El placer» — pleasure — sits at the centre of a classificatory route and a historical route: the Sapiens loop, laid out on the Cala Montjoi hillside.</figcaption>
+            </figure>
+
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
                 <!-- BODY:BEGIN — Technique. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
@@ -94,9 +126,19 @@
 <p>Drive the broken road north of Roses, into the Cap de Creus, and you reach Cala Montjoi &mdash; the rock-walled cove where <strong>elBulli</strong> spent fifty years turning dinner into something closer to a question. From <mark>1 May to 12 October 2026</mark> the building is open again, as it has been each summer since 2023. But elBulli stopped serving food on <strong>30 July 2011</strong> and never started again. What you can visit is <span class="term">elBulli1846</span> &mdash; the old restaurant turned into a museum, billed as the first restaurant on earth to become one. Half the year it is a museum; the other half it closes to the public and becomes <span class="term">elBulliDNA</span>, a working research lab. <em>(We told the story of how that kitchen rewrote cooking <a href="elbulli-foundation-frontier.html">here</a>; this is the second act.)</em></p>
 <p>So the doors are open and the stoves are cold. That is not a sad footnote &mdash; it is the whole argument Ferran Adri&agrave; has been making since he walked away at the top: <mark>the legacy worth keeping was never the foam. It was the method.</mark></p>
 
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-01.jpg" alt="Signage reading 'elBulli1846' beside tall interpretive panels among the pines at the reopened Cala Montjoi site.">
+    <figcaption>elBulli1846 — the old restaurant turned into a museum, and off-season into the elBulliDNA lab. The doors open; the stoves stay cold on purpose.</figcaption>
+</figure>
+
 <div class="note note--warning" data-label="The trap">
     <p>Here is how most of us reach for a &ldquo;new&rdquo; dish: borrow one we admired, swap two ingredients, plate it our way. That is not creating &mdash; it is reproducing with a limp. Adri&agrave; hit the same ceiling in the 1980s, cooking French classics out of books, until one line from the chef Jacques Maximin re-routed his career: <mark>&ldquo;creativity is not copying.&rdquo;</mark> The question that has driven him since is the one no gadget answers &mdash; how do you make something that did not exist before?</p>
 </div>
+
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-10.jpg" alt="An illuminated sign reading «CREAR ÉS NO COPIAR» mounted on a dark wall inside elBulli1846, beside a beamed passage.">
+    <figcaption>«Crear és no copiar» — <em>to create is not to copy</em>. Maximin's four-word verdict, kept lit on the wall. Everything downstream of it is an attempt to answer the question it opened.</figcaption>
+</figure>
 
 <div class="divider"><span class="divider__text">The Method</span></div>
 
@@ -106,6 +148,17 @@
 
 <div class="note note--key" data-label="The loop">
     <p>Sapiens runs as a repeatable loop, not a one-off study: <strong>Order</strong> the information (sort by element, goal, priority) &rarr; <strong>Contextualise</strong> it (where, when and why does this exist?) &rarr; <strong>Classify</strong> it so the gaps show &mdash; you can now see plainly what you know and what you don't &rarr; then <strong>Imagine</strong>, <strong>Create</strong>, and finally <strong>Understand</strong>, which means you can see the whole system and how its parts relate. Then you go round again.</p>
+</div>
+
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-02.jpg" alt="An outdoor path at elBulli1846 lined with black hexagonal markers labelled A1, A2, B1, B2, C1, stepping up the pine hillside.">
+        <figcaption>The loop made walkable: stations A1 to C climb the hillside, so you move through the method one stage at a time before you are trusted to invent anything.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-04.jpg" alt="An overhead metal plaque at elBulli1846: a dense grid of small labelled cards wired together into a genealogy of techniques.">
+        <figcaption>Classify until the gaps show. A whole subject wired into a genealogy — the stage where you can finally see plainly what is known and what isn't.</figcaption>
+    </figure>
 </div>
 
 <p>Two guardrails make it more than a flowchart. The first is that systems-theory habit: nothing is studied alone. The second is deliberately uncomfortable &mdash; Adri&agrave;'s expert panels are built to <strong>argue</strong>. Disagreement is kept alive on purpose, so the work never hardens into dogma, never settles into &ldquo;the way we've always done it.&rdquo; The grandmother's inherited wisdom and the scientist's standing doubt, in the same room, refusing to make peace.</p>
@@ -122,6 +175,17 @@
     <p>Sapiens is how they think. The Bullipedia is that thinking written down. The method is the engine; the encyclopedia is the exhaust.</p>
 </div>
 
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-07.jpg" alt="An outdoor display case at elBulli1846 filled with rows of elBulli books, catalogues and Bullipedia volumes.">
+        <figcaption>Not a website — a shelf. The Bullipedia is roughly 500-page hardback volumes, more than twenty so far of a planned fifty, each running one subject through the full loop.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-03.jpg" alt="An interpretive panel at elBulli1846 showing a chicken-curry dish broken into a diagram, headed with the word 'innovar?'.">
+        <figcaption>One subject, run through the method: <em>pollo al curry</em> taken apart on a panel under a single question — «innovar?»</figcaption>
+    </figure>
+</div>
+
 <h2>Run it on your charter week</h2>
 <p class="kicker">This is where it stops being museum talk. The loop fits a galley better than it fits a laboratory.</p>
 <p>A charter week is a complex operation run on limited resources with no room for chaos &mdash; precisely what Sapiens was built to organise. Before you write a single menu, run the loop on the week itself:</p>
@@ -131,6 +195,11 @@
     <li><strong>Classify until the gaps show.</strong> Lay the week out and the holes appear on their own &mdash; the protein you haven't sourced, the course with no acid, the day with nothing for the child aboard. <mark>That gap list is your provisioning order.</mark></li>
     <li><strong>Then imagine, build, and step back.</strong> Only now do you design &mdash; and you design the week as one system, where each dish relates to the others, not seven disconnected nights.</li>
 </ol>
+
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-06.jpg" alt="A metal plaque etched like a circuit board mapping a dish's construction as a flow of connected nodes, laid on rock.">
+    <figcaption>Design the week as one system. A dish drawn as a circuit — every part wired to the others — is exactly the shape a charter menu should have.</figcaption>
+</figure>
 
 <div class="note note--action" data-label="The move">
     <p>Adri&agrave;'s systems-theory rule is the most practical thing he ever said for a galley: <strong>nothing is designed in isolation.</strong> Guest menu and crew menu, breakfast and dinner, prep and service &mdash; treat them as one flow, not separate jobs. It is the same logic as building the guest dish first and deriving the heartier crew version from it: cook once, serve two tiers.</p>
@@ -178,6 +247,11 @@
 </div>
 
 <div class="divider"><span class="divider__text">Why It Works</span></div>
+
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-05.jpg" alt="A standing metal grid plaque among the Mediterranean scrub at elBulli1846, rows of etched cards connected by lines.">
+    <figcaption>One of 69 installations across nearly 4,000 square metres of hillside — a self-guided couple of hours that is, in the end, a museum about how to think.</figcaption>
+</figure>
 
 <div class="note note--science" data-label="Why it works">
     <p>The proof is not faith &mdash; it is the track record. The same lab discipline that produced spherification, hot gels and the foams now sold in every supplier's catalogue is the discipline now producing the Bullipedia, volume by volume. Sapiens has outgrown the kitchen: the foundation has run it with organisations as far from a stove as a bank, a football club and a champagne house, and turned it into stand-alone series &mdash; Coffee Sapiens with Lavazza, an eight-volume Wine Sapiens. A method that survives contact with that many fields is a method, not a mood. And the monument to it is open on the cliff at Cala Montjoi right now: <strong>69 installations</strong> across nearly 4,000 square metres &mdash; a self-guided couple of hours that is, in the end, a museum about how to think.</p>
