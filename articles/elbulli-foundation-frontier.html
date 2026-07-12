@@ -44,6 +44,32 @@
   "mainEntityOfPage": "https://www.littoralicious.com/articles/elbulli-foundation-frontier.html"
 }
     </script>
+    <style>
+        /* Scoped photo-figure component — B&W documentary photographs from elBulli1846.
+           Kept in-article (not in the shared locked style.css) so the departure from the
+           pencil-plate house style stays contained to this piece. */
+        .photo-figure { margin: var(--space-8) 0; }
+        .photo-figure img {
+            display: block; width: 100%; height: auto;
+            filter: grayscale(100%);
+            border: 1px solid color-mix(in srgb, var(--color-muted) 28%, transparent);
+        }
+        .photo-figure figcaption {
+            margin-top: 0.7rem;
+            font-family: var(--font-serif); font-style: italic;
+            font-size: 0.85rem; line-height: 1.55;
+            color: var(--color-muted); text-align: center;
+            max-width: 60ch; margin-left: auto; margin-right: auto;
+        }
+        .photo-duo {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: var(--space-6); align-items: start;
+        }
+        .photo-duo .photo-figure { margin: 0; }
+        @media (max-width: 640px) {
+            .photo-duo { grid-template-columns: 1fr; gap: var(--space-8); }
+        }
+    </style>
 </head>
 <body>
 
@@ -78,6 +104,11 @@
                 <p class="article__lede">A beach bar named after two French bulldogs became the most influential kitchen of the last century — then closed at its peak to protect the one thing it was built for. The frontier elBulli explored, the chemistry it left behind, and what a galley can still steal from it.</p>
             </header>
 
+            <figure class="photo-figure container" style="max-width: 78ch; margin-left: auto; margin-right: auto;">
+                <img src="../assets/photos/elbulli/elbulli-01.jpg" alt="Signage reading 'elBulli1846' beside tall interpretive panels among the pines at the reopened Cala Montjoi site.">
+                <figcaption>elBulli1846 — in 2023 the cove reopened not as a restaurant but as a museum and laboratory. The kitchen became an archive of its own thinking.</figcaption>
+            </figure>
+
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
                 <!-- BODY:BEGIN — Heritage. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
@@ -103,6 +134,11 @@
     <p>A restaurant nobody stumbles into has only one way to fill its tables: be worth the drive. Cala Montjoi could never win on convenience, so it was forced, for fifty years, to win on wonder.</p>
 </div>
 
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-14.jpg" alt="The Cala Montjoi inlet from the hillside above: a small beach cupped between two rocky headlands on the Cap de Creus.">
+    <figcaption>The road-to-nowhere inlet on the Cap de Creus. Remoteness was the first constraint — the one that turned a restaurant into a place that had to keep inventing to survive.</figcaption>
+</figure>
+
 <h2>The People</h2>
 <p><strong>Whose hands:</strong> a French classicist laid the foundation; a maître and two brothers from a Barcelona suburb tore it up.</p>
 <p>The cooking grew up French. Under chef <strong>Jean-Louis Neichel</strong>, who arrived in 1975 bringing <span class="term">nouvelle cuisine</span> — the 1970s French movement that traded heavy flour-thickened sauces for lightness, shorter cooking and the plate as composition — elBulli earned its <strong>first Michelin star in 1976</strong>. The grandmother pillar of this story is not a grandmother at all; it is a young, modest, intensely curious culture of cooks who treated the kitchen as a place to ask questions.</p>
@@ -112,7 +148,17 @@
     <p>1987, the Côte d'Azur. Adrià sits in on a talk by the chef Jacques Maximin, who is asked what creativity means. Maximin's answer — <mark>"creativity is not copying"</mark> — lands like a slap. Adrià goes home, stops reproducing French classics from books, and starts the long project of inventing a cuisine that had never existed. One sentence rerouted a career.</p>
 </div>
 
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-10.jpg" alt="An illuminated sign reading «CREAR ÉS NO COPIAR» mounted on a dark wall inside elBulli1846, beside a beamed passage.">
+    <figcaption>«Crear és no copiar» — <em>to create is not to copy</em>. Maximin's sentence, the one that rerouted Adrià in 1987, kept lit on the wall at elBulli1846.</figcaption>
+</figure>
+
 <p>His younger brother <strong>Albert Adrià</strong> joined in 1985 and took the pastry station from 1987 — and, crucially, became the engine of the creative workshop. If Ferran was the public philosopher, Albert was the one quietly working out how the impossible thing would actually be built. The third Michelin star came in <strong>1997</strong>. Then, when <em>Restaurant</em> magazine launched its World's 50 Best list in 2002, elBulli was named the <strong>best restaurant on earth</strong> — a title it took five times: 2002, 2006, 2007, 2008 and 2009.</p>
+
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-11.jpg" alt="A round table laid with a white cloth and place settings in the old elBulli dining room, an arched window with woodland beyond.">
+    <figcaption>A table laid in the old dining room, the arched window onto the pines behind it — where thirty to fifty tiny courses arrived as a single narrative.</figcaption>
+</figure>
 
 <div class="note" data-label="The Numbers">
     <p>By the end, elBulli opened roughly six months a year and served about <strong>8,000 diners a season</strong> against an estimated <strong>two million requests</strong>. The closed half of the year was spent in a Barcelona workshop — the <span class="term">taller</span> — inventing the next menu from scratch. The restaurant itself reportedly ran at a loss from 2000 on, kept afloat by Adrià's books and lectures. They were not selling dinner. They were funding research with dinner.</p>
@@ -122,6 +168,28 @@
 
 <h2>The Frontier They Explored</h2>
 <p><strong>What they actually invented:</strong> not gadgets, but a way to put a flavour into a texture, temperature or form that had never carried it before. Here are the landmark techniques — and the chemistry that makes each one true.</p>
+
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-12.jpg" alt="A small precise composition on a wide white plate, a single flute of wine behind it, on a linen-covered table.">
+        <figcaption>A course that reads like a sentence. Plating as language — the flavour is never quite where the eye expects it.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-13.jpg" alt="A single small plated course on a wide white plate, fork and spoon set either side, glasses beyond.">
+        <figcaption>The elBulli grammar of the tiny, exact course — one idea per plate, thirty to fifty times a meal.</figcaption>
+    </figure>
+</div>
+
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-03.jpg" alt="An interpretive panel at elBulli1846 showing a chicken-curry dish broken into a diagram, headed with the word 'innovar?'.">
+        <figcaption>«Innovar?» — a single dish, <em>pollo al curry</em>, taken apart into method on a museum panel. Every plate here is turned back into a question.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-06.jpg" alt="A metal plaque etched like a circuit board mapping a dish's construction as a flow of connected nodes, laid on rock.">
+        <figcaption>A dish diagrammed like a circuit — the taller's logic, cast in metal along the creativity walk. This is what the kitchen actually was: a lab drawing wiring diagrams for flavour.</figcaption>
+    </figure>
+</div>
 
 <p><strong>Foams (<span class="term">espumas</span>), 1994.</strong> The breakthrough that started it: a savoury white-bean foam with sea urchin, built by charging a flavoured liquid in a cream siphon with <mark>nitrous oxide</mark>. The choice of gas is the clever part — N₂O is fat-soluble and nearly tasteless, so it dissolves under pressure and, on release, expands the liquid into a foam that is <em>pure flavour and no cream</em>. A purée's taste with a cloud's weight. Every "espuma" on every menu since traces to this dish.</p>
 
@@ -193,13 +261,48 @@
     </table>
 </div>
 
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-04.jpg" alt="An overhead metal plaque at elBulli1846: a dense grid of small labelled cards wired together into a genealogy of techniques.">
+        <figcaption>The whole catalogue wired as a genealogy — every technique traced to the ones it grew from. The most secretive industry on earth, mapping itself in public.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-05.jpg" alt="A standing metal grid plaque among the Mediterranean scrub, rows of etched cards connected by lines.">
+        <figcaption>Radical openness, made physical: the work stood up in the scrub for anyone who walks the path to read.</figcaption>
+    </figure>
+</div>
+
 <div class="divider"><span class="divider__text">The Afterlife</span></div>
 
 <h2>Why It Endures</h2>
 <p><strong>What's lost without it:</strong> most legends end in decline. This one was ended on purpose, at the summit, to protect the thing that made it.</p>
 <p>On <strong>30 July 2011</strong>, holding three Michelin stars and two million reservation requests a year, elBulli served its last dinner — and closed. Not from failure. Adrià had decided the restaurant format itself had become a cage: the relentless cycle of service was eating the very creativity it was meant to feed. So he killed the restaurant to save the idea.</p>
 
-<p>In its place came the <strong>elBullifoundation</strong> (2013), built around a deceptively simple mission Adrià states plainly: <mark>to feed creativity</mark>. Two strands run from it. The <strong>Bullipedia</strong> — an attempt to catalogue and organise the whole of Western gastronomy across dozens of volumes (more than twenty published so far) — and the <strong>Sapiens</strong> method, a structured way of interrogating any subject deeply before trying to innovate within it. The man who deconstructed the omelette spent his second act trying to deconstruct knowledge itself.</p>
+<p>In its place came the <strong>elBullifoundation</strong> (2013), built around a deceptively simple mission Adrià states plainly: <mark>to feed creativity</mark>. If the restaurant had always been a laboratory that happened to serve dinner, the foundation dropped the pretence and became a laboratory outright. Two projects run from it, and both try to do to <em>knowledge</em> what the taller once did to the omelette — take it apart and understand how it is actually built.</p>
+
+<p>The first is the <strong>Sapiens method</strong> (<span class="term">metodología Sapiens</span>) — Adrià's structured way of interrogating any subject deeply <em>before</em> trying to innovate within it. Its premise is blunt: you cannot create inside a field you have not first understood, so the method makes you classify a subject, trace its history, and connect it to everything around it before you are allowed an original thought. Along the walk at elBulli1846 it is laid out in metal — a <em>mètode classificatori</em> and a <em>mètode històric</em> feeding a single map, with <em>el plaer</em>, pleasure, kept deliberately at the centre so the analysis never forgets what it is for.</p>
+
+<div class="note note--key" data-label="Understand, then create">
+    <p>The Sapiens method is Maximin's law turned into a procedure. "Creativity is not copying" tells you what <em>not</em> to do; Sapiens tells you what to do instead — <strong>understand a thing completely, from its history to its chemistry, and originality becomes the natural next step rather than a lucky one.</strong> It is the same discipline the kitchen ran on — protected time, no repetition, radical openness — rebuilt as a method any cook can follow. We take it apart step by step in the companion piece, <a href="elbulli-sapiens-method.html">The Sapiens Method: How elBulli Turned a Kitchen Into an Encyclopedia</a>.</p>
+</div>
+
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-15.jpg" alt="A metal plaque headed 'EL PLACER' at elBulli1846, mapping a classificatory method and a historical method into a single diagram of connected nodes.">
+        <figcaption>«El placer» — pleasure, mapped. The Sapiens method set out as a classificatory and a historical route into one subject, on the hillside above the cove.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-02.jpg" alt="An outdoor path at elBulli1846 lined with black hexagonal markers labelled A1, A2, B1, B2, C1, stepping up the pine hillside.">
+        <figcaption>The method broken into stations, A1 to C, climbing the Cala Montjoi hillside — the creativity walk you follow before you are trusted to invent anything.</figcaption>
+    </figure>
+</div>
+
+<p>The second project is the <strong>elBullipedia</strong> (the Bullipedia) — the output the method is built to produce. It is an attempt to catalogue and organise the whole of Western gastronomy, not as a book of recipes but as a structured encyclopaedia of ingredients, products, techniques and concepts, planned across dozens of volumes. The man who deconstructed the potato omelette spent his second act trying to deconstruct the entire field around it — and then, true to form, to publish the lot.</p>
+
+<figure class="photo-figure">
+    <img src="../assets/photos/elbulli/elbulli-07.jpg" alt="An outdoor display case at elBulli1846 filled with rows of elBulli books, catalogues and Bullipedia volumes.">
+    <figcaption>The published output on the hillside: books, catalogues and Bullipedia volumes. The world's most secretive kitchen turned its second life into its most generous archive.</figcaption>
+</figure>
 
 <div class="note" data-label="The Number">
     <p>In June 2023, twelve years after the last service, the cove reopened as <strong>elBulli1846</strong> — a museum and lab on the original site, billed as the first restaurant on earth turned into a museum. The number is a double signature: it is the count of dishes Adrià says the kitchen created across its life, <em>and</em> the birth year of Auguste Escoffier, the father of modern French cuisine. The most disruptive chef of his age named his monument after the most classical chef of the previous one.</p>
@@ -221,6 +324,17 @@
 
 <h2>Pairing</h2>
 <p><strong>Same coastline, same logic:</strong> elBulli sat in the Empordà, so the bottle should too.</p>
+
+<div class="photo-duo">
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-09.jpg" alt="The Cala Montjoi cove seen through the long panoramic window of the elBulli1846 dining room: a curve of beach, green hills falling to the Mediterranean.">
+        <figcaption>The view the diners got: Cala Montjoi through the long dining-room window. Local sea, and — for fifty years — a local glass to match it.</figcaption>
+    </figure>
+    <figure class="photo-figure">
+        <img src="../assets/photos/elbulli/elbulli-08.jpg" alt="The terrace at the original elBulli site: chairs and a table in the dappled shade of an olive tree, the cove beyond.">
+        <figcaption>Olive shade over the water on the original terrace — the Empordà coast the whole cellar was drawn from.</figcaption>
+    </figure>
+</div>
 <div class="note note--key">
     <p><strong>Wine:</strong> a white from <strong>DO Empordà</strong> — the appellation that wraps the same Costa Brava hills behind Cala Montjoi. A coastal blend on Garnatxa Blanca or Macabeu (look to producers such as Espelt or Castillo Perelada) carries the salt-and-stone minerality of the tramuntana-scoured coast: enough body for a foam or a rich espuma, enough cut to reset the palate between small courses. Local sea, local glass.</p>
 </div>
