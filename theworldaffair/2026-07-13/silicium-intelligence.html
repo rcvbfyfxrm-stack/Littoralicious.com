@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-13/">
+<title>Le Procès des Quatre Cents — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 13 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;164</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Fuites &amp; Verrous</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-13.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00695C">Silicium &amp; Intelligence</div>
+  <h1 class="article-title">Le Procès des Quatre Cents</h1>
+  <div class="article-date">Lundi 13 Juillet 2026 &mdash; Edition N&deg;164</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Quatre cents anciens salariés d'Apple, trois clones de Claude Cowork annoncés ou préparés en une semaine, et un modèle européen qui promet la souveraineté sans l'avoir encore prouvée — la frontière de l'IA se joue moins, cette semaine, dans les laboratoires que dans les tribunaux, les organigrammes RH et les preprints non relus. Apple accuse OpenAI d'avoir construit son futur appareil grand public avec la mémoire de ses propres ex-employés. Pendant ce temps, OpenAI, Cursor et AWS copient, chacun séparément, le même produit d'Anthropic — le compliment le plus honnête qu'un concurrent puisse faire. Et un consortium allemand publie un modèle « souverain » évalué par lui-même, sans réplication indépendante. Un fil commun : cette semaine, chacun a préféré emprunter, copier ou revendiquer plutôt que de démontrer — la preuve, la vraie, reste à venir pour les trois histoires.</p>
+<hr>
+<h2>Carte des Preuves</h2>
+<table class="twa-emap"><thead><tr><th>Affirmation</th><th>Grade</th><th>n / taille d&rsquo;effet</th><th>R&eacute;plication&#160;?</th><th>Source</th></tr></thead><tbody>
+<tr><td>OpenAI aurait volé des secrets industriels d'Apple</td><td class="twa-emap-g"><span class="twa-grade g-d">D</span></td><td>n/a — allégation judiciaire</td><td>non</td><td><a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/">TechCrunch</a></td></tr>
+<tr><td>Anthropic générerait 35 % de revenus de plus qu'OpenAI</td><td class="twa-emap-g"><span class="twa-grade g-c">C</span></td><td>estimation non auditée</td><td>non</td><td><a href="https://www.theinformation.com/newsletters/the-briefing/anthropic-likely-generating-least-35-revenue-openai">The Information</a></td></tr>
+<tr><td>Soofi S 30B-A3B égalerait des modèles denses 14-27B</td><td class="twa-emap-g"><span class="twa-grade g-c">C</span></td><td>17 modèles comparés, auto-évalués</td><td>non</td><td><a href="https://arxiv.org/abs/2607.09424">arXiv</a></td></tr>
+<tr><td>Un anneau de résonateurs reproduit la super-radiance rotationnelle de Penrose-Zel'dovich</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>étude unique, CUNY</td><td>non</td><td><a href="https://www.nature.com/articles/s41586-026-10725-y">Nature</a></td></tr>
+</tbody></table>
+<p class="twa-emap-key"><b class="g-a">A</b> ECR répliqué · <b class="g-b">B</b> revu par les pairs / étude unique · <b class="g-c">C</b> préprint non relu · <b class="g-d">D</b> talk / benchmark vendeur.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le procès des quatre cents</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">Dépôt judiciaire T0 · couverture T3 multiple</span></p>
+<p>Quatre cents — c'est le nombre approximatif d'anciens salariés d'Apple qu'OpenAI aurait recrutés, selon la plainte qu'Apple a déposée le 10 juillet devant un tribunal fédéral de Californie du Nord contre son responsable matériel Tang Tan et plusieurs autres transfuges, les accusant d'avoir emporté des secrets industriels et des documents confidentiels sur l'IA embarquée pour construire le propre appareil grand public d'OpenAI. <a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/">[T3, TechCrunch, 2026-07-10]</a></p>
+<p>OpenAI dément tout intérêt pour « les secrets industriels d'autres entreprises ». Deux jours plus tard, Elon Musk et Sam Altman se disputent publiquement sur X à propos de l'affaire — Musk traitant Altman de « Scam Altman », Altman répliquant qu'il « vend aux investisseurs des data centers spatiaux de court terme » —, signe que le procès est devenu un totem de la rivalité plus large entre laboratoires d'IA. <a href="https://tech.slashdot.org/story/26/07/12/1842219/elon-musk-and-sam-altman-spar-on-x-after-apple-files-openai-lawsuit">[T3, Slashdot, 2026-07-12]</a></p>
+<p>Le dossier arrive alors qu'Anthropic, le rival direct d'OpenAI, afficherait désormais un chiffre d'affaires annualisé supérieur d'au moins 35 % à celui d'OpenAI (~45-47 Md$ contre ~25-33 Md$), porté par les revenus entreprise de Claude Code — une estimation non auditée mais issue d'une enquête indépendante, pas d'une annonce d'entreprise. <a href="https://www.theinformation.com/newsletters/the-briefing/anthropic-likely-generating-least-35-revenue-openai">[T3, The Information, ~2026-07-08]</a></p>
+<p><strong>Qui paie · Qui profite :</strong> Apple gagne un angle offensif contre OpenAI au moment où les deux sociétés pourraient devenir concurrentes sur le matériel grand public ; OpenAI risque une bataille judiciaire coûteuse et une image écornée en pleine préparation d'introduction en Bourse ; les 400 transfuges eux-mêmes deviennent, malgré eux, la pièce à conviction centrale.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> toute entreprise recrutant massivement d'anciens salariés d'un concurrent direct devrait, sous 30 jours, auditer ses procédures de cloisonnement documentaire — ce procès fixe déjà, de facto, un nouveau standard de preuve à anticiper.</p>
+<p><strong>L'autre lecture :</strong> le recrutement massif de transfuges d'une entreprise concurrente est une pratique courante dans la Silicon Valley et ne constitue pas, en soi, un vol de secrets — Apple devra démontrer un transfert documentaire précis, pas seulement une coïncidence de trajectoires de carrière.</p>
+<p><strong>Verdict :</strong> que le procès aboutisse ou non, il documente déjà un fait : la frontière entre concurrence légitime pour les talents et vol de propriété intellectuelle s'est réduite à la taille d'un dossier RH.</p>
+<p><strong>Ce qui reste opaque :</strong> si des documents précis et identifiables ont réellement changé de mains, ou si l'accusation repose surtout sur la coïncidence des trajectoires de carrière.</p>
+<p><strong>À dire au dîner :</strong> Apple accuse OpenAI d'avoir construit son futur appareil grand public avec les mains de 400 anciens salariés d'Apple — et pour l'instant, la seule preuve rendue publique est une plainte, pas un document volé.</p>
+<hr>
+<h3>II. La course au clone</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 média (The Information) · T3 · 3 volets non corroborés</span></p>
+<p>Trois — c'est le nombre de concurrents distincts que le secteur a lancés ou révélés en une semaine pour copier un seul produit : Claude Cowork d'Anthropic. OpenAI a dévoilé « ChatGPT Work », combinant ChatGPT et Codex pour construire seul des tableurs, présentations et sites depuis les données d'une entreprise, propulsé par GPT-5.6. <a href="https://www.theinformation.com/briefings/openai-unveils-claude-cowork-competitor-desktop-superapp">[T3, The Information, 2026-07-09]</a></p>
+<p>Cursor développerait en interne un projet nom de code « Sand » — un agent généraliste, pas seulement de code, capable de traiter e-mails, tableurs et tâches d'ingénierie pour des utilisateurs professionnels, dans le contexte d'un possible rachat par l'unité IA de SpaceX. <a href="https://www.theinformation.com/articles/cursor-developing-ai-agent-compete-claude-cowork">[T3, The Information, 2026-07-09]</a> Selon une newsletter du même titre, AWS préparerait à son tour sa propre version d'un « superagent » face à Claude Cowork — un troisième géant qui rejoint la course. <a href="https://www.theinformation.com/newsletters/applied-ai/aws-joins-superagent-race-pushes-version-claude-cowork">[T3, The Information]</a></p>
+<p>Que trois acteurs indépendants — un rival frontal, une start-up d'outils de code, et un fournisseur cloud — convergent en quelques jours vers le même produit dit quelque chose que les communiqués individuels ne disent pas : Claude Cowork est devenu la référence à laquelle tout le secteur mesure désormais son propre retard.</p>
+<p><strong>Qui paie · Qui profite :</strong> Anthropic, qui a créé la catégorie, gagne en position de référence mais perd en exclusivité ; OpenAI, Cursor et AWS gagnent du temps de rattrapage ; les entreprises clientes gagnent, elles, du pouvoir de négociation entre quatre offres qui se ressemblent de plus en plus.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> les équipes qui évaluent un agent d'entreprise devraient, sous 30 jours, exiger un test comparatif sur leurs propres données plutôt que sur les démonstrations fournies par chaque vendeur — la convergence des produits rend les bancs d'essai marketing interchangeables.</p>
+<p><strong>L'autre lecture :</strong> une convergence aussi rapide peut aussi signaler une bulle de catégorie plutôt qu'une demande réelle — quatre géants qui copient le même produit en quelques jours n'ont pas nécessairement validé le besoin client, seulement la peur de rater le cycle.</p>
+<p><strong>Verdict :</strong> si les trois projets se confirment — un seul, ChatGPT Work, est officiel, les deux autres reposent sur les scoops d'un même média —, le meilleur indicateur de la position d'Anthropic ne sera ni son chiffre d'affaires ni ses benchmarks, mais le fait que ses concurrents aient jugé plus rapide de copier Claude Cowork que d'inventer autre chose.</p>
+<p><strong>Ce qui reste opaque :</strong> si l'estimation de revenus d'Anthropic (35 % de plus qu'OpenAI) résistera à un audit financier réel, les deux entreprises restant privées et non auditées publiquement.</p>
+<p><strong>À dire au dîner :</strong> le meilleur compliment qu'ait reçu Anthropic cette semaine n'est venu d'aucun client — ce sont OpenAI, Cursor et AWS qui, chacun de leur côté, ont décidé de construire la même chose.</p>
+<hr>
+<h3>III. Un rival souverain sort du bois</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 source, non répliquée · T2 (préprint)</span></p>
+<p>Trente milliards de paramètres, dont seulement 3 milliards actifs par jeton, entraînés sur 27 000 milliards de tokens sur le cloud IA industriel de Deutsche Telekom à Munich — c'est « Soofi S 30B-A3B », le nouveau modèle fondation ouvert que présente un consortium européen mené par la fédération allemande de l'IA (KI Bundesverband), avec le DFKI, deux instituts Fraunhofer et plusieurs universités, financé par le ministère fédéral allemand de l'Économie. <em>[préprint, non relu]</em> <a href="https://arxiv.org/abs/2607.09424">[T2, arXiv, 2026-07-10]</a></p>
+<p>Le modèle revendique des performances égalant des modèles denses de 14 à 27 milliards de paramètres et dépassant d'autres bases dites « souveraines » européennes, sur un panel de 17 modèles ouverts — le premier grand entraînement européen explicitement cadré comme réponse à la dépendance aux modèles non-européens.</p>
+<p><strong>Ce que dit vraiment le papier :</strong> l'effet est mesuré uniquement par les auteurs eux-mêmes, sur leurs propres benchmarks de comparaison ; aucune réplication indépendante n'existe à ce stade ; le financement provient intégralement du consortium et de l'État allemand, ce qui n'invalide pas les résultats mais impose la prudence sur leur généralisation.</p>
+<p><strong>Qui paie · Qui profite :</strong> le contribuable allemand et les partenaires du consortium financent l'entraînement ; l'écosystème européen de la souveraineté IA (DFKI, Fraunhofer) gagne une vitrine ; les laboratoires non-européens perdent, symboliquement, le monopole du récit de la frontière.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> les équipes techniques évaluant des alternatives souveraines devraient, sous 30 jours, demander l'accès aux poids et reproduire elles-mêmes au moins un sous-ensemble des benchmarks revendiqués avant toute décision d'adoption.</p>
+<p><strong>L'autre lecture :</strong> un preprint auto-évalué par ses propres auteurs sur ses propres benchmarks choisis n'a, par construction, jamais rapporté de contre-performance — la vraie mesure viendra des évaluations tierces, pas du papier lui-même.</p>
+<p><strong>Verdict :</strong> l'Europe a désormais un modèle à opposer au récit de dépendance technologique — mais tant qu'aucun laboratoire tiers n'a reproduit les chiffres, « souverain » reste une ambition, pas une mesure.</p>
+<p><strong>Ce qui reste opaque :</strong> si les performances revendiquées tiennent face à des benchmarks choisis par une équipe indépendante plutôt que par les auteurs eux-mêmes.</p>
+<p><strong>À dire au dîner :</strong> l'Europe vient de publier son premier grand modèle IA « souverain » — et pour l'instant, la seule preuve qu'il fonctionne aussi bien qu'annoncé provient de ceux qui l'ont construit.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Une équipe du CUNY Graduate Center publie dans Nature la première reproduction en laboratoire du processus de Penrose-Zel'dovich théorisé pour les trous noirs en rotation, via un anneau de résonateurs électroniques modulés — financé par la Défense américaine, la NSF et la fondation Simons. <a href="https://www.nature.com/articles/s41586-026-10725-y">Nature, 8 juillet</a></li>
+<li>Sur arXiv, deux préprints multi-agents distincts — « Agora » (allocation de tâches par enchères entre agents LLM, Université de Birmingham) et « WebSwarm » (orchestration récursive pour la recherche web, Renmin University) — non relus, non répliqués, mais publiés la même semaine.</li>
+<li>Meta prévoit de lancer en septembre la production de masse de son propre processeur IA maison, « Iris », conçu avec Broadcom et fabriqué par TSMC, pour doubler sa capacité de calcul et réduire sa dépendance à Nvidia — selon un mémo interne cité par la presse, non confirmé publiquement par Meta.</li>
+<li>Anthropic publie la version 2.1.207 de Claude Code, avec le mode automatique désormais actif par défaut sur Bedrock, Vertex AI et Foundry — mise à jour mineure mais révélatrice de la bataille des agents pour l'entreprise.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/">TechCrunch — Apple contre OpenAI, 10 juillet 2026</a></li>
+<li><a href="https://www.cnbc.com/2026/07/10/apple-openai-lawsuit-trade-secrets.html">CNBC, 10 juillet 2026</a></li>
+<li><a href="https://tech.slashdot.org/story/26/07/12/1842219/elon-musk-and-sam-altman-spar-on-x-after-apple-files-openai-lawsuit">Slashdot — dispute Musk/Altman, 12 juillet 2026</a></li>
+<li><a href="https://www.theinformation.com/newsletters/the-briefing/anthropic-likely-generating-least-35-revenue-openai">The Information — revenus Anthropic vs OpenAI</a></li>
+<li><a href="https://www.theinformation.com/briefings/openai-unveils-claude-cowork-competitor-desktop-superapp">The Information — ChatGPT Work, 9 juillet 2026</a></li>
+<li><a href="https://www.theinformation.com/articles/cursor-developing-ai-agent-compete-claude-cowork">The Information — Cursor « Sand »</a></li>
+<li><a href="https://www.theinformation.com/newsletters/applied-ai/aws-joins-superagent-race-pushes-version-claude-cowork">The Information — AWS superagent</a></li>
+<li><a href="https://arxiv.org/abs/2607.09424">arXiv — Soofi S 30B-A3B, 10 juillet 2026</a></li>
+<li><a href="https://www.nature.com/articles/s41586-026-10725-y">Nature — super-radiance rotationnelle de Floquet, 8 juillet 2026</a></li>
+<li><a href="https://arxiv.org/abs/2607.09600">arXiv — Agora, allocation par enchères</a></li>
+<li><a href="https://arxiv.org/abs/2607.08662">arXiv — WebSwarm</a></li>
+<li><a href="https://money.usnews.com/investing/news/articles/2026-07-09/exclusive-meta-to-put-ai-chip-into-production-in-september-as-it-looks-to-double-computing-capacity-memo-shows">US News/Reuters — puce Meta Iris, 9 juillet 2026</a></li>
+<li><a href="https://code.claude.com/docs/en/changelog">Anthropic — changelog Claude Code, 11 juillet 2026</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-07-13.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

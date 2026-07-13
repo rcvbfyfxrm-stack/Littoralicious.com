@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-13/">
+<title>Le Retour de la Prime de Guerre — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 13 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;164</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Fuites &amp; Verrous</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-13.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#1565C0">Marchés &amp; Capital</div>
+  <h1 class="article-title">Le Retour de la Prime de Guerre</h1>
+  <div class="article-date">Lundi 13 Juillet 2026 &mdash; Edition N&deg;164</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Quatre virgule un pour cent — c'est ce qu'a repris le baril en une nuit, et sept pour cent, ce qu'a perdu la Bourse de Séoul le lendemain matin. Le même week-end iranien qui ferme un détroit sur le papier a transmis son choc à un marché qui, trois jours plus tôt, célébrait la plus grosse introduction en Bourse étrangère de l'histoire américaine. SK Hynix a franchi le billion de dollars de capitalisation vendredi; le Kospi s'effondrait lundi, tiré par le poids même de cette action dans l'indice. Pendant ce temps, Circle devenait la première société de stablecoin à décrocher une charte bancaire fédérale, pendant que Tether restait, structurellement, au large du système réglementaire américain. Un fil commun : l'argent se déplace vite vers qui capte un privilège — chocs pétroliers, chartes bancaires, capitalisations record — et laisse la facture à qui vient d'entrer dans la position.</p>
+<hr>
+<h2>Le Tape</h2>
+<table class="twa-tape"><thead><tr><th>Instrument</th><th>Niveau</th><th>&Delta;</th><th>Position 52&#160;sem.</th><th>R&eacute;gime</th></tr></thead><tbody>
+<tr><td>Brent (crude)</td><td class="twa-lvl">79,12 $</td><td class="twa-up">+4,1 % ▲</td><td><span class="twa-pctbar"><i style="left:0%"></i></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Choc d'offre — Ormuz</td></tr>
+<tr><td>WTI (crude)</td><td class="twa-lvl">74,37 $</td><td class="twa-up">+4,1 % ▲</td><td><span class="twa-pctbar"><i style="left:0%"></i></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Choc d'offre — Ormuz</td></tr>
+<tr><td>S&amp;P 500</td><td class="twa-lvl">7 575,39</td><td class="twa-up">+0,42 % (clôture 10/07)</td><td><span class="twa-pctbar"><i style="left:97%"></i></span> <span class="twa-pctn">97e</span></td><td class="twa-regime">Record proche, futures en repli lundi</td></tr>
+<tr><td>Nasdaq Composite</td><td class="twa-lvl">26 281,61</td><td class="twa-up">+0,29 % (clôture 10/07)</td><td><span class="twa-pctbar"><i style="left:86%"></i></span> <span class="twa-pctn">86e</span></td><td class="twa-regime">Futures -0,5/-0,72 % lundi</td></tr>
+<tr><td>Kospi (Corée)</td><td class="twa-lvl">-7 % intraday</td><td class="twa-down">-7,0 % ▼</td><td><span class="twa-pctbar"><i style="left:0%"></i></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Choc importé — poids SK Hynix</td></tr>
+<tr><td>SK Hynix (SKHY)</td><td class="twa-lvl">168 $ j.1</td><td class="twa-up">+13 % ▲</td><td><span class="twa-pctbar"><i style="left:0%"></i></span> <span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Débuts records, 7x sursouscrit</td></tr>
+</tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le baril à quatre virgule un pour cent</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">Prix T0 · narratif géopolitique T3</span></p>
+<p>Quatre virgule un pour cent — c'est le bond du Brent (~79,12 $) et du WTI (~74,37 $) lundi matin, après le week-end le plus tendu du détroit d'Ormuz depuis le pic à 126 $ le baril atteint plus tôt cette année, « la plus grande perturbation de l'approvisionnement énergétique mondial depuis les années 1970 » selon le décompte cumulatif de plusieurs agences. <a href="https://tradingeconomics.com/commodity/brent-crude-oil">[T0, TradingEconomics, 2026-07-12/13]</a></p>
+<p>La transmission a été immédiate : le Kospi sud-coréen a chuté jusqu'à 7 % en séance asiatique lundi, tiré par le poids désormais écrasant de SK Hynix dans l'indice ; le Nikkei a perdu 1,6 %, et les futures Nasdaq reculaient de 0,5 à 0,72 % avant l'ouverture américaine. <a href="https://www.cnbc.com/2026/07/12/stock-market-today-live-updates.html">[T3, CNBC, 2026-07-12]</a></p>
+<p>Mais les données de transit elles-mêmes affaiblissent le récit d'une fermeture totale : une vingtaine de navires ont été escortés à travers le détroit dans les 24 heures suivant l'annonce iranienne. L'analyste Andy Lipow (Lipow Oil Associates) résume : « le marché pétrolier ne price pas une fermeture complète du détroit. » <a href="https://www.cnbc.com/2026/07/12/stock-market-today-live-updates.html">[T3, CNBC, 2026-07-12]</a></p>
+<p><strong>De l'autre côté du trade :</strong> les fonds indiciels et les acheteurs qui viennent d'entrer sur SK Hynix à la clôture record de vendredi se retrouvent, 48 heures plus tard, avec une exposition géopolitique qu'ils n'avaient pas mesurée — la contrepartie forcée d'un pari sur la mémoire IA devient, malgré eux, un pari sur Ormuz.</p>
+<p><strong>Qui paie · Qui profite :</strong> les compagnies pétrolières et les producteurs du Golfe captent des prix plus élevés ; le dollar profite d'un réflexe de valeur refuge ; les fonds long-only pris dans la baisse lundi et les consommateurs d'énergie importée paient la facture.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> toute position longue sur la mémoire ou les actions asiatiques exposées à la Corée devrait, sous 7 jours, être couverte contre le risque Ormuz plutôt que traitée comme un risque purement sectoriel — les deux se sont révélés être le même risque lundi.</p>
+<p><strong>L'autre lecture :</strong> certains gérants macro jugent au contraire que le marché sous-réagit — le brut n'a repris que 4 %, loin du pic à 126 $ atteint plus tôt cette année pour une perturbation comparable, signe que les opérateurs se lassent des annonces iraniennes répétées de fermeture.</p>
+<p><strong>Verdict :</strong> le marché a appris, à force de fausses fermetures, à ne plus prendre Téhéran au mot — mais il continue de payer la prime à chaque fois, ce qui revient au même pour qui achète de l'essence.</p>
+<p><strong>Ce qui reste opaque :</strong> si les niveaux de clôture de vendredi tiendront une fois les chiffres de la séance de lundi publiés — au moment d'écrire, seules les clôtures de vendredi et les futures de lundi matin étaient disponibles.</p>
+<p><strong>À dire au dîner :</strong> la Bourse sud-coréenne a perdu 7 % en une matinée à cause d'un pétrolier chypriote en feu à 6 000 kilomètres de Séoul — la preuve que la mémoire IA et le détroit d'Ormuz sont, désormais, le même marché.</p>
+<hr>
+<h3>II. Le billion qui fait trembler Séoul</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">Données de cotation · T0</span></p>
+<p>26,5 milliards de dollars — c'est ce qu'a levé SK Hynix vendredi 10 juillet lors de la deuxième plus grande introduction en Bourse jamais réalisée aux États-Unis, derrière SpaceX. Le fournisseur clé de mémoire HBM de Nvidia a franchi le billion de dollars de capitalisation, devenant seulement la deuxième entreprise coréenne à y parvenir après Samsung. <a href="https://fortune.com/2026/07/11/sk-hynix-us-stock-listing-nasdaq-second-largest-us-share-sale-ai-boom-hbw-memory/">[T3, Fortune, 2026-07-11]</a></p>
+<p>La demande aurait été sursouscrite sept fois ; l'action, entrée sous le ticker temporaire SKHYV à 149 $ l'ADR, a clôturé son premier jour en hausse d'environ 13 % à 168 $, avant de basculer ce lundi sous son ticker définitif SKHY — précisément le jour où le Kospi perdait 7 %. <a href="https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle">[T3, Bloomberg, 2026-07-10]</a></p>
+<p>SK Hynix contrôle environ 60 % du marché mondial de la mémoire à haute bande passante. Bloomberg résume le pari en une phrase : cette cotation « est un pari sur le fait que l'IA brise le cycle traditionnel de boom et de bust des semi-conducteurs » — un doute que la maison introduit elle-même dans sa propre couverture.</p>
+<p><strong>De l'autre côté du trade :</strong> les nouveaux acheteurs Nasdaq, souvent des investisseurs de détail américains attirés par le récit de la mémoire IA, se retrouvent contrepartie d'un double pari qu'ils n'ont pas nécessairement soupesé : un cycle de semi-conducteurs et une exposition géopolitique coréenne, empochée en un week-end.</p>
+<p><strong>Qui paie · Qui profite :</strong> SK Hynix, sa maison-mère et les souscripteurs de l'introduction encaissent une valorisation généreuse au sommet du cycle IA ; les nouveaux acheteurs Nasdaq absorbent, eux, le risque d'un possible pic cyclique.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> les gérants exposés à SKHY devraient vérifier sous 30 jours la corrélation de leur position avec l'indice coréen élargi — la cotation Nasdaq n'a pas supprimé l'exposition Kospi, elle l'a seulement rendue accessible en dollars.</p>
+<p><strong>L'autre lecture :</strong> l'euphorie du premier jour peut aussi se lire comme un signal sain — sept fois plus de demande que d'offre traduit une confiance structurelle dans la pénurie de mémoire HBM, pas seulement un engouement spéculatif.</p>
+<p><strong>Verdict :</strong> SK Hynix a réussi la meilleure introduction en Bourse étrangère de l'histoire américaine le jour précis où son marché domestique rappelait que la capitalisation ne protège de rien — la valorisation et la volatilité sont montées dans le même ascenseur.</p>
+<p><strong>Ce qui reste opaque :</strong> la part exacte de la chute du Kospi imputable au nouveau poids indiciel de SK Hynix plutôt qu'au choc Ormuz général.</p>
+<p><strong>À dire au dîner :</strong> la plus grosse introduction en Bourse étrangère de l'histoire américaine a mis 72 heures à découvrir qu'elle restait, structurellement, une action coréenne.</p>
+<hr>
+<h3>III. Circle décroche sa charte, Tether reste au large</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">Charte + cours T0 · parts de marché T3</span></p>
+<p>14 % — c'est le bond de l'action Circle (CRCL) le 10 juillet quand l'émetteur du stablecoin USDC est devenu le premier de l'histoire à obtenir une charte bancaire fédérale américaine, via l'agence de contrôle de la monnaie (OCC). <a href="https://www.circle.com/pressroom/circle-receives-final-occ-approval-to-establish-national-trust-bank">[T0, communiqué Circle, 2026-07-10]</a></p>
+<p>La nouvelle entité, « Circle National Trust », lui permet de gérer directement les réserves d'USDC et d'offrir la garde institutionnelle sans passer par une banque tierce. USDC représenterait déjà environ 70 % du volume ajusté de transactions en stablecoins (1 790 milliards de dollars en juin), contre 25 % pour Tether. <a href="https://www.coindesk.com/business/2026/07/06/circle-s-usdc-is-leaving-tether-behind-in-the-stablecoin-volume-race">[T3, CoinDesk, 2026-07-06]</a></p>
+<p>Le mouvement s'inscrit dans une rotation plus large : la capitalisation totale des stablecoins reste stable autour de 321 milliards de dollars depuis juin, mais l'USDT est passé d'environ 190 à 184 milliards et l'USDC de 80 à 73 milliards depuis mars, tandis que l'USDG d'Anchorage bondissait de 54 % en trois semaines à 6,12 milliards. Un consortium de 140 entreprises (BlackRock, Coinbase, Mastercard, Stripe, Visa) a par ailleurs lancé son propre stablecoin rival, OUSD, excluant explicitement Circle, Tether et PayPal. <a href="https://en.cryptonomist.ch/2026/07/12/stablecoin-market-decline-2026/">[T3, Cryptonomist, 2026-07-12]</a></p>
+<p><strong>De l'autre côté du trade :</strong> Tether reste la contrepartie forcée de cette bascule — sans charte bancaire ni ancrage réglementaire américain comparable, l'émetteur historique du plus gros stablecoin voit l'argent institutionnel se déplacer vers des structures adossées à une banque, pendant qu'il demeure, lui, offshore.</p>
+<p><strong>Qui paie · Qui profite :</strong> Circle gagne une douve structurelle — charte fédérale, garde directe des réserves — sur Tether ; les émetteurs adossés à une charte bancaire (Anchorage/USDGO) sont les grands gagnants de la rotation vers le « dollar régulé ».</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> toute trésorerie d'entreprise détenant des réserves en stablecoin devrait, sous 30 jours, réévaluer sa répartition entre émetteurs chartés et non chartés à la lumière de ce nouveau précédent réglementaire.</p>
+<p><strong>L'autre lecture :</strong> les chiffres de parts de marché proviennent presque entièrement de la presse spécialisée crypto relayée par un seul repreneur généraliste — une base de sourcing relativement étroite pour un récit de « bascule structurelle » ; à traiter comme directionnel, pas audité.</p>
+<p><strong>Verdict :</strong> la bataille des stablecoins ne se joue plus sur le volume de transactions mais sur qui obtient, en premier, l'habit réglementaire d'une banque — et Circle vient de l'enfiler avant tout le monde.</p>
+<p><strong>Ce qui reste opaque :</strong> si Tether cherchera à son tour une charte bancaire américaine, ou choisira de rester délibérément hors du système qu'elle a contribué à créer.</p>
+<p><strong>À dire au dîner :</strong> le dollar numérique le plus utilisé au monde vient de devenir, techniquement, une banque — et son plus gros concurrent reste, lui, une société offshore.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Le gouverneur de la Banque d'Angleterre Andrew Bailey qualifie de « risque de queue » l'endettement caché des gilts, des hedge funds et du crédit privé — tout en assouplissant, au même moment, les règles de levier bancaire pour absorber ~150 Md£ de dette d'État supplémentaire. <a href="https://www.bankofengland.co.uk/-/media/boe/files/financial-stability-report/2026/financial-stability-report-july-2026.pdf">Bank of England, 7 juillet</a></li>
+<li>Bonzo Lend, un protocole de prêt sur Hedera, perd 9 M$ (77 % de sa valeur bloquée) le 11 juillet dans une exploitation par manipulation d'oracle — environ 5,25 M$ blanchis vers Ethereum via LayerZero. <a href="https://www.coindesk.com/web3/2026/07/11/lending-protocol-bonzo-loses-77-of-value-locked-as-usd9-million-oracle-exploit-rattles-hedera">CoinDesk, 11 juillet</a></li>
+<li>LinqAlpha lève 22 M$ en série A pour un outil d'IA agentique déjà déployé dans plus de 70 institutions financières — signal discret d'une adoption plus rapide que prévu de l'IA côté buy-side.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://tradingeconomics.com/commodity/brent-crude-oil">TradingEconomics — Brent crude</a></li>
+<li><a href="https://www.cnbc.com/2026/07/12/stock-market-today-live-updates.html">CNBC — marchés du 12 juillet 2026</a></li>
+<li><a href="https://finance.yahoo.com/markets/articles/shares-slip-asia-oil-jumps-002452563.html">Yahoo Finance — Asie et pétrole, 12 juillet 2026</a></li>
+<li><a href="https://fortune.com/2026/07/11/sk-hynix-us-stock-listing-nasdaq-second-largest-us-share-sale-ai-boom-hbw-memory/">Fortune — introduction SK Hynix, 11 juillet 2026</a></li>
+<li><a href="https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/">TechCrunch, 10 juillet 2026</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-debut-is-a-bet-that-ai-breaks-boom-and-bust-chip-cycle">Bloomberg — SK Hynix, 10 juillet 2026</a></li>
+<li><a href="https://www.circle.com/pressroom/circle-receives-final-occ-approval-to-establish-national-trust-bank">Circle — communiqué charte OCC, 10 juillet 2026</a></li>
+<li><a href="https://www.coindesk.com/business/2026/07/10/circle-secures-u-s-trust-bank-approval-in-crypto-expansion">CoinDesk — charte Circle, 10 juillet 2026</a></li>
+<li><a href="https://www.coindesk.com/business/2026/07/06/circle-s-usdc-is-leaving-tether-behind-in-the-stablecoin-volume-race">CoinDesk — USDC vs Tether, 6 juillet 2026</a></li>
+<li><a href="https://en.cryptonomist.ch/2026/07/12/stablecoin-market-decline-2026/">Cryptonomist — rotation stablecoins, 12 juillet 2026</a></li>
+<li><a href="https://fortune.com/2026/06/30/stripe-visa-stablecoin-rival-ousd-tether-circle/">Fortune — stablecoin OUSD, 30 juin 2026</a></li>
+<li><a href="https://www.bankofengland.co.uk/-/media/boe/files/financial-stability-report/2026/financial-stability-report-july-2026.pdf">Bank of England — rapport de stabilité financière, 7 juillet 2026</a></li>
+<li><a href="https://www.coindesk.com/web3/2026/07/11/lending-protocol-bonzo-loses-77-of-value-locked-as-usd9-million-oracle-exploit-rattles-hedera">CoinDesk — exploit Bonzo Lend, 11 juillet 2026</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-07-13.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
