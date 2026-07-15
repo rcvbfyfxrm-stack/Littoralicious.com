@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-15/">
+<title>Un Bouclier à Crédit, une Raffinerie en Cendres — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 15 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;165</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Sous Nouveau Nom</div>
+  <div class="masthead-version">v1.1 &mdash; quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-15.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#283593">Ciel &amp; Énergie</div>
+  <h1 class="article-title">Un Bouclier à Crédit, une Raffinerie en Cendres</h1>
+  <div class="article-date">Mercredi 15 Juillet 2026 &mdash; Edition N&deg;165</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Un milliard sept cent cinquante millions de dollars pour trente-six satellites qui n'existent pas encore &mdash; c'est la nouvelle tranche que Washington vient d'ajouter à un bouclier antimissile déjà critiqué pour « tourner en rond ». Au même moment, à trois mille kilomètres de là, l'Ukraine a réduit le raffinage russe à son plus bas niveau depuis mars 2005 en incendiant deux raffineries de plus en une seule nuit. Et le baril, secoué par la guerre d'Ormuz, vient de toucher son plus haut niveau en un mois. Trois récits, un seul fil&#160;: cette semaine, l'énergie et l'espace ne se sont pas construits &mdash; ils se sont rechargés, sur un crédit que personne n'a encore vérifié.</p>
+<hr>
+<h2>Le Tape</h2>
+<table class="twa-tape"><thead><tr><th>Instrument</th><th>Niveau</th><th>&Delta;</th><th>Position 52&#160;sem.</th><th>R&eacute;gime</th></tr></thead><tbody>
+<tr><td>Investissement cumul&eacute; Golden Dome, couche de suivi</td><td class="twa-lvl">~5,25&#160;Md$</td><td class="twa-up">+1,75&#160;Md$ (semaine) ▲</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Acc&eacute;l&eacute;ration</td></tr>
+<tr><td>Co&ucirc;t cycle de vie Golden Dome (CBO, 20&#160;ans)</td><td class="twa-lvl">jusqu'&agrave; 1&#160;200&#160;Md$</td><td class="twa-regime">estimation incertaine</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Comptabilit&eacute; floue</td></tr>
+<tr><td>Raffinage russe (moyenne juillet)</td><td class="twa-lvl">3,91&#160;M b/j</td><td class="twa-down">plus bas depuis 2005 ▼</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Campagne ukrainienne</td></tr>
+<tr><td>Brent (contrat septembre)</td><td class="twa-lvl">85,92&#160;$/bbl</td><td class="twa-up">+9,6&#160;% (1&#160;mois) ▲</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Plus haut depuis le 15&#160;juin</td></tr>
+<tr><td>WTI (contrat ao&ucirc;t)</td><td class="twa-lvl">79,10&#160;$/bbl</td><td class="twa-up">+1,14&#160;% (jour) ▲</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Choc d'offre</td></tr>
+</tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Un bouclier à 1&#160;750&#160;millions de dollars, livré en deux morceaux rivaux</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">communiqué d'agence + 2 industriels + 5 rédactions · T0/T3</span></p>
+<p>Trente-six satellites, quatre plans orbitaux, deux industriels rivaux payés le même jour pour la même mission&#160;: la Space Development Agency américaine a attribué le 13-14&#160;juillet 955&#160;M$ à L3Harris (18&#160;satellites) et 798&#160;M$ à Sierra Space (18&#160;satellites) pour bâtir la couche accélérée de suivi des missiles hypersoniques du programme « Golden Dome », livrable fin 2028. L'objectif affiché, dans les mots du responsable de portefeuille du Space Force, GP&#160;Sandhoo&#160;: une « alerte, identification et poursuite globales et persistantes » des menaces balistiques avancées (<a href="https://www.sda.mil/space-development-agency-issues-awards-to-build-36-accelerated-missile-defense-tracking-layer-satellites-for-tranche-3-in-support-of-golden-dome-for-america/" target="_blank" rel="noopener">SDA, communiqué officiel</a>). Cette tranche s'ajoute à une précédente attribution de décembre&#160;2025 &mdash; quatre fournisseurs, 72&#160;satellites, 3,5&#160;Md$ &mdash;, portant l'engagement cumulé à environ 5,25&#160;Md$ et plus de 108&#160;satellites en huit mois (<a href="https://spacenews.com/l3harris-sierra-space-to-build-36-satellites-to-expand-u-s-missile-tracking-network/" target="_blank" rel="noopener">SpaceNews</a>, <a href="https://breakingdefense.com/2026/07/sda-awards-l3harris-sierra-1-75b-for-missile-defense-satellites/" target="_blank" rel="noopener">Breaking Defense</a>).</p>
+<p>Le rythme contredit un constat publié en avril par National Defense Magazine, selon lequel le programme phare « tournait en rond ». Le Congressional Budget Office chiffre de son côté le coût total du bouclier à hauteur de 1&#160;200&#160;Md$ sur vingt ans &mdash; un ordre de grandeur que les parlementaires eux-mêmes jugent instable d'une agence à l'autre. Aucune source consultée ne démontre que le système fonctionne contre une saturation réelle de missiles à têtes multiples&#160;: c'est une capacité en construction, pas une capacité en main (<a href="https://www.airandspaceforces.com/sda-awards-contracts-for-36-golden-dome-missile-tracking-satellites/" target="_blank" rel="noopener">Air &amp; Space Forces Magazine</a>, <a href="https://www.airforcetimes.com/industry/techwatch/2026/07/14/space-force-agency-awards-tech-companies-175-billion-contract-for-missile-warning-tracking-satellites/" target="_blank" rel="noopener">Air Force Times</a>).</p>
+<p><strong>Qui paie · Qui profite&#160;:</strong> le contribuable américain finance 1,75&#160;Md$ de plus&#160;; L3Harris et Sierra Space empochent directement le contrat&#160;; la Space Development Agency gagne en pertinence budgétaire et institutionnelle.</p>
+<p><strong>De l'autre côté du trade&#160;:</strong> les cinq fournisseurs déjà engagés sur Golden Dome (L3Harris, Northrop, Lockheed, Rocket Lab, désormais Sierra Space) se partagent un gâteau politique dont la logique technique &mdash; plutôt que la répartition électorale des contrats &mdash; reste à démontrer.</p>
+<p><strong>Conséquence opérable (7-30j)&#160;:</strong> surveiller si le Congrès publie d'ici la rentrée un chiffrage consolidé du coût total &mdash; son absence continuerait de signaler une comptabilité éclatée entre agences.</p>
+<p><strong>L'autre lecture&#160;:</strong> on peut voir dans la répartition entre deux industriels rivaux une diversification technique prudente plutôt qu'un saupoudrage politique &mdash; répartir le risque d'échec entre deux architectures différentes est une pratique standard en acquisition spatiale militaire.</p>
+<p><strong>Verdict&#160;:</strong> Golden Dome accumule des satellites plus vite qu'il n'accumule des preuves&#160;: 108&#160;engins commandés en huit mois, zéro test grandeur nature contre une salve réelle.</p>
+<p><strong>Ce qui reste opaque&#160;:</strong> aucune source indépendante du CBO ou du Pentagone ne permet de vérifier le chiffre de 1&#160;200&#160;Md$ sur vingt ans.</p>
+<p><strong>À dire au dîner&#160;:</strong> l'Amérique vient de commander sa troisième tranche de satellites de défense avant même d'avoir prouvé que la première fonctionne.</p>
+<hr>
+<h3>II. Cent jours de frappes ont ramené le raffinage russe à son niveau de 2005</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 cabinet d'analytics (EA Analytics) + 6 rédactions · T2/T3</span></p>
+<p>3,91&#160;millions de barils par jour&#160;: c'est le rythme moyen de raffinage russe en juillet 2026 &mdash; son plus bas niveau depuis mars&#160;2005, et plus de 1,4&#160;million de barils/jour sous la moyenne de l'an dernier &mdash; après qu'en cent jours l'Ukraine a frappé au moins 24 des 34&#160;grandes raffineries russes en une cinquantaine d'attaques. Dans la nuit du 14&#160;juillet, deux raffineries supplémentaires ont brûlé &mdash; Gazprom Neftekhim Salavat (~10&#160;Mt/an) et Afipsky (~6,25&#160;Mt/an) &mdash;, aux côtés de cinq tankers et d'un terminal de transbordement en mer Noire. Le chiffre de 3,91&#160;M&#160;b/j provient du cabinet d'analyse de marché EA Analytics, relayé par Bloomberg (<a href="https://www.bloomberg.com/news/articles/2026-07-13/russian-refinery-runs-plunge-to-lowest-in-more-than-two-decades" target="_blank" rel="noopener">Bloomberg, 13 juillet</a>) &mdash; c'est là l'origine traçable, pas une revendication du ministère ukrainien de la Défense.</p>
+<p>Conséquence directe&#160;: Moscou a interdit la majorité de ses exportations de diesel jusqu'à fin juillet, en plus des restrictions déjà en vigueur sur l'essence et le kérosène &mdash; poussant les prix mondiaux du diesel à des sommets pluriannuels. La campagne ukrainienne ne se contente donc plus de fragiliser l'approvisionnement intérieur russe&#160;: elle fuit désormais visiblement vers les marchés européens et mondiaux des produits raffinés (<a href="https://www.bloomberg.com/news/articles/2026-07-14/russia-s-afipsky-refinery-on-fire-as-kyiv-moscow-trade-attacks" target="_blank" rel="noopener">Bloomberg, 14 juillet</a>, <a href="https://kyivindependent.com/major-russian-oil-refinery-reportedly-struck-by-ukraine/" target="_blank" rel="noopener">Kyiv Independent</a>, <a href="https://foreignpolicy.com/2026/07/13/ukraine-drone-strike-russia-energy-oil-refinery-putin/" target="_blank" rel="noopener">Foreign Policy</a>). Fait à nuancer&#160;: les exportations russes de brut brut, elles, tiendraient mieux que le raffinage &mdash; ce qui complique le récit d'une « machine de guerre à sec » (<a href="https://www.thenationalnews.com/business/energy/2026/07/13/ukraines-refinery-offensive-is-draining-the-russian-war-machine/" target="_blank" rel="noopener">The National</a>). Aucune contre-source russe n'a été retrouvée sur ces frappes.</p>
+<p><strong>Qui paie · Qui profite&#160;:</strong> l'Ukraine dégrade l'économie de guerre russe et ses recettes d'exportation de carburant&#160;; les acheteurs mondiaux de diesel hors Russie (Inde, Golfe, certains raffineurs européens) profitent de marges de craquage plus élevées&#160;; les consommateurs et industriels russes ordinaires subissent les pénuries.</p>
+<p><strong>De l'autre côté du trade&#160;:</strong> les raffineurs européens qui dépendaient encore indirectement de flux diesel liés à la Russie doivent réorienter leurs achats vers l'Inde ou le Golfe, à un coût plus élevé.</p>
+<p><strong>Conséquence opérable (7-30j)&#160;:</strong> surveiller une nouvelle hausse des prix du diesel européen si l'interdiction d'exportation russe est prolongée au-delà de fin juillet.</p>
+<p><strong>L'autre lecture&#160;:</strong> si le raffinage plonge mais que les exportations de brut brut résistent, la Russie pourrait compenser une partie du manque à gagner en vendant simplement plus de pétrole non transformé &mdash; une lecture qui nuance, sans l'annuler, l'ampleur du succès ukrainien.</p>
+<p><strong>Verdict&#160;:</strong> la campagne de raffineries fonctionne, mais elle frappe la transformation, pas encore le robinet &mdash; et c'est sur ce second front que la guerre économique reste à gagner.</p>
+<p><strong>Ce qui reste opaque&#160;:</strong> je n'ai pas trouvé la méthodologie propre d'EA Analytics ni un second jeu de données indépendant (Kpler, Vortexa, EIA) confirmant le chiffre exact de 3,91&#160;M&#160;b/j.</p>
+<p><strong>À dire au dîner&#160;:</strong> la Russie raffine aujourd'hui moins de pétrole qu'en 2005 &mdash; mais elle continue d'en vendre le brut, ce qui veut dire que la guerre des raffineries n'est qu'à moitié gagnée.</p>
+<hr>
+<h3>III. Le baril grimpe, l'économie ne suit pas</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">4 rédactions concordantes, prix non tracés à la source primaire · T3</span></p>
+<p>85,92&#160;dollars le baril de Brent&#160;: le plus haut niveau depuis le 15&#160;juin, après un bond d'un jour de 9,6&#160;%, tiré par la reprise des combats américano-iraniens et les frappes sur les tankers émiratis dans le détroit d'Ormuz. Le WTI suit à 79,10&#160;$, en hausse de 1,14&#160;% sur la seule séance du 14&#160;juillet (<a href="https://www.aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook" target="_blank" rel="noopener">Al Jazeera</a>, <a href="https://www.thenationalnews.com/business/energy/2026/07/13/oil-jumps-amid-fears-of-prolonged-disruption-in-strait-of-hormuz/" target="_blank" rel="noopener">The National</a>).</p>
+<p>Mais ce sursaut est une rechute, pas une surprise&#160;: la crise a commencé le 7&#160;juillet avec la frappe iranienne sur un méthanier qatari, et tout lecteur suivant la presse économique depuis une semaine connaît déjà ce fil. Ce qui est neuf, c'est l'ampleur du repricing&#160;: les traders qui avaient recommencé à parier sur une désescalade après l'accord de juin doivent désormais intégrer un troisième cycle de frappes en un mois (<a href="https://www.cnbc.com/2026/07/14/us-iran-hormuz-strikes-oil-toll.html" target="_blank" rel="noopener">CNBC</a>, <a href="https://fortune.com/2026/07/14/oil-price-trump-tolls-strait-of-hormuz/" target="_blank" rel="noopener">Fortune</a>). Signal parallèle à surveiller&#160;: SpaceX a fait voler pour la 600e fois un booster Falcon&#160;9 réutilisé le 13&#160;juillet, un jalon de coût que les partisans de l'énergie solaire orbitale citent de plus en plus comme le seuil qui pourrait un jour rendre cette filière économiquement viable &mdash; une piste encore spéculative, mais qui illustre où pourrait se déplacer la course énergétique une fois la facture des hydrocarbures jugée trop instable (<a href="https://spaceflightnow.com/2026/07/13/live-coverage-spacex-to-launch-a-flight-proven-falcon-booster-for-600th-time/" target="_blank" rel="noopener">Spaceflight Now</a>).</p>
+<p><strong>Qui paie · Qui profite&#160;:</strong> les majors pétrolières et le pétrole de schiste américain profitent des prix plus élevés&#160;; les producteurs du Golfe disposant de pipelines de contournement (ligne Est-Ouest saoudienne) sont relativement avantagés face à ceux totalement dépendants du détroit.</p>
+<p><strong>De l'autre côté du trade&#160;:</strong> les compagnies aériennes et les industries énergivores d'Asie importatrice nette encaissent la hausse sans délai de couverture.</p>
+<p><strong>Conséquence opérable (7-30j)&#160;:</strong> si le Brent franchit 90&#160;$ dans les deux semaines, s'attendre à des interventions verbales de l'OPEP+ pour calmer le marché.</p>
+<p><strong>L'autre lecture&#160;:</strong> l'accord du 18&#160;juin avait déjà montré que la situation pouvait se retourner en sens inverse tout aussi vite &mdash; rien ne garantit que ce pic ne redescende pas dans les prochaines semaines comme le précédent.</p>
+<p><strong>Verdict&#160;:</strong> le marché du pétrole n'a pas de mémoire longue&#160;: chaque répit se négocie comme s'il était définitif, chaque rechute comme si elle était nouvelle.</p>
+<p><strong>Ce qui reste opaque&#160;:</strong> aucune source primaire (CENTCOM, EIA) n'a confirmé indépendamment les bilans humains de la frappe du 14&#160;juillet cités par la presse.</p>
+<p><strong>À dire au dîner&#160;:</strong> le pétrole vient de connaître son troisième choc en un mois pour la même raison &mdash; et le marché continue de le traiter comme un événement chaque fois inédit.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li><strong>L'AIE lance son Global Critical Minerals Outlook&#160;2026 ce 15&#160;juillet</strong>, avec un focus inédit sur les chaînes d'approvisionnement nucléaires et le rôle de l'Amérique latine &mdash; un rapport qui touche directement à la fois la transition énergétique et la course aux composants critiques du type Golden Dome. <a href="https://www.iea.org/events/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA</a>.</li>
+<li><strong>Frontier Nuclear lance un programme de forage de 36&#160;000&#160;mètres (~120&#160;trous) sur son site d'uranium Pine Ridge, Wyoming</strong> &mdash; petit acteur, mais signal de la ruée occidentale sur l'uranium portée par la demande nucléaire des centres de données IA. Communiqué d'entreprise, à traiter comme promotionnel. <a href="https://www.globenewswire.com/news-release/2026/07/14/3326732/0/en/Frontier-Nuclear-Launches-Major-2026-Drill-Program-at-the-Pine-Ridge-Uranium-Project.html" target="_blank" rel="noopener">GlobeNewswire</a>.</li>
+<li><strong>Bloomberg note que l'Europe accumule un retard structurel dans la course énergie/espace</strong> face au rythme américain, chinois et russe observé cette semaine. <a href="https://www.bloomberg.com/news/newsletters/2026-07-13/as-elsewhere-europe-has-a-long-way-to-travel-to-catch-up-in-the-space-race" target="_blank" rel="noopener">Bloomberg</a>.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.sda.mil/space-development-agency-issues-awards-to-build-36-accelerated-missile-defense-tracking-layer-satellites-for-tranche-3-in-support-of-golden-dome-for-america/" target="_blank" rel="noopener">Space Development Agency &mdash; communiqué officiel</a></li>
+<li><a href="https://spacenews.com/l3harris-sierra-space-to-build-36-satellites-to-expand-u-s-missile-tracking-network/" target="_blank" rel="noopener">SpaceNews &mdash; L3Harris/Sierra Space contracts</a></li>
+<li><a href="https://breakingdefense.com/2026/07/sda-awards-l3harris-sierra-1-75b-for-missile-defense-satellites/" target="_blank" rel="noopener">Breaking Defense &mdash; $1.75B awards</a></li>
+<li><a href="https://www.airandspaceforces.com/sda-awards-contracts-for-36-golden-dome-missile-tracking-satellites/" target="_blank" rel="noopener">Air &amp; Space Forces Magazine</a></li>
+<li><a href="https://www.airforcetimes.com/industry/techwatch/2026/07/14/space-force-agency-awards-tech-companies-175-billion-contract-for-missile-warning-tracking-satellites/" target="_blank" rel="noopener">Air Force Times</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-13/russian-refinery-runs-plunge-to-lowest-in-more-than-two-decades" target="_blank" rel="noopener">Bloomberg &mdash; Russian refinery runs plunge</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-14/russia-s-afipsky-refinery-on-fire-as-kyiv-moscow-trade-attacks" target="_blank" rel="noopener">Bloomberg &mdash; Afipsky refinery on fire</a></li>
+<li><a href="https://kyivindependent.com/major-russian-oil-refinery-reportedly-struck-by-ukraine/" target="_blank" rel="noopener">Kyiv Independent</a></li>
+<li><a href="https://foreignpolicy.com/2026/07/13/ukraine-drone-strike-russia-energy-oil-refinery-putin/" target="_blank" rel="noopener">Foreign Policy</a></li>
+<li><a href="https://www.thenationalnews.com/business/energy/2026/07/13/ukraines-refinery-offensive-is-draining-the-russian-war-machine/" target="_blank" rel="noopener">The National &mdash; refinery offensive</a></li>
+<li><a href="https://www.aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook" target="_blank" rel="noopener">Al Jazeera &mdash; oil hits 1-month high</a></li>
+<li><a href="https://www.cnbc.com/2026/07/14/us-iran-hormuz-strikes-oil-toll.html" target="_blank" rel="noopener">CNBC &mdash; Hormuz strikes oil toll</a></li>
+<li><a href="https://fortune.com/2026/07/14/oil-price-trump-tolls-strait-of-hormuz/" target="_blank" rel="noopener">Fortune</a></li>
+<li><a href="https://spaceflightnow.com/2026/07/13/live-coverage-spacex-to-launch-a-flight-proven-falcon-booster-for-600th-time/" target="_blank" rel="noopener">Spaceflight Now &mdash; Falcon 9's 600th flight</a></li>
+<li><a href="https://www.iea.org/events/global-critical-minerals-outlook-2026" target="_blank" rel="noopener">IEA &mdash; Global Critical Minerals Outlook 2026</a></li>
+</ul></div><div class="bottom-nav"><a href="../2026-07-15.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 &mdash; quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
