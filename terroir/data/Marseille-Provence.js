@@ -41,7 +41,12 @@ window.TERROIR_DATA = (function () {
   "address": "9 rue François Rocca, 13008 Marseille",
   "phone": "+33 4 91 24 83 63",
   "hours": "Dinner only, Tue–Sat",
-  "maps": "https://www.google.com/maps/search/?api=1&query=AM+par+Alexandre+Mazzia+Marseille"
+  "maps": "https://www.google.com/maps/search/?api=1&query=AM+par+Alexandre+Mazzia+Marseille",
+  "verdict": "Twenty-four covers of a culinary language with no French antecedent — Congo-raised, Marseille-fixed, Mazzia's tasting builds from smoke to sea in fragments that never explain themselves and never need to.",
+  "signature": "smoked eel with dark chocolate, passionfruit and hibiscus — bitter, sea-acid, chilled at the menu's hinge",
+  "person": "Alexandre Mazzia — 3 Michelin stars awarded January 2021, fastest three-star promotion in Michelin France's modern history",
+  "signal_chip": "3★ 2021 — fastest in Michelin France history",
+  "caveat": "24 covers, one sitting per evening — the waitlist runs three to six months. No à la carte. This requires planning, not impulse."
  },
  {
   "id": "v02-auffo",
@@ -67,7 +72,12 @@ window.TERROIR_DATA = (function () {
   "address": "158 rue du Vallon des Auffes, 13007 Marseille",
   "phone": "",
   "hours": "Lunch & dinner, Tue–Sat",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Auffo+Vallon+des+Auffes+Marseille"
+  "maps": "https://www.google.com/maps/search/?api=1&query=Auffo+Vallon+des+Auffes+Marseille",
+  "verdict": "Coline Faulquier opened Auffo in April 2025 at the old L'Épuisette address and earned her first star in her first season — the freshest Michelin star in Provence, on a terrace four metres above the fishing boats of the Vallon.",
+  "signature": "Mediterranean sea bass tartare with citrus-pressed olive oil, capers and fleur de sel — cold, clean, salt-bright over a sea you can almost touch",
+  "person": "Coline Faulquier — 1 Michelin star at Auffo 2026; previously starred at Signature, Aix-en-Provence (2022)",
+  "signal_chip": "1★ first season 2026",
+  "caveat": "Opened April 2025 — still in first full year. Reservations release without warning and fill within hours. Follow @auffo.marseille for slot announcements."
  },
  {
   "id": "v03-le-petit-nice-passedat",
@@ -93,7 +103,12 @@ window.TERROIR_DATA = (function () {
   "address": "Anse de Maldormé, 160 corniche J. F. Kennedy, 13007 Marseille",
   "phone": "+33 4 91 59 25 92",
   "hours": "Lunch & dinner; closed Mon",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Le+Petit+Nice+Passedat+Marseille"
+  "maps": "https://www.google.com/maps/search/?api=1&query=Le+Petit+Nice+Passedat+Marseille",
+  "verdict": "Three generations at this cliff-face address, three stars since 2013 — Passédat's 'Ma Bouille Abaisse' dismantles the charter dish course by course in a three-hour tasting on a private cove that looks like a movie set and is entirely real.",
+  "signature": "warm rouget with bone emulsion and sun-dried tomato — marine, mineral, barely touched by heat",
+  "person": "Gérald Passédat — 3 Michelin stars since 2013; third generation of the family at this address since 1917",
+  "signal_chip": "3★ since 2013",
+  "caveat": "Tasting menus EUR 250–340 per head; book 4–8 weeks ahead. The room behaves accordingly — Marseille's canonical fine-dining address does not flex."
  },
  {
   "id": "v04-une-table-au-sud",
