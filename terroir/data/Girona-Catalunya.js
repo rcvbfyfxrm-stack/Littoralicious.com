@@ -547,6 +547,43 @@ window.TERROIR_DATA = (function () {
       "full": "DO Empordà — registered estate of the Consell Regulador, 2026 listing",
       "cosign": "and the one large house in the Empordà we'd send a chef to taste at"
     }
+  },
+  {
+    "id": "v21-esperit-roca",
+    "cat": "mainland",
+    "tier": "several",
+    "priority": 21,
+    "badge": "Michelin",
+    "name": "Esperit Roca",
+    "short": "Esperit Roca",
+    "lat": 42.0321,
+    "lng": 2.8472,
+    "neighborhood": "La Fortalesa · Sant Julià de Ramis (10 km N)",
+    "tags": [
+      "Menus €139/€170",
+      "Books 90 days out",
+      "Go at lunch, for the views"
+    ],
+    "productTags": [
+      "1 Michelin",
+      "Roca",
+      "Distillery"
+    ],
+    "why": "One Michelin star since the 2025 Guide, held into 2026 — earned not for novelty but for how faithfully the Roca brothers' 1893 military fort above Girona serves El Celler's back catalogue — Toda la gamba (2012), Mar y montaña vegetal (2007), the Libro viejo dessert (2017) — rotating with the seasons. Famous as the family's grand project: an 80,000-bottle cellar beneath the dome, their own Esperit Roca distillery — now the kitchen's R&D space — a fifteen-room hotel and the CCR exhibition, ten kilometres north of the old town. To order: the Salty Spirit menu (€170), or the classics à la carte with a distillery pour. Closed Tuesday and Wednesday; dinner Thursday to Saturday only.",
+    "address": "Castell de Sant Julià de Ramis, Muntanya dels Sants Metges, Carrer Major s/n, 17481 Sant Julià de Ramis, Girona",
+    "phone": "",
+    "hours": "Lunch Fri–Mon 13:00–14:30; dinner Thu–Sat 19:30–21:30; closed Tue–Wed. Holiday closure 3–11 Nov 2026; also closed 25 and 31 Dec 2026.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Esperit+Roca+Castell+de+Sant+Juli%C3%A0+de+Ramis",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Esperit+Roca+Castell+de+Sant+Juli%C3%A0+de+Ramis",
+    "verdict": "This is El Celler's back catalogue served under its own Michelin star — bookable ninety days out at €170, where the mothership takes eleven months and some €145 more.",
+    "signature": "Toda la gamba — Palamós red prawn marinated in seaweed vinegar and katsuobushi; prawn velouté, sauce of the head, crisp legs, citric caviar, a concentrated distillate of the coral.",
+    "caveat": "Not El Celler and not pretending to be — this is the archive, refined, not the frontier. You need a car or taxi up the hill from Girona; Tuesdays and Wednesdays are dark; dinner runs only Thursday to Saturday; and €139–170 before wine is real money for revival dishes.",
+    "person": "Raül Sillero — head chef; eighteen years inside the Roca ecosystem, previously head chef of Mas Marroch, the family's events estate. His own framing: Esperit is \"El Celler's library of dishes\", not a last-minute outlet.",
+    "signal_chip": {
+      "label": "1★ 2025",
+      "full": "One MICHELIN star, first awarded in Guide España 2025 (gala 26 November 2024, Murcia — one of 32 new one-stars); retained in the 2026 Guide (gala Málaga, November 2025).",
+      "cosign": "The star rewards fidelity of execution rather than novelty — which is precisely the offer, and why it holds."
+    }
   }
 ];
   const NEIGHBORHOODS = [
@@ -905,5 +942,27 @@ window.TERROIR_DATA = (function () {
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Passeig+de+la+Muralla+Girona"
  }
 ];
-  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
+  const PHOTOS = [
+  {
+    "src": "/terroir/Girona-Catalunya/img/girona-onyar.jpg",
+    "caption": "The Onyar houses and the Eiffel bridge under the cathedral tower — the city doubling itself in its river.",
+    "credit": "kallerna / Wikimedia Commons · CC BY-SA 4.0"
+  },
+  {
+    "src": "/terroir/Girona-Catalunya/img/girona-cathedral.jpg",
+    "caption": "Ninety Baroque steps up to the single widest Gothic nave ever raised.",
+    "credit": "Richard Mortel / Wikimedia Commons · CC BY 2.0"
+  },
+  {
+    "src": "/terroir/Girona-Catalunya/img/girona-call.jpg",
+    "caption": "The vaulted passage of Carrer de Sant Llorenç, in the medieval Call.",
+    "credit": "Enfo / Wikimedia Commons · CC BY-SA 4.0"
+  }
+];
+  const ET = {
+  "label": "Learn it here",
+  "text": "Dolors Ros — Massana-trained, author of Parramón's ceramics manuals — founded the Escola de Ceràmica de la Bisbal in 1972 and still teaches the wheel-technique week every single week of the 2026 summer programme; the week-long intensives (throwing, raku, sculptural wheel work fired to 1,250°C — the August sculptural week runs €495 plus €30 materials, with residency on site) take complete beginners and book online until they sell out, which most of this summer's already have. This is the working school of a town that has fired clay since at least 1502, not a paint-a-pot afternoon.",
+  "url": "https://esceramicbisbal.com/"
+};
+  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, ET };
 })();
