@@ -193,7 +193,7 @@
             <button data-f="discarded" title="Drafts you discarded — hidden everywhere else on this page. Open here to Restore.">Discarded</button>
             <button data-f="own-photos" title="Articles you've marked to add your own photos to">My photos</button>
             <span class="st-tools__div" aria-hidden="true"></span>
-            <button data-g="work" title="Most worked on first — ranked by your notes, rewrites and recent activity (sign in to rank)">Most worked</button>
+            <button data-g="work" title="Reviewed &amp; updated first, then articles with notes, then new drafts — so the closest-to-publish sit on top">By stage</button>
             <button data-g="section" title="Group rows under each section, with a live/draft split">By section</button>
             <button data-g="date" title="Flat list, newest first">By date</button>
         </div>
@@ -260,8 +260,8 @@
         <p class="st-note">
             <strong>How this works.</strong> The strip at the top is your <strong>production line</strong>:
             Fresh drafts &rarr; In review &rarr; Rewrite queued &rarr; Ready &rarr; Live — click a stage to see exactly those pieces,
-            click it again to clear. The default view is <strong>Most worked</strong>: whatever you have poured notes, rewrites and
-            recent attention into sits on top, so you always resume where you left off (sign in to feed the ranking).
+            click it again to clear. The default view is <strong>By stage</strong>: articles are ordered by how far they have come &mdash;
+            <strong>reviewed &amp; updated</strong> (ready to ship) first, then those <strong>with notes</strong> to address, then <strong>new</strong> drafts, with live pieces last &mdash; so whatever is closest to publishing always sits on top (sign in to feed the ranking).
             Click an article title (or <strong>Review</strong>) to open the studio reader and leave notes paragraph by paragraph.
             <strong>Notes</strong> on <em>any</em> row — live or draft — opens the whole-article notepad: it saves on this device
             with every keystroke and syncs to every device once you're signed in, so nothing you type can be lost.
@@ -327,7 +327,7 @@
         var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
 
         // ---- persisted selections ----
-        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group.v2', EXPAND_KEY = 'litt.studio.expanded';
+        var PUB_KEY = 'litt.studio.publish', NEWS_KEY = 'litt.studio.news', GROUP_KEY = 'litt.studio.group.v3', EXPAND_KEY = 'litt.studio.expanded';
         // v2 key: the default view is now "Most worked" — what you're actively shaping sits on top
         var groupMode = (function () { try { return localStorage.getItem(GROUP_KEY) || 'work'; } catch (e) { return 'work'; } })();
         var load = function (k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch (e) { return []; } };
@@ -372,6 +372,24 @@
             return String(y.date).localeCompare(String(x.date));
         }
 
+        // ---- lifecycle tier for the default board order (Arnaud's ask): reviewed+updated -> has notes -> new -> live ----
+        function stageTier(a) {
+            if (!a.draft) return 3;                 // live — already published, sinks to the bottom
+            if (validatedMap[a.slug]) return 0;     // updated after review + validated (ready to ship)
+            if (scoreOf(a.slug) > 0) return 1;      // has notes (incl. rewrite queued), not yet validated
+            return 2;                               // new — no notes yet
+        }
+        var STAGE_META = [
+            { name: 'Reviewed &amp; updated — ready to publish', hint: 'Notes addressed and validated — send these out first' },
+            { name: 'Has notes — to address', hint: 'You left notes or queued a rewrite; finish these next' },
+            { name: 'New — not yet reviewed', hint: 'Fresh drafts with no notes yet' },
+            { name: 'Live', hint: 'Already published on the site' }
+        ];
+        function byStage(x, y) {
+            var d = stageTier(x) - stageTier(y);
+            return d ? d : byWork(x, y);
+        }
+
         function render() {
             // discarded drafts are removed from every view except the Discarded filter
             var vis = all.filter(function (a) { return !discardedMap[a.slug]; });
@@ -410,8 +428,13 @@
             if (!list.length) { rows.innerHTML = '<tr><td colspan="8" style="color:var(--color-muted);padding:var(--space-6);">No matches.</td></tr>'; return; }
             // Review-queue filters: flat list, most-worked first (equal-work → newest first), no section grouping.
             var reviewView = (filter === 'draft' || filter === 'needs-review' || filter === 'untouched' || filter === 'noted' || filter === 'queued' || filter === 'ready');
-            if (reviewView || groupMode === 'work') list = list.slice().sort(byWork);
-            rows.innerHTML = (groupMode === 'section' && !reviewView) ? renderGrouped(list) : list.map(rowHtml).join('');
+            if (reviewView) list = list.slice().sort(byWork);
+            else if (groupMode === 'work') list = list.slice().sort(byStage);
+            // 'section' and 'date' modes keep the loaded (date-desc) order
+            rows.innerHTML = reviewView ? list.map(rowHtml).join('')
+                : (groupMode === 'section') ? renderGrouped(list)
+                : (groupMode === 'work') ? renderByStage(list)
+                : list.map(rowHtml).join('');
         }
 
         // ---- the production line: draft → noted → rewrite → ready → live ----
@@ -473,6 +496,20 @@
                 var head = '<tr class="st-section" data-sec-key="' + esc(k) + '" title="Click to fold / unfold"><td colspan="8">' +
                     caret + '<span class="st-section__name">' + esc(k) + '</span>' + bar + counts + hint + '</td></tr>';
                 return head + (open ? items.map(rowHtml).join('') : '');
+            }).join('');
+        }
+
+        // default board view: rows grouped by lifecycle tier (reviewed+updated first) so ship-ready pieces lead
+        function renderByStage(list) {
+            var buckets = [[], [], [], []];
+            list.forEach(function (a) { buckets[stageTier(a)].push(a); });
+            return buckets.map(function (items, t) {
+                if (!items.length) return '';
+                var m = STAGE_META[t];
+                var head = '<tr class="st-section" title="' + m.hint + '"><td colspan="8">' +
+                    '<span class="st-section__name">' + m.name + '</span>' +
+                    '<span class="st-section__counts"> <span style="color:var(--color-salt);">(' + items.length + ')</span></span></td></tr>';
+                return head + items.map(rowHtml).join('');
             }).join('');
         }
 
