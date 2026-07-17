@@ -61,6 +61,45 @@ async function patchStatus(s, status) {
   });
   if (!r.ok) console.warn(`  (couldn't update request status: ${r.status} — re-review still works)`);
 }
+
+// "Start with fresh notes": once a rewrite has LANDED, the reviewer's notes were
+// about the OLD draft, so they should not cling to the new one. We wipe the
+// bundled notes on the PUBLIC request (notes/overall/markdown/count) but KEEP
+// status + rewrittenAt — the Studio reads rewrittenAt to clear the matching
+// PRIVATE draft-notes (which need a reviewer token this CLI can't get) on
+// reload, and to show "Rewritten ✓". Then drop the slug from the rewrite queue.
+async function freshenRequest(s) {
+  const url = `${BASE}/${REQ_PATH(s)}?key=${APIKEY}`
+    + "&updateMask.fieldPaths=notes&updateMask.fieldPaths=overall"
+    + "&updateMask.fieldPaths=markdown&updateMask.fieldPaths=count";
+  const r = await fetch(url, {
+    method: "PATCH", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ fields: {
+      notes: { arrayValue: { values: [] } },
+      overall: { stringValue: "" },
+      markdown: { stringValue: "" },
+      count: { integerValue: "0" },
+    } }),
+  });
+  if (!r.ok) { console.warn(`  (couldn't clear request notes: ${r.status})`); return; }
+  await dequeue(s).catch(() => {});
+  console.log("✓ notes cleared — this draft starts fresh for the next review round");
+}
+async function dequeue(s) {
+  const g = await fetch(`${BASE}/articles/_rewrite-queue?key=${APIKEY}`);
+  if (!g.ok) return;
+  const f = (await g.json()).fields || {};
+  const slugs = ((f.slugs && f.slugs.arrayValue && f.slugs.arrayValue.values) || [])
+    .map((v) => v.stringValue).filter(Boolean).filter((x) => x !== s);
+  const url = `${BASE}/articles/_rewrite-queue?key=${APIKEY}&updateMask.fieldPaths=slugs&updateMask.fieldPaths=updated`;
+  await fetch(url, {
+    method: "PATCH", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ fields: {
+      slugs: { arrayValue: { values: slugs.map((v) => ({ stringValue: v })) } },
+      updated: { integerValue: String(Date.now()) },
+    } }),
+  });
+}
 // The Studio appends each requested slug to articles/_rewrite-queue (a single
 // public doc) — collectionGroup queries are denied by the security rules, so we
 // fan out one cheap doc-GET per queued slug instead.
@@ -129,8 +168,15 @@ if (flags.has("--apply")) {
   console.log(lintOut.trim());
 
   await patchStatus(slug, "rewritten").catch(() => {});
+  await freshenRequest(slug).catch(() => {});
   console.log(`\n${lintOk ? "✓" : "⚠"} Rewrite applied. Re-review in the Studio (reload the review page), then validate + undraft to publish.`);
   if (!lintOk) console.log("  Lint still flags errors above — fix before publishing.");
+  process.exit(0);
+}
+
+// ---- freshen (clear the notes for an already-rewritten draft) ---------------
+if (flags.has("--freshen")) {
+  await freshenRequest(slug).catch((e) => die(e.message));
   process.exit(0);
 }
 

@@ -519,8 +519,37 @@
         //   npm run rewrite -- <slug>            builds the brief
         //   npm run rewrite -- <slug> --apply …  splices the rewrite + re-lints + flips status.
         var rewriteBtn = $('rv-rewrite'), rwStatusEl = $('rv-rw-status'), unsubReq = null;
+        var lastReq = null, freshenedFor = 0;
         function reqDoc() { return db.collection('articles').doc(slug).collection('_rewrite').doc('request'); }
         function queueDoc() { return db.collection('articles').doc('_rewrite-queue'); }
+
+        // "Start with fresh notes": once a rewrite has LANDED (request.status ===
+        // 'rewritten'), the reviewer's notes were about the OLD draft. The CLI
+        // already cleared the public bundle; here we clear the matching PRIVATE
+        // draft-notes so re-review begins on a clean slate. We only touch notes
+        // that predate rewrittenAt — anything the reviewer writes AFTER reload
+        // (ts > rewrittenAt) is theirs and is never deleted.
+        function maybeFreshen(req) {
+            if (isTpl || !signedReviewer || !req || req.status !== 'rewritten') return;
+            var rwAt = typeof req.rewrittenAt === 'number' ? req.rewrittenAt : 0;
+            if (!rwAt) return;
+            // Delete per-paragraph notes written for the pre-rewrite version.
+            state.notes.forEach(function (n) {
+                if ((n.ts || 0) > 0 && n.ts < rwAt) { notesCol().doc(n.id).delete().catch(function () {}); }
+            });
+            if (freshenedFor === rwAt) return;          // clear the overall verdict once per rewrite
+            freshenedFor = rwAt;
+            slugDoc().get().then(function (d) {
+                var dd = (d.exists && d.data()) || {};
+                if (dd.overallUpdated && dd.overallUpdated >= rwAt) return;  // reviewer already wrote a fresh one
+                if (!(dd.overall || '').trim()) return;
+                slugDoc().set({ overall: '', overallUpdated: Date.now(), lastWorked: Date.now() }, { merge: true }).catch(function () {});
+                try { localStorage.removeItem(OV_KEY); } catch (e) {}
+                state.overall = '';
+                if (document.activeElement !== overallEl) overallEl.value = '';
+                flash('previous notes cleared — reviewing the rewrite fresh');
+            }).catch(function () {});
+        }
         function fmtAgo(ms) { if (!ms) return ''; var s = Math.round((Date.now() - ms) / 1000); if (s < 60) return 'just now'; var m = Math.round(s / 60); if (m < 60) return m + 'm ago'; var h = Math.round(m / 60); if (h < 24) return h + 'h ago'; return Math.round(h / 24) + 'd ago'; }
         function paintReqStatus(d) {
             if (!rwStatusEl) return;
@@ -562,6 +591,7 @@
                 applyNotes();
                 setSync(true, 'synced · ' + state.notes.length);
                 maybeWriteParaCount(state.notes.length);   // denormalise count so the Studio list can show it
+                maybeFreshen(lastReq);                      // clear pre-rewrite notes as they stream in
             }, function (err) { setSync(false, 'sync error'); flash('sync: ' + (err.code || 'error'), true); });
             unsubDoc = slugDoc().onSnapshot(function (doc) {
                 var d = (doc.exists && doc.data()) || {};
@@ -582,7 +612,7 @@
             }, function () {});
             if (!isTpl) {
                 if (unsubReq) { unsubReq(); }
-                unsubReq = reqDoc().onSnapshot(function (doc) { paintReqStatus(doc.exists ? doc.data() : null); }, function () {});
+                unsubReq = reqDoc().onSnapshot(function (doc) { lastReq = doc.exists ? doc.data() : null; paintReqStatus(lastReq); maybeFreshen(lastReq); }, function () {});
             }
         }
         function maybeWriteParaCount(count) {
