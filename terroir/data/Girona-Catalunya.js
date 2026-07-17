@@ -25,7 +25,7 @@ window.TERROIR_DATA = (function () {
       "Tasting",
       "At-source"
     ],
-    "why": "Three Michelin stars, twice World's Best Restaurant (2013 & 2015), run by the three Roca brothers — Joan on the savoury pass, sommelier Josep on the wine, Jordi on pastry. Famous for an emotional, wine-led tasting that turns memory and landscape into courses. To order: the full tasting — the caramelised olives hung on a bonsai, the charcoal-grilled langoustine, and Jordi's perfume-derived desserts (aromas captured on a rotary evaporator). Closed Sun & Mon; the booking window — midnight on the 1st, ~11 months out — is the real gatekeeper, not the walk.",
+    "why": "Three Michelin stars, twice World's Best Restaurant (2013 & 2015), run by the three Roca brothers — Joan on the savoury pass, sommelier Josep on the wine, Jordi on pastry. Famous for an emotional, wine-led tasting that turns memory and landscape into courses. To order: the full tasting — the caramelised olives hung on a bonsai, the charcoal-grilled langoustine, and Jordi's perfume-derived desserts (aromas captured on a rotary evaporator). The real gatekeeper is the diary, not the door.",
     "address": "Carrer de Can Sunyer 48, 17007 Girona",
     "phone": "+34 972 222 157",
     "hours": "Lunch — marginally easier to land than dinner",
@@ -950,7 +950,7 @@ window.TERROIR_DATA = (function () {
   },
   {
     "src": "/terroir/Girona-Catalunya/img/girona-cathedral.jpg",
-    "caption": "Ninety Baroque steps up to the single widest Gothic nave ever raised.",
+    "caption": "Ninety Baroque steps to the door — then one span of vault, wall to wall, no aisles.",
     "credit": "Richard Mortel / Wikimedia Commons · CC BY 2.0"
   },
   {
@@ -964,5 +964,47 @@ window.TERROIR_DATA = (function () {
   "text": "Dolors Ros — Massana-trained, author of Parramón's ceramics manuals — founded the Escola de Ceràmica de la Bisbal in 1972 and still teaches the wheel-technique week every single week of the 2026 summer programme; the week-long intensives (throwing, raku, sculptural wheel work fired to 1,250°C — the August sculptural week runs €495 plus €30 materials, with residency on site) take complete beginners and book online until they sell out, which most of this summer's already have. This is the working school of a town that has fired clay since at least 1502, not a paint-a-pot afternoon.",
   "url": "https://esceramicbisbal.com/"
 };
-  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, ET };
+  const GEMS = [
+  {
+    "id": "botifarra-dol-a",
+    "pattern": "botifarra dolça",
+    "tag": "Food gem · Sweet",
+    "name": "Botifarra dolça",
+    "story": "Europe's charcuterie map holds one genuine anomaly — a pork sausage cured with sugar, lemon peel and sometimes cinnamon — and it exists only in the Girona region. Barcelona assumes it is an Empordà speciality; the food historian Jaume Fàbrega insists the epicentre is Girona city itself, with La Selva, the Pla de l'Estany and part of the Garrotxa in on the secret. It reached print late — Ferran Agulló first described it in the 1930s — and Josep Pla favoured a monastic origin for which, Fàbrega notes, no proof exists. Salvador Dalí made his Madrid friends eat it at Ca la Teta in Figueres. Born of the farmhouse matança, it now carries the Marca de Garantia Productes de l'Empordà (2003), and is best caramelised with apple — as pudding.",
+    "where": "the charcuterie stalls of the Mercat del Lleó in Girona; in Empordà country restaurants it arrives caramelised with apple, at the end of the meal."
+  },
+  {
+    "id": "anxova-de-l-escala",
+    "pattern": "anxov(?:a|es)(?: de l['’]Escala)?",
+    "tag": "Food gem · Fish",
+    "name": "Anxova de l'Escala",
+    "story": "L'Escala began in the sixteenth century as a fishermen's quarter dependent on Empúries — whose ruins hold a first-century-AD salting factory, among the oldest on the Iberian peninsula. The village's fortune was salt: once the Alfolí, its salt store, was completed in 1697, cabotage ships landed salt on the old port beach, barrels of anchovy sailed out, and the population quadrupled through the eighteenth century. More than a hundred lateen-rigged sardinal boats once worked this bay; motorised teranyines replaced them in the early twentieth century. L'Escala's municipal archivist, Lurdes Boix, documents an unbroken salting tradition since the 1700s — certified, since 1987, by the Denominació de Qualitat Anxova de l'Escala. The fillets spend roughly eight months under salt before they ever see olive oil.",
+    "where": "the salting houses of l'Escala, forty minutes north-east of Girona — Anxoves Solés has salted since 1888 — with the Museu de l'Anxova i de la Sal (2006) to see the barrels and brine first."
+  },
+  {
+    "id": "formatge-garrotxa",
+    "pattern": "Garrotxa",
+    "tag": "Food gem · Cheese",
+    "name": "Formatge Garrotxa",
+    "story": "Garrotxa the cheese very nearly outlived the habit of making it. The old farmhouse goat's cheese of these hills had all but disappeared when a recovery project in 1981 — credited by the Generalitat's own product inventory to the neorurals, the back-to-the-land generation — typified it: pasteurised goat's milk, three weeks' minimum maturing, one-kilo wheels sized after the district's old clay moulds. Around Sant Miquel de Campmajor, the young cheesemakers learned from the adviser Enric Canut to coax the pell florida — the grey-blue penicillium bloom that gives the rind its ash colour and the paste its hazelnut finish. The revival's quiet irony: of roughly ten Catalan producers today, exactly one, Mas Claperol, still makes it inside the Garrotxa comarca.",
+    "where": "Cal Formatger, Cort Reial 12B, in Girona's old town — Marc Masó's shop (2019) leans hard on Girona-province cheeses; ask what came in from the Garrotxa or the Pla de l'Estany that week."
+  },
+  {
+    "id": "ratafia",
+    "pattern": "ratafia",
+    "tag": "Food gem · Drink",
+    "name": "Ratafia",
+    "story": "Every Catalan house that makes ratafia guards its own recipe; the paper trail's oldest, from 1842, comes from La Selva — precisely the comarca whose capital now hosts the liqueur's great festival. The method is fixed by its geographical indication: walnuts picked green around Sant Joan in late June, before the shell hardens, macerated in spirit with — at minimum — lemon verbena, cinnamon, clove and nutmeg, then three months' steeping and three more in wood. Santa Coloma de Farners has run its ratafia competition since 1982, some two hundred homemade bottles entered each November. A Catalan quality denomination since 1985 and today the IGP Ratafia Catalana, it remains at heart a farmhouse solstice ritual — bottled at midsummer, ready by winter.",
+    "where": "Santa Coloma de Farners, half an hour south-west of Girona — the Festa de la Ratafia, second weekend of November; the rest of the year, look for the IGP Ratafia Catalana seal on the bottle."
+  },
+  {
+    "id": "esmorzar-de-forquilla",
+    "pattern": "esmorzar de forquilla",
+    "tag": "Food gem · Tradition",
+    "name": "Esmorzar de forquilla",
+    "story": "The esmorzar de forquilla — the fork breakfast — is working Catalunya's second breakfast: a bite before dawn, then, mid-morning, cap i pota, tripe, pig's trotters, stewed botifarra, a glass of red. Food writers trace its consolidation to the mid-eighteenth century, with markets as its epicentres — which is why Girona still does it properly. Can Marquès opened in 1920 facing what would later become the Mercat del Lleó, still opens at nine to feed the market opposite, and remains one of the longest-running restaurants in the city. In 2024 the tradition finally got its own book, Laia Freixinet's Esmorzars de forquilla. Around Girona it never needed reviving — in villages like Canet d'Adri, it simply never stopped.",
+    "where": "Can Marquès, Plaça Calvet i Rubalcaba 3, opposite the Mercat del Lleó — from 9am, Monday to Saturday; or the twenty-minute drive to Cal Sabater in Canet d'Adri."
+  }
+];
+  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, ET, GEMS };
 })();
