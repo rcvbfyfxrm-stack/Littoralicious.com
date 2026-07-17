@@ -100,6 +100,26 @@ async function dequeue(s) {
     } }),
   });
 }
+// Record the slug in the public articles/_rewrite-done index so the Studio board
+// can cheaply list "Newer version — review next" (rewritten, awaiting re-review)
+// with one doc-GET instead of scanning every draft's request. Read-modify-write
+// is fine (serial CLI); arrayUnion has no simple REST-PATCH form.
+async function markDone(s) {
+  let slugs = [];
+  try {
+    const g = await fetch(`${BASE}/articles/_rewrite-done?key=${APIKEY}`);
+    if (g.ok) { const f = (await g.json()).fields || {}; slugs = ((f.slugs && f.slugs.arrayValue && f.slugs.arrayValue.values) || []).map((v) => v.stringValue).filter(Boolean); }
+  } catch { /* first one, or offline */ }
+  if (!slugs.includes(s)) slugs.push(s);
+  const url = `${BASE}/articles/_rewrite-done?key=${APIKEY}&updateMask.fieldPaths=slugs&updateMask.fieldPaths=updated`;
+  await fetch(url, {
+    method: "PATCH", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ fields: {
+      slugs: { arrayValue: { values: slugs.map((v) => ({ stringValue: v })) } },
+      updated: { integerValue: String(Date.now()) },
+    } }),
+  }).catch(() => {});
+}
 // The Studio appends each requested slug to articles/_rewrite-queue (a single
 // public doc) — collectionGroup queries are denied by the security rules, so we
 // fan out one cheap doc-GET per queued slug instead.
@@ -168,6 +188,7 @@ if (flags.has("--apply")) {
   console.log(lintOut.trim());
 
   await patchStatus(slug, "rewritten").catch(() => {});
+  await markDone(slug).catch(() => {});
   await freshenRequest(slug).catch(() => {});
   console.log(`\n${lintOk ? "✓" : "⚠"} Rewrite applied. Re-review in the Studio (reload the review page), then validate + undraft to publish.`);
   if (!lintOk) console.log("  Lint still flags errors above — fix before publishing.");

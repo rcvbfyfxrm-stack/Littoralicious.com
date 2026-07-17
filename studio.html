@@ -70,6 +70,22 @@
         .st-section__counts .c-ready{color:#166534;font-weight:600;}
         .st-act a{color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);padding:.25em .6em;font-size:12px;margin-right:4px;white-space:nowrap;display:inline-block;}
         .st-act a:hover{border-color:var(--color-sea);}
+        /* "Newer version — review next" pinned section + bulk-queue action */
+        .st-reviewnext{border:2px solid #166534;background:#f2f8f3;border-radius:4px;padding:.7em .9em;margin:var(--space-4) 0;}
+        .st-rn__head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6em;margin-bottom:.5em;}
+        .st-rn__title{font-family:var(--font-serif);font-weight:600;font-size:var(--text-base);color:#166534;}
+        .st-rn__sub{font-family:var(--font-mono);font-size:11px;color:var(--color-salt);}
+        .st-rn__list{list-style:none;margin:0;padding:0;}
+        .st-rn__item{display:flex;flex-wrap:wrap;align-items:center;gap:.5em .8em;padding:.4em 0;border-top:1px solid #cfe4d5;}
+        .st-rn__item:first-child{border-top:none;}
+        .st-rn__name{font-family:var(--font-serif);color:var(--color-ink);text-decoration:none;font-weight:600;}
+        .st-rn__name:hover{color:#166534;text-decoration:underline;}
+        .st-rn__meta{font-size:12px;color:var(--color-muted);}
+        .st-rn__go{margin-left:auto;display:inline-flex;gap:4px;}
+        .st-rn__go a{color:var(--color-sea);text-decoration:none;border:1px solid var(--color-border);padding:.2em .55em;font-size:12px;white-space:nowrap;}
+        .st-rn__go a:hover{border-color:#166534;color:#166534;}
+        .st-bulk{align-items:center;gap:.6em;margin:var(--space-2) 0 var(--space-4);}
+        .st-bulk .st-flash{font-family:var(--font-mono);font-size:12px;color:var(--color-salt);}
         .st-note{font-size:13px;color:var(--color-muted);margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-border);}
         code{background:var(--color-subtle);padding:1px 5px;font-size:.85em;}
         .st-check{text-align:center;}
@@ -179,6 +195,13 @@
                 <span class="st-auth__who" id="auth-who"></span>
                 <button class="st-link" id="auth-signout" type="button">Sign out</button>
             </span>
+        </div>
+
+        <div class="st-reviewnext" id="st-reviewnext" style="display:none;"></div>
+
+        <div class="st-bulk" id="st-bulk" style="display:none;">
+            <button class="st-btn" id="bulk-queue" type="button" title="Bundle the notes on every draft you've annotated into the rewrite queue, in one go, so they can all be rewritten">Queue all noted drafts for rewrite</button>
+            <span class="st-flash" id="bulk-flash"></span>
         </div>
 
         <div class="st-pipe" id="st-pipe" title="Your production line — click a stage to see exactly those articles"></div>
@@ -323,6 +346,7 @@
         var discardedMap = {};   // slug -> true; reviewer discarded this draft (synced via draft-notes/{slug}.discarded)
         var ownPhotosMap = {};   // slug -> true; you'll supply your own photos for this article (draft-notes/{slug}.ownPhotos)
         var workMap = {}, queuedSet = {};   // slug -> work signals from Firestore; slugs queued for rewrite (public doc)
+        var rewrittenSet = {}, rewrittenAtMap = {};   // slugs rewritten & awaiting re-review (articles/_rewrite-done); slug -> rewrittenAt
         var bulletCache = {}; // slug -> array of bullets (lazy fetched)
         var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
 
@@ -435,6 +459,7 @@
                 : (groupMode === 'section') ? renderGrouped(list)
                 : (groupMode === 'work') ? renderByStage(list)
                 : list.map(rowHtml).join('');
+            renderReviewNext();
         }
 
         // ---- the production line: draft → noted → rewrite → ready → live ----
@@ -711,6 +736,8 @@
             render();
         });
 
+        (function () { var b = document.getElementById('bulk-queue'); if (b) b.addEventListener('click', queueAllNoted); })();
+
         search.addEventListener('input', function () { q = this.value.toLowerCase().trim(); render(); });
         [].forEach.call(document.querySelectorAll('.st-tools button[data-f]'), function (b) {
             b.addEventListener('click', function () {
@@ -745,9 +772,11 @@
                 if (isReviewer(u)) {
                     $('auth-out').style.display = 'none'; $('auth-in').style.display = 'inline';
                     $('auth-who').textContent = 'Signed in · ' + u.email;
+                    var bulk = $('st-bulk'); if (bulk) bulk.style.display = 'flex';
                     loadNotesMap();
                 } else {
                     $('auth-in').style.display = 'none'; $('auth-out').style.display = 'inline';
+                    var bulkOut = $('st-bulk'); if (bulkOut) bulkOut.style.display = 'none';
                     if (u) $('auth-msg').textContent = '"' + u.email + '" is not on the reviewer list.';
                     if (unsubNotes) { unsubNotes(); unsubNotes = null; }
                     clearLocalNotes();   // don't leave reviewer notes in a shared browser
@@ -822,6 +851,109 @@
                 ((doc.exists && doc.data() || {}).slugs || []).forEach(function (s) { queuedSet[s] = true; });
                 render(); renderPublish();
             }).catch(function () {});
+            // "Newer version — review next": slugs the rewrite CLI marked done. Public doc,
+            // so this works signed-out too. Pull each one's rewrittenAt for the age label.
+            db.collection('articles').doc('_rewrite-done').get().then(function (doc) {
+                rewrittenSet = {};
+                var slugs = (doc.exists && doc.data() || {}).slugs || [];
+                slugs.forEach(function (s) { rewrittenSet[s] = true; });
+                return Promise.all(slugs.map(function (s) {
+                    return db.collection('articles').doc(s).collection('_rewrite').doc('request').get()
+                        .then(function (r) { if (r.exists) { var d = r.data() || {}; if (typeof d.rewrittenAt === 'number') rewrittenAtMap[s] = d.rewrittenAt; } })
+                        .catch(function () {});
+                }));
+            }).then(function () { renderReviewNext(); }).catch(function () {});
+        }
+
+        function fmtAgo(ms) {
+            if (!ms) return '';
+            var s = Math.round((Date.now() - ms) / 1000);
+            if (s < 60) return 'just now';
+            var m = Math.round(s / 60); if (m < 60) return m + 'm ago';
+            var h = Math.round(m / 60); if (h < 24) return h + 'h ago';
+            return Math.round(h / 24) + 'd ago';
+        }
+
+        // pinned section atop the board: drafts rewritten from your notes, waiting for
+        // your re-review. Drops a row automatically once it's validated, discarded, or
+        // re-queued for another rewrite pass.
+        function renderReviewNext() {
+            var el = document.getElementById('st-reviewnext'); if (!el) return;
+            var list = all.filter(function (a) {
+                return a.draft && rewrittenSet[a.slug] && !validatedMap[a.slug] && !discardedMap[a.slug] && !queuedSet[a.slug];
+            }).sort(function (x, y) { return (rewrittenAtMap[y.slug] || 0) - (rewrittenAtMap[x.slug] || 0); });
+            if (!list.length) { el.style.display = 'none'; el.innerHTML = ''; return; }
+            el.style.display = 'block';
+            el.innerHTML = '<div class="st-rn__head">' +
+                '<span class="st-rn__title">Newer version &mdash; review next</span>' +
+                '<span class="st-rn__sub">' + list.length + ' draft' + (list.length === 1 ? '' : 's') + ' rewritten from your notes, waiting for your re-review</span></div>' +
+                '<ul class="st-rn__list">' + list.map(function (a) {
+                    var age = rewrittenAtMap[a.slug] ? fmtAgo(rewrittenAtMap[a.slug]) : '';
+                    var url = 'studio-review.html?slug=' + encodeURIComponent(a.slug);
+                    return '<li class="st-rn__item">' +
+                        '<a class="st-rn__name" href="' + url + '" title="Re-review the rewrite — your previous-round notes clear on load">' + esc(a.title) + '</a>' +
+                        '<span class="st-rn__meta">' + esc(a.cat) + (age ? ' &middot; rewritten ' + age : '') + '</span>' +
+                        '<span class="st-rn__go"><a href="' + url + '">Re-review &rarr;</a>' +
+                        '<a href="articles/' + a.slug + '.html" target="_blank">View</a></span>' +
+                        '</li>';
+                }).join('') + '</ul>';
+        }
+
+        // ---- queue ALL noted drafts for rewrite in one click ----
+        // The CLI can't read your private draft-notes; only your signed-in session can.
+        // So this bundles every annotated draft's notes (per-paragraph + overall verdict
+        // + whole-article note) into the public rewrite request the CLI reads, then adds
+        // it to the queue. After this, `npm run rewrite -- <slug>` can rewrite each.
+        function flashBulk(msg, isErr) { var el = document.getElementById('bulk-flash'); if (!el) return; el.textContent = msg; el.style.color = isErr ? '#b3261e' : ''; }
+        function bundleOne(slug) {
+            var base = db.collection('draft-notes').doc(slug);
+            return Promise.all([base.get(), base.collection('notes').get()]).then(function (res) {
+                var d = (res[0].exists && res[0].data()) || {};
+                var notes = [];
+                res[1].forEach(function (doc) {
+                    var n = doc.data() || {};
+                    if (n.text && String(n.text).trim()) {
+                        notes.push({ order: (typeof n.order === 'number' ? n.order : 1e9), anchor: n.anchor || '', anchorKey: n.anchorKey || '', text: String(n.text) });
+                    }
+                });
+                notes.sort(function (a, b) { return a.order - b.order; });
+                var parts = [];
+                if ((d.overall || '').trim()) parts.push(String(d.overall).trim());
+                if ((d.text || '').trim()) parts.push(String(d.text).trim());   // whole-article Notes-modal note
+                var overall = parts.join('\n\n');
+                if (!notes.length && !overall) return { slug: slug, skipped: true };
+                var a = byslug[slug] || {};
+                var md = '# ' + (a.title || slug) + '\n\n' +
+                    (overall ? '## Overall\n\n' + overall + '\n\n' : '') +
+                    notes.map(function (n, i) { return (i + 1) + '. [' + (n.anchor || '').slice(0, 80) + ']\n   ' + n.text; }).join('\n\n');
+                var FV = firebase.firestore.FieldValue;
+                return db.collection('articles').doc(slug).collection('_rewrite').doc('request').set({
+                    status: 'queued', requestedBy: user.email, requestedAt: Date.now(),
+                    overall: overall, count: notes.length, notes: notes, markdown: md
+                }, { merge: true }).then(function () {
+                    return db.collection('articles').doc('_rewrite-queue').set({ slugs: FV.arrayUnion(slug), updated: Date.now() }, { merge: true });
+                }).then(function () { return { slug: slug, queued: true, n: notes.length, hasOverall: !!overall }; });
+            }).catch(function (err) { return { slug: slug, error: (err && err.code) || 'error' }; });
+        }
+        function queueAllNoted() {
+            if (!isReviewer(user)) { flashBulk('Sign in as a reviewer first', true); return; }
+            var candidates = all.filter(function (a) {
+                if (!a.draft || discardedMap[a.slug]) return false;
+                if (queuedSet[a.slug]) return false;   // already waiting for a rewrite
+                var w = workMap[a.slug];
+                return !!(paraMap[a.slug] || notesMap[a.slug] || (w && w.hasOverall));
+            });
+            if (!candidates.length) { flashBulk('No noted drafts to queue', false); return; }
+            var btn = document.getElementById('bulk-queue'); if (btn) btn.disabled = true;
+            flashBulk('Queuing ' + candidates.length + ' draft' + (candidates.length === 1 ? '' : 's') + '…', false);
+            Promise.all(candidates.map(function (a) { return bundleOne(a.slug); })).then(function (results) {
+                var queued = results.filter(function (r) { return r && r.queued; }).length;
+                var skipped = results.filter(function (r) { return r && r.skipped; }).length;
+                var errs = results.filter(function (r) { return r && r.error; }).length;
+                flashBulk(queued + ' queued' + (skipped ? ' · ' + skipped + ' had no notes' : '') + (errs ? ' · ' + errs + ' failed' : '') + '  —  now run the rewrites', !!errs);
+                if (btn) btn.disabled = false;
+                loadQueue();
+            });
         }
 
         // Notes are local-first: every keystroke lands in localStorage immediately, so
