@@ -1018,6 +1018,13 @@
                 save(); render(); renderPublish();
                 $('auth-msg').textContent = 'Validate failed: ' + (err.code || 'error') + ' — try again.';
             });
+            // Mirror the validate signal into a PUBLIC queue so the nightly publish
+            // routine (web-key only — it cannot read the private validated flag) can act:
+            // validate → queue for auto-publish + IG posts; un-validate → pull it back.
+            var FVp = (typeof firebase !== 'undefined' && firebase.firestore && firebase.firestore.FieldValue) ? firebase.firestore.FieldValue : null;
+            if (FVp) db.collection('articles').doc('_publish-queue').set(
+                { slugs: next ? FVp.arrayUnion(slug) : FVp.arrayRemove(slug), updated: Date.now() }, { merge: true }
+            ).catch(function () {});
         }
 
         // ---- discard: reviewer hides a draft they don't want (synced, restorable, never deletes the file) ----
