@@ -154,16 +154,37 @@
 .gx-gem-pop__x{position:absolute;top:6px;right:10px;background:none;border:0;font-size:1.25em;line-height:1;color:#a9791a;cursor:pointer;padding:4px}
 .gx-gem-veil{position:fixed;inset:0;z-index:9590;background:transparent}
 
-/* La Grande / La Petite Table — organised inventory, compact cards (Girona reference, 2026-07-18) */
+/* La Grande / La Petite Table — organised inventory, two-layer cards (Girona reference, v2 2026-07-18) */
 .gx-torg{margin-top:26px}
 .gx-torg__title{font-family:'Playfair Display',Georgia,serif;font-size:1.5em;font-weight:700;color:#1a1a1a;margin:30px 0 2px}
 .gx-torg__desc{font-style:italic;color:var(--ink-2,#555);margin:0 0 6px;font-size:0.95em}
 .gx-torg__sec{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#2d4a5e;margin:18px 0 8px;border-bottom:1px solid #e3e0d8;padding-bottom:5px}
-.gx-torg__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;align-items:start}
-.gx-torg .terroir-card{cursor:pointer;margin:0}
-.gx-torg .terroir-card.is-open{grid-column:1/-1;cursor:default}
-.gx-torg .terroir-card:not(.is-open) .terroir-card__why,.gx-torg .terroir-card:not(.is-open) .terroir-card__meta,.gx-torg .terroir-card:not(.is-open) .terroir-card__verdict,.gx-torg .terroir-card:not(.is-open) .terroir-card__caveat,.gx-torg .terroir-card:not(.is-open) .terroir-card__person,.gx-torg .terroir-card:not(.is-open) .terroir-card__signature,.gx-torg .terroir-card:not(.is-open) .terroir-card__cosign,.gx-torg .terroir-card:not(.is-open) .terroir-card__vote,.gx-torg .terroir-card:not(.is-open) .terroir-card__hook,.gx-torg .terroir-card:not(.is-open) .terroir-card__rank{display:none}
-.gx-torg .terroir-card:not(.is-open) .terroir-card__body::after{content:"Details \25BE";font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:#a9791a;display:block;margin-top:8px}
+.gx-torg__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;align-items:start}
+.gx-card{border:1px solid #e3e0d8;border-radius:10px;background:#fff;overflow:hidden;transition:box-shadow .18s ease}
+.gx-card:hover{box-shadow:0 3px 14px rgba(45,74,94,.10)}
+.gx-card__face{display:block;width:100%;text-align:left;background:none;border:0;padding:14px 16px 12px;cursor:pointer;font:inherit;color:inherit}
+.gx-card__chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
+.gx-card__chips span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;padding:2px 7px;border-radius:3px;background:#eef2f5;color:#2d4a5e;font-weight:600}
+.gx-card__chips .gxc-star{background:#2d4a5e;color:#fff}
+.gx-card__chips .gxc-price{background:#fdfbf5;border:1px solid #e7dfc9;color:#a9791a}
+.gx-card__name{font-family:'Playfair Display',Georgia,serif;font-size:1.14em;font-weight:700;color:#1a1a1a;line-height:1.2}
+.gx-card__area{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-mut,#8a8578);margin-top:3px}
+.gx-card__dish{font-size:0.88em;font-style:italic;color:#2d4a5e;margin-top:7px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gx-card__dish::before{content:"\2605  ";color:#a9791a;font-style:normal;font-size:0.85em}
+.gx-card__hint{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:1.4px;text-transform:uppercase;color:#a9791a;margin-top:9px}
+.gx-card__full{display:none;border-top:1px solid #efece4}
+.gx-card.is-open{grid-column:1/-1}
+.gx-card.is-open .gx-card__full{display:block}
+.gx-card.is-open .gx-card__hint{display:none}
+.gx-card__full .terroir-card{margin:0;border:0;box-shadow:none}
+.gx-torg .gx-card__full .terroir-card{cursor:default}
+.gx-card__order{padding:4px 18px 14px}
+.gx-card__order-title{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:#a9791a;margin:10px 0 6px}
+.gx-card__order li{font-size:0.92em;line-height:1.55;margin:0 0 5px;list-style:none}
+.gx-card__order li b{font-weight:600;color:#1a1a1a}
+.gx-card__order li em{color:var(--ink-2,#555)}
+.gx-card__order ul{margin:0;padding:0}
+
 </style>
 <style id="cadaques-readability">/* bigger, calmer reading type */body{font-size:1.0em;}.lead{font-size:1.16em;line-height:1.86;}.prose p{font-size:1.1em;line-height:1.86;}.prose .subhead{font-size:1.3em;}#soul .soul__body{font-size:1.17em;line-height:1.95;}.cala-list p{font-size:1.0em;}.tcard__body{font-size:0.98em;line-height:1.72;}.gx-lede{font-family:Georgia,serif;font-size:1.2em;line-height:1.62;color:var(--ink);margin:2px 0 4px;}/* read-more fold */.gx-fold{overflow:hidden;transition:max-height .5s ease;}.gx-fold.is-folded{max-height:0;}/* B&W Leica-Q2M photos */.gx-photo{max-width:900px;margin:32px auto;padding:0 24px;}.gx-photo img{width:100%;height:auto;display:block;border:1px solid var(--rule);filter:grayscale(1) contrast(1.14) brightness(1.02);}.gx-photo figcaption{font-family:Inter,system-ui,sans-serif;font-size:0.86em;color:var(--ink-3);margin-top:9px;font-style:italic;line-height:1.5;}.gx-photo__credit{font-family:"JetBrains Mono",monospace;font-style:normal;font-size:0.8em;opacity:.7;letter-spacing:.3px;}.gx-appendix{max-width:900px;margin:48px auto 0;padding:16px 24px 0;border-top:1px solid var(--rule);opacity:0.62;transition:opacity .25s ease;}.gx-appendix:hover{opacity:1;}.gx-appendix__label{font-family:"JetBrains Mono",monospace;font-size:0.6em;letter-spacing:2px;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;}.gx-appendix .sfold{font-size:0.9em;}@media print{.gx-fold.is-folded{max-height:none;}.gx-foldbtn{display:none;}}</style>
 <style id="girona-blue-berths">/* Girona: the top-3 signature tables read in the litto sea-blue, not gold — scoped to this page only */
@@ -354,7 +375,7 @@ window.addEventListener('load', function () {
 </script>
 
 <script>
-/* La Grande / La Petite Table: organise the inventory, compact cards that expand on click */
+/* La Grande / La Petite Table v2: organised inventory, two-layer cards (compact face -> full kit card) */
 (function(){
   function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
   function starCard(v, rank){
@@ -372,14 +393,44 @@ window.addEventListener('load', function () {
     if(v.maps) meta.push('<div class="terroir-card__meta-row"><span>Maps</span><span><a href="'+esc(v.maps)+'" target="_blank" rel="noopener">Open in Google Maps →</a></span></div>');
     var el = document.createElement('article');
     el.className='terroir-card'; el.setAttribute('data-venue-id', v.id); el.id='gt-venue-'+v.id;
-    el.innerHTML = '<div class="terroir-card__rank">#'+rank+'</div><div class="terroir-card__body">'+
+    el.innerHTML = '<div class="terroir-card__body">'+
       '<div class="terroir-card__cat">Signature</div>'+
-      '<div class="terroir-card__name">'+esc(v.name)+(v.badge?'<span class="badge">'+esc(v.badge)+'</span>':'')+chip+
-      (v.neighborhood?' <span class="terroir-card__nbhd" style="font-family:\'JetBrains Mono\',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-mut);font-weight:400;">· '+esc(v.neighborhood)+'</span>':'')+'</div>'+
+      '<div class="terroir-card__name">'+esc(v.name)+(v.badge?'<span class="badge">'+esc(v.badge)+'</span>':'')+chip+'</div>'+
       cosign+person+sig+(tags?'<div class="terroir-card__tags">'+tags+'</div>':'')+verdict+
       (v.why?'<div class="terroir-card__why">'+esc(v.why)+'</div>':'')+caveat+
       '<div class="terroir-card__meta">'+meta.join('')+'</div></div>';
     return el;
+  }
+  function orderBlock(v){
+    if(!v.dishes || !v.dishes.length) return null;
+    var d = document.createElement('div'); d.className='gx-card__order';
+    d.innerHTML = '<div class="gx-card__order-title">To order — the icons</div><ul>' +
+      v.dishes.map(function(x){ return '<li><b>'+esc(x.name)+'</b> — <em>'+esc(x.note)+'</em></li>'; }).join('') + '</ul>';
+    return d;
+  }
+  function priceTag(v){
+    var t = (v.tags||[]).filter(function(x){ return /€|EUR|Market prices|Menú/i.test(x); })[0];
+    if(!t) return '';
+    return t.length > 22 ? t.slice(0, 22).replace(/\s+\S*$/,'') + '…' : t;
+  }
+  function shell(v, node){
+    var wrap = document.createElement('div'); wrap.className='gx-card'; wrap.setAttribute('data-shell', v.id);
+    var chips = [];
+    if(v.badge) chips.push('<span>'+esc(v.badge)+'</span>');
+    if(v.signal_chip && v.signal_chip.label) chips.push('<span class="gxc-star">'+esc(v.signal_chip.label)+'</span>');
+    var pt = priceTag(v); if(pt) chips.push('<span class="gxc-price">'+esc(pt)+'</span>');
+    var area = (v.neighborhood||'').split('·')[0].trim();
+    var dish = v.signature ? '<div class="gx-card__dish">'+esc(v.signature)+'</div>' : '';
+    wrap.innerHTML = '<button type="button" class="gx-card__face">'+
+      (chips.length?'<div class="gx-card__chips">'+chips.join('')+'</div>':'')+
+      '<div class="gx-card__name">'+esc(v.name)+'</div>'+
+      (area?'<div class="gx-card__area">'+esc(area)+'</div>':'')+dish+
+      '<div class="gx-card__hint">Open the full card ▾</div></button>'+
+      '<div class="gx-card__full"></div>';
+    var full = wrap.querySelector('.gx-card__full');
+    full.appendChild(node);
+    var ob = orderBlock(v); if(ob) full.appendChild(ob);
+    return wrap;
   }
   function organise(){
     var D = window.TERROIR_DATA; if(!D || !D.TABLES) return;
@@ -400,10 +451,21 @@ window.addEventListener('load', function () {
         if(!grid){ var lab=document.createElement('div'); lab.className='gx-torg__sec'; lab.textContent=sec.label; box.appendChild(lab);
           grid = document.createElement('div'); grid.id=sid; grid.className='gx-torg__grid'; box.appendChild(grid); }
         sec.ids.forEach(function(id, k){
+          var existing = grid.querySelector('[data-shell="'+id+'"]');
+          if(existing) {
+            var stray = document.getElementById('venue-'+id);
+            if(stray && stray.closest('.terroir-tier')){
+              var sh = existing.querySelector('.gx-card__full');
+              sh.insertBefore(stray, sh.firstChild);
+              var olds = sh.querySelectorAll('.terroir-card'); if(olds.length>1) olds[1].remove();
+            }
+            grid.appendChild(existing);
+            return;
+          }
+          var v = byId[id]; if(!v) return;
           var node = document.getElementById('venue-'+id);
-          if(node && node.closest('.terroir-tier')){ grid.appendChild(node); }
-          else if(!node && !document.getElementById('gt-venue-'+id) && byId[id] && gk==='grande'){
-            grid.appendChild(starCard(byId[id], k+1)); }
+          if(node && node.closest('.terroir-tier')) grid.appendChild(shell(v, node));
+          else if(!node && gk==='grande') grid.appendChild(shell(v, starCard(v, k+1)));
         });
       });
     });
@@ -415,10 +477,9 @@ window.addEventListener('load', function () {
       if(el) new MutationObserver(function(){ requestAnimationFrame(organise); }).observe(el, {childList:true});
     });
     document.addEventListener('click', function(ev){
-      var card = ev.target.closest && ev.target.closest('.gx-torg .terroir-card');
-      if(!card) return;
-      if(ev.target.closest('a, button')) return;
-      card.classList.toggle('is-open');
+      var face = ev.target.closest && ev.target.closest('.gx-card__face');
+      if(!face) return;
+      face.parentNode.classList.toggle('is-open');
     });
     setTimeout(organise, 1800);
   }
