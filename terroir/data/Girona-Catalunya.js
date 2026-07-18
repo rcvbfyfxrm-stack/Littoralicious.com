@@ -1006,5 +1006,71 @@ window.TERROIR_DATA = (function () {
     "where": "Can Marquès, Plaça Calvet i Rubalcaba 3, opposite the Mercat del Lleó — from 9am, Monday to Saturday; or the twenty-minute drive to Cal Sabater in Canet d'Adri."
   }
 ];
-  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, ET, GEMS };
+  const TABLES = {
+  "grande": {
+    "title": "La Grande Table",
+    "desc": "The occasion rooms — stars, cellars, the pilgrimage.",
+    "sections": [
+      {
+        "label": "Three stars — the pilgrimage",
+        "ids": [
+          "v01-el-celler-de-can-roca"
+        ]
+      },
+      {
+        "label": "One star",
+        "ids": [
+          "v02-restaurant-massana",
+          "v03-divinum",
+          "v21-esperit-roca"
+        ]
+      }
+    ]
+  },
+  "petite": {
+    "title": "La Petite Table",
+    "desc": "Everyday Girona — the rooms you return to.",
+    "sections": [
+      {
+        "label": "The Roca universe, everyday",
+        "ids": [
+          "v04-normal",
+          "v05-casa-cacao",
+          "v06-rocambolesc"
+        ]
+      },
+      {
+        "label": "The old houses",
+        "ids": [
+          "v07-can-marques",
+          "v08-casa-marieta",
+          "v09-fonda-cal-ros"
+        ]
+      },
+      {
+        "label": "Bistro & rice",
+        "ids": [
+          "v10-nu",
+          "v14-arros-9-by-terram"
+        ]
+      },
+      {
+        "label": "Cheese, pastry & coffee",
+        "ids": [
+          "v11-cal-formatger",
+          "v17-can-castello",
+          "v18-la-fabrica"
+        ]
+      },
+      {
+        "label": "Market & producers",
+        "ids": [
+          "v19-mercat-del-lleo",
+          "v20-espelt-viticultors"
+        ]
+      }
+    ]
+  }
+};
+  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, ET, GEMS, TABLES };
 })();
