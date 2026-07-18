@@ -1483,7 +1483,7 @@ window.TERROIR_DATA = (function () {
   const TABLES = {
   "grande": {
     "title": "La Grande Table",
-    "desc": "The occasion rooms — stars, cellars, the pilgrimage.",
+    "desc": "The occasion rooms — stars, cellars, the pilgrimage. One family built the whole ladder: €315 at the Celler eleven months out, €170 at the fort ninety days out — book the table before you book the flights.",
     "sections": [
       {
         "label": "Three stars — the pilgrimage",
@@ -1505,7 +1505,7 @@ window.TERROIR_DATA = (function () {
   },
   "petite": {
     "title": "La Petite Table",
-    "desc": "Everyday Girona — the rooms you return to.",
+    "desc": "Everyday Girona — the rooms you return to. Three currencies fund these tables — the AVE day-trip euro, the cycling euro that spends like a resident, and the local euro that keeps the menú del dia honest. Spend where repeat custom disciplines the cooking, not on the photo-menu terraces paying tourist-flat rents.",
     "sections": [
       {
         "label": "The Roca universe, everyday",
@@ -1548,7 +1548,7 @@ window.TERROIR_DATA = (function () {
           "v19-mercat-del-lleo",
           "v20-espelt-viticultors"
         ],
-        "desc": "Spend where repeat custom disciplines the cooking — the seven-a.m. fish counters and the tramuntana cellars."
+        "desc": "The larder itself — the seven-a.m. fish counters, the sugared botifarra dolça on the charcuterie stalls, the tramuntana cellars where the person pouring signed the label."
       }
     ]
   }
