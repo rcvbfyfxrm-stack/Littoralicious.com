@@ -38,7 +38,39 @@ window.TERROIR_DATA = (function () {
       "label": "3 STARS",
       "full": "MICHELIN Guide España 2026 — three stars, held since 2009",
       "cosign": "and the one booking in Catalunya we'd set a midnight alarm for"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Menú Festival — the full tasting",
+        "note": "The only menu — appetiser cavalcade, twelve courses, three desserts; olives to perfume.",
+        "kind": "dish"
+      },
+      {
+        "name": "Olives caramelitzades — the bonsai olives",
+        "note": "Anchovy-stuffed caramelised olives hung glinting from a bonsai olive tree.",
+        "kind": "dish"
+      },
+      {
+        "name": "El món (The World)",
+        "note": "Five one-bite world flavours on arms extending from a globe; Peru, Turkey recur.",
+        "kind": "dish"
+      },
+      {
+        "name": "Gamba de Palamós marinada",
+        "note": "Rice-vinegar-marinated red prawn, head-juice sauce, crisp fried legs, phytoplankton brioche.",
+        "kind": "dish"
+      },
+      {
+        "name": "Adaptation of Eternity by Calvin Klein",
+        "note": "Bergamot, basil, tangerine, vanilla — the fragrance rebuilt edible, a line since 2001.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Josep's wine pairing",
+        "note": "Optional €155 pairing; cellar built as five wine 'chapels' — Champagne, Burgundy, Riesling, Priorat, Jerez.",
+        "kind": "drink"
+      }
+    ]
   },
   {
     "id": "v02-restaurant-massana",
@@ -74,7 +106,29 @@ window.TERROIR_DATA = (function () {
       "label": "1 STAR",
       "full": "MICHELIN Guide España 2026 — one star, held since 2007",
       "cosign": "and the one we'd book for the duck alone"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Homenatge al Magret d'Ànec Massana (1986)",
+        "note": "Grill-charred duck breast, herb oil, rosemary pear — never off the card since 1986.",
+        "kind": "dish"
+      },
+      {
+        "name": "Caneló de pularda, escamarlà i crema de ceba dolça",
+        "note": "Silky poularde caneló under langoustine and sweet-onion cream — Catalan classic, starred.",
+        "kind": "dish"
+      },
+      {
+        "name": "Ceps, gambes i tòfona",
+        "note": "Autumn only — raw cep carpaccio, marinated prawns, truffle, pine-nut vinaigrette.",
+        "kind": "dish"
+      },
+      {
+        "name": "Ou estrellat",
+        "note": "Trompe-l'oeil egg of yoghurt, mango and white chocolate — theatrical finish.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v03-divinum",
@@ -110,7 +164,39 @@ window.TERROIR_DATA = (function () {
       "label": "1 STAR",
       "full": "MICHELIN Guide España 2026 — one star, first won November 2024",
       "cosign": "and the one starred room in town we'd book for the cellar alone"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Classic beef steak tartare",
+        "note": "Carved and sauced in the room; crowned Spain's best tartare 2022; €38.50.",
+        "kind": "dish"
+      },
+      {
+        "name": "Pèsols del Maresme",
+        "note": "Spring only — pil-pil broth, cod tripe, truffle shavings; Michelin's named standout.",
+        "kind": "dish"
+      },
+      {
+        "name": "Menú Essència with Laura Tejero's pairing",
+        "note": "€90 pairing over the €160 menu — the sommelier-led room's whole point.",
+        "kind": "drink"
+      },
+      {
+        "name": "The cheese trolley (selecció de formatges)",
+        "note": "Twenty-plus wheels — Rey Silo blue, Gargòla del Miracle — €25 to finish.",
+        "kind": "dish"
+      },
+      {
+        "name": "Chocolate and walnuts",
+        "note": "Casadevall's chocolate slot — his aubergine-Valrhona 'Horta dolça' won Best Chocolate Dessert 2022.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Fig-leaf flan ('Figs leaf flam')",
+        "note": "House flan, fig-leaf nitro ice cream churned tableside, carob crumble; €15.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v04-normal",
@@ -146,7 +232,39 @@ window.TERROIR_DATA = (function () {
       "label": "1 SOL",
       "full": "Guía Repsol — one Sol since 2024, held in the 2026 edition",
       "cosign": "and the one Roca room we'd book on our own money"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Truita Sacha amb carpaccio de gamba vermella",
+        "note": "Half-set omelette under raw Palamós prawn carpaccio — homage to Madrid's Sacha.",
+        "kind": "dish"
+      },
+      {
+        "name": "Filet Wellington de vedella madurada",
+        "note": "Dry-aged beef in glossy pastry, salsa cafè París — the other must-order.",
+        "kind": "dish"
+      },
+      {
+        "name": "Tarta al whisky amb gelat de rovell d'ou",
+        "note": "Since day one — boozy retro gateau, egg-yolk ice cream; Michelin names it.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Croqueta de llet d'ovella Mas Marcè i pernil ibèric",
+        "note": "Raw ripollesa ewe's-milk béchamel in a whisper-thin crust; ordered by the piece.",
+        "kind": "dish"
+      },
+      {
+        "name": "Els arrossos",
+        "note": "Repsol-tipped rices; this carta, dry rice of perol sausage and baby cuttlefish.",
+        "kind": "dish"
+      },
+      {
+        "name": "Patates fregides amb maionesa de tòfona i formatge (Bar Normal)",
+        "note": "The weeks-old companion bar's calling card — crisp chips, truffle mayonnaise, cheese.",
+        "kind": "dish"
+      }
+    ]
   },
   {
     "id": "v05-casa-cacao",
@@ -182,7 +300,34 @@ window.TERROIR_DATA = (function () {
       "label": "SOLETE",
       "full": "Guía Repsol Solete — Bar Cacao, current listing 2026",
       "cosign": "and the one Girona morning we'd build a provisioning run around"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Xocolata calenta (thick hot chocolate)",
+        "note": "House-roasted, conched metres away; thickened a la taza — dense enough to coat the spoon",
+        "kind": "drink"
+      },
+      {
+        "name": "Xuixo Casa Cacao",
+        "note": "Girona's fried pastry, warm, filled with 72% Colombian Arhuaco chocolate cream",
+        "kind": "sweet"
+      },
+      {
+        "name": "Fartonne",
+        "note": "Elongated panettone-dough brioche, made for dunking in the hot chocolate",
+        "kind": "sweet"
+      },
+      {
+        "name": "Single-origin bars (Hacienda Victoria 68%, Coop. Norandino 70%, Finca La Rioja 75%)",
+        "note": "Ecuador, Piura and Chiapas lots, wrapped in paper made from their cacao husks",
+        "kind": "buy"
+      },
+      {
+        "name": "Brunch a La Terrassa",
+        "note": "€55 rooftop sitting over the old town; seasonal, small-producer spread",
+        "kind": "dish"
+      }
+    ]
   },
   {
     "id": "v06-rocambolesc",
@@ -218,7 +363,29 @@ window.TERROIR_DATA = (function () {
       "label": "SOLETE",
       "full": "Guía Repsol Solete — live listing, 2026",
       "cosign": "and the rare chef spin-off that out-delivers its own queue"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Panet",
+        "note": "Brioche run hot through the 'Oxymoron Maker'; crackling crust, cold soft-serve heart.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Helado de manzana al horno (baked-apple soft-serve)",
+        "note": "House classic — baked-apple cream under caramelised apple and buttery biscuit crumbs.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Rocanas (the nose)",
+        "note": "Strawberry-and-rosewater lolly cast from a 3D scan of Jordi's own nose.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Mano Dorada (the Golden Hand)",
+        "note": "Jaime Lannister's gilt hand — blood orange, mango, cocoa butter, gold-dusted.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v07-can-marques",
@@ -249,7 +416,39 @@ window.TERROIR_DATA = (function () {
     "verdict": "Four unbroken generations since 1920 — among Girona's longest-running tables, and the Mercat del Lleó next door still sets the menu.",
     "signature": "The Thursday rice — the pan carries whatever the market gave up that morning.",
     "caveat": "Lunch is the meal: dinner is Thursday and Friday only, groups only — and Saturdays shut mid-June to mid-September.",
-    "person": "Ask for Eugeni Sánchez Marqués — fourth generation; his great-grandparents kept a boarding house here before the Mercat del Lleó was even built."
+    "person": "Ask for Eugeni Sánchez Marqués — fourth generation; his great-grandparents kept a boarding house here before the Mercat del Lleó was even built.",
+    "dishes": [
+      {
+        "name": "L'arròs del dijous (the Thursday rice)",
+        "note": "Thursday is rice day — market-driven arròs, the Mercat del Lleó across the square.",
+        "kind": "dish"
+      },
+      {
+        "name": "Botifarra de sal i pebre esparracada amb formatge brie",
+        "note": "Salt-and-pepper botifarra torn open under melting brie — old-school market comfort.",
+        "kind": "dish"
+      },
+      {
+        "name": "Bacallà amb samfaina i romesco",
+        "note": "Salt cod under slow-stewed samfaina, finished with nut-thick romesco.",
+        "kind": "dish"
+      },
+      {
+        "name": "Pota i tripa de vedella",
+        "note": "Trotter and tripe in one gelatinous stew — proper market-day offal.",
+        "kind": "dish"
+      },
+      {
+        "name": "Llengua de vedella estofada amb bolets",
+        "note": "Veal tongue braised with mushrooms until it yields to a spoon.",
+        "kind": "dish"
+      },
+      {
+        "name": "Escudella i carn d'olla (winter Wednesdays)",
+        "note": "Winter Wednesdays only — steaming broth first, then the platter of boiled meats.",
+        "kind": "dish"
+      }
+    ]
   },
   {
     "id": "v08-casa-marieta",
@@ -279,7 +478,34 @@ window.TERROIR_DATA = (function () {
     "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Marieta+Girona",
     "verdict": "Girona's oldest restaurant — on a square ringed with look-alike terraces, the one that has cooked here since 1892 and still cooks like it.",
     "signature": "Duck with pears: the old Catalan way, pears gone amber in the roasting juices.",
-    "caveat": "Open daily but on rails — lunch 12.30 to 3.30, dinner 7.30 to 10.30, half an hour longer at weekends, nothing between; the arcaded terrace books out first, and nobody here is chasing tasting-menu invention."
+    "caveat": "Open daily but on rails — lunch 12.30 to 3.30, dinner 7.30 to 10.30, half an hour longer at weekends, nothing between; the arcaded terrace books out first, and nobody here is chasing tasting-menu invention.",
+    "dishes": [
+      {
+        "name": "Ànec amb peres",
+        "note": "The old Catalan way — pears turned amber in the duck's roasting juices.",
+        "kind": "dish"
+      },
+      {
+        "name": "Canelons Casa Marieta",
+        "note": "The grandmother's canelons — the house sells them under its own name.",
+        "kind": "dish"
+      },
+      {
+        "name": "Espatlla de xai al forn",
+        "note": "Baked whole till the meat loosens from the bone — a listed house classic.",
+        "kind": "dish"
+      },
+      {
+        "name": "Sípia amb pèsols",
+        "note": "Cuttlefish dice simmered with sweet peas — sea-and-garden Catalan standard.",
+        "kind": "dish"
+      },
+      {
+        "name": "Xuixo de Girona",
+        "note": "Girona's cream-filled fried pastry, sugar-crusted — made in-house, press calls it legendary.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v09-fonda-cal-ros",
@@ -310,7 +536,34 @@ window.TERROIR_DATA = (function () {
     "verdict": "Not the Gascons' starred table — the same Els Tinars hands cooking fricandó and rice a la llauna for fonda money under the old inn's vaults.",
     "signature": "Rockfish rice a la llauna — baked flat in its tin until the edges catch.",
     "caveat": "Shut Tuesdays and Wednesdays — not the Monday you'd guess; plates land to share, so order as a table, not as individuals.",
-    "person": "Elena Gascons — she runs the room; brother Marc, on the stoves, has held Els Tinars' Michelin star since 2008."
+    "person": "Elena Gascons — she runs the room; brother Marc, on the stoves, has held Els Tinars' Michelin star since 2008.",
+    "dishes": [
+      {
+        "name": "Arròs a la llauna de peix de roca, gambetes i escamarlans",
+        "note": "Baked flat in its tin — rockfish, small prawns, langoustines; edges catch crisp.",
+        "kind": "dish"
+      },
+      {
+        "name": "Arbre d'embotits artesans",
+        "note": "Charcuterie hung on a table-side tree; Torroella de Montgrí cuts, sold by weight.",
+        "kind": "dish"
+      },
+      {
+        "name": "Canelons de rostit tradicional",
+        "note": "Roast-meat cannelloni ben gratinats — béchamel blistered deep and dark.",
+        "kind": "dish"
+      },
+      {
+        "name": "Porró de vi",
+        "note": "Empordà vi de pagès drunk from the glass porró, passed round the table.",
+        "kind": "drink"
+      },
+      {
+        "name": "Crema catalana tradicional cremada",
+        "note": "The traditional burnt crust — a thin caramel lid, cracked with the spoon.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v10-nu",
@@ -346,7 +599,34 @@ window.TERROIR_DATA = (function () {
       "label": "MICHELIN",
       "full": "MICHELIN Guide 2026 — in the selection, no star",
       "cosign": "and quiet confirmation the takeover held the line"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Steak tàrtar de vaca charolesa",
+        "note": "Forty-day dry-aged Charolais chopped at the open bar; smoked eel, raisins, pine nuts",
+        "kind": "dish"
+      },
+      {
+        "name": "Ostra Gillardeau amb salsa ponzu",
+        "note": "Gillardeau No 2 opened to order under ponzu and seven-spice — on since 2023",
+        "kind": "dish"
+      },
+      {
+        "name": "Canelons",
+        "note": "House caneló, refilled by season — truffled Mas el Cros black chicken, now morel sauce",
+        "kind": "dish"
+      },
+      {
+        "name": "Xuixo",
+        "note": "Girona's fried pastry made to order — àvia Núria's crema catalana, caramel ice cream",
+        "kind": "sweet"
+      },
+      {
+        "name": "Arròs sec",
+        "note": "Empordà dry rice, garnish rotating — Palamós prawn veil once, botifarra negra now",
+        "kind": "dish"
+      }
+    ]
   },
   {
     "id": "v11-cal-formatger",
@@ -377,7 +657,39 @@ window.TERROIR_DATA = (function () {
     "verdict": "The quesería Guía Repsol bills as Joan Roca's favourite in his own city — proof a province of small dairies can carry a counter alone.",
     "signature": "The Girona-comarca board, cut to order — start with the grey-rinded, hazelnut-sweet goat's cheeses.",
     "caveat": "Shut Sunday and Monday, and the counter goes dark mid-afternoon most days; tastings want notice, not a walk-in.",
-    "person": "Ask for Marc Masó — he opened the counter in 2019 with his wife Laia Manté; the pair stock it from seventy-odd farmhouse makers, most of them Catalan."
+    "person": "Ask for Marc Masó — he opened the counter in 2019 with his wife Laia Manté; the pair stock it from seventy-odd farmhouse makers, most of them Catalan.",
+    "dishes": [
+      {
+        "name": "Les Safates — the cut-to-order cheese board",
+        "note": "Four sizes, Parella €25 to XXL €55 — 'acadèmicament tallats', laid with grace.",
+        "kind": "dish"
+      },
+      {
+        "name": "Puigpedrós (Molí de Ger)",
+        "note": "Pere Pujol's washed-rind raw cow from Ger — orange rind, Munster-like, intensity 5/5.",
+        "kind": "buy"
+      },
+      {
+        "name": "Glauc (Formatgeria Xauxa, Les Preses)",
+        "note": "Paula Fonollà's creamy raw-milk blue from Les Preses — Lactium 2021 best Catalan cheese.",
+        "kind": "buy"
+      },
+      {
+        "name": "Tou del Lluçanès",
+        "note": "Their 'torta de vaca a la catalana' — spoon-soft raw cow's cheese, €15.",
+        "kind": "buy"
+      },
+      {
+        "name": "Cervesa Minera",
+        "note": "Craft beer brewed in Sant Joan de les Abadesses — full Minera catalogue stocked.",
+        "kind": "drink"
+      },
+      {
+        "name": "Audio tast premiats — guided tasting pack",
+        "note": "Cheese packs with the shop's audio-guided tastings — at home, or in-shop with makers.",
+        "kind": "buy"
+      }
+    ]
   },
   {
     "id": "v14-arros-9-by-terram",
@@ -408,7 +720,34 @@ window.TERROIR_DATA = (function () {
     "verdict": "Not a photo-menu paella stop — Terram's chef directs the rice pans, and each arròs is built on its own sofregit.",
     "signature": "Arròs del senyoret amb llagosta — lobster rice, everything peeled, spoon straight to the crust.",
     "caveat": "Shut Wednesdays, and dinner only four nights a week — Sundays and Tuesdays it's lunch or nothing.",
-    "person": "Adrià Bou — chef of the gastronomic Terram; he builds a separate sofregit and four broths so no two rices taste alike."
+    "person": "Adrià Bou — chef of the gastronomic Terram; he builds a separate sofregit and four broths so no two rices taste alike.",
+    "dishes": [
+      {
+        "name": "Arròs del senyorit, de bogavante — sec",
+        "note": "Peeled lobster rice, nothing to shell — spoon straight down to the socarrat; minimum two.",
+        "kind": "dish"
+      },
+      {
+        "name": "Arròs sec de porc ibèric flambejat",
+        "note": "Grill-soaked grains, flambéed presa ibèrica; reviewers singled out the morcilla alioli.",
+        "kind": "dish"
+      },
+      {
+        "name": "Arròs negre sec",
+        "note": "Squid-ink dry rice with langoustines and saffron lactonesa — scrape the toasted crust.",
+        "kind": "dish"
+      },
+      {
+        "name": "Croquetes de rostit tradicional",
+        "note": "Three-roast-meat croquettes, molten centre, ordered by the piece.",
+        "kind": "dish"
+      },
+      {
+        "name": "Xuixo de Girona flambejat al rom",
+        "note": "Girona's cream-filled pastry from Can Castelló, rum-flambéed, with vanilla ice cream.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v17-can-castello",
@@ -444,7 +783,24 @@ window.TERROIR_DATA = (function () {
       "label": "TIME OUT",
       "full": "Time Out, March 2024 — 'the first shop in the world dedicated only to the xuixo'",
       "cosign": "and still the pastry we'd send a galley crew ashore for"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Xuixo de Crema",
+        "note": "The classic, warm — crackling sugar crust into soft egg-rich crema; their best-seller.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Xuixo de Crema de Ratafia",
+        "note": "Cream cold-infused with ratafia herbs, finished with the Catalan liqueur itself.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Xuixo de Cabell d'Àngel",
+        "note": "Silky candied-pumpkin strands inside the fried, sugar-rolled lamination.",
+        "kind": "sweet"
+      }
+    ]
   },
   {
     "id": "v18-la-fabrica",
@@ -480,7 +836,34 @@ window.TERROIR_DATA = (function () {
       "label": "TIME OUT",
       "full": "Time Out Barcelona 2025 — among the 14 essential places to eat in Girona (Ricard Martín, Food & Drink editor)",
       "cosign": "and the one brunch queue in Girona worth standing in"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Flat white",
+        "note": "Double shot under foamed milk — beans Meier roasts himself at Espresso Mafia",
+        "kind": "drink"
+      },
+      {
+        "name": "Nordic bagel",
+        "note": "Herb cream cheese laid on thick, smoked salmon, shaved cucumber",
+        "kind": "dish"
+      },
+      {
+        "name": "Fruity Forest",
+        "note": "Violet-sugar yoghurt ringed by a kaleidoscope of tropical fruit",
+        "kind": "dish"
+      },
+      {
+        "name": "Cafè amb gel",
+        "note": "Order iced espresso, cold brew arrives — Meier refuses to ice-shock his roasts",
+        "kind": "drink"
+      },
+      {
+        "name": "Pulled pork bagel",
+        "note": "Tender pulled pork, melted cheese, bright mango salsa — post-ride fuel",
+        "kind": "dish"
+      }
+    ]
   },
   {
     "id": "v19-mercat-del-lleo",
@@ -510,7 +893,39 @@ window.TERROIR_DATA = (function () {
     "verdict": "The 1944 hall Girona still cooks from — a working larder, not a food-hall conversion.",
     "signature": "Day-boat Costa Brava fish off the Salvador counter — bright-eyed, stiff, smelling of the sea.",
     "caveat": "Shut Sundays and wound down by two; after ten the fish is picked over — come to shop, not to graze.",
-    "person": "Ask for Xavi Salvador on the fish line — third-generation, Costa Brava fishmongers since 1966; in 2024 he took over from Peixos Pol, the counter that retired after eighty years."
+    "person": "Ask for Xavi Salvador on the fish line — third-generation, Costa Brava fishmongers since 1966; in 2024 he took over from Peixos Pol, the counter that retired after eighty years.",
+    "dishes": [
+      {
+        "name": "Peix de costa — Peixateria Salvador (parades 74–75, 91–93)",
+        "note": "Llançà, Roses and Blanes day-boats — bright-eyed, stiff, smelling of clean sea",
+        "kind": "buy"
+      },
+      {
+        "name": "Botifarra dolça",
+        "note": "Empordà's sweet pork sausage — sugar and lemon peel; fry with Girona apple",
+        "kind": "buy"
+      },
+      {
+        "name": "Poma de Girona (IGP)",
+        "note": "Sea-tempered plain-grown apples — Gala, Golden, Granny Smith; EU PGI since 2003",
+        "kind": "buy"
+      },
+      {
+        "name": "Bacallà — Món Salat (parades 78–80)",
+        "note": "Top-grade salt cod plus brandada, piquillos, olives, bunyols de bacallà",
+        "kind": "buy"
+      },
+      {
+        "name": "Formatges de Mas Alba — El Petit Productor (parades 56–59)",
+        "note": "The Vilademuls farm's own stall — seven goat cheeses; try Babaus, Petitot",
+        "kind": "buy"
+      },
+      {
+        "name": "Salsafins",
+        "note": "October-to-April Girona root — sweet, delicate; classically stewed with duck",
+        "kind": "buy"
+      }
+    ]
   },
   {
     "id": "v20-espelt-viticultors",
@@ -546,7 +961,39 @@ window.TERROIR_DATA = (function () {
       "label": "DO EMP.",
       "full": "DO Empordà — registered estate of the Consell Regulador, 2026 listing",
       "cosign": "and the one large house in the Empordà we'd send a chef to taste at"
-    }
+    },
+    "dishes": [
+      {
+        "name": "Airam",
+        "note": "Grandfather Lluís's solera since 1997 — gold-to-red; rosemary honey, nuts, cinnamon.",
+        "kind": "drink"
+      },
+      {
+        "name": "Coma Bruna",
+        "note": "Century-old Carinyena on Rabós slate — plum, truffle; Decanter 94 (Evans).",
+        "kind": "drink"
+      },
+      {
+        "name": "Sauló",
+        "note": "The soulful young Garnatxa–Carinyena — violets, rosemary, garriga herbs; Vinari Gold 2021.",
+        "kind": "drink"
+      },
+      {
+        "name": "La Vella",
+        "note": "Near-extinct Carinyena Blanca, century vines, cement-egg lees — hazelnut, orange peel.",
+        "kind": "drink"
+      },
+      {
+        "name": "Garnatxa de l'Empordà (50 cl)",
+        "note": "Bright-amber natural sweet Garnatxa — cherry, honey, herbs; half-bottle for the galley.",
+        "kind": "buy"
+      },
+      {
+        "name": "Vinagre de Garnatxa",
+        "note": "Garnatxa-only wine vinegar — blackberry-sharp; a teaspoon wakes stews and braises.",
+        "kind": "buy"
+      }
+    ]
   },
   {
     "id": "v21-esperit-roca",
@@ -583,7 +1030,34 @@ window.TERROIR_DATA = (function () {
       "label": "1★ 2025",
       "full": "One MICHELIN star, first awarded in Guide España 2025 (gala 26 November 2024, Murcia — one of 32 new one-stars); retained in the 2026 Guide (gala Málaga, November 2025).",
       "cosign": "The star rewards fidelity of execution rather than novelty — which is precisely the offer, and why it holds."
-    }
+    },
+    "dishes": [
+      {
+        "name": "Toda la gamba (2012)",
+        "note": "Palamós red prawn — seaweed-vinegar marinade, head sauce, crisp legs, coral distillate.",
+        "kind": "dish"
+      },
+      {
+        "name": "Mar y montaña vegetal (2007)",
+        "note": "Plankton mousse, seaweeds, salicornia, enoki — surf-and-turf rendered wholly in vegetables.",
+        "kind": "dish"
+      },
+      {
+        "name": "Brioche de pularda",
+        "note": "Poularde brioche with a crackling, Pithiviers-like crust — on the Salty Spirit menu.",
+        "kind": "dish"
+      },
+      {
+        "name": "Libro viejo (2017)",
+        "note": "Jordi Roca's enfleurage old-book scent over Earl Grey cream, madeleine ice cream, mille-feuille.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Ginebra de Té de Roca",
+        "note": "House-distilled rock-tea gin — Jasonia glutinosa on Penedès-wine spirit; made to sip neat.",
+        "kind": "drink"
+      }
+    ]
   }
 ];
   const NEIGHBORHOODS = [
