@@ -1016,7 +1016,7 @@ window.TERROIR_DATA = (function () {
         "ids": [
           "v01-el-celler-de-can-roca"
         ],
-        "desc": "One booking, planned like a passage — the reason food people land in this city at all."
+        "desc": "One booking, planned like a passage — €315 before the pairing — and the reason food people land here at all."
       },
       {
         "label": "One star",
@@ -1025,7 +1025,7 @@ window.TERROIR_DATA = (function () {
           "v03-divinum",
           "v21-esperit-roca"
         ],
-        "desc": "The depth of the bench — starred rooms you can actually book this month, not next year."
+        "desc": "The deepest small-city bench in Europe after the ceiling — €80–170 rooms bookable this month, not next year."
       }
     ]
   },
@@ -1040,7 +1040,7 @@ window.TERROIR_DATA = (function () {
           "v05-casa-cacao",
           "v06-rocambolesc"
         ],
-        "desc": "The brothers' cooking at street prices — stew, thick chocolate and a cone, all inside three streets."
+        "desc": "The constellation that makes the city legible — stew, thick chocolate, a cone on the walk home, at street prices."
       },
       {
         "label": "The old houses",
@@ -1049,7 +1049,7 @@ window.TERROIR_DATA = (function () {
           "v08-casa-marieta",
           "v09-fonda-cal-ros"
         ],
-        "desc": "Fourth and fifth generations on the same arcaded squares — Girona's memory, served at lunch."
+        "desc": "Girona's memory at lunch — feeding the arcaded squares since 1920 and 1892, four and five generations in."
       },
       {
         "label": "Bistro & rice",
@@ -1057,7 +1057,7 @@ window.TERROIR_DATA = (function () {
           "v10-nu",
           "v14-arros-9-by-terram"
         ],
-        "desc": "The open bar and the socarrat — where the everyday city eats well without a reservation ritual."
+        "desc": "A normal lunch done properly — the open bar and the socarrat, no reservation ritual."
       },
       {
         "label": "Cheese, pastry & coffee",
@@ -1074,7 +1074,7 @@ window.TERROIR_DATA = (function () {
           "v19-mercat-del-lleo",
           "v20-espelt-viticultors"
         ],
-        "desc": "The larder itself — seven-a.m. fish counters and the tramuntana vineyards behind every good menu."
+        "desc": "Spend where repeat custom disciplines the cooking — the seven-a.m. fish counters and the tramuntana cellars."
       }
     ]
   }
