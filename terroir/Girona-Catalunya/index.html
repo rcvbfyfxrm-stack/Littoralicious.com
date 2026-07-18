@@ -159,6 +159,7 @@
 .gx-torg__title{font-family:'Playfair Display',Georgia,serif;font-size:1.5em;font-weight:700;color:#1a1a1a;margin:30px 0 2px}
 .gx-torg__desc{font-style:italic;color:var(--ink-2,#555);margin:0 0 6px;font-size:0.95em}
 .gx-torg__sec{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#2d4a5e;margin:18px 0 8px;border-bottom:1px solid #e3e0d8;padding-bottom:5px}
+.gx-torg__secdesc{font-style:italic;color:var(--ink-2,#555);font-size:0.92em;margin:-2px 0 10px;line-height:1.5}
 .gx-torg__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;align-items:start}
 .gx-card{border:1px solid #e3e0d8;border-radius:10px;background:#fff;overflow:hidden;transition:box-shadow .18s ease}
 .gx-card:hover{box-shadow:0 3px 14px rgba(45,74,94,.10)}
@@ -449,6 +450,7 @@ window.addEventListener('load', function () {
         var sid = gid+'-s'+si;
         var grid = document.getElementById(sid);
         if(!grid){ var lab=document.createElement('div'); lab.className='gx-torg__sec'; lab.textContent=sec.label; box.appendChild(lab);
+          if(sec.desc){ var sd=document.createElement('div'); sd.className='gx-torg__secdesc'; sd.textContent=sec.desc; box.appendChild(sd); }
           grid = document.createElement('div'); grid.id=sid; grid.className='gx-torg__grid'; box.appendChild(grid); }
         sec.ids.forEach(function(id, k){
           var existing = grid.querySelector('[data-shell="'+id+'"]');

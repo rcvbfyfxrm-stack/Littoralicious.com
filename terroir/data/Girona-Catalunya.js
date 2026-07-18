@@ -1015,7 +1015,8 @@ window.TERROIR_DATA = (function () {
         "label": "Three stars — the pilgrimage",
         "ids": [
           "v01-el-celler-de-can-roca"
-        ]
+        ],
+        "desc": "One booking, planned like a passage — the reason food people land in this city at all."
       },
       {
         "label": "One star",
@@ -1023,7 +1024,8 @@ window.TERROIR_DATA = (function () {
           "v02-restaurant-massana",
           "v03-divinum",
           "v21-esperit-roca"
-        ]
+        ],
+        "desc": "The depth of the bench — starred rooms you can actually book this month, not next year."
       }
     ]
   },
@@ -1037,7 +1039,8 @@ window.TERROIR_DATA = (function () {
           "v04-normal",
           "v05-casa-cacao",
           "v06-rocambolesc"
-        ]
+        ],
+        "desc": "The brothers' cooking at street prices — stew, thick chocolate and a cone, all inside three streets."
       },
       {
         "label": "The old houses",
@@ -1045,14 +1048,16 @@ window.TERROIR_DATA = (function () {
           "v07-can-marques",
           "v08-casa-marieta",
           "v09-fonda-cal-ros"
-        ]
+        ],
+        "desc": "Fourth and fifth generations on the same arcaded squares — Girona's memory, served at lunch."
       },
       {
         "label": "Bistro & rice",
         "ids": [
           "v10-nu",
           "v14-arros-9-by-terram"
-        ]
+        ],
+        "desc": "The open bar and the socarrat — where the everyday city eats well without a reservation ritual."
       },
       {
         "label": "Cheese, pastry & coffee",
@@ -1060,14 +1065,16 @@ window.TERROIR_DATA = (function () {
           "v11-cal-formatger",
           "v17-can-castello",
           "v18-la-fabrica"
-        ]
+        ],
+        "desc": "The province on a counter — grey-rinded goat's cheese, warm xuixos, coffee the roasters ride for."
       },
       {
         "label": "Market & producers",
         "ids": [
           "v19-mercat-del-lleo",
           "v20-espelt-viticultors"
-        ]
+        ],
+        "desc": "The larder itself — seven-a.m. fish counters and the tramuntana vineyards behind every good menu."
       }
     ]
   }
