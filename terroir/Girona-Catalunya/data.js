@@ -1058,6 +1058,769 @@ window.TERROIR_DATA = (function () {
         "kind": "drink"
       }
     ]
+  },
+  {
+    "id": "v30-can-roca-taiala",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 30,
+    "badge": "Menú",
+    "name": "Can Roca",
+    "short": "Can Roca",
+    "lat": 41.99429,
+    "lng": 2.8063,
+    "neighborhood": "Taialà",
+    "tags": [
+      "menú del dia",
+      "Roca family",
+      "worth the trek"
+    ],
+    "why": "The bar Josep Roca and Montserrat Fontané opened in 1967 in working-class Taialà, where the three Roca brothers grew up between the pans — 'the origin of everything', in their own words. It still runs as a casa de menjars: a short slate of firsts and seconds changing daily — spoon dishes, seasonal stews, rice on its appointed day, homemade desserts to close. The €18 menú (verified October 2025) feeds El Celler de Can Roca's own brigade at lunch — seventy-plus cooks and waiters daily, as hard a co-sign as cheap food gets. Weekday lunch only, two sittings; cross the Onyar and keep walking, it is a good 25 minutes north-west of the old town.",
+    "address": "Ctra. de Taialà, 42, 17007 Girona",
+    "phone": "",
+    "hours": "Mon–Fri: bar 6:30–17:00, fork breakfasts 8:30–10:30, menú 13:00–15:30 in two sittings. Closed Sat–Sun.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Can+Roca+Ctra.+de+Taial%C3%A0%2C+42%2C+17007+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Can+Roca+Ctra.+de+Taial%C3%A0%2C+42%2C+17007+Girona",
+    "verdict": "The cheapest sit-down meal in the Roca universe — €18 buys lunch from the family kitchen that raised a three-Michelin-star dynasty, and the Celler's own brigade eats it daily.",
+    "signature": "The menú's fish day — rap a la marinera, monkfish yielding under a dense marinera sauce that asks for bread.",
+    "caveat": "A formica-and-telly neighbourhood bar half an hour's walk from the Barri Vell, weekday lunch only — go for the cooking and the story, not a sighting of the brothers; the menú has crept from €16 (2023) via €17 (spring 2025) to €18 (autumn 2025), and August closing is unverified, so ring 972 20 51 19 before crossing town.",
+    "dishes": [
+      {
+        "name": "Menú del dia",
+        "note": "A short slate of firsts and seconds rotating daily — spoon dishes and seasonal stews up front, rice on its appointed day; €18, autumn 2025.",
+        "kind": "dish"
+      },
+      {
+        "name": "Rap a la marinera",
+        "note": "Monkfish fresh and yielding in a dense marinera that asks for bread — documented on the menú as far back as 2016.",
+        "kind": "dish"
+      },
+      {
+        "name": "Calamars a la romana",
+        "note": "Doña Montse's own recipe, ordered as an extra over the menú (€10.50, 2023) — a light fry, crisp jacket, the squid tender beneath.",
+        "kind": "dish"
+      },
+      {
+        "name": "Esmorzar de forquilla",
+        "note": "Fork breakfast, 8:30–10:30 — the working-Girona ritual of stew before ten, added to the bar's slate in 2024.",
+        "kind": "dish"
+      },
+      {
+        "name": "Postres casolans",
+        "note": "Crema catalana, arròs amb llet, baked apple, lemon mousse — homemade closers; the Rocambolesc gelat on the counter is a 2016 sighting.",
+        "kind": "sweet"
+      }
+    ],
+    "person": "Montserrat Fontané — matriarch of the Roca dynasty, at this stove since 1967; turned 90 in June 2026",
+    "signal_chip": {
+      "label": "Roca HQ",
+      "full": "El Celler de Can Roca's staff eat their daily lunch here — Joan Roca sends his three-star brigade, seventy-plus strong, to his parents' dining room between services.",
+      "cosign": "The Objective, 2025; Time Out, 2025"
+    }
+  },
+  {
+    "id": "v31-dit-i-fet",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 31,
+    "badge": "Bistró",
+    "name": "Dit i Fet",
+    "short": "Dit i Fet",
+    "lat": 41.9876,
+    "lng": 2.8243,
+    "neighborhood": "Barri Vell",
+    "tags": [
+      "ex-Celler crew",
+      "seasonal",
+      "Barri Vell"
+    ],
+    "why": "Adrià Edo (kitchen) and Júlia Trota (room) both came out of El Celler de Can Roca before opening this tight seasonal bistro on Carrer dels Calderers, under the shadow of Sant Feliu. Joan Roca names it as his place to eat in his own town — 'it's run by people who had worked with us' — and the 2026 Michelin Guide lists it. The register is Girona product with Celler-trained precision at bistro money: oxtail croquettes, a barely-set Palamós prawn tortilla, cap i pota for the brave, and the city's own xuixo pastry finished on the grill. Kitchen 13:00–15:00 and 20:00–22:30, closed Tuesday and Wednesday — book ahead.",
+    "address": "Carrer dels Calderers, 10, baixos, 17004 Girona",
+    "phone": "",
+    "hours": "Thu–Mon 09:30–17:00 & 19:30–00:30, kitchen 13:00–15:00 / 20:00–22:30 — closed Tue–Wed (official site, 2026)",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Dit+i+Fet+Carrer+dels+Calderers%2C+10%2C+baixos%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Dit+i+Fet+Carrer+dels+Calderers%2C+10%2C+baixos%2C+17004+Girona",
+    "verdict": "Joan Roca's named pick to eat out in Girona — ex-Celler craft at €40–50 a head, and the 2026 Michelin Guide agrees it belongs on the map.",
+    "signature": "★ Tortilla cremosa de gamba de Palamós — a barely-set omelette running with Palamós red prawn, the coast folded into eggs (€24).",
+    "caveat": "Closed Tuesday and Wednesday and the secret is out — reserve. At €40–50 a head it sits at the dear end of 'casual', and the short seasonal card means a dish you read about may have rotated off.",
+    "dishes": [
+      {
+        "name": "Tortilla cremosa de gamba de Palamós",
+        "note": "Custard-loose centre carrying the sweet iodine of Palamós red prawn — €24, and one of the two dishes the Michelin inspectors single out.",
+        "kind": "dish"
+      },
+      {
+        "name": "Croquetes de rabo",
+        "note": "Slow-braised tail meat under a shattering crumb — billed as Girona veal-tail in Infobae's 2025 write-up, listed as oxtail croquettes on the current menu.",
+        "kind": "dish"
+      },
+      {
+        "name": "Tartar de vieira, oliva manzanilla i piparra",
+        "note": "Scallop tartare with manzanilla olive and piparra sauce — the 2026 Michelin inspectors' other named pick.",
+        "kind": "dish"
+      },
+      {
+        "name": "Cap i pota",
+        "note": "Old-Girona stew of head and trotter, €19.50 on the July 2026 card — offal cookery with Celler discipline; not for the timid.",
+        "kind": "dish"
+      },
+      {
+        "name": "Xuixo a la brasa",
+        "note": "La Puntual's cream-filled xuixo — Girona's own pastry — charred over the grill with vanilla ice cream melting against warm caramelised sugar; €7.50 of terroir as dessert.",
+        "kind": "sweet"
+      }
+    ],
+    "person": "Joan Roca",
+    "signal_chip": {
+      "label": "Joan Roca",
+      "full": "Joan Roca names it his place to eat in Girona — 'run by people who had worked with us' (Infobae, 2025).",
+      "cosign": "Listed in the 2026 Michelin Guide España; kitchen and room are both ex-El Celler de Can Roca."
+    }
+  },
+  {
+    "id": "v32-safo",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 32,
+    "badge": "Vi natural",
+    "name": "SAFO",
+    "short": "SAFO",
+    "lat": 41.9826,
+    "lng": 2.8248,
+    "neighborhood": "Barri Vell — by Plaça del Vi",
+    "tags": [
+      "natural wine",
+      "Mexico × Catalunya",
+      "share plates"
+    ],
+    "why": "Chef Marietta Richter — born in Kenya to a Mexican father, trained through La Pubilla and Gresca in Barcelona — and sommelier Víctor Martín opened this natural-wine bar-à-vins beside Plaça del Vi in 2023: one page of share plates crossing Catalunya with Mexico and Kenya, and a cellar Martín talks you through glass by glass. Joan Roca vouches for it in the most neighbourly terms possible — 'not only our friends and neighbours, they also have very good natural wines. And you eat very well.' The pair took the emerging-chef Cuiner award at Gastronomic Forum Barcelona in 2024, and the cooking is playful and market-led: a crisp octopus quesadilla with avocado cream, a stracciatella galette with grilled bimi, whatever the week allows. In July and August it runs dinner only, Monday to Friday, 19:00 to midnight.",
+    "address": "Carrer Nou del Teatre, 2, 17004 Girona",
+    "phone": "",
+    "hours": "Jul–Aug: Mon–Fri 19:00–24:00, dinner only · rest of year: Tue 20:00–24:00, Wed–Sat 13:00–16:00 & 20:00–24:00; kitchen 13:00–15:30 / 20:00–22:00 (official site, 2026)",
+    "maps": "https://www.google.com/maps/search/?api=1&query=SAFO+Carrer+Nou+del+Teatre%2C+2%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=SAFO+Carrer+Nou+del+Teatre%2C+2%2C+17004+Girona",
+    "verdict": "Girona's most serious natural-wine room wearing its least serious face — vouched for, in print, by the three-star neighbour up the street.",
+    "signature": "★ Crispy octopus quesadilla with avocado cream — Richter's Mexico–Catalunya axis in a single bite.",
+    "caveat": "July–August is dinner only, Monday–Friday — and the one-page menu changes constantly, so the dish you read about may be gone. Natural wine means funk: trust Víctor rather than asking for Rioja.",
+    "dishes": [
+      {
+        "name": "Crispy octopus quesadilla, avocado cream",
+        "note": "Griddle-blistered tortilla, tender octopus, cool avocado — the house's two homelands on one plate.",
+        "kind": "dish"
+      },
+      {
+        "name": "Stracciatella galette with grilled bimi",
+        "note": "Milky stracciatella against grilled bimi, chopped nuts and sea fennel — though the galette's topping turns with the market week to week.",
+        "kind": "dish"
+      },
+      {
+        "name": "Natural wine by the glass",
+        "note": "Víctor Martín's low-intervention cellar, Catalan and beyond — he learned the genre at Barcelona's Bar Brutal; say what you like, let him pour.",
+        "kind": "drink"
+      }
+    ],
+    "person": "Joan Roca",
+    "signal_chip": {
+      "label": "Roca veí",
+      "full": "Joan Roca: 'Not only our friends and neighbours — very good natural wines. And you eat very well' (Infobae, 2025).",
+      "cosign": "Written up by natural-wine critic Alice Feiring in The Feiring Line; 2024 Cuiner award, Gastronomic Forum Barcelona."
+    }
+  },
+  {
+    "id": "v33-nomo-girona",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 33,
+    "badge": "Japanese",
+    "name": "Nomo Girona",
+    "short": "Nomo Girona",
+    "lat": 41.9817506,
+    "lng": 2.8249132,
+    "neighborhood": "Barri Vell — Pujada de la Mercè",
+    "tags": [
+      "Japanese",
+      "Garden",
+      "Tasting menu"
+    ],
+    "why": "Barcelona's Grupo Nomo — founded in Gràcia in 2007 by the Molina-Martell brothers, their brother-in-law Ramón Jiménez and Tokyo chef Naoyuki Haginoya — reopened the 1900 Jardins de la Mercè manor in the old quarter in October 2021: four dining rooms wrapped round a protected, city-catalogued romantic garden with a bamboo-screened private corner. Haginoya, formed in Tokyo's sushi bars, izakayas and yakinikus, writes the card — Japanese technique over local, seasonal product, sushi bar to rice and noodle dishes. Order the fourteen-course Menú Naoyuki (€50) or go à la carte, and insist on a garden table. Book ahead in summer — the garden is the point.",
+    "address": "Pujada de la Mercè, 10, 17004 Girona",
+    "phone": "",
+    "hours": "Lunch 13:30–17:00, dinner 20:00–24:00 — but aggregators disagree on days (daily vs closed Monday with Sunday lunch only) and the group site publishes none; confirm on +34 972 22 68 45",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Nomo+Girona+Pujada+de+la+Merc%C3%A8%2C+10%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Nomo+Girona+Pujada+de+la+Merc%C3%A8%2C+10%2C+17004+Girona",
+    "verdict": "A group outpost that out-sites the town's independents — dining rooms wrapped round a protected, city-catalogued 1900 romantic garden, with a Tokyo-formed partner-chef writing the menu.",
+    "signature": "Menú Naoyuki — the chef-partner's fourteen-course €50 set run, truffled edamame through yuzu mochi",
+    "caveat": "It is the tenth opening of a twelve-strong Catalan group, not a chef-owner's only room — the same Naoyuki menu runs in Barcelona and Madrid, and it holds no Michelin or Repsol mention; here you are paying, in part, for the garden.",
+    "dishes": [
+      {
+        "name": "Menú Naoyuki (€50)",
+        "note": "Fourteen courses — the chef-partner's whole argument in one sitting: truffled fried edamame, sukiyaki croquette, gyu-niku gyoza, ebi chili — izakaya comfort run through Mediterranean product.",
+        "kind": "dish"
+      },
+      {
+        "name": "Sukiyaki croquette",
+        "note": "Japanese-style oxtail croqueta under hard panko — molten, beefy centre; the house's Catalan-Tokyo handshake in one bite.",
+        "kind": "dish"
+      },
+      {
+        "name": "Ebi chili",
+        "note": "Spicy prawns with fried egg — Haginoya's Tokyo comfort register, closer to izakaya than sushi counter.",
+        "kind": "dish"
+      },
+      {
+        "name": "Butter-fish nigiri",
+        "note": "Silky and fat-rich, cut with kimchi sauce and pickled piparras — on the current Naoyuki card.",
+        "kind": "dish"
+      },
+      {
+        "name": "Yuzu mochi with white chocolate",
+        "note": "The set's current close — citrus sharpness in a soft rice skin; the card rotates, so expect movement here.",
+        "kind": "sweet"
+      }
+    ],
+    "person": "Naoyuki Haginoya — Tokyo-raised executive chef and founding partner of Grupo Nomo, formed in Tokyo's sushi bars, izakayas and yakinikus before Barcelona (El Punt Avui, 2021)",
+    "signal_chip": {
+      "label": "Punt Avui",
+      "full": "Opening covered by El Punt Avui (22 October 2021) — the 'emblematic' Jardins de la Mercè manor, with its protected and officially catalogued romantic garden, reopened by the Catalan-Japanese group, chef-partner Naoyuki Haginoya named at the stoves.",
+      "cosign": "Gastronomistas (December 2024) reviewed the group's €50, fourteen-course Menú Naoyuki course by course."
+    }
+  },
+  {
+    "id": "v34-cul-de-la-lleona",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 34,
+    "badge": "Nepali",
+    "name": "El Cul de la Lleona x Catmandu",
+    "short": "El Cul de la Lleona",
+    "lat": 41.9875162,
+    "lng": 2.8241725,
+    "neighborhood": "Barri Vell — Carrer dels Calderers",
+    "tags": [
+      "Nepali",
+      "Momos",
+      "Story"
+    ],
+    "why": "A tiny bar-restaurant on Carrer dels Calderers named for the lioness column on the same street — the twelfth-century statue whose stone backside you kiss so the city will have you back: només podràs tornar a Girona si has fet un petó al cul de la lleona. Rebadged El Cul de la Lleona x Catmandu, it now runs a genuinely Nepali card in one of the old town's most storied corners — momos steamed or fried, dal bhat and sandeko, backed by a proper craft-beer fridge — while the lunch menú del día marries the two kitchens, Nepali chicken curry and chowmein beside calamars and botifarra. Dinner runs Thursday to Saturday only; count €15–20 a head off the house card. Book at weekends — the room is small.",
+    "address": "Carrer dels Calderers, 8, 17004 Girona",
+    "phone": "",
+    "hours": "Mon–Wed & Sun 12:00–16:00; Thu–Fri 12:00–16:00 & 19:30–22:30; Sat 12:00–16:00 & 19:00–23:00",
+    "maps": "https://www.google.com/maps/search/?api=1&query=El+Cul+de+la+Lleona+x+Catmandu+Carrer+dels+Calderers%2C+8%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=El+Cul+de+la+Lleona+x+Catmandu+Carrer+dels+Calderers%2C+8%2C+17004+Girona",
+    "verdict": "The only Nepali kitchen we could verify inside the Barri Vell — worth the detour for momos beside the lioness gironins kiss to come home, not for fine-dining polish.",
+    "signature": "Curry de pollo nepalí — the plate the house itself flags as its most-loved",
+    "caveat": "No bylined review or guide mention exists — the signal here is the place, not the press; dinner is Thursday to Saturday only, the city's roster still carries a stale pre-rebrand tapas listing, and historians note the lioness-kissing rite is itself a later embellishment — kissed daily all the same.",
+    "dishes": [
+      {
+        "name": "Mo:mo (5 u, €8–12)",
+        "note": "Nepali dumplings five to a plate, veg or meat, steamed or fried — the C-momo version arrives in a tomato-vegetable sauce; the litmus test of any Nepali kitchen.",
+        "kind": "dish"
+      },
+      {
+        "name": "Curry de pollo nepalí",
+        "note": "Slow, spice-deep, with basmati rice — the house's own site calls it the most appreciated plate on the card, and it anchors the lunch menú too.",
+        "kind": "dish"
+      },
+      {
+        "name": "Dal bhat (veg €12 / chicken €14.50)",
+        "note": "Nepal's national plate in full — curry, lentil soup, basmati and potato salad on one tray; order it and eat like Kathmandu.",
+        "kind": "dish"
+      },
+      {
+        "name": "Vedella a la cassola",
+        "note": "Beef stewed in wine and beer with chimichurri and fried vegetables — the Catalan half of the marriage, pure menú-del-dia soul.",
+        "kind": "dish"
+      },
+      {
+        "name": "Craft beer from the fridge",
+        "note": "Artisan and international bottles chosen to stand up to spice — this is still, at heart, a Girona bar.",
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "v35-konig-2",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 35,
+    "badge": "Frankfurt",
+    "name": "König 2",
+    "short": "König 2",
+    "lat": 41.9856257,
+    "lng": 2.8232957,
+    "neighborhood": "Mercadal — Plaça de la Independència",
+    "tags": [
+      "institution",
+      "terrace",
+      "under €10"
+    ],
+    "why": "Girona's home-grown fast-food dynasty — Pere Parals came back from a trip to Germany and opened a frankfurt bar in the city centre on 5 February 1973, and the town has queued ever since. The mythology is the bravas: thousands of kilos of potatoes peeled and cut by hand every day, gloved in the house orange sauce — creamy, gently hot — and, per Ara in 2024, outselling beer, water and coffee on the group's tills. The 1973 room on Gran Via is gone, so this arcaded-square branch is the one to visit: order bravas, a frankfurt and a canya on the big terrace and watch the city do the same. Open all day, every day — and still a place where you can eat for under €10 (Ara, 2024).",
+    "address": "Plaça de la Independència, 2, 17001 Girona",
+    "phone": "",
+    "hours": "Daily 09:30–23:00, Fri–Sat until 23:30 (konig.cat, checked July 2026)",
+    "maps": "https://www.google.com/maps/search/?api=1&query=K%C3%B6nig+2+Pla%C3%A7a+de+la+Independ%C3%A8ncia%2C+2%2C+17001+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=K%C3%B6nig+2+Pla%C3%A7a+de+la+Independ%C3%A8ncia%2C+2%2C+17001+Girona",
+    "verdict": "Bravas, a frankfurt and a canya on the terrace will come in under €15 — in the city of El Celler de Can Roca, the people's institution still feeds you for under €10 (Ara, 2024). If your bill says otherwise, you ordered the 200 g premium burger.",
+    "signature": "★ Patates braves amb salsa König — the plate that outsells every drink on the till",
+    "caveat": "It's a local chain of eleven branches now (konig.cat, July 2026) — including Barcelona and a shopping-centre outlet — and the original 1973 room was demolished after closing in December 2014. You're visiting the institution's heir, not a time capsule: paper mats, families, speed. Come for the bravas and the square, not for terroir romance.",
+    "dishes": [
+      {
+        "name": "Patates braves",
+        "note": "Peeled and cut by hand that morning — thousands of kilos daily across the group — fried to a hard rustle and gloved in the house orange sauce: creamy, gently hot, warmer than allioli, politer than a Madrid brava. The dish that outsells every drink on the menu (Ara, 2024).",
+        "kind": "dish"
+      },
+      {
+        "name": "Frankfurt",
+        "note": "The 1973 founding order — a snap-skinned German-style sausage of Catalan production in a crusty roll with mustard. Nothing clever, which is the point.",
+        "kind": "dish"
+      },
+      {
+        "name": "Hamburguesa 10",
+        "note": "Fried egg, bacon, cheese and pink sauce collapsing into one another — 'molt contundent' by Ara's own 2024 warning, and the students' order of record.",
+        "kind": "dish"
+      },
+      {
+        "name": "König 1973 lager",
+        "note": "The house-badged beer — cold, blameless, built to chase bravas (konig.cat lists it as the group's own brand).",
+        "kind": "drink"
+      }
+    ],
+    "person": "Pere Parals — founder, 5 February 1973; his son Marc Parals has run the group since around 2000 (Ara, 2024)",
+    "signal_chip": {
+      "label": "Since '73",
+      "full": "Founded 5 February 1973 by Pere Parals after a trip to Germany; Grup König marked 50 years and its 12th restaurant in 2023 (Caternews Digital); konig.cat lists eleven as of 2026.",
+      "cosign": "Ara, 2024 — patatas bravas outsell beer, water and coffee across the group's own tills"
+    }
+  },
+  {
+    "id": "v36-zanpanzar",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 36,
+    "badge": "Pintxos",
+    "name": "Zanpanzar",
+    "short": "Zanpanzar",
+    "lat": 41.98482,
+    "lng": 2.82525,
+    "neighborhood": "Barri Vell — Cort Reial",
+    "tags": [
+      "basque counter",
+      "food to midnight",
+      "count your sticks"
+    ],
+    "why": "A San Sebastián-style pintxo counter trading in the old town since 28 December 1999 — and the only place in Girona where you can still eat properly as midnight approaches. Trays of hot and cold donostiarra pintxos circulate; you graze standing and settle by toothpick count, the proper Basque arithmetic. The May-2025 handover to a young local team kept the room, the spread and the held-over classics — bravas, pulpo, txuletón — and added a cachopo built for post-service hunger. Evenings run to midnight daily; go by 23:00 for a full counter rather than the remains.",
+    "address": "Carrer de la Cort Reial, 10-12, 17004 Girona (tel. 972 212 843)",
+    "phone": "",
+    "hours": "Evenings daily ~19:00–24:00 (Mon to 23:30 per listings); Sat–Sun also midday service (~12:00–16:00). Post-handover hours drift — ring ahead.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Zanpanzar+Carrer+de+la+Cort+Reial%2C+10-12%2C+17004+Girona+%28tel.+972+212+843%29",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Zanpanzar+Carrer+de+la+Cort+Reial%2C+10-12%2C+17004+Girona+%28tel.+972+212+843%29",
+    "verdict": "Walk in at 23:15 and the trays should still be circulating — that is the whole case for the card; if the spread is down to three tired sticks, the new regime has failed the one job the old one never did.",
+    "signature": "★ Hot txistorra pintxo off the passing tray — scarlet Basque sausage, its paprika fat soaking the bread beneath",
+    "caveat": "Midnight is the hard stop, and the handover is recent — the room and pintxos survived the May-2025 change of hands but the founding owners did not; arrive by 23:00 and treat the ~€2.50-a-stick figure as indicative, to be confirmed at the bar.",
+    "dishes": [
+      {
+        "name": "Txistorra pintxo",
+        "note": "hot off the plancha, garlicky and scarlet, the fat staining the bread — the counter's loudest argument",
+        "kind": "dish"
+      },
+      {
+        "name": "Tortilla pintxo",
+        "note": "cut thick from the omelette, centre just set — the staple you judge any pintxo bar by",
+        "kind": "dish"
+      },
+      {
+        "name": "Bacallà amb piperrada",
+        "note": "the new team's addition — cod over slow-stewed peppers, Basque to the bone",
+        "kind": "dish"
+      },
+      {
+        "name": "Pulpo a la gallega",
+        "note": "Galician-style octopus under pimentón and oil — one of the held-over classics from the first 25 years",
+        "kind": "dish"
+      },
+      {
+        "name": "Cachopo",
+        "note": "the Asturian interloper — breaded veal folded round ham and cheese; a post-service feed if ever there was one",
+        "kind": "dish"
+      },
+      {
+        "name": "Patatas bravas",
+        "note": "kept through the handover — order them when the pintxo trays slow after 23:00",
+        "kind": "dish"
+      }
+    ],
+    "person": "Sam Calvo — kitchen lead since the May-2025 reopening, alongside Noa Coll front-of-house (Diari de Catalunya, 2026)"
+  },
+  {
+    "id": "v37-restaurant-8de7",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 37,
+    "badge": "Menú",
+    "name": "Restaurant 8de7",
+    "short": "Restaurant 8de7",
+    "lat": 41.98468,
+    "lng": 2.82317,
+    "neighborhood": "Mercadal",
+    "tags": [
+      "menú del dia",
+      "book ahead",
+      "bistronomic"
+    ],
+    "why": "A small dining room near the Pont de les Peixateries Velles that has quietly become the city's reference for the over-delivering menú — it holds a Guía Repsol Solete. The formula since late 2014: a closed menu of three firsts and three seconds, homestyle bones with bistronomic plating, portions on the generous side of sensible. Weekday menú around €15; Saturday's fuller version runs to ~€19.50; nights switch to author tapas rather than the menú. Lunch sittings from 13:15 fill with office Girona — book or go hungry.",
+    "address": "Carrer de les Hortes, 10, 17001 Girona",
+    "phone": "",
+    "hours": "Lunch Tue–Sat 13:15–16:30 (kitchen to 15:30); dinner Tue–Sat 21:00–24:00 (kitchen to 23:00). Closed Sun–Mon.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Restaurant+8de7+Carrer+de+les+Hortes%2C+10%2C+17001+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Restaurant+8de7+Carrer+de+les+Hortes%2C+10%2C+17001+Girona",
+    "verdict": "The best-value serious cooking within walking distance of the Rambla — a Repsol-Solete kitchen at canteen money, which is why its few tables are spoken for by half one.",
+    "signature": "Patates braves 8de7 — the house's own reinvention and standing dare: 'no n'heu vist cap d'iguals' — you will not have seen their like.",
+    "caveat": "A small room and a closed-choice menú — without a booking you will not get in; Saturday's menú climbs to ~€19.50, past the bargain line, and evenings are à-la-carte author-tapas territory, not menú money.",
+    "dishes": [
+      {
+        "name": "Patates braves 8de7",
+        "note": "The calling card, rebuilt the house's own way — order them alongside whatever the menú says.",
+        "kind": "dish"
+      },
+      {
+        "name": "Arròs del dia",
+        "note": "The menú's rice sittings are the ones regulars book the room out for — the house itself bills its 'arrossos memorables'.",
+        "kind": "dish"
+      },
+      {
+        "name": "Canelons",
+        "note": "Old-school canelons under gratinated béchamel — grandmother territory given the bistro finish.",
+        "kind": "dish"
+      },
+      {
+        "name": "Menú de migdia",
+        "note": "Three firsts, three seconds, closed choice — homestyle-modern, plated with more care than the bill implies; ~€15 weekdays.",
+        "kind": "dish"
+      }
+    ],
+    "signal_chip": {
+      "label": "Solete",
+      "full": "Holds a Guía Repsol Solete — the guide's marker for honest, sunny neighbourhood spots.",
+      "cosign": "Guía Repsol, listing live 2026"
+    }
+  },
+  {
+    "id": "v38-tornes",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 38,
+    "badge": "Granja",
+    "name": "Tornés (Pastisseria Tornés)",
+    "short": "Tornés",
+    "lat": 41.97386,
+    "lng": 2.82057,
+    "neighborhood": "Eixample",
+    "tags": [
+      "granja-canteen",
+      "dessert buffet",
+      "since 1965"
+    ],
+    "why": "A family pastisseria founded in 1965 by Joan Tornés and Enriqueta Dalmau — city-listed as an establiment emblemàtic — where the second generation runs a proper lunch canteen behind the cake counter. The menú is deliberately light-handed, three firsts and three seconds off steam, oven and griddle rather than the fryer, because the point is the finish: a buffet of the day's house pastry in individual portions, included in the price. Around €14.50 on weekdays at last firm sighting (2025), €16.50 Saturdays with wine on older datapoints. Lunch 13:00–16:00, Tuesday to Saturday — and the xuixos travel.",
+    "address": "Carrer del Migdia, 51, 17003 Girona",
+    "phone": "",
+    "hours": "Tue–Sat 7:30–20:00, menú 13:00–16:00; Sun/holidays 8:00–13:30, no menú. Closed Mon.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Torn%C3%A9s+Carrer+del+Migdia%2C+51%2C+17003+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Torn%C3%A9s+Carrer+del+Migdia%2C+51%2C+17003+Girona",
+    "verdict": "The only menú del dia in Girona that ends at a 60-year-old pastry counter — a dessert buffet stocked by the family's own obrador, for less money than most old-town starters.",
+    "signature": "The dessert buffet — individual portions of the day's house pastry, included in a €14.50-odd menú; the finish is the point.",
+    "caveat": "A south-Eixample shopping street with zero old-town romance — and the €14.50/€16.50 stickers were last firmly dated 2025 and earlier, so budget €15–17 and confirm; no menú on Sundays, closed Mondays.",
+    "dishes": [
+      {
+        "name": "Menú equilibrat",
+        "note": "Three firsts, three seconds — steamed, oven-baked or griddled by design, built so you arrive at dessert with intent.",
+        "kind": "dish"
+      },
+      {
+        "name": "Dessert buffet",
+        "note": "Individual portions of the day's house pastry, included in the menú — the reason the lunch exists at all.",
+        "kind": "sweet"
+      },
+      {
+        "name": "Xuixo",
+        "note": "Girona's cream-filled, sugar-crusted fried pastry, made in the house obrador — take one for the walk back.",
+        "kind": "buy"
+      },
+      {
+        "name": "Xocolata desfeta",
+        "note": "House-made drinking chocolate, thick enough to stand a spoon in — the granja tradition kept honest.",
+        "kind": "drink"
+      }
+    ],
+    "person": "Josep Maria Tornés — second-generation pastry chef, running the house with his sister Maria Elena",
+    "signal_chip": {
+      "label": "Heritage",
+      "full": "Listed in Girona city council's official catalogue of Establiments Emblemàtics — the city's register of protected historic shops.",
+      "cosign": "Ajuntament de Girona"
+    }
+  },
+  {
+    "id": "v39-xocolateria-l-antiga",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 39,
+    "badge": "Granja",
+    "name": "Xocolateria L'Antiga",
+    "short": "Xocolateria L'Antiga",
+    "lat": 41.98302,
+    "lng": 2.82443,
+    "neighborhood": "Barri Vell — Plaça del Vi",
+    "tags": [
+      "xocolata desfeta",
+      "est. 1916",
+      "granja"
+    ],
+    "why": "A granja in the old sense — Girona's chocolate house since 1916, two generations deep, marble-topped tables on wrought-iron feet under the arcades of Plaça del Vi, the little terrace staring straight at the town hall. The trade is xocolata desfeta thick enough to coat a spoon, the suïssa capped with whipped cream, and melindros and home-baked coca to drag through the cup; Time Out calls it the best in the city — 'or nearly', in its own careful hedge. Locals also rate the entrepans — fuet on pa de pagès above all. The house's own site says doors open at 7, Monday to Saturday; Sunday hours are published nowhere consistently, so confirm before a special trip.",
+    "address": "Plaça del Vi, 8, 17004 Girona",
+    "phone": "",
+    "hours": "Own site: Mon–Sat 7:00–21:00, no Sunday hours published; hostaleria listing: Mon–Fri 7:00–21:00, Sat 8:00–21:00, Sun 16:00–21:00 with mornings closed out of season; council registry: Mon–Sat 8:00–21:00 — sources differ, confirm Sundays",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Xocolateria+L%27Antiga+Pla%C3%A7a+del+Vi%2C+8%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Xocolateria+L%27Antiga+Pla%C3%A7a+del+Vi%2C+8%2C+17004+Girona",
+    "verdict": "The nearest thing to a best-in-city call the record allows — Time Out names it 'la millor (o gairebé) xocolata desfeta de Girona' (2018), and the room has been thickening it under the same arcades since 1916.",
+    "signature": "Xocolata desfeta amb melindros — near-black, spoon-coating, under the arcades",
+    "caveat": "Come for chocolate, coca and entrepans, not coffee-geekery or brunch — the rest of the offer is deliberately plain, and Sunday hours are unreliable (the three published schedules disagree; its own site lists none).",
+    "dishes": [
+      {
+        "name": "Xocolata desfeta amb melindros",
+        "note": "Poured near-black and thick enough to coat the spoon; the sponge fingers are for dragging through, not polite dunking",
+        "kind": "drink"
+      },
+      {
+        "name": "Xocolata suïssa",
+        "note": "The same desfeta buried under a cap of whipped cream — richer than anything has a right to be at 8 am",
+        "kind": "drink"
+      },
+      {
+        "name": "Coca casolana",
+        "note": "Home-baked and grandmother-plain — built for the cup, not the camera",
+        "kind": "sweet"
+      },
+      {
+        "name": "Entrepà de fuet amb pa de pagès",
+        "note": "Coarse fuet on country bread — 'boníssim', the savoury order Time Out singles out",
+        "kind": "dish"
+      }
+    ],
+    "signal_chip": {
+      "label": "Heritage",
+      "full": "Listed in the Ajuntament de Girona's Catàleg d'Establiments Emblemàtics — one of the city's oldest bar-cafeterias, trading since 1916",
+      "cosign": "Ajuntament de Girona"
+    }
+  },
+  {
+    "id": "v40-ca-l-angel",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 40,
+    "badge": "Forquilla",
+    "name": "Ca l'Àngel",
+    "short": "Ca l'Àngel",
+    "lat": 42.147552,
+    "lng": 2.769949,
+    "neighborhood": "Melianta, Fontcoberta — 15 min north of Girona (Pla de l'Estany)",
+    "tags": [
+      "esmorzar de forquilla",
+      "since 1978",
+      "roadside"
+    ],
+    "why": "A bar de carretera on the Banyoles–Figueres road, opened in 1978 by Pilar and Àngel and now run by their children — and since January 2025 carrying ElNacional.cat's crown for the best esmorzar de forquilla in the Pla de l'Estany. From 6 in the morning the pots come out: cap i pota, botifarra amb mongetes, meatballs with wild mushrooms, even a fish stew with potatoes and peas — breakfast eaten with fork, knife and a glass of red. The party trick is pudding: a xuixo, Girona's own cream-filled pastry, finished on the grill and flambéed with ratafia. Fifteen minutes by car from the Barri Vell; the weekday lunch menú is €16 but esmorzar prices aren't published — ring 972 57 50 99.",
+    "address": "Ctra. de Banyoles a Figueres, 29, 17833 Fontcoberta (urb. Melianta)",
+    "phone": "",
+    "hours": "Mon–Fri 6:00–16:30, Sat 6:00–12:00; closed Sundays and holidays (official site, accessed July 2026 — ElNacional gave 6:30–16:00 in January 2025)",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Ca+l%27%C3%80ngel+Ctra.+de+Banyoles+a+Figueres%2C+29%2C+17833+Fontcoberta+%28urb.+Melianta%29",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Ca+l%27%C3%80ngel+Ctra.+de+Banyoles+a+Figueres%2C+29%2C+17833+Fontcoberta+%28urb.+Melianta%29",
+    "verdict": "The best esmorzar de forquilla within a 20-minute drive of Girona — ElNacional.cat crowned it the finest in the Pla de l'Estany (2025), and the 6 am opening tells you exactly who it feeds.",
+    "signature": "Cap i pota at breakfast — the forquilla litmus test, with bread and a glass of red",
+    "caveat": "It is a roadside bar in a residential estate, not a pretty room — Catalan-first, function over decor, closed Sundays and holidays with Saturday shutting at noon, and you need a car; arrive hungry and early, this is stew before 9 am.",
+    "dishes": [
+      {
+        "name": "Cap i pota",
+        "note": "Gelatinous, paprika-glossed head-and-trotter stew — wobbling, sticky-lipped, and on the table before most of Girona has had coffee",
+        "kind": "dish"
+      },
+      {
+        "name": "Botifarra amb mongetes",
+        "note": "Grill-charred sausage over creamy white beans slicked with the pan fat",
+        "kind": "dish"
+      },
+      {
+        "name": "Mandonguilles amb bolets",
+        "note": "Meatballs in a woodland-dark wild-mushroom sauce — the house stews are the reputation",
+        "kind": "dish"
+      },
+      {
+        "name": "Estofat de peix amb patates i pèsols",
+        "note": "A briny fish stew with potatoes and peas, served at breakfast without irony",
+        "kind": "dish"
+      },
+      {
+        "name": "Xuixo a la brasa amb ratafia",
+        "note": "Girona's cream-filled pastry re-crisped over the grill and flambéed with ratafia — the one flourish in an otherwise sober house",
+        "kind": "sweet"
+      }
+    ],
+    "person": "Àngel and Marta Castellà — second generation of the founding Castellà–Moiset family, with Marta's husband Salvador; their parents Pilar and Àngel opened the house in 1978 (ElNacional.cat, 2025)",
+    "signal_chip": {
+      "label": "ElNac '25",
+      "full": "ElNacional.cat (January 2025): 'el millor esmorzar de forquilla del Pla de l'Estany' — a sensational roadside bar",
+      "cosign": "ElNacional.cat"
+    }
+  },
+  {
+    "id": "v41-federal-cafe",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 41,
+    "badge": "Brunch",
+    "name": "Federal Cafè",
+    "short": "Federal Cafè",
+    "lat": 41.985668,
+    "lng": 2.825203,
+    "neighborhood": "Barri Vell — Carrer de la Força (the Call)",
+    "tags": [
+      "all-day brunch",
+      "Aussie café",
+      "cyclist-friendly"
+    ],
+    "why": "Australian brunch culture on the Roman Via Augusta: Federal — the café Tommy Tang and Crick King opened in Barcelona in 2010 and named after a hamlet in the hills above Byron Bay — runs this multi-level house on Carrer de la Força, the old Roman road through the Jewish quarter. It is the Barri Vell's fullest brunch kitchen: eggs done many ways (Time Out counted nine), eggs Benedict among them, avocado on rye sharpened with lemon and black sesame, burgers before noon and flat whites to Antipodean spec. Vegetarian-heavy, allergen-labelled, laptop-tolerant, with secure bike storage — cyclist Girona's other clubhouse. Reckon about €20 a head; published hours conflict, so check before a special trip.",
+    "address": "Carrer de la Força, 9, 17004 Girona",
+    "phone": "",
+    "hours": "Daily from ~8:30 (recent listings give 8:30–16:00); older directories run to 23:00 and Time Out serves brunch 9:00–13:00 — closing time conflicts across sources, confirm with the café (872 264 515)",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Federal+Caf%C3%A8+Carrer+de+la+For%C3%A7a%2C+9%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Federal+Caf%C3%A8+Carrer+de+la+For%C3%A7a%2C+9%2C+17004+Girona",
+    "verdict": "The fullest brunch menu inside the old walls — nine egg dishes and burgers before noon, a range neither La Fàbrica (bowls, toast, bagels) nor Espresso Mafia (sweet things only) attempts.",
+    "signature": "Eggs Benedict under silky hollandaise, eaten on the shaded Força patio",
+    "caveat": "This is the Girona outpost of a Barcelona-born group with branches from Madrid to Palma — you come for Antipodean comfort done properly, not for Girona terroir; and its published hours exist in at least three conflicting versions.",
+    "dishes": [
+      {
+        "name": "Eggs Benedict",
+        "note": "Poached just-runny under silky hollandaise — the order the listings keep coming back to",
+        "kind": "dish"
+      },
+      {
+        "name": "Avocado toast",
+        "note": "On rye, sharpened with lemon and black sesame",
+        "kind": "dish"
+      },
+      {
+        "name": "Halloumi burger",
+        "note": "Brunch that eats like lunch — squeaky halloumi in a proper bun, one of the morning hamburgers Time Out flags",
+        "kind": "dish"
+      },
+      {
+        "name": "Flat white",
+        "note": "Silky, to Antipodean spec — the founding argument of the whole group",
+        "kind": "drink"
+      }
+    ],
+    "person": "Tommy Tang and Crick King — the Australian founders of the Federal group, begun in Barcelona in 2010 (Economía 3; Infocif)",
+    "signal_chip": {
+      "label": "Time Out",
+      "full": "Featured in Time Out's 'Els millors esmorzars de Girona' — nine egg preparations and its cosmopolitan morning room called out",
+      "cosign": "Time Out Girona"
+    }
+  },
+  {
+    "id": "v42-sunset-jazz-club",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 42,
+    "badge": "Jazz bar",
+    "name": "Sunset Jazz Club",
+    "short": "Sunset Jazz Club",
+    "lat": 41.98895,
+    "lng": 2.82426,
+    "neighborhood": "Barri Vell — Pou Rodó / Sant Feliu",
+    "tags": [
+      "live jazz",
+      "drinks only",
+      "to 01:30–03:00"
+    ],
+    "why": "A roughly 50-seat jazz cave under a stone-vaulted ceiling behind Carrer de la Barca, open since 3 November 2001 and this year listed by DownBeat magazine among the best jazz clubs in the world, alongside Barcelona's Jamboree — reported by Ara in February 2026. Anna Gisbert co-founded it with Albert Perejoan; musician-journalist Alix Levy has programmed it since 2011, pulling players of the order of Scott Hamilton, Chano Domínguez and Jorge Rossy into a room the size of a wine cellar. Doors from 19:00, and the posted hours run to 01:30 most nights and 03:00 on Friday and Saturday — the 22:00 Saturday set carries you well past midnight, and this is where Girona actually stays up. There is no kitchen: you come for the glass and the second set.",
+    "address": "Carrer de Jaume Pons i Martí, 12, 17004 Girona",
+    "phone": "",
+    "hours": "Posted spring-2026 hours: Mon, Tue, Thu, Sun and holidays 19:00–01:30; Fri–Sat and holiday eves 19:00–03:00; no Wednesday listed. July–Aug: Thu outdoor sets 20:00 + 21:30, Sat indoor gigs 22:00 — check the programme.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Sunset+Jazz+Club+Carrer+de+Jaume+Pons+i+Mart%C3%AD%2C+12%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Sunset+Jazz+Club+Carrer+de+Jaume+Pons+i+Mart%C3%AD%2C+12%2C+17004+Girona",
+    "verdict": "After midnight Girona's choice is this or a rumba bar — and only one of the two is on a DownBeat list; if you need food rather than music with your last drink, this card is not your answer and nothing in the city is.",
+    "signature": "★ The Saturday 22:00 second set, glass in hand, under the stone vault",
+    "caveat": "Nothing to eat beyond the glass — no kitchen at all; and it is a ~50-cap room sustained by some 120 dues-paying members, so on name nights arrive at doors or you will be listening from the lane. Wednesday is absent from the posted hours — check before crossing town.",
+    "dishes": [
+      {
+        "name": "Copa at the vault bar",
+        "note": "a slow drink through the second set is the whole offer — take it under the stone ceiling and don't ask for a menu",
+        "kind": "drink"
+      },
+      {
+        "name": "Jazz a la Fresca first drink",
+        "note": "the summer outdoor sets are free with an obligatory first drink — a €5 supplement applies only if weather moves the gig indoors (programme, 2026)",
+        "kind": "drink"
+      }
+    ],
+    "person": "Alix Levy — musician and journalist, programmer and co-runner since 2011 with co-founder Anna Gisbert (Ara, 2026)",
+    "signal_chip": {
+      "label": "DownBeat",
+      "full": "Listed by DownBeat magazine among the best jazz clubs in the world, alongside Barcelona's Jamboree — reported February 2026",
+      "cosign": "DownBeat magazine"
+    }
+  },
+  {
+    "id": "v43-konig-sandwiches",
+    "cat": "shop",
+    "tier": "plenty",
+    "priority": 43,
+    "badge": "Braves",
+    "name": "König Sandwiches",
+    "short": "König Sandwiches",
+    "lat": 41.9878,
+    "lng": 2.82427,
+    "neighborhood": "Barri Vell — Plaça Sant Feliu",
+    "tags": [
+      "since 1973",
+      "kitchen to 23:30",
+      "fast-casual"
+    ],
+    "why": "Girona's home-grown fast-food dynasty: Pere Parals came back from Germany in 1973 and opened a frankfurter counter on Gran Via that served sandwiches late into the night — the group now runs four sites in the city, and this Calderers branch puts terrace tables under Sant Feliu's steps, a minute from the lioness's backside. The reason to come is statistical: the patates braves are the single best-selling item across every König, ahead of any individual drink — water, beer or coffee — per the Ara profile of 2024. Burgers use meat from Casa Baldiró in Banyoles, a supplier of roughly fifty years' standing, washed down with own-label König 1973 beer. Kitchen to 23:00, 23:30 on Friday and Saturday — which, in this city, is what late means.",
+    "address": "Carrer dels Calderers, 16, 17004 Girona",
+    "phone": "",
+    "hours": "Daily 9:30–23:00; Fri–Sat until 23:30 (own site, July 2026).",
+    "maps": "https://www.google.com/maps/search/?api=1&query=K%C3%B6nig+Sandwiches+Carrer+dels+Calderers%2C+16%2C+17004+Girona",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=K%C3%B6nig+Sandwiches+Carrer+dels+Calderers%2C+16%2C+17004+Girona",
+    "verdict": "Order the braves at 22:45 — if a plate of crisp cubes that outsells water across an entire restaurant group doesn't read as dinner after service, nothing in Girona will at that hour; judge it as the fast-casual counter it proudly is, not as a restaurant.",
+    "signature": "★ Patates braves — the group's best-selling item, ahead of every drink line including water (Ara, 2024)",
+    "caveat": "Late here means 23:00 sharp, 23:30 Friday–Saturday — miss it and you are down to Zanpanzar's pintxo trays until midnight, and after that nothing hot in the city; and it is trays-and-paper fast-casual, not a place you linger.",
+    "dishes": [
+      {
+        "name": "Patates braves",
+        "note": "crisp-edged cubes under the house brava sauce — potatoes peeled and cut by hand in the group's own workshop; the best-seller across all branches",
+        "kind": "dish"
+      },
+      {
+        "name": "Hamburger",
+        "note": "meat from Casa Baldiró in Banyoles, a ~50-year supplier — take it with braves alongside, not instead",
+        "kind": "dish"
+      },
+      {
+        "name": "Munich-style frankfurt",
+        "note": "the founding trade — the German sausage line that started the whole dynasty in 1973",
+        "kind": "dish"
+      },
+      {
+        "name": "König 1973 house beer",
+        "note": "the own-badge label — the right cold wash for brava sauce at 22:50",
+        "kind": "drink"
+      }
+    ],
+    "person": "Marc Parals — second generation, running the group since around 2000; son of founder Pere Parals (Ara, 2024)",
+    "signal_chip": {
+      "label": "Ara 2024",
+      "full": "Ara/Mengem profile: 'the Girona restaurant that sells more braves than waters'",
+      "cosign": "Ara (Mengem)"
+    }
   }
 ];
   const NEIGHBORHOODS = [
@@ -1549,6 +2312,56 @@ window.TERROIR_DATA = (function () {
           "v20-espelt-viticultors"
         ],
         "desc": "The larder itself — the seven-a.m. fish counters, the sugared botifarra dolça on the charcuterie stalls, the tramuntana cellars where the person pouring signed the label."
+      },
+      {
+        "label": "Where the chefs eat",
+        "ids": [
+          "v30-can-roca-taiala",
+          "v31-dit-i-fet",
+          "v32-safo"
+        ],
+        "desc": "Where the aprons go on the night off — the family menú, the ex-Celler bistro, the natural-wine room the brothers vouch for."
+      },
+      {
+        "label": "Ethnic tables — the special ones",
+        "ids": [
+          "v33-nomo-girona",
+          "v34-cul-de-la-lleona"
+        ],
+        "desc": "Girona's honest short list — only two non-Catalan kitchens clear our bar, and both earn the walk."
+      },
+      {
+        "label": "Neighborhood gems & dives",
+        "ids": [
+          "v35-konig-2",
+          "v36-zanpanzar"
+        ],
+        "desc": "Bravas, frankfurts and pintxo counters — under €15 a head in the city of the €315 tasting."
+      },
+      {
+        "label": "Bargain plates",
+        "ids": [
+          "v37-restaurant-8de7",
+          "v38-tornes"
+        ],
+        "desc": "Exceptional plates at canteen money — a Solete menú and the world-champion xuixo house; the €18 Roca family table sits under Where the chefs eat."
+      },
+      {
+        "label": "Breakfast & brunch",
+        "ids": [
+          "v39-xocolateria-l-antiga",
+          "v40-ca-l-angel",
+          "v41-federal-cafe"
+        ],
+        "desc": "The morning city — thick suís in a heritage granja, the province's best fork breakfast, eggs before noon inside the walls."
+      },
+      {
+        "label": "Late night — after service",
+        "ids": [
+          "v42-sunset-jazz-club",
+          "v43-konig-sandwiches"
+        ],
+        "desc": "Girona shuts early; this is what honestly remains after midnight — jazz on a DownBeat list, the braves that outsell water, and Zanpanzar's trays running past 23:00."
       }
     ]
   }
