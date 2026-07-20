@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-20/">
+<title>La Symphonie Sans l'Inde — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 20 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;168</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Le Z&eacute;ro D&eacute;cisif</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-20.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#00695C">Silicium &amp; Intelligence</div>
+  <h1 class="article-title">La Symphonie Sans l'Inde</h1>
+  <div class="article-date">Lundi 20 Juillet 2026 &mdash; Edition N&deg;168</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>« Le développement de l'IA ne devrait pas être la performance en solo d'un seul pays, mais une symphonie de coopération internationale » — c'est Xi Jinping, à Shanghai, inaugurant une organisation mondiale de gouvernance de l'intelligence artificielle avec vingt-neuf pays fondateurs. Un seul manque, et son absence crève l'écran : l'Inde. Le même jour presque, Apple attaque OpenAI en justice, nommant directement son directeur matériel et chiffrant à plus de quatre cents le nombre d'anciens employés Apple désormais chez le rival — juste avant une introduction en Bourse attendue. Et Google, qui promettait Gemini 3.5 Pro pour juin, l'a repoussé une deuxième fois, effaçant au passage environ 200 milliards de dollars de capitalisation sur une seule rumeur de retard. Trois récits, un seul fil : cette semaine, chaque acteur qui revendiquait le leadership de l'IA a dû publier, en même temps, le chiffre qui le contredit — une place vide, un décompte d'employés, une date qui recule.</p>
+<hr>
+<h2>Carte des Preuves</h2>
+<table class="twa-emap"><thead><tr><th>Affirmation</th><th>Grade</th><th>n / taille d&rsquo;effet</th><th>R&eacute;plication&#160;?</th><th>Source</th></tr></thead><tbody>
+<tr><td>Les représentations « verbalisables » de Claude forment un « espace de travail global » (J-space) auditable</td><td class="twa-emap-g"><span class="twa-grade g-c">C</span></td><td>étude architecturale interne, pas d'échantillon statistique classique</td><td>non — étude interne, non répliquée par un tiers</td><td><a href="https://transformer-circuits.pub">Anthropic, Transformer Circuits Thread</a></td></tr>
+<tr><td>Kimi K3 bat Claude à 76 % de victoires sur un classement de code frontend</td><td class="twa-emap-g"><span class="twa-grade g-d">D</span></td><td>classement propriétaire, méthodologie non vérifiée</td><td>non — non vérifié sur le classement primaire</td><td><a href="https://buildfastwithai.com">Agrégation, non recoupée</a></td></tr>
+<tr><td>Le retard de Gemini 3.5 Pro a effacé environ 200 Md$ de la capitalisation d'Alphabet</td><td class="twa-emap-g"><span class="twa-grade g-d">D</span></td><td>chiffre répété par plusieurs sites, aucune attribution nominative d'analyste</td><td>non — origine unique (Bloomberg), amplifiée sans corroboration indépendante</td><td><a href="https://9to5google.com">9to5Google, via Bloomberg</a></td></tr>
+</tbody></table>
+<p class="twa-emap-key"><b class="g-a">A</b> ECR répliqué · <b class="g-b">B</b> revu par les pairs / étude unique · <b class="g-c">C</b> préprint non relu · <b class="g-d">D</b> talk / benchmark vendeur.</p>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Xi convoque le monde — sans l'Inde</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">Transcript officiel Xinhua + 5 médias indépendants · T0/T3</span></p>
+<p>Vingt-neuf pays fondateurs, un siège à Shanghai, et une absence qui parle plus fort que la liste elle-même : le 16 juillet, la Chine a officiellement lancé la World Artificial Intelligence Cooperation Organisation (WAICO), rassemblant la Russie, le Pakistan, l'Indonésie, le Brésil, la Malaisie, le Sénégal et l'Afrique du Sud — mais pas l'Inde, deuxième marché mondial de l'IA par population d'utilisateurs. Le lendemain, dans son discours d'ouverture de la Conférence mondiale sur l'IA, Xi Jinping a positionné Pékin comme le convocateur d'une voie de gouvernance IA pour le « Sud global », explicitement construite en miroir inversé des contrôles américains à l'exportation de semi-conducteurs. <a href="https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it">[T3, Al Jazeera, 2026-07-17]</a></p>
+<p>La citation de Xi, retranscrite mot pour mot par Xinhua : « Le développement de l'IA ne devrait pas être la performance en solo d'un seul pays, mais une symphonie de coopération internationale. » Il a ajouté : « Nous devrions nous opposer conjointement à l'élargissement excessif du concept de sécurité nationale dans le domaine de l'IA » — une pique à peine voilée contre le cadre américain de contrôle des exportations de puces. <a href="https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it">[T0, transcript Xinhua, 2026-07-17]</a> Plusieurs analyses relayées les 19 et 20 juillet — WION en tête, sous le titre « La Chine lance un "corps mondial de l'IA" avec le Pakistan et la Russie dedans, l'Inde dehors » — confirment que le récit reste actif dans le cycle médiatique plusieurs jours après l'annonce initiale.</p>
+<p>L'ironie structurelle est nette : au moment même où Pékin se pose en garant d'une gouvernance IA multilatérale, Washington est décrit par plusieurs analystes comme en repli rapide des processus internationaux de normalisation cyber et IA — laissant un vide que la Chine occupe méthodiquement, avec une infrastructure de soft power qui recoupe largement les pays déjà courtisés par les nouvelles routes de la soie.</p>
+<p><strong>Qui paie · Qui profite :</strong> les pays membres qui dépendent aujourd'hui du cloud et du calcul occidental prennent le risque diplomatique de rejoindre un bloc rival ; les laboratoires d'IA chinois orientés open source gagnent un accès facilité à vingt-neuf marchés ; les États-Unis perdent, sans qu'un coup ne soit tiré, le premier rôle dans la définition du cadre de gouvernance IA du monde en développement.</p>
+<p><strong>Échelle de preuve :</strong> affirmation (« la Chine se pose en leader d'une gouvernance IA alternative ») → source (discours officiel de Xi, transcrit par Xinhua) → corroborée indépendamment par Al Jazeera, Reuters, CNBC et WION, chacun ayant couvert l'événement séparément → badge Confirmé sur l'existence et le contenu de l'annonce.</p>
+<p><strong>L'autre lecture :</strong> aucun mécanisme d'application n'a été rendu public, aucun budget divulgué — WAICO pourrait n'être qu'une structure symbolique de plus, sans capacité réglementaire réelle, et son recoupement avec les pays déjà liés aux nouvelles routes de la soie suggère une continuité d'infrastructure de soft power plutôt qu'une architecture de gouvernance véritablement nouvelle. Aucun expert occidental de la sécurité de l'IA n'a, à ce stade, évalué publiquement la capacité réglementaire réelle de l'organisation.</p>
+<p><strong>Verdict :</strong> WAICO ne change rien, ce lundi, aux règles techniques qui gouvernent réellement l'IA mondiale — mais elle change qui prétend les écrire, et l'absence de l'Inde dans la première liste dit, à elle seule, que la « symphonie » revendiquée n'est pas encore un chœur.</p>
+<p><strong>Ce qui reste opaque :</strong> le mandat réglementaire concret de WAICO et la raison exacte de l'absence de l'Inde — refus indien ou non-invitation chinoise.</p>
+<p><strong>À dire au dîner :</strong> la Chine vient de fonder une organisation mondiale pour l'IA sans la deuxième démocratie la plus peuplée du monde — et l'a appelée, sans ironie apparente, une symphonie.</p>
+<hr>
+<h3>II. Quatre cents anciens d'Apple, un procès, une IPO qui attend</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 source (plainte judiciaire, reportée par TechCrunch) · T1/T3</span></p>
+<p>Plus de quatre cents anciens employés d'Apple travaillent aujourd'hui chez OpenAI — c'est le chiffre qu'Apple avance elle-même, le 19 juillet, dans une plainte pour vol de secrets industriels visant directement Tang Tan, le directeur matériel d'OpenAI, et alléguant une sollicitation systématique d'informations confidentielles plutôt qu'un simple débauchage isolé. <a href="https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/">[T1, plainte judiciaire via TechCrunch, 2026-07-19]</a></p>
+<p>Le calendrier est le vrai signal : la plainte tombe alors qu'OpenAI préparerait un dépôt confidentiel d'introduction en Bourse pour fin 2026 ou début 2027, et développerait une ligne de matériel grand public — une enceinte intelligente — dont la procédure judiciaire pourrait forcer la divulgation de la feuille de route et de la structure de coûts en pleine séduction des investisseurs. OpenAI a répondu publiquement : « Nous n'avons connaissance d'aucune preuve que cette plainte soit fondée. » L'analyste de TechCrunch Sean O'Kane observe, en commentaire non confirmé par les parties : « Même en mettant de côté la question de savoir si le tribunal accorde une injonction, cela peut naturellement provoquer des retards dans ce sur quoi travaille OpenAI. »</p>
+<p>Le chiffre de quatre cents employés, pris seul, ne prouve rien : deux entreprises qui recrutent agressivement dans le matériel IA génèrent mécaniquement ce genre de flux de talents. Ce qui transforme le chiffre en accusation, c'est la plainte elle-même — qui doit démontrer qu'une information confidentielle précise, pas seulement des compétences, a changé de mains.</p>
+<p><strong>Qui paie · Qui profite :</strong> si Apple obtient gain de cause ou une injonction, elle protège sa propriété intellectuelle et retarde potentiellement le produit d'un concurrent ; si OpenAI l'emporte, elle conserve sa feuille de route matérielle et ses quatre cents recrues intactes à l'approche d'une introduction en Bourse à enjeux élevés.</p>
+<p><strong>Échelle de preuve :</strong> affirmation (« sollicitation systématique de secrets industriels ») → source (plainte judiciaire déposée par Apple, document primaire) → non encore corroborée par une décision de justice ou un élément de preuve rendu public au-delà de la plainte elle-même → badge À vérifier, la procédure n'en étant qu'à son dépôt.</p>
+<p><strong>L'autre lecture :</strong> le cadrage « cette plainte menace l'introduction en Bourse d'OpenAI » vient entièrement des analystes de TechCrunch, pas d'un juriste spécialisé en valeurs mobilières indépendant, ni d'OpenAI, ni d'Apple — à traiter comme une spéculation informée, pas comme un fait.</p>
+<p><strong>Verdict :</strong> qu'Apple gagne ou perde ce procès, elle a déjà obtenu ce qu'elle voulait le plus probablement : forcer OpenAI à gérer une procédure de découverte judiciaire au moment précis où elle a le moins besoin de distractions.</p>
+<p><strong>Ce qui reste opaque :</strong> si Apple dispose de preuves concrètes de transfert d'information confidentielle, ou si la plainte s'appuie principalement sur le volume de départs.</p>
+<p><strong>À dire au dîner :</strong> Apple n'attaque pas OpenAI pour avoir volé une invention précise — elle l'attaque pour avoir embauché, un par un, assez d'anciens ingénieurs Apple pour que le hasard ne suffise plus à l'expliquer.</p>
+<hr>
+<h3>III. Gemini 3.5 Pro repoussé : un retard, une rumeur, deux cents milliards</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 origine (Bloomberg), amplifiée sans corroboration indépendante · T3 seul</span></p>
+<p>Environ 200 milliards de dollars de capitalisation boursière évaporés chez Alphabet — c'est le chiffre que plusieurs sites ont associé, les 19 et 20 juillet, au deuxième report du modèle phare de Google, Gemini 3.5 Pro, initialement promis pour juin. Selon Bloomberg, relayé par 9to5Google, une mise à jour des données d'entraînement fin juin aurait produit des résultats décevants, en particulier sur les tâches de programmation. <a href="https://9to5google.com">[T3, 9to5Google via Bloomberg, 2026-07-16]</a></p>
+<p>La déclaration officielle de Google reste volontairement vague : « Nous livrons rapidement une large gamme de modèles tout en les gardant très rentables pour nos clients » — sans nouvelle date. Bloomberg rapporte séparément que l'entreprise « prend le temps d'améliorer ses capacités, en particulier en programmation ». Un détail complique pourtant ce récit d'échec : selon la même vague de couverture, 75 % du nouveau code écrit chez Google est désormais généré par IA, certains ingénieurs internes plaidant même pour davantage de code écrit à la main afin de préserver la qualité — ce qui suggère que le problème n'est peut-être pas l'absence de capacité, mais un seuil de qualité que Google refuse de baisser avant de publier.</p>
+<p>Le chiffre de 200 milliards de dollars, en particulier, mérite la plus grande prudence : il est répété par de nombreux agrégateurs (TradingKey, MSN, Inspenet) qui tracent tous à la même dépêche Bloomberg initiale — ce n'est pas une corroboration indépendante, c'est une seule source amplifiée. Le même article de TradingKey qui cite ce chiffre mentionne aussi, dans le même souffle, un contentieux réglementaire européen distinct touchant Alphabet — brouillant toute attribution causale propre au seul retard de Gemini.</p>
+<p><strong>Qui paie · Qui profite :</strong> les actionnaires d'Alphabet absorbent l'impact boursier immédiat ; OpenAI, Anthropic et potentiellement Moonshot AI avec son modèle Kimi sont les bénéficiaires directs si Google prend du retard sur le front le plus disputé de la compétition entre modèles frontières : les agents de programmation.</p>
+<p><strong>Échelle de preuve :</strong> affirmation (« le retard de Gemini a coûté 200 Md$ à Alphabet ») → source (une dépêche Bloomberg, reprise sans vérification indépendante par au moins quatre agrégateurs) → aucune corroboration d'un second organe de presse ayant enquêté séparément → badge À vérifier, conformément à la règle : un chiffre reposant sur une seule origine T3 ne peut jamais atteindre le badge Confirmé.</p>
+<p><strong>L'autre lecture :</strong> les mouvements de cours d'Alphabet sur une semaine donnée reflètent presque toujours plusieurs facteurs simultanés — retard produit, contentieux réglementaire européen, rotation sectorielle générale hors technologie — et isoler 200 milliards de dollars comme la conséquence du seul retard de Gemini relève de la simplification journalistique, pas de l'analyse financière rigoureuse.</p>
+<p><strong>Verdict :</strong> le retard de Gemini 3.5 Pro est réel et confirmé par Google elle-même ; le chiffre de 200 milliards de dollars qui lui est attaché, en revanche, est le genre de nombre arrondi et répété qui mérite d'être cité avec sa source unique explicitement affichée — pas comme un fait établi.</p>
+<p><strong>Ce qui reste opaque :</strong> la part exacte de la baisse du titre Alphabet directement imputable au retard de Gemini, par opposition aux autres facteurs de la semaine.</p>
+<p><strong>À dire au dîner :</strong> Google écrit déjà les trois quarts de son nouveau code avec de l'IA — et retarde quand même son propre modèle phare parce que cette IA-là n'est pas encore assez bonne pour programmer selon ses propres critères.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Anthropic publie une étude d'interprétabilité mécaniste identifiant un « espace de travail global » verbalisable dans les représentations internes de Claude — recherche interne (grade C, non répliquée par un tiers), avec un conflit d'intérêt structurel évident : l'équipe qui étudie le modèle et celle qui le commercialise appartiennent à la même entreprise. <a href="https://transformer-circuits.pub">Transformer Circuits Thread</a></li>
+<li>Kimi K3 (Moonshot AI) revendique la première place d'un classement de code frontend avec 76 % de victoires face à Claude — classement propriétaire non vérifié indépendamment ; poids ouverts promis pour le 27 juillet seulement. <a href="https://buildfastwithai.com">BuildFastWithAI, agrégation</a></li>
+<li>Un fournisseur de cybersécurité (Sysdig) revendique la « première chaîne d'attaque de rançongiciel entièrement autonome pilotée par IA » — vecteur d'entrée une CVE Langflow déjà connue ; le superlatif « premier jamais vu » reste à vérifier auprès du rapport primaire, d'un fournisseur ayant un intérêt commercial évident à l'annoncer. <a href="https://securityboulevard.com/2026/07/ai-security-incident-jadepuffer-ransomware-leverages-ai-agent-to-automate-attacks/">Security Boulevard</a></li>
+<li>Trois levées de fonds d'infrastructure d'inférence — Fireworks AI (1,5 Md$ à 17,5 Md$ de valorisation), Baseten (~1,5 Md$ à ~13 Md$) et Together AI (800 M$, avec Aramco Ventures) — sont présentées comme « 3,8 Md$ en quatre semaines », mais chaque opération sous-jacente date de trois jours à un mois avant la fenêtre : la tendance est réelle, le cadrage « cette semaine » est un artifice de rédaction. <a href="https://www.forbes.com/sites/janakirammsv/2026/07/18/open-weight-models-are-turning-inference-into-a-control-point/">Forbes, 18 juillet</a></li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it">Al Jazeera — lancement de WAICO par Xi Jinping, 17 juillet 2026</a></li>
+<li><a href="https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/">TechCrunch — procès Apple contre OpenAI, 19 juillet 2026</a></li>
+<li><a href="https://9to5google.com">9to5Google — retard de Gemini 3.5 Pro (via Bloomberg), 16 juillet 2026</a></li>
+<li><a href="https://transformer-circuits.pub">Transformer Circuits Thread — étude d'interprétabilité Anthropic</a></li>
+<li><a href="https://buildfastwithai.com">BuildFastWithAI — classement Kimi K3</a></li>
+<li><a href="https://securityboulevard.com/2026/07/ai-security-incident-jadepuffer-ransomware-leverages-ai-agent-to-automate-attacks/">Security Boulevard — rançongiciel piloté par IA « JadePuffer »</a></li>
+<li><a href="https://www.forbes.com/sites/janakirammsv/2026/07/18/open-weight-models-are-turning-inference-into-a-control-point/">Forbes — financement de l'infrastructure d'inférence, 18 juillet 2026</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-07-20.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

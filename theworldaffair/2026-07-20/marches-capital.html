@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-20/">
+<title>Le Trillion Envolé — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 20 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;168</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Le Z&eacute;ro D&eacute;cisif</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-20.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#1565C0">March&eacute;s &amp; Capital</div>
+  <h1 class="article-title">Le Trillion Envol&eacute;</h1>
+  <div class="article-date">Lundi 20 Juillet 2026 &mdash; Edition N&deg;168</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Vingt virgule deux pour cent. C'est ce que l'indice américain des semi-conducteurs a perdu en dix séances depuis son sommet du 22 juin — un marché officiellement entré en bear market, environ 1 300 milliards de dollars de capitalisation évaporés, Micron perdant à lui seul 138 milliards en une séance. Au même moment, le nouveau président de la Fed Kevin Warsh a viré au faucon le plus dur depuis des années, neuf des dix-huit membres du comité de politique monétaire évoquant désormais une hausse de taux en 2026 — pendant qu'une inflation à 4,2 % force la main. Le conseil d'administration de PayPal doit trancher, aujourd'hui même, une offre de rachat à 53 milliards de dollars venue de Stripe et Advent. Et six agences fédérales ont laissé filer, sans aucune sanction, le délai légal d'un an qu'elles s'étaient elles-mêmes fixé pour encadrer les stablecoins. Un fil commun : chaque acteur qui promettait de la stabilité — la Fed, les régulateurs, le marché de la puce — livre cette semaine exactement son contraire.</p>
+<hr>
+<h2>Le Tape</h2>
+<table class="twa-tape"><thead><tr><th>Instrument</th><th>Niveau</th><th>&Delta;</th><th>Position 52&#160;sem.</th><th>R&eacute;gime</th></tr></thead><tbody>
+<tr><td>S&amp;P 500</td><td class="twa-lvl">7 457,69</td><td class="twa-down">-1,01 % ▼</td><td><span class="twa-pctbar"><i style="left:88%"></i></span> <span class="twa-pctn">88e pct.</span></td><td class="twa-regime">Rotation défensive</td></tr>
+<tr><td>Nasdaq Composite</td><td class="twa-lvl">25 520,24</td><td class="twa-down">-1,40 % ▼</td><td><span class="twa-pctbar"><i style="left:75%"></i></span> <span class="twa-pctn">75e pct.</span></td><td class="twa-regime">Rotation hors tech</td></tr>
+<tr><td>PHLX Semiconductor (SOX)</td><td class="twa-lvl">≈11 694</td><td class="twa-down">-20,2 % ▼ (10 séances)</td><td><span class="twa-pctbar"><i style="left:68%"></i></span> <span class="twa-pctn">68e pct.</span></td><td class="twa-regime">Bear market officiel</td></tr>
+<tr><td>Bitcoin (BTC/USD)</td><td class="twa-lvl">64 245,95 $</td><td class="twa-up">+0,4 % ▲</td><td><span class="twa-pctbar"><i style="left:9%"></i></span> <span class="twa-pctn">9e pct.</span></td><td class="twa-regime">Range bas, sorties ETF</td></tr>
+<tr><td>Brent</td><td class="twa-lvl">88,10 $/bbl</td><td class="twa-up">+4,59 % ▲</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Prime de guerre Ormuz</td></tr>
+<tr><td>US 10 ans (Treasury)</td><td class="twa-lvl">4,55 %</td><td class="twa-up">en hausse ▲</td><td><span class="twa-pctn">&mdash;</span></td><td class="twa-regime">Anticipation Fed hawkish</td></tr>
+</tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le trillion envolé du silicium</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">Données de marché vérifiables (SOX, ETF) · récit T3</span></p>
+<p>Vingt virgule deux pour cent : c'est la chute du PHLX Semiconductor Index depuis son sommet historique de clôture du 22 juin, un plongeon suffisant pour classer officiellement le secteur en bear market. Le fonds coté VanEck Semiconductor a perdu 5,1 % en une seule séance début juillet, l'une de ses pires journées jamais enregistrées ; l'ETF iShares Semiconductor a cédé 8 % sur une semaine. Reuters chiffre à environ 1 300 milliards de dollars la capitalisation boursière effacée du secteur, Intel, Micron, AMD et Samsung tous sous pression — Micron a perdu jusqu'à 13 % en une seule séance, soit environ 138 milliards de dollars envolés. <a href="https://intellectia.ai/blog/ai-chip-stocks-july-2026-selloff">[T3, Intellectia.ai, 2026-07]</a></p>
+<p>Trois mécanismes distincts alimentent la chute. D'abord, Meta a annoncé « Meta Compute », une division cloud vendant sa capacité d'entraînement et d'inférence IA excédentaire — réécrivant d'un coup l'équation offre-demande de toute l'industrie. Ensuite, une vague de puces IA sur mesure a commencé à être livrée fin juin par plusieurs géants technologiques, signal que le quasi-monopole de Nvidia sur le calcul IA devient sérieusement contesté. Enfin, SK Hynix envisagerait de ralentir l'expansion de sa production de mémoire à haute bande passante (HBM) pour se recentrer vers des puces mémoire moins coûteuses — un désaveu implicite du rythme de la demande promise. <a href="https://cryptobriefing.com/ai-chip-selloff-trillion-custom-silicon-nvidia/">[T3, Crypto Briefing, 2026-07]</a></p>
+<p>Le Nikkei a suivi le mouvement avec sa propre correction technique le 17 juillet — plus de dix pour cent sous son sommet du 25 juin — les valeurs liées à l'IA japonaises particulièrement touchées : Kioxia -16,1 %, Tokyo Electron -8,1 %, SoftBank Group -9 %, Advantest -7,2 %. Samsung, pourtant, a publié un deuxième trimestre record avec une prévision de bénéfice multipliée par dix-neuf — et son titre a quand même reculé, signe que le marché considère désormais le trade IA comme surétendu, pas sous-évalué. <a href="https://www.bloomberg.com/news/articles/2026-07-17/japan-s-stocks-dive">[T3, Bloomberg, 2026-07-17]</a></p>
+<p><strong>De l'autre côté du trade :</strong> les fabricants d'équipements et fournisseurs de mémoire qui avaient signé des contrats pluriannuels pariant sur une demande HBM en expansion continue se retrouvent contrepartie forcée d'un ralentissement qu'ils n'ont pas anticipé — et les fonds indiciels passifs, structurellement surexposés aux « Magnificent Seven », encaissent la baisse sans pouvoir s'en couvrir.</p>
+<p><strong>Qui paie · Qui profite :</strong> les actionnaires de Micron, Intel, AMD et des valeurs IA japonaises paient directement ; les investisseurs ayant tourné vers les valeurs cycliques, industrielles et défensives — secteur qui a permis au Dow Jones d'atteindre des records au-dessus de 53 000 points la même semaine — profitent de la rotation.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> tout portefeuille encore surpondéré sur les fabricants de mémoire pure devrait, sous 30 jours, vérifier son exposition aux contrats HBM avant les résultats du troisième trimestre — le risque n'est plus la demande IA elle-même, mais le calendrier de livraison face à une offre qui rattrape enfin la demande.</p>
+<p><strong>L'autre lecture :</strong> plusieurs analystes qualifient cette chute de simple « reset de mi-cycle » et maintiennent des objectifs de cours à douze mois substantiels pour Nvidia et Micron — un bear market technique n'est pas nécessairement le signal d'une bulle qui éclate, et Samsung continue, malgré la baisse de son titre, d'afficher des résultats opérationnels solides.</p>
+<p><strong>Verdict :</strong> le marché ne dit pas que l'IA est surestimée dans l'absolu — il dit que la chaîne d'approvisionnement en mémoire et en calcul a promis une croissance plus rapide que ce que la physique de la production peut livrer, et que le prix vient de se réajuster à la vitesse réelle des usines, pas à celle des annonces.</p>
+<p><strong>Ce qui reste opaque :</strong> si Meta Compute capte réellement la demande excédentaire du marché ou si elle ne fait que déplacer la même demande d'un fournisseur vers un autre.</p>
+<p><strong>À dire au dîner :</strong> le secteur qui devait porter l'économie américaine pour la décennie a perdu, en dix séances, l'équivalent du PIB annuel de l'Espagne — et personne, à ce stade, ne sait si c'est une correction ou le début d'autre chose.</p>
+<hr>
+<h3>II. Warsh serre la vis, l'inflation ne desserre pas</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">Transcript FOMC officiel + CME FedWatch · T0</span></p>
+<p>Quatre virgule deux pour cent : c'est l'inflation annuelle mesurée en mai, la plus haute depuis trois ans, plus du double de l'objectif de 2 % que la Fed s'était fixé. Face à ce chiffre, le nouveau président de la Réserve fédérale Kevin Warsh a adopté, lors de sa première réunion du FOMC le 17 juin, un ton nettement plus faucon qu'attendu — maintenant le taux directeur entre 3,50 % et 3,75 %, mais faisant basculer les anticipations pour le reste de l'année. Neuf des dix-huit membres votants du comité projettent désormais au moins une hausse de taux en 2026, un renversement brutal par rapport aux prévisions antérieures qui envisageaient des baisses. <a href="https://www.npr.org/2026/06/17/nx-s1-5860084/fed-chief-warsh-first-fomc-meeting">[T0, transcript Fed/NPR, 2026-06-17]</a></p>
+<p>Warsh a explicitement déprioritisé le volet emploi du double mandat de la Fed, insistant sur un engagement « sans ambiguïté et unanime » envers la stabilité des prix. Les probabilités de marché pour une hausse lors de la réunion du 28-29 juillet sont montées à environ un tiers ; celles pour une hausse en septembre ont bondi à 73 %, selon les données CME FedWatch les plus récentes. Le choc pétrolier lié à la guerre Iran-États-Unis — le Brent en hausse de plus de 4,5 % sur la seule séance du 17 juillet — ne fait qu'ajouter de la pression inflationniste sur une Fed déjà convertie au discours dur. <a href="https://www.techtimes.com/articles/320773/20260716/iran-oil-shock-spills-demand-inflation-lifting-fed-rate-hike-odds-73-september.htm">[T3, Tech Times, 2026-07-16]</a></p>
+<p><strong>De l'autre côté du trade :</strong> les détenteurs d'obligations à long terme, qui avaient positionné leurs portefeuilles pour un cycle de baisses de taux, se retrouvent contrepartie forcée d'un scénario inverse — et les entreprises très endettées du secteur technologique, dont le refinancement dépendait d'un coût du capital en baisse, absorbent le choc en même temps que la correction des semi-conducteurs.</p>
+<p><strong>Qui paie · Qui profite :</strong> les emprunteurs à taux variable et les jeunes pousses non rentables paient le coût du capital plus élevé ; les détenteurs de cash et de fonds monétaires, dont le rendement suit désormais un taux directeur plus haut plus longtemps, en profitent directement.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> toute entreprise ayant une dette à refinancer d'ici la fin de l'année devrait, sous 30 jours, verrouiller ses conditions avant la réunion du FOMC des 28-29 juillet — les probabilités de hausse ne feront, au mieux, que se maintenir.</p>
+<p><strong>L'autre lecture :</strong> une partie du marché obligataire parie que ce virage faucon est en réalité une manœuvre de crédibilité — Warsh, nouvellement nommé, aurait intérêt à paraître dur dès sa première réunion précisément pour se donner ensuite la marge politique de baisser les taux sans passer pour laxiste, si l'inflation reflue au second semestre.</p>
+<p><strong>Verdict :</strong> que le faucon soit sincère ou tactique, l'effet sur les marchés est identique cette semaine — et c'est la coïncidence du choc pétrolier iranien avec le virage de Warsh, pas l'un ou l'autre isolément, qui explique la vitesse de la correction sur les actifs risqués.</p>
+<p><strong>Ce qui reste opaque :</strong> si l'inflation de mai reflète un choc temporaire lié au pétrole ou une dynamique de prix plus enracinée que ne le laisse penser la Fed.</p>
+<p><strong>À dire au dîner :</strong> la Fed vient de dire, dans le même mois, qu'elle se moque de l'emploi et que l'inflation est sa seule boussole — la dernière fois qu'un président de la Fed a formulé les choses aussi crûment, c'était Paul Volcker, il y a près d'un demi-siècle.</p>
+<hr>
+<h3>III. PayPal tranche aujourd'hui : 53 milliards sur la table</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">2 sources indépendantes (Reuters via CNBC/Yahoo) · T3, décision non encore rendue</span></p>
+<p>Soixante dollars et cinquante cents par action, cinquante-trois milliards de dollars au total, une prime de vingt-huit pour cent sur le cours — c'est l'offre que Stripe et le fonds Advent International ont déposée sur le bureau du conseil d'administration de PayPal, et une décision est attendue dès aujourd'hui, 20 juillet. Le montage prévoit environ cinquante milliards de dollars de financement bancaire déjà engagé et une répartition à parts égales de la propriété entre Stripe et Advent — sans plan de démantèlement de l'entreprise annoncé à ce stade. <a href="https://finance.yahoo.com/markets/stocks/articles/stripe-advent-international-53-billion-111839458.html">[T3, Reuters via Yahoo Finance, 2026-07-15]</a></p>
+<p>L'opération, révélée le 15 juillet, ferait de PayPal une entité privée après plus de deux décennies de cotation en Bourse séparée d'eBay — et confirmerait Stripe comme un acteur suffisamment capitalisé pour absorber l'un des plus anciens noms du paiement en ligne plutôt que de simplement lui faire concurrence. Aucun document réglementaire (dépôt SEC, communiqué officiel du conseil) confirmant l'issue de la délibération n'a pu être consulté au moment de la rédaction — la décision, si elle tombe dans la journée, n'était pas encore publique.</p>
+<p><strong>De l'autre côté du trade :</strong> les banques ayant engagé environ cinquante milliards de dollars de financement sont désormais contrepartie du risque d'exécution — si le conseil de PayPal refuse ou négocie à la hausse, c'est leur ligne de financement qui devra être retravaillée, pas seulement le prix par action.</p>
+<p><strong>Qui paie · Qui profite :</strong> les actionnaires historiques de PayPal empochent la prime de vingt-huit pour cent si l'offre est acceptée ; Stripe gagne d'un coup l'infrastructure et la base marchande d'un concurrent historique, ce qui rebat les cartes de tout le secteur des paiements en ligne.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> tout commerçant dépendant de l'API PayPal pour son paiement devrait, sous 30 jours, examiner ses clauses de continuité de service en cas de changement de contrôle — une fusion de cette taille s'accompagne presque toujours d'une consolidation technique différée mais annoncée tôt.</p>
+<p><strong>L'autre lecture :</strong> une prime de vingt-huit pour cent reste modeste pour une acquisition transformant la structure concurrentielle d'un secteur entier — certains actionnaires activistes pourraient juger l'offre insuffisante et pousser le conseil à la rejeter ou à solliciter une enchère concurrente.</p>
+<p><strong>Verdict :</strong> que l'offre soit acceptée aujourd'hui ou non, le simple fait qu'elle existe acte la fin d'une ère : PayPal, qui a longtemps été le standard du paiement en ligne, est désormais une cible plutôt qu'un prédateur.</p>
+<p><strong>Ce qui reste opaque :</strong> l'issue exacte du vote du conseil, non connue au moment de la publication.</p>
+<p><strong>À dire au dîner :</strong> l'entreprise qui a inventé le paiement en ligne grand public est, ce lundi, à quelques heures de devenir la propriété de la génération qui l'a remplacée.</p>
+<hr>
+<h3>IV. Le délai des stablecoins expire — et personne n'est prêt</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">6 agences fédérales, absence de règles vérifiée par plusieurs médias spécialisés · T0/T3</span></p>
+<p>Zéro sur six : c'est le nombre d'agences fédérales américaines ayant finalisé leurs règles d'encadrement des stablecoins avant l'échéance légale du 18 juillet 2026, un an jour pour jour après la promulgation du GENIUS Act. L'OCC, la FDIC, la NCUA, le Trésor, le FinCEN et l'OFAC avaient chacun publié des projets de règles — aucun n'a livré de texte définitif. <a href="https://cryptobriefing.com/us-regulators-miss-genius-act-stablecoin-deadline/">[T3, CryptoBriefing, 2026-07-18]</a></p>
+<p>Les conséquences retombent directement sur les émetteurs : les périodes de commentaires clés — règles anti-blanchiment de l'OCC (24 juillet), cadre de conformité de la FDIC (4 août), règle d'identification client à cinq agences (21 août) — se referment toutes après la date butoir manquée, sans qu'aucun jeu de règles finales coordonné ne soit visible à travers les agences. L'échéance de conformité de janvier 2027 reste théoriquement en vigueur, mais sa pertinence dépend entièrement de la capacité des régulateurs à publier des textes définitifs à temps pour que la fenêtre de mise en œuvre de cent vingt jours ait un sens. Tether, l'émetteur du plus gros stablecoin au monde, a de son côté révélé qu'environ vingt-cinq pour cent de ses réserves — or, bitcoin, prêts — ne répondraient pas aux standards du GENIUS Act, créant une ambiguïté juridique sur l'échéance réelle de mise en conformité. <a href="https://www.coindesk.com/news-analysis/2026/07/17/tether-s-usdt-hits-2-year-countdown-threatening-its-position-on-u-s-crypto-platforms">[T3, CoinDesk, 2026-07-17]</a></p>
+<p><strong>De l'autre côté du trade :</strong> Circle, qui a obtenu sa charte bancaire fédérale via l'OCC en amont de la mêlée réglementaire, se retrouve en position de force pendant que Tether navigue dans l'incertitude — le retard des régulateurs profite objectivement à l'émetteur le plus conforme, pas au plus gros.</p>
+<p><strong>Qui paie · Qui profite :</strong> les émetteurs de taille moyenne, qui n'ont ni la trésorerie de Circle ni la position dominante de Tether, paient le prix de l'incertitude prolongée ; les grands acteurs déjà en position de conformité anticipée profitent du répit réglementaire pour consolider leur avance.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> tout utilisateur ou plateforme dépendant d'un stablecoin non émis par un acteur déjà chartré devrait, sous 30 jours, évaluer un scénario de restriction d'accès aux plateformes américaines dès que les règles finiront par sortir.</p>
+<p><strong>L'autre lecture :</strong> l'absence de sanction légale pour le dépassement du délai signifie que ce raté n'a, en pratique, aucune conséquence immédiate — certains y voient une preuve que le Congrès a fixé un calendrier irréaliste dès le départ, plutôt qu'un signe de défaillance réglementaire.</p>
+<p><strong>Verdict :</strong> un délai sans sanction n'est pas un délai — et le marché des stablecoins, qui représente plus de 300 milliards de dollars de capitalisation, opère désormais sous un régime dont même les régulateurs ne peuvent dire avec certitude quand il prendra sa forme définitive.</p>
+<p><strong>Ce qui reste opaque :</strong> la date réelle à laquelle un jeu de règles coordonné sera publié à travers les six agences.</p>
+<p><strong>À dire au dîner :</strong> le Congrès a donné un an pile aux régulateurs américains pour encadrer un marché de 300 milliards de dollars — et le jour de l'échéance, ils se sont présentés les mains vides, sans qu'aucune loi ne les y oblige à en payer le prix.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Uber annonce le rachat de Delivery Hero pour 14,8 milliards de dollars, accélérant la consolidation du secteur de la livraison de repas. <a href="https://www.bloomberg.com/news/articles/2026-07-16/uber-agrees-to-buy-delivery-hero-as-food-sector-consolidates">Bloomberg, 16 juillet</a></li>
+<li>IBM perd 67 milliards de dollars de capitalisation après un avertissement surprise sur ses prévisions, dans un contexte de recomposition des dépenses technologiques d'entreprise. <a href="https://www.forbes.com/sites/petercohan/2026/07/15/ibm-stock-loses-67-billion--causes-and-recovery-outlook/">Forbes, 15 juillet</a></li>
+<li>Goldman Sachs publie un deuxième trimestre record, porté par des commissions de banque d'investissement en hausse de 55 % sur un an — dopées notamment par l'introduction en Bourse de SpaceX, valorisée 1 770 milliards de dollars. <a href="https://www.cnbc.com/2026/07/14/jpm-bank-of-america-citi-bank-earnings-live-updates.html">CNBC, 14 juillet</a></li>
+<li>La croissance du PIB chinois au deuxième trimestre ralentit à 4,3 %, sous l'objectif officiel — l'investissement immobilier chute de 18 %, partiellement compensé par des exportations technologiques en hausse de 13,3 %. <a href="https://www.bloomberg.com/news/articles/2026-07-15/china-s-gdp-growth-weakens-to-4-3-below-official-target-range">Bloomberg, 15 juillet</a></li>
+<li>Voir aussi, en Synthèse : la fermeture de fait du détroit d'Ormuz, moteur direct de la hausse du Brent qui pèse sur ce Tape.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://intellectia.ai/blog/ai-chip-stocks-july-2026-selloff">Intellectia.ai — chute des semi-conducteurs, juillet 2026</a></li>
+<li><a href="https://cryptobriefing.com/ai-chip-selloff-trillion-custom-silicon-nvidia/">Crypto Briefing — un trillion effacé sur les puces IA</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-17/japan-s-stocks-dive">Bloomberg — correction du Nikkei, 17 juillet 2026</a></li>
+<li><a href="https://www.npr.org/2026/06/17/nx-s1-5860084/fed-chief-warsh-first-fomc-meeting">NPR — première réunion FOMC de Kevin Warsh, 17 juin 2026</a></li>
+<li><a href="https://www.techtimes.com/articles/320773/20260716/iran-oil-shock-spills-demand-inflation-lifting-fed-rate-hike-odds-73-september.htm">Tech Times — choc pétrolier et probabilités de hausse Fed, 16 juillet 2026</a></li>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/stripe-advent-international-53-billion-111839458.html">Reuters via Yahoo Finance — offre Stripe/Advent sur PayPal, 15 juillet 2026</a></li>
+<li><a href="https://cryptobriefing.com/us-regulators-miss-genius-act-stablecoin-deadline/">CryptoBriefing — délai GENIUS Act manqué, 18 juillet 2026</a></li>
+<li><a href="https://www.coindesk.com/news-analysis/2026/07/17/tether-s-usdt-hits-2-year-countdown-threatening-its-position-on-u-s-crypto-platforms">CoinDesk — réserves Tether non conformes, 17 juillet 2026</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-16/uber-agrees-to-buy-delivery-hero-as-food-sector-consolidates">Bloomberg — Uber rachète Delivery Hero, 16 juillet 2026</a></li>
+<li><a href="https://www.forbes.com/sites/petercohan/2026/07/15/ibm-stock-loses-67-billion--causes-and-recovery-outlook/">Forbes — chute d'IBM, 15 juillet 2026</a></li>
+<li><a href="https://www.cnbc.com/2026/07/14/jpm-bank-of-america-citi-bank-earnings-live-updates.html">CNBC — résultats record Goldman Sachs, 14 juillet 2026</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-15/china-s-gdp-growth-weakens-to-4-3-below-official-target-range">Bloomberg — PIB chinois, 15 juillet 2026</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-07-20.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
