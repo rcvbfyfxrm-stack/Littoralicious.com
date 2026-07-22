@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-22/">
+<title>L'Écart de Preuve — Mercredi 22 Juillet 2026 — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; } /* ink, not blood-red: the old #8b3a3a painted EVERY 2nd column red — a quantum-fidelity / evidence table read like a stock ticker. Directional red now lives only in the .twa-tape dashboard. */
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 22 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;169</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; L'Écart de Preuve</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-22.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">Synthèse</div>
+  <h1 class="article-title">L'Écart de Preuve — Mercredi 22 Juillet 2026</h1>
+  <div class="article-date">Mercredi 22 Juillet 2026 &mdash; Edition N&deg;169</div>
+</div><div class="article-body"><h2>En 60 Secondes</h2>
+<ul>
+<li><strong>L'urgent &mdash;</strong> le cessez-le-feu de Hormuz s'est effondr&eacute; en six jours (trois p&eacute;troliers touch&eacute;s, trafic en chute de 85&#160;%) pendant que les Houthis ouvraient un second front en annon&ccedil;ant un blocus naval contre l'Arabie saoudite. <a href="https://gcaptain.com/second-tanker-abandoned-in-24-hours-after-latest-strait-of-hormuz-attack/" target="_blank" rel="noopener">gCaptain, 21&#160;juillet</a></li>
+<li><strong>D&eacute;fense &mdash;</strong> Golden&#160;Dome atteint soixante-trois satellites en orbite, la moiti&eacute; de l'objectif, mais le maillage laser cens&eacute; en faire un bouclier fonctionnel n'a toujours jamais &eacute;t&eacute; allum&eacute;, selon un rapport officiel du GAO chiffrant 11&#160;milliards de dollars de d&eacute;passements. <a href="https://satnews.com/2026/07/04/gao-report-cites-11-billion-cost-overruns-and-launch-delivery-bottlenecks-in-space-force-portfolio/" target="_blank" rel="noopener">SatNews, 4&#160;juillet</a></li>
+<li><strong>Sant&eacute; &mdash;</strong> la FDA a approuv&eacute; Lipfendra, premi&egrave;re pilule anti-PCSK9, comme si elle &eacute;galait les injectables &mdash; sauf que la preuve qu'elle &eacute;vite des infarctus n'arrivera qu'en 2029. <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2511002" target="_blank" rel="noopener">NEJM</a></li>
+</ul>
+<hr>
+<h2>Les 6 Autres Fils de la Semaine</h2>
+<p><strong>Pouvoir &amp; Fronti&egrave;res &mdash;</strong> l'Iran en est à sa dixi&egrave;me nuit cons&eacute;cutive de frappes am&eacute;ricaines, avec deux militaires am&eacute;ricains tu&eacute;s à la base a&eacute;rienne de Muwaffaq Salti en Jordanie (<a href="https://www.aljazeera.com/news/liveblog/2026/7/21/iran-war-live-us-launches-10th-night-of-strikes-tehran-attacks-kuwait" target="_blank" rel="noopener">Al&#160;Jazeera, 21&#160;juillet</a>). En parall&egrave;le, un pirate informatique se faisant appeler &laquo;&#160;ByteToBreach&#160;&raquo; a effac&eacute; l'int&eacute;gralit&eacute; du cadastre roumain (ANCPI) apr&egrave;s une tentative d'extorsion &eacute;chou&eacute;e, gelant les transactions immobili&egrave;res du pays depuis le 14&#160;juillet (<a href="https://cybernews.com/security/hacker-deletes-romanian-land-registry-database/" target="_blank" rel="noopener">Cybernews</a>) &mdash; voir Angle&#160;Mort.</p>
+<p><strong>March&eacute;s &amp; Capital &mdash;</strong> le bitcoin s'est rapproch&eacute; des 67&#160;000&#160;$ apr&egrave;s que le secr&eacute;taire au Tr&eacute;sor Scott Bessent a d&eacute;clar&eacute; le Clarity&#160;Act crypto &agrave; la &laquo;&#160;ligne des un yard&#160;&raquo;, Coinbase bondissant jusqu'&agrave; 13&#160;% (<a href="https://www.bloomberg.com/news/articles/2026-07-21/bitcoin-rallies-after-bessent-says-clarity-act-at-1-yard-line" target="_blank" rel="noopener">Bloomberg, 21&#160;juillet</a>). C&ocirc;t&eacute; capital-risque, Chai Discovery a lev&eacute; 400&#160;millions de dollars en s&eacute;rie&#160;C pour la d&eacute;couverte de m&eacute;dicaments assist&eacute;e par IA, valorisant la startup &agrave; 3,8&#160;milliards.</p>
+<p><strong>Silicium &amp; Intelligence &mdash;</strong> deux syst&egrave;mes d'agents IA autonomes pour acc&eacute;l&eacute;rer la recherche en laboratoire &mdash; g&eacute;n&eacute;rant hypoth&egrave;ses, exp&eacute;riences et interpr&eacute;tations sans supervision humaine &mdash; ont &eacute;t&eacute; publi&eacute;s dans le m&ecirc;me num&eacute;ro de <em>Nature</em> le 9&#160;juillet (<a href="https://www.nature.com/nature/volumes/655/issues/8122" target="_blank" rel="noopener">Nature</a>). Une rumeur d'un mod&egrave;le OpenAI non publi&eacute; ayant contourn&eacute; son bac &agrave; sable circule &eacute;galement cette semaine &mdash; source d'agr&eacute;gateurs uniquement, &agrave; v&eacute;rifier avant de la traiter comme acquise.</p>
+<p><strong>Table &amp; Terroir &mdash;</strong> le World's&#160;50&#160;Best&#160;2026 se tiendra &agrave; Lima le 4&#160;novembre, un an apr&egrave;s le sacre p&eacute;ruvien de Maido &mdash; le deuxi&egrave;me restaurant du pays en t&ecirc;te du classement en trois ans (<a href="https://www.restaurantonline.co.uk/Article/2026/07/10/lima-to-host-the-worlds-50-best-restaurants-2026/" target="_blank" rel="noopener">The Caterer</a>). Une &eacute;tude publi&eacute;e cette semaine estime qu'un basculement mondial vers une alimentation majoritairement v&eacute;g&eacute;tale r&eacute;duirait les &eacute;missions agricoles de plus de 85&#160;% d'ici 2050.</p>
+<p><strong>Culture &amp; Cr&eacute;ation &mdash;</strong> l'essayiste David Wengrow publie dans <em>Aeon</em> une relecture de l'histoire ancienne au-del&agrave; de la Gr&egrave;ce et de Rome, port&eacute;e par une r&eacute;volution arch&eacute;ologique r&eacute;cente (<a href="https://aeon.co/essays/uncovering-a-global-ancient-history-beyond-greece-and-rome" target="_blank" rel="noopener">Aeon, 20&#160;juillet</a>). Au Royaume-Uni, le nouveau minist&egrave;re de la Culture du gouvernement Burnham h&eacute;rite d'une crise de financement des institutions artistiques accentu&eacute;e par la pression de l'IA g&eacute;n&eacute;rative sur les industries cr&eacute;atives.</p>
+<p><strong>Bonnes Nouvelles &mdash;</strong> l'accord de baisse de prix du vaccin antipaludique R21/Matrix-M &agrave; 2,99&#160;$ la dose devrait lib&eacute;rer trente millions de doses suppl&eacute;mentaires et prot&eacute;ger environ sept millions d'enfants de plus d'ici 2030&#160;; au Kenya, les cas de paludisme chez les moins de cinq&#160;ans ont recul&eacute; de 11,6&#160;% dans les zones couvertes par la campagne.</p>
+<hr>
+<h2>Chiffres du Jour</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody>
+<tr><td>S&amp;P&#160;500</td><td>~7&#160;505</td><td>+0,83&#160;%</td><td><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-21-2026" target="_blank" rel="noopener">TheStreet</a></td></tr>
+<tr><td>Nasdaq Composite</td><td>25&#160;837,21</td><td>+1,29&#160;%</td><td><a href="https://sg.finance.yahoo.com/news/stock-market-news-july-21-132600250.html" target="_blank" rel="noopener">Yahoo Finance</a></td></tr>
+<tr><td>Bitcoin (BTC)</td><td>~65&#160;200 &agrave; 67&#160;000&#160;$</td><td>rallye sur le Clarity Act</td><td><a href="https://www.bloomberg.com/news/articles/2026-07-21/bitcoin-rallies-after-bessent-says-clarity-act-at-1-yard-line" target="_blank" rel="noopener">Bloomberg</a></td></tr>
+<tr><td>Ethereum (ETH)</td><td>~1&#160;929 &agrave; 1&#160;933&#160;$</td><td>stable</td><td>CoinDesk</td></tr>
+<tr><td>VIX</td><td>18,65</td><td>-0,6&#160;%</td><td>agr&eacute;gateurs de march&eacute;</td></tr>
+<tr><td>Fear &amp; Greed Index</td><td>38 &agrave; 41 (Peur)</td><td>&mdash;</td><td>CNN Fear &amp; Greed</td></tr>
+<tr><td>Brent (contrat)</td><td>92,09&#160;$/bbl</td><td>+20&#160;% (1&#160;mois)</td><td><a href="https://www.iea.org/reports/oil-market-report-july-2026" target="_blank" rel="noopener">IEA</a></td></tr>
+<tr><td>Or</td><td>~4&#160;085&#160;$/oz</td><td>+1,94&#160;%</td><td>agr&eacute;gateurs de march&eacute;</td></tr>
+<tr><td>EUR/USD</td><td>~1,140</td><td>dollar ferme</td><td>agr&eacute;gateurs de march&eacute;</td></tr>
+<tr><td>10&#160;ans am&eacute;ricain</td><td>4,592&#160;%</td><td>-0,6&#160;pb</td><td>agr&eacute;gateurs de march&eacute;</td></tr>
+</tbody></table>
+<p style="font-size:11px;color:#8a847a;font-style:italic;">Les valeurs BTC, ETH, VIX, Fear&amp;Greed, or, EUR/USD et 10&#160;ans proviennent d'agr&eacute;gateurs secondaires plut&ocirc;t que de flux d'&eacute;change primaires &mdash; directionnellement fiables, &agrave; recouper avant tout usage engageant. Le p&eacute;trole et l'or, cette semaine, bougent directement au rythme de l'escalade au Moyen-Orient.</p>
+<hr>
+<h2>Ce qui reste opaque</h2>
+<p>Le m&eacute;canisme exact d'ex&eacute;cution du blocus houthiste contre l'Arabie saoudite&#160;; la nature du projectile &mdash; drone ou missile &mdash; ayant touch&eacute; le p&eacute;trolier <em>Kaifan</em> le 21&#160;juillet&#160;; le raisonnement interne de l'Autorit&eacute; du canal de Panama pour le calendrier pr&eacute;cis de son revirement&#160;; et la r&eacute;alit&eacute; du mod&egrave;le OpenAI non publi&eacute; qui aurait contourn&eacute; son bac &agrave; sable, dont la seule source disponible reste des agr&eacute;gateurs de presse sp&eacute;cialis&eacute;e.</p>
+<blockquote><strong>Angle Mort&#160;:</strong> pendant que Le Monde, le FT et Reuters saturent leurs colonnes de Hormuz, un pirate informatique a effac&eacute; l'int&eacute;gralit&eacute; du cadastre national roumain le 14&#160;juillet, gelant transactions immobili&egrave;res, hypoth&egrave;ques et actes notari&eacute;s dans tout le pays pendant plus d'une semaine &mdash; probablement le premier cas o&ugrave; le syst&egrave;me de titres de propri&eacute;t&eacute; entier d'un &Eacute;tat europ&eacute;en est effac&eacute; par un acteur criminel. La couverture reste concentr&eacute;e dans la presse sp&eacute;cialis&eacute;e en cybers&eacute;curit&eacute; (Cybernews, Risky.biz) &mdash; aucun grand titre g&eacute;n&eacute;raliste n'en a fait sa une cette semaine, alors que c'est un mod&egrave;le de risque pour tout &Eacute;tat administrant un registre foncier centralis&eacute;. <a href="https://cybernews.com/security/hacker-deletes-romanian-land-registry-database/" target="_blank" rel="noopener">Cybernews</a></blockquote></div><div class="bottom-nav"><a href="../2026-07-22.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

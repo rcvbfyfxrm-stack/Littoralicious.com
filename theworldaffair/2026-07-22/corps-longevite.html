@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-22/">
+<title>La Preuve Qui Attend 2029 — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; } /* ink, not blood-red: the old #8b3a3a painted EVERY 2nd column red — a quantum-fidelity / evidence table read like a stock ticker. Directional red now lives only in the .twa-tape dashboard. */
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 22 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;169</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; L'Écart de Preuve</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-22.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#2E7D32">Corps &amp; Longévité</div>
+  <h1 class="article-title">La Preuve Qui Attend 2029</h1>
+  <div class="article-date">Mercredi 22 Juillet 2026 &mdash; Edition N&deg;169</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Cinquante-sept pour cent&#160;: c'est de combien une nouvelle pilule fait chuter le cholest&eacute;rol LDL &mdash; approuv&eacute;e cette semaine par la FDA comme si elle &eacute;galait d&eacute;jà les injectables. Sauf que la seule preuve qui compte vraiment, celle qui montrerait qu'elle &eacute;vite des infarctus, ne sera pas connue avant 2029. Le m&ecirc;me jour, une &eacute;quipe annon&ccedil;ait que le s&eacute;maglutide fait reculer la fibrose du foie chez des patients d&eacute;jà cirrhotiques &mdash; un renversement spectaculaire d'un essai ant&eacute;rieur qui avait &eacute;chou&eacute; sur ce point pr&eacute;cis. Et une &eacute;tude de vingt ans sur pr&egrave;s de 1&#160;700&#160;cerveaux affirme que trop de t&eacute;l&eacute;vision en milieu de vie r&eacute;tr&eacute;cit la mati&egrave;re grise &mdash; sans avoir jamais scann&eacute; ces m&ecirc;mes cerveaux au d&eacute;part. Trois r&eacute;cits, un seul fil&#160;: cette semaine, la science de la sant&eacute; a produit des chiffres impeccables et des preuves qui, presque à chaque fois, se d&eacute;robent au moment de conclure.</p>
+<hr>
+<h2>Carte des Preuves</h2>
+<table class="twa-emap"><thead><tr><th>Affirmation</th><th>Grade</th><th>n / taille d&rsquo;effet</th><th>R&eacute;plication&#160;?</th><th>Source</th></tr></thead><tbody>
+<tr><td>Lipfendra (enlicitide) r&eacute;duit le LDL-C de 57&#160;%</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>n=2&#160;909, -57 &agrave; -59,7&#160;%</td><td>essai jumeau (Lipids + HeFH)</td><td><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2511002" target="_blank" rel="noopener">NEJM</a></td></tr>
+<tr><td>S&eacute;maglutide am&eacute;liore la fibrose h&eacute;patique en cirrhose MASH compens&eacute;e</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>n&asymp;700</td><td>&eacute;tude unique, contredit un essai ant&eacute;rieur n&eacute;gatif</td><td><a href="https://health.ucsd.edu/news/press-releases/2026-07-16-glp-1-shows-promise-for-patients-with-advanced-fatty-liver-disease/" target="_blank" rel="noopener">Lancet Gastro &amp; Hepatol</a></td></tr>
+<tr><td>T&eacute;l&eacute;vision en milieu de vie associ&eacute;e &agrave; des volumes c&eacute;r&eacute;braux r&eacute;duits</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>n=1&#160;712, 20&#160;ans</td><td>cohorte unique, pas de r&eacute;plication</td><td><a href="https://www.sciencedaily.com/releases/2026/07/260721000822.htm" target="_blank" rel="noopener">Alzheimer's &amp; Dementia</a></td></tr>
+<tr><td>Biomarqueur ARN circulaire pr&eacute;dit Alzheimer mieux que pTau217</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>n=1&#160;221, AUC 0,945</td><td>r&eacute;pliqu&eacute; sur 2&#160;cohortes, conflit d'int&eacute;r&ecirc;t commercial</td><td><a href="https://www.nature.com/articles/s41591-026-04485-5" target="_blank" rel="noopener">Nature Medicine</a></td></tr>
+</tbody></table>
+<p class="twa-emap-key"><b class="g-a">A</b> ECR répliqué · <b class="g-b">B</b> revu par les pairs / étude unique · <b class="g-c">C</b> préprint non relu · <b class="g-d">D</b> talk / benchmark vendeur.</p>
+<hr>
+<h2>Les R&eacute;cits</h2>
+<h3>I. La pilule qui &eacute;gale l'injection, sauf sur ce qui compte</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirm&eacute;</span><span class="n">essai de phase&#160;3 jumeau, n=2&#160;909 · Grade B</span></p>
+<p>Le 16&#160;juillet, la FDA a approuv&eacute; Lipfendra (enlicitide decanoate, Merck) &mdash; le premier inhibiteur oral de PCSK9, une classe de m&eacute;dicaments jusqu'ici r&eacute;serv&eacute;e à l'injection (type Repatha ou Praluent). Un comprim&eacute; quotidien contre un peptide macrocyclique jusqu'ici pass&eacute; par la seringue&#160;: dans l'essai de phase&#160;3 CORALreef&#160;Lipids &mdash; 2&#160;909&#160;participants, 168&#160;sites, 14&#160;pays &mdash; la mol&eacute;cule a fait chuter le LDL-C de 57&#160;% à 24&#160;semaines, un effet maintenu à 52&#160;semaines (<a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2511002" target="_blank" rel="noopener">NEJM</a>). L'essai jumeau CORALreef&#160;HeFH, chez les patients d'hypercholest&eacute;rol&eacute;mie familiale h&eacute;t&eacute;rozygote, a montr&eacute; -59,4&#160;% (<a href="https://www.merck.com/news/mercks-enlicitide-decanoate-an-investigational-oral-pcsk9-inhibitor-significantly-reduced-ldl-c-in-adults-with-heterozygous-familial-hypercholesterolemia-hefh-in-phase-3-coralreef-hefh-tr/" target="_blank" rel="noopener">Merck/JAMA</a>). Tol&eacute;rance globalement comparable au placebo, avec un peu plus de vertiges (9&#160;% contre 4&#160;%) et de diarrh&eacute;es (7&#160;% contre 2&#160;%).</p>
+<p><strong>Ce que dit vraiment le papier&#160;:</strong> le LDL-C est un marqueur de substitution, pas un &eacute;v&eacute;nement cardiovasculaire dur. L'essai d'issues cliniques &mdash; CORALreef&#160;Outcomes, plus de 14&#160;500&#160;participants, inscriptions closes &mdash; ne livrera ses r&eacute;sultats qu'en 2029. La classe pharmacologique a d&eacute;jà prouv&eacute; son b&eacute;n&eacute;fice sur les infarctus via les formes injectables (FOURIER, ODYSSEY&#160;OUTCOMES) &mdash; mais cette preuve-là n'existe pas encore pour cette mol&eacute;cule pr&eacute;cise.</p>
+<p><strong>Qui paie &middot; Qui profite&#160;:</strong> Merck, promoteur et futur vendeur, a fix&eacute; le prix de lancement am&eacute;ricain à 10,50&#160;$ le comprim&eacute; &mdash; environ 3&#160;800&#160;$/an, nettement sous les 6&#160;000&#160;$ et plus des injectables &mdash; un positionnement con&ccedil;u pour capter à la fois les patients r&eacute;ticents à l'injection et les grilles de remboursement des assureurs.</p>
+<p><strong>La filiation&#160;:</strong> Lipfendra s'inscrit dans une lign&eacute;e d'inhibiteurs PCSK9 vieille d'une d&eacute;cennie, qui a d&eacute;jà prouv&eacute; son b&eacute;n&eacute;fice clinique sous forme injectable &mdash; la mol&eacute;cule emprunte la cr&eacute;dibilit&eacute; de sa classe avant d'avoir gagn&eacute; la sienne propre.</p>
+<p><strong>L'autre lecture&#160;:</strong> aucune contestation majeure du design n'a &eacute;t&eacute; trouv&eacute;e&#160;; la r&eacute;serve, unanime dans la presse sp&eacute;cialis&eacute;e (AJMC, TCTMD, ACC), porte toujours sur le m&ecirc;me point&#160;: les preuves d'issues dures manquent, et Merck le reconna&icirc;t elle-m&ecirc;me.</p>
+<p><strong>Verdict&#160;:</strong> c'est une r&eacute;ussite pharmacologique r&eacute;elle sur un marqueur de substitution, commercialis&eacute;e avec une assurance qui d&eacute;passe ce qui a &eacute;t&eacute; prouv&eacute; pour cette mol&eacute;cule pr&eacute;cise.</p>
+<p><strong>Ce qui reste opaque&#160;:</strong> les d&eacute;cisions de remboursement des grands payeurs am&eacute;ricains n'&eacute;taient pas encore finalis&eacute;es au moment de la r&eacute;daction.</p>
+<p><strong>&Agrave; dire au d&icirc;ner&#160;:</strong> la pilule qu'on vend comme l'&eacute;gale des injections n'aura sa vraie preuve &mdash; qu'elle emp&ecirc;che des infarctus &mdash; qu'en 2029.</p>
+<hr>
+<h3>II. Le m&eacute;dicament qui contredit son propre essai d'hier</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">&Agrave; v&eacute;rifier</span><span class="n">1&#160;&eacute;tude (Lancet Gastro Hepatol), financement Novo Nordisk · Grade B</span></p>
+<p>Premier essai à montrer une am&eacute;lioration de la fibrose h&eacute;patique chez des patients MASH d&eacute;jà en cirrhose compens&eacute;e&#160;: publi&eacute;e le 15&#160;juillet dans <em>The Lancet Gastroenterology &amp; Hepatology</em>, l'&eacute;tude de l'&eacute;quipe du Dr&#160;Rohit Loomba (UC&#160;San Diego Health) a suivi environ 700&#160;adultes atteints de MASH confirm&eacute;e par biopsie, r&eacute;partis en trois bras&#160;: s&eacute;maglutide seul, s&eacute;maglutide plus zalfermin, placebo. R&eacute;sultat&#160;: am&eacute;lioration statistiquement significative de la fibrose sous s&eacute;maglutide seul, sans aggravation de l'inflammation, y compris chez les cas avanc&eacute;s. La combinaison, elle, n'a pas surperform&eacute; le placebo &mdash; un signal n&eacute;gatif largement sous-rapport&eacute; (<a href="https://health.ucsd.edu/news/press-releases/2026-07-16-glp-1-shows-promise-for-patients-with-advanced-fatty-liver-disease/" target="_blank" rel="noopener">UC San Diego Health, 16&#160;juillet</a>).</p>
+<p><strong>Ce que dit vraiment le papier&#160;:</strong> c'est une phase&#160;2, pas une preuve de r&eacute;duction des issues cliniques dures &mdash; d&eacute;compensation, greffe, mortalit&eacute;. Elle contredit directement un essai de phase&#160;2 ant&eacute;rieur qui n'avait montr&eacute; aucune am&eacute;lioration de fibrose chez des cirrhoses NASH (<a href="https://www.mdedge.com/endocrinology/article/262228/gastroenterology/semaglutide-doesnt-improve-fibrosis-nash-related" target="_blank" rel="noopener">MDedge</a>). Le s&eacute;maglutide n'est aujourd'hui approuv&eacute; par la FDA que pour la MASH sans cirrhose (essai ESSENCE, NEJM)&#160;; les r&eacute;sultats de mortalit&eacute;/d&eacute;compensation de cet essai-là non plus ne sont attendus qu'en 2029.</p>
+<p><strong>Qui paie &middot; Qui profite&#160;:</strong> Novo Nordisk finance et co-signe l'essai &mdash; directement int&eacute;ress&eacute; à &eacute;largir l'indication du s&eacute;maglutide vers la MASH avanc&eacute;e et la cirrhose, un segment de patients aujourd'hui sans traitement approuv&eacute;.</p>
+<p><strong>La filiation&#160;:</strong> cet essai suit le sch&eacute;ma d&eacute;sormais famili&egrave;re des GLP-1 &mdash; une mol&eacute;cule approuv&eacute;e pour le diab&egrave;te, puis l'ob&eacute;sit&eacute;, progressivement pouss&eacute;e vers des territoires adjacents de plus en plus larges (MASH, d&eacute;sormais cirrhose) avant que la preuve la plus dure de chaque nouvelle indication n'existe.</p>
+<p><strong>L'autre lecture&#160;:</strong> la contre-source directe, dat&eacute;e et document&eacute;e est l'essai pr&eacute;d&eacute;cesseur de 2023, qui avait &eacute;chou&eacute; sur exactement ce m&ecirc;me crit&egrave;re en cirrhose NASH&#160;; les auteurs eux-m&ecirc;mes appellent à des essais plus larges, sp&eacute;cifiquement cibl&eacute;s sur les cirrhoses, pour confirmer.</p>
+<p><strong>Verdict&#160;:</strong> un vrai renversement, publi&eacute; et revu par les pairs, d'un r&eacute;sultat n&eacute;gatif ant&eacute;rieur &mdash; mais &laquo;&#160;le s&eacute;maglutide reverse la cirrhose&#160;&raquo;, le titre qui circule d&eacute;jà, n'est pas ce qu'un seul essai de phase&#160;2 non r&eacute;pliqu&eacute;, financ&eacute; par le fabricant, peut soutenir.</p>
+<p><strong>Ce qui reste opaque&#160;:</strong> aucune explication n'est offerte nulle part pour la contre-performance du bras combin&eacute; s&eacute;maglutide plus zalfermin &mdash; une vraie question ouverte.</p>
+<p><strong>&Agrave; dire au d&icirc;ner&#160;:</strong> le m&ecirc;me fabricant dont la mol&eacute;cule avait &eacute;chou&eacute; ce test h&eacute;patique pr&eacute;cis il y a trois ans vient de publier l'&eacute;tude o&ugrave; elle fonctionne.</p>
+<hr>
+<h3>III. Vingt ans de t&eacute;l&eacute;vision, un cerveau qu'on n'a jamais mesur&eacute; au d&eacute;part</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">&Agrave; v&eacute;rifier</span><span class="n">1&#160;cohorte (ARIC/USC), financement 100&#160;% public · Grade B</span></p>
+<p>Les personnes ayant d&eacute;clar&eacute; regarder la t&eacute;l&eacute;vision &laquo;&#160;tr&egrave;s souvent&#160;&raquo; en milieu de vie montrent, vingt ans plus tard, des volumes c&eacute;r&eacute;braux r&eacute;duits dans les r&eacute;gions li&eacute;es à la m&eacute;moire, aux lobes frontal et occipital, et davantage de l&eacute;sions de la substance blanche. C'est ce que conclut une &eacute;tude publi&eacute;e le 21&#160;juillet dans <em>Alzheimer's &amp; Dementia</em>, men&eacute;e par David Raichlen et Natan Feter (USC&#160;Dornsife) à partir de la cohorte ARIC suivie par Kaiser Permanente &mdash; 1&#160;712&#160;adultes, &acirc;ge moyen 53&#160;ans au d&eacute;part (<a href="https://www.sciencedaily.com/releases/2026/07/260721000822.htm" target="_blank" rel="noopener">ScienceDaily, 21&#160;juillet</a>). D&eacute;tail notable&#160;: ce n'est pas le temps assis en soi qui est en cause &mdash; les personnes ayant des emplois s&eacute;dentaires mais cognitivement stimulants montraient des profils c&eacute;r&eacute;braux plus sains. C'est le contenu du temps passif, pas la position assise, qui porte le signal.</p>
+<p><strong>Ce que dit vraiment le papier&#160;:</strong> c'est une association, pas une preuve de causalit&eacute;. Aucune IRM de r&eacute;f&eacute;rence n'a &eacute;t&eacute; r&eacute;alis&eacute;e en milieu de vie &mdash; seuls des scanners de suivi, vingt ans plus tard, existent. La causalit&eacute; inverse &mdash; des cerveaux d&eacute;jà en d&eacute;clin subtil se tournant davantage vers un divertissement passif &mdash; reste un angle mort explicitement reconnu par les auteurs eux-m&ecirc;mes. Financement&#160;: NIH, &Eacute;tat de l'Arizona et fondations &mdash; aucun financement industriel.</p>
+<p><strong>Qui paie &middot; Qui profite&#160;:</strong> financement enti&egrave;rement public et acad&eacute;mique &mdash; aucun b&eacute;n&eacute;ficiaire commercial direct identifi&eacute;, un contraste net avec les deux r&eacute;cits pr&eacute;c&eacute;dents.</p>
+<p><strong>La filiation&#160;:</strong> cette &eacute;tude s'ajoute à un corpus d&eacute;jà largement observationnel (cohortes ELSA, CARDIA) reliant t&eacute;l&eacute;vision et d&eacute;clin cognitif &mdash; elle renforce, sans l'&eacute;tablir pour la premi&egrave;re fois, un sch&eacute;ma jamais test&eacute; exp&eacute;rimentalement.</p>
+<p><strong>L'autre lecture&#160;:</strong> aucune r&eacute;action d'expert ind&eacute;pendante, dat&eacute;e et nomm&eacute;e sp&eacute;cifiquement sur cette &eacute;tude du 21&#160;juillet n'a &eacute;t&eacute; trouv&eacute;e&#160;; la r&eacute;serve la plus solide reste celle, auto-administr&eacute;e, des auteurs&#160;: pas de scanner de r&eacute;f&eacute;rence, habitudes t&eacute;l&eacute; auto-rapport&eacute;es.</p>
+<p><strong>Verdict&#160;:</strong> une &eacute;tude s&eacute;rieuse et financ&eacute;e publiquement, dont la limite la plus honn&ecirc;te &mdash; l'absence de scanner de d&eacute;part &mdash; est exactement le d&eacute;tail que la plupart des reprises ont laiss&eacute; tomber.</p>
+<p><strong>Ce qui reste opaque&#160;:</strong> impossible, avec ce design, de savoir si les volumes c&eacute;r&eacute;braux &eacute;taient d&eacute;jà plus petits avant l'habitude t&eacute;l&eacute;.</p>
+<p><strong>&Agrave; dire au d&icirc;ner&#160;:</strong> l'&eacute;tude qui fait les gros titres sur la t&eacute;l&eacute; qui r&eacute;tr&eacute;cit le cerveau n'a jamais mesur&eacute; un seul cerveau avant que l'habitude ne commence.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li><strong>Biomarqueur sanguin ARN circulaire pour pr&eacute;dire Alzheimer&#160;:</strong> Nature Medicine, WashU St.&#160;Louis, n=1&#160;221, AUC 0,945 contre 0,877 pour le pTau217 de r&eacute;f&eacute;rence, r&eacute;pliqu&eacute; sur deux cohortes ind&eacute;pendantes &mdash; solide sur le papier, mais promotion commerciale simultan&eacute;e via une spin-off, à traiter avec prudence. <a href="https://www.nature.com/articles/s41591-026-04485-5" target="_blank" rel="noopener">Nature Medicine</a>.</li>
+<li><strong>Imagerie chirale d&eacute;tecte le collag&egrave;ne cutan&eacute; ab&icirc;m&eacute; avant les rides&#160;:</strong> preuve de concept technique (Hiroshima University, ACS Nano), pas encore d'essai clinique. <a href="https://www.sciencedaily.com/releases/2026/07/260716023554.htm" target="_blank" rel="noopener">ScienceDaily</a>.</li>
+<li><strong>La spermidine am&eacute;liorerait la r&eacute;ponse vaccinale des seniors&#160;:</strong> petit essai pilote (Aging Cell) chez des plus de 65&#160;ans apr&egrave;s une troisi&egrave;me dose Covid &mdash; prometteur, mais &eacute;chantillon r&eacute;duit. <a href="https://www.sciencedaily.com/releases/2026/07/260719035951.htm" target="_blank" rel="noopener">ScienceDaily</a>.</li>
+<li><strong>Rappel anti-battage&#160;:</strong> une revue syst&eacute;matique dans <em>Lancet Healthy Longevity</em> conclut qu'aucun essai existant ne prouve que la rapamycine prolonge la vie chez l'adulte sain &mdash; utile à garder en t&ecirc;te chaque fois qu'un chiffre &laquo;&#160;longévité&#160;&raquo; circule sans essai randomis&eacute; derri&egrave;re.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-oral-pcsk9-inhibitor-lower-ldl-cholesterol-adults-high-cholesterol" target="_blank" rel="noopener">FDA &mdash; Approbation Lipfendra</a></li>
+<li><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2511002" target="_blank" rel="noopener">NEJM &mdash; CORALreef Lipids</a></li>
+<li><a href="https://www.merck.com/news/mercks-enlicitide-decanoate-an-investigational-oral-pcsk9-inhibitor-significantly-reduced-ldl-c-in-adults-with-heterozygous-familial-hypercholesterolemia-hefh-in-phase-3-coralreef-hefh-tr/" target="_blank" rel="noopener">Merck &mdash; CORALreef HeFH</a></li>
+<li><a href="https://chicago.suntimes.com/health/2026/07/16/cholesterol-pill-lipfendra-fda-heart-disease-enlicitide" target="_blank" rel="noopener">Chicago Sun-Times &mdash; Coût et accès</a></li>
+<li><a href="https://health.ucsd.edu/news/press-releases/2026-07-16-glp-1-shows-promise-for-patients-with-advanced-fatty-liver-disease/" target="_blank" rel="noopener">UC San Diego Health &mdash; Sémaglutide et fibrose hépatique</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/36934740/" target="_blank" rel="noopener">PubMed &mdash; Essai antérieur négatif (cirrhose NASH)</a></li>
+<li><a href="https://www.mdedge.com/endocrinology/article/262228/gastroenterology/semaglutide-doesnt-improve-fibrosis-nash-related" target="_blank" rel="noopener">MDedge &mdash; Semaglutide Doesn't Improve Fibrosis</a></li>
+<li><a href="https://www.nejm.org/doi/10.1056/NEJMoa2413258" target="_blank" rel="noopener">NEJM &mdash; Essai ESSENCE</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/07/260721000822.htm" target="_blank" rel="noopener">ScienceDaily &mdash; Télévision et volumes cérébraux</a></li>
+<li><a href="https://dornsife.usc.edu/news/stories/heavy-tv-watching-associated-with-smaller-brain-structures/" target="_blank" rel="noopener">USC Dornsife &mdash; Communiqué</a></li>
+<li><a href="https://divisionofresearch.kaiserpermanente.org/publications/long-term-television-viewing-patterns-and-gray-matter-brain-volume-in-midlife/" target="_blank" rel="noopener">Kaiser Permanente Division of Research</a></li>
+<li><a href="https://www.nature.com/articles/s41591-026-04485-5" target="_blank" rel="noopener">Nature Medicine &mdash; Biomarqueur ARN circulaire</a></li>
+</ul></div><div class="bottom-nav"><a href="../2026-07-22.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
