@@ -184,6 +184,7 @@
 .gx-card__order li{font-size:0.92em;line-height:1.55;margin:0 0 5px;list-style:none}
 .gx-card__order li b{font-weight:600;color:#1a1a1a}
 .gx-card__order li em{color:var(--ink-2,#555)}
+.gx-card__order li .ord-star{color:#c4a35a;font-size:0.92em;margin-right:3px}
 .gx-card__order ul{margin:0;padding:0}
 
 </style>
@@ -415,7 +416,7 @@ window.addEventListener('load', function () {
     if(!v.dishes || !v.dishes.length) return null;
     var d = document.createElement('div'); d.className='gx-card__order';
     d.innerHTML = '<div class="gx-card__order-title">To order — the icons</div><ul>' +
-      v.dishes.map(function(x){ return '<li><b>'+esc(x.name)+'</b> — <em>'+esc(x.note)+'</em></li>'; }).join('') + '</ul>';
+      v.dishes.map(function(x){ return '<li><span class="ord-star">★</span> <b>'+esc(x.name)+'</b>: <em>'+esc(x.note)+'</em></li>'; }).join('') + '</ul>';
     return d;
   }
   function priceTag(v){
@@ -498,6 +499,35 @@ window.addEventListener('load', function () {
   }
   if(document.readyState==='complete') wire();
   else window.addEventListener('load', wire);
+})();
+</script>
+<script>
+/* Athens — scoped: add the star "To order" panel to the 3 berth cards (the kit renders dishes only on the organiser's Grande/Petite cards) */
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function panel(v){
+    if(!v.dishes||!v.dishes.length)return null;
+    var d=document.createElement('div'); d.className='gx-card__order';
+    d.innerHTML='<div class="gx-card__order-title">To order — the icons</div><ul>'+
+      v.dishes.map(function(x){return '<li><span class="ord-star">★</span> <b>'+esc(x.name)+'</b>: <em>'+esc(x.note)+'</em></li>';}).join('')+'</ul>';
+    return d;
+  }
+  function run(){
+    var D=window.TERROIR_DATA; if(!D||!D.VENUES)return;
+    var byId={}; D.VENUES.forEach(function(v){byId[v.id]=v;});
+    document.querySelectorAll('#terroir-berths .terroir-berth[data-venue-id]').forEach(function(c){
+      if(c.__orderWired)return;
+      var v=byId[c.getAttribute('data-venue-id')]; if(!v)return;
+      var p=panel(v); if(!p)return;
+      var a=c.querySelector('.terroir-card__signature')||c.querySelector('.terroir-card__verdict');
+      if(a&&a.parentNode){a.parentNode.insertBefore(p,a.nextSibling);} else {c.appendChild(p);}
+      c.__orderWired=true;
+    });
+  }
+  function boot(){ setTimeout(run,300); setTimeout(run,1200); setTimeout(run,2500);
+    var t=document.getElementById('terroir-berths');
+    if(t)new MutationObserver(run).observe(t,{childList:true,subtree:true}); }
+  if(document.readyState!=='loading')boot(); else document.addEventListener('DOMContentLoaded',boot);
 })();
 </script>
 </body>
