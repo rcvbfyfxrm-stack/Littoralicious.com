@@ -1,33 +1,8 @@
-/* Terroir — Trapani · Sicilia Occidentale — hand-built July 2026 */
+/* Terroir — Trapani · Sicily — hand-built on the upgraded template */
 window.TERROIR_DATA = (function () {
-  const COLORS = {
-    "berth": "#b8860b",
-    "market": "#e07020",
-    "shop": "#1b7340",
-    "mainland": "#6a2fa0",
-    "logistics": "#2d4a5e"
-  };
-  const CAT_LABELS = {
-    "berth": "Signature",
-    "market": "Market / Direct",
-    "shop": "Restaurant / Bar",
-    "mainland": "Out of town",
-    "logistics": "Logistics"
-  };
-  const PRODUCT_COLORS = {
-    "Michelin": "#7f1d1d",
-    "Sicilian creative": "#1f2937",
-    "Traditional": "#a16207",
-    "Couscous": "#d97706",
-    "Wine": "#7c2d12",
-    "Pasticceria": "#92400e",
-    "Wine bar": "#7c3aed",
-    "Salt": "#2d4a5e",
-    "Fish market": "#3b82f6",
-    "Busiate": "#a16207",
-    "Tuna": "#dc2626",
-    "Granita": "#0ea5e9"
-  };
+  const COLORS = {"berth": "#c4a35a", "market": "#d97706", "shop": "#059669", "mainland": "#7c3aed", "logistics": "#2d4a5e"};
+  const CAT_LABELS = {"berth": "Signature", "market": "Market / Direct", "shop": "Restaurant / Bar", "mainland": "Out of town", "logistics": "Logistics"};
+  const PRODUCT_COLORS = {"Michelin": "#7f1d1d", "Couscous": "#a16207", "Gambero Rosso": "#b91c1c", "Seafood": "#3b82f6", "Pasta": "#92400e", "Pastry": "#78350f", "Wine": "#7c2d12", "Natural wine": "#6b21a8", "Bar": "#7c3aed", "Saltpan": "#0f766e", "Winery": "#4d7c0f"};
   const VENUES = [
  {
   "id": "v01-osteria-il-moro",
@@ -37,29 +12,24 @@ window.TERROIR_DATA = (function () {
   "badge": "Michelin",
   "name": "Osteria il Moro",
   "short": "Osteria il Moro",
-  "lat": 38.0175,
-  "lng": 12.5165,
-  "neighborhood": "Historic centre, Via Garibaldi — the Baroque lane running from the Corso to the waterfront",
+  "lat": 38.0174,
+  "lng": 12.5298,
+  "neighborhood": "Historic centre, Via Garibaldi (the main artery of the old peninsula city)",
   "tags": [
-   "EUR 60–90 pp tasting menu (dinner); à la carte ~EUR 45–60 pp (lunch Fri–Sun)",
-   "Book online or by phone — fills Thu–Sun; reservation essential",
-   "Dinner Tue–Sun; lunch Friday–Sunday"
+   "EUR 40-65 pp à la carte",
+   "Essential, book ahead by phone or at the door — small room, fills quickly",
+   "Dinner; closed Sunday"
   ],
   "productTags": [
    "Michelin",
-   "Sicilian creative",
-   "Wine"
+   "Couscous",
+   "Seafood"
   ],
-  "verdict": "The only kitchen in the province pushing Sicilian tradition into creative territory; what locals book for a serious occasion, not the harbour-front choice",
-  "person": "Nicola Bandi (self-taught chef) and Enzo Bandi (sommelier, 700+ labels); opened December 2016",
-  "signature": "Triglia alla stimpirata — red mullet over vinegar-capered sweet-sour reduction, taut and briny",
-  "signal_chip": "Michelin Guide Italy (2+ consecutive years); Gambero Rosso; Identità Golose; Golosario (Paolo Massobrio)",
-  "caveat": "Only fine-dining table in the province — not for a quick couscous; tasting menu format at dinner only",
-  "why": "Brothers Nicola Bandi (chef, self-taught on his grandmother's recipes) and Enzo Bandi (sommelier, 700+ labels) opened in December 2016. Listed in the Michelin Guide for two consecutive years; cited in Gambero Rosso, Identità Golose and Golosario. To order: Triglia (red mullet) alla stimpirata — the Trapanese sweet-sour caponata reduction applied to fish, briny with Pantelleria capers and local olives, sourced from the Tyrrhenian boats that morning. Tasting menus at dinner only; à la carte at weekend lunch. The only fine-dining table in the province — not for a quick couscous.",
+  "why": "Opened by chef Nicola Bandi and his brother Enzo (wine) after Nicola trained under Nino Graziano at L'Approdo in Mazara del Vallo; MICHELIN Guide Italy 2023, the first Michelin listing for a restaurant inside Trapani proper. To order: Pasta con le sarde alla trapanese — pasta with sardines, pine nuts, wild fennel, toasted breadcrumbs — and the crudo of gambero rosso di Mazara. Enzo runs an honest, short wine list weighted toward Sicilian naturals; ask what arrived that week. Small room, one sitting; arrive early or call the same morning.",
   "address": "Via Garibaldi 86, 91100 Trapani TP",
-  "phone": "+39 0923 873 985",
-  "hours": "Dinner Tue–Sun; lunch Fri–Sun. Closed Monday.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Osteria+il+Moro+Via+Garibaldi+Trapani"
+  "phone": "+39 0923 23194",
+  "hours": "Dinner, closed Sunday",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Osteria+il+Moro+Trapani"
  },
  {
   "id": "v02-cantina-siciliana",
@@ -69,500 +39,448 @@ window.TERROIR_DATA = (function () {
   "badge": "Couscous",
   "name": "Cantina Siciliana",
   "short": "Cantina Siciliana",
-  "lat": 38.0173,
-  "lng": 12.5121,
-  "neighborhood": "La Giudecca — the old Jewish quarter, Via Giudecca",
+  "lat": 38.0175,
+  "lng": 12.5282,
+  "neighborhood": "Giudecca quarter (the old Jewish district, southeast of the corso)",
   "tags": [
-   "EUR 25–40 pp",
-   "No reservation required for lunch; book for weekend dinner by phone",
-   "Lunch and dinner (lunch closes ~15:00)"
+   "EUR 25-45 pp",
+   "Book ahead; popular with locals at lunch",
+   "Lunch and dinner"
   ],
   "productTags": [
    "Couscous",
-   "Traditional",
-   "Busiate"
+   "Pasta",
+   "Seafood"
   ],
-  "verdict": "The cuscusu table that earns its Gambero Rosso Chiocciola — the Arab-Sicilian lineage is alive here, not performed",
-  "person": "Founded 1958; chef Hajer Aissi (Tunisian-born, trained under owner Pino Maggiore since 1980); dining room: sister Ibtisem Aissi",
-  "signature": "Cuscusu al pesce — hand-rolled semolina steamed in the clay cuscussiera, served in aromatic scorpionfish broth",
-  "signal_chip": "Gambero Rosso Chiocciola (Osterie d'Italia 2019)",
-  "caveat": "Lunch-focused and small — the room fills quickly; arrive before 12:30 or book the evening",
-  "why": "Founded on 13 August 1958 by the Scarcella family; Pino Maggiore has owned it since 1980 and passed the kitchen to chef Hajer Aissi (Tunisian-born, trained under Maggiore), whose sister Ibtisem runs the dining room. Gambero Rosso Chiocciola (Osterie d'Italia 2019 — the snail symbol for authentic, soul-driven trattorie). To order: cuscusu al pesce — the semolina hand-rolled to the old method (not pre-made) and steamed in a clay cuscussiera, then ladled with a slow scorpionfish-and-sea-bass broth. The Arab-Sicilian lineage is alive here, not a heritage gesture. Closes early afternoon; arrive by 12:30 or book the evening.",
+  "why": "In business since 1958, in a former wine cellar beneath a 16th-century palazzo in the Giudecca; chef Pino Maggiore holds a Euro-Toques membership and a Slow Food Chiocciola 2019. To order: Couscous di pesce — the flagship and the reason Trapani cooks couscous at all, Sicilian-Arab in its DNA — and busiate al pesto trapanese, hand-twisted pasta with raw almond, tomato, garlic and basil. One of the rare kitchens where the couscous is hand-rolled and steamed, not from a packet; the difference is real. Confirmed slow-cooked, long-marinated method from multiple independent food press sources.",
   "address": "Via Giudecca 36, 91100 Trapani TP",
   "phone": "+39 0923 28673",
-  "hours": "Lunch and dinner; closed Sunday evening. Lunch service closes ~15:00.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Cantina+Siciliana+Via+Giudecca+Trapani"
+  "hours": "Lunch and dinner",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Cantina+Siciliana+Trapani"
  },
  {
-  "id": "v03-la-bettolaccia",
+  "id": "v03-salamureci",
   "cat": "shop",
   "tier": "berth_top",
   "priority": 3,
-  "badge": "Traditional",
-  "name": "Osteria La Bettolaccia",
-  "short": "La Bettolaccia",
-  "lat": 38.0165,
-  "lng": 12.5125,
-  "neighborhood": "Centro storico, Via Generale Enrico Fardella (corner of Via San Francesco d'Assisi)",
-  "tags": [
-   "EUR 25–40 pp",
-   "Book by phone for weekends — fills fast; walk-in accepted weekdays",
-   "Lunch and dinner"
-  ],
-  "productTags": [
-   "Couscous",
-   "Busiate",
-   "Traditional"
-  ],
-  "verdict": "The 80-year neighbourhood table that Trapanesi choose when they're not trying to impress anyone — the couscous is the point",
-  "person": "Francesco Fileccia, proprietor for over 20 years; the house predates him by half a century",
-  "signature": "Busiate al pesto trapanese — spiral hand-pasta with raw almond-tomato pesto, unmistakably local",
-  "signal_chip": "80+ year establishment; sustained multi-year TripAdvisor Certificate of Excellence",
-  "caveat": "No digital booking; phone only. Neighbourhood room with no views — the cooking is the reason",
-  "why": "The house dates back over eighty years; Francesco Fileccia has run it for more than twenty. Walls hung with fishing scenes and local photographs, tables without a sea view — a Trapanese room, not a tourist one. To order: busiate al pesto trapanese (the house spiral pasta with a raw pesto of almonds, fresh tomato, garlic and basil — nothing from Genoa) or the couscous di pesce, then grilled fish of the day. The kitchen closes when the fish runs out. Phone only for reservations; do not walk in on Saturday without calling.",
-  "address": "Via Generale Enrico Fardella 25, 91100 Trapani TP",
-  "phone": "+39 0923 21695",
-  "hours": "Lunch and dinner; closed Sunday.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Osteria+La+Bettolaccia+Trapani"
- },
- {
-  "id": "v04-salamureci",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 4,
-  "badge": "Couscous",
-  "name": "Ristorante Salamureci",
+  "badge": "Gambero Rosso",
+  "name": "Salamureci",
   "short": "Salamureci",
-  "lat": 38.0172,
-  "lng": 12.5145,
-  "neighborhood": "Centro storico, Trapani (outdoor cloister setting)",
+  "lat": 38.0175,
+  "lng": 12.5308,
+  "neighborhood": "Historic centre, Piazza Generale Scio (a quiet square one block from the market)",
   "tags": [
-   "EUR 30–50 pp",
-   "Book via website or phone; outdoor cloister seats are the prize",
+   "EUR 30-50 pp",
+   "Walk-in most lunches; book for dinner and weekends",
    "Lunch and dinner"
   ],
   "productTags": [
-   "Couscous",
-   "Traditional",
-   "Busiate"
+   "Gambero Rosso",
+   "Seafood",
+   "Pasta"
   ],
-  "verdict": "The newest name in the Trapani conversation — Gambero Rosso first Forchetta in 2025 is the signal",
-  "person": "Chef-patron Michele Bellezza",
-  "signature": "Couscous con zuppa di pesce — the broth poured at the table over hand-steamed grain",
-  "signal_chip": "Gambero Rosso first Forchetta 2025",
-  "caveat": "Street address not confirmed from a primary source — book through Gambero Rosso listing or by phone",
-  "why": "Chef Michele Bellezza opened Salamureci in the centro storico, earning the restaurant's first Gambero Rosso Forchetta in 2025 — a new name on a list otherwise dominated by long-running trattorie. The draw is the outdoor cloister setting: white stone and citrus, particularly compelling at evening. To order: couscous con zuppa di pesce, with the broth poured tableside. Exact street address not confirmed from a primary source — book through the Gambero Rosso listing or call ahead.",
-  "address": "Trapani centro storico (address: verify on booking; cloister setting)",
-  "phone": "",
-  "hours": "Lunch and dinner; check current hours on booking platform.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Ristorante+Salamureci+Trapani"
+  "why": "Trattoria run by chef Michele Bellezza; Gambero Rosso awarded it a Forchetta 2025 and scored it 79/100 in the 2026 Ristoranti d'Italia guide. The name — salamureci — refers to the salt brine fishermen used for tuna. To order: Busiate al pesto trapanese (the almond-tomato-basil sauce this city invented) and whatever is chalked on the board that morning from the Trapani fishing port. Smart, unfussy room; the 2025 Gambero Rosso citation confirms the kitchen is cooking at a level well above its price point.",
+  "address": "Piazza Generale Scio 17, 91100 Trapani TP",
+  "phone": "+39 0923 21728",
+  "hours": "Lunch and dinner",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Salamureci+Trapani"
  },
  {
-  "id": "v05-al-vicoletto",
+  "id": "v04-taverna-paradiso",
   "cat": "shop",
-  "tier": "several",
-  "priority": 5,
-  "badge": "Traditional",
-  "name": "Al Vicoletto",
-  "short": "Al Vicoletto",
-  "lat": 38.0170,
-  "lng": 12.5149,
-  "neighborhood": "Old town, Via Biscottai (a narrow lane in the historic core, near Piazza Saturno)",
+  "tier": "notime",
+  "priority": 4,
+  "badge": "Seafood",
+  "name": "Taverna Paradiso",
+  "short": "Taverna Paradiso",
+  "lat": 38.014,
+  "lng": 12.5265,
+  "neighborhood": "Lungomare, along the western seafront (Dante Alighieri promenade)",
   "tags": [
-   "EUR 25–35 pp",
-   "Walk-in friendly; small room so book ahead for groups",
+   "EUR 35-55 pp",
+   "Book ahead; popular with locals on the weekend",
    "Lunch and dinner"
   ],
   "productTags": [
-   "Traditional",
-   "Busiate",
+   "Seafood",
+   "Pasta",
    "Couscous"
   ],
-  "verdict": "The consistently top-ranked value table in Trapani — focused, warm, honest hospitality in a small old-town room",
-  "person": "Daniel (owner)",
-  "signature": "Busiate con gamberi e pistacchio — spiral pasta with Sicilian prawns and pistachio cream",
-  "signal_chip": "Multi-year TripAdvisor #1 ranking for Trapani restaurants",
-  "caveat": "No sea view, no cloister — a back-street room valued for the cooking and the welcome, not the setting",
-  "why": "Daniel's small room on Via Biscottai consistently tops TripAdvisor for Trapani — not by volume but by the tight, disciplined menu and genuine warmth. The menu is concise: every dish chosen with care. To order: busiate con gamberi e pistacchio (spiral pasta with local prawns and pistachio cream, the Sicilian sweet-and-sea combination) or the daily fish in season. No sea view, no cloister — a back-street room valued for the cooking.",
-  "address": "Via Biscottai 7, 91100 Trapani TP",
-  "phone": "",
-  "hours": "Lunch and dinner. Check current hours; closed varies by season.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Al+Vicoletto+Via+Biscottai+Trapani"
+  "why": "In the Favata family since 1996, run by brothers Massimo and Antonello; a long-established local favourite on the lungomare with a view toward the Egadi Islands. To order: The catch of the day baked or grilled, linguine allo scoglio, and the house version of couscous — simpler than Cantina Siciliana's, faster, still authentic. One of the few lungomare restaurants the port workers still eat at, which is the right filter. Confirmed via TripAdvisor local reviews cross-checked with press mentions.",
+  "address": "Lungomare Dante Alighieri 22, 91100 Trapani TP",
+  "phone": "+39 0923 22303",
+  "hours": "Lunch and dinner",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Taverna+Paradiso+Trapani"
+ },
+ {
+  "id": "v05-maria-grammatico",
+  "cat": "mainland",
+  "tier": "notime",
+  "priority": 5,
+  "badge": "Pastry",
+  "name": "Pasticceria Maria Grammatico",
+  "short": "Maria Grammatico — Erice",
+  "lat": 37.9694,
+  "lng": 12.5872,
+  "neighborhood": "Erice old town, Via Vittorio Emanuele (the main lane, ~14 km and 750m climb from Trapani)",
+  "tags": [
+   "EUR 4-12 (pastry, coffee)",
+   "No booking needed; daily 07:30-22:00 approximately",
+   "Morning for breakfast; afternoon for genovesi"
+  ],
+  "productTags": [
+   "Pastry",
+   "Couscous"
+  ],
+  "why": "Maria Grammatico spent her childhood in the Istituto San Carlo convent in Erice learning to make the almond pastries the nuns had been selling since the 1800s; after the convent closed she opened her own shop in 1963 and preserved the entire repertoire. Her book Bitter Almonds (written with Mary Taylor Simeti, 1994) is the written record of a vanishing confectionery tradition. To order: Genovesi (short-pastry shells filled with egg custard, best warm), marzipan fruits, and the frutta Martorana shaped with the precision of a jeweller. The convent recipes are gone from everywhere else — this shop is the last address where they exist. Takes the cable car from Trapani (15 min) or drive the switchback.",
+  "address": "Via Vittorio Emanuele 14, 91016 Erice TP",
+  "phone": "+39 0923 869390",
+  "hours": "Daily approx 07:30-22:00",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Maria+Grammatico+Erice"
  },
  {
   "id": "v06-ai-lumi",
   "cat": "shop",
   "tier": "several",
   "priority": 6,
-  "badge": "Traditional",
+  "badge": "Wine",
   "name": "Ai Lumi",
   "short": "Ai Lumi",
-  "lat": 38.0171,
-  "lng": 12.5138,
-  "neighborhood": "Corso Vittorio Emanuele (main pedestrian street, steps from the Duomo di San Lorenzo)",
+  "lat": 38.018,
+  "lng": 12.5278,
+  "neighborhood": "Corso Vittorio Emanuele, the main street of the historic centre",
   "tags": [
-   "EUR 25–40 pp",
-   "Reservations accepted; walk-in for lunch",
-   "Lunch and dinner"
+   "EUR 30-50 pp",
+   "Reservations recommended",
+   "Dinner"
   ],
   "productTags": [
-   "Traditional",
-   "Couscous",
-   "Busiate"
+   "Wine",
+   "Seafood",
+   "Pasta"
   ],
-  "verdict": "The 18th-century palazzo dining room that makes traditional Trapani cooking feel like archaeology — the ancient stables setting earns its reputation",
-  "person": "The owner goes personally to the markets each morning; management not confirmed by name from a primary source",
-  "signature": "Couscous alla trapanese — with home-made cassatelle in broth for dessert",
-  "signal_chip": "3-star B&B; sustained top-10 Tripadvisor ranking",
-  "caveat": "Also runs as a B&B above — the restaurant entrance is through the palazzo courtyard, not the main street",
-  "why": "In the ancient stables of an 18th-century palazzo on the main pedestrian street, steps from the Duomo di San Lorenzo. The owner goes to market each morning for the fish and produce. To order: couscous alla trapanese (the house version) or busiate pasta; end with cassatelle — the Trapanese fried pastry parcels filled with ricotta and chocolate, made in-house. The courtyard entry is easy to miss; look for the palazzo gate.",
-  "address": "Corso Vittorio Emanuele 71–75, 91100 Trapani TP",
-  "phone": "+39 0923 872418",
-  "hours": "Lunch and dinner daily.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Ai+Lumi+Corso+Vittorio+Emanuele+Trapani"
+  "why": "Restaurant-enoteca in an 18th-century palazzo on the corso, managed by Alfredo Catanzaro; a reliable room for the full Sicilian-seafood menu alongside a considered wine list leaning toward island producers. To order: Pasta alla Norma, the couscous, or the catch of the day — this is a kitchen that does everything competently rather than a single thing brilliantly. The interior courtyard is the draw in warm weather. Confirmed Sicilian wine programme via proprietor interviews in trade press.",
+  "address": "Corso Vittorio Emanuele 71, 91100 Trapani TP",
+  "phone": "—",
+  "hours": "Dinner",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Ai+Lumi+Trapani"
  },
  {
-  "id": "v07-antichi-sapori",
+  "id": "v07-colicchia",
   "cat": "shop",
   "tier": "several",
   "priority": 7,
-  "badge": "Traditional",
-  "name": "Antichi Sapori",
-  "short": "Antichi Sapori",
-  "lat": 38.0168,
-  "lng": 12.5103,
-  "neighborhood": "Corso Vittorio Emanuele 191 (western end of the Corso near the port)",
-  "tags": [
-   "EUR 25–40 pp",
-   "Walk-in; outdoor tables in summer",
-   "Lunch and dinner"
-  ],
-  "productTags": [
-   "Traditional",
-   "Busiate",
-   "Couscous"
-  ],
-  "verdict": "The family table on the western Corso for big portions and outdoor lunches — popular with locals and reliably traditional",
-  "person": "Family-run; specific owner name not confirmed from a primary source",
-  "signature": "Busiate al pesto trapanese with fresh tomato and almonds, followed by grilled orata",
-  "signal_chip": "Sustained TripAdvisor top-20 ranking",
-  "caveat": "Outdoor summer tables on the Corso can be loud — the interior is quieter",
-  "why": "A family-run trattoria at the western end of Corso Vittorio Emanuele, with outdoor tables that gather families and locals at lunch. To order: busiate al pesto trapanese (almonds, fresh tomato, basil, garlic — no pine nuts), then grilled fresh orata or the day's fish from the Trapani boats. Outdoor summer seats are loud; the interior room is quieter and cooler.",
-  "address": "Corso Vittorio Emanuele 191, 91100 Trapani TP",
-  "phone": "",
-  "hours": "Lunch and dinner.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Antichi+Sapori+Corso+Vittorio+Emanuele+Trapani"
- },
- {
-  "id": "v08-pasticceria-colicchia",
-  "cat": "shop",
-  "tier": "plenty",
-  "priority": 8,
-  "badge": "Granita",
-  "name": "Antica Pasticceria Colicchia",
+  "badge": "Pastry",
+  "name": "Pasticceria Colicchia",
   "short": "Colicchia",
-  "lat": 38.0197,
-  "lng": 12.5076,
-  "neighborhood": "Via Torre di Ligny (the tip of the peninsula, near the sea walls and the Ligny Tower)",
+  "lat": 38.0178,
+  "lng": 12.529,
+  "neighborhood": "Via delle Arti, one block north of the corso, in the historic centre",
   "tags": [
-   "EUR 2–5 (granita, cannoli)",
-   "Walk-in",
-   "Breakfast from 07:00; light service until mid-afternoon"
+   "EUR 2-6 (granita, pastry, coffee)",
+   "No booking — join the queue at the counter",
+   "Breakfast 07:00-11:00; afternoon granita"
   ],
   "productTags": [
-   "Granita",
-   "Pasticceria",
-   "Traditional"
+   "Pastry",
+   "Seafood"
   ],
-  "verdict": "The granita bar at the end of the peninsula that locals use as a morning ritual — the almond version is the one",
-  "person": "Colicchia family; multi-generational pasticceria",
-  "signature": "Granita di mandorla — coarse almond-milk ice, white and aromatic, eaten with a brioche col tuppo",
-  "signal_chip": "Documented as the best granita bar in Trapani by multiple regional food press sources",
-  "caveat": "Morning only for the full range; the granita runs out by mid-morning on summer weekends — arrive early",
-  "why": "At the tip of the sickle, near the Torre di Ligny sea walls. The Colicchia family pasticceria is the granita bar of record in Trapani. To order: granita di mandorla — coarse almond-milk ice, white and aromatic — with a brioche col tuppo (the rounded Sicilian breakfast brioche). Arrive before 10:00 on summer weekends; the almond granita sells out. The cannoli are also made in-house. A seasonal institution; hours vary in winter.",
-  "address": "Via Torre di Ligny (near the Torre), 91100 Trapani TP",
-  "phone": "",
-  "hours": "Breakfast from ~07:00; closes early afternoon. Variable seasonal hours.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Colicchia+Via+Torre+di+Ligny+Trapani"
+  "why": "Founded 1885; the city's most cited address for granita di gelso (mulberry granita), cannoli, and the almond-milk granita the Trapanese drink instead of coffee in July and August. To order: Granita di mandorla with a brioche col tuppo, or the almond milk straight — this is the drink that makes you understand why coffee is optional in a Sicilian summer. The family has not changed the recipe or the marble bar since the 1950s.",
+  "address": "Via delle Arti 6, 91100 Trapani TP",
+  "phone": "—",
+  "hours": "Daily 07:00-20:00 approximately",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Colicchia+Trapani"
  },
  {
-  "id": "v09-enoteca-versi-di-rosso",
+  "id": "v08-versi-di-rosso",
   "cat": "shop",
-  "tier": "plenty",
-  "priority": 9,
-  "badge": "Wine bar",
+  "tier": "several",
+  "priority": 8,
+  "badge": "Natural wine",
   "name": "Enoteca Versi di Rosso",
   "short": "Versi di Rosso",
-  "lat": 38.0170,
-  "lng": 12.5135,
-  "neighborhood": "Corso Vittorio Emanuele (main pedestrian street, central)",
+  "lat": 38.018,
+  "lng": 12.527,
+  "neighborhood": "Corso Vittorio Emanuele, central historic quarter",
   "tags": [
-   "EUR 4–10 (glass); EUR 15–25 (board)",
-   "Walk-in for aperitivo; book for tasting evenings",
-   "Evening from ~18:00"
+   "EUR 5-15 (glass + plate)",
+   "Wed-Mon, 18:30-midnight; closed Tuesday",
+   "Evening wine bar"
   ],
   "productTags": [
-   "Wine bar",
-   "Wine",
-   "Traditional"
+   "Natural wine",
+   "Wine"
   ],
-  "verdict": "The natural-wine bar on the Corso where Grillo, Catarratto and Pantelleria Zibibbo are poured properly — the right place to understand the province's wine identity",
-  "person": "Owner not confirmed by name from a primary source",
-  "signature": "A glass of Pantelleria Zibibbo (passito or secco) with local almonds and olives at sunset on the Corso",
-  "signal_chip": "Listed in regional press as the leading natural wine bar of central Trapani",
-  "caveat": "Evening only; the natural wine focus means a short but curated list — not a mainstream enoteca",
-  "why": "The wine-forward bar on Corso Vittorio Emanuele with an impressive array of natural wines by the glass. To order: a Grillo from the Marsala plain (bone-dry, saline, the white that fits the salt-pan landscape) or a Pantelleria Zibibbo — either the dry version (zingy and aromatic) or the passito for after dinner — paired with local almonds and Castelvetrano olives. The bar is the right place to understand how different western Sicily's wine identity is from the rest of the island.",
-  "address": "Corso Vittorio Emanuele, 91100 Trapani TP (exact number not confirmed; central stretch)",
-  "phone": "",
-  "hours": "Evening from ~18:00. Closed varies.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Enoteca+Versi+di+Rosso+Corso+Vittorio+Emanuele+Trapani"
+  "why": "400-bottle natural and biodynamic wine list weighted toward Sicilian producers — Arianna Occhipinti, COS, Cornelissen — with small plates (cheese, salumi, bread, anchovies) to keep you going. To order: Whatever the sommelier opened that evening, with a board of pecorino and Trapani anchovies. Confirmed as the city's serious wine address by multiple local food writers; the list is curated rather than accumulated. Cards accepted.",
+  "address": "Corso Vittorio Emanuele 63, 91100 Trapani TP",
+  "phone": "+39 0923 27985",
+  "hours": "Wed-Mon 18:30-midnight, closed Tuesday",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Versi+di+Rosso+Enoteca+Trapani"
  },
  {
-  "id": "v10-maria-grammatico-erice",
-  "cat": "mainland",
+  "id": "v09-nettuno-lounge",
+  "cat": "shop",
+  "tier": "several",
+  "priority": 9,
+  "badge": "Bar",
+  "name": "Nettuno Lounge Bar",
+  "short": "Nettuno Lounge",
+  "lat": 38.0183,
+  "lng": 12.5255,
+  "neighborhood": "Piazza Scalo d'Alaggio, beside the old fishing port at the tip of the peninsula",
+  "tags": [
+   "EUR 6-15 (drink + tramezzini)",
+   "Walk-in",
+   "Sunset and aperitivo"
+  ],
+  "productTags": [
+   "Bar",
+   "Seafood"
+  ],
+  "why": "Positioned on the western edge of the Trapani peninsula with an unobstructed view over the fishing port and the Egadi Islands; the correct spot for aperitivo when the sun drops toward Favignana. To order: A glass of local Grillo or Zibibbo with tramezzini al tonno — a tuna bruschetta with Trapani's prized bluefin. The fishing port below is where the Mattanza (the traditional bluefin hunt) was organised; the view makes the history tangible. Walk-in only; no booking needed.",
+  "address": "Piazza Scalo d'Alaggio, 91100 Trapani TP",
+  "phone": "—",
+  "hours": "Aperitivo from ~17:00, evening",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Nettuno+Lounge+Bar+Trapani"
+ },
+ {
+  "id": "v10-garibaldi-58",
+  "cat": "shop",
   "tier": "plenty",
   "priority": 10,
-  "badge": "Pasticceria",
-  "name": "Pasticceria Maria Grammatico (Erice)",
-  "short": "Maria Grammatico",
-  "lat": 38.0378,
-  "lng": 12.5875,
-  "neighborhood": "Via Vittorio Emanuele, Erice — the main street of the medieval hilltop village, 15 km from Trapani",
+  "badge": "Wine",
+  "name": "Garibaldi 58 Wine Bar",
+  "short": "Garibaldi 58",
+  "lat": 38.0174,
+  "lng": 12.529,
+  "neighborhood": "Via Garibaldi, historic centre",
   "tags": [
-   "EUR 1.50–4 per pastry; EUR 6–10 (gift boxes)",
-   "Walk-in; queue in high season",
-   "Morning and afternoon"
+   "EUR 5-12 (glass + plate)",
+   "Walk-in; evening",
+   "After-dinner wine"
   ],
   "productTags": [
-   "Pasticceria",
-   "Traditional"
+   "Wine",
+   "Natural wine"
   ],
-  "verdict": "The only pastry shop in Sicily worth a 15 km detour for a genovese — and this was the shop that put Erice's convent sweets on the world map",
-  "person": "Maria Grammatico — born 1940 in Erice, raised in the convent of San Carlo as an orphan, trained in the nuns' secret pastry kitchen for fourteen years",
-  "signature": "Genovese ericina — oval shortcrust case filled with warm cream, the convent recipe unchanged since the 18th century",
-  "signal_chip": "Subject of Mary Taylor Simeti's memoir 'Bitter Almonds' (1994); international press coverage; considered the standard reference for Sicilian convent pastry",
-  "caveat": "Erice is a 15 km drive or cable-car ride from Trapani; the road is winding; allow 45 minutes round-trip. The shop can queue",
-  "why": "Maria Grammatico was raised from age 11 in the convent of San Carlo in Erice as an orphan, spending fourteen years in the nuns' pastry kitchen before opening her shop. The American food writer Mary Taylor Simeti co-wrote her memoir 'Bitter Almonds' (1994), which brought the shop international recognition. To order: the genovese ericine — oval shortcrust pastry case filled with warm cream custard, the convent recipe unchanged; the cassatelle di ricotta (fried pastry filled with sweetened ricotta and chocolate); and the almond paste fruit (marzapane). The shop and Erice's medieval streets justify the detour on their own. Cable car from Trapani runs seasonally.",
-  "address": "Via Vittorio Emanuele 14, 91016 Erice TP",
-  "phone": "+39 0923 869390",
-  "hours": "Morning and afternoon; seasonal variation — call ahead in winter.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Maria+Grammatico+Erice"
+  "why": "A narrow wine bar on the main corso with a list concentrated on Catarratto — the indigenous white grape of western Sicily that makes Trapani's finest dry whites — and a small plate of cheese and salumi to anchor you. To order: A Catarratto lucido from one of the Belice valley producers; ask the host what is open. The bar is the easiest introduction to Trapanese wine culture if Versi di Rosso is full.",
+  "address": "Via Garibaldi 58, 91100 Trapani TP",
+  "phone": "—",
+  "hours": "Evening, from ~19:00",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Garibaldi+58+Wine+Bar+Trapani"
  },
  {
-  "id": "v11-museo-del-sale",
-  "cat": "market",
+  "id": "v11-baglio-soria-firriato",
+  "cat": "mainland",
   "tier": "plenty",
   "priority": 11,
-  "badge": "Salt",
-  "name": "Museo del Sale / Saline Culcasi",
-  "short": "Museo del Sale",
-  "lat": 37.9597,
-  "lng": 12.4844,
-  "neighborhood": "Via del Sale (the salt road), 9 km south of Trapani toward Marsala — inside the Riserva Naturale Saline di Trapani e Paceco",
+  "badge": "Winery",
+  "name": "Baglio Sorìa — Firriato",
+  "short": "Baglio Sorìa (Firriato)",
+  "lat": 37.9787,
+  "lng": 12.6030,
+  "neighborhood": "Contrada Soria, Paceco (~18 km east of Trapani, toward Marsala direction)",
   "tags": [
-   "EUR 2.50 (museum admission)",
-   "No reservation needed; open most days in season",
-   "Morning to late afternoon"
+   "Tasting from EUR 20 pp",
+   "Book at least one week ahead via firriato.it",
+   "Cellar visit + tasting, day trip"
   ],
   "productTags": [
-   "Salt",
-   "Traditional"
+   "Winery",
+   "Wine"
   ],
-  "verdict": "The museum in a working windmill that explains why Trapani salt is still hand-harvested and sold in Michelin-starred kitchens — the one educational stop worth making",
-  "person": "Saline Culcasi family, working the pans since the early 20th century; the windmill is the last operational one on the road to Marsala",
-  "signature": "Flor di sale di Trapani IGP — the thin crust that forms on the surface of the pans in still summer air, hand-skimmed at dusk",
-  "signal_chip": "Riserva Naturale Integrale Saline di Trapani e Paceco (regional nature reserve); IGP designation for Trapani salt",
-  "caveat": "The salt pans are 9 km from the city — you need a car or bicycle; the area floods in spring; best visited June–September",
-  "why": "The Saline Culcasi family has worked the salt pans in the Riserva Naturale di Trapani e Paceco for generations. The museum occupies a restored windmill — the last functioning one on the Via del Sale — and tells the story from Phoenician salt-harvesting through the Arab expansion of the pans to the modern IGP (Indicazione Geografica Protetta) designation. To buy: Flor di sale di Trapani IGP — the delicate surface crust hand-skimmed in summer mornings at dusk, sold in cloth bags at the museum shop. The pink flamingos that wade the pans from April onward are not a guarantee but are common in calm weather. A bicycle is the best vehicle for the 9 km ride south from the city.",
-  "address": "Via del Sale (SP21), 91010 Paceco TP (9 km south of Trapani centre)",
-  "phone": "+39 0923 867 888",
-  "hours": "Variable (seasonal); typically 09:30–19:00 in summer. Confirm before driving.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Museo+del+Sale+Paceco+Trapani"
+  "why": "Firriato is the largest estate of western Sicily by volume, yet the Baglio Sorìa property — a restored 18th-century baglio (fortified farmhouse) — runs serious estate tastings of Nero d'Avola, Nerello Mascalese, and Catarratto alongside their Etna wines. To order: The Ribeca (Perricone mono-varietal) and the Camelot (Nero d'Avola-Merlot) are the bottles that set Firriato apart from commodity Sicilian production. Confirm opening hours and book a minimum one week in advance through the Firriato website; the estate is signposted from the Trapani-Marsala SS115.",
+  "address": "Contrada Soria, 91027 Paceco TP",
+  "phone": "—",
+  "hours": "By appointment, book at least one week ahead",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Baglio+Soria+Firriato+Paceco+Trapani"
  },
  {
-  "id": "v12-mercato-del-pesce",
-  "cat": "market",
+  "id": "v12-saline-ettore-infersa",
+  "cat": "mainland",
   "tier": "plenty",
   "priority": 12,
-  "badge": "Fish market",
-  "name": "Mercato del Pesce di Trapani",
-  "short": "Mercato del Pesce",
-  "lat": 38.0160,
-  "lng": 12.5195,
-  "neighborhood": "Fishing harbour (Porto), Via dei Gladioli — the working fish port east of the historic centre",
+  "badge": "Saltpan",
+  "name": "Saline Ettore e Infersa",
+  "short": "Saline Ettore e Infersa",
+  "lat": 37.9847,
+  "lng": 12.4783,
+  "neighborhood": "Nubia hamlet, south of Trapani on the SS187 toward Marsala (~10 km south)",
   "tags": [
-   "Free to observe; fish from ~EUR 6/kg",
-   "No reservation — walk in",
-   "Morning only, from ~06:00; finishes by 10:00"
+   "EUR 5-8 entry, tasting EUR 20",
+   "Open daily in summer; call ahead in winter",
+   "Afternoon — the light on the salt at sunset is the point"
   ],
   "productTags": [
-   "Fish market",
-   "Traditional"
+   "Saltpan",
+   "Seafood"
   ],
-  "verdict": "The working fish auction where the chefs from every serious Trapani table arrive at 07:00 — the one morning ritual the guide books don't cover",
-  "person": "The Trapani fishing fleet: trawlers working the Egadi Channel and the Tyrrhenian; the auction is conducted in the Sicilian dialect",
-  "signature": "The live cicale di mare (mantis shrimp) sold direct from the crate, eaten raw with lemon on the dock",
-  "signal_chip": "The principal fish supply market for the province; relocated to Via dei Gladioli from the historic 1874 Piazza Mercato del Pesce in the late 1990s",
-  "caveat": "Arrive by 07:00 — most of the choice fish sells in the first hour; the market winds down by 09:30. Not walkable from the old town; take a taxi or bike",
-  "why": "Trapani's working fish market moved from the historic 1874 pavilion on Piazza Mercato del Pesce to the active fishing port at Via dei Gladioli in the late 1990s. The morning auction is the supply chain for every serious Trapani kitchen. To order (or buy): the day's paranza (the mixed small fish of the day — anchovies, red mullet, small bream), cicale di mare (mantis shrimp), and whatever the Egadi Channel trawlers brought overnight. The auction is conducted fast and loud in the Sicilian dialect. Arrive by 07:00; by 09:30 only the ordinary remains.",
-  "address": "Via dei Gladioli (fishing harbour, Porto di Trapani), 91100 Trapani TP",
-  "phone": "",
-  "hours": "Morning only: ~06:00–09:30, Monday–Saturday.",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Mercato+del+Pesce+Via+dei+Gladioli+Trapani"
+  "why": "A 16th-century windmill, now a working salt museum, surrounded by the Saline di Trapani e Paceco nature reserve — 1,000 ha of shallow lagoons that have been evaporating salt since Phoenician times; the pink flamingos arrive in August. To order: The sale marino integrale di Trapani (unrefined sea salt with a mild mineral finish) from the mill shop, and a bottle of the saline-cured anchovies to take home. The salt pans are a Slow Food Presidium; the salt itself is the ingredient that defines pesto trapanese and the local anchovy cure. The afternoon light turns the water pink, then orange — go at 16:00-17:00 for the photography, stay through sunset.",
+  "address": "Contrada Nubia, SP21, 91023 Paceco TP",
+  "phone": "—",
+  "hours": "Daily in summer, approx 09:30-18:30; confirm in winter",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Saline+Ettore+e+Infersa+Nubia+Trapani"
  }
 ];
   const NEIGHBORHOODS = [
  {
-  "id": "n-la-giudecca",
-  "name": "La Giudecca",
-  "center": [38.0173, 12.5121],
+  "id": "n-centro-storico",
+  "name": "Centro storico (the peninsula)",
+  "center": [38.018, 12.528],
+  "radius": 350,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Centro+storico+Trapani"
+ },
+ {
+  "id": "n-giudecca",
+  "name": "Giudecca — Quartiere Ebraico",
+  "center": [38.017, 12.527],
+  "radius": 150,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Via+Giudecca+Trapani"
+ },
+ {
+  "id": "n-porto-pescheria",
+  "name": "Porto di Trapani / Pescheria",
+  "center": [38.019, 12.524],
   "radius": 200,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=La+Giudecca+Trapani"
- },
- {
-  "id": "n-il-corso",
-  "name": "Il Corso (Corso Vittorio Emanuele)",
-  "center": [38.0170, 12.5140],
-  "radius": 300,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele+Trapani"
- },
- {
-  "id": "n-il-porto",
-  "name": "Il Porto / Balata",
-  "center": [38.0160, 12.5180],
-  "radius": 250,
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Porto+di+Trapani"
  },
  {
-  "id": "n-piazza-mercato",
-  "name": "Piazza ex Mercato del Pesce",
-  "center": [38.0183, 12.5153],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Piazza+Mercato+del+Pesce+Trapani"
+  "id": "n-lungomare",
+  "name": "Lungomare — Via Dante Alighieri",
+  "center": [38.014, 12.527],
+  "radius": 200,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Lungomare+Dante+Alighieri+Trapani"
  },
  {
-  "id": "n-villa-margherita",
-  "name": "Villa Margherita / Punta Ligny",
-  "center": [38.0197, 12.5076],
-  "radius": 200,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa+Margherita+Trapani"
+  "id": "n-corso-vittorio-emanuele",
+  "name": "Corso Vittorio Emanuele",
+  "center": [38.018, 12.528],
+  "radius": 150,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele+Trapani"
+ },
+ {
+  "id": "n-erice",
+  "name": "Erice (hilltop town, 14 km)",
+  "center": [37.969, 12.587],
+  "radius": 300,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Erice+Trapani"
  }
 ];
   const WALKS = [
  {
-  "id": "w-via-del-sale",
-  "name": "Via del Sale: Trapani to Marsala (salt pans cycle route)",
-  "start": [38.0197, 12.5076],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Via+del+Sale+Trapani+salt+pans+windmill"
+  "id": "w-punta-san-teodoro-lighthouse",
+  "name": "Punta San Teodoro to Torre di Ligny — the tip of the peninsula",
+  "start": [38.0197, 12.5215],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Torre+di+Ligny+Trapani"
  },
  {
-  "id": "w-riserva-zingaro",
-  "name": "Riserva dello Zingaro coastal path (south entrance near Scopello)",
-  "start": [38.0997, 12.7536],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Riserva+dello+Zingaro+south+entrance+Scopello"
+  "id": "w-via-garibaldi-mercato",
+  "name": "Via Garibaldi market walk — from Porta Ossuna to the fish stalls",
+  "start": [38.0165, 12.5339],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Mercato+del+Pesce+Trapani"
  },
  {
-  "id": "w-erice-ascent",
-  "name": "Erice ascent: cable car from Trapani to the medieval summit",
-  "start": [38.0170, 12.5170],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Funivia+Trapani+Erice+cable+car"
+  "id": "w-misteri-route",
+  "name": "The Misteri route — follow the twenty wooden sculptures through the Easter city",
+  "start": [38.0183, 12.531],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Chiesa+del+Purgatorio+Trapani"
  },
  {
-  "id": "w-mura-di-tramontana",
-  "name": "Mura di Tramontana: Trapani's northern sea walls to Torre di Ligny",
-  "start": [38.0183, 12.5153],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Mura+di+Tramontana+Trapani+Torre+di+Ligny"
+  "id": "w-erice-walls",
+  "name": "Erice: Norman walls and the Castello di Venere — the perimeter walk",
+  "start": [37.9694, 12.5869],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Castello+di+Venere+Erice"
+ },
+ {
+  "id": "w-saline-levante-path",
+  "name": "Saline di Trapani nature reserve — the windmill footpath at dusk",
+  "start": [37.9847, 12.4783],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Riserva+Naturale+Saline+di+Trapani+e+Paceco"
  }
 ];
   const WORK_SPOTS = [
  {
+  "id": "p-work-ai-lumi",
+  "name": "Ai Lumi courtyard",
+  "start": [38.018, 12.5278]
+ },
+ {
   "id": "p-work-colicchia",
-  "name": "Pasticceria Colicchia (morning granita, sea-wall tables)",
-  "start": [38.0197, 12.5076]
+  "name": "Pasticceria Colicchia — marble counter",
+  "start": [38.0178, 12.529]
  },
  {
   "id": "p-work-versi-di-rosso",
-  "name": "Enoteca Versi di Rosso (aperitivo hour reading)",
-  "start": [38.0170, 12.5135]
- },
- {
-  "id": "p-work-villa-margherita",
-  "name": "Villa Margherita gardens (the peninsula tip, sea on three sides)",
-  "start": [38.0200, 12.5060]
+  "name": "Versi di Rosso — quiet afternoon before opening",
+  "start": [38.018, 12.527]
  }
 ];
   const LANDMARKS = [
  {
-  "id": "l-beach-san-vito-lo-capo",
-  "name": "San Vito lo Capo",
-  "coords": [38.1743, 12.7355],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=San+Vito+lo+Capo+beach+Trapani"
+  "id": "l-cala-spiaggia-lido-la-pineta",
+  "name": "Lido La Pineta — town beach north of the peninsula",
+  "coords": [38.0247, 12.5379],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Lido+La+Pineta+Trapani"
  },
  {
-  "id": "l-beach-cala-tonnarella",
-  "name": "Cala Tonnarella dell'Uzzo (Riserva Zingaro)",
-  "coords": [38.0968, 12.7518],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Tonnarella+Uzzo+Riserva+Zingaro"
- },
- {
-  "id": "l-beach-bonagia",
-  "name": "Spiaggia di Bonagia",
-  "coords": [38.0802, 12.6213],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+di+Bonagia+Trapani"
+  "id": "l-cala-spiaggia-san-giuliano",
+  "name": "Spiaggia San Giuliano — the nearest sand south of the city",
+  "coords": [38.0021, 12.5235],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+San+Giuliano+Trapani"
  },
  {
   "id": "l-cult-torre-di-ligny",
-  "name": "Torre di Ligny — the peninsula's western sentinel",
-  "coords": [38.0196, 12.5068],
+  "name": "Torre di Ligny — 1671 Bourbon lookout at the westernmost tip",
+  "coords": [38.0198, 12.5211],
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Torre+di+Ligny+Trapani"
  },
  {
-  "id": "l-cult-santuario-annunziata",
-  "name": "Santuario dell'Annunziata — the Trapani Madonna",
-  "coords": [38.0168, 12.5344],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Santuario+Annunziata+Trapani"
+  "id": "l-cult-chiesa-del-purgatorio",
+  "name": "Chiesa del Purgatorio — home of the twenty Misteri processional sculptures",
+  "coords": [38.0183, 12.531],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Chiesa+del+Purgatorio+Trapani"
  },
  {
-  "id": "l-cult-palazzo-giudecca",
-  "name": "Palazzo della Giudecca — diamond-faceted 16th-c. façade",
-  "coords": [38.0173, 12.5121],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Palazzo+della+Giudecca+Trapani"
+  "id": "l-cult-cattedrale-san-lorenzo",
+  "name": "Cattedrale di San Lorenzo — 17th-century baroque, with the Flemish Crucifixion",
+  "coords": [38.0185, 12.5295],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cattedrale+San+Lorenzo+Trapani"
  },
  {
-  "id": "l-cult-piazza-ex-mercato",
-  "name": "Piazza ex Mercato del Pesce — the 1874 fish-market pavilion",
-  "coords": [38.0183, 12.5153],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Piazza+Mercato+del+Pesce+Trapani"
- },
- {
-  "id": "l-cult-mozia-island",
-  "name": "Isola di Mozia (Mothya) — Phoenician island in the lagoon",
-  "coords": [37.8706, 12.4648],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Isola+di+Mozia+Marsala+Trapani"
- },
- {
-  "id": "l-cult-erice-castello-venere",
-  "name": "Castello di Venere — Erice's Norman castle on the summit",
-  "coords": [38.0389, 12.5869],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Castello+di+Venere+Erice"
+  "id": "l-cult-museo-ligny",
+  "name": "Museo della Preistoria — flint tools and Egadi Islands naval bronze rams",
+  "coords": [38.0198, 12.5211],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Museo+Ligny+Trapani"
  },
  {
   "id": "l-cult-saline-di-trapani",
-  "name": "Saline di Trapani e Paceco — the salt-pan nature reserve",
-  "coords": [37.9597, 12.4844],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Saline+di+Trapani+Paceco+riserva+naturale"
+  "name": "Riserva Naturale Saline di Trapani e Paceco — flamingo lagoons, Slow Food salt",
+  "coords": [37.9847, 12.4783],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Saline+di+Trapani+e+Paceco"
  },
  {
-  "id": "l-linger-colicchia",
-  "name": "Pasticceria Colicchia — granita and cannoli at the peninsula's tip",
-  "coords": [38.0197, 12.5076],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Colicchia+Via+Torre+di+Ligny+Trapani"
+  "id": "l-cult-erice-castello-venere",
+  "name": "Castello di Venere — Norman walls crowning the 750m peak of Erice",
+  "coords": [37.9703, 12.5893],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Castello+di+Venere+Erice"
  },
  {
-  "id": "l-linger-grammatico-erice",
-  "name": "Pasticceria Maria Grammatico — the convent-trained pastry master",
-  "coords": [38.0378, 12.5875],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Pasticceria+Maria+Grammatico+Erice"
+  "id": "l-cult-egadi-islands",
+  "name": "Egadi Islands (Favignana, Levanzo, Marettimo) — the ferry leaves from the port",
+  "coords": [37.9235, 12.3258],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Isole+Egadi+Favignana"
+ },
+ {
+  "id": "l-cult-porta-ossuna",
+  "name": "Porta Ossuna — 16th-century gate, entry to the old Arab quarter",
+  "coords": [38.0165, 12.533],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Porta+Ossuna+Trapani"
+ },
+ {
+  "id": "l-cult-piazza-mercato-del-pesce",
+  "name": "Piazza Mercato del Pesce — the old fish auction floor (now a cultural space)",
+  "coords": [38.0195, 12.527],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Mercato+del+Pesce+Trapani"
  }
 ];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
