@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-24/">
+<title>Un Empire Sans Consentement — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; } /* ink, not blood-red: the old #8b3a3a painted EVERY 2nd column red — a quantum-fidelity / evidence table read like a stock ticker. Directional red now lives only in the .twa-tape dashboard. */
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Vendredi 24 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;170</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Records Sous Réserve</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-24.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#4E342E">Culture & Création</div>
+  <h1 class="article-title">Un Empire Sans Consentement</h1>
+  <div class="article-date">Vendredi 24 Juillet 2026 &mdash; Edition N&deg;170</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Un blockbuster peut-il effacer cinquante ans de contentieux territorial en un week-end? Christopher Nolan vient de battre son propre record mondial d'ouverture avec <em>The Odyssey</em> — pendant qu'une lettre ouverte signée par Bardem, Almodóvar et Thunberg accuse le film d'avoir tourné sans le consentement du peuple sahraoui, sur un territoire occupé. Au même moment, trois procès distincts convergent pour trancher une question que personne n'a réglée depuis les rouleaux de piano mécanique de 1908: une intelligence artificielle qui s'entraîne sur une œuvre a-t-elle besoin du consentement de son auteur? Et pendant que les tribunaux hésitent, les salles de vente, elles, encaissent leur meilleur semestre depuis des années. Le fil commun: cette semaine, la culture a généré ses meilleurs chiffres au moment précis où sa légitimité était la plus contestée.</p>
+<hr>
+<div class="twa-wonder"><div class="twa-wonder-lab">Le Fait du Jour</div><div class="twa-wonder-fact">Le film qui bat le record mondial d'ouverture de Christopher Nolan a été tourné sur un territoire que la Cour de justice de l'UE a jugé, en 2024, ne pas appartenir légalement au pays qui en a autorisé le tournage.</div><div class="twa-wonder-why">Un succès commercial peut recouvrir, en un seul week-end, cinquante ans de contentieux territorial — sans qu'aucune sanction ne s'applique jamais.</div></div>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le seul consentement obtenu venait de l'occupant</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">faits confirmés · impact non mesuré · T0/T3</span></p>
+<p>264,1 millions de dollars. C'est le meilleur lancement mondial de toute la carrière de Christopher Nolan pour <em>The Odyssey</em> — devant <em>The Dark Knight Rises</em> et ses 249 millions de 2012 [T3, <a href="https://deadline.com/2026/07/box-office-the-odyssey-monday-record-1236998940/">Deadline, 20-23/07/2026</a>]. Le film a aussi signé le meilleur lundi de l'année, devant <em>Toy Story 5</em>. Mais une partie du tournage s'est déroulée près de Dakhla, au Sahara occidental — territoire occupé par le Maroc depuis un demi-siècle, revendiqué par le peuple sahraoui et le Front Polisario, avec le soutien financier de subventions marocaines [T3, <a href="https://www.middleeasteye.net/news/calls-boycott-odyssey-over-filming-occupied-western-sahara">Middle East Eye, 16-20/07</a>]. Le Maroc a lui-même présenté ce tournage comme la porte d'entrée à davantage de productions hollywoodiennes sur ce territoire, dans le cadre de sa stratégie touristique pour Dakhla.</p>
+<p>Une lettre ouverte organisée autour du festival FiSahara, signée par Javier Bardem, Pedro Almodóvar, Greta Thunberg et plusieurs acteurs espagnols, est sans ambiguïté: « M. Nolan a tourné là-bas sans le consentement du peuple sahraoui. Le seul consentement qu'il a obtenu venait de la force occupante: le Maroc » [T3, <a href="https://festivalsahara.org/en/news/the-odyssey-manifesto/">manifeste FiSahara</a>]. Le fondement juridique n'est pas une opinion militante — c'est un arrêt de la Cour de justice de l'Union européenne, Grande Chambre, du 4 octobre 2024 (<em>Front Polisario c. Conseil</em>), qui a jugé que le Sahara occidental a un statut « séparé et distinct » du Maroc, et qu'aucun accord ne peut s'y appliquer sans le consentement sahraoui [T0, <a href="https://verfassungsblog.de/commission-v-front-polisario/">arrêt CJUE</a>]. Universal et la société de production de Nolan n'ont, à ce jour, répondu à aucune demande de commentaire [T3, Middle East Eye].</p>
+<p><strong>Qui paie · Qui profite :</strong> paie la cause sahraouie, privée d'un levier de pression internationale supplémentaire; profite le Maroc, qui obtient une vitrine hollywoodienne pour légitimer sa présence à Dakhla — et Universal, dont le box-office ne montre, à ce stade, aucun signe d'impact du boycott.</p>
+<p><strong>La filiation :</strong> le précédent oublié est le boycott de Sun City en 1985 — quand Artists United Against Apartheid a mis au ban les artistes qui se produisaient dans ce complexe de loisirs sud-africain, utilisé pour blanchir la légitimité internationale d'un bantoustan nominal indépendant sous l'apartheid. Même mécanisme: une économie de loisir financée de l'extérieur sert à légitimer une revendication territoriale contestée, jusqu'à ce qu'une mobilisation d'artistes la nomme publiquement.</p>
+<p><strong>L'autre lecture :</strong> aucune défense sur le fond n'a été trouvée du côté de Nolan, Universal ou du Maroc — mais le marché, lui, a déjà tranché dans les faits: le record commercial suggère que la controverse n'a, pour l'instant, rien coûté au film. Le silence peut aussi se lire comme une stratégie délibérée de ne pas nourrir la polémique.</p>
+<p><strong>Verdict :</strong> un boycott qui ne fait pas un seul point de pourcentage d'écart au box-office n'est pas un échec moral — mais il prouve qu'à ce stade, la légitimité et le succès commercial ne se parlent plus.</p>
+<p><strong>Ce qui reste opaque :</strong> aucun montant précis des subventions marocaines n'a été publié, et aucune mesure indépendante de l'effet du boycott sur les ventes n'existe — le box-office record va dans le sens contraire de l'argument militant.</p>
+<p><strong>À dire au dîner :</strong> le film qui vient de battre le record de carrière de Christopher Nolan a été tourné sur un territoire que la justice européenne a jugé ne pas appartenir légalement à celui qui en a autorisé le tournage.</p>
+<hr>
+<h3>II. Le rouleau de piano mécanique, deuxième acte</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">plainte confirmée · T0, chiffre-clé mono-source · T3</span></p>
+<p>Vingt et un millions deux cent mille enregistrements protégés par le droit d'auteur circuleraient entre développeurs d'IA, selon une enquête de <em>The Atlantic</em> portant sur quatre bases de données publiques — dont des morceaux de Taylor Swift, Bad Bunny, les Beatles et Nirvana [T3, <a href="https://www.musicbusinessworldwide.com/four-music-datasets-holding-millions-of-tracks-are-being-shared-among-ai-developers-the-atlantics-reports/">Music Business Worldwide, relayant The Atlantic</a>]. Ce chiffre n'a qu'une seule origine: chaque média qui le reprend cite la même enquête — ce n'est pas une corroboration indépendante, c'est un écho.</p>
+<p>Ce qui l'est, en revanche: le 10 juillet, Hachette, Cengage, Elsevier et l'auteur Scott Turow ont déposé une plainte collective contre Google devant le tribunal fédéral de Manhattan, affirmant que Gemini a été entraîné sur des millions de livres protégés via Google Books et des sources potentiellement piratées [T0, dépôt judiciaire, 10/07, relayé par <a href="https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/">TechCrunch</a> et <a href="https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement">Al Jazeera</a>]. En parallèle, dans l'affaire Sony/UMG contre Suno au Massachusetts, les maisons de disques ont fait ajouter 61 026 enregistrements identifiés par empreinte numérique Audible Magic — la première audience fédérale posant frontalement la question: entraîner un modèle génératif sur de l'audio protégé, est-ce un usage transformateur ou une contrefaçon [T0, <a href="https://www.courtlistener.com/docket/68878608/umg-recordings-inc-v-suno-inc/">dossier judiciaire</a>, la date exacte d'audience restant incohérente selon les médias — signalé comme non résolu]?</p>
+<p><strong>Qui paie · Qui profite :</strong> paient, potentiellement, les développeurs de modèles d'IA musicale et textuelle si les tribunaux tranchent contre le fair-use; profitent les ayants droit qui négocient déjà des licences plutôt que d'attendre un jugement — UMG et Warner ont préféré transiger avec Suno/Udio plutôt que de pousser jusqu'au jugement, aveu implicite qu'ils voient un vrai risque juridique à perdre.</p>
+<p><strong>La filiation :</strong> en 1908, la Cour suprême américaine (<em>White-Smith Music Publishing Co. v. Apollo Co.</em>) a jugé que les rouleaux de piano mécanique n'étaient pas des « copies » au sens du droit d'auteur, parce qu'illisibles par un humain — les fabricants de rouleaux ne devaient donc rien aux compositeurs. Le tollé qui a suivi a forcé le Congrès à inventer la licence mécanique obligatoire dans le Copyright Act de 1909. Une technologie de reproduction a distancé la loi, les juges ont d'abord refusé d'y voir une contrefaçon, et la solution est venue du législateur — pas des tribunaux. Un siècle plus tard, la question revient à l'identique, cette fois pour l'entraînement des modèles d'IA.</p>
+<p><strong>L'autre lecture :</strong> l'argument central de Suno/Udio — qu'entraîner un modèle génératif est un usage « transformateur », distinct de la redistribution de l'œuvre elle-même — est un argument juridique sérieux, pas une esquive. Rien ne garantit que les tribunaux tranchent contre les plateformes d'IA.</p>
+<p><strong>Verdict :</strong> le droit d'auteur n'a jamais réglé une rupture technologique par la seule voie judiciaire — il a toujours fallu, in fine, une loi ou un accord de licence négocié. Rien n'indique que 2026 fera exception.</p>
+<p><strong>Ce qui reste opaque :</strong> la date exacte de l'audience Sony/UMG contre Suno reste contradictoire selon les sources; le jugement de la Cour du Massachusetts, une fois rendu, fixera le cadre pour toutes les plaintes suivantes.</p>
+<p><strong>À dire au dîner :</strong> le procès qui décidera si l'IA peut s'entraîner librement sur la musique protégée rejoue, presque mot pour mot, un procès de 1908 sur les rouleaux de piano mécanique.</p>
+<hr>
+<h3>III. Le semestre record qui sent la bulle</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 source spécialisée · chiffres maison non recoupés · T3</span></p>
+<p>4,4 et 4,5 milliards de dollars. Ce sont les chiffres d'affaires du premier semestre 2026 de Sotheby's et Christie's, portés par un taux d'invendus historiquement bas (environ 90% de ventes réalisées) et par la vente à 296 millions de livres de la collection Lewis [T3, <a href="https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results">The Art Newspaper, 15/07</a>]. Les maisons de vente encaissent leur meilleur semestre depuis des années — pendant que la guerre en Ukraine, la guerre en Iran et une inflation persistante devraient, en théorie, faire fuir les capitaux du marché de l'art vers des valeurs refuges plus classiques.</p>
+<p>Le motif réel n'est pas mystérieux: les acheteurs se concentrent sur les « trophy lots » — les pièces uniques et les grandes signatures — et délaissent le marché intermédiaire. C'est une fuite vers la qualité, pas une santé généralisée du marché de l'art.</p>
+<p><strong>Qui paie · Qui profite :</strong> profitent les maisons de vente et les propriétaires d'œuvres iconiques; le marché intermédiaire, lui, reste à la traîne — la hausse ne se redistribue pas.</p>
+<p><strong>La filiation :</strong> en 1990, en pleine bulle spéculative japonaise, l'industriel Ryoei Saito avait payé un record de 82,5 millions de dollars pour le <em>Portrait du Dr Gachet</em> de Van Gogh — quelques mois avant l'effondrement du marché immobilier et boursier japonais. Les booms de « trophy assets » ont, historiquement, davantage précédé des corrections qu'ils ne les ont annoncées.</p>
+<p><strong>L'autre lecture :</strong> les maisons de vente elles-mêmes présentent ce semestre comme une preuve de résilience du marché du luxe face à l'incertitude géopolitique — l'art tangible comme valeur refuge plutôt que comme signe de bulle.</p>
+<p><strong>Verdict :</strong> un marché où 90% des lots se vendent mais où seules les pièces les plus rares font le chiffre d'affaires n'est pas un marché sain — c'est un marché étroit qui se donne l'apparence de la santé.</p>
+<p><strong>Ce qui reste opaque :</strong> aucune donnée n'a été trouvée sur la part exacte du marché intermédiaire dans la baisse — l'écart entre « trophy lots » et le reste du marché mériterait un chiffre précis.</p>
+<p><strong>À dire au dîner :</strong> le marché de l'art vient de vivre son meilleur semestre depuis des années — en ne vendant, en réalité, que ses pièces les plus rares.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Dua Lipa ouvre une bibliothèque permanente de 100 livres interdits ou censurés à la Livraria Lello de Porto [<a href="https://vogueadria.com/dua-lipa-banned-books-library/">Vogue Adria</a>].</li>
+<li>San Diego sécurise le maintien de Comic-Con au moins jusqu'en 2030, annoncé à l'ouverture de l'édition 2026 le 23 juillet [<a href="https://kyma.com/news/california-news/2026/07/23/san-diego-comic-con-2026-underway/">KYMA, 23/07</a>].</li>
+<li>La liste longue du International Booker Prize 2026 (13 livres, 11 langues sources) est dévoilée avant la liste courte du Booker "classique" prévue le 28 juillet [<a href="https://lithub.com/heres-the-longlist-for-the-2026-international-booker-prize/">LitHub</a>].</li>
+<li>Une statue en bronze de Charlie Kirk, financée par la vente de l'appartement du sculpteur italien Sergio Furnari, ne réunit que 8 000$ sur les 150 000$ visés pour son installation à Times Square [<a href="https://boingboing.net/2026/07/20/crowdfunding-campaign-for-100k-charlie-kirk-statue-languishes.html">Boing Boing, 20/07</a>].</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://deadline.com/2026/07/box-office-the-odyssey-monday-record-1236998940/">Deadline — box-office de The Odyssey</a></li>
+<li><a href="https://www.middleeasteye.net/news/calls-boycott-odyssey-over-filming-occupied-western-sahara">Middle East Eye — appel au boycott</a></li>
+<li><a href="https://www.democracynow.org/2026/7/17/the_odyssey">Democracy Now</a></li>
+<li><a href="https://www.commondreams.org/news/christopher-nolan-odyssey-western-sahara">Common Dreams</a></li>
+<li><a href="https://festivalsahara.org/en/news/the-odyssey-manifesto/">FiSahara — manifeste</a></li>
+<li><a href="https://jacobin.com/2026/07/nolan-odyssey-western-sahara-morocco-colonialism">Jacobin</a></li>
+<li><a href="https://carnegieendowment.org/emissary/2026/07/odyssey-movie-western-sahara-morocco-film">Carnegie Endowment</a></li>
+<li><a href="https://verfassungsblog.de/commission-v-front-polisario/">Verfassungsblog — analyse de l'arrêt CJUE</a></li>
+<li><a href="https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/">TechCrunch — plainte contre Google</a></li>
+<li><a href="https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement">Al Jazeera</a></li>
+<li><a href="https://www.musicbusinessworldwide.com/four-music-datasets-holding-millions-of-tracks-are-being-shared-among-ai-developers-the-atlantics-reports/">Music Business Worldwide — enquête The Atlantic</a></li>
+<li><a href="https://www.musicbusinessworldwide.com/why-a-fight-over-61000-recordings-could-shape-the-future-of-ai-music-licensing/">Music Business Worldwide — Sony/UMG v. Suno</a></li>
+<li><a href="https://www.courtlistener.com/docket/68878608/umg-recordings-inc-v-suno-inc/">CourtListener — dossier judiciaire</a></li>
+<li><a href="https://variety.com/2026/music/news/tidal-label-ai-generated-music-ban-royalties-from-ai-songs-1236798543/">Variety — politique IA de Tidal</a></li>
+<li><a href="https://www.theartnewspaper.com/2026/07/15/trophy-lots-and-luxury-goods-fuel-rebound-for-christies-and-sothebys-2026-half-year-results">The Art Newspaper — résultats Christie's/Sotheby's</a></li>
+<li><a href="https://vogueadria.com/dua-lipa-banned-books-library/">Vogue Adria</a></li>
+<li><a href="https://kyma.com/news/california-news/2026/07/23/san-diego-comic-con-2026-underway/">KYMA</a></li>
+<li><a href="https://lithub.com/heres-the-longlist-for-the-2026-international-booker-prize/">LitHub</a></li>
+<li><a href="https://boingboing.net/2026/07/20/crowdfunding-campaign-for-100k-charlie-kirk-statue-languishes.html">Boing Boing</a></li>
+</ul></div><div class="bottom-nav"><a href="../2026-07-24.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>

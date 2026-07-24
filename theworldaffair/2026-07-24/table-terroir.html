@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-24/">
+<title>Le Tarif Qui Mord La Main Qui Le Sert — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; } /* ink, not blood-red: the old #8b3a3a painted EVERY 2nd column red — a quantum-fidelity / evidence table read like a stock ticker. Directional red now lives only in the .twa-tape dashboard. */
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Vendredi 24 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;170</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Records Sous Réserve</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-24.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#C2185B">Table & Terroir</div>
+  <h1 class="article-title">Le Tarif Qui Mord La Main Qui Le Sert</h1>
+  <div class="article-date">Vendredi 24 Juillet 2026 &mdash; Edition N&deg;170</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Le lobby américain des spiritueux vient de supplier Washington d'arrêter de le "protéger". Le 21 juillet, un tarif de 50% sur l'alcool canadien signé par la Maison Blanche a provoqué, en quelques heures, la réaction la plus embarrassante possible: son propre bénéficiaire déclaré s'y oppose publiquement. Au même moment, l'autorité cardiologique la plus citée du monde siffle la fin d'un mythe vieux de quarante ans sur le café, et la canicule européenne comprime le calendrier viticole à un point jamais vu en trois siècles de Champagne. Trois récits, un fil commun: cette semaine, chaque acteur qui annonçait une victoire a dû, dans le même souffle, en citer la limite.</p>
+<hr>
+<h2>Indicateurs Avancés</h2>
+<table><thead><tr><th>Indicateur</th><th>Valeur</th><th>Δ vs édition précédente</th><th>Source</th></tr></thead><tbody>
+<tr><td>Tarif US sur l'alcool canadien</td><td>50%</td><td>nouveau, effectif 19 août 2026</td><td><a href="https://www.shankennewsdaily.com/2026/07/21/40274/trump-administration-to-impose-50-tariffs-on-canadian-alcohol-imports/">Shanken News Daily, 21/07</a></td></tr>
+<tr><td>Exportations spiritueux US → Canada</td><td>−70%+</td><td>depuis mars 2025</td><td><a href="https://www.shankennewsdaily.com/2026/07/21/40274/trump-administration-to-impose-50-tariffs-on-canadian-alcohol-imports/">Shanken News Daily, 21/07</a></td></tr>
+<tr><td>Plafond caféine jugé sûr (AHA)</td><td>400 mg/j (~5 tasses)</td><td>première position officielle</td><td><a href="https://newsroom.heart.org/news/coffee-and-heart-health-how-many-cups-of-caffeinated-coffee-are-safe-to-drink-each-day">AHA/Circulation, 20/07</a></td></tr>
+<tr><td>Rendement Champagne 2026 (estimé)</td><td>−10%</td><td>vendange dès le 15 août</td><td><a href="https://vino-joy.com/2026/07/10/frances-heatwave-cuts-wine-harvest-as-growers-brace-for-smaller-vintage/">Vino-Joy, 10/07</a></td></tr>
+<tr><td>Expéditions Champagne 2025</td><td>266 M bouteilles</td><td>−2%, plus bas niveau en 20 ans</td><td><a href="https://www.thedrinksbusiness.com/2026/01/global-champagne-shipments-fall-by-2-in-2025/">The Drinks Business, 01/2026</a></td></tr>
+</tbody></table>
+<hr>
+<h2>Les Récits</h2>
+<h3>I. Le tarif qui mord la main qui le sert</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">5 sources indépendantes · T0</span></p>
+<p>Cinquante pour cent. C'est le tarif que Donald Trump vient d'imposer sur tout l'alcool canadien — bière, cidre, vin, spiritueux — à effet du 19 août [T0, proclamation présidentielle, Section 338 du Tariff Act de 1930, rapportée par <a href="https://www.shankennewsdaily.com/2026/07/21/40274/trump-administration-to-impose-50-tariffs-on-canadian-alcohol-imports/">Shanken News Daily, 21/07/2026</a>]. Le motif affiché: dix-sept mois de boycott provincial des alcools américains dans les magasins d'État canadiens, qui aurait fait chuter les exportations de spiritueux US vers le Canada de plus de 70% depuis mars 2025 — Crown Royal recule de 5,8% (6,9 millions de caisses), Fireball de 2,5% [T3, Shanken News Daily].</p>
+<p>Sauf que la première voix à s'élever contre la mesure n'est pas celle d'Ottawa. C'est celle de DISCUS, le lobby américain des spiritueux — le bénéficiaire déclaré du tarif — qui prévient que la mesure « approfondit les tensions commerciales et augmente le risque de nouvelles représailles » pour toute la restauration américaine [T3, <a href="https://distilledspirits.org/news/discus-statement-regarding-president-trumps-presidential-proclamation-imposing-a-50-tariff-on-spirits-from-canada-august-19/">communiqué DISCUS, 21/07</a>]. Le premier ministre canadien Mark Carney, lui, qualifie la mesure de violation de l'ACEUM et refuse pourtant d'annoncer une contre-mesure — préférant « intensifier » les discussions [T3, <a href="https://www.cbc.ca/news/politics/carney-trade-response-trump-9.7277862">CBC, 22/07</a>]. Seul gain net identifié: neuf premiers ministres provinciaux canadiens ont profité de la semaine pour assouplir le commerce interprovincial d'alcool, ouvrant enfin la vente directe aux distillateurs et brasseurs du pays [T3, <a href="https://www.bnnbloomberg.ca/tariffs/2026/07/22/premiers-push-back-against-us-booze-as-canada-reacts-to-trumps-latest-tariffs/">BNN Bloomberg, 22/07</a>].</p>
+<p><strong>Qui paie · Qui profite :</strong> paient les consommateurs canadiens de bourbon et les distillateurs américains eux-mêmes, qui militent contre leur propre "protection"; profitent, à la marge, les producteurs canadiens qui gagnent un marché intérieur élargi.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> tout chef de yacht approvisionnant sa cave en Amérique du Nord a un mois pour arbitrer ses achats de spiritueux avant l'entrée en vigueur du tarif le 19 août — les prix de la carte américaine vont bouger avant l'automne.</p>
+<p><strong>L'autre lecture :</strong> la Maison Blanche peut légitimement pointer dix-sept mois de boycott provincial comme le vrai premier coup porté — un tarif de représailles n'est pas un tarif gratuit. Et le silence de Carney sur toute contre-mesure suggère qu'Ottawa, en privé, ne veut pas non plus d'escalade.</p>
+<p><strong>Verdict :</strong> un tarif que son propre bénéficiaire combat publiquement n'a pas été taillé pour une filière — il a été taillé pour un communiqué.</p>
+<p><strong>Ce qui reste opaque :</strong> le chiffre de 718M$ à 137M$ d'exportations américaines vers le Canada, avancé par la Maison Blanche, n'a été confirmé par aucune source canadienne indépendante à ce jour.</p>
+<p><strong>À dire au dîner :</strong> le lobby américain des spiritueux vient de supplier Washington d'arrêter de le protéger.</p>
+<hr>
+<h3>II. Le café acquitté après quarante ans d'instruction</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">4 sources indépendantes · T1</span></p>
+<p>Quarante ans de suspicion balayés en une publication. L'American Heart Association vient de publier sa toute première prise de position complète sur la caféine et le cœur — verdict: jusqu'à 400 mg par jour, soit environ cinq tasses, le café ne nuit pas au système cardiovasculaire, et pourrait même en réduire le risque [T1, <em>Circulation</em>, DOI 10.1161/CIR.0000000000001454, 20/07/2026, présidée par Gregory Marcus (UCSF) et Frank Hu (Harvard)]. Mais la vraie trouvaille n'est pas le chiffre — c'est la courbe. Chez les personnes à tension normale, boire une à trois tasses par jour est associé à un risque plus élevé de développer de l'hypertension; boire plus de trois tasses l'associe à un risque plus bas. Une relation en U, pas une ligne droite [T1, AHA].</p>
+<p>Deuxième nuance, plus vendable encore: le bénéfice ne vaut que pour le café filtré ou instantané. L'espresso, le moka, le café turc non filtré conservent le cafestol, un composé qui fait grimper le LDL [T1, AHA]. Un essai clinique cité dans la déclaration montre que le café quotidien réduit de 39% la récidive de fibrillation auriculaire après une ablation [T1]. Et la consommation habituelle de café est associée à une baisse de 20 à 30% du risque de diabète de type 2 — pendant que les boissons énergisantes, trois à quatre fois plus concentrées en caféine, gardent un profil de risque bien plus sombre, arythmies comprises, même chez des adultes sains de moins de 30 ans [T1].</p>
+<p><strong>Qui paie · Qui profite :</strong> paient les buveurs d'espresso et de café turc qui ignorent le risque cafestol; profitent les torréfacteurs de café filtre/instantané, dont la pratique vient d'être validée par l'autorité cardiologique la plus citée au monde.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> revoir la carte café à bord — orienter les convives sensibles au LDL vers le filtre ou l'instantané, sans renoncer aux trois à cinq tasses quotidiennes désormais jugées bénéfiques.</p>
+<p><strong>L'autre lecture :</strong> l'essentiel des preuves reste observationnel, pas expérimental — seul l'essai sur la fibrillation auriculaire est un vrai essai contrôlé. Une causalité inverse (les gens en meilleure santé boivent plus de café) n'est jamais totalement exclue.</p>
+<p><strong>Verdict :</strong> après quarante ans de café diabolisé sur la foi d'études mal calibrées, l'AHA vient de siffler la fin d'un mythe — avec une nuance qu'aucun titre de presse n'a retenue: c'est le filtre qui fait la différence, pas la dose.</p>
+<p><strong>Ce qui reste opaque :</strong> aucune contre-étude critique n'a été retrouvée dans cette fenêtre de recherche — silence qui mérite d'être noté plutôt que masqué.</p>
+<p><strong>À dire au dîner :</strong> l'AHA vient de dire, noir sur blanc, pour la première fois: le café ne fait pas de mal au cœur — sauf si vous le buvez sans filtre.</p>
+<hr>
+<h3>III. Trois semaines de calendrier perdues en cinq ans</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">2 sources, même origine syndicale · T3</span></p>
+<p>La Champagne vendangera cette année plus tôt qu'elle ne l'a jamais fait en trois siècles d'existence. Le syndicat des vignerons évoque une récolte possible dès le 15 août — un record de précocité — avec une perte de rendement estimée à 10% sous l'effet de la canicule qui frappe le vignoble français depuis début juillet [T3, <a href="https://vino-joy.com/2026/07/10/frances-heatwave-cuts-wine-harvest-as-growers-brace-for-smaller-vintage/">Vino-Joy, 10/07</a>]. À Bordeaux, certains producteurs annoncent une baisse de production supérieure à 20%; dans le Val de Loire, un vigneron dit avoir perdu jusqu'à 40% de sa récolte, les grains se rétractant littéralement sur pied [T3, <a href="https://www.forbes.com/sites/karlsson/2026/06/28/vineyards-threatened-by-the-extreme-heat-wave/">Forbes, 28/06</a>].</p>
+<p>De l'autre côté de l'Atlantique, la Napa Valley calque le même mouvement: les premiers raisins destinés aux vins effervescents ont été cueillis le 21 juillet chez Round Pond Estate, Mumm Napa et Schramsberg annonçant leurs premières coupes pour le 23 [T3, <a href="https://wineindustryadvisor.com/2026/07/22/harvest-in-napa-valley-is-on-and-guests-are-invited-to-experience-it/">Wine Industry Advisor, 22/07</a>]. Le fond de l'histoire, invisible dans les titres: les expéditions de Champagne ont déjà reculé pour la troisième année consécutive en 2025, à 266 millions de bouteilles (−2%), leur plus bas niveau en vingt ans hors pandémie [T3, <a href="https://www.thedrinksbusiness.com/2026/01/global-champagne-shipments-fall-by-2-in-2025/">The Drinks Business, janvier 2026</a>]. Le climat ne fait qu'accélérer un déclin de volume déjà entamé.</p>
+<p><strong>Qui paie · Qui profite :</strong> paient les vignerons de Champagne et de Bordeaux, dont le rendement recule pour la deuxième année sur cinq; profitent, relativement, les domaines qui ont investi tôt dans l'irrigation de précision et les cépages résistants à la chaleur.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> sécuriser dès maintenant les allocations de Champagne 2026 auprès des maisons — la vendange la plus précoce jamais enregistrée annonce un volume réduit et des prix qui grimperont dès l'automne.</p>
+<p><strong>L'autre lecture :</strong> une vendange précoce n'est pas nécessairement une défaite — certains vignerons de Napa la présentent comme la preuve que leurs techniques d'adaptation (ombrage, irrigation ciblée) fonctionnent, plutôt que comme un aveu de crise climatique.</p>
+<p><strong>Verdict :</strong> sous la même canicule, le calendrier viticole européen s'est resserré de trois semaines en cinq ans — le vin n'a plus de saison fixe, il a une fenêtre qui rétrécit.</p>
+<p><strong>Ce qui reste opaque :</strong> l'ampleur réelle de la perte 2026 ne sera connue qu'à la vendange elle-même — les chiffres actuels ne sont que des estimations syndicales, non auditées de façon indépendante.</p>
+<p><strong>À dire au dîner :</strong> la Champagne vendangera cette année plus tôt qu'à aucun autre moment de son histoire connue.</p>
+<hr>
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Une analyse présentée au Congrès international sur l'obésité (Mexico, 15-17 juillet) documente comment l'industrie agroalimentaire requalifie certains aliments ultra-transformés en produits "plus sains" — préprint, non relu [<a href="https://medicalxpress.com/news/2026-07-ultra-food-firms-hoodwink-products.html">Medical Xpress, 20/07</a>].</li>
+<li>Le poulet cultivé en laboratoire obtient un feu vert fédéral aux États-Unis — mais la Louisiane, entre autres États, en restreint la vente sur son sol [<a href="https://www.wgem.com/2026/07/09/farm-table-or-lab-table-cell-cultivated-meat-sparks-local-attention/">WGEM, 09/07</a>].</li>
+<li>Round Pond Estate ouvre la vendange 2026 de Napa dès le 21 juillet, Mumm Napa et Schramsberg suivant le 23 [<a href="https://wineindustryadvisor.com/2026/07/22/harvest-in-napa-valley-is-on-and-guests-are-invited-to-experience-it/">Wine Industry Advisor, 22/07</a>].</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.shankennewsdaily.com/2026/07/21/40274/trump-administration-to-impose-50-tariffs-on-canadian-alcohol-imports/">Shanken News Daily — Trump administration to impose 50% tariffs on Canadian alcohol imports</a></li>
+<li><a href="https://www.thedrinksbusiness.com/2026/07/trump-hits-canada-with-50-tariffs-over-us-alcohol-ban/">The Drinks Business — Trump hits Canada with 50% tariffs</a></li>
+<li><a href="https://distilledspirits.org/news/discus-statement-regarding-president-trumps-presidential-proclamation-imposing-a-50-tariff-on-spirits-from-canada-august-19/">DISCUS — communiqué officiel</a></li>
+<li><a href="https://www.cbsnews.com/news/trump-canada-tariffs-hockey-milk-alcohol/">CBS News</a></li>
+<li><a href="https://www.cbc.ca/news/politics/carney-trade-response-trump-9.7277862">CBC — réaction de Mark Carney</a></li>
+<li><a href="https://www.bnnbloomberg.ca/tariffs/2026/07/22/premiers-push-back-against-us-booze-as-canada-reacts-to-trumps-latest-tariffs/">BNN Bloomberg — les premiers ministres provinciaux</a></li>
+<li><a href="https://www.forbes.com/sites/siladityaray/2026/07/21/carney-says-canada-is-open-to-talks-after-trump-imposes-new-50-tariffs/">Forbes</a></li>
+<li><a href="https://newsroom.heart.org/news/coffee-and-heart-health-how-many-cups-of-caffeinated-coffee-are-safe-to-drink-each-day">American Heart Association — communiqué</a></li>
+<li><a href="https://fortune.com/2026/07/22/coffee-cups-per-day-heart-attack-risk-health-study-american-heart-association/">Fortune</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/07/260721000820.htm">ScienceDaily</a></li>
+<li><a href="https://www.medscape.com/viewarticle/aha-finally-comes-out-favor-coffee-2026a1000oiy">Medscape</a></li>
+<li><a href="https://www.sciencealert.com/new-review-from-american-heart-association-reveals-the-optimal-daily-cups-of-coffee-for-your-health">ScienceAlert</a></li>
+<li><a href="https://vino-joy.com/2026/07/10/frances-heatwave-cuts-wine-harvest-as-growers-brace-for-smaller-vintage/">Vino-Joy</a></li>
+<li><a href="https://www.forbes.com/sites/karlsson/2026/06/28/vineyards-threatened-by-the-extreme-heat-wave/">Forbes — canicule des vignobles</a></li>
+<li><a href="https://wineindustryadvisor.com/2026/07/22/harvest-in-napa-valley-is-on-and-guests-are-invited-to-experience-it/">Wine Industry Advisor</a></li>
+<li><a href="https://www.thedrinksbusiness.com/2026/01/global-champagne-shipments-fall-by-2-in-2025/">The Drinks Business — expéditions Champagne 2025</a></li>
+<li><a href="https://medicalxpress.com/news/2026-07-ultra-food-firms-hoodwink-products.html">Medical Xpress</a></li>
+<li><a href="https://www.wgem.com/2026/07/09/farm-table-or-lab-table-cell-cultivated-meat-sparks-local-attention/">WGEM</a></li>
+</ul></div><div class="bottom-nav"><a href="../2026-07-24.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
