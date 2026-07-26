@@ -1,512 +1,511 @@
-/* Terroir — Procida · Campania — hand-built July 2026 */
+/* Terroir — Procida · Bay of Naples — hand-built on the upgraded template */
 window.TERROIR_DATA = (function () {
-  const COLORS = {
-    "berth":     "#c4a35a",
-    "market":    "#d97706",
-    "shop":      "#059669",
-    "mainland":  "#7c3aed",
-    "logistics": "#2d4a5e"
-  };
-  const CAT_LABELS = {
-    "berth":     "Signature",
-    "market":    "Market / Direct",
-    "shop":      "Restaurant / Bar",
-    "mainland":  "Out of town",
-    "logistics": "Logistics"
-  };
-  const PRODUCT_COLORS = {
-    "Sea Urchin":   "#1e40af",
-    "Seafood":      "#3b82f6",
-    "Km-Zero":      "#15803d",
-    "View":         "#2d4a5e",
-    "Local":        "#059669",
-    "Literary":     "#7c3aed",
-    "Pastry":       "#a16207",
-    "Bakery":       "#92400e",
-    "Trattoria":    "#374151",
-    "Market":       "#d97706",
-    "IGP Lemon":    "#ca8a04",
-    "Wine":         "#7c2d12"
-  };
+  const COLORS = {"berth": "#c4a35a", "market": "#d97706", "shop": "#059669", "mainland": "#7c3aed", "logistics": "#2d4a5e"};
+  const CAT_LABELS = {"berth": "Signature", "market": "Producer / Market", "shop": "Restaurant / Bar", "mainland": "Naples excursion", "logistics": "Getting there"};
+  const PRODUCT_COLORS = {"Sea urchin": "#0c4a6e", "Seafood": "#1e40af", "Limoncello": "#ca8a04", "Pastry": "#92400e", "Lingua": "#b45309", "Lemon": "#a16207", "Crudo": "#0f766e", "Rabbit": "#7c3aed", "Pizza": "#dc2626", "Amaro": "#374151", "Bar": "#6b21a8", "Producer": "#065f46"};
   const VENUES = [
  {
-  "id": "v01-caracale",
+  "id": "v01-la-conchiglia",
   "cat": "shop",
   "tier": "berth_top",
   "priority": 1,
-  "badge": "Sea Urchin",
-  "name": "Caracalè",
-  "short": "Caracalè",
-  "lat": 40.7640,
-  "lng": 14.0095,
-  "neighborhood": "Marina di Corricella — Via Marina di Corricella 62, at the quayside of the oldest fishing port",
+  "badge": "Seafood",
+  "name": "La Conchiglia da Tonino",
+  "short": "La Conchiglia",
+  "lat": 40.7660,
+  "lng": 14.0388,
+  "neighborhood": "Spiaggia della Chiaia, northeast coast — accessible only by a 20-min coastal footpath from Corricella, or the free seasonal boat Tonino runs from Marina Corricella every 2 h",
   "tags": [
-   "EUR 40–65 pp",
-   "Book ahead — books out by noon in July–August; phone or email",
-   "Lunch or dinner, quayside terrace"
+   "€40–50 pp",
+   "Cash only; free seasonal boat from Marina Corricella every 2 h (book by phone); alternatively 20-min coastal footpath",
+   "Lunch on the beach terrace, spring to early autumn"
   ],
-  "productTags": [
-   "Sea Urchin",
-   "Seafood"
-  ],
-  "why": "Opened March 2000 in a beautifully restored 17th-century boat depot right on the Corricella quay — the name is Neapolitan-Greek for 'beautiful place.' The kitchen is a focused argument for the waters immediately outside: bonito tartare, spaghetti al ricci di mare (sea urchins, only when in season), mantis shrimp (cannocchie) with cherry tomatoes. #1-rated restaurant in Procida across multiple review platforms. To order: Spaghetti al ricci di mare when the urchins are running (roughly December–March) — briny, oceanic, raw roe tossed into pasta; in summer the mantis shrimp. Not a full tasting menu — a short, produce-led list. Tables overlook the actual fishing boats: book at least a day ahead in shoulder season, a week in August.",
-  "address": "Via Marina di Corricella 62, 80079 Procida NA",
-  "phone": "+39 081 896 9192",
-  "hours": "Lunch or dinner, quayside terrace",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Caracal%C3%A8+Procida+Via+Marina+di+Corricella"
+  "productTags": ["Sea urchin", "Seafood"],
+  "verdict": "The one worth the walk — or the boat — not the harbourfront tables that settle for a view",
+  "signature": "Ricci di mare: iodine-salt sea-urchin shells straight from the sea below, scooped raw with bread",
+  "person": "Tonino, whose first name the restaurant carries; he selects the day's catch personally each morning and runs the free boat himself in season",
+  "signal_chip": "4.7 / 5 across 1,570+ reviews · Slow Food Campania recommended · named by Procida Insider among top tables",
+  "caveat": "Open spring–early autumn only; cash only; no road access — boat or footpath only; no credit cards",
+  "why": "Tonino's is the one locals take the ferry to Naples to tell their friends about — not one of the Corricella waterfront seats, which all have a fine view and little else. The approach is part of it: a 20-minute footpath from Corricella, or the free boat Tonino runs every two hours from the marina in season, and then you arrive at a terrace on dark volcanic sand with the Chiaia bay below the tables. To order: ricci di mare — sea urchin in their shells, tasting of pure iodine and brine, scooped with bread; then spaghetti alle vongole or ravioli di pesce; house limoncello made from the family's own trees to close. Not for anyone expecting year-round opening, a card terminal, or a road. Cash only; closed October–April.",
+  "address": "Via Pizzaco 10, Spiaggia della Chiaia, 80079 Procida NA",
+  "phone": "—",
+  "hours": "Lunch on the beach terrace, spring to early autumn",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Conchiglia+Procida+Via+Pizzaco"
  },
  {
-  "id": "v02-la-lampara",
+  "id": "v02-caracale",
   "cat": "shop",
   "tier": "berth_top",
   "priority": 2,
-  "badge": "View",
-  "name": "La Lampara",
-  "short": "La Lampara",
-  "lat": 40.7642,
-  "lng": 14.0100,
-  "neighborhood": "Above Marina di Corricella — Hotel La Corricella terrace, the panoramic belvedere level over the fishing harbour",
+  "badge": "Sea urchin",
+  "name": "Caracalè",
+  "short": "Caracalè",
+  "lat": 40.7644,
+  "lng": 14.0328,
+  "neighborhood": "Via Marina di Corricella 62 — inside the car-free painted harbour, in a converted 17th-century boat-storage deposit built into the sea wall",
   "tags": [
-   "EUR 35–55 pp",
-   "Book for dinner; walk-ups turned away in summer",
-   "Lunch for the Corricella panorama below; dinner for the lit harbour"
+   "€20–40 pp",
+   "Reservations advised; +39 081 8969192",
+   "Lunch or dinner on the waterfront, spring to autumn"
   ],
-  "productTags": [
-   "View",
-   "Seafood"
-  ],
-  "why": "The single best viewing position on the island: a terrace belonging to the Gentile family's La Corricella hotel, directly above the amphitheatre of pastel fishing houses. The kitchen keeps pace: linguine ai frutti di mare (clams, mussels, prawns) and grilled whole branzino or orata, with an octopus salad dressed with Procida lemon and olive oil as the island seasonal. To order: Linguine ai frutti di mare for the pasta, whole grilled branzino for the main — both let the ingredients carry the work. Arrive for lunch to see the fishing boats below at rest; for dinner you trade the panorama for harbour lights, which is its own argument. The view is functional here, not decorative — this is where fishermen's families would have looked out to see whether the fleet was coming in.",
-  "address": "Via Marina di Corricella 36 (Hotel La Corricella), 80079 Procida NA",
-  "phone": "+39 081 896 7502",
-  "hours": "Lunch for the Corricella panorama below; dinner for the lit harbour",
-  "maps": "https://www.google.com/maps/search/?api=1&query=La+Lampara+Procida+Corricella"
+  "productTags": ["Sea urchin", "Seafood"],
+  "verdict": "The one that earns its view — the spaghetti alla Corricella is the dish, not a prop for the Instagram harbour shot",
+  "signature": "Spaghetti alla Corricella: golden sea-urchin roe heaped on pasta, oceanic-salt, olive oil, no cream, nothing between you and the sea",
+  "person": "Opened March 2000 in the lenzo (boat deposit) built into the Corricella sea wall; the kitchen staff have not been individually named in available sources",
+  "signal_chip": "Recommended by Luciano Pignataro Wine Blog · March 2000 opening in a historic boat storage · cited in 8 major travel guides",
+  "caveat": "No motor vehicles can reach Corricella — on foot only; the harbour tables fill fast in August; book ahead",
+  "why": "Opened March 2000 in a converted boat-storage deposit — a lenzo, the original vaulted rooms built into the sea wall to house fishing gear and skiffs — whose rough stone arch frames the tables looking out over the Corricella harbour. The kitchen bridges tradition and technique: spaghetti alla Corricella uses sea-urchin roe (ricci di mare) placed directly on al dente pasta with olive oil and nothing else — which only works when the urchins come up the same day. To order: spaghetti alla Corricella; or polpette di melanzane e spada (aubergine and swordfish balls with capers); or zuppa con fagioli e cozze (mussel and bean soup). Fishing boats five metres from the table; the same waterfront Il Postino (1994) made world-famous. Not for spontaneous summer walk-ins — book ahead.",
+  "address": "Via Marina di Corricella, 62, 80079 Procida NA",
+  "phone": "+39 081 8969192",
+  "hours": "Lunch or dinner on the waterfront, spring to autumn",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Caracalè+Procida+Corricella"
  },
  {
-  "id": "v03-il-pescatore",
+  "id": "v03-bar-roma",
   "cat": "shop",
   "tier": "berth_top",
   "priority": 3,
-  "badge": "Km-Zero",
-  "name": "Il Pescatore",
-  "short": "Il Pescatore",
-  "lat": 40.7639,
-  "lng": 14.0097,
-  "neighborhood": "Marina di Corricella — at the heart of the quay, between the fishing nets",
+  "badge": "Pastry",
+  "name": "Bar Roma Pasticceria",
+  "short": "Bar Roma",
+  "lat": 40.7618,
+  "lng": 14.0297,
+  "neighborhood": "Via Roma 164, steps from Marina Grande — the island's main port",
   "tags": [
-   "EUR 30–50 pp",
-   "Bookable by phone; walk-ins taken if space",
-   "Lunch or dinner, Corricella waterfront"
+   "€3–8 (pastry + espresso)",
+   "Walk-in; no reservations; opens early for the morning ferry crowd",
+   "Morning — the lingua di Procida is best warm from the oven"
   ],
-  "productTags": [
-   "Km-Zero",
-   "Seafood"
-  ],
-  "why": "The host known simply as Ciro (Ciro Girone) sources every ingredient himself each morning — the menu is written or recited when it changes with the catch. Grilled pagello (sea bream) in a crust of coarse salt and Procida herbs; the island rabbit (coniglio) simmered on Fridays with cherry tomatoes, garlic, olive oil and white wine in the manner of the giardini families who still keep hutch rabbits on the island's terraces. Organic and zero-kilometre by conviction not certification, with a kitchen that proves the principle. To order: Ask for the bream in salt crust, or the rabbit on a Friday. This is the one that locals drive in for, not the harbourfront one with the waiting list — which is a distinction worth understanding about a four-kilometre island.",
-  "address": "Via Marina di Corricella 5, 80079 Procida NA",
-  "phone": "+39 081 896 7483",
-  "hours": "Lunch or dinner, Corricella waterfront",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Il+Pescatore+Procida+Corricella"
+  "productTags": ["Lingua", "Pastry", "Lemon"],
+  "verdict": "The origin of the lingua di Procida — Mazziotti invented it here in the 1950s; every other version on the island measures itself against this one",
+  "signature": "Lingua di Procida: hot puff pastry shattering in layers, cold bright lemon crema inside — the contrast of warm flake and sharp citrus is the whole point",
+  "person": "Pasquale Mazziotti, the pastry chef who created the lingua di Procida in the 1950s using the thick pith of the Procida lemon; Bar Roma has been his house since",
+  "signal_chip": "Gambero Rosso International · invention credited by La Cucina Italiana · documented in Storie Napoli (2022) · the original recipe by Mazziotti",
+  "caveat": "A walk-in pasticceria — no restaurant food, no full meals; lines in high summer are real; cash culture",
+  "why": "The site was a bar called 'O Cafè re Barone since the 1930s. From the 1970s, pastry chef Pasquale Mazziotti took over and it was Mazziotti who invented the lingua di Procida in the 1950s — a fat oblong of flaky puff pastry shaped like an ox tongue, filled with a cold lemon crema pasticcera made from Procida's De.Co. lemons. Bar Roma is where that pastry was born and where it is still measured; the lingua here arrives still warm from the oven, the pastry shattering in crackled layers at the first bite, releasing cold, intensely lemon cream. To order: the lingua di Procida warm from the oven, with a short espresso. Also: babà al rum, sfogliatella riccia, pastiera napoletana. Not for those expecting a sit-down meal, a table, or a card machine.",
+  "address": "Via Roma 164, 80079 Procida NA",
+  "phone": "+39 081 8967460",
+  "hours": "Morning — the lingua di Procida is best warm from the oven",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Roma+Pasticceria+Procida"
  },
  {
-  "id": "v04-ristorante-crescenzo",
+  "id": "v04-bar-dal-cavaliere",
   "cat": "shop",
   "tier": "several",
   "priority": 4,
-  "badge": "Local",
-  "name": "Ristorante Crescenzo",
-  "short": "Crescenzo",
-  "lat": 40.7535,
-  "lng": 13.9958,
-  "neighborhood": "Marina di Chiaiolella — the quieter lagoon harbour on the island's western end, between Procida and Vivara",
+  "badge": "Bar",
+  "name": "Bar dal Cavaliere",
+  "short": "Bar dal Cavaliere",
+  "lat": 40.7619,
+  "lng": 14.0293,
+  "neighborhood": "Via Roma 42 — the main harbour square at Marina Grande",
   "tags": [
-   "EUR 30–45 pp",
-   "Recommended in season; third-generation family house",
-   "Lunch, with the fishing boats of Chiaiolella at your back"
+   "€3–8 (granita, pastry, coffee)",
+   "Walk-in; open year-round",
+   "Morning for the granita al limone; open through the day"
   ],
-  "productTags": [
-   "Local",
-   "Seafood"
-  ],
-  "why": "The Crescenzo family has run this quayside table at Chiaiolella marina for three generations — this is the one Neapolitans take the ferry for specifically, without stopping at Corricella. The kitchen does acqua pazza (white fish poached in sweet tomato broth, garlic, capers and local olive oil) and grilled totano (flying squid) with Procida lemon as well as anyone on the island. To order: Acqua pazza with whatever the boat brought in, or the grilled totano. Fifteen-minute walk from the Corricella circuit, which means the room stays quietly authentic and the markup never creeps. Not for those whose primary interest is the Corricella view — the Chiaiolella boats are working, not photogenic.",
-  "address": "Via Roma 33, Marina di Chiaiolella, 80079 Procida NA",
-  "phone": "+39 081 896 7255",
-  "hours": "Lunch, with the fishing boats of Chiaiolella at your back",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Ristorante+Crescenzo+Procida+Chiaiolella"
+  "productTags": ["Lemon", "Pastry"],
+  "verdict": "The harbour-square bar for granita al limone — built from real Procida De.Co. lemons, not syrup; a genuine second opinion on the lingua alongside Bar Roma",
+  "signature": "Granita al limone: sharp, icy, intense with Procida lemon acidity — the bitter pith oils linger behind the cold citrus",
+  "person": "The bar has operated on Via Roma for multiple decades; no individual owner confirmed in available sources",
+  "signal_chip": "Lonely Planet listed · visitprocida.com recommended · one of two historic bars on Via Roma that anchor morning life at the port",
+  "caveat": "Pastry, coffee and granita only — not a restaurant; granita is seasonal; high-summer queues",
+  "why": "Cited by Lonely Planet as the harbour-square bar of reference for granita al limone — the lemon granita is made from real Procida De.Co. lemons, which carry notably higher acidity than Amalfi or Sorrento varieties alongside the fragrant essential oils of the thick rind. The result is sharper, more intense, and more icy than anything made from standard lemons. Also serves the lingua di Procida (neighbor and competitor to Bar Roma, 120 metres along the same Via Roma), espresso, and the full pastry range. Not a restaurant — this is coffee, pastry and granita territory, all day.",
+  "address": "Via Roma 42, 80079 Procida NA",
+  "phone": "—",
+  "hours": "Morning for the granita al limone; open through the day",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+dal+Cavaliere+Procida+Via+Roma"
  },
  {
-  "id": "v05-la-gorgonia",
+  "id": "v05-crescenzo",
   "cat": "shop",
   "tier": "several",
   "priority": 5,
   "badge": "Seafood",
-  "name": "La Gorgonia",
-  "short": "La Gorgonia",
-  "lat": 40.7638,
-  "lng": 14.0093,
-  "neighborhood": "Marina di Corricella — Via Marina di Corricella 50, on the quay beside Caracalè",
+  "name": "Crescenzo Hotel Ristorante",
+  "short": "Crescenzo",
+  "lat": 40.7518,
+  "lng": 14.0188,
+  "neighborhood": "Via Marina Chiaiolella 33 — directly on the Chiaiolella horseshoe harbour, the island's southern port",
   "tags": [
-   "EUR 30–50 pp",
-   "Walk-in often possible; book for weekends",
-   "Lunch, quayside"
+   "Mid-range (hotel restaurant pricing)",
+   "Reservations advised; +39 081 896 7255; hotelcrescenzo.it",
+   "Lunch or dinner on the harbourfront; evening pizza from the wood-fired oven"
   ],
-  "productTags": [
-   "Seafood",
-   "IGP Lemon"
-  ],
-  "why": "On the Corricella quay at number 50 — next to Caracalè, with more room and without a two-week waiting list. Known for acqua pazza, grilled fish and, when the season runs roughly April–September, the insalata di limone di Procida: the island's IGP lemon sliced almost translucently thin, dressed with local olive oil, fresh herbs and sometimes a layer of local tuna. To order: The lemon salad as a starter if in season (early spring to mid-autumn), then grilled calamari or the frittura di paranza (mixed small-fish fry). Reliable, honest cooking without the reservation drama of its neighbour.",
-  "address": "Via Marina di Corricella 50, 80079 Procida NA",
-  "phone": "+39 081 896 7660",
-  "hours": "Lunch, quayside",
-  "maps": "https://www.google.com/maps/search/?api=1&query=La+Gorgonia+Procida+Corricella"
+  "productTags": ["Seafood", "Pizza"],
+  "verdict": "The oldest continuously operating restaurant at Chiaiolella — the founder's biography is specific and verifiable, not a heritage-branding exercise",
+  "signature": "Catch of the day simply grilled: sea bass or bream with Procida lemon and olive oil, the fish chosen by the kitchen from the morning's boats",
+  "person": "Founded 1953 by Signor Crescenzo (from Ischia, who rowed to Procida daily to sell produce) and his wife Signora Vincenza, daughter of a Chiaiolella merchant; family-run since",
+  "signal_chip": "Founded 1953 · one of the oldest restaurants on the island · family history documented on hotelcrescenzo.it · year-round operation",
+  "caveat": "A hotel restaurant at a tourist harbour — honest and traditional rather than ambitious; do not arrive expecting destination cooking",
+  "why": "In 1953 a man from Ischia rowed across the bay daily to sell vegetables and fell for the daughter of a Chiaiolella merchant. They opened a bar first, then fed 30 construction workers in the area, and it grew into a restaurant and hotel. The kitchen delivers the catch of the day simply grilled — sea bass, bream or octopus, with lemon and oil — and evening pizza from a wood-fired oven. Signora Vincenza's family tradition still shows in the hospitality. To order: whatever is on the slate as the catch of the day, grilled; evening pizza if you want the oven at work. Not for those wanting creative or destination cooking — this is honest, old-fashioned, waterfront Campanian.",
+  "address": "Via Marina Chiaiolella, 33, 80079 Procida NA",
+  "phone": "+39 081 896 7255",
+  "hours": "Lunch or dinner on the harbourfront; evening pizza from the wood-fired oven",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Crescenzo+Ristorante+Procida+Chiaiolella"
  },
  {
-  "id": "v06-ristorante-graziella",
+  "id": "v06-da-girone",
   "cat": "shop",
   "tier": "several",
   "priority": 6,
-  "badge": "Literary",
-  "name": "Ristorante Graziella",
-  "short": "Ristorante Graziella",
-  "lat": 40.7635,
-  "lng": 14.0089,
-  "neighborhood": "Marina di Corricella — on the quay, named for Lamartine's 1849 novel set on this island",
+  "badge": "Seafood",
+  "name": "Ristorante Da Girone",
+  "short": "Da Girone",
+  "lat": 40.7580,
+  "lng": 14.0250,
+  "neighborhood": "Lungomare Cristoforo Colombo 4 — waterfront terrace between Marina Grande and Chiaiolella, with views to Ischia",
   "tags": [
-   "EUR 25–40 pp",
-   "Walk-in; booking recommended at weekends",
-   "Lunch or dinner, harbourfront"
+   "Mid-range; reservations strongly advised",
+   "Book well ahead in July–August; confirm via phone or booking platform",
+   "Lunch and dinner; covered sea-view terrace"
   ],
-  "productTags": [
-   "Literary",
-   "Seafood"
-  ],
-  "why": "Named for Alphonse de Lamartine's 1849 novella 'Graziella' — set on this island and published two years before the author's political ruin — a restaurant that wears its literary pedigree lightly. The fritto misto di mare (mixed small-fish fry, lemon, no batter) is the honest house statement; the spaghetti with local salted anchovies aglio e olio is the winter comfort dish. To order: Fritto misto if it's the hot season, spaghetti aglio e olio all'acciuga in autumn and winter. The literary tie-in draws a gentle, unhurried crowd; the cooking is Neapolitan-honest without the Corricella premium.",
-  "address": "Via Marina di Corricella (Corricella harbourfront), 80079 Procida NA",
-  "phone": "+39 081 896 7479",
-  "hours": "Lunch or dinner, harbourfront",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Ristorante+Graziella+Procida"
+  "productTags": ["Seafood", "Lemon"],
+  "verdict": "Named 'the island's most beloved restaurant' by Procida Insider — the pesto di limone spaghetti is a dish you will want the recipe for and cannot replicate without a Procida lemon",
+  "signature": "Spaghetti al pesto di limone: pale-green sauce of Procida lemon zest, pine nuts, herbs, Parmigiano — intensely fragrant, coating each strand without heaviness",
+  "person": "Ciro, known as 'Girone' — the restaurant carries his nickname; he selects the catch and ingredients personally each morning at the market",
+  "signal_chip": "Named 'the island's most beloved restaurant' by Procida Insider · Ciro's daily market selection confirmed across multiple reviews · terrace with Ischia views",
+  "caveat": "Books up days in advance in high season; essential to reserve; the pesto di limone is a lunch dish — order it early",
+  "why": "Ciro's nickname is Girone and the name stuck to the restaurant he runs on the sea-view terrace with Ischia across the water. He selects the catch and market produce personally each morning. To order: spaghetti al pesto di limone — the pale green sauce built from Procida De.Co. lemons, pine nuts, walnuts, basil, parsley, Parmigiano and olive oil, intensely fragrant, coating each strand of al dente pasta; or spaghetti con cozze e menta (mussels and fresh mint — a Ciro signature that works completely); or the pasta con crema di mare. Ciro is cited by Procida Insider as running the island's most beloved restaurant — the pesto di limone is the reason. Not for those arriving without a reservation in July–August.",
+  "address": "Lungomare Cristoforo Colombo, 4, 80079 Procida NA",
+  "phone": "—",
+  "hours": "Lunch and dinner; covered sea-view terrace",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Da+Girone+Procida"
  },
  {
-  "id": "v07-bar-roma",
+  "id": "v07-la-medusa",
   "cat": "shop",
   "tier": "several",
   "priority": 7,
-  "badge": "Pastry",
-  "name": "Bar Roma",
-  "short": "Bar Roma",
-  "lat": 40.7628,
-  "lng": 14.0040,
-  "neighborhood": "Marina Grande — Via Roma, the island's main road off the ferry port",
+  "badge": "Crudo",
+  "name": "La Medusa",
+  "short": "La Medusa",
+  "lat": 40.7616,
+  "lng": 14.0295,
+  "neighborhood": "Via Roma 116 — Marina Grande waterfront, the island's main port",
   "tags": [
-   "EUR 3–8 (pastry, coffee)",
-   "Walk-in; open from 06:30",
-   "Morning only — sells out by 10:00 in July–August"
+   "Mid-range",
+   "Book ahead for the crudo menu; contact via booking platform (phone unconfirmed)",
+   "Lunch and dinner; established 1954"
   ],
-  "productTags": [
-   "Pastry",
-   "IGP Lemon"
-  ],
-  "why": "Bar Roma and Bar Dal Cavaliere have argued for supremacy over the lingua di Procida for 60 years — the puff-pastry 'tongue' invented in the 1950s by Pasquale Mazziotti, filled with lemon cream from the island's IGP lemons. Bar Roma's version is the crisper, more citrus-forward of the two: thinner pastry, tighter lamination, a lemon cream that bites back. An institution: the island's first stop after the morning ferry. To order: One lingua di Procida and a macchiato at the bar. You are expected to take a side in the Roma vs Dal Cavaliere debate — both are obligatory.",
-  "address": "Via Roma 27, Marina Grande, 80079 Procida NA",
-  "phone": "+39 081 896 8136",
-  "hours": "Morning only — sells out by 10:00 in July–August",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Roma+Procida+Marina+Grande"
+  "productTags": ["Crudo", "Seafood"],
+  "verdict": "The oldest restaurant at Marina Grande — over seventy years on the same waterfront — with a raw fish menu that requires advance booking and rewards it",
+  "signature": "Crudo di mare: paper-thin carpaccio of the day's local catch — olive oil, lemon, sea salt — purity and freshness over technique",
+  "person": "Brothers Marco and Luca (surnames not confirmed in available sources) have run the kitchen for the current generation; the restaurant was established 1954",
+  "signal_chip": "Established 1954 · the first dining establishment at Marina Grande · documented by Procida Insider and Yelp · 70+ years of continuous operation",
+  "caveat": "The crudo menu requires pre-booking; exact phone number not confirmed — contact via booking platform; winter hours may be reduced",
+  "why": "The first proper restaurant ever to open at Marina Grande, in 1954 — which gives La Medusa more than seventy years on the same waterfront, more than any other table in the port. Brothers Marco and Luca run a kitchen that leads with the raw and the pure: the crudo di mare — paper-thin carpaccio of whatever the boats brought in that morning, dressed only with high-quality olive oil, lemon and sea salt — is listed as a special and requires advance booking. To order: the crudo if you have booked; otherwise the spaghetti alle vongole or frittura di paranza (fried mixed small fish — anchovies, whitebait, small squid). Not for those wanting a confirmed phone booking — contact via email or booking platform before going.",
+  "address": "Via Roma 116, 80079 Procida NA",
+  "phone": "—",
+  "hours": "Lunch and dinner; established 1954",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Medusa+Procida+Via+Roma"
  },
  {
-  "id": "v08-bar-dal-cavaliere",
+  "id": "v08-la-locanda-del-postino",
   "cat": "shop",
   "tier": "several",
   "priority": 8,
-  "badge": "Pastry",
-  "name": "Bar Dal Cavaliere",
-  "short": "Bar Dal Cavaliere",
-  "lat": 40.7625,
-  "lng": 14.0036,
-  "neighborhood": "Marina Grande — Piazza dei Martiri, the small square off Via Roma near the ferry",
+  "badge": "Seafood",
+  "name": "La Locanda del Postino",
+  "short": "La Locanda del Postino",
+  "lat": 40.7643,
+  "lng": 14.0330,
+  "neighborhood": "Via Marina di Corricella 63 — one address from Caracalè on the same Il Postino quayside",
   "tags": [
-   "EUR 3–8 (pastry, granita)",
-   "Walk-in; open from 06:30",
-   "Morning, and again as an afternoon granita stop"
+   "Very reasonable — confirmed by multiple reviewers as priced below comparable waterfront tables",
+   "Seasonal; spring to autumn",
+   "Lunch and dinner on the Corricella waterfront"
   ],
-  "productTags": [
-   "Pastry",
-   "IGP Lemon"
-  ],
-  "why": "The other side of the lingua di Procida argument: Bar Dal Cavaliere's version is thicker, richer, the cream more dominant and the pastry less aggressive — preferred by those who want the lemon cushioned rather than foregrounded. Also the better source for granita di limone in the afternoon: a proper water-ice, not the granular tourist version, made from the same IGP lemons. To order: The lingua and a granita di limone in the same visit — the contrast of the warm pastry and the cold granita is the point. The square is where island gossip actually happens.",
-  "address": "Piazza dei Martiri, Marina Grande, 80079 Procida NA",
-  "phone": "+39 081 896 7130",
-  "hours": "Morning, and again as an afternoon granita stop",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Dal+Cavaliere+Procida"
+  "productTags": ["Seafood"],
+  "verdict": "The Il Postino quayside is this stretch of Corricella — a working fishermen's taverna, not a film-tourism operation",
+  "signature": "Frittura di paranza: whitebait, anchovies and small squid barely battered and hot, served in a cone of paper at the water's edge",
+  "person": "No individual owner confirmed in available sources; the quayside location is documented by visitprocida.com at this exact address",
+  "signal_chip": "Listed by visitprocida.com and Procida Insider · Il Postino (1994) filmed on this exact stretch of Corricella quay · 4.0 / 5 across 1,274 reviews",
+  "caveat": "Seasonal only — confirm dates before arriving off-season; the Il Postino name draws extra crowds in August; waterfront tables go first",
+  "why": "The bar and waterfront taverna that forms the backdrop to the most famous scenes of Il Postino (1994) — where Mario first speaks to Beatrice, where Neruda walks, where the fishing village of the film was staged — is this exact stretch of Corricella quay. La Locanda del Postino is a working fisherman's restaurant, not a film-tourism makeover: the kitchen sends out tonno rosso tartare (bluefin tuna, roughly cut, minimally dressed), frittura di paranza (tiny mixed fried fish in a paper cone, hot and barely battered), and spaghetti alle vongole. To order: the frittura di paranza with Falanghina while the fishing boats come in. Not for those arriving off-season without confirming — seasonal hours only.",
+  "address": "Via Marina di Corricella, 63, 80079 Procida NA",
+  "phone": "—",
+  "hours": "Lunch and dinner on the Corricella waterfront; seasonal",
+  "maps": "https://www.google.com/maps/search/?api=1&query=La+Locanda+del+Postino+Procida+Corricella"
  },
  {
-  "id": "v09-paname",
+  "id": "v09-il-galeone",
   "cat": "shop",
   "tier": "plenty",
   "priority": 9,
-  "badge": "Bakery",
-  "name": "Panâme",
-  "short": "Panâme",
-  "lat": 40.7626,
-  "lng": 14.0039,
-  "neighborhood": "Marina Grande — along Via Roma, close to the ferry terminal",
+  "badge": "Pizza",
+  "name": "Il Galeone",
+  "short": "Il Galeone",
+  "lat": 40.7517,
+  "lng": 14.0192,
+  "neighborhood": "Via Marina Chiaiolella 54 — the southern harbour front, next to Crescenzo",
   "tags": [
-   "EUR 3–10 (bread, pastry)",
-   "Walk-in; limited hours — check locally",
-   "Morning, before 12:00"
+   "Affordable to mid-range",
+   "Walk-in and reservations; +39 081 896 9622",
+   "Lunch, dinner, and evening Neapolitan pizza from the wood-fired oven; open year-round"
   ],
-  "productTags": [
-   "Bakery",
-   "IGP Lemon"
-  ],
-  "why": "A newer artisanal bakery that brought French-inflected technique to the island's lemon obsession: harbour bread baked with local lemon seeds; suisse pastry (a Lyon classic naturalized to the island counter); lemon tarts alongside the obligatory lingua di Procida. The approach is the lingua tradition updated rather than repeated. To order: The harbour bread warm from the oven, or the lemon tart when available. Limited hours and a small counter — closed by midday. Not for those seeking the old-Procida ritual (that's Bar Roma); this is for those who want the same ingredient rethought.",
-  "address": "Via Roma (Marina Grande), 80079 Procida NA",
-  "phone": "—",
-  "hours": "Morning, before 12:00",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Paname+bakery+Procida"
+  "productTags": ["Pizza", "Seafood"],
+  "verdict": "The Chiaiolella anchor — restaurant, pizzeria and bar under one roof, and one of the few tables open year-round on an island that largely hibernates",
+  "signature": "Calamarata: wide rings of pasta tangled with squid in a tomato-caper sauce, the pasta absorbing the briny sea into its walls",
+  "person": "No individual owner confirmed in available sources; documented on procida.net and Google at this exact address",
+  "signal_chip": "4.4 / 5 on Google · documented on procida.net · year-round operation (rare on a seasonal island)",
+  "caveat": "Volume restaurant — honest and reliable rather than special; the pizza is the evening strength; lunch is for practical hunger rather than an occasion",
+  "why": "Il Galeone operates simultaneously as restaurant, pizzeria and bar — which makes it the practical anchor of Chiaiolella, the southern harbour, on days when more destination tables are closed or full. The kitchen opens year-round, which is genuinely unusual on a seasonal island. To order: calamarata — wide ring pasta with squid in a tomato-caper sauce — or the evening Neapolitan pizza from the wood oven. Tiramisu is the reliable close. Not for those seeking a special occasion table — this is the honest, year-round local of the southern port.",
+  "address": "Via Marina Chiaiolella, 54, 80079 Procida NA",
+  "phone": "+39 081 896 9622",
+  "hours": "Lunch, dinner, and evening Neapolitan pizza; open year-round",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Il+Galeone+Procida+Chiaiolella"
  },
  {
-  "id": "v10-da-girone",
+  "id": "v10-bar-capriccio",
   "cat": "shop",
   "tier": "plenty",
   "priority": 10,
-  "badge": "Trattoria",
-  "name": "Da Girone",
-  "short": "Da Girone",
-  "lat": 40.7637,
-  "lng": 14.0094,
-  "neighborhood": "Marina di Corricella — casual trattoria on the quay",
+  "badge": "Bar",
+  "name": "Bar Capriccio",
+  "short": "Bar Capriccio",
+  "lat": 40.7618,
+  "lng": 14.0292,
+  "neighborhood": "Via Roma 99 — steps from the Marina Grande ferry pier; the first bar most visitors encounter",
   "tags": [
-   "EUR 20–35 pp",
-   "Walk-in; cash preferred",
-   "Lunch or early dinner"
+   "Bar prices",
+   "Walk-in; open year-round; +39 081 896 8016",
+   "Espresso from 7 am through the day; cocktails and occasional live music from late afternoon"
   ],
-  "productTags": [
-   "Trattoria",
-   "Seafood"
-  ],
-  "why": "The Girone family's casual trattoria on the Corricella quay — unpretentious, generous portions, the mixed-fish fry and pasta with clams done without ceremony. No framing, no curated menu, no scenery markup. The local alternative when Caracalè and La Lampara are booked solid. To order: Whatever the cook recommends that day; the fritto misto and spaghetti alle vongole are consistently reliable. Not for those wanting the full restaurant experience — this is a meal, not a production.",
-  "address": "Via Marina di Corricella (Corricella harbourfront), 80079 Procida NA",
-  "phone": "+39 081 896 7564",
-  "hours": "Lunch or early dinner",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Da+Girone+Procida+Corricella"
+  "productTags": ["Bar", "Pastry"],
+  "verdict": "The first and last bar most visitors encounter — morning lingua di bue still warm from the oven, evening Campari spritz with Ischia across the bay",
+  "signature": "Morning lingua di bue with espresso off the Naples ferry: the pastry warm and shattering, the coffee short and dark, the Bay of Naples immediate",
+  "person": "No individual owner confirmed in available sources; documented by visitprocida.com at this exact address",
+  "signal_chip": "Listed by visitprocida.com · step from the Marina Grande ferry landing · open year-round",
+  "caveat": "A multi-purpose bar — coffee, sandwiches, drinks and music — rather than a specialist in any of these; the evening transition to cocktail bar makes it noisy late",
+  "why": "Bar Capriccio sits steps from the Marina Grande ferry landing, which makes it where Procida begins and ends for most visitors: morning espresso and a lingua di bue as you arrive off the Naples hydrofoil; a limoncello spritz at the same pavement table at dusk as you wait for the last boat back, with Ischia visible across the water. It moves through three modes in a day: morning café (tramezzini, pastry, coffee from 7 am), lunchtime sandwiches, evening cocktail bar with occasional live music. To order: the lingua di bue warm with espresso on arrival; a limoncello spritz using locally squeezed Procida lemon in the evening. Not for those seeking depth in any single direction — this is gateway-bar utility.",
+  "address": "Via Roma 99, 80079 Procida NA",
+  "phone": "+39 081 896 8016",
+  "hours": "Espresso from 7 am; cocktails and occasional music from late afternoon",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Bar+Capriccio+Procida"
  },
  {
-  "id": "v11-san-michele-hotel-restaurant",
-  "cat": "mainland",
-  "tier": "plenty",
+  "id": "v11-lubrano-farm",
+  "cat": "market",
+  "tier": "several",
   "priority": 11,
-  "badge": "View",
-  "name": "San Michele Boutique Hotel",
-  "short": "San Michele Hotel",
-  "lat": 40.7663,
-  "lng": 14.0063,
-  "neighborhood": "Above the island's mid-section — Via Vittorio Emanuele (central Procida), elevated above both marinas with views toward Ischia and Capri",
+  "badge": "Producer",
+  "name": "Azienda Agricola Lubrano — lemon grove tour",
+  "short": "Lubrano Farm",
+  "lat": 40.7650,
+  "lng": 14.0340,
+  "neighborhood": "Via Regina Elena 20, Starza — interior of the island, above Corricella; pre-booking required via procidaexperience.it",
   "tags": [
-   "EUR 50–80 pp (hotel dining)",
-   "Hotel guests and reservations; book 48h ahead",
-   "Dinner, panoramic terrace"
+   "Tour + tasting price (see procidaexperience.it for current rates)",
+   "Pre-booking required; pesticide-free, 12,000 sq m grove",
+   "Guided visits by appointment; seasonal"
   ],
-  "productTags": [
-   "View",
-   "Seafood"
-  ],
-  "why": "The island's most elevated dining position — a boutique hotel restaurant on the high central road with uninterrupted views toward Ischia, Capri and the Phlegraean Fields at dusk. The kitchen respects the same Campanian sourcing as the quayside rooms: Procida lemon throughout, fresh catch, local vegetables. Not for those wanting the Corricella fishing-village experience — this is the island seen from above, which is a different proposition. Practical: non-guests can book for dinner but the experience is quieter and more formal than the quayside alternatives.",
-  "address": "Via Vittorio Emanuele II 31, 80079 Procida NA",
-  "phone": "+39 081 896 7422",
-  "hours": "Dinner, panoramic terrace",
-  "maps": "https://www.google.com/maps/search/?api=1&query=San+Michele+Boutique+Hotel+Procida"
+  "productTags": ["Lemon", "Producer"],
+  "verdict": "The most direct encounter with the limone di Procida — the De.Co. lemon too large, too mild and too fragile for commercial export, growing as the Lubranos have grown it for generations",
+  "signature": "The limone pane tasted raw in the grove: thick white pith mild as bread, flesh acidic and intensely fragrant — the flavour the lingua di Procida is built on",
+  "person": "The Lubrano family (multi-generational); cultivation pesticide-free, technique handed father to son on volcanic-sedimentary soil above Corricella",
+  "signal_chip": "Procida lemon on the Slow Food Ark of Taste · De.Co. (Denominazione Comunale) certified grove · documented by procidaexperience.it",
+  "caveat": "No walk-ins — pre-booking via procidaexperience.it is mandatory; not accessible without a confirmed reservation",
+  "why": "The limone di Procida — also called limone pane (bread lemon) for the thick, mild, sponge-like white pith under its zest — carries a De.Co. (Denominazione Comunale) designation and appears on the Slow Food Ark of Taste as a variety in decline, not the IGP status of the Amalfi or Sorrento lemons. The Lubrano family has cultivated these lemons on 12,000 square metres of volcanic-sedimentary soil, pesticide-free, since before the current generation. The tour walks the grove, explains the cultivation cycle, and ends with a tasting of limoncello and crema di limone made on site. To order (at the tasting): the homemade limoncello and crema di limone; buy a bottle to take the island's defining flavour home. Not accessible without pre-booking through procidaexperience.it — walk-ins will find a locked gate.",
+  "address": "Via Regina Elena 20, Starza, 80079 Procida NA",
+  "phone": "+39 081 810 1348",
+  "hours": "Guided visits by appointment; seasonal",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Azienda+Agricola+Lubrano+Procida+Starza"
  },
  {
-  "id": "v12-limone-di-procida-stalls",
+  "id": "v12-agre-liquorificio",
   "cat": "market",
   "tier": "plenty",
   "priority": 12,
-  "badge": "IGP Lemon",
-  "name": "Limone di Procida — street stalls",
-  "short": "Lemon stalls",
-  "lat": 40.7624,
-  "lng": 14.0037,
-  "neighborhood": "Piazza dei Martiri / Via Roma — the stalls cluster around the market square off Marina Grande",
+  "badge": "Limoncello",
+  "name": "Agre — Liquorificio Artigianale",
+  "short": "Agre",
+  "lat": 40.7620,
+  "lng": 14.0300,
+  "neighborhood": "Via Vittorio Emanuele 255 — Marina Grande area",
   "tags": [
-   "EUR 3–6 per lemon",
-   "No booking; seasonal (April–October)",
-   "Morning market hours"
+   "Retail bottle prices",
+   "Walk-in shop; check agreprocida.com for current hours",
+   "Shop hours; not a bar or tasting room"
   ],
-  "productTags": [
-   "IGP Lemon",
-   "Market"
-  ],
-  "why": "The Limone di Procida — called 'limone di pane' (bread lemon) for its thick, spongy white pith — is the island's primary agricultural product. Grafted onto bitter orange rootstock and grown in the steeply terraced walled giardini of the island's interior slopes, the fruits reach grapefruit size, turn greenish-yellow when ripe (not the supermarket lemon yellow), and carry an intensely perfumed rind used in lingua di Procida pastries, granita, and the island's limoncello. Buy from the stall vendors at Piazza dei Martiri rather than the harbour tourist shops: the fruit is the same, the price is half. To order: Two or three lemons; eat one peeled like an orange (locals do this in summer — the pith is sweet enough to eat raw). Out of season the stalls thin out; do not confuse with the commercially bottled 'Limone di Procida' liqueurs.",
-  "address": "Piazza dei Martiri / Via Roma, Marina Grande, 80079 Procida NA",
-  "phone": "—",
-  "hours": "Morning market hours",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Piazza+dei+Martiri+Procida"
+  "productTags": ["Limoncello", "Amaro"],
+  "verdict": "SCORZA is the limoncello that earns the description — a 2-day maceration for fresh-peel intensity, not the cooked-sugar bottle sold by the ferryload at Sorrento",
+  "signature": "Fogliolì amaro: macerated from lemon leaves rather than peel — green, bitter, herbaceous; a genuinely unusual Italian spirit that exists almost nowhere else",
+  "person": "Artisanal producer (individual founder not confirmed in available sources); operations and products documented at agreprocida.com",
+  "signal_chip": "SCORZA reviewed by Cinque Gusti and Bottle of Italy · Fogliolì cited as unique in the Italian amaro landscape · De.Co. Procida lemon source",
+  "caveat": "A retail shop only — not a bar, tasting room or café in the conventional sense; confirm hours at agreprocida.com before visiting",
+  "why": "SCORZA is the limoncello that earns the word: the peels of Procida De.Co. lemons macerated for only two days — a shorter time than the standard commercial process — yielding intense, bright, fresh-peel fragrance rather than the cooked-sugar flavour of tourist limoncello. At 34% ABV, it is stronger than most. But Fogliolì is the more distinctive product: an amaro made from lemon leaves (foglie) rather than peel, drawing from a Procida tradition of adding leaves to limoncello maceration. The result is greener, more bitter and herbaceous — a genuinely unusual Italian spirit. Reviewed and recommended by Cinque Gusti and Bottle of Italy. To buy: a bottle of SCORZA and a bottle of Fogliolì. Not a tasting bar — confirm hours on the website before making the trip.",
+  "address": "Via Vittorio Emanuele 255, 80079 Procida NA",
+  "phone": "+39 339 1643991",
+  "hours": "Shop hours; see agreprocida.com",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Agre+Liquorificio+Procida"
  }
 ];
   const NEIGHBORHOODS = [
  {
   "id": "n-marina-grande",
-  "name": "Marina Grande",
-  "center": [40.7627, 14.0037],
-  "radius": 200,
+  "name": "Marina Grande — the main port",
+  "center": [40.7618, 14.0294],
+  "radius": 220,
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+Grande+Procida"
  },
  {
-  "id": "n-marina-di-corricella",
-  "name": "Marina di Corricella",
-  "center": [40.7638, 14.0095],
-  "radius": 160,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+di+Corricella+Procida"
- },
- {
   "id": "n-terra-murata",
-  "name": "Terra Murata",
-  "center": [40.7688, 14.0075],
-  "radius": 200,
+  "name": "Terra Murata — the medieval hilltop",
+  "center": [40.7694, 14.0345],
+  "radius": 150,
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Terra+Murata+Procida"
  },
  {
-  "id": "n-marina-di-chiaiolella",
-  "name": "Marina di Chiaiolella",
-  "center": [40.7533, 13.9955],
+  "id": "n-marina-corricella",
+  "name": "Marina Corricella — the painted harbour",
+  "center": [40.7644, 14.0328],
+  "radius": 150,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+Corricella+Procida"
+ },
+ {
+  "id": "n-chiaiolella",
+  "name": "Chiaiolella — the southern beach port",
+  "center": [40.7518, 14.0188],
   "radius": 200,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+di+Chiaiolella+Procida"
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Chiaiolella+Procida"
  },
  {
-  "id": "n-le-giardini",
-  "name": "Le Giardini (lemon terraces)",
-  "center": [40.7642, 13.9992],
-  "radius": 320,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Giardini+Procida+lemon+gardens"
- },
- {
-  "id": "n-via-liberta-sent-co",
-  "name": "Via Libertà / Sent'Co",
-  "center": [40.7628, 14.0000],
+  "id": "n-pizzaco-chiaia",
+  "name": "Pizzaco / Spiaggia della Chiaia",
+  "center": [40.7660, 14.0388],
   "radius": 180,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Via+Libert%C3%A0+Procida"
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+della+Chiaia+Procida"
+ },
+ {
+  "id": "n-starza-centane",
+  "name": "Starza / Centane — interior lemon country",
+  "center": [40.7650, 14.0340],
+  "radius": 160,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Starza+Procida"
  }
 ];
   const WALKS = [
  {
-  "id": "w-corricella-to-terra-murata",
-  "name": "Corricella to Terra Murata via the stepped lane",
-  "start": [40.7640, 14.0095],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Salita+San+Michele+Procida+to+Terra+Murata"
+  "id": "w-terra-murata-corricella-descent",
+  "name": "Terra Murata → Corricella descent",
+  "start": [40.7694, 14.0345],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Terra+Murata+Procida+viewpoint"
  },
  {
-  "id": "w-marina-grande-to-pozzo-vecchio",
-  "name": "Marina Grande to Pozzo Vecchio (Postman's Beach)",
-  "start": [40.7627, 14.0037],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Pozzo+Vecchio+Beach+Procida"
+  "id": "w-corricella-chiaia-coastal-path",
+  "name": "Corricella → Spiaggia della Chiaia coastal path",
+  "start": [40.7644, 14.0328],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+Corricella+Procida"
  },
  {
-  "id": "w-via-liberta-giardini-loop",
-  "name": "Via Libertà and the giardini lemon-terrace loop",
-  "start": [40.7627, 14.0037],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Via+Libert%C3%A0+Procida+lemon+gardens"
+  "id": "w-island-circuit",
+  "name": "Island circuit — full loop",
+  "start": [40.7618, 14.0294],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Procida+island+circuit+walk"
  },
  {
-  "id": "w-chiaiolella-to-vivara",
-  "name": "Chiaiolella to Vivara nature reserve (footbridge)",
-  "start": [40.7533, 13.9955],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Vivara+Island+Procida+footbridge"
+  "id": "w-pozzo-vecchio-postino-beach",
+  "name": "Pozzo Vecchio / Il Postino beach path",
+  "start": [40.7540, 14.0200],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+Pozzo+Vecchio+Procida"
  },
  {
-  "id": "w-circumnavigation-coastal",
-  "name": "Coastal circumnavigation — rough track, full island",
-  "start": [40.7627, 14.0037],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Procida+island+coastal+walk"
+  "id": "w-vivara-guided-walk",
+  "name": "Vivara Nature Reserve — guided circuit",
+  "start": [40.7521, 14.0129],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Vivara+Procida+nature+reserve"
  }
 ];
   const WORK_SPOTS = [
  {
-  "id": "p-work-bar-roma",
-  "name": "Bar Roma (morning, pre-10:00)",
-  "start": [40.7628, 14.0040]
+  "id": "p-work-bar-capriccio",
+  "name": "Bar Capriccio",
+  "start": [40.7618, 14.0292]
  },
  {
-  "id": "p-work-la-corricella-terrace",
-  "name": "Hotel La Corricella terrace",
-  "start": [40.7642, 14.0100]
+  "id": "p-work-caracale-terrace",
+  "name": "Caracalè terrace (Corricella)",
+  "start": [40.7644, 14.0328]
  },
  {
-  "id": "p-work-belvedere-elsa-morante",
-  "name": "Belvedere Elsa Morante (above Corricella)",
-  "start": [40.7649, 14.0100]
+  "id": "p-work-locanda-del-postino",
+  "name": "La Locanda del Postino (Corricella waterfront)",
+  "start": [40.7643, 14.0330]
  }
 ];
   const LANDMARKS = [
  {
-  "id": "l-beach-pozzo-vecchio",
-  "name": "Spiaggia del Pozzo Vecchio (Postman's Beach)",
-  "coords": [40.7513, 13.9888],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+del+Pozzo+Vecchio+Procida"
+  "id": "l-beach-chiaia",
+  "name": "Spiaggia della Chiaia",
+  "coords": [40.7660, 14.0388],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+della+Chiaia+Procida"
  },
  {
-  "id": "l-beach-chiaia",
-  "name": "Spiaggia di Chiaia",
-  "coords": [40.7618, 14.0162],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+di+Chiaia+Procida"
+  "id": "l-beach-pozzo-vecchio",
+  "name": "Spiaggia del Pozzo Vecchio — Il Postino beach",
+  "coords": [40.7540, 14.0200],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+Pozzo+Vecchio+Procida"
  },
  {
   "id": "l-beach-ciraccio",
-  "name": "Lido Ciraccio (main organised beach)",
-  "coords": [40.7540, 13.9965],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Lido+Ciraccio+Procida"
- },
- {
-  "id": "l-beach-la-lingua",
-  "name": "La Lingua (sand spit toward Vivara)",
-  "coords": [40.7484, 13.9878],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+della+Lingua+Procida"
+  "name": "Spiaggia di Ciraccio — the long beach with sea stacks",
+  "coords": [40.7565, 14.0220],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+Ciraccio+Procida"
  },
  {
   "id": "l-beach-chiaiolella",
-  "name": "Marina di Chiaiolella anchorage beach",
-  "coords": [40.7528, 13.9952],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+di+Chiaiolella+Procida+beach"
- },
- {
-  "id": "l-cult-abbazia-san-michele",
-  "name": "Abbazia di San Michele Arcangelo — Benedictine abbey with ossuary",
-  "coords": [40.7688, 14.0063],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Abbazia+San+Michele+Arcangelo+Procida"
- },
- {
-  "id": "l-cult-palazzo-d-avalos",
-  "name": "Palazzo d'Avalos — former Aragonese palace, Bourbon prison (1830–1988)",
-  "coords": [40.7665, 14.0069],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Palazzo+d%27Avalos+Procida"
- },
- {
-  "id": "l-cult-terra-murata",
-  "name": "Terra Murata — the fortified hilltop citadel",
-  "coords": [40.7688, 14.0075],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Terra+Murata+Procida"
- },
- {
-  "id": "l-cult-belvedere-elsa-morante",
-  "name": "Belvedere Elsa Morante — the panoramic viewpoint above Corricella",
-  "coords": [40.7649, 14.0099],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Belvedere+Elsa+Morante+Procida"
+  "name": "Marina Chiaiolella beach — the horseshoe harbour sand",
+  "coords": [40.7518, 14.0188],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+Chiaiolella+Procida+beach"
  },
  {
   "id": "l-cult-marina-corricella",
-  "name": "Marina di Corricella — the 17th-century fishing port",
-  "coords": [40.7638, 14.0095],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+di+Corricella+Procida"
+  "name": "Marina Corricella — the painted fishermen's harbour",
+  "coords": [40.7644, 14.0328],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Marina+Corricella+Procida"
  },
  {
-  "id": "l-cult-vivara-riserva",
-  "name": "Vivara Nature Reserve — volcanic islet, Bronze Age site, migratory birds",
-  "coords": [40.7456, 13.9822],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Vivara+Nature+Reserve+Procida"
+  "id": "l-cult-terra-murata",
+  "name": "Terra Murata — the walled medieval village",
+  "coords": [40.7694, 14.0345],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Terra+Murata+Procida"
  },
  {
-  "id": "l-cult-hotel-elda-morante",
-  "name": "Hotel Elda (ex Hotel Eldorado) — where Elsa Morante wrote L'Isola di Arturo",
-  "coords": [40.7632, 14.0048],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel+Elda+Procida"
+  "id": "l-cult-palazzo-davalos",
+  "name": "Palazzo d'Avalos — royal residence turned maximum-security prison, now open for visits",
+  "coords": [40.7697, 14.0350],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Palazzo+d'Avalos+Procida"
+ },
+ {
+  "id": "l-cult-abbazia-san-michele",
+  "name": "Abbazia di San Michele Arcangelo — 11th-century Benedictine abbey and crypt",
+  "coords": [40.7691, 14.0344],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Abbazia+San+Michele+Arcangelo+Procida"
+ },
+ {
+  "id": "l-cult-vivara",
+  "name": "Vivara — State Nature Reserve and Mycenaean Bronze Age site",
+  "coords": [40.7521, 14.0129],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Vivara+Procida+nature+reserve"
+ },
+ {
+  "id": "l-cult-pozzo-vecchio-postino",
+  "name": "Spiaggia del Pozzo Vecchio — the Il Postino (1994) beach",
+  "coords": [40.7540, 14.0200],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Spiaggia+Pozzo+Vecchio+Procida"
+ },
+ {
+  "id": "l-gastro-lemon-groves-starza",
+  "name": "Lemon groves of Starza — the De.Co. limone di Procida orchards",
+  "coords": [40.7650, 14.0340],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=lemon+groves+Starza+Procida"
+ },
+ {
+  "id": "l-gastro-marina-grande-market",
+  "name": "Marina Grande market — the island's daily fish and produce market",
+  "coords": [40.7618, 14.0294],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=market+Marina+Grande+Procida"
  }
 ];
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
