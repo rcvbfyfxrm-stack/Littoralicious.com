@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="A ~985-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, a self-improving palette memory so no two cards repeat, a non-overridable validation gate, and a one-page card you print from any browser. What it does, why it is the best, and how to run it.">
+    <meta name="description" content="A ~1,100-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, an automatic composition formula (two proteins, one starch, a garden that follows the vibe), a one-dish breakfast with a true fact, a self-improving palette memory, a non-overridable validation gate, and a one-page card you print from any browser. What it does, why it is the best, and how to run it.">
     <title>The Menu Agent: One Prompt That Turns Any AI Into a Superyacht Menu Designer — LITTORALICIOUS</title>
     <link rel="canonical" href="https://www.littoralicious.com/articles/menu-agent.html">
     <meta property="og:title" content="The Menu Agent: One Prompt That Turns Any AI Into a Superyacht Menu Designer — LITTORALICIOUS">
-    <meta property="og:description" content="A ~985-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: named-touchstone menus, a self-improving palette memory, a non-overridable validation gate, and a one-page card you print from any browser.">
+    <meta property="og:description" content="A ~1,100-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: named-touchstone menus, an automatic composition formula, a one-dish breakfast with a true fact, a self-improving palette memory, and a one-page card you print from any browser.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.littoralicious.com/articles/menu-agent.html">
     <meta property="og:site_name" content="Littoralicious">
@@ -26,7 +26,7 @@
   "@type": "Article",
   "name": "The Menu Agent: One Prompt That Turns Any AI Into a Superyacht Menu Designer",
   "headline": "The Menu Agent: One Prompt That Turns Any AI Into a Superyacht Menu Designer",
-  "description": "A ~985-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, a self-improving palette memory so no two cards repeat, a non-overridable validation gate, and a one-page card you print from any browser.",
+  "description": "A ~1,100-line prompt turns Claude, ChatGPT, or Gemini into a superyacht menu designer: every menu anchored to a named touchstone, an automatic composition formula, a one-dish breakfast with a true fact, a self-improving palette memory, a non-overridable validation gate, and a one-page card you print from any browser.",
   "datePublished": "2026-06-01",
   "author": { "@type": "Organization", "name": "Littoralicious" },
   "publisher": { "@type": "Organization", "name": "Littoralicious", "logo": { "@type": "ImageObject", "url": "https://www.littoralicious.com/assets/logo/logo.svg" } },
@@ -63,6 +63,22 @@
         .menu-card__dish span { display: block; font-size: var(--text-sm); color: #5b5347; font-style: italic; margin-top: 2px; }
         .menu-card__flag { display: block; font-size: var(--text-xs); color: #a8302c; font-style: italic; margin-top: 1px; }
         .menu-card__div { color: #a8302c; margin: var(--space-3) 0; font-size: 0.8em; }
+        .menu-card__note { border-top: 1px solid currentColor; margin-top: var(--space-4); padding-top: var(--space-3); font-style: italic; font-size: var(--text-sm); }
+        .menu-card__note-label { display: block; font-style: normal; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 4px; }
+        .menu-card__note-evidence { display: block; font-style: normal; font-size: var(--text-xs); margin-top: 4px; opacity: 0.75; }
+        .menu-card--aegean { background: #F4F1E8; color: #1C4E80; }
+        .menu-card--aegean .menu-card__rule { background: #9A8C3D; }
+        .menu-card--aegean .menu-card__div, .menu-card--aegean .menu-card__flag { color: #9A8C3D; }
+        .menu-card--aegean .menu-card__dish span { color: #6E7C8C; }
+        .menu-card--ember { background: #1E1E1E; color: #EAE3D2; }
+        .menu-card--ember .menu-card__rule { background: #B8893C; }
+        .menu-card--ember .menu-card__div, .menu-card--ember .menu-card__flag { color: #B8893C; }
+        .menu-card--ember .menu-card__dish span { color: #9B958A; }
+        .menu-card--morning { background: #FBF6EC; color: #4A3527; }
+        .menu-card--morning .menu-card__rule { background: #C46A2B; }
+        .menu-card--morning .menu-card__div, .menu-card--morning .menu-card__flag { color: #C46A2B; }
+        .menu-card--morning .menu-card__dish span { color: #7A6A55; }
+        .menu-card--morning .menu-card__note-label { color: #C46A2B; }
     </style>
 </head>
 <body>
@@ -96,7 +112,7 @@
                 <div class="article__meta">
                     <span class="article__category">The Method</span>
                     <time class="article__date">June 1, 2026</time>
-                    <span class="article__reading-time">19 min read</span>
+                    <span class="article__reading-time">22 min read</span>
                 </div>
                 <h1 class="article__title">The Menu Agent: One Prompt That Turns Any AI Into a Superyacht Menu Designer</h1>
                 <p class="article__lede">A guest list of eight lands at 11&nbsp;PM for a charter that starts at noon. The owner wants Italian, one guest is coeliac, Mr&nbsp;B still won&rsquo;t touch onions. You need a printed card that looks like it came from Harry&rsquo;s Bar &mdash; not a spreadsheet. There is one prompt for this, and it no longer needs you to know LaTeX.</p>
@@ -110,6 +126,7 @@
     <ul>
         <li>One prompt that designs charter-ready menus in any AI &mdash; Claude, ChatGPT, Gemini &mdash; and prints a one-page card from a browser, no LaTeX.</li>
         <li>The single rule that makes the output feel like a real galley: every menu anchored to a <em>named</em> touchstone, never a vibe.</li>
+        <li>The v4 composition formula: two proteins, one starch, and a garden that follows the vibe &mdash; plus a one-dish breakfast that always carries a true fact.</li>
         <li>Why a prompt with a memory beats a clever one-off &mdash; and exactly how to install and run it.</li>
     </ul>
 </div>
@@ -121,6 +138,7 @@
         <li><a href="#what">What the prompt actually is</a></li>
         <li><a href="#anatomy">Anatomy: floor, ceiling, memory</a></li>
         <li><a href="#touchstone">The touchstone: the idea everything grows from</a></li>
+        <li><a href="#formula">What goes on the plate: the composition formula</a></li>
         <li><a href="#memory">The self-improving part most prompts never have</a></li>
         <li><a href="#card">What never touches the card</a></li>
         <li><a href="#models">Where to run it: Claude, ChatGPT, Gemini, Claude Code</a></li>
@@ -140,7 +158,8 @@
 <p>A purpose-built prompt is not a smarter model. It is the same model handed a chef&rsquo;s standards, written down once, in full &mdash; and, here, a memory of every menu it has already shipped. The difference in the output is not subtle.</p>
 
 <h2 id="what">What the prompt actually is</h2>
-<p>The system is a single self-contained instruction file &mdash; the menu agent, currently <span class="term">v3-unified</span>, roughly 985 lines. It is not a one-liner. It is closer to a service manual fused with a logbook: the complete specification for how a menu gets anchored, written, designed, validated, and turned into a one-page card &mdash; plus a running inventory of every menu it has produced. Its own header says it plainly: <em>&ldquo;No external soul doc &mdash; this IS the source of truth.&rdquo;</em></p>
+<p>The system is a single self-contained instruction file &mdash; the menu agent, currently <span class="term">v4-unified</span>, roughly 1,100 lines. It is not a one-liner. It is closer to a service manual fused with a logbook: the complete specification for how a menu gets anchored, composed, written, designed, validated, and turned into a one-page card &mdash; plus a running inventory of every menu it has produced. Its own header says it plainly: <em>&ldquo;No external soul doc &mdash; this IS the source of truth.&rdquo;</em></p>
+<p>The July 2026 revision (v4) added five things the earlier versions left to taste: an <strong>automatic composition formula</strong> for any lunch or dinner, a <strong>one-dish breakfast rule</strong> with a two-tier true-fact note, a <strong>guest-profile step</strong> that reads preference sheets before proposing anything, a <strong>fun register for crew cards</strong>, and a <strong>trend pulse</strong> that keeps the touchstone library anchored to the current dining scene instead of the year the prompt was written.</p>
 <p>The most important change from earlier versions: <strong>the default output is no longer LaTeX.</strong> The agent now authors each menu as a single self-contained HTML file and renders it to a full-bleed A4 PDF. In practice that means you no longer need a TeX install to get a guest-grade card &mdash; the menu is an HTML file you open and print to PDF from any browser. LaTeX stays as an option for plain monochrome crew cards; HTML is the default for anything a guest will see.</p>
 
 <h2 id="anatomy">Anatomy: floor, ceiling, memory</h2>
@@ -149,7 +168,7 @@
     <div class="feature-card">
         <div class="feature-card__tag">&sect;1 &mdash; the floor</div>
         <div class="feature-card__title">Hard rules</div>
-        <p class="feature-card__body">Eighteen non-negotiables in four phases: what never appears on the card (Identity), how dishes are written (Content), what ships (Output), how it gets made (Process).</p>
+        <p class="feature-card__body">Twenty-one non-negotiables in four phases: what never appears on the card (Identity), how dishes are written (Content), what ships (Output), how it gets made (Process) &mdash; including the v4 composition formula and the one-dish breakfast.</p>
     </div>
     <div class="feature-card">
         <div class="feature-card__tag">&sect;10 &mdash; the ceiling</div>
@@ -162,7 +181,7 @@
         <p class="feature-card__body">A catalog of named culinary references and a rolling inventory of every menu ever shipped &mdash; date, touchstone, palette &mdash; read before designing the next one.</p>
     </div>
 </div>
-<p>Between them sit the working sections: filename and geometry, the two render pipelines, voice and banned vocabulary, mandatory complementary dishes, an after-compile checklist, quick patterns for crew and birthday and boss&rsquo;s-choice, refusal triggers, and a closing ritual that logs each menu back into the memory. That structure is the value: a floor you can&rsquo;t fall through, a ceiling worth reaching for, a memory that stops the agent repeating itself.</p>
+<p>Between them sit the working sections: filename and geometry, the two render pipelines, voice and banned vocabulary, the one-suggestion rule, an after-compile checklist, quick patterns for crew and birthday and boss&rsquo;s-choice, refusal triggers, and a closing ritual that logs each menu back into the memory. That structure is the value: a floor you can&rsquo;t fall through, a ceiling worth reaching for, a memory that stops the agent repeating itself.</p>
 
 <h2 id="touchstone">The touchstone: the idea everything grows from</h2>
 <p class="kicker">The one thing a casual prompt never gets right.</p>
@@ -177,6 +196,59 @@
 <div class="note note--key">
     <p>Ask for &ldquo;the best Italian restaurant in the world&rdquo; and it reaches for a World&rsquo;s-50-Best register (Da Vittorio, Bottura, Locanda Cipriani), not a generic trattoria. There is a logged failure behind that rule: a Mexican breakfast once shipped as &ldquo;Sonoran desert dawn&rdquo; theatrics when the brief asked for world-class; it was rejected and re-anchored on Pujol. The prompt remembers the mistake so it can&rsquo;t make it twice.</p>
 </div>
+
+<h2 id="formula">What goes on the plate: the composition formula</h2>
+<p class="kicker">New in v4. The touchstone decides the world; the formula decides the table.</p>
+<p>Ask a bare AI for &ldquo;a dinner menu&rdquo; and you get whatever shape it fell into that day &mdash; three mains one night, no vegetables the next. The v4 agent composes every lunch and dinner on a fixed frame, automatically, without being asked:</p>
+<ul>
+    <li><strong>Two proteins</strong>, contrasted &mdash; one from the sea, one from land, unless the theme pulls both one way. Name proteins in your brief and those two are locked; it never adds a third.</li>
+    <li><strong>One starch</strong>, theme-native &mdash; rice, bread, pasta, potato, or grain. One, not two.</li>
+    <li><strong>The garden follows the vibe.</strong> Default: one vegetable and one or two salads. A roasted, fire-driven, cool-weather table flips it to <em>two vegetables and one salad</em>. A summer deck lunch flips it the other way: <em>two salads and one vegetable</em>. The agent states which split it chose and why, so the shape is a decision, not an accident.</li>
+</ul>
+<p>The formula&rsquo;s twin rule is the register: <strong>simple card, magnificent produce</strong>. Descriptions stay short; the luxury lives in what the ingredient <em>is</em> &mdash; line-caught, pasture-raised, DOP, the named cove &mdash; never in prose. Here is the same formula wearing two different vibes:</p>
+<div class="menu-card menu-card--aegean">
+    <div class="menu-card__title">Thalassa</div>
+    <div class="menu-card__rule"></div>
+    <p class="menu-card__dish"><strong>Lavraki</strong><span>sea bass &middot; charcoal &middot; lemon &middot; wild oregano</span><span class="menu-card__flag">Aegean &middot; line-caught</span></p>
+    <p class="menu-card__dish"><strong>Kotopoulo Souvlaki</strong><span>free-range chicken &middot; lemon &middot; bay &middot; ladolemono</span></p>
+    <div class="menu-card__div">&mdash;</div>
+    <p class="menu-card__dish"><strong>Horiatiki</strong><span>vine tomato &middot; barrel-aged feta &middot; Kalamata &middot; rigani</span></p>
+    <p class="menu-card__dish"><strong>Maroulosalata</strong><span>romaine &middot; dill &middot; spring onion</span></p>
+    <p class="menu-card__dish"><strong>Melitzanes</strong><span>eggplant &middot; embers &middot; ladolemono</span></p>
+    <div class="menu-card__div">&mdash;</div>
+    <p class="menu-card__dish"><strong>Pita</strong><span>wood-oven pita &middot; Cretan oil</span></p>
+</div>
+<p style="font-size: var(--text-sm); color: var(--color-muted); margin-top: calc(-1 * var(--space-4));"><em>Summer deck lunch: two salads, one vegetable. Two proteins on top, one starch at the foot.</em></p>
+<div class="menu-card menu-card--ember">
+    <div class="menu-card__title">Coal &amp; Coast</div>
+    <div class="menu-card__rule"></div>
+    <p class="menu-card__dish"><strong>C&ocirc;te de B&oelig;uf</strong><span>Bazas beef &middot; vine embers &middot; fleur de sel</span><span class="menu-card__flag">dry-aged 40 days</span></p>
+    <p class="menu-card__dish"><strong>Turbot</strong><span>wild turbot &middot; brown butter &middot; charred lemon</span></p>
+    <div class="menu-card__div">&mdash;</div>
+    <p class="menu-card__dish"><strong>Carottes Fanes</strong><span>bunched carrot &middot; embers &middot; cumin honey</span></p>
+    <p class="menu-card__dish"><strong>Poireaux</strong><span>leek &middot; embers &middot; ravigote</span></p>
+    <p class="menu-card__dish"><strong>Salade d&rsquo;Herbes</strong><span>bitter leaves &middot; fines herbes &middot; shallot vinaigrette</span></p>
+    <div class="menu-card__div">&mdash;</div>
+    <p class="menu-card__dish"><strong>Pommes Ratte</strong><span>ratte potato &middot; beef drippings &middot; thyme</span></p>
+</div>
+<p style="font-size: var(--text-sm); color: var(--color-muted); margin-top: calc(-1 * var(--space-4));"><em>Roasted, fire-driven dinner: the split flips &mdash; two vegetables, one salad. Same frame, different vibe.</em></p>
+
+<h3>Breakfast is one dish and one true fact</h3>
+<p>Breakfast gets the opposite discipline: <strong>one dish, never a spread</strong>. No automatic fruit plate, no pastry basket &mdash; add-ons are proposed, never assumed. And every guest breakfast card carries a short note in the house&rsquo;s voice, with a two-tier honesty rule: when real ingredient-level science backs the dish, the note is a <em>verified health fact</em>; when the science is thin, the agent does not stretch it &mdash; it prints a <em>feel-good but true</em> fact instead: an origin, a ritual, a date. Both tiers are verified; neither is ever invented. A charming true story beats a shaky health claim.</p>
+<div class="menu-card menu-card--morning">
+    <div class="menu-card__title">Piperade du Matin</div>
+    <div class="menu-card__rule"></div>
+    <p class="menu-card__dish"><strong>Piperade Basquaise</strong><span>farm eggs &middot; sweet peppers &middot; onion &middot; Espelette</span><span class="menu-card__flag">Pays Basque &middot; piment d&rsquo;Espelette AOP</span></p>
+    <div class="menu-card__note">
+        <span class="menu-card__note-label">Note de la Maison</span>
+        Eggs are among the richest everyday sources of <strong>choline</strong> &mdash; a nutrient your memory and muscles run on.
+        <span class="menu-card__note-evidence">&#10003; NIH Office of Dietary Supplements</span>
+    </div>
+</div>
+<p style="font-size: var(--text-sm); color: var(--color-muted); margin-top: calc(-1 * var(--space-4));"><em>One dish. One verified fact, impossible to miss at arm&rsquo;s length &mdash; that&rsquo;s the whole card.</em></p>
+
+<h3>And the crew finally gets the fun</h3>
+<p>v4 makes it official: guest cards whisper, crew cards grin. Crew menus get punny names (&ldquo;Arma Tu Taco&rdquo;, &ldquo;Whatever The Market Says&rdquo;), brighter palettes, and interactive formats &mdash; checkbox pickers, station tags, stamp-cards, tear-off corners &mdash; plus one witty functional line where a guest card would stay silent. Same elegance discipline, looser grip. And when guests are aboard, the crew card <em>derives</em> from the guest menu: same theme, simpler technique, cheaper cuts &mdash; the guest table&rsquo;s daurade becomes the mess&rsquo;s whole-roasted mackerel. One shop, two cards.</p>
 
 <h2 id="memory">The self-improving part most prompts never have</h2>
 <p>Here is what genuinely sets this prompt apart, and why it earns the &ldquo;best&rdquo; claim more than any clever phrasing could. It keeps a <strong>rolling inventory of every menu it has shipped</strong> &mdash; date, filename, touchstone, base palette &mdash; updated as a closing ritual after every card. Before designing anything new, it runs a <span class="term">sibling-palette pre-flight</span>: it reads the last three menus and must pick a base palette (paper + ink) that differs from all of them. The reasoning is exact &mdash; cream-on-dark cards with merely different gold, teal, or red accents read as one restaurant&rsquo;s seasonal variations, not as distinct identities. Accent-swapping is banned; the base has to change.</p>
@@ -215,7 +287,7 @@
     <div class="menu-card__div">&mdash;</div>
     <p class="menu-card__dish"><strong>Risotto al Carnaroli</strong><span>Castelmagno &middot; timo &middot; aged butter</span></p>
 </div>
-<p>Note what is <em>not</em> there: no date, no &ldquo;family style,&rdquo; no &ldquo;Proteins&rdquo; header, no monogram, no commas. The mains sit at the top, the supporting plates in the middle, the starch at the bottom &mdash; a hierarchy of heroes, not a serving order. One dish carries a small italic provenance flag; the rest stay silent. The whole thing fits on one page a guest would want to fold and keep.</p>
+<p>Note what is <em>not</em> there: no date, no &ldquo;family style,&rdquo; no &ldquo;Proteins&rdquo; header, no monogram, no commas. The mains sit at the top, the supporting plates in the middle, the starch at the bottom &mdash; a hierarchy of heroes, not a serving order. One dish carries a small italic provenance flag; the rest stay silent. Count the plates: two proteins, a garden, one starch &mdash; the composition formula above, already at work. The whole thing fits on one page a guest would want to fold and keep.</p>
 
 <h2 id="models">Where to run it: Claude, ChatGPT, Gemini, Claude Code</h2>
 <p>The prompt is just text, so it runs anywhere &mdash; but the four common tools give different ceilings. The honest split is between <strong>chat models</strong>, which design the menu and hand you a finished HTML file to print, and <strong>agentic tools</strong>, which run the whole loop to an opened PDF. Capabilities below are current as of early 2026 and move fast; check before relying on a specific limit.</p>
@@ -225,7 +297,7 @@
             <tr><th>Tool</th><th>Best for</th><th>Ceiling</th></tr>
         </thead>
         <tbody>
-            <tr><td><strong>Claude</strong> (Anthropic)</td><td>The design itself. Holds the whole ~985-line spec and reasons from a touchstone. Projects save it once.</td><td>Designs + writes the HTML. You print.</td></tr>
+            <tr><td><strong>Claude</strong> (Anthropic)</td><td>The design itself. Holds the whole ~1,100-line spec and reasons from a touchstone. Projects save it once.</td><td>Designs + writes the HTML. You print.</td></tr>
             <tr><td><strong>ChatGPT</strong> (OpenAI)</td><td>Most chefs already have it. Custom GPTs store the spec; it returns the self-contained HTML.</td><td>Designs + writes the HTML. You print.</td></tr>
             <tr><td><strong>Gemini</strong> (Google)</td><td>Large context and Workspace links. Gems save the persona. Handy if prefs live in Google Docs.</td><td>Designs + writes the HTML. You print.</td></tr>
             <tr><td><strong>Claude Code</strong> (terminal)</td><td>The full agent. Reads the inventory, runs the palette check, writes the HTML, renders with Chrome headless, opens the PDF.</td><td>End-to-end: brief in, A4 PDF out.</td></tr>
@@ -250,12 +322,16 @@
 <p>The full agent is long because it carries two render pipelines and a touchstone library. If you only want the design intelligence &mdash; the part that makes the menu good &mdash; the condensed core below is enough to transform any chat model today. Paste it as your custom instruction, then ask for menus.</p>
 <div class="prompt-block">
     <div class="prompt-block__header">
-        <span class="prompt-block__title">Prompt &mdash; Menu Agent core (v3)</span>
+        <span class="prompt-block__title">Prompt &mdash; Menu Agent core (v4)</span>
         <button class="copy-btn" onclick="copyText(this, document.getElementById('prompt-core').textContent)">Copy</button>
     </div>
     <div class="prompt-block__content prompt-block__content--tall" id="prompt-core">You are a luxury superyacht chef's menu designer. Follow these rules on every request.
 
 TOUCHSTONE FIRST (guest menus). Anchor every menu to ONE named, real-world culinary memory — a specific restaurant, market, era, signature plate, or family table (e.g. "Harry's Bar Venezia", "Pujol Polanco", "Tsukiji 4 AM", "Em Sherif Beirut"). NEVER a vague vibe ("Italian", "Mediterranean", "elegant"). If it fits in three generic words and could apply to anything, redo it. If I name the theme, pick the best-fit touchstone silently and move on; if my brief is open, propose 2–3 touchstones and say which you'd pick. For "best [cuisine] in the world", use World's-50-Best–calibre references, not a generic local spot.
+
+COMPOSITION FORMULA (lunch/dinner, when I haven't named every dish). Build the slate automatically: exactly 2 proteins, contrasted — one from the sea, one from land unless the theme pulls both one way (if I name proteins, those are the two; never add a third) · 1 theme-native starch · then let the VIBE split the garden: default 1 vegetable + 1–2 salads; roasted / fire / cool-weather → 2 vegetables + 1 salad; summer / deck lunch → 2 salads + 1 vegetable. State which split you chose and why. One dessert at most. Keep every description simple — the luxury is the QUALITY of the ingredient (line-caught, pasture-raised, DOP, the named farm or cove), never longer prose.
+
+BREAKFAST = ONE DISH. Never a spread unless I explicitly ask; propose add-ons, never add them. Every guest breakfast card carries a short fact note in the house's voice, two-tier: a VERIFIED health fact when real ingredient-level science backs the dish (no stretched claims) — otherwise a feel-good but TRUE fact (origin, ritual, history). Never invent either tier. Make the note impossible to miss on the card.
 
 WHAT NEVER APPEARS ON THE CARD (unless I explicitly ask): no date, no day, no time; no allergen badges or "GF on request"; no wine/drink pairings; no egg cooking method (print "Eggs"); no poetic subtitle under the title; no chef signature, initials, or monogram — ever; no section headers ("STARTERS", "MAINS"). Group dishes with visual space, not labels.
 
@@ -265,13 +341,15 @@ VOICE. Confident, terse, ingredient-first. BANNED: "whisper of", "hint of", "dri
 
 DESIGN. Make each card a one-of-a-kind artifact a guest would fold and keep. Pick a base palette (paper + ink) that differs from the last few menus you've made for me — different accents alone are not enough, the base must change. Exactly ONE innovative gesture per menu (a single glyph, a hairline rule, an unusual fold) — not three. Elegance always; playful is never cheap.
 
-COMPLEMENTARY DISHES. Always surface 3–5 extra dishes from the same touchstone's repertoire that round out the table, each with one line on why it fits, ranked, with your pick.
+CHEF'S SUGGESTION — ONE only. Offer exactly ONE best-fit extra dish or luxury add-on (a farm egg, shaved truffle, Ibérico) with one line on why it fits — never a ranked list, and never on the card until I say yes.
+
+CREW CARDS = FUN. Guest cards whisper; crew cards grin. Punny name, brighter palette, interactive formats (checkboxes, station tags, stamp-cards), one witty functional line allowed. Still elegant — playful is never cheap. When guests are aboard, derive the crew menu from the guest menu: same theme, simpler technique, cheaper cuts.
 
 OUTPUT. One page only. Default format: a single self-contained HTML file (Google Fonts in the head, all CSS inline, an @media print block sized to A4 with margins:0 and print-color-adjust:exact) that I can open and print to PDF from any browser (Cmd-P → Save as PDF → A4 → no margins). Use plain text/markdown if I only want the dish list.
 
 VALIDATION GATE (non-overridable). 1) Read any preferences I've given and treat allergies/strong dislikes as hard limits — that ingredient appears nowhere. 2) State the touchstone + a short design brief. 3) Present the full dish list exactly as it will read on the card. 4) WAIT for my explicit "yes / go / validated" before producing the final HTML or file. Never compile without it.</div>
 </div>
-<p>That is the engine in one screen. The full agent adds the LaTeX pipeline, the touchstone library, the multi-card &ldquo;boss&rsquo;s choice&rdquo; patterns, the mandatory breakfast health note, and the closing ritual that writes each menu back into its own memory.</p>
+<p>That is the engine in one screen. The full agent adds the LaTeX pipeline, the touchstone library, the multi-card &ldquo;boss&rsquo;s choice&rdquo; patterns, the trend pulse, and the closing ritual that writes each menu back into its own memory.</p>
 
 <h2 id="situations">Ready-to-paste prompts for the jobs you run</h2>
 <p class="kicker">The core above is the engine. These are the same engine, pointed at one job &mdash; copy, swap the bracketed bits, paste.</p>
@@ -334,32 +412,36 @@ VALIDATION GATE (non-overridable). 1) Read any preferences I've given and treat 
 </div>
 
 <div class="note note--key">
-    <p><strong>The full prompt &mdash; everything in one block.</strong> The four above are the core pointed at a job. This is the whole agent in a single instruction: it reads your guest sheet, anchors on a named touchstone, keeps the card clean, designs it like the best restaurant in the world, outputs print-ready HTML, and never compiles without your &ldquo;yes.&rdquo; Paste this once as your system instruction (Gem, Project, or Custom GPT) and you&rsquo;re done.</p>
+    <p><strong>The full prompt &mdash; everything in one block.</strong> The four above are the core pointed at a job. This is the whole agent in a single instruction: it reads your guest sheet, anchors on a named touchstone, composes on the two-proteins-one-starch formula with the vibe-split garden, keeps breakfast to one dish with a true fact, keeps the card clean, designs it like the best restaurant existing in the world for the theme &mdash; and makes the crew cards fun &mdash; then outputs print-ready HTML and never compiles without your &ldquo;yes.&rdquo; Paste this once as your system instruction (Gem, Project, or Custom GPT) in any AI chat, and anyone gets the same result.</p>
 </div>
 <div class="prompt-block">
     <div class="prompt-block__header">
-        <span class="prompt-block__title">Prompt &mdash; the full Menu Agent</span>
+        <span class="prompt-block__title">Prompt &mdash; the full Menu Agent (v4)</span>
         <button class="copy-btn" onclick="copyText(this, document.getElementById('prompt-full').textContent)">Copy</button>
     </div>
     <div class="prompt-block__content prompt-block__content--tall" id="prompt-full">You are a luxury superyacht chef's menu designer. Follow every rule below, every time.
 
-0) READ THE GUEST SHEET FIRST. A guest preference sheet may be attached to your knowledge (Gem / Project / Custom GPT) or pasted by me. Before composing anything, read it. Pull each guest's allergies, intolerances, strong dislikes, and dietary needs. Treat every ALLERGY and intolerance as a HARD LIMIT — that ingredient, and anything derived from it, appears in NO dish, in any form. Strong dislikes too, unless I override. If a sheet should exist and you can't find it, ask before composing. State in one line what you found and how you handled it.
+0) READ THE GUEST SHEET FIRST. A guest preference sheet may be attached to your knowledge (Gem / Project / Custom GPT) or pasted by me. Before composing anything, read it. Pull each guest's allergies, intolerances, strong dislikes, and dietary needs. Treat every ALLERGY and intolerance as a HARD LIMIT — that ingredient, and anything derived from it, appears in NO dish, in any form. Strong dislikes too, unless I override. If a sheet should exist and you can't find it, ask before composing. If there is no sheet, infer the register from what I tell you about the party — nationality, ages, family or corporate — and state your inference in ONE line so I can correct it. Preference always beats theme: if the sheet says no raw fish, the omakase becomes aburi/cooked, and you flag the tension instead of silently serving it. State in one line what you found and how you handled it.
 
-1) TOUCHSTONE FIRST (guest menus). Anchor every menu to ONE named, real-world culinary memory — a specific restaurant, market, era, signature plate, or family table ("Harry's Bar Venezia", "Pujol Polanco", "Tsukiji 4 AM"). Never a vibe ("Italian", "elegant"). For "the best [cuisine] in the world", use World's-50-Best–calibre references. If I name the theme, pick the touchstone silently; if my brief is open, offer 2–3 and say which you'd pick.
+1) TOUCHSTONE FIRST (guest menus). Anchor every menu to ONE named, real-world culinary memory — a specific restaurant, market, era, signature plate, or family table ("Harry's Bar Venezia", "Pujol Polanco", "Tsukiji 4 AM"). Never a vibe ("Italian", "elegant"). For "the best [cuisine] in the world", use World's-50-Best–calibre references. If I name the theme, pick the touchstone silently; if I name only PROTEINS ("a menu with lamb and seabass"), lock them in and pick ONE best theme around them yourself — no alternatives; if my brief is genuinely open, offer 2–3 touchstones and say which you'd pick. Keep touchstones CURRENT: check the place still operates as remembered, and when the brief is open include at least one reference from the current dining scene.
 
-2) WHAT NEVER APPEARS ON THE CARD (unless I ask): no date, day, or time; no allergen badges or "GF on request"; no wine or drink pairings; no egg cooking method (print "Eggs"); no poetic subtitle; no chef signature, initials, or monogram — ever; no section headers ("STARTERS", "MAINS"). Group with space, not labels. EXCEPTION — build-your-own / make-your-own menus: printed pick-labels ARE allowed and should read as instructions ("PICK A BASE · PICK A PROTEIN · PICK A SAUCE").
+2) COMPOSITION FORMULA (lunch/dinner, when I haven't named every dish). Build the slate automatically: exactly 2 proteins, contrasted — one from the sea, one from land unless the theme pulls both one way (proteins I name are locked; never add a third) · 1 theme-native starch (one, not two) · then let the VIBE split the garden: default 1 vegetable + 1–2 salads; roasted / fire / cool-weather table → 2 vegetables + 1 salad; summer / deck lunch → 2 salads + 1 vegetable. State which split you chose and why. One dessert at most. The register is high-end yacht main cuisine: refined, produce-first. Keep every description SIMPLE — the luxury lives in the quality of the ingredient (line-caught, pasture-raised, DOP, the named farm or cove), never in prose.
 
-3) HOW DISHES ARE WRITTEN. Hero-first — the first word of each line is the star ingredient. Separate with middots " · ", never commas. Don't repeat the method the title already implies. Titles in the cuisine's native language; ingredient lines in English; sourcing terms native (DOP, fleur de sel). One capitalization system per card. Order: mains first, supporting dishes middle, starch and dessert last — a hierarchy of heroes, not a serving order.
+3) BREAKFAST = ONE DISH, always. Never a spread unless I explicitly ask — no auto sides, fruit plate, or pastry basket; propose ONE add-on if it truly elevates, and only add it when I say yes. Every guest breakfast card carries a short fact note in the house's voice ("Note de la Maison", "El Doctor Dice"…), two-tier: a VERIFIED health fact when real ingredient-level science backs the dish (no stretched claims, no pseudo-medicine) — otherwise a feel-good but TRUE fact (origin, ritual, history, a date). Never invent either tier; a charming true story beats a shaky health claim. Style the note so it cannot be missed at arm's length.
 
-4) VOICE. Confident, terse, ingredient-first. BANNED: "whisper of", "hint of", "drizzle of", "lovingly", "perfectly", "nestled", "crowned with", "served with", "on a bed of", adjective stacks, storytelling ("a journey through…"). ALLOWED: real sourcing and geography ("line-caught", "pasture-raised", "DOP", "Adriatic", "30 months").
+4) WHAT NEVER APPEARS ON THE CARD (unless I ask): no date, day, or time; no allergen badges or "GF on request"; no wine or drink pairings; no egg cooking method (print "Eggs"); no poetic subtitle; no chef signature, initials, or monogram — ever; no section headers ("STARTERS", "MAINS"). Group with space, not labels. EXCEPTIONS — build-your-own / make-your-own menus: printed pick-labels ARE allowed and should read as instructions ("PICK A BASE · PICK A PROTEIN · PICK A SAUCE"); crew cards in the fun register: one witty FUNCTIONAL line allowed.
 
-5) COMPLEMENTARY DISHES. Always surface 3–5 extra dishes from the same touchstone that round out the table, ranked, with your pick.
+5) HOW DISHES ARE WRITTEN. Hero-first — the first word of each line is the star ingredient. Separate with middots " · ", never commas. Don't repeat the method the title already implies. Titles in the cuisine's native language; ingredient lines in English; sourcing terms native (DOP, fleur de sel). One capitalization system per card. Order: mains first, supporting dishes middle, starch and dessert last — a hierarchy of heroes, not a serving order.
 
-6) DESIGN — like the best restaurant in the world for this theme. Pick a base palette (paper + ink) that differs from my last few menus — accents alone don't count. One signature face plus one quiet supporting face. Exactly ONE innovative gesture (a glyph, a hairline rule, an unusual fold) — not three. Blindfold test: with the title covered, the cuisine is obvious from the design alone. Elegance always; playful is never cheap; no monogram.
+6) VOICE. Confident, terse, ingredient-first. BANNED: "whisper of", "hint of", "drizzle of", "lovingly", "perfectly", "nestled", "crowned with", "served with", "on a bed of", adjective stacks, storytelling ("a journey through…"). ALLOWED: real sourcing and geography ("line-caught", "pasture-raised", "DOP", "Adriatic", "30 months").
 
-7) OUTPUT — print-ready, no LaTeX. One page. A single self-contained HTML file: Google Fonts in the head, all CSS inline, an @media print block sized to A4 (210×297mm), margins:0, print-color-adjust:exact, so the card fills the page. I print it from any browser: Cmd-P → Save as PDF → A4 → margins: none. (Landscape A4 for deli-grid / build-your-own.) Give plain text only if I ask for just the dish list.
+7) CHEF'S SUGGESTION — ONE only. Offer exactly ONE best-fit extra dish or luxury add-on (a farm egg, shaved truffle, Ibérico in place of streaky bacon) with one line on why it fits this menu — never a ranked list, and never on the card until I approve it.
 
-8) VALIDATION GATE (non-overridable). State the touchstone, a one-line design brief, and which guest restrictions you applied. Show the full dish list exactly as it will read on the card. WAIT for my explicit "yes / go / validated" before producing the final HTML. Never skip this.</div>
+8) DESIGN — like the best restaurant existing in the world for this theme. For an iconic address, study its real typography, paper, and tone and recreate the feel faithfully with one tiny respectful signature; for an invented house, design the card that WOULD be the world's best if it existed. Pick a base palette (paper + ink) that differs from my last few menus — accents alone don't count; if you can't see past menus, ask me to paste the last 2–3 (title + palette). One signature face plus one quiet supporting face. Exactly ONE innovative gesture (a glyph, a hairline rule, an unusual fold) — not three. Blindfold test: with the title covered, the cuisine is obvious from the design alone. Elegance always; no monogram. CREW CARDS = FUN: punny name, brighter palette, interactive formats (checkboxes, station tags, stamp-cards, tear-off corners) — playful, never cheap. When guests are aboard, derive the crew menu from the guest menu: same theme, simpler technique, cheaper cuts. Deli / build-your-own cards go cooler and interactive: pick-labels, order-ticket aesthetics, the interactivity functional.
+
+9) OUTPUT — print-ready, no LaTeX. One page. A single self-contained HTML file: Google Fonts in the head, all CSS inline, an @media print block sized to A4 (210×297mm), margins:0, print-color-adjust:exact, so the card fills the page. I print it from any browser: Cmd-P → Save as PDF → A4 → margins: none. (Landscape A4 for deli-grid / build-your-own.) Give plain text only if I ask for just the dish list.
+
+10) VALIDATION GATE (non-overridable). State the touchstone, a one-line design brief, the composition split you chose, and which guest restrictions or profile inference you applied. Show the full dish list exactly as it will read on the card. WAIT for my explicit "yes / go / validated" before producing the final HTML. Never skip this.</div>
 </div>
 
 <h2 id="workflow">A real session, request to PDF</h2>
@@ -373,7 +455,7 @@ VALIDATION GATE (non-overridable). 1) Read any preferences I've given and treat 
 </div>
 <p><span class="step-number">A</span> <strong>It anchors and checks first.</strong> Touchstone: Harry&rsquo;s Bar Venezia, a faithful homage. It reads the restrictions &mdash; no onions anywhere, in any form; fennel swapped for another bitter element; a quiet gluten-free note only on the dish that needs it. Allergies are treated as hard limits, not preferences.</p>
 <p><span class="step-number">B</span> <strong>It runs the palette pre-flight.</strong> It reads the last three menus it made for you, names their base palettes, and picks one that differs &mdash; so this card won&rsquo;t look like last Tuesday&rsquo;s.</p>
-<p><span class="step-number">C</span> <strong>It presents the dish list and stops.</strong> You get the validation draft &mdash; touchstone, a one-line design brief, the dishes hero-first with middots, three or four ranked complementary suggestions &mdash; then: &ldquo;Any changes before I render? Wine pairing?&rdquo; No file yet. This is the gate, and it is non-overridable.</p>
+<p><span class="step-number">C</span> <strong>It presents the dish list and stops.</strong> You get the validation draft &mdash; touchstone, a one-line design brief, the composition split it chose (here: fire-leaning, so two vegetables and one salad), the dishes hero-first with middots, and ONE chef&rsquo;s suggestion &mdash; then: &ldquo;Any changes before I render? Wine pairing?&rdquo; No file yet. This is the gate, and it is non-overridable.</p>
 <p><span class="step-number">D</span> <strong>You say &ldquo;yes,&rdquo; and it renders.</strong> On an agentic tool it writes <span class="term">Chef - 2026-06-01_Guests-Dinner_Harrys-Bar-Venezia.html</span>, renders it to a full-bleed A4 PDF with Chrome headless, verifies it&rsquo;s exactly one page, opens it &mdash; then logs the touchstone and palette into its memory. On a chat model, it hands you the HTML and you print it. Either way the metadata lives in the filename; the card stays clean.</p>
 <p>The whole exchange takes under two minutes. The scramble from the top of this article is gone &mdash; not because the AI cooked, but because it absorbed every standard you would have applied by hand, remembered every card it already made, and refused to skip the one step (your approval) that should never be automated.</p>
 
@@ -382,7 +464,7 @@ VALIDATION GATE (non-overridable). 1) Read any preferences I've given and treat 
 <p><strong>Feed it the preferences once, in writing.</strong> Upload the guest-preference sheet (allergies, intolerances, strong dislikes, the kids&rsquo; no-gos) as a knowledge file or paste it at the top. A menu designed blind is a menu you re-check by hand.</p>
 <p><strong>Respect the validation gate &mdash; it is for you.</strong> The agent stops and shows you the dish list before rendering. That is your cheapest moment to swap a protein, catch a clash, or change the touchstone. Approve too fast and you only move the rework downstream.</p>
 <p><strong>Let the palette memory work.</strong> On an agentic tool, keep your menus in one folder so the sibling-palette pre-flight has a real history to read. On a chat model, paste your last two or three menu titles and palettes so it can avoid repeating them.</p>
-<p><strong>Name constraints, not dishes.</strong> You don&rsquo;t need to specify every plate. Give the limits &mdash; eight covers, 80% prep ahead, no pork, the dorade that needs using &mdash; and let it compose. It fills a well-defined box better than it reads your mind. Take its complementary suggestions as a market stall, not an order: keep what serves the menu, drop the rest.</p>
+<p><strong>Name constraints, not dishes.</strong> You don&rsquo;t need to specify every plate. Give the limits &mdash; eight covers, 80% prep ahead, no pork, the dorade that needs using &mdash; and let it compose. It fills a well-defined box better than it reads your mind. Take its one chef&rsquo;s suggestion as an offer, not an order: keep it if it serves the menu, wave it away if not.</p>
 
 <div class="note note--quote">
     <p>It does not cook. It gives you back the hours you never had for the cooking.</p>
@@ -402,7 +484,7 @@ VALIDATION GATE (non-overridable). 1) Read any preferences I've given and treat 
 
 <div class="article-sources">
     <strong>Sources</strong>
-    <p>Built from the menu agent&rsquo;s own specification (v3-unified) and its inline correction log &mdash; each rule here traces to a documented failure fixed in real service (e.g. the pairing-block strip of 1 May 2026, the Casa Madrugada register correction of 5 May 2026). Model capabilities (Claude, ChatGPT, Gemini, Claude Code) are stated as of early 2026 and change quickly; verify current limits before relying on a specific one. Tested at sea.</p>
+    <p>Built from the menu agent&rsquo;s own specification (v4-unified, revised July 2026) and its inline correction log &mdash; each rule here traces to a documented failure fixed in real service (e.g. the pairing-block strip of 1 May 2026, the Casa Madrugada register correction of 5 May 2026). The breakfast fact note follows a two-tier verification rule; the choline example above is calibrated to the NIH Office of Dietary Supplements. Model capabilities (Claude, ChatGPT, Gemini, Claude Code) are stated as of early 2026 and change quickly; verify current limits before relying on a specific one. Tested at sea.</p>
 </div>
                 <!-- BODY:END -->
 
