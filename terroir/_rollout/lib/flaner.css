@@ -1,0 +1,31 @@
+<style id="flaner-cards">
+/* Flâner subcategories + compact→expand cards (2026-07-25, Arnaud). A lighter
+   sibling of the tables' two-layer cards: read the sub-desc to know the best,
+   click a card to open the detail. No JS — native <details>. */
+.fsub{margin:0 0 22px}
+.fsub__title{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.16em;color:var(--ink,#1a1a1a);margin:0 0 3px;letter-spacing:.2px}
+.fsub__desc{font-family:Georgia,serif;font-style:italic;font-size:.98em;line-height:1.6;color:#2d4a5e;margin:0 0 12px;max-width:64ch}
+.fsub__cards{display:flex;flex-direction:column;gap:8px}
+
+.fcard{border:1px solid #e7dfc9;border-radius:9px;background:#fdfbf5;overflow:hidden;transition:border-color .15s}
+.fcard[open]{border-color:#c4a35a;background:#fff}
+.fcard>summary{list-style:none;cursor:pointer;padding:11px 15px;display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 10px}
+.fcard>summary::-webkit-details-marker{display:none}
+.fcard>summary::after{content:'▾';margin-left:auto;color:#c4a35a;font-size:.8em;transition:transform .15s;align-self:center}
+.fcard[open]>summary::after{transform:rotate(180deg)}
+.fcard__name{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.03em;color:var(--ink,#1a1a1a)}
+.fcard__tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#a9791a;border:1px solid #e2d7b8;border-radius:20px;padding:2px 8px;align-self:center}
+.fcard__teaser{font-family:Georgia,serif;font-style:italic;font-size:.9em;color:var(--ink-2,#555);flex:1 1 220px;min-width:160px}
+.fcard__body{padding:2px 15px 14px;font-size:.95em;line-height:1.68;color:var(--ink,#222);border-top:1px solid #f0e9d6}
+.fcard__body p{margin:9px 0}
+.fcard__meta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.4px;color:var(--ink-2,#666);margin:8px 0 2px}
+.fcard__map{font-family:Inter,sans-serif;font-size:.82em;color:#2d4a5e;text-decoration:none;border-bottom:1px solid #c4a35a}
+.fcard__order{margin:9px 0 2px;padding:9px 13px;border:1px solid #e7dfc9;border-radius:8px;background:#fbf8ef}
+.fcard__order-title{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:#a9791a;margin:0 0 5px}
+.fcard__order ul{margin:0;padding:0}
+.fcard__order li{font-size:.92em;line-height:1.5;margin:0 0 4px;list-style:none}
+.fcard__order li .ord-star{color:#c4a35a;font-size:.92em;margin-right:3px}
+.fcard__order li b{font-weight:600;color:#1a1a1a}
+.fcard__order li em{color:var(--ink-2,#555)}
+@media (max-width:560px){.fcard__teaser{flex-basis:100%}}
+</style>

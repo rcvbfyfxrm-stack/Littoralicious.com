@@ -1,0 +1,22 @@
+{
+  "purpose": "Nightly GOLD3 uplift of the existing terroir guides — one guide per run to keep token use bounded. Athens-Attiki and Piraeus-Saronic are already GOLD3 (the reference).",
+  "gold3_ref": ["Athens-Attiki", "Piraeus-Saronic"],
+  "order_note": "tables-era guides first (structurally ready, low risk), then the pre-GOLD2 guides (need a bigger uplift). One PENDING guide is taken per nightly run, oldest-index first.",
+  "queue": [
+    {"slug": "Bozcaada-NorthAegean", "region": "North Aegean, Turkey", "tier": "tables-era", "status": "pending"},
+    {"slug": "Cadaques-CapdeCreus", "region": "Cap de Creus, Catalunya", "tier": "tables-era", "status": "pending"},
+    {"slug": "Girona-Catalunya", "region": "Catalunya", "tier": "tables-era", "status": "pending"},
+    {"slug": "Paris", "region": "Île-de-France", "tier": "tables-era", "status": "pending"},
+    {"slug": "Var-Provence", "region": "Provence", "tier": "tables-era", "status": "pending"},
+    {"slug": "Cavalaire-sur-Mer", "region": "Var, Provence", "tier": "tables-era", "status": "pending"},
+    {"slug": "Barcelona-Catalunya", "region": "Catalunya", "tier": "pre-gold2", "status": "pending"},
+    {"slug": "Costa-Brava-Catalunya", "region": "Catalunya", "tier": "pre-gold2", "status": "pending"},
+    {"slug": "Split-Dalmatie", "region": "Dalmatia", "tier": "pre-gold2", "status": "pending"},
+    {"slug": "Dubrovnik-Dalmatie", "region": "Dalmatia", "tier": "pre-gold2", "status": "pending"},
+    {"slug": "Faro-Algarve", "region": "Algarve", "tier": "pre-gold2", "status": "pending"},
+    {"slug": "beaune-bourgogne", "region": "Bourgogne", "tier": "pre-gold2", "status": "pending"},
+    {"slug": "lons-le-saunier-jura", "region": "Jura", "tier": "pre-gold2", "status": "pending"}
+  ],
+  "after_queue": "When every queue item is done|held, STOP taking guides and instead research + build NEW places, starting with the main Turkey superyacht hub (Bodrum / Göcek / Yalıkavak) — see PLAYBOOK §NEW PLACES. Do NOT invent this list; ask/confirm the exact town on the first new-place run.",
+  "log": []
+}
