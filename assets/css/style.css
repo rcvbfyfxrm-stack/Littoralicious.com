@@ -2420,3 +2420,8 @@ mark {
         scroll-behavior: auto !important;
     }
 }
+
+/* Photo figures — article images with captions (menu-agent, elbulli articles) */
+.photo-figure { margin: var(--space-7, 2.5rem) 0; }
+.photo-figure img, .photo-figure video { max-width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid var(--color-border, #e2ddd3); }
+.photo-figure figcaption { margin-top: var(--space-3, 0.75rem); font-size: var(--text-sm, 0.9rem); color: var(--color-muted, #6b675f); line-height: 1.55; }
