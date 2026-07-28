@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
 
     <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
-    <link rel="stylesheet" href="../assets/css/style.css?v=e0d1257a">
+    <link rel="stylesheet" href="../assets/css/style.css?v=7ec143de">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,13 +117,13 @@
                     Before you dive into the database, you need to understand what you're looking at. Every food you eat contains hundreds of volatile organic compounds. When you bite into a strawberry, over 360 different molecules hit your olfactory receptors. Your brain doesn't process them individually — it reads the pattern as "strawberry."
                 </p>
 
-                <div class="note note--science"><p>A single strawberry releases over 360 volatile compounds. Your brain reads the pattern, not the individual molecules. Flavor lives in the olfactory channel (1,000+ receptors), not the gustatory channel (33 taste receptors).</p></div>
+                <div class="note note--science"><p>A single strawberry releases over 360 volatile compounds. Your brain reads the pattern, not the individual molecules. Flavor lives in the olfactory channel (~400 working receptor types), not the gustatory channel (a couple of dozen).</p></div>
 
                 <div style="background: #d1e7dd; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #059669;">
                     <h4 style="margin-top: 0; color: #065f46; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">The Two Systems</h4>
                     <ul style="margin-bottom: 0; font-size: var(--text-sm);">
-                        <li><strong>Gustatory (taste):</strong> Your tongue detects five basic tastes — sweet, sour, salty, bitter, umami. These are detected by 33 taste receptors. This is crude, binary information: is it sweet? How sweet?</li>
-                        <li><strong>Olfactory (smell):</strong> Your nose and retronasal passage detect volatile compounds through <strong>over 1,000 odor receptors</strong>. This is where flavor lives. This is why food tastes like nothing when you have a cold — you've lost the olfactory channel. The difference between a strawberry and a raspberry is almost entirely olfactory, not gustatory.</li>
+                        <li><strong>Gustatory (taste):</strong> Your tongue detects five basic tastes — sweet, sour, salty, bitter, umami. These run on a small receptor set — roughly 25 bitter receptors plus a handful for sweet and umami, with salt and sour handled by ion channels. This is crude, low-bandwidth information: is it sweet? How sweet?</li>
+                        <li><strong>Olfactory (smell):</strong> Your nose and retronasal passage detect volatile compounds through <strong>about 400 working odour-receptor types</strong> (humans carry roughly 800 such genes, but half have gone dead over evolutionary time — the "1,000 receptors" figure you see quoted is the gene family, not the working set). This is where flavor lives. This is why food tastes like nothing when you have a cold — you've lost the olfactory channel. The difference between a strawberry and a raspberry is almost entirely olfactory, not gustatory.</li>
                     </ul>
                 </div>
 
@@ -278,6 +278,7 @@
                     <li><strong>Cooking transforms molecules.</strong> Raw garlic and roasted garlic have completely different volatile profiles. The Maillard reaction creates new compounds that don't exist in raw ingredients. The database captures raw profiles primarily.</li>
                     <li><strong>Texture and temperature.</strong> A pairing that works as a cold salad might fail as a hot soup. The physical experience of eating — crunch, creaminess, temperature contrast — is invisible to molecular analysis.</li>
                     <li><strong>Cultural context.</strong> Your brain's experience of "pleasant" is shaped by what you grew up eating. A pairing that FlavorDB predicts as harmonious might feel wrong to a guest whose food culture has no reference for it.</li>
+                    <li><strong>The rule is not universal — and the founding paper says so.</strong> Ahn et al. (<em>Scientific Reports</em>, 2011) is the study this whole approach rests on, and its actual finding is split: Western recipes do tend to combine ingredients that share compounds, but East Asian recipes tend to do the <em>opposite</em>, pairing ingredients that share as few as possible. "Shared compounds equals good pairing" is a Western regularity, not a law of flavour. Half the world's best cooking breaks it deliberately.</li>
                     <li><strong>Interaction effects.</strong> Molecules don't always combine linearly. Two pleasant compounds can create an unpleasant third interaction. Chemistry is more complex than addition.</li>
                 </ul>
                 <p>
