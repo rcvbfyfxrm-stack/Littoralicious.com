@@ -1,6 +1,9 @@
 #!/bin/bash
-# Piraeus-Saronic guide verification — GOLD2-era adaptation of terroir.md §16
+# Generic GOLD3 guide verification — GOLD2-era adaptation of terroir.md §16.
+# Portable across guides: SLUG is taken from the LIVE dir name (terroir/<SLUG>/),
+# or pass it explicitly as argv[2] if the live dir path doesn't match the slug.
 LIVE="$1"   # dir containing index.html + data.js
+SLUG="${2:-$(basename "$LIVE")}"
 F="$LIVE/index.html"
 fail=0
 ck(){ if eval "$2"; then echo "OK   $1"; else echo "FAIL $1"; fail=1; fi }
@@ -19,8 +22,8 @@ ck "no search/votes js"      '! grep -qE "guide-search\.js|votes\.js" "$F"'
 ck "comments js"             'grep -q "guide-comments.js" "$F"'
 ck "organiser script"        'grep -q "La Grande / La Petite Table v2" "$F"'
 ck "gem popup script"        'grep -q "food-gem popups" "$F"'
-ck "config Athens"           'grep -q "terroir-Piraeus-Saronic" "$F"'
-ck "data.js src"             'grep -q "/terroir/data/Piraeus-Saronic.js" "$F"'
+ck "config articleId"        "grep -q 'terroir-${SLUG}' \"\$F\""
+ck "data.js src"             "grep -q '/terroir/data/${SLUG}.js' \"\$F\""
 ck "no relative ../ assets"  '! grep -q "\.\./_assets" "$F"'
 ck "no stale Girona content" '[ $(grep -o "Girona" "$F" | wc -l) -le 2 ]'
 ck "no port-call/pcv"        '[ $(cat "$F" "$LIVE/data.js" | grep -ciE "port-call|pcv") -eq 0 ]'
