@@ -109,6 +109,51 @@ Every claim traceable: peer-reviewed journals, named books, documented experienc
 visible **Evidence Grade** in a `citation-card` (dual grade — absorption · clinical — where
 relevant); reference books (McGee, Modernist) may support but never stand alone.
 
+#### The fact-check pass — MANDATORY before any science claim ships
+
+Canonical, reader-facing version: **`articles/the-source-standard.html`**. That article *is*
+the standard; this is the operating summary. Trigger it automatically on any claim about
+health, nutrition, physiology, food chemistry, microbiology or perception — no need to be asked.
+
+**The grade decides the verb.**
+
+| Grade | What it is | What you may write |
+|---|---|---|
+| **A** | Systematic reviews / meta-analyses (Cochrane, PRISMA); large pre-registered RCTs; EFSA · WHO · FAO/JECFA · FDA assessments; USDA FoodData Central for composition | Plain declarative |
+| **B** | One well-powered RCT; strong prospective cohort; scientific-society consensus; named analytical chemistry in a Q1 food journal | Attributed and bounded ("in one trial of n=…") |
+| **C** | Mechanistic / in-vitro / cell-culture / animal | Flagged preliminary **in the same sentence** — "not shown in humans" |
+| **Reject** | Press releases, supplement sellers, wellness sites, wikis, appeals to unnamed research, predatory journals, anything that will not resolve | Nothing — cut, or reframe as tradition/flavour |
+
+**Cannot reach ≥ B → cut it.** Not soften it. Hedging is how bad claims get smuggled past a standard.
+
+**The eight tests** (run in order; the first three kill most bad claims):
+1. **Does the document exist** — resolve the DOI / find it on PubMed. Plausible citations that
+   resolve to nothing are now the single most common failure mode. It is how we shipped a
+   fabricated *Circulation Research* 2022 cocoa paper.
+2. **Does it say what the citation claims** — open the abstract. We once credited sweet–sour
+   suppression to Breslin & Beauchamp 1997, which is about *salt suppressing bitterness*.
+3. **Humans, or a dish/mouse** — in-vitro and animal results are Grade C, always labelled.
+4. **n and duration** — twenty people for four weeks is a pilot, not a finding.
+5. **Relative or absolute** — "30% reduction" is meaningless without the baseline.
+6. **Who paid** — read funding + COI. Industry money does not invalidate; it must be disclosed.
+7. **Failed replications** — check Retraction Watch (free via Crossref since Sept 2023).
+   Report the null trial next to the positive one (REDUCE-IT ↔ STRENGTH).
+8. **Best available source, or first one found** — escalate. If Cochrane/EFSA/WHO have
+   aggregated the question, their answer supersedes any single study.
+
+**Where to look, by literature** — food chemistry & technology: *Nature Food*, *Trends in Food
+Sci & Tech*, *Compr. Rev. Food Sci. Food Saf.*, *Annu. Rev. Food Sci. Technol.*, *Food Chemistry*,
+*J. Agric. Food Chem.* · nutrition & health: **Cochrane first**, then NEJM · Lancet · JAMA · BMJ ·
+AJCN · J. Nutr. · Adv. Nutr. · sensory: *Chemical Senses*, *Food Quality and Preference*,
+*J. Sensory Studies*, *Appetite* · gastronomy: *Int. J. Gastronomy and Food Science* (smaller
+journal — say so when citing it).
+
+**Standing rules.** Omit before you fabricate — a gap is honest, a confident wrong answer is not.
+Surface live disputes rather than hide them. Never cite a database (PubMed, PMC) as if it were a
+journal. Chefs' labs (Fat Duck, *Modernist Cuisine*, ChefSteps) are trade sources: cite them for
+what happens in a pan, never for what happens in a body. Corrections are printed in the article,
+not quietly swapped in.
+
 ### Banned words
 
 delicious · yummy · mouthwatering · elevated · curated · artisanal (as marketing) ·

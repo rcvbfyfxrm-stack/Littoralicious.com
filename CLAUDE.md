@@ -13,6 +13,11 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
    Copy markup from the most recent equivalent file — never improvise the look.
 3. **Never invent an article template.** Pick one of the 14 fixed templates (see DNA.md);
    fill the body only.
+4. **Run the fact-check pass on every science claim.** Non-negotiable gate — DNA.md →
+   *Source rule* → *The fact-check pass*, stated in full for readers in
+   `articles/the-source-standard.html`. Grade A/B/C, cut anything below B, and run the eight
+   tests. Test 1 is *resolve the DOI*: a citation that looks right and resolves to nothing is
+   the most common way this publication has been wrong. Omit before you fabricate.
 
 ## Writing editorial — rules-first
 
