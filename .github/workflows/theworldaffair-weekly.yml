@@ -1,11 +1,14 @@
 name: The World Affair — weekly recap
 
 # Autonomous WEEKLY recap on GitHub's own infrastructure (off the write-blocking
-# cloud egress proxy). Saturdays: SONNET 5 harvests the week + writes the recap,
+# cloud egress proxy). Saturdays: SONNET 5 researches the week + writes the recap,
 # OPUS 4.8 supervises, then the workflow commits, pushes and deploys to Firebase.
-# Companion to theworldaffair-autopublish.yml (the Mon/Wed/Fri daily editions that
-# cover all 9 beats). Same auth: prefers ANTHROPIC_API_KEY (no cap), falls back to
+# Same auth: prefers ANTHROPIC_API_KEY (no cap), falls back to
 # CLAUDE_CODE_OAUTH_TOKEN. Spec = theworldaffair/.twa-recap-spec.md.
+#
+# 2026-07-29: theworldaffair-autopublish.yml (the Mon/Wed/Fri dailies) is PAUSED,
+# so this is now THE ONLY edition The World Affair publishes. It no longer has
+# dailies to harvest — it researches the whole week from zero. See the spec.
 
 on:
   schedule:
@@ -54,13 +57,13 @@ jobs:
         if: steps.guard.outputs.go == 'true'
         run: npm i -g @anthropic-ai/claude-code
 
-      - name: Write the recap — SONNET 5 (harvest week + write)
+      - name: Write the recap — SONNET 5 (research week + write)
         if: steps.guard.outputs.go == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          claude -p "You are the WRITER producing today's The World Affair WEEKLY RECAP inside a GitHub Actions checkout of branch rebuild/publishing-system. The repo is ALREADY checked out here — do NOT clone. Read theworldaffair/.twa-recap-spec.md (your recap instructions) AND theworldaffair/.twa-magazine-spec.md (shared standards) AND theworldaffair/.front-template.html and theworldaffair/.article-template.html. Then execute the recap spec STEP 0 through STEP 5: harvest the last 7 days of daily editions from editions.json + the files, refresh via WebSearch, select the week's 7-10 biggest stories across ALL 9 beats, and WRITE the front page theworldaffair/$(date +%F).html plus la-semaine.html (and preferably histoire-de-la-semaine.html) under theworldaffair/$(date +%F)/, and update theworldaffair/editions.json (kind: weekly). Do NOT run STEP 6 / any git command — leave files on disk. Obey the LOI EDITORIALE, the T3-floor rule, and emit the .twa-verdict typographic stamp — never emoji." \
+          claude -p "You are the WRITER producing today's The World Affair WEEKLY RECAP inside a GitHub Actions checkout of branch rebuild/publishing-system. The repo is ALREADY checked out here — do NOT clone. Read theworldaffair/.twa-recap-spec.md (your recap instructions) AND theworldaffair/.twa-magazine-spec.md (shared standards) AND theworldaffair/.front-template.html and theworldaffair/.article-template.html. Then execute the recap spec STEP 0 through STEP 5. IMPORTANT: the Mon/Wed/Fri daily editions are PAUSED, so there will be NO daily editions from this week to harvest — that is EXPECTED, not an error. Never abort and never write a placeholder because of it. You research the week YOURSELF from zero: WebSearch across ALL 9 beats (at least two searches per beat, scoped to the last 7 days, against the tier-1 whitelists), fetch the real weekly moves for the Chiffres de la Semaine table, check how each story RESOLVED by Saturday, then select the week's 7-10 biggest stories touching at least 6 of the 9 beats, and WRITE the front page theworldaffair/$(date +%F).html plus la-semaine.html (and preferably histoire-de-la-semaine.html) under theworldaffair/$(date +%F)/, and update theworldaffair/editions.json (kind: weekly). Do NOT run STEP 6 / any git command — leave files on disk. Obey the LOI EDITORIALE, the T3-floor rule, and emit the .twa-verdict typographic stamp — never emoji." \
             --model claude-sonnet-5 \
             --dangerously-skip-permissions
 
@@ -70,7 +73,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          claude -p "You are the OPUS EDITOR-IN-CHIEF supervising today's WEEKLY RECAP that a Sonnet writer just produced in this checkout. Do NOT clone, do NOT run git. Standards = theworldaffair/.twa-recap-spec.md + theworldaffair/.twa-magazine-spec.md. Read them, then read the files just written: theworldaffair/$(date +%F).html and everything under theworldaffair/$(date +%F)/. Audit hard against: the LOI EDITORIALE (payoff-first, one idea per section, never lose attention); is this genuinely the BEST-OF the whole week across all 9 beats, not a rehash of one day?; the T3-floor rule (no wire-only 'Confirme' — downgrade or cut; upgrade verdicts the week firmed up); every load-bearing claim has an inline <a href> source; the .twa-verdict typographic stamps are used and there is ZERO emoji; the Chiffres de la Semaine table shows real weekly moves; 'A surveiller' and 'L'Angle Mort' earn their place; tight literary French. FIX problems by EDITING the files directly — tighten prose, correct verdicts, add missing sources or cut unsourced claims, delete any emoji, sharpen flat headlines. Improve surgically; do not regenerate wholesale. Ensure it is publish-ready. Do NOT run git." \
+          claude -p "You are the OPUS EDITOR-IN-CHIEF supervising today's WEEKLY RECAP that a Sonnet writer just produced in this checkout. Do NOT clone, do NOT run git. Standards = theworldaffair/.twa-recap-spec.md + theworldaffair/.twa-magazine-spec.md. Read them, then read the files just written: theworldaffair/$(date +%F).html and everything under theworldaffair/$(date +%F)/. Audit hard against: the LOI EDITORIALE (payoff-first, one idea per section, never lose attention); is this genuinely the BEST-OF the whole week across all 9 beats, not a rehash of one day? — this is now the ONLY edition of the week (the dailies are paused), so BREADTH is a hard requirement: at least 6 of the 9 beats represented, no beat holding more than 3 slots, and every number in the Chiffres table sourced rather than estimated; the T3-floor rule (no wire-only 'Confirme' — downgrade or cut; upgrade verdicts the week firmed up); every load-bearing claim has an inline <a href> source; the .twa-verdict typographic stamps are used and there is ZERO emoji; the Chiffres de la Semaine table shows real weekly moves; 'A surveiller' and 'L'Angle Mort' earn their place; tight literary French. FIX problems by EDITING the files directly — tighten prose, correct verdicts, add missing sources or cut unsourced claims, delete any emoji, sharpen flat headlines. Improve surgically; do not regenerate wholesale. Ensure it is publish-ready. Do NOT run git." \
             --model claude-opus-4-8 \
             --dangerously-skip-permissions
 
