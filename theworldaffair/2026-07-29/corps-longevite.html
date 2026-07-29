@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-07-29/">
+<title>Sept Points sur Cent : le Vrai Prix de l'Effort — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; } /* ink, not blood-red: the old #8b3a3a painted EVERY 2nd column red — a quantum-fidelity / evidence table read like a stock ticker. Directional red now lives only in the .twa-tape dashboard. */
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+/* ===== STYLED COMPONENTS — one per beat-class. Cream/serif lock, hardcoded
+   hex, scoped under .article-body so they win over the generic table rules.
+   The routine emits the matching component HTML into the article body. ===== */
+/* Carte des Preuves (FRONTIER: Silicium & Intelligence · Corps & Longévité) */
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+/* Carte Cui-Bono (POWER: Pouvoir & Frontières) */
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+/* Le Fait du Jour (INTERPRETIVE: Culture & Création · Bonnes Nouvelles · Table & Terroir) */
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+/* Le Tape — market dashboard (MARKET: Marchés & Capital · Mer & Navigation · Ciel & Énergie). Δ carries the only scoped directional red. */
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+/* Verdict — per-récit confidence stamp (typographic letterpress; replaces the emoji dot). Muted paper-palette colour per level, heavier left rule like a classification tab. */
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+/* ---- Attention-playbook devices (gazette-native, design-lock: Playfair/cream/ink) ---- */
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Mercredi 29 Juillet 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;172</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; La Prime de Risque</div>
+  <div class="masthead-version">v1.1 — quotidien</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-07-29.html">Premi&egrave;re Page</a><a class="nav-link" href="synthese.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#2E7D32">Corps & Longévité</div>
+  <h1 class="article-title">Sept Points sur Cent : le Vrai Prix de l'Effort</h1>
+  <div class="article-date">Mercredi 29 Juillet 2026 &mdash; Edition N&deg;172</div>
+</div><div class="article-body"><h2>Édition du Jour</h2>
+<p>Sept points sur cent. C'est le vrai bénéfice moyen de l'exercice sur la douleur d'arthrose de hanche, deux fois trop faible pour qu'un patient le remarque — et c'est une revue Cochrane, l'étalon-or de la médecine fondée sur les preuves, qui vient de le mesurer sur 1 368 patients. <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007912.pub3/full" target="_blank" rel="noopener">Cochrane, 23 juillet</a> Le même écart entre promesse et preuve traverse deux autres histoires cette semaine : un suivi de trente ans sur 147 000 adultes qui isole enfin la dose exacte de musculation qui compte, et une étude chinoise qui rajeunit des ovaires de souris — commentée dans la même revue par un actionnaire des biotechs qui en profiteraient. Un fil commun : cette semaine, chaque promesse de santé a dû être pesée au gramme près, et certaines ont pesé moins lourd qu'annoncé.</p>
+<hr>
+<h2>Indicateurs Avancés</h2>
+<table class="twa-emap">
+<thead><tr><th>Affirmation</th><th>Grade</th><th>n / taille d&rsquo;effet</th><th>Réplication&#160;?</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>L'exercice réduit la douleur de l'arthrose de hanche</td><td class="twa-emap-g"><span class="twa-grade g-a">A</span></td><td>n=1 368 (18 ECR) ; effet ≈7 pts/100 (seuil clinique&#160;: 12)</td><td>oui — 3e mise à jour d'une revue de 2009/2014</td><td><a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007912.pub3/full" target="_blank" rel="noopener">Cochrane</a></td></tr>
+<tr><td>90-119 min/semaine de musculation réduit la mortalité neurologique de 27%</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>n=147 374, suivi jusqu'à 30 ans</td><td>non — première mesure de cette fenêtre de dose précise</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42230125/" target="_blank" rel="noopener">British Journal of Sports Medicine</a></td></tr>
+<tr><td>Bloquer l'IL-11 restaure la fonction ovarienne (souris/rats)</td><td class="twa-emap-g"><span class="twa-grade g-b">B</span></td><td>modèle animal + tissus humains corrélationnels ; n animal non précisé</td><td>non — étude unique</td><td><a href="https://www.nature.com/articles/s43587-026-01159-2" target="_blank" rel="noopener">Nature Aging</a></td></tr>
+</tbody></table>
+<p class="twa-emap-key"><b class="g-a">A</b> ECR répliqué · <b class="g-b">B</b> revu par les pairs / étude unique · <b class="g-c">C</b> préprint non relu · <b class="g-d">D</b> talk / benchmark vendeur.</p>
+<hr>
+<h2>Les Récits</h2>
+
+<h3>I. Le Bénéfice Trop Petit Pour Être Senti</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">Revue systématique Cochrane, 18 ECR · Grade A</span></p>
+<p>Dix-huit essais randomisés, 1 368 patients, une échelle de douleur sur 100 points : l'exercice, dans l'arthrose de hanche, réduit la douleur d'environ 7 points — quand il en faut 12 pour qu'un patient perçoive lui-même une différence. <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007912.pub3/full" target="_blank" rel="noopener">Cochrane, 23 juillet</a> La revue, troisième mise à jour d'un travail lancé en 2009, est dirigée par Michelle Hall (Université de Sydney) et Belinda Lawford (Université de Melbourne) ; sur la qualité de vie, l'effet est nul ou quasi nul quel que soit le comparateur. Aucun financement industriel&#160;: la revue est financée sur fonds académiques et institutionnels.</p>
+<p><strong>Ce que dit vraiment le papier :</strong> effet moyen ≈7 points/100 sur la douleur, sous le seuil de signification clinique de 12 points ; effet nul sur la qualité de vie ; limites majeures — essais majoritairement petits, impossibles à mener en double aveugle (on sait toujours si on fait de l'exercice), critères de jugement auto-rapportés ; le seuil de 12 points lui-même vient d'études mixtes genou/hanche, pas spécifiquement hanche, ce qui pourrait en fait surestimer ce qu'il faut pour « compter ».</p>
+<p>Michelle Hall, l'une des autrices, tempère elle-même sa propre revue : « l'exercice reste recommandé comme traitement de première ligne pour l'arthrose de hanche, et cette revue ne remet pas cela en cause. Mais elle suggère qu'il faut être honnête avec les patients : le bénéfice moyen pourrait être modeste. »</p>
+<p><strong>Qui paie · Qui profite :</strong> les patients paient le coût — temps, effort, parfois kinésithérapie facturée — d'un traitement dont le bénéfice moyen mesuré est sous le seuil ressenti ; les systèmes de santé publics, eux, profitent d'une intervention sans risque et peu coûteuse comparée à la chirurgie.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> un praticien peut, dès aujourd'hui, ajuster son discours — recommander l'exercice pour ses bénéfices cardio-métaboliques indépendants plutôt que comme solution miracle contre la douleur de hanche, sans pour autant l'abandonner.</p>
+<p><strong>L'autre lecture :</strong> la revue agrège des protocoles très hétérogènes — de 2 à 52 semaines, renforcement, aérobie, approches corps-esprit — sans trancher lequel fonctionne le mieux ; un sous-groupe pourrait répondre nettement mieux que la moyenne, noyé dans l'agrégat.</p>
+<p><strong>Verdict :</strong> l'exercice n'est pas inefficace contre l'arthrose de hanche — il est simplement moins efficace que ce que la pratique clinique courante laisse croire, et Cochrane vient de mettre un chiffre dessus.</p>
+<p><strong>Ce qui reste opaque :</strong> quel type d'exercice, quelle intensité, quelle supervision produiraient un effet supérieur à la moyenne agrégée — la revue ne le dit pas.</p>
+<p><strong>À dire au dîner :</strong> la prochaine fois qu'on vous recommande l'exercice contre l'arthrose de hanche, sachez que la meilleure preuve disponible dit que vous ne sentirez probablement pas la différence.</p>
+<hr>
+
+<h3>II. La Dose Exacte, Trouvée Après Trente Ans</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 étude de cohorte (3 cohortes combinées), non répliquée · Grade B</span></p>
+<p>147 374 adultes, jusqu'à trente ans de suivi, et une fenêtre précise : 90 à 119 minutes de musculation par semaine — grosso modo deux séances — sont associées à 27% de risque en moins de mourir d'une maladie neurologique, 19% de moins pour les causes cardiovasculaires, 13% de moins toutes causes confondues. <a href="https://pubmed.ncbi.nlm.nih.gov/42230125/" target="_blank" rel="noopener">British Journal of Sports Medicine, 2026</a> Au-delà de deux heures par semaine, le bénéfice plafonne. L'équipe, menée par Yiwen Zhang et Edward Giovannucci (Harvard T.H. Chan School of Public Health), a combiné trois cohortes historiques américaines suivies depuis 1992 ; combinée à un haut niveau d'activité aérobie, la réduction de mortalité atteint 45 à 58%.</p>
+<p><strong>Ce que dit vraiment le papier :</strong> n=147 374 ; -13% mortalité toutes causes, -19% cardiovasculaire, -27% neurologique pour 90-119 min/semaine, plateau au-delà ; financement National Cancer Institute/NIH, entièrement public, aucun lien industriel identifié ; limites — cohortes de professionnels de santé américains, population non représentative (biais du volontaire en bonne santé), exercice auto-rapporté sans mesure d'intensité, aucune preuve de causalité puisque l'étude est observationnelle.</p>
+<p><strong>Qui paie · Qui profite :</strong> le contribuable américain finance la recherche via le NIH ; l'industrie du fitness et du bien-être profite indirectement d'un chiffre marketing prêt à l'emploi — « deux séances par semaine » — que l'étude elle-même ne peut pas garantir causal.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> un lecteur peut recalibrer son programme hebdomadaire de musculation autour de 90-120 minutes plutôt que de viser toujours plus, sans attendre de bénéfice supplémentaire démontré au-delà de ce seuil.</p>
+<p><strong>L'autre lecture :</strong> les cohortes NHS/NHS II/HPFS regroupent presque exclusivement des professionnels de santé américains blancs et aisés — une population en meilleure santé et plus disciplinée dès l'inclusion, ce qui gonfle structurellement l'association par confusion résiduelle : ceux qui font 90-119 minutes de musculation par semaine ont probablement d'autres habitudes protectrices non mesurées.</p>
+<p><strong>Verdict :</strong> l'étude identifie une association solide, pas une preuve de cause à effet — le plafonnement au-delà de deux heures pourrait tout aussi bien refléter qui continue à s'entraîner à haute dose (des personnes déjà fragiles) qu'un vrai effet de dose.</p>
+<p><strong>Ce qui reste opaque :</strong> aucun essai randomisé n'a testé cette fenêtre de dose contre la mortalité — seule une expérimentation contrôlée pourrait trancher la causalité.</p>
+<p><strong>À dire au dîner :</strong> trente ans de données et 147 000 personnes suivies aboutissent à un conseil que votre grand-mère aurait pu vous donner gratuitement : pas trop, mais pas rien, deux fois par semaine.</p>
+<hr>
+
+<h3>III. Un Ovaire de Souris Rajeunit — Commenté par un Actionnaire</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 étude (souris/rats), conflit d'intérêt déclaré dans le commentaire associé · Grade B</span></p>
+<p>Neutraliser une seule protéine, l'interleukine-11, rend des ovaires de souris âgées plus souples et restaure leur fertilité — une piste préclinique qui vient avec un avertissement rarement affiché aussi clairement : l'auteur du commentaire qui l'accompagne dans Nature Aging est actionnaire de deux biotechs qui développent des thérapies anti-IL-11. <a href="https://www.nature.com/articles/s43587-026-01159-2" target="_blank" rel="noopener">Nature Aging, 14 juillet</a></p>
+<p>L'équipe chinoise de Meng Wu (Huazhong University of Science and Technology) a montré que l'expression ovarienne d'IL-11 augmente avec l'âge — confirmé chez la souris, le rat, et sur des tissus humains de trois tranches d'âge. Cette protéine active des fibroblastes qui rigidifient l'ovaire ; la bloquer, génétiquement ou par nanoparticules, restaure chez les rongeurs âgés la fonction ovarienne, l'équilibre hormonal, et augmente le nombre de petits par portée. Le commentaire qui accompagne l'étude est signé Stuart A. Cook, actionnaire d'Enleofen Bio et de one30 Therapeutics — deux sociétés qui développent précisément ce type de thérapie, et dont le propre papier fondateur de 2024 avait déjà lié l'inhibition d'IL-11 à une extension de la durée de vie chez les mammifères. <a href="https://www.nature.com/articles/s43587-026-01137-8" target="_blank" rel="noopener">Nature Aging, commentaire, 2026</a></p>
+<p><strong>Ce que dit vraiment le papier :</strong> preuve de concept chez la souris et le rat, avec expression d'IL-11 confirmée sur tissus ovariens humains de trois tranches d'âge — mais purement corrélationnelle côté humain, aucun essai interventionnel ; effet mesuré = portées plus nombreuses et matrice moins rigide chez les rongeurs traités ; financement de l'étude primaire non précisé dans les sources disponibles ; limite reconnue même par les commentateurs favorables — « nous sommes encore loin de voir cette recherche se traduire en traitement pour l'humain ».</p>
+<p><strong>Qui paie · Qui profite :</strong> les biotechs Enleofen Bio et one30 Therapeutics, dont l'auteur du commentaire est actionnaire, profiteraient directement d'un engouement médiatique pour la piste anti-IL-11 ; les lectrices qui liraient cette étude comme une promesse de traitement de fertilité en paieraient, elles, la désillusion.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> aucune — c'est une piste de recherche fondamentale, pas une perspective thérapeutique proche ; aucune action pratique n'est justifiée par ces données à ce stade.</p>
+<p><strong>L'autre lecture :</strong> l'IL-11 est une cytokine aux effets redondants dans de multiples tissus — la littérature reconnaît la difficulté de cibler cette voie à l'échelle d'un seul organe sans effets hors cible ; le relais médiatique de l'étude passe largement par un commentaire dont l'auteur a un intérêt financier direct, un cas d'école du principe « le conflit d'intérêt est une pièce à charge, pas une preuve ».</p>
+<p><strong>Verdict :</strong> l'étude elle-même est solide sur le plan préclinique ; c'est son habillage médiatique — porté par un commentateur juge et partie — qui mérite la méfiance, pas la science sous-jacente.</p>
+<p><strong>Ce qui reste opaque :</strong> aucun essai chez l'humain n'existe pour la fertilité ; la sécurité d'une inhibition systémique d'IL-11 sur le long terme chez l'humain n'est pas établie par cette étude.</p>
+<p><strong>À dire au dîner :</strong> la meilleure question à poser face à une étude qui rajeunit un organe de souris n'est pas « est-ce vrai ? » mais « qui a intérêt à ce que vous le croyiez tout de suite vrai pour l'humain ? »</p>
+<hr>
+
+<h2>Signaux Faibles</h2>
+<ul>
+<li>Une étude Lancet (Imperial College London, n=978 425, 7 pays) attribue la baisse conjointe de tension et cholestérol chez les obèses de plus de 40 ans à la hausse de prescription de statines et antihypertenseurs — jusqu'à 72% des hommes obèses sévères sous hypolipémiants aux USA/UK. Financement public (UK Medical Research Council). <a href="https://www.statnews.com/2026/07/01/lancet-obesity-blood-pressure-cholesterol-study/" target="_blank" rel="noopener">STAT News</a> — Grade B</li>
+<li>Le variant génétique APOE2 protégerait les neurones des dégâts de l'ADN, selon le Buck Institute (Aging Cell, 8 mai) — piste mécanistique pour Alzheimer, modèle souris humanisée. <a href="https://neurosciencenews.com/apoe2-longevity-dna-alzheimers-30675/" target="_blank" rel="noopener">Neuroscience News</a> — Grade B</li>
+<li>Un défaut de repliement de protéines auxiliaires dans les cellules bêta pancréatiques pourrait sous-tendre le diabète de type 2, selon Sanford Burnham Prebys et l'Université du Michigan (PNAS). <a href="https://www.sciencedaily.com/releases/2026/07/260727214616.htm" target="_blank" rel="noopener">ScienceDaily</a> — Grade B</li>
+<li>Des transplantations pulmonaires pour cancer du poumon avancé donnent de meilleurs résultats que l'immunothérapie standard chez des patients sélectionnés, selon une équipe de Northwestern (JAMA, 8 juillet) — un résultat qui rouvre le débat éthique sur l'allocation d'organes. <a href="https://www.statnews.com/2026/07/08/lung-transplant-advanced-cancer-study-results-ethics-jama/" target="_blank" rel="noopener">STAT News</a> — Grade B, probablement monocentrique</li>
+</ul>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007912.pub3/full" target="_blank" rel="noopener">Cochrane — Exercise for osteoarthritis of the hip, 23 juillet 2026 (DOI: 10.1002/14651858.CD007912.pub3)</a></li>
+<li><a href="https://www.cochrane.org/about-us/news/exercise-helps-hip-arthritis-pain-perhaps-less-we-thought" target="_blank" rel="noopener">Cochrane — communiqué officiel</a></li>
+<li><a href="https://www.usnews.com/news/health-news/articles/2026-07-23/exercise-underwhelms-as-a-hip-arthritis-treatment-review-concludes" target="_blank" rel="noopener">US News — Exercise underwhelms as hip arthritis treatment</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/42230125/" target="_blank" rel="noopener">British Journal of Sports Medicine — Long-term resistance training and mortality, 2026 (DOI: 10.1136/bjsports-2025-110503)</a></li>
+<li><a href="https://hsph.harvard.edu/news/moderate-amount-of-strength-training-each-week-could-boost-longevity/" target="_blank" rel="noopener">Harvard T.H. Chan School of Public Health — communiqué</a></li>
+<li><a href="https://www.nature.com/articles/s43587-026-01159-2" target="_blank" rel="noopener">Nature Aging — Modulating IL-11-dependent matrix stiffness to delay ovarian aging, 14 juillet 2026 (DOI: 10.1038/s43587-026-01159-2)</a></li>
+<li><a href="https://www.nature.com/articles/s43587-026-01137-8" target="_blank" rel="noopener">Nature Aging — Targeting interleukin-11 to slow ovarian aging (commentaire, conflit d'intérêt déclaré)</a></li>
+<li><a href="https://www.nature.com/articles/s41586-024-07701-9" target="_blank" rel="noopener">Nature — Inhibition of IL-11 signalling extends mammalian healthspan and lifespan, 2024</a></li>
+<li><a href="https://www.sciencealert.com/blocking-one-protein-kept-aging-ovaries-soft-in-mice-extending-fertility" target="_blank" rel="noopener">ScienceAlert</a></li>
+</ul>
+</div><div class="bottom-nav"><a href="../2026-07-29.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Gastronomie &mdash; v1.1 — quotidien</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegard\u00e9s \u2014 "+VAULT+"\n\nExport\u00e9 le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" \u2014 "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
