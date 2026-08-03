@@ -1,138 +1,86 @@
 <!DOCTYPE html>
 <!--
   Littoralicious — Terroir Hub  (UNLISTED, noindex)
-
-  This page is intentionally NOT linked from any other Littoralicious page,
-  not present in sitemap.xml, not in feed.xml, and is Disallowed in robots.txt.
-  Bookmark URL only.
+  Organised as sailing routes by sea region; land briefings kept separate.
+  Ocean chart + live search. Hand-edited — never run the destructive hub builder.
 -->
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Terroir field briefings — private archive.">
+    <meta name="description" content="Terroir field briefings — private archive, by sailing route.">
     <title>Terroir — Littoralicious</title>
     <link rel="stylesheet" href="../assets/css/style.css?v=4ec33c16">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <style>
-      .terroir-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: var(--space-8);
-        margin-top: var(--space-8);
+      /* ── chart-table scoped styles (sea-blue lock: #2d4a5e) ── */
+      .tr-intro { max-width: 760px; margin: 0 auto; text-align: center; }
+      .tr-private-mark { font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-sea); margin-bottom: var(--space-3); text-align: center; }
+      .tr-intro h1 { font-family: var(--font-serif); font-size: var(--text-3xl); margin-bottom: var(--space-3); }
+      .tr-tagline { font-family: Marcellus, Georgia, serif; font-style: italic; font-size: 1.55rem; line-height: 1.3; color: #2d4a5e; margin: .2em 0 .7em; }
+      .tr-intro p.lede { color: var(--color-muted); font-size: var(--text-lg); line-height: 1.7; }
+
+      /* search */
+      .tr-search { max-width: 560px; margin: var(--space-8) auto var(--space-6); position: relative; }
+      .tr-search input { width: 100%; box-sizing: border-box; font-family: var(--font-serif); font-size: 1.05rem; color: var(--color-ink); background: var(--color-paper); border: 1px solid var(--color-border); border-bottom: 2px solid #2d4a5e; padding: .7em 2.6em .7em 2.6em; outline: none; transition: border-color 150ms ease; }
+      .tr-search input:focus { border-bottom-color: #2aa198; }
+      .tr-search__icon { position: absolute; left: .85em; top: 50%; transform: translateY(-50%); color: #2d4a5e; font-size: 1rem; pointer-events: none; }
+      .tr-search__clear { position: absolute; right: .6em; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--color-salt); font-size: 1.2rem; cursor: pointer; line-height: 1; display: none; }
+      .tr-search__count { text-align: center; font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .05em; color: var(--color-salt); margin-top: var(--space-2); min-height: 1em; }
+
+      /* ocean chart */
+      .tr-chart { position: relative; margin: var(--space-6) 0 var(--space-4); border: 1px solid var(--color-border); }
+      #tr-map { height: 460px; width: 100%; background: #cfe0e6; }
+      .leaflet-container { font-family: var(--font-sans); }
+      .tr-chart__caption { position: absolute; top: 10px; left: 12px; z-index: 500; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #2d4a5e; background: rgba(250,249,246,.86); padding: 4px 9px; border: 1px solid var(--color-border); pointer-events: none; }
+      .tr-legend { display: flex; flex-wrap: wrap; align-items: center; gap: .35em 1.1em; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-top: 0; background: var(--color-paper); font-family: var(--font-sans); font-size: var(--text-xs); }
+      .tr-legend__item { display: inline-flex; align-items: center; gap: .45em; color: var(--color-ink); }
+      .tr-legend__dot { width: 11px; height: 11px; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255,255,255,.9); flex: none; }
+      .tr-legend__dot--land { border-radius: 1px; }
+      .tr-legend__toggle { margin-left: auto; display: inline-flex; align-items: center; gap: .45em; font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--color-sea); cursor: pointer; user-select: none; }
+      .tr-marker-label { font-family: var(--font-sans); font-size: 11px; font-weight: 600; color: #23384a; }
+
+      /* route sections */
+      .tr-routes { margin-top: var(--space-10); }
+      .tr-route { margin-bottom: var(--space-10); scroll-margin-top: 80px; }
+      .tr-route__head { display: flex; align-items: baseline; gap: .8em; border-bottom: 1px solid #e3e0d8; padding-bottom: .4em; margin-bottom: var(--space-6); }
+      .tr-route__idx { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .12em; color: var(--color-salt); }
+      .tr-route__marker { width: 12px; height: 12px; border-radius: 50%; flex: none; align-self: center; box-shadow: 0 0 0 2px rgba(255,255,255,.9); }
+      .tr-route__name { font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 1.5rem; color: #2d4a5e; margin: 0; }
+      .tr-route__sea { font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .1em; color: var(--color-salt); margin-left: auto; white-space: nowrap; }
+
+      .tr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6); }
+      .terroir-card { border: 1px solid var(--color-border); border-left: 3px solid var(--_accent, #2d4a5e); padding: var(--space-6); background: var(--color-paper); display: flex; flex-direction: column; transition: box-shadow 150ms ease, transform 150ms ease; }
+      .terroir-card:hover { box-shadow: 0 6px 22px -14px rgba(45,74,94,.5); transform: translateY(-2px); }
+      .terroir-card__overline { font-family: var(--font-sans); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-sea); margin-bottom: var(--space-3); }
+      .terroir-card__title { font-family: var(--font-serif); font-size: var(--text-xl); font-weight: 400; line-height: 1.2; margin-bottom: var(--space-2); }
+      .terroir-card__region { font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-4); }
+      .terroir-card__essence { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.55; color: var(--color-ink); margin-bottom: var(--space-4); flex-grow: 1; }
+      .terroir-card__date { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-salt); margin-bottom: var(--space-4); letter-spacing: 0.05em; }
+      .terroir-card__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); border-top: 1px solid var(--color-border); padding-top: var(--space-4); }
+      .terroir-btn { display: inline-block; font-family: var(--font-sans); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; padding: var(--space-2) var(--space-3); text-decoration: none; border: 1px solid var(--color-border); color: var(--color-ink); transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease; }
+      .terroir-btn:hover { background: var(--color-sea); color: #fff; border-color: var(--color-sea); }
+      .terroir-btn--primary { background: var(--color-sea); color: #fff; border-color: var(--color-sea); }
+      .terroir-btn--primary:hover { opacity: 0.85; }
+
+      /* land shelf — visually separated */
+      .tr-land { margin-top: var(--space-12); padding-top: var(--space-8); border-top: 2px solid #e3e0d8; }
+      .tr-land .tr-route__marker { border-radius: 2px; }
+      .tr-land .terroir-card { background: #faf8f3; }
+
+      .tr-empty { grid-column: 1/-1; font-family: var(--font-serif); font-style: italic; color: var(--color-salt); text-align: center; padding: var(--space-8) 0; }
+      .tr-meta-row { margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-border); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-salt); text-align: center; letter-spacing: 0.05em; }
+
+      @media (max-width: 640px) {
+        #tr-map { height: 340px; }
+        .tr-route__sea { display: none; }
       }
-      .terroir-card {
-        border: 1px solid var(--color-border);
-        padding: var(--space-6);
-        background: var(--color-paper);
-        display: flex;
-        flex-direction: column;
-      }
-      .terroir-card__overline {
-        font-family: var(--font-sans);
-        font-size: var(--text-xs);
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--color-sea);
-        margin-bottom: var(--space-3);
-      }
-      .terroir-card__title {
-        font-family: var(--font-serif);
-        font-size: var(--text-xl);
-        font-weight: 400;
-        line-height: 1.2;
-        margin-bottom: var(--space-2);
-      }
-      .terroir-card__region {
-        font-family: var(--font-sans);
-        font-size: var(--text-sm);
-        color: var(--color-muted);
-        margin-bottom: var(--space-4);
-      }
-      .terroir-card__essence {
-        font-family: var(--font-serif);
-        font-size: var(--text-base);
-        line-height: 1.55;
-        color: var(--color-ink);
-        margin-bottom: var(--space-4);
-        flex-grow: 1;
-      }
-      .terroir-card__date {
-        font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        color: var(--color-salt);
-        margin-bottom: var(--space-4);
-        letter-spacing: 0.05em;
-      }
-      .terroir-card__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-        border-top: 1px solid var(--color-border);
-        padding-top: var(--space-4);
-      }
-      .terroir-btn {
-        display: inline-block;
-        font-family: var(--font-sans);
-        font-size: var(--text-xs);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: 600;
-        padding: var(--space-2) var(--space-3);
-        text-decoration: none;
-        border: 1px solid var(--color-border);
-        color: var(--color-ink);
-        transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
-      }
-      .terroir-btn:hover {
-        background: var(--color-sea);
-        color: #fff;
-        border-color: var(--color-sea);
-      }
-      .terroir-btn--primary {
-        background: var(--color-sea);
-        color: #fff;
-        border-color: var(--color-sea);
-      }
-      .terroir-btn--primary:hover {
-        opacity: 0.85;
-        background: var(--color-sea);
-        color: #fff;
-      }
-      .terroir-intro {
-        max-width: 720px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .terroir-intro h1 {
-        font-family: var(--font-serif);
-        font-size: var(--text-3xl);
-        margin-bottom: var(--space-4);
-      }
-      .terroir-intro p {
-        color: var(--color-muted);
-        font-size: var(--text-lg);
-        line-height: 1.7;
-      }
-      .terroir-private-mark {
-        font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: var(--color-sea);
-        margin-bottom: var(--space-3);
-        text-align: center;
-      }
-      .terroir-meta-row {
-        margin-top: var(--space-12);
-        padding-top: var(--space-6);
-        border-top: 1px solid var(--color-border);
-        font-family: var(--font-mono);
-        font-size: var(--text-xs);
-        color: var(--color-salt);
-        text-align: center;
-        letter-spacing: 0.05em;
+      @media (prefers-reduced-motion: reduce) {
+        .terroir-card { transition: none; }
+        .terroir-card:hover { transform: none; }
       }
     </style>
 </head>
@@ -150,179 +98,39 @@
 </header>
 
 <main>
-    <section class="container" style="padding-top: var(--space-16); padding-bottom: var(--space-8);">
-        <div class="terroir-intro">
-            <p class="terroir-private-mark" style="margin-bottom:6px;"><a href="/" style="color:#2d4a5e;text-decoration:none;text-transform:uppercase;letter-spacing:1.6px;font-size:0.7rem;">&larr; Littoralicious</a></p>
-            <p class="terroir-private-mark">Private archive &middot; unlisted</p>
+    <section class="container" style="padding-top: var(--space-16); padding-bottom: var(--space-4);">
+        <div class="tr-intro">
+            <p class="tr-private-mark" style="margin-bottom:6px;"><a href="/" style="color:#2d4a5e;text-decoration:none;text-transform:uppercase;letter-spacing:1.6px;font-size:0.7rem;">&larr; Littoralicious</a></p>
+            <p class="tr-private-mark">Private archive &middot; unlisted</p>
             <h1>Terroir</h1>
-            <p class="terroir-tagline" style="font-family:Marcellus,Georgia,serif;font-style:italic;font-size:1.55rem;line-height:1.3;color:#2d4a5e;margin:.2em 0 .7em;letter-spacing:.01em;">Finally, a guide that gives a f*rk.</p>
-            <p>
-                Field briefings on the cities I cook through &mdash; markets, fishmongers,
-                producers, restaurants worth the detour. Each city ships as a readable
-                guide and a raw CSV of suppliers.
+            <p class="tr-tagline">Finally, a guide that gives a f*rk.</p>
+            <p class="lede">
+                Field briefings on the coasts I cook through &mdash; read as sailing routes,
+                sea by sea. Markets, fishmongers, bay tavernas, the tables worth the tender ride.
+                Each port ships as a readable guide and a raw CSV of suppliers. Inland briefings
+                sit on their own shelf below.
             </p>
         </div>
+
+        <div class="tr-search">
+            <span class="tr-search__icon" aria-hidden="true">&#9906;</span>
+            <input id="tr-q" type="search" autocomplete="off" spellcheck="false"
+                   placeholder="Search a port, a sea, a dish&hellip;" aria-label="Search the terroir archive">
+            <button class="tr-search__clear" id="tr-clear" aria-label="Clear search">&times;</button>
+        </div>
+        <div class="tr-search__count" id="tr-count"></div>
     </section>
 
     <section class="container" style="padding-bottom: var(--space-16);">
-        <div class="divider"><span class="divider__text">6 cities</span></div>
-
-        <div class="terroir-grid">
-            <h2 class="terroir-group" style="grid-column:1/-1;margin:0 0 calc(-1 * var(--space-4));font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.45rem;color:#2d4a5e;border-bottom:1px solid #e3e0d8;padding-bottom:.35em;letter-spacing:.01em;">Catalunya &amp; the Costa Brava</h2>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">SPAIN</div>
-                <h3 class="terroir-card__title">Cadaqués</h3>
-                <div class="terroir-card__region">Cap de Creus &middot; Empordà, Catalonia, Spain</div>
-                <p class="terroir-card__essence">A whitewashed fishing crescent wedged into schist at the wind-end of the Cap de Creus peninsula, where the tramuntana files the rock into Dalí’s shapes and the sea gives up anchovies in spring and sea urchins in the dead of winter.</p>
-                <div class="terroir-card__date">Published 2026-06-08</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Cadaques-CapdeCreus/">View</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">SPAIN</div>
-                <h3 class="terroir-card__title">Costa Brava</h3>
-                <div class="terroir-card__region">Empordà &middot; Catalunya, Spain</div>
-                <p class="terroir-card__essence">The precise point where the Pyrenees drown in the Mediterranean — cork-oak hills, anchovy ports and tramuntana-scoured coves along the Empordà shore that fed elBulli.</p>
-                <div class="terroir-card__date">Published 2026-06-04</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Costa-Brava-Catalunya/">View</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">SPAIN</div>
-                <h3 class="terroir-card__title">Barcelona</h3>
-                <div class="terroir-card__region">Catalunya, Spain</div>
-                <p class="terroir-card__essence">A Roman veterans' colony grown into a Mediterranean capital — Augustus' temple columns still standing in the Gothic core, Gaudí overhead, and a market-and-vermouth culture underneath the tourism.</p>
-                <div class="terroir-card__date">Published 2026-05-26</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Barcelona-Catalunya/">View</a>
-                    <a class="terroir-btn" href="/terroir/Barcelona-Catalunya/data.csv" download>Download CSV</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">SPAIN</div>
-                <h3 class="terroir-card__title">Girona</h3>
-                <div class="terroir-card__region">Catalunya, Spain</div>
-                <p class="terroir-card__essence">Four rivers, a Roman spine and the widest Gothic nave ever raised &mdash; a stone city that reflects itself in the Onyar and eats off the Empord&agrave; plain, with El Celler de Can Roca at its summit and the xuixo invented three streets from the Cathedral.</p>
-                <div class="terroir-card__date">Published 2026-07-12</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Girona-Catalunya/">View</a>
-                    <a class="terroir-btn" href="/terroir/Girona-Catalunya/data.csv" download>Download CSV</a>
-                </div>
-            </article>
-
-            <h2 class="terroir-group" style="grid-column:1/-1;margin:var(--space-8) 0 calc(-1 * var(--space-4));font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.45rem;color:#2d4a5e;border-bottom:1px solid #e3e0d8;padding-bottom:.35em;letter-spacing:.01em;">Dalmatia</h2>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">CROATIA</div>
-                <h3 class="terroir-card__title">Split</h3>
-                <div class="terroir-card__region">Dalmatia, Croatia</div>
-                <p class="terroir-card__essence">Diocletian's palace still lived in, the Pazar market pressed against the Roman wall, the 1890 Ribarnica fish hall, Marjan dropping straight into the sea — and a Dalmatian table finally serious about itself.</p>
-                <div class="terroir-card__date">Published 2026-04-29</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Split-Dalmatie/">View</a>
-                    <a class="terroir-btn" href="/terroir/Split-Dalmatie/data.csv" download>Download CSV</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">CROATIA</div>
-                <h3 class="terroir-card__title">Dubrovnik</h3>
-                <div class="terroir-card__region">Dalmatia, Croatia</div>
-                <p class="terroir-card__essence">A city that survives its own legend — every façade along the limestone Stradun the same height since the 1667 rebuild, the walls walked by everyone, the good eating found just off them.</p>
-                <div class="terroir-card__date">Published 2026-05-30</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Dubrovnik-Dalmatie/">View</a>
-                    <a class="terroir-btn" href="/terroir/Dubrovnik-Dalmatie/data.csv" download>Download CSV</a>
-                </div>
-            </article>
-
-                        <h2 class="terroir-group" style="grid-column:1/-1;margin:var(--space-8) 0 calc(-1 * var(--space-4));font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.45rem;color:#2d4a5e;border-bottom:1px solid #e3e0d8;padding-bottom:.35em;letter-spacing:.01em;">The Aegean</h2>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">TURKEY</div>
-                <h3 class="terroir-card__title">Bozcaada</h3>
-                <div class="terroir-card__region">North Aegean, Turkey</div>
-                <p class="terroir-card__essence">A wind-raked wine island in the mouth of the Dardanelles &mdash; its own pre-phylloxera grapes, grilled squid off the strait and a Greek-Turkish table. The only Turkish entry on National Geographic&rsquo;s 2026 list of the best places in the world for food.</p>
-                <div class="terroir-card__date">Published 2026-06-27</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Bozcaada-NorthAegean/">View</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">GREECE</div>
-                <h3 class="terroir-card__title">Athens</h3>
-                <div class="terroir-card__region">Attica, Greece</div>
-                <p class="terroir-card__essence">Athens eats in layers, and the loudest is always the newest catastrophe — bitter oil from the Acropolis olive, cumin the 1922 refugees carried in, coffee sunk in hot sand since 1923. Taste the sequence in one dawn bowl of patsas at the Varvakios, poured by Oinomageireio Epirus since 1898.</p>
-                <div class="terroir-card__date">Published 2026-07-22</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Athens-Attiki/">View</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">GREECE</div>
-                <h3 class="terroir-card__title">Piraeus</h3>
-                <div class="terroir-card__region">Saronic Gulf, Greece</div>
-                <p class="terroir-card__essence">Piraeus is a sea-town first: burned to nothing in 86 BC, refounded on a mud shore in 1834, and layered since by newcomers who arrived across the water. Eat the fish the Mikrolimano way and drink ouzo to a bouzouki — but skip the photo-menu terraces for where the port eats.</p>
-                <div class="terroir-card__date">Published 2026-07-28</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Piraeus-Saronic/">View</a>
-                </div>
-            </article>
-
-
-
-<h2 class="terroir-group" style="grid-column:1/-1;margin:var(--space-8) 0 calc(-1 * var(--space-4));font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.45rem;color:#2d4a5e;border-bottom:1px solid #e3e0d8;padding-bottom:.35em;letter-spacing:.01em;">The Algarve</h2>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">PORTUGAL</div>
-                <h3 class="terroir-card__title">Faro</h3>
-                <div class="terroir-card__region">Algarve, Portugal</div>
-                <p class="terroir-card__essence">The quiet Algarve capital that gave its bishop's library to the Bodleian — a walled town on the Ria Formosa lagoon, once the western edge of al-Andalus, the gateway most travellers skip.</p>
-                <div class="terroir-card__date">Published 2026-05-26</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/Faro-Algarve/">View</a>
-                    <a class="terroir-btn" href="/terroir/Faro-Algarve/data.csv" download>Download CSV</a>
-                </div>
-            </article>
-
-            <h2 class="terroir-group" style="grid-column:1/-1;margin:var(--space-8) 0 calc(-1 * var(--space-4));font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.45rem;color:#2d4a5e;border-bottom:1px solid #e3e0d8;padding-bottom:.35em;letter-spacing:.01em;">Provence &amp; the Côte d’Azur</h2><article class="terroir-card"><div class="terroir-card__overline">FRANCE</div><h3 class="terroir-card__title">Cavalaire-sur-Mer</h3><div class="terroir-card__region">Var · Côte d’Azur, France</div><p class="terroir-card__essence">Cavalaire is the Golfe de Saint-Tropez without the velvet rope: a working fishermen's bay that woke one August morning in 1944 with an army on its sand, and has been selling summers ever since.</p><div class="terroir-card__date">Published 2026-07-03</div><div class="terroir-card__actions"><a class="terroir-btn terroir-btn--primary" href="/terroir/Cavalaire-sur-Mer/">View</a></div></article><article class="terroir-card"><div class="terroir-card__overline">FRANCE</div><h3 class="terroir-card__title">The Var</h3><div class="terroir-card__region">Provence, France</div><p class="terroir-card__essence">The Var is the half of the Cote d'Azur that kept its working clothes on — a naval arsenal, a cork forest, and a black grape that likes its feet in the water and its head in the sun.</p><div class="terroir-card__date">Published 2026-07-03</div><div class="terroir-card__actions"><a class="terroir-btn terroir-btn--primary" href="/terroir/Var-Provence/">View</a></div></article><h2 class="terroir-group" style="grid-column:1/-1;margin:var(--space-8) 0 calc(-1 * var(--space-4));font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.45rem;color:#2d4a5e;border-bottom:1px solid #e3e0d8;padding-bottom:.35em;letter-spacing:.01em;">Inland France</h2><article class="terroir-card"><div class="terroir-card__overline">FRANCE</div><h3 class="terroir-card__title">Paris</h3><div class="terroir-card__region">Ile-de-France, France</div><p class="terroir-card__essence">A museum-city that refuses to become a museum: the boulangerie still opens before dawn, and the espresso is still drunk standing at the zinc.</p><div class="terroir-card__date">Published 2026-07-03</div><div class="terroir-card__actions"><a class="terroir-btn terroir-btn--primary" href="/terroir/Paris/">View</a></div></article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">FRANCE</div>
-                <h3 class="terroir-card__title">Beaune</h3>
-                <div class="terroir-card__region">Bourgogne, France</div>
-                <p class="terroir-card__essence">The only town in France where the premier crus begin at the last street — a walled wine capital on the eastern lip of the Côte d'Or, built around the Hospices and its glazed-tile roof.</p>
-                <div class="terroir-card__date">Published 2026-05-21</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/beaune-bourgogne/">View</a>
-                    <a class="terroir-btn" href="/terroir/beaune-bourgogne/data.csv" download>Download CSV</a>
-                </div>
-            </article>
-
-            <article class="terroir-card">
-                <div class="terroir-card__overline">FRANCE</div>
-                <h3 class="terroir-card__title">Lons-le-Saunier</h3>
-                <div class="terroir-card__region">Jura, France</div>
-                <p class="terroir-card__essence">A Jura prefecture that doesn't give itself away — salt-seeping ground since the Neolithic, Comté country, birthplace of the Marseillaise, where the Bresse plain dies into the first plateau.</p>
-                <div class="terroir-card__date">Published 2026-05-26</div>
-                <div class="terroir-card__actions">
-                    <a class="terroir-btn terroir-btn--primary" href="/terroir/lons-le-saunier-jura/">View</a>
-                    <a class="terroir-btn" href="/terroir/lons-le-saunier-jura/data.csv" download>Download CSV</a>
-                </div>
-            </article>
+        <div class="tr-chart">
+            <div class="tr-chart__caption">The archive by water &middot; click a port</div>
+            <div id="tr-map"></div>
         </div>
+        <div class="tr-legend" id="tr-legend"></div>
 
-        <p class="terroir-meta-row">
-            This page is unlisted.
-        </p>
+        <div class="tr-routes" id="tr-routes"></div>
+
+        <p class="tr-meta-row">This page is unlisted.</p>
     </section>
 </main>
 
@@ -334,6 +142,185 @@
     </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+/* ── one source of truth: routes (west→east) + guides ── */
+const ROUTES = [
+  { key:'algarve',  name:'The Algarve',                 sea:'Atlantic approach',            color:'#3f7d6e' },
+  { key:'catalan',  name:'The Catalan Coast',           sea:'Balearic Sea',                 color:'#c26b4a' },
+  { key:'azur',     name:'Côte d’Azur & the Var',       sea:'Ligurian Sea',                 color:'#b0843f' },
+  { key:'dalmatia', name:'The Dalmatian Coast',         sea:'Adriatic',                     color:'#2f6f7e' },
+  { key:'saronic',  name:'The Greek Saronic',           sea:'Aegean',                       color:'#35618f' },
+  { key:'turkish',  name:'The Turkish Aegean & Lycia',  sea:'The Turquoise Coast',          color:'#2aa198' },
+];
+const LAND = { key:'land', name:'By land', sea:'Inland briefings', color:'#8a8256' };
+
+/* guides ordered within each route roughly W→E along the coast */
+const GUIDES = [
+  { slug:'Faro-Algarve', name:'Faro', country:'PORTUGAL', region:'Algarve, Portugal', date:'2026-05-26', lat:37.0194, lng:-7.9304, route:'algarve', csv:true,
+    essence:`The quiet Algarve capital that gave its bishop’s library to the Bodleian — a walled town on the Ria Formosa lagoon, once the western edge of al-Andalus, the gateway most travellers skip.` },
+
+  { slug:'Cadaques-CapdeCreus', name:'Cadaqués', country:'SPAIN', region:'Cap de Creus · Empordà, Catalonia, Spain', date:'2026-06-08', lat:42.2887, lng:3.2779, route:'catalan', csv:false,
+    essence:`A whitewashed fishing crescent wedged into schist at the wind-end of the Cap de Creus peninsula, where the tramuntana files the rock into Dalí’s shapes and the sea gives up anchovies in spring and sea urchins in the dead of winter.` },
+  { slug:'Costa-Brava-Catalunya', name:'Costa Brava', country:'SPAIN', region:'Empordà · Catalunya, Spain', date:'2026-06-04', lat:41.9500, lng:3.2100, route:'catalan', csv:false,
+    essence:`The precise point where the Pyrenees drown in the Mediterranean — cork-oak hills, anchovy ports and tramuntana-scoured coves along the Empordà shore that fed elBulli.` },
+  { slug:'Barcelona-Catalunya', name:'Barcelona', country:'SPAIN', region:'Catalunya, Spain', date:'2026-05-26', lat:41.3874, lng:2.1686, route:'catalan', csv:true,
+    essence:`A Roman veterans’ colony grown into a Mediterranean capital — Augustus’ temple columns still standing in the Gothic core, Gaudí overhead, and a market-and-vermouth culture underneath the tourism.` },
+
+  { slug:'Cavalaire-sur-Mer', name:'Cavalaire-sur-Mer', country:'FRANCE', region:'Var · Côte d’Azur, France', date:'2026-07-03', lat:43.1730, lng:6.5300, route:'azur', csv:false,
+    essence:`Cavalaire is the Golfe de Saint-Tropez without the velvet rope: a working fishermen’s bay that woke one August morning in 1944 with an army on its sand, and has been selling summers ever since.` },
+  { slug:'Var-Provence', name:'The Var', country:'FRANCE', region:'Provence, France', date:'2026-07-03', lat:43.1200, lng:6.0200, route:'azur', csv:false,
+    essence:`The Var is the half of the Côte d’Azur that kept its working clothes on — a naval arsenal, a cork forest, and a black grape that likes its feet in the water and its head in the sun.` },
+
+  { slug:'Split-Dalmatie', name:'Split', country:'CROATIA', region:'Dalmatia, Croatia', date:'2026-04-29', lat:43.5081, lng:16.4402, route:'dalmatia', csv:true,
+    essence:`Diocletian’s palace still lived in, the Pazar market pressed against the Roman wall, the 1890 Ribarnica fish hall, Marjan dropping straight into the sea — and a Dalmatian table finally serious about itself.` },
+  { slug:'Dubrovnik-Dalmatie', name:'Dubrovnik', country:'CROATIA', region:'Dalmatia, Croatia', date:'2026-05-30', lat:42.6507, lng:18.0944, route:'dalmatia', csv:true,
+    essence:`A city that survives its own legend — every façade along the limestone Stradun the same height since the 1667 rebuild, the walls walked by everyone, the good eating found just off them.` },
+
+  { slug:'Athens-Attiki', name:'Athens', country:'GREECE', region:'Attica, Greece', date:'2026-07-22', lat:37.9838, lng:23.7275, route:'saronic', csv:false,
+    essence:`Athens eats in layers, and the loudest is always the newest catastrophe — bitter oil from the Acropolis olive, cumin the 1922 refugees carried in, coffee sunk in hot sand since 1923. Taste the sequence in one dawn bowl of patsas at the Varvakios.` },
+  { slug:'Piraeus-Saronic', name:'Piraeus', country:'GREECE', region:'Saronic Gulf, Greece', date:'2026-07-28', lat:37.9420, lng:23.6465, route:'saronic', csv:false,
+    essence:`Piraeus is a sea-town first: burned to nothing in 86 BC, refounded on a mud shore in 1834, and layered since by newcomers who arrived across the water. Eat the fish the Mikrolimano way and drink ouzo to a bouzouki.` },
+
+  { slug:'Bozcaada-NorthAegean', name:'Bozcaada', country:'TURKEY', region:'North Aegean, Turkey', date:'2026-06-27', lat:39.8283, lng:26.0389, route:'turkish', csv:false,
+    essence:`A wind-raked wine island in the mouth of the Dardanelles — its own pre-phylloxera grapes, grilled squid off the strait and a Greek-Turkish table. The only Turkish entry on National Geographic’s 2026 list of the best places in the world for food.` },
+
+  /* ── land / inland ── */
+  { slug:'Girona-Catalunya', name:'Girona', country:'SPAIN', region:'Catalunya, Spain', date:'2026-07-12', lat:41.9794, lng:2.8214, route:'land', csv:true,
+    essence:`Four rivers, a Roman spine and the widest Gothic nave ever raised — a stone city that reflects itself in the Onyar and eats off the Empordà plain, with El Celler de Can Roca at its summit and the xuixo invented three streets from the Cathedral.` },
+  { slug:'Paris', name:'Paris', country:'FRANCE', region:'Île-de-France, France', date:'2026-07-03', lat:48.8566, lng:2.3522, route:'land', csv:false,
+    essence:`A museum-city that refuses to become a museum: the boulangerie still opens before dawn, and the espresso is still drunk standing at the zinc.` },
+  { slug:'beaune-bourgogne', name:'Beaune', country:'FRANCE', region:'Bourgogne, France', date:'2026-05-21', lat:47.0257, lng:4.8397, route:'land', csv:true,
+    essence:`The only town in France where the premier crus begin at the last street — a walled wine capital on the eastern lip of the Côte d’Or, built around the Hospices and its glazed-tile roof.` },
+  { slug:'lons-le-saunier-jura', name:'Lons-le-Saunier', country:'FRANCE', region:'Jura, France', date:'2026-05-26', lat:46.6753, lng:5.5548, route:'land', csv:true,
+    essence:`A Jura prefecture that doesn’t give itself away — salt-seeping ground since the Neolithic, Comté country, birthplace of the Marseillaise, where the Bresse plain dies into the first plateau.` },
+];
+
+const ROUTE_BY = Object.fromEntries(ROUTES.concat(LAND).map(r => [r.key, r]));
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+/* ── render route sections + cards ── */
+(function renderRoutes(){
+  const root = document.getElementById('tr-routes');
+  const order = ROUTES.concat(LAND);
+  let html = '';
+  order.forEach((r, i) => {
+    const list = GUIDES.filter(g => g.route === r.key);
+    if (!list.length) return;
+    const isLand = r.key === 'land';
+    const idx = isLand ? 'LAND' : 'LEG ' + String(i + 1).padStart(2, '0');
+    html += `<section class="tr-route${isLand ? ' tr-land' : ''}" data-route="${r.key}" id="route-${r.key}">
+      <div class="tr-route__head">
+        <span class="tr-route__idx">${idx}</span>
+        <span class="tr-route__marker" style="background:${r.color}"></span>
+        <h2 class="tr-route__name">${esc(r.name)}</h2>
+        <span class="tr-route__sea">${esc(r.sea)}</span>
+      </div>
+      <div class="tr-grid">`;
+    list.forEach(g => {
+      const csvBtn = g.csv ? `<a class="terroir-btn" href="/terroir/${g.slug}/data.csv" download>Download CSV</a>` : '';
+      const badge = g.isNew ? ' · NEW' : '';
+      html += `<article class="terroir-card" data-slug="${g.slug}" style="--_accent:${r.color}"
+                 data-hay="${esc((g.name + ' ' + g.region + ' ' + g.country + ' ' + r.name + ' ' + r.sea + ' ' + g.essence).toLowerCase())}">
+        <div class="terroir-card__overline">${esc(g.country)}${badge}</div>
+        <h3 class="terroir-card__title">${esc(g.name)}</h3>
+        <div class="terroir-card__region">${esc(g.region)}</div>
+        <p class="terroir-card__essence">${esc(g.essence)}</p>
+        <div class="terroir-card__date">Published ${g.date}</div>
+        <div class="terroir-card__actions">
+          <a class="terroir-btn terroir-btn--primary" href="/terroir/${g.slug}/">View</a>
+          ${csvBtn}
+        </div>
+      </article>`;
+    });
+    html += `</div></section>`;
+  });
+  root.innerHTML = html;
+})();
+
+/* ── legend ── */
+(function renderLegend(){
+  const el = document.getElementById('tr-legend');
+  let h = ROUTES.map(r => `<span class="tr-legend__item"><span class="tr-legend__dot" style="background:${r.color}"></span>${esc(r.name)}</span>`).join('');
+  h += `<label class="tr-legend__toggle"><input type="checkbox" id="tr-land-toggle"> <span class="tr-legend__dot tr-legend__dot--land" style="background:${LAND.color}"></span> Show inland</label>`;
+  el.innerHTML = h;
+})();
+
+/* ── ocean chart ── */
+let MAP, MARKERS = {}, LAND_LAYER;
+(function initMap(){
+  MAP = L.map('tr-map', { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO', maxZoom: 19, subdomains: 'abcd'
+  }).addTo(MAP);
+
+  const sea = GUIDES.filter(g => g.route !== 'land');
+  ROUTES.forEach(r => {
+    const pts = sea.filter(g => g.route === r.key).map(g => [g.lat, g.lng]);
+    if (pts.length > 1) L.polyline(pts, { color: r.color, weight: 2, opacity: .55, dashArray: '2 6' }).addTo(MAP);
+  });
+  sea.forEach(g => {
+    const r = ROUTE_BY[g.route];
+    const m = L.circleMarker([g.lat, g.lng], {
+      radius: g.isNew ? 8 : 6, color: '#fff', weight: 2, fillColor: r.color, fillOpacity: .95
+    }).addTo(MAP);
+    m.bindTooltip(g.name, { permanent: false, direction: 'top', className: 'tr-marker-label' });
+    m.bindPopup(`<strong style="font-family:Georgia,serif;font-size:15px;color:#2d4a5e">${esc(g.name)}</strong><br><span style="font-size:11px;color:#667">${esc(g.region)}</span><br><a href="/terroir/${g.slug}/" style="font-size:12px;color:#2aa198;font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-decoration:none">Open the guide →</a>`);
+    MARKERS[g.slug] = m;
+  });
+
+  const seaBounds = L.latLngBounds(sea.map(g => [g.lat, g.lng])).pad(0.12);
+  MAP.fitBounds(seaBounds);
+
+  document.getElementById('tr-land-toggle').addEventListener('change', e => {
+    if (e.target.checked) {
+      LAND_LAYER = L.layerGroup();
+      GUIDES.filter(g => g.route === 'land').forEach(g => {
+        const mk = L.marker([g.lat, g.lng], {
+          icon: L.divIcon({ className: 'tr-land-pin', html: `<span style="display:block;width:12px;height:12px;background:${LAND.color};border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)"></span>`, iconSize: [12,12], iconAnchor: [6,6] })
+        });
+        mk.bindPopup(`<strong style="font-family:Georgia,serif;font-size:15px;color:#5a5636">${esc(g.name)}</strong><br><span style="font-size:11px;color:#667">${esc(g.region)}</span><br><a href="/terroir/${g.slug}/" style="font-size:12px;color:#8a8256;font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-decoration:none">Open the guide →</a>`);
+        LAND_LAYER.addLayer(mk);
+        MARKERS[g.slug] = mk;
+      });
+      LAND_LAYER.addTo(MAP);
+      MAP.flyToBounds(L.latLngBounds(GUIDES.map(g => [g.lat, g.lng])).pad(0.1), { duration: .6 });
+    } else if (LAND_LAYER) {
+      MAP.removeLayer(LAND_LAYER);
+      GUIDES.filter(g => g.route === 'land').forEach(g => delete MARKERS[g.slug]);
+      MAP.flyToBounds(seaBounds, { duration: .6 });
+    }
+  });
+})();
+
+/* ── live search ── */
+(function search(){
+  const q = document.getElementById('tr-q'), count = document.getElementById('tr-count'), clear = document.getElementById('tr-clear');
+  const cards = () => Array.from(document.querySelectorAll('.terroir-card'));
+  function run(){
+    const term = q.value.trim().toLowerCase();
+    clear.style.display = term ? 'block' : 'none';
+    let shown = 0;
+    cards().forEach(c => {
+      const hit = !term || c.dataset.hay.includes(term);
+      c.style.display = hit ? '' : 'none';
+      if (hit) shown++;
+      const m = MARKERS[c.dataset.slug];
+      if (m && m.setStyle) m.setStyle({ fillOpacity: hit ? .95 : .12, opacity: hit ? 1 : .25 });
+      else if (m && m._icon) m._icon.style.opacity = hit ? 1 : .2;
+    });
+    document.querySelectorAll('.tr-route').forEach(s => {
+      const any = s.querySelector('.terroir-card:not([style*="display: none"])');
+      s.style.display = any ? '' : 'none';
+    });
+    count.textContent = term ? `${shown} of ${cards().length} briefings` : `${cards().length} briefings · 6 sailing routes + inland`;
+  }
+  q.addEventListener('input', run);
+  clear.addEventListener('click', () => { q.value = ''; run(); q.focus(); });
+  run();
+})();
+</script>
 <script src="/assets/js/tools-widget.js?v=20260707-spoon" defer></script>
 </body>
 </html>
