@@ -113,7 +113,31 @@ jobs:
             exit 1
           fi
           git commit -m "World Affair: weekly recap $DATE (Sonnet write · Opus supervise)"
-          git push origin HEAD:rebuild/publishing-system
+
+          # The job holds a checkout for ~25 minutes while it researches and writes.
+          # rebuild/publishing-system is a BUSY branch — the Littoralicious terroir and
+          # publish routines push to it on their own schedules — so by the time we get
+          # here the remote has often moved and a plain push is rejected (this is exactly
+          # how the 2026-08-04 run died: recap fully written, then "! [rejected] (fetch
+          # first)" and the whole edition thrown away at the last step).
+          # Rebase onto whatever landed while we worked, then push. Retry a few times in
+          # case another routine pushes again during the rebase.
+          pushed=0
+          for attempt in 1 2 3 4 5; do
+            git fetch origin rebuild/publishing-system
+            if ! git rebase origin/rebuild/publishing-system; then
+              git rebase --abort || true
+              echo "::error::Recap conflicts with work pushed to rebuild/publishing-system while this job ran (most likely theworldaffair/editions.json). The edition was written but NOT published. Re-run the workflow: gh workflow run theworldaffair-weekly.yml"
+              exit 1
+            fi
+            if git push origin HEAD:rebuild/publishing-system; then pushed=1; break; fi
+            echo "::notice::Push rejected on attempt $attempt — the branch moved again. Rebasing and retrying."
+            sleep $((attempt * 10))
+          done
+          if [ "$pushed" != "1" ]; then
+            echo "::error::Could not push the recap after 5 attempts — rebuild/publishing-system is being written to too fast. The edition was written but NOT published."
+            exit 1
+          fi
 
       - name: Deploy to live Firebase Hosting
         if: steps.guard.outputs.go == 'true'
