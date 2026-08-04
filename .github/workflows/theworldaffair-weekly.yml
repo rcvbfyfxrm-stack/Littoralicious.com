@@ -1,18 +1,33 @@
 name: The World Affair — weekly recap
 
 # Autonomous WEEKLY recap on GitHub's own infrastructure (off the write-blocking
-# cloud egress proxy). Saturdays: SONNET 5 researches the week + writes the recap,
+# cloud egress proxy). SONNET 5 researches the week + writes the recap,
 # OPUS 4.8 supervises, then the workflow commits, pushes and deploys to Firebase.
-# Same auth: prefers ANTHROPIC_API_KEY (no cap), falls back to
-# CLAUDE_CODE_OAUTH_TOKEN. Spec = theworldaffair/.twa-recap-spec.md.
+# Auth: prefers ANTHROPIC_API_KEY (pay-per-token, no cap), falls back to
+# CLAUDE_CODE_OAUTH_TOKEN (the subscription). Spec = theworldaffair/.twa-recap-spec.md.
 #
 # 2026-07-29: theworldaffair-autopublish.yml (the Mon/Wed/Fri dailies) is PAUSED,
 # so this is now THE ONLY edition The World Affair publishes. It no longer has
 # dailies to harvest — it researches the whole week from zero. See the spec.
+#
+# ⚠ 2026-08-04 — WHY THIS RUNS ON MONDAY, NOT SATURDAY. The recap failed silently
+# on 2026-07-25 and again on 2026-08-01, both times in ~1.6s with a bare exit 1.
+# The cause, in the log both times: "You've hit your weekly limit · resets <Sun>,
+# 8pm (UTC)". Only CLAUDE_CODE_OAUTH_TOKEN is set on this repo, so every run is
+# billed against the Claude SUBSCRIPTION, whose usage week resets SUNDAY 20:00 UTC.
+# A Saturday 01:00 slot therefore sat ~5 days into the usage week, behind every
+# other automation on the account — it was scheduled at the emptiest moment of the
+# budget. Moved to MONDAY 02:07 UTC: ~30h after the reset, with a full week's
+# headroom, and it recaps a clean completed Monday-to-Sunday week.
+#
+# THE PERMANENT FIX is to add an ANTHROPIC_API_KEY repo secret — this workflow
+# already prefers it and it has no weekly cap. Until then the recap shares one
+# subscription budget with the nightly EducatedTraveler skill-sheet builder (Opus,
+# every night) and the Littoralicious routines, so a heavy week can still starve it.
 
 on:
   schedule:
-    - cron: '0 1 * * 6'   # 01:00 UTC Saturday — after the week's Mon/Wed/Fri editions
+    - cron: '7 2 * * 1'   # 02:07 UTC Monday — safely AFTER the Sunday 20:00 UTC usage-week reset
   workflow_dispatch:
 
 permissions:
@@ -63,9 +78,18 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          claude -p "You are the WRITER producing today's The World Affair WEEKLY RECAP inside a GitHub Actions checkout of branch rebuild/publishing-system. The repo is ALREADY checked out here — do NOT clone. Read theworldaffair/.twa-recap-spec.md (your recap instructions) AND theworldaffair/.twa-magazine-spec.md (shared standards) AND theworldaffair/.front-template.html and theworldaffair/.article-template.html. Then execute the recap spec STEP 0 through STEP 5. IMPORTANT: the Mon/Wed/Fri daily editions are PAUSED, so there will be NO daily editions from this week to harvest — that is EXPECTED, not an error. Never abort and never write a placeholder because of it. You research the week YOURSELF from zero: WebSearch across ALL 9 beats (at least two searches per beat, scoped to the last 7 days, against the tier-1 whitelists), fetch the real weekly moves for the Chiffres de la Semaine table, check how each story RESOLVED by Saturday, then select the week's 7-10 biggest stories touching at least 6 of the 9 beats, and WRITE the front page theworldaffair/$(date +%F).html plus la-semaine.html (and preferably histoire-de-la-semaine.html) under theworldaffair/$(date +%F)/, and update theworldaffair/editions.json (kind: weekly). Do NOT run STEP 6 / any git command — leave files on disk. Obey the LOI EDITORIALE, the T3-floor rule, and emit the .twa-verdict typographic stamp — never emoji." \
+          claude -p "You are the WRITER producing today's The World Affair WEEKLY RECAP inside a GitHub Actions checkout of branch rebuild/publishing-system. The repo is ALREADY checked out here — do NOT clone. Read theworldaffair/.twa-recap-spec.md (your recap instructions) AND theworldaffair/.twa-magazine-spec.md (shared standards) AND theworldaffair/.front-template.html and theworldaffair/.article-template.html. Then execute the recap spec STEP 0 through STEP 5. IMPORTANT: the Mon/Wed/Fri daily editions are PAUSED, so there will be NO daily editions from this week to harvest — that is EXPECTED, not an error. Never abort and never write a placeholder because of it. You research the week YOURSELF from zero: WebSearch across ALL 9 beats (at least two searches per beat, scoped to the last 7 days, against the tier-1 whitelists), fetch the real weekly moves for the Chiffres de la Semaine table, check how each story RESOLVED by the end of the week, then select the week's 7-10 biggest stories touching at least 6 of the 9 beats, and WRITE the front page theworldaffair/$(date +%F).html plus la-semaine.html (and preferably histoire-de-la-semaine.html) under theworldaffair/$(date +%F)/, and update theworldaffair/editions.json (kind: weekly). Do NOT run STEP 6 / any git command — leave files on disk. Obey the LOI EDITORIALE, the T3-floor rule, and emit the .twa-verdict typographic stamp — never emoji." \
             --model claude-sonnet-5 \
-            --dangerously-skip-permissions
+            --dangerously-skip-permissions 2>&1 | tee /tmp/writer.log
+          code=${PIPESTATUS[0]}
+          if [ $code -ne 0 ]; then
+            if grep -qi "hit your \(weekly\|usage\) limit\|rate.limit\|resets " /tmp/writer.log; then
+              echo "::error::CLAUDE USAGE CAP HIT — the recap did not run. This repo authenticates with CLAUDE_CODE_OAUTH_TOKEN (the subscription), whose usage week resets Sunday 20:00 UTC. Fix properly by adding an ANTHROPIC_API_KEY repo secret (no cap; this workflow already prefers it). Re-run manually after the reset with: gh workflow run theworldaffair-weekly.yml"
+            else
+              echo "::error::The writer step failed for a reason other than the usage cap — see the log above."
+            fi
+            exit $code
+          fi
 
       - name: Supervise — OPUS 4.8 (editor-in-chief review + fix)
         if: steps.guard.outputs.go == 'true'
