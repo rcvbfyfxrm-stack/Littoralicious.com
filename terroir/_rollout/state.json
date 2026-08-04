@@ -60,12 +60,49 @@
         "date": "2026-07-29",
         "structure_target": "Match live Athens-Attiki (GOLD3). Splice pipeline is ready: GOLD2.html ALREADY contains the organiser script (line 379 'La Grande / La Petite Table v2'), both gem-popup scripts (147,315), the ★ render + berth To-order panel (added by splice.py), and the 'cadaques-readability' style anchor splice.py targets. lib/flaner.css defines .fsub/.fcard/.fsub__title/.fsub__desc/.fsub__cards/.fcard__name/.fcard__tag/.fcard__teaser/.fcard__body/.fcard__meta/.fcard__map and is injected by splice.py. So the next run authors the 27 slot files (SLOTS map in splice.py: 201 hero…229 appendix; DELETE 216 tables-extended; INSERT_BEFORE 219 -> calas) + final-data.json (emit_data.py PACK shape) and runs emit_data.py then splice.py. guide-meta.json already drafted (center [42.2887,3.2789], zoom 14, cityRadiusKm 12, sister Costa-Brava). Section fold order: tables→dish→bougie→calas→walks→coffee-gardens→work→culture→crafts→quartiers→gastronomy→bars→music. Tables shell (slot 214) is near-empty: <div class='terroir-berths' id='terroir-berths'></div> + the organiser appends .gx-torg from TABLES. gem field name is 'pattern' (used as new RegExp(pattern,'i')); story/name inject as innerHTML (keep HTML-safe). dishes shape {name,note,kind} kind∈dish|sweet|drink; every venue needs >=2.",
         "gems_verified_6_ready_to_ship": [
-          {"id":"gem-taps","pattern":"taps de Cadaqués","tag":"Born here","name":"The tap de Cadaqués","born_here_dish_flag":true,"story":"Cork-shaped sugar-dusted sponge named for the tap (cork) of a cava bottle it apes when it rises past its mould. La Mallorquina — the Cabrisas family pastisseria by the church since the 1700s — is the only maker; taps made there since the 1800s. Sources: TERMCAT 'tap de Cadaqués'; Catavino; M'agrada Catalunya. where: La Mallorquina, Plaça Doctor Trèmols."},
-          {"id":"gem-dali","pattern":"Les Dîners de Gala","tag":"Table lore","name":"Dalí's dinners at Portlligat","story":"Dalí lived in Portlligat, the cove over the headland; his 1973 cookbook Les Dîners de Gala set down 136 recipes from the surrealist banquets he and Gala staged there — food as spectacle, born on this shore. Sources: NPR/Smithsonian/TASCHEN. where: Portlligat — Casa-Museu Salvador Dalí."},
-          {"id":"gem-garnatxa","pattern":"Garnatxa de l'Empordà","tag":"Terroir","name":"The sweet Garnatxa","story":"Sweet fortified solera wine from overripe Garnatxa, off the slate terraces of DO Empordà (granted 1972; terraces first tended by the monks of Sant Pere de Rodes). Sources: winetourism.com; costabrava.org; empordaturisme. where: DO Empordà cellars, Cap de Creus."},
-          {"id":"gem-suquet","pattern":"suquet","tag":"Fisher's pot","name":"Suquet — the at-sea stew","story":"Not a Cadaqués invention but a Cadaqués habit: the pot fishermen cooked over days at sea, catch dropped in with the tomato/onion/potato/garlic carried from shore. Honest regional framing. where: harbour tavernes."},
-          {"id":"gem-garoinada","pattern":"garoinada","tag":"Winter rite","name":"The sea-urchin winter","story":"The eriçó de mar cracked open raw with bread and cold white wine when the cold water clears. HONEST CORRECTION: the garoinada festival with tasting menus belongs down-coast in Palafrugell/Baix Empordà (mid-Jan–March); here it is just the urchin in season. Sources: costabrava.org; femturisme; moll.company. where: winter tables (and Palafrugell, down-coast)."},
-          {"id":"gem-garum","pattern":"garum","tag":"Salt-fish heritage","name":"The salting art from Empúries","story":"Greeks at Empúries perfected fish-salting here; the Romans built a garum works. HONEST CORRECTION: the famous salt-cured anxova is l'Escala's craft (Solés 1888, Callol i Serrats 1847), not Cadaqués's own — here the anchovy is landed and eaten more fresh than cured. Sources: Smithsonian anchovy-coast; barcelona-metropolitan; fascinatingspain. where: the Alt Empordà coast."}
+          {
+            "id": "gem-taps",
+            "pattern": "taps de Cadaqués",
+            "tag": "Born here",
+            "name": "The tap de Cadaqués",
+            "born_here_dish_flag": true,
+            "story": "Cork-shaped sugar-dusted sponge named for the tap (cork) of a cava bottle it apes when it rises past its mould. La Mallorquina — the Cabrisas family pastisseria by the church since the 1700s — is the only maker; taps made there since the 1800s. Sources: TERMCAT 'tap de Cadaqués'; Catavino; M'agrada Catalunya. where: La Mallorquina, Plaça Doctor Trèmols."
+          },
+          {
+            "id": "gem-dali",
+            "pattern": "Les Dîners de Gala",
+            "tag": "Table lore",
+            "name": "Dalí's dinners at Portlligat",
+            "story": "Dalí lived in Portlligat, the cove over the headland; his 1973 cookbook Les Dîners de Gala set down 136 recipes from the surrealist banquets he and Gala staged there — food as spectacle, born on this shore. Sources: NPR/Smithsonian/TASCHEN. where: Portlligat — Casa-Museu Salvador Dalí."
+          },
+          {
+            "id": "gem-garnatxa",
+            "pattern": "Garnatxa de l'Empordà",
+            "tag": "Terroir",
+            "name": "The sweet Garnatxa",
+            "story": "Sweet fortified solera wine from overripe Garnatxa, off the slate terraces of DO Empordà (granted 1972; terraces first tended by the monks of Sant Pere de Rodes). Sources: winetourism.com; costabrava.org; empordaturisme. where: DO Empordà cellars, Cap de Creus."
+          },
+          {
+            "id": "gem-suquet",
+            "pattern": "suquet",
+            "tag": "Fisher's pot",
+            "name": "Suquet — the at-sea stew",
+            "story": "Not a Cadaqués invention but a Cadaqués habit: the pot fishermen cooked over days at sea, catch dropped in with the tomato/onion/potato/garlic carried from shore. Honest regional framing. where: harbour tavernes."
+          },
+          {
+            "id": "gem-garoinada",
+            "pattern": "garoinada",
+            "tag": "Winter rite",
+            "name": "The sea-urchin winter",
+            "story": "The eriçó de mar cracked open raw with bread and cold white wine when the cold water clears. HONEST CORRECTION: the garoinada festival with tasting menus belongs down-coast in Palafrugell/Baix Empordà (mid-Jan–March); here it is just the urchin in season. Sources: costabrava.org; femturisme; moll.company. where: winter tables (and Palafrugell, down-coast)."
+          },
+          {
+            "id": "gem-garum",
+            "pattern": "garum",
+            "tag": "Salt-fish heritage",
+            "name": "The salting art from Empúries",
+            "story": "Greeks at Empúries perfected fish-salting here; the Romans built a garum works. HONEST CORRECTION: the famous salt-cured anxova is l'Escala's craft (Solés 1888, Callol i Serrats 1847), not Cadaqués's own — here the anchovy is landed and eaten more fresh than cured. Sources: Smithsonian anchovy-coast; barcelona-metropolitan; fascinatingspain. where: the Alt Empordà coast."
+          }
         ],
         "bougie_theme": "Repurpose #bougie as a food-history ESSAY (gx-lede + running <p>, count = editorial stat line, open). Two honest options: (A) KEEP the existing strong 'elBulli — the cove that changed cooking' essay (Cala Montjoi/Adrià 1987–2011 → Compartir/Disfrutar line back to Cadaqués) — it is already verbatim-good and gate-ready; OR (B) widen to the tramuntana-scoured fishing cove that produced both a cork-shaped celebration cake (taps) and Dalí's banquet-as-artwork. Recommend keeping (A) — it's excellent and reuses existing prose.",
         "venue_expansion_to_30": "Existing 15 TABLE venues (DROP v16 elBulli-museum from VENUES — it's a museum 30min away with no dishes; it lives in the #bougie essay already). Add dishes[] to all 15 from the 'To order:' text embedded in each why blob (all 16 strings catalogued). New verified table venues (9): La Mallorquina (pastisseria/taps+burilles, Plaça Doctor Trèmols); Celler Martín Faixó / Sa Perafita (winery+gastropub IN Cap de Creus, Mas Perafita, Empordà plates paired w/ estate Garnatxa; tours Mon–Sun 11:00/12:30/16:00 ~€15); Sa Gambina (seafood on the beachfront, Riba Nemesi Llorens 2, Palamós shrimp/fideuà/seafood paella, a Dalí regular); El Gato Azul (Carrer Curós 10, French-Lebanese, tuna carpaccio/falafel/hummus/goat-cheese salad, €10–20); Bistrovino (Franco-Catalan wine bistro, wine by the glass + homemade plates); Brown Sugar (cocktail/world-music bar, cocktails/juices/veg tapas & sandwiches); Bar Casino @ Societat l'Amistat (historic café-bar on the plaza, vermut/coffee/beers); La Sal (beachfront chiringuito under olive trees, Mediterranean bites + local wine + cocktails); Café La Habana (historic café-bar, coffee/drinks). Producers/direct as 'Out of town' VENUES (6, all catalogued in #gastronomy/#bars): Mas Estela (biodynamic, La Selva de Mar); Espelt Viticultors (Vilajuïga); Empordàlia (cellar + Oli de Pau DOP, Pau); Anxoves de l'Escala — Solés (1888) & Callol i Serrats (1847); Espolla (Garnatxa de l'Empordà); Vinyes dels Aspres (Empordà red). Total 15+9+6 = 30. If a cleaner restaurant is preferred over a producer, verify one of: El Barroco, L'Estable, Es Racó, Can Tito, Es Fornet (all on 2026 best-lists but dishes NOT yet verified — verify or skip; do NOT fabricate their dishes).",
@@ -102,11 +139,48 @@
         "guide_is_department_level": "Var-Provence is a DEPARTMENT/regional guide (spans Saint-Tropez, Ramatuelle, the Gulf of St-Tropez, Toulon, Hyeres + Iles d'Hyeres/Porquerolles, Bandol/Le Castellet, inland Gorges du Verdon + Massif des Maures/Collobrieres), NOT a single city. So 'neighborhoods' = towns/areas; guide-meta needs a large cityRadiusKm and a department-centred center/zoom. Photos already present: ph-1-saint-tropez-port-boats.jpg, ph-2-porquerolles-plage-notre.jpg, ph-3-gorges-du-verdon.jpg (3, reuse — PHOTOS must be exactly 3; confirm/honour their CC attribution in credits).",
         "structure_target": "Match live Athens-Attiki (GOLD3). GOLD2.html already carries the organiser script, both gem-popup scripts, the star render + berth To-order panel, and lib/flaner.css (.fsub/.fcard) injected by splice.py. So the next run authors final-data.json (emit_data.py PACK shape) + the slot files, then runs emit_data.py then splice.py, copies data.js to BOTH terroir/Var-Provence/data.js AND terroir/data/Var-Provence.js, writes both CSVs (folder + terroir/csv/). gem field name is 'pattern' (used as new RegExp(pattern,'i')); story/name inject as innerHTML (HTML-safe). dishes shape {name,note,kind} kind in dish|sweet|drink; every venue needs >=2 (verify or drop the 2nd — do NOT fabricate).",
         "gems_verified_5_ready_to_ship": [
-          {"id":"gem-tropezienne","pattern":"tarte tropezienne","tag":"Born here","born_here_dish_flag":true,"confidence":"strong","story":"Born on this shore: Alexandre Micka, a Polish baker, opened in Saint-Tropez in 1955 selling his grandmother's cream-filled sugar-crusted brioche. Catering the 1955 shoot of Et Dieu crea la femme, Brigitte Bardot loved it and suggested naming it for the town; Micka trademarked La Tarte Tropezienne in 1973. Sources: gaultmillau.com; culturetrip; Wikipedia 'Tarte tropezienne'. where: Saint-Tropez.","note":"anchor also appears as accented 'tropezienne'; ensure the prose carries the plain-ascii-foldable phrase the regex hits."},
-          {"id":"gem-bandol","pattern":"bandol","tag":"Terroir","confidence":"strong","story":"The Var's great red: AOC Bandol (granted 1941) spans 8 communes around Bandol, Le Castellet and La Cadiere-d'Azur, on sea-facing limestone terraces. Mourvedre — min 50% in the reds — ripens here as almost nowhere else in France. The first vines were planted around Le Castellet in Roman times. Sources: bandoltourisme.fr; wine-searcher; La Cave Eclairee. where: Bandol / Le Castellet, western Var.","note":"ties to the guide's real venue 'La Table du Castellet'."},
-          {"id":"gem-sollies","pattern":"figue de sollies","tag":"Born here","born_here_dish_flag":true,"confidence":"strong","story":"The only AOP fig in France: the Figue de Solli, the Bourjassotte Noire violet fig grown almost solely in the Solli basin east of Toulon (AOP since 2011). The Solli valley alone yields ~57% of France's figs. Dense, jammy, black-veined violet. Sources: INAO; TasteAtlas; fr.wikipedia 'Figue de Sollies'. where: Sollies-Pont, central Var.","note":"safe alternate anchor 'sollies' if the accented form is awkward in prose."},
-          {"id":"gem-collobrieres","pattern":"collobrieres","tag":"Born here","confidence":"strong","story":"Chestnut capital of the coast: Collobrieres, deep in the Massif des Maures, sits in ~900 hectares of chestnut groves. The marron glace has been candied here since the early 1900s; the village keeps a Musee du Marron Glace and an autumn chestnut fair (Fetes de la Chataigne). Sources: cotedazurfrance.com; Lavandou tourist office; provenceweb. where: Collobrieres, Massif des Maures.","note":"secondary anchor 'marron glace' also appears; either works."},
-          {"id":"gem-bouillabaisse","pattern":"bouillabaisse","tag":"Honest correction","confidence":"strong","story":"HONEST CORRECTION: bouillabaisse is MARSEILLE's dish (Bouches-du-Rhone), not the Var's — born of fishermen's unsold catch, codified by Marseille's 1980 Charte de la Bouillabaisse. What the Var coast actually keeps is the simpler soupe de poisson with rouille and croutons. Frame it as the neighbour's pride, not a local claim. Sources: National Geographic; marseille-tourisme; Wikipedia 'Bouillabaisse'.","note":"CAUTION: the anchor 'bouillabaisse' ALSO appears as a place name — La Vague d'Or sits on 'Bouillabaisse beach' in St-Tropez (in venue v1's why-blob). Ensure the gem story anchors on the DISH mention in prose, and that the beach mention doesn't misfire a wrong popup — either anchor on a longer dish phrase or add the correction where the dish is discussed."}
+          {
+            "id": "gem-tropezienne",
+            "pattern": "tarte tropezienne",
+            "tag": "Born here",
+            "born_here_dish_flag": true,
+            "confidence": "strong",
+            "story": "Born on this shore: Alexandre Micka, a Polish baker, opened in Saint-Tropez in 1955 selling his grandmother's cream-filled sugar-crusted brioche. Catering the 1955 shoot of Et Dieu crea la femme, Brigitte Bardot loved it and suggested naming it for the town; Micka trademarked La Tarte Tropezienne in 1973. Sources: gaultmillau.com; culturetrip; Wikipedia 'Tarte tropezienne'. where: Saint-Tropez.",
+            "note": "anchor also appears as accented 'tropezienne'; ensure the prose carries the plain-ascii-foldable phrase the regex hits."
+          },
+          {
+            "id": "gem-bandol",
+            "pattern": "bandol",
+            "tag": "Terroir",
+            "confidence": "strong",
+            "story": "The Var's great red: AOC Bandol (granted 1941) spans 8 communes around Bandol, Le Castellet and La Cadiere-d'Azur, on sea-facing limestone terraces. Mourvedre — min 50% in the reds — ripens here as almost nowhere else in France. The first vines were planted around Le Castellet in Roman times. Sources: bandoltourisme.fr; wine-searcher; La Cave Eclairee. where: Bandol / Le Castellet, western Var.",
+            "note": "ties to the guide's real venue 'La Table du Castellet'."
+          },
+          {
+            "id": "gem-sollies",
+            "pattern": "figue de sollies",
+            "tag": "Born here",
+            "born_here_dish_flag": true,
+            "confidence": "strong",
+            "story": "The only AOP fig in France: the Figue de Solli, the Bourjassotte Noire violet fig grown almost solely in the Solli basin east of Toulon (AOP since 2011). The Solli valley alone yields ~57% of France's figs. Dense, jammy, black-veined violet. Sources: INAO; TasteAtlas; fr.wikipedia 'Figue de Sollies'. where: Sollies-Pont, central Var.",
+            "note": "safe alternate anchor 'sollies' if the accented form is awkward in prose."
+          },
+          {
+            "id": "gem-collobrieres",
+            "pattern": "collobrieres",
+            "tag": "Born here",
+            "confidence": "strong",
+            "story": "Chestnut capital of the coast: Collobrieres, deep in the Massif des Maures, sits in ~900 hectares of chestnut groves. The marron glace has been candied here since the early 1900s; the village keeps a Musee du Marron Glace and an autumn chestnut fair (Fetes de la Chataigne). Sources: cotedazurfrance.com; Lavandou tourist office; provenceweb. where: Collobrieres, Massif des Maures.",
+            "note": "secondary anchor 'marron glace' also appears; either works."
+          },
+          {
+            "id": "gem-bouillabaisse",
+            "pattern": "bouillabaisse",
+            "tag": "Honest correction",
+            "confidence": "strong",
+            "story": "HONEST CORRECTION: bouillabaisse is MARSEILLE's dish (Bouches-du-Rhone), not the Var's — born of fishermen's unsold catch, codified by Marseille's 1980 Charte de la Bouillabaisse. What the Var coast actually keeps is the simpler soupe de poisson with rouille and croutons. Frame it as the neighbour's pride, not a local claim. Sources: National Geographic; marseille-tourisme; Wikipedia 'Bouillabaisse'.",
+            "note": "CAUTION: the anchor 'bouillabaisse' ALSO appears as a place name — La Vague d'Or sits on 'Bouillabaisse beach' in St-Tropez (in venue v1's why-blob). Ensure the gem story anchors on the DISH mention in prose, and that the beach mention doesn't misfire a wrong popup — either anchor on a longer dish phrase or add the correction where the dish is discussed."
+          }
         ],
         "sixth_gem_candidate_verify_or_drop": "Salade nicoise / pan bagnat as a boundary-correction gem (both are NICE / Alpes-Maritimes, NOT Var) — well-established but NOT re-verified this run; verify in the build run or ship only the 5 above (already >=5 floor). Do NOT add a born-here flag for these.",
         "bougie_theme": "Repurpose #bougie as a food-history ESSAY (gx-lede + running <p>). Strong honest option: 'The department that feeds the yachts' — the arc from Saint-Tropez's celebration cake (tarte tropezienne) and the Michelin cluster on the peninsula (La Vague d'Or, La Voile/La Reserve, La Table du Castellet) to the working produce behind them (Bandol's Mourvedre terraces, the Sollies fig, Collobrieres' chestnuts) — luxury plate and peasant larder on the same coast. Reuse the existing #history/#why-now prose where strong.",
@@ -122,7 +196,8 @@
       "slug": "Cavalaire-sur-Mer",
       "region": "Var, Provence",
       "tier": "tables-era",
-      "status": "pending"
+      "status": "held",
+      "reason": "MIS-TAGGED 'tables-era' — the actual state is a full from-scratch GOLD3 build at pre-GOLD2 scale, structurally the same class as the held Paris item, NOT a low-risk uplift (assessed 2026-08-04). terroir/Cavalaire-sur-Mer/data.js uses the OLD CATEGORIES/GROUPS/GROUP_OF model with NO TABLES key (checks.sh data.js-parse throws) and NO GEMS (0, need >=5); dishes[] on 0 of 20 venues (need >=2 each, i.e. 60+ verified dish claims to author); only 20 VENUES (need >=30); NEIGHBORHOODS=0 (need >=10), WALKS=0 (need >=6), WORK_SPOTS=0, LANDMARKS=5 (need >=10). index.html has 0 data-pins (need >=40), no organiser script ('La Grande / La Petite Table v2'), no gem-popup script, stale #money-sits still present, and is missing EIGHT required sections (#bougie #coffee-gardens #work #crafts #quartiers #gastronomy #bars #music). No terroir/data/Cavalaire-sur-Mer.js and no data.csv exist; banned words in reusable prose (foodie x1, elevated/curated x2). checks.sh (2026-08-04) fails ~19 explicit checks plus the parse/gem node-throws. No committed reference build artifacts (no lines/ or final-data.json anywhere in the repo), so ALL GOLD3 markup must be reverse-engineered from the live Athens/Piraeus guides. A full build requires 5-7 adversarially-verified born-here food-origin gems, dishes[] on ~30 verified venues, 10+ neighborhoods, 6+ walks, 10+ landmarks, fsub/fcard rewrite of 8 sections, a TABLES layer with scene descs, and the banned-word scrub — which cannot be completed TO the ABSOLUTE all-green gate inside one bounded nightly run without rushing the venue/dish/gem verification the deploy gate exists to prevent. Held rather than deploy a regression or fabricate to hit the floors. IMPORTANT DISTINCTION from the Paris/Girona holds: Cavalaire is COASTAL (Var, Provence) with REAL coves (Cap Lardier, the Gigaro coves, Bonporteau, Pardigon) and already carries a working #calas section, so it has NO inland deploy-gate incompatibility — unlike Paris/Girona it CAN pass checks.sh unchanged. This is a pure-SCALE hold, fully buildable, needing a dedicated full GOLD3 build (a whole interactive/nightly session on this guide alone), NOT any checks.sh/splice.py change. SOLID BASE TO TRANSFORM (do not discard): 20 real detailed venues already verified (e.g. La Palmeraie - Chateau de Valmer, confirmed 1-star 2026 Michelin; Vista & La Brigantine at Lily of the Valley; Les Saisonniers; La Voile - La Reserve Ramatuelle) plus rich prose venues in index.html not yet structured (Bar de la Menado, Injir Coffee Shop, Hera Bistrot bar a vin, La Cave de Mon Village, La Grange a Vins, La Rhumerie, Fondugues-Pradugues, Le Comptoir des Saveurs, O Petit Bar) and 5 real coast LANDMARKS — transform these into the GOLD3 data model, then research ONLY the new layers. CANDIDATE born-here gem directions for the next build (UNVERIFIED — must be adversarially verified before use, verify-or-drop): the Gulf-of-Saint-Tropez / Massif-des-Maures food identity — tarte tropezienne (Saint-Tropez, ~15km), marrons/chataignes de Collobrieres, Cotes de Provence rose (Chateau de Valmer / Fondugues-Pradugues estates), the Maures cork-oak/chestnut country. RESUME PLAN: run this guide as a dedicated full-build session (research->verify->assemble final-data.json ->author lines/->emit_data+splice->checks.sh all-green->headless render->deploy), same procedure as Athens/Piraeus. The premise of a quick nightly 'uplift' does not fit this queue: every assessed 'tables-era' item (Girona, Paris, Cavalaire) has turned out mis-tagged, and all remaining pending items are pre-gold2 full builds — Arnaud may want to re-scope the routine to one-full-build-per-run or drain these interactively."
     },
     {
       "slug": "Barcelona-Catalunya",
