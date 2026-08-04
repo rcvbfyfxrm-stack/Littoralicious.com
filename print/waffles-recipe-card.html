@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waffles &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.5pt; line-height: 1.27; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 5mm 8mm 4mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.6mm; margin-bottom: 2mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 17.4pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.7pt; color: #4a5568; line-height: 1.24; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 1.6mm; padding-top: 1.6mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.8mm 0 0; padding: 1.3mm 2.2mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.5pt; line-height: 1.27; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 4.5mm; margin-bottom: 2mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1mm; margin-bottom: 1.8mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 6.7pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.8mm 0 0.3mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.5pt; }
+        .ingredients td { padding: 0.4mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.8pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.4pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.3pt; color: #6b7280; margin-top: 1.6mm; padding-top: 1mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.15mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.45mm 0; padding: 0.5mm 0 0.5mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.6pt; font-style: italic; color: #4a5568; line-height: 1.28; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.5mm 2.5mm; margin-top: 1.7mm; font-size: 7.4pt; line-height: 1.29; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.5mm 2.5mm; margin-top: 1.7mm; font-size: 7.4pt; line-height: 1.29; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.5mm 2.5mm; margin: 1.7mm 0; font-size: 7.4pt; line-height: 1.29; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.4mm 2.1mm; margin-bottom: 1.5mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.6pt; line-height: 1.27; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.6pt; border-collapse: collapse; line-height: 1.27; }
+        .troubleshoot td, .charter td { padding: 0.4mm 1.1mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:6.4pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.4mm;letter-spacing:0;}</style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Waffles &mdash; Crisp Shell, Custard Middle</h1>
+    <p class="hook">A shell that cracks like thin ice over a middle close to custard. Overnight yeasted batter, whipped whites folded at service &mdash; cook to the wisp of steam, then rack, never stack.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>24 waffles</strong> (10&ndash;12)</span>
+        <span>Active: <strong>30 min</strong></span>
+        <span>Total: <strong>overnight</strong></span>
+        <span>Iron: <strong>highest</strong></span>
+        <span>Done: <strong>steam thins to a wisp</strong></span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Medieval Europe &mdash; hinged irons for communion wafers and the street <em>oublie</em>, 9th&ndash;10th c. The name is Frankish <em>wafla</em>, honeycomb. The Brussels form (thin yeast batter, whipped whites) recorded by name in Ghent, 1842&ndash;43.</div>
+    <div><span class="o-label">Eaten, authentically</span>Standing, out of paper, under nothing but icing sugar &mdash; Brussels street and fairground food, never a plated dessert.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>A breakfast and brunch fixture worldwide since the 1964 New York World&rsquo;s Fair. The same batter turns savoury with cheese and pepper.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight (g) &middot; cups / volume in right column</p>
+
+        <div class="group-label">The overnight batter</div>
+        <table>
+            <tr><td>Plain flour</td><td class="data">450g</td><td class="vol">3⅝ cups</td></tr>
+            <tr><td>Cornflour <span class="note">(cornstarch)</span></td><td class="data">150g</td><td class="vol">1¼ cups</td></tr>
+            <tr><td>Caster sugar</td><td class="data">40g</td><td class="vol">3 tbsp</td></tr>
+            <tr><td>Fine sea salt</td><td class="data">11g</td><td class="vol">1¾ tsp</td></tr>
+            <tr><td>Instant dried yeast</td><td class="data">5g</td><td class="vol">1½ tsp</td></tr>
+            <tr><td>Buttermilk <span class="note">(room temp)</span></td><td class="data">720g</td><td class="vol">3 cups</td></tr>
+            <tr><td>Whole milk</td><td class="data">240g</td><td class="vol">1 cup</td></tr>
+            <tr><td>Unsalted butter, melted</td><td class="data">240g</td><td class="vol">1 cup + 1 tbsp</td></tr>
+            <tr><td>Egg yolks</td><td class="data">6</td><td class="vol">keep whites</td></tr>
+            <tr><td>Vanilla extract</td><td class="data">8g</td><td class="vol">2 tsp</td></tr>
+        </table>
+
+        <div class="group-label">At service</div>
+        <table>
+            <tr><td>Egg whites, cold</td><td class="data">6</td><td class="vol">from above</td></tr>
+            <tr><td>Bicarbonate of soda</td><td class="data">4g</td><td class="vol">¾ tsp</td></tr>
+            <tr><td>Butter / oil, for the plates</td><td class="data">&mdash;</td><td class="vol"></td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; flour blend at 100%</span>
+            <strong>Blend 100% (&frac34; plain &middot; &frac14; cornflour) &middot; Dairy 160% &middot; Butter 40% &middot; Egg 50% &middot; Sugar 7% &middot; Salt 1.8% &middot; Yeast 0.8% &middot; Soda 0.7%.</strong> Three numbers do the crisping: the &frac14; cornflour, the 40% butter, and dairy at 160% &mdash; thin enough to reach every corner of the grid.
+        </div>
+
+        <p class="equipment">
+            <strong>Kit:</strong> waffle iron &middot; scale &middot; two large bowls &middot; whisk &middot; balloon whisk or mixer &middot; wire rack &middot; 85g ladle &middot; lidded jug for a swell
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Build the base &mdash; night before.</strong> Whisk dry: 450g flour, 150g cornflour, 40g sugar, 11g salt, 5g yeast. Whisk in 720g buttermilk + 240g milk until smooth, then 240g melted butter, 6 yolks, vanilla. It should ribbon off the whisk.
+                <span class="why">Overnight the yeast makes acids and aroma no chemical leavening gives, and the flour hydrates fully so the batter flows into the grid instead of sitting on it. <cite>&mdash; McGee</cite></span>
+            </li>
+            <li>
+                <strong>Ferment, then chill.</strong> 1 hr at ambient until it just bubbles, then fridge <strong>8&ndash;24 hr</strong>. Hot galley: straight to the fridge.
+            </li>
+            <li>
+                <strong>Stand &amp; preheat.</strong> Batter out <strong>45 min</strong> so the butter loosens. Iron on its highest setting a <strong>full 10 min</strong>.
+                <span class="why">The shell is built by conduction, so plate temperature at the pour decides the crust. A plate still climbing steams the batter instead of drying it.</span>
+            </li>
+            <li>
+                <strong>Soda in, whites folded.</strong> Whisk 4g soda through. Whip 6 whites to <strong>soft peaks</strong> &mdash; not stiff &mdash; and fold in three. Stop while streaky.
+                <span class="why">The foam is a gas phase built in advance: open cells that survive into the crumb. The soda hits the buttermilk acid for a fast surge, and lifts pH, which speeds browning. <cite>&mdash; Ajandouz &amp; Puigserver 1999</cite></span>
+            </li>
+            <li>
+                <strong>Brush, pour, close, leave it.</strong> Brush both plates. About <strong>85g</strong> per waffle into the centre, short of the edges &mdash; it spreads. Do not open to look.
+            </li>
+            <li>
+                <strong>Cook to the wisp.</strong> <strong>4&ndash;6 min.</strong> Hard steam at first, then a thin wisp &mdash; that is the cue, not the timer and never the light.
+                <span class="why">While the plume is heavy the crust is still wet and capped at 100&deg;C. When it thins, the crust has dropped below ~9&ndash;10% water into the glassy, brittle state &mdash; only then can it brown. <cite>&mdash; Roudaut et al. 2002</cite></span>
+            </li>
+            <li>
+                <strong>Rack it. Never stack it.</strong> Straight onto a wire rack, single layer, uncovered, in a <strong>100&deg;C</strong> oven.
+            </li>
+        </ol>
+
+        <div class="done">
+            <strong>Done:</strong> the steam drops from a hard jet to a thin wisp; the lid lifts without resistance and the waffle releases itself; it sounds hollow tapped on the rack; deep chestnut, not blond. <strong>Single layer, uncovered</strong> &mdash; trapped steam turns brittle to leather in about a minute.
+        </div>
+
+        <div class="sauce-block">
+            <strong>Efficiency &amp; service</strong> &mdash; the night-before batter makes service a five-minute job: soda in, whites folded, pour. Two irons and one long rack; the iron is the bottleneck, never the batter. Freeze the surplus flat and toast from frozen &mdash; waffles come back better than they hold.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One batter, two dishes &mdash; the savoury waffle</span>
+            After the fold, <strong>divide the bowl</strong>. Into one half work <strong>150g grated Gruy&egrave;re</strong>, cracked black pepper and a scrape of nutmeg; serve under a <strong>fried egg</strong>, or split with ham and b&eacute;chamel. <em>Drop the iron one setting &mdash; cheese against the plates catches fast.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Icing sugar only</strong> &mdash; the Brussels way</li>
+                <li><strong>Brown the butter</strong> &mdash; same 240g, hazelnut</li>
+                <li><strong>Malt powder</strong> &mdash; 5% of the flour</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Beer</strong> &mdash; for 20% of the dairy; crisper</li>
+                <li><strong>Sourdough starter</strong> &mdash; 150g for the yeast</li>
+                <li><strong>Buckwheat</strong> &mdash; 15% of the flour</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>Macerated strawberries</strong> + cr&egrave;me fra&icirc;che</li>
+                <li><strong>Gruy&egrave;re + fried egg</strong> &mdash; the crew tier</li>
+                <li><strong>Split</strong> with ham and b&eacute;chamel</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Soft in minutes</td><td>Stacked or covered &rarr; wire rack, single layer, uncovered</td></tr>
+            <tr><td>Pale and blond</td><td>Iron not fully preheated, or the soda was missed &rarr; a full 10 min</td></tr>
+            <tr><td>Sticks &amp; tears</td><td>Dry plates, or opened early &rarr; brush every time; leave it shut</td></tr>
+            <tr><td>Dense crumb</td><td>Whites stiff, or folded smooth &rarr; soft peaks, stop while streaky</td></tr>
+            <tr><td>Crisp then limp</td><td>Poured too thick &rarr; thinner pour, hotter iron</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Best route</td><td>Batter the night before; soda and whites at service only</td></tr>
+            <tr><td>Batter</td><td>24 hr fridge max &mdash; past that it goes beery</td></tr>
+            <tr><td>Hold</td><td>Wire rack, single layer, 95&ndash;100&deg;C oven, up to 30 min</td></tr>
+            <tr><td>Frozen</td><td>Cool flat, bag; 200&deg;C 5&ndash;6 min from frozen, or the toaster</td></tr>
+            <tr><td>Never</td><td>Stack hot, cover, or hold in a warming box</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Roudaut et al. 2002 (<em>Trends Food Sci. Technol.</em>) &middot; Vall&egrave;s P&agrave;mies et al. 2000 &middot; Ajandouz &amp; Puigserver 1999 &middot; McGee</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
