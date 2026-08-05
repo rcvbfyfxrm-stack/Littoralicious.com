@@ -14,6 +14,13 @@
  * galley with a dead scale can always reach for cups. The US figure comes from
  * the ingredient's density (read from its name); things you weigh anyway
  * (meat, fish) show oz/lb. Temperatures carry both °C and °F in the prose.
+ *
+ * WHAT SCALES AND WHAT DOES NOT — scaling multiplies the BATCH, never the COOK.
+ * A [data-qty] whose data-unit is a temperature, a time, a dimension or a
+ * percentage (°C, °F, min, sec, hr, cm, mm, in, %) is left exactly as written:
+ * a double batch is not a 400 °C oven, and half a batch is not a 36 °C burger.
+ * Those spans are never re-rendered, so ranges ("54–57 °C", "2–3 min") survive
+ * intact. Add data-no-scale to freeze any other quantity by hand.
  */
 (function () {
   "use strict";
@@ -111,7 +118,29 @@
     if (oz >= 1) return trim(Math.round(oz * 10) / 10) + " oz";
     return trim(Math.round(oz * 100) / 100) + " oz";
   }
-  function metricText(val, unit, round) { return fmtNum(val, round) + (unit ? " " + unit : ""); }
+  /* Units that describe the COOK, not the batch. Doubling a tray does not double the
+     oven temperature, the core temperature, the timings or the thickness you cut to.
+     These are left exactly as written — which also preserves ranges ("54–57 °C"). */
+  var NO_SCALE = /^(°c|°f|c|f|deg|degrees|min|mins|minute|minutes|sec|secs|second|seconds|hr|hrs|hour|hours|day|days|cm|mm|inch|inches|in|%)$/i;
+  function nonScaling(unit) { return NO_SCALE.test(String(unit || "").trim()); }
+
+  /* Discrete things you count: say "1 sprig", not "1 sprigs". */
+  var SING = { sprigs: "sprig", pinches: "pinch", eggs: "egg", yolks: "yolk", whites: "white",
+               cloves: "clove", slices: "slice", sheets: "sheet", leaves: "leaf", heads: "head",
+               bunches: "bunch", stalks: "stalk", strips: "strip", fillets: "fillet",
+               portions: "portion", squares: "square", rashers: "rasher" };
+  var PLUR = {}; for (var _k in SING) PLUR[SING[_k]] = _k;
+  function unitText(shown, unit) {
+    if (!unit) return "";
+    var u = String(unit), lower = u.toLowerCase();
+    if (Math.abs(shown - 1) < 1e-9) { if (SING[lower]) return SING[lower]; }
+    else if (PLUR[lower]) return PLUR[lower];
+    return u;
+  }
+  function metricText(val, unit, round) {
+    var s = fmtNum(val, round);
+    return s + (unit ? " " + unitText(parseFloat(s), unit) : "");
+  }
   function usValue(name, val, unit) {
     if (unit === "g") {
       var d = density(name);
@@ -131,6 +160,7 @@
       var base = parseFloat(el.getAttribute("data-base"));
       if (isNaN(base)) return;
       var unit = el.getAttribute("data-unit") || "", round = el.getAttribute("data-round");
+      if (nonScaling(unit) || el.hasAttribute("data-no-scale")) return;   // leave the prose untouched
       var val = base * mult;
       var m = metricText(val, unit, round);
       var us = usValue(el.getAttribute("data-name") || "", val, unit);
