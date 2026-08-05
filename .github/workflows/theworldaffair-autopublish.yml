@@ -16,6 +16,22 @@ name: The World Affair — autopublish
 # Until one is set the job SKIPS cleanly. FIREBASE_SERVICE_ACCOUNT_LITTORALICIOUS_WEB_ECEED already exists.
 #
 # NOTE: this is the ALTERNATIVE to the cloud routine trig_01FWy1qd — keep that DISABLED so no double-publish.
+#
+# ⚠ 2026-07-29 — THIS WORKFLOW IS CURRENTLY DISABLED (`gh workflow disable`), by Arnaud's
+# request, to free attention for the EducatedTraveler skill sheets. The Saturday— now
+# MONDAY — recap (theworldaffair-weekly.yml) is the only edition being published, and it
+# has been rewritten to research the whole week from zero rather than harvest these
+# dailies. Re-enable with:  gh workflow enable "The World Affair — autopublish"
+#
+# ⚠ BEFORE YOU RE-ENABLE, read this — two bugs killed the weekly recap silently for weeks:
+#   1. USAGE CAP. With only CLAUDE_CODE_OAUTH_TOKEN set, every run bills the SUBSCRIPTION,
+#      whose usage week resets SUNDAY 20:00 UTC. Jobs scheduled late in that week fail in
+#      ~1.6s with a bare exit 1 and one buried line: "You've hit your weekly limit".
+#      Mon/Wed/Fri is early in the week so this job is less exposed than the old Saturday
+#      recap was — but if you re-enable it you are adding load to the SAME shared budget
+#      that the Monday recap and the nightly EducatedTraveler Opus builder draw on.
+#      The real fix is the ANTHROPIC_API_KEY secret named above.
+#   2. PUSH RACE — fixed below; see the comment in the commit step.
 
 on:
   schedule:
@@ -96,7 +112,30 @@ jobs:
             exit 1
           fi
           git commit -m "World Affair: cluster magazine $DATE (Sonnet write · Opus supervise)"
-          git push origin HEAD:rebuild/publishing-system
+
+          # Same hardening as theworldaffair-weekly.yml — see the note there.
+          # This job holds a checkout for a long time while it researches and writes, and
+          # rebuild/publishing-system is a BUSY branch (the Littoralicious terroir and
+          # publish routines push to it on their own schedules). A plain push gets
+          # rejected with "! [rejected] (fetch first)" and throws the finished edition
+          # away — it exists only on the runner. That is exactly how the 2026-08-04
+          # weekly recap died. Rebase onto whatever landed while we worked, then push.
+          pushed=0
+          for attempt in 1 2 3 4 5; do
+            git fetch origin rebuild/publishing-system
+            if ! git rebase origin/rebuild/publishing-system; then
+              git rebase --abort || true
+              echo "::error::Edition conflicts with work pushed to rebuild/publishing-system while this job ran (most likely theworldaffair/editions.json). The edition was written but NOT published. Re-run: gh workflow run theworldaffair-autopublish.yml"
+              exit 1
+            fi
+            if git push origin HEAD:rebuild/publishing-system; then pushed=1; break; fi
+            echo "::notice::Push rejected on attempt $attempt — the branch moved again. Rebasing and retrying."
+            sleep $((attempt * 10))
+          done
+          if [ "$pushed" != "1" ]; then
+            echo "::error::Could not push the edition after 5 attempts — rebuild/publishing-system is being written to too fast. The edition was written but NOT published."
+            exit 1
+          fi
 
       - name: Deploy to live Firebase Hosting
         if: steps.guard.outputs.go == 'true'
