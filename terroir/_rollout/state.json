@@ -203,7 +203,80 @@
       "slug": "Barcelona-Catalunya",
       "region": "Catalunya",
       "tier": "pre-gold2",
-      "status": "pending"
+      "status": "held",
+      "reason": "Confirmed pre-GOLD2 full from-scratch GOLD3 build — and the LARGEST guide in the queue (60 venues vs 20-39 for the other held items), so the same class as Cadaques/Var/Cavalaire/Paris but bigger, not a low-risk uplift (assessed 2026-08-05). terroir/Barcelona-Catalunya/data.js uses the old model (VENUES/COLORS/CAT_LABELS/PRODUCT_COLORS/NEIGHBORHOODS/WALKS/WORK_SPOTS/LANDMARKS/PHOTOS) with NO TABLES key (checks.sh data.js-parse node-THROWS 'Cannot read grande') and NO GEMS key (gem-patterns check also node-throws). dishes[] on 0 of 60 venues (need >=2 each = ~120 verified dish claims to author). index.html (379 lines, long-line) has no organiser script ('La Grande / La Petite Table v2'), no gem-popup script, no data.js <script src>, stale #three-tables + #money-sits still present, and is MISSING FIVE sections (#drink, #bougie, #work, #crafts, #music). 'no stale Girona content' FAILS (Girona chrome token leaking). Banned words in reusable prose: charming x1, foodie x4, elevated/curated x6 (11 to scrub). No terroir/data/Barcelona-Catalunya.js (splice must emit it). checks.sh (2026-08-05) fails 17 of 52 explicit checks + two node-throws. GOOD BASE, like Cadaques/Var (content is REAL, not padding): NEIGHBORHOODS=11 (>=10 OK), WALKS=7 (>=6 OK), LANDMARKS=8 (need >=10, add 2), WORK_SPOTS=5, PHOTOS=3 (exist: 1-vista/2-human-food/3-texture + cat-1/2/3 — pick exactly 3, honour CC BY-SA), data-pins=72 (>=40 OK), csv in folder present. All 60 venues carry signature+why+verdict+caveat strings, so dishes[] is EXTRACTION not fabrication (extract dish 1 from each 'signature'; mine 'why'/'verdict' for dish 2, else verify from current Michelin/official menu or leave honest-thin single-dish — never fabricate a 2nd). This is COMPLETING a rich, under-structured world-food-city guide, but 60 venues x2 dishes + TABLES restructure + 5 new fsub/fcard sections + banned-word scrub + all-green gate + headless render cannot be finished TO QUALITY inside one bounded nightly run without rushing the ~120 dish + gem verification the deploy gate exists to prevent. Held with the execution-ready spec below; the hardest, most fabrication-prone layer (the 7 born-here gems) is DONE and verified 2026-08-05, so the next run does the mechanical build only. META for Arnaud: this is the 7th consecutive hold — the entire pending front is pre-gold2 full builds; the nightly 'quick uplift' premise no longer fits. Consider re-scoping the routine to one-full-build-per-dedicated-session (interactive), same procedure as Athens/Piraeus.",
+      "research": {
+        "date": "2026-08-05",
+        "structure_target": "Match live Athens-Attiki (GOLD3). GOLD2.html already carries the organiser script, both gem-popup scripts, the star render + berth To-order panel, and lib/flaner.css (.fsub/.fcard) injected by splice.py. Next run authors final-data.json (emit_data.py PACK shape) + slot files, runs emit_data.py then splice.py, copies data.js to BOTH terroir/Barcelona-Catalunya/data.js AND terroir/data/Barcelona-Catalunya.js, writes both CSVs (folder + terroir/csv/). gem field name is 'pattern' (new RegExp(pattern,'i')); story/name inject as innerHTML (keep HTML-safe). dishes shape {name,note,kind} kind in dish|sweet|drink; every venue needs >=2 or stays honest-thin single-dish.",
+        "gems_verified_7_ready_to_ship": [
+          {
+            "id": "gem-crema",
+            "pattern": "crema catalana",
+            "tag": "Born here",
+            "born_here_dish_flag": true,
+            "confidence": "strong",
+            "story": "Born on this shore: crema catalana is the oldest custard dessert in Europe, written down in the 14th-century Catalan Llibre de Sent Sovi — likely predating and inspiring France's creme brulee. Set with egg yolks, lemon and cinnamon, torched to a glass lid, and eaten above all on Sant Josep, 19 March. Sources: en.wikipedia.org 'Crema catalana'; foodrepublic.com. where: Catalan tables citywide.",
+            "note": "anchor also appears as 'crema Catalana'; ensure lowercase substring present in prose."
+          },
+          {
+            "id": "gem-pa-tomaquet",
+            "pattern": "pa amb tomaquet",
+            "tag": "Born here",
+            "born_here_dish_flag": true,
+            "confidence": "strong",
+            "story": "The Catalan handshake with bread: stale pa de pages rubbed with a split tomato, olive oil, salt — first written down in 1884 as a way to soften two-day-old bread. Now a marker of Catalan identity, laid under every slice of ham. Sources: barcelonaturisme.com 'sacred principles of pa amb tomaquet'; en.wikipedia.org. where: every table in the city.",
+            "note": "regex must be accent-fold-safe; ensure plain-ascii 'pa amb tomaquet' appears in prose (checks.sh uses literal lowercase includes)."
+          },
+          {
+            "id": "gem-bikini",
+            "pattern": "bikini",
+            "tag": "Born here",
+            "born_here_dish_flag": true,
+            "confidence": "strong",
+            "story": "The city's own sandwich: in 1953 the Sala Bikini nightclub on Avinguda Diagonal put a toasted ham-and-cheese on the menu, but Franco-era rules barred the French name croque-monsieur, so it took the club's name instead. The 'bikini' stuck — Barcelona's, not France's. Sources: tastingtable.com; xceed.me/NIGHTMAG. where: Sala Bikini, Diagonal; bar counters citywide.",
+            "note": "CAUTION: 'bikini' is a short/common token — anchor the popup on a longer prose phrase like 'the bikini sandwich' to avoid misfires, or pattern 'bikini sandwich'."
+          },
+          {
+            "id": "gem-escudella",
+            "pattern": "escudella",
+            "tag": "Table lore",
+            "confidence": "strong",
+            "story": "The oldest documented soup in Europe: escudella i carn d'olla, a broth-then-stew the 14th-century Catalan friar Francesc Eiximenis said every Catalan ate daily. Peasant thrift — the pantry simmered down — it still crowns the Christmas table, its giant pilota meatball floating in the pot. Sources: en.wikipedia.org 'Escudella'; shbarcelona.com. where: winter and Nadal tables.",
+            "note": "born-here Catalan; frame as heritage, not a Barcelona-city invention."
+          },
+          {
+            "id": "gem-cava",
+            "pattern": "cava",
+            "tag": "Terroir",
+            "confidence": "strong",
+            "story": "The Catalan bubble: in 1872 Josep Raventos of Codorniu made the first bottle of cava at Sant Sadurni d'Anoia in the Penedes, applying the Champagne method to native Macabeo, Xarel-lo and Parellada. HONEST GEOGRAPHY: cava is made in the Penedes hills ~40km west, not in Barcelona — the city drinks it, the Penedes makes it. Sources: cava.wine 'Codorniu'; en.wikipedia.org 'Sant Sadurni d'Anoia'. where: Penedes cellars; Barcelona xampanyerias.",
+            "note": "CAUTION: 'cava' also means a cellar/bar in Catalan and appears in venue names (e.g. 'La Cava...'). Anchor the popup on 'cava' in a wine sentence, or use a longer phrase, to avoid misfiring on a venue name."
+          },
+          {
+            "id": "gem-calcots",
+            "pattern": "calcots",
+            "tag": "Born here",
+            "confidence": "strong",
+            "story": "The winter fire-ritual: calcots — long sweet spring onions charred black on vine-shoot flames, peeled by hand and dunked in romesco/salvitxada — born in 19th-century Valls (Alt Camp, Tarragona) with the farmer Xat de Benaiges. HONEST GEOGRAPHY: the calcotada belongs to Valls ~100km down-country, PGI-protected; Barcelona keeps the feast, not the origin. Sources: visitavalls.cat; en.wikipedia.org 'Calcot'. where: Valls (Jan-Mar); Barcelona winter tables.",
+            "note": "accent-fold: ensure plain 'calcots' substring in prose."
+          },
+          {
+            "id": "gem-fideua",
+            "pattern": "fideua",
+            "tag": "Honest correction",
+            "confidence": "strong",
+            "story": "HONEST CORRECTION: fideua — paella's noodle twin, short fideos toasted in the pan with seafood — is NOT Catalan. It was born ~1915 in the Valencian port of Gandia (the fisherman Zabalo, out of rice on the boat, reached for noodles); its championship still runs in Gandia. Barcelona cooks it well, but it belongs to Valencia. Sources: visitgandia.com; en.wikipedia.org 'Fideua'. where: Valencia (Gandia); seafood tables here.",
+            "note": "correction gem — do NOT add a born-here flag."
+          }
+        ],
+        "eighth_gem_optional": "esqueixada (shredded raw-salt-cod summer salad, verb esqueixar 'to tear', tomato/onion/oil/vinegar) is a strong born-here Catalan dish, verified 2026-08-05 (en.wikipedia.org 'Esqueixada') — ship as an 8th if a summer/salt-cod anchor is wanted; the 7 above already meet the >=5 floor.",
+        "venue_dishes_extraction": "All 60 VENUES carry a 'signature' string (e.g. Disfrutar -> 'the panchino'), plus 'why'/'verdict'/'caveat'. Extract dishes[0] from each signature (real, already stated). For the mandated 2nd dish, mine why/verdict first; where absent, verify one from the venue's current-year Michelin/official menu OR leave the venue honest-thin single-dish — do NOT fabricate. ~120 dish claims total; this is the largest verification block and the main reason the build cannot be rushed in one bounded run.",
+        "tables_restructure": "data.js has NO TABLES key — build TABLES.grande + TABLES.petite from the existing venue 'cat'/'tier'/'category'/'subcat'/'section' fields (berth_top/etc). GRANDE (title 'La Grande Table') = the Michelin/50Best houses (Disfrutar v01 etc.) split into 2-3 scene subsections; PETITE (title 'La Petite Table') = tapas counters, vermuterias, bodegas, markets, everyday rooms, split into scene subsections. Each subsection desc = 14-26 words painting what the room is for. Fold the stale #three-tables + #money-sits price-ladder language into group descs, then REMOVE both sections.",
+        "sections_to_build": "FIVE flaner sections MISSING, author as .fsub/.fcard: #drink (vermut/xampanyeria/wine counters — ties cava gem), #bougie (food-history ESSAY: gx-lede + running <p> — 'the city that wrote Europe's oldest custard and stole a nightclub's name for its sandwich'; weave crema catalana + bikini + pa amb tomaquet + the elBulli-to-Disfrutar modernist line), #work (HONESTLY small — verify real remote-work cafes from WORK_SPOTS=5 or omit), #crafts (Barcelona artisans: ceramics, the Boqueria/Santa Caterina market stalls, xampanyeria cellars, chocolate — verify each), #music (verify real live venues — Jamboree/Harlem Jazz Club/Palau de la Musica-adjacent bars — or keep small; never pad). Existing sections to TRANSFORM into GOLD3 (do not discard): #soul #history #why-now #eat #tables #dish #calas #walks #coffee-gardens #culture #quartiers #gastronomy #bars #avoid #follow #seasonal #sources.",
+        "banned_word_scrub": "In reusable prose: 'charming' x1, 'foodie' x4, 'elevated'/'curated' x6 — 11 occurrences to rewrite during the section conversion (checks.sh banned-word checks must reach 0).",
+        "geo_status": "NEIGHBORHOODS=11 (OK), WALKS=7 (OK), LANDMARKS=8 (add 2 real ones to reach >=10 — e.g. La Boqueria, Sagrada Familia/Sant Pau, Mercat de Santa Caterina, Bunkers del Carmel), WORK_SPOTS=5, data-pins=72 (OK). PHOTOS: 6 files exist (1-vista, 2-human-food, 3-texture, cat-1-vermut-hour, cat-2-the-boqueria-counters, cat-3-a-barcelona-tapas-pintxo) — PHOTOS array must be EXACTLY 3; pick the 3 best and honour CC BY-SA attribution in credits.",
+        "estimated_next_run": "One dedicated full-build session (NOT a bounded nightly uplift — 60 venues makes this the biggest in the queue): author final-data.json (60 venues w/ extracted+verified dishes[], TABLES grande/petite from the cat/tier fold, the 7 gems above, 11 neighborhoods, 7 walks, 10+ landmarks, work_spots, 3 photos, product_colors) + the slot files (transform existing verbatim prose + fsub/fcard for the 5 missing sections + banned-word scrub), remove #three-tables + #money-sits, run emit_data.py + splice.py, copy data.js to BOTH paths, write both CSVs, then checks.sh ALL GREEN + headless render, then deploy. The gems layer (hardest, most fabrication-prone) is already DONE and verified above; the remaining work is the ~120-dish extraction/verification + mechanical assembly."
+      }
     },
     {
       "slug": "Costa-Brava-Catalunya",
