@@ -37,16 +37,16 @@
   /* ---- Density tables (grams per US cup / per tsp), specific keys first --- */
   var CUP = [
     ["rice flour", 158], ["cornflour", 120], ["cornstarch", 120], ["corn flour", 120],
-    ["wholemeal", 125], ["whole wheat", 125], ["rye flour", 125], ["rye", 125], ["spelt", 125], ["semolina", 170],
+    ["wholemeal", 125], ["whole wheat", 125], ["oat flour", 95], ["rye flour", 125], ["rye", 125], ["spelt", 125], ["semolina", 170],
     ["bread flour", 125], ["strong flour", 125], ["plain flour", 125], ["all-purpose", 125], ["00 flour", 125], ["flour", 125],
     ["icing sugar", 120], ["powdered sugar", 120], ["confection", 120],
     ["brown sugar", 220], ["muscovado", 220], ["demerara", 220],
     ["caster sugar", 200], ["granulated", 200], ["sugar", 200],
     ["honey", 340], ["golden syrup", 340], ["syrup", 320], ["treacle", 340], ["molasses", 340], ["maple", 320],
-    ["olive oil", 218], ["vegetable oil", 218], ["sunflower oil", 218], ["neutral oil", 218], ["melted butter", 218], ["dripping", 218], ["goose fat", 218], ["duck fat", 218], ["lard", 205], ["oil", 218],
+    ["olive oil", 218], ["vegetable oil", 218], ["sunflower oil", 218], ["neutral oil", 218], ["melted butter", 218], ["brown butter", 218], ["browned butter", 218], ["dripping", 218], ["goose fat", 218], ["duck fat", 218], ["lard", 205], ["oil", 218],
     ["mascarpone", 240], ["cream cheese", 240], ["sour cream", 240], ["creme fraiche", 240], ["crème fraîche", 240], ["yoghurt", 245], ["yogurt", 245], ["buttermilk", 245], ["double cream", 235], ["cream", 240], ["milk", 245],
     ["lager", 240], ["beer", 240], ["sparkling water", 240], ["soda water", 240], ["stock", 240], ["broth", 240], ["wine", 240], ["vodka", 235], ["gin", 235], ["rum", 235], ["brandy", 235], ["spirit", 235], ["juice", 240], ["brine", 240], ["water", 240],
-    ["parmesan", 90], ["grated cheese", 100], ["cheddar", 100], ["gruy", 100], ["cheese", 100],
+    ["cottage cheese", 226], ["ricotta", 246], ["parmesan", 90], ["grated cheese", 100], ["cheddar", 100], ["gruy", 100], ["cheese", 100],
     ["cocoa", 85], ["rolled oats", 90], ["oats", 90], ["desiccated coconut", 80], ["coconut", 80], ["ground almond", 96], ["almond flour", 96], ["breadcrumb", 108], ["panko", 60], ["walnut", 120], ["pecan", 100], ["nuts", 120], ["raisin", 145], ["sultana", 145], ["currant", 145], ["rice", 185]
   ];
   var TSP = [

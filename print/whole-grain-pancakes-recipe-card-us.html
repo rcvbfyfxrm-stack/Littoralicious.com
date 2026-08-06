@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The American Pancake &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.24pt; line-height: 1.238; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 4.6mm 7.36mm 3.68mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.47mm; margin-bottom: 1.84mm; }
+        .brand { font-family: Georgia, serif; font-size: 6.95pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.27pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 2.76mm; }
+        h1 { font-family: Georgia, serif; font-size: 16.79pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.004; margin: 0.55mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.43pt; color: #4a5568; line-height: 1.209; }
+        .meta-bar { display: flex; gap: 4.14mm; margin-top: 1.47mm; padding-top: 1.47mm; border-top: 1px solid #e2e2e2; font-size: 7.43pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.68mm; margin: 1.66mm 0 0; padding: 1.2mm 2.02mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.27pt; line-height: 1.238; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 5.98pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.37mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 4.14mm; margin-bottom: 1.84mm; }
+        h2 { font-family: Georgia, serif; font-size: 7.91pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.92mm; margin-bottom: 1.66mm; }
+
+        .ingredients-note { font-size: 6.27pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.83mm 0 1.29mm 0; }
+        .group-label { font-size: 6.47pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.74mm 0 0.28mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.24pt; }
+        .ingredients td { padding: 0.37mm 0.92mm; vertical-align: top; line-height: 1.248; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.56pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.18pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.66mm; }
+        .note { font-size: 6.56pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.08pt; color: #6b7280; margin-top: 1.47mm; padding-top: 0.92mm; border-top: 1px solid #f0f0f0; line-height: 1.268; }
+
+        .method ol { padding-left: 4.6mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.06mm; padding-left: 0.46mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -4.6mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.95pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.41mm 0; padding: 0.46mm 0 0.46mm 2.76mm; border-left: 2px solid #5c9ead; font-size: 6.37pt; font-style: italic; color: #4a5568; line-height: 1.248; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.38mm 2.3mm; margin-top: 1.56mm; font-size: 7.14pt; line-height: 1.258; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.38mm 2.3mm; margin-top: 1.56mm; font-size: 7.14pt; line-height: 1.258; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.38mm 2.3mm; margin: 1.56mm 0; font-size: 7.14pt; line-height: 1.258; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.27pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.37mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.29mm 1.93mm; margin-bottom: 1.38mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.29mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.58mm; }
+        .tier-label { font-weight: 700; font-size: 6.27pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.46mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 2.94mm; font-size: 6.37pt; line-height: 1.238; }
+        .elevation li { margin-bottom: 0.37mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.31mm; margin-bottom: 0.92mm; }
+        .bottom h2 { font-size: 7.43pt; padding-bottom: 0.92mm; margin-bottom: 1.47mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.37pt; border-collapse: collapse; line-height: 1.238; }
+        .troubleshoot td, .charter td { padding: 0.37mm 1.01mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.27pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.1mm; border-top: 1px solid #e2e2e2; font-size: 5.31pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 0.92mm; padding: 0.74mm 1.66mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.39mm; font-size: 5.31pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 5.79pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.74mm; }
+        .contact .ig-logo { width: 6.27pt; height: 6.27pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:6.18pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.21mm;letter-spacing:0;}</style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>The American Pancake &mdash; Whole Grain, Tall, Browned</h1>
+    <p class="hook">One hundred percent whole grain and it still comes off the griddle mahogany. The grain drinks overnight, the whites go in at the last minute, and the soda buys the colour that the sugar isn&rsquo;t there to buy.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>36 pancakes</strong> (10&ndash;12)</span>
+        <span>Active: <strong>35 min</strong></span>
+        <span>Total: <strong>overnight</strong></span>
+        <span>Griddle: <strong>175&deg;C</strong></span>
+        <span>Done: <strong>rim bubbles stay open</strong></span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>North America &mdash; the tall griddle cake follows the leavener. <em>Pearlash</em> (potassium carbonate, leached from wood ash) went into print in Amelia Simmons&rsquo; <em>American Cookery</em>, Hartford 1796; <em>saleratus</em> by the 1840s; Horsford&rsquo;s calcium acid phosphate patented 1856.</div>
+    <div><span class="o-label">Eaten, authentically</span>Stacked and dealt from a shared pile at a slow breakfast &mdash; butter melting between the layers, the syrup passed down the table rather than poured for you.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>The diner stack, everywhere. This build keeps the height and the browning and runs the flour <strong>100% whole grain</strong> &mdash; about 15 g protein and 5.5 g fibre a serving.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight (lb/oz) &middot; cups / volume in right column</p>
+
+        <div class="group-label">The soak &mdash; night before</div>
+        <table>
+            <tr><td>Cottage cheese <span class="note">(4%, blended smooth)</span></td><td class="data">14.1oz</td><td class="vol">1&frac34; cups</td></tr>
+            <tr><td>Buttermilk</td><td class="data">1lb 7.3oz</td><td class="vol">2&frac23; cups</td></tr>
+            <tr><td>Oat flour <span class="note">(or oats, blitzed)</span></td><td class="data">10.6oz</td><td class="vol">3&frac18; cups</td></tr>
+            <tr><td>White whole wheat flour</td><td class="data">10.6oz</td><td class="vol">2&frac38; cups</td></tr>
+            <tr><td>Fine sea salt</td><td class="data">0.32oz</td><td class="vol">1&frac12; tsp</td></tr>
+        </table>
+
+        <div class="group-label">The wake &mdash; 20 min before service</div>
+        <table>
+            <tr><td>Brown butter <span class="note">(from 100g butter)</span></td><td class="data">3.2oz</td><td class="vol">&frac38; cup</td></tr>
+            <tr><td>Egg yolks</td><td class="data">6</td><td class="vol">keep whites</td></tr>
+            <tr><td>Maple syrup <span class="note">(in it, not on it)</span></td><td class="data">1.4oz</td><td class="vol">2 tbsp</td></tr>
+            <tr><td>Baking powder</td><td class="data">0.53oz</td><td class="vol">1&frac18; tbsp</td></tr>
+            <tr><td>Bicarbonate of soda</td><td class="data">0.18oz</td><td class="vol">1&frac18; tsp</td></tr>
+        </table>
+
+        <div class="group-label">The fold</div>
+        <table>
+            <tr><td>Egg whites, cold</td><td class="data">6</td><td class="vol">from above</td></tr>
+            <tr><td>Butter, for the griddle</td><td class="data">&mdash;</td><td class="vol"></td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; flour at 100%</span>
+            <strong>Flour 100% (&frac12; oat &middot; &frac12; white whole wheat) &middot; Buttermilk 110% &middot; Cottage cheese 67% &middot; Egg 50% &middot; Brown butter 15% &middot; Maple 7% &middot; Salt 1.5% &middot; Powder 2.5% &middot; Soda 0.8%.</strong> Dairy at <strong>177%</strong> against a diner pancake&rsquo;s 120% &mdash; whole grain holds far more water, so build it wet enough to still pour <em>after</em> it drinks. Soda capped at 0.8%: past what the acid can spend, you taste soap.
+        </div>
+
+        <p class="equipment">
+            <strong>Kit:</strong> blender &middot; scale &middot; two large bowls &middot; whisk &middot; balloon whisk or mixer &middot; flat griddle or wide non-stick &middot; 60g ladle &middot; wire rack &middot; lidded container for the soak
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Soak &mdash; night before.</strong> Blend 14.1oz cottage cheese with 1lb 7.3oz buttermilk until <strong>completely smooth</strong> &mdash; run it longer than feels necessary. Whisk in both flours + 0.32oz salt. Cover, fridge overnight. It stiffens to wet plaster. That is right.
+                <span class="why">Bran and oat &beta;-glucan drink slowly. Water they haven&rsquo;t taken by the pan, they take from the crumb as it sets &mdash; that is the gummy middle. Acid also wakes the grain&rsquo;s own phytase: at pH 5.5 phytate breakdown runs 40%&rarr;70%, freeing iron and zinc. <cite>&mdash; Leenhardt et al. 2005</cite></span>
+            </li>
+            <li>
+                <strong>Warm soak for the minerals.</strong> Cold overnight = texture only. <strong>2&ndash;4 hr at room temperature</strong> is what actually moves the phytate. Hot galley: fridge, and take the texture win.
+            </li>
+            <li>
+                <strong>Brown the butter.</strong> 3.5oz butter, pale pan, medium. Foam falls, solids go hazelnut. Off <strong>the moment it smells of nuts</strong> &mdash; colour lags flavour ~20 sec. Scrape the solids in. Cool to warm.
+                <span class="why">Milk protein + lactose running Maillard in hot fat. At ~7 g of butter a head the fat budget is lean, so it has to be loud.</span>
+            </li>
+            <li>
+                <strong>Wake it.</strong> Stir in 6 yolks, the warm brown butter, 1.4oz maple. <strong>Sift</strong> 0.53oz powder + 0.18oz soda over &mdash; tipped in dry it leaves metallic pockets. Loosen with buttermilk until a ladleful <strong>ribbons and sinks back in 3 sec</strong>.
+                <span class="why">Soda meets the buttermilk acid at once (~1.4 L of gas). Spending that acid walks the batter from pH 4.5 toward neutral &mdash; step 6 collects on it. The powder is double-acting: the reserve that keeps the last ladle as tall as the first.</span>
+            </li>
+            <li>
+                <strong>Whip &amp; fold.</strong> 6 whites to <strong>soft peak</strong> &mdash; tip flops, doesn&rsquo;t stand. Fold in three, stop while streaky. <strong>Cook within 25 min.</strong>
+                <span class="why">Half this flour is oat &mdash; no gluten at all. Whipped whites go around the problem: egg proteins unfold at the air-water interface and set a film that holds bubbles by itself. Past soft peak the foam shatters on folding instead of stretching.</span>
+            </li>
+            <li>
+                <strong>Griddle low and long.</strong> <strong>175&deg;C</strong> (350&deg;F) &mdash; lower than a white-flour pancake. Butter on, wiped almost dry. <strong>60g</strong> a cake, spread to 10cm. <strong>2&frac12;&ndash;3 min</strong>, flip <strong>once</strong>, <strong>1&frac12;&ndash;2 min</strong>.
+                <span class="why">Maillard needs an unprotonated amino group; acid holds it protonated, alkali frees it, so browning climbs steeply with pH. That is how a batter with 3 g of sugar a serving still lands mahogany &mdash; the colour is bought with pH, not sugar. It also browns early, so the heat comes down to let the middle finish. <cite>&mdash; Ajandouz &amp; Puigserver 1999</cite></span>
+            </li>
+            <li>
+                <strong>Rack it, single layer.</strong> Wire rack, <strong>uncovered</strong>, 70&deg;C oven. Cover them and the crust goes to flannel in five minutes.
+            </li>
+        </ol>
+
+        <div class="done">
+            <strong>Done:</strong> the bubbles opening at the rim <strong>stay open</strong> &mdash; a batter that reseals its own holes is still too wet to turn. Rim matte from the outside in, ~5mm deep. Underside even mahogany, not blotched. Springs back slowly at the centre with no wet give underneath.
+        </div>
+
+        <div class="sauce-block">
+            <strong>Service</strong> &mdash; the split batter is the whole trick: the soak holds <strong>48 hr</strong>, the folded batter holds <strong>nothing</strong>. Staggered service? Hold back a third of the soak and fold fresh whites into it later &mdash; never re-whip a slumped batter. For a big breakfast, cook the lot the day before and reheat from frozen; they come back better than from the fridge.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One soak, two tiers &mdash; cook once</span>
+            <strong>Guests:</strong> 60g a cake, stacked three high, brown-butter roasted stone fruit and thick yogurt, syrup passed. <strong>Crew:</strong> same batter dropped at <strong>120g</strong> and spread wide, folded over bacon with a scrape of maple, two to a plate. <em>One pan, one service.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Frozen blueberries</strong> &mdash; onto the wet face, never stirred in</li>
+                <li><strong>Flaky salt</strong> &mdash; on the stack, not in it</li>
+                <li><strong>Lemon zest</strong> &mdash; into the soak</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Buckwheat</strong> &mdash; for 100g of the oat; brown 10&deg;C cooler</li>
+                <li><strong>Barley flour</strong> &mdash; same &beta;-glucan; +5% buttermilk</li>
+                <li><strong>Kefir</strong> for buttermilk &mdash; soda down to 4g</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>Roast stone fruit</strong> + thick yogurt &mdash; guest tier</li>
+                <li><strong>Savoury</strong> &mdash; spring onion, under a fried egg</li>
+                <li><strong>Folded over bacon</strong> &mdash; the crew tier</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Gummy, damp middle</td><td>Reached the pan still thirsty, or griddle too hot &rarr; longer soak; 165&deg;C + a minute</td></tr>
+            <tr><td>Soapy / metallic</td><td>More soda than the acid can spend, or unsifted &rarr; drop to 4g, or +60g buttermilk</td></tr>
+            <tr><td>Flat, dense base band</td><td>Whites stiff and broken, or batter sat &rarr; soft peak; cook within 25 min</td></tr>
+            <tr><td>Pale and dull</td><td>Griddle cool, or soda under-dosed &rarr; fix pH before reaching for sugar</td></tr>
+            <tr><td>Bitter, bran-y</td><td>Red wholemeal used &rarr; hard <em>white</em> wheat; same grain, no tannins</td></tr>
+            <tr><td>Rubbery flecks</td><td>Cottage cheese curd survived &rarr; blend longer or sieve it</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Best route</td><td>Soak the night before; soda and whites at service only</td></tr>
+            <tr><td>Soak</td><td>48 hr fridge; improves over the first 24</td></tr>
+            <tr><td>Folded batter</td><td>25 min, then it slumps &mdash; no holding, ever</td></tr>
+            <tr><td>Hold</td><td>Wire rack, single layer, uncovered, 70&deg;C, up to 40 min</td></tr>
+            <tr><td>Frozen</td><td>Interleave with paper; 180&deg;C 4 min from frozen</td></tr>
+            <tr><td>Provisioning</td><td><em>White</em> whole wheat, not red &mdash; the one call guests notice</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Leenhardt et al. 2005 (<em>J. Agric. Food Chem.</em>) &middot; Ajandouz &amp; Puigserver 1999 &middot; Aune et al. 2016 (<em>BMJ</em>) &middot; Lo &amp; Lampoglou et al. 2026 (<em>npj Sci. Food</em>) &middot; EFSA 2010</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
