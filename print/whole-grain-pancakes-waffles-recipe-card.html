@@ -9,101 +9,100 @@
         html, body { box-sizing: border-box; height: 100%; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 7.24pt; line-height: 1.238; color: #0a0a0a; background: #fff;
-            width: 210mm; height: 297mm; margin: 0 auto; padding: 4.6mm 7.36mm 3.68mm;
+            font-size: 6.86pt; line-height: 1.2; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 4.3mm 6.88mm 3.44mm;
             display: flex; flex-direction: column;
         }
-        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.47mm; margin-bottom: 1.84mm; }
-        .brand { font-family: Georgia, serif; font-size: 6.95pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
-        .brand-tagline { font-size: 6.27pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 2.76mm; }
-        h1 { font-family: Georgia, serif; font-size: 16.79pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.004; margin: 0.55mm 0; }
-        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.43pt; color: #4a5568; line-height: 1.209; }
-        .meta-bar { display: flex; gap: 4.14mm; margin-top: 1.47mm; padding-top: 1.47mm; border-top: 1px solid #e2e2e2; font-size: 7.43pt; color: #6b7280; }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.38mm; margin-bottom: 1.72mm; }
+        .brand { font-family: Georgia, serif; font-size: 6.59pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 5.95pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 2.58mm; }
+        h1 { font-family: Georgia, serif; font-size: 15.92pt; font-weight: 700; letter-spacing: -0.02em; line-height: 0.973; margin: 0.52mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.05pt; color: #4a5568; line-height: 1.172; }
+        .meta-bar { display: flex; gap: 3.87mm; margin-top: 1.38mm; padding-top: 1.38mm; border-top: 1px solid #e2e2e2; font-size: 7.05pt; color: #6b7280; }
         .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
 
         /* Origin band — where it was born, how it's eaten authentically, how it's used now */
-        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.68mm; margin: 1.66mm 0 0; padding: 1.2mm 2.02mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
-        .origin > div { font-size: 6.27pt; line-height: 1.238; color: #4a5568; }
-        .origin .o-label { display: block; font-size: 5.98pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.37mm; }
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.44mm; margin: 1.55mm 0 0; padding: 1.12mm 1.89mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 5.95pt; line-height: 1.2; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 5.67pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.34mm; }
         .origin em { color: #2d4a5e; font-style: italic; }
 
-        .main { display: grid; grid-template-columns: 36% 1fr; gap: 4.14mm; margin-bottom: 1.84mm; }
-        h2 { font-family: Georgia, serif; font-size: 7.91pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.92mm; margin-bottom: 1.66mm; }
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 3.87mm; margin-bottom: 1.72mm; }
+        h2 { font-family: Georgia, serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.86mm; margin-bottom: 1.55mm; }
 
-        .ingredients-note { font-size: 6.27pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.83mm 0 1.29mm 0; }
-        .group-label { font-size: 6.47pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.74mm 0 0.28mm; }
-        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.24pt; }
-        .ingredients td { padding: 0.37mm 0.92mm; vertical-align: top; line-height: 1.248; }
-        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.56pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
-        .ingredients td:nth-child(3) { font-size: 6.18pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.66mm; }
-        .note { font-size: 6.56pt; color: #6b7280; font-style: italic; }
-        .equipment { font-size: 6.08pt; color: #6b7280; margin-top: 1.47mm; padding-top: 0.92mm; border-top: 1px solid #f0f0f0; line-height: 1.268; }
+        .ingredients-note { font-size: 5.95pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.77mm 0 1.2mm 0; }
+        .group-label { font-size: 6.13pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.69mm 0 0.26mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 6.86pt; }
+        .ingredients td { padding: 0.34mm 0.86mm; vertical-align: top; line-height: 1.21; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.22pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 5.86pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.55mm; }
+        .note { font-size: 6.22pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 5.76pt; color: #6b7280; margin-top: 1.38mm; padding-top: 0.86mm; border-top: 1px solid #f0f0f0; line-height: 1.229; }
 
-        .method ol { padding-left: 4.6mm; list-style: none; }
+        .method ol { padding-left: 4.3mm; list-style: none; }
         .method > ol { counter-reset: step; }
-        .method li { margin-bottom: 1.06mm; padding-left: 0.46mm; position: relative; }
+        .method li { margin-bottom: 0.99mm; padding-left: 0.43mm; position: relative; }
         .method > ol > li { counter-increment: step; }
-        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -4.6mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.95pt; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -4.3mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.59pt; }
         .method li > strong:first-child { color: #2d4a5e; }
-        .why { display: block; margin: 0.41mm 0; padding: 0.46mm 0 0.46mm 2.76mm; border-left: 2px solid #5c9ead; font-size: 6.37pt; font-style: italic; color: #4a5568; line-height: 1.248; }
+        .why { display: block; margin: 0.39mm 0; padding: 0.43mm 0 0.43mm 2.58mm; border-left: 2px solid #5c9ead; font-size: 6.04pt; font-style: italic; color: #4a5568; line-height: 1.21; }
         .why cite { font-style: normal; color: #2d4a5e; }
-        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.38mm 2.3mm; margin-top: 1.56mm; font-size: 7.14pt; line-height: 1.258; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.29mm 2.15mm; margin-top: 1.46mm; font-size: 6.77pt; line-height: 1.219; }
         .done strong { color: #2d4a5e; }
 
-        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.38mm 2.3mm; margin-top: 1.56mm; font-size: 7.14pt; line-height: 1.258; }
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.29mm 2.15mm; margin-top: 1.46mm; font-size: 6.77pt; line-height: 1.219; }
         .sauce-block strong { color: #5b21b6; }
 
-        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.38mm 2.3mm; margin: 1.56mm 0; font-size: 7.14pt; line-height: 1.258; }
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.29mm 2.15mm; margin: 1.46mm 0; font-size: 6.77pt; line-height: 1.219; }
         .subrecipe strong { color: #92400e; }
-        .subrecipe .sub-label { font-size: 6.27pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.37mm; }
+        .subrecipe .sub-label { font-size: 5.95pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.34mm; }
 
-        .elevation { border: 2px solid #2d4a5e; padding: 1.29mm 1.93mm; margin-bottom: 1.38mm; }
-        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.29mm; }
-        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.58mm; }
-        .tier-label { font-weight: 700; font-size: 6.27pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.46mm; }
+        .elevation { border: 2px solid #2d4a5e; padding: 1.2mm 1.81mm; margin-bottom: 1.29mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.2mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.41mm; }
+        .tier-label { font-weight: 700; font-size: 5.95pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.43mm; }
         .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
-        .elevation ul { padding-left: 2.94mm; font-size: 6.37pt; line-height: 1.238; }
-        .elevation li { margin-bottom: 0.37mm; }
+        .elevation ul { padding-left: 2.75mm; font-size: 6.04pt; line-height: 1.2; }
+        .elevation li { margin-bottom: 0.34mm; }
         .elevation li strong { color: #0a0a0a; }
 
-        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.31mm; margin-bottom: 0.92mm; }
-        .bottom h2 { font-size: 7.43pt; padding-bottom: 0.92mm; margin-bottom: 1.47mm; }
-        .troubleshoot table, .charter table { width: 100%; font-size: 6.37pt; border-collapse: collapse; line-height: 1.238; }
-        .troubleshoot td, .charter td { padding: 0.37mm 1.01mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.1mm; margin-bottom: 0.86mm; }
+        .bottom h2 { font-size: 7.05pt; padding-bottom: 0.86mm; margin-bottom: 1.38mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.04pt; border-collapse: collapse; line-height: 1.2; }
+        .troubleshoot td, .charter td { padding: 0.34mm 0.95mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
         .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
-        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.27pt; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 5.95pt; }
         .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
         .charter tr:first-child td:last-child { font-weight: 600; }
 
-        .footer { padding-top: 1.1mm; border-top: 1px solid #e2e2e2; font-size: 5.31pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
-        .contact { margin-top: 0.92mm; padding: 0.74mm 1.66mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.39mm; font-size: 5.31pt; color: #4a5568; }
-        .contact strong { font-family: Georgia, serif; font-size: 5.79pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
-        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.74mm; }
-        .contact .ig-logo { width: 6.27pt; height: 6.27pt; }
+        .footer { padding-top: 1.03mm; border-top: 1px solid #e2e2e2; font-size: 5.03pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 0.86mm; padding: 0.69mm 1.55mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.24mm; font-size: 5.03pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 5.49pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.69mm; }
+        .contact .ig-logo { width: 5.95pt; height: 5.95pt; }
         .contact .sep { color: #cbd2da; }
         .spacer { flex: 1; min-height: 0; }
         @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
-    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:6.18pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.21mm;letter-spacing:0;}</style>
+    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:5.86pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.06mm;letter-spacing:0;}</style>
 </head>
 <body>
 
 <header class="header">
     <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
-    <h1>The American Pancake &mdash; Whole Grain, Tall, Browned</h1>
-    <p class="hook">One hundred percent whole grain and it still comes off the griddle mahogany. The grain drinks overnight, the whites go in at the last minute, and the soda buys the colour that the sugar isn&rsquo;t there to buy.</p>
+    <h1>The American Pancake &amp; Waffle &mdash; One Soak, Two Machines</h1>
+    <p class="hook">One overnight soak of whole grain and cultured dairy. Griddle it for a tall, mahogany pancake &mdash; or change three numbers and send it to the iron. The split happens twenty minutes before service, not the night before.</p>
     <div class="meta-bar">
-        <span>Yield: <strong>36 pancakes</strong> (10&ndash;12)</span>
+        <span>Yield: <strong>36 pancakes</strong> or <strong>28 waffles</strong> (10&ndash;12)</span>
         <span>Active: <strong>35 min</strong></span>
         <span>Total: <strong>overnight</strong></span>
-        <span>Griddle: <strong>175&deg;C</strong></span>
-        <span>Done: <strong>rim bubbles stay open</strong></span>
+        <span>Griddle: <strong>175&deg;C</strong> &middot; Iron: <strong>highest</strong></span>
     </div>
 </header>
 
 <div class="origin">
     <div><span class="o-label">Where it was born</span>North America &mdash; the tall griddle cake follows the leavener. <em>Pearlash</em> (potassium carbonate, leached from wood ash) went into print in Amelia Simmons&rsquo; <em>American Cookery</em>, Hartford 1796; <em>saleratus</em> by the 1840s; Horsford&rsquo;s calcium acid phosphate patented 1856.</div>
     <div><span class="o-label">Eaten, authentically</span>Stacked and dealt from a shared pile at a slow breakfast &mdash; butter melting between the layers, the syrup passed down the table rather than poured for you.</div>
-    <div><span class="o-label">How it&rsquo;s used now</span>The diner stack, everywhere. This build keeps the height and the browning and runs the flour <strong>100% whole grain</strong> &mdash; about 15 g protein and 5.5 g fibre a serving.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>The diner stack, everywhere. This build keeps the height and the browning and runs the flour <strong>100% whole grain</strong> as a pancake (~91% as a waffle) &mdash; about 15 g protein and 5.5 g fibre a serving.</div>
 </div>
 
 <div class="main">
@@ -181,12 +180,13 @@
         </div>
 
         <div class="sauce-block">
-            <strong>Service</strong> &mdash; the split batter is the whole trick: the soak holds <strong>48 hr</strong>, the folded batter holds <strong>nothing</strong>. Staggered service? Hold back a third of the soak and fold fresh whites into it later &mdash; never re-whip a slumped batter. For a big breakfast, cook the lot the day before and reheat from frozen; they come back better than from the fridge.
+            <strong>Service</strong> &mdash; the split batter is the whole trick: the soak holds <strong>48 hr</strong>, the folded batter holds <strong>nothing</strong>. Staggered service? Hold back a third of the soak and fold fresh whites into it later &mdash; never re-whip a slumped batter, and never leaven the whole soak unless you are cooking the whole soak.
         </div>
 
         <div class="subrecipe">
-            <span class="sub-label">One soak, two tiers &mdash; cook once</span>
-            <strong>Guests:</strong> 60g a cake, stacked three high, brown-butter roasted stone fruit and thick yogurt, syrup passed. <strong>Crew:</strong> same batter dropped at <strong>120g</strong> and spread wide, folded over bacon with a scrape of maple, two to a plate. <em>One pan, one service.</em>
+            <span class="sub-label">One soak, two machines &mdash; the waffle</span>
+            <strong>Soak unchanged.</strong> At step 4, three numbers move: <strong>brown butter 90g&rarr;210g</strong> (fat fries the plate face and releases from the iron) &middot; <strong>+60g cornflour</strong> sifted in (pure starch, no soak needed; goes glassy where &beta;-glucan can&rsquo;t &mdash; takes it to ~91% whole grain) &middot; <strong>+150g buttermilk</strong> (it must <em>flow</em> into the grid, not sit on it). Iron on <strong>highest</strong>, preheat 10 min, <strong>5&ndash;7 min</strong> &mdash; longer, never hotter; the shell can&rsquo;t brown until it has dried. <strong>Done:</strong> hard steam drops to a thin wisp; the lid lifts with no resistance. <strong>Rack, never stack.</strong>
+            <br><em>A pancake is a sponge, a waffle is a plate</em> &mdash; the pancake drinks butter and syrup; the waffle&rsquo;s pockets hold wet things on top (poached egg, creamed mushrooms). <strong>Pancakes = crew breakfast</strong> (live, eaten in 10 min). <strong>Waffles = charter service</strong> (cook ahead, freeze flat, toast from frozen &mdash; they come back crisper).
         </div>
     </section>
 </div>
@@ -213,9 +213,9 @@
         <div>
             <div class="tier-label t3">Tier 3 &mdash; Service</div>
             <ul>
-                <li><strong>Roast stone fruit</strong> + thick yogurt &mdash; guest tier</li>
-                <li><strong>Savoury</strong> &mdash; spring onion, under a fried egg</li>
-                <li><strong>Folded over bacon</strong> &mdash; the crew tier</li>
+                <li><strong>Waffle</strong> + poached egg &mdash; the grid holds the yolk</li>
+                <li><strong>Pancakes</strong> stacked &mdash; roast stone fruit, thick yogurt</li>
+                <li><strong>Crew</strong> &mdash; 120g pancake folded over bacon</li>
             </ul>
         </div>
     </div>
@@ -240,7 +240,7 @@
             <tr><td>Soak</td><td>48 hr fridge; improves over the first 24</td></tr>
             <tr><td>Folded batter</td><td>25 min, then it slumps &mdash; no holding, ever</td></tr>
             <tr><td>Hold</td><td>Wire rack, single layer, uncovered, 70&deg;C, up to 40 min</td></tr>
-            <tr><td>Frozen</td><td>Interleave with paper; 180&deg;C 4 min from frozen</td></tr>
+            <tr><td>Frozen</td><td>Waffles freeze <em>better</em> than fresh &mdash; toast from frozen. Pancakes: 180&deg;C 4 min, never quite as good</td></tr>
             <tr><td>Provisioning</td><td><em>White</em> whole wheat, not red &mdash; the one call guests notice</td></tr>
         </table>
     </section>
