@@ -149,11 +149,12 @@
 const ROUTES = [
   { key:'algarve',  name:'The Algarve',                 sea:'Atlantic approach',            color:'#3f7d6e' },
   { key:'catalan',  name:'The Catalan Coast',           sea:'Balearic Sea',                 color:'#c26b4a' },
-  { key:'azur',     name:'Côte d’Azur & the Var',       sea:'Ligurian Sea',                 color:'#b0843f' },
+  { key:’languedoc’, name:’The Languedoc Coast’,         sea:’Golfe du Lion’,                color:’#5a6a8a’ },
+  { key:’azur’,     name:’Côte d’Azur & the Var’,       sea:’Ligurian Sea’,                 color:’#b0843f’ },
   { key:'dalmatia', name:'The Dalmatian Coast',         sea:'Adriatic',                     color:'#2f6f7e' },
   { key:'saronic',  name:'The Greek Saronic',           sea:'Aegean',                       color:'#35618f' },
   { key:'turkish',  name:'The Turkish Aegean & Lycia',  sea:'The Turquoise Coast',          color:'#2aa198' },
-  { key:'tyrrhenian', name:'The Tyrrhenian Coast',      sea:'Gulf of Naples',               color:'#6b4fa0' },
+  { key:'tyrrhenian', name:'The Tyrrhenian Coast',      sea:'Tyrrhenian Sea · Gulf of Naples', color:'#8a3a3a' },
 ];
 const LAND = { key:'land', name:'By land', sea:'Inland briefings', color:'#8a8256' };
 
@@ -169,7 +170,10 @@ const GUIDES = [
   { slug:'Barcelona-Catalunya', name:'Barcelona', country:'SPAIN', region:'Catalunya, Spain', date:'2026-05-26', lat:41.3874, lng:2.1686, route:'catalan', csv:true,
     essence:`A Roman veterans’ colony grown into a Mediterranean capital — Augustus’ temple columns still standing in the Gothic core, Gaudí overhead, and a market-and-vermouth culture underneath the tourism.` },
 
-  { slug:'Cavalaire-sur-Mer', name:'Cavalaire-sur-Mer', country:'FRANCE', region:'Var · Côte d’Azur, France', date:'2026-07-03', lat:43.1730, lng:6.5300, route:'azur', csv:false,
+  { slug:’Sete-Languedoc’, name:’Sète’, country:’FRANCE’, region:’Hérault · Languedoc, France’, date:’2026-08-09’, lat:43.4030, lng:3.6972, route:’languedoc’, csv:false,
+    essence:`The only island-city in France, built on a spit between the Étang de Thau and the open Mediterranean — tielle, bourride and joutes nautiques since 1666, with Valéry and Brassens buried on the same hillside above the sea.` },
+
+  { slug:’Cavalaire-sur-Mer’, name:’Cavalaire-sur-Mer’, country:’FRANCE’, region:’Var · Côte d’Azur, France’, date:'2026-07-03', lat:43.1730, lng:6.5300, route:'azur', csv:false,
     essence:`Cavalaire is the Golfe de Saint-Tropez without the velvet rope: a working fishermen’s bay that woke one August morning in 1944 with an army on its sand, and has been selling summers ever since.` },
   { slug:'Var-Provence', name:'The Var', country:'FRANCE', region:'Provence, France', date:'2026-07-03', lat:43.1200, lng:6.0200, route:'azur', csv:false,
     essence:`The Var is the half of the Côte d’Azur that kept its working clothes on — a naval arsenal, a cork forest, and a black grape that likes its feet in the water and its head in the sun.` },

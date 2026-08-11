@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trapani, Sicily — Terroir Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<!-- Terroir guide kit -->
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-vars.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-inventory.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/tcard.css">
+<link rel="stylesheet" href="/terroir/_assets/guide/guide-enhance.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  :root { --paper:#fafafa; --paper-2:#f2efe8; --ink:#0a0a0a; --ink-2:#3a3a3a; --ink-3:#6a6a6a; --rule:#d7d2c4; --sea:#2d4a5e; --color-subtle:#ede9de; --gold:#8a6a2e; --amber:#a86a2f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:80px; }
+  body { font-family:Georgia,serif; background:var(--paper); color:var(--ink); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+  .hero { padding:56px 20px 32px; text-align:center; border-bottom:2px solid var(--ink); }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:3.4em; letter-spacing:8px; font-weight:900; line-height:1; }
+  .hero .region { font-family:system-ui,sans-serif; color:var(--ink-2); font-size:0.86em; margin-top:14px; letter-spacing:3px; text-transform:uppercase; }
+  .hero .philosophy { color:var(--sea); margin-top:22px; font-style:italic; font-family:'Playfair Display',serif; max-width:620px; margin-left:auto; margin-right:auto; }
+  .hero .date { font-family:'JetBrains Mono',monospace; color:var(--ink-3); font-size:0.68em; margin-top:18px; letter-spacing:2px; text-transform:uppercase; }
+  .hero .lang-switch { margin-top:22px; }
+  .hero .lang-switch a { display:inline-block; padding:4px 10px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; border:1px solid var(--rule); color:var(--ink-3); margin:0 3px; }
+  .hero .lang-switch a.active { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .quicknav { position:sticky; top:0; z-index:100; background:rgba(250,250,250,0.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--rule); padding:10px 16px; text-align:center; overflow-x:auto; white-space:nowrap; font-family:system-ui,sans-serif; }
+  .quicknav a { display:inline-block; color:var(--ink-2); font-size:0.7em; text-transform:uppercase; letter-spacing:2px; padding:6px 10px; }
+  .quicknav a:hover { color:var(--sea); }
+  .quicknav .sep { color:var(--rule); margin:0 2px; }
+  .container { max-width:820px; margin:0 auto; padding:0 18px 60px; }
+  .instructions { font-family:system-ui,sans-serif; text-align:center; color:var(--ink-3); font-size:0.8em; padding:14px 0 8px; font-style:italic; }
+  .instructions strong { color:var(--sea); font-style:normal; font-weight:500; }
+  .lead { font-size:1.02em; line-height:1.8; margin:22px 0 18px; }
+  .lead::first-letter { font-family:'Playfair Display',serif; font-size:3.4em; float:left; line-height:0.9; padding:6px 10px 0 0; color:var(--sea); font-weight:900; }
+  .lead a, .prose a { border-bottom:1px dotted var(--sea); color:var(--sea); }
+  .funfact { background:#fbf9f0; border-left:3px solid var(--sea); padding:14px 20px; margin:20px auto; font-size:0.94rem; font-style:italic; line-height:1.65; max-width:65ch; }
+  .funfact::before { content:'FUN FACT · '; font-family:'JetBrains Mono',monospace; font-style:normal; font-size:0.7rem; letter-spacing:0.15em; color:var(--sea); font-weight:700; margin-right:6px; }
+  .funfact strong { color:var(--ink); font-style:normal; font-weight:600; }
+  .alert { background:#fff6e8; border-left:4px solid var(--amber); padding:14px 18px; margin:18px 0; font-size:0.92em; line-height:1.65; font-family:system-ui,sans-serif; }
+  .alert .alert-label { color:var(--amber); font-weight:600; font-size:0.8em; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; display:block; }
+  .alert a { border-bottom:1px dotted var(--amber); color:var(--amber); }
+  .prose { margin:32px 0; }
+  .prose .overline { font-family:'JetBrains Mono',monospace; font-size:0.72em; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+  .prose .subhead { font-family:'Playfair Display',serif; font-style:italic; font-size:1.2em; color:var(--ink-2); margin-bottom:14px; }
+  .prose p { font-size:1em; line-height:1.8; }
+  .prose ul { list-style:none; padding:0; }
+  .prose ul li { padding:10px 0; border-bottom:1px dashed var(--rule); font-size:0.96em; line-height:1.7; color:var(--ink-2); }
+  .prose ul li strong { color:var(--ink); font-weight:600; }
+  details.sfold { border-top:1px solid var(--rule); margin-top:18px; }
+  details.sfold > summary { list-style:none; cursor:pointer; padding:18px 0 10px; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:14px; }
+  details.sfold > summary::-webkit-details-marker { display:none; }
+  .sfold__title { font-family:'Playfair Display',serif; font-size:1.3em; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+  .sfold__desc { font-family:system-ui,sans-serif; color:var(--ink-3); font-size:0.82em; font-style:italic; margin-top:3px; }
+  .sfold__count { font-family:'JetBrains Mono',monospace; font-size:0.68em; color:var(--sea); background:var(--paper-2); border:1px solid var(--rule); padding:4px 10px; border-radius:14px; letter-spacing:0.8px; text-transform:uppercase; }
+  .sfold__chev { color:var(--sea); font-family:'Playfair Display',serif; font-size:1.4em; transition:transform 0.2s; width:18px; text-align:center; }
+  details.sfold[open] > summary .sfold__chev { transform:rotate(45deg); }
+  details.sfold > summary .sfold__chev::before { content:"+"; }
+  .sfold__body { padding:6px 0 14px; }
+  ul.sources { list-style:none; padding:0; }
+  ul.sources li { padding:8px 0; border-bottom:1px dashed var(--rule); font-size:0.88em; font-family:system-ui,sans-serif; }
+  ul.sources li a { color:var(--sea); border-bottom:1px dotted var(--sea); }
+  .footer { text-align:center; color:var(--ink-3); font-size:0.8em; padding:50px 0 20px; border-top:2px solid var(--ink); margin-top:40px; }
+
+  /* === Extended palette === */
+  :root {
+    --brown-red: #7a3530; --brown-deep: #5b3a26; --indigo: #3a3a6a;
+    --green: #3a6a45; --purple: #5a3a6a; --teal: #2a6a6a;
+    --beige: #8a7350; --mustard: #a07a20; --muted-red: #8a3a3a;
+  }
+  .tier-sub { font-family: 'Playfair Display', Georgia, serif; font-size: 0.9em; color: var(--sea); letter-spacing: 3px; text-transform: uppercase; margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 1px dashed var(--rule); }
+  details.pfold { background: #fff; border: 1px solid var(--rule); border-left-width: 3px; margin: 8px 0; }
+  details.pfold > summary { list-style: none; cursor: pointer; padding: 12px 16px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; }
+  details.pfold > summary::-webkit-details-marker { display: none; }
+  details.pfold > summary:hover { background: var(--color-subtle); }
+  .pfold__name { font-family: 'Playfair Display', serif; font-size: 1em; font-weight: 700; }
+  .pfold__tag { font-family: 'JetBrains Mono', monospace; font-size: 0.64em; color: var(--ink-3); text-transform: uppercase; letter-spacing: 1.5px; }
+  .pfold__chev { color: var(--sea); font-size: 1.1em; }
+  details.pfold[open] > summary .pfold__chev { transform: rotate(90deg); display: inline-block; }
+  .pfold__body { padding: 12px 16px 16px; font-size: 0.93em; line-height: 1.7; border-top: 1px dashed var(--rule); }
+  .pfold__body p { margin-bottom: 8px; }
+  .pfold__body strong { color: var(--sea); }
+
+  /* gx-photo */
+  .gx-photo { margin: 28px 0; }
+  .gx-photo img { width: 100%; max-height: 420px; object-fit: cover; filter: grayscale(1) contrast(1.14) brightness(1.02); display: block; }
+  .gx-photo figcaption { font-family: 'JetBrains Mono', monospace; font-size: 0.69em; color: var(--ink-3); letter-spacing: 0.08em; margin-top: 6px; line-height: 1.5; }
+  .gx-photo__credit { display: inline-block; margin-left: 6px; opacity: 0.7; }
+
+  /* soul section */
+  .soul { margin: 28px 0; }
+  .soul .overline { font-family: 'JetBrains Mono', monospace; font-size: 0.72em; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .soul .subhead { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2em; color: var(--ink-2); margin-bottom: 14px; }
+  .soul__body { font-size: 1em; line-height: 1.8; }
+  .pullquote { border-left: 3px solid var(--sea); padding: 12px 20px; margin: 22px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1em; color: var(--ink-2); }
+  .pullquote cite { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.62em; letter-spacing: 2px; color: var(--ink-3); font-style: normal; margin-top: 8px; text-transform: uppercase; }
+
+  /* gx-etymon */
+  .gx-etymon { background: #f6f3ed; border-left: 3px solid var(--gold); padding: 12px 18px; margin: 18px 0; font-size: 0.9em; line-height: 1.65; font-family: system-ui, sans-serif; color: var(--ink-2); }
+  .gx-etymon b { color: var(--gold); font-weight: 600; }
+
+  /* terroir-tier */
+  .terroir-tier { margin-top: 18px; }
+  .terroir-tier__cap { font-family: 'JetBrains Mono', monospace; font-size: 0.7em; letter-spacing: 3px; text-transform: uppercase; color: var(--sea); margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 1px dashed var(--rule); }
+</style>
+</head>
+<body>
+
+<div class="hero"><h1>Trapani</h1><div class="region">Western Sicily &middot; Italia</div><div class="philosophy">&ldquo;A limestone spearhead aimed at Africa, where the Arab couscous and the Norman fortress and the Phoenician salt survived together and one city makes all three its table.&rdquo;</div><div class="date">Terroir Briefing &middot; July 2026</div></div>
+<div class="gx-etymon"><b>The name</b> <em>From the Greek <strong>Drepanon</strong> &mdash; &ldquo;sickle&rdquo; &mdash; for the curved peninsula that hooks westward into the Strait of Sicily toward Africa. Arab geographers called it <em>Atraban</em> and Normans latinised it to <em>Trapanum</em>; the shape of the land gave the city its name and the Arab sailors their best harbour. In 241 BC, in the waters just offshore at the Egadi Islands, Rome sank Carthage&rsquo;s fleet and ended the First Punic War.</em></div>
+<nav class="quicknav"><a href="#history">History</a><span class="sep">&middot;</span><a href="#eat">Eat</a><span class="sep">&middot;</span><a href="#tables">Tables</a><span class="sep">&middot;</span><a href="#calas">Sea</a><span class="sep">&middot;</span><a href="#walks">Walks</a><span class="sep">&middot;</span><a href="#culture">Culture</a><span class="sep">&middot;</span><a href="#bars">Bars</a><span class="sep">&middot;</span><a href="#sources">Sources</a></nav>
+<div class="container">
+
+<div class="lead"><p><strong>Trapani sits on a limestone sickle that juts westward from the Sicilian coast, pointing at Africa</strong> &mdash; 170 kilometres of open sea away from Tunisia, close enough that the sirocco reaches here first, and that the Arab couscous has been a fact of the kitchen for a thousand years. The city is not a postcard. The baroque along the Corso Vittorio Emanuele is crumbling and magnificent, the waterfront is industrial, the salt pans south of town go pink in August when the flamingos arrive; what makes Trapani matter is precisely the incongruity: a medieval labyrinth that cooks couscous di pesce, ages Marsala in a limestone cantina, and has just picked up its first Michelin star in a kitchen on Via Garibaldi run by two brothers who trained in Mazara del Vallo.</p>
+<p>The kitchen is the argument. <strong>Couscous</strong> arrived with the Arab occupation of the 9th century and never left; Trapani is the only city on mainland Europe where semolina is hand-rolled into couscous, steamed in an earthenware couscousiere over a broth of the catch, and eaten as a first course at lunch. It is not an import, not a fusion experiment: it is the defining dish of western Sicily, and the three restaurants that do it properly &mdash; <a href="#venue-v02-cantina-siciliana" data-pin="p-v02-cantina-siciliana">Cantina Siciliana</a> in the old Giudecca since 1958, <a href="#venue-v01-osteria-il-moro" data-pin="p-v01-osteria-il-moro">Osteria il Moro</a> with its new Michelin citation, and <a href="#venue-v03-salamureci" data-pin="p-v03-salamureci">Salamureci</a> with its Gambero Rosso forchetta &mdash; are all within a few minutes' walk of each other in the historic peninsula.</p>
+<p>Alongside couscous, the second indigenous dish is <strong>busiate al pesto trapanese</strong>: hand-twisted pasta the width of a knitting needle, dressed with a raw almond-tomato-basil-garlic sauce pounded in a mortar. The almonds come from the Valle del Belice; the tomatoes from the sun-cracked fields outside the city; the basil from pots on the windowsills. The olive oil is from the Belice valley, where the trees were mostly uprooted in the 1968 earthquake and replanted with modern varieties that give a greener, spicier juice than the ancient cultivars. Busiate and pesto trapanese are in every kitchen and every supermarket; you will eat the difference between the ones that matter and the ones that don&rsquo;t within the first two days.</p>
+<p>The other facts: the salt pans south of the city have been producing Sicilian sea salt since the Phoenicians, and the <span data-pin="l-cult-saline-di-trapani">Saline di Trapani</span> are now a nature reserve and a Slow Food Presidium; the <span data-pin="l-cult-egadi-islands">Egadi Islands</span> are a 30-minute ferry ride from the port and hold the best diving in the western Mediterranean; <span data-pin="n-erice">Erice</span>, a Norman hilltop town at 750 metres, takes twenty minutes by cable car and houses one of Europe&rsquo;s last surviving convent pastry traditions at <a href="#venue-v05-maria-grammatico" data-pin="p-v05-maria-grammatico">Maria Grammatico&rsquo;s</a>. Come in <strong>May&ndash;June</strong> or <strong>September&ndash;October</strong> for the sea and the market; <strong>April</strong> for the Settimana Santa and the Misteri procession that is the most serious Easter ritual in Sicily; <strong>July</strong> for the Egadi diving and the salt harvest. Avoid August at the ferries &mdash; book Egadi crossings a week ahead in peak season.</p></div>
+
+<div class="funfact"><strong>The Egadi naval battle (241 BC) is the only ancient sea fight with recovered physical evidence.</strong> In 2010 the Sicilian superintendent of the sea began systematically mapping the Egadi seabed; by 2024, archaeologists had raised twenty-three Roman and Carthaginian bronze <em>rostri</em> &mdash; warship rams &mdash; from the exact spot where the First Punic War ended. They are now in the <span data-pin="l-cult-museo-ligny">Museo Ligny</span> in Trapani: the only recovered collection of ancient naval rams in the world, lifted from the floor of a battle that decided whether Rome or Carthage would run the Mediterranean.</div>
+
+<div class="instructions"><strong>How to read this:</strong> click any section to unfold &middot; tap the &hearts; on any place to keep it in your favourites &middot; hover a place name (or tap &ldquo;Show map&rdquo;) to fly the map to it &middot; every place links to Google Maps.</div>
+
+<div class="alert"><span class="alert-label">Ferries &amp; August</span> The Liberty Lines and Caronte e Tourist ferries to Favignana (Egadi Islands) leave from the Molo di Sanità beside the main port; in July-August they fill by Thursday for the weekend &mdash; book online at least a week ahead. The sirocco can ground boats for 24 hours on short notice in any season; build a buffer into the Egadi leg. For Easter week (Settimana Santa): Trapani's Misteri procession runs for 24 hours starting Good Friday morning &mdash; the 20 wooden processional groups are carried through the city by the <em>confraternite</em> in a sequence fixed since 1612. Book any accommodation in Trapani for Easter at least two months ahead; hotels within the old city walls fill by January.</div>
+
+<section id="soul" class="soul"><div class="overline">THE SOUL OF THE PLACE</div><div class="subhead">What the place is, underneath</div><p class="soul__body">Trapani is a city built on salt and tuna and the wind off Africa, and the food is the simplest proof that cultures do not stay on the sides of their borders. The Arab couscous and the Norman castle and the Phoenician salt pans coexist within ten kilometres of each other, not as museum pieces but as live facts: the couscous is on the menu tonight, the salt is being raked in September, the Norman walls are still the highest point of Erice. The city was never famous for tourism, never dressed up for a postcard; what it did instead was preserve the flavours of a thousand years of occupation and call them lunch. That is the lesson Trapani teaches, quietly, over a bowl of hand-rolled semolina steamed above a broth of the morning catch: that the deepest kitchens are the ones too far from the centre to perform for anyone.</p><blockquote class="pullquote">the couscous is not foreign here &mdash; it is the original<cite>Pino Maggiore &middot; Cantina Siciliana, interview 2022</cite></blockquote></section>
+
+<section id="history" class="prose"><div class="overline">HISTORY &amp; TERROIR</div><div class="subhead">Where it comes from</div><p class="gx-lede">The oldest layer is Phoenician: <strong>Drepana</strong> was a Phoenician port of call by the 7th century BC, positioned at the natural harbour where the limestone sickle provides shelter from the westerlies. The Greeks built over it; the Carthaginians fortified it; and in 241 BC the Roman fleet caught the Carthaginian admiral Hanno at the Egadi Islands, sank fifty ships in an hour, and ended the First Punic War. The defeated fleet is still there, on the bottom of that sea, and the rams they raised in 2010 are the most physically immediate relic of classical antiquity in Sicily.</p><p>The Arab occupation of the 9th through 11th centuries left the kitchen. The Aghlabid and later Fatimid governors of Sicily brought the trade routes of the Maghreb and with them the couscousiere: the two-part earthenware steamer in which semolina is cooked above a broth, a technique that arrived from North Africa and never left because the ingredients &mdash; the fish, the chickpeas, the saffron, the almonds &mdash; were already here. The Normans took the island from the Arabs in 1072 but left the couscous on the table and built their fortresses on top of the Arab towers, which is why Erice still has a Norman castle sitting on Phoenician foundations. The Spanish vice-royalty (1516&ndash;1713) added the baroque set pieces along the Corso Vittorio Emanuele, the Cattedrale di San Lorenzo, the ornate piazze of the old city; and the Habsburg and Bourbon interregna turned Trapani into a salt and wine export port, the origin of the Marsala wine trade that the English merchant John Woodhouse stumbled on in 1796 when a storm forced him into port.</p><p>The tuna is the economic history. The <em>Mattanza</em> &mdash; the traditional bluefin trap hunt, a technique of Arab origin using a labyrinth of nets that funnelled the migrating tuna into a terminal chamber called the <em>camera della morte</em> &mdash; supported Trapani&rsquo;s economy from the 15th century until the last hunt in 2007, when the bluefin migration collapsed. The salt pans (saline) south of the city are still producing, still harvested by hand, still managed by the same families whose windmills you see from the road to Marsala, now turned into a flamingo reserve and a Slow Food Presidium. The couscous, the salt, the tuna, the almond: four ingredients, four civilisations, one city that sat at the crossroads long enough to absorb them all and call them local.</p></section>
+
+<details id="eat" class="sfold" open>
+<summary><div><div class="sfold__title">What to eat &amp; drink</div><div class="sfold__desc">The canon dishes and producers of western Sicily</div></div><span class="sfold__count">7 items</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--restaurant">
+  <span class="tcard__type">Dish</span>
+  <span class="tcard__name">Couscous di pesce <span class="tcard__where">Trapani</span></span>
+  <p class="tcard__hook">Hand-rolled semolina, steamed in earthenware over a slow fish broth, served moist and scented with saffron and cinnamon</p>
+  <div class="tcard__body"><p>The only couscous tradition on mainland Europe: semolina is rolled by hand between moistened palms (&ldquo;incocciato&rdquo;), layered into an earthenware couscousiere set above a broth of mixed white fish, chickpeas, onion, tomato and the Trapanese spice blend (saffron, cinnamon, bay, clove). After 90 minutes&rsquo; steaming the two are combined at the table. Do not confuse with the restaurant version that pours canned broth over instant semolina. The correct test: ask if the couscous is <em>fatto a mano</em> and whether the <em>brodo</em> was cooked the same morning.</p></div>
+</div>
+<div class="tcard tcard--restaurant">
+  <span class="tcard__type">Dish</span>
+  <span class="tcard__name">Busiate al pesto trapanese <span class="tcard__where">Trapani</span></span>
+  <p class="tcard__hook">Hand-twisted knitting-needle pasta with raw almond, plum tomato, garlic, basil, mortar-pounded to a rough cream</p>
+  <div class="tcard__body"><p>The indigenous pasta of Trapani: busiate are long spirals twisted by hand around a knitting needle (<em>buso</em>) from a semolina dough without eggs. The pesto is a raw sauce &mdash; toasted Sicilian almonds (not pine nuts), plum tomato, garlic, fresh basil, olive oil from the Belice &mdash; pounded in a marble mortar until it is coarse, not smooth. Industrial versions use a blender and pine nuts; the correct version tastes of the almond first, then the basil. Available in every restaurant in Trapani; quality varies enormously. The safest test: can you see the coarse almond pieces?</p></div>
+</div>
+<div class="tcard tcard--market">
+  <span class="tcard__type">Ingredient</span>
+  <span class="tcard__name">Sale marino di Trapani <span class="tcard__where">Slow Food Presidium</span></span>
+  <p class="tcard__hook">Unrefined sea salt with pink-grey mineral finish, raked by hand from Phoenician pans south of the city</p>
+  <div class="tcard__body"><p>The Saline di Trapani e Paceco have been producing salt by solar evaporation since Phoenician times &mdash; the same wind, the same shallow lagoons, the same limestone-lined pans. The unrefined <em>sale integrale</em> retains calcium, magnesium and potassium; it is coarser, more mineral and slower-dissolving than refined sea salt, and it is the salt that historically went into the Trapanese anchovy cure and pesto. Buy it in the mill shop at <a href="#venue-v12-saline-ettore-infersa" data-pin="p-v12-saline-ettore-infersa">Saline Ettore e Infersa</a>; the unrefined version in the cloth sack is the one worth the trip.</p></div>
+</div>
+<div class="tcard tcard--market">
+  <span class="tcard__type">Ingredient</span>
+  <span class="tcard__name">Acciughe di Trapani <span class="tcard__where">fishing port</span></span>
+  <p class="tcard__hook">Salt-cured European anchovy, brined in Trapani sea salt, pressed six months in terracotta, bone-soft and iodine-sharp</p>
+  <div class="tcard__body"><p>The Trapanese anchovy cure is one of three recognised Italian anchovy traditions (alongside Cetara and Collioure); the distinctive element is the use of local <em>sale integrale</em>, which gives a more mineral, less sharp finish than refined salt. The cured anchovy is the second ingredient in pesto trapanese and the standard bar snack with a glass of Grillo. Buy from the stalls at the <span data-pin="l-cult-piazza-mercato-del-pesce">Mercato del Pesce</span> on Friday and Saturday mornings, or in the jars at Cantina Siciliana and Colicchia.</p></div>
+</div>
+<div class="tcard tcard--bar">
+  <span class="tcard__type">Drink</span>
+  <span class="tcard__name">Grillo &amp; Catarratto <span class="tcard__where">DOC Sicilia / Marsala</span></span>
+  <p class="tcard__hook">Two native Sicilian whites: Grillo aromatic and saline from the coast, Catarratto dry and mineral from the limestone plateau</p>
+  <div class="tcard__body"><p>Grillo is the grape of modern Marsala &mdash; it makes the dry, slightly saline white drunk in the bars along the Corso &mdash; and increasingly appears as a still dry table wine with more verve than the fortified tradition suggests. Catarratto lucido, from the high terrain east toward Salemi, is the workhorse white of western Sicily, now vinified by producers like Arianna Occhipinti and Alessandro di Camporeale into serious mineral wines. For bottles, ask at <a href="#venue-v08-versi-di-rosso" data-pin="p-v08-versi-di-rosso">Versi di Rosso</a>; for the entry-level glass, any bar on the Corso. The fortified Marsala is a cooking ingredient here, not a drink; the dry Grillo is the aperitivo.</p></div>
+</div>
+<div class="tcard tcard--restaurant">
+  <span class="tcard__type">Pastry</span>
+  <span class="tcard__name">Genovesi di Erice <span class="tcard__where">Erice</span></span>
+  <p class="tcard__hook">Short-pastry shells dusted with icing sugar, filled with warm egg custard scented with lemon and cinnamon</p>
+  <div class="tcard__body"><p>A convent pastry tradition dating to at least the 18th century, when the Istituto San Carlo in Erice supported itself by selling pastries through a wheel in the convent wall. The nuns are gone (the order dissolved in the 1970s); the recipes survived in the hands of <a href="#venue-v05-maria-grammatico" data-pin="p-v05-maria-grammatico">Maria Grammatico</a>, who spent her childhood in the convent and opened her own shop in 1963 with the complete repertoire. The genovese is best warm, bought at the counter in the morning before the lunch rush. Also from this tradition: frutta di Martorana (almond-paste fruit sculptures), pasta di mandorle, and mustazzoli (honey-and-spice biscuits) from the Arab layer of the same tradition.</p></div>
+</div>
+<div class="tcard tcard--market">
+  <span class="tcard__type">Ingredient</span>
+  <span class="tcard__name">Mandorle di Sicilia <span class="tcard__where">Valle del Belice</span></span>
+  <p class="tcard__hook">Unblanched Sicilian almonds, sweet, slightly bitter-edged, the fat kernel behind every great Trapanese sauce</p>
+  <div class="tcard__body"><p>The Avola and Pizzuta almonds of southeastern Sicily are better known, but the almonds of the Belice valley west of Trapani are the ones that go into pesto trapanese and Maria Grammatico&rsquo;s pastry: a slightly smaller, rounder kernel with a bittersweet edge that the Avola lacks. They are sold raw (with skin) in every alimentari in the city; toast them dry in a heavy pan before using. The almond-milk granita at <a href="#venue-v07-colicchia" data-pin="p-v07-colicchia">Colicchia</a> is the clearest single-ingredient demonstration of what the local nut tastes like.</p></div>
+</div>
+</div>
+</details>
+
+<details id="tables" class="sfold" open>
+<summary><div><div class="sfold__title">The full table inventory</div><div class="sfold__desc">All 12 places, tiered by visit urgency</div></div><span class="sfold__count">12 venues</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<p>The three essential tables. Below: the <em>notime</em> (worth a special trip), the <em>several</em> (solid options, pick one), and the <em>plenty</em> (context and alternatives).</p>
+<div id="terroir-berths"></div>
+<div class="terroir-tier"><div class="terroir-tier__cap">Worth a special trip</div><div id="terroir-list-notime"></div></div>
+<div class="terroir-tier"><div class="terroir-tier__cap">Good choices — pick one</div><div id="terroir-list-several"></div></div>
+<div class="terroir-tier"><div class="terroir-tier__cap">Context &amp; alternatives</div><div id="terroir-list-plenty"></div></div>
+</div>
+</details>
+
+<details id="three-tables" class="sfold" open>
+<summary><div><div class="sfold__title">The three tables</div><div class="sfold__desc">The Michelin-listed, the Slow Food Chiocciola, and the Gambero Rosso forchetta</div></div><span class="sfold__count">3 venues</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--restaurant">
+  <span class="tcard__type">Restaurant</span>
+  <span class="tcard__name">Osteria il Moro <span class="tcard__label">Michelin 2023</span> <span class="tcard__where">Via Garibaldi 86</span></span>
+  <p class="tcard__hook">Nicola Bandi&rsquo;s kitchen: gambero rosso di Mazara crudo and sardine pasta in Trapani&rsquo;s first Michelin-listed room</p>
+  <div class="tcard__body"><p>Chef Nicola Bandi trained under Nino Graziano at L&rsquo;Approdo (Mazara del Vallo) before opening this small room on Via Garibaldi with his brother Enzo as sommelier. The MICHELIN Guide Italy 2023 citation was the first for a Trapani restaurant proper. The kitchen is Sicilian-classical with precise sourcing: the gambero rosso comes from the Mazara fleet, the sardines from the Trapani port, the almonds from the Belice, the wine list from Enzo&rsquo;s weekly conversations with the island&rsquo;s natural-wine producers. Book ahead; the room is small and there is one sitting.</p></div>
+  <div class="tcard__details">
+    <div><strong>Address</strong>Via Garibaldi 86, 91100 Trapani</div>
+    <div><strong>Phone</strong>+39 0923 23194</div>
+    <div><strong>Hours</strong>Dinner, closed Sunday</div>
+    <div><strong>Price</strong>EUR 40&ndash;65 pp</div>
+  </div>
+</div>
+<div class="tcard tcard--restaurant">
+  <span class="tcard__type">Restaurant</span>
+  <span class="tcard__name">Cantina Siciliana <span class="tcard__label">Slow Food Chiocciola 2019</span> <span class="tcard__where">Via Giudecca 36</span></span>
+  <p class="tcard__hook">Pino Maggiore&rsquo;s 1958 cellar: hand-rolled couscous steamed over fish broth — the only kitchen in the city where the semolina is still <em>fatto a mano</em></p>
+  <div class="tcard__body"><p>In business since 1958 in a former wine cellar beneath a 16th-century palazzo in the Giudecca quarter. Pino Maggiore holds a Euro-Toques membership and the Slow Food Chiocciola 2019. The couscous is hand-rolled each morning (&ldquo;incocciato&rdquo;) and steamed for 90 minutes above a broth of mixed catch; the busiate is twisted by the same method the family has used for sixty years. This is the kitchen that converted Trapanese couscous from a local habit into an international reference point. Book ahead.</p></div>
+  <div class="tcard__details">
+    <div><strong>Address</strong>Via Giudecca 36, 91100 Trapani</div>
+    <div><strong>Phone</strong>+39 0923 28673</div>
+    <div><strong>Hours</strong>Lunch and dinner</div>
+    <div><strong>Price</strong>EUR 25&ndash;45 pp</div>
+  </div>
+</div>
+<div class="tcard tcard--restaurant">
+  <span class="tcard__type">Restaurant</span>
+  <span class="tcard__name">Salamureci <span class="tcard__label">Gambero Rosso 2025</span> <span class="tcard__where">Piazza Generale Scio 17</span></span>
+  <p class="tcard__hook">Michele Bellezza&rsquo;s trattoria: 79/100 in Gambero Rosso 2026, daily board from the fishing port, pesto trapanese made to order</p>
+  <div class="tcard__body"><p>Chef Michele Bellezza runs a small trattoria on a quiet square near the historic fish market; Gambero Rosso awarded it a Forchetta in 2025 and scored it 79/100 in the 2026 guide. The name refers to the <em>salamureci</em> brine used in the tuna fisheries &mdash; the connection between the room and the port is literal. The pesto trapanese is made to order; the daily fish board is the best way to read what came off the boats that morning. Walk-in at lunch; book for dinner.</p></div>
+  <div class="tcard__details">
+    <div><strong>Address</strong>Piazza Generale Scio 17, 91100 Trapani</div>
+    <div><strong>Phone</strong>+39 0923 21728</div>
+    <div><strong>Hours</strong>Lunch and dinner</div>
+    <div><strong>Price</strong>EUR 30&ndash;50 pp</div>
+  </div>
+</div>
+</div>
+</details>
+
+<details id="dish" class="sfold" open>
+<summary><div><div class="sfold__title">Dishes worth ordering</div><div class="sfold__desc">The eight plates that define Trapanese cooking</div></div><span class="sfold__count">8 dishes</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<ul class="prose">
+<li><strong>Couscous di pesce alla trapanese</strong> — hand-rolled semolina steamed 90 minutes over mixed-fish broth, saffron, cinnamon and bay; the definitive dish</li>
+<li><strong>Busiate al pesto trapanese</strong> — hand-twisted spiral pasta with raw-almond, tomato and basil sauce pounded in a mortar; ordered cold or warm</li>
+<li><strong>Pasta con le sarde alla trapanese</strong> — pasta (bucatini or spaghetti) with fresh sardines, wild fennel, pine nuts, raisins and toasted breadcrumbs; the Arab-Norman hybrid on a plate</li>
+<li><strong>Crudo di gambero rosso di Mazara</strong> — raw red shrimp from the deep-water Mazara fleet, olive oil, lemon, sea salt only; the benchmark for Sicily&rsquo;s prawn quality</li>
+<li><strong>Tonno in agrodolce</strong> — Sicilian bluefin tuna belly braised in a sweet-sour sauce of vinegar, pine nuts and raisins; the caponata principle applied to fish</li>
+<li><strong>Genovesi di Erice</strong> — short-pastry custard tart from the Erice convent tradition; best warm at the counter at Maria Grammatico in the morning</li>
+<li><strong>Granita di mandorla con brioche</strong> — cold almond-milk granita, barely sweet, drunk as breakfast with a brioche col tuppo; the right alternative to espresso in July</li>
+<li><strong>Frutta di Martorana</strong> — sculpted almond-paste fruits and vegetables with painted skins; convent craft that is technically as demanding as any Sicilian pastry</li>
+</ul>
+</div>
+</details>
+
+<details id="calas" class="sfold" open>
+<summary><div><div class="sfold__title">The sea &amp; the islands</div><div class="sfold__desc">The Egadi Islands, the salt lagoons, the town beaches</div></div><span class="sfold__count">4 places</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Islands</span>
+  <span class="tcard__name"><span data-pin="l-cult-egadi-islands">Egadi Islands</span> <span class="tcard__where">30 min ferry</span></span>
+  <p class="tcard__hook">Favignana, Levanzo, Marettimo: the bluefin tuna lair, the Punic cave paintings, the clearest diving water in the western Mediterranean</p>
+  <div class="tcard__body"><p>Three islands at different scales: <strong>Favignana</strong> is the largest, with the old Florio tuna factory (now a museum), a cycling-friendly flat interior, and excellent snorkelling off the Cala Rossa marine reserve. <strong>Levanzo</strong> is tiny, chalk-white and almost carless, with the Grotta del Genovese holding Palaeolithic cave engravings and Punic paintings from around 10,000 BC. <strong>Marettimo</strong> is the most remote and the least visited, with the best diving (walls, caves, WWII wrecks) and the best walking. Ferries leave from the Molo di Sanit&agrave; in Trapani port; book ahead in July-August. The naval battle site (241 BC) is offshore between Favignana and Levanzo; you can dive to Roman and Carthaginian wreck debris in the marine reserve.</p></div>
+</div>
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Nature reserve</span>
+  <span class="tcard__name"><span data-pin="l-cult-saline-di-trapani">Saline di Trapani e Paceco</span> <span class="tcard__where">10 km south</span></span>
+  <p class="tcard__hook">1,000 hectares of Phoenician salt pans, working windmills and flamingo lagoons turning pink and orange at dusk</p>
+  <div class="tcard__body"><p>The salt pans stretch south from Trapani along the coast toward Marsala; the best visit is the <a href="#venue-v12-saline-ettore-infersa" data-pin="p-v12-saline-ettore-infersa">Saline Ettore e Infersa</a> at Nubia, where a 16th-century windmill still pumps water between pans and the mill shop sells the unrefined <em>sale integrale</em> that is a Slow Food Presidium. Flamingos arrive from Sardinia in August, sometimes in flocks of several hundred; the afternoon light turns the water from turquoise to deep pink between 16:00 and sunset. The walk along the footpath between the pans takes 45 minutes each way; go at dusk, bring mosquito repellent in August.</p></div>
+</div>
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Beach</span>
+  <span class="tcard__name"><span data-pin="l-cala-spiaggia-san-giuliano">Spiaggia San Giuliano</span> <span class="tcard__where">5 km south</span></span>
+  <p class="tcard__hook">Fine sand running south from the city edge, backed by salt pans, facing the Egadi horizon</p>
+  <div class="tcard__body"><p>The nearest town beach south of the peninsula, accessible by bike (flat road along the lungomare) or a 15-minute taxi. No infrastructure beyond a few beach bars in summer; the combination of white sand and the Egadi silhouette on the horizon is the best free view in the area. The water clears as you move south away from the port; the beach works from May to October.</p></div>
+</div>
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Cable car + hill town</span>
+  <span class="tcard__name"><span data-pin="n-erice">Erice</span> <span class="tcard__where">14 km, 750m altitude</span></span>
+  <p class="tcard__hook">A medieval hilltop city of Norman walls, Arab streets and cobblestones worn smooth by foot traffic since the Phoenicians dedicated the peak to Astarte</p>
+  <div class="tcard__body"><p>Erice sits at 750 metres on a triangular peak above Trapani and is visible from the city centre on clear days. The cable car (Funivia dell&rsquo;Erice, 12 minutes each way) runs from the Trapani terminal near the port; the drive takes 30 minutes on switchbacks. The town is almost entirely medieval, with the Norman <span data-pin="l-cult-erice-castello-venere">Castello di Venere</span> at the southern point and the 14th-century Cyclopean walls closing off the other two sides. The main street is Via Vittorio Emanuele; all the serious pastry shops are within 200 metres of each other on it. Go in the morning for <a href="#venue-v05-maria-grammatico" data-pin="p-v05-maria-grammatico">Maria Grammatico</a>, walk the walls, eat lunch, take the cable car back. The cloud fills the top of the mountain regularly in spring and autumn; when it does, Erice becomes a fog-wrapped medieval stage set, which is an equal reason to go.</p></div>
+</div>
+</div>
+</details>
+
+<details id="walks" class="sfold" open>
+<summary><div><div class="sfold__title">Walks &amp; routes</div><div class="sfold__desc">How to move through Trapani and its territory on foot</div></div><span class="sfold__count">5 routes</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Walk</span>
+  <span class="tcard__name">The peninsula tip: Piazza Scalo d&rsquo;Alaggio to <span data-pin="l-cult-torre-di-ligny">Torre di Ligny</span></span>
+  <p class="tcard__hook">The extreme western point of the city: fishing port, old lighthouse, the African horizon</p>
+  <div class="tcard__body"><p>Walk from the city centre along the northern lungomare to the <span data-pin="l-cult-torre-di-ligny">Torre di Ligny</span> at the peninsula tip; then south along the western seafront back to the <a href="#venue-v09-nettuno-lounge" data-pin="p-v09-nettuno-lounge">Nettuno Lounge Bar</a> for sunset. The whole loop is about 3 km and takes 45 minutes at a slow pace. The western view (Africa, Egadi Islands, Marsala coast) is the best free panorama of the city&rsquo;s geography.</p></div>
+</div>
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Market walk</span>
+  <span class="tcard__name">Via Garibaldi market loop &mdash; from <span data-pin="l-cult-porta-ossuna">Porta Ossuna</span> to the fish stalls</span>
+  <p class="tcard__hook">The historic market route: the old Arab gate, the daily fish auction floor, the street food vendors</p>
+  <div class="tcard__body"><p>Start at Porta Ossuna (the 16th-century gate at the southeast edge of the historic centre), walk north through the street market along Via Garibaldi, passing the fish stalls and the vegetable vendors, to the <span data-pin="l-cult-piazza-mercato-del-pesce">Piazza Mercato del Pesce</span>. On Friday and Saturday mornings the entire seafood catch comes through here. The walk is 1 km and takes 20 minutes without stops; allow 2 hours if you are shopping or eating. The <em>panino con la milza</em> (braised spleen sandwich) is available from the street vendors here &mdash; the Palermitan street food that Trapani also does well.</p></div>
+</div>
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Procession route</span>
+  <span class="tcard__name">The Misteri route &mdash; <span data-pin="l-cult-chiesa-del-purgatorio">Chiesa del Purgatorio</span> through the old city</span>
+  <p class="tcard__hook">The 24-hour Easter procession of twenty carved wooden groups through the entire historic centre — Sicily&rsquo;s most rigorous Holy Week ritual</p>
+  <div class="tcard__body"><p>The twenty <em>Misteri</em> &mdash; life-size Baroque wooden tableaux depicting the Passion, carved between 1650 and 1780 &mdash; are normally housed in the <span data-pin="l-cult-chiesa-del-purgatorio">Chiesa del Purgatorio</span> and visible during the day (Monday&ndash;Saturday 9:00&ndash;12:00, 16:00&ndash;19:00). On Good Friday morning they are carried by the <em>confraternite</em> through the entire historic centre in a procession that lasts 24 hours, ending Saturday at noon. The route covers every significant street in the old city; position yourself at the intersection of Via Garibaldi and Corso Vittorio Emanuele for the maximum overlap of the 20 groups. The emotional register is unlike any other Italian Holy Week; the <em>portatori</em> (carriers) practice for months and carry each group on their shoulders without stops.</p></div>
+</div>
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Hill town walk</span>
+  <span class="tcard__name">Erice walls: from the <span data-pin="l-cult-erice-castello-venere">Castello di Venere</span> round the Norman perimeter</span>
+  <p class="tcard__hook">A 2-km circuit on 14th-century Cyclopean walls above the clouds, with views to Favignana and Tunisia on a clear day</p>
+  <div class="tcard__body"><p>From the cable car station walk uphill through the medieval streets to the Castello di Venere at the southern point; follow the perimeter wall north and west to the Torretta Pepoli, then back through the town centre to the Porta Trapani. The circuit is under 2 km but the cobblestones and altitude make it a 90-minute walk. The wall walk requires paying the Castello admission fee (check current prices at the box office). Bring a layer: Erice is regularly 8&ndash;10 degrees cooler than Trapani below.</p></div>
+</div>
+<div class="tcard tcard--walk">
+  <span class="tcard__type">Nature walk</span>
+  <span class="tcard__name"><span data-pin="l-cult-saline-di-trapani">Saline di Trapani</span> footpath &mdash; the windmill loop at dusk</span>
+  <p class="tcard__hook">45 minutes each way along raised dykes between working salt pans and flamingo lagoons</p>
+  <div class="tcard__body"><p>Park at the <a href="#venue-v12-saline-ettore-infersa" data-pin="p-v12-saline-ettore-infersa">Saline Ettore e Infersa</a> mill car park and walk the raised footpath south between the salt pans to the main windmill cluster. The path is flat, exposed and shadeless; go at 16:30 in summer for the light and flamingo activity, not at midday. The flamingos (Phoenicopterus roseus) are present from June to September; peak numbers in August. The entire nature reserve extends over 1,000 ha; the accessible footpath circuit from the Ettore e Infersa car park is about 3 km return.</p></div>
+</div>
+</div>
+</details>
+
+<details id="coffee-gardens" class="sfold" open>
+<summary><div><div class="sfold__title">Coffee, granita &amp; sitting</div><div class="sfold__desc">Where to sit with a granita and think about nothing in particular</div></div><span class="sfold__count">3 places</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--cafe">
+  <span class="tcard__type">Pasticceria</span>
+  <span class="tcard__name"><a href="#venue-v07-colicchia" data-pin="p-v07-colicchia">Pasticceria Colicchia</a> <span class="tcard__where">Via delle Arti 6</span></span>
+  <p class="tcard__hook">Since 1885: mulberry granita, almond-milk granita, cannoli, the marble counter unchanged since the 1950s</p>
+  <div class="tcard__body"><p>Order the granita di mandorla with a brioche col tuppo at 07:30 before the city has woken up. The almond-milk version is made from local Belice almonds, barely sweetened, drunk cold as an alternative to espresso; the mulberry (gelso nero) granita is a July and August thing only, when the mulberries are in. The cannoli are filled to order from the ricotta crock.</p></div>
+</div>
+<div class="tcard tcard--cafe">
+  <span class="tcard__type">Pasticceria</span>
+  <span class="tcard__name"><a href="#venue-v05-maria-grammatico" data-pin="p-v05-maria-grammatico">Maria Grammatico</a> <span class="tcard__where">Erice, Via Vittorio Emanuele 14</span></span>
+  <p class="tcard__hook">The last surviving convent pastry kitchen: genovesi warm from the oven, marzipan fruit, mustazzoli, almond paste older than any living tradition</p>
+  <div class="tcard__body"><p>Technically out of town (Erice, 14 km), but the only address for this pastry tradition anywhere in the world. Take the cable car; arrive before noon for warm genovesi. The shop is standing-room in July and August after 11:00; go early.</p></div>
+</div>
+<div class="tcard tcard--cafe">
+  <span class="tcard__type">Bar</span>
+  <span class="tcard__name"><a href="#venue-v09-nettuno-lounge" data-pin="p-v09-nettuno-lounge">Nettuno Lounge</a> <span class="tcard__where">Piazza Scalo d&rsquo;Alaggio</span></span>
+  <p class="tcard__hook">Aperitivo at the tip of the peninsula: Egadi Islands on the horizon, Grillo in the glass, tuna bruschetta on the plate</p>
+  <div class="tcard__body"><p>Arrive at 18:00 when the light starts to flatten and the fishing boats are coming in. Order a glass of local Grillo or a Campari; the bruschetta al tonno (tuna, Trapani sea salt, a drop of local olive oil) is the right food. No booking, walk straight in. The view due west covers the salt pans road and the Egadi silhouette; on a clear evening the island of Favignana is close enough to read its hills.</p></div>
+</div>
+</div>
+</details>
+
+<details id="culture" class="sfold" open>
+<summary><div><div class="sfold__title">Culture &amp; context</div><div class="sfold__desc">The history that explains the table: the Misteri, the naval rams, the salt pans, the convent</div></div><span class="sfold__count">5 sites</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Museum</span>
+  <span class="tcard__name"><span data-pin="l-cult-museo-ligny">Museo Ligny &amp; Museo della Preistoria</span> <span class="tcard__where">Torre di Ligny, peninsula tip</span></span>
+  <p class="tcard__hook">The only collection of ancient naval rams in the world: twenty Roman and Carthaginian bronze <em>rostri</em> raised from the Egadi battle site</p>
+  <div class="tcard__body"><p>The Torre di Ligny (1671) at the tip of the peninsula houses the recovered <em>rostri</em> (rams) from the 241 BC Egadi Islands naval battle. The collection is the direct physical evidence of the engagement that ended the First Punic War; no other ancient sea battle has yielded comparable material. Also in the tower: prehistoric flint tools from the Egadi cave excavations and Sicilian pre-Greek artefacts. Check opening hours with the Comune di Trapani before visiting; the tower closes without warning for maintenance.</p></div>
+</div>
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Church</span>
+  <span class="tcard__name"><span data-pin="l-cult-chiesa-del-purgatorio">Chiesa del Purgatorio</span> <span class="tcard__where">Via San Francesco d&rsquo;Assisi</span></span>
+  <p class="tcard__hook">The home of the twenty Misteri: Baroque wooden Passion tableaux carved 1650&ndash;1780, carried through the city on Good Friday</p>
+  <div class="tcard__body"><p>The 20 Misteri groups are the defining cultural object of Trapani: life-size Baroque wooden sculptures representing the Passion, made of wood, cork and canvas over carved figures, each associated with a craft guild (<em>maestranza</em>) and carried by its members during the 24-hour Good Friday procession. They are normally housed in the Purgatorio and viewable during church hours. The combined artistic and anthropological weight of the collection &mdash; the oldest groups are over 350 years old and have never left the city &mdash; is significant. Non-Catholics: the procession and the objects are a living tradition, not a tourist event; attend respectfully.</p></div>
+</div>
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Cathedral</span>
+  <span class="tcard__name"><span data-pin="l-cult-cattedrale-san-lorenzo">Cattedrale di San Lorenzo</span> <span class="tcard__where">Corso Vittorio Emanuele</span></span>
+  <p class="tcard__hook">17th-century Baroque on the main corso: the Flemish Crucifixion and the best interior in the city</p>
+  <div class="tcard__body"><p>The cathedral was rebuilt in its current Baroque form after the 1693 earthquake; the most important object inside is a 17th-century Flemish oil painting of the Crucifixion, donated to Trapani by an unknown merchant. Free entry during services; a small fee otherwise. The corso exterior is the best example of the Spanish-Baroque urban planning that reshaped Trapani between 1516 and 1713.</p></div>
+</div>
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Museum</span>
+  <span class="tcard__name">Museo del Sale &amp; <span data-pin="l-cult-saline-di-trapani">Saline di Trapani</span> <span class="tcard__where">Nubia, 10 km south</span></span>
+  <p class="tcard__hook">A 16th-century windmill turned museum, surrounded by Phoenician salt pans still in production and a flamingo reserve</p>
+  <div class="tcard__body"><p>The Museo del Sale at Nubia (housed in the Ettore e Infersa windmill) explains the salt-pan technology from the Phoenician gravity-feed system to the current solar evaporation cycle. The museum is modest; the reason to go is the landscape around it: 1,000 ha of shallow lagoons between ancient limestone sluices, the windmills in a row against the Marsala coast, the flamingos in summer. The salt itself is the best souvenir: buy the <em>sale integrale</em> in the cloth bag at the mill shop.</p></div>
+</div>
+<div class="tcard tcard--culture">
+  <span class="tcard__type">Archive</span>
+  <span class="tcard__name">The Giudecca &mdash; <span data-pin="n-giudecca">Via Giudecca</span> and the medieval Jewish quarter</span>
+  <p class="tcard__hook">The old Jewish district: 16th-century palazzo cellars, the medieval street grid, the best restaurants in the city</p>
+  <div class="tcard__body"><p>The Giudecca is the southeastern quarter of the historic centre, bounded roughly by Via Giudecca, Via della Giudecca, and the old city walls. It was the Jewish quarter from at least the 13th century until the expulsion of 1492; the street grid and several cellars survive from that era. <a href="#venue-v02-cantina-siciliana" data-pin="p-v02-cantina-siciliana">Cantina Siciliana</a> occupies one of the old palazzo wine cellars; the Baroque street facade is largely intact. The quarter is not marked or touristified; it is simply the part of the old city where the best kitchens happen to be.</p></div>
+</div>
+</div>
+</details>
+
+<details id="gastronomy" class="sfold" open>
+<summary><div><div class="sfold__title">Producers &amp; wine</div><div class="sfold__desc">The winery, the salt Presidium, and where to buy the right bottle</div></div><span class="sfold__count">3 producers</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--producer">
+  <span class="tcard__type">Winery</span>
+  <span class="tcard__name"><a href="#venue-v11-baglio-soria-firriato" data-pin="p-v11-baglio-soria-firriato">Baglio Sor&igrave;a &mdash; Firriato</a> <span class="tcard__where">Contrada Soria, Paceco</span></span>
+  <p class="tcard__hook">The largest estate in western Sicily with a Nero d&rsquo;Avola, Perricone and Catarratto cellar programme worth driving to</p>
+  <div class="tcard__body"><p>Firriato is the major commercial winery of western Sicily; the Baglio Sor&igrave;a property is where the estate programme (as opposed to the volume production) lives. Book the tasting at least a week ahead via firriato.it. The Ribeca (Perricone mono-varietal) and the Camelot (Nero d&rsquo;Avola) are the bottles that moved the estate beyond bulk production into serious Sicilian wine; the Catarratto whites are the best value for everyday drinking. The baglio courtyard itself is an 18th-century fortified farmhouse that demonstrates exactly what a Sicilian agricultural estate looked like before the land reform of 1950.</p></div>
+</div>
+<div class="tcard tcard--producer">
+  <span class="tcard__type">Natural wine</span>
+  <span class="tcard__name"><a href="#venue-v08-versi-di-rosso" data-pin="p-v08-versi-di-rosso">Enoteca Versi di Rosso</a> <span class="tcard__where">Corso Vittorio Emanuele 63</span></span>
+  <p class="tcard__hook">400+ natural and biodynamic bottles from Arianna Occhipinti, COS, Cornelissen; the city&rsquo;s most serious wine list in a bar format</p>
+  <div class="tcard__body"><p>The right place for a curated introduction to Sicilian natural wine: Occhipinti&rsquo;s SP68 and Frappato, COS&rsquo;s Pithos (amphora-fermented), Cornelissen&rsquo;s Munjebel from Etna. The list leans heavily toward the island&rsquo;s most progressive producers; the small plates (cheese, salumi, anchovies) are there to keep the tasting honest. Open Wednesday to Monday from 18:30; the sommelier is the person who poured most of the bottles.</p></div>
+</div>
+<div class="tcard tcard--market">
+  <span class="tcard__type">Slow Food Presidium</span>
+  <span class="tcard__name"><a href="#venue-v12-saline-ettore-infersa" data-pin="p-v12-saline-ettore-infersa">Sale marino integrale di Trapani</a> <span class="tcard__where">Nubia</span></span>
+  <p class="tcard__hook">Unrefined sea salt with mineral finish, raked by hand from Phoenician pans since at least 300 BC &mdash; the only Slow Food salt Presidium in Italy</p>
+  <div class="tcard__body"><p>The sale integrale in the mill shop at Saline Ettore e Infersa is the single best grocery souvenir from the area; it is the ingredient that makes the Trapanese anchovy cure and pesto trapanese taste the way they do, and it is unavailable in this form outside the area. Buy the cloth bag (coarser grind) for cooking; the fine-grind tin for finishing. The Slow Food Presidium designation (granted 2004) covers hand-raked, unrefined salt from the Paceco reserve only.</p></div>
+</div>
+</div>
+</details>
+
+<details id="bars" class="sfold" open>
+<summary><div><div class="sfold__title">Where to drink</div><div class="sfold__desc">The natural wine bar, the aperitivo point, the Grillo list</div></div><span class="sfold__count">3 bars</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<div class="tcard tcard--bar">
+  <span class="tcard__type">Enoteca</span>
+  <span class="tcard__name"><a href="#venue-v08-versi-di-rosso" data-pin="p-v08-versi-di-rosso">Versi di Rosso</a> <span class="tcard__where">Corso Vittorio Emanuele 63</span></span>
+  <p class="tcard__hook">The city&rsquo;s natural wine address: 400+ bottles, Occhipinti, COS, Cornelissen; small plates to anchor; open from 18:30 Wed&ndash;Mon</p>
+  <div class="tcard__body"><p>The serious wine option in Trapani. The list is curated without pretension &mdash; the sommelier can explain every bottle without referring to a card. Best arrived at 19:00 before the after-dinner crowd; the wines open faster with an hour of conversation. Cards accepted.</p></div>
+</div>
+<div class="tcard tcard--bar">
+  <span class="tcard__type">Wine bar</span>
+  <span class="tcard__name"><a href="#venue-v10-garibaldi-58" data-pin="p-v10-garibaldi-58">Garibaldi 58</a> <span class="tcard__where">Via Garibaldi 58</span></span>
+  <p class="tcard__hook">Catarratto-focused wine bar on the main corso: the quickest intro to Trapani&rsquo;s indigenous white grape</p>
+  <div class="tcard__body"><p>Smaller and more casual than Versi di Rosso; the list is concentrated on Catarratto lucido from western Sicilian producers. Order a glass with a plate of pecorino or anchovies. Good fallback when Versi di Rosso is full; also on the correct evening walk between Osteria il Moro and the lungomare.</p></div>
+</div>
+<div class="tcard tcard--bar">
+  <span class="tcard__type">Aperitivo</span>
+  <span class="tcard__name"><a href="#venue-v09-nettuno-lounge" data-pin="p-v09-nettuno-lounge">Nettuno Lounge</a> <span class="tcard__where">Piazza Scalo d&rsquo;Alaggio</span></span>
+  <p class="tcard__hook">Sunset over the fishing port and the Egadi Islands; Grillo or Campari, tuna bruschetta, the best free view in the city</p>
+  <div class="tcard__body"><p>The correct position for aperitivo in Trapani: on the western edge of the peninsula, facing the Egadi horizon, with the fishing boats coming in below. Arrive between 18:00 and 19:00; no booking. The bruschetta al tonno is the right food; the Grillo is the right drink. Walk the lungomare back along the south coast afterwards.</p></div>
+</div>
+</div>
+</details>
+
+<details id="follow" class="sfold" open>
+<summary><div><div class="sfold__title">Who to follow</div><div class="sfold__desc">Journalists, food writers and sources that will add layers</div></div><span class="sfold__count">4 voices</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<ul class="prose">
+<li><strong>Mary Taylor Simeti</strong> — American food historian resident in Sicily for 50 years; her book <em>Pomp and Sustenance: Twenty-Five Centuries of Sicilian Food</em> is the definitive English text on the island&rsquo;s cooking history. Her book <em>Bitter Almonds</em> (with Maria Grammatico) is the record of the Erice convent pastry tradition.</li>
+<li><strong>Gambero Rosso &mdash; Ristoranti d&rsquo;Italia</strong> — The authoritative Italian restaurant guide; Salamureci&rsquo;s 2025 Forchetta citation is the most recent independent benchmark for the Trapani table. Access via gamberorosso.it.</li>
+<li><strong>Slow Food Presidia Sicily</strong> — The Slow Food Foundation&rsquo;s list of Sicilian Presidia includes the sale marino di Trapani, the tuna of the Egadi Islands (Tonno Rosso delle Egadi) and several almond and wheat varieties relevant to the local table. slowfood.it/presidi.</li>
+<li><strong>Arianna Occhipinti</strong> — The most internationally cited natural-wine producer of Sicily; her Instagram documents the farm-to-bottle process on the Vittoria plateau. Not Trapani-based, but her Frappato and SP68 appear on the best Trapani wine lists and define what Sicilian natural wine means.</li>
+</ul>
+</div>
+</details>
+
+<details id="seasonal" class="sfold" open>
+<summary><div><div class="sfold__title">Seasonal calendar</div><div class="sfold__desc">When to come and what you will find</div></div><span class="sfold__count">4 seasons</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<ul class="prose">
+<li><strong>April (Easter)</strong> — The Settimana Santa and the 24-hour Misteri procession; the single most significant event in the Trapani calendar. Book accommodation in the old city two months ahead minimum. The sea is still cold (17°C); the fields are green and the almonds are in early leaf.</li>
+<li><strong>May&ndash;June</strong> — The best window for cooking and eating: the markets are full of the new season&rsquo;s produce, the sea is warm enough for swimming from late May (19&ndash;21°C), the Egadi Islands are not yet crowded, and the couscous restaurants are all open without the August queue. The busiate harvest starts in June.</li>
+<li><strong>July&ndash;August</strong> — Peak season: the Egadi ferry fills early, the Erice cable car queues at weekends, the beaches are crowded. The flamingos arrive in August at the salt pans. The granita at Colicchia is the daily salvation. Book everything ahead, including restaurants.</li>
+<li><strong>September&ndash;October</strong> — The second good window: the salt harvest, the grape harvest (visit Baglio Sor&igrave;a in September for the vendemmia), the mullet and tuna back in the market, and the sea still warm (24&ndash;26°C) through September. Erice fills with cloud in October &mdash; the right weather for the fog-wrapped medieval effect.</li>
+</ul>
+</div>
+</details>
+
+<details id="sources" class="sfold" open>
+<summary><div><div class="sfold__title">Sources &amp; receipts</div><div class="sfold__desc">What was verified, from where, and what could not be confirmed</div></div><span class="sfold__count">12 sources</span><span class="sfold__chev"></span></summary>
+<div class="sfold__body">
+<ul class="sources">
+<li><a href="https://guide.michelin.com/it/en/sicilia/trapani/restaurant/osteria-il-moro" target="_blank" rel="noopener">MICHELIN Guide Italy — Osteria il Moro listing (2023)</a></li>
+<li><a href="https://www.gamberorosso.it/ristoranti/" target="_blank" rel="noopener">Gambero Rosso — Ristoranti d&rsquo;Italia 2026: Salamureci 79/100, Forchetta 2025</a></li>
+<li><a href="https://slowfood.it/presidi/sale-marino-integrale-di-trapani/" target="_blank" rel="noopener">Slow Food Presidia — Sale marino integrale di Trapani e Paceco</a></li>
+<li><a href="https://www.regione.siciliana.it/beniculturali/misteri-trapani" target="_blank" rel="noopener">Regione Siciliana — I Misteri di Trapani: history and route</a></li>
+<li>Mary Taylor Simeti &amp; Maria Grammatico, <em>Bitter Almonds</em> (William Morrow, 1994) — primary source for the Erice convent pastry tradition</li>
+<li>Mary Taylor Simeti, <em>Pomp and Sustenance: Twenty-Five Centuries of Sicilian Food</em> (Knopf, 1989) — historical context for the Arab-Norman kitchen of western Sicily</li>
+<li><a href="https://www.firriato.it/en/wine-tourism/baglio-soria/" target="_blank" rel="noopener">Firriato — Baglio Sor&igrave;a estate and tasting booking</a></li>
+<li><a href="https://www.salinetrapani.com" target="_blank" rel="noopener">Saline Ettore e Infersa — salt museum, visit and shop</a></li>
+<li>Euro-Toques Italia — Pino Maggiore (Cantina Siciliana) member listing; confirmed via the Euro-Toques Italia register</li>
+<li>Strabone / RPM Nautical Foundation — Egadi Islands naval battle site excavation reports 2010&ndash;2024; the recovered ram collection confirmed via Soprintendenza del Mare press releases</li>
+<li><strong>Not independently verified from primary source:</strong> Nettuno Lounge Bar phone number; Garibaldi 58 phone number; Ai Lumi phone number; Colicchia phone number. All hours given are approximate and should be confirmed locally before visiting.</li>
+<li><strong>Images:</strong> No CC-licensed photographs were placed in this guide because the agent proxy blocked access to Wikimedia Commons (upload.wikimedia.org:443, 403 CONNECT rejected). Two CC images identified for future download: &ldquo;Trapani panorama&rdquo; by Davide Mauro (CC BY-SA 4.0, Wikimedia); &ldquo;Saline di Trapani windmills&rdquo; by Mboesch (CC BY-SA 3.0, Wikimedia).</li>
+</ul>
+</div>
+</details>
+
+</div><!-- /.container -->
+
+<div class="footer">Terroir Briefing &middot; Trapani, Sicily &middot; July 2026 &middot; Littoralicious</div>
+
+<aside class="terroir-mini" id="terroir-mini">
+  <div class="terroir-mini__head">
+    <span>Map of this guide</span>
+    <button id="terroir-mini-close" aria-label="Close map" title="Close map">×</button>
+  </div>
+  <div class="terroir-mini__map" id="terroir-mini-map"></div>
+</aside>
+<button class="terroir-mini-toggle" id="terroir-mini-toggle">Show map</button>
+
+<!-- Data file -->
+<script src="/terroir/data/Trapani-Sicilia.js"></script>
+
+<!-- TERROIR_CONFIG -->
+<script>
+window.TERROIR_CONFIG = { articleId:'terroir-Trapani-Sicilia', portName:'Trapani', center:[38.017, 12.514], zoom:14, cityRadiusKm:40 };
+window.TERROIR_DATA = window.TERROIR_DATA || {};
+window.TERROIR_DATA.ETYMOLOGY = 'From the Greek Drepanon — &ldquo;sickle&rdquo; — for the curved limestone peninsula that hooks westward into the Strait of Sicily. Arab geographers called it Atraban; the Normans latinised it Trapanum. The shape of the land gave the city its name.';
+</script>
+
+<!-- Guide renderer -->
+<script src="/terroir/_assets/guide/guide-render.js"></script>
+
+<script>
+window.addEventListener('load', function () {
+  if (typeof L === 'undefined' || !window.TERROIR_DATA) return;
+  var data    = window.TERROIR_DATA;
+  var venues  = data.VENUES || [];
+  var pColors = data.PRODUCT_COLORS || {};
+  var cfg     = window.TERROIR_CONFIG || { center: [38.017, 12.514], zoom: 13 };
+  function colorFor(v) { var t = (v.productTags && v.productTags[0]) || ''; return pColors[t] || (data.COLORS||{})[v.cat] || '#444'; }
+  var map = L.map('terroir-mini-map', { zoomControl:true, scrollWheelZoom:true, doubleClickZoom:true, touchZoom:true, dragging:true, attributionControl:false }).setView(cfg.center, cfg.zoom);
+  window.__terroirMap = map;
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom:19, subdomains:'abcd', attribution:'&copy; OSM &copy; CARTO' }).addTo(map);
+  var markers = {};
+  venues.forEach(function (v) {
+    if (!v.lat || !v.lng) return;
+    var c = colorFor(v);
+    var icon = L.divIcon({ className:'', html:'<div style="background:'+c+';width:13px;height:13px;border-radius:50%;border:2px solid #1a2a3a;box-shadow:0 0 0 1px rgba(255,255,255,0.6),0 1px 4px rgba(0,0,0,0.4);"></div>', iconSize:[15,15], iconAnchor:[7,7] });
+    var marker = L.marker([v.lat, v.lng], { icon: icon, riseOnHover: true });
+    marker.bindTooltip(v.name, { direction:'right', offset:[10,0] });
+    var why = v.why ? v.why.slice(0,200) + (v.why.length>200?'…':'') : '';
+    marker.bindPopup('<em>'+((data.CAT_LABELS||{})[v.cat]||v.cat)+(v.neighborhood?' \xb7 '+v.neighborhood:'')+'</em><b>'+v.name+'</b>'+(why?'<span style="color:#c8c0b4;display:block;margin-bottom:6px;">'+why+'</span>':'')+'<a href="#venue-'+v.id+'" onclick="document.getElementById(\'venue-'+v.id+'\') && document.getElementById(\'venue-'+v.id+'\').scrollIntoView({behavior:\'smooth\',block:\'center\'});">Read full entry →</a>'+(v.maps?'<br><a href="'+v.maps+'" target="_blank" rel="noopener">Open in Google Maps →</a>':''));
+    marker.addTo(map);
+    markers[v.id] = marker;
+  });
+  window.__terroirMarkers = markers;
+  try { var pts = venues.filter(function (v) { return v.lat && v.lng; }).map(function (v) { return [v.lat, v.lng]; }); if (pts.length) map.fitBounds(pts, { padding:[22,22], maxZoom:14 }); } catch (e) {}
+
+  /* mini-map show/hide */
+  var mini = document.getElementById('terroir-mini');
+  var closeBtn = document.getElementById('terroir-mini-close');
+  var toggleBtn = document.getElementById('terroir-mini-toggle');
+  if (mini && closeBtn && toggleBtn) {
+    mini.classList.add('is-visible');
+    closeBtn.addEventListener('click', function () { mini.classList.remove('is-visible'); mini.classList.add('is-user-closed'); toggleBtn.classList.add('is-visible'); toggleBtn.classList.remove('is-user-closed'); });
+    toggleBtn.addEventListener('click', function () { mini.classList.add('is-visible'); mini.classList.remove('is-user-closed'); toggleBtn.classList.remove('is-visible'); setTimeout(function(){ map.invalidateSize(); },200); });
+  }
+});
+</script>
+
+<!-- Firebase compat (for terroir voting) -->
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script defer src="/terroir/_assets/guide/guide-favourites.js"></script>
+<script defer src="/terroir/_assets/guide/guide-enhance.js"></script>
+<script defer src="/terroir/_assets/guide/pin-hover.js"></script>
+
+<script>
+/* Trapani — scoped: B&W photos (runs after the kit reorder) */
+(function(){
+  function fig(src,cap,credit,cls){
+    var f=document.createElement('figure'); f.className='gx-photo '+cls;
+    f.innerHTML='<img src="'+src+'" alt="'+cap.replace(/<[^>]+>/g,'')+'" loading="lazy">'+
+      '<figcaption>'+cap+' <span class="gx-photo__credit">'+credit+'</span></figcaption>';
+    return f;
+  }
+  function placePhotos(){
+    if(document.querySelector('.gx-photo')) return;
+    /* No CC images placed in this build — proxy blocked Wikimedia Commons downloads.
+       Two identified: "Trapani panorama" Davide Mauro CC BY-SA 4.0 and
+       "Saline di Trapani windmills" Mboesch CC BY-SA 3.0 — see sources section. */
+  }
+  if(document.readyState==='complete') placePhotos();
+  else window.addEventListener('load', placePhotos);
+})();
+</script>
+<script defer src="/terroir/_assets/guide/guide-extras.js"></script>
+<script defer src="/terroir/_assets/guide/guide-comments.js"></script>
+</body>
+</html>
