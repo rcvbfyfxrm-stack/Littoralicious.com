@@ -153,6 +153,7 @@ const ROUTES = [
   { key:'dalmatia', name:'The Dalmatian Coast',         sea:'Adriatic',                     color:'#2f6f7e' },
   { key:'saronic',  name:'The Greek Saronic',           sea:'Aegean',                       color:'#35618f' },
   { key:'turkish',  name:'The Turkish Aegean & Lycia',  sea:'The Turquoise Coast',          color:'#2aa198' },
+  { key:'tyrrhenian', name:'The Tyrrhenian Coast',      sea:'Gulf of Naples',               color:'#6b4fa0' },
 ];
 const LAND = { key:'land', name:'By land', sea:'Inland briefings', color:'#8a8256' };
 
@@ -183,8 +184,11 @@ const GUIDES = [
   { slug:'Piraeus-Saronic', name:'Piraeus', country:'GREECE', region:'Saronic Gulf, Greece', date:'2026-07-28', lat:37.9420, lng:23.6465, route:'saronic', csv:false,
     essence:`Piraeus is a sea-town first: burned to nothing in 86 BC, refounded on a mud shore in 1834, and layered since by newcomers who arrived across the water. Eat the fish the Mikrolimano way and drink ouzo to a bouzouki.` },
 
-  { slug:'Bozcaada-NorthAegean', name:'Bozcaada', country:'TURKEY', region:'North Aegean, Turkey', date:'2026-06-27', lat:39.8283, lng:26.0389, route:'turkish', csv:false,
+  { slug:’Bozcaada-NorthAegean’, name:’Bozcaada’, country:’TURKEY’, region:’North Aegean, Turkey’, date:’2026-06-27’, lat:39.8283, lng:26.0389, route:’turkish’, csv:false,
     essence:`A wind-raked wine island in the mouth of the Dardanelles — its own pre-phylloxera grapes, grilled squid off the strait and a Greek-Turkish table. The only Turkish entry on National Geographic’s 2026 list of the best places in the world for food.` },
+
+  { slug:’Procida-Campania’, name:’Procida’, country:’ITALY’, region:’Campi Flegrei · Campania, Italy’, date:’2026-08-11’, lat:40.7654, lng:14.0054, route:’tyrrhenian’, csv:false, isNew:true,
+    essence:`A four-square-kilometre volcanic island in the Gulf of Naples that refused to become Capri — the totani still go through the net before breakfast at Corricella, the Limone di Procida still curls the cream in the lingua di bue, and the island still carries the particular ache of the death of Massimo Troisi.` },
 
   /* ── land / inland ── */
   { slug:'Girona-Catalunya', name:'Girona', country:'SPAIN', region:'Catalunya, Spain', date:'2026-07-12', lat:41.9794, lng:2.8214, route:'land', csv:true,
