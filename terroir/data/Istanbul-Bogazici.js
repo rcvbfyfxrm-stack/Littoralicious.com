@@ -1,7 +1,9 @@
-/* Terroir — Istanbul · Boğaziçi — built 2026-08-11 from the verified, geocoded briefing.
-   PIN POLICY: only geo_precision=="venue" rows carry lat/lng. Neighbourhood centroids are
-   deliberately NOT emitted as venue pins — a centroid sends a reader to the wrong street.
-   Every venue carries `status` + `statusChecked` from the 2026-08-11 liveness cross-check. */
+/* Terroir — Istanbul · Boğaziçi — data v2.
+   v1 shipped TABLES as {groups:[...]}, which the organised-tables renderer cannot read
+   (it looks up TABLES.grande / TABLES.petite), so the inventory silently fell back to flat
+   tier lists. v2 emits the correct shape AND the rich venue fields (dishes, signal_chip,
+   person, signature, verdict, caveat, hours) that the card expansion is gated on.
+   PIN POLICY unchanged: only street-level geocodes carry lat/lng. */
 window.TERROIR_DATA = (function () {
   const COLORS = {"berth": "#2d4a5e", "market": "#d97706", "shop": "#059669", "mainland": "#7c3aed", "logistics": "#2d4a5e"};
   const CAT_LABELS = {"berth": "Signature", "market": "Market / Direct", "shop": "Restaurant / Bar", "mainland": "Out of town", "logistics": "Logistics"};
@@ -16,19 +18,22 @@ window.TERROIR_DATA = (function () {
   "short": "TURK Fatih Tütak",
   "neighborhood": "Istanbul",
   "maps": "https://www.google.com/maps/search/?api=1&query=TURK+Fatih+T%C3%BCtak+Istanbul",
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "2★ MICHELIN",
+   "full": "★★ MICHELIN · Green Star (2026 edition)"
+  },
+  "verdict": "The city's only two-star, and the most formally ambitious argument for Anatolian cooking as haute cuisine anywhere",
+  "caveat": "★★ in the MICHELIN Guide Türkiye 2026",
+  "hours": "Dinner",
   "productTags": [
    "Anatolian",
    "Fine dining"
   ],
+  "badge": "Michelin",
   "tags": [
    "Weeks ahead",
-   "Dinner",
    "Best night: Wed"
   ],
-  "why": "★★ MICHELIN · Green Star (2026 edition)",
-  "hook": "The city's only two-star, and the most formally ambitious argument for Anatolian cooking as haute cuisine anywhere",
-  "caveat": "★★ in the MICHELIN Guide Türkiye 2026",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -43,19 +48,24 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Mikla+Istanbul",
   "lat": 41.031087,
   "lng": 28.974017,
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN"
+  },
+  "person": "Mehmet Gürs",
+  "verdict": "The view is famous; the ingredient philosophy is why it lasted",
+  "caveat": "★ in the MICHELIN Guide Türkiye 2026; top two floors of The Marmara Pera",
+  "hours": "Dinner, for the light",
+  "why": "Chef Mehmet Gürs. The house that invented the phrase New Anatolian Kitchen and spent fifteen years proving it meant something.",
   "productTags": [
    "New Anatolian",
    "Rooftop"
   ],
+  "badge": "Michelin",
   "tags": [
    "Weeks ahead",
-   "Dinner, for the light",
    "Best night: Wed"
   ],
-  "why": "Chef Mehmet Gürs. The house that invented the phrase New Anatolian Kitchen and spent fifteen years proving it meant something. ★ MICHELIN",
-  "hook": "The view is famous; the ingredient philosophy is why it lasted",
-  "caveat": "★ in the MICHELIN Guide Türkiye 2026; top two floors of The Marmara Pera",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -70,18 +80,23 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Neolokal+Istanbul",
   "lat": 41.023782,
   "lng": 28.973476,
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN"
+  },
+  "person": "Maksut Aşkar",
+  "caveat": "⚠ EXACT BUILDING UNVERIFIED — sources disagree. Geocode before publishing.",
+  "hours": "Dinner",
+  "why": "Chef Maksut Aşkar. Traditional Turkish dishes taken apart and rebuilt.",
   "productTags": [
    "Modern Turkish",
    "Sustainability"
   ],
+  "badge": "Michelin",
   "tags": [
    "Weeks ahead",
-   "Dinner",
    "Best night: Wed"
   ],
-  "why": "Chef Maksut Aşkar. Traditional Turkish dishes taken apart and rebuilt. ★ MICHELIN",
-  "caveat": "⚠ EXACT BUILDING UNVERIFIED — sources disagree. Geocode before publishing.",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -96,18 +111,23 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Nicole+Istanbul",
   "lat": 41.03023,
   "lng": 28.977828,
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN since 2022 · MICHELIN Service Award 2025"
+  },
+  "person": "Serkan Aksoy",
+  "verdict": "The room for when you want the whole performance right, not only the plates",
+  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
+  "hours": "Dinner",
+  "why": "Chef Serkan Aksoy.",
   "productTags": [
    "Fine dining"
   ],
+  "badge": "Michelin",
   "tags": [
    "Weeks ahead",
-   "Dinner",
    "Best night: Wed"
   ],
-  "why": "Chef Serkan Aksoy. ★ MICHELIN since 2022 · MICHELIN Service Award 2025",
-  "hook": "The room for when you want the whole performance right, not only the plates",
-  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -120,19 +140,22 @@ window.TERROIR_DATA = (function () {
   "short": "Araka",
   "neighborhood": "Yeniköy, up the Bosphorus",
   "maps": "https://www.google.com/maps/search/?api=1&query=Araka+Istanbul",
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN"
+  },
+  "verdict": "Worth the drive north",
+  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
+  "hours": "Lunch — make the journey part of it",
   "productTags": [
    "Fine dining",
    "Bosphorus"
   ],
+  "badge": "Michelin",
   "tags": [
    "Ahead",
-   "Lunch — make the journey part of it",
    "Best night: Wed"
   ],
-  "why": "★ MICHELIN",
-  "hook": "Worth the drive north",
-  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -145,13 +168,16 @@ window.TERROIR_DATA = (function () {
   "short": "Arkestra",
   "neighborhood": "Istanbul",
   "maps": "https://www.google.com/maps/search/?api=1&query=Arkestra+Istanbul",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN"
+  },
+  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
   "badge": "Michelin",
   "tags": [
    "Ahead",
    "Best night: Wed"
   ],
-  "why": "★ MICHELIN",
-  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -164,16 +190,20 @@ window.TERROIR_DATA = (function () {
   "short": "Sankai by Nagaya",
   "neighborhood": "Istanbul",
   "maps": "https://www.google.com/maps/search/?api=1&query=Sankai+by+Nagaya+Istanbul",
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN"
+  },
+  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
+  "why": "Japanese, and genuinely so.",
   "productTags": [
    "Japanese"
   ],
+  "badge": "Michelin",
   "tags": [
    "Ahead",
    "Best night: Wed"
   ],
-  "why": "Japanese, and genuinely so. ★ MICHELIN",
-  "caveat": "★ in the MICHELIN Guide Türkiye 2026",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -188,21 +218,36 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Araf+%C4%B0stanbul+Istanbul",
   "lat": 40.908528,
   "lng": 29.286561,
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "★ MICHELIN 2026"
+  },
+  "person": "Kenan Çetinkaya and Pınar Korgan Çetinkaya",
+  "signature": "whatever comes off the fire — offal first, then the large cuts",
+  "dishes": [
+   {
+    "name": "Whatever comes off the fire",
+    "note": "offal first"
+   },
+   {
+    "name": "Large cuts",
+    "note": "the large cuts"
+   }
+  ],
+  "verdict": "THE PICK. If you get in, you have had the defining meal of this decade in Istanbul",
+  "caveat": "Twelve seats and one seating — any night is hard; midweek is the least impossible",
+  "hours": "One seating a night",
+  "why": "Chefs Kenan Çetinkaya and Pınar Korgan Çetinkaya. Twelve seats, one open fire.",
   "productTags": [
    "Open fire",
    "Offal",
    "Counter"
   ],
+  "badge": "Michelin",
   "tags": [
    "DIRECT CONTACT ONLY — no booking app, no agency",
-   "One seating a night",
    "Best night: Wed"
   ],
-  "why": "Chefs Kenan Çetinkaya and Pınar Korgan Çetinkaya. Twelve seats, one open fire. ★ MICHELIN 2026",
-  "hook": "THE PICK. If you get in, you have had the defining meal of this decade in Istanbul",
-  "order": "whatever comes off the fire — offal first, then the large cuts",
-  "caveat": "Twelve seats and one seating — any night is hard; midweek is the least impossible",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -217,21 +262,31 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=%C3%87iya+Sofras%C4%B1+Istanbul",
   "lat": 40.989347,
   "lng": 29.024429,
-  "badge": "Petite Table",
+  "signal_chip": {
+   "label": "50 BEST DISCOVERY",
+   "full": "The World's 50 Best Discovery · Chef's Table"
+  },
+  "signature": "from the counter — take what you cannot identify",
+  "dishes": [
+   {
+    "name": "From the counter",
+    "note": "take what you cannot identify"
+   }
+  ],
+  "verdict": "Not a restaurant so much as a field-recording project with a kitchen",
+  "caveat": "trading 2026; Güneşlibahçe Sk. No: 43, Kadıköy",
+  "address": "Caferağa Mah., Güneşlibahçe Sok. No:43, Kadıköy, İstanbul",
+  "hours": "Lunch, when the daily menu is fullest",
+  "why": "Founded 1998 by Musa Dağdeviren. Forgotten regional recipes collected village by village: Azeri, Georgian, Arab, Armenian, Assyrian, Ottoman and Jewish dishes in their own traditions.",
   "productTags": [
    "Anatolian",
    "Regional",
    "Daily menu"
   ],
+  "badge": "Michelin",
   "tags": [
-   "Lunch, when the daily menu is fullest",
    "Best night: Tue"
   ],
-  "why": "Founded 1998 by Musa Dağdeviren. Forgotten regional recipes collected village by village: Azeri, Georgian, Arab, Armenian, Assyrian, Ottoman and Jewish dishes in their own traditions. The World's 50 Best Discovery · Chef's Table",
-  "hook": "Not a restaurant so much as a field-recording project with a kitchen",
-  "order": "from the counter — take what you cannot identify",
-  "address": "Caferağa Mah., Güneşlibahçe Sok. No:43, Kadıköy, İstanbul",
-  "caveat": "trading 2026; Güneşlibahçe Sk. No: 43, Kadıköy",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -246,19 +301,23 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Yanyal%C4%B1+Fehmi+Lokantas%C4%B1+Istanbul",
   "lat": 40.990765,
   "lng": 29.025509,
-  "badge": "Petite Table",
+  "signal_chip": {
+   "label": "BIB GOURMAND",
+   "full": "Bib Gourmand 2026"
+  },
+  "verdict": "The mirror image of the city's loss: the oldest surviving lokanta on the Asian side was founded by a family who came the OTHER way in the exchange",
+  "caveat": "Bib Gourmand confirmed on the MICHELIN Guide's own listing",
+  "address": "Osmanağa Mah., Yağlıkçı İsmail Sok. No:1, Kadıköy, 34714 İstanbul",
+  "hours": "09:00–22:30 daily (closed the first two days of public holidays)",
+  "why": "Founded 1919 by Fehmi Efendi, whose family migrated from Yanya (Ioannina) in Greece — 'Yanyalı' means 'from Yanya'. Third generation, still family-run. 140–150 different dishes a day.",
   "productTags": [
    "Lokanta",
    "Since 1919"
   ],
+  "badge": "Michelin",
   "tags": [
-   "09:00–22:30 daily (closed the first two days of public holidays)",
    "Best night: Tue"
   ],
-  "why": "Founded 1919 by Fehmi Efendi, whose family migrated from Yanya (Ioannina) in Greece — 'Yanyalı' means 'from Yanya'. Third generation, still family-run. 140–150 different dishes a day. Bib Gourmand 2026",
-  "hook": "The mirror image of the city's loss: the oldest surviving lokanta on the Asian side was founded by a family who came the OTHER way in the exchange",
-  "address": "Osmanağa Mah., Yağlıkçı İsmail Sok. No:1, Kadıköy, 34714 İstanbul",
-  "caveat": "Bib Gourmand confirmed on the MICHELIN Guide's own listing",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -273,17 +332,17 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Agora+Meyhanesi+Istanbul",
   "lat": 41.033349,
   "lng": 28.946504,
+  "verdict": "The meyhane as it was before the neighbourhood changed hands",
+  "caveat": "trading seven days a week; own site agora1890.com",
+  "hours": "Long dinner",
+  "why": "Trading since 1890.",
   "productTags": [
    "Meyhane",
    "Since 1890"
   ],
   "tags": [
-   "Long dinner",
    "Best night: Thu"
   ],
-  "why": "Trading since 1890.",
-  "hook": "The meyhane as it was before the neighbourhood changed hands",
-  "caveat": "trading seven days a week; own site agora1890.com",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -296,16 +355,20 @@ window.TERROIR_DATA = (function () {
   "short": "Casius Antioch Kitchen",
   "neighborhood": "Cihangir",
   "maps": "https://www.google.com/maps/search/?api=1&query=Casius+Antioch+Kitchen+Istanbul",
-  "badge": "Petite Table",
+  "signal_chip": {
+   "label": "BIB GOURMAND",
+   "full": "Bib Gourmand 2026"
+  },
+  "caveat": "Bib Gourmand confirmed on the MICHELIN Guide's own listing",
+  "why": "Antakya cooking in Istanbul, which after the 2023 earthquakes carries a weight it did not have before.",
   "productTags": [
    "Antakya",
    "Regional"
   ],
+  "badge": "Michelin",
   "tags": [
    "Best night: Thu"
   ],
-  "why": "Antakya cooking in Istanbul, which after the 2023 earthquakes carries a weight it did not have before. Bib Gourmand 2026",
-  "caveat": "Bib Gourmand confirmed on the MICHELIN Guide's own listing",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -320,17 +383,32 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Tam+Ocakba%C5%9F%C4%B1+Istanbul",
   "lat": 41.067658,
   "lng": 29.043958,
+  "person": "Türev Uludağ",
+  "signature": "liver first, then the skewers, then a lahmacun to close",
+  "dishes": [
+   {
+    "name": "Liver first",
+    "note": "liver first"
+   },
+   {
+    "name": "Skewers",
+    "note": "the skewers"
+   },
+   {
+    "name": "A lahmacun to close",
+    "note": "a lahmacun to close"
+   }
+  ],
+  "caveat": "⚠ Friday and Saturday evenings are very hard to get into — book ahead",
+  "hours": "Late dinner",
+  "why": "Chef Türev Uludağ.",
   "productTags": [
    "Ocakbaşı",
    "Fire counter"
   ],
   "tags": [
-   "Late dinner",
    "Best night: Thu"
   ],
-  "why": "Chef Türev Uludağ.",
-  "order": "liver first, then the skewers, then a lahmacun to close",
-  "caveat": "⚠ Friday and Saturday evenings are very hard to get into — book ahead",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -345,16 +423,16 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Mesai+Istanbul",
   "lat": 40.881684,
   "lng": 29.284741,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Late dinner",
+  "why": "Ocakbaşı culture against a Bosphorus and Historic Peninsula view, running sunset into night.",
   "productTags": [
    "Ocakbaşı",
    "Fire counter"
   ],
   "tags": [
-   "Late dinner",
    "Best night: Thu"
   ],
-  "why": "Ocakbaşı culture against a Bosphorus and Historic Peninsula view, running sunset into night.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -367,16 +445,16 @@ window.TERROIR_DATA = (function () {
   "short": "Çıra Ocakbaşı",
   "neighborhood": "Sarıyer / Skyland",
   "maps": "https://www.google.com/maps/search/?api=1&query=%C3%87%C4%B1ra+Ocakba%C5%9F%C4%B1+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "address": "Skyland, Huzur Mah., Azerbaycan Cad., D1 Blok No:4d, Sarıyer, İstanbul",
+  "hours": "Late dinner",
   "productTags": [
    "Ocakbaşı",
    "Fire counter"
   ],
   "tags": [
-   "Late dinner",
    "Best night: Thu"
   ],
-  "address": "Skyland, Huzur Mah., Azerbaycan Cad., D1 Blok No:4d, Sarıyer, İstanbul",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -391,20 +469,26 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=WAYANA+Wine+Bar+%26+Tapas+Istanbul",
   "lat": 40.980199,
   "lng": 29.023997,
+  "signature": "a flight of rare native grapes — the whole list is available by the glass",
+  "dishes": [
+   {
+    "name": "A flight of rare native grapes",
+    "note": "the whole list is available by the glass"
+   }
+  ],
+  "verdict": "Go here first; it will reorganise what you think Turkish wine is",
+  "caveat": "Listed on Star Wine List; own site live",
+  "address": "Ferit Tek Sok. 60/B, Moda, Kadıköy, İstanbul",
+  "phone": "+90 216 550 22 07",
+  "hours": "16:00–00:00",
+  "why": "500+ labels served entirely by the glass. As of July 2026: 143 Turkish wineries and 90 endemic grape varieties. Own site wayanatapas.com.",
   "productTags": [
    "Natural wine",
    "Turkish indigenous grapes"
   ],
   "tags": [
-   "16:00–00:00",
    "Best night: Tue"
   ],
-  "why": "500+ labels served entirely by the glass. As of July 2026: 143 Turkish wineries and 90 endemic grape varieties. Own site wayanatapas.com.",
-  "hook": "Go here first; it will reorganise what you think Turkish wine is",
-  "order": "a flight of rare native grapes — the whole list is available by the glass",
-  "address": "Ferit Tek Sok. 60/B, Moda, Kadıköy, İstanbul",
-  "phone": "+90 216 550 22 07",
-  "caveat": "Listed on Star Wine List; own site live",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -419,16 +503,16 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Ba%C4%9F+Pera+Istanbul",
   "lat": 41.027517,
   "lng": 28.974427,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Lunch Mon–Sat 12:00–14:45 · dinner daily 17:30–00:00",
+  "why": "Excellent small Turkish producers, plus tastings and workshops.",
   "productTags": [
    "Wine bar",
    "Tapas"
   ],
   "tags": [
-   "Lunch Mon–Sat 12:00–14:45 · dinner daily 17:30–00:00",
    "Best night: Thu"
   ],
-  "why": "Excellent small Turkish producers, plus tastings and workshops.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -441,15 +525,15 @@ window.TERROIR_DATA = (function () {
   "short": "Lips Wine Bar",
   "neighborhood": "Nişantaşı",
   "maps": "https://www.google.com/maps/search/?api=1&query=Lips+Wine+Bar+Istanbul",
+  "caveat": "⚠ CLOSED SUNDAYS",
+  "address": "Teşvikiye, Hacı Emin Efendi Sok., Nişantaşı Apt No:24C, Şişli, İstanbul",
+  "hours": "17:00–00:00 · Fri–Sat to 02:00",
   "productTags": [
    "Wine bar"
   ],
   "tags": [
-   "17:00–00:00 · Fri–Sat to 02:00",
    "Best night: Any except Sun"
   ],
-  "address": "Teşvikiye, Hacı Emin Efendi Sok., Nişantaşı Apt No:24C, Şişli, İstanbul",
-  "caveat": "⚠ CLOSED SUNDAYS",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -464,16 +548,14 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Montag+Istanbul",
   "lat": 40.98478,
   "lng": 29.025796,
+  "caveat": "Hours current on multiple 2026 listings",
+  "address": "Caferağa, Muvakkıthane Cd. No:16/A Kat:1, 34710 Kadıköy, İstanbul",
+  "hours": "Mon–Sun 10:00–22:00 (Fri–Sat to 23:00)",
+  "why": "Roasting its own since 2016; the pioneer most of the scene credits.",
   "productTags": [
    "Specialty coffee",
    "Roaster"
   ],
-  "tags": [
-   "Mon–Sun 10:00–22:00 (Fri–Sat to 23:00)"
-  ],
-  "why": "Roasting its own since 2016; the pioneer most of the scene credits.",
-  "address": "Caferağa, Muvakkıthane Cd. No:16/A Kat:1, 34710 Kadıköy, İstanbul",
-  "caveat": "Hours current on multiple 2026 listings",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -488,14 +570,12 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Federal+Galata+Istanbul",
   "lat": 41.026294,
   "lng": 28.973672,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Morning",
+  "why": "Est. 2016, up the hill from the Kamondo stairs. Australian-café register and a proper flat white.",
   "productTags": [
    "Specialty coffee"
   ],
-  "tags": [
-   "Morning"
-  ],
-  "why": "Est. 2016, up the hill from the Kamondo stairs. Australian-café register and a proper flat white.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -510,14 +590,12 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Coffee+Manifesto+Istanbul",
   "lat": 40.989201,
   "lng": 29.02417,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Morning",
+  "why": "Run with world-ranked barista Koray Erdoğdu.",
   "productTags": [
    "Specialty coffee"
   ],
-  "tags": [
-   "Morning"
-  ],
-  "why": "Run with world-ranked barista Koray Erdoğdu.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -530,17 +608,17 @@ window.TERROIR_DATA = (function () {
   "short": "Dama",
   "neighborhood": "Teşvikiye, Şişli",
   "maps": "https://www.google.com/maps/search/?api=1&query=Dama+Istanbul",
+  "verdict": "A café by day that becomes a hi-fi listening bar at night — the format Istanbul has taken to faster than any other European city",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Either end of the day",
+  "why": "Morning coffee watching the side street, lunch with friends, and the tempo climbing into a hi-fi evening.",
   "productTags": [
    "Café by day",
    "Hi-fi by night"
   ],
   "tags": [
-   "Either end of the day",
    "Best night: Tue"
   ],
-  "why": "Morning coffee watching the side street, lunch with friends, and the tempo climbing into a hi-fi evening.",
-  "hook": "A café by day that becomes a hi-fi listening bar at night — the format Istanbul has taken to faster than any other European city",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -553,15 +631,15 @@ window.TERROIR_DATA = (function () {
   "short": "Neroli Daylight Kitchen",
   "neighborhood": "Teşvikiye",
   "maps": "https://www.google.com/maps/search/?api=1&query=Neroli+Daylight+Kitchen+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Morning",
   "productTags": [
    "Brunch",
    "Seasonal"
   ],
   "tags": [
-   "Morning",
    "Best night: Sun"
   ],
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -574,15 +652,15 @@ window.TERROIR_DATA = (function () {
   "short": "Morning in Pera",
   "neighborhood": "Yeşilköy (new room)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Morning+in+Pera+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Morning",
   "productTags": [
    "Breakfast",
    "Brunch"
   ],
   "tags": [
-   "Morning",
    "Best night: Sun"
   ],
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -597,18 +675,18 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Arkaoda+Istanbul",
   "lat": 40.98659,
   "lng": 29.026539,
+  "caveat": "open Mon–Sun 12:00–02:00 per a July 2026 listing; Kadife Sok. No:18 D:1",
+  "address": "Kadife Sok. No:18 D:1, Caferağa, Kadıköy, İstanbul",
+  "hours": "Mon–Sun 12:00–02:00",
+  "why": "Anchor since 1999. Selectors move between Turkish psych, jazz and electronic. Functionally a collective as much as a bar.",
   "productTags": [
    "Listening bar",
    "Turkish psych",
    "Garden"
   ],
   "tags": [
-   "Mon–Sun 12:00–02:00",
    "Best night: Tue"
   ],
-  "why": "Anchor since 1999. Selectors move between Turkish psych, jazz and electronic. Functionally a collective as much as a bar.",
-  "address": "Kadife Sok. No:18 D:1, Caferağa, Kadıköy, İstanbul",
-  "caveat": "open Mon–Sun 12:00–02:00 per a July 2026 listing; Kadife Sok. No:18 D:1",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -623,14 +701,14 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Karga+Istanbul",
   "lat": 40.986644,
   "lng": 29.026584,
+  "caveat": "⚠ the venue's own Facebook page shows 'Closing Soon' — CHECK BEFORE SENDING ANYONE",
+  "why": "Vinyl-led sessions in the upstairs rooms.",
   "productTags": [
    "Vinyl sessions"
   ],
   "tags": [
    "Best night: Tue"
   ],
-  "why": "Vinyl-led sessions in the upstairs rooms.",
-  "caveat": "⚠ the venue's own Facebook page shows 'Closing Soon' — CHECK BEFORE SENDING ANYONE",
   "status": "closing_soon",
   "statusChecked": "2026-08-11"
  },
@@ -643,6 +721,7 @@ window.TERROIR_DATA = (function () {
   "short": "Nayah",
   "neighborhood": "Kadıköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=Nayah+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
   "productTags": [
    "Reggae",
    "Dub"
@@ -650,7 +729,6 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Best night: Tue"
   ],
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -663,6 +741,8 @@ window.TERROIR_DATA = (function () {
   "short": "Frankhan",
   "neighborhood": "Karaköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=Frankhan+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Large main room plus a dedicated audiophile Sound Room.",
   "productTags": [
    "House",
    "Electro",
@@ -671,8 +751,6 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Best night: Fri"
   ],
-  "why": "Large main room plus a dedicated audiophile Sound Room.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -687,15 +765,15 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=June+Istanbul",
   "lat": 41.16961,
   "lng": 28.990789,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "address": "Teşvikiye, Ahmet Fetgeri Sok. No:31, Şişli, İstanbul",
+  "why": "A neighbourhood bar that is also a listening bar — vinyl through good equipment, dancing later.",
   "productTags": [
    "Listening bar"
   ],
   "tags": [
    "Best night: Tue"
   ],
-  "why": "A neighbourhood bar that is also a listening bar — vinyl through good equipment, dancing later.",
-  "address": "Teşvikiye, Ahmet Fetgeri Sok. No:31, Şişli, İstanbul",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -708,18 +786,18 @@ window.TERROIR_DATA = (function () {
   "short": "FLUX",
   "neighborhood": "Maslak",
   "maps": "https://www.google.com/maps/search/?api=1&query=FLUX+Istanbul",
+  "verdict": "The serious techno room — and the programming actually splits: Fridays lean house, Saturdays go techno",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Late",
+  "why": "Funktion-One in a modular room. 2026 season has carried Ben Klock, Anja Schneider, Gerd Janson, Cormac, Setaoc Mass and Stef Mendesidis alongside local artists.",
   "productTags": [
    "Techno",
    "House",
    "Funktion-One"
   ],
   "tags": [
-   "Late",
    "Best night: Fri (house) · Sat (techno)"
   ],
-  "why": "Funktion-One in a modular room. 2026 season has carried Ben Klock, Anja Schneider, Gerd Janson, Cormac, Setaoc Mass and Stef Mendesidis alongside local artists.",
-  "hook": "The serious techno room — and the programming actually splits: Fridays lean house, Saturdays go techno",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -734,6 +812,9 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=%C5%9Eahika+Istanbul",
   "lat": 41.0348,
   "lng": 28.977639,
+  "caveat": "Active club listing on Resident Advisor; roof bar hosting music, exhibitions, talks",
+  "hours": "Late",
+  "why": "Multi-level with a rooftop terrace; the experimental end of the programming.",
   "productTags": [
    "Techno",
    "Jungle",
@@ -742,11 +823,8 @@ window.TERROIR_DATA = (function () {
    "Rooftop"
   ],
   "tags": [
-   "Late",
    "Best night: Fri"
   ],
-  "why": "Multi-level with a rooftop terrace; the experimental end of the programming.",
-  "caveat": "Active club listing on Resident Advisor; roof bar hosting music, exhibitions, talks",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -759,6 +837,9 @@ window.TERROIR_DATA = (function () {
   "short": "NOH Radio Bar / NOH Extended",
   "neighborhood": "Beyoğlu",
   "maps": "https://www.google.com/maps/search/?api=1&query=NOH+Radio+Bar+%2F+NOH+Extended+Istanbul",
+  "caveat": "Active club listing on Resident Advisor",
+  "hours": "Late",
+  "why": "The compact bar where the music goes out into the street, plus its late club and art space.",
   "productTags": [
    "Techno",
    "Trance",
@@ -767,11 +848,8 @@ window.TERROIR_DATA = (function () {
    "Art space"
   ],
   "tags": [
-   "Late",
    "Best night: Fri"
   ],
-  "why": "The compact bar where the music goes out into the street, plus its late club and art space.",
-  "caveat": "Active club listing on Resident Advisor",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -784,6 +862,7 @@ window.TERROIR_DATA = (function () {
   "short": "POPSTEL — Stay Local",
   "neighborhood": "Galatasaray",
   "maps": "https://www.google.com/maps/search/?api=1&query=POPSTEL+%E2%80%94+Stay+Local+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
   "productTags": [
    "Y2K hip-hop",
    "UK garage",
@@ -792,7 +871,6 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Best night: Fri"
   ],
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -807,6 +885,8 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Ritim+Istanbul+Istanbul",
   "lat": 40.921866,
   "lng": 29.158616,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Multi-floor, broader and more international.",
   "productTags": [
    "Reggaeton",
    "Pop",
@@ -816,8 +896,6 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Best night: Sat"
   ],
-  "why": "Multi-floor, broader and more international.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -830,16 +908,16 @@ window.TERROIR_DATA = (function () {
   "short": "Sazzou",
   "neighborhood": "Hilton İstanbul Bosphorus, Harbiye",
   "maps": "https://www.google.com/maps/search/?api=1&query=Sazzou+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Evening",
+  "why": "Built around jazz and cocktail culture — live jazz plus vinyl DJ sets.",
   "productTags": [
    "Jazz",
    "Cocktails"
   ],
   "tags": [
-   "Evening",
    "Best night: Wed"
   ],
-  "why": "Built around jazz and cocktail culture — live jazz plus vinyl DJ sets.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -852,6 +930,9 @@ window.TERROIR_DATA = (function () {
   "short": "Suma Han",
   "neighborhood": "Beyoğlu",
   "maps": "https://www.google.com/maps/search/?api=1&query=Suma+Han+Istanbul",
+  "verdict": "The clearest example in the city of artists building their own infrastructure",
+  "caveat": "Active club listing on Resident Advisor",
+  "why": "Offices, artist studios, residences and common rooms, plus a club room with a 500-capacity floor and real acoustics.",
   "productTags": [
    "Creative hub",
    "Studios",
@@ -861,9 +942,6 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Best night: Fri"
   ],
-  "why": "Offices, artist studios, residences and common rooms, plus a club room with a 500-capacity floor and real acoustics.",
-  "hook": "The clearest example in the city of artists building their own infrastructure",
-  "caveat": "Active club listing on Resident Advisor",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -876,14 +954,14 @@ window.TERROIR_DATA = (function () {
   "short": "KOLI Art Space",
   "neighborhood": "Kadıköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=KOLI+Art+Space+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Founded 2021 by Elçin Acun and Yasemin Kalaycı. Non-profit production and exhibition space supporting feminist and queer artists, on identity and gender fluidity. Showed at Contemporary Istanbul CI BLOOM 2026.",
   "productTags": [
    "Queer community",
    "Exhibitions",
    "Performance",
    "Music"
   ],
-  "why": "Founded 2021 by Elçin Acun and Yasemin Kalaycı. Non-profit production and exhibition space supporting feminist and queer artists, on identity and gender fluidity. Showed at Contemporary Istanbul CI BLOOM 2026.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -896,12 +974,13 @@ window.TERROIR_DATA = (function () {
   "short": "NOKS (formerly TOZ)",
   "neighborhood": "Kadıköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=NOKS+%28formerly+TOZ%29+Istanbul",
+  "person": "Ece Elder, Elvan Ekren, Sinem Dişli and Volkan Kızıltunç",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Began 2015 as TOZ, founded by Ece Elder, Elvan Ekren, Sinem Dişli and Volkan Kızıltunç; NOKS after 2018, run by Kızıltunç and Ekren. Showed at Contemporary Istanbul CI BLOOM 2026; SAHA-supported.",
   "productTags": [
    "Artist-run",
    "Non-profit"
   ],
-  "why": "Began 2015 as TOZ, founded by Ece Elder, Elvan Ekren, Sinem Dişli and Volkan Kızıltunç; NOKS after 2018, run by Kızıltunç and Ekren. Showed at Contemporary Istanbul CI BLOOM 2026; SAHA-supported.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -914,12 +993,12 @@ window.TERROIR_DATA = (function () {
   "short": "BAS · AVTO",
   "neighborhood": "Istanbul",
   "maps": "https://www.google.com/maps/search/?api=1&query=BAS+%C2%B7+AVTO+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Long-running independent spaces — artist books and experimental programming. SAHA Sustainability Fund supported.",
   "productTags": [
    "Artist books",
    "Experimental"
   ],
-  "why": "Long-running independent spaces — artist books and experimental programming. SAHA Sustainability Fund supported.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -932,14 +1011,14 @@ window.TERROIR_DATA = (function () {
   "short": "Nublu Istanbul / Nublu Records",
   "neighborhood": "Istanbul",
   "maps": "https://www.google.com/maps/search/?api=1&query=Nublu+Istanbul+%2F+Nublu+Records+Istanbul",
+  "verdict": "The most internationally connected music operation in the city",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "İlhan Erşahin's label and room, founded 2005 as the extension of the Nublu sound from New York's Lower East Side.",
   "productTags": [
    "Label",
    "Live room",
    "Jazz"
   ],
-  "why": "İlhan Erşahin's label and room, founded 2005 as the extension of the Nublu sound from New York's Lower East Side.",
-  "hook": "The most internationally connected music operation in the city",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -952,17 +1031,17 @@ window.TERROIR_DATA = (function () {
   "short": "The Bank Roof Bar",
   "neighborhood": "Karaköy — The Bank Hotel",
   "maps": "https://www.google.com/maps/search/?api=1&query=The+Bank+Roof+Bar+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Daily, midday to late",
+  "why": "Views over the Golden Horn, Bosphorus, Hagia Sophia, Topkapı and the Blue Mosque.",
   "productTags": [
    "Rooftop",
    "Old-city view"
   ],
   "tags": [
    "TL 400–700 a cocktail (2026 hotel-rooftop band)",
-   "Book for sunset",
-   "Daily, midday to late"
+   "Book for sunset"
   ],
-  "why": "Views over the Golden Horn, Bosphorus, Hagia Sophia, Topkapı and the Blue Mosque.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -975,17 +1054,17 @@ window.TERROIR_DATA = (function () {
   "short": "Roof Mezzepotamia",
   "neighborhood": "Sirkeci, Fatih — terrace of the Orient Occident Hotel, Autograph Collection",
   "maps": "https://www.google.com/maps/search/?api=1&query=Roof+Mezzepotamia+Istanbul",
+  "caveat": "⚠ It is in SIRKECI, not Karaköy — do not send anyone to the wrong shore",
+  "address": "Hobyar Mah., Hoca Kasım Köprüsü Sok. No:2, Sirkeci, Fatih, İstanbul",
+  "hours": "Sunset",
+  "why": "270° over the Bosphorus, the Golden Horn and the tower; DJs nightly.",
   "productTags": [
    "Rooftop",
    "270° view"
   ],
   "tags": [
-   "Book for sunset",
-   "Sunset"
+   "Book for sunset"
   ],
-  "why": "270° over the Bosphorus, the Golden Horn and the tower; DJs nightly.",
-  "address": "Hobyar Mah., Hoca Kasım Köprüsü Sok. No:2, Sirkeci, Fatih, İstanbul",
-  "caveat": "⚠ It is in SIRKECI, not Karaköy — do not send anyone to the wrong shore",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -998,15 +1077,15 @@ window.TERROIR_DATA = (function () {
   "short": "Roof106",
   "neighborhood": "Galata — atop the Galata Times Hotel, Beyoğlu",
   "maps": "https://www.google.com/maps/search/?api=1&query=Roof106+Istanbul",
+  "caveat": "⚠ CLOSED TUESDAYS",
+  "hours": "Sunset",
   "productTags": [
    "Rooftop",
    "Cocktails"
   ],
   "tags": [
-   "Sunset",
    "Best night: Any except Tue"
   ],
-  "caveat": "⚠ CLOSED TUESDAYS",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1019,13 +1098,11 @@ window.TERROIR_DATA = (function () {
   "short": "Sky Karaköy",
   "neighborhood": "9th floor, JW Marriott İstanbul Bosphorus, Karaköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=Sky+Karak%C3%B6y+Istanbul",
+  "caveat": "⚠ SEASONAL — Marriott's own listing has carried a 'Seasonally Closed' label. Check before going.",
+  "hours": "17:00–01:00",
   "productTags": [
    "Rooftop"
   ],
-  "tags": [
-   "17:00–01:00"
-  ],
-  "caveat": "⚠ SEASONAL — Marriott's own listing has carried a 'Seasonally Closed' label. Check before going.",
   "status": "seasonal",
   "statusChecked": "2026-08-11"
  },
@@ -1038,14 +1115,12 @@ window.TERROIR_DATA = (function () {
   "short": "Manifest Roof",
   "neighborhood": "Bereketzade, Galata, Beyoğlu",
   "maps": "https://www.google.com/maps/search/?api=1&query=Manifest+Roof+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "hours": "Dinner from 18:00",
   "productTags": [
    "Rooftop",
    "Modern Mediterranean"
   ],
-  "tags": [
-   "Dinner from 18:00"
-  ],
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1058,16 +1133,17 @@ window.TERROIR_DATA = (function () {
   "short": "Arogan",
   "neighborhood": "Tarabya",
   "maps": "https://www.google.com/maps/search/?api=1&query=Arogan+Istanbul",
+  "person": "Burak Zafer",
+  "caveat": "⚠ CLOSED SUNDAYS AND MONDAYS",
+  "hours": "Tue–Sat 18:00–00:00",
+  "why": "Chef Burak Zafer. Opened 30 January 2026.",
   "productTags": [
    "Modern",
    "Local ingredients"
   ],
   "tags": [
-   "Tue–Sat 18:00–00:00",
    "Best night: Tue–Sat"
   ],
-  "why": "Chef Burak Zafer. Opened 30 January 2026.",
-  "caveat": "⚠ CLOSED SUNDAYS AND MONDAYS",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1080,12 +1156,13 @@ window.TERROIR_DATA = (function () {
   "short": "Kontuar",
   "neighborhood": "Pera / Asmalımescit",
   "maps": "https://www.google.com/maps/search/?api=1&query=Kontuar+Istanbul",
+  "person": "Mustafa Otar",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Chef Mustafa Otar. Opened January 2026 as a chef's-table counter built on 'fire, emotion and roots'.",
   "productTags": [
    "Fire-focused",
    "Modern"
   ],
-  "why": "Chef Mustafa Otar. Opened January 2026 as a chef's-table counter built on 'fire, emotion and roots'.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1098,14 +1175,14 @@ window.TERROIR_DATA = (function () {
   "short": "Hodan",
   "neighborhood": "Beyoğlu (listed by some sources as Nişantaşı)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Hodan+Istanbul",
+  "caveat": "⚠ Neighbourhood disputed across sources (Beyoğlu vs Nişantaşı) — confirm before travelling",
+  "why": "One of Beyoğlu's most talked-about new chef restaurants, and already a brunch fixture. Sunday jazz brunch.",
   "productTags": [
    "Modern Anatolian"
   ],
   "tags": [
    "Best night: Sun, for the jazz brunch"
   ],
-  "why": "One of Beyoğlu's most talked-about new chef restaurants, and already a brunch fixture. Sunday jazz brunch.",
-  "caveat": "⚠ Neighbourhood disputed across sources (Beyoğlu vs Nişantaşı) — confirm before travelling",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1118,11 +1195,11 @@ window.TERROIR_DATA = (function () {
   "short": "Todos Los Días",
   "neighborhood": "Beyoğlu / Asmalımescit",
   "maps": "https://www.google.com/maps/search/?api=1&query=Todos+Los+D%C3%ADas+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Esen Hünal, Maksut Aşkar and Erim Leblebicioğlu.",
   "productTags": [
    "Comfort food"
   ],
-  "why": "Esen Hünal, Maksut Aşkar and Erim Leblebicioğlu.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -1135,11 +1212,12 @@ window.TERROIR_DATA = (function () {
   "short": "Indochine İstanbul",
   "neighborhood": "Bebek",
   "maps": "https://www.google.com/maps/search/?api=1&query=Indochine+%C4%B0stanbul+Istanbul",
+  "person": "Mahmut Can Kızılbay",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Chef Mahmut Can Kızılbay.",
   "productTags": [
    "Vietnamese"
   ],
-  "why": "Chef Mahmut Can Kızılbay.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "unverified",
   "statusChecked": ""
  },
@@ -1152,12 +1230,16 @@ window.TERROIR_DATA = (function () {
   "short": "Basta! Neo Bistro",
   "neighborhood": "Caddebostan, Kadıköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=Basta%21+Neo+Bistro+Istanbul",
-  "badge": "Michelin",
+  "signal_chip": {
+   "label": "1★ MICHELIN",
+   "full": "In the 2026 MICHELIN selection"
+  },
+  "caveat": "in the MICHELIN Guide Türkiye 2026 selection",
+  "why": "Kaan Sakarya and Derin Arıbaş, both trained in Michelin kitchens in France.",
   "productTags": [
    "Neo-bistro"
   ],
-  "why": "Kaan Sakarya and Derin Arıbaş, both trained in Michelin kitchens in France. In the 2026 MICHELIN selection",
-  "caveat": "in the MICHELIN Guide Türkiye 2026 selection",
+  "badge": "Michelin",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1170,12 +1252,12 @@ window.TERROIR_DATA = (function () {
   "short": "Lina Anatolian",
   "neighborhood": "Karaköy",
   "maps": "https://www.google.com/maps/search/?api=1&query=Lina+Anatolian+Istanbul",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Regional Anatolian flavours through contemporary technique, over the Bosphorus — a refined interpretation rather than a recreation.",
   "productTags": [
    "Modern Anatolian",
    "Bosphorus view"
   ],
-  "why": "Regional Anatolian flavours through contemporary technique, over the Bosphorus — a refined interpretation rather than a recreation.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1188,15 +1270,16 @@ window.TERROIR_DATA = (function () {
   "short": "Lokanta Stambouli",
   "neighborhood": "Pera (Minoa Pera)",
   "maps": "https://www.google.com/maps/search/?api=1&query=Lokanta+Stambouli+Istanbul",
+  "person": "Perviz Resuli on the first floor of the historic Union Française building at Mino",
+  "verdict": "The most interesting new room in the city — a Rum meyhane revival opening in 2026 is a loaded act, and it is the living answer to this guide's history section",
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "address": "Asmalı Mescit Mah., Meşrutiyet Cad. No:99, Beyoğlu, İstanbul",
+  "phone": "+90 539 693 12 78",
+  "why": "Opened by Perviz Resuli on the first floor of the historic Union Française building at Minoa Pera. Capacity 70. Explicitly marries the old Istanbul meyhane to Greek cooking.",
   "productTags": [
    "Meyhane",
    "Turkish and Rum tradition"
   ],
-  "why": "Opened by Perviz Resuli on the first floor of the historic Union Française building at Minoa Pera. Capacity 70. Explicitly marries the old Istanbul meyhane to Greek cooking.",
-  "hook": "The most interesting new room in the city — a Rum meyhane revival opening in 2026 is a loaded act, and it is the living answer to this guide's history section",
-  "address": "Asmalı Mescit Mah., Meşrutiyet Cad. No:99, Beyoğlu, İstanbul",
-  "phone": "+90 539 693 12 78",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1209,12 +1292,12 @@ window.TERROIR_DATA = (function () {
   "short": "Seoul Kitchen",
   "neighborhood": "Bomontiada, Şişli",
   "maps": "https://www.google.com/maps/search/?api=1&query=Seoul+Kitchen+Istanbul",
+  "caveat": "POP-UP — will not last · pop-up — no stated end date, will not last",
+  "why": "Jimmy & Jin.",
   "productTags": [
    "Korean",
    "Pop-up"
   ],
-  "why": "Jimmy & Jin.",
-  "caveat": "POP-UP — will not last · pop-up — no stated end date, will not last",
   "status": "time_limited",
   "statusChecked": "2026-08-11"
  },
@@ -1227,12 +1310,12 @@ window.TERROIR_DATA = (function () {
   "short": "Østre",
   "neighborhood": "Cihangir",
   "maps": "https://www.google.com/maps/search/?api=1&query=%C3%98stre+Istanbul",
+  "caveat": "Limited seating — reservations needed for evening service",
+  "why": "A small seafood bar built on oysters and raw fish.",
   "productTags": [
    "Oysters",
    "Raw bar"
   ],
-  "why": "A small seafood bar built on oysters and raw fish.",
-  "caveat": "Limited seating — reservations needed for evening service",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1247,6 +1330,8 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=R%C3%BCya+%C4%B0stanbul+Istanbul",
   "lat": 41.03627,
   "lng": 29.093512,
+  "caveat": "not cross-checked in this pass — do not publish as open",
+  "why": "Sharing plates in the Çırağan Palace Kempinski. It revived the long-missed Sunday brunch tradition.",
   "productTags": [
    "Modern Anatolian",
    "Grand hotel"
@@ -1254,8 +1339,6 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Best night: Sun, for the brunch"
   ],
-  "why": "Sharing plates in the Çırağan Palace Kempinski. It revived the long-missed Sunday brunch tradition.",
-  "caveat": "not cross-checked in this pass — do not publish as open",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1268,10 +1351,10 @@ window.TERROIR_DATA = (function () {
   "short": "Burger and Lobster",
   "neighborhood": "The Ritz-Carlton Istanbul",
   "maps": "https://www.google.com/maps/search/?api=1&query=Burger+and+Lobster+Istanbul",
+  "caveat": "RUNS ONLY TO THE END OF AUGUST 2026 · stated to run only to the end of August 2026",
   "productTags": [
    "Pop-up"
   ],
-  "caveat": "RUNS ONLY TO THE END OF AUGUST 2026 · stated to run only to the end of August 2026",
   "status": "time_limited",
   "statusChecked": "2026-08-11"
  },
@@ -1286,17 +1369,21 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Vefa+Bozac%C4%B1s%C4%B1+Istanbul",
   "lat": 41.015324,
   "lng": 28.958419,
+  "signature": "boza with cinnamon and roasted chickpeas",
+  "dishes": [
+   {
+    "name": "Boza with cinnamon and roasted chickpeas",
+    "note": "boza with cinnamon and roasted chickpeas"
+   }
+  ],
+  "verdict": "The point of going is the room, unchanged",
+  "caveat": "own site vefa.com.tr active",
+  "hours": "Winter — it is a cold-season drink",
+  "why": "Selling boza since 1876.",
   "productTags": [
    "Boza",
    "Since 1876"
   ],
-  "tags": [
-   "Winter — it is a cold-season drink"
-  ],
-  "why": "Selling boza since 1876.",
-  "hook": "The point of going is the room, unchanged",
-  "order": "boza with cinnamon and roasted chickpeas",
-  "caveat": "own site vefa.com.tr active",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  },
@@ -1311,16 +1398,16 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Kuzguncuk+Istanbul",
   "lat": 41.03216,
   "lng": 29.036026,
+  "verdict": "The single loveliest street in Istanbul, and the physical proof of the city this guide describes",
+  "caveat": "A neighbourhood, not a venue",
+  "hours": "Late afternoon",
   "productTags": [
    "Wooden houses",
    "Mosque + synagogue + church"
   ],
   "tags": [
-   "Late afternoon",
    "Best night: Sun"
   ],
-  "hook": "The single loveliest street in Istanbul, and the physical proof of the city this guide describes",
-  "caveat": "A neighbourhood, not a venue",
   "status": "n/a",
   "statusChecked": "2026-08-11"
  },
@@ -1333,13 +1420,11 @@ window.TERROIR_DATA = (function () {
   "short": "Balat and Fener",
   "neighborhood": "Golden Horn",
   "maps": "https://www.google.com/maps/search/?api=1&query=Balat+and+Fener+Istanbul",
+  "caveat": "Neighbourhoods, not venues",
+  "hours": "Early — it fills",
   "productTags": [
    "Old Greek and Jewish quarters"
   ],
-  "tags": [
-   "Early — it fills"
-  ],
-  "caveat": "Neighbourhoods, not venues",
   "status": "n/a",
   "statusChecked": "2026-08-11"
  },
@@ -1354,15 +1439,13 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Arnavutk%C3%B6y+to+Bebek+Istanbul",
   "lat": 41.077183,
   "lng": 29.043259,
+  "verdict": "The best hour on the European shore",
+  "caveat": "A walking route, not a venue",
+  "hours": "Late afternoon",
   "productTags": [
    "Yalı",
    "3 km waterside walk"
   ],
-  "tags": [
-   "Late afternoon"
-  ],
-  "hook": "The best hour on the European shore",
-  "caveat": "A walking route, not a venue",
   "status": "n/a",
   "statusChecked": "2026-08-11"
  },
@@ -1377,17 +1460,17 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=B%C3%BCy%C3%BCkada%2C+Princes%27+Islands+Istanbul",
   "lat": 40.856355,
   "lng": 29.119037,
+  "caveat": "An island, not a venue",
+  "hours": "A full day",
+  "why": "About 5 × 1 km. Roughly 90 minutes by ferry from the European piers, 45 from the Asian side.",
   "productTags": [
    "No cars",
    "Wooden houses",
    "Monastery of St George"
   ],
   "tags": [
-   "A full day",
    "Best night: Sun"
   ],
-  "why": "About 5 × 1 km. Roughly 90 minutes by ferry from the European piers, 45 from the Asian side.",
-  "caveat": "An island, not a venue",
   "status": "n/a",
   "statusChecked": "2026-08-11"
  },
@@ -1402,6 +1485,9 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Kad%C4%B1k%C3%B6y+Istanbul",
   "lat": 40.991295,
   "lng": 29.024563,
+  "verdict": "The centre of gravity of everything good happening in Istanbul now",
+  "caveat": "A district, not a venue",
+  "hours": "Market by day, bars by night",
   "productTags": [
    "Market streets",
    "Barlar Sokağı",
@@ -1409,11 +1495,8 @@ window.TERROIR_DATA = (function () {
    "Yeldeğirmeni"
   ],
   "tags": [
-   "Market by day, bars by night",
    "Best night: Sat"
   ],
-  "hook": "The centre of gravity of everything good happening in Istanbul now",
-  "caveat": "A district, not a venue",
   "status": "n/a",
   "statusChecked": "2026-08-11"
  },
@@ -1428,6 +1511,10 @@ window.TERROIR_DATA = (function () {
   "maps": "https://www.google.com/maps/search/?api=1&query=Nardis+Jazz+Club+Istanbul",
   "lat": 41.025442,
   "lng": 28.974186,
+  "verdict": "THE jazz room in Istanbul, and the reason Wednesday is on the week grid",
+  "address": "Kuledibi Sok., Galata, Beyoğlu, İstanbul",
+  "hours": "Weekdays 21:30–00:30 · weekends 22:30–01:30",
+  "why": "Roughly 120 seats at the foot of the Galata Tower, live jazz from local and international acts practically every night. Programming already listed into 2026–27.",
   "productTags": [
    "Jazz",
    "Live nearly every night",
@@ -1436,12 +1523,8 @@ window.TERROIR_DATA = (function () {
   "tags": [
    "Mid",
    "Recommended",
-   "Weekdays 21:30–00:30 · weekends 22:30–01:30",
    "Best night: Wed"
   ],
-  "why": "Roughly 120 seats at the foot of the Galata Tower, live jazz from local and international acts practically every night. Programming already listed into 2026–27.",
-  "hook": "THE jazz room in Istanbul, and the reason Wednesday is on the week grid",
-  "address": "Kuledibi Sok., Galata, Beyoğlu, İstanbul",
   "status": "confirmed",
   "statusChecked": "2026-08-11"
  }
@@ -1537,79 +1620,86 @@ window.TERROIR_DATA = (function () {
   const GEMS = [
  {
   "title": "The restaurant that came the other way",
-  "body": "Yanyalı Fehmi Lokantası has been open in Kadıköy since 1919, founded by Fehmi Efendi, whose family migrated from Yanya — Ioannina, in Greece. 'Yanyalı' means 'from Yanya'. In a city whose Greek community was removed by a wealth tax, a pogrom and an expulsion, the oldest surviving lokanta on the Asian side was founded by a family who came the other way in the same exchange. Third generation, still family-run, 140–150 dishes a day."
+  "body": "Yanyalı Fehmi Lokantası has been open in Kadıköy since 1919, founded by Fehmi Efendi, whose family migrated from Yanya — Ioannina, in Greece. 'Yanyalı' means 'from Yanya'. In a city whose Greek community was removed by a wealth tax, a pogrom and an expulsion, the oldest surviving lokanta on the Asian side was founded by a family who came the other way in the same exchange."
  },
  {
   "title": "Why the meyhane looks the way it does",
-  "body": "Under the Ottoman millet system the empire's non-Muslim communities governed their own affairs — and because alcohol was forbidden to Muslims, the licence to run a drinking house was effectively a non-Muslim one. For centuries the tavern was a Greek, Armenian or Jewish institution. The long table of cold mezes, the rakı poured with water, the fasıl musicians moving between tables: that is not a Turkish invention that happens to be old, it is a minority institution that outlived the minority."
+  "body": "Under the Ottoman millet system the non-Muslim communities governed their own affairs — and because alcohol was forbidden to Muslims, the licence to run a drinking house was effectively a non-Muslim one. The long table of cold mezes, the rakı poured with water, the fasıl musicians moving between tables: not a Turkish invention that happens to be old, but a minority institution that outlived the minority."
  }
 ];
   const TABLES = {
- "groups": [
-  {
-   "label": "Les Grandes Tables",
-   "desc": "The rooms arguing about what Turkish cooking is allowed to become. Book weeks ahead.",
-   "sections": [
-    {
-     "label": "The starred houses",
-     "ids": [
-      "turk-fatih-tutak",
-      "mikla",
-      "neolokal",
-      "nicole",
-      "araka",
-      "arkestra",
-      "sankai-by-nagaya"
-     ],
-     "desc": "One two-star and seven one-stars. Formal, expensive, and each answering the same question differently."
-    }
-   ]
-  },
-  {
-   "label": "Les Petites Tables",
-   "desc": "Smaller, more specific, mostly across the water — where the cooking is least translated for you.",
-   "sections": [
-    {
-     "label": "The rooms that matter more",
-     "ids": [
-      "araf-istanbul",
-      "ciya-sofrasi",
-      "yanyali-fehmi-lokantasi",
-      "agora-meyhanesi",
-      "casius-antioch-kitchen"
-     ],
-     "desc": "A twelve-seat fire counter, a field-recording project with a kitchen, and a lokanta open since 1919."
-    },
-    {
-     "label": "The fire counters",
-     "ids": [
-      "tam-ocakbasi",
-      "mesai",
-      "cira-ocakbasi"
-     ],
-     "desc": "A bar with a charcoal trench in it, and you sit at the trench. Liver first, then skewers, then lahmacun."
-    },
-    {
-     "label": "The 2026 wave",
-     "ids": [
-      "arogan",
-      "kontuar",
-      "hodan",
-      "todos-los-dias",
-      "indochine-istanbul",
-      "basta-neo-bistro",
-      "lina-anatolian",
-      "lokanta-stambouli",
-      "seoul-kitchen",
-      "stre",
-      "ruya-istanbul",
-      "burger-and-lobster"
-     ],
-     "desc": "The newest rooms, most with a rising chef's name on them. Reported, not ranked — check before you travel."
-    }
-   ]
-  }
- ]
+ "grande": {
+  "title": "La Grande Table",
+  "desc": "The tier you clear an evening for. One two-star at the top — TURK Fatih Tütak, which also took a Green Star in the 2026 edition — then a ring of one-stars arguing about what Anatolian cooking is allowed to become: Mikla on the Pera roof, Neolokal in Karaköy, Nicole with the city's best service, Araka up the Bosphorus at Yeniköy. Book weeks ahead and dress for it.",
+  "sections": [
+   {
+    "label": "The stars",
+    "desc": "One two-star and seven one-stars. Formal, expensive, and each answering the same question about Turkish cooking differently.",
+    "ids": [
+     "turk-fatih-tutak",
+     "mikla",
+     "neolokal",
+     "nicole",
+     "araka",
+     "arkestra",
+     "sankai-by-nagaya"
+    ]
+   }
+  ]
+ },
+ "petite": {
+  "title": "La Petite Table",
+  "desc": "Where this guide actually lives. Smaller, more specific, mostly across the water on the Asian side, and least translated for a visitor — a twelve-seat fire counter with a star, a kitchen that collects forgotten village recipes, a lokanta trading since 1919 and a meyhane since 1890.",
+  "sections": [
+   {
+    "label": "The rooms that matter more",
+    "desc": "A twelve-seat counter around one open fire, a field-recording project with a kitchen, and the houses that outlived every fashion.",
+    "ids": [
+     "araf-istanbul",
+     "ciya-sofrasi",
+     "yanyali-fehmi-lokantasi",
+     "agora-meyhanesi",
+     "casius-antioch-kitchen"
+    ]
+   },
+   {
+    "label": "The fire counters — ocakbaşı",
+    "desc": "A bar with a charcoal trench in it, and you sit at the trench. Liver first, then the skewers, then a lahmacun to close.",
+    "ids": [
+     "tam-ocakbasi",
+     "mesai",
+     "cira-ocakbasi"
+    ]
+   },
+   {
+    "label": "The 2026 wave",
+    "desc": "The newest rooms, most with a rising chef's name on them. Reported rather than ranked — confirm before you travel.",
+    "ids": [
+     "arogan",
+     "kontuar",
+     "hodan",
+     "todos-los-dias",
+     "indochine-istanbul",
+     "basta-neo-bistro",
+     "lina-anatolian",
+     "lokanta-stambouli",
+     "seoul-kitchen",
+     "stre",
+     "ruya-istanbul",
+     "burger-and-lobster"
+    ]
+   },
+   {
+    "label": "Natural wine & the native grape",
+    "desc": "Öküzgözü, Boğazkere, Narince, Emir — the indigenous grapes almost nobody orders, and the rooms that pour them by the glass.",
+    "ids": [
+     "wayana-wine-bar-tapas",
+     "bag-pera",
+     "lips-wine-bar"
+    ]
+   }
+  ]
+ }
 };
   return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, GEMS, TABLES };
 })();
