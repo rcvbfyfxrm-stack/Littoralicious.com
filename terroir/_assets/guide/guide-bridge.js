@@ -18,7 +18,6 @@
     moveAuthored();
     buildShortlist(B, V);
     buildDoors(B, V);
-    foldMinutes();
     bandSpy();
     trayCopy(V);
   }
@@ -36,12 +35,7 @@
     if (document.querySelector('.gx-bridge')) return;
     var lead = document.querySelector('.lead');
     if (!lead || !B.doors || !B.doors.length) return;
-    var container = document.querySelector('.container') || document.body;
-    var words = container.textContent.trim().split(/\s+/).length;
-    var mins = Math.round(words / 220);
-    var time = mins >= 90 ? '≈ ' + Math.round(mins / 30) / 2 + ' h' : '≈ ' + mins + ' min';
-    var head = words.toLocaleString('en-US') + ' words · ' + time +
-      ' in full. Nobody has to — each door is the fast way in.';
+    var head = 'Nobody reads all of it — each door goes straight to its answer.';
     var html = '<div class="gx-bridge__head"><span class="gx-bridge__fr">Trois lectures</span>' +
       '<span class="gx-bridge__en">' + esc(head) + '</span></div>';
     B.doors.forEach(function (d) {
@@ -131,10 +125,10 @@
     var foot = dates.length ? '<p class="gx-cs__foot">Booking states checked ' + esc(fmtRange(dates[0], dates[dates.length - 1])) +
       ' — where a row says unverified, call before you promise the table to a guest.</p>' : '';
     var det = document.createElement('details');
-    det.className = 'sfold'; det.id = 'ce-soir'; det.open = true;
+    det.className = 'sfold'; det.id = 'ce-soir';
     det.innerHTML = '<summary><div><div class="sfold__title">' + esc(S.title || 'Ce Soir') + '</div>' +
       '<div class="sfold__desc">' + esc(S.desc || '') + '</div></div>' +
-      '<span class="sfold__count">' + rows + ' tables · ≈ 2 min</span><span class="sfold__chev"></span></summary>' +
+      '<span class="sfold__count">' + rows + ' tables</span><span class="sfold__chev"></span></summary>' +
       '<div class="sfold__body">' + html + foot + '</div>';
     anchor.parentNode.insertBefore(det, anchor.nextSibling);
     det.addEventListener('click', function (e) {
@@ -212,29 +206,6 @@
     new MutationObserver(insert).observe(tray, { childList: true, subtree: true });
   }
 
-  /* ---------- read-time pills on every fold */
-  function foldMinutes() {
-    document.querySelectorAll('details.sfold').forEach(function (d) {
-      if (d.getAttribute('data-gx-min')) return;
-      var body = d.querySelector('.sfold__body');
-      var sum = d.querySelector('summary');
-      if (!body || !sum) return;
-      var w = body.textContent.trim().split(/\s+/).length;
-      var m = Math.round(w / 220);
-      if (m < 2) return;
-      d.setAttribute('data-gx-min', m);
-      var pill = sum.querySelector('.sfold__count');
-      if (pill) { pill.textContent = pill.textContent + ' · ≈ ' + m + ' min'; }
-      else {
-        var chev = sum.querySelector('.sfold__chev');
-        var span = document.createElement('span');
-        span.className = 'sfold__count';
-        span.textContent = '≈ ' + m + ' min';
-        if (chev) sum.insertBefore(span, chev); else sum.appendChild(span);
-      }
-    });
-  }
-
   /* ---------- band-nav scrollspy */
   function bandSpy() {
     var bands = document.querySelectorAll('.gx-band[id]');
@@ -252,6 +223,12 @@
     }, { rootMargin: '0px 0px -85% 0px' });
     bands.forEach(function (b) { io.observe(b); });
   }
+
+  /* ---------- keep the doors first under the lead (extras inserts photo 1 there on load) */
+  window.addEventListener('load', function () {
+    var b = document.querySelector('.gx-bridge'), p = document.querySelector('.gx-photo--1');
+    if (b && p && p.nextElementSibling === b) b.parentNode.insertBefore(p, b.nextSibling);
+  });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
