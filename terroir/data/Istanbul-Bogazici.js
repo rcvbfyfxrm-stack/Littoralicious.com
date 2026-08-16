@@ -2342,10 +2342,12 @@ window.TERROIR_DATA = (function () {
   {
    "fr": "Jour de Repos",
    "en": "Day off — which night is for what, then where the city actually eats.",
-   "note": "La semaine · Sur le pouce · Boire & sortir · Les quartiers",
+   "note": "La semaine · le hammam · les rituels · Sur le pouce · la nuit",
    "href": "#money-sits",
    "open": [
     "money-sits",
+    "hammam",
+    "rituals",
     "street-food",
     "bars",
     "quartiers"
