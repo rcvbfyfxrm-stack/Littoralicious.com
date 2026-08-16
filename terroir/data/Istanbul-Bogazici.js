@@ -62,7 +62,16 @@ window.TERROIR_DATA = (function () {
     "name": "Chef's table",
     "note": "a booking option, not a dish — you sit at the kitchen"
    }
-  ]
+  ],
+  "guest": {
+   "dress": "Stated on the house reservation page: 'Semi-formal. For men, we require attire with a collar and long trousers.' Shorts, sports attire, tracksuits, hoodies, caps and flip flops are not allowed.",
+   "private_dining": "A Chef's Table option exists — the house describes it as letting you 'witness the culinary artistry of our kitchen team up close during your evening' — but no capacity, pricing or solo-diner rule is published. No separate private room is published. Menu is the 14-course Chef Signature Tasting Menu ('Slow Dining — please allow 200 minutes'), 19,900 TL per guest; guests aged 12 and up only; no vegan, vegetarian or gluten-free accommodation; corkage allowed up to two 75 cl bottles per party at 6,000 TL each. Note the homepage still says '12-course' — the reservation page's 14-course wording is the transactional one.",
+   "view_terrace": "No view or terrace published — a Şişli dining room; the house presents its AVLU courtyard as 'the perfect prelude' — a place to unwind and socialise before the table, not a dining terrace.",
+   "max_party": "'Minimum one person a maximum of 5 people per booking are allowed on a single table' per the house reservation page. No chef's-table capacity is published.",
+   "booking_lead": "No published booking window (reservation pages read 2026-08-16; the booking engine itself renders no content, so live availability could not be observed). A 7,500 TL/head deposit within 24 h confirms the table; full refund only 72 h+ out — cancelling, no-showing or shrinking the party inside 72 h forfeits 7,500 TL per person.",
+   "guest_line": "TURK Fatih Tütak (2-star, Şişli): 14-course tasting menu only (about 200 minutes), tables capped at 5 per booking, semi-formal dress with collar and long trousers for men, guests 12 and over, no vegan/vegetarian/gluten-free accommodation.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "mikla",
@@ -124,7 +133,15 @@ window.TERROIR_DATA = (function () {
     "name": "Vegan tasting",
     "note": "seven courses, ₺9,600"
    }
-  ]
+  ],
+  "guest": {
+   "dress": "Stated in the house booking flow: 'In accordance with our Smart Chic clothing policy, sportswear such as tracksuits and slippers are not accepted.'",
+   "view_terrace": "At the top of The Marmara Pera: the restaurant plus a roof-terrace bar (open 18:00–02:00) 'in the midst of jasmine scents accompanied by the chilling breeze of Galata'; The World's 50 Best says 'come to Mikla for the best-in-Istanbul views'. No specific floor number is published by the house.",
+   "max_party": "8 online; 'more than 8 people, please call +90 (212) 293 5656 or send an e-mail to reservations@miklarestaurant.com' per the booking flow.",
+   "booking_lead": "No published booking window; the online diary takes a credit-card guarantee of 35 EUR per person ('no charges will be made unless there is a no-show'), cancellation at least 8 h ahead, and the table is cancelled 30 minutes after the slot if you have not arrived (booking flow and rules pages read 2026-08-16).",
+   "guest_line": "Mikla (1-star, rooftop of The Marmara Pera, Mon–Sat dinner only from 18:00): New Anatolian cooking with the city's most famous rooftop view and a terrace bar until 02:00 — smart-chic dress, last food order 21:30, parties over 8 by phone or email.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "neolokal",
@@ -186,7 +203,13 @@ window.TERROIR_DATA = (function () {
     "name": "The Turkish wine pairing",
     "note": "MICHELIN Sommelier Award 2026, Ersin Topkara"
    }
-  ]
+  ],
+  "guest": {
+   "view_terrace": "Inside SALT Galata (the old Ottoman Bank building) on Bankalar Avenue, Karaköy, with 'jaw-dropping views of the Golden Horn through its floor-to-ceiling windows' per The World's 50 Best Discovery; no terrace — and no floor — is published by the house.",
+   "booking_lead": "No published booking window and no online diary found on the house site — reservations by the two listed lines (+90 212 244 00 16 / +90 551 447 45 45) or info@neolokal.com; valet service is stated on the house site (read 2026-08-16). Opening days/hours are not published — confirm when booking.",
+   "guest_line": "Neolokal (1-star plus Green Star, in the SALT Galata building, Karaköy): Maksut Aşkar's modern Anatolian kitchen behind floor-to-ceiling windows over the Golden Horn — reserve by phone or email, valet at the door.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "nicole",
@@ -247,7 +270,13 @@ window.TERROIR_DATA = (function () {
     "name": "Catch of the day",
     "note": "şevket-i bostan, sea herbs, crayfish beurre monté"
    }
-  ]
+  ],
+  "guest": {
+   "view_terrace": "Top floor of Tomtom Suites; the house describes 'a chic terrace with a magnificent view of the Old Town, Princes' Islands and beyond', and the hotel site calls it a 'magnificent Historical Peninsula view'.",
+   "booking_lead": "No published booking window; book via the CheckandPlace link on the house site or +90 (212) 292 44 67 (site read 2026-08-16). The longer Tasting Menu No.1 (8,100 TL) is served only until 20:30 — after 21:00 only Menu No.2 (7,500 TL) — and all guests at the table must take menus of the same length.",
+   "guest_line": "Nicole (1-star, top-floor terrace of Tomtom Suites, Beyoğlu): two tasting menus with the whole table on the same length — sit before 20:30 for the longer Menu No.1 — on a terrace facing the Old Town and Princes' Islands.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "araka",
@@ -294,7 +323,14 @@ window.TERROIR_DATA = (function () {
     "name": "Seasonal vegetable-led menu",
     "note": "changes with what is picked"
    }
-  ]
+  ],
+  "guest": {
+   "private_dining": "No private room published; the house runs an Events & Catering arm — 'from intimate gatherings to grand celebrations, our event and catering services are tailored to create memorable experiences' — with enquiries and large-party bookings by the email and phone (+90 533 392 7223) listed on the site; no capacities stated.",
+   "view_terrace": "The house site lists a Garden as its own space alongside the Yeniköy dining room, but publishes no description of it and claims no water view.",
+   "booking_lead": "No published booking window; the online diary (CheckandPlace) would not render when checked 2026-08-16, so book via the site or phone. Open Tuesday–Sunday 13:00–24:00, closed Monday. The house states an a la carte menu alongside the tasting menu, with vegan, vegetarian, gluten-free, dairy-free and pescatarian options available each service.",
+   "guest_line": "Araka (1-star, Yeniköy, Tue–Sun 13:00–24:00, closed Monday): a la carte and tasting menu with vegan, vegetarian, gluten-free, dairy-free and pescatarian options each service, plus a garden space — large or private parties by email.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "arkestra",
@@ -349,7 +385,15 @@ window.TERROIR_DATA = (function () {
     "name": "Ritmo",
     "note": "the 32-cover bistro behind the velvet curtain, small plates and cocktails"
    }
-  ]
+  ],
+  "guest": {
+   "private_dining": "The house states 'Arkestra caters different spaces for a variety of special events and private dining', with private-hire enquiries by the email on its private-events page; Ritmo — its 32-cover dining room 'tucked away behind velvet curtains', 'accessible through a private entrance' — is the obvious candidate, though the site does not assign capacities to event hire. A Chef's Table menu is also published on the menus page (no capacity stated).",
+   "view_terrace": "No view — a former residential villa built in the 1960s in Etiler; 'the Restaurant opens up to a secluded courtyard, for those times when the weather calls for al fresco dining', and the upstairs Listening Room is 'currently welcoming restaurant guests only'.",
+   "max_party": "The online booking form takes 2–7 guests (form observed 2026-08-16); no larger-party route is published beyond the private-events email.",
+   "booking_lead": "No published booking window and the diary shows no open-calendar view; the form offers a waitlist if your preferred date is unavailable (booking form read 2026-08-16). House hours Tuesday–Saturday 18:00–01:00, closed Sunday and Monday.",
+   "guest_line": "Arkestra (1-star, Etiler, Tue–Sat 18:00–01:00): Cenk Debensason's dining room in a 1960s villa with a secluded courtyard for al fresco, the 32-cover Ritmo room behind velvet curtains with its own entrance, and an upstairs Listening Room for restaurant guests — online bookings take 2 to 7.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "sankai-by-nagaya",
@@ -400,7 +444,14 @@ window.TERROIR_DATA = (function () {
     "name": "Edomae sushi counter",
     "note": "head sushi chef Hiroko Shibata"
    }
-  ]
+  ],
+  "guest": {
+   "private_dining": "The restaurant itself is the chef's-table format — a 24-seat omakase room where the house invites you to 'join him on the chef's table for an unforgettable trip to Japan'; 'all guests under the same reservation will enjoy the same menu selected upon booking', choosing between the two tasting menus (Sankai Sushi or Nagaya Signature). No separate private room published.",
+   "view_terrace": "In the Bebek Hotel by The Stay, Cevdet Paşa Caddesi, Bebek; no floor, terrace or view is published. A complimentary BMW i7 transfer within 5 km is offered with advance reservation, limited availability.",
+   "booking_lead": "No online booking — reservations by email (reservation@sankai.com.tr) or phone (+90 532 379 1997) only; reconfirm before travelling, as the house website was carrying injected casino-spam content when read on 2026-08-16, which suggests it is not being maintained.",
+   "guest_line": "Sankai by Nagaya (1-star, in the Bebek Hotel): a 24-seat omakase room pairing kaiseki with Edomae sushi, the whole party on one of two menus — book by email or phone only, and reconfirm the restaurant is serving before crossing the city.",
+   "checked": "2026-08-16"
+  }
  },
  {
   "id": "araf-istanbul",
