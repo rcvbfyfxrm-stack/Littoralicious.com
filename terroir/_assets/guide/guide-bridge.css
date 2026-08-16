@@ -1,0 +1,54 @@
+/* TERROIR KIT — BRIDGE ("La Passerelle") styles. Only loaded by opted-in
+   guides; selectors match nothing unless guide-bridge.js has run.
+   Palette/typography via the --gx-* tokens defined in guide-enhance.css. */
+
+/* doors */
+.gx-bridge{max-width:900px;margin:26px auto 34px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.gx-bridge__head{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;}
+.gx-bridge__fr{font-family:var(--gx-serif);font-size:1.25em;color:var(--gx-ink);}
+.gx-bridge__en{font-family:var(--gx-mono);font-size:0.64em;letter-spacing:1px;text-transform:uppercase;color:var(--gx-ink3);}
+.gx-bridge__door{display:block;text-decoration:none;border:1px solid var(--gx-rule);border-top:3px solid var(--gx-sea);background:#fff;padding:13px 15px 12px;transition:background .15s ease;}
+.gx-bridge__door:hover{background:var(--gx-paper2);}
+.gx-bridge__door b{display:block;font-family:var(--gx-serif);font-weight:700;font-size:1.02em;color:var(--gx-ink);margin-bottom:4px;}
+.gx-bridge__door span{display:block;font-family:var(--gx-sans);font-size:0.78em;line-height:1.45;color:var(--gx-ink2);margin-bottom:7px;}
+.gx-bridge__door i{display:block;font-style:normal;font-family:var(--gx-mono);font-size:0.6em;letter-spacing:1px;text-transform:uppercase;color:var(--gx-sea);}
+@media(max-width:700px){.gx-bridge{grid-template-columns:1fr;gap:8px;margin:18px auto 24px;}.gx-bridge__door{min-height:52px;padding:11px 13px;}}
+
+/* shortlist */
+.gx-bridge-on .sfold{scroll-margin-top:66px;}
+.gx-cs-group{margin:16px 0 4px;}
+.gx-cs-group__label{font-family:var(--gx-serif);font-size:1.08em;color:var(--gx-ink);margin-right:10px;}
+.gx-cs-group__sub{font-family:var(--gx-mono);font-size:0.6em;letter-spacing:1px;text-transform:uppercase;color:var(--gx-ink3);}
+.gx-cs{position:relative;padding:11px 52px 11px 0;border-bottom:1px dotted var(--gx-rule);}
+.gx-cs:last-of-type{border-bottom:0;}
+.gx-cs__top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;}
+.gx-cs__name{font-family:var(--gx-serif);font-weight:700;font-size:1.05em;color:var(--gx-ink);text-decoration:none;}
+.gx-cs__name:hover{color:var(--gx-sea);}
+.gx-cs__area{font-family:var(--gx-mono);font-size:0.6em;letter-spacing:1px;text-transform:uppercase;color:var(--gx-ink3);}
+.gx-cs__strip{display:flex;flex-wrap:wrap;gap:6px 12px;margin:5px 0 2px;font-family:var(--gx-mono);font-size:0.68em;letter-spacing:.4px;}
+.gx-cs__price{color:var(--gx-sea);font-weight:400;}
+.gx-cs__cell{color:var(--gx-ink2);}
+.gx-cs__flag{color:var(--gx-gold);background:rgba(138,106,46,0.08);border-left:2px solid var(--gx-gold);padding:1px 7px;}
+.gx-cs__fit{font-family:Georgia,serif;font-style:italic;font-size:0.9em;line-height:1.5;color:var(--gx-ink2);margin:4px 0;}
+.gx-cs__acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px;font-family:var(--gx-mono);font-size:0.66em;letter-spacing:1px;text-transform:uppercase;}
+.gx-cs__acts a{color:var(--gx-sea);text-decoration:none;border-bottom:1px solid var(--gx-rule);}
+.gx-cs__acts a:hover{border-color:var(--gx-sea);}
+.gx-cs__copy,.gx-bridge-copyall{border:1px solid var(--gx-sea);background:none;border-radius:14px;padding:2px 10px;cursor:pointer;font:inherit;color:var(--gx-sea);letter-spacing:1px;text-transform:uppercase;}
+.gx-cs__copy:hover,.gx-bridge-copyall:hover{background:var(--gx-sea);color:#fff;}
+.gx-cs.is-hover{background:#fff8e6;box-shadow:inset 4px 0 0 #c4a35a;} /* same recipe as .terroir-card.is-hover */
+.gx-cs .gx-fav{position:absolute;top:8px;right:6px;}
+.gx-cs .gx-loved-ribbon{display:none;}
+.gx-cs__foot{font-family:var(--gx-sans);font-style:italic;font-size:0.8em;color:var(--gx-ink3);margin-top:12px;}
+.gx-bridge-copyall{display:block;margin:2px 0 10px;font-family:var(--gx-mono);font-size:0.66em;}
+
+/* route */
+.gx-route{list-style:none;margin:0;padding:0;}
+.gx-route li{display:flex;gap:14px;padding:9px 0;border-bottom:1px dotted var(--gx-rule);}
+.gx-route li:last-child{border-bottom:0;}
+.gx-route__t{flex:0 0 52px;font-family:var(--gx-mono);font-size:0.72em;color:var(--gx-sea);padding-top:3px;}
+.gx-route b{font-family:var(--gx-serif);}
+
+/* band-nav state */
+.band-nav__chip.is-here{background:var(--gx-sea);color:#fff;border-color:var(--gx-sea);}
+
+@media print{.gx-bridge,.gx-cs__acts,.gx-bridge-copyall{display:none;}}

@@ -259,3 +259,8 @@
 /* short "what it is" description line on cards */
 .tcm__hook,.terroir-berth__hook,.terroir-card__hook{font-family:Georgia,serif;font-style:italic;font-size:0.93em;color:var(--ink-2,#3a3a3a);line-height:1.45;margin:3px 0 2px;}
 .tcm__hook{margin-top:4px;}
+
+/* BRIDGE field-gated blocks — match nothing until a guide's data carries buy/galley */
+.terroir-card__buy, .terroir-card__galley { margin:6px 0 2px; padding:4px 9px; background:rgba(45,74,94,0.05); border-left:2px solid var(--sea, #2d4a5e); font-size:0.85em; color:var(--ink-2, #3a3a3a); line-height:1.45; }
+.tbuy { font-family:'JetBrains Mono',monospace; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--sea, #2d4a5e); margin-right:5px; }
+.tbuy__when { font-family:'JetBrains Mono',monospace; font-size:0.78em; color:var(--ink-3, #6a6a6a); margin-left:6px; }

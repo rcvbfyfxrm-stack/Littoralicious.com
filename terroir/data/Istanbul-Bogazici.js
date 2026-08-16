@@ -71,6 +71,13 @@ window.TERROIR_DATA = (function () {
    "booking_lead": "No published booking window (reservation pages read 2026-08-16; the booking engine itself renders no content, so live availability could not be observed). A 7,500 TL/head deposit within 24 h confirms the table; full refund only 72 h+ out — cancelling, no-showing or shrinking the party inside 72 h forfeits 7,500 TL per person.",
    "guest_line": "TURK Fatih Tütak (2-star, Şişli): 14-course tasting menu only (about 200 minutes), tables capped at 5 per booking, semi-formal dress with collar and long trousers for men, guests 12 and over, no vegan/vegetarian/gluten-free accommodation.",
    "checked": "2026-08-16"
+  },
+  "charter": {
+   "price": "₺₺₺₺",
+   "book": "Direct only · deposit ₺7,500/head · max 5 covers · weeks ahead",
+   "dress": "Semi-formal — collar + long trousers (men)",
+   "warn": "No vegan / vegetarian / GF · guests 12+",
+   "fit": "The one to impress: Türkiye's only two-star — 14 courses, about 200 minutes."
   }
  },
  {
@@ -141,6 +148,14 @@ window.TERROIR_DATA = (function () {
    "booking_lead": "No published booking window; the online diary takes a credit-card guarantee of 35 EUR per person ('no charges will be made unless there is a no-show'), cancellation at least 8 h ahead, and the table is cancelled 30 minutes after the slot if you have not arrived (booking flow and rules pages read 2026-08-16).",
    "guest_line": "Mikla (1-star, rooftop of The Marmara Pera, Mon–Sat dinner only from 18:00): New Anatolian cooking with the city's most famous rooftop view and a terrace bar until 02:00 — smart-chic dress, last food order 21:30, parties over 8 by phone or email.",
    "checked": "2026-08-16"
+  },
+  "charter": {
+   "price": "₺₺₺₺",
+   "book": "Online · card guarantee €35/head · parties over 8 by phone",
+   "dress": "Smart chic — no sportswear",
+   "view": "Rooftop of The Marmara Pera — the famous view · terrace bar to 02:00",
+   "warn": "Last food order 21:30 · closed Sun",
+   "fit": "The view table: twenty years of New Anatolian cooking above Pera."
   }
  },
  {
@@ -159,7 +174,7 @@ window.TERROIR_DATA = (function () {
    "full": "★ MICHELIN"
   },
   "person": "Maksut Aşkar",
-  "caveat": "⚠ EXACT BUILDING UNVERIFIED — sources disagree. Geocode before publishing.",
+  "caveat": "Sources disagree on the exact entrance within the SALT Galata block — follow the venue's own directions on arrival rather than a map pin.",
   "hours": "Dinner",
   "why": "Chef Maksut Aşkar. Traditional Turkish dishes taken apart and rebuilt.",
   "productTags": [
@@ -209,6 +224,13 @@ window.TERROIR_DATA = (function () {
    "booking_lead": "No published booking window and no online diary found on the house site — reservations by the two listed lines (+90 212 244 00 16 / +90 551 447 45 45) or info@neolokal.com; valet service is stated on the house site (read 2026-08-16). Opening days/hours are not published — confirm when booking.",
    "guest_line": "Neolokal (1-star plus Green Star, in the SALT Galata building, Karaköy): Maksut Aşkar's modern Anatolian kitchen behind floor-to-ceiling windows over the Golden Horn — reserve by phone or email, valet at the door.",
    "checked": "2026-08-16"
+  },
+  "charter": {
+   "price": "₺₺₺₺",
+   "book": "Online or phone · valet at the door",
+   "view": "Floor-to-ceiling over the Golden Horn — SALT Galata",
+   "warn": "Hours unpublished — confirm when booking",
+   "fit": "Maksut Aşkar's modern Anatolian kitchen in the old Ottoman Bank — 1★ + Green Star."
   }
  },
  {
@@ -276,6 +298,13 @@ window.TERROIR_DATA = (function () {
    "booking_lead": "No published booking window; book via the CheckandPlace link on the house site or +90 (212) 292 44 67 (site read 2026-08-16). The longer Tasting Menu No.1 (8,100 TL) is served only until 20:30 — after 21:00 only Menu No.2 (7,500 TL) — and all guests at the table must take menus of the same length.",
    "guest_line": "Nicole (1-star, top-floor terrace of Tomtom Suites, Beyoğlu): two tasting menus with the whole table on the same length — sit before 20:30 for the longer Menu No.1 — on a terrace facing the Old Town and Princes' Islands.",
    "checked": "2026-08-16"
+  },
+  "charter": {
+   "price": "₺₺₺₺ — Menu No.1 ₺8,100 · No.2 ₺7,500",
+   "book": "Online (CheckandPlace) or phone",
+   "view": "Top-floor terrace — Old Town and Princes’ Islands in front",
+   "warn": "Longer menu only before 20:30 · whole table takes the same menu length",
+   "fit": "The terrace dinner: two tasting menus over the rooftops of Tomtom."
   }
  },
  {
@@ -393,6 +422,13 @@ window.TERROIR_DATA = (function () {
    "booking_lead": "No published booking window and the diary shows no open-calendar view; the form offers a waitlist if your preferred date is unavailable (booking form read 2026-08-16). House hours Tuesday–Saturday 18:00–01:00, closed Sunday and Monday.",
    "guest_line": "Arkestra (1-star, Etiler, Tue–Sat 18:00–01:00): Cenk Debensason's dining room in a 1960s villa with a secluded courtyard for al fresco, the 32-cover Ritmo room behind velvet curtains with its own entrance, and an upstairs Listening Room for restaurant guests — online bookings take 2 to 7.",
    "checked": "2026-08-16"
+  },
+  "charter": {
+   "price": "₺₺₺₺",
+   "book": "Online 2–7 covers · larger parties by email · Tue–Sat from 18:00",
+   "private": "Ritmo — 32-cover room behind velvet curtains, private entrance",
+   "warn": "Closed Sun–Mon",
+   "fit": "Cenk Debensason's villa in Etiler: the dining room, then the listening room upstairs."
   }
  },
  {
@@ -451,6 +487,13 @@ window.TERROIR_DATA = (function () {
    "booking_lead": "No online booking — reservations by email (reservation@sankai.com.tr) or phone (+90 532 379 1997) only; reconfirm before travelling, as the house website was carrying injected casino-spam content when read on 2026-08-16, which suggests it is not being maintained.",
    "guest_line": "Sankai by Nagaya (1-star, in the Bebek Hotel): a 24-seat omakase room pairing kaiseki with Edomae sushi, the whole party on one of two menus — book by email or phone only, and reconfirm the restaurant is serving before crossing the city.",
    "checked": "2026-08-16"
+  },
+  "charter": {
+   "price": "₺₺₺₺",
+   "book": "Phone or email only · no online diary · reconfirm before travelling",
+   "private": "BMW i7 transfer within 5 km offered with the booking",
+   "warn": "House site unreachable when checked — call before promising the table",
+   "fit": "Twenty-four seats of kaiseki and Edomae sushi at Bebek — the intimate option."
   }
  },
  {
@@ -609,7 +652,12 @@ window.TERROIR_DATA = (function () {
     "name": "The daily counter",
     "note": "140–150 dishes: 10 soups, 60–70 hot, 40 in olive oil"
    }
-  ]
+  ],
+  "charter": {
+   "price": "₺",
+   "book": "Walk in · 09:00–22:30 daily",
+   "fit": "Lunch ashore, zero risk: the 1919 lokanta, three generations, point at the trays."
+  }
  },
  {
   "id": "agora-meyhanesi",
@@ -674,7 +722,12 @@ window.TERROIR_DATA = (function () {
     "name": "Tarama",
     "note": ""
    }
-  ]
+  ],
+  "charter": {
+   "price": "₺₺₺",
+   "book": "Site (agora1890.com) or phone · 150–200 covers · fills at weekends",
+   "fit": "The safe big-table call: a 135-year meyhane that can seat a party tonight and still feel like Istanbul."
+  }
  },
  {
   "id": "casius-antioch-kitchen",
@@ -787,7 +840,12 @@ window.TERROIR_DATA = (function () {
   "reservation": "Phone +90 539 927 91 07 — essential for Friday and Saturday",
   "best_time": "Late dinner",
   "best_night": "Tuesday or Wednesday",
-  "money_eats": false
+  "money_eats": false,
+  "charter": {
+   "book": "Phone · essential for Fri–Sat",
+   "warn": "Fri–Sat very hard to get into",
+   "fit": "The fire counter for guests who want the real thing: chef-run Adana in a Bosphorus village."
+  }
  },
  {
   "id": "mesai",
@@ -1907,6 +1965,102 @@ window.TERROIR_DATA = (function () {
   ],
   "status": "confirmed",
   "statusChecked": "2026-08-11"
+ },
+ {
+  "id": "namli-gurme",
+  "cat": "market",
+  "tier": "several",
+  "priority": 50,
+  "name": "Namlı Gurme",
+  "short": "Namlı Gurme",
+  "neighborhood": "Karaköy, Beyoğlu — two minutes off the waterfront",
+  "address": "Kemankeş Mahallesi, Mumhane Caddesi, Atilla İş Hanı No: 6/A, Karaköy, Beyoğlu",
+  "hours": "Monday–Sunday 07:00–22:00 (the shop's own listing)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Naml%C4%B1%20Gurme%20Istanbul",
+  "hook": "One Karaköy counter covering pastırma, cheese, olives, oil, honey and tahin — open seven days a week from seven in the morning.",
+  "why": "This is the single most efficient provisioning stop on the European side, and its own shop publishes the numbers, VAT included: çemeni sıyrılmış pastırma, the fenugreek crust scraped back, ₺5,400/kg; an 850 g kangal sucuk made from 100% beef in the house's own workshop, ₺1,836; Gelibolu eski kaşar ₺1,690/kg and Kars Göle eski kaşar ₺1,080/kg; Erzincan tulum ₺1,180/kg, Van otlu peynir ₺1,490/kg, Ezine beyaz peynir ₺598 a block, Balıkesir buffalo butter ₺576 for 450 g. On the dry side: kuru sele olives ₺780/kg, Ayvalık kırma yeşil ₺590/kg, a litre of Makaron olive oil ₺1,080, 330 g of tahin ₺240, Elazığ mulberry pekmez ₺350 and nar ekşisi ₺350 for 350 ml. Honey is the outlier — Hakkari karakovan comb honey ₺4,200 — and these are the online-store figures checked in August 2026, so the counter can differ. The hours are the real advantage: Monday to Sunday, 07:00 to 22:00.",
+  "signature": "Pastırma cut to order in front of you, thin enough to read through — ask for the çemeni sıyrılmış if you want the meat rather than the fenugreek. Kangal sucuk whole, not sliced. A kilo of Gelibolu eski kaşar for grating, and tulum for the meze board.",
+  "buy": "Pastırma with the fenugreek crust scraped back (çemeni sıyrılmış), sliced to order; Kangal sucuk whole; Gelibolu cheese and tahin from the same counter",
+  "buy_when": "Before 10:00 — the counter is calm and cutting fresh",
+  "galley": "Vacuum-packs on request · pastırma and sucuk survive weeks chilled",
+  "label": "EMİNÖNÜ",
+  "status": "confirmed",
+  "statusChecked": "2026-08-15",
+  "productTags": [
+   "Provisioning"
+  ]
+ },
+ {
+  "id": "kurukahveci-mehmet-efendi",
+  "cat": "market",
+  "tier": "several",
+  "priority": 50,
+  "name": "Kurukahveci Mehmet Efendi",
+  "short": "Kurukahveci Mehmet Efendi",
+  "neighborhood": "Eminönü, Fatih — at the corner of the Spice Bazaar",
+  "address": "Tahmis Sokağı 66, Eminönü 34116, İstanbul (branch: Söğütlüçeşme Caddesi 12, Kadıköy 34714)",
+  "hours": "Not published on the company's own site — confirm before a special trip.",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Kurukahveci%20Mehmet%20Efendi%20Istanbul",
+  "hook": "One counter on Tahmis Sokak that has ground the city's coffee since 1871.",
+  "why": "The house is in its 155th year — its own site runs the anniversary as \"155. YIL\" and its official channel carries the founding date in the handle — and it is still at Tahmis Sokağı 66, in the purpose-built block the company credits to the architect Zühtü Başar. There are only three shops in the whole city, all confirmed on the company's own contact pages: the Eminönü merkez, a Sirkeci branch, and Kadıköy at Osmanağa Mahallesi, Söğütlüçeşme Caddesi 12 — anything sold as Mehmet Efendi anywhere else is retail packaging, not the counter grind. The queue is long, moves fast, and almost everyone in it buys the same thing: Türk kahvesi ground to order and handed over still warm. The company does not publish shop hours on its own site, which is worth knowing before you cross the Golden Horn for it.",
+  "signature": "Buy Türk kahvesi ground fresh at the counter, in the smallest pack you will finish within a fortnight — it is milled far finer than espresso and roasted for cezve extraction, so it will choke a portafilter basket.",
+  "buy": "Türk kahvesi ground at the counter — the smallest pack you will finish in a fortnight",
+  "buy_when": "Grind is cezve-fine: it will choke a portafilter — keep it for the pot",
+  "galley": "Sealed packs keep · the queue moves fast, cash or card",
+  "label": "EMİNÖNÜ",
+  "status": "confirmed",
+  "statusChecked": "2026-08-15",
+  "productTags": [
+   "Provisioning"
+  ]
+ },
+ {
+  "id": "karakoy-gulluoglu",
+  "cat": "market",
+  "tier": "several",
+  "priority": 50,
+  "name": "Karaköy Güllüoğlu",
+  "short": "Karaköy Güllüoğlu",
+  "neighborhood": "Karaköy, Beyoğlu",
+  "address": "Kemankeş Karamustafa Paşa Mah., Kemankeş Cad. No:67, 34425 Karaköy — Beyoğlu",
+  "hours": "Mon–Sat 07:30–01:00, Sun 08:00–01:00 (OpenStreetMap; the house publishes only a 19:00 courier cut-off)",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Karak%C3%B6y%20G%C3%BCll%C3%BCo%C4%9Flu%20Istanbul",
+  "hook": "One counter in Karaköy, open past midnight, run by the fifth generation of the family that made Gaziantep a baklava town.",
+  "why": "The dynasty's origin is documented outside the family's own marketing: baklava was introduced to Gaziantep in 1871 by Çelebi Güllü, who had learned the recipe from a Syrian chef in Damascus. The city's version was registered as a Turkish geographical indication in 2008 and became Antep Baklavası, a Protected Geographical Indication under the European Commission, in 2013 — the first Turkish product to receive one. This house dates itself to 1843 and puts Nadir Güllü at the counter as \"the fifth generation representative of a family that has been making baklava since 1843,\" trained by his father and master Hacı Mustafa Güllü. The decisive fact is the smallest one: their contact page lists a single shop, Kemankeş Caddesi 67, and OpenStreetMap records the same telephone the house publishes, +90 850 308 45 45, against hours running to one in the morning.",
+  "signature": "Fıstıklı kuru baklava — the dry pistachio one, no cream, cut small and stacked; it is the version that survives being carried onto a boat. Ask by weight (porsiyon or half a kilo), not by the piece. The tell for the whole city is here: Karaköy Güllüoğlu has one shop, and it is in Karaköy. A Güllüoğlu sign anywhere else is a different branch of the family.",
+  "buy": "Fıstıklı kuru baklava — the dry pistachio one, no cream — by weight, not by the piece",
+  "buy_when": "Open past midnight; the kuru travels",
+  "galley": "The dry version survives being carried onto a boat · courier cut-off 19:00",
+  "label": "KARAKÖY",
+  "status": "confirmed",
+  "statusChecked": "2026-08-15",
+  "productTags": [
+   "Provisioning"
+  ]
+ },
+ {
+  "id": "kadikoy-market",
+  "cat": "market",
+  "tier": "several",
+  "priority": 50,
+  "name": "Tarihi Kadıköy Çarşısı",
+  "short": "Tarihi Kadıköy Çarşısı",
+  "neighborhood": "Kadıköy, Asian side — five minutes' walk from the ferry pier",
+  "address": "Güneşlibahçe Sokağı and Serasker Caddesi, Osmanağa, Kadıköy",
+  "hours": "Stalls set their own hours; the street trades daytime and is busiest late morning. Verify per shop.",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Tarihi%20Kad%C4%B1k%C3%B6y%20%C3%87ar%C5%9F%C4%B1s%C4%B1%20Istanbul",
+  "hook": "Five minutes uphill from the ferry: the fish row, the butchers and the greengrocers that feed Kadıköy's own kitchens.",
+  "why": "The market is not a building, it is a grid of short streets behind Söğütlüçeşme, and Güneşlibahçe Sokağı is its spine — OpenStreetMap maps fishmongers at nos. 1–3, a greengrocer at no. 9, butchers, bakeries and a spice counter inside about eighty metres of each other, with more fish and a butcher's row round the corner on Serasker Caddesi. Buy to the Turkish fishing calendar rather than to a shopping list: commercial fishing runs 1 September to 15 April, so palamut lands from September, lüfer through the autumn and hamsi from late autumn into winter, while between mid-April and the end of August almost everything on ice is farmed levrek and çipura or flown in. Fish is chalked per kilo and cleaned at the counter at no charge; produce is priced per kilo too, and the crates behind the stall are usually cheaper than the display. Stall names on this street turn over faster than the trades do, so shop the counter, not the sign — verify any single shop before you make a special trip for it.",
+  "signature": "Whole palamut in autumn, gutted and scaled at the counter; ripe tomatoes and a bunch of flat parsley from the greengrocer at Güneşlibahçe 9; then the butchers' row for kuzu pirzola. Say \"temizlensin\" for the fish to be cleaned.",
+  "buy": "Whole palamut in autumn gutted at the counter; tomatoes and flat parsley from Güneşlibahçe 9; kuzu pirzola from the butchers’ row",
+  "buy_when": "Late morning — the stalls are fullest; say “temizlensin” to have the fish cleaned",
+  "galley": "Buy to the fishing calendar, not the shopping list — the row sells what the boats landed",
+  "label": "KADIKÖY",
+  "status": "confirmed",
+  "statusChecked": "2026-08-15",
+  "productTags": [
+   "Provisioning"
+  ]
  }
 ];
   const CATEGORIES = [
@@ -2160,5 +2314,77 @@ window.TERROIR_DATA = (function () {
   ]
  }
 };
-  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, GEMS, TABLES, CATEGORIES, GROUPS, GROUP_OF };
+  const BRIDGE = {
+ "_rule": "SINGLE-EDITOR RULE: charter{} on a venue deliberately duplicates booking truth held in its reservation/price_range/caveat prose. Any commit editing those fields on a shortlist venue MUST update its charter block in the same commit, and lead-time grouping below must be re-verified at write time.",
+ "doors": [
+  {
+   "fr": "La Table des Invités",
+   "en": "Guests ashore tonight — bookable, dressed, priced. Decided in 90 seconds.",
+   "note": "auto",
+   "href": "#ce-soir",
+   "open": [
+    "ce-soir"
+   ]
+  },
+  {
+   "fr": "Le Terroir",
+   "en": "For the chef — why this food exists, the four-hour provisioning run, the dishes born here.",
+   "note": "Le plat · le produit · la course · le geste · le rite",
+   "href": "#band-place",
+   "open": [
+    "eat",
+    "gastronomy",
+    "dish",
+    "provisioning",
+    "chef-route"
+   ]
+  },
+  {
+   "fr": "Jour de Repos",
+   "en": "Day off — which night is for what, then where the city actually eats.",
+   "note": "La semaine · Sur le pouce · Boire & sortir · Les quartiers",
+   "href": "#money-sits",
+   "open": [
+    "money-sits",
+    "street-food",
+    "bars",
+    "quartiers"
+   ]
+  }
+ ],
+ "shortlist": {
+  "title": "Ce Soir",
+  "desc": "The charter shortlist — guests ashore, decided fast. Every name links to its full entry below.",
+  "groups": [
+   {
+    "label": "Ce soir même",
+    "sub": "Will take a call this afternoon and still impress",
+    "ids": [
+     "agora-meyhanesi",
+     "yanyali-fehmi-lokantasi",
+     "tam-ocakbasi"
+    ]
+   },
+   {
+    "label": "Cette semaine",
+    "sub": "Two to seven days of lead — the strong middle",
+    "ids": [
+     "neolokal",
+     "mikla",
+     "arkestra"
+    ]
+   },
+   {
+    "label": "Le grand soir",
+    "sub": "Book-ahead trophies — plan them into the next charter",
+    "ids": [
+     "turk-fatih-tutak",
+     "nicole",
+     "sankai-by-nagaya"
+    ]
+   }
+  ]
+ }
+};
+  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, GEMS, TABLES, CATEGORIES, GROUPS, GROUP_OF, BRIDGE };
 })();
