@@ -78,3 +78,12 @@
 /* la liste */
 .gx-liste{margin:14px 0 0;padding:0 0 0 20px;}
 .gx-liste li{font-size:0.92em;line-height:1.55;padding:3px 0;}
+
+/* la liste v2 */
+.gx-say{font-family:var(--gx-mono);font-size:0.68em;letter-spacing:.6px;color:var(--gx-sea);background:var(--gx-paper2);border:1px solid var(--gx-rule);border-radius:10px;padding:1px 8px;margin-left:8px;white-space:nowrap;}
+.gx-liste li{padding:9px 0;border-bottom:1px dotted var(--gx-rule);}
+.gx-liste li:last-child{border-bottom:0;}
+.gx-liste__what{font-size:0.9em;line-height:1.5;margin-top:2px;}
+.gx-liste__why{font-size:0.85em;line-height:1.5;font-style:italic;color:var(--gx-ink2);margin-top:1px;}
+.gx-liste__where{font-family:var(--gx-sans);font-size:0.8em;color:var(--gx-ink2);margin-top:3px;}
+.gx-liste__where a{color:var(--gx-sea);}
