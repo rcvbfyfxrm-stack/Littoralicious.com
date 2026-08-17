@@ -27,6 +27,44 @@ on real prose phrases), the `#bougie` food-history callout, born-here dish flags
 absolute `/terroir/…` paths, NEVER fabricate, honesty gates. "Even the things you missed" (Arnaud):
 make sure EVERY guide carries the born-here food-origin stories + gem popups + a scene-first read.
 
+
+## ⭐ GOLD4 — THE ISTANBUL STANDARD (2026-08-17, supersedes GOLD3 as the target)
+
+**Reference guide: live `Istanbul-Bogazici`.** Arnaud's instruction: every next briefing must be
+AS DEVELOPED as Istanbul. GOLD3 (Athens/Piraeus) remains the acceptable floor for nightly uplifts;
+any NEW guide, and any guide you can take further, builds to GOLD4. The delta over GOLD3:
+
+1. **La Passerelle (the bridge).** Three doors after the lead routing the three readers —
+   La Table des Invités → the «Ce Soir» charter shortlist (rows carry a hand-written `charter:{}`
+   block: price band · booking reality · dress · view · private · the deal-breaker warning, plus
+   tap-to-call, Maps, copy-for-itinerary, the ♡) · a chef door · a day-off door. Opt-in per guide:
+   `TERROIR_DATA.BRIDGE` + the two `guide-bridge.*` includes. The SINGLE-EDITOR rule travels with
+   charter{}: edit a shortlist venue's booking prose ⇒ update its charter block in the same commit.
+2. **One opening essay.** soul + history + why-now merged into a single captivating read (facts
+   verbatim, transitions only), the born-here food gem embedded. No separate history/why-now folds.
+3. **Table LANES, 3–5 entries each** (never two 15-deep groups): the stars · the wave (trimmed to
+   its strongest) · WHERE THE CHEFS EAT (sourced day-off addresses — name who says so) · the fire/
+   local-form lanes · KAHVALTI-equivalent breakfast lane · THE OTHER KITCHENS (regional/minority
+   tables) · LATE NIGHT after service · SUR LE POUCE (named counters) · THE OLD HOUSES (dated).
+   Every lane opens with a **food story** (`CATEGORIES[].story` → gembox, kit-gated). Every venue
+   carries `dishes[]` — the iconic plates — rendered by `gemDishes()`. Cards three-up, closed,
+   click to unfold (guide-bridge.css).
+4. **The signature-experience sections** — what the place is uniquely FOR gets its OWN section(s)
+   (Istanbul: #hammam with gendered-hours honesty + #rituals incl. the berber). Buried = absent.
+5. **Squares, gardens & the little beauties** + a "rooms to linger & work" group with the honest
+   work-truth line ("Beautiful. Close the laptop.") — the flâner layer a crew actually uses.
+6. **La liste.** A closing what-to-eat-&-drink checklist: per item SAY-IT pronunciation · what it
+   is · why unique (one verified fact) · BEST PLACE + Maps. Two downloads: .ics of VTODOs
+   (LOCATION + URL fields — lands in Apple Reminders) and a plain .txt.
+7. **Closed-by-default + hierarchy.** Everything folded on landing; bands are the chapters
+   (large serif + sea rule), closed sections read as index rows; NO word-counts or read-time
+   chrome; the liveness "checked <dates>" line lives INSIDE #sources, not as a top alert.
+8. **Autour band** (real day-trips out), provisioning/larder with Buy/Galley chef blocks, and the
+   hub map's clickable sea region for the guide's water.
+9. **Maps-link audit before deploy:** every link canonical `maps/search/?api=1&query=` + city
+   token, zero `amp;` residue, name-vs-query sanity — plus the standing liveness/no-fabrication/
+   no-emoji/orthography gates. Verify by headless render, never by reading source.
+
 ## Steps each run
 1. **Setup.** You are in a fresh clone of `rebuild/publishing-system`. Read `terroir/_rollout/state.json`.
    Pick the FIRST queue item with `status:"pending"`. If none pending, go to **NEW PLACES**. Set env
