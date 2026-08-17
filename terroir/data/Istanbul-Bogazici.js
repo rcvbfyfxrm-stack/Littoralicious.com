@@ -2333,7 +2333,6 @@ window.TERROIR_DATA = (function () {
    "href": "#band-place",
    "open": [
     "eat",
-    "gastronomy",
     "dish",
     "provisioning",
     "chef-route"

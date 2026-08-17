@@ -52,3 +52,16 @@
 .band-nav__chip.is-here{background:var(--gx-sea);color:#fff;border-color:var(--gx-sea);}
 
 @media print{.gx-bridge,.gx-cs__acts,.gx-bridge-copyall{display:none;}}
+
+/* hierarchy — bands are the chapters; closed sections read as their index rows.
+   A section regains its full-size title only when opened. */
+.gx-bridge-on .gx-band{margin-top:56px;padding-top:16px;border-top:2px solid var(--gx-sea);}
+.gx-bridge-on .gx-band__title{display:block;font-family:var(--gx-serif);font-size:1.65em;color:var(--gx-ink);font-weight:700;letter-spacing:0;}
+.gx-bridge-on .gx-band__sub{display:block;margin-top:3px;}
+.gx-bridge-on details.sfold{margin-top:8px;border-top:1px dotted var(--gx-rule);}
+.gx-bridge-on details.sfold>summary .sfold__title{font-size:0.98em;letter-spacing:1.1px;font-weight:600;}
+.gx-bridge-on details.sfold>summary .sfold__desc{font-size:0.75em;margin-top:2px;}
+.gx-bridge-on details.sfold>summary .sfold__count{font-size:0.6em;padding:3px 8px;}
+.gx-bridge-on details.sfold[open]{margin-top:26px;}
+.gx-bridge-on details.sfold[open]>summary .sfold__title{font-size:1.3em;letter-spacing:2px;}
+.gx-bridge-on details.sfold[open]>summary .sfold__desc{font-size:0.82em;}
