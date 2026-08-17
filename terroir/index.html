@@ -35,6 +35,17 @@
       .tr-chart { position: relative; margin: var(--space-6) 0 var(--space-4); border: 1px solid var(--color-border); }
       #tr-map { height: 460px; width: 100%; background: #cfe0e6; }
       .leaflet-container { font-family: var(--font-sans); }
+
+      /* clickable sea regions — nautical-chart labels on the water */
+      .tr-sea-label { pointer-events:auto; cursor:pointer; white-space:nowrap;
+        font-family:Georgia,'Times New Roman',serif; font-style:italic;
+        letter-spacing:.34em; text-transform:uppercase; font-weight:400;
+        text-shadow:0 1px 3px rgba(255,255,255,.9), 0 0 12px rgba(255,255,255,.7);
+        opacity:.82; transition:opacity .15s ease; }
+      .tr-sea-label:hover { opacity:1; }
+      .tr-route.is-flash { animation:tr-flash 1.6s ease; }
+      @keyframes tr-flash { 0%,60% { background:rgba(45,74,94,.06); } 100% { background:transparent; } }
+
       .tr-chart__caption { position: absolute; top: 10px; left: 12px; z-index: 500; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #2d4a5e; background: rgba(250,249,246,.86); padding: 4px 9px; border: 1px solid var(--color-border); pointer-events: none; }
       .tr-legend { display: flex; flex-wrap: wrap; align-items: center; gap: .35em 1.1em; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-top: 0; background: var(--color-paper); font-family: var(--font-sans); font-size: var(--text-xs); }
       .tr-legend__item { display: inline-flex; align-items: center; gap: .45em; color: var(--color-ink); }
@@ -294,6 +305,50 @@ let MAP, MARKERS = {}, LAND_LAYER;
       GUIDES.filter(g => g.route === 'land').forEach(g => delete MARKERS[g.slug]);
       MAP.flyToBounds(seaBounds, { duration: .6 });
     }
+  });
+})();
+
+
+/* ── clickable sea regions — click the water, open the leg ── */
+(function seaRegions(){
+  // hand-set open-water anchors; label text honest to the actual water body
+  const SEAS = [
+    { key:'algarve',  label:'Atlantic',        at:[36.55, -8.10], km:60 },
+    { key:'catalan',  label:'Balearic Sea',    at:[40.90,  3.40], km:85 },
+    { key:'azur',     label:'Ligurian Sea',    at:[42.90,  7.20], km:65 },
+    { key:'dalmatia', label:'Adriatic Sea',    at:[42.70, 16.30], km:95 },
+    { key:'saronic',  label:'Saronic Gulf',    at:[37.55, 23.55], km:45 },
+    { key:'turkish',  label:'North Aegean',    at:[39.50, 25.80], km:60 },
+    { key:'marmara',  label:'Sea of Marmara',  at:[40.72, 28.35], km:55 }
+  ];
+  function go(key){
+    const sec = document.getElementById('route-' + key);
+    if (!sec) return;
+    sec.scrollIntoView({ behavior:'smooth', block:'start' });
+    sec.classList.remove('is-flash'); void sec.offsetWidth; sec.classList.add('is-flash');
+    try { history.replaceState(null, '', '#route-' + key); } catch(e){}
+  }
+  SEAS.forEach(s => {
+    const r = ROUTE_BY[s.key];
+    if (!r || !GUIDES.some(g => g.route === s.key)) return;
+    const halo = L.circle(s.at, { radius:s.km * 1000, color:r.color, weight:1,
+      opacity:.25, dashArray:'3 7', fillColor:r.color, fillOpacity:.07, interactive:true });
+    halo.addTo(MAP);
+    const label = L.marker(s.at, { interactive:true, keyboard:true,
+      icon: L.divIcon({ className:'', iconSize:[220,20], iconAnchor:[110,10],
+        html:'<div class="tr-sea-label" style="color:' + r.color + '" role="link" tabindex="0" ' +
+             'aria-label="Open the ' + esc(r.name) + ' leg">' + esc(s.label) + '</div>' }) });
+    label.addTo(MAP);
+    halo.on('click', () => go(s.key));
+    label.on('click', () => go(s.key));
+    halo.on('mouseover', () => halo.setStyle({ fillOpacity:.14, opacity:.5 }));
+    halo.on('mouseout',  () => halo.setStyle({ fillOpacity:.07, opacity:.25 }));
+    halo.bindTooltip(r.name + ' — view the leg', { direction:'top', className:'tr-marker-label', sticky:true });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const t = e.target.closest && e.target.closest('.tr-sea-label');
+    if (t) t.click();
   });
 })();
 
