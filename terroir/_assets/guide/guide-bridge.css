@@ -65,3 +65,16 @@
 .gx-bridge-on details.sfold[open]{margin-top:26px;}
 .gx-bridge-on details.sfold[open]>summary .sfold__title{font-size:1.3em;letter-spacing:2px;}
 .gx-bridge-on details.sfold[open]>summary .sfold__desc{font-size:0.82em;}
+
+/* three-up table lanes — small closed cards, three to a line; an open card takes the row */
+.gx-bridge-on #tables .terroir-tier__list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start;}
+.gx-bridge-on #tables .terroir-card--fold{margin:0;border:1px solid var(--gx-rule);border-top:2px solid var(--gx-sea);background:#fff;}
+.gx-bridge-on #tables .terroir-card--fold>summary{padding:9px 11px;}
+.gx-bridge-on #tables .terroir-card--fold .tcm__hook{font-size:0.78em;}
+.gx-bridge-on #tables .terroir-card--fold .tcm__sig{font-size:0.75em;}
+.gx-bridge-on #tables .terroir-card--fold[open]{grid-column:1/-1;}
+@media(max-width:900px){.gx-bridge-on #tables .terroir-tier__list{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.gx-bridge-on #tables .terroir-tier__list{grid-template-columns:1fr;}}
+/* la liste */
+.gx-liste{margin:14px 0 0;padding:0 0 0 20px;}
+.gx-liste li{font-size:0.92em;line-height:1.55;padding:3px 0;}

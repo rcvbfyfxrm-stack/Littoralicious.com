@@ -2334,8 +2334,7 @@ window.TERROIR_DATA = (function () {
    "open": [
     "eat",
     "dish",
-    "provisioning",
-    "chef-route"
+    "provisioning"
    ]
   },
   {

@@ -75,6 +75,7 @@
         function gemCaveat(v){ return v.caveat?'<div class="terroir-card__caveat"><span class="tcav">Heads up</span> '+escapeHTML(v.caveat)+'</div>':''; }
         function gemBuy(v){ if(!v.buy) return ''; return '<div class="terroir-card__buy"><span class="tbuy">Buy</span> '+escapeHTML(v.buy)+(v.buy_when?' <span class="tbuy__when">'+escapeHTML(v.buy_when)+'</span>':'')+'</div>'; }
         function gemGalley(v){ return v.galley?'<div class="terroir-card__galley"><span class="tbuy">Galley</span> '+escapeHTML(v.galley)+'</div>':''; }
+        function gemDishes(v){ if(!v.dishes||!v.dishes.length) return ''; return '<div class="terroir-card__dishes"><span class="tdish__head">To order</span><ul class="tdish">'+v.dishes.map(function(d){ return '<li><b>'+escapeHTML(d.name)+'</b>'+(d.note?' <span class="tdish__note">'+escapeHTML(d.note)+'</span>':'')+'</li>'; }).join('')+'</ul></div>'; }
         function gemSubcat(v){ return v.subcat?'<span class="terroir-card__subcat">'+escapeHTML(v.subcat)+'</span>':''; }
         function gemMoneyEats(v){ return v.money_eats?'<span class="terroir-card__money" title="Where the smart local money eats">&#8364; money eats here</span>':''; }
 
@@ -114,7 +115,7 @@
                     '<div class="terroir-berth__tags">' + tags + '</div>' +
                     gemVerdict(v) +
                     (v.why ? '<p class="terroir-berth__why">' + escapeHTML(v.why) + '</p>' : '') +
-                    gemCaveat(v) + gemBuy(v) + gemGalley(v) +
+                    gemDishes(v) + gemCaveat(v) + gemBuy(v) + gemGalley(v) +
                     '<div class="terroir-berth__meta">' + meta.map(m => '<div>' + m + '</div>').join('') + '</div>' +
                     '</div>';
             }).join('');
@@ -149,7 +150,7 @@
                     (tags ? '<div class="terroir-card__tags">' + tags + '</div>' : '') +
                     gemVerdict(v) +
                     (v.why ? '<div class="terroir-card__why">' + escapeHTML(v.why) + '</div>' : '') +
-                    gemCaveat(v) + gemBuy(v) + gemGalley(v) +
+                    gemDishes(v) + gemCaveat(v) + gemBuy(v) + gemGalley(v) +
                     '<div class="terroir-card__meta">' + meta.join('') + '</div>' +
                 '</div>' +
                 '<div class="terroir-card__vote">' +
@@ -204,7 +205,7 @@
                 '<div class="terroir-card__body">' +
                     gemCosign(v) + gemPerson(v) + gemVerdict(v) +
                     (v.why ? '<div class="terroir-card__why">' + escapeHTML(v.why) + '</div>' : '') +
-                    gemCaveat(v) + gemBuy(v) + gemGalley(v) +
+                    gemDishes(v) + gemCaveat(v) + gemBuy(v) + gemGalley(v) +
                     (products ? '<div class="terroir-card__products">' + products + '</div>' : '') +
                     (tags ? '<div class="terroir-card__tags">' + tags + '</div>' : '') +
                     '<div class="terroir-card__meta">' + meta.join('') + '</div>' +
