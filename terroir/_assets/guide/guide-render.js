@@ -228,10 +228,13 @@
                     const va=voteCounts[a.id]||0, vb=voteCounts[b.id]||0; if(vb!==va) return vb-va; return (a.priority||99)-(b.priority||99);
                 });
                 if(!list.length) return '';
+                var storyBox = (c.story && c.story.story)
+                    ? '<aside class="gembox"><div class="gembox__tag">Food story</div><div class="gembox__name">'+escapeHTML(c.story.title||'')+'</div><p class="gembox__story">'+escapeHTML(c.story.story)+'</p>'+(c.story.where?'<div class="gembox__where"><b>Where</b> — '+escapeHTML(c.story.where)+'</div>':'')+'</aside>'
+                    : '';
                 return '<div class="terroir-cat" id="cat-'+c.key+'">' +
                     '<div class="terroir-cat__head"><h4 class="terroir-cat__title">'+escapeHTML(c.label)+'</h4>' +
                     '<div class="terroir-cat__lead">'+escapeHTML(c.lead)+'</div>' +
-                    '<span class="terroir-cat__count">'+list.length+'</span></div>' +
+                    '<span class="terroir-cat__count">'+list.length+'</span></div>' + storyBox +
                     '<div class="terroir-tier__list">' + list.map(function(v,i){return renderCardCompact(v,i+1);}).join('') + '</div></div>';
             }
             let html = '';
