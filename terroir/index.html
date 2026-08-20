@@ -165,6 +165,7 @@ const ROUTES = [
   { key:'saronic',  name:'The Greek Saronic',           sea:'Aegean',                       color:'#35618f' },
   { key:'turkish',  name:'The Turkish Aegean & Lycia',  sea:'The Turquoise Coast',          color:'#2aa198' },
   { key:'marmara',  name:'The Bosphorus & Marmara',      sea:'Where the Black Sea meets the Aegean', color:'#4a6fa5' },
+  { key:'swahili',  name:'The Swahili Coast',           sea:'The Indian Ocean monsoon coast',       color:'#a8683a' },
 ];
 const LAND = { key:'land', name:'By land', sea:'Inland briefings', color:'#8a8256' };
 
@@ -199,6 +200,9 @@ const GUIDES = [
     essence:`A wind-raked wine island in the mouth of the Dardanelles — its own pre-phylloxera grapes, grilled squid off the strait and a Greek-Turkish table. The only Turkish entry on National Geographic’s 2026 list of the best places in the world for food.` },
   { slug:'Istanbul-Bogazici', name:'Istanbul', country:'TURKEY', region:'The Bosphorus, Turkey', date:'2026-08-15', lat:41.0082, lng:28.9784, route:'marmara', csv:true,
     essence:`The only city on two continents, and a table built largely by the people it lost — the meyhane was a Greek, Armenian and Jewish institution before a wealth tax, a pogrom and an expulsion took the authors and left the food. Cross to Kadıköy for a twelve-seat fire counter and take the last ferry back.` },
+
+  { slug:'Diani-Kwale', name:'Diani', country:'KENYA', region:'Kwale, Kenya', date:'2026-08-20', lat:-4.3125, lng:39.5794, route:'swahili', csv:true, isNew:true,
+    essence:`A working monsoon coast wearing a resort as a thin white coat — the lagoon empties twice a day, the sacred kaya forests of the Digo stand behind the hotel walls, and the table obeys the moon: fish at dawn where the ngalawa land, the dhow day to Kisite, palm wine tapped twice daily.` },
 
   /* ── land / inland ── */
   { slug:'Girona-Catalunya', name:'Girona', country:'SPAIN', region:'Catalunya, Spain', date:'2026-07-12', lat:41.9794, lng:2.8214, route:'land', csv:true,
@@ -319,7 +323,8 @@ let MAP, MARKERS = {}, LAND_LAYER;
     { key:'dalmatia', label:'Adriatic Sea',    at:[42.70, 16.30], km:95 },
     { key:'saronic',  label:'Saronic Gulf',    at:[37.55, 23.55], km:45 },
     { key:'turkish',  label:'North Aegean',    at:[39.50, 25.80], km:60 },
-    { key:'marmara',  label:'Sea of Marmara',  at:[40.72, 28.35], km:55 }
+    { key:'marmara',  label:'Sea of Marmara',  at:[40.72, 28.35], km:55 },
+    { key:'swahili',  label:'Indian Ocean',    at:[-4.55, 39.78], km:90 }
   ];
   function go(key){
     const sec = document.getElementById('route-' + key);
