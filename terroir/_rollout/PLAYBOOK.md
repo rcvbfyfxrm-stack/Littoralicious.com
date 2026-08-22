@@ -65,6 +65,51 @@ any NEW guide, and any guide you can take further, builds to GOLD4. The delta ov
    token, zero `amp;` residue, name-vs-query sanity — plus the standing liveness/no-fabrication/
    no-emoji/orthography gates. Verify by headless render, never by reading source.
 
+## ⭐ THE GATE IS AUTOMATED (2026-08-22)
+
+Everything §6 used to ask you to eyeball is now one command. **Run it; do not hand-verify.**
+
+```bash
+python3 terroir/_rollout/lib/checks_gold4.py . terroir/_rollout/lib/guides/<Slug>.check.json
+#   --no-render   skip only the browser stage (never skip it before a deploy)
+```
+
+Per-guide config lives in `lib/guides/<Slug>.check.json` — copy the Kendwa one and edit
+`slug/city/mapsTokens/staleTokens/sectionsRequired/sectionsForbidden/floors/renderFloors`.
+Exit 0 = deployable, exit 1 = HOLD. What it asserts, in one pass:
+
+1. **Files** — guide `index.html`/`data.js`/`data.csv`, plus the `terroir/data/` and `terroir/csv/`
+   copies, and that the two copies are byte-identical (a stale second copy is a classic silent bug).
+2. **Structure** — every required section id present, every forbidden one absent, topnav, floating
+   map, absolute kit paths, bridge includes, no read-time chrome.
+3. **La liste** — `.ics` linked and present, VTODO count ≥ floor, `X-WR-CALNAME` set, **no `.txt`**,
+   and no `download` attribute on the link (it must open in Reminders, not save).
+4. **Language** — banned words (with `<cite>`/href exemption), per-guide stale-city tokens matched on
+   **word boundaries** (so "Kenyatta Road" no longer trips "Kenya"), zero `amp;amp;`, zero emoji.
+5. **Maps audit** — every link canonical `?api=1`, carries a local token, no `amp;` residue, and the
+   query actually shares a word with the venue's name.
+6. **Data floors** — venues, gems, neighbourhoods, walks, lanes, lane stories, 2 groups, 3 doors,
+   3 shortlist groups, exactly 3 photos, exactly 3 berths, `TABLES.grande/petite` shape, and
+   `dishes[]` on every venue in a rendered lane.
+7. **Honesty** — every venue carries a legal `status`; every confirmed one carries a check date;
+   the checked-dates line sits inside `#sources`; pin coverage reported.
+8. **Integrity** — gem `pattern`s actually occur in the prose, no dead `#anchor`, no dead `data-pin`
+   (runtime-built `"#venue-'+v.id+'"` hrefs are ignored), CSV is 24 columns with a row per venue.
+9. **The hub** — carries the slug, the card parses, has coords/route/essence, csv flag matches, and
+   at most one `isNew:true`.
+10. **THE RENDER GATE** — serves the repo on a **fresh ephemeral port** (never reuse a stale server)
+    and drives Chrome to read the real DOM, asserting organiser groups/lanes/cards, 3 berth cards,
+    fcards, one map pin per pinned venue, gemboxes, gem popups, bridge doors, shortlist groups, liste
+    items, no flat-tier fallback, no leaked `undefined`/`NaN`.
+
+⚠ **Two traps baked in the hard way, 2026-08-22.** (a) Chrome 151 removed `--headless=old` and
+`--dump-dom` never returns for these guides — verified against the live Diani build, so it is the
+browser, not the page. `lib/cdp.py` is a stdlib-only DevTools-Protocol driver written to replace it;
+no pip, no puppeteer. (b) The `.gx-torg-*` classes in every guide's `<head>` are **legacy Girona-era
+CSS that nothing emits any more** — checking for them reports a false failure. The current kit
+renders `terroir-group` / `terroir-cat` / `terroir-card` (guide-render.js) and `gx-bridge__door` /
+`gx-cs-group` (guide-bridge.js). Count those.
+
 ## Steps each run
 1. **Setup.** You are in a fresh clone of `rebuild/publishing-system`. Read `terroir/_rollout/state.json`.
    Pick the FIRST queue item with `status:"pending"`. If none pending, go to **NEW PLACES**. Set env
