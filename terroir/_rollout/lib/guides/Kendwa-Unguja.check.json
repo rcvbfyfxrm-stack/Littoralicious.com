@@ -50,6 +50,7 @@
     "off the beaten"
   ],
   "sectionsRequired": [
+    "hot",
     "soul",
     "bougie",
     "money-sits",
@@ -87,7 +88,6 @@
     "three-tables",
     "tables-extended",
     "history",
-    "why-now",
     "rooftops",
     "hammam",
     "rituals",
@@ -101,7 +101,7 @@
     "walks": 6,
     "categories": 14,
     "laneStories": 12,
-    "fcards": 115,
+    "fcards": 120,
     "fsubs": 22,
     "liste": 14,
     "mapsLinks": 40,
@@ -112,5 +112,9 @@
     "cards": 40,
     "gemboxes": 12
   },
-  "groups": 3
+  "groups": 3,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 5
+  }
 }

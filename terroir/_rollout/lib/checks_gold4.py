@@ -14,7 +14,7 @@ The config JSON makes it reusable for every future guide:
 
 Exit 0 = ALL GREEN (deployable). Exit 1 = HOLD.
 """
-import json, sys, re, os, subprocess, socket, threading, http.server, functools
+import json, sys, re, os, subprocess, socket, threading, http.server, functools, datetime
 import pathlib, urllib.parse, csv, tempfile, shutil, html as htmlmod
 
 CHROME = next((p for p in (
@@ -257,6 +257,30 @@ def main():
     # coordinates: never invented — report coverage, fail only if the map would be empty
     pinned = [v for v in D["VENUES"] if v.get("lat") is not None]
     r.ck("map has pins", len(pinned) >= floors.get("pins", 25), f"{len(pinned)}/{len(D['VENUES'])} pinned")
+
+    # ---- 7b · "what's hot this month" must not be allowed to rot ------------
+    # This is the one block in a guide that is deliberately perishable, so the gate
+    # enforces its own expiry rather than trusting anyone to remember.
+    hot = cfg.get("hot")
+    if hot:
+        m = re.search(r'data-hot-asof="(\d{4}-\d{2}-\d{2})"', doc)
+        if r.ck("hot: as-of date present", bool(m)):
+            asof = datetime.date.fromisoformat(m.group(1))
+            age = (datetime.date.today() - asof).days
+            r.ck(f"hot: checked within {hot.get('maxAgeDays', 70)} days",
+                 0 <= age <= hot.get("maxAgeDays", 70),
+                 f"as-of {asof} is {age} days old — re-check or remove the section")
+        m2 = re.search(r'data-hot-review="(\d{4}-\d{2}-\d{2})"', doc)
+        if r.ck("hot: review-by date present", bool(m2)):
+            review = datetime.date.fromisoformat(m2.group(1))
+            r.ck("hot: review date is in the future", review > datetime.date.today(),
+                 f"review-by {review} has passed")
+        r.ck("hot: section carries the visible date",
+             bool(re.search(r"[Cc]hecked \d{1,2} \w+ 20\d\d", doc)),
+             "no human-readable checked date in the section")
+        n_hot = sum(1 for v in D["VENUES"] if v.get("hot_this_month"))
+        r.ck("hot: venues carry hot_this_month",
+             n_hot >= hot.get("minVenues", 5), f"{n_hot} venues")
 
     # ---- 8 · gem popup anchors must exist in the prose -----------------------
     miss = [g["pattern"] for g in D.get("GEMS", []) if g["pattern"].lower() not in low]
