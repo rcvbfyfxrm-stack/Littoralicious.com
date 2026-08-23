@@ -124,8 +124,10 @@ def _launch(profile, extra_flags=()):
          f"--user-data-dir={profile}", "--remote-debugging-port=0", *extra_flags,
          "about:blank"],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # A loaded machine (or a pile of stray headless Chromes from other jobs) can push
+    # startup well past 20 s, so wait generously before giving up.
     portfile = os.path.join(profile, "DevToolsActivePort")
-    for _ in range(200):                                    # up to ~20 s
+    for _ in range(900):                                    # up to ~90 s
         if os.path.exists(portfile):
             txt = open(portfile).read().split("\n")
             if txt and txt[0].strip().isdigit():
@@ -133,10 +135,23 @@ def _launch(profile, extra_flags=()):
         if proc.poll() is not None:
             raise RuntimeError("chrome exited during startup")
         time.sleep(0.1)
+    proc.terminate()
     raise TimeoutError("chrome never published a debug port")
 
 
-def render_dom(url, settle_ms=2500, timeout=75, quiet_hosts=True):
+def render_dom(url, settle_ms=2500, timeout=75, quiet_hosts=True, tries=2):
+    """Retry once: browser startup is the flaky part, not the page."""
+    last = None
+    for attempt in range(tries):
+        try:
+            return _render_once(url, settle_ms, timeout, quiet_hosts)
+        except (TimeoutError, RuntimeError, ConnectionError, OSError) as ex:
+            last = ex
+            time.sleep(3)
+    raise last
+
+
+def _render_once(url, settle_ms=2500, timeout=75, quiet_hosts=True):
     """Navigate, let the page's own scripts build the DOM, then return outerHTML.
 
     We do NOT wait for network idle: these guides hold an open Firestore channel and map

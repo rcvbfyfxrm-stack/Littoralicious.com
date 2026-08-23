@@ -215,7 +215,20 @@ def main():
     r.ck("lane stories (gembox)",
          sum(1 for c in D.get("CATEGORIES", []) if c.get("story")) >= floors.get("laneStories", 4),
          f'{sum(1 for c in D.get("CATEGORIES", []) if c.get("story"))}')
-    r.ck("GROUPS = 2", len(D.get("GROUPS", [])) == 2)
+    want_groups = cfg.get("groups", 2)
+    r.ck(f"GROUPS = {want_groups}", len(D.get("GROUPS", [])) == want_groups,
+         f'{len(D.get("GROUPS", []))}')
+    # every lane must map to a declared group, and every group must have lanes
+    gkeys = {g["key"] for g in D.get("GROUPS", [])}
+    gof = D.get("GROUP_OF", {})
+    unmapped = [c["key"] for c in D.get("CATEGORIES", []) if gof.get(c["key"]) not in gkeys]
+    r.ck("every lane maps to a group", not unmapped, f"{unmapped}")
+    empty = [g for g in gkeys if not any(gof.get(c["key"]) == g for c in D.get("CATEGORIES", []))]
+    r.ck("no empty group", not empty, f"{empty}")
+    # a declared lane with no venues renders as nothing — catch it here
+    r.ck("lanes are non-empty", all(any(x.get("category") == c["key"] for x in D["VENUES"])
+                                    for c in D.get("CATEGORIES", [])),
+         "a declared lane has no venues")
     r.ck("BRIDGE 3 doors", len(D.get("BRIDGE", {}).get("doors", [])) == 3)
     r.ck("BRIDGE shortlist groups", len(D.get("BRIDGE", {}).get("shortlist", {}).get("groups", [])) == 3)
     r.ck("berths = 3", sum(1 for v in D["VENUES"] if v.get("tier") == "berth_top") == 3)
