@@ -38,7 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order: Summary box → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Poetic) → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (only if peculiar) → Yacht Galley Intel → Stories → Quick Reference → Takeaway → Sources. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. -->
+                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order: Summary box → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Poetic) → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (only if peculiar) → Yacht Galley Intel → Stories → Quick Reference → Takeaway → Sources. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. IDENTITY (META-PROMPT grid): PROMISE = the laboratory dossier — one ingredient, four registers · OPENING REGISTER = the paradox, stated in two lines before any card · SIGNATURE = the 8-cell Identity Card + Four Ways + the register ladder + the Flavour-Compounding table · PRO-HOOK = the Frontier register + the strong-tier compound bridges · FORBIDDEN = shipping without Four Ways; filler examples. LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the Identity Card, the loudest in Frontier or the compound table, one in Stories. -->
 <!-- SUMMARY-BOX — the payoff up top. Three scannable lines: history, science, galley move. -->
 <div class="summary-box"><strong>What you'll get</strong><ul>
 <li><!-- one line: where this ingredient comes from and why it earned its place. --></li>
@@ -46,13 +46,16 @@
 <li><!-- one line: the galley move — how to buy, store, and deploy it at sea. --></li>
 </ul></div>
 
+<!-- THE PARADOX — the register this dossier owns: open on the ingredient's central contradiction, in two lines of prose. The tension the whole profile resolves — prized yet poisonous raw, dirt-cheap yet irreplaceable, everywhere yet misunderstood. True and sourceable, never a slogan; the dossier below is what settles it. Write it fresh for every piece. -->
+<p>[The paradox: the two true things about this ingredient that should not both be possible — two sentences, before any card or number.]</p>
+
 <!-- AT-A-GLANCE JUMP-STRIP — this is a 16-min read; a single divider-row of anchors so a tired scanner never loses the spine. Keep the markup; the labels map 1:1 to the h2 dividers below. NO EMOJI. -->
 <nav class="divider" aria-label="On this page" style="font-size: var(--text-sm);">
     <span class="divider__text"><a href="#history">History</a> &middot; <a href="#science">Science</a> &middot; <a href="#four-ways">Four Ways</a> &middot; <a href="#pairing">Pairing</a> &middot; <a href="#galley">Galley</a> &middot; <a href="#stories">Stories</a></span>
 </nav>
 <!-- WRITER: leave as-is. The id="" hooks are added on the section dividers/h2s below — do not rename one without the other. -->
 
-<!-- IDENTITY CARD — the at-a-glance profile. LOCKED .id-card markup: keep the wrapper verbatim, one .id-card__row per fact, fill every slot. 8 rows is the full set; drop a row only if it genuinely doesn't apply (e.g. Species for a processed larder item). The trailing muted text after each __value is the one-line gloss — keep it short. NO EMOJI anywhere. -->
+<!-- IDENTITY CARD — the at-a-glance profile. LOCKED .id-card markup: keep the wrapper verbatim, one .id-card__row per fact, fill every slot. 8 rows is the full set; drop a row only if it genuinely doesn't apply (e.g. Species for a processed larder item). The trailing muted text after each __value is the one-line gloss — keep it short. NO EMOJI anywhere. LEARNING CONTRACT: at least one cell carries a value a ten-year pro would not have guessed. -->
 <div class="id-card">
     <h4 class="id-card__title">Identity Card</h4>
     <div class="id-card__grid">
@@ -132,7 +135,7 @@
 <!-- THE USE SPECTRUM — the heart of the profile. ONE ingredient, four registers: how the tradition cooked it, the best the modern kitchen does, the frontier edge, and the poetic gesture. Each card: the move, then a concrete example. Give SEVERAL examples ONLY where they are genuinely notable — one sharp example beats three filler ones. Frontier/Poetic must stay defensible (real chemistry, real sensory logic), never gimmick. NO EMOJI. -->
 <!-- ====================================================================== -->
 <!-- DISTINCTIVENESS LOCK — "Four Ways to Use It" is what makes this the    -->
-<!-- DEEP-DIVE and not a standard Shore Larder. A piece shipped (koji)      -->
+<!-- DEEP-DIVE and not a standard Ingredient Profile. One shipped (koji)    -->
 <!-- WITHOUT it. MANDATORY: never publish a deep-dive without Four Ways +   -->
 <!-- the register ladder below. The four cards (Traditional/Modern/Frontier -->
 <!-- /Poetic) and the ladder are NON-NEGOTIABLE. Do not delete either.      -->
@@ -160,7 +163,7 @@
 <div class="note note--action" data-label="Modern"><p>What precision tools changed: sous-vide window, controlled <span class="term">Maillard</span>, low-temperature infusion, the exact &deg;C/time that beats the traditional method on consistency. State the number. <em>Example:</em> the contemporary preparation a working galley should default to now, and why it wins.</p></div>
 
 <p>Push past the default and the ingredient starts behaving like a material to be re-engineered:</p>
-<!-- FRONTIER — the avant-garde edge (elBulli lineage): ferment, spherify, dehydrate, smoke, oil-infuse, enzyme-treat. Defensible, not theatre. Locked note--science[data-label="Frontier"] — name the technique AND the compound it manipulates. -->
+<!-- FRONTIER — the avant-garde edge (elBulli lineage): ferment, spherify, dehydrate, smoke, oil-infuse, enzyme-treat. Defensible, not theatre. Locked note--science[data-label="Frontier"] — name the technique AND the compound it manipulates. LEARNING CONTRACT: the dossier's loudest new-to-a-pro fact lives here or in the strong-tier compound bridges below — if the Frontier card holds nothing a pro hasn't seen, hunt deeper before shipping. -->
 <div class="note note--science" data-label="Frontier"><p>The reinvention: fermentation, spherification, dehydration-to-powder, cold-smoke, fat-wash/oil infusion, enzymatic ageing &mdash; whatever the modernist lineage unlocked for this specific ingredient. Name the technique and the compound it manipulates. <em>Examples (no limit where each is genuinely interesting):</em> list the frontier moves that actually improve it, each with the reason it works.</p></div>
 
 <p>Strip away the chemistry and one register is left — the one aimed at the guest, not the plate:</p>
@@ -191,7 +194,7 @@
 <!-- PULL-QUOTE — re-hook the eye at the mid-point, between what's known and what's unexpected. -->
 <div class="note note--quote"><p>One striking line — the sentence that reframes the whole ingredient and earns the second half.</p></div>
 
-<!-- THE UNEXPECTED PAIRING — the bold cross-category matches. Purple bordered list (list-style:none). RENAMED from "Poetic Pairing" so the word "Poetic" only ever means the register up in Four Ways — here it is simply the unexpected. The three-register pairing logic + the Flavour-Compounding table below are EXCLUSIVE to this deep-dive template; a standard Shore Larder drops both. Keep them here. -->
+<!-- THE UNEXPECTED PAIRING — the bold cross-category matches. Purple bordered list (list-style:none). RENAMED from "Poetic Pairing" so the word "Poetic" only ever means the register up in Four Ways — here it is simply the unexpected. The three-register pairing logic + the Flavour-Compounding table below are EXCLUSIVE to this deep-dive template; a standard Ingredient Profile drops both. Keep them here. -->
 <h2>The Unexpected Pairing: [the framing]</h2>
 <p><strong>The bold move:</strong> <!-- kicker: why these unexpected matches still obey the chemistry. --></p>
 <div style="background: #d4dce8; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #7c3aed;">

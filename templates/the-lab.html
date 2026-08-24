@@ -38,7 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Lab Notes. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+                <!-- BODY:BEGIN — Template 13, THE LAB (file the-lab): we ran the test so you don't have to. IDENTITY (META-PROMPT grid): OPENING REGISTER = the question, as a bet — hypothesis + falsifiable prediction, pinned before any data · SIGNATURE = Hypothesis → Method → Trials → What Held Up → Verdict, failures reported · PRO-HOOK = Where It Disobeyed — the trial where the data went against the prediction, n and conditions stated · FORBIDDEN = post-hoc certainty; hiding failed trials; universal claims from n=3. LEARNING CONTRACT: the deviation, the protocol's decisive setting, and the confidence limit — three things a pro can rerun. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
 <!-- Top promise: the reader sees the payoff before reading a line -->
 <div class="summary-box">
     <p class="summary-box__title">What you'll get</p>
@@ -55,7 +55,7 @@
     <p class="article-toc__title">In This Article</p>
     <ol>
         <li><a href="#lab-hypothesis">The Hypothesis</a></li>
-        <li><a href="#lab-method">Techniques &amp; Recipes</a></li>
+        <li><a href="#lab-method">The Method</a></li>
         <li><a href="#lab-trials">Trials &amp; Results</a></li>
         <li><a href="#lab-held-up">What Held Up</a></li>
         <li><a href="#lab-conclusion">Conclusion</a></li>
@@ -65,7 +65,7 @@
 <!-- 1. The Hypothesis -->
 <h2 id="lab-hypothesis">The Hypothesis</h2>
 <!-- KICKER: one line selling why this question is worth a chef's attention -->
-<p><em>One-line kicker: the belief everyone repeats in the galley — and why it has never actually been measured.</em></p>
+<p class="kicker">The belief everyone repeats in the galley — and why it has never actually been measured.</p>
 <!-- WRITER: State the question and the testable prediction in one tight para. What variable are you isolating, and what do you expect to happen and why (cite the mechanism / prior source)? No hedging — make a falsifiable claim. -->
 <p>One-line placeholder: the claim under test, the variable isolated, and the predicted outcome with its mechanism — name the <span class="term">controlled variable</span> you hold fixed.</p>
 
@@ -78,7 +78,7 @@
 <!-- 2. The Method -->
 <h2 id="lab-method">The Method</h2>
 <!-- KICKER: one line promising the reader can repeat this exactly -->
-<p><em>One-line kicker: the protocol is tight enough that a competent chef could rerun it tomorrow and get the same grid.</em></p>
+<p class="kicker">The protocol is tight enough that a competent chef could rerun it tomorrow and get the same grid.</p>
 <!-- WRITER: How the test was run, reproducibly. Equipment, quantities, temperatures (°C, Fahrenheit in parens), timings, controls, number of trials. A competent chef should be able to repeat it. -->
 <p>One-line placeholder: the protocol in brief — sample, control, and how many trials were run.</p>
 
@@ -120,7 +120,7 @@
 <!-- 3. Trials & Results -->
 <h2 id="lab-trials">Trials &amp; Results</h2>
 <!-- KICKER: one line promising the honest, unfiltered data -->
-<p><em>One-line kicker: every run is here, failures included — the grid is only useful if nothing was quietly dropped.</em></p>
+<p class="kicker">Every run is here, failures included — the grid is only useful if nothing was quietly dropped.</p>
 <!-- WRITER: The data. Lead with one line framing how to read the grid, then the results table. Report every trial — including the ones that failed. -->
 <p>One-line placeholder: how to read the results grid (units, what a pass/fail means).</p>
 
@@ -170,9 +170,9 @@
 <p>One-line placeholder: the headline result, e.g. <mark>worked 14 of 16 trials</mark>, with the source or mechanism that explains it.</p>
 
 <!-- Mid-piece pull-quote: re-hook the eye on the single striking finding -->
-<div class="note note--quote">
-    <!-- WRITER: One striking line — the result that made you rerun the test to be sure. -->
-    <p>Placeholder pull-quote: the one number that overturned what the galley takes for granted.</p>
+<!-- WHERE IT DISOBEYED — the pro-hook and the template's centrepiece: the trial where the data went AGAINST the prediction. The surprise is the story — state it as one striking line. If every run matched the prediction, say that flatly instead: a clean confirmation is also a result, and rarer than it sounds. -->
+<div class="note note--quote" data-label="Where It Disobeyed">
+    <p>Placeholder: the trial that disobeyed the prediction — the number, and what it overturns. (Or the honest line: every run matched; the belief holds.)</p>
 </div>
 
 <div class="note note--science">
@@ -183,7 +183,7 @@
 <!-- 4. What Held Up -->
 <h2 id="lab-held-up">What Held Up</h2>
 <!-- KICKER: one line — this is the integrity section, no overclaiming -->
-<p><em>One-line kicker: what replicated, what cracked, and the exact condition that breaks the result.</em></p>
+<p class="kicker">What replicated, what cracked, and the exact condition that breaks the result.</p>
 <!-- WRITER: Honest read of the data. Separate what replicated from what didn't. Name the failure modes and the conditions that broke the result. This is the integrity section — no overclaiming. -->
 <p>One-line placeholder: what replicated reliably, and under which conditions.</p>
 
@@ -223,7 +223,7 @@
 <!-- 5. Conclusion -->
 <h2 id="lab-conclusion">Conclusion</h2>
 <!-- KICKER: one line — the verdict, plainly -->
-<p><em>One-line kicker: did it hold? The answer, and the one thing it changes.</em></p>
+<p class="kicker">Did it hold? The answer, and the one thing it changes.</p>
 <!-- WRITER: Did the hypothesis hold? State the verdict plainly, then the one usable galley takeaway. Tie it back to the prediction. End with practicality. -->
 <p>One-line placeholder: the verdict against the hypothesis, and the one thing a chef should do differently because of it.</p>
 
