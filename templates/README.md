@@ -15,7 +15,7 @@ inline `term` definitions, and a closing takeaway. Keep these when you write —
 stop the reader's eye from drifting. Fill the placeholders; don't strip the structure.
 
 The `<h2>` kicker is the styled `p.kicker` beat (one-line value promise under the heading), and
-Tight Ship's station-map table wraps in `.galley-plan` — both locked in `content/DESIGN-LOCK.md`.
+the Galley Operations (tight-ship) station-map table wraps in `.galley-plan` — both locked in `content/DESIGN-LOCK.md`.
 
 ## The 14 templates (+ shell helpers)
 
@@ -23,18 +23,18 @@ Tight Ship's station-map table wraps in `.galley-plan` — both locked in `conte
 |---|---|---|---|
 | `shore-larder` | 01 | Ingredients | Ingredient Profile — one ingredient, fast and warm |
 | `shore-larder-deep-dive` | 01b | Ingredients | Ingredient Deep-Dive (identity card + 9 sections) |
-| `the-method-technique` | 02 | The Method | Technique brief — Provoke → Instruct → Prove |
-| `littoral-heritage-article` | 03 | Littoral Heritage | Culture & history |
-| `the-evidence` | 04 | The Evidence | Single-study translation |
-| `recipe-blueprint` | 05 | The Method | Full recipe with science (The Blueprint) |
-| `signal-fire` | 06 | The Bridge | Sourcing & supply intel |
-| `the-horizon` | 07 | The Bridge | Forecast & macro |
-| `trade-winds` | 08 | The Bridge | Career & industry / regional shifts |
-| `tight-ship` | 09 | The Method | Galley operations |
-| `port-call` | 10 | The Bridge | City provisioning guide (Quick Map text table) |
-| `the-locker` | 11 | The Method | Equipment review |
-| `weekly-brief` | 12 | The Bridge | Digest |
-| `the-lab` | 13 | The Method | Experimental / lab notes |
+| `the-method-technique` | 02 | Techniques & Recipes | Technique brief — Provoke → Instruct → Prove |
+| `littoral-heritage-article` | 03 | Heritage | Culture & history |
+| `the-evidence` | 04 | Food Science | Study Decoded — single-study translation |
+| `recipe-blueprint` | 05 | Techniques & Recipes | Full recipe with science (Recipe Blueprint) |
+| `signal-fire` | 06 | Industry & Ports | Supply Alert — sourcing intel, act this week |
+| `the-horizon` | 07 | Industry & Ports | Forecast & macro |
+| `trade-winds` | 08 | Industry & Ports | Career & industry / regional shifts |
+| `tight-ship` | 09 | Techniques & Recipes | Galley operations |
+| `port-call` | 10 | Industry & Ports | City provisioning guide (Quick Map text table) |
+| `the-locker` | 11 | Techniques & Recipes | Equipment review |
+| `weekly-brief` | 12 | Industry & Ports | Digest |
+| `the-lab` | 13 | Techniques & Recipes | Experimental / lab notes |
 
 Shell helpers (not article types): `standard.html` (generic fallback), `section.html`
 (builds the section index pages), `og-image.html` (the social-image source).

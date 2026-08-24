@@ -175,37 +175,39 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 | Section | For |
 |---|---|
 | **Ingredients** (slug `shore-larder`) | One ingredient at a time — its science, sourcing, and history. |
-| **The Method** | Techniques, recipe blueprints, galley-efficiency, equipment, galley tech/AI. |
-| **Littoral Heritage** | Coastal traditions, the culture and stories behind the dishes. |
-| **The Evidence** | Food science proper — compounds, mechanisms, research. |
-| **The Bridge** | Essays, forecasts, supply intel, manifesto — cooking at sea meets the wider world. |
+| **Techniques & Recipes** (slug `the-method`) | Techniques, recipe blueprints, galley operations, equipment, galley tech/AI. |
+| **Heritage** (slug `littoral-heritage`) | Coastal food traditions — the culture and stories behind the dishes. |
+| **Food Science** (slug `the-evidence`) | Food science proper — compounds, mechanisms, research. |
+| **Industry & Ports** (slug `the-bridge`) | Forecasts, supply signals, careers, port guides, essays — cooking at sea meets the wider world. |
 
 ## The 14 templates (12 named formats + the Deep-Dive variant + the standard fallback) — pick one, never invent
 
 Every piece must fit one existing template. If it doesn't fit, narrow scope or split — do
 not create a new format. **Auto-select the template** — infer it from what the article is
-(ingredient → Ingredient Profile or Deep-Dive (slug shore-larder), recipe → The Blueprint, technique → The Method, study → The
-Evidence, city → Port Call, gear → The Locker, career → Trade Winds, galley ops → Tight
-Ship, sourcing → Signal Fire, culture → Littoral Heritage, forecast → The Horizon, digest →
-Weekly Brief, experiment → The Lab). **Never ask which template** — pick it, state the fit in
-one line (e.g. *"Template fit: The Method (02)"*), and proceed.
+(ingredient → Ingredient Profile or Deep-Dive (slug shore-larder), recipe → Recipe Blueprint, technique →
+Technique (slug the-method-technique), study → Study Decoded (slug the-evidence), city → Port Call,
+gear → Equipment Review (slug the-locker), career → Career & Industry (slug trade-winds), galley ops →
+Galley Operations (slug tight-ship), sourcing → Supply Alert (slug signal-fire), culture → Heritage
+(slug littoral-heritage-article), forecast → Forecast (slug the-horizon), digest → Weekly Brief,
+experiment → The Lab). **Never ask which template** — pick it, state the fit in
+one line (e.g. *"Template fit: Technique (02)"*), and proceed.
 
 | # | Template | Section | Length | Use for |
 |---|---|---|---|---|
 | 01 | Ingredient Profile | Ingredients | 8–12 min | Fast, warm profile of one ingredient |
 | 01b | Ingredient Deep-Dive | Ingredients | 14–22 min | MAX ingredient profile: 8-cell Identity Card (Species, Origin, Season, Flavour Profile, Key Compounds, Quality Tell, Conservation, Best For) → History (origin + how it developed in the culture) → Science → **Four Ways to Use It** (Traditional / Modern / Frontier / Poetic) → Pairing → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (if peculiar) → Galley Intel → Stories → Quick Reference. Several examples only where notable. |
-| 02 | The Method | Method | 8–15 min | Technique brief — Provoke → Instruct → Prove |
-| 03 | Littoral Heritage | Heritage | 10–20 min | Culture & history |
-| 04 | The Evidence | Evidence | 1–2 min | Single-study translation |
-| 05 | The Blueprint | Method | 8–15 min | Full recipe with science |
-| 06 | Signal Fire | Bridge | 4–8 min | Sourcing & supply intel |
-| 07 | The Horizon | Bridge | 5–10 min | Forecast & macro |
-| 08 | Trade Winds | Bridge | 4–8 min | Regional shifts / career & industry |
-| 09 | Tight Ship | Method | 6–12 min | Galley operations |
-| 10 | Port Call | Bridge | 10–20 min | City provisioning guide (Quick Map text table — never a graphic map) |
-| 11 | The Locker | Method | 4–10 min | Equipment review |
-| 12 | Weekly Brief | Bridge | 3–5 min | Digest |
-| 13 | The Lab | Method | varies | Experimental / lab notes |
+| 02 | Technique | Techniques & Recipes | 8–15 min | Technique brief — Provoke → Instruct → Prove |
+| 03 | Heritage | Heritage | 10–20 min | Culture & history |
+| 04 | Study Decoded | Food Science | 1–2 min | Single-study translation |
+| 05 | Recipe Blueprint | Techniques & Recipes | 8–15 min | Full recipe with science |
+| 06 | Supply Alert | Industry & Ports | 4–8 min | Sourcing & supply intel — act this week |
+| 07 | Forecast | Industry & Ports | 5–10 min | Forecast & macro |
+| 08 | Career & Industry | Industry & Ports | 4–8 min | Regional shifts / career & industry |
+| 09 | Galley Operations | Techniques & Recipes | 6–12 min | Galley operations |
+| 10 | Port Call | Industry & Ports | 10–20 min | City provisioning guide (Quick Map text table — never a graphic map) |
+| 11 | Equipment Review | Techniques & Recipes | 4–10 min | Equipment review |
+| 12 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
+| 13 | The Lab | Techniques & Recipes | varies | Experimental / lab notes |
 
 **Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Deep-Dive, Heritage,
 Port Call) must open with the two-minute-version block so depth is opt-in.
@@ -217,7 +219,7 @@ Grandmother pillar must be visible, not implied.
 Social posts have their own canon: `content/SOCIAL-POSTS.md` (max 3 posts per article, every
 post teaches — substance before volume).
 
-Manifesto / framework pieces use **The Bridge** category with a Method or Signal Fire
+Manifesto / framework pieces use the **Industry & Ports** category (slug `the-bridge`) with a Technique or Supply Alert
 structure — there is no free-form essay format.
 
 ## Design identity (the lock)

@@ -40,17 +40,20 @@ if (exists(p("index.html"))) {
 
 // 2) CATEGORY PAGES — any page containing <!-- CATEGORY-ARTICLES:BEGIN/END --> opts in.
 //    The category is taken from the file's <body data-category="..."> or filename.
+// A section page may aggregate several categories so its name stays literally true:
+// "Industry & Ports" lists the port/supply/career categories; "Techniques & Recipes"
+// carries the equipment verdicts. Card labels still show each article's own category.
 const CATEGORY_PAGES = {
-  "the-method.html": "the-method",
-  "shore-larder.html": "shore-larder",
-  "littoral-heritage.html": "littoral-heritage",
-  "the-evidence.html": "the-evidence",
-  "the-bridge.html": "the-bridge",
+  "the-method.html": ["the-method", "the-locker"],
+  "shore-larder.html": ["shore-larder"],
+  "littoral-heritage.html": ["littoral-heritage"],
+  "the-evidence.html": ["the-evidence"],
+  "the-bridge.html": ["the-bridge", "port-call", "signal-fire", "trade-winds"],
 };
-for (const [file, cat] of Object.entries(CATEGORY_PAGES)) {
+for (const [file, cats] of Object.entries(CATEGORY_PAGES)) {
   if (!exists(p(file))) continue;
   const html = read(p(file));
-  const inCat = published.filter((a) => a.category === cat);
+  const inCat = published.filter((a) => cats.includes(a.category));
   const cards = inCat.map((a) => "                " + dispatchCard(a)).join("\n\n");
   const r = replaceBetween(html, "CATEGORY-ARTICLES", cards);
   if (r.found) writeFile(file, r.html); // silent if no markers (opt-in)

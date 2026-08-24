@@ -36,8 +36,7 @@ Before drafting any article/page, open the response with **two things**, in orde
 1. A compact **rules summary** (~150 words): the first law (never lose focus), mission, the
    three pillars, the DNA test, source rule, banned words, design tokens, editorial firewall.
 2. A **"Template fit:"** line — **auto-select** the matching template (never ask which);
-   infer it from what the piece is and state it in one line (e.g. *"Template fit: The
-   Blueprint (05)"*). Then scaffold with `npm run new -- --template <name> …`.
+   infer it from what the piece is and state it in one line (e.g. *"Template fit: Recipe Blueprint (05)"*). Then scaffold with `npm run new -- --template <name> …`.
 
 Then write — and **design it to captivate**: boxes (`summary-box`, `note--key/science/action/
 warning`, custom `note[data-label]`), highlighting (`<mark>` / `.highlight` / `.term`), pull-quotes,
@@ -50,7 +49,7 @@ on a tiny fix, or when Arnaud says to.)
 **Template files.** All 14 template bodies exist in `templates/`, each named for its format
 and used via `npm run new -- --template <name>`: `shore-larder`, `shore-larder-deep-dive`,
 `the-method-technique`, `littoral-heritage-article`, `the-evidence`, `recipe-blueprint`
-(= The Blueprint, 05), `signal-fire`, `the-horizon`, `trade-winds`, `tight-ship`,
+(= Recipe Blueprint, 05), `signal-fire`, `the-horizon`, `trade-winds`, `tight-ship`,
 `port-call`, `the-locker`, `weekly-brief`, `the-lab`. Shell helpers (not article types):
 `standard.html` (generic fallback), `section.html` (section index pages), `og-image.html`.
 Keep the masthead, footer, head-generation, and tokens identical across them; vary only the BODY.
