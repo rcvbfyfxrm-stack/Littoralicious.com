@@ -21,8 +21,8 @@ Tight Ship's station-map table wraps in `.galley-plan` — both locked in `conte
 
 | `--template` | # | Section | For |
 |---|---|---|---|
-| `shore-larder` | 01 | Shore Larder | Ingredient deep-dive |
-| `shore-larder-deep-dive` | 01b | Shore Larder | Extended deep-dive (identity card + 9 sections) |
+| `shore-larder` | 01 | Ingredients | Ingredient Profile — one ingredient, fast and warm |
+| `shore-larder-deep-dive` | 01b | Ingredients | Ingredient Deep-Dive (identity card + 9 sections) |
 | `the-method-technique` | 02 | The Method | Technique brief — Provoke → Instruct → Prove |
 | `littoral-heritage-article` | 03 | Littoral Heritage | Culture & history |
 | `the-evidence` | 04 | The Evidence | Single-study translation |

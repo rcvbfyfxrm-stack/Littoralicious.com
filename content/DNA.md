@@ -174,7 +174,7 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 
 | Section | For |
 |---|---|
-| **Shore Larder** | Ingredient deep-dives — science, sourcing, history of one ingredient. |
+| **Ingredients** (slug `shore-larder`) | One ingredient at a time — its science, sourcing, and history. |
 | **The Method** | Techniques, recipe blueprints, galley-efficiency, equipment, galley tech/AI. |
 | **Littoral Heritage** | Coastal traditions, the culture and stories behind the dishes. |
 | **The Evidence** | Food science proper — compounds, mechanisms, research. |
@@ -184,7 +184,7 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 
 Every piece must fit one existing template. If it doesn't fit, narrow scope or split — do
 not create a new format. **Auto-select the template** — infer it from what the article is
-(ingredient → Shore Larder, recipe → The Blueprint, technique → The Method, study → The
+(ingredient → Ingredient Profile or Deep-Dive (slug shore-larder), recipe → The Blueprint, technique → The Method, study → The
 Evidence, city → Port Call, gear → The Locker, career → Trade Winds, galley ops → Tight
 Ship, sourcing → Signal Fire, culture → Littoral Heritage, forecast → The Horizon, digest →
 Weekly Brief, experiment → The Lab). **Never ask which template** — pick it, state the fit in
@@ -192,8 +192,8 @@ one line (e.g. *"Template fit: The Method (02)"*), and proceed.
 
 | # | Template | Section | Length | Use for |
 |---|---|---|---|---|
-| 01 | Shore Larder | Larder | 12–18 min | Ingredient deep-dive |
-| 01b | Shore Larder Deep-Dive | Larder | 14–22 min | MAX ingredient profile: 8-cell Identity Card (Species, Origin, Season, Flavour Profile, Key Compounds, Quality Tell, Conservation, Best For) → History (origin + how it developed in the culture) → Science → **Four Ways to Use It** (Traditional / Modern / Frontier / Poetic) → Pairing → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (if peculiar) → Galley Intel → Stories → Quick Reference. Several examples only where notable. |
+| 01 | Ingredient Profile | Ingredients | 8–12 min | Fast, warm profile of one ingredient |
+| 01b | Ingredient Deep-Dive | Ingredients | 14–22 min | MAX ingredient profile: 8-cell Identity Card (Species, Origin, Season, Flavour Profile, Key Compounds, Quality Tell, Conservation, Best For) → History (origin + how it developed in the culture) → Science → **Four Ways to Use It** (Traditional / Modern / Frontier / Poetic) → Pairing → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (if peculiar) → Galley Intel → Stories → Quick Reference. Several examples only where notable. |
 | 02 | The Method | Method | 8–15 min | Technique brief — Provoke → Instruct → Prove |
 | 03 | Littoral Heritage | Heritage | 10–20 min | Culture & history |
 | 04 | The Evidence | Evidence | 1–2 min | Single-study translation |
@@ -210,7 +210,7 @@ one line (e.g. *"Template fit: The Method (02)"*), and proceed.
 **Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Deep-Dive, Heritage,
 Port Call) must open with the two-minute-version block so depth is opt-in.
 
-**Warmth is mandatory in food-facing templates** (Shore Larder, Deep-Dive, Heritage,
+**Warmth is mandatory in food-facing templates** (Ingredient Profile, Ingredient Deep-Dive, Heritage,
 Blueprint, Evidence, Method): every piece carries at least one tradition/people beat — the
 Grandmother pillar must be visible, not implied.
 

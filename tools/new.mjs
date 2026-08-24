@@ -22,7 +22,7 @@ if (exists(articleFile)) die(`articles/${slug}.html already exists`);
 
 // Per-template defaults (category + header subtag) so you rarely pass --category/--subtag.
 const TEMPLATE_DEFAULTS = {
-  "shore-larder": { category: "shore-larder", subtag: "Ingredient Deep-Dive" },
+  "shore-larder": { category: "shore-larder", subtag: "Ingredient Profile" },
   "shore-larder-deep-dive": { category: "shore-larder", subtag: "Ingredient Deep-Dive" },
   "the-method-technique": { category: "the-method", subtag: "Technique" },
   "the-evidence": { category: "the-evidence", subtag: "Food Science" },
