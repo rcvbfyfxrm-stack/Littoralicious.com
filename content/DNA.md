@@ -204,7 +204,7 @@ one line (e.g. *"Template fit: Technique (02)"*), and proceed.
 | 07 | Forecast | Industry & Ports | 5–10 min | Forecast & macro |
 | 08 | Career & Industry | Industry & Ports | 4–8 min | Regional shifts / career & industry |
 | 09 | Galley Operations | Techniques & Recipes | 6–12 min | Galley operations |
-| 10 | Port Call | Industry & Ports | 10–20 min | City provisioning guide (Quick Map text table — never a graphic map) |
+| 10 | Port Call | Industry & Ports | 10–20 min | City provisioning guide organised by dwell time — hours / a couple of days / a week or more (Quick Map text table — never a graphic map) |
 | 11 | Equipment Review | Techniques & Recipes | 4–10 min | Equipment review |
 | 12 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
 | 13 | The Lab | Techniques & Recipes | varies | Experimental / lab notes |

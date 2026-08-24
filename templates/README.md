@@ -31,7 +31,7 @@ the Galley Operations (tight-ship) station-map table wraps in `.galley-plan` —
 | `the-horizon` | 07 | Industry & Ports | Forecast & macro |
 | `trade-winds` | 08 | Industry & Ports | Career & industry / regional shifts |
 | `tight-ship` | 09 | Techniques & Recipes | Galley operations |
-| `port-call` | 10 | Industry & Ports | City provisioning guide (Quick Map text table) |
+| `port-call` | 10 | Industry & Ports | City provisioning guide by dwell time — hours / days / a week (Quick Map text table) |
 | `the-locker` | 11 | Techniques & Recipes | Equipment review |
 | `weekly-brief` | 12 | Industry & Ports | Digest |
 | `the-lab` | 13 | Techniques & Recipes | Experimental / lab notes |
