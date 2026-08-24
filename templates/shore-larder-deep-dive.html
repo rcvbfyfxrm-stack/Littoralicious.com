@@ -38,7 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order: Summary box → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Poetic) → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (only if peculiar) → Yacht Galley Intel → Stories → Quick Reference → Takeaway → Sources. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. IDENTITY (META-PROMPT grid): PROMISE = the laboratory dossier — one ingredient, four registers · OPENING REGISTER = the paradox, stated in two lines before any card · SIGNATURE = the 8-cell Identity Card + Four Ways + the register ladder + the Flavour-Compounding table · PRO-HOOK = the Frontier register + the strong-tier compound bridges · FORBIDDEN = shipping without Four Ways; filler examples. LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the Identity Card, the loudest in Frontier or the compound table, one in Stories. -->
+                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order (founder-revised 2026-08-24): Summary box → The Paradox → The two-minute version → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Unexpected) → Flavour-Compounding (shared-molecule bridges, no row cap) → Choosing & Buying (quality + fraud test + how-to-buy, ONE run) → Conservation (only if peculiar) → Galley Intel (+ substitution ladder, FUNCTIONAL ingredients only) → Stories → Quick Reference → Takeaway → Sources. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. IDENTITY (META-PROMPT grid): PROMISE = the laboratory dossier — one ingredient, four registers · OPENING REGISTER = the paradox, stated in two lines before any card · SIGNATURE = the 8-cell Identity Card + Four Ways + the register ladder + the Flavour-Compounding table · PRO-HOOK = the Frontier register + the strong-tier compound bridges · FORBIDDEN = shipping without Four Ways; filler examples. LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the Identity Card, the loudest in Frontier or the compound table, one in Stories. -->
 <!-- SUMMARY-BOX — the payoff up top. Three scannable lines: history, science, galley move. -->
 <div class="summary-box"><strong>What you'll get</strong><ul>
 <li><!-- one line: where this ingredient comes from and why it earned its place. --></li>
@@ -48,6 +48,9 @@
 
 <!-- THE PARADOX — the register this dossier owns: open on the ingredient's central contradiction, in two lines of prose. The tension the whole profile resolves — prized yet poisonous raw, dirt-cheap yet irreplaceable, everywhere yet misunderstood. True and sourceable, never a slogan; the dossier below is what settles it. Write it fresh for every piece. -->
 <p>[The paradox: the two true things about this ingredient that should not both be possible — two sentences, before any card or number.]</p>
+
+<!-- THE TWO-MINUTE VERSION — DNA law for long formats (14-22 min): the dossier compressed so depth is opt-in. Five clauses: what it is and the variety to buy · the one mechanism that explains it · the buying tell · the storage rule with its number · the single best use aboard. A reader who stops here still leaves fed. The paradox prose above keeps it off the summary-box. -->
+<div class="note" data-label="The two-minute version"><p><strong>[Ingredient] in five lines:</strong> what it is and which variety to buy &middot; the one mechanism that explains it &middot; the buying tell &middot; the storage rule with its number &middot; the single best use aboard. One clause each — the dossier below earns the details.</p></div>
 
 <!-- AT-A-GLANCE JUMP-STRIP — this is a 16-min read; a single divider-row of anchors so a tired scanner never loses the spine. Keep the markup; the labels map 1:1 to the h2 dividers below. NO EMOJI. -->
 <nav class="divider" aria-label="On this page" style="font-size: var(--text-sm);">
@@ -176,17 +179,27 @@
 
 <div class="divider" id="pairing"><span class="divider__text">Pairing</span></div>
 
-<!-- TRADITIONAL PAIRING — cultures that already know. Wheat card grid. -->
+<!-- TRADITIONAL PAIRING — cultures that already know. Locked .data-table (converted from the pre-lock wheat grid, founder call 2026-08-24): Pairing / dish | Region | Why it works. -->
 <h2>Traditional Pairing: [the framing]</h2>
 <p><strong>What the old kitchens already knew:</strong> <!-- kicker: one line on the cultural logic these pairings share. --></p>
-<div style="background: #f5deb3; padding: var(--space-6); margin: var(--space-6) 0;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); font-size: var(--text-sm);">
-        <div style="border-left: 3px solid #92400e; padding-left: var(--space-3);">
-            <strong>Pairing or dish (region)</strong><br>
-            <span style="color: #5c4033;">One line on why it works — name the shared compound or the cultural logic.</span>
-        </div>
-        <!-- WRITER: 4–6 cards. Established pairings/classic dishes, each with the reason underneath. -->
-    </div>
+<div style="overflow-x: auto; margin: var(--space-6) 0;">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Pairing / dish</th>
+                <th>Region</th>
+                <th>Why it works</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Pairing or dish</strong></td>
+                <td>Region</td>
+                <td>The shared compound or the cultural logic, one line.</td>
+            </tr>
+            <!-- WRITER: 4–6 rows. Established pairings / classic dishes, each with the reason. -->
+        </tbody>
+    </table>
 </div>
 
 <p>Those are the safe pairings — the ones a culture arrives at by repetition. The interesting ones start where that logic is pushed.</p>
@@ -197,12 +210,10 @@
 <!-- THE UNEXPECTED PAIRING — the bold cross-category matches. Purple bordered list (list-style:none). RENAMED from "Poetic Pairing" so the word "Poetic" only ever means the register up in Four Ways — here it is simply the unexpected. The three-register pairing logic + the Flavour-Compounding table below are EXCLUSIVE to this deep-dive template; a standard Ingredient Profile drops both. Keep them here. -->
 <h2>The Unexpected Pairing: [the framing]</h2>
 <p><strong>The bold move:</strong> <!-- kicker: why these unexpected matches still obey the chemistry. --></p>
-<div style="background: #d4dce8; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid #7c3aed;">
-    <ul style="margin: 0; font-size: var(--text-sm); list-style: none; padding: 0;">
-        <li style="margin-bottom: var(--space-3); padding-left: var(--space-4); border-left: 2px solid #7c3aed;"><strong style="color: #5b21b6;">A + B</strong> &mdash; the surprising pairing, the molecular or sensory reason it works, and how to deploy it.</li>
-        <!-- WRITER: 5 items. Last <li> drops margin-bottom. Bold the pairing, then explain. Bold but plausible — no gimmicks. -->
-    </ul>
-</div>
+<div class="note" data-label="The Unexpected"><ul>
+    <li><strong>A + B</strong> &mdash; the surprising pairing, the molecular or sensory reason it works, and how to deploy it.</li>
+    <!-- WRITER: 4–5 items (locked note, converted from the pre-lock purple list, founder call 2026-08-24). Bold the pairing, then explain. Bold but plausible — no gimmicks. -->
+</ul></div>
 <p>One of those will bite if you treat it like the others. The caveat:</p>
 <div class="note note--warning"><p>A handling caveat for one of the pairings — over-steeping, burning, intensity. Keep it practical.</p></div>
 
@@ -236,7 +247,7 @@
 <div class="divider" id="galley"><span class="divider__text">The Galley</span></div>
 
 <!-- QUALITY: GOOD vs BAD — the buying eye, made explicit. Two columns: what a good one shows, what a bad one shows. This is non-negotiable in every ingredient profile. -->
-<h2>Quality: How to Tell a Good One from a Bad One</h2>
+<h2>Choosing &amp; Buying: How to Tell a Good One</h2>
 <p><strong>Trust your eyes, nose and hands first:</strong> <!-- kicker: the single most reliable quality tell for this ingredient, stated up front. --></p>
 <!-- Locked note--key[data-label="Signs of Quality"] then note--warning[data-label="Signs of Decline"], joined by the one-line prose bridge below — never the two boxes bare-stacked. Notes may carry a sense-by-sense ul (as shore-larder.html does). -->
 <div class="note note--key" data-label="Signs of Quality"><ul>
@@ -255,46 +266,47 @@
 <p>Both columns assume an honest counter. The trouble is the defect a seller has already hidden:</p>
 <div class="note note--warning" data-label="The Tell That Hides"><p>The one defect a vendor can mask — wax, wash, cold-counter lighting, added water — and how to catch it anyway.</p></div>
 
+<!-- OPTIONAL — THE FRAUD TEST (founder addition, 2026-08-24): for HIGH-VALUE or frequently-adulterated ingredients ONLY (saffron, vanilla, olive oil, honey, spices sold ground). How this ingredient is actually faked — dyed threads, cut powders, blended oils, added sugars — and the bench checks that catch each fake, concrete enough to run in a galley (cold-water bloom, burn test, label read). Follow-the-money made practical; name where the fraud enters the chain (grinder, blender, broker). DELETE for ingredients nobody bothers to fake. -->
+<p>Masking hides age. Fraud goes further — it sells you a different substance entirely:</p>
+<div class="note note--warning" data-label="The Fraud Test"><p>How it is faked &mdash; the common adulterations, named &mdash; and the bench check that catches each one, with what an honest specimen shows. One line on where the fraud enters the chain.</p></div>
+
+<!-- HOW TO BUY — folded into this section (founder call, 2026-08-24: one Choosing-and-Buying run instead of three separate buying beats; the old grey-card grid + golden-rule para + warning are retired). Locked note--action: 3-4 items of form/grade + judging + timing, closing on the golden rule. -->
+<p>Knowing good from bad — and real from fake — the buying itself comes down to form and timing:</p>
+<div class="note note--action" data-label="How to Buy"><ul>
+    <li><strong>Form / grade</strong> &mdash; what it is, how to judge it, when to buy it.</li>
+    <li><strong>Form / grade</strong> &mdash; judging + timing, one line.</li>
+    <li><strong>The golden rule</strong> &mdash; the one non-negotiable sourcing principle, stated flatly.</li>
+</ul></div>
+
 <!-- CONSERVATION — include ONLY where this ingredient has a genuinely peculiar or non-obvious preservation technique (e.g. garlic confit's botulism rule, saffron in the dark, fresh herbs as oil cubes, salt-packing, oxygen control). Skip if storage is ordinary (that lives in Galley Intel below). -->
 <h2>Conservation: [the peculiar technique]</h2>
 <p><strong>Why ordinary storage fails it:</strong> <!-- kicker: the specific enemy — light, oxygen, ethylene, moisture, temperature — and the technique that defeats it. --></p>
 <div class="note note--action" data-label="The Method"><p>The exact preservation method, with numbers: form, medium, &deg;C, oxygen/light control, and the resulting shelf life. Name the failure mode it prevents — and any safety line (e.g. acidification, botulism risk) that must not be crossed.</p></div>
 
-<!-- HOW TO BUY — sourcing. Grey-card grid (3px coloured left borders), optional golden-rule para, warning note. -->
-<h2>How to Buy: [what to look for]</h2>
-<p><strong>Spend well:</strong> <!-- kicker: the one quality signal that separates good from wasted money. --></p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); margin: var(--space-6) 0;">
-    <div style="background: #e2e5e9; padding: var(--space-4); border-left: 3px solid #d97706;">
-        <strong style="font-size: var(--text-sm); color: #d97706;">Variety / form / quality signal</strong>
-        <p style="font-size: var(--text-sm); color: #333; margin: var(--space-1) 0 0;">What it is, how to judge it, when to buy it.</p>
-    </div>
-    <!-- WRITER: 3–4 grey cards. Vary the left-border colour (#d97706, var(--color-sea), #059669, #7c3aed). Practical sourcing. -->
-</div>
-<p><strong>The golden rule:</strong> one non-negotiable sourcing principle, stated flatly. (Optional — drop if not needed.)</p>
-<div class="note note--warning"><p>The buying mistake to avoid — soft spots, dust and fannings, dull colour. One firm sentence.</p></div>
-
 <!-- YACHT GALLEY INTEL — the at-sea payoff. Sea-bordered grey box, ul. Then one or two action notes. -->
 <h2>Yacht Galley Intel</h2>
 <p><strong>At sea, this is what counts:</strong> <!-- kicker: the storage or space constraint this ingredient lives or dies by. --></p>
-<div style="background: #e2e5e9; padding: var(--space-6); margin: var(--space-6) 0; border-left: 4px solid var(--color-sea);">
-    <ul style="margin: 0; font-size: var(--text-sm);">
-        <li style="margin-bottom: var(--space-2);"><strong>Lead-in.</strong> Storage life, weight/space, or a galley technique — bolded label, then the detail with numbers (&deg;C, minutes). Note where the <span class="term">Maillard reaction</span> earns its colour.</li>
-        <!-- WRITER: 4–5 items. Galley-specific: storage, batch-prep recipe, shortcuts, provisioning maths. Last <li> drops margin-bottom. -->
-    </ul>
-</div>
+<div class="note note--action" data-label="Galley Intel"><ul>
+    <li><strong>Lead-in.</strong> Storage life, weight/space, or a galley technique &mdash; bolded label, then the detail with numbers (&deg;C, minutes). Note where the <span class="term">Maillard reaction</span> earns its colour.</li>
+    <!-- WRITER: 4–5 items (locked note, converted from the pre-lock grey box, founder call 2026-08-24). Galley-specific: storage, batch-prep recipe, shortcuts, provisioning maths. -->
+</ul></div>
 <p>The one move from that list worth doing once and drawing on all week:</p>
 <div class="note note--action" data-label="Galley Batch Prep"><p>One repeatable batch-prep or technique with exact quantities, temperature, time, and shelf life.</p></div>
 
-<!-- THE STORIES — the warmth. Stacked coloured cards, each a self-contained anecdote. MANDATORY in this template: a deep-dive without Stories is a spec sheet. Never drop this section. -->
+<!-- OPTIONAL — THE SUBSTITUTION LADDER (founder rule, 2026-08-24: FUNCTIONAL ingredients only — leaveners, dairy, binders, where a mid-passage swap is a real question. NEVER for classic character ingredients you would not substitute — no ladder for saffron or basil.) Three rungs, each with the ratio and the compound logic. -->
+<p>And if the tin runs empty mid-passage, the ladder — nearest first:</p>
+<div class="note" data-label="The Substitution Ladder"><ul>
+    <li><strong>Nearest:</strong> the true substitute, with the ratio and the mechanism that makes it work.</li>
+    <li><strong>In a pinch:</strong> the acceptable stand-in, and what it changes in the result.</li>
+    <li><strong>Never:</strong> the swap that fails, and the chemistry of why.</li>
+</ul></div>
+
+<!-- THE STORIES — the warmth, told as PROSE with bold headline lead-ins (converted from the pre-lock coloured cards, founder call 2026-08-24). MANDATORY in this template: a deep-dive without Stories is a spec sheet. One story may be the myth-break: the belief the trade repeats, broken against the named record. Never drop this section. -->
 <h2 id="stories">The Stories</h2>
 <p><strong>The warmth:</strong> <!-- kicker: one line on why this ingredient is worth caring about, not just measuring. --></p>
-<div style="display: grid; gap: var(--space-4); margin: var(--space-6) 0;">
-    <div style="background: #f5deb3; padding: var(--space-4); border-left: 4px solid #d97706;">
-        <strong style="font-size: var(--text-sm);">Story title</strong>
-        <p style="font-size: var(--text-sm); margin: var(--space-1) 0 0; color: #5c4033;">A sourced anecdote — myth, history, espionage, class. Tie it back to the ingredient.</p>
-    </div>
-    <!-- WRITER: 3–4 cards, rotate background + matching text colour (wheat/#5c4033, blue #d4dce8/#3b3b5c, green #d1e7dd/#1a3a2a, red #f0c0c0/#5c1a1a). -->
-</div>
+<p><strong>[Story headline].</strong> A sourced anecdote &mdash; myth, history, espionage, class &mdash; two or three sentences, told, not listed. Tie it back to the ingredient.</p>
+<p><strong>[Story headline].</strong> A short, sourced tale.</p>
+<p><strong>[Story headline].</strong> A short, sourced tale.</p>
 
 <p>Those stories only earn their place if one line survives to the pass:</p>
 <!-- NURTURE NOTE — MANDATORY food-facing close (label "At the Table" per the canon). The single line a chef can actually say to a guest, drawn from the Stories above — sourced, not invented, the human version of one fact. This is the warmth pillar made usable at the pass. -->
