@@ -302,6 +302,13 @@ def main():
         n_hot = sum(1 for v in D["VENUES"] if v.get("hot_this_month"))
         r.ck("hot: venues carry hot_this_month",
              n_hot >= hot.get("minVenues", 5), f"{n_hot} venues")
+        # the CSV is a published artefact — it must not lag data.js
+        with open(gdir / "data.csv") as f:
+            _rows = list(csv.reader(f))
+        if _rows and "hot_this_month" in _rows[0]:
+            _i = _rows[0].index("hot_this_month")
+            n_csv = sum(1 for row in _rows[1:] if len(row) > _i and row[_i].strip())
+            r.ck("hot: CSV matches data.js", n_csv == n_hot, f"csv {n_csv} vs data {n_hot}")
 
     # ---- 8 · gem popup anchors must exist in the prose -----------------------
     miss = [g["pattern"] for g in D.get("GEMS", []) if g["pattern"].lower() not in low]
