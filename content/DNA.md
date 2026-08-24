@@ -229,8 +229,9 @@ Refined light **journal**. Tokens: paper `#fafafa`, ink `#0a0a0a`, sea `#2d4a5e`
 scale (1.333). No gradients, no rounded corners on content blocks, no stock photography,
 monochrome images. Metric units (Fahrenheit in parens). The sealed CSS is
 `assets/css/style.css` — match the latest file, never improvise the look.
-Motion serves focus, never decoration — the only sanctioned animation is the
-technical-pencil draw-on figure (see DESIGN-LOCK Motion).
+Motion serves focus, never decoration — the sanctioned animations are the technical-pencil
+draw-on figure and the reader-driven **smart explainer** for techniques and science mechanisms,
+used only when the mechanism visibly moves (see DESIGN-LOCK Motion + META-PROMPT).
 
 ## Off-brand / forbidden
 

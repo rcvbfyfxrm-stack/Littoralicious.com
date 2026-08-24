@@ -103,6 +103,13 @@ line — *We report back: [date]* — and the Weekly Brief's "Since last week" b
 call whose window or horizon has closed: held, missed, or falsified, printed plainly with the
 number. A publication that keeps its own score is the one a professional trusts.
 
+**The smart explainer (founder rule, 2026-08-24).** Techniques AND science mechanisms get an
+interactive, animated explainer — *not always, but when it speaks*: when the mechanism has a visible
+process (a set point, a phase change, an emulsion forming, a diffusion front). Bar = the egg
+explainer (`_pencil-art/interactive/egg-explainer.html`): lit real-time 3D, self-explanatory from a
+paused frame with the text hidden, reader-driven with a Play button, never autoplay, motion lock.
+Where nothing moves, no animation — never decorate.
+
 ## Automation wiring
 
 - `tools/draft.mjs` and `tools/rewrite.mjs` embed this file in every brief, after the DNA — the

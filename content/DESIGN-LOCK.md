@@ -235,6 +235,7 @@ Motion is **opt-in and single-purpose**. The whole grammar:
 - Everything **pauses off-screen** (IntersectionObserver) and **collapses to the final frame** under
   `prefers-reduced-motion`.
 - **No loops, no parallax, no autoplay video.**
+- **The smart explainer** (three.js, lit real-time 3D, reader-driven Play, self-explanatory paused frame) is sanctioned for techniques AND science mechanisms — *when it speaks*, never as decoration (founder rule 2026-08-24; full spec in `templates/the-method-technique.html` + META-PROMPT).
 - Pencil figures: ink `#131312` on paper `#F6F5F1`.
 - The shared helper is `assets/js/litto-sketch.js` — use it; don't re-implement the draw-on.
 
