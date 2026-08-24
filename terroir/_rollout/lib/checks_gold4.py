@@ -26,10 +26,27 @@ CHROME = next((p for p in (
 BANNED = ["delicious", "yummy", "mouthwatering", "elevated", "curated", "hidden gem",
           "foodie", "must-try", "bucket list", "vibrant", "charming", "quaint",
           "stunning", "breathtaking", "superfood", "game-changer", "nestled",
-          "authentic vibe", "a hidden", "picturesque"]
+          "authentic vibe", "picturesque"]
 
-# words that legitimately appear inside quoted source titles / proper names
-BANNED_EXEMPT_CONTEXT = re.compile(r'(?:<cite[^>]*>[^<]*|href="[^"]*)', re.I)
+def quoted_spans(doc):
+    """Character ranges we do NOT police for banned words: href values, <cite> blocks, and
+    the whole #sources list — those are other people's titles and URLs, quoted verbatim.
+    Censoring a real newspaper headline would be worse than the word."""
+    spans = []
+    for m in re.finditer(r'href="[^"]*"', doc):
+        spans.append(m.span())
+    for m in re.finditer(r"<cite[^>]*>.*?</cite>", doc, re.S | re.I):
+        spans.append(m.span())
+    j = doc.find('id="sources"')
+    if j >= 0:
+        end = doc.find("</details>", j)
+        # the sources block is a flat list of <li><a>…</a></li> — police only outside it
+        spans.append((doc.rfind("<details", 0, j), end + 10 if end > 0 else len(doc)))
+    return spans
+
+
+def in_spans(pos, spans):
+    return any(a <= pos < b for a, b in spans)
 
 
 class R:
@@ -166,11 +183,15 @@ def main():
              not re.search(r'<a[^>]+download[^>]*' + re.escape(ics_name), doc))
 
     # ---- 4 · language gates --------------------------------------------------
+    exempt = quoted_spans(doc)
     for w in BANNED + cfg.get("bannedExtra", []):
-        hits = [m.start() for m in re.finditer(re.escape(w), low)]
-        # allow inside <cite> blocks and hrefs (real source titles / venue names)
-        real = [h for h in hits if not BANNED_EXEMPT_CONTEXT.match(doc, max(0, h - 120))]
-        r.ck(f"banned '{w}'", not real, f"x{len(real)}")
+        real = [m.start() for m in re.finditer(re.escape(w), low)
+                if not in_spans(m.start(), exempt)]
+        if real:
+            ctx = doc[max(0, real[0] - 60):real[0] + 60].replace("\n", " ")
+            r.ck(f"banned '{w}'", False, f"x{len(real)} — …{ctx}…")
+        else:
+            r.ck(f"banned '{w}'", True)
     for w in cfg.get("staleTokens", []):
         # word-boundary: "Kenya" must not fire on "Kenyatta Road"
         n = len(re.findall(r"\b" + re.escape(w.lower()) + r"\b", low))
@@ -310,6 +331,16 @@ def main():
     if "maps" in hdr:
         i = hdr.index("maps")
         r.ck("csv every row has a maps link", all(row[i].startswith("https://") for row in rows[1:]))
+
+    # ---- 9d · nothing may bridge INTO the tail wrapper -----------------------
+    # A [data-bridge-after] pointing at an id inside .gx-tail drops that element between
+    # the checklist and the shortlist at runtime. Diani carried exactly this, invisibly.
+    tj = doc.find('class="gx-tail"')
+    if tj >= 0:
+        tail_ids = set(re.findall(r'id="([^"]+)"', doc[tj:]))
+        intruders = [(el, tgt) for el, tgt in re.findall(r'id="([^"]+)"[^>]*data-bridge-after="#([^"]+)"', doc)
+                     if tgt in tail_ids and el not in tail_ids]
+        r.ck("no section bridges into the tail", not intruders, f"{intruders}")
 
     # ---- 10b · the hub must carry the guide ----------------------------------
     hub = repo / "terroir" / "index.html"
