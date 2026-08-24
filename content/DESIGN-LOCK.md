@@ -67,7 +67,12 @@
 </div>
 ```
 
-### Register Ladder — `register-ladder` (Shore Larder Deep-Dive four-stop rail)
+### Verdict chip — `verdict-chip` (Equipment Review signature: BUY / SKIP / BUY IF, pinned at the top of The Verdict; added 2026-08-24)
+```html
+<span class="verdict-chip verdict-chip--buy">Buy</span>   <!-- exactly one modifier: --buy / --skip / --buy-if -->
+```
+
+### Register Ladder — `register-ladder` (Ingredient Deep-Dive four-stop rail)
 ```html
 <div class="register-ladder">
   <div class="register-ladder__stop register-ladder__stop--trad">Traditional<span>…</span></div>
