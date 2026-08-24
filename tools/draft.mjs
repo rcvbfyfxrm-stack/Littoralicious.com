@@ -62,6 +62,7 @@ console.log(newOut.trim());
 const tmpl = opt("--template") || (newOut.match(/auto-selected template:\s*(\S+)/) || [])[1] || "standard";
 const tmplBody = articleInner(read(p("templates", `${tmpl}.html`))) || "(template has no BODY markers — open templates/" + tmpl + ".html)";
 const dna = exists(p("content", "DNA.md")) ? read(p("content", "DNA.md")) : "(content/DNA.md missing)";
+const meta = exists(p("content", "META-PROMPT.md")) ? read(p("content", "META-PROMPT.md")) : "(content/META-PROMPT.md missing)";
 const srcFile = opt("--source");
 const source = srcFile && exists(srcFile) ? read(srcFile) : (srcFile || "(no source supplied — research the topic and cite real, named sources)");
 
@@ -70,7 +71,7 @@ const brief = `# Drafting brief — ${slug}
 Write the BODY of this Littoralicious article. Template: **${tmpl}**. Title: "${title}".
 
 ## Rules
-Obey every rule in the DNA below. The first law is **never lose focus** — open with a .summary-box payoff, one idea per <h2>, re-hook every ~150 words, close on one takeaway. Hold all three pillars (grandmother warmth · scientist precision, sourced · yacht-chef directness). NO emoji. NO banned words. Name every source — no "studies show" without the study. British cooking spelling. Use only the locked CSS components (.summary-box, .note--key/science/action/warning/quote, <mark>, .term, data-label boxes). Output ONLY the inner body HTML (between BODY:BEGIN and BODY:END).
+Obey every rule in the DNA below, and run the Master Meta-Prompt protocol below it — phase 1 HUNT before drafting (resolve DOIs first; find six Learning-Contract facts, keep three), phase 2 BUILD in the template's opening register, phase 3 FINAL EDIT as a separate adversarial pass (gates E1–E8, cut ~⅓). The Learning Contract is law: three verified facts a ten-year professional chef doesn't know, one in the first two screens. The first law is **never lose focus** — open with a .summary-box payoff, one idea per <h2>, re-hook every ~150 words, close on one takeaway. Hold all three pillars (grandmother warmth · scientist precision, sourced · yacht-chef directness). NO emoji. NO banned words. Name every source — no "studies show" without the study. British cooking spelling. Use only the locked CSS components (.summary-box, .note--key/science/action/warning/quote, <mark>, .term, data-label boxes). Output ONLY the inner body HTML (between BODY:BEGIN and BODY:END).
 
 ## Source material / topic
 ${source}
@@ -82,6 +83,9 @@ ${tmplBody}
 
 ## The DNA (obey every rule)
 ${dna}
+
+## The Master Meta-Prompt (the protocol — phases, gates, the Learning Contract, the identity grid)
+${meta}
 
 ---
 When the body is written to a file, land it:

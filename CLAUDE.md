@@ -18,6 +18,12 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
    `articles/the-source-standard.html`. Grade A/B/C, cut anything below B, and run the eight
    tests. Test 1 is *resolve the DOI*: a citation that looks right and resolves to nothing is
    the most common way this publication has been wrong. Omit before you fabricate.
+5. **Run `content/META-PROMPT.md` on every article** — the Master Meta-Prompt is the protocol
+   that sequences all of the above: FIT → HUNT → BUILD → FINAL EDIT (gates E1–E8) → PROVE →
+   SHIP. It carries two laws found nowhere else: the **Learning Contract** (three verified
+   facts a ten-year professional chef doesn't know, one in the first two screens) and the
+   **Template Identity Grid** (each template's opening register, signature object, pro-hook,
+   forbidden moves). `draft.mjs` and `rewrite.mjs` embed it in every brief.
 
 ## Writing editorial — rules-first
 

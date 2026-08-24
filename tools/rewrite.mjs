@@ -217,6 +217,7 @@ if (!req.notes.length && !req.overall.trim()) die(`the rewrite request for "${sl
 const html = read(file);
 const { inner, hasMarkers } = articleBody(html);
 const dna = exists(p("content", "DNA.md")) ? read(p("content", "DNA.md")) : "(content/DNA.md not found)";
+const meta = exists(p("content", "META-PROMPT.md")) ? read(p("content", "META-PROMPT.md")) : "(content/META-PROMPT.md not found)";
 let entry = null;
 try { entry = loadArticles().articles.find((a) => a.slug === slug) || null; } catch { /* demo: no json entry */ }
 
@@ -228,7 +229,7 @@ const brief = `# Rewrite brief — ${slug}
 You are rewriting one Littoralicious draft. ${entry ? `Title: "${entry.title}". Section: ${entry.category_label || entry.category || "?"}. Subtag: ${entry.subtag || "—"}.` : ""}
 
 ## Your job
-Rewrite the article BODY below so it (a) addresses EVERY review note, (b) obeys every rule in the DNA, and (c) keeps using the locked CSS components (.summary-box, .note--key/science/action/warning/quote, <mark>, .term, data-label boxes). Do not invent new styling or a new template. ${hasMarkers ? "Output ONLY the new inner body HTML (what goes between BODY:BEGIN and BODY:END) — no <head>, no masthead, no footer." : "NOTE: this file has no BODY:BEGIN/END markers — add them around the body when you write it back, or apply by hand."}
+Rewrite the article BODY below so it (a) addresses EVERY review note, (b) obeys every rule in the DNA, (c) keeps using the locked CSS components (.summary-box, .note--key/science/action/warning/quote, <mark>, .term, data-label boxes), and (d) passes the Master Meta-Prompt's final-edit gates E1–E8 (claims audit with resolved DOIs, the ~⅓ cut, spine test, stack scan, placeholder scan, the Learning Contract — three verified facts a ten-year professional doesn't know — identity check, the 11 PM read). Do not invent new styling or a new template. ${hasMarkers ? "Output ONLY the new inner body HTML (what goes between BODY:BEGIN and BODY:END) — no <head>, no masthead, no footer." : "NOTE: this file has no BODY:BEGIN/END markers — add them around the body when you write it back, or apply by hand."}
 
 The first law is **never lose focus**: every line earns the next. Open with the payoff (.summary-box), one idea per <h2>, re-hook the eye every ~150 words, close on one takeaway. No emoji. No banned words (delicious, yummy, mouthwatering, elevated, curated, artisanal, superfood, game-changer, hack). Name every source — no "studies show" without the study. British cooking spelling.
 
@@ -245,6 +246,9 @@ ${inner || "(could not extract the body — open the file directly: articles/" +
 
 ## The DNA (obey every rule)
 ${dna}
+
+## The Master Meta-Prompt (the protocol — final-edit gates, the Learning Contract, the identity grid)
+${meta}
 
 ---
 When done, write the new body to a file and run:
