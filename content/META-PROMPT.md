@@ -98,6 +98,11 @@ the **pro learns**, and what it must **never** do. Two templates that answer ali
 | 12 | Weekly Brief | The continuing conversation | **Since last week** — the carried thread, first | The serial frame (Since last week / Watching next) + note rotation | One named source + one figure per item; the flip thresholds in Watching next | More than 5 items; two consecutive same-type notes; a one-shot list |
 | 13 | The Lab | We ran the test so you don't have to | **The question, as a bet** — hypothesis + falsifiable prediction, pinned | Hypothesis→Method→Data→Verdict; failures reported | The deviation — where the data disobeyed the prediction; n and conditions stated | Post-hoc certainty; hiding failed trials; universal claims from n=3 |
 
+**The call-back loop (founder law, 2026-08-24).** Every Supply Alert and Forecast ends with one
+line — *We report back: [date]* — and the Weekly Brief's "Since last week" beat must settle every
+call whose window or horizon has closed: held, missed, or falsified, printed plainly with the
+number. A publication that keeps its own score is the one a professional trusts.
+
 ## Automation wiring
 
 - `tools/draft.mjs` and `tools/rewrite.mjs` embed this file in every brief, after the DNA — the
