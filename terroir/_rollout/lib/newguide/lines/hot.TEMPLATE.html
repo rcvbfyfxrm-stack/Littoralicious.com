@@ -1,0 +1,53 @@
+<!-- GOLD5 §10 · WHAT'S HOT THIS MONTH — mandatory, and the only perishable block.
+     id MUST be "why-now": guide-enhance.js's locked RANK table scores that id 11, which
+     places it high (right before #eat). An unranked id is sorted to the tail. Keep the
+     #hot anchor inside so both links resolve.
+     data-hot-asof / data-hot-review are READ BY THE GATE — it fails the build when the
+     as-of date is >70 days old or the review date has passed. Update both, or delete the
+     whole section; do not leave a stale one standing. -->
+<details class="sfold" id="why-now" data-hot-asof="YYYY-MM-DD" data-hot-review="YYYY-MM-DD" open>
+<summary>
+<div>
+<div class="sfold__title"><span id="hot"></span>What&#x27;s hot this month</div>
+<div class="sfold__desc">Checked D MONTH YYYY — [the two or three things genuinely on right now]. This is the one section that goes stale: review by [MONTH YYYY]</div>
+</div>
+<span class="sfold__count">MON–MON YYYY</span>
+<span class="sfold__chev"></span>
+</summary>
+<div class="sfold__body">
+<p class="gx-lede">The rest of this guide is written to last. This part is not — it is a dated snapshot of what is actually on right now, and it carries the date it was checked so you can see how much to trust it.</p>
+
+<!-- Four groups. Drop any that has nothing TRUE in it this month; never pad. -->
+<div class="fsub">
+<h4 class="fsub__title">In the water</h4>
+<p class="fsub__desc">[migration · visibility · what the wind is doing to the diving]</p>
+<div class="fsub__cards">
+<details class="fcard">
+<summary><span class="fcard__name">[thing]</span><span class="fcard__tag">[window]</span><span class="fcard__teaser">[one line]</span></summary>
+<div class="fcard__body"><p>[the fact, dated and sourced]</p>
+<div class="fcard__meta">[how to act on it]</div>
+<a class="fcard__map" href="https://www.google.com/maps/search/?api=1&query=..." target="_blank" rel="noopener">Open in Google Maps →</a></div>
+</details>
+</div>
+</div>
+
+<div class="fsub">
+<h4 class="fsub__title">In the sky</h4>
+<p class="fsub__desc">[moon phase · eclipses · whatever the lunar calendar is doing to the parties and the tides]</p>
+<div class="fsub__cards"></div>
+</div>
+
+<div class="fsub">
+<h4 class="fsub__title">On the plate</h4>
+<p class="fsub__desc">[what is being harvested · what fruit is in · what is NOT at peak, said plainly]</p>
+<div class="fsub__cards"></div>
+</div>
+
+<div class="fsub">
+<h4 class="fsub__title">In the calendar</h4>
+<p class="fsub__desc">[festivals · holidays · and an honest line when there is nothing on]</p>
+<div class="fsub__cards"></div>
+</div>
+
+</div>
+</details>

@@ -1,0 +1,51 @@
+{
+  "_readme": [
+    "Copy this to <build-dir>/meta.json and fill it in. It drives geocode/emit/assemble.",
+    "srcSlug/srcCity/srcCenter describe the guide whose chrome you are cloning — keep it",
+    "pointed at the CURRENT GOLD reference (see _rollout/state.json gold5_ref).",
+    "tokenSwaps is the belt-and-braces sweep for place words the clone carries over;",
+    "anything you miss is caught again by staleTokens in the check config."
+  ],
+
+  "slug": "Place-Region",
+  "city": "Place",
+  "country": "Country",
+  "listeSlug": "place",
+  "title": "Place — Terroir Guide",
+  "desc": "One sentence for the meta description: who it is for, the two or three facts that make this place itself, and the promise that every venue was checked.",
+
+  "center": [0.0, 0.0],
+  "zoom": 12,
+  "radiusKm": 14,
+
+  "checkedOn": "1 January 2027",
+  "recheckBy": "July 2027",
+
+  "repo": "/private/tmp/litto-<place>",
+  "src": "/private/tmp/litto-<place>/terroir/Kendwa-Unguja/index.html",
+  "srcSlug": "Kendwa-Unguja",
+  "srcCity": "Kendwa",
+  "srcCenter": [-5.7405, 39.2925],
+
+  "sections_replace": [
+    "hot", "bougie", "money-sits", "eat", "dish", "bars", "quartiers", "walks",
+    "culture", "coffee-gardens", "art", "craft", "around", "provisioning",
+    "street-food", "la-liste", "landmarks", "avoid", "follow", "seasonal", "sources"
+  ],
+  "sections_delete": [],
+  "sections_insert_after_walks": [],
+
+  "_signature_note": "GOLD5 §4 — the 2–4 sections this place is uniquely FOR go in sections_insert_after_walks, with their own lines/<id>.html. Kendwa used tide/dhow/reef/fullmoon. Never reuse another guide's; find this one's.",
+
+  "tokenSwaps": [
+    ["Kendwa", "Place"],
+    ["Nungwi", "Neighbour"],
+    ["Unguja", "Region"],
+    ["Zanzibar", "Country"]
+  ],
+
+  "stale_tokens": [
+    "Kendwa", "Nungwi", "Unguja", "Zanzibar", "Tumbatu", "Mkokotoni", "kaskazi", "kusi",
+    "Diani", "Kwale", "Istanbul", "Bogazici"
+  ]
+}

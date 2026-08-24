@@ -509,5 +509,9 @@
  "gold4_ref": [
   "Istanbul-Bogazici"
  ],
- "gold4_note": "2026-08-17: GOLD4 = the Istanbul standard (see PLAYBOOK §GOLD4). New guides build to GOLD4; GOLD3 remains the uplift floor. Arnaud: 'make sure the next terroir briefing is as developed.'"
+ "gold4_note": "2026-08-17: GOLD4 = the Istanbul standard (see PLAYBOOK §GOLD4). New guides build to GOLD4; GOLD3 remains the uplift floor. Arnaud: 'make sure the next terroir briefing is as developed.'",
+ "gold5_ref": [
+  "Kendwa-Unguja"
+ ],
+ "target": "GOLD5 (see PLAYBOOK §GOLD5). Reference = live Kendwa-Unguja. GOLD4/Istanbul is the acceptable floor for a nightly uplift; new guides and any guide you can take further build to GOLD5. Scaffold: lib/newguide/. Gate: lib/checks_gold4.py + lib/guides/<Slug>.check.json."
 }

@@ -1,0 +1,96 @@
+{
+  "_readme": [
+    "Copy to guides/<Slug>.check.json and edit. Drives checks_gold4.py (the GOLD5 gate).",
+    "Run:  python3 terroir/_rollout/lib/checks_gold4.py . terroir/_rollout/lib/guides/<Slug>.check.json",
+    "Exit 0 = deployable. Exit 1 = HOLD. --no-render skips ONLY the browser stage; never skip it before a deploy.",
+    "mapsTokens: every Maps link must contain one of these (catches links pointing at the wrong continent).",
+    "staleTokens: place words from the guide you cloned. Matched on word boundaries.",
+    "groups: 2 or 3. Use 3 when the guide has a street-food group (GOLD5 §3).",
+    "hot: turns on the freshness gate for the What's-hot-this-month board (GOLD5 §10)."
+  ],
+  "slug": "Place-Region",
+  "city": "Place",
+  "listeSlug": "place",
+  "groups": 3,
+  "mapsTokens": [
+    "Place",
+    "Region",
+    "Country"
+  ],
+  "staleTokens": [
+    "Kendwa",
+    "Nungwi",
+    "Unguja",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Istanbul"
+  ],
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "hot",
+    "soul",
+    "bougie",
+    "money-sits",
+    "eat",
+    "tables",
+    "dish",
+    "bars",
+    "quartiers",
+    "walks",
+    "sea-stories",
+    "culture",
+    "coffee-gardens",
+    "art",
+    "craft",
+    "around",
+    "provisioning",
+    "street-food",
+    "la-liste",
+    "landmarks",
+    "avoid",
+    "follow",
+    "seasonal",
+    "sources"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "rooftops",
+    "hammam",
+    "rituals",
+    "listening"
+  ],
+  "floors": {
+    "venues": 60,
+    "gems": 5,
+    "neighborhoods": 8,
+    "walks": 6,
+    "categories": 14,
+    "laneStories": 12,
+    "fcards": 115,
+    "fsubs": 22,
+    "liste": 14,
+    "mapsLinks": 40,
+    "pins": 40
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 40,
+    "gemboxes": 12
+  },
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 5
+  }
+}

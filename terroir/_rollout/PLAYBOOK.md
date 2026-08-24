@@ -1,9 +1,16 @@
-# TERROIR GOLD3 NIGHTLY UPLIFT — routine playbook
+# TERROIR UPLIFT — routine playbook
 
-You are the nightly terroir-uplift agent. Each run you upgrade **ONE** existing guide to the
-**GOLD3** standard (the Athens/Piraeus structure), verify it hard, and deploy it only if it passes.
-Keep it to one guide so token use stays bounded. Be honest: if you can't reach quality, HOLD the
-guide (don't deploy a regression) and say so.
+**The target is ⭐⭐ GOLD5 (§ below). Reference guide = live `Kendwa-Unguja`.**
+
+You are the nightly terroir-uplift agent. Each run you take **ONE** guide as far up the ladder as
+it will honestly go, verify it hard, and deploy only if the gate is green. Keep it to one guide so
+token use stays bounded. Be honest: if you can't reach quality, HOLD the guide (don't deploy a
+regression) and say so.
+
+**Read in this order:** §GOLD5 (the target) → §THE GATE IS AUTOMATED (how you prove it) →
+§12 section order (the two traps that will otherwise waste your run) → `lib/newguide/README.md`
+(the build scaffold — do not re-derive the pipeline). GOLD3 and GOLD4 below are kept as the
+history of the ladder and as the acceptable floors; everything in them still holds.
 
 ## What GOLD3 is (the target — match live Athens-Attiki / Piraeus-Saronic)
 Read `terroir/_rollout/lib/` (machinery) and the design lock context below. Three changes over GOLD2:
@@ -65,6 +72,49 @@ any NEW guide, and any guide you can take further, builds to GOLD4. The delta ov
    token, zero `amp;` residue, name-vs-query sanity — plus the standing liveness/no-fabrication/
    no-emoji/orthography gates. Verify by headless render, never by reading source.
 
+## ⭐⭐ GOLD5 — THE KENDWA STANDARD (2026-08-23, supersedes GOLD4 as the target)
+
+**Reference guide: live `Kendwa-Unguja`.** GOLD4 (Istanbul) stays the acceptable floor for a
+nightly uplift; **any NEW guide, and any guide you can take further, builds to GOLD5.** Everything
+in GOLD4 §1–9 still holds. The delta, all of it shipped and render-verified on Kendwa:
+
+1. **Full table taxonomy — up to ~14 lanes in 3 groups.** `GROUPS` is not fixed at 2;
+   `guide-render.js` iterates it generically. The canonical set, covering every lane used across
+   the earlier guides:
+   - **Les Grandes Tables** — `creme` · `rising` (the new wave) · `houses` · `landings`
+   - **Les Petites Tables** — `swahili`/local · `italian`/second-cuisine · `ethnic` (the other
+     kitchens) · `breakfast` · `grills` (the fire) · `fast-food` · `chefs-eat` · `beach-rooms` ·
+     `story` (the old houses)
+   - **La Rue** — `street`, placed immediately after the petites
+   Adapt the *names* to the place; do not drop a lane because it is easier. Every lane opens on a
+   `CATEGORIES[].story` gembox. ⚠ **A venue belongs to exactly ONE lane** — listed twice it
+   silently vanishes from all but the last. Assert it in the build.
+2. **Street food is a table GROUP, and `#street-food` at the foot is something else.** The group
+   is where to eat street food; the closing section is renamed **"Sur le pouce — the late plate"**
+   and answers only *what is still open after the bar shuts*. They must not overlap.
+3. **The foot of the guide is: la liste → «Ce Soir» → The Dish → sources.** The checklist, the
+   charter shortlist and the dish canon travel together at the end, out of the tables. See §12 for
+   the mechanism — it is not obvious and it fought back.
+4. **`#craft` — Craftsmanship, scored against the EducatedTraveler bar.** Mandatory. Four bars:
+   a named still-practising master · dedicated teaching lab · **open enrolment** · at the source.
+   Group entries by how many they clear and **print the bar each one fails**; never upgrade a
+   place quietly. "Nothing here clears all four" is a legitimate finding. Kendwa's one full pass
+   is the Nungwi dhow-building course taught in the working yard.
+5. **`#hot` — What's hot this month.** Mandatory, dated, and the only perishable block in a guide.
+   Four groups: in the water · in the sky · on the plate · in the calendar. Say plainly when there
+   is nothing on ("no festival now, and the weather is the trade") rather than inventing one. Fill
+   the `hot_this_month` CSV column while you are there — it emitted **empty** on every guide
+   before this.
+   ⚠ Its id MUST be `why-now` (see §12) and it MUST carry `data-hot-asof` / `data-hot-review`:
+   **the gate fails the build when it goes stale.** `why-now` is therefore no longer forbidden —
+   it is a dated board, not the old GOLD4 why-now fold.
+6. **Geocoding is name-validated.** A Nominatim hit whose feature name shares no significant word
+   with the venue is REJECTED, and school/ward-office matches are refused outright. Unresolved
+   venues stay unpinned and keep a Maps search link. No coordinate is ever hand-written.
+7. **The scaffold is checked in.** `lib/newguide/` holds the working pipeline (geocode → emit →
+   assemble → generated liste/sources) plus section templates. Read its README first; do not
+   re-derive it.
+
 ## ⭐ THE GATE IS AUTOMATED (2026-08-22)
 
 Everything §6 used to ask you to eyeball is now one command. **Run it; do not hand-verify.**
@@ -97,12 +147,37 @@ Exit 0 = deployable, exit 1 = HOLD. What it asserts, in one pass:
    (runtime-built `"#venue-'+v.id+'"` hrefs are ignored), CSV is 24 columns with a row per venue.
 9. **The hub** — carries the slug, the card parses, has coords/route/essence, csv flag matches, and
    at most one `isNew:true`.
+9b. **Groups & lanes** — group count matches config, every lane maps to a declared group, no group
+   is empty, no declared lane is venue-less.
+9c. **The hot board expires itself** — `data-hot-asof` older than `maxAgeDays` (70), a passed
+   `data-hot-review`, a missing visible "Checked <date>" line, or fewer than `minVenues` venues
+   carrying `hot_this_month` all FAIL the build. Proven by positive control.
 10. **THE RENDER GATE** — serves the repo on a **fresh ephemeral port** (never reuse a stale server)
     and drives Chrome to read the real DOM, asserting organiser groups/lanes/cards, 3 berth cards,
     fcards, one map pin per pinned venue, gemboxes, gem popups, bridge doors, shortlist groups, liste
     items, no flat-tier fallback, no leaked `undefined`/`NaN`.
 
-⚠ **Two traps baked in the hard way, 2026-08-22.** (a) Chrome 151 removed `--headless=old` and
+### ⚠ §12 · Section ORDER — the locked RANK table (2026-08-23)
+
+`_assets/guide/guide-enhance.js` is **LOCKED** and holds a `RANK` map that re-sorts **every direct
+child of the lead's container** on load. Known ids get a fixed rank (`DETAILS#dish` = 23, pinned
+beside `#tables`; `#why-now` = 11, high; `#sources` = 64); anything unrecognised gets `200 + index`
+and lands in the tail in source order. **`data-bridge-after` cannot beat it** — the attribute fires
+and `reorder()` then undoes the move.
+
+- **To move a ranked section to the foot:** put everything you want there inside ONE rank-neutral
+  wrapper (`<div class="gx-tail">`). `keyOf()` reads the wrapper, not its children, so the block
+  travels together with its internal order intact. This is how la-liste → Ce Soir → Dish → sources
+  is achieved.
+- **To place a section high:** give it an id the RANK table already scores. The hot board uses
+  `why-now` (rank 11) for exactly this reason, with `<span id="hot">` inside for the anchor.
+- ⚠ **Never author an `id="band-eat"` anchor.** `makeBand()` generates its own divider with that
+  id for the "eat" act, and `guide-bridge.js` resolves `#ce-soir`'s position with
+  `getElementById('band-eat') || getElementById('tables')` — so it finds the kit's one first and
+  the shortlist reappears beside the tables. Relocate `#ce-soir` after the kit builds it, with a
+  small page-local rAF-polling script.
+
+⚠ **Two more traps baked in the hard way, 2026-08-22.** (a) Chrome 151 removed `--headless=old` and
 `--dump-dom` never returns for these guides — verified against the live Diani build, so it is the
 browser, not the page. `lib/cdp.py` is a stdlib-only DevTools-Protocol driver written to replace it;
 no pip, no puppeteer. (b) The `.gx-torg-*` classes in every guide's `<head>` are **legacy Girona-era
