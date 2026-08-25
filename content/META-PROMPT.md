@@ -25,6 +25,27 @@
 6. **WARM.** The Grandmother pillar visible — mandatory in food-facing templates, recommended
    everywhere. Rigour is the method; nurture is the reason.
 
+## THE OPENING PAYOFF (law) — every template, its own way in
+
+The law is **payoff up top**, not *a box that says "What you'll get"*. Founder rule, 2026-08-25:
+no two templates may open the same way. Nine templates keep a promise box and each one is titled in
+its own voice (01 *What you'll know before you buy it* · 02 *What you'll be able to do* ·
+03 *What the record settles* · 07 *The bet, and what would break it* · 08 *What changed, and what it
+costs you* · 09 *What you'll walk out with* · 10 *What this port gives you* · 11 *The verdict, up
+front* · 13 *The question, and what the data did*). 05 opens on **The one idea**.
+
+**Four templates carry no promise box at all**, because their own signature device pays off sooner
+and better — putting a box above it would say the same thing twice, in a weaker voice:
+
+- **01b Ingredient Deep-Dive** → The Name, then **the two-minute version**.
+- **04 Study Decoded** → the claim in two or three sentences, settled by the **Citation Card**. Its own
+  forbidden move is *any stacked box*; a promise box would spend a third of a two-minute read.
+- **06 Supply Alert** → the dated number itself, then the **Signal Board** (number, direction, window).
+- **12 Weekly Brief** → **Since last week**. A continuing conversation opens on the carried thread.
+
+Never re-add a promise box to those four. Never copy another template's box title. `tools/lint.mjs`
+checks the law, not the box: any locked payoff device counts, as long as it lands inside ~150 words.
+
 ## THE LEARNING CONTRACT (law)
 
 Every article carries **at least three load-bearing facts a working professional chef — ten years
@@ -117,5 +138,5 @@ Where nothing moves, no animation — never decorate.
 - The cloud routines (auto-draft, rewrite-queue, publish-and-post) obey phases 3–4 before any
   apply, and phase 5 always: `draft:true`, Arnaud gates live.
 - `npm run lint` currently enforces: headline rules, emoji, banned words, unsourced phrasing,
-  British spelling, summary-box, `<mark>` presence, 150-word runs. The rest of the final edit
+  British spelling, the opening payoff device, `<mark>` presence, 150-word runs. The rest of the final edit
   (E1–E3, E5–E8) is judgment — run it as its own pass, never assume the linter caught it.

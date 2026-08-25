@@ -97,8 +97,21 @@ function lintArticle(a) {
   }
   if (spellHits.size) W(`US spelling (house style is British): ${[...spellHits].join(", ")}`);
 
-  // 6) The opening payoff — .summary-box. WARN (legacy pieces predate it).
-  if (!/class="summary-box"/i.test(body)) W(`no opening .summary-box — the focus law's payoff-up-top`);
+  // 6) The opening payoff. WARN (legacy pieces predate it).
+  // The law is PAYOFF UP TOP, not "a box that says What you'll get". Each template has its own way in
+  // (founder rule 2026-08-25): the Study Decoded pays off with its Citation Card, the Supply Alert with
+  // its Signal Board, the Weekly Brief with the Since-last-week note, the Deep-Dive with the two-minute
+  // version. So: accept ANY locked payoff device, as long as it lands inside the first ~150 words.
+  const PAYOFF = /<div\s+class="(summary-box|signal-board|citation-card|forecast-scorecard|glance|id-card|note)\b/i;
+  const openBody = body.replace(/<!--[\s\S]*?-->/g, " ");
+  const payoffAt = openBody.search(PAYOFF);
+  if (payoffAt < 0) {
+    W(`no opening payoff device — the focus law's payoff-up-top (a promise box, or the template's own: Signal Board, Citation Card, two-minute version, Since-last-week)`);
+  } else {
+    const wordsBefore = (text(openBody.slice(0, payoffAt)).match(/\S+/g) || []).length;
+    if (wordsBefore > 150)
+      W(`the payoff arrives ~${wordsBefore} words in — the focus law wants it up top (inside ~150)`);
+  }
 
   // 7) The scannable spine — at least one <mark>/highlight. WARN.
   if (!/<mark\b/i.test(body) && !/class="highlight"/i.test(body))
