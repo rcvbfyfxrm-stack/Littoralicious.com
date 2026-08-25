@@ -28,6 +28,27 @@ BANNED = ["delicious", "yummy", "mouthwatering", "elevated", "curated", "hidden 
           "stunning", "breathtaking", "superfood", "game-changer", "nestled",
           "authentic vibe", "picturesque"]
 
+def element(doc, anchor, tag="details"):
+    """The full text of the element whose opening tag contains `anchor` — nesting-aware."""
+    j = doc.find(anchor)
+    if j < 0:
+        return ""
+    start = doc.rfind(f"<{tag}", 0, j + len(tag) + 2)
+    opens = re.compile(f"<{tag}\\b"); closes = f"</{tag}>"
+    i, depth = start, 0
+    while True:
+        no = opens.search(doc, i + 1 if depth else i)
+        nc = doc.find(closes, i + 1 if depth else i)
+        if nc < 0:
+            return doc[start:]
+        if no and no.start() < nc:
+            depth += 1; i = no.start()
+        else:
+            depth -= 1; i = nc
+            if depth == 0:
+                return doc[start:nc + len(closes)]
+
+
 def quoted_spans(doc):
     """Character ranges we do NOT police for banned words: href values, <cite> blocks, and
     the whole #sources list — those are other people's titles and URLs, quoted verbatim.
@@ -299,6 +320,21 @@ def main():
         r.ck("hot: section carries the visible date",
              bool(re.search(r"[Cc]hecked \d{1,2} \w+ 20\d\d", doc)),
              "no human-readable checked date in the section")
+        # the board is placed twice (high, and again at the foot). One source, so they
+        # must be byte-identical apart from the ids and the cross-link.
+        if hot.get("twice"):
+            r.ck("hot: foot copy present", 'id="hot-foot"' in doc)
+            r.ck("hot: cross-links both ways",
+                 'href="#hot-foot"' in doc and 'href="#why-now"' in doc)
+            r.ck("hot: exactly one dated board", doc.count("data-hot-asof") == 1,
+                 f'{doc.count("data-hot-asof")} — the foot copy must not carry the dates')
+            def _cards(block):
+                return re.findall(r'<span class="fcard__name">([^<]*)</span>', block)
+            top = _cards(element(doc, 'id="why-now"'))
+            foot = _cards(element(doc, 'id="hot-foot"'))
+            r.ck("hot: the two copies have not drifted",
+                 len(top) >= 4 and top == foot,
+                 f"{len(top)} vs {len(foot)} cards")
         n_hot = sum(1 for v in D["VENUES"] if v.get("hot_this_month"))
         r.ck("hot: venues carry hot_this_month",
              n_hot >= hot.get("minVenues", 5), f"{n_hot} venues")
