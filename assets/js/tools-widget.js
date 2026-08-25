@@ -223,10 +223,34 @@
             '    color: #fafafa;' +
             '    outline: none;' +
             '}' +
-            '[data-theme="dark"] .tools-widget-btn { color: var(--color-paper, #fafafa); }' +
+            // Dark mode: the spoon takes the INK token (white on a dark page).
+            // It used to take --color-paper, which flips to #0a0a0a in dark —
+            // a black spoon on a black page, i.e. no spoon at all. Same for the
+            // panel border. The glow shadows flip light too, or they vanish.
+            '[data-theme="dark"] .tools-widget-btn { color: var(--color-ink, #fafafa); }' +
+            '[data-theme="dark"] .tools-widget[data-open="true"] .tools-widget-btn { color: var(--color-sea, #7ba3bd); }' +
+            '@keyframes spoon-glow-dark {' +
+            '    0%, 100% { opacity: 0.72; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)); }' +
+            '    50% { opacity: 1; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 7px rgba(123, 163, 189, 0.6)); }' +
+            '}' +
+            '[data-theme="dark"] .tools-widget-btn svg { animation-name: spoon-glow-dark; }' +
+            '@media (prefers-reduced-motion: reduce) {' +
+            '    [data-theme="dark"] .tools-widget-btn svg {' +
+            '        animation: none;' +
+            '        opacity: 1;' +
+            '        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));' +
+            '    }' +
+            '}' +
+            '[data-theme="dark"] .tools-widget-btn:hover svg,' +
+            '[data-theme="dark"] .tools-widget-btn:focus-visible svg,' +
+            '[data-theme="dark"] .tools-widget[data-open="true"] .tools-widget-btn svg {' +
+            '    animation: none;' +
+            '    opacity: 1;' +
+            '    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 8px rgba(123, 163, 189, 0.65));' +
+            '}' +
             '[data-theme="dark"] .tools-widget-panel {' +
-            '    background: var(--color-paper, #1a1a1a);' +
-            '    border-color: var(--color-paper, #fafafa);' +
+            '    background: var(--color-paper, #0a0a0a);' +
+            '    border-color: var(--color-ink, #fafafa);' +
             '}' +
             '@media print { .tools-widget { display: none !important; } }' +
             '@media (max-width: 480px) {' +
