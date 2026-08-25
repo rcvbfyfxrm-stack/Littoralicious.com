@@ -1,20 +1,26 @@
 <!-- GOLD5 §10 · WHAT'S HOT THIS MONTH — mandatory, and the only perishable block.
-     id MUST be "why-now": guide-enhance.js's locked RANK table scores that id 11, which
-     places it high (right before #eat). An unranked id is sorted to the tail. Keep the
-     #hot anchor inside so both links resolve.
+
+     ⚠ THE BOARD BELOW GOES AT THE FOOT, inside the .gx-tail wrapper, as
+     id="hot-foot". High up you author only the ONE-LINE POINTER at the bottom of
+     this file (GOLD5 §3b) — the board is not printed twice.
+     (Arnaud, 2026-08-25: "should be a small line that directs you to the bottom.")
+
      data-hot-asof / data-hot-review are READ BY THE GATE — it fails the build when the
-     as-of date is >70 days old or the review date has passed. Update both, or delete the
-     whole section; do not leave a stale one standing. -->
-<details class="sfold" id="why-now" data-hot-asof="YYYY-MM-DD" data-hot-review="YYYY-MM-DD" open>
+     as-of date is >70 days old or the review date has passed, and it fails if more than
+     one block carries them. Update both, or delete the whole section; do not leave a
+     stale one standing. The pointer repeats the checked date in prose and the gate
+     asserts the two match. -->
+<details class="sfold" id="hot-foot" data-hot-asof="YYYY-MM-DD" data-hot-review="YYYY-MM-DD" open>
 <summary>
 <div>
-<div class="sfold__title"><span id="hot"></span>What&#x27;s hot this month</div>
+<div class="sfold__title">What&#x27;s hot this month</div>
 <div class="sfold__desc">Checked D MONTH YYYY — [the two or three things genuinely on right now]. This is the one section that goes stale: review by [MONTH YYYY]</div>
 </div>
 <span class="sfold__count">MON–MON YYYY</span>
 <span class="sfold__chev"></span>
 </summary>
 <div class="sfold__body">
+<p class="gx-hot-jump">This is the board the line at the top points to — <a href="#why-now">back up to where you saw it</a></p>
 <p class="gx-lede">The rest of this guide is written to last. This part is not — it is a dated snapshot of what is actually on right now, and it carries the date it was checked so you can see how much to trust it.</p>
 
 <!-- Four groups. Drop any that has nothing TRUE in it this month; never pad. -->
@@ -51,3 +57,14 @@
 
 </div>
 </details>
+
+<!-- ------------------------------------------------------------------------
+     AND HIGH UP, where the board used to be: the pointer. GOLD5 §3b.
+     It must stay a <section> — RANK keys are TAG#id, so DIV#why-now is unranked
+     and would be flung to the tail. Keep <span id="hot"> so #hot still resolves.
+     Keep it to ~60 words. The gate fails if it grows a card or passes 1 500 bytes.
+     ------------------------------------------------------------------------ -->
+<section class="gx-jump" id="why-now"><span id="hot"></span>
+<p><span class="gx-jump__t">What&#x27;s hot this month.</span> Checked D MONTH YYYY — [the two or three things genuinely on right now]. The dated board is at the foot. <a class="gx-jump__go" href="#hot-foot">What&#x27;s on right now →</a></p>
+<p class="gx-jump__meta">The one part of this guide written to go out of date: review by [D MONTH YYYY].</p>
+</section>

@@ -78,6 +78,18 @@ Clones the current reference guide's chrome and replaces every content block who
 `guide-enhance.js` is LOCKED and re-sorts sections by a `RANK` table; and you must never author
 an `id="band-eat"` anchor.
 
+### The section templates in `lines/`
+
+| file | goes | note |
+|------|------|------|
+| `craft.TEMPLATE.html` | in place | leads with the one to do; the ET bar decides the order but is never printed (GOLD5 §4) |
+| `hot.TEMPLATE.html` | **foot**, as `#hot-foot` | the dated board, once; the file ends with the `#why-now` pointer that goes high (§3b) |
+| `eat-pointer.TEMPLATE.html` | high, as `#eat` | one line down to `#la-liste`, which holds the list, The Dish and the `.ics` (§3b) |
+
+⚠ A jump line must stay a `<section>`. RANK keys are `TAG#id`, so a `<div>` on a ranked id scores
+`200 + i` and is flung to the tail — the line would end up at the bottom next to the thing it
+points at.
+
 ## 7 · The gate
 
 ```bash

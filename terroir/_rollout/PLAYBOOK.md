@@ -92,9 +92,14 @@ in GOLD4 §1–9 still holds. The delta, all of it shipped and render-verified o
 2. **Street food is a table GROUP, and `#street-food` at the foot is something else.** The group
    is where to eat street food; the closing section is renamed **"Sur le pouce — the late plate"**
    and answers only *what is still open after the bar shuts*. They must not overlap.
-3. **The foot of the guide is: la liste → «Ce Soir» → The Dish → sources.** The checklist, the
-   charter shortlist and the dish canon travel together at the end, out of the tables. See §12 for
-   the mechanism — it is not obvious and it fought back.
+3. **The foot of the guide is: La liste (The Dish inside it) → «Ce Soir» → sources.** The
+   checklist, the dish canon and the charter shortlist travel together at the end, out of the
+   tables. See §12 for the mechanism — it is not obvious and it fought back.
+   ⚠ **What-to-eat and The Dish are ONE section, not three.** (Arnaud, 2026-08-25: *"dish and what
+   to eat and drink are the same section."*) `#la-liste` at the foot is the whole thing — the list,
+   the origin stories under `.gx-liste-dish`, and the one-tap `.ics` button. `#dish` stays a `<div>`
+   inside it so its anchor and every `#p-dish-N` link still resolve.
+   **`#eat` high up is a one-line pointer to it — never a second copy.** See §3b.
 4. **`#craft` — Craftsmanship.** Mandatory. The EducatedTraveler bar still decides what goes in
    and in what order — a named still-practising master · dedicated teaching lab · **open
    enrolment** · at the source — but **the bar is the editor's tool, not the reader's: never
@@ -114,9 +119,33 @@ in GOLD4 §1–9 still holds. The delta, all of it shipped and render-verified o
    is nothing on ("no festival now, and the weather is the trade") rather than inventing one. Fill
    the `hot_this_month` CSV column while you are there — it emitted **empty** on every guide
    before this.
-   ⚠ Its id MUST be `why-now` (see §12) and it MUST carry `data-hot-asof` / `data-hot-review`:
-   **the gate fails the build when it goes stale.** `why-now` is therefore no longer forbidden —
-   it is a dated board, not the old GOLD4 why-now fold.
+   ⚠ It MUST carry `data-hot-asof` / `data-hot-review`: **the gate fails the build when it goes
+   stale.** `why-now` is therefore no longer forbidden — it is a dated board, not the old GOLD4
+   why-now fold.
+   ⚠ **The board itself lives ONCE, at the foot** (`#hot-foot`, inside the tail wrapper), where the
+   reader is when they decide what to do with the evening. High up, on the ranked `why-now` id,
+   there is a **one-line pointer** down to it. See §3b. The dates live on the foot board only.
+
+### 3b · JUMP LINES — a section that lives at the foot, announced high as one line
+
+Two sections belong at the end and still have to be visible early: **La liste** (the checklist you
+leave with) and **the hot board** (the dated one you check last). The answer is not to print them
+twice. Up top, on the same ranked id the section used to carry, author a `<section class="gx-jump"
+id="…">`: one bold lead, one sentence, one `.gx-jump__go` link down, one `.gx-jump__meta` line
+under it. Keep it to ~60 words — Arnaud's ask was *"a small line that directs you to the bottom."*
+
+- **It must stay a `<section>` or `<details>`, never a `<div>`.** `keyOf()` builds `TAG#id`, so
+  `DIV#why-now` is not in RANK and gets `200 + i` — the line would be flung to the tail.
+  `SECTION#eat` (12) and `SECTION#why-now` (11) are both scored; that is why the pointer sits
+  exactly where the fold did.
+- Keep `<span id="hot"></span>` inside the hot pointer so `#hot` still resolves.
+- Cross-link both ways: the pointer links to `#hot-foot` / `#la-liste`, the foot block links back.
+- The pointer repeats the checked date in prose. The gate asserts it **matches `data-hot-asof`**,
+  because two dates that can drift eventually will.
+- Style is in the kit (`guide-enhance.css` §14) — nothing per-guide.
+- The gate holds the line to a line: `"hot": {"mode": "pointer"}` and `"listePointer": true` fail
+  the build if a card, a `terroir-btn`, a `.ics` link or 1 200+ bytes reappear up top. Proven by
+  positive control (a card, a duplicated `.ics`, and a drifted date each produced a clean HOLD).
 6. **Geocoding is name-validated.** A Nominatim hit whose feature name shares no significant word
    with the venue is REJECTED, and school/ward-office matches are refused outright. Unresolved
    venues stay unpinned and keep a Maps search link. No coordinate is ever hand-written.
@@ -161,6 +190,11 @@ Exit 0 = deployable, exit 1 = HOLD. What it asserts, in one pass:
 9c. **The hot board expires itself** — `data-hot-asof` older than `maxAgeDays` (70), a passed
    `data-hot-review`, a missing visible "Checked <date>" line, or fewer than `minVenues` venues
    carrying `hot_this_month` all FAIL the build. Proven by positive control.
+9d. **The jump lines stay lines** — with `"hot": {"mode": "pointer"}` and `"listePointer": true`,
+   the gate fails if `#why-now` grows a card or passes 1 500 bytes, if `#eat` grows a `.ics`,
+   a `terroir-btn` or a second list, if either loses its down-link or its back-link, if more than
+   one block carries `data-hot-asof`, if `#dish` leaves `#la-liste`, or if the pointer's visible
+   date drifts from the attribute. See §3b.
 10. **THE RENDER GATE** — serves the repo on a **fresh ephemeral port** (never reuse a stale server)
     and drives Chrome to read the real DOM, asserting organiser groups/lanes/cards, 3 berth cards,
     fcards, one map pin per pinned venue, gemboxes, gem popups, bridge doors, shortlist groups, liste
@@ -178,8 +212,10 @@ and `reorder()` then undoes the move.
   wrapper (`<div class="gx-tail">`). `keyOf()` reads the wrapper, not its children, so the block
   travels together with its internal order intact. This is how la-liste → Ce Soir → Dish → sources
   is achieved.
-- **To place a section high:** give it an id the RANK table already scores. The hot board uses
-  `why-now` (rank 11) for exactly this reason, with `<span id="hot">` inside for the anchor.
+- **To place a section high:** give it an id the RANK table already scores. The hot **pointer**
+  uses `why-now` (rank 11) for exactly this reason, with `<span id="hot">` inside for the anchor,
+  and the la-liste pointer uses `eat` (rank 12). ⚠ RANK keys are `TAG#id` — a `<div>` on a ranked
+  id scores `200 + i` and lands in the tail. Pointers are `<section>`s. See §3b.
 - ⚠ **Never author an `id="band-eat"` anchor.** `makeBand()` generates its own divider with that
   id for the "eat" act, and `guide-bridge.js` resolves `#ce-soir`'s position with
   `getElementById('band-eat') || getElementById('tables')` — so it finds the kit's one first and

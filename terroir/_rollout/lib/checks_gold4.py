@@ -338,16 +338,49 @@ def main():
         r.ck("hot: section carries the visible date",
              bool(re.search(r"[Cc]hecked \d{1,2} \w+ 20\d\d", doc)),
              "no human-readable checked date in the section")
-        # the board is placed twice (high, and again at the foot). One source, so they
-        # must be byte-identical apart from the ids and the cross-link.
-        if hot.get("twice"):
+        def _cards(block):
+            return re.findall(r'<span class="fcard__name">([^<]*)</span>', block)
+        # POINTER mode (2026-08-25, Arnaud): the board lives ONCE, at the foot. High up,
+        # on the same ranked id, there is a one-line <section> pointing down to it — not
+        # a second copy. The gate's job is to prove the line stayed a line.
+        if hot.get("mode") == "pointer":
+            top = element(doc, 'id="why-now"', tag="section")
+            r.ck("hot: the top copy is a pointer line, not a board",
+                 bool(top) and not _cards(top) and len(top) < 1500,
+                 f"{len(_cards(top))} cards / {len(top)} bytes at #why-now")
+            r.ck("hot: the pointer is a jump line", 'class="gx-jump"' in top)
+            r.ck("hot: pointer links down to the board", 'href="#hot-foot"' in top)
+            r.ck("hot: the '#hot' anchor still resolves", 'id="hot"' in top)
+            foot = element(doc, 'id="hot-foot"')
+            r.ck("hot: the board is at the foot", bool(foot))
+            r.ck("hot: the foot board carries the dates", "data-hot-asof" in foot)
+            r.ck("hot: exactly one dated board", doc.count("data-hot-asof") == 1,
+                 f'{doc.count("data-hot-asof")} — only the foot board may carry the dates')
+            r.ck("hot: the board links back up", 'href="#why-now"' in foot)
+            r.ck("hot: the board still has its cards", len(_cards(foot)) >= 4,
+                 f"{len(_cards(foot))} cards")
+            # the pointer repeats the checked date in prose — it must not drift from the attribute
+            MONTHS = ("january february march april may june july august september "
+                      "october november december").split()
+            dates = set()
+            for blk in (top, foot):
+                for dm in re.finditer(r"[Cc]hecked (\d{1,2}) (\w+) (20\d\d)", blk):
+                    try:
+                        dates.add(datetime.date(int(dm.group(3)),
+                                                MONTHS.index(dm.group(2).lower()) + 1,
+                                                int(dm.group(1))))
+                    except ValueError:
+                        dates.add(dm.group(0))
+            r.ck("hot: the visible date matches the attribute",
+                 dates == {asof} if m else False, f"{sorted(map(str, dates))} vs as-of {m.group(1) if m else '?'}")
+        # LEGACY: the board placed twice, in full. One source, so the two copies
+        # must not have drifted apart.
+        elif hot.get("twice"):
             r.ck("hot: foot copy present", 'id="hot-foot"' in doc)
             r.ck("hot: cross-links both ways",
                  'href="#hot-foot"' in doc and 'href="#why-now"' in doc)
             r.ck("hot: exactly one dated board", doc.count("data-hot-asof") == 1,
                  f'{doc.count("data-hot-asof")} — the foot copy must not carry the dates')
-            def _cards(block):
-                return re.findall(r'<span class="fcard__name">([^<]*)</span>', block)
             top = _cards(element(doc, 'id="why-now"'))
             foot = _cards(element(doc, 'id="hot-foot"'))
             r.ck("hot: the two copies have not drifted",
@@ -363,6 +396,26 @@ def main():
             _i = _rows[0].index("hot_this_month")
             n_csv = sum(1 for row in _rows[1:] if len(row) > _i and row[_i].strip())
             r.ck("hot: CSV matches data.js", n_csv == n_hot, f"csv {n_csv} vs data {n_hot}")
+
+    # ---- 7c · what-to-eat is ONE section, at the foot ------------------------
+    # Arnaud, 2026-08-25: "dish and what to eat and drink are the same section."
+    # #la-liste at the foot is the canon — the list, the origin stories, the .ics.
+    # #eat high up is a one-line pointer to it and must never grow back into a copy.
+    if cfg.get("listePointer"):
+        top = element(doc, 'id="eat"', tag="section")
+        r.ck("liste: #eat is a pointer line, not a second list",
+             bool(top) and len(top) < 1200
+             and not re.search(r'class="(gx-liste__what|fcard|terroir-btn)', top),
+             f"{len(top)} bytes at #eat")
+        r.ck("liste: the pointer is a jump line", 'class="gx-jump"' in top)
+        r.ck("liste: it points at la liste", 'href="#la-liste"' in top)
+        body = element(doc, 'id="la-liste"')
+        r.ck("liste: the canon is at the foot", bool(body))
+        r.ck("liste: The Dish is inside it", 'id="dish"' in body,
+             "#dish must live inside #la-liste, not as its own fold")
+        r.ck("liste: the .ics button is on the section that has the list",
+             ".ics" in body, "the one-tap checklist must sit with la liste")
+        r.ck("liste: the .ics is not duplicated at the top", ".ics" not in top)
 
     # ---- 8 · gem popup anchors must exist in the prose -----------------------
     miss = [g["pattern"] for g in D.get("GEMS", []) if g["pattern"].lower() not in low]

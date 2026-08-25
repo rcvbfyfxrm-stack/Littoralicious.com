@@ -383,3 +383,29 @@
 #band-close ~ details.sfold .sfold__desc{font-size:0.8em;}
 .band-nav__chip[href="#band-close"]{opacity:.7;font-size:0.62rem;}
 @media(max-width:640px){#band-close ~ details.sfold{max-width:none;}}
+
+/* ============================================================================
+   14 · JUMP LINE — a section that lives at the foot, announced high as one line
+   Some sections belong at the end: the checklist you actually leave with, the
+   dated board you check last. They still have to be visible early, so up here
+   they are ONE LINE pointing down rather than a second copy to scroll past.
+   Authored on the SAME ranked id the section used to carry (as a <section>, so
+   guide-enhance's RANK table still places it) — the line sits exactly where the
+   fold did. Arnaud, 2026-08-25: "should be a small line that directs you to the
+   bottom."
+   ========================================================================== */
+.gx-jump{
+  border-top:1px solid var(--gx-rule);
+  margin-top:18px; padding:13px 0 3px 14px;
+  border-left:3px solid var(--gx-gold);
+  font-family:var(--gx-sans); font-size:.95rem; line-height:1.55;
+  color:var(--gx-ink2);
+}
+.gx-jump p{ margin:0; }
+.gx-jump__t{ font-weight:600; color:var(--gx-ink); }
+.gx-jump__meta{ margin-top:5px !important; color:var(--gx-ink3); font-size:.82rem; }
+.gx-jump__go{
+  color:var(--gx-sea); font-weight:600; text-decoration:none;
+  border-bottom:1px solid var(--gx-rule); white-space:nowrap;
+}
+.gx-jump__go:hover{ border-bottom-color:var(--gx-sea); }
