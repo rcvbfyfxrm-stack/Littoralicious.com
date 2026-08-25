@@ -45,7 +45,8 @@ const EMOJI_OK = new Set(["⚠"]); // DNA tolerates ⚠/✓/★ as functional UI
 // Prefer the BODY:BEGIN/END markers (newer articles); else drop chrome + scripts.
 function bodyOf(html) {
   const m = html.match(/<!--\s*BODY:BEGIN[\s\S]*?-->([\s\S]*?)<!--\s*BODY:END[\s\S]*?-->/i);
-  if (m) return m[1];
+  // Interactive explainers ride inside the body (importmap + module script + SVG poster) — code is not prose.
+  if (m) return m[1].replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<svg[\s\S]*?<\/svg>/gi, " ");
   return html
     .replace(/<head[\s\S]*?<\/head>/gi, "")
     .replace(/<script[\s\S]*?<\/script>/gi, "")
@@ -64,7 +65,8 @@ function lintArticle(a) {
   const E = (m) => errs.push(m), W = (m) => warns.push(m);
   const html = read(p("articles", `${a.slug}.html`));
   const body = bodyOf(html);
-  const prose = text(body);
+  // Reference titles are quoted verbatim (US journals spell 'behavior'); judge voice on the prose, not the sources strip.
+  const prose = text(body.replace(/<div\s+class="article-sources">[\s\S]*?<\/div>/gi, " "));
 
   // 1) Headline rules (on the canonical title). Hard rules — these are ERRORS.
   if (/!/.test(a.title)) E(`headline has an exclamation mark: "${a.title}"`);
