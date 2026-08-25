@@ -121,7 +121,7 @@ function lintArticle(a) {
 
   // 8) Focus runs — ~150 words of unbroken prose before a visual beat. WARN.
   // Locked visual blocks (DESIGN-LOCK) count as beats too — glance/id-card/citation-card/… re-grab the eye exactly like a note.
-  const BEAT = /<(h2|h3|h4|blockquote|ul|ol|li|table|thead|tbody|tr|td|th|caption|dl|dt|dd|img|figure|hr|pre)\b|<div\s+class="(note|summary-box|divider|identity|pairing|stat|at-a-glance|science|glance|id-card|citation-card|register-ladder|heritage-timeline|cook-this-port|galley-plan|signal-board|forecast-scorecard|article-toc|article-sources|tw-)/gi;
+  const BEAT = /<(h2|h3|h4|blockquote|ul|ol|li|table|thead|tbody|tr|td|th|caption|dl|dt|dd|img|figure|hr|pre|details|summary|nav)\b|<div\s+class="(note|summary-box|divider|identity|pairing|stat|at-a-glance|science|glance|id-card|citation-card|register-ladder|heritage-timeline|cook-this-port|galley-plan|signal-board|forecast-scorecard|article-toc|article-sources|tw-|pc-|three-berths|tb-col|pfold|verdict|lab-)/gi;
   // The closing reference strip is a list of citations, not prose — leave it out of the focus-run count.
   const proseBody = body.replace(/<div\s+class="article-sources">[\s\S]*?<\/div>/gi, " ");
   const chunks = proseBody.replace(BEAT, "\u0000$&").split("\u0000"); // NUL as the beat separator (was a raw NUL byte; escaped so the file stays text)
