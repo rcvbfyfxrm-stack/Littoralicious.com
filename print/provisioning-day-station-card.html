@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provisioning Day Station Card &mdash; Littoralicious</title>
+    <style>
+        @page { size: A5; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7pt; line-height: 1.25; color: #0a0a0a; background: #fff;
+            width: 148mm; height: 210mm; margin: 0 auto; padding: 6mm 7mm 5mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.6mm; margin-bottom: 2mm; }
+        .brand { font-family: Georgia, serif; font-size: 7pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 15pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; margin: 1mm 0 0.6mm; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.6pt; color: #4a5568; line-height: 1.3; }
+        .numbers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; margin: 2.2mm 0; }
+        .numbers > div { border-left: 3px solid #2d4a5e; background: #f4f6f7; padding: 1.6mm 2.2mm; }
+        .numbers b { display: block; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 11pt; color: #2d4a5e; line-height: 1.1; }
+        .numbers span { display: block; font-size: 6.3pt; color: #4a5568; margin-top: 0.6mm; line-height: 1.25; }
+        h2 { font-family: Georgia, serif; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.8mm; margin: 1.6mm 0 1.2mm; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; font-size: 6pt; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; padding: 0.6mm 1.2mm; border-bottom: 1px solid #cbd5e1; }
+        td { padding: 1.05mm 1.2mm; vertical-align: top; border-bottom: 1px solid #e5e7eb; font-size: 6.6pt; line-height: 1.28; }
+        td:first-child { font-weight: 700; color: #2d4a5e; white-space: nowrap; width: 22mm; }
+        td:first-child small { display: block; font-weight: 400; color: #6b7280; font-size: 5.9pt; white-space: normal; }
+        td:last-child { color: #1f2937; }
+        .habit { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.6mm 2.4mm; margin-top: 2mm; font-size: 6.8pt; line-height: 1.32; }
+        .habit strong { color: #2d4a5e; }
+        .tally { margin-top: 2mm; border: 1px solid #0a0a0a; padding: 1.6mm 2.4mm; font-size: 6.8pt; display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+        .tally span { display: block; color: #6b7280; font-size: 5.9pt; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.2mm; }
+        .tally .line { border-bottom: 1px solid #0a0a0a; height: 5mm; }
+        .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; margin-top: 2mm; }
+        .pair > div { border-left: 3px solid #2d4a5e; background: #f4f6f7; padding: 1.6mm 2.2mm; font-size: 6.6pt; line-height: 1.32; }
+        .pair b { display: block; font-size: 6pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; margin-bottom: 0.7mm; }
+        .pair q { font-family: Georgia, serif; font-style: italic; color: #1f2937; }
+        .foot { margin-top: auto; padding-top: 1.4mm; border-top: 1px solid #e2e2e2; font-size: 5.6pt; color: #6b7280; line-height: 1.3; }
+        .foot b { color: #2d4a5e; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="brand">Littoralicious</span><span class="brand-tagline">Station card &middot; Galley Operations</span>
+        <h1>Provisioning Day</h1>
+        <p class="hook">Tailgate to freezer. The fridge door is the finish line, and on an August quay it is one hour away.</p>
+    </div>
+
+    <div class="numbers">
+        <div><b>5 &deg;C</b><span>Chilled food at 5 &deg;C or below when received, and held there. Eggs from a van at 7 &deg;C or less.</span></div>
+        <div><b>1 hour</b><span>Above 32 &deg;C, nothing sits out of refrigeration for more than one hour; two hours below that.</span></div>
+        <div><b>&minus;18 &deg;C</b><span>Frozen is &minus;18 &deg;C at every point. Shipped frozen, arrives frozen, or it stays on the quay.</span></div>
+    </div>
+
+    <h2>Station map</h2>
+    <table>
+        <thead><tr><th>Station</th><th>The job</th><th>The rule</th></tr></thead>
+        <tbody>
+            <tr><td>Quay<small>probe point, tailgate</small></td><td>Probe every chilled and frozen crate before it crosses the passerelle; write the reading on the crate</td><td>5 &deg;C or below, frozen frozen, eggs 7 &deg;C; anything else stays on the quay and goes on the delivery note</td></tr>
+            <tr><td>Deck<small>sort lane, in shade</small></td><td>Three lanes &mdash; freezer, fridge, dry; nothing is opened here</td><td>Nothing waits: the hour started at the tailgate</td></tr>
+            <tr><td>Freezer<small>chest and upright</small></td><td>Freezer lane stows first; every pack dated, oldest forward</td><td>&minus;18 &deg;C at all points; a thawed-and-refrozen pack is refused at the quay</td></tr>
+            <tr><td>Fridge 1<small>proteins, lower shelves</small></td><td>Raw animal foods by species; cooked and ready-to-eat above them; fish on melting ice, drained</td><td>Raw below ready-to-eat, species apart; poultry 4 &deg;C, minced 2 &deg;C, fish on melting ice</td></tr>
+            <tr><td>Fridge 2<small>produce, two climates</small></td><td>Leaves, cole crops, berries, temperate fruit at 0&ndash;2 &deg;C; citrus and fruit-type vegetables at 7&ndash;10 &deg;C</td><td>Ethylene producers away from the leaves; the grouping holds for seven days</td></tr>
+            <tr><td>Dry store<small>racks and the warm shelf</small></td><td>Tropicals, melons, hard squash, roots at 13&ndash;18 &deg;C; dry goods dated, oldest forward</td><td>Everything 15 cm off the sole; nothing on the deck</td></tr>
+        </tbody>
+    </table>
+
+    <div class="habit"><strong>The morning reading.</strong> Before coffee, probe the warmest shelf of every cold unit and write the probe's number in the log &mdash; not the door display's. Above 5 &deg;C: move the contents, find the cause, write both down. Freezer at &minus;18 &deg;C or lower. Sign the line; the master's documented inspection reads it.</div>
+
+    <div class="tally">
+        <div><span>Services run</span><div class="line"></div></div>
+        <div><span>Units found above 5 &deg;C at the morning reading</span><div class="line"></div></div>
+    </div>
+
+    <div class="pair">
+        <div><b>Refuse on paper</b><q>&ldquo;This crate reads nine degrees; it goes back, and I am writing it on the note.&rdquo;</q> The reading and the refusal go on the delivery note before the driver leaves &mdash; a written 9 &deg;C is rarely argued with, a phone call the next day always is.</div>
+        <div><b>Label rule</b>Name &middot; received &middot; opened &mdash; three words in marker on every pack before it reaches a shelf. An opened chilled ready-to-eat item is used within seven days at 5 &deg;C; the day of opening is day one. Thaw in the fridge at 5 &deg;C or under running water at 21 &deg;C or below, never on the counter.</div>
+    </div>
+
+    <div class="foot"><b>Sources:</b> FDA Food Code 2022 &sect;&sect;3-202.11, 3-302.11, 3-305.11, 3-501.13, 3-501.17, 3-501.19, 4-204.112 &middot; CDC Vessel Sanitation Program, 2018 Operations Manual &sect;7.3.2.2.1 &middot; Regulation (EC) 853/2004, Annex III &middot; Directive 89/108/EEC, Art. 1 &middot; USDA FSIS, &ldquo;Danger Zone&rdquo; &middot; Thompson, Kader &amp; Sylva (1996), UC Davis compatibility chart &middot; MLC 2006, Standard A3.2 &para;7. Full protocol: littoralicious.com/articles/provisioning-day</div>
+</body>
+</html>
