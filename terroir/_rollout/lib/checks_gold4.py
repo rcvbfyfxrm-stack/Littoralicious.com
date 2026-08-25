@@ -9,8 +9,12 @@ fields) fail SILENTLY and a guide can look perfect in source while rendering a l
 version of itself. Source checks alone are not a gate.
 
 The config JSON makes it reusable for every future guide:
-  { slug, city, guideDir?, mapsTokens[], staleTokens[], sectionsRequired[],
-    sectionsForbidden[], bannedExtra[], floors{...}, listeSlug? }
+  { slug, city, guideDir?, mapsTokens[], staleTokens[], staleAllow{token:[phrase]},
+    sectionsRequired[], sectionsForbidden[], bannedExtra[], floors{...}, listeSlug? }
+
+staleAllow exempts ONLY the exact reviewed phrase — for the case where a "stale"
+token is a real fact about this place rather than a leftover from the guide it was
+cloned from. Every other occurrence still fails.
 
 Exit 0 = ALL GREEN (deployable). Exit 1 = HOLD.
 """
@@ -213,10 +217,24 @@ def main():
             r.ck(f"banned '{w}'", False, f"x{len(real)} — …{ctx}…")
         else:
             r.ck(f"banned '{w}'", True)
+    # staleAllow: a stale token may be a REAL fact about this place rather than a
+    # leftover from the guide it was cloned from ("Kenya" is where a good share of
+    # the Kendwa beach carvings actually come from). Exempt only the exact reviewed
+    # phrase, so every other occurrence still fails.
+    allow = cfg.get("staleAllow", {})
     for w in cfg.get("staleTokens", []):
         # word-boundary: "Kenya" must not fire on "Kenyatta Road"
-        n = len(re.findall(r"\b" + re.escape(w.lower()) + r"\b", low))
-        r.ck(f"stale token '{w}'", n == 0, f"x{n}")
+        okspans = [(m.start(), m.end())
+                   for p in allow.get(w, [])
+                   for m in re.finditer(re.escape(p.lower()), low)]
+        hits = [m.start() for m in re.finditer(r"\b" + re.escape(w.lower()) + r"\b", low)
+                if not in_spans(m.start(), okspans)]
+        if hits:
+            ctx = doc[max(0, hits[0] - 60):hits[0] + 60].replace("\n", " ")
+            r.ck(f"stale token '{w}'", False, f"x{len(hits)} — …{ctx}…")
+        else:
+            r.ck(f"stale token '{w}'", True,
+                 f"x0 ({len(okspans)} allowed)" if okspans else "x0")
     r.ck("no &amp;amp;", "amp;amp;" not in doc)
     emoji = re.findall("[\U0001F300-\U0001FAFF]", doc)
     r.ck("no emoji", not emoji, f"{sorted(set(emoji))[:6]}")

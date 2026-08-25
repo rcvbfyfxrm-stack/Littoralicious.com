@@ -95,11 +95,20 @@ in GOLD4 §1–9 still holds. The delta, all of it shipped and render-verified o
 3. **The foot of the guide is: la liste → «Ce Soir» → The Dish → sources.** The checklist, the
    charter shortlist and the dish canon travel together at the end, out of the tables. See §12 for
    the mechanism — it is not obvious and it fought back.
-4. **`#craft` — Craftsmanship, scored against the EducatedTraveler bar.** Mandatory. Four bars:
-   a named still-practising master · dedicated teaching lab · **open enrolment** · at the source.
-   Group entries by how many they clear and **print the bar each one fails**; never upgrade a
-   place quietly. "Nothing here clears all four" is a legitimate finding. Kendwa's one full pass
-   is the Nungwi dhow-building course taught in the working yard.
+4. **`#craft` — Craftsmanship.** Mandatory. The EducatedTraveler bar still decides what goes in
+   and in what order — a named still-practising master · dedicated teaching lab · **open
+   enrolment** · at the source — but **the bar is the editor's tool, not the reader's: never
+   print the scoring apparatus.** No "the four bars" card, no "how these are judged", no scores.
+   (Arnaud, 2026-08-25: *"don't put the way you select, just put the most recommended and why,
+   and the others what's missing… simpler without losing substance."*)
+   The shape is: **"Do this one"** — a single entry with a «Why this one» that states the facts
+   (the craft is unbroken, the master is named, you can enrol) rather than a score; then
+   **"The others, and what each is missing"**, every card tagged `missing: <the one thing>` and
+   carrying a plain **Missing:** line ("no instructor is named publicly — a reputable room, but
+   you don't know whose hands you're in until you arrive"); then the free/unstructured hour and
+   the warning about what is sold as local craft and is not. Never upgrade a place quietly.
+   "Nothing here clears the bar" is a legitimate finding — say it in the lede, as Diani does.
+   Kendwa's one full pass is the Nungwi dhow-building course taught in the working yard.
 5. **`#hot` — What's hot this month.** Mandatory, dated, and the only perishable block in a guide.
    Four groups: in the water · in the sky · on the plate · in the calendar. Say plainly when there
    is nothing on ("no festival now, and the weather is the trade") rather than inventing one. Fill

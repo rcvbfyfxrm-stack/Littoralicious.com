@@ -5,6 +5,7 @@
     "Exit 0 = deployable. Exit 1 = HOLD. --no-render skips ONLY the browser stage; never skip it before a deploy.",
     "mapsTokens: every Maps link must contain one of these (catches links pointing at the wrong continent).",
     "staleTokens: place words from the guide you cloned. Matched on word boundaries.",
+    "staleAllow: {token: [exact phrase]} — exempts ONLY that reviewed phrase, for when a stale token is a real fact here and not a leftover. Every other occurrence still fails.",
     "groups: 2 or 3. Use 3 when the guide has a street-food group (GOLD5 §3).",
     "hot: turns on the freshness gate for the What's-hot-this-month board (GOLD5 §10)."
   ],
@@ -26,6 +27,7 @@
     "Kwale",
     "Istanbul"
   ],
+  "staleAllow": {},
   "bannedExtra": [
     "paradise",
     "unspoilt",
