@@ -6,6 +6,10 @@
 > Rules: DNA voice (Grandmother + Scientist + Yacht Chef), never lose focus, name the study, no banned words,
 > grade the hype. Many "trend" pieces work BECAUSE we tell the honest version the feed skips.
 
+> **Companion log:** the founder's own seeds and directives, mined from the WhatsApp intelligence groups,
+> live in `content/article-ideas-from-whatsapp.md` (newest mining session first). This catalogue is the
+> trend-scan half; that one is the founder half. Check both before starting a draft.
+
 **Editor's top picks (most on-brand + most distinctive):** Mushroom Garum for the galley · Why the Seed-Oil
 Panic Doesn't Survive the Cohorts · Sardine & Anchovy Collapse Before Bluefin · Feeding a Guest on Ozempic ·
 The Functional Pour (zero-proof pairings) · Induction at Sea · MSG, Honestly · The 23% Olive-Oil "Reprieve."
