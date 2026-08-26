@@ -49,6 +49,15 @@ law, not the box: any locked payoff device counts, as long as it lands inside ~1
 - **Pairings are cards.** `pair-cards`: the pairing on the card, the reason on click; the wild card
   starred. Galley intel opens on concrete ideas — ways to use it, compound logic and all.
 
+**The ingredient standard (locked 2026-08-26).** `templates/shore-larder.html` + `shore-larder-deep-dive.html`
+carry one spine, and `articles/bay-leaf.html` is the reference build: encounter → sketch set into the column →
+the name → the taste → the old habit teased → sum-up → origin folded → Science (numbers, Blind Spot, chemistry,
+**Is it a remedy?** with the dose gap, the folk use that holds, and **how to use it that way**) → Pairings
+(register chips, 2–5 ingredients, one COMPOUND card naming the shared molecule and its share of both oils) →
+Galley Intel (carreaux tiles) → How to Buy → the one thing. Retired for good: the promise box, the Cook's
+Reason box, the Stories section, the Quick Reference card, and the Galley Batch box unless it teaches
+something a pro does not know.
+
 **Concision is a law, not a style.** Say it once. Clear, direct, efficient, without losing substance;
 a repeated fact is a cut, not an emphasis.
 

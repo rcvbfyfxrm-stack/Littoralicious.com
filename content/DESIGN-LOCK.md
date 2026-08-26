@@ -49,6 +49,22 @@ The card shows the pairing only; the reason opens on click and the open card spa
 <details class="fold"><summary>Read more — where it comes from</summary><div class="fold__body"><p>…</p></div></details>
 ```
 
+
+### Galley tiles — `tiles` > `tile` (added 2026-08-26; Galley Intel's field)
+```html
+<div class="tiles">
+  <div class="tile tile--wide" style="--t:#2d4a5e"><span class="tile__name">Laurel butter</span><span class="tile__how">method, temperature, why</span></div>
+  <div class="tile" style="--t:#6f8a6a"><span class="tile__name">Bay oil</span><span class="tile__how">one line</span></div>
+</div>
+```
+Hue per tile via the inline `--t` custom property (the second lock-safe inline, with Trade Winds' `--tw-accent`). `tile--wide` spans two columns.
+
+### Specimen sketch — `figure.specimen` (added 2026-08-26)
+Floats right at ≥720px (252px) so the prose runs around it; centres at a 240px cap below. Inline hatched SVG, pure `#0a0a0a`, transparent ground. Generator: `_pencil-art/galley-sketches/sketch.py`.
+
+### Pairing register chip — `pair-card__reg` (added 2026-08-26)
+`Traditional` · `Modern` · `Compound` · `From the littoral`, inside the card's `<summary>` above the name.
+
 ### Callout notes — `note` + modifier (each auto-labels via ::before)
 - `note--key` → **Key Point** · `note--science` → **The Science** · `note--action` → **Takeaway** ·
   `note--warning` → **Warning** · `note--quote` → pull-quote (no label).

@@ -53,3 +53,24 @@ npm run new -- --slug pizza-napoletana --title "Pizza Napoletana: Poolish, 48h C
   --template recipe-blueprint --read 11
 # category + subtag auto-set from the template; write the body, fill the json, npm run publish
 ```
+
+## The ingredient standard (locked 2026-08-26)
+
+`shore-larder.html` is **the** ingredient template; `shore-larder-deep-dive.html` is the long form of the
+same spine. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
+
+Spine: **1–3 lines of encounter → the specimen sketch, set into the column → the name → the taste ("In the
+mouth") → the old habit, teased, linking to #science → the sum-up → the origin, folded → The Science (the
+four numbers, the Blind Spot, the chemistry, then **Is it a remedy?**) → The Pairings (cards, four registers,
+2–5 ingredients each) → Galley Intel (the carreaux tiles) → How to Buy → the one thing → Sources.**
+
+Standing rules: no promise box · no Cook's Reason box · no Stories section (tales inline or behind the word)
+· no Quick Reference · no Galley Batch Prep unless the procedure is genuinely something a pro would not know
+· the numbers live with the mechanism, not in the intro · every rare word carries `data-def` · pairings carry
+a register chip and never more than five ingredients · if the remedy beat lands on something real, it is
+followed by **how to use it that way** (where, how much, how often, the honest limit) · say it once.
+
+Components: `.specimen` (the sketch, floated), `details.fold` (the glass read-more), `.article-toc` +
+`article-toc__desc` (the sum-up), `.pair-cards` / `.pair-card__reg`, `.tiles` / `.tile` with the inline `--t`
+hue, `.term[data-def]` (click-to-define, `data-kind="story"` for a tale). Sketch generator:
+`_pencil-art/galley-sketches/sketch.py`.

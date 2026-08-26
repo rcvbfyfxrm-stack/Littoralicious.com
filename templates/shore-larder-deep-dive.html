@@ -57,8 +57,24 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <!-- THE PARADOX — the hook this dossier owns: on the ingredient's central contradiction, in two lines of prose. The tension the whole profile resolves — prized yet poisonous raw, dirt-cheap yet irreplaceable, everywhere yet misunderstood. True and sourceable, never a slogan; the dossier below is what settles it. Write it fresh for every piece. -->
 <p>[The paradox: the two true things about this ingredient that should not both be possible — two sentences, before any card or number.]</p>
 
+<!-- SPECIMEN SKETCH — the ingredient's own mark (same rule as template 01): one inline hatched
+     black-ink drawing SET INTO the column (.specimen floats right ≥720px, centres at 240px below), so
+     the name and the taste run around it. Pure #0a0a0a, no grey, no labels or digits, ground-shadow
+     hatch, hand-wobble filter, transparent ground; anything behind is CLIPPED OUT of the foreground
+     silhouette. Build: scratchpad/sketch.py; reference sheet _pencil-art/galley-sketches/. -->
+<figure class="specimen">
+    [inline SVG sketch — generated, not hand-written]
+    <figcaption>[one line: what the drawing shows a buyer to look for]</figcaption>
+</figure>
+
 <!-- THE TASTE — MANDATORY in the intro (founder rule 2026-08-26): the flavour profile in the mouth before any card or number. One prose paragraph, two to four sentences, opening bold "In the mouth:" — attack, middle, finish; what it does to the food around it; fresh against aged where they differ. Sensory words tied to the compounds the Science names. -->
 <p><strong>In the mouth:</strong> [attack &mdash; middle &mdash; finish; what it does to the dish; new crop against aged].</p>
+
+<!-- THE OLD HABIT, TEASED (same rule as template 01): the kitchen belief, the grandmother's hack or
+     the folk remedy this ingredient carries, in one line, with an in-page link to #science where it is
+     settled. Link a sister Littoralicious piece here or in a card when it is genuinely the same subject
+     — in the run of the sentence, never a "related articles" list. -->
+<p>[The old habit or the folk claim, in one line — and <a href="#science">the promise that it is settled below</a>.]</p>
 
 <!-- THE TWO-MINUTE VERSION — DNA law for long formats (14-22 min): the dossier compressed so depth is opt-in. Five clauses: what it is and the variety to buy · the one mechanism that explains it · the buying tell · the storage rule with its number · the single best use aboard. A reader who stops here still leaves fed. The paradox prose above keeps it off the summary-box. -->
 <div class="note" data-label="The two-minute version"><p><strong>[Ingredient] in five lines:</strong> what it is and which variety to buy &middot; the one mechanism that explains it &middot; the buying tell &middot; the storage rule with its number &middot; the single best use aboard. One clause each — the dossier below earns the details.</p></div>
@@ -155,6 +171,22 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <!-- Each claim sourced and rated. No "studies show" without naming the study in Sources. Do NOT add a second science note after this box — the box is the takeaway. -->
 
 <!-- OPTIONAL — THE SMART EXPLAINER (founder rule, 2026-08-24: techniques AND science get an animated explainer — "not always, but when it speaks"). When THIS mechanism has a visible process worth seeing — a set point, a phase change, an emulsion forming, a diffusion front, a crystal growing — carry an interactive explainer here: lit real-time 3D (three.js via CDN importmap), monochrome tone from light, a little functional colour only where it aids reading; SELF-EXPLANATORY from a paused frame with the article text hidden (leader-line labels naming the parts, thresholds worded on the gauge, each part's state legible); a Play button — reader-driven, never autoplay; motion lock applies (pauses off-screen, collapses to the final frame under prefers-reduced-motion). Bar and reference build: _pencil-art/interactive/egg-explainer.html; the full rule lives in templates/the-method-technique.html (THE EXPLAINER) and META-PROMPT. If nothing visibly moves, SKIP — never decorate. -->
+
+<!-- IS IT A REMEDY? (same rule as template 01, and the deep-dive's Health Evidence beat folds into it):
+     (1) what the human trials actually show — n, design, duration, journal, honest strength line, and the
+     DOSE GAP between the trial amount and what a portion delivers; (2) the folk use that DOES hold up,
+     with its paper; (3) IF IT WORKS, HOW TO USE IT — where, how much, how often, the honest limit. If
+     neither half has real sourced content, cut the beat entirely. -->
+<h3>Is it a remedy?</h3>
+<p>[One line framing the two answers.]</p>
+<div class="note note--science" data-label="What the trials actually show"><ul>
+    <li><strong>[What was measured]</strong> [finding, n, design, duration, journal, year. <em>Strength: [tier] — [why].</em>]</li>
+    <li><strong>[The dose gap]</strong> [what a portion delivers against the trial dose — <mark>the clause that settles it</mark>.]</li>
+</ul></div>
+<div class="note note--key" data-label="[The grandmother was right]"><p>[The traditional habit the evidence confirms, with its paper.]</p></div>
+<div class="note note--action" data-label="How to use it that way"><ul>
+    <li><strong>Where:</strong> [the exact application]. <strong>How much:</strong> [amount and form]. <strong>How often:</strong> [interval, and the sign it has stopped working]. <strong>Its honest limit:</strong> [what the evidence does not cover].</li>
+</ul></div>
 
 <div class="divider" id="four-ways"><span class="divider__text">Four Ways to Use It</span></div>
 
@@ -296,10 +328,18 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <!-- YACHT GALLEY INTEL — the at-sea payoff. Sea-bordered grey box, ul. Then one or two action notes. -->
 <h2 id="galley-intel">Yacht Galley Intel</h2>
 <p><strong>At sea, this is what counts:</strong> <!-- kicker: the storage or space constraint this ingredient lives or dies by. --></p>
-<div class="note note--action" data-label="Galley Intel"><ul>
-    <li><strong>Lead-in.</strong> Storage life, weight/space, or a galley technique &mdash; bolded label, then the detail with numbers (&deg;C, minutes). Note where the <span class="term">Maillard reaction</span> earns its colour.</li>
-    <!-- WRITER: 4–5 items (locked note, converted from the pre-lock grey box, founder call 2026-08-24). Galley-specific: storage, batch-prep recipe, shortcuts, provisioning maths. -->
-</ul></div>
+<!-- GALLEY INTEL — the carreaux tile field (same rule as template 01): every idea a tile with its own
+     hue via the inline --t custom property, .tile--wide for the ones that deserve the room; then the
+     working tiles (dose, storage, provisioning). NO Galley Batch Prep box unless the procedure is
+     genuinely something a pro would not know; NO Quick Reference card; never repeat a pairing here. -->
+<div class="tiles">
+    <div class="tile tile--wide" style="--t:#2d4a5e"><span class="tile__name">[The best idea]</span><span class="tile__how">[method, temperature, time — and why it works]</span></div>
+    <div class="tile" style="--t:#6f8a6a"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile" style="--t:#a8664f"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile" style="--t:#c4a35a"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile" style="--t:#2d4a5e"><span class="tile__name">Dose</span><span class="tile__how">[the amounts, with the weight of a unit]</span></div>
+    <div class="tile" style="--t:#a8664f"><span class="tile__name">Storage &amp; buying at sea</span><span class="tile__how">[how it keeps, and where it is cheap]</span></div>
+</div>
 <p>The one move from that list worth doing once and drawing on all week:</p>
 <div class="note note--action" data-label="Galley Batch Prep"><p>One repeatable batch-prep or technique with exact quantities, temperature, time, and shelf life.</p></div>
 
