@@ -38,7 +38,7 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order (founder-revised 2026-08-24; The Name added 2026-08-25, promise box removed): THE NAME → The Paradox → The two-minute version → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Unexpected) → Flavour-Compounding (shared-molecule bridges, no row cap) → Choosing & Buying (quality + fraud test + how-to-buy, ONE run) → Conservation (only if peculiar) → Galley Intel (+ substitution ladder, FUNCTIONAL ingredients only) → Stories → Quick Reference → Takeaway → Sources. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. IDENTITY (META-PROMPT grid): PROMISE = the laboratory dossier — one ingredient, four registers · OPENING REGISTER = THE NAME (the word and its origin, the other names and WHY, the family) — then the paradox, stated in two lines before any card · SIGNATURE = The Name + the 8-cell Identity Card + Four Ways + the register ladder + the Flavour-Compounding table · PRO-HOOK = the Frontier register + the strong-tier compound bridges · FORBIDDEN = shipping without Four Ways; filler examples. LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the Identity Card, the loudest in Frontier or the compound table, one in Stories. -->
+                <!-- BODY:BEGIN — Ingredient Deep-Dive (MAX profile). Section order (founder-revised 2026-08-24; The Name added 2026-08-25, promise box removed): THE NAME → The Paradox → The two-minute version → Identity Card (8 cells incl. Season, Flavour Profile, Quality Tell, Conservation, Best For) → History (Origin → Journey/how it developed in the culture) → Science → FOUR WAYS TO USE IT (Traditional/Modern/Frontier/Poetic) → Pairing (Traditional/Unexpected) → Flavour-Compounding (shared-molecule bridges, no row cap) → Choosing & Buying (quality + fraud test + how-to-buy, ONE run) → Conservation (only if peculiar) → Galley Intel (+ substitution ladder, FUNCTIONAL ingredients only) → Quick Reference → Takeaway → Sources. NO Stories section (founder rule 2026-08-26): tales sit inline in a small box where they bite or behind a click on the word (data-kind="story"). The SUM-UP (article-toc with descriptions) follows the two-minute version. Pairings are cards. Every rare word carries data-def. Keep all three pillars. Science inline. Sourced, not asserted. British spelling. Several examples ONLY where notable. NO EMOJI. Banned words: delicious, yummy, elevated, curated, artisanal, superfood, game-changer, hack. IDENTITY (META-PROMPT grid): PROMISE = the laboratory dossier — one ingredient, four registers · OPENING REGISTER = THE NAME (the word and its origin, the other names and WHY, the family) — then the paradox, stated in two lines before any card · SIGNATURE = The Name + the 8-cell Identity Card + Four Ways + the register ladder + the Flavour-Compounding table · PRO-HOOK = the Frontier register + the strong-tier compound bridges · FORBIDDEN = shipping without Four Ways; filler examples. LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the Identity Card, the loudest in Frontier or the compound table, one behind a click-story. -->
 <!-- NO PROMISE BOX HERE (founder rule 2026-08-25: every template gets its own way in). This dossier
      pays off up top with THE NAME and then The two-minute version — five clauses a reader can leave on.
      A "what you'll get" box stacked above them would say the same thing twice, in a weaker voice. -->
@@ -61,9 +61,19 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <div class="note" data-label="The two-minute version"><p><strong>[Ingredient] in five lines:</strong> what it is and which variety to buy &middot; the one mechanism that explains it &middot; the buying tell &middot; the storage rule with its number &middot; the single best use aboard. One clause each — the dossier below earns the details.</p></div>
 
 <!-- AT-A-GLANCE JUMP-STRIP — this is a 16-min read; a single divider-row of anchors so a tired scanner never loses the spine. Keep the markup; the labels map 1:1 to the h2 dividers below. NO EMOJI. -->
-<nav class="divider" aria-label="On this page" style="font-size: var(--text-sm);">
-    <span class="divider__text"><a href="#history">History</a> &middot; <a href="#science">Science</a> &middot; <a href="#four-ways">Four Ways</a> &middot; <a href="#pairing">Pairing</a> &middot; <a href="#galley">Galley</a> &middot; <a href="#stories">Stories</a></span>
-</nav>
+<!-- THE SUM-UP (founder rule 2026-08-26; replaces the on-this-page strip): every section with a one-line description, anchors on the dividers/h2s. -->
+<div class="article-toc">
+    <p class="article-toc__title">In this piece</p>
+    <ol>
+        <li><a href="#history">History</a><span class="article-toc__desc">[origin, journey, the two schools]</span></li>
+        <li><a href="#science">The Science</a><span class="article-toc__desc">[the compounds, the mechanism, the health claim only if real]</span></li>
+        <li><a href="#four-ways">Four Ways to Use It</a><span class="article-toc__desc">[traditional, modern, frontier, poetic]</span></li>
+        <li><a href="#pairing">Pairing</a><span class="article-toc__desc">[the classics as cards, the unexpected, the compound bridges]</span></li>
+        <li><a href="#buying">Choosing &amp; Buying</a><span class="article-toc__desc">[quality, the fraud test, the grade to buy]</span></li>
+        <li><a href="#galley-intel">Galley Intel</a><span class="article-toc__desc">[dose, batch, provisioning]</span></li>
+        <li><a href="#reference">Quick Reference</a><span class="article-toc__desc">[the card, and the one thing]</span></li>
+    </ol>
+</div>
 <!-- WRITER: leave as-is. The id="" hooks are added on the section dividers/h2s below — do not rename one without the other. -->
 
 <!-- IDENTITY CARD — the at-a-glance profile. LOCKED .id-card markup: keep the wrapper verbatim, one .id-card__row per fact, fill every slot. 8 rows is the full set; drop a row only if it genuinely doesn't apply (e.g. Species for a processed larder item). The trailing muted text after each __value is the one-line gloss — keep it short. NO EMOJI anywhere. LEARNING CONTRACT: at least one cell carries a value a ten-year pro would not have guessed. -->
@@ -192,24 +202,11 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <!-- TRADITIONAL PAIRING — cultures that already know. Locked .data-table (converted from the pre-lock wheat grid, founder call 2026-08-24): Pairing / dish | Region | Why it works. -->
 <h2>Traditional Pairing: [the framing]</h2>
 <p><strong>What the old kitchens already knew:</strong> <!-- kicker: one line on the cultural logic these pairings share. --></p>
-<div style="overflow-x: auto; margin: var(--space-6) 0;">
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th>Pairing / dish</th>
-                <th>Region</th>
-                <th>Why it works</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Pairing or dish</strong></td>
-                <td>Region</td>
-                <td>The shared compound or the cultural logic, one line.</td>
-            </tr>
-            <!-- WRITER: 4–6 rows. Established pairings / classic dishes, each with the reason. -->
-        </tbody>
-    </table>
+<!-- PAIRING CARDS (founder rule 2026-08-26): the pairing on the card, region under it, the reason on click. 4-6 cards; star the wild card with pair-card--wild where there is one. Locked .pair-cards. -->
+<div class="pair-cards">
+    <details class="pair-card"><summary><span class="pair-card__name">[Pairing or dish]</span><span class="pair-card__region">[Region]</span></summary><div class="pair-card__body"><p>[Why it works — the reason, sourced.]</p></div></details>
+    <details class="pair-card"><summary><span class="pair-card__name">[Pairing or dish]</span><span class="pair-card__region">[Region]</span></summary><div class="pair-card__body"><p>[Reason.]</p></div></details>
+    <details class="pair-card"><summary><span class="pair-card__name">[Pairing or dish]</span><span class="pair-card__region">[Region]</span></summary><div class="pair-card__body"><p>[Reason.]</p></div></details>
 </div>
 
 <p>Those are the safe pairings — the ones a culture arrives at by repetition. The interesting ones start where that logic is pushed.</p>
@@ -257,7 +254,7 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <div class="divider" id="galley"><span class="divider__text">The Galley</span></div>
 
 <!-- QUALITY: GOOD vs BAD — the buying eye, made explicit. Two columns: what a good one shows, what a bad one shows. This is non-negotiable in every ingredient profile. -->
-<h2>Choosing &amp; Buying: How to Tell a Good One</h2>
+<h2 id="buying">Choosing &amp; Buying: How to Tell a Good One</h2>
 <p><strong>Trust your eyes, nose and hands first:</strong> <!-- kicker: the single most reliable quality tell for this ingredient, stated up front. --></p>
 <!-- Locked note--key[data-label="Signs of Quality"] then note--warning[data-label="Signs of Decline"], joined by the one-line prose bridge below — never the two boxes bare-stacked. Notes may carry a sense-by-sense ul (as shore-larder.html does). -->
 <div class="note note--key" data-label="Signs of Quality"><ul>
@@ -294,7 +291,7 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
 <div class="note note--action" data-label="The Method"><p>The exact preservation method, with numbers: form, medium, &deg;C, oxygen/light control, and the resulting shelf life. Name the failure mode it prevents — and any safety line (e.g. acidification, botulism risk) that must not be crossed.</p></div>
 
 <!-- YACHT GALLEY INTEL — the at-sea payoff. Sea-bordered grey box, ul. Then one or two action notes. -->
-<h2>Yacht Galley Intel</h2>
+<h2 id="galley-intel">Yacht Galley Intel</h2>
 <p><strong>At sea, this is what counts:</strong> <!-- kicker: the storage or space constraint this ingredient lives or dies by. --></p>
 <div class="note note--action" data-label="Galley Intel"><ul>
     <li><strong>Lead-in.</strong> Storage life, weight/space, or a galley technique &mdash; bolded label, then the detail with numbers (&deg;C, minutes). Note where the <span class="term">Maillard reaction</span> earns its colour.</li>
@@ -311,21 +308,11 @@ they exist. Then the family, and the one thing the kinship tells a cook.]</p>
     <li><strong>Never:</strong> the swap that fails, and the chemistry of why.</li>
 </ul></div>
 
-<!-- THE STORIES — the warmth, told as PROSE with bold headline lead-ins (converted from the pre-lock coloured cards, founder call 2026-08-24). MANDATORY in this template: a deep-dive without Stories is a spec sheet. One story may be the myth-break: the belief the trade repeats, broken against the named record. Never drop this section. -->
-<h2 id="stories">The Stories</h2>
-<p><strong>The warmth:</strong> <!-- kicker: one line on why this ingredient is worth caring about, not just measuring. --></p>
-<p><strong>[Story headline].</strong> A sourced anecdote &mdash; myth, history, espionage, class &mdash; two or three sentences, told, not listed. Tie it back to the ingredient.</p>
-<p><strong>[Story headline].</strong> A short, sourced tale.</p>
-<p><strong>[Story headline].</strong> A short, sourced tale.</p>
-
-<p>Those stories only earn their place if one line survives to the pass:</p>
-<!-- NURTURE NOTE — MANDATORY food-facing close (label "At the Table" per the canon). The single line a chef can actually say to a guest, drawn from the Stories above — sourced, not invented, the human version of one fact. This is the warmth pillar made usable at the pass. -->
-<div class="note note--quote" data-label="At the Table"><p>The one tableside sentence — what a chef tells the guest about this ingredient that turns a plate into a story. Pull it straight from a sourced anecdote above; never fabricate the line. (<em>e.g. name the place, the season, or the hands, in a sentence a guest remembers.</em>)</p></div>
-<!-- WRITER: must trace to a real story/source above. If you have no sourced line worth saying aloud, fix the Stories — don't invent one here. -->
+<!-- NO STORIES SECTION (founder rule 2026-08-26): the tales that used to gather here live where they bite — a small note--quote box beside the passage, or behind the word as a click-story (data-kind="story"). -->
 
 <p>Strip the whole dossier back to what a busy service actually reaches for, and it fits on one card:</p>
 <!-- QUICK REFERENCE — recap card as the LOCKED .id-card (dark navy/gold), for dossier gravitas: the closing spec block echoes the opening Identity Card while the short profiles stay in notes. 4 stat rows + the chef's note as an italic close. -->
-<div class="id-card">
+<div class="id-card" id="reference">
     <h4 class="id-card__title">Quick Reference</h4>
     <div class="id-card__grid">
         <div class="id-card__row"><span class="id-card__label">Label</span><span class="id-card__value">Short answer</span></div>

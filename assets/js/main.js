@@ -487,13 +487,17 @@
         x.addEventListener('click', close);
         pop.appendChild(kind); pop.appendChild(word); pop.appendChild(body); pop.appendChild(x);
         document.body.appendChild(pop);
-        var r = el.getBoundingClientRect();
+        openEl = el; el.classList.add('is-open'); el.setAttribute('aria-expanded', 'true');
+        place();
+    }
+    function place() {
+        if (!pop || !openEl) return;
+        var r = openEl.getBoundingClientRect();
         var top = r.bottom + window.scrollY + 8, left = r.left + window.scrollX;
         var maxLeft = window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12;
         if (left > maxLeft) left = Math.max(12, maxLeft);
         if (r.bottom + pop.offsetHeight + 16 > window.innerHeight && r.top > pop.offsetHeight + 16) top = r.top + window.scrollY - pop.offsetHeight - 8;
         pop.style.top = top + 'px'; pop.style.left = left + 'px';
-        openEl = el; el.classList.add('is-open'); el.setAttribute('aria-expanded', 'true');
     }
     document.querySelectorAll('.term[data-def]').forEach(function (el) {
         el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); el.setAttribute('aria-expanded', 'false');
@@ -509,5 +513,5 @@
             e.preventDefault(); if (openEl === e.target) close(); else show(e.target);
         }
     });
-    window.addEventListener('resize', close);
+    window.addEventListener('resize', place);   // reposition, never close: viewports resize on their own (address bars, headless capture)
 })();
