@@ -85,7 +85,7 @@
 
 <p>Saffron is the most expensive thing in the spice drawer and it cannot breed: every crocus that produces it is a sterile triploid, a cutting of a plant that stopped making seed in Attica, and has been dug up and replanted by hand ever since (Nemati et al. 2019). The most faked food in Pliny's Rome is still the most faked spice on Europe's shelves &mdash; eleven samples in a hundred were flagged in the EU's 2021 authenticity sweep &mdash; and the thread you are holding has almost certainly crossed a border under a flag it was not grown under.</p>
 
-<div class="note" data-label="The two-minute version"><p><strong>Saffron in five lines:</strong> the dried stigmas of <em>Crocus sativus</em> &mdash; buy whole threads, all-red Negin or Sargol grade, never powder &middot; three molecules do everything: crocins for colour, picrocrocin for bitterness, safranal for aroma &middot; the tell is a slow golden bleed in cold water with the thread staying red; instant colour and a pale thread is dye &middot; sealed, dark, cool, and never boiled: crocins peak at 60&nbsp;&deg;C in twenty minutes and safranal leaves in the steam &middot; aboard, a gram of saffron water made on provisioning day carries the rice, the fish stew and the custard for a week.</p></div>
+<div class="note" data-label="The two-minute version"><p><strong>Saffron in five lines:</strong> the dried stigmas of <em>Crocus sativus</em> &mdash; buy whole threads, all-red Negin or Sargol grade, never powder &middot; three molecules do everything: crocins for colour, picrocrocin for bitterness, safranal for aroma &middot; the tell is a slow golden bleed in cold water with the thread staying red; instant colour and a pale thread is dye &middot; sealed, dark, cool, and never boiled: crocins peak at 60&nbsp;&deg;C in twenty minutes, and past 80&nbsp;&deg;C the safranal crosses into fat and falls away in the water &middot; aboard, a gram of saffron water made on provisioning day carries the rice, the fish stew and the custard for a week.</p></div>
 
 <nav class="divider" aria-label="On this page" style="font-size: var(--text-sm);">
     <span class="divider__text"><a href="#history">History</a> &middot; <a href="#science">Science</a> &middot; <a href="#four-ways">Four Ways</a> &middot; <a href="#pairing">Pairing</a> &middot; <a href="#galley">Galley</a> &middot; <a href="#stories">Stories</a></span>
@@ -154,6 +154,340 @@
 <div class="note note--science" data-label="Health Evidence"><ul>
     <li><strong>Effect:</strong> in a meta-analysis of randomised trials, saffron outperformed placebo on depression severity (nine trials pooled, g&nbsp;=&nbsp;0.89, 95% CI 0.37&ndash;1.41) and was not inferior to the antidepressants it was tested against (g&nbsp;=&nbsp;&minus;0.25, p&nbsp;=&nbsp;0.053). <em>T&oacute;th et al. (2019), Planta Medica 85(1):24&ndash;31. DOI 10.1055/a-0660-9565. Meta-analysis of small trials, Cochrane risk-of-bias assessed &middot; Strength: moderate.</em> A galley supports; it does not prescribe.</li>
 </ul></div>
+
+<figure class="sf-explainer" id="sf-explainer" aria-label="Interactive: where saffron's colour and aroma go, by temperature">
+<style>
+  .sf-explainer{margin:var(--space-10,3rem) auto;max-width:760px;font-family:Georgia,serif;color:#1d2226;}
+  .sf-explainer .sf-kick{font-family:Inter,system-ui,sans-serif;font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:#2d4a5e;margin-bottom:6px;text-align:center;}
+  .sf-explainer .sf-stage{position:relative;width:100%;height:470px;overflow:hidden;background:radial-gradient(120% 120% at 55% 20%,#fcfbf7,#eae8e0);border:1px solid #d9d6cd;cursor:grab;}
+  .sf-explainer .sf-stage:active{cursor:grabbing;}
+  .sf-explainer .sf-cv{position:absolute;inset:0;}
+  .sf-explainer .sf-poster{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .sf-explainer .sf-overlay,.sf-explainer .sf-thermo{position:absolute;pointer-events:none;display:none;}
+  .sf-explainer .sf-overlay{inset:0;width:100%;height:100%;}
+  .sf-explainer .sf-thermo{left:14px;top:96px;}
+  .sf-explainer.is-live .sf-poster{display:none;}
+  .sf-explainer.is-live .sf-overlay,.sf-explainer.is-live .sf-thermo{display:block;}
+  .sf-explainer.is-live .sf-controls{display:flex;}
+  .sf-explainer.is-live .sf-read{display:block;}
+  .sf-explainer .sf-lab{font-family:Georgia,serif;font-variant:small-caps;letter-spacing:.06em;font-size:15px;fill:#1d2226;}
+  .sf-explainer .sf-lab.sm{font-size:12px;fill:#6b7176;font-variant:normal;font-style:italic;letter-spacing:0;}
+  .sf-explainer .sf-leader{stroke:#1d2226;stroke-width:1;fill:none;}
+  .sf-explainer .sf-dot{fill:#1d2226;}
+  .sf-explainer .sf-controls{display:none;align-items:center;justify-content:center;gap:16px;margin-top:14px;flex-wrap:wrap;}
+  .sf-explainer .sf-play{font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:13px;padding:9px 20px 9px 15px;border:1.5px solid #1d2226;background:#1d2226;color:#f4f2ec;border-radius:30px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .sf-explainer .sf-play:hover{background:#2d4a5e;border-color:#2d4a5e;}
+  .sf-explainer .sf-slider{display:flex;align-items:center;gap:12px;}
+  .sf-explainer .sf-slider span{font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6b7176;}
+  .sf-explainer input[type=range]{-webkit-appearance:none;appearance:none;width:210px;height:2px;background:#1d2226;outline:none;}
+  .sf-explainer input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #1d2226;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+  .sf-explainer input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid #1d2226;cursor:pointer;}
+  .sf-explainer .sf-read{display:none;margin-top:10px;text-align:center;}
+  .sf-explainer .sf-read .sf-t{font-weight:700;font-size:36px;line-height:1;}
+  .sf-explainer .sf-read .sf-t sup{font-size:14px;font-weight:400;}
+  .sf-explainer .sf-states{margin-top:6px;font-family:Inter,system-ui,sans-serif;font-size:13px;letter-spacing:.02em;color:#6b7176;}
+  .sf-explainer .sf-states b{color:#1d2226;font-weight:700;}
+  .sf-explainer figcaption{margin:var(--space-4,1rem) auto 0;max-width:60ch;font-style:italic;font-size:var(--text-sm,.9rem);line-height:1.5;color:var(--color-muted,#525252);text-align:center;}
+  @media (prefers-reduced-motion: reduce){ .sf-explainer .sf-controls{display:none;} }
+</style>
+
+<p class="sf-kick">The Spice Splits in Two</p>
+
+<div class="sf-stage" id="sf-stage">
+    <div class="sf-cv" id="sf-cv"></div>
+
+    <svg class="sf-poster" id="sf-poster" viewBox="0 0 760 470" role="img" aria-label="A glass of saffron infusion under an oil film: gold crocins dispersed through the water, safranal gathered in the oil above, at sixty and eighty degrees">
+        <rect width="760" height="470" fill="url(#sfbg)"/>
+        <defs>
+            <radialGradient id="sfbg" cx="55%" cy="20%" r="120%"><stop offset="0" stop-color="#fcfbf7"/><stop offset="1" stop-color="#eae8e0"/></radialGradient>
+            <linearGradient id="sfwater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8a63a" stop-opacity=".72"/><stop offset="1" stop-color="#b8801d" stop-opacity=".85"/></linearGradient>
+            <linearGradient id="sfoil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2e2b4" stop-opacity=".75"/><stop offset="1" stop-color="#e8d090" stop-opacity=".9"/></linearGradient>
+        </defs>
+        <ellipse cx="380" cy="404" rx="150" ry="20" fill="#1d2226" opacity=".10"/>
+        <path d="M262 150 h236 v212 a26 26 0 0 1 -26 26 h-184 a26 26 0 0 1 -26 -26 z" fill="#ffffff" opacity=".55"/>
+        <path d="M266 214 h228 v146 a24 24 0 0 1 -24 24 h-180 a24 24 0 0 1 -24 -24 z" fill="url(#sfwater)"/>
+        <path d="M266 182 h228 v32 h-228 z" fill="url(#sfoil)"/>
+        <path d="M262 150 h236 v212 a26 26 0 0 1 -26 26 h-184 a26 26 0 0 1 -26 -26 z" fill="none" stroke="#1d2226" stroke-width="1.4" opacity=".55"/>
+        <line x1="266" y1="182" x2="494" y2="182" stroke="#1d2226" stroke-width="1" opacity=".45"/>
+        <line x1="266" y1="214" x2="494" y2="214" stroke="#1d2226" stroke-width="1" opacity=".45"/>
+        <g fill="#8d1f10" opacity=".92">
+            <path d="M300 246 q10 16 4 34" stroke="#8d1f10" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M342 262 q12 12 6 30" stroke="#8d1f10" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M420 250 q-10 15 -3 33" stroke="#8d1f10" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M452 272 q-11 12 -5 28" stroke="#8d1f10" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+        </g>
+        <g fill="#c8921f" opacity=".9">
+            <circle cx="292" cy="300" r="3.2"/><circle cx="318" cy="332" r="2.6"/><circle cx="350" cy="298" r="3"/><circle cx="378" cy="340" r="2.4"/>
+            <circle cx="404" cy="306" r="3.1"/><circle cx="436" cy="330" r="2.7"/><circle cx="464" cy="296" r="2.9"/><circle cx="330" cy="360" r="2.5"/>
+            <circle cx="396" cy="366" r="2.6"/><circle cx="452" cy="358" r="2.4"/><circle cx="286" cy="342" r="2.3"/><circle cx="422" cy="284" r="2.2"/>
+        </g>
+        <g fill="#3f6a82" stroke="#2d4a5e" stroke-width=".6" opacity=".95">
+            <circle cx="304" cy="198" r="3.4"/><circle cx="346" cy="192" r="3"/><circle cx="392" cy="200" r="3.3"/>
+            <circle cx="436" cy="193" r="2.9"/><circle cx="470" cy="199" r="3.1"/>
+        </g>
+        <g class="sf-lab">
+            <path class="sf-leader" d="M496 198 L616 166"/><circle class="sf-dot" cx="496" cy="198" r="2.6"/>
+            <text x="742" y="162" text-anchor="end">Oil film</text><text class="sf-lab sm" x="742" y="180" text-anchor="end">safranal — the aroma — gathers here</text>
+            <path class="sf-leader" d="M496 300 L616 318"/><circle class="sf-dot" cx="496" cy="300" r="2.6"/>
+            <text x="742" y="314" text-anchor="end">Water</text><text class="sf-lab sm" x="742" y="332" text-anchor="end">crocins — colour and bitterness — stay</text>
+            <path class="sf-leader" d="M300 268 L206 300"/><circle class="sf-dot" cx="300" cy="268" r="2.6"/>
+            <text x="26" y="296">Threads</text><text class="sf-lab sm" x="26" y="314">whole stigmas, ground and bloomed</text>
+        </g>
+        <g class="sf-lab"><text x="380" y="440" text-anchor="middle">60&#176;C for the colour &#183; 80&#176;C for the nose &#183; never the boil</text></g>
+    </svg>
+
+    <svg class="sf-thermo" width="248" height="330" viewBox="0 0 248 330">
+        <rect x="18" y="18" width="15" height="294" rx="7.5" fill="#ffffff" stroke="#1d2226" stroke-width="1.1" opacity=".85"/>
+        <rect id="sf-merc" x="21" y="290" width="9" height="19" rx="4.5" fill="#8d1f10"/>
+        <g class="sf-lab sm">
+            <line x1="34" y1="216" x2="48" y2="216" stroke="#1d2226" stroke-width="1"/><text x="54" y="213">60&#176; crocins peak in water</text><text x="54" y="229">85.4 &#181;g/mg at 20 min</text>
+            <line x1="34" y1="143" x2="48" y2="143" stroke="#1d2226" stroke-width="1"/><text x="54" y="140">80&#176; safranal into the oil</text><text x="54" y="156">12.3 &#181;g/mg at 20 min</text>
+            <line x1="34" y1="70" x2="48" y2="70" stroke="#1d2226" stroke-width="1"/><text x="54" y="67">100&#176; safranal falls away</text><text x="54" y="83">in the water phase</text>
+        </g>
+    </svg>
+
+    <svg class="sf-overlay" id="sf-ov"><g id="sf-labels"></g></svg>
+</div>
+<div class="sf-controls">
+    <button class="sf-play" id="sf-play" type="button"><span id="sf-ic">&#9654;</span><span id="sf-pl">Play</span></button>
+    <div class="sf-slider"><span>20&deg;</span><input id="sf-temp" type="range" min="20" max="100" step="0.5" value="20" aria-label="Infusion temperature"><span>100&deg;</span></div>
+</div>
+<div class="sf-read">
+    <div class="sf-t"><span id="sf-tv">20</span><sup>&deg;C</sup></div>
+    <div class="sf-states">colour <b id="sf-sc">bleeding slowly</b> &middot; aroma <b id="sf-sa">still in the thread</b></div>
+</div>
+<figcaption>The same threads, in real-time lit 3D, under a film of oil. Warm the water and the crocins leave the thread and hold in the water &mdash; most of them at 60&nbsp;&deg;C. Push past 80&nbsp;&deg;C and the safranal crosses into the oil, where the nose can find it. Take it to the boil and the aroma falls out of the water faster than you gain anything (Criado-Navarro et al. 2024). Drag to tilt.</figcaption>
+</figure>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+(async () => {
+const fig = document.getElementById('sf-explainer'), stage = document.getElementById('sf-stage'), cvHost = document.getElementById('sf-cv');
+let reduced = false; try { reduced = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+if (reduced || !stage) return;                        // motion lock: the poster IS the final frame
+let THREE, OrbitControls, RoomEnvironment;
+try {
+  THREE = await import('three');
+  ({ OrbitControls } = await import('three/addons/controls/OrbitControls.js'));
+  ({ RoomEnvironment } = await import('three/addons/environments/RoomEnvironment.js'));
+} catch (e) { return; }                               // no module/WebGL: keep the poster
+let W = stage.clientWidth, H = stage.clientHeight, renderer;
+try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); } catch (e) { return; }
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(W, H);
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+cvHost.appendChild(renderer.domElement);
+fig.classList.add('is-live');
+
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 100);
+camera.position.set(0.2, 1.0, 6.6);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.09; controls.enablePan = false;
+controls.minPolarAngle = 0.85; controls.maxPolarAngle = 1.45; controls.minAzimuthAngle = -0.55; controls.maxAzimuthAngle = 0.55;
+controls.minDistance = 5.0; controls.maxDistance = 8.6; controls.autoRotate = false; controls.target.set(0, -0.1, 0);
+const key = new THREE.DirectionalLight(0xffffff, 2.0); key.position.set(-2.5, 6, 4.5); scene.add(key);
+scene.add(new THREE.DirectionalLight(0xffffff, 0.5).translateZ(-4));
+scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+
+// ---- the glass, the water, the oil film -------------------------------------
+const R = 1.15, WATER_TOP = 0.62, OIL_TOP = 0.90, FLOOR = -1.25;
+const glass = new THREE.Mesh(
+  new THREE.CylinderGeometry(R, R * 0.94, 2.5, 64, 1, true),
+  new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.12, metalness: 0.0,
+    transparent: true, opacity: 0.18, side: THREE.DoubleSide, depthWrite: false }));
+glass.position.y = -0.05; glass.renderOrder = 4; scene.add(glass);
+
+// Plain alpha-blended phases: the particles inside must read through them.
+const waterH = WATER_TOP - FLOOR;
+const water = new THREE.Mesh(
+  new THREE.CylinderGeometry(R * 0.97, R * 0.92, waterH, 64),
+  new THREE.MeshStandardMaterial({ color: 0xf1e6cc, roughness: 0.5, transparent: true,
+    opacity: 0.42, depthWrite: false }));
+water.position.y = FLOOR + waterH / 2; water.renderOrder = 0; scene.add(water);
+
+const oilH = OIL_TOP - WATER_TOP;
+const oil = new THREE.Mesh(
+  new THREE.CylinderGeometry(R * 0.97, R * 0.97, oilH, 64),
+  new THREE.MeshStandardMaterial({ color: 0xe0b64f, roughness: 0.22, transparent: true,
+    opacity: 0.5, depthWrite: false }));
+oil.position.y = WATER_TOP + oilH / 2; oil.renderOrder = 0; scene.add(oil);
+
+// The two interfaces, drawn: without these the vessel reads as one beige column.
+function ring(y, colour, w) {
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.975, R * 0.975, w, 64, 1, true),
+    new THREE.MeshBasicMaterial({ color: colour, transparent: true, opacity: 0.75, side: THREE.DoubleSide }));
+  m.position.y = y; m.renderOrder = 3; scene.add(m); return m;
+}
+ring(WATER_TOP, 0x8a7440, 0.012);      // the water / oil interface
+ring(OIL_TOP, 0xb99a4e, 0.010);        // the oil surface
+
+// ---- the threads -------------------------------------------------------------
+const threads = new THREE.Group();
+for (let i = 0; i < 6; i++) {
+  const a = (i / 6) * Math.PI * 2 + 0.4, r = 0.45 + (i % 3) * 0.16;
+  const x = Math.cos(a) * r, z = Math.sin(a) * r, y0 = 0.18 - (i % 4) * 0.12;
+  const curve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(x, y0, z),
+    new THREE.Vector3(x + 0.07, y0 - 0.16, z + 0.05),
+    new THREE.Vector3(x - 0.03, y0 - 0.34, z - 0.04),
+    new THREE.Vector3(x + 0.05, y0 - 0.5, z + 0.03)]);
+  const m = new THREE.Mesh(new THREE.TubeGeometry(curve, 24, 0.021, 8, false),
+    new THREE.MeshStandardMaterial({ color: 0x8d1f10, roughness: 0.62 }));
+  threads.add(m);
+}
+scene.add(threads);
+
+// ---- crocins in the water · safranal crossing into the oil -------------------
+const NC = 520, cPos = new Float32Array(NC * 3), cSeed = [];
+for (let i = 0; i < NC; i++) {
+  const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * R * 0.9;
+  cPos[i * 3] = Math.cos(a) * r; cPos[i * 3 + 2] = Math.sin(a) * r;
+  cPos[i * 3 + 1] = FLOOR + 0.05 + Math.random() * (waterH - 0.1);
+  cSeed.push({ y0: cPos[i * 3 + 1], ph: Math.random() * 6.28, sp: 0.25 + Math.random() * 0.5 });
+}
+const cGeo = new THREE.BufferGeometry(); cGeo.setAttribute('position', new THREE.BufferAttribute(cPos, 3));
+const cMat = new THREE.PointsMaterial({ color: 0xb87d12, size: 0.075, transparent: true, opacity: 0, depthWrite: false });
+const crocins = new THREE.Points(cGeo, cMat); crocins.renderOrder = 1; scene.add(crocins);
+
+const NS = 190, sPos = new Float32Array(NS * 3), sSeed = [];
+for (let i = 0; i < NS; i++) {
+  const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * R * 0.88;
+  sPos[i * 3] = Math.cos(a) * r; sPos[i * 3 + 2] = Math.sin(a) * r;
+  sPos[i * 3 + 1] = 0;
+  sSeed.push({ a, r, ph: Math.random() * 6.28, lag: Math.random() });
+}
+const sGeo = new THREE.BufferGeometry(); sGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+const sMat = new THREE.PointsMaterial({ color: 0x3f6a82, size: 0.072, transparent: true, opacity: 0, depthWrite: false });
+const safranal = new THREE.Points(sGeo, sMat); safranal.renderOrder = 2; scene.add(safranal);
+
+// ---- the numbers behind the picture (Criado-Navarro et al. 2024) -------------
+// crocins: max in water at 60 °C / 20 min, falling away above; safranal: max into
+// oil at 80 °C, and at 100 °C it drops sharply in the water phase.
+const crocinAt = t => t < 60 ? clamp((t - 18) / 42, 0, 1) : clamp(1 - (t - 60) / 62, 0.32, 1);
+const safranalAt = t => t < 80 ? clamp((t - 46) / 34, 0, 1) : clamp(1 - (t - 80) / 26, 0.22, 1);
+const inOilAt = t => clamp((t - 62) / 20, 0, 1);          // how much of it has crossed the interface
+
+// ---- labels, projected each frame -------------------------------------------
+const ov = document.getElementById('sf-ov'), labG = document.getElementById('sf-labels');
+ov.setAttribute('viewBox', `0 0 ${W} ${H}`);
+const NS_SVG = 'http://www.w3.org/2000/svg';
+const LABELS = [
+  { id: 'oil',   at: () => new THREE.Vector3(R * 0.5, WATER_TOP + oilH / 2, 0),
+    place: () => ({ x: W - 14, y: 62, anchor: 'end' }),
+    t: 'Oil film', s: () => 'safranal \u2014 the aroma \u2014 ' + (inOilAt(temp) > 0.45 ? 'has crossed into it' : 'still below it') },
+  { id: 'water', at: () => new THREE.Vector3(R * 0.55, -0.25, 0),
+    place: () => ({ x: W - 14, y: H - 96, anchor: 'end' }),
+    t: 'Water', s: () => 'crocins \u2014 colour and bitterness \u2014 stay' },
+  { id: 'thr',   at: () => new THREE.Vector3(-R * 0.4, -0.1, 0.25),
+    place: () => ({ x: 26, y: H - 34, anchor: 'start' }),
+    t: 'Threads', s: () => 'ground, then bloomed' },
+];
+function placeLabel(L) {
+  const v = L.at().clone().project(camera);
+  const x = (v.x * 0.5 + 0.5) * W, y = (-v.y * 0.5 + 0.5) * H;
+  const pos = L.place();                              // fixed corners: labels never overflow the stage
+  let g = document.getElementById('sfL-' + L.id);
+  if (!g) {
+    g = document.createElementNS(NS_SVG, 'g'); g.id = 'sfL-' + L.id;
+    const p = document.createElementNS(NS_SVG, 'path'); p.setAttribute('class', 'sf-leader');
+    const d = document.createElementNS(NS_SVG, 'circle'); d.setAttribute('class', 'sf-dot'); d.setAttribute('r', '2.6');
+    const t1 = document.createElementNS(NS_SVG, 'text'); t1.setAttribute('class', 'sf-lab');
+    const t2 = document.createElementNS(NS_SVG, 'text'); t2.setAttribute('class', 'sf-lab sm');
+    g.append(p, d, t1, t2); labG.appendChild(g);
+  }
+  g.children[0].setAttribute('d', `M${x.toFixed(1)} ${y.toFixed(1)} L${pos.x} ${pos.y}`);
+  g.children[1].setAttribute('cx', x.toFixed(1)); g.children[1].setAttribute('cy', y.toFixed(1));
+  g.children[2].setAttribute('x', pos.x); g.children[2].setAttribute('y', pos.y - 6);
+  g.children[3].setAttribute('x', pos.x); g.children[3].setAttribute('y', pos.y + 12);
+  g.children[2].setAttribute('text-anchor', pos.anchor);
+  g.children[3].setAttribute('text-anchor', pos.anchor);
+  g.children[2].textContent = L.t; g.children[3].textContent = L.s();
+}
+
+// ---- state -------------------------------------------------------------------
+const tempEl = document.getElementById('sf-temp'), tvEl = document.getElementById('sf-tv');
+const scEl = document.getElementById('sf-sc'), saEl = document.getElementById('sf-sa'), merc = document.getElementById('sf-merc');
+let temp = 20, playing = false, playT0 = 0, onScreen = true, visible = true, raf = 0;
+
+const waterCold = new THREE.Color(0xf1e6cc), waterGold = new THREE.Color(0xc9871a);
+function setTemp(t) {
+  temp = t; tvEl.textContent = t.toFixed(t % 1 ? 1 : 0);
+  const c = crocinAt(t), s = safranalAt(t);
+  water.material.color.copy(waterCold).lerp(waterGold, c * 0.92);
+  cMat.opacity = 0.35 + c * 0.6;
+  sMat.opacity = 0.3 + s * 0.65;
+  scEl.textContent = t < 45 ? 'bleeding slowly' : t < 72 ? 'at its peak — 60°C, 20 min' : t < 90 ? 'past its best' : 'falling away';
+  saEl.textContent = t < 55 ? 'still in the thread' : t < 74 ? 'starting to move' : t < 90 ? 'crossing into the oil — 80°C' : 'lost from the water';
+  const top = 18, bot = 309, y = bot - ((t - 20) / 80) * (bot - top - 19);
+  merc.setAttribute('y', y.toFixed(1)); merc.setAttribute('height', (bot - y).toFixed(1));
+}
+
+function layout(now) {
+  const s = now / 1000, oilFrac = inOilAt(temp);
+  const cp = cGeo.attributes.position.array;
+  for (let i = 0; i < NC; i++) {
+    const sd = cSeed[i];
+    let y = sd.y0 + Math.sin(s * sd.sp + sd.ph) * 0.035 * (0.4 + (temp - 20) / 80);
+    cp[i * 3 + 1] = clamp(y, FLOOR + 0.04, WATER_TOP - 0.05);
+  }
+  cGeo.attributes.position.needsUpdate = true;
+  const sp = sGeo.attributes.position.array;
+  for (let i = 0; i < NS; i++) {
+    const sd = sSeed[i];
+    const cross = clamp((oilFrac - sd.lag * 0.55) / 0.45, 0, 1);     // each parcel crosses in its own time
+    const yWater = -0.35 + Math.sin(s * 0.5 + sd.ph) * 0.12;
+    const yOil = WATER_TOP + oilH * (0.25 + 0.5 * ((Math.sin(s * 0.7 + sd.ph) + 1) / 2));
+    const y = yWater + (yOil - yWater) * cross;
+    const wob = 0.04 * (1 - cross);
+    sp[i * 3] = Math.cos(sd.a) * sd.r + Math.sin(s * 0.6 + sd.ph) * wob;
+    sp[i * 3 + 2] = Math.sin(sd.a) * sd.r + Math.cos(s * 0.6 + sd.ph) * wob;
+    sp[i * 3 + 1] = y;
+  }
+  sGeo.attributes.position.needsUpdate = true;
+}
+
+function sweep(sec) { const c = sec % 15; return c < 11 ? 20 + (c / 11) * 80 : 100 - ((c - 11) / 4) * 80; }
+function setPlay(on) {
+  playing = on;
+  document.getElementById('sf-ic').textContent = on ? '❚❚' : '▶';
+  document.getElementById('sf-pl').textContent = on ? 'Pause' : 'Play';
+  if (on) playT0 = performance.now() - clamp((temp - 20) / 80, 0, 1) * 11000;
+}
+document.getElementById('sf-play').addEventListener('click', () => setPlay(!playing));
+tempEl.addEventListener('input', e => { if (playing) setPlay(false); setTemp(+e.target.value); });
+addEventListener('resize', () => {
+  W = stage.clientWidth; H = stage.clientHeight; renderer.setSize(W, H);
+  camera.aspect = W / H; camera.updateProjectionMatrix(); ov.setAttribute('viewBox', `0 0 ${W} ${H}`);
+});
+
+function frame(now) {
+  raf = requestAnimationFrame(frame);
+  if (playing) { const t = sweep((now - playT0) / 1000); tempEl.value = t; setTemp(t); }
+  layout(now); controls.update();
+  for (const L of LABELS) placeLabel(L);
+  renderer.render(scene, camera);
+}
+function sync() {
+  const run = onScreen && visible;
+  if (run && !raf) raf = requestAnimationFrame(frame);
+  if (!run && raf) { cancelAnimationFrame(raf); raf = 0; if (playing) setPlay(false); }
+}
+new IntersectionObserver(es => { onScreen = es[0].isIntersecting; sync(); }, { threshold: 0.05 }).observe(stage);
+document.addEventListener('visibilitychange', () => { visible = !document.hidden; sync(); });
+
+// deep-link a temperature: ?sfT=80
+let t0 = 20; try { const q = +new URLSearchParams(location.search).get('sfT'); if (q >= 20 && q <= 100) t0 = q; } catch (e) {}
+tempEl.value = t0; setTemp(t0); sync();
+})();
+</script>
 
 <div class="divider" id="four-ways"><span class="divider__text">Four Ways to Use It</span></div>
 
