@@ -2477,6 +2477,22 @@ mark {
 .pair-card--wild { border-style: dashed; }
 .pair-card--wild .pair-card__name::before { content: "\2605 "; color: #c4a35a; }
 
+
+/* Specimen sketch — SET INTO the text (founder rule 2026-08-26): the drawing sits in the
+   column with the prose running around it, never as an isolated block above it. */
+.specimen { max-width: 240px; margin: var(--space-3, .75rem) auto var(--space-5, 1.25rem); }
+.specimen svg { display: block; width: 100%; height: auto; }
+.specimen figcaption {
+    margin-top: var(--space-2, .5rem); font-style: italic;
+    font-size: var(--text-xs, .78rem); line-height: 1.45;
+    color: var(--color-muted, #6b7280); text-align: center;
+}
+@media (min-width: 720px) {
+    .specimen { float: right; width: 252px; max-width: none; margin: 0 0 var(--space-4, 1rem) var(--space-8, 2rem); shape-margin: 12px; }
+    .specimen--left { float: left; margin: 0 var(--space-8, 2rem) var(--space-4, 1rem) 0; }
+}
+.article-toc, .fold, .divider, .glance, .summary-box { clear: both; }
+
 /* The read-more fold — glass panel, Terroir register (founder rule 2026-08-26).
    Translucent gradient + backdrop blur + hairline + inner highlight; serif uppercase
    title, italic hint, rotating "+" — the guide kit's sfold, in the article grid. */

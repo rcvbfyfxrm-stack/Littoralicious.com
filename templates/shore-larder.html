@@ -46,6 +46,23 @@
 <!-- THE SCENE — one or two sentences at a concrete moment: the crate at 0600, the market table, the pan as it turns. A real place, a real hour. The warmth of the old Cook's Reason lives here and along the piece — not in a box. -->
 <p>[The encounter, in scene.]</p>
 
+<!-- SPECIMEN SKETCH — the ingredient's own mark, Volta/galley-sketch register (founder rule: an
+     ingredient piece carries one, and it is SET INTO the text — floated in the column with the taste
+     and the specimen line running around it, never an isolated block). ONE inline hatched black-ink
+     drawing at the size a reader identifies it by: form-following hatch on the shaded half,
+     cross-hatch darks at the base, contour outline in pure #0a0a0a, NO grey, NO labels or digits
+     inside the drawing, a short horizontal hatch patch for the ground shadow, subtle hand-wobble
+     (the feTurbulence + feDisplacementMap filter travels inside the svg). ~250px in the column,
+     transparent ground so it sits on the paper in either theme; anything behind must be CLIPPED OUT
+     of the foreground silhouette — a transparent drawing cannot wipe with paper colour. Placed
+     immediately BEFORE the taste paragraph so the float has text to wrap; .article-toc/.fold clear it.
+     Build: scratchpad/sketch.py — the proof-sheet generator (rng/hatch/ink/shadow) ported to Python,
+     emitting static SVG; reference sheet _pencil-art/galley-sketches/. -->
+<figure class="specimen">
+    [inline SVG sketch — generated, not hand-written]
+    <figcaption>[one line: what the drawing shows a buyer to look for]</figcaption>
+</figure>
+
 <!-- THE TASTE — MANDATORY in the intro (founder rule 2026-08-26): the flavour profile in the mouth, so the reader tastes it before the numbers. One prose paragraph, two to four sentences, opening bold "In the mouth:" — attack, middle, finish; bitterness, astringency or texture where they matter; what it does to the food around it; fresh against dried, raw against cooked, where they differ. A cook's sensory words, tied to the compounds The Science names later. No banned words. -->
 <p><strong>In the mouth:</strong> [attack &mdash; middle &mdash; finish; what it does to the pot; fresh against dried].</p>
 
@@ -60,20 +77,6 @@
 <!-- THE SPECIMEN LINE — binomial and family, with cultivar where the named variety carries the flavour. One prose line. -->
 <p>[<em>Genus species</em>, Family — one line naming the specimen, then the promise of what follows: how to choose it, why it tastes of what it tastes of, how to keep it alive through a charter.]</p>
 
-<!-- SPECIMEN SKETCH — the ingredient's own mark, Volta/galley-sketch register (founder rule: an
-     ingredient piece carries one). ONE inline hatched black-ink drawing of the specimen at the size
-     a reader identifies it by: form-following hatch on the lit-from-above half, cross-hatch darks at
-     the base, contour outline in pure #0a0a0a, NO grey, NO labels or digits inside the drawing, a
-     short horizontal hatch patch for the ground shadow, subtle hand-wobble (the feTurbulence +
-     feDisplacementMap filter travels inside the svg). Max ~300px wide, transparent ground so it sits
-     on the paper in either theme. Anything behind must be CLIPPED OUT of the foreground silhouette —
-     a transparent drawing cannot wipe with paper colour. Sits after the specimen line, before the
-     sum-up. Build: scratchpad/sketch.py — the proof-sheet generator (rng/hatch/ink/shadow) ported to
-     Python, emitting static SVG; reference sheet _pencil-art/galley-sketches/. -->
-<figure style="max-width: 300px; margin: var(--space-6) auto 0;">
-    [inline SVG sketch — generated, not hand-written]
-    <figcaption style="font-style: italic; font-size: var(--text-sm); color: var(--color-muted); text-align: center;">[one line: what the drawing shows a buyer to look for]</figcaption>
-</figure>
 
 <!-- THE SUM-UP — the opener of every template since 2026-08-26 (the promise box is retired): every section below, with a one-line description of what it holds, so the reader clicks to what they came for. Real descriptions, working anchors. -->
 <div class="article-toc">
