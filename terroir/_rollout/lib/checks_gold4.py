@@ -265,6 +265,25 @@ def main():
              or all('rel="noopener"' in m for m in re.findall(r'<a class="fcard__site"[^>]*>', doc)),
              "every .fcard__site needs target=_blank rel=noopener")
 
+    # ---- 4c · a Maps link must point at somewhere you GO ---------------------
+    # Arnaud, 2026-08-26: "don't add google map link when it's irrelevant, only for
+    # start place of walk or something, restaurants." A pin on a card about a sky
+    # event, a past festival, a historical gale or "nothing is on this month" is
+    # noise. The judgement is editorial, but the two card types that are NEVER a
+    # place are machine-checkable by their tag.
+    NOT_A_PLACE = ("the warning", "honestly")
+    offenders = []
+    for m in re.finditer(r'<span class="fcard__name">([^<]*)</span>'
+                         r'<span class="fcard__tag">([^<]*)</span>', doc):
+        name, tag = m.group(1), m.group(2).strip().lower()
+        if tag not in NOT_A_PLACE:
+            continue
+        end = doc.find("</details>", m.end())
+        if 'class="fcard__map"' in doc[m.end():end]:
+            offenders.append(f"{name} [{tag}]")
+    r.ck("maps: no pin on a card that is not a place",
+         not offenders, "; ".join(offenders[:3]))
+
     # ---- 5 · maps-link audit -------------------------------------------------
     tok = re.compile("|".join(cfg["mapsTokens"]), re.I)
     links = re.findall(r"https://www\.google\.com/maps/search/\?[^\"'<> ]+", doc + DJ.read_text())

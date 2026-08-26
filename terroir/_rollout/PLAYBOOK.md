@@ -159,6 +159,35 @@ under it. Keep it to ~60 words — Arnaud's ask was *"a small line that directs 
    assemble → generated liste/sources) plus section templates. Read its README first; do not
    re-derive it.
 
+## ⭐ CROSS-CHECK THE LINKS (2026-08-26)
+
+Arnaud: *"always cross check the links make sure they work properly."* One command, run it
+before every deploy and read it:
+
+```bash
+python3 terroir/_rollout/lib/checklinks.py . <Slug> [--archive]
+```
+
+It is deliberately NOT part of `checks_gold4.py`: it is the only check that depends on the
+whole internet being up, and someone else's outage must never be able to fail your deploy.
+It separates three things, and treating them alike is what produces bad fixes:
+- **DEAD** (refused / 404 / persistent 5xx over three tries) — fix or remove.
+- **BOT-WALLED** (403/401/406/400/429/503) — publishers and Cloudflare block curl; the page is
+  fine in a browser. **Never "fix" one of these.** Confirm with `cdp.render_dom(url,
+  quiet_hosts=False)`, which is how divingthecrab.com and the World Unite! course page were
+  verified.
+- **MOVED** (2xx on a different host) — usually correct (`doi.org` → the publisher,
+  `hdl.handle.net` → the repository). **Read every one**: `kayakinondo.com` now redirects to
+  an unrelated squatted domain.
+
+⚠ **One failure is not proof of death.** `kuzacave.com` and `kentaste.com` each failed a full
+pass and were back minutes later. Re-check before tearing a link out.
+
+For anything genuinely dead, **prefer an archive snapshot to deleting the citation** —
+`--archive` prints the closest one. Repoint the href and say so in the link text ("dead link,
+archived copy June 2026"); never let a reader think it is live. Where there is no snapshot,
+unlink but keep the source's name: a citation is evidence even when the page is gone.
+
 ## ⭐ THE GATE IS AUTOMATED (2026-08-22)
 
 Everything §6 used to ask you to eyeball is now one command. **Run it; do not hand-verify.**
@@ -196,6 +225,17 @@ Exit 0 = deployable, exit 1 = HOLD. What it asserts, in one pass:
 9c. **The hot board expires itself** — `data-hot-asof` older than `maxAgeDays` (70), a passed
    `data-hot-review`, a missing visible "Checked <date>" line, or fewer than `minVenues` venues
    carrying `hot_this_month` all FAIL the build. Proven by positive control.
+9c-bis. **A Maps pin must point at somewhere you GO.** (Arnaud, 2026-08-26: *"don't add
+    google map link when it's irrelevant, only for start place of walk or something,
+    restaurants."*) Venues, a walk's **starting point**, a site you visit — yes. A card about
+    a sky event, a past festival, a historical gale, "nothing is on this month", or advice to
+    close the laptop — **no pin**. A pin on a whole city or region is the tell: it means there
+    was no place to point at. Where a walk has a meeting point, the pin is the MEETING POINT,
+    not the operator's office (Kaaribu → Tsunami Garden Cafe, not Kaaribu Experiences). The
+    gate machine-checks the two card types that are never a place — tag `the warning` and tag
+    `honestly` — and the rest is your judgement.
+    ⚠ The checklist is the opposite case: **every la-liste item and every `.ics` VTODO keeps
+    its Maps link**, because that is exactly where a pin earns its place.
 9d. **The jump lines stay lines** — with `"hot": {"mode": "pointer"}` and `"listePointer": true`,
    the gate fails if `#why-now` grows a card or passes 1 500 bytes, if `#eat` grows a `.ics`,
    a `terroir-btn` or a second list, if either loses its down-link or its back-link, if more than
