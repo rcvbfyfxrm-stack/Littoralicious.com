@@ -239,6 +239,32 @@ def main():
     emoji = re.findall("[\U0001F300-\U0001FAFF]", doc)
     r.ck("no emoji", not emoji, f"{sorted(set(emoji))[:6]}")
 
+    # ---- 4b · website-link audit ---------------------------------------------
+    # A card may carry the venue's OWN site (.fcard__site). 2026-08-26: two candidates
+    # nearly shipped — kayakinondo.com now redirects to an unrelated squatted domain,
+    # and akambahandicraft.com is dead. So the label must PROVE where the link goes:
+    # the visible text is the link's own host, which makes a swapped target visible.
+    sites = re.findall(r'<a class="fcard__site"[^>]*href="([^"]+)"[^>]*>([^<]*)</a>', doc)
+    if sites:
+        bad_scheme = [u for u, _ in sites if not u.startswith("https://")]
+        r.ck("sites: every website link is https", not bad_scheme, str(bad_scheme[:3]))
+        aggregators = ("google.com/maps", "tripadvisor.", "facebook.com", "instagram.com",
+                       "booking.com", "getyourguide.", "wanderlog.")
+        bad_agg = [u for u, _ in sites if any(a in u.lower() for a in aggregators)]
+        r.ck("sites: no aggregator standing in for the venue's own site",
+             not bad_agg, str(bad_agg[:3]))
+        mismatched = []
+        for u, label in sites:
+            host = urllib.parse.urlparse(u).netloc.lower().removeprefix("www.")
+            if host not in label.lower().replace(" ", ""):
+                mismatched.append(f"{label.strip()} -> {host}")
+        r.ck("sites: the visible label names the host it links to",
+             not mismatched, str(mismatched[:3]))
+        r.ck("sites: links open in a new tab safely",
+             doc.count('class="fcard__site"') == doc.count('rel="noopener"')
+             or all('rel="noopener"' in m for m in re.findall(r'<a class="fcard__site"[^>]*>', doc)),
+             "every .fcard__site needs target=_blank rel=noopener")
+
     # ---- 5 · maps-link audit -------------------------------------------------
     tok = re.compile("|".join(cfg["mapsTokens"]), re.I)
     links = re.findall(r"https://www\.google\.com/maps/search/\?[^\"'<> ]+", doc + DJ.read_text())

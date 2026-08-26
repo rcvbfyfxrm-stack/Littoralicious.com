@@ -114,6 +114,12 @@ in GOLD4 §1–9 still holds. The delta, all of it shipped and render-verified o
    the warning about what is sold as local craft and is not. Never upgrade a place quietly.
    "Nothing here clears the bar" is a legitimate finding — say it in the lede, as Diani does.
    Kendwa's one full pass is the Nungwi dhow-building course taught in the working yard.
+   ⚠ **Every card gives the website of the place** (`.fcard__site`, before the Maps link), the
+   link text being the bare domain so the reader sees where they are sent (Arnaud, 2026-08-26).
+   The venue's OWN site only — the gate rejects aggregators, plain `http`, and a label that does
+   not name the host it links to. **Verify each one resolves**: on the Swahili pass
+   `kayakinondo.com` had been taken over and redirected to an unrelated domain, and
+   `akambahandicraft.com` was dead. No site (a working yard, a roaming trade) ⇒ omit the link.
 5. **`#hot` — What's hot this month.** Mandatory, dated, and the only perishable block in a guide.
    Four groups: in the water · in the sky · on the plate · in the calendar. Say plainly when there
    is nothing on ("no festival now, and the weather is the trade") rather than inventing one. Fill

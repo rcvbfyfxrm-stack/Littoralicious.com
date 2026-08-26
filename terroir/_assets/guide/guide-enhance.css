@@ -409,3 +409,15 @@
   border-bottom:1px solid var(--gx-rule); white-space:nowrap;
 }
 .gx-jump__go:hover{ border-bottom-color:var(--gx-sea); }
+
+/* ============================================================================
+   15 · CARD WEBSITE link — the place's own site, beside the Maps link
+   Arnaud, 2026-08-26: a craft card must give the website of the place. The link
+   text is the bare domain, so the reader can see where they are being sent.
+   Only ever the venue's OWN site — never an aggregator, never a reseller.
+   ========================================================================== */
+.fcard__site{
+  font-family:var(--gx-sans); font-size:.82em; color:var(--gx-sea);
+  text-decoration:none; border-bottom:1px solid #c4a35a; margin-right:14px;
+}
+.fcard__site:hover{ border-bottom-color:var(--gx-sea); }
