@@ -47,14 +47,18 @@ law, not the box: any locked payoff device counts, as long as it lands inside ~1
 - **No Stories section.** Tales live where they bite — a small `note--quote` box beside the passage,
   or behind the word — never gathered at the end.
 - **Pairings are cards.** `pair-cards`: the pairing on the card, the reason on click; the wild card
-  starred. Galley intel opens on concrete ideas — ways to use it, compound logic and all.
+  starred. Where the pairings were found by shared compounds, one line after the grid points at the
+  **Pairing Wheel** in the Spoon Lab (`<a href="#pairings" data-open-lab>`) and says plainly that it is
+  simmering, not ready — never a date. Galley intel opens on concrete ideas — ways to use it, compound logic and all.
 
 **The ingredient standard (locked 2026-08-26).** `templates/shore-larder.html` + `shore-larder-deep-dive.html`
 carry one spine, and `articles/bay-leaf.html` is the reference build: encounter → sketch set into the column →
-the name → the taste → the old habit teased → sum-up → origin folded → Science (numbers, Blind Spot, chemistry,
+the name → the taste (closing on what it does in the hand — the snap, the crack, the smell) → the origin folded,
+as a card directly under the taste → the old habit teased → sum-up, outside the fold → Science (numbers, Blind Spot, chemistry,
 **Is it a remedy?** with the dose gap, the folk use that holds, and **how to use it that way**) → Pairings
 (register chips, 2–5 ingredients, one COMPOUND card naming the shared molecule and its share of both oils) →
-Galley Intel (carreaux tiles) → How to Buy → the one thing. Retired for good: the promise box, the Cook's
+Galley Intel (carreaux tiles) → How to Buy (the varieties as CARDS — flavour profile, best for, a little story
+told nowhere else) → the one thing. Retired for good: the promise box, the Cook's
 Reason box, the Stories section, the Quick Reference card, and the Galley Batch box unless it teaches
 something a pro does not know.
 

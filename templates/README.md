@@ -60,17 +60,20 @@ npm run new -- --slug pizza-napoletana --title "Pizza Napoletana: Poolish, 48h C
 same spine. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
 
 Spine: **1–3 lines of encounter → the specimen sketch, set into the column → the name → the taste ("In the
-mouth") → the old habit, teased, linking to #science → the sum-up → the origin, folded → The Science (the
-four numbers, the Blind Spot, the chemistry, then **Is it a remedy?**) → The Pairings (cards, four registers,
-2–5 ingredients each) → Galley Intel (the carreaux tiles) → How to Buy → the one thing → Sources.**
+mouth"), closing on what it does in the hand → the origin, folded, as a card directly under the taste → the
+old habit, teased, linking to #science → the sum-up, outside the fold → The Science (the four numbers, the
+Blind Spot, the chemistry, then **Is it a remedy?**) → The Pairings (cards, four registers, 2–5 ingredients
+each, then the Pairing Wheel line) → Galley Intel (the carreaux tiles) → How to Buy (the varieties as cards)
+→ the one thing → Sources.**
 
 Standing rules: no promise box · no Cook's Reason box · no Stories section (tales inline or behind the word)
 · no Quick Reference · no Galley Batch Prep unless the procedure is genuinely something a pro would not know
 · the numbers live with the mechanism, not in the intro · every rare word carries `data-def` · pairings carry
-a register chip and never more than five ingredients · if the remedy beat lands on something real, it is
+a register chip and never more than five ingredients · the sum-up never sits inside the fold · the varieties
+are cards, each with flavour profile, best for and a little story told nowhere else in the piece · if the remedy beat lands on something real, it is
 followed by **how to use it that way** (where, how much, how often, the honest limit) · say it once.
 
 Components: `.specimen` (the sketch, floated), `details.fold` (the glass read-more), `.article-toc` +
-`article-toc__desc` (the sum-up), `.pair-cards` / `.pair-card__reg`, `.tiles` / `.tile` with the inline `--t`
+`article-toc__desc` (the sum-up), `.pair-cards` / `.pair-card__reg` (pairings AND varieties), `.tiles` / `.tile` with the inline `--t`
 hue, `.term[data-def]` (click-to-define, `data-kind="story"` for a tale). Sketch generator:
 `_pencil-art/galley-sketches/sketch.py`.

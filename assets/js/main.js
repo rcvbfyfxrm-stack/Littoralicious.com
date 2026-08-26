@@ -434,7 +434,7 @@
         if (document.querySelector('.tools-widget')) return;
         if (document.querySelector('script[data-spoon-lab]')) return;
         var s = document.createElement('script');
-        s.src = '/assets/js/tools-widget.js?v=20260707-spoon';
+        s.src = '/assets/js/tools-widget.js?v=20260826-lab';
         s.defer = true;
         s.setAttribute('data-spoon-lab', '');
         document.body.appendChild(s);

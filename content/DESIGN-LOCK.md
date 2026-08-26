@@ -44,6 +44,10 @@ JS in `main.js` builds the popover (`.term-pop`, `--story` variant); keyboard-re
 ```
 The card shows the pairing only; the reason opens on click and the open card spans the row.
 
+**Also the varieties card set** (How to Buy, added 2026-08-26): the same component, three beats in the body —
+`<strong>Flavour profile:</strong>`, `<strong>Best for:</strong>`, then one or two sentences of story told
+nowhere else in the piece. The `pair-card__reg` chip says what the thing IS, not a pairing register.
+
 ### Fold — `details.fold` (added 2026-08-26; the intro's read-more)
 ```html
 <details class="fold"><summary>Read more — where it comes from</summary><div class="fold__body"><p>…</p></div></details>
@@ -64,6 +68,14 @@ Floats right at ≥720px (252px) so the prose runs around it; centres at a 240px
 
 ### Pairing register chip — `pair-card__reg` (added 2026-08-26)
 `Traditional` · `Modern` · `Compound` · `From the littoral`, inside the card's `<summary>` above the name.
+
+### Lab link — `[data-open-lab]` (added 2026-08-26)
+```html
+<a href="#pairings" data-open-lab>Pairing Wheel</a>
+```
+Opens the Spoon Lab panel instead of navigating — the way an article points at a tool that has no page yet.
+Handled in `assets/js/tools-widget.js`; the `href` is the no-JS fallback, so make it a same-page anchor and
+the reader stays where they are. Say the tool is **simmering**; never promise a date.
 
 ### Callout notes — `note` + modifier (each auto-labels via ::before)
 - `note--key` → **Key Point** · `note--science` → **The Science** · `note--action` → **Takeaway** ·

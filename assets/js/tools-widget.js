@@ -431,6 +431,20 @@
             if (!widget.contains(e.target)) closeWidget();
         });
 
+        /* Any page can point at the lab: an <a data-open-lab> in an article —
+           for a tool that has no page of its own yet — opens the panel instead
+           of navigating. The listener is registered AFTER the close-on-outside
+           one above, so it wins. Without JS the link's href is a same-page
+           anchor and the reader simply stays put. */
+        document.addEventListener('click', function (e) {
+            var el = e.target;
+            while (el && el !== document && !(el.dataset && el.dataset.openLab !== undefined)) el = el.parentNode;
+            if (!el || el === document) return;
+            e.preventDefault();
+            openWidget();
+            widget.scrollIntoView({ block: 'nearest' });
+        });
+
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && widget.dataset.open === 'true') {
                 closeWidget();
