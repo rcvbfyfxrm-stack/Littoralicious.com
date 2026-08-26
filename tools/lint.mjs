@@ -104,7 +104,7 @@ function lintArticle(a) {
   // (founder rule 2026-08-25): the Study Decoded pays off with its Citation Card, the Supply Alert with
   // its Signal Board, the Weekly Brief with the Since-last-week note, the Deep-Dive with the two-minute
   // version. So: accept ANY locked payoff device, as long as it lands inside the first ~150 words.
-  const PAYOFF = /<div\s+class="(summary-box|signal-board|citation-card|forecast-scorecard|glance|id-card|note)\b/i;
+  const PAYOFF = /<div\s+class="(article-toc|summary-box|signal-board|citation-card|forecast-scorecard|glance|id-card|note)\b/i;
   const openBody = body.replace(/<!--[\s\S]*?-->/g, " ");
   const payoffAt = openBody.search(PAYOFF);
   if (payoffAt < 0) {

@@ -323,6 +323,8 @@
     function generateTableOfContents() {
         const tocContainer = document.querySelector('.article-toc');
         if (!tocContainer) return;
+        // Author-written sum-up (founder rule 2026-08-26): a TOC that carries descriptions is kept as written.
+        if (tocContainer.querySelector('.article-toc__desc')) return;
 
         const article = document.querySelector('.article__content, .article-body');
         if (!article) return;
@@ -461,4 +463,51 @@
             document.body.appendChild(rn);
         }
     });
+})();
+
+/* Click-to-define terms and inline stories — founder rule 2026-08-26.
+   <span class="term" data-def="…">word</span> opens a small popover; data-kind="story" carries a tale. */
+(function () {
+    var openEl = null, pop = null;
+    function close() {
+        if (pop) { pop.remove(); pop = null; }
+        if (openEl) { openEl.classList.remove('is-open'); openEl.setAttribute('aria-expanded', 'false'); openEl = null; }
+    }
+    function show(el) {
+        close();
+        var def = el.getAttribute('data-def'); if (!def) return;
+        var story = el.getAttribute('data-kind') === 'story';
+        pop = document.createElement('div');
+        pop.className = 'term-pop' + (story ? ' term-pop--story' : '');
+        pop.setAttribute('role', 'dialog');
+        var kind = document.createElement('span'); kind.className = 'term-pop__kind'; kind.textContent = story ? 'The story' : 'In one line';
+        var word = document.createElement('span'); word.className = 'term-pop__word'; word.textContent = el.getAttribute('data-word') || el.textContent;
+        var body = document.createElement('p'); body.className = 'term-pop__def'; body.textContent = def;
+        var x = document.createElement('button'); x.className = 'term-pop__close'; x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.textContent = '×';
+        x.addEventListener('click', close);
+        pop.appendChild(kind); pop.appendChild(word); pop.appendChild(body); pop.appendChild(x);
+        document.body.appendChild(pop);
+        var r = el.getBoundingClientRect();
+        var top = r.bottom + window.scrollY + 8, left = r.left + window.scrollX;
+        var maxLeft = window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12;
+        if (left > maxLeft) left = Math.max(12, maxLeft);
+        if (r.bottom + pop.offsetHeight + 16 > window.innerHeight && r.top > pop.offsetHeight + 16) top = r.top + window.scrollY - pop.offsetHeight - 8;
+        pop.style.top = top + 'px'; pop.style.left = left + 'px';
+        openEl = el; el.classList.add('is-open'); el.setAttribute('aria-expanded', 'true');
+    }
+    document.querySelectorAll('.term[data-def]').forEach(function (el) {
+        el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); el.setAttribute('aria-expanded', 'false');
+    });
+    document.addEventListener('click', function (e) {
+        var t = e.target.closest ? e.target.closest('.term[data-def]') : null;
+        if (t) { e.preventDefault(); if (openEl === t) close(); else show(t); return; }
+        if (pop && !pop.contains(e.target)) close();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { close(); return; }
+        if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.matches && e.target.matches('.term[data-def]')) {
+            e.preventDefault(); if (openEl === e.target) close(); else show(e.target);
+        }
+    });
+    window.addEventListener('resize', close);
 })();

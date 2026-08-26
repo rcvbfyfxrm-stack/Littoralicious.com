@@ -16,8 +16,9 @@ you haven't earned the next line yet.*
 
 **How we engineer focus** (every article, built only from the locked components):
 
-- **Open with the payoff.** A `.summary-box` up top — what they'll walk away with, in three
-  scannable lines. Nobody reads on for a promise they can't see.
+- **Open with the sum-up.** After the intro, an `.article-toc` with a one-line description under
+  every section — the reader sees the whole piece and clicks to what they came for. No promise box
+  (founder rule 2026-08-26). Rare words define themselves on click; stories sit where they bite.
 - **One idea per section.** `<h2>` headings that promise value; short paragraphs; bold
   lead-ins. No walls of text — a wall is where focus dies.
 - **Re-hook the eye.** Break long stretches with a `.note--quote` pull-quote — one striking line.
@@ -36,7 +37,8 @@ Plain prose loses people. **Every article is designed to be read** — boxes, hi
 visual beats that hold the eye the whole way down. Reach for these (all locked CSS, no new styling):
 
 **Boxes / callouts** (each auto-labels itself):
-- `<div class="summary-box"><strong>What you'll get</strong><ul>…</ul></div>` — the opening promise.
+- `<div class="article-toc">` with `article-toc__desc` lines — the sum-up (the promise box is retired).
+- `<span class="term" data-def="…">` — click-to-define; `data-kind="story"` for a tale. `pair-cards` for pairings; `details.fold` for the intro's read-more.
 - `<div class="note note--key"><p>…</p></div>` → **Key Point** · `note--science` → **The Science** ·
   `note--action` → **Takeaway** · `note--warning` → **Warning** · `note--quote` → pull-quote.
 - **Custom-labeled box** (clever, use it): `<div class="note" data-label="The Number"><p>…</p></div>`

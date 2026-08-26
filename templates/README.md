@@ -8,7 +8,7 @@ and adds a draft entry to `data/articles.json` (category + subtag default per te
 ## The first law is built in
 
 Every template is **focus-engineered** (see `content/DNA.md` → *Never lose focus*). Each one
-ships with: a `summary-box` "What you'll get" promise up top, labelled `divider` section
+ships with: the `article-toc` sum-up (one-line description per section) after the intro — no promise box since 2026-08-26 — labelled `divider` section
 breaks, a one-line value kicker under each `<h2>`, `note--quote` pull-quotes to re-hook,
 `note--key` / `note--science` / `note--action` / `note--warning` callouts where they belong,
 inline `term` definitions, and a closing takeaway. Keep these when you write — they are what

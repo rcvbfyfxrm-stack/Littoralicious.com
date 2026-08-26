@@ -25,26 +25,32 @@
 6. **WARM.** The Grandmother pillar visible — mandatory in food-facing templates, recommended
    everywhere. Rigour is the method; nurture is the reason.
 
-## THE OPENING PAYOFF (law) — every template, its own way in
+## THE OPENING (law) — the sum-up, not a promise
 
-The law is **payoff up top**, not *a box that says "What you'll get"*. Founder rule, 2026-08-25:
-no two templates may open the same way. Nine templates keep a promise box and each one is titled in
-its own voice (01 *What you'll know before you buy it* · 02 *What you'll be able to do* ·
-03 *What the record settles* · 07 *The bet, and what would break it* · 08 *What changed, and what it
-costs you* · 09 *What you'll walk out with* · 10 *What this port gives you* · 11 *The verdict, up
-front* · 13 *The question, and what the data did*). 05 opens on **The one idea**.
+Founder rule, 2026-08-26: **no template promises what you get before you buy it.** The opening device
+is the **sum-up** — the `article-toc` with a one-line description under every section, so the reader
+sees the whole piece in one glance and clicks straight to what they came for. It sits after the intro
+(the name, the scene, the vital signs, the folded origin on an ingredient piece; the lede paragraph
+elsewhere) and before the first section. The promise box (`summary-box "What you'll get"`) is retired
+from every template; the CSS stays for older pages.
 
-**Four templates carry no promise box at all**, because their own signature device pays off sooner
-and better — putting a box above it would say the same thing twice, in a weaker voice:
+The sum-up is skipped only where it makes no sense: a piece too short to need a map, or a template
+whose own signature device pays off sooner and better — **01b** (The Name, then the two-minute
+version), **04** (the claim, settled by the Citation Card), **06** (the dated number, then the Signal
+Board), **12** (Since last week). Never copy another template's opener. `tools/lint.mjs` checks the
+law, not the box: any locked payoff device counts, as long as it lands inside ~150 words.
 
-- **01b Ingredient Deep-Dive** → The Name, then **the two-minute version**.
-- **04 Study Decoded** → the claim in two or three sentences, settled by the **Citation Card**. Its own
-  forbidden move is *any stacked box*; a promise box would spend a third of a two-minute read.
-- **06 Supply Alert** → the dated number itself, then the **Signal Board** (number, direction, window).
-- **12 Weekly Brief** → **Since last week**. A continuing conversation opens on the carried thread.
+**Three reader devices go with it (same rule, 2026-08-26):**
+- **Click-to-define.** Every rare word carries a definition on click — `<span class="term"
+  data-def="…">` — written to capture exactly the sense of the word, beautifully, in one or two
+  lines. Names with a story (Daphne, the wreath) carry the tale the same way: `data-kind="story"`.
+- **No Stories section.** Tales live where they bite — a small `note--quote` box beside the passage,
+  or behind the word — never gathered at the end.
+- **Pairings are cards.** `pair-cards`: the pairing on the card, the reason on click; the wild card
+  starred. Galley intel opens on concrete ideas — ways to use it, compound logic and all.
 
-Never re-add a promise box to those four. Never copy another template's box title. `tools/lint.mjs`
-checks the law, not the box: any locked payoff device counts, as long as it lands inside ~150 words.
+**Concision is a law, not a style.** Say it once. Clear, direct, efficient, without losing substance;
+a repeated fact is a cut, not an emphasis.
 
 ## THE LEARNING CONTRACT (law)
 

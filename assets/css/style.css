@@ -2435,3 +2435,52 @@ mark {
 .photo-figure { margin: var(--space-7, 2.5rem) 0; }
 .photo-figure img, .photo-figure video { max-width: 100%; height: auto; display: block; margin: 0 auto; border: 1px solid var(--color-border, #e2ddd3); }
 .photo-figure figcaption { margin-top: var(--space-3, 0.75rem); font-size: var(--text-sm, 0.9rem); color: var(--color-muted, #6b675f); line-height: 1.55; }
+
+/* =====================================================================
+   READER COMPONENTS — founder rules 2026-08-26
+   1. Sum-up: article-toc carries a one-line description per section (replaces the promise box).
+   2. Click-to-define: .term[data-def] opens a .term-pop; data-kind="story" carries a short tale.
+   3. Pairing cards: .pair-cards > details.pair-card — the pairing on the card, the reason on click.
+   4. Fold: details.fold — the intro's "read more" (origin), Terroir-style.
+   ===================================================================== */
+.article-toc__desc { display: block; margin-top: 2px; color: var(--color-muted, #6b7280); font-size: var(--text-xs, 0.8rem); line-height: 1.45; }
+.article-toc li a { font-weight: 600; }
+
+.term[data-def] { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.term[data-def].is-open { background: var(--color-subtle, #f3f4f6); }
+.term-pop {
+    position: absolute; z-index: 60; max-width: 38ch; min-width: 22ch;
+    padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+    background: var(--color-paper, #fff); color: var(--color-ink, #0a0a0a);
+    border: 1px solid var(--color-border, #d1d5db); border-left: 3px solid var(--color-sea, #2d4a5e);
+    box-shadow: 0 14px 34px rgba(0,0,0,.14);
+    font-size: var(--text-sm, 0.9rem); line-height: 1.55;
+}
+.term-pop--story { border-left-color: #c4a35a; }
+.term-pop__kind { display: block; font-family: var(--font-mono, monospace); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-muted, #6b7280); margin-bottom: 4px; }
+.term-pop__word { display: block; font-family: var(--font-serif, Georgia, serif); font-style: italic; font-size: var(--text-lg, 1.2rem); line-height: 1.2; margin-bottom: var(--space-2, .5rem); }
+.term-pop__def { margin: 0; }
+.term-pop__close { position: absolute; top: 6px; right: 8px; border: 0; background: none; font-size: 16px; line-height: 1; color: var(--color-muted, #6b7280); cursor: pointer; }
+
+.pair-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: var(--space-3, .75rem); margin: var(--space-6, 1.5rem) 0; }
+.pair-card { border: 1px solid var(--color-border, #d1d5db); background: var(--color-subtle, #f3f4f6); transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.pair-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.08); border-color: var(--color-sea, #2d4a5e); }
+.pair-card > summary { list-style: none; cursor: pointer; position: relative; padding: var(--space-4, 1rem) var(--space-8, 2rem) var(--space-4, 1rem) var(--space-4, 1rem); }
+.pair-card > summary::-webkit-details-marker { display: none; }
+.pair-card > summary::after { content: "+"; position: absolute; top: 10px; right: 12px; font-family: var(--font-mono, monospace); font-size: 18px; color: var(--color-sea, #2d4a5e); }
+.pair-card[open] > summary::after { content: "\2013"; }
+.pair-card__name { display: block; font-family: var(--font-serif, Georgia, serif); font-weight: 600; font-size: var(--text-base, 1rem); line-height: 1.25; }
+.pair-card__region { display: block; margin-top: 4px; font-family: var(--font-mono, monospace); font-size: var(--text-xs, .75rem); letter-spacing: .04em; color: var(--color-muted, #6b7280); }
+.pair-card[open] { grid-column: 1 / -1; background: var(--color-paper, #fff); border-color: var(--color-sea, #2d4a5e); transform: none; }
+.pair-card__body { padding: 0 var(--space-4, 1rem) var(--space-4, 1rem); font-size: var(--text-sm, .9rem); line-height: 1.6; }
+.pair-card__body p { margin: 0 0 var(--space-2, .5rem); }
+.pair-card--wild { border-style: dashed; }
+.pair-card--wild .pair-card__name::before { content: "\2605 "; color: #c4a35a; }
+
+.fold { margin: var(--space-5, 1.25rem) 0; border-top: 1px solid var(--color-border, #d1d5db); border-bottom: 1px solid var(--color-border, #d1d5db); }
+.fold > summary { list-style: none; cursor: pointer; padding: var(--space-3, .75rem) 0; font-family: var(--font-mono, monospace); font-size: var(--text-xs, .75rem); letter-spacing: .12em; text-transform: uppercase; color: var(--color-muted, #6b7280); display: flex; align-items: center; gap: var(--space-2, .5rem); }
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary::before { content: "+"; font-size: 14px; color: var(--color-sea, #2d4a5e); }
+.fold[open] > summary::before { content: "\2013"; }
+.fold__body { padding: 0 0 var(--space-4, 1rem); }
+.fold__body > p + p { margin-top: var(--space-3, .75rem); }

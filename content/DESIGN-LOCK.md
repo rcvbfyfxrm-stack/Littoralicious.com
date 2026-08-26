@@ -14,9 +14,39 @@
 
 ## The locked component library
 
-### Opening promise — `summary-box`
+### Opening promise — `summary-box` (RETIRED 2026-08-26 — replaced by the sum-up below; CSS kept for older pages)
 ```html
 <div class="summary-box"><strong>What you'll get</strong><ul><li>…</li></ul></div>
+```
+
+
+### Sum-up — `article-toc` + `article-toc__desc` (the opener on every template since 2026-08-26)
+```html
+<div class="article-toc"><p class="article-toc__title">In this piece</p><ol>
+  <li><a href="#science">The Science</a><span class="article-toc__desc">one line on what the section holds</span></li>
+</ol></div>
+```
+Sits after the intro, before the first section. Every section listed, every line a real description, every title a working anchor.
+
+### Click-to-define — `term[data-def]` → `term-pop` (added 2026-08-26)
+```html
+<span class="term" data-def="One or two lines that capture exactly the sense of the word.">word</span>
+<span class="term" data-kind="story" data-word="Daphne" data-def="The tale, told in three or four lines.">Daphne</span>
+```
+JS in `main.js` builds the popover (`.term-pop`, `--story` variant); keyboard-reachable; one open at a time. Plain text only in `data-def`.
+
+### Pairing cards — `pair-cards` > `details.pair-card` (added 2026-08-26)
+```html
+<div class="pair-cards">
+  <details class="pair-card"><summary><span class="pair-card__name">Bay + dried beans</span><span class="pair-card__region">Türkiye · Greece</span></summary><div class="pair-card__body"><p>why it works</p></div></details>
+  <details class="pair-card pair-card--wild">…</details>   <!-- the littoral wild card, starred -->
+</div>
+```
+The card shows the pairing only; the reason opens on click and the open card spans the row.
+
+### Fold — `details.fold` (added 2026-08-26; the intro's read-more)
+```html
+<details class="fold"><summary>Read more — where it comes from</summary><div class="fold__body"><p>…</p></div></details>
 ```
 
 ### Callout notes — `note` + modifier (each auto-labels via ::before)
@@ -251,7 +281,7 @@ Motion is **opt-in and single-purpose**. The whole grammar:
 curl -fsSL https://www.littoralicious.com/assets/css/style.css -o /tmp/litt-live.css
 
 # 2. list every locked component class still present (should match this doc)
-grep -oE '\.(summary-box|note|glance|id-card|citation-card|divider|register-ladder|heritage-timeline|cook-this-port|data-table|term|highlight|kicker|galley-plan|science-box|article-toc|article-sources|signal-board|signal-ledger|forecast-scorecard|tw-case-grid|tw-hub-grid|tw-band-ladder|rcp-[a-z]+)[a-z0-9_-]*(__[a-z-]+)?(--[a-z-]+)?' /tmp/litt-live.css | sort -u
+grep -oE '\.(summary-box|article-toc|term-pop|pair-card|fold|note|glance|id-card|citation-card|divider|register-ladder|heritage-timeline|cook-this-port|data-table|term|highlight|kicker|galley-plan|science-box|article-toc|article-sources|signal-board|signal-ledger|forecast-scorecard|tw-case-grid|tw-hub-grid|tw-band-ladder|rcp-[a-z]+)[a-z0-9_-]*(__[a-z-]+)?(--[a-z-]+)?' /tmp/litt-live.css | sort -u
 # (Port Call classes live in assets/css/port-call-content.css — check that file, not style.css)
 
 # 3. confirm the auto-labels haven't changed
