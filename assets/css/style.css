@@ -2478,6 +2478,37 @@ mark {
 .pair-card--wild .pair-card__name::before { content: "\2605 "; color: #c4a35a; }
 
 
+
+/* Galley tiles — the ideas laid like carreaux (founder rule 2026-08-26): a coloured tile field,
+   each tile one usable idea. Hue per tile via the inline --t custom property (the one lock-safe
+   inline, as with Trade Winds' --tw-accent). */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(196px, 1fr)); gap: 8px; margin: var(--space-6, 1.5rem) 0; }
+.tile {
+    position: relative; overflow: hidden; padding: 15px 17px 17px;
+    border: 1px solid color-mix(in srgb, var(--t, #2d4a5e) 42%, transparent);
+    background: color-mix(in srgb, var(--t, #2d4a5e) 11%, var(--color-paper, #fafafa));
+}
+.tile::after {
+    content: ""; position: absolute; right: -22px; bottom: -22px; width: 62px; height: 62px;
+    border: 1px solid color-mix(in srgb, var(--t, #2d4a5e) 30%, transparent); transform: rotate(45deg);
+}
+.tile__name {
+    display: block; font-family: var(--font-serif, Georgia, serif); font-weight: 700;
+    font-size: var(--text-base, 1rem); line-height: 1.2;
+    color: color-mix(in srgb, var(--t, #2d4a5e) 78%, var(--color-ink, #0a0a0a));
+}
+.tile__how { display: block; margin-top: 6px; font-size: var(--text-sm, .9rem); line-height: 1.5; position: relative; z-index: 1; }
+.tile--wide { grid-column: span 2; }
+@media (max-width: 560px) { .tile--wide { grid-column: span 1; } }
+
+/* Pairing register chip — traditional / modern / compound / littoral */
+.pair-card__reg {
+    display: inline-block; margin-bottom: 6px; padding: 2px 8px;
+    font-family: var(--font-mono, monospace); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--color-sea, #2d4a5e); border: 1px solid color-mix(in srgb, var(--color-sea, #2d4a5e) 40%, transparent);
+}
+.pair-card--wild .pair-card__reg { color: #a8804a; border-color: color-mix(in srgb, #c4a35a 55%, transparent); }
+
 /* Specimen sketch — SET INTO the text (founder rule 2026-08-26): the drawing sits in the
    column with the prose running around it, never as an isolated block above it. */
 .specimen { max-width: 240px; margin: var(--space-3, .75rem) auto var(--space-5, 1.25rem); }

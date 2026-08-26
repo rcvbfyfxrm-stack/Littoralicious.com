@@ -38,59 +38,36 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Template 01, INGREDIENT PROFILE (file/slug shore-larder; category label: Ingredients): the fast, warm FIELD PROFILE of one ingredient. IDENTITY (META-PROMPT grid): PROMISE = the fast, warm field profile · OPENING REGISTER = THE NAME (what it is called and where the word comes from, the other names and WHY, the family), then the scene, then the INTRO BLOCK — vital signs .glance + the specimen line (+ optional sketch) + the ORIGIN, folded behind a read-more · then the SUM-UP (article-toc with one-line descriptions — the reader clicks to what they came for) · SIGNATURE = The Name + vital signs + the folded origin + pairing cards · PRO-HOOK = The Blind Spot opening The Science, plus one brigade-test number in the glance · FORBIDDEN = a promise box; a Cook's Reason box (warmth runs through the prose instead); a Stories section (tales sit inline in small boxes or behind a click on the word); a second stat grid; the deep-dive dossier (that is 01b). LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the glance, one in The Blind Spot, one free. CONCISION LAW (founder, 2026-08-26): say it once — clear, direct, efficient, no lost substance; a repeated fact is a cut. Target 6-9 min. Spine: THE NAME → scene → THE TASTE (in the mouth) → vital signs + specimen line + SKETCH → origin (folded) → SUM-UP → The Science (Blind Spot first; Health Evidence only when real) → How to Buy (varieties, where it really comes from, THE CLEAN WAY TO GET IT, buying signals, the rejection rule) → The Pairings (cards; wild card starred) → Galley Intel (ideas first, then storage/dose/batch) → Quick Reference + The one thing → Sources. Every rare word: data-def. NEVER hand-roll a card. -->
+                <!-- BODY:BEGIN — Template 01, INGREDIENT PROFILE (file/slug shore-larder; category label: Ingredients): the fast, warm FIELD PROFILE of one ingredient. IDENTITY (META-PROMPT grid): PROMISE = the fast, warm field profile · OPENING REGISTER = the encounter in one to three lines, then THE SKETCH, then THE NAME (the word and where it comes from, the other names and WHY, the family), then THE TASTE, then the origin folded — the intro IS the history · SIGNATURE = the specimen sketch set into the text + the folded origin + the pairing cards + the galley tiles · PRO-HOOK = The Blind Spot opening The Science, plus one brigade-test number in the glance · FORBIDDEN = a promise box; a Cook's Reason box (warmth runs through the prose); a Stories section (tales sit inline or behind a click on the word); a Quick Reference card; a Galley Batch Prep box UNLESS the procedure is genuinely something a pro would not know; a second stat grid; repeating any fact twice. LEARNING CONTRACT: three verified facts a ten-year pro doesn't know — one in the glance, one in The Blind Spot, one free. CONCISION LAW: say it once — clear, direct, efficient, no lost substance. Target 6-9 min.
+     SPINE (founder-revised 2026-08-26): 1–3 lines of encounter → SPECIMEN SKETCH (floated into the column) → THE NAME → THE TASTE ("In the mouth") → SUM-UP → the ORIGIN, folded → The Science (THE FOUR NUMBERS at its top, then the Blind Spot and the chemistry) → The Pairings (cards, four registers, 2–5 ingredients each) → Galley Intel (the carreaux tile field) → How to Buy (varieties, provenance, The Clean Way, the signals, the rejection rule) → The one thing → Sources. NEVER hand-roll a card. -->
 
-<!-- THE NAME — the OPENING REGISTER of every ingredient piece (founder directive 2026-08-25). Two to four sentences, prose: the name and where the word comes from; the other names and WHY they exist (a port, a mistake, a trade); the family and the one thing the kinship tells a cook. Never invent a folk etymology. Rare words carry data-def; a name with a story carries data-kind="story". -->
-<p>[The name and where the word comes from. The other names and the reason they exist. The family, and what the kinship tells a cook — with the look-alike that shares the look but not the safety.]</p>
+<!-- THE ENCOUNTER — one to three lines, in scene at a concrete moment: the crate at 0600, the market table, the pan as it turns. A real place, a real hour. Nothing else above the sketch. -->
+<p>[The encounter, in scene — three lines at most.]</p>
 
-<!-- THE SCENE — one or two sentences at a concrete moment: the crate at 0600, the market table, the pan as it turns. A real place, a real hour. The warmth of the old Cook's Reason lives here and along the piece — not in a box. -->
-<p>[The encounter, in scene.]</p>
-
-<!-- SPECIMEN SKETCH — the ingredient's own mark, Volta/galley-sketch register (founder rule: an
-     ingredient piece carries one, and it is SET INTO the text — floated in the column with the taste
-     and the specimen line running around it, never an isolated block). ONE inline hatched black-ink
-     drawing at the size a reader identifies it by: form-following hatch on the shaded half,
-     cross-hatch darks at the base, contour outline in pure #0a0a0a, NO grey, NO labels or digits
-     inside the drawing, a short horizontal hatch patch for the ground shadow, subtle hand-wobble
-     (the feTurbulence + feDisplacementMap filter travels inside the svg). ~250px in the column,
-     transparent ground so it sits on the paper in either theme; anything behind must be CLIPPED OUT
-     of the foreground silhouette — a transparent drawing cannot wipe with paper colour. Placed
-     immediately BEFORE the taste paragraph so the float has text to wrap; .article-toc/.fold clear it.
-     Build: scratchpad/sketch.py — the proof-sheet generator (rng/hatch/ink/shadow) ported to Python,
-     emitting static SVG; reference sheet _pencil-art/galley-sketches/. -->
+<!-- SPECIMEN SKETCH — the ingredient's own mark, Volta/galley-sketch register: one inline hatched black-ink drawing SET INTO the column (.specimen floats right ≥720px, centres at 240px below), so the name and the taste run around it. Form-following hatch on the shaded half, cross-hatch darks at the base, contour in pure #0a0a0a, NO grey, NO labels or digits inside the drawing, a short horizontal hatch patch for the ground shadow, hand-wobble via the inline feTurbulence filter, transparent ground. Anything behind must be CLIPPED OUT of the foreground silhouette — a transparent drawing cannot wipe with paper colour. Build: scratchpad/sketch.py (the proof-sheet generator ported to Python); reference sheet _pencil-art/galley-sketches/. -->
 <figure class="specimen">
     [inline SVG sketch — generated, not hand-written]
     <figcaption>[one line: what the drawing shows a buyer to look for]</figcaption>
 </figure>
 
-<!-- THE TASTE — MANDATORY in the intro (founder rule 2026-08-26): the flavour profile in the mouth, so the reader tastes it before the numbers. One prose paragraph, two to four sentences, opening bold "In the mouth:" — attack, middle, finish; bitterness, astringency or texture where they matter; what it does to the food around it; fresh against dried, raw against cooked, where they differ. A cook's sensory words, tied to the compounds The Science names later. No banned words. -->
+<!-- THE NAME — under the sketch: the word and where it comes from; the other names and WHY they exist (a port, a mistake, a trade); the family, and the one thing the kinship tells a cook. Never invent a folk etymology. Rare words carry data-def; a name with a story carries data-kind="story". -->
+<p>[The name and where the word comes from. The other names and the reason they exist. The family, and what the kinship tells a cook — with the look-alike that shares the look but not the safety.]</p>
+
+<!-- THE TASTE — MANDATORY: the flavour in the mouth before any number. Two to four sentences, opening bold "In the mouth:" — attack, middle, finish; bitterness, astringency or texture where they matter; what it does to the food around it; fresh against dried where they differ. -->
 <p><strong>In the mouth:</strong> [attack &mdash; middle &mdash; finish; what it does to the pot; fresh against dried].</p>
 
-<!-- VITAL SIGNS — locked .glance, 4 cells, real sourced numbers: concentration, the temperature that frees it, the temperature that wrecks it, how fast it fades — or a truer vital sign (season window, price per kg). Delete a cell rather than print 000. At least ONE must pass the brigade test. -->
-<div class="glance">
-    <div class="glance__cell"><span class="glance__num">00%</span><span class="glance__label">Key compound, by mass</span></div>
-    <div class="glance__cell"><span class="glance__num">00&deg;C</span><span class="glance__label">Frees the flavour</span></div>
-    <div class="glance__cell"><span class="glance__num">000&deg;C</span><span class="glance__label">Destroys it past</span></div>
-    <div class="glance__cell"><span class="glance__num">00 d</span><span class="glance__label">Storage half-life</span></div>
-</div>
-
-<!-- THE SPECIMEN LINE — binomial and family, with cultivar where the named variety carries the flavour. One prose line. -->
-<p>[<em>Genus species</em>, Family — one line naming the specimen, then the promise of what follows: how to choose it, why it tastes of what it tastes of, how to keep it alive through a charter.]</p>
-
-
-<!-- THE SUM-UP — the opener of every template since 2026-08-26 (the promise box is retired): every section below, with a one-line description of what it holds, so the reader clicks to what they came for. Real descriptions, working anchors. -->
+<!-- THE SUM-UP — the opener of every template since 2026-08-26 (the promise box is retired): every section below with a one-line description, so the reader clicks to what they came for. It sits BEFORE the fold, never inside it. -->
 <div class="article-toc">
     <p class="article-toc__title">In this piece</p>
     <ol>
-        <li><a href="#science">The Science</a><span class="article-toc__desc">[the blind spot most pros have wrong, and the chemistry that settles it]</span></li>
-        <li><a href="#buy">How to Buy</a><span class="article-toc__desc">[the varieties, where it really comes from, the clean way to get it, the signal and the rejection rule]</span></li>
-        <li><a href="#pairings">The Pairings</a><span class="article-toc__desc">[the classics every coast found, and the wild card]</span></li>
-        <li><a href="#galley">Galley Intel</a><span class="article-toc__desc">[ways to use it, storage, dose, the batch worth pinning]</span></li>
-        <li><a href="#reference">Quick Reference</a><span class="article-toc__desc">[the card for the bench]</span></li>
+        <li><a href="#science">The Science</a><span class="article-toc__desc">[the numbers, the blind spot, the mechanism]</span></li>
+        <li><a href="#pairings">The Pairings</a><span class="article-toc__desc">[the classics, the shared-molecule surprises, the one from the shore]</span></li>
+        <li><a href="#galley">Galley Intel</a><span class="article-toc__desc">[the ideas, the dose, the locker]</span></li>
+        <li><a href="#buy">How to Buy</a><span class="article-toc__desc">[the varieties, where it really comes from, the clean way, the rejection rule]</span></li>
     </ol>
 </div>
 
-<!-- ORIGIN — folded (founder rule 2026-08-26: the origin belongs to the intro, behind a glass read-more like the Terroir guide) — and it comes AFTER the sum-up, so the sum-up is never inside the fold. Two short paragraphs: wild origin and earliest dated evidence; the status flip in one breath (how its standing reversed, the named figure or book, the form it holds on a dock today). One note--key inside for the fact a tired chef remembers. Stories that belong here go behind a click on the word (data-kind="story") or in one small note--quote — never a section. -->
+<!-- THE ORIGIN, FOLDED — the intro's history, behind the glass read-more (the Terroir register). Two short paragraphs: wild origin and earliest dated evidence; the status flip in one breath (how its standing reversed, the named figure or book, the form it holds on a dock today). One note--key inside for the fact a tired chef remembers. Tales go behind a click on the word (data-kind="story"), never in a section of their own. -->
 <details class="fold">
     <summary><span><span class="fold__title">Where it comes from</span><span class="fold__hint">[the wild origin, the turn, where it stands on your dock now]</span></span><span class="fold__chev"></span></summary>
     <div class="fold__body">
@@ -100,14 +77,21 @@
     </div>
 </details>
 
-
 <div class="divider"><span class="divider__text">Why It Works</span></div>
 
-<!-- THE SCIENCE — opens on THE BLIND SPOT, then proves it. Claim first, chemistry second. One science-box, 2-4 compound lines; a prose paragraph ending bold on the mechanism a chef can act on. -->
+<!-- THE SCIENCE — the four numbers first (this is the ONLY stat grid in the piece; it moved here from the intro on 2026-08-26 because the numbers only mean anything beside the mechanism), then the Blind Spot, then the chemistry, ending bold on the move. -->
 <h2 id="science">The Science: [The Mechanism / Why It Works]</h2>
-<p class="kicker">[the value of the mechanism for the cook's next decision]</p>
+<p class="kicker">[the numbers, then the mechanism that makes them matter]</p>
 
-<!-- THE BLIND SPOT — MANDATORY pro-hook. One verified claim most working chefs have wrong; <mark> the jolt; the named source in the same beat. Locked note--science, data-label "The Blind Spot". -->
+<!-- VITAL SIGNS — locked .glance, 4 cells, real sourced numbers: concentration, the temperature that frees it, the temperature that wrecks it, how fast it fades — or a truer vital sign (season window, price per kg). Delete a cell rather than print 000. At least ONE must pass the brigade test. -->
+<div class="glance">
+    <div class="glance__cell"><span class="glance__num">00%</span><span class="glance__label">Key compound, by mass</span></div>
+    <div class="glance__cell"><span class="glance__num">00&deg;C</span><span class="glance__label">Frees the flavour</span></div>
+    <div class="glance__cell"><span class="glance__num">000&deg;C</span><span class="glance__label">Destroys it past</span></div>
+    <div class="glance__cell"><span class="glance__num">00 d</span><span class="glance__label">Storage half-life</span></div>
+</div>
+
+<!-- THE BLIND SPOT — MANDATORY pro-hook. One verified claim most working chefs have wrong; <mark> the jolt; the named source in the same beat. -->
 <div class="note note--science" data-label="The Blind Spot"><p>[The counter-intuitive, sourced fact: <mark>the clause a ten-year chef rereads</mark> — stated flat, with the named source.]</p></div>
 
 <p>Here is the chemistry that proves it:</p>
@@ -124,22 +108,54 @@
     </div>
 </div>
 
-<p>[The single biggest scientific point in plain language with numbers. <strong>End bold on the one-sentence mechanism a chef can act on — compound, temperature, what changes.</strong>]</p>
+<p>[The single biggest scientific point in plain language. <strong>End bold on the one-sentence mechanism a chef can act on — compound, temperature, what changes.</strong>]</p>
 
-<!-- OPTIONAL — THE SMART EXPLAINER (founder rule, 2026-08-24: "not always, but when it speaks"). When THIS mechanism has a visible process — a set point, a phase change, an emulsion forming, a diffusion front — carry an interactive explainer here (three.js via CDN importmap; self-explanatory from a paused frame; Play button, never autoplay; motion lock). Reference build: _pencil-art/interactive/egg-explainer.html; the full rule lives in templates/the-method-technique.html. If nothing visibly moves, SKIP. -->
+<!-- OPTIONAL — THE SMART EXPLAINER: when THIS mechanism has a visible process (a set point, a phase change, an emulsion forming, a diffusion front), carry an interactive explainer here (three.js via CDN importmap; self-explanatory from a paused frame; Play button, never autoplay; motion lock). Reference build: _pencil-art/interactive/egg-explainer.html. If nothing visibly moves, SKIP. -->
+<!-- OPTIONAL — HEALTH EVIDENCE (ONLY when real): each claim ONE measured number on a PRIMARY peer-reviewed paper with an honest strength tier; otherwise leave DELETED. -->
 
-<!-- OPTIONAL — HEALTH EVIDENCE (ONLY when real): each claim ONE measured number on a PRIMARY peer-reviewed paper with an honest strength tier; otherwise leave DELETED. Uncomment to use:
-<p>The same compound that carries the flavour does something measurable to the body. Here is what holds up.</p>
-<div class="note note--science" data-label="Health Evidence"><ul>
-    <li><strong>Claim:</strong> finding + ONE number. <em>Author (Year), Journal. DOI. Design · n = 00 · Strength tier.</em></li>
-</ul></div>
--->
+<div class="divider"><span class="divider__text">What Every Cuisine Found</span></div>
+
+<!-- THE PAIRINGS — cards, and FOUR REGISTERS (founder rule 2026-08-26). Each card names TWO TO FIVE ingredients, never more, and carries a .pair-card__reg chip:
+       · Traditional — what the old kitchens actually cook, with the reason it works.
+       · Modern — the same logic reworked for a plate served now.
+       · Compound — the SURPRISE: a partner that shares this ingredient's own molecules. Name the compound and the percentage in BOTH, each with its paper. This is the pro-hook of the section; two of these is right when the chemistry supports two.
+       · From the littoral — the coast's own answer, defensible and sourced; starred with pair-card--wild.
+     The pairing on the card, the reason on click. Never a table here. -->
+<h2 id="pairings">The Pairings: [Proven, Molecular, and One from the Shore]</h2>
+<p class="kicker">[two to five things on a card — the classics, the shared-molecule surprises, the one guests remember]</p>
+
+<div class="pair-cards">
+    <details class="pair-card"><summary><span class="pair-card__reg">Traditional</span><span class="pair-card__name">[Ingredient + 1–4 partners]</span><span class="pair-card__region">[Cuisine / region]</span></summary><div class="pair-card__body"><p>[Why it works — the reason, sourced.]</p></div></details>
+    <details class="pair-card"><summary><span class="pair-card__reg">Traditional</span><span class="pair-card__name">[Ingredient + partners]</span><span class="pair-card__region">[Region]</span></summary><div class="pair-card__body"><p>[Reason.]</p></div></details>
+    <details class="pair-card"><summary><span class="pair-card__reg">Modern</span><span class="pair-card__name">[Ingredient + partners]</span><span class="pair-card__region">[Where it comes from, reworked]</span></summary><div class="pair-card__body"><p>[The move, with its temperature or timing.]</p></div></details>
+    <details class="pair-card"><summary><span class="pair-card__reg">Compound</span><span class="pair-card__name">[Ingredient + the molecular twin + 1–3 carriers]</span><span class="pair-card__region">The shared-molecule surprise</span></summary><div class="pair-card__body"><p>[<mark>The shared molecule</mark>, its share of BOTH oils with a named paper each, and the dish that proves it.]</p></div></details>
+    <details class="pair-card pair-card--wild"><summary><span class="pair-card__reg">From the littoral</span><span class="pair-card__name">[Ingredient + shore partner + carrier]</span><span class="pair-card__region">[The coast it comes from]</span></summary><div class="pair-card__body"><p>[Reads wrong on paper, lands on the plate — the logic, with <mark>the surprise</mark> marked, and the sourced tradition behind it.]</p></div></details>
+</div>
+
+<div class="divider"><span class="divider__text">Tested at Sea</span></div>
+
+<!-- GALLEY INTEL — the carreaux tile field (founder rule 2026-08-26): every idea a tile, each with its own hue via the inline --t custom property, .tile--wide for the two or three that deserve the room. Concrete uses with the temperature and the reason (which compound, which fat), then the working tiles: dose, storage, provisioning. NO Galley Batch Prep box unless the procedure is genuinely something a pro would not know; NO Quick Reference card. Do not repeat a pairing here. -->
+<h2 id="galley">Galley Intel: [What to Do With It, and How It Keeps]</h2>
+<p class="kicker">[the one rule that runs every tile below]</p>
+
+<div class="tiles">
+    <div class="tile tile--wide" style="--t:#2d4a5e"><span class="tile__name">[The best idea]</span><span class="tile__how">[method, temperature, time — and why it works]</span></div>
+    <div class="tile" style="--t:#6f8a6a"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile" style="--t:#a8664f"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile" style="--t:#c4a35a"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile" style="--t:#46618a"><span class="tile__name">[Idea]</span><span class="tile__how">[one line]</span></div>
+    <div class="tile tile--wide" style="--t:#7a6a8a"><span class="tile__name">[Idea worth the room]</span><span class="tile__how">[method and reason]</span></div>
+    <div class="tile" style="--t:#2d4a5e"><span class="tile__name">Dose</span><span class="tile__how">[the amounts, with the weight of a unit]</span></div>
+    <div class="tile" style="--t:#a8664f"><span class="tile__name">Storage &amp; buying at sea</span><span class="tile__how">[how it keeps, and where it is cheap]</span></div>
+</div>
+
+<!-- OPTIONAL — one inline note--quote for the myth or the medical fact that belongs beside the tiles. Only if it earns it. -->
 
 <div class="divider"><span class="divider__text">At the Dock</span></div>
 
-<!-- HOW TO BUY — one section, four beats, no repetition (founder rule 2026-08-26): (1) THE VARIETIES table (only when the ingredient genuinely has varieties a chef will meet; DELETE otherwise): Variety | Taste profile | Best for. (2) WHERE IT REALLY COMES FROM, in prose: the real top region vs the label, the price band, what a yacht pays. (3) THE CLEAN WAY TO GET IT — locked note--action, data-label "The Clean Way": what the trade normally does to it that a cook would rather it did not (irradiation, fumigants, sprays, colour, additives — sourced, named, with the law that allows it), and the most natural route: wild or organic certification, the label words to look for, the form to buy, the tree in a pot. (4) HOW TO BUY — locked note--action, data-label "How to Buy": 3-4 quality signals. Then the rejection rule in a note--warning. -->
+<!-- HOW TO BUY — last, because the reader now knows what it tastes of, what it does and what to make with it (founder rule 2026-08-26). Four beats, no repetition: (1) THE VARIETIES table (delete for single-variety ingredients); (2) WHERE IT REALLY COMES FROM in prose — the real region against the label, the price band, what a yacht pays; (3) THE CLEAN WAY — what the trade may do to it (irradiation, fumigants, sprays, colour — sourced, with the law) and the most natural route (wild or organic certification, the form, the words on the label, the plant in a pot); (4) HOW TO BUY — 3-4 quality signals. Then the rejection rule. -->
 <h2 id="buy">How to Buy: [What to Look For]</h2>
-<p class="kicker">[the value of buying right — most of the eating quality is decided here]</p>
+<p class="kicker">[most of the eating quality is decided here]</p>
 
 <div style="overflow-x: auto; margin: var(--space-6) 0;">
     <table class="data-table">
@@ -151,12 +167,12 @@
     </table>
 </div>
 
-<p>[Where it really comes from: the real top region today against the label, the price band per kg, what a yacht pays through an agent — follow the money, in prose, once.]</p>
+<p>[Where it really comes from: the real top region against the label, the price band per kg, what a yacht pays through an agent — follow the money, once.]</p>
 
 <div class="note note--action" data-label="The Clean Way">
     <ul>
         <li><strong>What the trade may do to it:</strong> [the treatment, the law that allows it, the label word that reveals it — sourced].</li>
-        <li><strong>The most natural route:</strong> [wild-collected / certified organic and what that certification actually requires; the form to buy; the words on the label].</li>
+        <li><strong>The most natural route:</strong> [wild-collected / certified organic and what that certification requires; the form to buy; the words on the label].</li>
         <li><strong>The chef's own supply:</strong> [the plant in a pot, the market stall, the branch from the tree — where honest].</li>
     </ul>
 </div>
@@ -171,56 +187,6 @@
 
 <p>And the specimen you hand straight back:</p>
 <div class="note note--warning"><p>[The single rejection rule, and the look-alike to refuse.]</p></div>
-
-<div class="divider"><span class="divider__text">What Every Cuisine Found</span></div>
-
-<!-- THE PAIRINGS — cards (founder rule 2026-08-26): the pairing on the card, region under it, the reason on click. 4-6 cards; THE LAST IS THE LITTORAL WILD CARD, starred (pair-card--wild): one unexpected but defensible pairing drawn from a coast, its chemistry in the body, <mark> the surprise. Locked .pair-cards; never a table here. -->
-<h2 id="pairings">The Pairings: [What Every Coast Figured Out]</h2>
-<p class="kicker">[the classics a chef can serve blind, then the one guests remember]</p>
-
-<div class="pair-cards">
-    <details class="pair-card"><summary><span class="pair-card__name">[Ingredient + partner]</span><span class="pair-card__region">[Cuisine / region]</span></summary><div class="pair-card__body"><p>[The chemical reason this pairing is inevitable.]</p></div></details>
-    <details class="pair-card"><summary><span class="pair-card__name">[Ingredient + partner]</span><span class="pair-card__region">[Cuisine / region]</span></summary><div class="pair-card__body"><p>[Reason, two lines.]</p></div></details>
-    <details class="pair-card"><summary><span class="pair-card__name">[Ingredient + partner]</span><span class="pair-card__region">[Cuisine / region]</span></summary><div class="pair-card__body"><p>[Reason, two lines.]</p></div></details>
-    <details class="pair-card pair-card--wild"><summary><span class="pair-card__name">[The littoral wild card: ingredient + shore partner]</span><span class="pair-card__region">[The coast it comes from]</span></summary><div class="pair-card__body"><p>[Reads wrong on paper, lands on the plate — the molecular logic, with <mark>the surprise</mark> marked, and the sourced tradition behind it.]</p></div></details>
-</div>
-
-<div class="divider"><span class="divider__text">Tested at Sea</span></div>
-
-<!-- GALLEY INTEL — opens on IDEAS (founder rule 2026-08-26): concrete, modern ways to use it, each with the compound or fat-solubility logic that makes it work — an infused butter, an oil, a salt, a syrup, a smoke, a brine, the pairing by shared compound. Then the at-sea list: storage, dose, batch prep, provisioning. Numbers + °C. -->
-<h2 id="galley">Galley Intel: [Ways to Use It, and How It Survives a Charter]</h2>
-<p class="kicker">[what survives a 4 m² galley, a swell, and a week without a market]</p>
-
-<div class="note note--action" data-label="Ways to Use It">
-    <ul>
-        <li><strong>[Idea]</strong> &mdash; [method in one line, temperature and time, and the reason it works: which compound, which fat].</li>
-        <li><strong>[Idea]</strong> &mdash; [one line].</li>
-        <li><strong>[Idea]</strong> &mdash; [one line].</li>
-        <li><strong>[Idea]</strong> &mdash; [one line].</li>
-    </ul>
-</div>
-
-<div class="note note--action" data-label="Galley Intel">
-    <ul>
-        <li><strong>Storage:</strong> [how long, where, in what].</li>
-        <li><strong>Dose:</strong> [the amounts, with the weight of a unit].</li>
-        <li><strong>Provisioning:</strong> [what to carry and where it is cheap].</li>
-    </ul>
-</div>
-
-<p>Of all that, one move is worth pinning above the prep bench:</p>
-<div class="note note--action" data-label="Galley Batch Prep"><p>[One procedure: quantities, temperature, time, how long it keeps.]</p></div>
-
-<!-- QUICK REFERENCE + THE ONE THING — locked note--key cards; then the sources. -->
-<h2 id="reference">Quick Reference</h2>
-<div class="note note--key" data-label="Quick Reference">
-    <ul>
-        <li><strong>Best season</strong> &mdash; [window].</li>
-        <li><strong>Best with</strong> &mdash; [the pairings, in a breath].</li>
-        <li><strong>Avoid with</strong> &mdash; [the mismatches].</li>
-        <li><strong>Storage</strong> &mdash; [the rule].</li>
-    </ul>
-</div>
 
 <div class="note note--key" data-label="The one thing"><p>[The single sentence that survives if they forget everything else.]</p></div>
 
