@@ -52,7 +52,7 @@ law, not the box: any locked payoff device counts, as long as it lands inside ~1
   simmering, not ready — never a date. Galley intel opens on concrete ideas — ways to use it, compound logic and all.
 
 **The ingredient standard (locked 2026-08-26).** `templates/shore-larder.html` + `shore-larder-deep-dive.html`
-carry one spine, and `articles/bay-leaf.html` is the reference build: encounter → sketch set into the column →
+carry one spine — `articles/bay-leaf.html` and `articles/saffron.html` are the reference builds: encounter → sketch set into the column →
 the name → the taste (closing on what it does in the hand — the snap, the crack, the smell) → the origin folded,
 as a card directly under the taste → the old habit teased → sum-up, outside the fold → Science (numbers, Blind Spot, chemistry,
 **Is it a remedy?** with the dose gap, the folk use that holds, and **how to use it that way**) → Pairings

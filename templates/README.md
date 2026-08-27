@@ -57,7 +57,10 @@ npm run new -- --slug pizza-napoletana --title "Pizza Napoletana: Poolish, 48h C
 ## The ingredient standard (locked 2026-08-26)
 
 `shore-larder.html` is **the** ingredient template; `shore-larder-deep-dive.html` is the long form of the
-same spine. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
+same spine. Both carry the 26 Aug second pass: the taste closes on what the ingredient
+does in the hand, the grades/varieties are cards (flavour profile · best for · a little story), and the
+pairings close on the Pairing Wheel line. The deep-dive keeps History as a full section — the folded origin
+is template 01's device, not its own. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
 
 Spine: **1–3 lines of encounter → the specimen sketch, set into the column → the name → the taste ("In the
 mouth"), closing on what it does in the hand → the origin, folded, as a card directly under the taste → the
