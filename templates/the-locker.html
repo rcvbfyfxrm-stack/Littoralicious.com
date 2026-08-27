@@ -151,13 +151,34 @@
                 <p class="kicker">When the cheaper, smaller, or simpler kit quietly wins.</p>
 
                 <p>One line framing the trade-off between this tool and the alternatives below.</p>
-                <!-- WRITER: name real alternatives. State plainly when a chef should NOT buy this (small galley, low usage, simpler kit already aboard). -->
+                <!-- WRITER: name real alternatives — a maker and a model, never "a cheaper one". State plainly when a chef should NOT buy this (small galley, low usage, simpler kit already aboard). -->
 
-                <ul>
-                    <li><strong>Cheaper option:</strong> Placeholder &mdash; what you lose and when that loss is acceptable.</li>
-                    <li><strong>Smaller-footprint option:</strong> Placeholder &mdash; when stowage matters more than capacity.</li>
-                    <li><strong>Skip it entirely if:</strong> Placeholder &mdash; the galley or charter profile where this tool earns nothing.</li>
-                </ul>
+                <!-- THE ALTERNATIVES AS CARDS (founder rule 2026-08-26, second pass — the same beat template 01
+                     runs on its varieties and 01b on its grades). Each real alternative is a card on the locked
+                     pair-card component, three beats in the body and in this order: WHAT YOU GIVE UP (the honest
+                     trade, named), BEST FOR (the galley or charter profile it wins on — "nothing on a boat" is a
+                     legitimate answer), and A LITTLE STORY, one or two sourced sentences told nowhere else in the
+                     piece. The pair-card__reg chip is a verdict, not a category: "Cheaper", "Smaller", "Skip it".
+                     Name real kit — never a placeholder class of thing. NEVER hand-roll a card. -->
+                <div class="pair-cards">
+                    <details class="pair-card"><summary><span class="pair-card__reg">Cheaper</span><span class="pair-card__name">[The named cheaper kit]</span><span class="pair-card__region">[Maker &middot; price]</span></summary><div class="pair-card__body">
+                        <p><strong>What you give up:</strong> [the honest trade, named].</p>
+                        <p><strong>Best for:</strong> [the galley or charter profile where that loss is acceptable].</p>
+                        <p>[A little story: one or two sourced sentences told nowhere else in the piece.]</p>
+                    </div></details>
+
+                    <details class="pair-card"><summary><span class="pair-card__reg">Smaller</span><span class="pair-card__name">[The named smaller-footprint kit]</span><span class="pair-card__region">[Maker &middot; footprint]</span></summary><div class="pair-card__body">
+                        <p><strong>What you give up:</strong> [capacity, power, speed &mdash; named].</p>
+                        <p><strong>Best for:</strong> [when stowage matters more than capacity].</p>
+                        <p>[The little story.]</p>
+                    </div></details>
+
+                    <details class="pair-card"><summary><span class="pair-card__reg">Skip it</span><span class="pair-card__name">[Do without &mdash; and what you do instead]</span><span class="pair-card__region">[The workaround already aboard]</span></summary><div class="pair-card__body">
+                        <p><strong>What you give up:</strong> [what the tool would have bought you].</p>
+                        <p><strong>Best for:</strong> [the galley or charter profile where this tool earns nothing].</p>
+                        <p>[The little story.]</p>
+                    </div></details>
+                </div>
 
                 <div class="note note--action">
                     <p><strong>Bottom line:</strong> One line a tired chef can act on at 11 PM mid-charter &mdash; the single decision rule for this purchase. Tested at sea.</p>
@@ -262,7 +283,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script src="../assets/js/firebase-config.js"></script>
-    <script src="../assets/js/main.js?v=20260707-spoon"></script>
+    <script src="../assets/js/main.js?v=20260826-spoon"></script>
     <script src="../assets/js/community.js"></script>
 </body>
 </html>

@@ -54,6 +54,26 @@ npm run new -- --slug pizza-napoletana --title "Pizza Napoletana: Poolish, 48h C
 # category + subtag auto-set from the template; write the body, fill the json, npm run publish
 ```
 
+## The second pass (2026-08-26/27) — which templates carry which rule
+
+Three rules came out of the Shore Larder review. They are not all universal; each has a domain, and
+forcing one outside it makes the piece worse.
+
+| Rule | Where it lives | Where it deliberately does not |
+|---|---|---|
+| **The taste closes on the hand** — the last line of the taste beat is what the ingredient does when you break, crush or cut it; it never sits in the opening scene | `shore-larder`, `shore-larder-deep-dive` | every template without a taste beat |
+| **The options are cards** — a set of named things becomes `pair-cards`, three beats in the body: the profile · best for · a little story told nowhere else. The `pair-card__reg` chip is a verdict, not a category | `shore-larder` (varieties), `shore-larder-deep-dive` (grades), `the-locker` (alternatives) | tables you scan down a column: `port-call` (minutes from berth), `signal-fire`, `the-evidence`, `the-lab`, `the-method-technique`, `tight-ship`. `littoral-heritage-article`'s Tradition Ledger stays a table — those three columns *are* the template's signature. `trade-winds` already owns its `tw-*` racks |
+| **The Pairing Wheel line** — one line closing a pairing beat, pointing at the wheel in the Spoon Lab and saying it is simmering, never a date | `shore-larder`, `shore-larder-deep-dive`, `littoral-heritage-article` | every template with no pairing beat |
+
+**The folded origin is template 01's device only.** The deep-dive keeps History as a full section by
+design; do not fold it.
+
+**`[data-open-lab]`** — any article can point at a Spoon Lab tool that has no page yet:
+`<a href="#some-id" data-open-lab>Pairing Wheel</a>` opens the lab panel. The handler lives in
+`assets/js/tools-widget.js`; the `href` is the no-JS fallback, so make it a same-page anchor and the
+reader stays where they are. Inline links in article prose carry **no decoration site-wide** — wrap a
+link the reader is meant to find in `<strong>`.
+
 ## The ingredient standard (locked 2026-08-26)
 
 `shore-larder.html` is **the** ingredient template; `shore-larder-deep-dive.html` is the long form of the

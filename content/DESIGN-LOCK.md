@@ -44,7 +44,7 @@ JS in `main.js` builds the popover (`.term-pop`, `--story` variant); keyboard-re
 ```
 The card shows the pairing only; the reason opens on click and the open card spans the row.
 
-**Also the varieties card set** (How to Buy, added 2026-08-26): the same component, three beats in the body —
+**Also the options card set** — varieties (01), grades (01b), alternatives (the-locker), added 2026-08-26: the same component, three beats in the body —
 `<strong>Flavour profile:</strong>`, `<strong>Best for:</strong>`, then one or two sentences of story told
 nowhere else in the piece. The `pair-card__reg` chip says what the thing IS, not a pairing register.
 
