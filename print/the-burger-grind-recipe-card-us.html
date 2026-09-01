@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US &middot; The Burger Grind &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.2pt; line-height: 1.22; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 5mm 8mm 4mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 1.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 17pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.4pt; color: #4a5568; line-height: 1.22; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 1.4mm; padding-top: 1.4mm; border-top: 1px solid #e2e2e2; font-size: 7.4pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.5mm 0 0; padding: 1.1mm 2mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.3pt; line-height: 1.22; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.3mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 4.5mm; margin-bottom: 1.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.9mm; margin-bottom: 1.5mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.8mm 0 1.2mm 0; }
+        .group-label { font-size: 6.7pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.8mm 0 0.3mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.2pt; }
+        .ingredients td { padding: 0.35mm 1mm; vertical-align: top; line-height: 1.24; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.8pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.4pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.6pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.2pt; color: #6b7280; margin-top: 1.4mm; padding-top: 0.9mm; border-top: 1px solid #f0f0f0; line-height: 1.24; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 0.95mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.4mm 0; padding: 0.4mm 0 0.4mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.3pt; font-style: italic; color: #4a5568; line-height: 1.22; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.2mm 2.2mm; margin-top: 1.3mm; font-size: 7.1pt; line-height: 1.22; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.2mm 2.2mm; margin-top: 1.3mm; font-size: 7.1pt; line-height: 1.22; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.2mm 2.2mm; margin: 1.3mm 0; font-size: 7.1pt; line-height: 1.22; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.3mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.1mm 2mm; margin-bottom: 1.2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.1mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.3pt; line-height: 1.22; }
+        .elevation li { margin-bottom: 0.3mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 0.8mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 0.9mm; margin-bottom: 1.3mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.3pt; border-collapse: collapse; line-height: 1.22; }
+        .troubleshoot td, .charter td { padding: 0.3mm 1mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.3pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 0.8mm; padding: 0.7mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:6.4pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.4mm;letter-spacing:0;}</style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>The Burger Grind &mdash; Three Cuts, Two Passes, Salt at the Pan</h1>
+    <p class="hook">Chuck, brisket and short rib at 2:1:1, ground twice from near-frozen and salted only as it meets the pan &mdash; an open, tender grain no tub of mince can give. The probe decides doneness; colour never does.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>12 &times; 150g</strong> (10&ndash;12)</span>
+        <span>Active: <strong>35 min</strong></span>
+        <span>Total: <strong>1 hr 15</strong></span>
+        <span>Pan: <strong>smoking</strong> (~230&deg;C)</span>
+        <span>Done: <strong>55&ndash;57&deg;C</strong> guest &middot; <strong>71&deg;C</strong> safe</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>A port, not a dish. Hannah Glasse&rsquo;s <em>Hamburgh sausage</em> (in print by 1774) was beef and suet, salted, spiced and chimney-smoked to keep a year; Fannie Farmer&rsquo;s 1896 <em>Hamburg Steak</em> made it fresh &mdash; chopped lean neck and round, salted before shaping.</div>
+    <div><span class="o-label">Eaten, authentically</span>In the hand, at once, without ceremony. White Castle put the small griddled patty in a bun at Wichita in 1921 and sold it by the sack &mdash; the smash is the older American form, the thick pub patty the later one.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>One grind, two ways: thick and rosy for the plate, thin and laced for the griddle. Since the 1993 outbreak the safe number is 71&deg;C; the chef&rsquo;s number is 55&ndash;57 &mdash; know which one you are serving.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight (lb/oz) &middot; cups / volume in right column</p>
+
+        <div class="group-label">The grind &mdash; 4 lb (buy 4&frac12; lb)</div>
+        <table>
+            <tr><td>Beef chuck <span class="note">(boneless, fat on)</span></td><td class="data">1 lb 15.7 oz</td><td class="vol"></td></tr>
+            <tr><td>Beef brisket <span class="note">(point end, 1 cm cap)</span></td><td class="data">15.9 oz</td><td class="vol"></td></tr>
+            <tr><td>Beef short rib <span class="note">(boned)</span></td><td class="data">15.9 oz</td><td class="vol"></td></tr>
+        </table>
+
+        <div class="group-label">At the pan</div>
+        <table>
+            <tr><td>Fine sea salt <span class="note">(crust only, never in the mix)</span></td><td class="data">0.85 oz</td><td class="vol">4 tsp</td></tr>
+            <tr><td>Black pepper, coarse</td><td class="data">0.21 oz</td><td class="vol">2&frac12; tsp</td></tr>
+            <tr><td>Beef dripping <span class="note">(or neutral oil)</span></td><td class="data">1.1 oz</td><td class="vol">2 tbsp</td></tr>
+            <tr><td>Soft buns <span class="note">(potato or brioche)</span></td><td class="data">12</td><td class="vol"></td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; the blend = 100%</span>
+            <strong>Chuck 50% &middot; Brisket 25% &middot; Short rib 25% &rarr; fat 20&ndash;25% &middot; Salt 0% inside, 1.3% on the crust &middot; Plates 10 mm then 4.5 mm.</strong> Twenty per cent fat is the knee of the curve: cooking loss stays flat to 20%, then climbs (Troutt 1992). 150g a patty for the plate; 2 &times; 75g for the smash.
+        </div>
+
+        <p class="equipment">
+            <strong>Kit:</strong> grinder with 10 mm + 4.5 mm plates (blade, auger, bowl all frozen) &middot; scale &middot; two trays &middot; bowl over ice &middot; heavy pan or plancha &middot; stiff spatula &middot; probe thermometer &middot; greaseproof
+        </p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Dice and chill everything.</strong> 2&ndash;3 cm dice, gristle and silverskin out, fat in. Tray, freezer <strong>25&ndash;30 min</strong>: edges firm and frosted, centre still gives. Grinder parts and bowl in the freezer too.
+                <span class="why">Warm fat smears grey over the lean; near-frozen fat shears into chips that survive as juice pockets. Raw mince lives at 4&deg;C or below. <cite>&mdash; L&oacute;pez-Alt; USDA FSIS</cite></span>
+            </li>
+            <li>
+                <strong>First grind, coarse.</strong> <strong>10 mm</strong> plate, dice fed steadily, never forced, into the cold bowl over ice; the three cuts go through mixed. Grey smear at the plate = warm: stop, freeze 10 min.
+            </li>
+            <li>
+                <strong>Re-chill, second grind, finer.</strong> 10 min in the freezer, then the <strong>4.5 mm</strong> plate (6 mm for a looser pub patty), once more over ice. Do not stir; the fat must still show as white flecks.
+                <span class="why">The first pass opens the dice; the second sets the grain and gives a thick patty its bind &mdash; without salt.</span>
+            </li>
+            <li>
+                <strong>Portion, dimple &mdash; no salt.</strong> <strong>150g</strong>, gathered loosely, pressed to <strong>2 cm</strong> and a thumb wider than the bun; dimple the centre. Tray, cover, fridge <strong>30 min</strong> (up to 24 h).
+                <span class="why">Salt swells the myofibrils and extracts myosin, the glue of a sausage: salt worked in gives a springy patty, salt on the surface keeps it loose. <cite>&mdash; Offer &amp; Trinick 1983; Ruusunen &amp; Puolanne 2005</cite></span>
+            </li>
+            <li>
+                <strong>Sear hard, salt at the pan.</strong> Dripping just smoking (~<strong>230&deg;C</strong>). Patties in, not touching; salt the top face now (~1g) with the pepper. <strong>2&ndash;3 min</strong> until the crust releases; flip once, salt the second face. Never press.
+                <span class="why">A wet face is pinned at 100&deg;C by its own steam until it dries; browning only starts after. <cite>&mdash; Martins et al. 2000</cite></span>
+            </li>
+            <li>
+                <strong>Probe, pull, rest.</strong> From the side into the centre. Safe for any ground beef: <strong>71&deg;C</strong> (USDA). Chef&rsquo;s medium-rare: pull at <strong>52&ndash;54&deg;C</strong>, rest 3 min to <strong>55&ndash;57&deg;C</strong> &mdash; an informed risk for guests who choose it, never for children, pregnancy, the elderly or the immunocompromised. Grinding folds surface bacteria through the mass; a fresh, cold, whole-cut grind lowers the risk and never removes it. Buns in the pan fat; build.
+                <span class="why">1992&ndash;93: 500+ <em>E. coli</em> O157:H7 cases and four deaths traced to one chain&rsquo;s patties; the FDA&rsquo;s interim line went to 155&deg;F, USDA&rsquo;s now sits at 71&deg;C. <cite>&mdash; CDC MMWR 42(14) 1993</cite></span>
+            </li>
+        </ol>
+
+        <div class="sauce-block">
+            <strong>No grinder aboard &mdash; the hand-chop</strong>
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 0.8mm; list-style: none;">
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 0.5mm;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">a.</span>Freeze the dice 30 min; slice 3 mm, stack, cross-cut.</li>
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 0.5mm;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">b.</span>Rock-chop with two knives to 3&ndash;5 mm, folding in from the edges; straight back to the fridge.</li>
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 0;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">c.</span>Portion as above &mdash; it holds better as a smash than as a thick patty.</li>
+            </ol>
+        </div>
+
+        <div class="done">
+            <strong>Done:</strong> the probe, not the colour &mdash; patties can be brown right through at 55&deg;C and the juices never run clear (Hague 1994). Guests 55&ndash;57&deg;C after the rest; the vulnerable and the smash 71&deg;C. Crust dark and releasing on its own.<br>
+            <strong>Serve:</strong> rest 3 min; buns in the pan fat; hold cooked patties no more than 5 min.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One grind, two dishes &mdash; the crew smash</span>
+            Same 1.8 kg = 12 doubles. <strong>2 &times; 75g</strong> loose balls a bun on a plancha as hot as it goes: ball down 10 s, <strong>smash through greaseproof to 4&ndash;5 mm</strong>, once; salt now; 60&ndash;90 s until the edge laces; scrape, flip, cheese, 30 s, stack. <em>Safe by geometry: 5 mm passes 71&deg;C before the crust has finished &mdash; the crew, the children and the cautious all get the good version.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Buns in the dripping</strong> &mdash; cut face down, 30 s</li>
+                <li><strong>Smoked flaky salt</strong> &mdash; on the crust, at the pan</li>
+                <li><strong>Onions into the smash</strong> &mdash; paper-thin, on the ball</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Dry-aged trim</strong> &mdash; 10&ndash;15% of the blend</li>
+                <li><strong>Butter-baste</strong> &mdash; after the flip, last minute</li>
+                <li><strong>24 h pickles</strong> &mdash; cucumber, vinegar, dill</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>Bone marrow</strong> &mdash; 5%, frozen, with the second grind</li>
+                <li><strong>Beef-fat mayonnaise</strong> &mdash; the rendered dripping, warm</li>
+                <li><strong>Two tiers</strong> &mdash; guest patty at 55&deg;C, crew smash after</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Dense, bouncy, sausage-like</td><td>Salt in the mix, or over-worked &rarr; salt only at the pan; handle less</td></tr>
+            <tr><td>Grey, greasy, weeping</td><td>Warm meat or grinder &rarr; near-frozen dice, frozen kit, ice under the bowl</td></tr>
+            <tr><td>Falls apart on the flip</td><td>One coarse pass only &rarr; second grind at 4.5 mm, colder patty; or smash it</td></tr>
+            <tr><td>Domed puck</td><td>No dimple, or pressed &rarr; dimple the centre, hands off</td></tr>
+            <tr><td>Pale, no crust</td><td>Cool pan, crowded, wet surface &rarr; smoking pan, space, loose cold grind</td></tr>
+            <tr><td>Brown but under temp</td><td>Premature browning &rarr; the probe decides, every patty</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Best route</td><td>Grind on a calm morning at anchor; portion; cook within 24 h at &le;4&deg;C</td></tr>
+            <tr><td>Freeze</td><td>Raw, flat between greaseproof, bagged, 1 month; thaw in the fridge overnight</td></tr>
+            <tr><td>From frozen</td><td>Only as a smash &mdash; a thick patty chars before the centre moves</td></tr>
+            <tr><td>In a swell</td><td>Clamp the grinder; bowl in a bigger bowl of ice; tray with a lip</td></tr>
+            <tr><td>Never</td><td>Salt ahead, refreeze, taste the raw grind, grind warm meat</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Troutt et al. 1992 (<em>J. Food Sci.</em>) &middot; Hague et al. 1994 &middot; Offer &amp; Trinick 1983 (<em>Meat Sci.</em>) &middot; Ruusunen &amp; Puolanne 2005 &middot; Tornberg 2005 &middot; Martins et al. 2000 &middot; CDC MMWR 1993 &middot; USDA FSIS &middot; L&oacute;pez-Alt, <em>The Food Lab</em> (pan only)</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
