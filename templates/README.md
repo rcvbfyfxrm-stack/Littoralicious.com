@@ -82,7 +82,7 @@ does in the hand, the grades/varieties are cards (flavour profile · best for ·
 pairings close on the Pairing Wheel line. The deep-dive keeps History as a full section — the folded origin
 is template 01's device, not its own. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
 
-Spine (revised 2026-09-01): **1–3 lines of encounter → the specimen case (`details.fold.fold--specimen`: the
+Spine (revised 2026-09-01 — no encounter line, the piece opens on the case): **the specimen case (`details.fold.fold--specimen`: the
 sketch on the glass, the Latin name + a one-line hint as its label; inside, the name and the origin around one
 `note--key`) → the taste ("In the mouth"), always visible, closing on what it does in the hand → the sum-up,
 outside the case → the old habit, teased, linking to #science → The Science (the four numbers, the

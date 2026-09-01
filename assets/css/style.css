@@ -2587,8 +2587,9 @@ mark {
 /* The specimen case — .fold--specimen (founder ask 2026-09-01, template 01's intro): the same
    glass read-more with the SKETCH ON THE PANE, a herbarium sheet under its glass. The label is
    the Latin name in italic + the one-line hint; the drawing sits at the right with its buyer's
-   caption; the "+" opens the word, the family and the origin. Above it only the encounter, under
-   it the taste — so the first screen is the scene, the leaf, the mouth. */
+   caption; the "+" opens the word, the family and the origin. It opens the piece — nothing above
+   it (no scene line, founder rule 2026-09-01) — and the taste follows it, so the first screen is
+   the leaf and the mouth. */
 .fold--specimen > summary {
     grid-template-columns: minmax(0, 1fr) auto auto;
     gap: var(--space-5, 1.25rem);
