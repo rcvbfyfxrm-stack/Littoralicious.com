@@ -7,11 +7,11 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
 ## Before you start
 
 1. Read **`content/DNA.md`** — mission (Nurture), the three pillars (Grandmother /
-   Scientist / Yacht Chef), the DNA test, voice, banned words, sections, and the 14 templates.
+   Scientist / Yacht Chef), the DNA test, voice, banned words, sections, and the 11 templates.
 2. **Match the design lock.** The look is sealed in `assets/css/style.css` (refined light
    journal; Georgia serif + system sans; paper `#fafafa`, ink `#0a0a0a`, sea `#2d4a5e`).
    Copy markup from the most recent equivalent file — never improvise the look.
-3. **Never invent an article template.** Pick one of the 14 fixed templates (see DNA.md);
+3. **Never invent an article template.** Pick one of the 11 fixed templates (see DNA.md);
    fill the body only.
 4. **Run the fact-check pass on every science claim.** Non-negotiable gate — DNA.md →
    *Source rule* → *The fact-check pass*, stated in full for readers in
@@ -46,11 +46,13 @@ the eye; vary the devices piece to piece. See DNA.md → *Captivating design*. I
 template, stop and propose narrowing or splitting — never invent a format. (Skip the summary only
 on a tiny fix, or when Arnaud says to.)
 
-**Template files.** All 14 template bodies exist in `templates/`, each named for its format
-and used via `npm run new -- --template <name>`: `shore-larder`, `shore-larder-deep-dive`,
-`the-method-technique`, `littoral-heritage-article`, `the-evidence`, `recipe-blueprint`
-(= Recipe Blueprint, 05), `signal-fire`, `the-horizon`, `trade-winds`, `tight-ship`,
-`port-call`, `the-locker`, `weekly-brief`, `the-lab`. Shell helpers (not article types):
+**Template files.** All 11 template bodies exist in `templates/`, each named for its format
+and used via `npm run new -- --template <name>`: `shore-larder` (01 Ingredient Profile),
+`the-method-technique` (02 Technique — a counted test is its Bench slot; not a recipe),
+`littoral-heritage-article` (03), `the-evidence` (04), `recipe-blueprint` (05 Recipe Blueprint = the
+recipe), `signal-fire` (06 Supply Alert & Forecast — one template), `trade-winds` (07), `tight-ship`
+(08), `port-call` (09), `the-locker` (10), `weekly-brief` (11). Deleted 2026-09-01: the deep-dive,
+the-horizon, the-lab. Shell helpers (not article types):
 `standard.html` (generic fallback), `section.html` (section index pages), `og-image.html`.
 Keep the masthead, footer, head-generation, and tokens identical across them; vary only the BODY.
 

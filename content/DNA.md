@@ -182,46 +182,44 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 | **Food Science** (slug `the-evidence`) | Food science proper — compounds, mechanisms, research. |
 | **Industry & Ports** (slug `the-bridge`) | Forecasts, supply signals, careers, port guides, essays — cooking at sea meets the wider world. |
 
-## The 14 templates (12 named formats + the Deep-Dive variant + the standard fallback) — pick one, never invent
+## The 11 templates (+ the standard fallback) — pick one, never invent
+
+> Consolidated 2026-09-01 (founder): the Ingredient Deep-Dive is deleted (one ingredient template); Supply Alert and Forecast are ONE template; The Lab is folded into Technique (a counted test is The Bench slot inside Prove). Technique is not recipe — the Recipe Blueprint is the recipe.
 
 Every piece must fit one existing template. If it doesn't fit, narrow scope or split — do
 not create a new format. **Auto-select the template** — infer it from what the article is
-(ingredient → Ingredient Profile or Deep-Dive (slug shore-larder), recipe → Recipe Blueprint, technique →
-Technique (slug the-method-technique), study → Study Decoded (slug the-evidence), city → Port Call,
+(ingredient → Ingredient Profile (slug shore-larder), recipe → Recipe Blueprint, technique or a counted
+test → Technique (slug the-method-technique), study → Study Decoded (slug the-evidence), city → Port Call,
 gear → Equipment Review (slug the-locker), career → Career & Industry (slug trade-winds), galley ops →
-Galley Operations (slug tight-ship), sourcing → Supply Alert (slug signal-fire), culture → Heritage
-(slug littoral-heritage-article), forecast → Forecast (slug the-horizon), digest → Weekly Brief,
-experiment → The Lab). **Never ask which template** — pick it, state the fit in
+Galley Operations (slug tight-ship), sourcing or forecast → Supply Alert & Forecast (slug signal-fire),
+culture → Heritage (slug littoral-heritage-article), digest → Weekly Brief). **Never ask which template** — pick it, state the fit in
 one line (e.g. *"Template fit: Technique (02)"*), and proceed.
 
 | # | Template | Section | Length | Use for |
 |---|---|---|---|---|
-| 01 | Ingredient Profile | Ingredients | 8–12 min | Fast, warm profile of one ingredient |
-| 01b | Ingredient Deep-Dive | Ingredients | 14–22 min | MAX ingredient profile: 8-cell Identity Card (Species, Origin, Season, Flavour Profile, Key Compounds, Quality Tell, Conservation, Best For) → History (origin + how it developed in the culture) → Science → **Four Ways to Use It** (Traditional / Modern / Frontier / Poetic) → Pairing → Flavour-Compounding (shared-molecule bridges, no row cap) → Quality good-vs-bad → Conservation (if peculiar) → Galley Intel → Stories → Quick Reference. Several examples only where notable. |
-| 02 | Technique | Techniques & Recipes | 8–15 min | Technique brief — Provoke → Instruct → Prove |
+| 01 | Ingredient Profile | Ingredients | 6–9 min | The one ingredient template: the specimen case (sketch on the glass; name + origin folded), the taste, the science, the pairings as cards, the galley tiles, how to buy |
+| 02 | Technique | Techniques & Recipes | 8–15 min | Technique brief — Provoke → Instruct → Prove. A counted test lives in The Bench slot inside Prove. Not a recipe |
 | 03 | Heritage | Heritage | 10–20 min | Culture & history |
 | 04 | Study Decoded | Food Science | 1–2 min | Single-study translation |
-| 05 | Recipe Blueprint | Techniques & Recipes | 8–15 min | Full recipe with science |
-| 06 | Supply Alert | Industry & Ports | 4–8 min | Sourcing & supply intel — act this week |
-| 07 | Forecast | Industry & Ports | 5–10 min | Forecast & macro |
-| 08 | Career & Industry | Industry & Ports | 4–8 min | Regional shifts / career & industry |
-| 09 | Galley Operations | Techniques & Recipes | 6–12 min | Galley operations |
-| 10 | Port Call | Industry & Ports | 10–20 min | City provisioning guide organised by dwell time — hours / a couple of days / a week or more (Quick Map text table — never a graphic map) |
-| 11 | Equipment Review | Techniques & Recipes | 4–10 min | Equipment review |
-| 12 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
-| 13 | The Lab | Techniques & Recipes | varies | Experimental / lab notes |
+| 05 | Recipe Blueprint | Techniques & Recipes | 8–15 min | The recipe — ratio, science, two services, galley cards |
+| 06 | Supply Alert & Forecast | Industry & Ports | 6–10 min | One signal, now and ahead: the number that moved, the move this week, the call with its horizon and falsifier, the watch list |
+| 07 | Career & Industry | Industry & Ports | 4–8 min | Regional shifts / career & industry |
+| 08 | Galley Operations | Techniques & Recipes | 6–12 min | Galley operations |
+| 09 | Port Call | Industry & Ports | 10–20 min | City provisioning guide organised by dwell time — hours / a couple of days / a week or more (Quick Map text table — never a graphic map) |
+| 10 | Equipment Review | Techniques & Recipes | 4–10 min | Equipment review |
+| 11 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
 
-**Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Deep-Dive, Heritage,
+**Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Heritage,
 Port Call) must open with the two-minute-version block so depth is opt-in.
 
-**Warmth is mandatory in food-facing templates** (Ingredient Profile, Ingredient Deep-Dive, Heritage,
+**Warmth is mandatory in food-facing templates** (Ingredient Profile, Heritage,
 Blueprint, Evidence, Method): every piece carries at least one tradition/people beat — the
 Grandmother pillar must be visible, not implied.
 
 Social posts have their own canon: `content/SOCIAL-POSTS.md` (max 3 posts per article, every
 post teaches — substance before volume).
 
-Manifesto / framework pieces use the **Industry & Ports** category (slug `the-bridge`) with a Technique or Supply Alert
+Manifesto / framework pieces use the **Industry & Ports** category (slug `the-bridge`) with a Technique or Supply Alert & Forecast
 structure — there is no free-form essay format.
 
 ## Design identity (the lock)

@@ -44,7 +44,7 @@ JS in `main.js` builds the popover (`.term-pop`, `--story` variant); keyboard-re
 ```
 The card shows the pairing only; the reason opens on click and the open card spans the row.
 
-**Also the options card set** — varieties (01), grades (01b), alternatives (the-locker), added 2026-08-26: the same component, three beats in the body —
+**Also the options card set** — varieties (01), alternatives (the-locker), added 2026-08-26: the same component, three beats in the body —
 `<strong>Flavour profile:</strong>`, `<strong>Best for:</strong>`, then one or two sentences of story told
 nowhere else in the piece. The `pair-card__reg` chip says what the thing IS, not a pairing register.
 
@@ -205,7 +205,7 @@ the reader stays where they are. Say the tool is **simmering**; never promise a 
 </div>
 ```
 
-### Signal Board — `signal-board` (Signal Fire signature: present-tense number / direction / window, pinned under the lede)
+### Signal Board — `signal-board` (Supply Alert & Forecast signature, the NOW half: present-tense number / direction / window, pinned under the lede)
 ```html
 <div class="signal-board">
   <span class="board-eyebrow">Signal</span>
@@ -223,7 +223,7 @@ the reader stays where they are. Say the tool is **simmering**; never promise a 
 </ol>
 ```
 
-### Forecast scorecard — `forecast-scorecard` (The Horizon signature: future-tense call + falsify line; Bridge forecasts only)
+### Forecast scorecard — `forecast-scorecard` (Supply Alert & Forecast signature, the AHEAD half: the call + horizon + confidence, and the falsify line — the two boards are one template since 2026-09-01)
 ```html
 <div class="forecast-scorecard">
   <span class="board-eyebrow">Forecast</span>

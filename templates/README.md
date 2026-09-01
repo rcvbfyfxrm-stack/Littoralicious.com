@@ -17,24 +17,25 @@ stop the reader's eye from drifting. Fill the placeholders; don't strip the stru
 The `<h2>` kicker is the styled `p.kicker` beat (one-line value promise under the heading), and
 the Galley Operations (tight-ship) station-map table wraps in `.galley-plan` — both locked in `content/DESIGN-LOCK.md`.
 
-## The 14 templates (+ shell helpers)
+## The 11 templates (+ shell helpers)
+
+Consolidated 2026-09-01 (founder): the Ingredient Deep-Dive is deleted — one ingredient template; Supply
+Alert and Forecast are ONE template (`signal-fire`); The Lab is folded into Technique as The Bench slot.
+Technique is not recipe — the Recipe Blueprint is the recipe.
 
 | `--template` | # | Section | For |
 |---|---|---|---|
-| `shore-larder` | 01 | Ingredients | Ingredient Profile — one ingredient, fast and warm |
-| `shore-larder-deep-dive` | 01b | Ingredients | Ingredient Deep-Dive (identity card + 9 sections) |
-| `the-method-technique` | 02 | Techniques & Recipes | Technique brief — Provoke → Instruct → Prove |
+| `shore-larder` | 01 | Ingredients | Ingredient Profile — the one ingredient template: specimen case, taste, science, pairings, galley, how to buy |
+| `the-method-technique` | 02 | Techniques & Recipes | Technique — Provoke → Instruct → Prove; a counted test lives in The Bench slot. Not a recipe |
 | `littoral-heritage-article` | 03 | Heritage | Culture & history |
 | `the-evidence` | 04 | Food Science | Study Decoded — single-study translation |
-| `recipe-blueprint` | 05 | Techniques & Recipes | Full recipe with science (Recipe Blueprint) |
-| `signal-fire` | 06 | Industry & Ports | Supply Alert — sourcing intel, act this week |
-| `the-horizon` | 07 | Industry & Ports | Forecast & macro |
-| `trade-winds` | 08 | Industry & Ports | Career & industry / regional shifts |
-| `tight-ship` | 09 | Techniques & Recipes | Galley operations |
-| `port-call` | 10 | Industry & Ports | City provisioning guide by dwell time — hours / days / a week (Quick Map text table) |
-| `the-locker` | 11 | Techniques & Recipes | Equipment review |
-| `weekly-brief` | 12 | Industry & Ports | Digest |
-| `the-lab` | 13 | Techniques & Recipes | Experimental / lab notes |
+| `recipe-blueprint` | 05 | Techniques & Recipes | Recipe Blueprint — the recipe, with its science and galley cards |
+| `signal-fire` | 06 | Industry & Ports | Supply Alert & Forecast — the number that moved, the move this week, the call ahead with its falsifier |
+| `trade-winds` | 07 | Industry & Ports | Career & industry / regional shifts |
+| `tight-ship` | 08 | Techniques & Recipes | Galley operations |
+| `port-call` | 09 | Industry & Ports | City provisioning guide by dwell time — hours / days / a week (Quick Map text table) |
+| `the-locker` | 10 | Techniques & Recipes | Equipment review |
+| `weekly-brief` | 11 | Industry & Ports | Digest |
 
 Shell helpers (not article types): `standard.html` (generic fallback), `section.html`
 (builds the section index pages), `og-image.html` (the social-image source).
@@ -61,12 +62,11 @@ forcing one outside it makes the piece worse.
 
 | Rule | Where it lives | Where it deliberately does not |
 |---|---|---|
-| **The taste closes on the hand** — the last line of the taste beat is what the ingredient does when you break, crush or cut it; it never sits in the opening scene | `shore-larder`, `shore-larder-deep-dive` | every template without a taste beat |
-| **The options are cards** — a set of named things becomes `pair-cards`, three beats in the body: the profile · best for · a little story told nowhere else. The `pair-card__reg` chip is a verdict, not a category | `shore-larder` (varieties), `shore-larder-deep-dive` (grades), `the-locker` (alternatives) | tables you scan down a column: `port-call` (minutes from berth), `signal-fire`, `the-evidence`, `the-lab`, `the-method-technique`, `tight-ship`. `littoral-heritage-article`'s Tradition Ledger stays a table — those three columns *are* the template's signature. `trade-winds` already owns its `tw-*` racks |
-| **The Pairing Wheel line** — one line closing a pairing beat, pointing at the wheel in the Spoon Lab and saying it is simmering, never a date | `shore-larder`, `shore-larder-deep-dive`, `littoral-heritage-article` | every template with no pairing beat |
+| **The taste closes on the hand** — the last line of the taste beat is what the ingredient does when you break, crush or cut it; it never sits in the opening scene | `shore-larder` | every template without a taste beat |
+| **The options are cards** — a set of named things becomes `pair-cards`, three beats in the body: the profile · best for · a little story told nowhere else. The `pair-card__reg` chip is a verdict, not a category | `shore-larder` (varieties), `the-locker` (alternatives) | tables you scan down a column: `port-call` (minutes from berth), `signal-fire`, `the-evidence`, `the-method-technique`, `tight-ship`. `littoral-heritage-article`'s Tradition Ledger stays a table — those three columns *are* the template's signature. `trade-winds` already owns its `tw-*` racks |
+| **The Pairing Wheel line** — one line closing a pairing beat, pointing at the wheel in the Spoon Lab and saying it is simmering, never a date | `shore-larder`, `littoral-heritage-article` | every template with no pairing beat |
 
-**The specimen case — the sketch on the glass with the name and the origin folded inside — is template 01's device only.** The deep-dive keeps the sketch set into the column and History as a full section by
-design; do not fold it.
+**The specimen case — the sketch on the glass with the name and the origin folded inside — is template 01's device.** (The deep-dive that kept History as a section was deleted 2026-09-01.)
 
 **`[data-open-lab]`** — any article can point at a Spoon Lab tool that has no page yet:
 `<a href="#some-id" data-open-lab>Pairing Wheel</a>` opens the lab panel. The handler lives in
@@ -76,11 +76,10 @@ link the reader is meant to find in `<strong>`.
 
 ## The ingredient standard (locked 2026-08-26)
 
-`shore-larder.html` is **the** ingredient template; `shore-larder-deep-dive.html` is the long form of the
-same spine. Both carry the 26 Aug second pass: the taste closes on what the ingredient
-does in the hand, the grades/varieties are cards (flavour profile · best for · a little story), and the
-pairings close on the Pairing Wheel line. The deep-dive keeps History as a full section — the folded origin
-is template 01's device, not its own. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
+`shore-larder.html` is **the** ingredient template — the only one since 2026-09-01 (the deep-dive is deleted).
+It carries the 26 Aug second pass: the taste closes on what the ingredient does in the hand, the varieties
+are cards (flavour profile · best for · a little story), and the pairings close on the Pairing Wheel line.
+The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
 
 Spine (revised 2026-09-01 — no encounter line, the piece opens on the case): **the specimen case (`details.fold.fold--specimen`: the
 sketch on the glass, the Latin name + a one-line hint as its label; inside, the name and the origin around one
@@ -97,7 +96,7 @@ a register chip and never more than five ingredients · the sum-up never sits in
 are cards, each with flavour profile, best for and a little story told nowhere else in the piece · if the remedy beat lands on something real, it is
 followed by **how to use it that way** (where, how much, how often, the honest limit) · say it once.
 
-Components: `details.fold.fold--specimen` (the specimen case — the glass read-more with the sketch on it; `.specimen` floated stays for 01b), `.article-toc` +
+Components: `details.fold.fold--specimen` (the specimen case — the glass read-more with the sketch on it), `.article-toc` +
 `article-toc__desc` (the sum-up), `.pair-cards` / `.pair-card__reg` (pairings AND varieties), `.tiles` / `.tile` with the inline `--t`
 hue, `.term[data-def]` (click-to-define, `data-kind="story"` for a tale). Sketch generator:
 `_pencil-art/galley-sketches/sketch.py`.

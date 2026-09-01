@@ -102,13 +102,13 @@ function lintArticle(a) {
   // 6) The opening payoff. WARN (legacy pieces predate it).
   // The law is PAYOFF UP TOP, not "a box that says What you'll get". Each template has its own way in
   // (founder rule 2026-08-25): the Study Decoded pays off with its Citation Card, the Supply Alert with
-  // its Signal Board, the Weekly Brief with the Since-last-week note, the Deep-Dive with the two-minute
-  // version. So: accept ANY locked payoff device, as long as it lands inside the first ~150 words.
+  // its Signal Board, the Weekly Brief with the Since-last-week note, the ingredient piece with the
+  // specimen case. So: accept ANY locked payoff device, as long as it lands inside the first ~150 words.
   const PAYOFF = /<div\s+class="(article-toc|summary-box|signal-board|citation-card|forecast-scorecard|glance|id-card|note)\b/i;
   const openBody = body.replace(/<!--[\s\S]*?-->/g, " ");
   const payoffAt = openBody.search(PAYOFF);
   if (payoffAt < 0) {
-    W(`no opening payoff device — the focus law's payoff-up-top (a promise box, or the template's own: Signal Board, Citation Card, two-minute version, Since-last-week)`);
+    W(`no opening payoff device — the focus law's payoff-up-top (a promise box, or the template's own: Signal Board, Citation Card, specimen case, Since-last-week)`);
   } else {
     const wordsBefore = (text(openBody.slice(0, payoffAt)).match(/\S+/g) || []).length;
     if (wordsBefore > 150)

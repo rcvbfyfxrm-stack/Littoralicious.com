@@ -23,18 +23,15 @@ if (exists(articleFile)) die(`articles/${slug}.html already exists`);
 // Per-template defaults (category + header subtag) so you rarely pass --category/--subtag.
 const TEMPLATE_DEFAULTS = {
   "shore-larder": { category: "shore-larder", subtag: "Ingredient Profile" },
-  "shore-larder-deep-dive": { category: "shore-larder", subtag: "Ingredient Deep-Dive" },
   "the-method-technique": { category: "the-method", subtag: "Technique" },
   "the-evidence": { category: "the-evidence", subtag: "Study Decoded" },
   "littoral-heritage-article": { category: "littoral-heritage", subtag: "Food History" },
-  "signal-fire": { category: "signal-fire", subtag: "Sourcing" },
-  "the-horizon": { category: "the-bridge", subtag: "Forecast" },
+  "signal-fire": { category: "signal-fire", subtag: "Supply Alert & Forecast" },
   "trade-winds": { category: "trade-winds", subtag: "Industry Shift" },
   "tight-ship": { category: "the-method", subtag: "Galley Operations" },
   "port-call": { category: "port-call", subtag: "Provisioning" },
   "the-locker": { category: "the-locker", subtag: "Gear Review" },
   "weekly-brief": { category: "the-bridge", subtag: "Digest" },
-  "the-lab": { category: "the-method", subtag: "Lab Notes" },
   "recipe-blueprint": { category: "the-method", subtag: "Recipe Blueprint" },
 };
 const tmplName = args.template || inferTemplate(title, args.subtag || "");
@@ -101,17 +98,15 @@ function inferTemplate(title, subtag) {
   if (has("recipe", "blueprint", "cake", "bread", "dough", "pizza", "sauce", "braise", "roast", "crumble", "pudding", "soup", "bake")) return "recipe-blueprint";
   if (has("port call", "port-call", "provisioning", "provision", "market", "supplier")) return "port-call";
   if (has("technique", "beurre", "emulsif", "temper", "confit", "cure", "ferment", "method", "how to ")) return "the-method-technique";
-  if (has("deep dive", "deep-dive")) return "shore-larder-deep-dive";
-  if (has("ingredient", "immortal", "the bulb", "the leaf")) return "shore-larder";
+  if (has("deep dive", "deep-dive", "ingredient", "immortal", "the bulb", "the leaf")) return "shore-larder";
   if (has("study", "evidence", "compound", "flavordb", "the fat index", "the salt index", "umami", "maillard", "science of")) return "the-evidence";
   if (has("heritage", "history", "tradition", "origin of", "the first", "born")) return "littoral-heritage-article";
   if (has("equipment", "review", "pacojet", "thermomix", "vitamix", "the locker", "gear")) return "the-locker";
   if (has("tax", "career", "crew", "industry", "become a", "trade winds", "residency")) return "trade-winds";
   if (has("galley", "efficiency", "mise", "station", "operations", "rotation", "tight ship")) return "tight-ship";
-  if (has("sourcing", "supply", "quota", "seasonal", "signal fire", "shortage", "window is closing")) return "signal-fire";
-  if (has("forecast", "horizon", "future", "trend", "macro", "outlook", "is coming")) return "the-horizon";
+  if (has("sourcing", "supply", "quota", "seasonal", "signal fire", "shortage", "window is closing", "forecast", "horizon", "future", "trend", "macro", "outlook", "is coming")) return "signal-fire";
   if (has("weekly brief", "monthly brief", "digest", "roundup", "six things")) return "weekly-brief";
-  if (has("the lab", "experiment", "trial", "measured", "tested against")) return "the-lab";
+  if (has("the lab", "experiment", "trial", "measured", "tested against")) return "the-method-technique";   // The Lab folded into Technique (2026-09-01)
   console.warn("\n  ⚠ No template matched — narrow the scope or split the piece (DNA: never invent a format).");
   console.warn("    Scaffolding on 'standard' as a fallback.\n");
   return "standard";
