@@ -38,7 +38,7 @@ visual beats that hold the eye the whole way down. Reach for these (all locked C
 
 **Boxes / callouts** (each auto-labels itself):
 - `<div class="article-toc">` with `article-toc__desc` lines — the sum-up (the promise box is retired).
-- `<span class="term" data-def="…">` — click-to-define; `data-kind="story"` for a tale. `pair-cards` for pairings; `details.fold` for the intro's read-more.
+- `<span class="term" data-def="…">` — click-to-define; `data-kind="story"` for a tale. `pair-cards` for pairings; `details.fold.fold--specimen` for the ingredient intro's specimen case (the sketch on the glass, the name and the origin folded inside).
 - `<div class="note note--key"><p>…</p></div>` → **Key Point** · `note--science` → **The Science** ·
   `note--action` → **Takeaway** · `note--warning` → **Warning** · `note--quote` → pull-quote.
 - **Custom-labeled box** (clever, use it): `<div class="note" data-label="The Number"><p>…</p></div>`

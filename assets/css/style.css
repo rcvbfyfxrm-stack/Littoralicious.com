@@ -2584,3 +2584,32 @@ mark {
 .fold__body { position: relative; padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem) var(--space-6, 1.5rem); }
 .fold__body > p + p { margin-top: var(--space-3, .75rem); }
 
+/* The specimen case — .fold--specimen (founder ask 2026-09-01, template 01's intro): the same
+   glass read-more with the SKETCH ON THE PANE, a herbarium sheet under its glass. The label is
+   the Latin name in italic + the one-line hint; the drawing sits at the right with its buyer's
+   caption; the "+" opens the word, the family and the origin. Above it only the encounter, under
+   it the taste — so the first screen is the scene, the leaf, the mouth. */
+.fold--specimen > summary {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: var(--space-5, 1.25rem);
+    padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+}
+.fold--specimen .fold__title {
+    font-style: italic; font-weight: 400; text-transform: none;
+    letter-spacing: .01em; font-size: var(--text-lg, 1.333rem); line-height: 1.2;
+}
+.fold--specimen .fold__hint { margin-top: var(--space-2, .5rem); font-size: var(--text-sm, .875rem); line-height: 1.5; }
+.fold__art { display: block; width: 200px; }
+.fold__art svg { display: block; width: 100%; height: auto; }
+.fold__caption {
+    display: block; margin-top: var(--space-2, .5rem);
+    font-style: italic; font-size: var(--text-xs, .75rem); line-height: 1.4;
+    color: var(--color-muted, #6b7280); text-align: center;
+}
+[data-theme="dark"] .fold__art svg, [data-theme="dark"] .specimen svg { filter: invert(1); }
+@media (max-width: 599px) {
+    .fold--specimen > summary { grid-template-columns: minmax(0, 1fr) auto; }
+    .fold__art { grid-column: 1 / -1; width: 180px; justify-self: center; }
+    .fold--specimen .fold__chev { grid-row: 1; grid-column: 2; }   /* beside the title, or auto-placement drops it under the art */
+}
+

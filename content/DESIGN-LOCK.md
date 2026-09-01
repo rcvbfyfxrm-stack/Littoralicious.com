@@ -53,6 +53,11 @@ nowhere else in the piece. The `pair-card__reg` chip says what the thing IS, not
 <details class="fold"><summary>Read more — where it comes from</summary><div class="fold__body"><p>…</p></div></details>
 ```
 
+**The specimen case** — `fold--specimen` (added 2026-09-01; template 01's intro): the same glass with the sketch ON the pane, a herbarium sheet under its glass. Label = the Latin name (italic) + a one-line hint; the drawing sits at the right with its buyer's caption; the body carries the name and the origin around one `note--key`. Above it only the encounter, under it the taste; the sum-up never goes inside.
+```html
+<details class="fold fold--specimen"><summary><span><span class="fold__title">Genus species</span><span class="fold__hint">…</span></span><span class="fold__art"><svg …></svg><span class="fold__caption">…</span></span><span class="fold__chev"></span></summary><div class="fold__body"><p>…</p><p>…</p><div class="note note--key"><p>…</p></div><p>…</p></div></details>
+```
+
 
 ### Galley tiles — `tiles` > `tile` (added 2026-08-26; Galley Intel's field)
 ```html

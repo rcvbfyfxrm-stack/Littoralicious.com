@@ -30,7 +30,7 @@
 Founder rule, 2026-08-26: **no template promises what you get before you buy it.** The opening device
 is the **sum-up** — the `article-toc` with a one-line description under every section, so the reader
 sees the whole piece in one glance and clicks straight to what they came for. It sits after the intro
-(the name, the scene, the vital signs, the folded origin on an ingredient piece; the lede paragraph
+(the scene, the specimen case and the taste on an ingredient piece; the lede paragraph
 elsewhere) and before the first section. The promise box (`summary-box "What you'll get"`) is retired
 from every template; the CSS stays for older pages.
 
@@ -52,9 +52,8 @@ law, not the box: any locked payoff device counts, as long as it lands inside ~1
   simmering, not ready — never a date. Galley intel opens on concrete ideas — ways to use it, compound logic and all.
 
 **The ingredient standard (locked 2026-08-26).** `templates/shore-larder.html` + `shore-larder-deep-dive.html`
-carry one spine — `articles/bay-leaf.html` and `articles/saffron.html` are the reference builds: encounter → sketch set into the column →
-the name → the taste (closing on what it does in the hand — the snap, the crack, the smell) → the origin folded,
-as a card directly under the taste → the old habit teased → sum-up, outside the fold → Science (numbers, Blind Spot, chemistry,
+carry one spine — `articles/bay-leaf.html` and `articles/saffron.html` are the reference builds: encounter → the specimen case
+(01: the sketch on the glass, the name and the origin folded inside — 01b keeps the sketch set into the column and History as a section) → the taste (closing on what it does in the hand — the snap, the crack, the smell) → sum-up, outside the case → the old habit teased → Science (numbers, Blind Spot, chemistry,
 **Is it a remedy?** with the dose gap, the folk use that holds, and **how to use it that way**) → Pairings
 (register chips, 2–5 ingredients, one COMPOUND card naming the shared molecule and its share of both oils) →
 Galley Intel (carreaux tiles) → How to Buy (the varieties as CARDS — flavour profile, best for, a little story

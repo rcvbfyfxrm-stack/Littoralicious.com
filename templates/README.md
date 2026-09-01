@@ -65,7 +65,7 @@ forcing one outside it makes the piece worse.
 | **The options are cards** — a set of named things becomes `pair-cards`, three beats in the body: the profile · best for · a little story told nowhere else. The `pair-card__reg` chip is a verdict, not a category | `shore-larder` (varieties), `shore-larder-deep-dive` (grades), `the-locker` (alternatives) | tables you scan down a column: `port-call` (minutes from berth), `signal-fire`, `the-evidence`, `the-lab`, `the-method-technique`, `tight-ship`. `littoral-heritage-article`'s Tradition Ledger stays a table — those three columns *are* the template's signature. `trade-winds` already owns its `tw-*` racks |
 | **The Pairing Wheel line** — one line closing a pairing beat, pointing at the wheel in the Spoon Lab and saying it is simmering, never a date | `shore-larder`, `shore-larder-deep-dive`, `littoral-heritage-article` | every template with no pairing beat |
 
-**The folded origin is template 01's device only.** The deep-dive keeps History as a full section by
+**The specimen case — the sketch on the glass with the name and the origin folded inside — is template 01's device only.** The deep-dive keeps the sketch set into the column and History as a full section by
 design; do not fold it.
 
 **`[data-open-lab]`** — any article can point at a Spoon Lab tool that has no page yet:
@@ -82,9 +82,10 @@ does in the hand, the grades/varieties are cards (flavour profile · best for ·
 pairings close on the Pairing Wheel line. The deep-dive keeps History as a full section — the folded origin
 is template 01's device, not its own. The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
 
-Spine: **1–3 lines of encounter → the specimen sketch, set into the column → the name → the taste ("In the
-mouth"), closing on what it does in the hand → the origin, folded, as a card directly under the taste → the
-old habit, teased, linking to #science → the sum-up, outside the fold → The Science (the four numbers, the
+Spine (revised 2026-09-01): **1–3 lines of encounter → the specimen case (`details.fold.fold--specimen`: the
+sketch on the glass, the Latin name + a one-line hint as its label; inside, the name and the origin around one
+`note--key`) → the taste ("In the mouth"), always visible, closing on what it does in the hand → the sum-up,
+outside the case → the old habit, teased, linking to #science → The Science (the four numbers, the
 Blind Spot, the chemistry, then **Is it a remedy?**) → The Pairings (cards, four registers, 2–5 ingredients
 each, then the Pairing Wheel line) → Galley Intel (the carreaux tiles) → How to Buy (the varieties as cards)
 → the one thing → Sources.**
@@ -96,7 +97,7 @@ a register chip and never more than five ingredients · the sum-up never sits in
 are cards, each with flavour profile, best for and a little story told nowhere else in the piece · if the remedy beat lands on something real, it is
 followed by **how to use it that way** (where, how much, how often, the honest limit) · say it once.
 
-Components: `.specimen` (the sketch, floated), `details.fold` (the glass read-more), `.article-toc` +
+Components: `details.fold.fold--specimen` (the specimen case — the glass read-more with the sketch on it; `.specimen` floated stays for 01b), `.article-toc` +
 `article-toc__desc` (the sum-up), `.pair-cards` / `.pair-card__reg` (pairings AND varieties), `.tiles` / `.tile` with the inline `--t`
 hue, `.term[data-def]` (click-to-define, `data-kind="story"` for a tale). Sketch generator:
 `_pencil-art/galley-sketches/sketch.py`.
