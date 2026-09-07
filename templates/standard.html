@@ -40,6 +40,11 @@
 
                 <!-- BODY:BEGIN — GENERIC FALLBACK. First choice: pick one of the named templates (Ingredient Profile, Technique, Heritage, Study Decoded, Recipe Blueprint, Supply Alert &amp; Forecast, Career &amp; Industry, Galley Operations, Port Call, Equipment Review, Weekly Brief). Use this ONLY when a piece genuinely fits none. Even here, keep the focus spine below: open with the payoff, one idea per h2, science where it bites, close on one thing, name your sources. NOTE: the TEMPLATE-FALLBACK sentinel comment below is flagged by tools/lint.mjs — a piece still carrying it will not pass the publish gate; it goes only when the generic structure has been replaced. -->
 
+<!-- SAY TO YOUR SOUS CHEF (founder rule 2026-09-05) — THE FIRST BLOCK ON THE PAGE, on every template. One sentence a chef would actually say out loud to their sous chef: the answer, in the imperative, specific, no hedge. Everything below is the science behind that sentence. This block REPLACED the closing takeaway box — never restate it at the foot. -->
+<div class="sous">
+    <p>[The one line a chef would say out loud about this piece &mdash; the move, in the imperative, specific and without hedge.]</p>
+</div>
+
 <!-- TEMPLATE-FALLBACK: replace this structure before publishing (DNA: narrow the scope or split — never ship the generic format) -->
 
 <!-- FALLBACK BANNER — delete once you have written the piece. -->
@@ -61,7 +66,7 @@
 <p class="kicker">One-line value promise under the h2.</p>
 <p>One idea per section. Short paragraphs, bold lead-ins, a <mark>highlight</mark> on the one phrase that must land. Define jargon inline with <span class="term">a term</span> so the reader never leaves the page.</p>
 
-<div class="note note--science"><p>The mechanism, inline where it bites — name the compound, the °C, the reaction. Cite a primary source; never "studies show".</p></div>
+<div class="note note--science"><p>The mechanism, inline where it bites — name the compound, the °C, the reaction. Cite a primary source; never lean on an unnamed one.</p></div>
 
 <h2>Second idea</h2>
 <p class="kicker">Another one-line promise.</p>
@@ -69,14 +74,16 @@
 
 <div class="note note--action" data-label="At Sea"><p>The practical move in a 4 m&sup2; galley — the takeaway they use mid-charter, with a number where you have one.</p></div>
 
-<div class="divider"><span class="divider__text">The one thing</span></div>
-
-<div class="note note--key" data-label="The one thing"><p>Close on a single takeaway — the one line they keep, traceable to a source, nothing else competing for the eye.</p></div>
-
-<div class="article-sources">
-    <strong>Sources</strong>
-    <p>Every claim traceable — named journals, books, documented experience. No "they say".</p>
-</div>
+<!-- SOURCES, FOLDED (founder rule 2026-09-05). Keep the inner div.article-sources markup exactly as it is: the linter exempts that block by matching this opening tag, and nesting another div inside it would break the exemption. -->
+<details class="fold fold--sources">
+    <summary><span class="fold__title">Sources</span><span class="fold__chev"></span></summary>
+    <div class="fold__body">
+        <div class="article-sources">
+        <strong>Sources</strong>
+        <p>Every claim traceable — named journals, books, documented experience. No "they say".</p>
+        </div>
+    </div>
+</details>
 
 <p><em>Tested at sea.</em></p>
 

@@ -39,134 +39,94 @@
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
                 <!-- READER RULES (founder, 2026-08-26): every rare word carries a click definition — <span class="term" data-def="…">; tales sit inline or behind the word (data-kind="story"); concision is law. No sum-up on this short template: its own device opens it. -->
-<!-- BODY:BEGIN — Food Science. Fill each slot; keep the focus components (pull-quote, Key Point/Science/Action). NO promise box — see below. -->
-<!-- STUDY DECODED (04, file the-evidence) — SHORT single-study translation. Rhythm: claim (2–3 sentences of PROSE — the citation-card is never the first thing after an h2) → Citation Card (the named study, graded) → mechanism → "What Cooks Already Knew" (the Grandmother beat) → galley use + At Sea → limitations (Holds for / Breaks at) → repeatable close → sources. Keep it tight: 1–2 min read. Science inline; every claim traceable to a PRIMARY peer-reviewed paper (journal article / lab paper / systematic review) — NEVER a reference book. British cooking spelling, sign off "Tested at sea." SIGNATURE = the Citation Card; this is the only template that opens on one decoded paper. MANDATORY food-facing beats: Evidence Grade, Who Paid, What Cooks Already Knew. Focus: the claim itself as the payoff up top (no promise box), per-h2 kickers, mid-piece pull-quote, notes at their beats, inline terms, one repeatable takeaway. IDENTITY (META-PROMPT grid): OPENING REGISTER = the finding as a usable sentence, actable tonight · PRO-HOOK = What Cooks Already Knew + honest limitations incl. The Best Evidence Against (calibration, not just facts) · FORBIDDEN = multi-study essays; running past 2 min; any stacked box. LEARNING CONTRACT (mapped for a 1–2 min piece): the finding, the mechanism, and the tradition-reversal ARE the three facts — one study, three kinds of new; never stuff more in. -->
+<!-- READER RULES (founder, 2026-08-26): every rare word carries a click definition — <span class="term" data-def="…">; tales sit inline or behind the word (data-kind="story"); concision is law. No sum-up on this short template: its own device opens it. -->
+<!-- BODY:BEGIN — Template 04, STUDY DECODED (file the-evidence): one paper, one galley move. RESTRUCTURED 2026-09-05 (founder: "don't put (Salazar et al. 2020, PLOS ONE) inline — add the source at the end, folded, and put a number after the fact that you can click to check the claim against the source"). SPINE: the sous-chef line → The Claim (prose) → The Paper (Citation Card) → The Mechanism → What Cooks Already Knew → Galley Implications → What This Does NOT Mean → Limitations + the best evidence against → Sources, folded. IDENTITY (META-PROMPT grid): OPENING REGISTER = the finding as a sentence a chef says out loud tonight · SIGNATURE = the Citation Card with its grade chip; this is the only template that opens on one decoded paper · PRO-HOOK = What Cooks Already Knew + honest limitations including The Best Evidence Against · FORBIDDEN = multi-study essays; running past 2 min; any stacked box; a parenthetical citation in the body prose. LENGTH: 1-2 min. MANDATORY food-facing beats: Evidence Grade, Who Paid where it matters, What Cooks Already Knew. Every claim traceable to a PRIMARY peer-reviewed paper — never a reference book. British cooking spelling. -->
 
-<!-- NO PROMISE BOX HERE (founder rule 2026-08-25). This template's own forbidden move is "any stacked
-     box", and its register is the finding as a usable sentence. The payoff up top IS the claim, in two
-     or three sentences of prose, settled immediately by the graded Citation Card. A promise box would
-     spend a third of a two-minute read announcing what the next line already says. -->
+<!-- HOW CITATIONS WORK HERE (founder rule 2026-09-05) — the prose never carries a parenthetical. A fact that needs a source gets a numbered marker straight after it; the reader clicks the number and the source opens in place, so they can check the claim without leaving the sentence. The numeral is drawn by a CSS counter, so re-ordering the prose never renumbers anything by hand. The element is EMPTY; data-word names the source in the popover's heading; data-def carries the full citation and, where it exists, the specific figure the paper supplies. data-def is plain text — no markup, and a DOI in it is not clickable, which is why the full copyable citation still sits in the folded Sources block at the foot. Markup, copied exactly:
+     <sup class="ref" data-kind="source" data-word="Salazar et al. 2020" data-def="Salazar, J.K. et al. Listeria monocytogenes growth kinetics in refrigerated ready-to-eat dips and dip components. PLOS ONE 15(6):e0235472, 2020. DOI 10.1371/journal.pone.0235472 — Table 1: guacamole = mashed avocado 71%, diced tomato 10%, diced onion 8%, lemon juice 5%, jalapeno 3.5%, cilantro 1.5%, salt 1%; pH 4.82 against 6.82 for plain avocado."></sup>
+-->
+
+<!-- SAY TO YOUR SOUS CHEF (founder rule 2026-09-05) — THE FIRST BLOCK ON THE PAGE. The finding turned into one sentence a chef says out loud, at the pass, tonight: imperative and usable, not a bare statistic. Everything below is the science behind it. This block REPLACED the closing "Say it at the pass" box — the piece no longer ends on a repeat. -->
+<div class="sous">
+    <p>[The finding, said out loud &mdash; the move it earns, in the imperative. "Lime the guacamole, press the film flat to the surface, hold it at 4 &deg;C, and make it for this service, not the next."]</p>
+</div>
 
 <h2>The Claim</h2>
 <p class="kicker">The finding, in one line you can act on tonight.</p>
-<!-- WRITER: A single value kicker right under the h2. -->
-<p>Two or three sentences of prose stating the finding plainly: what the study found, what it changes for a working cook, and why it is worth two minutes of their watch.</p>
-<!-- WRITER: MANDATORY — open The Claim with 2–3 sentences of PROSE, never a card. The citation-card must NOT be the first thing after any h2; it belongs in The Paper below, and only after the claim has been stated in plain sentences. This section is prose only — no boxes, no notes. State the claim without hype. What does this single paper let a chef do differently? Avoid banned words (delicious, elevated, hack, etc.). -->
+<p>[Two or three sentences of prose stating the finding plainly: what the study found, <mark>what it changes for a working cook</mark>, and why it is worth two minutes of their watch. Attach a numbered marker to the load-bearing figure<sup class="ref" data-kind="source" data-word="[Author et al. YEAR]" data-def="[Full citation: Author(s). Title. Journal vol(issue):pages, year. DOI 10.0000/xxxxx — and the specific figure this paper supplies.]"></sup> rather than a parenthetical. No hype, no banned words.]</p>
+<!-- WRITER: prose only here — no boxes, no notes, and never a card as the first thing after an h2. -->
 
 <h2>The Paper</h2>
-<p class="kicker">One named study — graded, so you know how much weight it holds.</p>
-<!-- WRITER: Value kicker. -->
-<p>One sentence of prose introducing the study — who ran it, and the question they set out to answer.</p>
-<!-- WRITER: MANDATORY prose line before the card. The citation-card is never the first thing after an h2 — a sentence introduces it, the card then lands as the payoff. -->
+<p class="kicker">One named study &mdash; graded, so you know how much weight it holds.</p>
+<p>[One sentence introducing the study: who ran it, and the question they set out to answer.]</p>
 
-<!-- SIGNATURE BLOCK — The Citation Card. The unmistakable "one study, decoded" object that owns this template. MANDATORY: stand on ONE primary, peer-reviewed paper (journal article / lab paper / systematic review). A reference book (McGee, Modernist Cuisine) may support but NEVER replaces it. The grade chip tells the reader the weight before they reach the mechanism. -->
+<!-- SIGNATURE BLOCK — The Citation Card. The unmistakable "one study, decoded" object that owns this template. MANDATORY: stand on ONE primary, peer-reviewed paper. A reference book (McGee, Modernist Cuisine) may support but NEVER replaces it. The grade chip tells the reader the weight before they reach the mechanism. -->
 <div class="citation-card">
     <span class="citation-card__eyebrow">The study</span>
     <p style="margin: 0 0 var(--space-2);"><strong>Author(s)</strong> (Year). Title of the paper. <span class="citation-card__journal">Journal Name</span>. <span class="citation-card__doi">DOI: 10.0000/xxxxx</span></p>
     <span class="citation-card__grade">Design &middot; n = 00 &middot; Strength: strong / moderate / observational / in&nbsp;vitro</span>
 </div>
-<!-- WRITER: Evidence Grade is required — study design (RCT / cohort / in vitro / systematic review), sample size, and an honest strength tier. Mirrors the Ingredient Profile strong/moderate/in-vitro convention. -->
-<p>One sentence on what the study actually measured, and how.</p>
+<p>[One sentence on what the study actually measured, and how &mdash; including, where it matters, exactly what was in the thing they measured. A dish named in a paper is often not the dish a cook means by that name; if it diverges, say so here rather than letting the reader assume.]</p>
 
-<!-- OPTIONAL "Who Paid" note — include ONLY when funding is industry-linked or otherwise non-trivial enough to colour the claim; otherwise fold a half-line ("independently funded") into the sentence above and DELETE this. Follow-the-money is the Scientist pillar — when it matters, state it plainly, never bury it:
+<!-- OPTIONAL "Who Paid" note — include ONLY when funding is industry-linked or otherwise non-trivial enough to colour the claim; otherwise fold a half-line ("independently funded") into the sentence above and DELETE this:
 <div class="note note--science" data-label="Who Paid"><p>Funder &middot; declared conflict &middot; whether it colours the claim.</p></div>
 -->
 
-
 <h2>The Mechanism</h2>
-<p class="kicker">The molecule, the °C, the reaction — why the result holds.</p>
-<!-- WRITER: Value kicker. -->
-<p>One line naming the compound / temperature / reaction that explains the result.</p>
-<!-- WRITER: Explain the WHY inline at the moment it matters — name the <span class="term">compound</span>, the °C, the reaction. Define one jargon word with .term so the reader never leaves the page. Keep to 2–3 sentences. -->
-<div class="note note--science"><p>One sentence on the reaction itself — the <span class="term">mechanism</span> in plain language, where it bites.</p></div>
-<!-- WRITER: Science-in-the-method core. Inline, not a sidebar. -->
+<p class="kicker">The molecule, the &deg;C, the reaction &mdash; why the result holds.</p>
+<p>[One line naming the compound, temperature or reaction that explains the result. Define one jargon word with <span class="term" data-def="[one or two plain lines]">a click definition</span> so the reader never leaves the page. Two or three sentences, no more.]</p>
+<div class="note note--science"><p>[The reaction itself, in plain language &mdash; where it bites, with its figure and marker<sup class="ref" data-kind="source" data-word="[Author et al. YEAR]" data-def="[Full citation and the figure it supplies.]"></sup>.]</p></div>
 
-<!-- OPTIONAL — THE SMART EXPLAINER (founder rule, 2026-08-24: techniques AND science get an animated explainer — "not always, but when it speaks"). When THIS mechanism has a visible process worth seeing — a set point, a phase change, an emulsion forming, a diffusion front, a crystal growing — carry an interactive explainer here: lit real-time 3D (three.js via CDN importmap), monochrome tone from light, a little functional colour only where it aids reading; SELF-EXPLANATORY from a paused frame with the article text hidden (leader-line labels naming the parts, thresholds worded on the gauge, each part's state legible); a Play button — reader-driven, never autoplay; motion lock applies (pauses off-screen, collapses to the final frame under prefers-reduced-motion). Bar and reference build: _pencil-art/interactive/egg-explainer.html; the full rule lives in templates/the-method-technique.html (THE EXPLAINER) and META-PROMPT. If nothing visibly moves, SKIP — never decorate. -->
+<!-- OPTIONAL — THE SMART EXPLAINER (founder rule 2026-08-24: techniques AND science get an animated explainer — "not always, but when it speaks"). When THIS mechanism has a visible process worth seeing — a set point, a phase change, an emulsion forming, a diffusion front — carry an interactive explainer here: lit real-time 3D (three.js via CDN importmap), self-explanatory from a paused frame, a Play button and never autoplay, motion lock applies. Reference build: _pencil-art/interactive/egg-explainer.html; full rule in templates/the-method-technique.html and META-PROMPT. If nothing visibly moves, SKIP — never decorate. -->
 
-<!-- OPTIONAL DATA TABLE — include ONLY if the study gives quantitative values (concentrations, temperatures, counts) that genuinely earn a scan; otherwise DELETE this whole comment. If you use it, write one line of prose first so it doesn't stack on the science note above, then drop in:
-<div style="overflow-x: auto; margin: var(--space-6) 0;">
-    <table class="data-table">
-        <thead><tr><th>Source / Variable</th><th>Measured Value (unit)</th><th>Mechanism</th></tr></thead>
-        <tbody>
-            <tr><td>Row label</td><td class="num">000</td><td>One-line mechanism</td></tr>
-            <tr><td>Row label</td><td class="num">000</td><td>One-line mechanism</td></tr>
-        </tbody>
-    </table>
-</div>
-OPTIONAL — only if the figures earn a scan; otherwise DELETE. The Citation Card is the signature object; do not let a table or grid compete with it. -->
+<p>[One short bridge line carrying the reader from the mechanism to the technique their kitchen already trusts.]</p>
 
-<p>One short bridge line carrying the reader from the mechanism to the technique their kitchen already trusts.</p>
-<!-- WRITER: A single sentence of prose so the next box does not stack on the science note. -->
+<div class="note note--key" data-label="What Cooks Already Knew"><p>[The traditional practice this paper now explains &mdash; the move used for generations that the data has only just caught up to. Name the dish, region or lineage. MANDATORY in this food-facing template: the study says WHY; the cook already knew WHAT.]</p></div>
 
-<div class="note note--key" data-label="What Cooks Already Knew"><p>The traditional practice this paper now explains — the move a grandmother used for generations that the data has only just caught up to. Name the dish, region, or lineage. This is where the Scientist meets the Grandmother. <strong>MANDATORY</strong> in this food-facing template.</p></div>
-<!-- WRITER: The warmth + tradition beat. One or two sentences tying the finding to an existing technique/dish lineage. The study says WHY; the cook already knew WHAT. -->
+<p>[One line of prose carrying the reader from the tradition into the galley.]</p>
 
-<p>One line of prose carrying the reader from the tradition into the galley — the pivot the pull-quote then lands.</p>
-<!-- WRITER: A sentence of prose so the pull-quote below does not stack on the tradition note above. -->
-
-<div class="note note--quote"><p>One striking line that re-hooks the eye — the finding turned into a sentence a chef repeats at the pass.</p></div>
-<!-- WRITER: Mid-piece pull-quote at the natural pivot between the science and the galley use. One line, no hype. -->
+<div class="note note--quote"><p>[One striking line that re-hooks the eye &mdash; the finding as a sentence a chef repeats at the pass.]</p></div>
 
 <h2>Galley Implications</h2>
-<p class="kicker">The science, turned into one move you make in a 4 m² galley.</p>
-<!-- WRITER: Value kicker. -->
-<p>One line on the call this finding settles, then the concrete move it earns.</p>
-<!-- WRITER: A sentence of prose so the action note below does not stack on the kicker, and the decision and the instruction read as one beat. -->
+<p class="kicker">The science, turned into one move you make in a 4 m&sup2; galley.</p>
+<p>[One line on the call this finding settles, then the concrete move it earns.]</p>
 <div class="note note--action" data-label="How To Use It">
-    <p>Direct, specific instruction: what to do with this finding in a 4 m² galley, on charter, under real constraints.</p>
+    <p>[Direct, specific instruction: what to do with this finding in a 4 m&sup2; galley, on charter, under real constraints. Numbers, temperatures, timings.]</p>
 </div>
-<!-- WRITER: Translate the science into one concrete galley move. Numbers, ports, provisioning reality. This is the "how to use it" payoff — the whole reason the piece exists. -->
 
-<!-- OPTIONAL "At Sea" note — include ONLY if the charter-specific consequence genuinely earns a scan (holding temp, swell, a substitute sourced in port; one number where you have one, e.g. "held 14 of 16 services"); otherwise DELETE. Do not place it directly against the action note — write a half-line of prose first. The Yacht-Chef pillar's home:
+<!-- OPTIONAL "At Sea" note — include ONLY if the charter-specific consequence earns a scan (holding temp, swell, a substitute sourced in port; one number where you have one). Write a half-line of prose first so it never stacks:
 <div class="note" data-label="At Sea"><p>How the finding changes under real charter constraints — one line, with a number.</p></div>
 -->
 
-
 <h2>What This Does NOT Mean</h2>
 <p class="kicker">The overreach to refuse before it costs you a service.</p>
-<!-- WRITER: Value kicker. -->
-<p>Name the overreach the data does not support, then the failure mode it tempts.</p>
-<!-- WRITER: One line of prose framing the distinction, so the warning box below does not stack on the kicker. -->
+<p>[Name the overreach the data does not support, then the failure mode it tempts.]</p>
 <div class="note note--warning" data-label="Important Distinction">
-    <p>The claim the data does NOT support — and the failure mode it tempts: push this past its tested range and here is what breaks.</p>
+    <p>[The claim the data does NOT support &mdash; and the failure mode it tempts: push this past its tested range and here is what breaks. One box, not two.]</p>
 </div>
-<!-- WRITER: One box, not two. The honest-scope distinction and the failure mode are the same beat — keep them in one warning so the section does not stack two callouts. Direct, no hype. -->
 
 <h2>Limitations</h2>
-<p class="kicker">Exactly how far the evidence reaches — and no further.</p>
-<!-- WRITER: Value kicker. -->
-<p>One or two lines on what the study cannot tell you: sample, scope, paywall, brand/age variance, raw-vs-cooked, etc.</p>
-<!-- WRITER: Be candid. Is it a <span class="term">review paper</span>, not new data? Behind a paywall? Values brand-dependent? "Worked 14 of 16 trials" honesty. Define one term inline if useful. -->
+<p class="kicker">Exactly how far the evidence reaches &mdash; and no further.</p>
+<p>[One or two lines on what the study cannot tell you: sample, scope, paywall, brand or age variance, raw against cooked &mdash; and whether the thing measured was really the thing a cook means. Be candid: "worked 14 of 16 trials" honesty.]</p>
 
-<!-- THE BEST EVIDENCE AGAINST — MANDATORY (founder call, 2026-08-24; canon test 7 made structural). One prose line, bold lead-in, no box — this format stays lean: the null trial, failed replication, contradicting meta-analysis, or retraction check against this finding, named with its year — or the honest "none found" plus WHERE you looked (Cochrane, Retraction Watch via Crossref, PubMed). The reader sees the whole scale, not one pan of it. -->
-<p><strong>The best evidence against:</strong> the named null trial, failed replication, or contradicting review, with its year &mdash; or "none found in [named databases]". One sentence.</p>
+<!-- THE BEST EVIDENCE AGAINST — MANDATORY (founder call, 2026-08-24; canon test 7 made structural). One prose line, bold lead-in, no box: the null trial, failed replication, contradicting meta-analysis or retraction check against this finding, named with its year — or the honest "none found" plus WHERE you looked (Cochrane, Retraction Watch via Crossref, PubMed). The reader sees the whole scale, not one pan of it. -->
+<p><strong>The best evidence against:</strong> [the named null trial, failed replication or contradicting review, with its year and a marker &mdash; or "none found in [named databases]". One sentence.]</p>
 
-<!-- OPTIONAL Holds-for / Breaks-at table — include ONLY if the boundary is sharp enough that a two-column scan beats the prose above; otherwise the prose already carries it, so DELETE. Do not duplicate what the line above just said:
-<div style="overflow-x: auto; margin: var(--space-6) 0;">
-    <table class="data-table">
-        <thead><tr><th>Holds for</th><th>Breaks at</th></tr></thead>
-        <tbody>
-            <tr><td>The condition where the finding is solid</td><td>Where it stops applying</td></tr>
-            <tr><td>The second case it covers</td><td>The second boundary</td></tr>
-        </tbody>
-    </table>
-</div>
--->
-
-<div class="divider"><span class="divider__text">The one thing</span></div>
-
-<div class="note note--key" data-label="Say it at the pass"><p>The one line a chef repeats — to a guest, to crew — the finding turned into something worth retelling, still traceable to the paper above. Not a bare statistic: the human version. (<em>"Tell a guest: X and Y share Z — that's why they work."</em>)</p></div>
-<!-- WRITER: Closing single-takeaway, reframed as a repeatable sentence (nurture: leave them with something to retell). Load-bearing, named source, nothing else competing for the eye. -->
-
-<div class="article-sources">
-    <strong>Sources</strong>
-    <p>Author(s). <em>Journal name</em>, year. DOI: 00.0000/xxxxx</p>
-    <!-- WRITER: Lead with the PRIMARY peer-reviewed paper (journal, year, DOI) — academic-grade only; a reference book (McGee, Modernist) may support but never replace it. Every figure above traces to a named source. No "studies show" without a name. -->
-</div>
-
-<!-- Close on the house sign-off where apt: "Tested at sea." -->
 <p><em>Tested at sea.</em></p>
-                <!-- BODY:END -->
+
+<!-- SOURCES, FOLDED (founder rule 2026-09-05) — the full, copyable citations behind one click. Every numbered marker above has its entry here. Keep the inner div.article-sources markup exactly as it is: the linter exempts that block by matching this opening tag, and nesting another div inside it would break the exemption. -->
+<details class="fold fold--sources">
+    <summary><span class="fold__title">Sources</span><span class="fold__chev"></span></summary>
+    <div class="fold__body">
+        <div class="article-sources">
+            <strong>Sources</strong>
+            <p>Author(s). &ldquo;Title.&rdquo; <em>Journal</em> vol(issue):pages, year. DOI 10.0000/xxxxx (design, n, or the specific figure the paper supplies).</p>
+            <!-- WRITER: lead with the PRIMARY peer-reviewed paper — academic-grade only; a reference book may support but never replace it. One paragraph per reference, numbered in the order the markers appear. No "studies show" without a name. -->
+        </div>
+    </div>
+</details>
+
+<!-- BODY:END -->
 
                 <!-- Article Engagement -->
                 <div class="article-engagement">

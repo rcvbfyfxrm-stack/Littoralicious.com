@@ -465,9 +465,13 @@
     });
 })();
 
-/* Click-to-define terms and inline stories — founder rule 2026-08-26.
-   <span class="term" data-def="…">word</span> opens a small popover; data-kind="story" carries a tale. */
+/* Click-to-define terms, inline stories and source markers — founder rule 2026-08-26,
+   widened to citations 2026-09-05.
+   <span class="term" data-def="…">word</span> opens a small popover; data-kind="story" carries a tale;
+   <sup class="ref" data-kind="source" data-word="Salazar et al. 2020" data-def="…"></sup> carries a
+   citation, its number drawn by a CSS counter so re-ordering never renumbers by hand. */
 (function () {
+    var SEL = '.term[data-def], .ref[data-def]';
     var openEl = null, pop = null;
     function close() {
         if (pop) { pop.remove(); pop = null; }
@@ -476,12 +480,15 @@
     function show(el) {
         close();
         var def = el.getAttribute('data-def'); if (!def) return;
-        var story = el.getAttribute('data-kind') === 'story';
+        var k = el.getAttribute('data-kind');
+        var story = k === 'story', source = k === 'source' || el.classList.contains('ref');
         pop = document.createElement('div');
         pop.className = 'term-pop' + (story ? ' term-pop--story' : '');
         pop.setAttribute('role', 'dialog');
-        var kind = document.createElement('span'); kind.className = 'term-pop__kind'; kind.textContent = story ? 'The story' : 'In one line';
-        var word = document.createElement('span'); word.className = 'term-pop__word'; word.textContent = el.getAttribute('data-word') || el.textContent;
+        var kind = document.createElement('span'); kind.className = 'term-pop__kind'; kind.textContent = story ? 'The story' : (source ? 'The source' : 'In one line');
+        var word = document.createElement('span'); word.className = 'term-pop__word';
+        // A .ref is empty (its numeral is a CSS counter), so it names its source in data-word.
+        word.textContent = el.getAttribute('data-word') || el.textContent || 'Source';
         var body = document.createElement('p'); body.className = 'term-pop__def'; body.textContent = def;
         var x = document.createElement('button'); x.className = 'term-pop__close'; x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.textContent = '×';
         x.addEventListener('click', close);
@@ -499,17 +506,17 @@
         if (r.bottom + pop.offsetHeight + 16 > window.innerHeight && r.top > pop.offsetHeight + 16) top = r.top + window.scrollY - pop.offsetHeight - 8;
         pop.style.top = top + 'px'; pop.style.left = left + 'px';
     }
-    document.querySelectorAll('.term[data-def]').forEach(function (el) {
+    document.querySelectorAll(SEL).forEach(function (el) {
         el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); el.setAttribute('aria-expanded', 'false');
     });
     document.addEventListener('click', function (e) {
-        var t = e.target.closest ? e.target.closest('.term[data-def]') : null;
+        var t = e.target.closest ? e.target.closest(SEL) : null;
         if (t) { e.preventDefault(); if (openEl === t) close(); else show(t); return; }
         if (pop && !pop.contains(e.target)) close();
     });
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') { close(); return; }
-        if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.matches && e.target.matches('.term[data-def]')) {
+        if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.matches && e.target.matches(SEL)) {
             e.preventDefault(); if (openEl === e.target) close(); else show(e.target);
         }
     });

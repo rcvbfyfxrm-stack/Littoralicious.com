@@ -6,6 +6,10 @@
        dishes), primary-paper science bar, family-tree lineage, Done-when senses cues, mandatory
        cook-once-serve-two-tiers crew swap, and the At-the-Table nurture close. Provisioning-at-sea
        is OPTIONAL — only when sourcing is the dish's special angle. Re-LOCKED at this revision.
+     REVISED 2026-09-05 (Arnaud-approved unlock) — ADDITIVE only: the sous-chef line opens the
+       piece (publication-wide rule), and "Now make it" gains the handover paragraph plus an
+       inline PDF preview fold above the two download buttons. Engine, cards and dual units
+       UNCHANGED. Re-LOCKED at this revision.
      Do NOT restyle, re-scaffold, or regenerate without an explicit "unlock".
      Invariants: recipe.js drives always-on DUAL units (metric + US inline, no toggle);
      TWO galley-card buttons — "Metric + cups" ({{SLUG}}-recipe-card.pdf) and
@@ -89,6 +93,11 @@
                         · two .rcp-card galley PDFs (Metric + cups / lb-oz + cups) — same recipe; the cups
                           column is identical in both. Cache-bust: append ?v=<YYYYMMDD> on every re-render.
                      ════════════════════════════════════════════════════════════════════════════════ -->
+
+<!-- SAY TO YOUR SOUS CHEF (founder rule 2026-09-05) — THE FIRST BLOCK ON THE PAGE, on every template. One sentence a chef would actually say out loud to their sous chef: the answer, in the imperative, specific, no hedge. Everything below is the science behind that sentence. This block REPLACED the closing takeaway box — never restate it at the foot. -->
+<div class="sous">
+    <p>[The recipe in one spoken line &mdash; the ratio or the rule that makes it work. "Eight whole eggs and two yolks to the litre of dairy, and it sets every time."]</p>
+</div>
 
                 <!-- ── I. THE STORY ──────────────────────────────────────────────────────────── -->
 
@@ -175,9 +184,34 @@
                     <div><dt>Make-ahead</dt><dd>[the one holding fact]</dd></div>
                 </dl>
 
+                <!-- THE HANDOVER (founder rule 2026-09-05) — say plainly, right here, what the two things
+                     below are and which one the reader wants. The card is the whole recipe: one page, two at
+                     the very most, everything needed to cook it, nothing to scroll. Most readers should take
+                     it and go. What follows on this page is the same recipe with the science and the
+                     technique opened up, for the reader who wants to know why. Never imply the card is the
+                     abridged version — it is complete. -->
+                <p><strong>Take the card and cook.</strong> One page, two at the most &mdash; ratio, weights in both systems, the method in order, temperatures, done-when. Print it, pin it, and you never need this page again: <mark>the card is the whole recipe, not a summary of it</mark>. What follows is the same recipe opened up, for the reader who wants to know why.</p>
+
+                <!-- SEE IT BEFORE YOU TAKE IT (founder rule 2026-09-05: "can they see the pdf on the page
+                     before it automatically downloads?"). Yes — this fold renders the card inline. It is a
+                     native details, so the PDF is not fetched until the reader opens it, and the page stays
+                     light. Chrome, Firefox, Edge and desktop Safari render it in place; iOS Safari and some
+                     Android browsers do not and fall through to the link inside, so that link is NEVER
+                     optional. Preview the METRIC card only — one preview, not two. -->
+                <details class="rcp-fold">
+                    <summary>See the card first &mdash; one page, before you download it</summary>
+                    <div class="rcp-fold__body">
+                        <object class="rcp-preview" data="../print/{{SLUG}}-recipe-card.pdf" type="application/pdf">
+                            <p class="rcp-preview__fallback">Your browser will not show the card in the page. <a href="../print/{{SLUG}}-recipe-card.pdf" target="_blank" rel="noopener">Open it in a new tab</a> instead.</p>
+                        </object>
+                        <p class="rcp-preview__fallback">Reading on a phone? <a href="../print/{{SLUG}}-recipe-card.pdf" target="_blank" rel="noopener">Open the card in a new tab</a> &mdash; it will not print well from a small screen, but it reads.</p>
+                    </div>
+                </details>
+
                 <!-- GALLEY CARDS — placed HIGH, right under the hinge + stats, so a reader who just wants
                      the recipe grabs a one-page printable without scrolling. TWO variants, same recipe:
                      Metric (grams + cups) and US (lb/oz + cups); the cups column is identical in both.
+                     These DOWNLOAD on click, which is why the preview above exists.
                      Cache-bust: append ?v=<YYYYMMDD> to each href whenever you re-render the cards. -->
                 <a class="rcp-card" href="../print/{{SLUG}}-recipe-card.pdf" download>
                     <span><b>Galley card &middot; Metric</b><span>Grams + cups, one line &mdash; print, pin, cook.</span></span>
@@ -286,7 +320,8 @@
                 <!-- NURTURE NOTE (MANDATORY · fixed slot · the warmest beat) — the serving culture: how it is actually
                      eaten, torn, shared, dunked; who you feed and why. Not "serve warm" — the human ritual. This is
                      the Grandmother pillar closing the piece. One or two lines, real feeling, never filler. -->
-                <div class="note note--quote" data-label="At the Table"><p>[How it is really eaten — torn by hand, dunked, passed down the crew table; the moment it makes, and who you are feeding when you make it.]</p></div>
+                <!-- "AT THE TABLE" — THE SCENE BAN (founder rule 2026-09-05). This beat says WHO you are feeding and WHAT the dish gives them. It is NOT a mood piece. The founder struck this from the burger Blueprint as the model of what not to write: "Burger night is the one the crew asks for by name. Guests get theirs plated, 55 °C, on the good bun; the crew get the same grind smashed on the plancha ten minutes later and eat it standing at the pass, with the onion smell still hanging in the galley…" — atmosphere, staged, and carrying nothing a cook can use. Same ban as the "0540, the dry store" line on the Ingredient Profile. Write the human fact, not the film: who eats it, how it is actually eaten, and the service call it implies. One or two lines. If there is nothing true to say, DELETE the box. -->
+                <div class="note note--quote" data-label="At the Table"><p>[Who you are feeding and how it is really eaten — torn by hand, dunked, passed down the crew table — and the service call that follows from it. One or two lines, no scene-setting.]</p></div>
 
                 <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> [named books / papers] &mdash; <cite>Author, <em>Title</em></cite>. <em>Tested at sea.</em></p>
 

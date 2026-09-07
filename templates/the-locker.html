@@ -38,171 +38,111 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Template 10, EQUIPMENT REVIEW (file the-locker): equipment verdicts. Fill each slot on locked blocks only (summary-box, .glance, note--key/--science/--action/--warning/--quote, article-toc, article-sources); never hand-roll a card. Spine: job → glance stats → claim → test → verdict → alternatives. IDENTITY (META-PROMPT grid): OPENING REGISTER = the job it has to do — the galley problem precisely defined; the gear judged against the task, never the brochure · SIGNATURE = the Verdict chip (BUY / SKIP / BUY IF) + `glance` spec grid + counted test · PRO-HOOK = the claim-vs-physics check + counted trial data, conditions named · FORBIDDEN = brochure rewrites; softened verdicts; specs without price/footprint/draw. LEARNING CONTRACT: one glance number that surprises, the physics behind the maker's claim, and the honest failure mode. -->
+                <!-- BODY:BEGIN — Template 10, EQUIPMENT REVIEW (file the-locker): the verdict, then the engineering that earns it. RESTRUCTURED 2026-09-05 (founder: "say straight away at the beginning the solution and what is the best X for a galley, then show why. Engineering precise, cross-checked, but concise, clear, direct — like an engineer that a chef can understand"). Fill each slot on locked blocks only (sous, verdict-chip, glance, note--science/--warning/--quote, article-toc, pair-cards, article-sources); never hand-roll a card. SPINE: the sous-chef line → the verdict chip → the numbers → the sum-up → Why It Works (the physics, the maker's claim checked against it) → What It Did on Charter (counted trials, honest limits) → Alternatives & When Not To → Sources, folded. IDENTITY (META-PROMPT grid): OPENING REGISTER = the answer, spoken — which kit, and the one-line rule for using it · SIGNATURE = the Verdict chip (BUY / SKIP / BUY IF) pinned at the top + `glance` spec grid + the counted test · PRO-HOOK = the maker's claim checked against the physics, with a named standard, and the counted trial data with its conditions · FORBIDDEN = brochure rewrites; softened verdicts; specs without price/footprint/draw; burying the verdict below the argument; adjectives where a unit belongs. LEARNING CONTRACT: one glance number that surprises, the physical reason the maker's claim holds or fails, and the honest failure mode. LENGTH: 4-6 min, about 900-1,100 words — cut to it, do not pad to it. -->
 
-                <!-- Top promise: the payoff in three scannable lines. The reader sees the verdict-shape before reading on. -->
-                <!-- NO PROMISE BOX (founder rule 2026-08-26): the verdict shape lives in the sum-up below. -->
+<!-- THE REGISTER — write this like an engineer a chef can follow. Every number carries its unit AND its galley consequence in the same sentence: "Janka 6.5 kN, so a cleaver edge rolls before the board scars", never "hard-wearing". Name the standard rather than the adjective (NSF/ANSI 2, EN 1186, IP rating, Shore A, dB(A), moisture %, W and A draw). Where the maker makes a claim, check it against the physics and say whether it holds — do not restate the brochure. No jargon without a data-def on first use. -->
 
-                <!-- One-line prose bridge — the summary never butts onto the ToC box. -->
-                <p>One sentence naming the kit, its price bracket, and the question this review settles.</p>
+<!-- SAY TO YOUR SOUS CHEF (founder rule 2026-09-05) — THE FIRST BLOCK ON THE PAGE, on every template. One sentence a chef would actually say out loud to their sous chef: the answer, in the imperative, specific, no hedge. On a review it names the kit and the one rule for living with it. Everything below is the science behind that sentence. This block REPLACED the closing takeaway box — never restate it at the foot. -->
+<div class="sous">
+    <p>[The answer, said out loud &mdash; the named kit and the single rule for using it. "Get the 45 &times; 30 end-grain maple. It goes back in the rack on its edge, never flat."]</p>
+</div>
 
-                <!-- Table of Contents: keep the review's section order. Update labels/anchors to match this piece. -->
-                <!-- THE SUM-UP (founder rule 2026-08-26): every section, one-line description each. -->
+<!-- THE VERDICT CHIP — Equipment Review signature (founder call 2026-08-24), MOVED TO THE TOP 2026-09-05. Locked .verdict-chip with exactly ONE modifier: --buy / --skip / --buy-if. It lands before the argument, not after it; the prose below earns it. Never leave the modifier unchosen. -->
+<span class="verdict-chip verdict-chip--buy-if">Buy if</span>
+
+<p>[One direct sentence: buy it, skip it, or buy it only if [condition] &mdash; naming the price bracket and the chef it is right for. This is the whole review in a line; the rest is proof.]</p>
+
+<!-- AT A GLANCE — locked .glance stat grid, swap the numbers and labels only, never restyle. 3-5 cells, and only the metrics a chef weighs against locker space and the generator. Metric units, imperial in parens where it helps. Delete a cell rather than print a placeholder. At least one number should surprise a ten-year pro. -->
+<div class="glance">
+    <div class="glance__cell"><span class="glance__num">&euro;000</span><span class="glance__label">Price</span></div>
+    <div class="glance__cell"><span class="glance__num">00 &times; 00 cm</span><span class="glance__label">Footprint</span></div>
+    <div class="glance__cell"><span class="glance__num">000 W</span><span class="glance__label">Power</span></div>
+    <div class="glance__cell"><span class="glance__num">0.0 kg</span><span class="glance__label">Weight</span></div>
+</div>
+
+<p>[One line reading the grid for the buyer: <mark>the number that decides the purchase</mark>, and the one the brochure buries.]</p>
+
+<!-- THE SUM-UP (founder rule 2026-08-26): every section below, one line each. Every item needs its .article-toc__desc — without it main.js overwrites the whole block with auto-generated links. -->
 <div class="article-toc">
     <p class="article-toc__title">In this piece</p>
     <ol>
-        <li><a href="#job">The Job It Has to Do</a><span class="article-toc__desc">[the galley problem, precisely]</span></li>
-        <li><a href="#spec">At a Glance</a><span class="article-toc__desc">[the numbers that decide the purchase]</span></li>
-        <li><a href="#claim">What It Claims</a><span class="article-toc__desc">[the promise and the physics]</span></li>
-        <li><a href="#test">How It Was Tested</a><span class="article-toc__desc">[the counted test — whose, and its limits]</span></li>
-        <li><a href="#verdict">The Verdict</a><span class="article-toc__desc">[buy / skip / buy if]</span></li>
-        <li><a href="#alternatives">Alternatives &amp; When Not To</a><span class="article-toc__desc">[cheaper, smaller, skip]</span></li>
+        <li><a href="#why">Why It Works</a><span class="article-toc__desc">[the physics, and whether the maker's claim survives it]</span></li>
+        <li><a href="#tested">What It Did on Charter</a><span class="article-toc__desc">[the counted trials, and where it struggled]</span></li>
+        <li><a href="#alternatives">Alternatives &amp; When Not To</a><span class="article-toc__desc">[cheaper, smaller, skip it]</span></li>
     </ol>
 </div>
 
-                <!-- Section 1: THE JOB. Open with the galley problem this gear is meant to solve — space, swell, holding temp, provisioning. Name the tool and what it competes against. -->
-                <h2 id="job">The Job It Has to Do</h2>
-                <p class="kicker">Judge the kit against the task, not the brochure &mdash; here's the task.</p>
-                <!-- WRITER kicker: every h2 carries one — a single line on why the section matters, in the reader's terms. Plain text, no emphasis markup; the class does the styling. -->
+<h2 id="why">Why It Works</h2>
+<p class="kicker">The mechanism, in units a chef can act on &mdash; and the maker's claim held against it.</p>
 
-                <p>One sentence on the constraint at sea that creates the need for this tool, and what chefs currently do without it.</p>
-                <!-- WRITER: define the task precisely (the temperature, the volume, the swell condition). The gear is judged against the job, not against its brochure. -->
+<p>[The working principle in two or three sentences: the property, its measured value with the unit, and what that value does in a moving 4 m&sup2; galley. Define the one term that earns it with <span class="term" data-def="[one or two plain lines, exactly the sense of the word]">the term</span>.]</p>
 
-                <div class="note note--key">
-                    <p><strong>The job:</strong> One line stating exactly what success looks like for this piece of kit in a moving 4 m&sup2; galley.</p>
-                </div>
+<div class="note note--science">
+    <p>[The mechanism named: the compound, temperature, hardness, conductivity or pressure the tool relies on, with the figure and the named standard or paper behind it. Where the maker's headline claim is contested, say plainly whether the physics supports it, and by how much.]</p>
+</div>
 
-                <!-- Section 2: AT A GLANCE. Locked .glance stat grid — swap the numbers/labels only, never restyle. 3-5 cells max, the numbers that decide a purchase: price, footprint, draw, weight, noise. -->
-                <h2 id="spec">At a Glance</h2>
-                <p class="kicker">The handful of numbers a chef actually weighs against locker space and the generator.</p>
+<p>[The trade the physics forces &mdash; the property that had to be given up to get the one above, stated as a number. Every material choice costs something; name it.]</p>
 
-                <div class="glance">
-                    <div class="glance__cell"><span class="glance__num">&euro;000</span><span class="glance__label">Price</span></div>
-                    <div class="glance__cell"><span class="glance__num">00 &times; 00 cm</span><span class="glance__label">Footprint</span></div>
-                    <div class="glance__cell"><span class="glance__num">000 W</span><span class="glance__label">Power</span></div>
-                    <div class="glance__cell"><span class="glance__num">0.0 kg</span><span class="glance__label">Weight</span></div>
-                </div>
-                <!-- WRITER: metric units, imperial in parens if needed. Only the metrics a chef weighs against galley space and the generator. -->
+<h2 id="tested">What It Did on Charter</h2>
+<p class="kicker">Counted trials, real conditions, honest about what we could not control.</p>
 
-                <p>One line reading the grid for the buyer: the number that decides the purchase, and the one the brochure buries.</p>
+<p>[The test setup in one line: the task, the number of runs, the sea state and ambient temperature, the period, and what it was run against. Be specific about uncertainty &mdash; "held 14 of 16 services", never false certainty.]</p>
 
-                <div class="note note--action">
-                    <p><strong>Quick check:</strong> One line on whether these numbers clear your <span class="term">power budget</span> &mdash; the amps the generator can spare before the AC trips.</p>
-                </div>
+<h3>What worked</h3>
+<ul>
+    <li>[A concrete measured win, with its number and the job it maps back to.]</li>
+    <li>[A second observed strength under real conditions.]</li>
+</ul>
 
-                <!-- Section 3: THE CLAIM. State what the maker promises, plus the mechanism — why it should work (the compound, the temperature, the reaction). Science inline, not a sidebar. -->
-                <h2 id="claim">What It Claims</h2>
-                <p class="kicker">The maker's promise, and the physics that would have to hold for it to be true.</p>
+<h3>Where it struggled</h3>
+<ul>
+    <li>[The failure mode: what broke down, when, and by how much.]</li>
+    <li>[The practical cost &mdash; cleaning, noise in dB(A), stowage, current draw.]</li>
+</ul>
+<!-- WRITER: do not soften this. The reader is buying against a budget and a locker that is already full. -->
 
-                <p>One line on the manufacturer's headline claim and the physical mechanism behind it.</p>
-                <!-- WRITER: explain the working principle so the chef understands WHY it should deliver — then we can test whether it does. -->
+<div class="note note--warning">
+    <p><strong>Watch for:</strong> [the one failure case a buyer must know before committing &mdash; the swell limit, the cleaning trap, the part that fails first, with the condition that triggers it].</p>
+</div>
 
-                <div class="note note--science">
-                    <p><strong>The mechanism:</strong> One line naming the temperature, compound, or physical effect the tool relies on &mdash; e.g. <span class="term">conduction</span> versus forced-air heat &mdash; with a named source if the claim is contested.</p>
-                </div>
+<h2 id="alternatives">Alternatives &amp; When Not To</h2>
+<p class="kicker">When the cheaper, smaller or simpler kit quietly wins.</p>
 
-                <div class="divider"><span class="divider__text">The proof</span></div>
+<!-- THE ALTERNATIVES AS CARDS (founder rule 2026-08-26) — the locked pair-card component, three beats in the body and in this order: WHAT YOU GIVE UP (the honest trade, named and numbered), BEST FOR (the galley or charter profile it wins on — "nothing on a boat" is a legitimate answer), and A LITTLE STORY, one or two sourced sentences told nowhere else. The pair-card__reg chip is a verdict, not a category: "Cheaper", "Smaller", "Skip it". Name real kit — a maker and a model, never a class of thing. NEVER hand-roll a card. -->
+<div class="pair-cards">
+    <details class="pair-card"><summary><span class="pair-card__reg">Cheaper</span><span class="pair-card__name">[The named cheaper kit]</span><span class="pair-card__region">[Maker &middot; price]</span></summary><div class="pair-card__body">
+        <p><strong>What you give up:</strong> [the honest trade, as a number].</p>
+        <p><strong>Best for:</strong> [the galley or charter profile where that loss is acceptable].</p>
+        <p>[A little story: one or two sourced sentences told nowhere else in the piece.]</p>
+    </div></details>
 
-                <!-- Section 4: HOW WE TESTED IT. The proof. Describe the protocol honestly: how many trials, over what period, in what conditions. This is the "Tested at sea" core. -->
-                <h2 id="test">How We Tested It</h2>
-                <p class="kicker">Real charters, counted trials, honest about what we couldn't control.</p>
+    <details class="pair-card"><summary><span class="pair-card__reg">Smaller</span><span class="pair-card__name">[The named smaller-footprint kit]</span><span class="pair-card__region">[Maker &middot; footprint]</span></summary><div class="pair-card__body">
+        <p><strong>What you give up:</strong> [capacity, power or speed &mdash; named and numbered].</p>
+        <p><strong>Best for:</strong> [when stowage matters more than capacity].</p>
+        <p>[The little story.]</p>
+    </div></details>
 
-                <p>One line describing the test setup: the dish or task, the number of runs, the charter conditions, the period.</p>
-                <!-- WRITER: be specific and honest about uncertainty. "Worked 14 of 16 trials," not false certainty. Note sea state, ambient temp, and what it was run against. -->
+    <details class="pair-card"><summary><span class="pair-card__reg">Skip it</span><span class="pair-card__name">[Do without &mdash; and what you do instead]</span><span class="pair-card__region">[The workaround already aboard]</span></summary><div class="pair-card__body">
+        <p><strong>What you give up:</strong> [what the tool would have bought you].</p>
+        <p><strong>Best for:</strong> [the galley where this tool earns nothing].</p>
+        <p>[The little story.]</p>
+    </div></details>
+</div>
 
-                <div class="note note--quote">
-                    <p>One striking line from the bench &mdash; the moment the kit either earned its place or gave itself away.</p>
-                </div>
-                <!-- WRITER pull-quote: the single sentence that re-hooks the eye mid-piece. A real observation, not a slogan. -->
+<p><strong>Tested at sea.</strong></p>
 
-                <h3>What Worked</h3>
-                <ul>
-                    <li>Placeholder result &mdash; one concrete, measured win (with the number).</li>
-                    <li>Placeholder result &mdash; another observed strength under real conditions.</li>
-                </ul>
-                <!-- WRITER: tie each point to the job defined up top. Numbers over adjectives. -->
+<!-- SOURCES, FOLDED (founder rule 2026-09-05) — every contested number traces to a name, behind one click at the foot. Keep the inner div.article-sources markup exactly as it is: the linter exempts that block by matching this opening tag, and nesting another div inside it would break the exemption. -->
+<details class="fold fold--sources">
+    <summary><span class="fold__title">Sources</span><span class="fold__chev"></span></summary>
+    <div class="fold__body">
+        <div class="article-sources">
+            <strong>Sources</strong>
+            <p>Manufacturer spec sheet &amp; manual | The named standard or study behind each performance claim | Test conditions log (charter, sea state, dates)</p>
+        </div>
+    </div>
+</details>
 
-                <h3>Where It Struggled</h3>
-                <ul>
-                    <li>Placeholder failure mode &mdash; what broke down, when, and by how much.</li>
-                    <li>Placeholder failure mode &mdash; the practical cost (cleanup, noise, stowage, draw).</li>
-                </ul>
-                <!-- WRITER: do not soften this. The reader is buying against a budget and a locker that is already full. -->
-
-                <div class="note note--warning">
-                    <p><strong>Watch for:</strong> One line on the failure case a buyer must know before committing &mdash; the swell limit, the cleaning trap, the part that fails first.</p>
-                </div>
-
-                <!-- Section 5: THE VERDICT. A clear, direct call. Worth the space and the spend, or not — and for whom. -->
-                <h2 id="verdict">The Verdict</h2>
-                <p class="kicker">The unambiguous call &mdash; buy, skip, or buy-only-if &mdash; and the chef it's right for.</p>
-                <!-- THE VERDICT CHIP — Equipment Review signature (founder call, 2026-08-24; the design lock's first new component since June). Locked .verdict-chip with exactly ONE modifier: --buy / --skip / --buy-if. Pinned here so the call is unmissable and scannable across every review; the prose below argues it. Never leave the default modifier unchosen. -->
-                <span class="verdict-chip verdict-chip--buy-if">Buy if</span>
-
-                <p>One direct sentence: buy it, skip it, or buy it only if [condition].</p>
-                <!-- WRITER: the verdict must be unambiguous and tied to galley reality — space, budget, frequency of use. Warm but honest. -->
-
-                <div class="note note--key">
-                    <p><strong>Verdict:</strong> One line summarising the call and the single chef it is right for.</p>
-                </div>
-
-                <!-- Section 6: ALTERNATIVES / WHEN NOT TO. Name the competitors and the cases where the cheaper, smaller, or simpler option wins. -->
-                <h2 id="alternatives">Alternatives &amp; When Not To</h2>
-                <p class="kicker">When the cheaper, smaller, or simpler kit quietly wins.</p>
-
-                <p>One line framing the trade-off between this tool and the alternatives below.</p>
-                <!-- WRITER: name real alternatives — a maker and a model, never "a cheaper one". State plainly when a chef should NOT buy this (small galley, low usage, simpler kit already aboard). -->
-
-                <!-- THE ALTERNATIVES AS CARDS (founder rule 2026-08-26, second pass — the same beat template 01
-                     runs on its varieties). Each real alternative is a card on the locked
-                     pair-card component, three beats in the body and in this order: WHAT YOU GIVE UP (the honest
-                     trade, named), BEST FOR (the galley or charter profile it wins on — "nothing on a boat" is a
-                     legitimate answer), and A LITTLE STORY, one or two sourced sentences told nowhere else in the
-                     piece. The pair-card__reg chip is a verdict, not a category: "Cheaper", "Smaller", "Skip it".
-                     Name real kit — never a placeholder class of thing. NEVER hand-roll a card. -->
-                <div class="pair-cards">
-                    <details class="pair-card"><summary><span class="pair-card__reg">Cheaper</span><span class="pair-card__name">[The named cheaper kit]</span><span class="pair-card__region">[Maker &middot; price]</span></summary><div class="pair-card__body">
-                        <p><strong>What you give up:</strong> [the honest trade, named].</p>
-                        <p><strong>Best for:</strong> [the galley or charter profile where that loss is acceptable].</p>
-                        <p>[A little story: one or two sourced sentences told nowhere else in the piece.]</p>
-                    </div></details>
-
-                    <details class="pair-card"><summary><span class="pair-card__reg">Smaller</span><span class="pair-card__name">[The named smaller-footprint kit]</span><span class="pair-card__region">[Maker &middot; footprint]</span></summary><div class="pair-card__body">
-                        <p><strong>What you give up:</strong> [capacity, power, speed &mdash; named].</p>
-                        <p><strong>Best for:</strong> [when stowage matters more than capacity].</p>
-                        <p>[The little story.]</p>
-                    </div></details>
-
-                    <details class="pair-card"><summary><span class="pair-card__reg">Skip it</span><span class="pair-card__name">[Do without &mdash; and what you do instead]</span><span class="pair-card__region">[The workaround already aboard]</span></summary><div class="pair-card__body">
-                        <p><strong>What you give up:</strong> [what the tool would have bought you].</p>
-                        <p><strong>Best for:</strong> [the galley or charter profile where this tool earns nothing].</p>
-                        <p>[The little story.]</p>
-                    </div></details>
-                </div>
-
-                <div class="note note--action">
-                    <p><strong>Bottom line:</strong> One line a tired chef can act on at 11 PM mid-charter &mdash; the single decision rule for this purchase. Tested at sea.</p>
-                </div>
-
-                <!-- Closing single-takeaway: the one thing the reader keeps after the page closes. One-line prose bridge first — never two boxes butted together. -->
-                <p>Whatever you decide at the till, leave with this:</p>
-
-                <div class="note note--key">
-                    <p><strong>The one thing:</strong> The single sentence that settles it &mdash; if you remember nothing else about this kit, remember this.</p>
-                </div>
-
-                <!-- Sources: every contested claim traceable. Locked .article-sources block; list named makers, manuals, and any study cited inline. One-line prose bridge in first. -->
-                <p>Every number above traces to a name:</p>
-                <div class="article-sources">
-                    <p><strong>Sources</strong></p>
-                    <p>
-                        Manufacturer spec sheet &amp; manual |
-                        Named study or standard for any performance claim |
-                        Test conditions log (charter, sea state, dates)
-                    </p>
-                </div>
-
-                <!-- BODY:END -->
+<!-- BODY:END -->
 
                 <!-- Article Engagement -->
                 <div class="article-engagement">
