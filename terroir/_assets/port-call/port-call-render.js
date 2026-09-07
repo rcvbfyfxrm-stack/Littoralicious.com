@@ -261,7 +261,7 @@
             miniMap = L.map('pcv-mini-map', {
                 zoomControl: true, zoomControlOptions: { position: 'topright' },
                 scrollWheelZoom: true, doubleClickZoom: true, touchZoom: true,
-                dragging: true, attributionControl: false
+                dragging: true, attributionControl: true
             }).setView(cfg.center || [0, 0], (cfg.zoom || 13) - 1);
 
             L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2y1q_1_9335e2d3dfc2e4ca49336cc9', {

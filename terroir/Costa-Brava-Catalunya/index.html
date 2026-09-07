@@ -5,6 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Costa Brava, Catalunya — Terroir Guide</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -307,7 +308,7 @@ window.addEventListener('load', function () {
   var pColors = data.PRODUCT_COLORS || {};
   var cfg     = window.TERROIR_CONFIG || { center: [0,0], zoom: 11 };
   function colorFor(v) { var t = (v.productTags && v.productTags[0]) || ''; return pColors[t] || (data.COLORS||{})[v.cat] || '#444'; }
-  var map = L.map('terroir-mini-map', { zoomControl:true, scrollWheelZoom:true, doubleClickZoom:true, touchZoom:true, dragging:true, attributionControl:false }).setView(cfg.center, cfg.zoom);
+  var map = L.map('terroir-mini-map', { zoomControl:true, scrollWheelZoom:true, doubleClickZoom:true, touchZoom:true, dragging:true, attributionControl: true }).setView(cfg.center, cfg.zoom);
   window.__terroirMap = map;
   L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2y1q_1_9335e2d3dfc2e4ca49336cc9', { maxZoom:19, subdomains:'abcd', attribution:'&copy; OSM &copy; CARTO' }).addTo(map);
   var markers = {};
