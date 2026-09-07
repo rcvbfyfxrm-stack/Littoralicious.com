@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Ingredient] &mdash; Ingredient Card &mdash; Littoralicious</title>
+    <!-- =============================================================================
+         INGREDIENT CARD — the printable one-page companion to an Ingredient Profile (01).
+         Founder rule 2026-09-05: "create an idea card of the ingredient that people could
+         print — all the interesting stories, the flavour profile, the cousin varieties,
+         the pairings, the galley uses with dose and storage, the buying signals and the
+         rejection rule, and the drawing of the ingredient. Make it like one ingredient
+         page of the Littoralicious journal."
+
+         SELF-CONTAINED by design: its own <style>, no stylesheet link, every dimension in
+         mm/pt — the same architecture as templates/recipe-card.html and the Provisioning
+         Day station card. It shares their vocabulary (.header/.brand/Georgia h1/.numbers/
+         .habit/.foot) so the printed set reads as one publication.
+
+         HARD RULE: it MUST fit ONE A4 page. Copy to print/<slug>-ingredient-card.html,
+         fill it, then:
+           CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+           "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
+             --print-to-pdf="print/<slug>-ingredient-card.pdf" \
+             "file://$PWD/print/<slug>-ingredient-card.html"
+           pdfinfo print/<slug>-ingredient-card.pdf | grep Pages     # MUST say 1
+         If it spills, tighten line-height and mm-paddings EVENLY — never drop a section.
+
+         THE DRAWING is the article's own specimen sketch: paste the inline <svg> from the
+         piece's fold--specimen straight into .sketch. Pure #0a0a0a on transparent, no grey.
+         ============================================================================= -->
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 8pt; line-height: 1.3; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 10mm 11mm 8mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.4mm; margin-bottom: 3mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.4pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.6pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 22pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; margin: 1.6mm 0 0.8mm; }
+        h1 em { font-style: italic; font-weight: 400; font-size: 12pt; color: #6b7280; letter-spacing: 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 9pt; color: #2d4a5e; line-height: 1.32; }
+
+        /* two columns: the specimen side, and the working side */
+        .main { display: grid; grid-template-columns: 62mm 1fr; gap: 6mm; align-items: start; }
+        /* NOTE: no flex:1 here. The two columns are rarely the same height, and stretching
+           the grid to fill the page parks the slack in the middle of the card, which reads
+           as a mistake. Let the columns size to content; .foot's margin-top:auto pushes the
+           leftover to the bottom, where a page ending is meant to be. */
+        .rail { display: flex; flex-direction: column; }
+        .sketch { text-align: center; margin-bottom: 2.4mm; }
+        .sketch svg { width: 100%; max-height: 46mm; height: auto; }
+        .sketch figcaption { font-size: 6.2pt; color: #6b7280; line-height: 1.3; margin-top: 1mm; font-style: italic; }
+
+        h2 { font-family: Georgia, serif; font-size: 8.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em;
+             border-bottom: 1px solid #0a0a0a; padding-bottom: 0.8mm; margin: 3mm 0 1.6mm; }
+        .rail h2:first-of-type, .work h2:first-child { margin-top: 0; }
+        p { margin-bottom: 1.4mm; }
+
+        .numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-bottom: 2mm; }
+        .numbers > div { border-left: 3px solid #2d4a5e; background: #f4f6f7; padding: 1.5mm 2mm; }
+        .numbers b { display: block; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 10pt; color: #2d4a5e; line-height: 1.1; }
+        .numbers span { display: block; font-size: 6pt; color: #4a5568; margin-top: 0.5mm; line-height: 1.22; }
+
+        .taste { font-family: Georgia, serif; font-size: 8pt; line-height: 1.4; color: #1f2937; }
+        .taste b { font-family: -apple-system, sans-serif; font-size: 6.4pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; display: block; margin-bottom: 0.8mm; }
+
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280;
+             padding: 0.7mm 1.2mm; border-bottom: 1px solid #0a0a0a; }
+        td { padding: 1.1mm 1.2mm; vertical-align: top; border-bottom: 1px solid #e5e7eb; font-size: 7pt; line-height: 1.3; }
+        td:first-child { font-weight: 700; color: #2d4a5e; white-space: nowrap; width: 26mm; }
+        td:first-child small { display: block; font-weight: 400; color: #6b7280; font-size: 6.1pt; white-space: normal; }
+
+        .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm; }
+        .pair > div { border-left: 3px solid #2d4a5e; background: #f4f6f7; padding: 1.6mm 2.2mm; font-size: 6.9pt; line-height: 1.32; }
+        .pair b { display: block; font-size: 6pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; margin-bottom: 0.7mm; }
+        .pair--wild { border-left-color: #c4a35a !important; }
+        .pair--wild b { color: #8a6d2f; }
+
+        .habit { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.6mm 2.4mm; margin-top: 2mm; font-size: 7.2pt; line-height: 1.35; }
+        .habit strong { color: #2d4a5e; }
+        .reject { background: #fdf2f2; border-left: 3px solid #a33; padding: 1.6mm 2.4mm; margin-top: 2mm; font-size: 7.2pt; line-height: 1.35; }
+        .reject strong { color: #a33; }
+
+        .stories { margin-top: 3mm; border-top: 1px solid #0a0a0a; padding-top: 2mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+        .stories div { font-size: 6.9pt; line-height: 1.34; }
+        .stories b { display: block; font-family: Georgia, serif; font-size: 7.2pt; color: #2d4a5e; margin-bottom: 0.7mm; }
+
+        .foot { margin-top: auto; padding-top: 2mm; border-top: 1px solid #e2e2e2; font-size: 6pt; color: #6b7280; line-height: 1.32; }
+        .foot b { color: #2d4a5e; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="brand">Littoralicious</span><span class="brand-tagline">Ingredient card &middot; Ingredients</span>
+        <h1>[Ingredient] <em>[Genus species]</em></h1>
+        <p class="hook">[The sous-chef line from the article &mdash; the one sentence you would say out loud about this ingredient.]</p>
+    </div>
+
+    <div class="main">
+        <!-- THE SPECIMEN SIDE — the drawing, what it tastes of, and the four numbers. -->
+        <div class="rail">
+            <figure class="sketch">
+                [PASTE the article's inline <svg> specimen sketch here &mdash; unchanged]
+                <figcaption>[What the drawing shows a buyer to look for.]</figcaption>
+            </figure>
+
+            <h2>In the mouth</h2>
+            <p class="taste"><b>Flavour profile</b>[Attack, middle, finish; bitterness or texture where they matter; what it does to the food around it; fresh against dried. Close on what it does in the hand &mdash; the snap, the smell that comes off it.]</p>
+
+            <h2>The numbers</h2>
+            <div class="numbers">
+                <div><b>00%</b><span>[Key compound, by mass]</span></div>
+                <div><b>00&nbsp;&deg;C</b><span>[Frees the flavour]</span></div>
+                <div><b>000&nbsp;&deg;C</b><span>[Destroys it past]</span></div>
+                <div><b>00&nbsp;d</b><span>[Storage half-life]</span></div>
+            </div>
+
+            <h2>The cousins</h2>
+            <table>
+                <tbody>
+                    <tr><td>[Variety]<small>[<em>Botanical name</em>]</small></td><td>[The flavour difference, and the use it wins at.]</td></tr>
+                    <tr><td>[Variety]<small>[Where it grows]</small></td><td>[The difference, and what to use it for.]</td></tr>
+                    <tr><td>[The look-alike]<small>[Not the same plant]</small></td><td>[What gives it away, and why it matters.]</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- THE WORKING SIDE — what to do with it, and how to buy it. -->
+        <div class="work">
+            <h2>What to do with it</h2>
+            <table>
+                <thead><tr><th>Use</th><th>How, and why it works</th></tr></thead>
+                <tbody>
+                    <tr><td>[The best idea]</td><td>[Method, temperature, time &mdash; and the compound or fat that makes it work.]</td></tr>
+                    <tr><td>[Idea]</td><td>[One line.]</td></tr>
+                    <tr><td>[Idea]</td><td>[One line.]</td></tr>
+                    <tr><td>[Idea]</td><td>[One line.]</td></tr>
+                </tbody>
+            </table>
+
+            <div class="habit">
+                <strong>Dose &amp; storage.</strong> [The amounts, with the weight of a unit. Then how it keeps: the container, the temperature, the enemy (light, air, damp, the freezer), and how long before it is worth nothing.]
+            </div>
+
+            <h2>What it goes with</h2>
+            <div class="pair">
+                <div><b>Traditional</b>[Ingredient + 1&ndash;4 partners &mdash; and the reason it works.]</div>
+                <div><b>Modern</b>[The same logic on a plate served now.]</div>
+                <div><b>Compound</b>[The shared molecule, named, and the partner that carries it.]</div>
+                <div class="pair--wild"><b>From the littoral</b>[The coast's own answer &mdash; reads wrong on paper, lands on the plate.]</div>
+            </div>
+
+            <h2>Buying it</h2>
+            <table>
+                <tbody>
+                    <tr><td>[Form or grade]</td><td>[What it is good for, and the quality signal to check.]</td></tr>
+                    <tr><td>[Form or grade]</td><td>[Signals to check.]</td></tr>
+                    <tr><td>Where it's from</td><td>[The real region against the label, the price band, what a yacht pays.]</td></tr>
+                    <tr><td>The clean way</td><td>[What the trade may do to it, and the most natural route to buy.]</td></tr>
+                </tbody>
+            </table>
+
+            <div class="reject">
+                <strong>Hand it back if.</strong> [The single rejection rule, and the look-alike to refuse.]
+            </div>
+        </div>
+    </div>
+
+    <!-- THE STORIES — the two or three that travel. Told nowhere else on this card; these are
+         what make it worth pinning up rather than filing. Sourced, never invented. -->
+    <div class="stories">
+        <div><b>[The name]</b>[Where the word comes from, and the reason the other names exist.]</div>
+        <div><b>[The turn]</b>[The named figure, book or law that changed its standing &mdash; with its date.]</div>
+        <div><b>[The blind spot]</b>[The one thing most chefs have wrong about it, and what is actually true.]</div>
+    </div>
+
+    <div class="foot">
+        <b>Littoralicious</b> &middot; littoralicious.com/articles/[slug] &mdash; the full piece, with the sources.
+        Every number on this card traces to a named source in it. <b>Tested at sea.</b>
+    </div>
+</body>
+</html>
