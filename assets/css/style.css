@@ -2319,6 +2319,46 @@ mark {
 .rcp-preview__fallback { margin: var(--space-3) 0 0; font-size: var(--text-sm);
   color: var(--color-muted); }
 
+/* --- PAYSLIP — the interactive pay card (founder rule 2026-09-05: "make it an interactive
+   one-page payslip card, easy to read, then guide them to the Spoon Lab pay tool").
+   Career & Industry only. Driven by assets/js/payslip.js; without JS it still reads as a
+   filled payslip, because the markup ships with the default band already in it. --------- */
+.payslip { margin: var(--space-8) 0; border: 1px solid var(--color-ink); background: var(--color-paper); }
+.payslip__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-ink); background: var(--color-subtle); }
+.payslip__eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--color-sea); }
+.payslip__for { font-size: var(--text-xs); color: var(--color-muted); }
+
+.payslip__controls { display: grid; gap: var(--space-3); padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border); }
+.payslip__ctl { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.payslip__ctl > b { flex: 0 0 auto; min-width: 7.5rem; font-family: var(--font-sans); font-size: var(--text-xs);
+  font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--color-muted); }
+.payslip__opt { font-family: var(--font-mono); font-size: var(--text-xs); padding: .35em .7em;
+  border: 1px solid var(--color-border); background: transparent; color: var(--color-ink); cursor: pointer; }
+.payslip__opt:hover { border-color: var(--color-sea); }
+.payslip__opt[aria-pressed="true"] { background: var(--color-sea); border-color: var(--color-sea); color: var(--color-paper); }
+
+.payslip__lines { padding: var(--space-2) var(--space-4) var(--space-4); }
+.payslip__line { display: flex; align-items: baseline; gap: var(--space-3);
+  padding: var(--space-2) 0; border-bottom: 1px dotted var(--color-border); }
+.payslip__line:last-child { border-bottom: 0; }
+.payslip__line > span:first-child { flex: 1 1 auto; font-size: var(--text-sm); }
+.payslip__line small { display: block; font-size: var(--text-xs); color: var(--color-muted); line-height: 1.4; }
+.payslip__fig { flex: 0 0 auto; font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 700;
+  color: var(--color-sea); text-align: right; white-space: nowrap; }
+.payslip__group { margin-top: var(--space-4); padding-top: var(--space-2); border-top: 1px solid var(--color-ink);
+  font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--color-muted); }
+.payslip__total { display: flex; align-items: baseline; gap: var(--space-3); margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4); border-top: 2px solid var(--color-ink); background: var(--color-subtle); }
+.payslip__total > span:first-child { flex: 1 1 auto; font-family: var(--font-serif); font-size: var(--text-lg); }
+.payslip__total .payslip__fig { font-size: var(--text-lg); color: var(--color-ink); }
+.payslip__foot { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs); color: var(--color-muted); line-height: 1.5; }
+@media print { .payslip__controls { display: none; } }
+
 /* ============================================================================
    DEPTH & SIGNATURE BLOCKS  —  added 2026-06-19
    Locked, additive, light-journal only. NO gradients, NO rounded content

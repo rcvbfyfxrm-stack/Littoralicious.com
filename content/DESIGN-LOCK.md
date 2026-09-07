@@ -117,6 +117,27 @@ byte-identical and put no nested `<div>` inside it** — `tools/lint.mjs` exempt
 the opening tag and stopping at the first `</div>`; nesting breaks the exemption and citation text
 starts tripping the banned-word and prose-density checks.
 
+### Payslip — `payslip` (Career & Industry, added 2026-09-05)
+```html
+<div class="payslip" data-payslip>
+  <div class="payslip__head"><span class="payslip__eyebrow">Payslip</span><span class="payslip__for" data-out="band">…</span></div>
+  <div class="payslip__controls"><div class="payslip__ctl"><b>Vessel</b>
+    <button class="payslip__opt" data-k="size" data-v="60" aria-pressed="true">40–60 m</button></div></div>
+  <div class="payslip__lines">
+    <div class="payslip__line"><span>Gross, a month<small>…</small></span><span class="payslip__fig" data-out="gross">…</span></div>
+    <p class="payslip__group">Not on the slip</p>
+  </div>
+  <div class="payslip__total"><span>What you walk in and say</span><span class="payslip__fig" data-out="gross">…</span></div>
+  <div class="payslip__foot">…<a href="/pay-check/" data-open-lab>Pay Check tool</a>…</div>
+</div>
+```
+Driven by `assets/js/payslip.js` (loaded per-article, like `recipe.js` — not injected). **Ship it with a
+real band already written into the markup** so it reads as a filled payslip with JavaScript off.
+**Honesty contract, and it is the point of the card:** every figure stays a RANGE because the guides
+disagree; tax and social contributions are not deducted at source on most yacht contracts and depend on
+the reader's residency, so the card never invents a net figure — it names the line as *your figure* and
+hands the arithmetic to the Pay Check tool. Tips never touch the hourly.
+
 ### PDF preview — `rcp-preview` (Recipe Blueprint, added 2026-09-05)
 ```html
 <details class="rcp-fold">
