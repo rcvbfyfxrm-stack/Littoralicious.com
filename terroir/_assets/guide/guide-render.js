@@ -325,7 +325,7 @@
             bigMap = L.map('terroir-inv-map', { zoomControl: true, scrollWheelZoom: false, attributionControl: true })
                 .setView(cfg.center || [0, 0], cfg.zoom || 13);
 
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2y1q_1_9335e2d3dfc2e4ca49336cc9', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
                 maxZoom: 19, subdomains: 'abcd'
             }).addTo(bigMap);
@@ -396,7 +396,7 @@
                 dragging: true, attributionControl: false
             }).setView(cfg.center || [0, 0], (cfg.zoom || 13) - 1);
 
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2y1q_1_9335e2d3dfc2e4ca49336cc9', {
                 maxZoom: 19, subdomains: 'abcd'
             }).addTo(miniMap);
 

@@ -343,7 +343,7 @@ window.addEventListener('load', function () {
   function colorFor(v) { var t = (v.productTags && v.productTags[0]) || ''; return pColors[t] || (data.COLORS||{})[v.cat] || '#444'; }
   var map = L.map('terroir-mini-map', { zoomControl:true, scrollWheelZoom:true, doubleClickZoom:true, touchZoom:true, dragging:true, attributionControl:false }).setView(cfg.center, cfg.zoom);
   window.__terroirMap = map;
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom:19, subdomains:'abcd', attribution:'&copy; OSM &copy; CARTO' }).addTo(map);
+  L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2y1q_1_9335e2d3dfc2e4ca49336cc9', { maxZoom:19, subdomains:'abcd', attribution:'&copy; OSM &copy; CARTO' }).addTo(map);
   var markers = {};
   venues.forEach(function (v) {
     if (!v.lat || !v.lng) return;

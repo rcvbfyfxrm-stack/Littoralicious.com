@@ -111,7 +111,7 @@
                 zoomControl: false, scrollWheelZoom: false, dragging: false,
                 doubleClickZoom: false, touchZoom: false, attributionControl: true
             });
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2y1q_1_9335e2d3dfc2e4ca49336cc9', {
                 attribution: '&copy; OSM &copy; CARTO',
                 maxZoom: 19, subdomains: 'abcd'
             }).addTo(map);
