@@ -16,9 +16,12 @@ you haven't earned the next line yet.*
 
 **How we engineer focus** (every article, built only from the locked components):
 
-- **Open with the sum-up.** After the intro, an `.article-toc` with a one-line description under
-  every section — the reader sees the whole piece and clicks to what they came for. No promise box
-  (founder rule 2026-08-26). Rare words define themselves on click; stories sit where they bite.
+- **Open with the line you'd say to your sous chef.** The `.sous` block is the first thing on the
+  page: one sentence in the imperative, specific, no hedge — the answer. Everything below it is the
+  science behind that sentence (founder rule 2026-09-05). Answer first, argue after.
+- **Then the sum-up.** An `.article-toc` with a one-line description under every section — the reader
+  sees the whole piece and clicks to what they came for. No promise box (founder rule 2026-08-26).
+  Rare words define themselves on click; stories sit where they bite.
 - **One idea per section.** `<h2>` headings that promise value; short paragraphs; bold
   lead-ins. No walls of text — a wall is where focus dies.
 - **Re-hook the eye.** Break long stretches with a `.note--quote` pull-quote — one striking line.
@@ -26,7 +29,12 @@ you haven't earned the next line yet.*
   `.note--science` for the mechanism, exactly where it bites.
 - **Make it usable mid-read.** `.note--action` for the move; `.note--warning` for the failure mode.
 - **Never stall the reader.** Define jargon inline with `.term` — they never leave the page to look something up.
-- **Close on one thing.** End on the single takeaway they keep.
+- **Do not close on a repeat.** The closing takeaway box is retired on every template (founder rule
+  2026-09-05): the sous-chef line at the top already carries it, and a reader who left never reaches
+  a summary at the foot. End on the last real thing you have to say, then the folded sources.
+- **Cite with a marker, not a parenthesis.** A fact that needs a source takes a numbered `.ref`; the
+  reader clicks it and checks the claim without leaving the sentence. Full citations sit folded at the
+  foot.
 
 **The focus test:** read it as a tired chef at 11 PM, mid-charter. If your eye drifts even
 once — cut, tighten, or add a hook. Ship only when it doesn't.
@@ -199,14 +207,14 @@ one line (e.g. *"Template fit: Technique (02)"*), and proceed.
 |---|---|---|---|---|
 | 01 | Ingredient Profile | Ingredients | 6–9 min | The one ingredient template: the specimen case (sketch on the glass; name + origin folded), the taste, the science, the pairings as cards, the galley tiles, how to buy |
 | 02 | Technique | Techniques & Recipes | 8–15 min | Technique brief — Provoke → Instruct → Prove. A counted test lives in The Bench slot inside Prove. Not a recipe |
-| 03 | Heritage | Heritage | 10–20 min | Culture & history |
-| 04 | Study Decoded | Food Science | 1–2 min | Single-study translation |
+| 03 | Heritage | Heritage | 10–20 min | Culture & history — the founding facts ride the historical arrow; no Origin Card |
+| 04 | Study Decoded | Food Science | 1–2 min | Single-study translation — numbered source markers, sources folded |
 | 05 | Recipe Blueprint | Techniques & Recipes | 8–15 min | The recipe — ratio, science, two services, galley cards |
-| 06 | Supply Alert & Forecast | Industry & Ports | 6–10 min | One signal, now and ahead: the number that moved, the move this week, the call with its horizon and falsifier, the watch list |
+| 06 | Supply Alert & Forecast | Industry & Ports | **2–4 min** | An alert, in ONE section: what moved, the context, how it hits us, what to do about it — plus the call with its horizon and falsifier |
 | 07 | Career & Industry | Industry & Ports | 4–8 min | Regional shifts / career & industry |
-| 08 | Galley Operations | Techniques & Recipes | 6–12 min | Galley operations |
+| 08 | Galley Operations | Techniques & Recipes | **3–5 min** | ONE galley problem solved — context, the fix, why it works, what it costs. "How to stop scrubbing oven trays", not "how the galley runs" |
 | 09 | Port Call | Industry & Ports | 10–20 min | City provisioning guide organised by dwell time — hours / a couple of days / a week or more (Quick Map text table — never a graphic map) |
-| 10 | Equipment Review | Techniques & Recipes | 4–10 min | Equipment review |
+| 10 | Equipment Review | Techniques & Recipes | **4–6 min** | Equipment review — the verdict first, then the engineering that earns it |
 | 11 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
 
 **Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Heritage,

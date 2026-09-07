@@ -82,6 +82,57 @@ Opens the Spoon Lab panel instead of navigating — the way an article points at
 Handled in `assets/js/tools-widget.js`; the `href` is the no-JS fallback, so make it a same-page anchor and
 the reader stays where they are. Say the tool is **simmering**; never promise a date.
 
+### Say to your sous chef — `sous` (the opening block of EVERY article, added 2026-09-05)
+```html
+<div class="sous"><p>Board goes back in the rack on its edge, never flat.</p></div>
+```
+The first block on the page, before the template's own opening device. One sentence a chef would say
+out loud to their sous chef: the answer, imperative, specific, no hedge — everything below it is the
+science behind that sentence. The eyebrow is drawn by CSS; never type the label. **It replaced the
+closing takeaway box on every template** — do not restate it at the foot. It is also the one thing
+allowed to sit above the Ingredient Profile's specimen case: it is the payoff, not a scene line.
+
+### Source marker — `ref` (added 2026-09-05)
+```html
+<sup class="ref" data-kind="source" data-word="Salazar et al. 2020"
+     data-def="Salazar, J.K. et al. PLOS ONE 15(6):e0235472, 2020. DOI 10.1371/journal.pone.0235472 — guacamole pH 4.82 against 6.82 for plain avocado."></sup>
+```
+A numbered superscript that opens its citation in the shared `.term-pop` popover (`main.js`). **The
+element is empty** — the numeral is a CSS counter reset on `.article__content`, so re-ordering the
+prose never renumbers anything by hand. `data-def` is plain text (no markup, no clickable DOI), which
+is why the full copyable citation still lives in the folded Sources block. Prose carries no
+parenthetical citations: the marker replaces them.
+
+### Sources, folded — `fold--sources` (added 2026-09-05)
+```html
+<details class="fold fold--sources">
+  <summary><span class="fold__title">Sources</span><span class="fold__chev"></span></summary>
+  <div class="fold__body">
+    <div class="article-sources"><strong>Sources</strong><p>…</p></div>
+  </div>
+</details>
+```
+The citation strip behind one click at the foot. **Keep the inner `<div class="article-sources">`
+byte-identical and put no nested `<div>` inside it** — `tools/lint.mjs` exempts that block by matching
+the opening tag and stopping at the first `</div>`; nesting breaks the exemption and citation text
+starts tripping the banned-word and prose-density checks.
+
+### PDF preview — `rcp-preview` (Recipe Blueprint, added 2026-09-05)
+```html
+<details class="rcp-fold">
+  <summary>See the card first — one page, before you download it</summary>
+  <div class="rcp-fold__body">
+    <object class="rcp-preview" data="../print/<slug>-recipe-card.pdf" type="application/pdf">
+      <p class="rcp-preview__fallback">…<a href="…" target="_blank" rel="noopener">Open in a new tab</a></p>
+    </object>
+    <p class="rcp-preview__fallback">Reading on a phone? <a href="…" target="_blank" rel="noopener">Open the card in a new tab</a>.</p>
+  </div>
+</details>
+```
+Answers "can they see the PDF before it downloads?" — yes. Inside a native `<details>`, so the file is
+not fetched until asked for. Chrome, Firefox, Edge and desktop Safari render it inline; iOS Safari and
+some Android browsers do not and fall through to the link, so **that link is never optional**.
+
 ### Callout notes — `note` + modifier (each auto-labels via ::before)
 - `note--key` → **Key Point** · `note--science` → **The Science** · `note--action` → **Takeaway** ·
   `note--warning` → **Warning** · `note--quote` → pull-quote (no label).
@@ -113,7 +164,7 @@ the reader stays where they are. Say the tool is **simmering**; never promise a 
   </div>
 </div>
 ```
-*Use for: Shore Larder ingredient vitals, Port Call vitals, a hero fact-block. `--origin` labels lean Born / Of necessity / The constraint / First cooked by / Now defended by.*
+*Use for: Shore Larder ingredient vitals, Port Call vitals, a hero fact-block. **`--origin` is retired from Heritage** (founder rule 2026-09-05) — those founding facts now ride the historical arrow. The variant survives for other uses and for older pages.*
 
 ### Labelled section rail — `divider`
 ```html
@@ -145,13 +196,24 @@ the reader stays where they are. Say the tool is **simmering**; never promise a 
 </div>
 ```
 
-### Heritage Timeline — `heritage-timeline` (slim dated lineage ribbon)
+### Historical arrow — `heritage-timeline` (Heritage signature; rebuilt from a flat ribbon into a chronological arrow 2026-09-05)
 ```html
 <div class="heritage-timeline">
-  <div class="heritage-timeline__stop"><span class="heritage-timeline__date">1789</span><span class="heritage-timeline__label">…</span></div>
-  <!-- repeat stops; horizontal grid -->
+  <div class="heritage-timeline__stop">
+    <span class="heritage-timeline__date">1789</span>
+    <span class="heritage-timeline__label">what happened, in the reader's terms</span>
+    <span class="heritage-timeline__fact">born: the coastline · of necessity: the hunger that made it</span>
+  </div>
+  <!-- 3–6 stops; the last is always the present, and the arrow points at it -->
 </div>
 ```
+A spine running left to right, a ruler tick rising at each dated stop, a taller tick and an arrowhead
+at the present. The optional `__fact` line in italic carries the founding facts the **retired Origin
+Card** used to hold (born / of necessity / the constraint / first hands / defended by) — the
+`id-card--origin` variant is no longer used on Heritage (founder rule 2026-09-05). Markup contract is
+unchanged from the ribbon, so existing pieces upgrade with no edit.
+⚠ `overflow-x: auto` makes the block axis clip as well, so the container's `padding-top` is what keeps
+the ticks and the arrowhead from being cut off. Do not remove it.
 
 ### Cook-This-Port — `cook-this-port` (Port Call action grid)
 ```html
@@ -273,6 +335,8 @@ the same never-hand-roll rule applies.
 2. **One idea per block; SIGNAL only.** No stacked boxes; short stays short. Build the scannable spine (boxes +
    bold lead-ins + h2s alone tell the whole story); ≤~150 words of prose before a visual beat re-grabs the eye.
 3. **Vary the devices piece to piece** — predictable = invisible. Rotate which blocks you use.
+   The one fixed exception: **`.sous` opens every article** and the closing takeaway box is retired
+   everywhere (founder rule 2026-09-05). Answer first, argue after.
 4. **Evidence:** primary peer-reviewed source + visible grade in a `citation-card`; never reference books alone.
    Dual grade where it applies (absorption · clinical).
 5. **Match the latest `style.css`** — if a class here ever changes live, the live stylesheet wins; re-capture and

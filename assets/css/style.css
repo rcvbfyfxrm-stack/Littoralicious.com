@@ -2404,13 +2404,16 @@ mark {
    survives horizontal scrolling; the last stop draws the head and fills its own tick to mark
    the present. Square ticks, flat colour — no gradients, no rounded corners. --------------- */
 .heritage-timeline { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr);
-  overflow-x: auto; margin: var(--space-8) 0 var(--space-6); }
+  overflow-x: auto; margin: var(--space-6) 0; padding-top: var(--space-6); }
+/* NOTE: overflow-x:auto makes the block axis clip too (a "visible" axis computes to "auto"
+   when its partner is not visible), so the ticks and the arrowhead MUST live inside the box —
+   that padding-top is what keeps them from being cut off. Do not remove it. */
 .heritage-timeline__stop { position: relative; border-top: 2px solid var(--color-sea);
   padding: var(--space-6) var(--space-4) var(--space-2) 0; }
-.heritage-timeline__stop::before { content: ""; position: absolute; left: 0; top: -7px;
-  width: 9px; height: 9px; background: var(--color-paper); border: 2px solid var(--color-sea); }
-.heritage-timeline__stop:last-child { padding-right: var(--space-6); }
-.heritage-timeline__stop:last-child::before { background: var(--color-sea); }
+.heritage-timeline__stop::before { content: ""; position: absolute; left: 0; top: -12px;
+  width: 2px; height: 10px; background: var(--color-sea); }
+.heritage-timeline__stop:last-child { padding-right: var(--space-8); }
+.heritage-timeline__stop:last-child::before { height: 16px; top: -18px; }
 .heritage-timeline__stop:last-child::after { content: ""; position: absolute; right: 0; top: -10px;
   border-top: 9px solid transparent; border-bottom: 9px solid transparent;
   border-left: 13px solid var(--color-sea); }

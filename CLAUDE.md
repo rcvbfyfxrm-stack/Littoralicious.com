@@ -28,8 +28,9 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
 ## Writing editorial — rules-first
 
 **The first law (DNA.md): never lose focus.** Every line must pull the reader to the next —
-that is the bar for publishing. Build focus in with the locked components: a `.summary-box`
-promise up top, `.note--quote` pull-quotes to re-hook, `.note--key`/`.note--science` insights
+that is the bar for publishing. Build focus in with the locked components: the `.sous` line up
+top (the sentence you'd say to your sous chef — the answer, with the whole piece as its argument;
+founder rule 2026-09-05), the `.article-toc` sum-up after it, `.note--quote` pull-quotes to re-hook, `.note--key`/`.note--science` insights
 where earned, `.term` for inline jargon, one takeaway to close.
 
 Before drafting any article/page, open the response with **two things**, in order:
@@ -38,7 +39,7 @@ Before drafting any article/page, open the response with **two things**, in orde
 2. A **"Template fit:"** line — **auto-select** the matching template (never ask which);
    infer it from what the piece is and state it in one line (e.g. *"Template fit: Recipe Blueprint (05)"*). Then scaffold with `npm run new -- --template <name> …`.
 
-Then write — and **design it to captivate**: boxes (`summary-box`, `note--key/science/action/
+Then write — and **design it to captivate**: boxes (`sous`, `note--key/science/action/
 warning`, custom `note[data-label]`), highlighting (`<mark>` / `.highlight` / `.term`), pull-quotes,
 stat grids, labelled dividers. Build a **scannable spine** (boxes + bold lead-ins + h2s alone
 tell the whole story); never more than ~150 words of unbroken prose before a visual beat re-grabs

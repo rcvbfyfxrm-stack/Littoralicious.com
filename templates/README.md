@@ -8,11 +8,15 @@ and adds a draft entry to `data/articles.json` (category + subtag default per te
 ## The first law is built in
 
 Every template is **focus-engineered** (see `content/DNA.md` → *Never lose focus*). Each one
-ships with: the `article-toc` sum-up (one-line description per section) after the intro — no promise box since 2026-08-26 — labelled `divider` section
-breaks, a one-line value kicker under each `<h2>`, `note--quote` pull-quotes to re-hook,
-`note--key` / `note--science` / `note--action` / `note--warning` callouts where they belong,
-inline `term` definitions, and a closing takeaway. Keep these when you write — they are what
-stop the reader's eye from drifting. Fill the placeholders; don't strip the structure.
+ships with: the **`sous` block first on the page** — the line you'd say to your sous chef, with the
+whole piece as its argument (founder rule 2026-09-05) — then the `article-toc` sum-up (one-line
+description per section), no promise box since 2026-08-26, labelled `divider` section breaks, a
+one-line value kicker under each `<h2>`, `note--quote` pull-quotes to re-hook, `note--key` /
+`note--science` / `note--action` / `note--warning` callouts where they belong, inline `term`
+definitions, numbered `ref` source markers instead of parenthetical citations, and the sources folded
+at the foot. **There is no closing takeaway box** — retired 2026-09-05, because it repeated the
+sous-chef line to a reader who had already gone. Keep these when you write — they are what stop the
+reader's eye from drifting. Fill the placeholders; don't strip the structure.
 
 The `<h2>` kicker is the styled `p.kicker` beat (one-line value promise under the heading), and
 the Galley Operations (tight-ship) station-map table wraps in `.galley-plan` — both locked in `content/DESIGN-LOCK.md`.
@@ -27,14 +31,14 @@ Technique is not recipe — the Recipe Blueprint is the recipe.
 |---|---|---|---|
 | `shore-larder` | 01 | Ingredients | Ingredient Profile — the one ingredient template: specimen case, taste, science, pairings, galley, how to buy |
 | `the-method-technique` | 02 | Techniques & Recipes | Technique — Provoke → Instruct → Prove; a counted test lives in The Bench slot. Not a recipe |
-| `littoral-heritage-article` | 03 | Heritage | Culture & history |
-| `the-evidence` | 04 | Food Science | Study Decoded — single-study translation |
+| `littoral-heritage-article` | 03 | Heritage | Culture & history — founding facts on the historical arrow; no Origin Card |
+| `the-evidence` | 04 | Food Science | Study Decoded — single-study translation. Numbered source markers, sources folded |
 | `recipe-blueprint` | 05 | Techniques & Recipes | Recipe Blueprint — the recipe, with its science and galley cards |
-| `signal-fire` | 06 | Industry & Ports | Supply Alert & Forecast — the number that moved, the move this week, the call ahead with its falsifier |
+| `signal-fire` | 06 | Industry & Ports | Supply Alert & Forecast — an alert in ONE section: what moved, the context, how it hits us, what to do. 2–4 min |
 | `trade-winds` | 07 | Industry & Ports | Career & industry / regional shifts |
-| `tight-ship` | 08 | Techniques & Recipes | Galley operations |
+| `tight-ship` | 08 | Techniques & Recipes | Galley operations — ONE problem solved: context, the fix, why it works, what it costs. 3–5 min |
 | `port-call` | 09 | Industry & Ports | City provisioning guide by dwell time — hours / days / a week (Quick Map text table) |
-| `the-locker` | 10 | Techniques & Recipes | Equipment review |
+| `the-locker` | 10 | Techniques & Recipes | Equipment review — the verdict first, then the engineering. 4–6 min |
 | `weekly-brief` | 11 | Industry & Ports | Digest |
 
 Shell helpers (not article types): `standard.html` (generic fallback), `section.html`
@@ -81,7 +85,7 @@ It carries the 26 Aug second pass: the taste closes on what the ingredient does 
 are cards (flavour profile · best for · a little story), and the pairings close on the Pairing Wheel line.
 The reference build is `articles/bay-leaf.html` — read it before writing a new ingredient piece.
 
-Spine (revised 2026-09-01 — no encounter line, the piece opens on the case): **the specimen case (`details.fold.fold--specimen`: the
+Spine (revised 2026-09-05 — the sous-chef line opens the piece, then the case, OPEN so there is something to read on arrival): **the `sous` line → the specimen case (`details.fold.fold--specimen`: the
 sketch on the glass, the Latin name + a one-line hint as its label; inside, the name and the origin around one
 `note--key`) → the taste ("In the mouth"), always visible, closing on what it does in the hand → the sum-up,
 outside the case → the old habit, teased, linking to #science → The Science (the four numbers, the
@@ -92,7 +96,7 @@ each, then the Pairing Wheel line) → Galley Intel (the carreaux tiles) → How
 Standing rules: no promise box · no Cook's Reason box · no Stories section (tales inline or behind the word)
 · no Quick Reference · no Galley Batch Prep unless the procedure is genuinely something a pro would not know
 · the numbers live with the mechanism, not in the intro · every rare word carries `data-def` · pairings carry
-a register chip and never more than five ingredients · the sum-up never sits inside the fold · the varieties
+a register chip and never more than five ingredients · the sum-up never sits inside the fold · the case carries THE THREE VOICES after its `note--key` (what the dock says, what tradition says, what the science says) · no closing "one thing" box · the varieties
 are cards, each with flavour profile, best for and a little story told nowhere else in the piece · if the remedy beat lands on something real, it is
 followed by **how to use it that way** (where, how much, how often, the honest limit) · say it once.
 
