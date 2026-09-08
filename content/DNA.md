@@ -214,7 +214,7 @@ one line (e.g. *"Template fit: Technique (02)"*), and proceed.
 | 06 | Supply Alert & Forecast | Industry & Ports | **2–4 min** | An alert, in ONE section: what moved, the context, how it hits us, what to do about it — plus the call with its horizon and falsifier |
 | 07 | Career & Industry | Industry & Ports | 4–8 min | Regional shifts / career & industry |
 | 08 | Galley Operations | Techniques & Recipes | **3–5 min** | ONE galley problem solved — context, the fix, why it works, what it costs. "How to stop scrubbing oven trays", not "how the galley runs" |
-| 09 | Port Call | Industry & Ports | 10–20 min | City provisioning guide organised by dwell time — hours / a couple of days / a week or more (Quick Map text table — never a graphic map) |
+| 09 | Port Call | Industry & Ports | 10–20 min | City provisioning guide on a real supplier map, read three ways by dwell time, with a search bar and a keep-list. Provisioning only — eating out is the Terroir guide's job |
 | 10 | Equipment Review | Techniques & Recipes | **4–6 min** | Equipment review — the verdict first, then the engineering that earns it |
 | 11 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
 

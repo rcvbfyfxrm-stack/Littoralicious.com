@@ -3,6 +3,11 @@
 <head>
 {{HEAD}}
     <link rel="stylesheet" href="../assets/css/port-call-content.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="/terroir/_assets/port-call/port-call-vars.css">
+    <link rel="stylesheet" href="/terroir/_assets/port-call/port-call.css">
+    <link rel="stylesheet" href="/terroir/_assets/port-call/port-call-card.css">
+    <link rel="stylesheet" href="/terroir/_assets/port-call/port-call-shell.css">
 </head>
 <body>
 
@@ -39,334 +44,99 @@
 
             <div class="article__content container" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
 
-                <!-- BODY:BEGIN — Template 09, PORT CALL (file port-call): the port, decoded from the berth. IDENTITY (META-PROMPT grid): OPENING REGISTER = the port's single hard fact — the constraint that shapes every supplier decision (the pc-funfact bar) · SIGNATURE = the Quick Map text table (NEVER a graphic — that is Terroir's) + the Three Berths + the DWELL-TIME LADDER (hours / days / week) with its Agent Brief, Quick Radius table and source suppliers + Cook This Port · PRO-HOOK = the one number a chef repeats at the pass (the cold-chain figure with its named agency) + the price-vs-import reality · FORBIDDEN = graphic maps; tourism prose; unverified suppliers. LEARNING CONTRACT: the pass number, the source-supplier fact (who actually feeds the fishmongers, and that they deliver), and the quick-radius cut-off only working intel carries. Fill each slot; keep the focus components (summary-box, pull-quote, Key Point/Science/Action). -->
+                <!-- BODY:BEGIN — Template 09, PORT CALL (file port-call): the port, decoded from the berth. REBUILT 2026-09-08 to the founder brief: "I want all the information on a map, the same kind of map as the terroir guide… an easy way to read it with the three different angles so people can just pick what they want to read… an easy search bar… and cards for each place people can add as their favourite. Make it the level of the terroir guide, but for provisioning only."
 
-<!-- ====================================================================
-     PORT CALL (10) — City provisioning guide. Section rhythm
-     (founder-revised 2026-08-24): port reality (funfact) → two-minute
-       version → QUICK MAP text table → berths → brief → cook this port
-       → THE DWELL-TIME LADDER (hours / a couple of days / a week or more,
-       each tier one step closer to the source, all deliverable to a yacht)
-       → transport → watch-outs → bottom line.
-     DESIGN LOCK: reuse the exact classes below (sfold/pfold/tb-col/
-     cau pills/pc-funfact/pc-pullq). NEVER a graphical/Leaflet map in
-     the body skeleton — the Quick Map is a TEXT TABLE only.
-     FOCUS LAYER: summary-box up top, a one-line kicker under every h2,
-     note--key/science/action/warning at the beats that earn them, one
-     note--quote pull-quote mid-piece, term spans on 2–4 jargon words,
-     and a closing single-takeaway. Layered ON the structure, not over it.
-     DNA: science inline, sourced claims, British spelling, "Tested at sea."
-     Banned: delicious, yummy, elevated, curated, artisanal, superfood,
-     game-changer, hack.
-===================================================================== -->
+     ⚠ THIS REVERSES A STANDING RULE. Until today Port Call was forbidden a graphic map — the Quick Map text table was its signature, precisely so it could never be confused with Terroir. The founder has overturned that: Port Call now carries a real map. CLAUDE.md's hard rule and the Identity Grid were updated in the same pass. What has NOT changed is the separation itself: Port Call is a tool for WORK — suppliers, sourcing, stocking the galley — and Terroir is a document for exploring a place. Same level of craft, its own kit, its own framing. This template loads NOTHING from terroir/_assets/guide/; it uses Port Call's own kit at terroir/_assets/port-call/.
 
-<!-- THE SUM-UP (founder rule 2026-08-26; replaces the promise box and the pc-quicknav strip): every section with a one-line description, anchors on the h2s below. -->
-<div class="article-toc">
-    <p class="article-toc__title">In this piece</p>
-    <ol>
-        <li><a href="#quick-map">Quick Map</a><span class="article-toc__desc">[the port in minutes from the berth]</span></li>
-        <li><a href="#three-berths">The Three Berths</a><span class="article-toc__desc">[the shortlist]</span></li>
-        <li><a href="#brief">The Brief</a><span class="article-toc__desc">[why this port behaves unlike the last]</span></li>
-        <li><a href="#cook-this-port">Cook This Port</a><span class="article-toc__desc">[the catch, the window]</span></li>
-        <li><a href="#touch-and-go">Hours Alongside</a><span class="article-toc__desc">[the agent, the box to order blind]</span></li>
-        <li><a href="#couple-of-days">A Couple of Days</a><span class="article-toc__desc">[the store that delivers, the quick radius]</span></li>
-        <li><a href="#a-week">A Week or More</a><span class="article-toc__desc">[the source suppliers]</span></li>
-        <li><a href="#transport">Transport</a><span class="article-toc__desc">[moving boxes, the fees]</span></li>
-        <li><a href="#watchouts">Watch-outs</a><span class="article-toc__desc">[the dates that break a day]</span></li>
-        <li><a href="#bottom">The Bottom Line</a><span class="article-toc__desc">[three moves, the load-out, avoid]</span></li>
-    </ol>
+     IDENTITY (META-PROMPT grid): OPENING REGISTER = the port's single hard fact, the constraint that shapes every supplier decision · SIGNATURE = the supplier map with the berth at its centre + the three angles (no time / a few hours / a day or more) + the search bar + the keep-list + the Agent Brief · PRO-HOOK = the one number a chef repeats at the pass, and who actually feeds the fishmongers · FORBIDDEN = tourism prose; anything about eating out (that is Terroir's job); an unverified supplier; a sous-chef line (this template does not carry one).
+
+     TO BUILD A PORT: write assets/js/port-call-<slug>-data.js setting window.PCV_DATA and window.PCV_CONFIG, then fill the prose slots below. EVERY venue is real and checked — name, address, phone, hours, and the date you checked it. Never invent a supplier, a price or an opening time: an unverified line sends a chef across a port for nothing, which is worse than leaving it out.
+
+     DATA CONTRACT — window.PCV_DATA = { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS }
+       VENUES[] : { id, cat, tier, priority, name, short, neighborhood, lat, lng, maps,
+                    badge, tags[], why, address, phone, email, hours, web, online, productTags[] }
+         tier   'berth_top' pins it to the berth band; otherwise 'notime' | 'several' | 'plenty'
+                — that field IS the three angles, so every supplier gets exactly one
+         cat    a SUPPLY category: fish · meat · produce · dry · specialist · chandler · agent
+         why    the one line saying why a chef goes there
+         online true if they ship to the boat rather than being walked to
+       window.PCV_CONFIG = { articleId, cardUrl, center:[lat,lng], zoom } -->
+
+<p class="pc-kicker">[The port in one line: what it is for a chef, and what it is not.]</p>
+
+<!-- THE ONE HARD FACT — the opening register. The single constraint that shapes every decision
+     in this port: the market that shuts at noon, the agent who owns the gate, the four hours
+     between the berth and the fish. Not a welcome, not a scene. -->
+<div class="pc-funfact"><strong>[The port's single hard fact]</strong> &mdash; [the constraint a chef plans around before anything else, with its number].</div>
+
+<!-- THE MAP — every supplier at once, the berth at the centre, pins coloured by category and the
+     legend generated from the data. It comes first because a provisioning decision is a geography
+     decision. The search bar, the three angles and the keep-list are injected directly beneath it
+     by port-call-shell.js; there is nothing to write for them. -->
+<div class="pcv-map-wrap">
+    <div class="pcv-map-head"><strong>The port from the berth</strong> &mdash; every supplier below is on this map.</div>
+    <div id="pcv-map"></div>
+    <div id="pcv-legend"></div>
 </div>
 
-<!-- Port reality: one paragraph of fact that defines the constraint. This single
-     funfact IS the port's vitals in a line — it carries the constraint so the
-     Quick Map table can carry the geography. Do not add a second vitals box (the
-     id-card) directly under it: that stacks two summaries of the same fact. -->
-<div class="pc-funfact"><strong>[The single hard fact about this port]</strong> &mdash; <!-- WRITER: the geography/logistics constraint that shapes every supplier decision (no roads / ferry-only / island / tides). Sourced number where you have one. --> placeholder reality line.</div>
+<!-- THE BERTH BAND — the two or three suppliers that matter whatever time you have.
+     Marked tier:'berth_top' in the data. -->
+<h2 id="berth">From the Berth</h2>
+<p class="pc-kicker">[What you can reach without leaving the port, and what it costs you.]</p>
+<div id="pcv-berths"></div>
 
-<!-- One-line prose bridge — the funfact bar never butts onto the digest note. -->
-<p>If you read nothing else, read this by how long you are staying:</p>
+<!-- THE THREE ANGLES (founder rule 2026-09-08) — the same port read three ways, so a chef reads
+     only the band that matches the stop they actually have. The switcher above filters these; put
+     every supplier in exactly one, via its tier. -->
+<h2 id="notime">No Time &mdash; A Few Hours Alongside</h2>
+<p class="pc-kicker">[What is genuinely reachable and worth it on a short stop.]</p>
+<div id="pcv-list-notime"></div>
 
-<!-- THE TWO-MINUTE VERSION — DNA law for long formats (10-20 min), organised by DWELL TIME (founder principle, 2026-08-24): one line per tier, then the load-out. -->
-<div class="note" data-label="The two-minute version"><p><strong>Hours:</strong> the agent to call and the one box to order blind. <strong>A couple of days:</strong> the general store that delivers, and the two merchants inside fifteen minutes of the berth. <strong>A week or more:</strong> the wholesale source and the fish house behind the fishmongers — both will deliver to a yacht. <strong>Load before you sail:</strong> the one thing this port is the place to buy.</p></div>
+<h2 id="several">A Few Hours &mdash; Half a Day Ashore</h2>
+<p class="pc-kicker">[What opens up with a taxi and half a day.]</p>
+<div id="pcv-list-several"></div>
 
-<!-- OPTIONAL — Port Card (.id-card). Include ONLY if this port's vitals genuinely
-     need a scannable five-row grid that the funfact above and the Quick Map below
-     do NOT already carry (rare); otherwise DELETE. If used, it must NOT sit flush
-     against the funfact — put it after the Quick Map, and drop any row that merely
-     repeats the funfact (the constraint) or the Bottom Line (the avoid window).
-<div class="id-card"><h4 class="id-card__title">Port Card</h4><div class="id-card__grid">
-  <div><span class="id-card__label">Lifeline</span><strong class="id-card__value">the fresh-food artery — the road/ferry/cargo line everything aboard travels on</strong></div>
-  <div><span class="id-card__label">Day-one stop</span><strong class="id-card__value">where to go first on arrival — the market, the agent, the wholesale run</strong></div>
-  <div><span class="id-card__label">Agent lead time</span><strong class="id-card__value">hours/days the agent needs the written brief before arrival</strong></div>
-</div></div>
--->
+<h2 id="plenty">A Day or More</h2>
+<p class="pc-kicker">[The trip worth making when the boat is not going anywhere &mdash; the inland market, the producer, the wholesaler.]</p>
+<div id="pcv-list-plenty"></div>
 
-<!-- ============================================================
-     LOCKED: the TEXT Quick-Map table below is the ONLY map.
-     NEVER add a Leaflet / #pcv-map graphic map here — that is the
-     Terroir system, a separate publication. If a visual locator is
-     wanted, use a [GLANCE] count grid (berths / suppliers / minutes
-     to wholesale / ferry days-per-week) — a data block, never a
-     graphic map.
-============================================================ -->
-<h2 id="quick-map">Quick Map</h2>
-<p class="pc-kicker"><!-- WRITER: one line — the whole port at a glance, by minutes from the berth. --> Where everything is, in minutes from the dock.</p>
-<!-- ============================================================
-     LOCKED COMPONENT — "Quick Map" TEXT TABLE. Reproduce this
-     <table> structure verbatim; only swap the placeholder cells.
-     This is the textual stand-in for a map — NEVER a graphic.
-     Columns: Where / What it is / Time from berth / Note.
-     One row per category zone (Berths, Markets & Direct,
-     Specialty & Wine, Mainland / Wholesale, Logistics).
-============================================================ -->
-<table class="pc-quickmap">
-    <thead>
-        <tr><th>Where</th><th>What it is</th><th>Time from berth</th><th>Note</th></tr>
-    </thead>
-    <tbody>
-        <tr><td><strong>[Berth zone]</strong></td><td>[the harbour / anchorage cluster]</td><td>[—]</td><td>[the one operational caveat]</td></tr>
-        <tr><td><strong>[Markets &amp; Direct]</strong></td><td>[fish hall / produce / off-the-boat]</td><td>[min on foot or by tender]</td><td>[opening days that bite]</td></tr>
-        <tr><td><strong>[Specialty &amp; Wine]</strong></td><td>[cheese / wine / bakery]</td><td>[min]</td><td>[siesta / case-order lead time]</td></tr>
-        <tr><td><strong>[Mainland / Wholesale]</strong></td><td>[hypermarket / bulk run]</td><td>[the portage / ferry leg]</td><td>[full-day vs quick run]</td></tr>
-        <tr><td><strong>[Logistics]</strong></td><td>[agent / water taxi / cargo ferry]</td><td>[—]</td><td>[brief lead time]</td></tr>
-    </tbody>
-</table>
-<div class="note note--key"><p><!-- WRITER: the one row in the table that decides the day — usually the portage/ferry leg. State it flat. --> placeholder — the leg that sets every delivery window.</p></div>
-
-<h2 id="three-berths">The Three Berths</h2>
-<p class="pc-kicker"><!-- WRITER: one line — the trade-off between these three, stated as a choice. --> The shortlist, and what each one puts you walking distance from.</p>
-<!-- The shortlist any captain actually picks from. Keep the 3-column grid verbatim;
-     blank the names, subtitles and meta. tel: links and map-link are part of the lock. -->
-<div class="three-berths">
-    <div class="tb-col" id="p-berth-1">
-        <h3>[Berth one]</h3>
-        <div class="subtitle">[zone] &middot; [max LOA] &middot; [draft / walk] &middot; <a href="tel:+000000000000">[phone]</a></div>
-        <ol><li><span class="meta">[One line: who berths here and why. What it puts you in walking/tender distance of.] <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a></span></li></ol>
-    </div>
-    <div class="tb-col" id="p-berth-2">
-        <h3>[Berth two]</h3>
-        <div class="subtitle">[zone] &middot; [max LOA] &middot; [note] &middot; <a href="tel:+000000000000">[phone]</a></div>
-        <ol><li><span class="meta">[One line.] <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a></span></li></ol>
-    </div>
-    <div class="tb-col" id="p-berth-3">
-        <h3>[Berth three]</h3>
-        <div class="subtitle">[zone] &middot; [max LOA] &middot; [note]</div>
-        <ol><li><span class="meta">[One line.] <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a></span></li></ol>
-    </div>
-</div>
-<div class="note note--action"><p><!-- WRITER: the booking move — which berth to hold for provisioning vs guest access, and when to lock it. --> placeholder — book this one for the galley, that one for the guests.</p></div>
-
-<h2 id="brief">The Brief</h2>
-<p class="pc-kicker"><!-- WRITER: one line — why this port behaves unlike the last one. --> What makes this port different, and what to set up on day one.</p>
-<!-- Why this port is different + what to set up on day one. -->
-<p><strong>Port type: [one-line classification].</strong> <!-- WRITER: the defining constraint and how everything fresh actually reaches the boat (boat / portage / cargo ferry / air freight). --> placeholder. The supply runs on <span class="term">portage</span> — every box is carried, not driven.</p>
-<div class="pc-pullq">[The one sentence a tired chef should remember. The constraint, stated flat.]</div>
-<p><!-- WRITER: how the supplier game flows from that constraint — where the bulk lives vs the fresh, and why. Numbers/prices where sourced. --> placeholder.</p>
-<div class="note note--science"><p><!-- WRITER: MANDATORY — one traceable claim built around ONE hard figure with a NAMED source. Lead with the bare number so a chef can repeat it at the pass, then the mechanism: e.g. "5°C — the cold-chain line. An open-deck chilled load drifts past it on a 30-min ferry leg, and Vibrio doubles roughly every 1–2 h above it while Listeria monocytogenes still grows down to ~0°C (FDA Fish & Fishery Products Hazards Guide, 4th ed.)." Name the compound/pathogen, the °C, the agency + year. NEVER "studies show" without a name. One box, one figure — do not split into a second science note. --> placeholder — the one number, its mechanism, and its named source, in a line a chef repeats at the pass.</p></div>
-
-<h2 id="cook-this-port">Cook This Port</h2>
-<p class="pc-kicker"><!-- WRITER: one line — the one thing this coast does better than anywhere, and when. --> Before you decide where to buy, decide what to put on the card.</p>
-<!-- COOK THIS PORT — the culture beat that answers WHAT to cook before WHERE to
-     buy. This is the biggest gap in a pure-logistics guide: the sibling cook-the-port
-     essays prove the appetite. Locked .cook-this-port. Anchor the speciality name
-     with <mark>, the local word with .term. Keep both halves tight and sourced. -->
-<div class="cook-this-port">
-    <div><span class="cook-this-port__label">The catch / crop</span><p>The one ingredient this coast does better than anywhere, at its <mark>peak window</mark>. <!-- WRITER: name the speciality and put <mark> on it; give the real peak window (months) and the line of provenance — why HERE, not the next port. The local word for it goes in .term. --> Local word: <span class="term">term</span>.</p></div>
-    <div><span class="cook-this-port__label">Serve it</span><p><!-- WRITER: two concrete ways to put it on the guest menu (the traditional treatment + one for a yacht service), then the price-vs-import reality — what it costs landed here at peak vs flying it in elsewhere, with a number. --> Two ways to put it on the guest menu, plus the price-vs-import reality.</p></div>
+<!-- THE AGENT BRIEF — verbatim, copy-and-send (founder addition 2026-08-24). The exact written
+     brief for the agent before arrival, with this port's real lead times and the agent's actual
+     channel. Locked note--action. -->
+<div class="note note--action" data-label="The agent brief">
+    <p>[Ready to send, as written: what you need, by when, delivered where, who signs for it, and the lead time this port actually runs on.]</p>
 </div>
 
-<!-- ============================================================
-     THE DWELL-TIME LADDER — the organising principle of Port Call
-     (founder principle, 2026-08-24). A chef's provisioning reach is set
-     by HOW LONG the boat stays: HOURS = agents only; A COUPLE OF DAYS =
-     the general store that delivers + the quick radius of small merchants
-     near the marina; A WEEK OR MORE = go to the SOURCE — the wholesale
-     market that feeds the city's shops, the fish house that supplies the
-     fishmongers, the growers — as close to origin as possible WHILE they
-     will still deliver to a yacht. Every supplier entry states Delivers to
-     yacht / minimum order / lead time. The tiers are the sections; the
-     pfold is the entry device in all three.
-============================================================ -->
-<div class="divider"><span class="divider__text"><a href="#touch-and-go">Hours</a> &middot; <a href="#couple-of-days">A couple of days</a> &middot; <a href="#a-week">A week or more</a></span></div>
-
-<h2 id="touch-and-go">Touch and Go: Hours Alongside</h2>
-<p class="pc-kicker"><!-- WRITER: one line — with hours, the agent IS the port. --> With hours alongside you never leave the boat: the agent is the port.</p>
-<p><!-- WRITER: one short paragraph — what an hours-only call can realistically load here, and the cut-off hour that decides it. --> placeholder — what hours alongside buys you here, and the cut-off that decides it.</p>
-
-<!-- THE AGENT BRIEF — verbatim, copy-and-send (founder addition, 2026-08-24). The exact written brief for the agent before arrival — the one thing a chef needs the night before. Locked note--action; fill with this port's real lead times and the agent's actual channel. -->
-<div class="note note--action" data-label="The Agent Brief"><p><strong>Send in writing, [lead time] before arrival:</strong> (1) the full provision list with brand and grade specs; (2) the fresh box — species, cut, kg, and the substitute you accept; (3) dietary lines and wine preferences; (4) customs clearance on the fresh box, cold chain on the quay, delivery window in local time; (5) the festival or peak exception, with the longer lead.</p></div>
-
-<!-- The first call before arrival. Each supplier is a pfold. Reproduce ONE
-     pfold verbatim per entry; .top marks the lead pick. Blank name/hook/recog/
-     prose/meta. cau pills carry the inline caution (data-fix = the workaround). -->
-<details class="pfold top" id="p-agent">
-    <summary><div><div class="pfold__name">[Yacht agent name]</div><div class="pfold__hook">[address] &middot; [since YYYY] &middot; [phone]</div></div><span class="pfold__chev"></span></summary>
-    <div class="pfold__body">
-        <div class="pfold__recog">[why this is the first call — one line of provenance]</div>
-        <p>[What they handle: customs, supplier coordination, dockside delivery, portage. The sourced reason they are the standard.] <span class="cau cau--high" data-fix="[The workaround — what to do, with the lead time and the festival exception spelled out.]">[short pill label]</span></p>
-        <div class="pfold__meta">
-            <div><strong>Address</strong>[…]</div>
-            <div><strong>Phone</strong>[…]</div>
-            <div><strong>Email</strong>[…]</div>
-            <div><strong>Web</strong>[…]</div>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a>
-    </div>
-</details>
-<!-- Repeat the pfold for the transport channel (water taxi / cargo ferry) and any remote-order backup. -->
-<div class="note note--warning"><p><!-- WRITER: the failure mode here — the agent who confirms but doesn't clear customs on the fresh box, or the cargo ferry that bumps provisions for cars in season. Name the move that prevents it. --> placeholder — what goes wrong when you skip the written confirm.</p></div>
-
-<h2 id="couple-of-days">A Couple of Days: The General Store and the Quick Radius</h2>
-<p class="pc-kicker"><!-- WRITER: one line — with days you shop the one big store that delivers, and the merchants close enough to run to. --> Two days buys you the big store that delivers — and the merchants inside a short walk of the berth.</p>
-<!-- THE GENERAL STORE / WHOLESALE — the main hypermarket, cash-and-carry or general
-     provisioner. Include ONLY if it delivers to the yacht or the marina; the meta
-     states minimum order, cut-off hour and delivery window. One pfold, .top. -->
-<details class="pfold top" id="p-general-store">
-    <summary><div><div class="pfold__name">[General store / cash-and-carry]</div><div class="pfold__hook">[address] &middot; [delivers: yes / marina only] &middot; [cut-off hour]</div></div><span class="pfold__chev"></span></summary>
-    <div class="pfold__body">
-        <div class="pfold__recog">[one line — why this is the two-day default: range, delivery, the account]</div>
-        <p>[What it carries that a yacht actually needs, what it does badly, the order channel and the account setup.] <span class="cau cau--med" data-fix="[Workaround — minimum order, Sunday closure, the delivery slot to book.]">[pill]</span></p>
-        <div class="pfold__meta">
-            <div><strong>Delivers to yacht</strong>[yes / marina gate only · min order · lead time]</div>
-            <div><strong>Cut-off</strong>[…]</div>
-            <div><strong>Phone</strong>[…]</div>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a>
-    </div>
-</details>
-
-<!-- THE QUICK RADIUS — founder addition (2026-08-24): the small merchants CLOSE TO
-     THE MARINA who deliver fast — bakery, fishmonger, greengrocer, butcher inside
-     ~15 minutes of the berth. Locked .data-table: Merchant | What | Minutes from
-     berth | Delivers / cut-off. 3-6 rows, each verified, each with a real number. -->
-<p>And inside a short walk of the berth, the merchants who will bring a box down the same morning:</p>
-<div style="overflow-x: auto; margin: var(--space-6) 0;">
-    <table class="data-table">
-        <thead>
-            <tr><th>Merchant</th><th>What</th><th>Minutes from berth</th><th>Delivers / cut-off</th></tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>[Bakery]</strong></td><td>[bread by 07:00, the loaf worth ordering]</td><td class="num">[00]</td><td>[yes / order by 18:00 the day before]</td></tr>
-            <tr><td><strong>[Fishmonger]</strong></td><td>[the morning's landing, what to ask for]</td><td class="num">[00]</td><td>[to the quay by 11:00 / min 5 kg]</td></tr>
-            <tr><td><strong>[Greengrocer]</strong></td><td>[what is local vs trucked in]</td><td class="num">[00]</td><td>[same-day / phone order]</td></tr>
-        </tbody>
-    </table>
+<!-- THE PASS NUMBER — the pro-hook: the one figure a chef repeats, with its named agency; and
+     who actually feeds the fishmongers, which is the thing only working intel carries. -->
+<div class="note note--science">
+    <p>[The cold-chain or landing figure with its named source &mdash; and where the supply really comes from: who lands it, who trucks it, and which of the names above are buying from the same van.]</p>
 </div>
 
-<!-- THE MARKET — the retail fish hall / produce market for a day-two visit. Same pfold. -->
-<details class="pfold" id="p-market-fish">
-    <summary><div><div class="pfold__name">[Fish market / banco]</div><div class="pfold__hook">[address] &middot; [since YYYY] &middot; [days &amp; hours]</div></div><span class="pfold__chev"></span></summary>
-    <div class="pfold__body">
-        <div class="pfold__recog">[the provenance line — since when, why it's the source]</div>
-        <p>[What lands here, the seasonal species and their windows, the science where it matters (why the soft-shell window is fragile, what the ink is for). Sourced.] <span class="cau cau--high" data-fix="[Workaround — e.g. never put the fragile species on a printed menu; verbal special only; have a substitute named.]">[pill]</span> <span class="cau cau--med" data-fix="[Second caution — closed days, acqua alta, tides.]">[pill]</span></p>
-        <div class="pfold__meta">
-            <div><strong>Address</strong>[…]</div>
-            <div><strong>Hours</strong>[…]</div>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a>
-    </div>
-</details>
-<div class="note note--action"><p><!-- WRITER: the move at the market — what to buy on the day, what to never put on a printed menu, the substitute to name. --> placeholder — buy on the day, name a substitute before you print.</p></div>
+<div class="note note--warning">
+    <p>[The trap in this port: the closure nobody mentions, the cash-only gate, the agent's cut, the market that sells retail volumes at wholesale prices.]</p>
+</div>
 
-<!-- One line bridges the practical move into the relationship beat: the buying is
-     half the job; getting the local box at the local price is the other half. -->
-<p><!-- WRITER: one sentence handing off from "what to buy" to "how the stall treats you" — the regular gets the back stock, the tourist gets the mark-up. --> But the box only comes off the back shelf if the stall reads you as a chef who cooks here, not a tourist passing through.</p>
+<!-- REFERENCE — the check date, what moves with the season, and what could NOT be confirmed.
+     An unverified supplier is worse than a missing one; say which is which. -->
+<h2 id="reference">Reference</h2>
+<p>[Every entry checked on [date]. What moves with the season. What could not be confirmed, said plainly.]</p>
 
-<!-- NURTURE / WARMTH BEAT (MANDATORY) — "At the Stall". The relationship layer a
-     logistics guide never shows: the words and the etiquette that get a yacht chef
-     the local box at the local price. Locked note--quote, label "At the Stall".
-     Must earn its place — real, specific, sourced to the port's own language. -->
-<div class="note note--quote" data-label="At the Stall"><p><!-- WRITER: the 4–6 local words (please/thank you/"for the boat"/"what's freshest today") plus ONE custom that signals you cook here, not pass through — and the etiquette that opens the back stock at the back-stock price. Real and specific to this port; warm but useful. Name the words in their language. --> The handful of local words and the one custom that turn a chef from a tourist into a regular — and get the box at the local price.</p></div>
-
-<h2 id="a-week">A Week or More: To the Source</h2>
-<p class="pc-kicker"><!-- WRITER: one line — with a week you go where the shops buy. --> With a week you skip the shops and go where the shops buy — as long as they will deliver to a yacht.</p>
-<!-- THE SOURCE SUPPLIERS — the wholesale market that feeds the city (this port's
-     Rungis), the fish house that supplies the fishmongers, the grower or cooperative
-     behind the produce stalls. RULE: as close to origin as possible WHILE they still
-     deliver to a yacht — every entry's meta states Delivers to yacht / minimum order /
-     lead time. One pfold each; .top marks the one to call first. -->
-<details class="pfold top" id="p-wholesale-market">
-    <summary><div><div class="pfold__name">[The wholesale market — the city's Rungis]</div><div class="pfold__hook">[address] &middot; [trade hours, e.g. 04:00–09:00] &middot; [access: trade card / agent]</div></div><span class="pfold__chev"></span></summary>
-    <div class="pfold__body">
-        <div class="pfold__recog">[one line — this is where the shops buy; what changes when you buy here]</div>
-        <p>[The halls that matter (fish / produce / dairy), the day and hour the best lots move, what a yacht can and cannot buy without a trade account, and the price step against retail — with a number.] <span class="cau cau--med" data-fix="[Workaround — the agent's trade card, the hour to arrive, the pallet minimum.]">[pill]</span></p>
-        <div class="pfold__meta">
-            <div><strong>Delivers to yacht</strong>[yes via carrier / min order / lead time]</div>
-            <div><strong>Access</strong>[trade card · agent · public hours]</div>
-            <div><strong>Phone</strong>[…]</div>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a>
-    </div>
-</details>
-<details class="pfold" id="p-fish-house">
-    <summary><div><div class="pfold__name">[The fish house — who supplies the fishmongers]</div><div class="pfold__hook">[address] &middot; [landing days] &middot; [phone]</div></div><span class="pfold__chev"></span></summary>
-    <div class="pfold__body">
-        <div class="pfold__recog">[one line — the company behind the counters; the boats it buys from]</div>
-        <p>[What lands with them and when, the species worth a direct order, the grading language they use, and the day-of-week that decides freshness — sourced.] <span class="cau cau--med" data-fix="[Workaround — order by the evening before the landing; accept the substitute they name.]">[pill]</span></p>
-        <div class="pfold__meta">
-            <div><strong>Delivers to yacht</strong>[yes / min order / lead time]</div>
-            <div><strong>Phone</strong>[…]</div>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a>
-    </div>
-</details>
-<!-- Repeat the pfold for the grower / cooperative / dairy behind the produce stalls. -->
-
-<!-- SPECIALTY & WINE — the shops worth the trip and the case order. Same pfold structure. -->
-<p>Then the shops that justify the trip — the case and the wheel:</p>
-<details class="pfold" id="p-wine">
-    <summary><div><div class="pfold__name">[Wine merchant]</div><div class="pfold__hook">[address] &middot; [since YYYY] &middot; [phone]</div></div><span class="pfold__chev"></span></summary>
-    <div class="pfold__body">
-        <div class="pfold__recog">[one line — the case-order go-to]</div>
-        <p>[The labels worth the case order, named by <span class="term">appellation</span> where it matters.] <span class="cau cau--med" data-fix="[Workaround — siesta hours, phone ahead for a multi-bottle order.]">[pill]</span></p>
-        <div class="pfold__meta">
-            <div><strong>Address</strong>[…]</div>
-            <div><strong>Phone</strong>[…]</div>
-            <div><strong>Hours</strong>[…]</div>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=" target="_blank" rel="noopener">Map &nearr;</a>
-    </div>
-</details>
-<!-- Repeat pfold for cheese counter, bakery, and any cultural-reference stop (mark warn). -->
-<div class="note note--key"><p><!-- WRITER: the decision point — order the case by phone N days ahead, or accept what's on the shelf. State the lead time. --> placeholder — phone the case order ahead, or take what's left.</p></div>
-
-<h2 id="transport">Transport — [Lines, Carrello / Ferry, Access Fee]</h2>
-<p class="pc-kicker"><!-- WRITER: one line — moving boxes, not people, is the whole problem. --> The routes, the baggage rule, and the fee that catches crew out.</p>
-<!-- Chef notes on moving boxes: the lines that matter, the baggage rule, any city fee. -->
-<p><strong>[Public transport in N lines]:</strong> <!-- WRITER: only the routes a chef needs, with the time-critical leg and the run-time. --> placeholder.</p>
-<p><strong>[Fares / the baggage or carrello rule]:</strong> <!-- WRITER: current-year fares, the free-baggage allowance, what a loaded <span class="term">carrello</span> (hand trolley) counts as. --> placeholder. <span class="cau cau--high" data-fix="[Workaround — off-peak only window, validate at gate, fines.]">[pill]</span></p>
-<p><strong>[Any city / day-tripper fee]:</strong> <!-- WRITER: the fee, the dates, the crew exemption and how to secure it in writing. --> placeholder. <span class="cau cau--high" data-fix="[Workaround — get the working-crew exemption in writing through the agent before sending crew ashore.]">[pill]</span></p>
-<div class="note note--warning"><p><!-- WRITER: the trap — crew fined at the gate for an unvalidated ticket or an unexempted access fee. The written move that avoids it. --> placeholder — the fine crew walk into, and the paper that prevents it.</p></div>
-
-<h2 id="watchouts">⚠ Watch-outs by Season &amp; Event</h2>
-<p class="pc-kicker"><!-- WRITER: one line — the few dates that break a charter day. --> The windows that produce every horror story — and the move for each.</p>
-
-<!-- TRADITION BEAT — "The Calendar". The festival that strips the shelves IS the
-     festival that defines the town: pair each seasonal window to what it means
-     CULTURALLY and OPERATIONALLY in the same breath. This turns a watch-out list
-     from a warning into a reason to care about the port. Locked note[data-label]. -->
-<div class="note" data-label="The Calendar"><p><!-- WRITER: 3–4 lines, each pairing one seasonal window to both meanings at once — the saint's day / harvest / regatta that empties the market is also what the town lives for. e.g. "Mid-Aug feast — the whole coast eats the same dish for three days; the fish hall sells out by 09:00 and shuts for two. Order it as a guest special, not a staple." Real, sourced where you can. --> Each window means something to the town and something to your provisioning run — name both.</p></div>
-
-<!-- The few that actually break the day. In the live build these render from a data
-     file into #wo-list; in the skeleton, list them inline as a short ol so a writer
-     can fill them without the JS. Keep severity language: "breaks the day" / "annoying". -->
-<ol>
-    <li><strong>[Event / season — when]</strong> — [what breaks] · <em>Workaround:</em> [the move]. <!-- severity: high · breaks the day --></li>
-    <li><strong>[Event / season — when]</strong> — [what breaks] · <em>Workaround:</em> [the move]. <!-- severity: medium · annoying --></li>
-    <li><strong>[Event / season — when]</strong> — [what breaks] · <em>Workaround:</em> [the move].</li>
-</ol>
-
-<h2 id="bottom">The Bottom Line</h2>
-<p class="pc-kicker"><!-- WRITER: one line — if you read nothing else, this. --> The three moves, the load-out, and what to avoid.</p>
-<!-- If you read nothing else. Three operational moves + a load-out list + an avoid list. -->
-<p>[One sentence on the port's character.] By how long you stay: <strong>hours — [the agent move]</strong>; <strong>a couple of days — [the store that delivers + the quick-radius run]</strong>; <strong>a week — [the source to call first]</strong>.</p>
-<p><strong>Before you sail away,</strong> load [the named, sourced things this port is the place to buy — by the case, the wheel, the window].</p>
-<p><strong>Avoid:</strong> [the named festival weeks, the closed-canal weekend, the red-alert days — the windows that produce every horror story].</p>
-<!-- NO CLOSING "ONE THING" BOX (founder rule 2026-09-05) — the sous-chef line at the top is the takeaway. Do not restate it here. -->
-
-<!-- Sign-off carries the DNA proof. Keep it. -->
 <p><strong>Tested at sea.</strong></p>
-                <!-- BODY:END -->
+
+<!-- SOURCES, FOLDED. Keep the inner div.article-sources markup exactly as it is: the linter
+     exempts that block by matching this opening tag. -->
+<details class="fold fold--sources">
+    <summary><span class="fold__title">Sources</span><span class="fold__chev"></span></summary>
+    <div class="fold__body">
+        <div class="article-sources">
+            <strong>Sources</strong>
+            <p>[Each supplier: how it was checked and when &mdash; a call, a visit, a named person. Plus the port authority, the fish auction, the agency and any published landing or price figure, with dates. No supplier appears here that was not confirmed.]</p>
+        </div>
+    </div>
+</details>
+
+<!-- BODY:END -->
 
                 <!-- Article Engagement -->
                 <div class="article-engagement">
@@ -448,6 +218,13 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script src="../assets/js/firebase-config.js"></script>
     <script src="../assets/js/main.js?v=20260826-spoon"></script>
+    <div id="pcv-mini"><div id="pcv-mini-handle"></div><div id="pcv-mini-body"><div id="pcv-mini-map"></div><div id="pcv-mini-active"></div></div></div>
+
     <script src="../assets/js/community.js"></script>
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- per-port data: window.PCV_DATA + window.PCV_CONFIG -->
+    <script src="../assets/js/port-call-{{SLUG}}-data.js"></script>
+    <script defer src="/terroir/_assets/port-call/port-call-render.js"></script>
+    <script defer src="/terroir/_assets/port-call/port-call-shell.js"></script>
 </body>
 </html>

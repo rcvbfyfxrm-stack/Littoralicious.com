@@ -138,8 +138,10 @@ get slow from their heavy data, move just the big files to git-lfs; URLs never c
   or mix its identity editorially. (See NEXUS rule: Sextant ↔ Littoralicious separation.)
 - **Never publish real names from WhatsApp / private chats.** Anonymise: "one chef," "a crew member."
 - **No version numbers in active filenames.** No `style-v2.css`. Drafts use the `draft` flag.
-- **Port Call uses the Quick Map text table** — never a graphical map (that's the Terroir
-  system, which must not blend in here).
+- **Port Call carries a real supplier map** (founder ruling 2026-09-08, reversing the text-table
+  rule). It uses Port Call's OWN kit at `terroir/_assets/port-call/` — never `terroir/_assets/guide/`.
+  The separation that still stands is one of purpose, not pixels: **Port Call is a tool for work —
+  suppliers, sourcing, stocking the galley; Terroir is a document for exploring a place.**
 - **Don't hand-edit generated files** (homepage card block, section lists, sitemap.xml,
   feed.xml, draft-articles.json). Change `articles.json` + the body, then `npm run build`.
 

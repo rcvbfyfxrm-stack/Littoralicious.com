@@ -1,0 +1,50 @@
+/* ============================================================================
+   PORT CALL — SHELL  (added 2026-09-08)
+   The three things a provisioning guide needs on top of the renderer: pick your
+   angle, search the port, keep your own list. Port Call's OWN kit — it borrows
+   nothing from terroir/_assets/guide/, per the standing separation ruling: same
+   level, different system. Prefix is pc- throughout.
+   Progressive enhancement: without this file the guide still renders and reads.
+   ========================================================================== */
+.pc-shell { position: sticky; top: 0; z-index: 40; margin: 0 0 28px;
+  padding: 14px 0 12px; background: var(--paper, #fafafa);
+  border-bottom: 1px solid var(--rule, #d4d4d4); }
+
+.pc-shell__row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+.pc-search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px;
+  border: 1px solid var(--rule, #d4d4d4); background: #fff; padding: 8px 12px; }
+.pc-search input { flex: 1 1 auto; border: 0; outline: 0; background: transparent;
+  font-family: inherit; font-size: 14px; color: inherit; min-width: 0; }
+.pc-search__icon { flex: 0 0 auto; opacity: .5; font-size: 13px; }
+.pc-search__clear { flex: 0 0 auto; width: 22px; height: 22px; border: 0; background: transparent;
+  cursor: pointer; font-size: 16px; line-height: 22px; text-align: center; padding: 0;
+  color: var(--ink-mut, #6b7280); }
+.pc-search__clear:hover { color: var(--sea, #2d4a5e); }
+.pc-search__clear[hidden] { display: none !important; }
+
+.pc-angles { display: flex; flex-wrap: wrap; gap: 6px; }
+.pc-angle { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px;
+  letter-spacing: .06em; text-transform: uppercase; padding: 7px 12px; cursor: pointer;
+  border: 1px solid var(--rule, #d4d4d4); background: transparent; color: inherit; }
+.pc-angle:hover { border-color: var(--sea, #2d4a5e); }
+.pc-angle[aria-pressed="true"] { background: var(--sea, #2d4a5e); border-color: var(--sea, #2d4a5e); color: #fff; }
+.pc-angle__n { opacity: .6; margin-left: 6px; }
+
+.pc-count { flex: 0 0 auto; font-size: 12px; color: var(--ink-mut, #6b7280); }
+.pc-empty { padding: 28px 4px; color: var(--ink-mut, #6b7280); font-style: italic; }
+
+/* the heart, dropped onto every rendered card */
+.pc-fav { position: absolute; top: 10px; left: 10px; z-index: 2; width: 30px; height: 30px;
+  border: 1px solid var(--rule, #d4d4d4); background: #fff; cursor: pointer; line-height: 1;
+  font-size: 14px; color: var(--ink-mut, #6b7280); display: flex; align-items: center; justify-content: center; }
+.pc-fav:hover { border-color: #b3324a; color: #b3324a; }
+.pc-fav[aria-pressed="true"] { color: #b3324a; border-color: #b3324a; }
+.pcv-card { position: relative; }
+/* The renderer owns the right-hand vote column (a PUBLIC count). The keep-heart is PRIVATE
+   and sits at the top of that same column, so the two read as one control stack and neither
+   lands on the card body. --incol cancels the absolute fallback positioning. */
+.pc-fav--incol { position: static; margin: 0 auto 6px; }
+
+.pc-hidden { display: none !important; }
+@media print { .pc-shell, .pc-fav { display: none !important; } }

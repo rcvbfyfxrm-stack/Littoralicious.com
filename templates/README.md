@@ -36,7 +36,7 @@ Technique is not recipe — the Recipe Blueprint is the recipe.
 | `signal-fire` | 06 | Industry & Ports | Supply Alert & Forecast — an alert in ONE section: what moved, the context, how it hits us, what to do. 2–4 min |
 | `trade-winds` | 07 | Industry & Ports | Career & industry / regional shifts |
 | `tight-ship` | 08 | Techniques & Recipes | Galley operations — ONE problem solved: context, the fix, why it works, what it costs. 3–5 min |
-| `port-call` | 09 | Industry & Ports | City provisioning guide by dwell time — hours / days / a week (Quick Map text table) |
+| `port-call` | 09 | Industry & Ports | City provisioning guide on a supplier map, three angles by dwell time, search + keep-list. Port Call's own kit, never Terroir's |
 | `the-locker` | 10 | Techniques & Recipes | Equipment review — the verdict first, then the engineering. 4–6 min |
 | `weekly-brief` | 11 | Industry & Ports | Digest |
 

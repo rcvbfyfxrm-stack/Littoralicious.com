@@ -344,6 +344,18 @@ checkbox list (`data-qty`/`data-unit`) · `rcp-progress` + `rcp-steps`/`rcp-step
 `rcp-fold(__body)` bottom folds · `rcp-meta` reset row. **Contract:** never re-order `.rcp-ing`/`.rcp-step` after publish (ticks persist by DOM
 index); `rcp-why`/`rcp-ratio`/`rcp-fold` are native `<details>` — no JS; copy the markup from the template, never re-derive it.
 
+### Port Call map kit — `terroir/_assets/port-call/` (Port Call only, added to 2026-09-08)
+The supplier map, its cards and the shell that sits over them: `port-call-vars.css` · `port-call.css` ·
+`port-call-card.css` · `port-call-render.js` (renders `#pcv-map`, `#pcv-legend`, `#pcv-berths` and the
+three `#pcv-list-*` bands from `window.PCV_DATA` / `PCV_CONFIG`) · **`port-call-shell.css` +
+`port-call-shell.js`** (new: the search bar, the three-angle switcher and the private keep-list heart,
+injected over the rendered cards). Leaflet from unpkg.
+**This kit is Port Call's own and shares no file with `terroir/_assets/guide/`.** The separation that
+matters is purpose: Port Call is a tool for work, Terroir a document for exploring a place. The
+graphic-map ban on Port Call was lifted by the founder on 2026-09-08; the framing ban was not.
+⚠ The renderer already draws a public vote heart in the card's right-hand column, so the private
+keep-heart is positioned on the LEFT. Do not move it back.
+
 ### Port Call set — `assets/css/port-call-content.css` (Port Call template only)
 Port Call's components live in their own stylesheet, not `style.css`: `pc-quicknav` (anchor nav) · `pc-funfact` (hard-fact bar) ·
 `pc-quickmap` (the text-table map — never a graphic) · `pc-kicker` (section kicker) · `pc-pullq` (flat pull-quote) ·
