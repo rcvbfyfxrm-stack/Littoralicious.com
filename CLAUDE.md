@@ -28,9 +28,10 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
 ## Writing editorial — rules-first
 
 **The first law (DNA.md): never lose focus.** Every line must pull the reader to the next —
-that is the bar for publishing. Build focus in with the locked components: the `.sous` line up
-top (the sentence you'd say to your sous chef — the answer, with the whole piece as its argument;
-founder rule 2026-09-05), the `.article-toc` sum-up after it, `.note--quote` pull-quotes to re-hook, `.note--key`/`.note--science` insights
+that is the bar for publishing. Build focus in with the locked components: on Technique, Study
+Decoded and Equipment Review the `.sous` line up top (the sentence you'd say to your sous chef, with
+the whole piece as its argument; those three templates only, founder ruling 2026-09-08), the
+`.article-toc` sum-up, `.note--quote` pull-quotes to re-hook, `.note--key`/`.note--science` insights
 where earned, `.term` for inline jargon, one takeaway to close.
 
 Before drafting any article/page, open the response with **two things**, in order:

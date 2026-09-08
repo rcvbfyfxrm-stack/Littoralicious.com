@@ -8,8 +8,7 @@ and adds a draft entry to `data/articles.json` (category + subtag default per te
 ## The first law is built in
 
 Every template is **focus-engineered** (see `content/DNA.md` → *Never lose focus*). Each one
-ships with: the **`sous` block first on the page** — the line you'd say to your sous chef, with the
-whole piece as its argument (founder rule 2026-09-05) — then the `article-toc` sum-up (one-line
+ships with: the `article-toc` sum-up (one-line
 description per section), no promise box since 2026-08-26, labelled `divider` section breaks, a
 one-line value kicker under each `<h2>`, `note--quote` pull-quotes to re-hook, `note--key` /
 `note--science` / `note--action` / `note--warning` callouts where they belong, inline `term`

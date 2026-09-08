@@ -16,9 +16,10 @@ you haven't earned the next line yet.*
 
 **How we engineer focus** (every article, built only from the locked components):
 
-- **Open with the line you'd say to your sous chef.** The `.sous` block is the first thing on the
-  page: one sentence in the imperative, specific, no hedge — the answer. Everything below it is the
-  science behind that sentence (founder rule 2026-09-05). Answer first, argue after.
+- **Answer first, argue after.** On Technique (02), Study Decoded (04) and Equipment Review (10) that
+  is literal: the `.sous` block opens the page with one sentence you would say out loud to your sous
+  chef, and everything below is the science behind it. **Those three templates only** (founder ruling
+  2026-09-08). Elsewhere the piece opens on its own register, and the same discipline applies in prose.
 - **Then the sum-up.** An `.article-toc` with a one-line description under every section — the reader
   sees the whole piece and clicks to what they came for. No promise box (founder rule 2026-08-26).
   Rare words define themselves on click; stories sit where they bite.

@@ -86,11 +86,15 @@ the reader stays where they are. Say the tool is **simmering**; never promise a 
 ```html
 <div class="sous"><p>Board goes back in the rack on its edge, never flat.</p></div>
 ```
-The first block on the page, before the template's own opening device. One sentence a chef would say
-out loud to their sous chef: the answer, imperative, specific, no hedge — everything below it is the
-science behind that sentence. The eyebrow is drawn by CSS; never type the label. **It replaced the
-closing takeaway box on every template** — do not restate it at the foot. It is also the one thing
-allowed to sit above the Ingredient Profile's specimen case: it is the payoff, not a scene line.
+**Only three templates carry it (founder ruling 2026-09-08): Technique (02), Study Decoded (04) and
+Equipment Review (10).** Everywhere else the piece opens on its own register — the specimen case, the
+dated scene, the headnote, the Signal Board, Since last week — and a line worth saying out loud is
+written as plain prose, not put in this box. Do not reach for `.sous` outside those three.
+
+On those three it is the first block on the page: one sentence a chef would say out loud to their
+sous chef — the answer, imperative, specific, no hedge — with everything below it as the science
+behind that sentence. The eyebrow is drawn by CSS; never type the label. **It replaced the closing
+takeaway box, which stays retired on every template.**
 
 ### Source marker — `ref` (added 2026-09-05)
 ```html

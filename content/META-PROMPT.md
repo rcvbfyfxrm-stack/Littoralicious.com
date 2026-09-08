@@ -27,9 +27,9 @@
 
 ## THE OPENING (law) — the sous-chef line, then the sum-up
 
-**Founder rule, 2026-09-05: every article opens on the line you would say to your sous chef, and
-everything below it is the science behind that statement.** The `.sous` block is the first thing on
-the page, before the template's own opening register — one sentence in the imperative, specific, no
+**Founder ruling, 2026-09-08: the sous-chef line belongs to three templates — Technique (02), Study
+Decoded (04) and Equipment Review (10) — and nowhere else.** On those, the `.sous` block is the first
+thing on the page, before the template's own opening register — one sentence in the imperative, specific, no
 hedge, the kind a chef actually says out loud across a galley. The piece then earns it. This is what
 makes the Gear Review lead with the verdict, the Supply Alert lead with the move, and the Study
 Decoded lead with the finding rather than the paper.
@@ -143,7 +143,7 @@ the **pro learns**, and what it must **never** do. Two templates that answer ali
 | 07 | Career & Industry | The rulebook moving under your feet, by region | **The dockside myth** — what everyone repeats, and the shift making it dangerous | The comparison rack (case-grid / hub-grid / band-ladder) | The named statute + exact threshold pros half-know + The Trap | Hand-rolled grids; advice without the named rule; one-rule-fits-all |
 | 08 | Galley Operations | **One galley problem, solved** — context, the fix, why it works, what it costs | **The sous-chef line** — the fix itself, in one imperative sentence | The numbered fix a chef runs tonight, timed + the mechanism with its number + the Station Map (`galley-plan`) **only where the problem is genuinely spatial** | The mechanism behind a fix everyone half-knows, sourced + the honest count from real service | A whole-galley system essay; more than one problem per piece; a seven-section protocol; a Setup Checklist or Proof-It-Scales section (cut 2026-09-05); vibes instead of counts; a closing takeaway box |
 | 09 | Port Call | The port, decoded from the berth | **The port's single hard fact** — the constraint that shapes every decision | Quick Map text table + Three Berths + the Dwell-Time Ladder (hours / days / week: Agent Brief, Quick Radius, source suppliers) + Cook This Port | The one number repeated at the pass (cold-chain figure, named agency) + price-vs-import | Graphic maps (Terroir's); tourism prose; unverified suppliers |
-| 10 | Equipment Review | Gear judged against the job, counted — **the answer first** | **The sous-chef line, then the Verdict chip** — which kit, and the one rule for living with it | The Verdict chip (BUY / SKIP / BUY IF) **pinned at the top** + `glance` spec grid + the counted test + when-not-to | The maker's claim checked against the physics with a named standard + the trial data, conditions named. Register: every number carries its unit *and* its galley consequence | Brochure rewrites; softened verdicts; specs without price/footprint/draw; **burying the verdict below the argument**; an adjective where a unit belongs; a closing takeaway box |
+| 10 | Equipment Review | Gear judged against the job, counted — **the answer first** | **The sous-chef line, then WHAT YOU NEED** — the named shopping list with a reason each, then the Verdict chip | The Verdict chip (BUY / SKIP / BUY IF) **pinned at the top** + `glance` spec grid + the counted test + when-not-to | The maker's claim checked against the physics with a named standard + the trial data, conditions named. Register: every number carries its unit *and* its galley consequence | Brochure rewrites; softened verdicts; specs without price/footprint/draw; **burying the verdict below the argument**; an adjective where a unit belongs; a closing takeaway box; **judging a field of two when the trade names ten**; picking one winner where two are genuinely level |
 | 11 | Weekly Brief | The continuing conversation | **Since last week** — the carried thread, first | The serial frame (Since last week settles closed calls / Watching next) + note rotation | One named source + one figure per item; the flip thresholds in Watching next | More than 5 items; two consecutive same-type notes; a one-shot list |
 
 **The call-back loop (founder law, 2026-08-24).** Every Supply Alert & Forecast ends with one
