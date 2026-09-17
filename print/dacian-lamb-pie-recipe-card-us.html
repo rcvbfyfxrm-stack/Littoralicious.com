@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US &middot; Dacian Lamb Pie &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.2pt; line-height: 1.22; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 5mm 8mm 4mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 1.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; }
+        h1 { font-family: Georgia, serif; font-size: 17pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 7.4pt; color: #4a5568; line-height: 1.22; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 1.4mm; padding-top: 1.4mm; border-top: 1px solid #e2e2e2; font-size: 7.4pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 1.5mm 0 0; padding: 1.1mm 2mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.3pt; line-height: 1.22; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.3mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 4.5mm; margin-bottom: 1.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 0.9mm; margin-bottom: 1.5mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.8mm 0 1.2mm 0; }
+        .group-label { font-size: 6.7pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.8mm 0 0.3mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.2pt; }
+        .ingredients td { padding: 0.35mm 1mm; vertical-align: top; line-height: 1.24; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.8pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td:nth-child(3) { font-size: 6.4pt; text-align: right; color: #6b7280; white-space: nowrap; width: 62px; padding-left: 1.8mm; }
+        .note { font-size: 6.6pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.2pt; color: #6b7280; margin-top: 1.4mm; padding-top: 0.9mm; border-top: 1px solid #f0f0f0; line-height: 1.24; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 0.95mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.4mm 0; padding: 0.4mm 0 0.4mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.3pt; font-style: italic; color: #4a5568; line-height: 1.22; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.2mm 2.2mm; margin-top: 1.3mm; font-size: 7.1pt; line-height: 1.22; }
+        .done strong { color: #2d4a5e; }
+
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.2mm 2.2mm; margin-top: 1.3mm; font-size: 7.1pt; line-height: 1.22; }
+        .sauce-block strong { color: #5b21b6; }
+
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.2mm 2.2mm; margin: 1.3mm 0; font-size: 7.1pt; line-height: 1.22; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.3mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.1mm 2mm; margin-bottom: 1.2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.1mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.3pt; line-height: 1.22; }
+        .elevation li { margin-bottom: 0.3mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 0.8mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 0.9mm; margin-bottom: 1.3mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.3pt; border-collapse: collapse; line-height: 1.22; }
+        .troubleshoot td, .charter td { padding: 0.3mm 1mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.3pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 0.8mm; padding: 0.7mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .ingredients td.vol{text-align:left;color:#94a3b8;font-size:6.4pt;font-family:-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap;padding-left:2.4mm;letter-spacing:0;}</style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Dacian Lamb Pie &mdash; Millet as the Sponge, Baked Under the Bell</h1>
+    <p class="hook">Knife-chopped lamb salted an hour ahead, soaked sheep&rsquo;s cheese and scalded millet in a wholemeal butter crust, baked covered then open &mdash; the millet drinks the juice, so the base stays crisp and the slice stands. A reconstruction from Dacian excavations, not a recovered recipe.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>2 &times; 28 cm</strong> (12 wedges)</span>
+        <span>Active: <strong>1 hr 10</strong></span>
+        <span>Total: <strong>3 hr 30</strong></span>
+        <span>Oven: <strong>220&rarr;200&deg;C</strong> (425&rarr;400&deg;F)</span>
+        <span>Done: <strong>80&deg;C</strong> centre</span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Dacia, 1st century BC to 106 AD &mdash; <em>reconstructed</em>. The larder is excavated: bread wheat at Sarmizegetusa Regia, garlic cloves, millet cooked wet at Șimleu Silvaniei; the Greeks mocked the Thracians as <em>butter-eaters</em>.</div>
+    <div><span class="o-label">Eaten, authentically</span>No Dacian pie survives; the words came with Rome. <em>Plăcintă</em> is Latin <em>placenta</em>, <em>țest</em> is <em>testum</em>: Cato&rsquo;s sheep&rsquo;s-cheese pie, baked on a hot hearth under a heated clay bell, coals on top.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span><em>Plăcintă</em> and the <em>țest</em> are still Romanian. Here: two round pies for the guests, the same filling as a lidded slab for the crew.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight (lb/oz) &middot; cups / volume in right column</p>
+        <div class="group-label">Start first &mdash; the cheese</div>
+        <table>
+            <tr><td>Brined sheep&rsquo;s cheese <span class="note">(telemea or sheep&rsquo;s feta, in the piece)</span></td><td class="data">14.1 oz</td><td class="vol">2&#8532; cups crumbled</td></tr>
+        </table>
+        <div class="group-label">The filling &mdash; about 5&frac14; lb</div>
+        <table>
+            <tr><td>Lamb shoulder, boned <span class="note">(from ~2.2 kg on the bone, fat on)</span></td><td class="data">3 lb 8.4 oz</td><td class="vol"></td></tr>
+            <tr><td>Fine sea salt <span class="note">(for the lamb)</span></td><td class="data">0.7 oz</td><td class="vol">3&#8531; tsp</td></tr>
+            <tr><td>Garlic <span class="note">(grated)</span></td><td class="data">1.1 oz</td><td class="vol">8 cloves</td></tr>
+            <tr><td>Hulled proso millet <span class="note">(rinsed clear)</span></td><td class="data">5.6 oz</td><td class="vol">&frac34; cup + 1 tbsp</td></tr>
+            <tr><td>Butter <span class="note">(to toast the millet)</span></td><td class="data">1.4 oz</td><td class="vol">3 tbsp</td></tr>
+            <tr><td>Water, boiling <span class="note">(for the millet)</span></td><td class="data">5.6 oz</td><td class="vol">&#8532; cup</td></tr>
+        </table>
+        <div class="group-label">The crust &mdash; two pies</div>
+        <table>
+            <tr><td>Wholemeal wheat flour <span class="note">(stone-ground; half strong white if it cracks)</span></td><td class="data">1 lb 10.5 oz</td><td class="vol">6 cups</td></tr>
+            <tr><td>Fine sea salt</td><td class="data">0.4 oz</td><td class="vol">1&frac34; tsp</td></tr>
+            <tr><td>Water</td><td class="data">12 oz</td><td class="vol">1&#8531; cups + 1 tbsp</td></tr>
+            <tr><td>Butter <span class="note">(diced)</span></td><td class="data">7.9 oz</td><td class="vol">1 cup</td></tr>
+        </table>
+        <div class="group-label">To finish</div>
+        <table>
+            <tr><td>Melted butter <span class="note">(pans and lids)</span></td><td class="data">1.1 oz</td><td class="vol">2 tbsp</td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; lamb = 100% &middot; flour = 100%</span>
+            <strong>Filling: lamb 100% &middot; soaked cheese 25% &middot; millet 10% dry, scalded 1:1 &middot; garlic 2% &middot; salt 1.25%.<br>Crust: wholemeal flour 100% &middot; boiling water 45% &middot; butter 30% &middot; salt 1.5%.</strong> Millet is sized to the meat, where the juice comes from; the cheese brings its own salt.
+        </div>
+
+        <p class="equipment"><strong>Kit:</strong> two heavy 28 cm pans, 4 cm deep (cast iron or deep tins) + two more to upturn as lids, or foil &middot; baking steel or heavy tray &middot; sharp knife &middot; clean cloth &middot; rolling pin &middot; probe thermometer &middot; scale</p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li>
+                <strong>Soak the cheese.</strong> 3 cm pieces, 3&times; their volume of cold water, fridge <strong>2 h</strong>, water changed twice. A crumb should taste milky, lightly salted. Squeeze hard in a cloth; crumble to 1 cm.
+                <span class="why">Salt diffuses back out into fresh water; small pieces and changed water keep it moving. <cite>&mdash; Cato, De Agri Cultura 76</cite></span>
+            </li>
+            <li>
+                <strong>Chop and salt the lamb.</strong> Sinew and thick fat seams out; 1 cm strips, then <strong>5&ndash;8 mm</strong> pieces. Work in the 20g salt and the garlic by hand 2 min, until tacky. Cover, fridge <strong>1 h</strong> (up to 24 h).
+                <span class="why">Salt draws out myosin, which sets on heating into the bind that lets a filling slice. <cite>&mdash; Offer &amp; Trinick 1983; Ruusunen &amp; Puolanne 2005</cite></span>
+            </li>
+            <li>
+                <strong>Scald the millet.</strong> Toast it in the 40g butter, medium heat, <strong>3&ndash;4 min</strong>, until nutty and the first grains pop. Add the 160g boiling water, stir once, lid on, off the heat <strong>10 min</strong>. Spread to cool. It should taste underdone.
+                <span class="why">Proso millet starch gelatinises at 71.5&ndash;79&deg;C; lamb collagen shrinks and sheds juice at 53&ndash;63&deg;C. Scalded, the grain goes in thirsty and finishes on the juice. <cite>&mdash; Li et al. 2020; Tornberg 2005</cite></span>
+            </li>
+            <li>
+                <strong>Fill and close.</strong> Mix lamb, cold millet and cheese until even. Fry a walnut of it; taste; adjust salt. Butter the pans, line with the bases (overhang on), <strong>~1.2 kg filling a pie</strong>, pressed level and firm, no air. Lid on, fold the overhang over, crimp. <strong>1 cm steam hole</strong>; brush with butter.
+            </li>
+            <li>
+                <strong>Bake under the bell, then open.</strong> Oven <strong>220&deg;C</strong> (fan 200) with a steel on the lowest shelf, 20 min. Pies on the steel, an upturned pan or tight foil dome over each: <strong>30 min</strong>. Uncover, <strong>200&deg;C</strong> (fan 180), <strong>25&ndash;35 min</strong>, until the lid is deep brown and the centre reads <strong>80&deg;C</strong>.
+                <span class="why">Covered it steams and heats through from the hot steel; open, the lid dries and browns. 71&deg;C makes minced lamb safe; 80&deg;C finishes the millet. <cite>&mdash; Cato 76; USDA FSIS</cite></span>
+            </li>
+            <li>
+                <strong>Rest, then cut.</strong> <strong>20 min</strong> in the pans on a rack; six wedges a pie (eight for a guest lunch).
+            </li>
+        </ol>
+
+        <div class="sauce-block">
+            <strong>The hot-water butter crust &mdash; make it after step 3, roll it warm</strong>
+            <ol style="counter-reset: sauce; padding-left: 4mm; margin-top: 1mm; list-style: none;">
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 1mm;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">a.</span>Flour and salt in a bowl. Bring the 340g water and 225g butter to a full boil together; pour over; mix, then knead 1 min while hot.</li>
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 1mm;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">b.</span>Cover, rest 15 min, still warm. One 660g piece a pie: 380g rolled to a 34 cm base, 280g to a 29 cm lid, ~4 mm.</li>
+                <li style="counter-increment: sauce; position: relative; padding-left: 1mm; margin-bottom: 0;"><span style="position: absolute; left: -4mm; font-weight: 700; font-family: 'SF Mono', monospace; font-size: 6.5pt; color: #5b21b6;">c.</span>Cold, it cracks: keep it covered, work fast, patch tears with a pinch of dough.</li>
+            </ol>
+        </div>
+
+        <div class="done">
+            <strong>Done:</strong> lid deep brown, dry, hollow when tapped &middot; <strong>80&deg;C</strong> (176&deg;F) through the steam hole &middot; juice at the vent thick and glossy, not thin and pink.<br>
+            <strong>Serve:</strong> warm, after the 20-min rest &mdash; cut hot and the slice slumps.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One filling, two dishes &mdash; the crew slab</span>
+            Lamb neck or mutton, chopped and salted the same; millet up to <strong>12%</strong> of the meat. Deep buttered 2/3 GN (or a ~35 &times; 30 cm tin), <strong>no base</strong>, half the crust as a lid tucked inside the rim, steam holes every 10 cm. Same bake to 80&deg;C; rest 20 min; twelve squares. <em>Half the pastry, the same slice.</em>
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul>
+                <li><strong>Bay leaves under the base</strong> &mdash; Cato set his <em>placenta</em> on them</li>
+                <li><strong>Flaky salt</strong> &mdash; on the buttered lid before the bake</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul>
+                <li><strong>Dried plums</strong> &mdash; 150g chopped through the filling</li>
+                <li><strong>The Roman finish</strong> &mdash; 20g honey on the hot lids</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Service</div>
+            <ul>
+                <li><strong>A clay <em>țest</em></strong> &mdash; heated on the steel, set over the pie</li>
+                <li><strong>Dill + lovage</strong> &mdash; the modern Romanian table, not Dacian</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Puddle, soggy base</td><td>Too little millet, wet cheese, cut early &rarr; 10% millet, squeeze dry, rest 20 min</td></tr>
+            <tr><td>Gritty millet</td><td>Went in raw, or centre under 80&deg;C &rarr; scald it; bake to 80</td></tr>
+            <tr><td>Slice crumbles</td><td>No salting time, lamb too lean &rarr; 1 h with the salt, keep the fat</td></tr>
+            <tr><td>Too salty</td><td>Cheese not soaked &rarr; 2 h, three waters; fry-test before closing</td></tr>
+            <tr><td>Dough cracks</td><td>It cooled &rarr; roll warm, covered; patch with a pinch</td></tr>
+            <tr><td>Lid pale, base dark</td><td>Covered too long &rarr; uncover at 30 min; up a shelf for the last 10</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>Day before</td><td>Soak + squeeze the cheese; chop + salt the lamb; both covered at &le;4&deg;C</td></tr>
+            <tr><td>Crust</td><td>On the day; or line the pans and chill, covered, up to 24 h</td></tr>
+            <tr><td>Raw pies</td><td>Freeze in the pans 1 month; thaw overnight; +10 min under the bell</td></tr>
+            <tr><td>Baked</td><td>Fridge within 2 h, 3 days; reheat covered at 180&deg;C to 74&deg;C centre</td></tr>
+            <tr><td>Provisioning</td><td>Millet keeps months sealed, brined cheese in its brine; lamb last port</td></tr>
+            <tr><td>Never</td><td>Close the pie untasted, skip the scald, or cut it straight from the oven</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Li et al. 2020 (<em>Food Chem.</em>) &middot; Balkrishna &amp; Visvanathan 2019 &middot; Tornberg 2005 &middot; Offer &amp; Trinick 1983 &middot; Ruusunen &amp; Puolanne 2005 (<em>Meat Sci.</em>) &middot; USDA FSIS. Record: Ciută 2023, 2026 &middot; Malaxa &amp; Berzovan 2023 &middot; Cato, <em>De Agri Cultura</em> 74&ndash;78 &middot; Strabo 7.3 &middot; Athenaeus 4.131</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
