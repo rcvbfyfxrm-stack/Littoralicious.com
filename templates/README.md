@@ -29,7 +29,7 @@ Technique is not recipe — the Recipe Blueprint is the recipe.
 | `--template` | # | Section | For |
 |---|---|---|---|
 | `shore-larder` | 01 | Ingredients | Ingredient Profile — the one ingredient template: specimen case, taste, science, pairings, galley, how to buy |
-| `the-method-technique` | 02 | Techniques & Recipes | Technique — Provoke → Instruct → Prove; a counted test lives in The Bench slot. Not a recipe |
+| `the-method-technique` | 02 | Techniques & Recipes | Technique v2 (2026-09-28) — concise, 6–9 min: the explainer, the step rail, the scale, the hard line, the break rows. A counted test lives in The Bench slot. Not a recipe. Reference: `freezing-protein` |
 | `littoral-heritage-article` | 03 | Heritage | Culture & history — founding facts on the historical arrow; no Origin Card |
 | `the-evidence` | 04 | Food Science | Study Decoded — single-study translation. Numbered source markers, sources folded |
 | `recipe-blueprint` | 05 | Techniques & Recipes | Recipe Blueprint — the recipe, with its science and galley cards |

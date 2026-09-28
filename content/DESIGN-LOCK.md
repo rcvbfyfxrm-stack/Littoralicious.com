@@ -365,6 +365,25 @@ the same never-hand-roll rule applies.
 
 ---
 
+### Technique v2 — `tq-*` (template 02 only, added 2026-09-28)
+The founder's redesign brief for Technique: *"a cooler design… smart and concise… straight to the point… an animation to show the visual points."* Reference build: `articles/freezing-protein.html`. Tokens only (ink, paper, sea; the id-card navy + gold for the hard line), square blocks, no gradients.
+```html
+<ol class="tq-steps"><li><p class="tq-step__do">Seal it flat.</p><p class="tq-step__why">Why, one or two sentences.</p><span class="tq-step__num">≤ 5 cm</span></li></ol>
+<div class="tq-scale"><div class="tq-scale__row tq-scale__row--band|--law"><span class="tq-scale__num">−1 to −5 °C</span><span class="tq-scale__what"><strong>Zone.</strong> What happens.</span></div></div>
+<div class="tq-line"><p class="tq-line__eyebrow">The hard line · where</p><p class="tq-line__num">−20 °C × 24 h</p><p>The rule.</p></div>
+<figure class="tq-bars" style="--max:24"><figcaption class="tq-bars__legend"><span class="tq-key tq-key--a">a</span><span class="tq-key tq-key--b">b</span></figcaption>
+  <div class="tq-bars__row"><p class="tq-bars__label">Context</p><p class="tq-bars__note">Weak point.</p><div class="tq-bars__track"><span class="tq-bar tq-bar--a" style="--v:4" title="…">4 mo</span><span class="tq-bar tq-bar--b" style="--v:12" title="…">12 mo</span></div></div></figure>
+<div class="tq-breaks"><div class="tq-break"><p class="tq-break__see">Symptom</p><p class="tq-break__why">Why</p><p class="tq-break__save">Save</p></div></div>
+<div class="tq-duo"><div class="tq-duo__cell"><p class="tq-duo__label">At sea</p><p>…</p></div><div class="tq-duo__cell"><p class="tq-duo__label">On charter</p><p>…</p></div></div>
+<figure class="tq-explainer" id="fx">… stage (poster SVG + labels SVG) · controls (play, range, phase) · gauge SVG · two-column readout · figcaption</figure>
+```
+- **Bars:** the value is always printed and every bar carries a `title`; series a is an outline, series b solid sea, so identity never rests on colour. The inline `--v`/`--max` custom properties are the one lock-safe inline, as with `--tw-accent`.
+- **Breaks** replace the three-column data-table, which crushed on a phone; the row labels (You see / Why / The save) are drawn by CSS.
+- **Explainer:** the frame is shared; each explainer brings its own scene script (`assets/js/<slug>-explainer.js`, three.js via the importmap). Motion lock applies.
+- `lint.mjs` counts every `<div class="tq-…">` as a visual beat.
+
+---
+
 ## Rules of use (the lock)
 1. **Never hand-roll a card or invent a class.** If a block doesn't exist above, use the closest locked one or a
    plain `<p>` — do not improvise inline styles. (The 2026-06-19 founder ruling: use the locked depth-block classes,
