@@ -167,6 +167,7 @@ const ROUTES = [
   { key:'algarve',  name:'The Algarve',                 sea:'Atlantic approach',            color:'#3f7d6e' },
   { key:'catalan',  name:'The Catalan Coast',           sea:'Balearic Sea',                 color:'#c26b4a' },
   { key:'azur',     name:'Côte d’Azur & the Var',       sea:'Ligurian Sea',                 color:'#b0843f' },
+  { key:'ionian',   name:'Eastern Sicily',              sea:'Ionian Sea',                   color:'#7a4f6b' },
   { key:'dalmatia', name:'The Dalmatian Coast',         sea:'Adriatic',                     color:'#2f6f7e' },
   { key:'saronic',  name:'The Greek Saronic',           sea:'Aegean',                       color:'#35618f' },
   { key:'turkish',  name:'The Turkish Aegean & Lycia',  sea:'The Turquoise Coast',          color:'#2aa198' },
@@ -192,6 +193,9 @@ const GUIDES = [
   { slug:'Var-Provence', name:'The Var', country:'FRANCE', region:'Provence, France', date:'2026-07-03', lat:43.1200, lng:6.0200, route:'azur', csv:false,
     essence:`The Var is the half of the Côte d’Azur that kept its working clothes on — a naval arsenal, a cork forest, and a black grape that likes its feet in the water and its head in the sun.` },
 
+  { slug:'Sicilia-Orientale', name:'East Sicily', country:'ITALY', region:'Siracusa · Etna · Taormina, Sicily', date:'2026-10-04', lat:37.4500, lng:15.1000, route:'ionian', csv:true, isNew:true,
+    essence:`A volcano and a sea arguing down two hundred kilometres of coast — Ortigia's spring where the Greeks landed in 734 BC, Catania rebuilt in black lava, the Val di Noto in gold after 1693, Taormina's theatre framing Etna. Breakfast is almond granita and a brioche; the wine is Nerello picked a thousand metres up in late October; fourteen MICHELIN-starred kitchens and the arancino eaten standing.` },
+
   { slug:'Split-Dalmatie', name:'Split', country:'CROATIA', region:'Dalmatia, Croatia', date:'2026-04-29', lat:43.5081, lng:16.4402, route:'dalmatia', csv:true,
     essence:`Diocletian’s palace still lived in, the Pazar market pressed against the Roman wall, the 1890 Ribarnica fish hall, Marjan dropping straight into the sea — and a Dalmatian table finally serious about itself.` },
   { slug:'Dubrovnik-Dalmatie', name:'Dubrovnik', country:'CROATIA', region:'Dalmatia, Croatia', date:'2026-05-30', lat:42.6507, lng:18.0944, route:'dalmatia', csv:true,
@@ -215,7 +219,7 @@ const GUIDES = [
   /* ── land / inland ── */
   { slug:'Girona-Catalunya', name:'Girona', country:'SPAIN', region:'Catalunya, Spain', date:'2026-07-12', lat:41.9794, lng:2.8214, route:'land', csv:true,
     essence:`Four rivers, a Roman spine and the widest Gothic nave ever raised — a stone city that reflects itself in the Onyar and eats off the Empordà plain, with El Celler de Can Roca at its summit and the xuixo invented three streets from the Cathedral.` },
-  { slug:'Prague-Cechy', name:'Prague', country:'CZECHIA', region:'Bohemia, Czechia', date:'2026-09-27', lat:50.0875, lng:14.4213, route:'land', csv:true, isNew:true,
+  { slug:'Prague-Cechy', name:'Prague', country:'CZECHIA', region:'Bohemia, Czechia', date:'2026-09-27', lat:50.0875, lng:14.4213, route:'land', csv:true,
     essence:`A river town that forgot it was one — timber rafts tied up below Vyšehrad until 1961 and a landlocked country registered ocean ships here. The lager is ordered by the depth of its foam, the grand café is a morning's occupation, and the first MICHELIN guide to Czechia starred five small rooms in December 2025. Eat two streets off the square; drink where the tank is in the cellar.` },
   { slug:'Paris', name:'Paris', country:'FRANCE', region:'Île-de-France, France', date:'2026-07-03', lat:48.8566, lng:2.3522, route:'land', csv:false,
     essence:`A museum-city that refuses to become a museum: the boulangerie still opens before dawn, and the espresso is still drunk standing at the zinc.` },
@@ -330,6 +334,7 @@ let MAP, MARKERS = {}, LAND_LAYER;
     { key:'algarve',  label:'Atlantic',        at:[36.55, -8.10], km:60 },
     { key:'catalan',  label:'Balearic Sea',    at:[40.90,  3.40], km:85 },
     { key:'azur',     label:'Ligurian Sea',    at:[42.90,  7.20], km:65 },
+    { key:'ionian',   label:'Ionian Sea',      at:[37.30, 15.75], km:70 },
     { key:'dalmatia', label:'Adriatic Sea',    at:[42.70, 16.30], km:95 },
     { key:'saronic',  label:'Saronic Gulf',    at:[37.55, 23.55], km:45 },
     { key:'turkish',  label:'North Aegean',    at:[39.50, 25.80], km:60 },
