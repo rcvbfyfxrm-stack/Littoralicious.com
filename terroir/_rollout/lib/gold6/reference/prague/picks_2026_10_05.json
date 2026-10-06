@@ -1,0 +1,609 @@
+{
+ "_rule": "Arnaud, 5 Oct 2026: max 3 places per subcategory, 4 only when genuinely torn. The cap wins: the guest list and the berths are rebuilt from the venues kept. Criteria: can't-miss, authentic over touristic, teaches something, confirmed over unverified.",
+ "lanes": {
+  "La crème": {
+   "keep": {
+    "la-degustation": "berth: the most Czech of the stars, cooking from 250 km",
+    "papilio": "Czechia's only two-star",
+    "field": "Prague's longest-held star, field-and-forest cooking"
+   },
+   "cut": {
+    "stangl": "the four-hour-dinner alternative; Field covers the Czech-produce star",
+    "levitate": "the theatrical star — a performance, not Prague",
+    "casa-de-carli": "excellent Italian-Czech pasta, the least Prague of the stars"
+   }
+  },
+  "The new wave": {
+   "keep": {
+    "taro": "Young Chef 2025 — the next star",
+    "marie-b": "no-menu counter, best-value serious dinner",
+    "benjamin": "ten seats, one Czech menu"
+   },
+   "cut": {
+    "parzival": "Levantine menu — interesting but least Prague of the four"
+   }
+  },
+  "The grand houses": {
+   "keep": {
+    "terasa-u-zlate-studne": "guest list: the castle-and-roofs dinner",
+    "v-zatisi": "guest list: private rooms, open daily",
+    "villa-richter": "dinner inside the castle vineyard"
+   }
+  },
+  "On the Vltava": {
+   "keep": {
+    "kampa-park": "guest list: the Charles Bridge terrace",
+    "mlynec": "guest list: the river view with a real plate",
+    "restaurace-vltava": "the working river table since 1945"
+   },
+   "cut": {
+    "lod-pivovar": "unverified; a beer boat, eat elsewhere"
+   }
+  },
+  "The larder": {
+   "keep": {
+    "naplavka-farmers-market": "the Saturday river market — the ritual",
+    "jirak-market": "the market Vinohrady actually shops at",
+    "holesovice-hall-22": "the slaughterhouse vegetable hall"
+   },
+   "cut": {
+    "kulatak-market": "a third Saturday market; Náplavka does it on the river"
+   }
+  },
+  "The Czech kitchen": {
+   "keep": {
+    "lokal-dlouhaaa": "guest list: the tank-Pilsner benchmark",
+    "u-mateje": "Bib: the most serious Czech cooking at pub prices",
+    "u-kroka": "regulars, a proper sauce, under Vyšehrad"
+   },
+   "cut": {
+    "u-kalendu": "excellent, but U Matěje is the Bib to make the trip for"
+   }
+  },
+  "Pubs & beer": {
+   "keep": {
+    "u-cerneho-vola": "unchanged 1965 room on the castle hill",
+    "u-vystreleneho-oka": "Žižkov's canonical pub",
+    "dva-kohouti": "beer from the source in a Karlín courtyard"
+   },
+   "cut": {
+    "zly-casy": "a multitap — good, not unique to Prague",
+    "vinohradsky-pivovar": "a neighbourhood brewery like many",
+    "klasterni-pivovar-strahov": "the setting more than the pub"
+   }
+  },
+  "The old houses": {
+   "keep": {
+    "u-zlateho-tygra": "berth: Hrabal's pub",
+    "u-pinkasu": "guest list: first Pilsner in Prague, 1843",
+    "u-fleku": "1499, the incontournable — told honestly"
+   },
+   "cut": {
+    "u-medvidku": "the fourth old hall; three tell the story"
+   }
+  },
+  "Grand cafés": {
+   "keep": {
+    "grand-cafe-orient": "berth: the world's only Cubist café",
+    "cafe-louvre": "the grand café to actually spend a morning in",
+    "kavarna-slavia": "the theatre-and-dissident café, the Absinthe Drinker"
+   },
+   "cut": {
+    "cafe-imperial": "a restaurant now (Pohlreich); the tiled hall stays as a room card under the grand cafés",
+    "kavarna-obecni-dum": "the room is the Municipal House, told under landmarks"
+   }
+  },
+  "Snídaně": {
+   "keep": {
+    "cafe-savoy": "grand-café breakfast under the 1893 ceiling",
+    "eska-karlin": "bread-first breakfast",
+    "bockem": "the ambitious two-hour breakfast"
+   }
+  },
+  "Little Hanoi": {
+   "keep": {
+    "sapa-market": "the Vietnamese market town — the un-Paris trip",
+    "hai-ha-sapa": "the one thing to eat at SAPA",
+    "pho-vietnam-anglicka": "the central phở when SAPA is too far"
+   },
+   "cut": {
+    "banh-mi-makers-dlouha": "a quick lunch, not a reason to go"
+   }
+  },
+  "The other kitchens": {
+   "keep": {
+    "turkestan": "halal Central Asian, the reset meal",
+    "polevkarna-pani-manco": "a Tbilisi soup counter since 2013",
+    "dhaba-beas": "how the city eats at noon"
+   },
+   "cut": {
+    "the-borsc": "unverified for 2026"
+   }
+  },
+  "The fire": {
+   "keep": {
+    "kantyna": "guest list: point at the cut, they grill it",
+    "nase-maso": "butcher's counter lunch",
+    "vycep-korunni": "Bib: the Moravian smokehouse"
+   }
+  },
+  "The fast plate": {
+   "keep": {
+    "havelska-koruna": "the paper-ticket canteen",
+    "jidelna-svetozor": "three courses for 169 Kč",
+    "centraal": "hot chicken worth planning around"
+   }
+  },
+  "Gardens and hills": {
+   "keep": {
+    "letna-beer-garden": "the one beer garden to see",
+    "parukarka": "the pub inside a hill",
+    "zlute-lazne": "the river bathing ground"
+   }
+  },
+  "La Rue": {
+   "keep": {
+    "liberske-lahudky": "the chlebíček standard",
+    "sisters-bistro": "the chlebíček rewritten",
+    "mysak": "the 1911 cukrárna, done properly"
+   },
+   "cut": {
+    "erhartova-cukrarna": "a second cukrárna; Myšák carries it"
+   }
+  }
+ },
+ "groups": {
+  "quartiers": {
+   "The towns Prague swallowed in 1922": {
+    "keep": [
+     "Vinohrady",
+     "Žižkov",
+     "Karlín",
+     "Letná"
+    ],
+    "why": "4 — torn: Letná is where 1989 stood and the beer garden is; Vršovice, Smíchov, Holešovice cut"
+   }
+  },
+  "money-sits": {
+   "The street and the hotels": {
+    "keep": [
+     "Pařížská street",
+     "Zlatá Praha, Fairmont Golden Prague",
+     "CottoCrudo, Four Seasons"
+    ]
+   },
+   "Rooms that close": {
+    "keep": [
+     "V Zátiší's private rooms",
+     "Kampa Park's boat"
+    ]
+   }
+  },
+  "provisioning": {
+   "The markets": {
+    "keep": [
+     "Náplavka farmers' market",
+     "Jiřák market",
+     "Holešovice market, Hall 22"
+    ]
+   },
+   "Bread and meat": {
+    "keep": [
+     "Eska",
+     "Naše maso",
+     "Pražská šunka · Prague ham"
+    ]
+   },
+   "The Czech larder": {
+    "keep": [
+     "Olomoucké tvarůžky",
+     "Hermelín",
+     "Oplatky, perník, trubičky"
+    ]
+   },
+   "The bottles": {
+    "keep": [
+     "Kofola",
+     "Burčák, Moravian wine and slivovice"
+    ],
+    "why": "told once: Becherovka lives under the bars' herbal shelf"
+   }
+  },
+  "kavarna": {
+   "The rooms that justify the trip": {
+    "keep": [
+     "Grand Café Orient",
+     "Café Louvre",
+     "Kavárna Slavia"
+    ]
+   },
+   "The other grand rooms": {
+    "keep": [
+     "Café Imperial",
+     "Café Savoy",
+     "Kavárna Lucerna"
+    ]
+   },
+   "How it works": {
+    "keep": [
+     "How to sit in a kavárna",
+     "The dezert cabinet",
+     "If you have one morning"
+    ]
+   }
+  },
+  "coffee-scene": {
+   "Roasters with their own bars": {
+    "keep": [
+     "Můj šálek kávy",
+     "EMA Espresso Bar",
+     "The Miners JZP"
+    ]
+   },
+   "Small counters, big coffee": {
+    "keep": [
+     "Onesip",
+     "Kavárna co hledá jméno",
+     "The championship"
+    ]
+   }
+  },
+  "sit": {
+   "Rooms built for staying": {
+    "keep": [
+     "Kampus Hybernská",
+     "Café Neustadt",
+     "Beautiful. Close the laptop."
+    ]
+   },
+   "Yards and squares": {
+    "keep": [
+     "Ungelt (Týnský dvůr)",
+     "Náměstí Jiřího z Poděbrad",
+     "Kampa"
+    ]
+   }
+  },
+  "twentyfour": {
+   "Morning: the river and the covered city": {
+    "keep": [
+     "06:30 · Charles Bridge at first light",
+     "08:00 · Breakfast at Café Louvre",
+     "09:00 · Kafka's head and the passages"
+    ]
+   },
+   "Afternoon to night: castle hill, Letná, and the tank": {
+    "keep": [
+     "12:00 · Strahov: library, then lunch at the brewery",
+     "15:15 · The castle and St Vitus",
+     "17:30 · Letná at sunset",
+     "19:30 · Dinner at Lokál Dlouhááá"
+    ],
+    "why": "4 — a day needs its dinner"
+   }
+  },
+  "pasaze": {
+   "The Wenceslas Square labyrinth": {
+    "keep": [
+     "Palác Lucerna",
+     "St Wenceslas on the dead horse",
+     "Světozor and the Tesla window"
+    ]
+   },
+   "Na Příkopě to Národní": {
+    "keep": [
+     "Palác Koruna",
+     "Palác Adria",
+     "Threading them: a passage route"
+    ]
+   }
+  },
+  "walks": {
+   "Hills over the river": {
+    "keep": [
+     "Petřín: funicular, tower, Hunger Wall, Strahov",
+     "Vyšehrad and the national cemetery",
+     "Vítkov into Žižkov"
+    ]
+   },
+   "River, gorge and vineyards": {
+    "keep": [
+     "Letná to Stromovka to Troja",
+     "The náplavka embankment",
+     "Divoká Šárka"
+    ]
+   }
+  },
+  "landmarks": {
+   "The Old Town side": {
+    "keep": [
+     "Charles Bridge",
+     "The Orloj",
+     "Old Town Square",
+     "The Jewish Town: Old-New Synagogue and Old Jewish Cemetery"
+    ],
+    "why": "4 — torn: all four are the reason people come"
+   },
+   "The castle side": {
+    "keep": [
+     "Prague Castle and St Vitus",
+     "St Nicholas, Malá Strana",
+     "Strahov Library"
+    ]
+   }
+  },
+  "small-wonders": {
+   "Gardens behind walls": {
+    "keep": [
+     "Vrtba Garden",
+     "Břevnov Monastery",
+     "St Clare's Vineyard, Troja"
+    ],
+    "why": "Vojan and Wallenstein are already under Rooms & gardens; Troja under Art"
+   },
+   "Stones and oddities": {
+    "keep": [
+     "Rotunda of St Longinus",
+     "Chochol's cubist houses under Vyšehrad",
+     "The Loreta carillon"
+    ]
+   },
+   "Things Prague did first, or strangely": {
+    "keep": [
+     "The defenestrations",
+     "Robot is a Czech word",
+     "Soft contact lenses, made in a kitchen",
+     "The Golem, a 19th-century invention"
+    ],
+    "why": "4 — torn: the Golem is the story every visitor is told wrong"
+   },
+   "Monuments with a second life": {
+    "keep": [
+     "The Stalin monument and the Metronome",
+     "The babies on the Žižkov tower",
+     "The Devil's Canal"
+    ]
+   }
+  },
+  "culture": {
+   "Rooms Mozart and the nation built": {
+    "keep": [
+     "Estates Theatre",
+     "National Theatre",
+     "How to get in cheaply"
+    ]
+   },
+   "Strings, mime and the small screen": {
+    "keep": [
+     "Puppetry, a UNESCO practice",
+     "Divadlo Na zábradlí",
+     "Ponrepo"
+    ]
+   }
+  },
+  "art": {
+   "Big modern rooms": {
+    "keep": [
+     "Trade Fair Palace",
+     "Kunsthalle Praha",
+     "DOX and the Gulliver airship"
+    ]
+   },
+   "Collectors, Cubists and Mucha": {
+    "keep": [
+     "Museum Kampa",
+     "House of the Black Madonna",
+     "Mucha Museum, Kaunický palace"
+    ]
+   },
+   "Gardens, studios and shops": {
+    "keep": [
+     "Troja Chateau",
+     "Josef Sudek's studio",
+     "Where Czech glass design is sold"
+    ]
+   }
+  },
+  "vltava": {
+   "The steamers and the boats you can take": {
+    "keep": [
+     "Parník Vltava (1940)",
+     "The Smíchov lock",
+     "Row yourself: Slovanka on Žofín"
+    ]
+   },
+   "Islands, ferries and cold water": {
+    "keep": [
+     "Ferry P2, Podbaba to Troja",
+     "The islands, read as a working river",
+     "Podskalská celnice na Výtoni"
+    ]
+   }
+  },
+  "sea-stories": {
+   "When the river came into town": {
+    "keep": [
+     "Bradáč, the bearded gauge",
+     "4 September 1890: the rafts broke the bridge",
+     "August 2002: the metro under water"
+    ]
+   },
+   "The landlocked navy": {
+    "keep": [
+     "Československá námořní plavba: Praha on the stern",
+     "Pionýr, the only one lost",
+     "Lednice, eight years in the Bitter Lake"
+    ]
+   }
+  },
+  "pivo": {
+   "Order like a regular": {
+    "keep": [
+     "The four pours",
+     "Degrees are not alcohol",
+     "Tankové pivo",
+     "The slip, the mat, 'ještě jedno'"
+    ],
+    "why": "4 — torn: the four are the whole grammar of a Czech pub"
+   },
+   "The Pilsner temples": {
+    "keep": [
+     "U Zlatého tygra",
+     "U Pinkasů",
+     "Lokál Dlouhááá"
+    ]
+   },
+   "Monks, craft taps and the one evening": {
+    "keep": [
+     "Dva kohouti",
+     "U Vystřelenýho oka",
+     "If you have one evening, do this one"
+    ]
+   }
+  },
+  "bars": {
+   "Rooms that matter": {
+    "keep": [
+     "Hemingway Bar",
+     "Black Angel's",
+     "Bugsy's"
+    ]
+   },
+   "The herbal shelf": {
+    "keep": [
+     "Becherovka",
+     "Slivovice",
+     "Tuzemák"
+    ]
+   },
+   "One drink, one room": {
+    "keep": [
+     "Tony's Café & Bar, Hotel Paris",
+     "Monastiq Bar & Lounge, Mandarin Oriental",
+     "Josef Aperitivo Bar"
+    ]
+   },
+   "Up high": {
+    "keep": [
+     "Letná beer garden",
+     "Glass Bar, Dancing House",
+     "Terasa U Zlaté studně"
+    ]
+   }
+  },
+  "natural-wine": {
+   "Names to ask for, and the season": {
+    "keep": [
+     "Milan Nestarec",
+     "Dobrá Vinice"
+    ],
+    "why": "told once: the burčák law lives in the larder"
+   }
+  },
+  "underground": {
+   "Clubs": {
+    "keep": [
+     "Cross Club",
+     "Roxy",
+     "Lucerna Music Bar"
+    ]
+   }
+  },
+  "around": {
+   "The beer, wine and spa-water country": {
+    "keep": [
+     "Plzeň · Pilsner Urquell brewery",
+     "Žatec · the Saaz hop landscape",
+     "Mělník · where the Vltava meets the Elbe"
+    ]
+   },
+   "Castles, silver and sandstone": {
+    "keep": [
+     "Kutná Hora · silver, bones, St Barbara",
+     "Karlštejn and the Bohemian Karst",
+     "Bohemian Switzerland · Pravčická brána after the fire"
+    ]
+   },
+   "The water, the ponds and the parks": {
+    "keep": [
+     "Třeboň · the carp ponds",
+     "Kladruby nad Labem · the white carriage horses",
+     "Český Krumlov · the honest answer"
+    ]
+   }
+  },
+  "avoid": {
+   "The warnings": {
+    "keep": [
+     "Eating on Old Town Square",
+     "Trdelník",
+     "Ham off the spit, by the 100 g",
+     "ATMs that offer to convert"
+    ],
+    "why": "4 — torn: the four that cost a visitor real money; the second Trdelník card was a duplicate"
+   }
+  },
+  "follow": {
+   "Who knows": {
+    "keep": [
+     "Taste of Prague",
+     "Maurerův výběr",
+     "Evan Rail"
+    ]
+   }
+  },
+  "events": {
+   "Autumn and winter 2026": {
+    "keep": [
+     "17 November: Struggle for Freedom and Democracy Day",
+     "Mikuláš, 5 December",
+     "The Christmas carp"
+    ],
+    "why": "told once: Designblok, Signal and 28 October are on the dated board"
+   },
+   "Spring and summer, for next year": {
+    "keep": [
+     "Pálení čarodějnic, 30 April",
+     "Prague Spring festival",
+     "Letní Letná"
+    ]
+   }
+  },
+  "hot-foot": {
+   "In the calendar": {
+    "keep": [
+     "Designblok 2026, 7–11 October",
+     "Signal Festival, 15–18 October",
+     "Dušičky, 2 November"
+    ]
+   }
+  }
+ },
+ "shortlist": {
+  "berths": [
+   "la-degustation",
+   "u-zlateho-tygra",
+   "grand-cafe-orient"
+  ],
+  "groups": {
+   "Last minute — save the night": [
+    "lokal-dlouhaaa",
+    "u-pinkasu",
+    "kantyna"
+   ],
+   "Plan ahead — this week": [
+    "terasa-u-zlate-studne",
+    "mlynec",
+    "v-zatisi"
+   ],
+   "Plan ahead — the grand night": [
+    "la-degustation",
+    "papilio",
+    "field"
+   ]
+  },
+  "why": {
+   "kampa-park": "left the list: book it for the bridge, not the kitchen — the boat stays under Where the money sits"
+  }
+ }
+}

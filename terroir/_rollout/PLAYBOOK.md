@@ -1,16 +1,79 @@
 # TERROIR UPLIFT — routine playbook
 
-**The target is ⭐⭐ GOLD5 (§ below). Reference guide = live `Kendwa-Unguja`.**
+**The target is ⭐⭐⭐ GOLD6 — the Prague standard (§ below, 6 Oct 2026). Reference guides = live `Prague-Cechy` and `Siracusa-Sicilia`.** GOLD6 RUN MODE is REVIEW FIRST: never push to `rebuild/publishing-system`.
 
 You are the nightly terroir-uplift agent. Each run you take **ONE** guide as far up the ladder as
-it will honestly go, verify it hard, and deploy only if the gate is green. Keep it to one guide so
+it will honestly go, verify it hard, and leave it on a review branch for Arnaud (GOLD6 run mode). Keep it to one guide so
 token use stays bounded. Be honest: if you can't reach quality, HOLD the guide (don't deploy a
 regression) and say so.
 
-**Read in this order:** §GOLD5 (the target) → §THE GATE IS AUTOMATED (how you prove it) →
+**Read in this order:** §GOLD6 (the target) → `lib/gold6/README.md` → §GOLD5 (still required underneath) → §THE GATE IS AUTOMATED (how you prove it) →
 §12 section order (the two traps that will otherwise waste your run) → `lib/newguide/README.md`
 (the build scaffold — do not re-derive the pipeline). GOLD3 and GOLD4 below are kept as the
 history of the ladder and as the acceptable floors; everything in them still holds.
+
+## ⭐⭐⭐ GOLD6 — THE PRAGUE STANDARD (2026-10-06, supersedes GOLD5 as the target)
+
+Arnaud, 5–6 Oct 2026: *"the guides are a bit overcharged — limit to 3 the places by subcategory … select
+the more authentic and interesting, always what they shouldn't miss; put 4 when you really can't decide"* ·
+*"make all the cards more interesting and complete so people are really captivated about the places they
+could visit; add labels even in things like walks"* · *"every night update all the guides to put them to
+the level of Prague"*. **References (live, read them before you start):** `terroir/Prague-Cechy/` (the
+original) and `terroir/Siracusa-Sicilia/` (the same layer built from scratch). Toolkit: `lib/gold6/`.
+
+**The seven things a GOLD6 guide has** (on top of everything GOLD5 requires — the gate still applies):
+1. **≤3 places per subcategory.** Every table lane (TABLES/CATEGORIES) and every `.fsub` group (and the hot
+   board's groups) holds at most 3; a 4 only when genuinely torn, and the reason is written down in the
+   picks file. Criteria, in order: can't-miss for THIS place · authentic over touristic · teaches something ·
+   `confirmed` over `unverified`. Tiny one-venue lanes are merged or cut — fewer places is the point.
+   ⚠ **The cap wins over the guest list:** the BRIDGE shortlist (exactly 3 groups, ≤3 ids each, every id
+   with a `charter{}` built only from its own fields) and the 3 berths are REBUILT from the venues kept —
+   never keep a venue because the list named it. Cut venues leave data.js, both CSVs and every `#venue-`
+   link (no dead anchors).
+2. **The reading layer (Prague 28 Sept):** authored `.gx-chapter` blocks with `.gx-band` headers, the
+   `.gx-tags` chapter bar + `.gx-subtags`, `data-tags` on every fold, merged folds with `.gx-merge` groups,
+   square tiles, the essay as a fold under a SHORT lead (~80 words with make-or-break + the warning), the
+   hover glossary (place's own words, accurate definitions), `.gx-tail` INSIDE the scoped container. Build
+   it by cloning the LIVE Prague page's chrome (see `gold6/reference/sicily/city_build.py`) — never edit
+   the locked kit `_assets/guide/*`.
+3. **Prague's 4 Oct fixes:** the closed `#tables` names its groups (`gx-tgroups`; strip the chrome's own
+   `prague-tgroups` block before injecting yours), the doors ONE NIGHT · THE GASTRONOMIC DIG-IN · FOR
+   GUESTS, the guest list split *Last minute — save the night* / *Plan ahead — this week* / *Plan ahead —
+   the grand night* (last-minute venues need hours read on their own site, dated), events + seasonal in
+   Pratique, a hi-fi/listening sub-tag (an honest "none found" card if there is none — never invent one).
+4. **Every card rewritten to captivate** (`gold6/SPEC.md`): hook teaser ≤110 chars; a 60–110-word TRUE
+   story (sea/river stories up to 160, keeping the ★ old-hand line); one "why go" line; pointer cards (a
+   venue inside a section) carry one line in THAT section's angle + "Full card →", no Maps. Every kept
+   venue gets a fresh `hook` (≤110) and `why` (50–90 words, distinct from verdict). Facts only from the
+   card, the venue record, the guide's research, or what you verify now with a trusted source (add it to
+   #sources). Disputes stay disputes.
+5. **Labels on every card** — `<dl class="fcard__facts">` (walk: Start · Length · Time · Terrain · Best hour ·
+   Don't miss · Bring; sight: Where · Open · Cost · Best hour · Time needed · Don't miss; market: Days ·
+   Hours · Go at · Look for; pointer: Order · When · Book · Price; story: Touch it today · Where the
+   sources argue …). Omit a label rather than guess; date every price. Then run `gold6/facts_tidy.py`
+   (a value never repeats its label, always starts with a capital). Page-local CSS as `#sicily-facts`.
+6. **Told once.** A fact lives in one home; other places point to it. Before you finish, run a repetition
+   audit (exact sentences ≥50 chars + 4-word shingles ≥12 shared between cards, popups, lane stories,
+   dish stories and venue `why`) and fix every hit — cut the duplicate popup or card, never the substance.
+7. **Re-verified now.** Every kept venue's liveness re-read (MICHELIN/Gambero Rosso/own site, dated);
+   closures, moves, wrong locations corrected (the Sicily pass found a Caravaggio in the wrong church and a
+   castle closed to 2027 — expect errors in the old text and fix them).
+
+**Proving it (all must pass before you hand the guide over):** `checks_gold4.py` WITH render ALL GREEN (write
+the guide's check config from what it now contains — `gold6/reference/sicily/gate_config.py`; floors are
+the curated counts, never padded) · `glass` if available, else a Playwright render with 0 page errors ·
+`gold6/probes/probe-guide.cjs <url>` (chapters, sub-tags, readout, pointer landing, back button, labels on
+every card, guest list at the foot, phone 390px no sideways scroll even with every card open) ·
+`gold6/probes/probe-links.cjs desk|phone <url>` = 0 failures · `checklinks.py . <slug>` = 0 dead (a whole
+dead host with no archive → cite by name, unlinked) · screenshots of one opened card on desktop and phone.
+
+### ⚠ GOLD6 RUN MODE — REVIEW FIRST (Arnaud, 6 Oct 2026). This overrides "Deploy" in the steps below.
+Never push to `rebuild/publishing-system` (that push IS the live deploy). Commit the finished guide to a
+branch `terroir-uplift/<slug>-<YYYY-MM-DD>` cut from `origin/rebuild/publishing-system`, push THAT branch,
+and in `state.json` (committed on the same branch) set the item `status:"review"` with `branch`,
+`checks` (one line per check with its result) and `notes`. Arnaud says "push" to publish. If a guide cannot
+reach the bar in one run, push what you have to the branch anyway with `status:"partial"` and exactly what
+remains, so the next run resumes from that branch instead of starting over. Never run the hub builder.
 
 ## What GOLD3 is (the target — match live Athens-Attiki / Piraeus-Saronic)
 Read `terroir/_rollout/lib/` (machinery) and the design lock context below. Three changes over GOLD2:

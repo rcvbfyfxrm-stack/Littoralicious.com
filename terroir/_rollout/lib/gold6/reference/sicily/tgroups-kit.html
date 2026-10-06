@@ -1,0 +1,41 @@
+<style id="sicily-tgroups">
+.gx-tgroups{display:flex;flex-wrap:wrap;gap:.4rem .9rem;align-items:baseline;margin:1.1rem 0 .4rem;font:500 .78rem/1.4 var(--font-mono,ui-monospace,monospace);letter-spacing:.06em;text-transform:uppercase}
+.gx-tgroups[hidden]{display:none}
+.gx-tgroups__lbl{color:var(--muted,#6b7280)}
+.gx-tgroups a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.gx-tgroups a b{font-weight:500;opacity:.6;margin-left:.3em}
+</style>
+<script id="sicily-tgroups-js">
+/* 5 Oct 2026: name the three groups on the closed #tables fold, with live counts; each link opens the
+   fold and takes its own jump once the cards exist (the 27 Sept filter trap). */
+(function () {
+  function groups() { var t = document.getElementById('tables'); return t ? t.querySelectorAll('.terroir-group') : []; }
+  function counts() {
+    var g = groups(); if (g.length < 3) return false;
+    Array.prototype.forEach.call(g, function (el, i) {
+      var n = 0, s = el.nextElementSibling;
+      while (s && !s.classList.contains('terroir-group')) { n += s.querySelectorAll('.terroir-card').length; s = s.nextElementSibling; }
+      var a = document.querySelector('.gx-tgroups a[data-tgroup="' + i + '"]');
+      if (a && !a.querySelector('b')) { var b = document.createElement('b'); b.textContent = n; a.appendChild(b); }
+    });
+    return true;
+  }
+  (function poll(k) { if (!counts() && k < 200) requestAnimationFrame(function () { poll(k + 1); }); })(0);
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('.gx-tgroups a[data-tgroup]');
+    if (!a) return;
+    e.preventDefault(); e.stopPropagation();
+    var t = document.getElementById('tables'); if (!t) return;
+    t.open = true;
+    var i = +a.getAttribute('data-tgroup');
+    /* the page keeps growing under the reader after the fold opens (phone): re-take the jump until it holds */
+    var tries = 0;
+    (function go() {
+      var g = groups()[i] || t; g.scrollIntoView({ block: 'start' });
+      var top = g.getBoundingClientRect().top;
+      if (++tries < 12 && (top > 120 || top < -5)) setTimeout(go, 150);
+      else if (tries < 4) setTimeout(go, 250);
+    })();
+  }, true);
+})();
+</script>
