@@ -1,0 +1,631 @@
+{
+ "maisha-beach": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Own site blocked to this session. Booking.com/Hotels.com/Expedia list the parent hotel as 'Maisha Nungwi' (URL slugs still 'aluna-beach-lodge'/'aluna-nungwi'), with a beach restaurant about 70 m from the hotel; no dated 2026 source seen for the restaurant or its event nights.",
+  "sources": [
+   {
+    "label": "Booking.com: Maisha Nungwi",
+    "url": "https://booking.com/hotel/tz/aluna-beach-lodge-nl.html"
+   },
+   {
+    "label": "Wanderlog place listing",
+    "url": "https://wanderlog.com/place/details/2800653"
+   }
+  ],
+  "corrections": [
+   "Own site could not be loaded: WebFetch and direct HTTPS were blocked by this session's egress proxy on 7 Oct 2026, so the old web URL is not re-confirmed and is left empty here.",
+   "Friday Afro Latin and Saturday saxophone nights (both 20:00) not confirmed by any source found; keep only if the own site confirms.",
+   "Dishes: tuna poke bowl and aubergine curry not confirmed; review snippets name fish coconut curry and tuna tartare instead (Wanderlog, weak). Recheck the menu.",
+   "Context to add: the beach restaurant belongs to the Maisha Nungwi hotel, listed by OTAs under its former name Aluna Nungwi, which explains the 'Aluna road' address."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "The beach restaurant of the Maisha Nungwi hotel, on the sand at the north tip of the island.",
+  "why": "The hotel behind this beach kitchen used to trade as Aluna Nungwi, which is why the lane down to it is still called the Aluna road and why the booking sites still carry the old name in their links. The restaurant sits about 70 metres from the hotel, directly on the sand and facing west for the sunset. Visitor reviews single out a fish coconut curry and a tuna tartare; check the current menu and the weekly music nights before you go.",
+  "facts": [
+   "The parent hotel is listed as Maisha Nungwi on Booking.com, Hotels.com and Expedia, with URLs still using the former name Aluna (OTA listings).",
+   "Maisha Beach Restaurant is described as about 70 m from the Maisha Nungwi hotel, at the northern tip of Zanzibar (search summary of listings).",
+   "Review snippets mention fish coconut curry and tuna tartare (Wanderlog, weak)."
+  ]
+ },
+ "kendwa-rocks": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Own site blocked. Third-party event pages surfaced in search (Techno Airlines club listing, a We Are Zanzibar page, a '2026 guide') describe the monthly Full Moon Party with ticket prices, and the hotel is listed on Booking.com/Kayak; none could be opened to see a date.",
+  "sources": [
+   {
+    "label": "Techno Airlines: Kendwa Rocks club page",
+    "url": "https://www.technoairlines.com/club/kendwa-rocks-zanzibar"
+   },
+   {
+    "label": "We Are Zanzibar: Full Moon Party at Kendwa Rocks",
+    "url": "https://wearezanzibar.nuxt.dev/zanzibar/full-moon-party"
+   },
+   {
+    "label": "The Citizen: Kendwa's legendary Full Moon party",
+    "url": "https://www.thecitizen.co.tz/tanzania/magazines/kendwa-s-legendary-full-moon-party-5224376"
+   },
+   {
+    "label": "Booking.com: Kendwa Rocks Hotel",
+    "url": "https://m.booking.com/hotel/tz/kendwa-rocks.html"
+   }
+  ],
+  "corrections": [
+   "Own site could not be loaded: WebFetch and direct HTTPS were blocked by this session's egress proxy on 7 Oct 2026, so the old web URL is not re-confirmed and is left empty here.",
+   "Timing: old says the first Saturday after each full moon; third-party pages say the Saturday closest to the full moon. Recheck on the own site before printing either.",
+   "Timings to add if confirmed: gates 19:00, main stage until about 04:00, afterparty in the club until 06:00 (third-party pages).",
+   "Price: old says about 50,000 TZS for the Full Moon Party; third-party pages say tickets from TZS 32,000 with earlier releases cheaper, charged in USD at checkout. Treat 50,000 as a door/late price only if confirmed.",
+   "Rocks Lounge Tue/Thu/Sat from 22:00 matches a third-party summary (not own site).",
+   "hot_this_month (Sat 29 Aug) is out of date; remove."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "The Kendwa beach hotel whose monthly Full Moon Party grew from a beach fire among friends in 1996.",
+  "why": "The hotel's own story puts the first Full Moon Party in 1996: a few friends and guests, a beach fire, drums and acrobats on a clear night. It is now a ticketed event with gates at 19:00, a main stage until about four and a club afterparty until six, run on a Saturday near each full moon. On the other nights it is a 47-room beach hotel with a bar on the sand and a club three nights a week.",
+  "facts": [
+   "Kendwa Rocks is a beach hotel on Kendwa Beach and home of the monthly Full Moon Party (third-party summaries).",
+   "The party began in 1996 as a beach-fire gathering of friends and guests with drums and acrobatics (third-party summary of the venue's account).",
+   "Full Moon Party: gates 19:00, main stage to about 04:00, club afterparty to 06:00 (We Are Zanzibar page, via search).",
+   "Tickets from TZS 32,000, earlier releases cheaper, charged in USD at checkout (third-party page, via search).",
+   "The Rocks Lounge Club opens Tue, Thu and Sat from 22:00 (third-party summary).",
+   "The hotel has 47 rooms (search summary)."
+  ]
+ },
+ "sunset-kendwa": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Only OTA listings (Hotels.com, Expedia, Travelocity) found: a lodge with 'Sunset Restaurant' and a beach bar. No own site, social account or dated 2026 source seen.",
+  "sources": [
+   {
+    "label": "Expedia: Sunset Kendwa",
+    "url": "https://expedia.com/Kendwa-hotels-Sunset-Kendwa.h8075665.Hotel-information"
+   },
+   {
+    "label": "Hotels.com: Sunset Kendwa",
+    "url": "https://sg.hotels.com/ho456263/sunset-kendwa-kendwa-tanzania"
+   }
+  ],
+  "corrections": [
+   "Add: the OTA listing says the property closes from 24 December to 10 January; worth a caveat if confirmed.",
+   "Add: listings describe about 50 rooms, an on-site 'Sunset Restaurant' and a beachside bar.",
+   "'Fifty metres up the beach' from Kendwa Rocks matches the stored coordinates but is not confirmed by any source."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A Kendwa beach lodge with a sand-side bar and restaurant, next along the beach from Kendwa Rocks.",
+  "why": "A plain beach lodge of about fifty rooms, with a bar on the sand and a restaurant named for the reason it is here: the beach faces west, so the sun goes down straight in front of it. It sits next along the sand from Kendwa Rocks, so on a Full Moon Saturday it is the nearby place to sit with a drink and watch the sun set. Booking listings say it closes over Christmas and New Year.",
+  "facts": [
+   "Listed as a lodge with about 50 rooms, an on-site restaurant called Sunset Restaurant and a beachside bar (Expedia/Hotels.com).",
+   "OTA listing states the property is closed 24 Dec to 10 Jan (Expedia/Hotels.com)."
+  ]
+ },
+ "mangis": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Search found only undated aggregator/travel-forum entries (Lametayel, Wanderlog) describing it as a popular sunset bar; nothing confirms trading or closure in 2026.",
+  "sources": [
+   {
+    "label": "Lametayel POI: Mangi's Bar & Restaurant",
+    "url": "https://www.lametayel.co.il/pois/lp70p"
+   },
+   {
+    "label": "Wanderlog Nungwi list",
+    "url": "https://wanderlog.com/explore/79416/%E3%83%8C%E3%83%B3%E3%82%B0%E3%82%A4"
+   }
+  ],
+  "corrections": [
+   "The open/closed conflict noted in the old caveat could not be resolved; no source found says closed or reopened. Keep the warning.",
+   "Caveat contains an emoji-like warning symbol; house style may want plain text.",
+   "Dishes: listings mention grilled octopus, calamari and fresh-fruit cocktails; grilled fish is not contradicted."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A long-running sunset bar on Nungwi sand; check it is open before you plan an evening there.",
+  "why": "For years this was the bar Nungwi's mixed crowd ended up at for sundown: residents, boat crews and visitors on the same stretch of sand with a cold beer. Listings describe a short menu of grilled octopus and calamari and cocktails made with fresh fruit. Its status has been reported both ways by aggregators this year, so walk past in daylight and see if the shutters are up before you plan an evening around it.",
+  "facts": [
+   "Described as a popular village beach bar and restaurant known for its sunset views (Lametayel/Wanderlog, undated).",
+   "Listings mention grilled octopus, calamari and fresh-fruit cocktails (aggregator summary, undated)."
+  ]
+ },
+ "cholos": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Only older undated guide text and aggregator mentions found (hammocks above the bar, benches from halved dhows, bathtub urinal, cheap shacks). No 2026 source.",
+  "sources": [
+   {
+    "label": "Upper Crust India travel piece (older)",
+    "url": "https://www.uppercrustindia.com/oldsite/19crust/nineteen/travel1.htm"
+   },
+   {
+    "label": "Lametayel POI",
+    "url": "https://www.lametayel.co.il/pois/6jdmo"
+   }
+  ],
+  "corrections": [
+   "'Oldest bar in the village' not confirmed by any source found; soften or attribute.",
+   "Halved-dhow benches and hammocks are confirmed by older travel writing, which also records basic shacks for rent (about US$10 at the time); current lodging not confirmed.",
+   "Also listed as 'Cholo Disco Bar' in one source."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A driftwood beach bar in Nungwi with benches cut from halved dhow hulls and hammocks over the bar.",
+  "why": "Travel writers have described it the same way for years: hammocks slung above the bar, benches made from dhow hulls sawn in half, a bathtub doing duty as a urinal, and a few basic shacks to sleep in. The boats came from the yards a short walk up the same beach, which is the most specific thing about the place. It has no website, and no source confirms it is open this season, so walk past and check first.",
+  "facts": [
+   "Older travel writing describes hammocks above the bar, benches made from halved dhows and a bathtub urinal (Upper Crust India, undated).",
+   "The same source lists basic shacks at about US$10 at the time of writing (undated).",
+   "Also referred to as Cholo Disco Bar (search summary)."
+  ]
+ },
+ "kajibange": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Several OTA listings (Hotels.com, Travelocity, Trip.com) show 'Kajibange Bar and Guesthouse' with 11 units in Banda Kuu, Nungwi; listing text was not dated and one description contradicts the 'inland' framing.",
+  "sources": [
+   {
+    "label": "Travelocity: Kajibange Bar and Guesthouse",
+    "url": "https://www.travelocity.com/Nungwi-Hotels-Kajibange-Bar-And-Guesthouse.h29361097.Hotel-Information"
+   },
+   {
+    "label": "Trip.com: Kajibange Bar and Guesthouse",
+    "url": "https://uk.trip.com/hotels/nungwi-hotel-detail-9522455/kajibange-bar-and-guesthouse"
+   },
+   {
+    "label": "Wanderlog: Kajibange Bar & Guest House",
+    "url": "https://wanderlog.com/place/details/2802250/kajibange-bar--guest-house"
+   }
+  ],
+  "corrections": [
+   "Name: listed as 'Kajibange Bar and Guesthouse' (a bar with 11 rooms), not just a bar.",
+   "Location conflict: OTA text places it in Banda Kuu, near Nungwi beach and the turtle aquarium, with 'tables right in front of the beach' and a lounge made from half a wooden dhow. That contradicts 'Mkunguni, inland, not on the sand, no view'. Verify the pin on the ground before printing the verdict.",
+   "Listings mention reggae covers and live music; not in old record."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A Nungwi bar and eleven-room guesthouse, with a lounge built from half a wooden dhow.",
+  "why": "A bar first and a guesthouse second: eleven simple rooms behind a rustic bar whose lounge is made from half of a wooden dhow, the kind built a few hundred metres away on the same beach. Guests describe reggae covers on music nights and cocktails from fresh fruit. Listings place it in Banda Kuu near the turtle ponds, closer to the water than its old 'inland' billing suggests, so check where it actually stands before you go.",
+  "facts": [
+   "Listed as Kajibange Bar and Guesthouse with 11 units, Banda Kuu, Nungwi (Hotels.com/Trip.com).",
+   "Listing describes a lounge made from a half wooden dhow and tables in front of the beach (OTA text).",
+   "Reviews mention live reggae covers and fresh-fruit cocktails (OTA review summary)."
+  ]
+ },
+ "coccobello": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Found only as 'Coccobello Zanzibar' on OTAs (Orbitz, Priceline, Hotels.com): 13 rooms, garden, bar, restaurant, about 3 minutes from the beach. No dated 2026 source.",
+  "sources": [
+   {
+    "label": "Hotels.com: Coccobello Zanzibar",
+    "url": "https://ie.hotels.com/ho1209337440/coccobello-zanzibar-nungwi-tanzania"
+   },
+   {
+    "label": "Orbitz: Coccobello Zanzibar",
+    "url": "https://www.orbitz.com/Kendwa-Hotels-COCCOBELLO-ZANZIBAR.h102701950.Hotel-Information"
+   },
+   {
+    "label": "Wanderlog place",
+    "url": "https://wanderlog.com/place/details/1392931"
+   }
+  ],
+  "corrections": [
+   "Name on listings is 'Coccobello Zanzibar'; 'African Village' not seen in any source found.",
+   "Add: listed as a 13-room guesthouse with bar, restaurant and garden, about 3 minutes' walk from the beach.",
+   "Add: a listing says it hosts parties on Wednesday, Thursday and Sunday with local and reggae music; this contradicts 'not a destination' on those nights, so confirm."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A 13-room guesthouse and bar between Kendwa and Nungwi that hosts reggae party nights.",
+  "why": "A small guesthouse of thirteen rooms with a bar, a kitchen and a garden, a few minutes inland from the beach on the road between Kendwa and Nungwi. That makes it a useful stop when a high tide has cut the beach walk between the two villages. Listings also say it runs reggae and local-music party nights on Wednesdays, Thursdays and Sundays, so on those nights it is a place people go to rather than pass through.",
+  "facts": [
+   "Listed as Coccobello Zanzibar, a 13-room guesthouse with bar, restaurant and garden (Hotels.com/Priceline).",
+   "About 3 minutes from the beach (OTA text).",
+   "A listing says it holds parties Wednesday, Thursday and Sunday with local and reggae music (OTA text, undated)."
+  ]
+ },
+ "waves-nungwi": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Trip.com lists 'Wave's Restaurant and Bar' at Jambo Brothers Bungalows, Nungwi; a Flightlink blog lists it among Nungwi seafood places. No dated 2026 source.",
+  "sources": [
+   {
+    "label": "Trip.com: Wave's Restaurant and Bar",
+    "url": "https://nz.trip.com/restaurant/tanzania/nungwi/detail/Wave's%20Restaurant%20and%20Bar-19870882"
+   },
+   {
+    "label": "Flightlink blog: Best Seafood Guide in Nungwi",
+    "url": "https://blog.flightlink.co.tz/?p=331"
+   }
+  ],
+  "corrections": [
+   "Name usually written 'Wave's Restaurant and Bar'.",
+   "Address: listed at Jambo Brothers Bungalows, Nungwi; add to the address.",
+   "Menu: listings name calamari, grilled fish, shrimp and lobster; listed as open late, not just 'day into dinner'."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "The beachfront restaurant at Jambo Brothers Bungalows in Nungwi: grilled fish, calamari and lobster.",
+  "why": "The restaurant of Jambo Brothers Bungalows, a budget guesthouse on the Nungwi strip, with tables facing the water. The menu is the coast's standard seafood list of calamari, grilled fish, prawns and lobster, and it stays open late. It is the kind of place you end up eating at more than once in a week because it is on your way, it is reliable and nobody hurries you.",
+  "facts": [
+   "Wave's Restaurant and Bar is located at Jambo Brothers Bungalows, Nungwi (Trip.com).",
+   "Menu includes calamari, grilled fish, shrimp and lobster (Flightlink blog).",
+   "Listed as open late (Trip.com)."
+  ]
+ },
+ "zanzibar-watersports": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Own site blocked. A Holafly diving guide (undated) describes Zanzibar Watersports as running PADI courses, Leven Bank and Mnemba trips from a centre at Kendwa Rocks; no dated 2026 source seen.",
+  "sources": [
+   {
+    "label": "Holafly: Scuba diving in Zanzibar",
+    "url": "https://esim.holafly.com/travel-tips/scuba-diving-zanzibar"
+   },
+   {
+    "label": "Dive Worldwide: Kendwa Rocks Beach Hotel",
+    "url": "https://www.diveworldwide.com/accommodation/kendwa-rocks-beach-hotel"
+   },
+   {
+    "label": "The Citizen: Zanzibar revises marine conservation entry fees",
+    "url": "https://www.thecitizen.co.tz/tanzania/zanzibar/zanzibar-revises-marine-conservation-entry-fees-5177588"
+   },
+   {
+    "label": "ATTA: Zanzibar revises entry fees for marine conservation areas (3 Sep 2025)",
+    "url": "https://atta.travel/resource/zanzibar-revises-entry-fees-for-marine-conservation-areas.html"
+   }
+  ],
+  "corrections": [
+   "Own site could not be loaded: WebFetch and direct HTTPS were blocked by this session's egress proxy on 7 Oct 2026, so the old web URL is not re-confirmed and is left empty here.",
+   "old says Mnemba carries a US$10 per-person conservation fee; search summaries of The Citizen / ATTA (Sep 2025) give US$25 per non-East African adult (US$10 child) for the Mnemba Island Conservation Area, unchanged by the 1 Sep 2025 revision. Change to 'about US$25 per foreign adult' after checking the article.",
+   "Location check: the record's coordinates (-5.7284, 39.2923) are in Nungwi, not at Kendwa Rocks (-5.7524, 39.2879). Either the pin is the Nungwi base or the name is wrong; fix one.",
+   "'Full PADI ladder to instructor' not confirmed; the Holafly guide confirms PADI courses, double dives, Leven Bank and full-day Mnemba trips.",
+   "hot_this_month (kusi season) is out of date by October; review."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "PADI dive and water-sports centre on the north coast, running trips to Leven Bank and Mnemba.",
+  "why": "A PADI centre that runs courses, double dives for certified divers, full-day trips to the Mnemba atoll and trips to Leven Bank, a deep bank in the Pemba Channel with strong currents that only experienced divers should do. It works from the Kendwa Rocks beach, which makes it the nearest dive desk if you are staying there. Mnemba carries a separate conservation fee of about US$25 per foreign adult, paid on top of the dive.",
+  "facts": [
+   "Zanzibar Watersports offers PADI courses, double dives, Leven Bank trips and full-day Mnemba tours (Holafly diving guide, undated).",
+   "Mnemba Island Conservation Area fee: US$25 per non-East African adult, US$10 per child (The Citizen/ATTA, Sep 2025, via search)."
+  ]
+ },
+ "spanish-dancer": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "PADI's dive-centre directory lists Spanish Dancer Divers, Nungwi, as a PADI 5 Star Dive Resort, 'one of the first dive centres on Zanzibar' with 'a 20 years record'; languages English, Spanish, French, German. Listing text undated; own site blocked.",
+  "sources": [
+   {
+    "label": "PADI dive centre listing: Spanish Dancer Divers",
+    "url": "https://padi.com/dive-center/tanzania/spanish-dancer-divers"
+   },
+   {
+    "label": "Taucher.net review page",
+    "url": "https://taucher.net/tauchbasis-spanish_dancer_divers-bericht-flz104353"
+   },
+   {
+    "label": "The Citizen: Zanzibar revises marine conservation entry fees",
+    "url": "https://www.thecitizen.co.tz/tanzania/zanzibar/zanzibar-revises-marine-conservation-entry-fees-5177588"
+   },
+   {
+    "label": "ATTA: Zanzibar revises entry fees for marine conservation areas (3 Sep 2025)",
+    "url": "https://atta.travel/resource/zanzibar-revises-entry-fees-for-marine-conservation-areas.html"
+   }
+  ],
+  "corrections": [
+   "Own site could not be loaded: WebFetch and direct HTTPS were blocked by this session's egress proxy on 7 Oct 2026, so the old web URL is not re-confirmed and is left empty here.",
+   "'Since 2001' / 'twenty-five years' not confirmed: PADI listing says only 'a 20 years record' (undated). Drop the year or confirm it on the own site.",
+   "old says Mnemba carries a US$10 per-person conservation fee; search summaries of The Citizen / ATTA (Sep 2025) give US$25 per non-East African adult (US$10 child) for the Mnemba Island Conservation Area, unchanged by the 1 Sep 2025 revision. Change to 'about US$25 per foreign adult' after checking the article.",
+   "Dive sites (Mnemba, Leven, Tumbatu, Magic Reef) not confirmed by sources found; plausible but unverified.",
+   "hot_this_month (humpbacks Aug-Sep) is out of season by October; remove."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A PADI 5 Star dive resort in Nungwi, teaching in English, Spanish, French and German.",
+  "why": "PADI's directory calls it one of the first dive centres on Zanzibar, with a twenty-year safety record, and rates it a 5 Star Dive Resort. Courses run in English, Spanish, French and German. That length of time in the same water is the useful thing: a desk that has dived these sites for two decades can tell you which day and tide suits the site you have in mind, and which sites to skip.",
+  "facts": [
+   "Spanish Dancer Divers is a PADI 5 Star Dive Resort in Nungwi (PADI directory).",
+   "PADI listing calls it one of the first dive centres on Zanzibar Island with a 20-year record (PADI directory, undated text).",
+   "Languages: English, Spanish, French, German (PADI directory)."
+  ]
+ },
+ "diving-poseidon": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Listed in the PADI dive-centre directory; German diver reviews on taucher.net (undated in results) describe it as run by Bernhard and Ilse from Austria. No 2026 source.",
+  "sources": [
+   {
+    "label": "PADI dive centre listing: Diving Poseidon",
+    "url": "https://padi.com/dive-center/tanzania/diving-poseidon"
+   },
+   {
+    "label": "Taucher.net reviews: Diving Poseidon, Nungwi",
+    "url": "https://taucher.net/tauchbasis-diving_poseidon__nungwi_-_sansibar-bericht-flz105412"
+   }
+  ],
+  "corrections": [
+   "Location: reviews say about 30 m inland from the beach near Baraka Beach Bungalows, not 'on the beach'.",
+   "Add: PADI courses to Divemaster plus specialties (taucher.net).",
+   "Add: run by an Austrian couple, Bernhard and Ilse (taucher.net, date of review unknown; confirm still current)."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A small PADI dive centre in Nungwi, a few steps back from the beach near Baraka Beach Bungalows.",
+  "why": "A small PADI centre that German-speaking divers have reviewed for years, run by an Austrian couple, Bernhard and Ilse, from a base about thirty metres back from the beach near Baraka Beach Bungalows. It runs daily boats to the north-coast reefs for certified divers and teaches courses up to Divemaster. Reviewers mention well-kept, fairly new kit and good contact before a booking, which is the thing to compare on a day the bigger desks are full.",
+  "facts": [
+   "Diving Poseidon is listed in the PADI dive-centre directory, Tanzania (PADI).",
+   "Reviews say it is run by Bernhard and Ilse from Austria (taucher.net, undated).",
+   "About 30 m inland from the beach near Baraka Beach Bungalows (taucher.net).",
+   "PADI courses up to Divemaster and specialties (taucher.net)."
+  ]
+ },
+ "nungwi-dhow-yard": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Travel guides (Go Backpacking, Brilliant Africa, Nungwi village tour listings) describe Nungwi as Zanzibar's dhow-building centre with hand-built boats on the beach; tour operators sell village tours that include the yards. None dated 2026.",
+  "sources": [
+   {
+    "label": "Go Backpacking: Nungwi village",
+    "url": "https://gobackpacking.com/nungwi-village-zanzibar/"
+   },
+   {
+    "label": "Brilliant Africa: Nungwi at a glance",
+    "url": "https://www.brilliant-africa.com/tanzania/zanzibar/nungwi"
+   },
+   {
+    "label": "The Abroad Guide: Nungwi village tour, dhow building",
+    "url": "https://theabroadguide.com/nungwi-village-tour-swim-with-turtles-at-mnarani-aquarium/"
+   }
+  ],
+  "corrections": [
+   "Ngalawa dug from a single mango trunk, fire-bent planks and 'months for a jahazi' are not confirmed by sources found; not contradicted. Keep only with a source.",
+   "Nothing found contradicts free access or daylight working hours."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "Nungwi's beach boatyards, where dhows are still built by hand on the open sand.",
+  "why": "Nungwi is known across Zanzibar as the place the dhows are built, and the work happens in the open on the beach: shipwrights turning rough timber into ocean-going hulls with hand tools and methods passed down through families. There is no ticket and no viewing platform. It is a place of work, so watch from a respectful distance, ask before photographing anyone, and keep off the hulls.",
+  "facts": [
+   "Nungwi is known throughout Zanzibar as the dhow-building centre (Go Backpacking).",
+   "Shipwrights on Nungwi beach build dhows by hand with traditional tools (Brilliant Africa / guide summaries).",
+   "Village tours sold locally include the dhow-building yards (The Abroad Guide)."
+  ]
+ },
+ "mnarani": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Tourtravelworld and tour listings describe the community-opened Mnarani Natural Aquarium (1993) with a US$10 entrance; Expedia lists it as an attraction. No dated 2026 operator or official source seen.",
+  "sources": [
+   {
+    "label": "Tourtravelworld: Mnarani Marine Turtles Conservation Pond",
+    "url": "https://www.tourtravelworld.com/tanzania/zanzibar/mnarani-marine-turtles-conservation-pond.htm"
+   },
+   {
+    "label": "Expedia: Mnarani Natural Aquarium",
+    "url": "https://www.expedia.com/Mnarani-Natural-Aquarium-Nungwi.d6162515.Vacation-Attraction"
+   },
+   {
+    "label": "The Abroad Guide: Nungwi village tour with Mnarani",
+    "url": "https://theabroadguide.com/nungwi-village-tour-swim-with-turtles-at-mnarani-aquarium/"
+   }
+  ],
+  "corrections": [
+   "Price: old says 'small entry fee'; Tourtravelworld gives US$10 per person.",
+   "Name: also widely listed as 'Mnarani Natural Aquarium'.",
+   "Visitors feed seaweed to the turtles from a wooden platform and swimming with them is sometimes allowed; the verdict contrasting it with Baraka should note this.",
+   "February public release not confirmed by any source found; keep only if confirmed.",
+   "hot_this_month should read the same in October (no event until February) only if the release is confirmed."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A tidal turtle pool by the Nungwi lighthouse, opened by the village in 1993; about US$10 to enter.",
+  "why": "In 1993 the people of Nungwi, with help from conservation groups and marine biologists, turned a tidal lagoon near the lighthouse into a pool for sea turtles. That is where the name comes from: Mnarani means 'at the lighthouse'. Visitors stand on a wooden platform and feed seaweed to the turtles, and swimming with them is sometimes allowed. Entry is about US$10.",
+  "facts": [
+   "Opened in 1993 by the local community with help from conservation bodies and marine biologists (Tourtravelworld).",
+   "Entrance fee US$10 per person (Tourtravelworld, undated).",
+   "Visitors feed seaweed from a wooden platform; swimming with turtles sometimes allowed (Tourtravelworld).",
+   "Also listed as Mnarani Natural Aquarium (Expedia)."
+  ]
+ },
+ "baraka-aquarium": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Own site blocked. Multiple bookable Expedia/Wotif activity listings sell Baraka Aquarium turtle swims (e.g. 'Swim with Turtles' from US$12), suggesting it is operating, but no listing could be opened to confirm dates.",
+  "sources": [
+   {
+    "label": "Expedia: Zanzibar swim with sea turtles at Baraka Aquarium Nungwi",
+    "url": "https://www.expedia.com.au/things-to-do/zanzibar-swim-with-sea-turtles-at-baraka-aquarium-nungwi.a53287845.activity-details"
+   },
+   {
+    "label": "Expedia: Swim with turtles tour",
+    "url": "https://www.expedia.com/things-to-do/swim-with-turtles-tour-to-zanzibar-sanctuary.a49382936.activity-details"
+   }
+  ],
+  "corrections": [
+   "Own site could not be loaded: WebFetch and direct HTTPS were blocked by this session's egress proxy on 7 Oct 2026, so the old web URL is not re-confirmed and is left empty here.",
+   "US$10 per activity and 08:00-18:00 daily come from the own site as read in August; not re-confirmed. A tour listing shows 08:00-18:00 (one day shown) and resells the swim at US$12.",
+   "Add: located near Mnarani Cottages (listing text).",
+   "Welfare dispute remains unresolved; no new source either way."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A turtle lagoon in Nungwi that sells swims and feeding; its welfare claims are disputed by visitors.",
+  "why": "Its own pages say it exists to rescue and rehabilitate turtles and return them to the sea, and tour sellers market it as a chance to feed and swim with them in a natural lagoon pool near Mnarani Cottages. Visitor accounts dispute this: small crowded pools, animals handled, and no evidence of releases when asked. We could not settle the argument, so read the accounts before you buy a ticket from a beach seller.",
+  "facts": [
+   "Located near Mnarani Cottages, Nungwi (activity listing).",
+   "Sold as feeding and swimming with turtles in a natural lagoon pond; a tour listing prices the swim at US$12 per adult (Expedia).",
+   "Listing hours shown as 08:00-18:00 (Expedia, one day shown)."
+  ]
+ },
+ "ras-nungwi-lighthouse": {
+  "status": "confirmed",
+  "checked": "2026-10-07",
+  "evidence": "Wikipedia's Ras Nungwi Lighthouse article and the Lighthouse Digest database describe the operating light at the northern tip, managed by the ports authority; authoritative description suffices for a fixed site.",
+  "sources": [
+   {
+    "label": "Wikipedia: Ras Nungwi Lighthouse",
+    "url": "https://en.wikipedia.org/wiki/Ras_Nungwi_Lighthouse"
+   },
+   {
+    "label": "Lighthouse Digest database",
+    "url": "https://www.lighthousedigest.com/Digest/database/uniquelighthouse.cfm?value=5199"
+   }
+  ],
+  "corrections": [
+   "Dates: sources give 1881 for a first stone tower and 1886 for the light being established; present tower 1926. The old caveat's 1881/1886 split stands; it can say what each date refers to.",
+   "Add: operated by the Zanzibar Ports Corporation (Wikipedia); light shows white flashes.",
+   "Also known as Hog Point."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "Unguja's oldest lighthouse, a white stone tower lit in 1926 at the island's northern point.",
+  "why": "Ras Nungwi, which old charts call Hog Point, is the northern tip of Unguja, and a light has marked it since the 1880s. The tower there now is a white square stone tower in three stages, built in 1926: 14 metres tall with a focal height of 18 metres, and its white flash reaches 13 nautical miles. The Zanzibar Ports Corporation still runs it as a working light, so you see it from outside only.",
+  "facts": [
+   "Oldest lighthouse on Unguja; three-stage square white stone tower (Wikipedia).",
+   "First stone tower 1881; light established 1886; present tower built 1926 (Wikipedia, sources differ).",
+   "Focal height 18 m, range 13 nautical miles, flashing white (Wikipedia).",
+   "Operated by the Zanzibar Ports Corporation (Wikipedia).",
+   "The point is also called Hog Point (Wikipedia)."
+  ]
+ },
+ "kendwa-beach": {
+  "status": "confirmed",
+  "checked": "2026-10-07",
+  "evidence": "Several travel guides (Easy Travel, Jaynevy Tours tides guide, The Traveler) describe Kendwa as the north-west beach least affected by tides because the water deepens quickly; natural site.",
+  "sources": [
+   {
+    "label": "Easy Travel: Kendwa Beach Zanzibar",
+    "url": "https://www.easytravel.co.tz/tanzania/where-to-go/kendwa-beach-zanzibar/"
+   },
+   {
+    "label": "Jaynevy Tours: Zanzibar tides explained",
+    "url": "https://www.jaynevytours.com/zanzibar-tides-explained-best-beaches-for-swimming.html"
+   },
+   {
+    "label": "The Traveler: Zanzibar beaches explained",
+    "url": "https://www.thetraveler.org/zanzibar-beaches-explained-nungwi-kendwa-paje-and-more/"
+   }
+  ],
+  "corrections": [
+   "Soften 'swimmable at any tide' / 'the one beach that keeps its water': sources say Kendwa is 'not as affected by tides' and swimmable 'for much of the day'; Nungwi is similar. Say 'least tide-affected' rather than 'the one beach'.",
+   "'3 km from the point' not checked."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A west-facing beach on Unguja where the sea stays close at low tide, so you can swim most of the day.",
+  "why": "Along most of Zanzibar's east and south-east coast the sea goes out a long way at low tide and you plan swims around the tide table. Kendwa, on the north-west coast, shelves quickly, so the water is deep enough to swim in for most of the day whatever the tide is doing. It also faces west, so you can stay in the water until the sun goes down.",
+  "facts": [
+   "Kendwa is less affected by tides than most Zanzibar beaches because the water deepens quickly (Easy Travel / Jaynevy Tours).",
+   "It is on the north-west coast and less restricted by low tide than the east and south-east coasts (Jaynevy Tours)."
+  ]
+ },
+ "mkokotoni": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Only general, undated descriptions of a small fish market at Mkokotoni where locals bargain for the catch (Edge of Humanity, 2016). No 2026 source and no source for auction times.",
+  "sources": [
+   {
+    "label": "Edge of Humanity: Zanzibar (2016)",
+    "url": "https://edgeofhumanity.com/2016/03/20/zanzibar/"
+   },
+   {
+    "label": "Wikipedia: Tumbatu (Mkokotoni faces the island)",
+    "url": "https://en.wikipedia.org/wiki/Tumbatu"
+   }
+  ],
+  "corrections": [
+   "Morning auction timing (first light to about 09:00) and 'over by mid-morning' not confirmed; not contradicted.",
+   "Jodari landing more often than at Nungwi: unverified.",
+   "hot_this_month (28 Aug spring tides) out of date; remove."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "The fish landing at Mkokotoni, on Unguja's north-west coast, directly across the water from Tumbatu.",
+  "why": "Mkokotoni is the north-west coast town where boats bring their catch ashore and local buyers, men and women, haggle over it on the spot, a market for people who live here rather than a sight laid on for visitors. It faces Tumbatu across a narrow channel, and the island's largest old mosque ruin stands on the shore looking back at it. Go early and bring Tanzanian shillings in small notes.",
+  "facts": [
+   "Fishermen sell their catch at a small fish market in Mkokotoni, with local buyers bargaining (Edge of Humanity, 2016).",
+   "The largest mosque ruin on Tumbatu sits on the shore facing Mkokotoni (Wikipedia: Tumbatu)."
+  ]
+ },
+ "tumbatu": {
+  "status": "confirmed",
+  "checked": "2026-10-07",
+  "evidence": "Wikipedia (Tumbatu, Tumbatu Island) describes the island, its villages and the 12th-15th-century ruins, and states visits need permission from the elders; a Marriott activities listing sells a Tumbatu cultural village tour. Island is a natural/heritage site.",
+  "sources": [
+   {
+    "label": "Wikipedia: Tumbatu",
+    "url": "https://en.wikipedia.org/wiki/Tumbatu"
+   },
+   {
+    "label": "Wikipedia: Tumbatu Island",
+    "url": "https://en.wikipedia.org/wiki/Tumbatu_Island"
+   },
+   {
+    "label": "ZanTours: Tumbatu",
+    "url": "https://zantours.com/tumbatu/"
+   },
+   {
+    "label": "Marriott Activities: Tumbatu island cultural village tour",
+    "url": "https://activities.marriott.com/africa/united-republic-of-tanzania/zanzibar/activities/tumbatu_island_cultural_village_tour-X7ABTE"
+   }
+  ],
+  "corrections": [
+   "Ruins: the Tumbatu (Makutani) site has many collapsed coral-stone houses and several mosques, inhabited 12th-15th century; the largest mosque stands on the shore facing Mkokotoni, not 'in the forest'. Fix the signature line.",
+   "Dates: old says a state centre c.1100-1300; Wikipedia gives occupation from the 12th to 15th century.",
+   "Jongowe as 'among the largest settlements in the 1150s-1250s' not confirmed; Wikipedia names Jongowe (south) and Gomani (north) as the two present villages. Check the source or drop.",
+   "Permission from the elders confirmed (Wikipedia). 'UNESCO 2000' product tag not confirmed by any source found; remove unless sourced.",
+   "Add: a guided cultural village tour is sold through a hotel activities platform (Marriott Activities)."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "The island off Kendwa with 12th-century stone-town ruins, visited only with the elders' permission.",
+  "why": "From the 12th to the 15th century Tumbatu held a town of coral-stone houses and several mosques. The largest mosque ruin still stands on the shore facing Mkokotoni across the channel. Today the island has two villages, Jongowe in the south and Gomani in the north, and outsiders need permission from the community's elders to land. Organised cultural tours exist; turning up on a hired boat without permission is not acceptable.",
+  "facts": [
+   "Tumbatu's ruins include collapsed coral-stone houses and several mosques, inhabited 12th-15th century CE (Wikipedia).",
+   "The largest mosque is on the shore facing Mkokotoni (Wikipedia).",
+   "Two villages: Jongowe in the south and Gomani further north (Wikipedia).",
+   "Entry requires special permission from the island's elders (Wikipedia / ZanTours).",
+   "A Tumbatu cultural village tour is sold via Marriott Activities (listing)."
+  ]
+ },
+ "mangapwani-cave": {
+  "status": "unverified",
+  "checked": "2026-10-07",
+  "evidence": "Showcaves.com and The EastAfrican describe both sites and their history; tour sellers (Magpie) list Mangapwani cave tours and reviews cite about US$5 or about 12,000 TZS entry. No dated 2026 official source.",
+  "sources": [
+   {
+    "label": "Showcaves: Mangapwani Slave Cave",
+    "url": "https://www.showcaves.com/english/tz/subterranea/Mangapwani.html"
+   },
+   {
+    "label": "Showcaves: Mangapwani Coral Cavern",
+    "url": "https://showcaves.com/english/tz/caves/Mangapwani.html"
+   },
+   {
+    "label": "The EastAfrican: Mangapwani, stairway into the past",
+    "url": "https://www.theeastafrican.co.ke/tea/magazine/mangapwani-stairway-into-the-past-world-of-slavery-once-thrived-3782680"
+   },
+   {
+    "label": "Magpie: Mangapwani Coral Cave Tour",
+    "url": "https://magpie.travel/things-to-do/mangapwani-coral-cave-tour/394063e7-e32e-4731-810b-fbf952e82d87"
+   }
+  ],
+  "corrections": [
+   "Distance: old says the two sites are 1 km apart; Showcaves says the slave chamber is 'a few kilometres further up the coast' from the coral cave. Recheck before printing either.",
+   "Fee: about US$5 per reviews, or about 12,000 TZS per another source; give both or 'about US$5'.",
+   "Builder's name (Mohammed bin Nassor Al-Alwi) not confirmed by sources found; not contradicted.",
+   "Confirmed: chamber cut c.1880, seven years after abolition (1873), used until about 1905; coral cave has a narrow entrance and freshwater pool."
+  ],
+  "hours": "",
+  "web": "",
+  "hook": "A coral cave with a freshwater pool, and nearby a rock-cut cell used to hold slaves after abolition.",
+  "why": "Two sites on the same coast north of Stone Town. The coral cave is a natural cavern with a narrow entrance and a pool of fresh water at the bottom. A few kilometres on is a square cell cut into the coral rock and roofed over around 1880, seven years after the 1873 treaty that banned the slave trade, and used to hold captives illegally until about 1905. Entry is roughly US$5.",
+  "facts": [
+   "Coral cave: a deep natural cavern with a narrow entrance and a freshwater pool at its lowest point (Showcaves).",
+   "Slave chamber: square cell cut from coral rock with a roof, built 1880, seven years after abolition; illicit trade continued until 1905 (Showcaves).",
+   "The chamber is a few kilometres up the coast from the cave (Showcaves).",
+   "About 20 km north of Zanzibar Town (Showcaves).",
+   "Entry about US$5 per reviews, or about 12,000 TZS (aggregated sources)."
+  ]
+ }
+}

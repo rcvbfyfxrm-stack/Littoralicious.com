@@ -1,0 +1,810 @@
+{
+ "_doc": "GOLD6 card plan for Kendwa-Unguja (7 Oct 2026). Each fold -> groups (<=3 cards) -> cards. 'from' lists the OLD card keys (section|name, see cards_old.json) whose verified content the new card is built from; several keys = a merge (told once). 'note' = the angle / what to keep. Cards not listed anywhere are CUT (reasons in picks.json).",
+ "quartiers": {
+  "chapter": "place",
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "Kendwa",
+    "cards": [
+     {
+      "key": "q-kendwa-sand",
+      "from": [
+       "quartiers|Kendwa sand"
+      ],
+      "note": "the beach as a place to stay: hotels on the sand, the vendor trade, 20-minute length. The geology of WHY the water stays lives in tide; do not explain it here."
+     },
+     {
+      "key": "q-kendwa-road",
+      "from": [
+       "quartiers|Kendwa Road"
+      ],
+      "note": "the service road behind the sand: dukas, cheaper beds, unlit at night. Do not name individual restaurants (they are in the tables)."
+     },
+     {
+      "key": "q-kilindi-end",
+      "from": [
+       "quartiers|The Kilindi end"
+      ],
+      "note": "the quiet north end; the domes; Benny Andersson commission is told in the venue card — here only one clause."
+     }
+    ]
+   },
+   {
+    "title": "Nungwi",
+    "cards": [
+     {
+      "key": "q-nungwi-strip",
+      "from": [
+       "quartiers|Nungwi west — the strip"
+      ],
+      "note": "the west-facing strip of bars, hotels and dive desks; no venue roll-call beyond two names."
+     },
+     {
+      "key": "q-nungwi-village",
+      "from": [
+       "quartiers|Nungwi village"
+      ],
+      "note": "where people live; dress, Friday prayer; the cheap kitchens. Name no cut venue (Kivulini is cut)."
+     },
+     {
+      "key": "q-working-beach",
+      "from": [
+       "quartiers|The working beach"
+      ],
+      "note": "north of the hotel line: yards + landing. Point to the walk; do not retell the yard."
+     }
+    ]
+   }
+  ]
+ },
+ "tide": {
+  "chapter": "flaner",
+  "sub": "tide",
+  "groups": [
+   {
+    "title": "The shelf",
+    "cards": [
+     {
+      "key": "t-water-stays",
+      "from": [
+       "tide|Why the water stays"
+      ],
+      "note": "keep the east-coast comparison; this is the home of the bathymetry fact"
+     },
+     {
+      "key": "t-sunset-face",
+      "from": [
+       "tide|And why it faces the sunset"
+      ],
+      "note": "north-west aspect, Daloni and Tumbatu; the home of the aspect fact"
+     }
+    ]
+   },
+   {
+    "title": "What the moon decides",
+    "cards": [
+     {
+      "key": "t-spring-tides",
+      "from": [
+       "tide|Spring tides — new and full moon",
+       "landmarks|The reef flat at spring low"
+      ],
+      "note": "the widest lows: walk the exposed flats north and east of the point (wear shoes), biggest landings, cheapest fish; the octopus gatherers are told in sea-stories, one clause here"
+     },
+     {
+      "key": "t-fifty-minutes",
+      "from": [
+       "tide|The landing walks around the day"
+      ],
+      "note": "the 50-minute lunar day; why 'the market is at six' is wrong"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "chapter": "flaner",
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "On the sand",
+    "cards": [
+     {
+      "key": "w-kendwa-nungwi",
+      "from": [
+       "walks|Kendwa to Nungwi",
+       "tide|The Kendwa–Nungwi beach walk",
+       "tide|The inland fallback",
+       "quartiers|The Kendwa–Nungwi headland"
+      ],
+      "note": "THE home of the low-water walk + the headland + the inland fallback (taxi/boda ~10 min, agree the fare). Facts: Start, Length (about 3 km), Time (30-35 min), Terrain, Best hour (falling tide, from about 2 h before low), Don't miss, Bring. Maps pin = Kendwa Rocks start."
+     },
+     {
+      "key": "w-last-hour",
+      "from": [
+       "walks|The last hour on Kendwa sand",
+       "landmarks|The sunset, without ceremony"
+      ],
+      "note": "north toward the domes at sunset; the sunset times (about 18:15-18:45 all year) live here only"
+     }
+    ]
+   },
+   {
+    "title": "Through the village and out to the point",
+    "cards": [
+     {
+      "key": "w-first-light",
+      "from": [
+       "walks|The dawn landing",
+       "walks|The yards and the market, in one",
+       "dhow|Do it with the market, in one walk"
+      ],
+      "note": "ONE early walk: landing + auction + yards + on to the point; hour walks forward ~50 min a day (one clause, the fact lives in tide)"
+     },
+     {
+      "key": "w-village-lighthouse",
+      "from": [
+       "walks|Nungwi village to the lighthouse"
+      ],
+      "note": "through the village to the point; dress covered; Friday midday"
+     }
+    ]
+   }
+  ]
+ },
+ "reef": {
+  "chapter": "flaner",
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The dives",
+    "cards": [
+     {
+      "key": "r-leven",
+      "from": [
+       "reef|Leven Bank",
+       "tide|And the dive tides"
+      ],
+      "note": "experienced only; tide-gated (home of that fact); walls past 160 m"
+     },
+     {
+      "key": "r-mnemba",
+      "from": [
+       "reef|Mnemba Atoll",
+       "around|Mnemba Atoll"
+      ],
+      "note": "the conservation-area fee (keep as stated, dated 'seen Aug 2026' unless re-verified), cannot land; best snorkel"
+     },
+     {
+      "key": "r-tumbatu-reefs",
+      "from": [
+       "reef|Tumbatu and the shallow reefs"
+      ],
+      "note": "the fallback reefs, no permission needed to dive them"
+     }
+    ]
+   },
+   {
+    "title": "The season you are in",
+    "cards": [
+     {
+      "key": "r-humpbacks",
+      "from": [
+       "reef|The humpbacks"
+      ],
+      "note": "season-neutral: arrive from late July, turn south through Sep-Oct; seen off Nungwi and in the channel. No 'now'."
+     },
+     {
+      "key": "r-two-seasons",
+      "from": [
+       "reef|Why the diving is best now"
+      ],
+      "note": "rewrite season-neutral: kusi (dry, Jun-Oct) vs kaskazi; visibility peak in the kusi months; no 'now'."
+     },
+     {
+      "key": "r-turtles",
+      "from": [
+       "reef|The turtles, honestly",
+       "culture|Baraka Natural Aquarium"
+      ],
+      "note": "wild on the reef vs two paying ponds; Mnarani (told in landmarks, one clause) vs Baraka contested — keep the dispute as a dispute (own site claims release; visitor accounts allege handling, no releases)"
+     }
+    ]
+   }
+  ]
+ },
+ "sea-stories": {
+  "chapter": "flaner",
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The two winds",
+    "cards": [
+     {
+      "key": "s-kaskazi-kusi",
+      "from": [
+       "sea-stories|Kaskazi and kusi"
+      ]
+     },
+     {
+      "key": "s-kingfish",
+      "from": [
+       "sea-stories|The kingfish that came down with the fleet"
+      ]
+     },
+     {
+      "key": "s-watumbatu",
+      "from": [
+       "sea-stories|The Watumbatu",
+       "sea-stories|The island that took the refugees"
+      ],
+      "note": "the seamen + the 13th-century refuge in one card; the permission rule lives in landmarks Tumbatu card (one clause here)"
+     }
+    ]
+   },
+   {
+    "title": "The chart makers",
+    "cards": [
+     {
+      "key": "s-leven",
+      "from": [
+       "sea-stories|HMS Leven, and the price of a chart"
+      ]
+     },
+     {
+      "key": "s-light",
+      "from": [
+       "sea-stories|The light on the corner"
+      ],
+      "note": "the HISTORY of the light (the station's disputed first date 1881/1886, what it meant to dhows); the tower specs and the dusk visit live in landmarks"
+     }
+    ]
+   },
+   {
+    "title": "Hard water",
+    "cards": [
+     {
+      "key": "s-hurricane",
+      "from": [
+       "sea-stories|The hurricane of 15 April 1872"
+      ]
+     },
+     {
+      "key": "s-dhow-chasing",
+      "from": [
+       "sea-stories|Dhow chasing"
+      ]
+     },
+     {
+      "key": "s-shortest-war",
+      "from": [
+       "sea-stories|The shortest war in history"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "The working sea, now",
+    "cards": [
+     {
+      "key": "s-mwani",
+      "from": [
+       "sea-stories|Mwani — the seaweed women"
+      ],
+      "note": "the economics are told HERE once; the craft card on Mwani Zanzibar points to it"
+     },
+     {
+      "key": "s-octopus",
+      "from": [
+       "sea-stories|The octopus at low water"
+      ]
+     },
+     {
+      "key": "s-name-ladder",
+      "from": [
+       "sea-stories|The name ladder at the slab"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "landmarks": {
+  "chapter": "flaner",
+  "sub": "sights",
+  "groups": [
+   {
+    "title": "The point",
+    "cards": [
+     {
+      "key": "l-lighthouse",
+      "from": [
+       "culture|Ras Nungwi Lighthouse",
+       "landmarks|The lighthouse at dusk"
+      ],
+      "note": "the visit: tower specs (14 m, 13 nm, 1926) + go at dusk, both coasts from one spot"
+     },
+     {
+      "key": "l-mnarani",
+      "from": [
+       "culture|Mnarani turtle pond"
+      ],
+      "note": "village-run since 1993; February release; fee only if re-verified"
+     },
+     {
+      "key": "l-coral-rag",
+      "from": [
+       "landmarks|The coral rag"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "On the horizon",
+    "cards": [
+     {
+      "key": "l-tumbatu",
+      "from": [
+       "culture|Tumbatu",
+       "landmarks|Tumbatu on the horizon",
+       "quartiers|Tumbatu"
+      ],
+      "note": "the home of the permission rule (written permission of the elders, approved guide, arranged via Mkokotoni) and of the Makutani/Jongowe ruins"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "chapter": "flaner",
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "Stone Town — the honest half",
+    "cards": [
+     {
+      "key": "c-christ-church",
+      "from": [
+       "culture|Christ Church & the slave-market memorial"
+      ]
+     },
+     {
+      "key": "c-old-fort",
+      "from": [
+       "culture|The Old Fort"
+      ]
+     },
+     {
+      "key": "c-house-of-wonders",
+      "from": [
+       "culture|House of Wonders"
+      ],
+      "note": "status must match the 2026 re-verification"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "chapter": "flaner",
+  "sub": "culture",
+  "merges": [
+   {
+    "title": "The boats",
+    "desc": "Three kinds of hull, two thousand years of method, and one beach where it is still done.",
+    "groups": [
+     {
+      "title": "What you are looking at",
+      "cards": [
+       {
+        "key": "d-ngalawa",
+        "from": [
+         "dhow|The ngalawa"
+        ]
+       },
+       {
+        "key": "d-mashua",
+        "from": [
+         "dhow|The jahazi and the mashua"
+        ]
+       },
+       {
+        "key": "d-mtepe",
+        "from": [
+         "dhow|The mtepe — the ship with no nails"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Craftsmanship — where you can actually learn something",
+    "desc": "",
+    "groups": [
+     {
+      "title": "Do this one",
+      "cards": [
+       {
+        "key": "k-course",
+        "from": [
+         "craft|★ The dhow-building course, Nungwi"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "The others, and what each is missing",
+      "cards": [
+       {
+        "key": "k-kuza",
+        "from": [
+         "craft|Kuza Cave Culture Centre, Jambiani"
+        ]
+       },
+       {
+        "key": "k-mwani",
+        "from": [
+         "craft|Mwani Zanzibar, Paje",
+         "art|Seaweed soap and oils"
+        ],
+        "note": "point to the sea-story for the economics; do not repeat the percentages"
+       }
+      ]
+     },
+     {
+      "title": "Free, and still the best hour on the cape",
+      "cards": [
+       {
+        "key": "k-yards",
+        "from": [
+         "craft|The Nungwi dhow yards, just watching",
+         "dhow|The rules, such as they are",
+         "art|The boats",
+         "landmarks|The hulls on the sand"
+        ],
+        "note": "the home of the yard rules (ask before photographing, do not climb hulls, agree a guide fee)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Made here — and sold here",
+    "desc": "",
+    "groups": [
+     {
+      "title": "Worth carrying home",
+      "cards": [
+       {
+        "key": "a-spice",
+        "from": [
+         "art|Spice, bought properly"
+        ]
+       },
+       {
+        "key": "a-mbuzi",
+        "from": [
+         "art|The mbuzi — the coconut stool"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Sold here, made elsewhere",
+      "cards": [
+       {
+        "key": "a-warning",
+        "from": [
+         "craft|What is sold as craft and is not",
+         "art|The beach stalls",
+         "art|The 'Zanzibar door'"
+        ],
+        "note": "tag 'the warning'; no maps pin"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "chapter": "flaner",
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Where to sit",
+    "cards": [
+     {
+      "key": "g-mama-mia"
+     },
+     {
+      "key": "g-langi"
+     },
+     {
+      "key": "g-flame-tree"
+     }
+    ]
+   },
+   {
+    "title": "The work truth",
+    "cards": [
+     {
+      "key": "g-work-truth",
+      "from": [
+       "coffee-gardens|Do not plan to work here"
+      ],
+      "note": "tag 'honestly', no pin"
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "chapter": "tables",
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The dawn run",
+    "cards": [
+     {
+      "key": "p-nungwi-landing",
+      "from": [
+       "provisioning|Nungwi landing"
+      ],
+      "note": "buying angle (cash, small notes, price per kilo, ice); pointer ref nungwi-fish-market"
+     },
+     {
+      "key": "p-mkokotoni",
+      "from": [
+       "provisioning|Mkokotoni"
+      ],
+      "note": "buying angle; ref mkokotoni"
+     }
+    ]
+   },
+   {
+    "title": "The dry store",
+    "cards": [
+     {
+      "key": "p-dukas",
+      "from": [
+       "provisioning|Nungwi village dukas"
+      ],
+      "note": "ref nungwi-village"
+     },
+     {
+      "key": "p-darajani",
+      "from": [
+       "provisioning|Darajani, for the deep inventory"
+      ],
+      "note": "ref darajani"
+     }
+    ]
+   },
+   {
+    "title": "The galley notes",
+    "cards": [
+     {
+      "key": "p-ice",
+      "from": [
+       "provisioning|Ice is the bottleneck",
+       "provisioning|Water and the obvious"
+      ]
+     },
+     {
+      "key": "p-coconut",
+      "from": [
+       "provisioning|Learn the coconut"
+      ],
+      "note": "the two presses; the mbuzi tool itself is told in craft — one clause"
+     },
+     {
+      "key": "p-shillings",
+      "from": [
+       "provisioning|Buy in shillings, ask in Kiswahili"
+      ],
+      "note": "point to the name ladder sea-story for fish names"
+     }
+    ]
+   }
+  ]
+ },
+ "street-food": {
+  "chapter": "fast",
+  "sub": "late",
+  "groups": [
+   {
+    "title": "Still open when the kitchens aren't",
+    "cards": [
+     {
+      "key": "f-highland",
+      "from": [
+       "street-food|Highland Bungalows"
+      ],
+      "note": "venue pointer ref highland IF kept"
+     },
+     {
+      "key": "f-che-rock",
+      "from": [
+       "street-food|Che Rock, up to 23:00"
+      ],
+      "note": "venue pointer ref che-rock"
+     },
+     {
+      "key": "f-chipsi",
+      "from": [
+       "street-food|Chipsi mayai, from a cart"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "The honest timings",
+    "cards": [
+     {
+      "key": "f-closes-early",
+      "from": [
+       "street-food|This coast closes early",
+       "street-food|The Rocks Lounge, and its problem"
+      ]
+     },
+     {
+      "key": "f-ramadan",
+      "from": [
+       "street-food|And in Ramadan it inverts",
+       "bars|Ramadan"
+      ],
+      "note": "the home of the Ramadan rule (outlets outside hotel compounds close in daylight, reopen at iftar)"
+     }
+    ]
+   }
+  ]
+ },
+ "fullmoon": {
+  "chapter": "sortir",
+  "sub": "moon",
+  "groups": [
+   {
+    "title": "What it is",
+    "cards": [
+     {
+      "key": "m-1996",
+      "from": [
+       "fullmoon|1996, on a clear full moon"
+      ]
+     },
+     {
+      "key": "m-when",
+      "from": [
+       "fullmoon|When it happens"
+      ],
+      "note": "first Saturday AFTER each full moon; the dates for the coming months are on the hot board (one clause)"
+     },
+     {
+      "key": "m-rest",
+      "from": [
+       "fullmoon|The rest of the month"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "How to handle it",
+    "cards": [
+     {
+      "key": "m-want",
+      "from": [
+       "fullmoon|If you want it",
+       "fullmoon|And the village's side of it"
+      ]
+     },
+     {
+      "key": "m-dont",
+      "from": [
+       "fullmoon|If you don't"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "chapter": "around",
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "Half a day, on the road south",
+    "cards": [
+     {
+      "key": "o-mkokotoni",
+      "from": [
+       "around|Mkokotoni",
+       "quartiers|Mkokotoni"
+      ],
+      "note": "the trip angle (the town, the Tumbatu jetty); the buying is in provisioning"
+     },
+     {
+      "key": "o-kizimbani",
+      "from": [
+       "around|Kizimbani spice plantation"
+      ]
+     },
+     {
+      "key": "o-mangapwani",
+      "from": [
+       "around|Mangapwani",
+       "culture|Mangapwani",
+       "walks|Mangapwani — the cave and the chamber"
+      ],
+      "note": "the home of Mangapwani: natural cave + the chamber cut c.1880 by Mohammed bin Nassor Al-Alwi, used until about 1905"
+     }
+    ]
+   },
+   {
+    "title": "A full day — or a night",
+    "cards": [
+     {
+      "key": "o-stone-town",
+      "from": [
+       "around|Stone Town, done in one day",
+       "quartiers|Stone Town",
+       "walks|Forodhani at dusk"
+      ],
+      "note": "the day plan ending at Forodhani at dusk"
+     },
+     {
+      "key": "o-the-roof",
+      "from": [
+       "around|…or stay the night for the roof"
+      ],
+      "note": "Emerson roof(s) — must match venue re-verification"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "chapter": "sortir",
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Kendwa",
+    "cards": [
+     {
+      "key": "b-kendwa-rocks"
+     },
+     {
+      "key": "b-sunset-kendwa"
+     },
+     {
+      "key": "b-bahari"
+     }
+    ]
+   },
+   {
+    "title": "Nungwi",
+    "cards": [
+     {
+      "key": "b-maisha"
+     },
+     {
+      "key": "b-cholos"
+     },
+     {
+      "key": "b-z-rooftop"
+     }
+    ]
+   },
+   {
+    "title": "Where it stops, and why",
+    "cards": [
+     {
+      "key": "b-village-line"
+     }
+    ]
+   }
+  ]
+ }
+}
