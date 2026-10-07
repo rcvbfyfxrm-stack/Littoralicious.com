@@ -58,6 +58,14 @@ original) and `terroir/Siracusa-Sicilia/` (the same layer built from scratch). T
 7. **Re-verified now.** Every kept venue's liveness re-read (MICHELIN/Gambero Rosso/own site, dated);
    closures, moves, wrong locations corrected (the Sicily pass found a Caravaggio in the wrong church and a
    castle closed to 2027 — expect errors in the old text and fix them).
+8. **The four readings (Arnaud, 7 Oct 2026; live on Prague).** `gold6/readings/` — read its README first.
+   The doors become ONE NIGHT (a lens: one evening per quarter, walking order) · THE GASTRONOMIC DIG-IN ·
+   FOR GUESTS · **THE GETAWAY WEEKEND** (a lens: Friday night to Sunday afternoon — ⛔ *not* romantic: no
+   "romantic", "for two", "à deux"). The four doors repeat at the foot of the article; **no lens chip in the
+   chapter bar**; every card that has a place shows **"Map ↗" on the closed card**. Author
+   `<slug>.readings.json` from the guide's OWN verified cards (every link a `[[venue:id|…]]`/`[[card:Name|…]]`
+   ref — the tool fails on a ref that does not resolve), then `gold6/readings/apply_readings.py` LAST, after
+   every other step (it refuses to run twice). Commit the JSON beside the guide's other build files.
 
 **Proving it (all must pass before you hand the guide over):** `checks_gold4.py` WITH render ALL GREEN (write
 the guide's check config from what it now contains — `gold6/reference/sicily/gate_config.py`; floors are
@@ -65,9 +73,13 @@ the curated counts, never padded) · `glass` if available, else a Playwright ren
 `gold6/probes/probe-guide.cjs <url>` (chapters, sub-tags, readout, pointer landing, back button, labels on
 every card, guest list at the foot, phone 390px no sideways scroll even with every card open) ·
 `gold6/probes/probe-links.cjs desk|phone <url>` = 0 failures · `checklinks.py . <slug>` = 0 dead (a whole
-dead host with no archive → cite by name, unlinked) · screenshots of one opened card on desktop and phone.
+dead host with no archive → cite by name, unlinked) · screenshots of one opened card on desktop and phone · `gold6/probes/probe-readings.cjs <url> <dir>` exit 0 (both lenses, every link inside them, the foot doors, Maps on every closed card) + its screenshots of both lenses.
 
 ### ⚠ GOLD6 RUN MODE — REVIEW FIRST (Arnaud, 6 Oct 2026). This overrides "Deploy" in the steps below.
+**Readings-only items (7 Oct 2026).** A queue item with `"pass": "readings"` is a guide already at GOLD6
+that only needs §8. These are small: do up to THREE readings-only items in one night (each on its own
+`terroir-uplift/<slug>-readings-<date>` branch), or one full GOLD6 guide. A guide whose full GOLD6 pass is
+already on a review branch without §8 gets §8 added on that SAME branch (status stays `review`, note it).
 Never push to `rebuild/publishing-system` (that push IS the live deploy). Commit the finished guide to a
 branch `terroir-uplift/<slug>-<YYYY-MM-DD>` cut from `origin/rebuild/publishing-system`, push THAT branch,
 and in `state.json` (committed on the same branch) set the item `status:"review"` with `branch`,

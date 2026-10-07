@@ -518,11 +518,30 @@
   "Prague-Cechy",
   "Siracusa-Sicilia"
  ],
- "gold6_note": "6 Oct 2026, Arnaud: 'every night update all the guides to put them to the level of Prague'. One guide per night, REVIEW FIRST: work lands on branch terroir-uplift/<slug>-<date>; Arnaud says push. Before picking, read the remote terroir-uplift/* branches: a slug with a branch in status review is skipped; a branch in status partial is resumed.",
+ "gold6_note": "6 Oct 2026, Arnaud: 'every night update all the guides to put them to the level of Prague'. One guide per night, REVIEW FIRST: work lands on branch terroir-uplift/<slug>-<date>; Arnaud says push. Before picking, read the remote terroir-uplift/* branches: a slug with a branch in status review is skipped; a branch in status partial is resumed. 7 Oct 2026: §8 the four readings joined GOLD6 (Prague live, commit 9af3064); readings-only items first, up to three a night.",
  "gold6_queue": [
   {
+   "slug": "Siracusa-Sicilia",
+   "status": "pending",
+   "pass": "readings",
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+  },
+  {
+   "slug": "Catania-Sicilia",
+   "status": "pending",
+   "pass": "readings",
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+  },
+  {
+   "slug": "Taormina-Sicilia",
+   "status": "pending",
+   "pass": "readings",
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+  },
+  {
    "slug": "Kendwa-Unguja",
-   "status": "pending"
+   "status": "pending",
+   "readings": "owed — its GOLD6 pass is on terroir-uplift/Kendwa-Unguja-2026-10-07 without §8: add §8 on that branch."
   },
   {
    "slug": "Diani-Kwale",
@@ -597,7 +616,11 @@
   {
    "slug": "Prague-Cechy",
    "date": "2026-10-05",
-   "commit": "39bb1a7"
+   "commit": "39bb1a7",
+   "readings": {
+    "date": "2026-10-07",
+    "commit": "9af3064"
+   }
   },
   {
    "slug": "Siracusa-Sicilia",
