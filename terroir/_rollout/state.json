@@ -528,13 +528,14 @@
    "checks": [
     "checks_gold4.py WITH render: ALL CHECKS GREEN (201 OK; render via Playwright, leaflet@1.9.4 served from the npm registry by a test-only route shim because unpkg.com is blocked in the sandbox)",
     "probe-guide.cjs: 28/29 PASS — the FAIL 'sub-tag restaurants … opened' fails identically on live Prague and Siracusa (the chrome never auto-opens #tables by design)",
-    "probe-links.cjs desk: pending at commit time (see later commit)",
-    "probe-links.cjs phone: pending at commit time (see later commit)",
+    "probe-links.cjs phone: 178 visible links clicked, 0 failures",
+    "probe-links.cjs desk: 192 visible links clicked, 0 landing failures; 9 links listed in one pass were not reproducible after the probe's hash-only reload (#venue-emerson-hurumzi, -langi-langi, -darajani, -che-rock, -essque-zalu) — the stock probe crashes on the first such case. Live Siracusa: 109/0. Cause not pinned (suspect state/timing after a prior click); OPEN",
+    "fixed tonight: map popups linked 'Read full entry' to all 18 map-only places (dead anchors) and Leaflet's close button was an href=#close anchor — page-local chrome script now links only places with a card",
     "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 232 units",
     "checklinks.py: NOT RUNNABLE — sandbox egress proxy refuses every external host (0 of 252 reachable)",
     "screenshots: review/Kendwa-Unguja/kendwa-card-desktop.png, kendwa-card-phone.png"
    ],
-   "notes": "Places 73 -> 52 (lane venues 52 -> 34, 14 -> 12 lanes, every lane <=3, no 4s); fold cards 127 -> 99, all rewritten and labelled; reading layer on the live Siracusa/Prague chrome; doors, guest list, events, hi-fi sub-tag, dated hot board (as of 7 Oct, review 25 Nov). PARTIAL because the sandbox could not load any external site: checklinks not run, own-site liveness read only via search indexes (17 re-confirmed 7 Oct, 27 keep 22 Aug confirmation, 8 unverified). Remaining: run checklinks from a normal network; re-read own sites + the last-minute venues' hours (Sexy Fish, Maisha Beach, Langi Langi); confirm the Full Moon rule/dates on kendwarocks.com; confirm craft sites resolve. Then set status review. Details: terroir/_rollout/review/Kendwa-Unguja/README.md"
+   "notes": "Places 73 -> 52 (lane venues 52 -> 34, 14 -> 12 lanes, every lane <=3, no 4s); fold cards 127 -> 99, all rewritten and labelled; reading layer on the live Siracusa/Prague chrome; doors, guest list, events, hi-fi sub-tag, dated hot board (as of 7 Oct, review 25 Nov). PARTIAL because the sandbox could not load any external site: checklinks not run, own-site liveness read only via search indexes (17 re-confirmed 7 Oct, 27 keep 22 Aug confirmation, 8 unverified). Remaining: run checklinks from a normal network; re-read own sites + the last-minute venues' hours (Sexy Fish, Maisha Beach, Langi Langi); confirm the Full Moon rule/dates on kendwarocks.com; confirm craft sites resolve. Then set status review. Details: terroir/_rollout/review/Kendwa-Unguja/README.md Also remaining: the desk link-probe reproducibility issue above."
   },
   {
    "slug": "Diani-Kwale",

@@ -44,6 +44,7 @@ on WebSearch result extracts only. So:
    last-minute venues (Sexy Fish, Maisha Beach, Langi Langi) on their own sites, dated, for the guest list.
 3. Confirm on kendwarocks.com: the party rule and the Oct/Nov dates (derived: Sat 31 Oct, Sat 28 Nov).
 4. Confirm the craft sites still resolve (world-unite.de course page, kuzacave.com, mwanizanzibar.com) and Yasa/Hanoi/Makofi web.
+5. Resolve the desk link-probe reproducibility issue (see Checks).
 Then flip state to `review`.
 
 ## Checks (7 Oct 2026, local, Python http.server on an ephemeral port)
@@ -51,6 +52,8 @@ Then flip state to `review`.
   leaflet@1.9.4 dist from the npm registry (unpkg.com is blocked here) — the page itself is unchanged.
 - probe-guide.cjs: 28/29 PASS. The one FAIL ("sub-tag restaurants … opened") fails identically on live Prague and Siracusa: the
   chrome deliberately never auto-opens #tables (the 4 Oct "closed #tables names its groups" fix). Probe expectation is stale.
-- probe-links.cjs desk / phone: see state.json.
+- probe-links.cjs phone: 178 links, 0 failures. Desk: 192 links, 0 landing failures, but 9 links listed once were not
+  reproducible after the probe's hash-only reload (stock probe crashes on these); live Siracusa is 109/0 — open, cause not pinned.
+- Fixed: map popups no longer link 'Read full entry' to the 18 map-only places; Leaflet's '#close' anchor neutralised (page-local).
 - repetition audit: 0 exact repeats, 0 shingle pairs ≥12 (232 units).
 - checklinks.py: NOT RUNNABLE here (see above).
