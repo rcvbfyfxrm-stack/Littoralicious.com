@@ -256,6 +256,14 @@ doc = doc[:g0] + "  var G = [\n" + ",\n".join("    " + json.dumps(x, ensure_asci
 for x_, y_ in [("gx-sicily", "gx-kendwa"), ('id="sicily-', 'id="kendwa-'), ("Sicilian and Italian words", "Swahili words"),
                ("/* Siracusa: the top-3", "/* Kendwa: the top-3"), ("/* Siracusa — scoped:", "/* Kendwa — scoped:")]:
     doc = doc.replace(x_, y_)
+# map popups (page-local chrome script): "Read full entry" only for places that have a table card (18 are map-only),
+# and Leaflet's close button carries href="#close", an anchor with no target — make it a plain "#" (Leaflet prevents default).
+_pop = "'<a href=\"#venue-'+v.id+'\" onclick="
+assert doc.count(_pop) == 1
+doc = doc.replace(_pop, "(document.getElementById('venue-'+v.id) ? " + _pop, 1)
+doc = doc.replace("Read full entry →</a>'+(v.maps?", "Read full entry →</a>' : '')+(v.maps?", 1)
+doc = doc.replace("  window.__terroirMarkers = markers;", "  map.on('popupopen', function (e) { var x = e.popup && e.popup._closeButton; if (x) x.setAttribute('href', '#'); });\n  window.__terroirMarkers = markers;", 1)
+assert "x.setAttribute('href', '#')" in doc
 doc = re.sub(r"<title>[^<]*</title>", f"<title>{t(P.TITLE)}</title>", doc, count=1)
 doc = re.sub(r'(<meta name="description" content=")[^"]*(")', lambda m: m.group(1) + a(P.DESC) + m.group(2), doc, count=1)
 doc = doc.replace("/terroir/data/Siracusa-Sicilia.js", f"/terroir/data/{SLUG}.js")

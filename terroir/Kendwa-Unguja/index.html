@@ -2615,10 +2615,11 @@ window.addEventListener('load', function () {
     var marker = L.marker([v.lat, v.lng], { icon: icon, riseOnHover: true });
     marker.bindTooltip(v.name, { direction:'right', offset:[10,0] });
     var why = v.why ? v.why.slice(0,200) + (v.why.length>200?'…':'') : '';
-    marker.bindPopup('<em>'+((data.CAT_LABELS||{})[v.cat]||v.cat)+(v.neighborhood?' · '+v.neighborhood:'')+'</em><b>'+v.name+'</b>'+(why?'<span style="color:#c8c0b4;display:block;margin-bottom:6px;">'+why+'</span>':'')+'<a href="#venue-'+v.id+'" onclick="document.getElementById(\'venue-'+v.id+'\') && document.getElementById(\'venue-'+v.id+'\').scrollIntoView({behavior:\'smooth\',block:\'center\'});">Read full entry →</a>'+(v.maps?'<br><a href="'+v.maps+'" target="_blank" rel="noopener">Open in Google Maps →</a>':''));
+    marker.bindPopup('<em>'+((data.CAT_LABELS||{})[v.cat]||v.cat)+(v.neighborhood?' · '+v.neighborhood:'')+'</em><b>'+v.name+'</b>'+(why?'<span style="color:#c8c0b4;display:block;margin-bottom:6px;">'+why+'</span>':'')+(document.getElementById('venue-'+v.id) ? '<a href="#venue-'+v.id+'" onclick="document.getElementById(\'venue-'+v.id+'\') && document.getElementById(\'venue-'+v.id+'\').scrollIntoView({behavior:\'smooth\',block:\'center\'});">Read full entry →</a>' : '')+(v.maps?'<br><a href="'+v.maps+'" target="_blank" rel="noopener">Open in Google Maps →</a>':''));
     marker.addTo(map);
     markers[v.id] = marker;
   });
+  map.on('popupopen', function (e) { var x = e.popup && e.popup._closeButton; if (x) x.setAttribute('href', '#'); });
   window.__terroirMarkers = markers;
   try { var pts = venues.filter(function (v) { return v.lat && v.lng; }).map(function (v) { return [v.lat, v.lng]; }); if (pts.length) map.fitBounds(pts, { padding:[22,22], maxZoom:15 }); } catch (e) {}
 });
