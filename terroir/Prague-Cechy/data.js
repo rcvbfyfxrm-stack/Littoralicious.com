@@ -443,15 +443,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening: a small table, a pub, a bar, a listening room, the late plate.",
+   "en": "Crew ashore for one evening: a plan for each quarter — the pub, the table, the bar, the late plate, in walking order.",
    "note": "La petite table · le bar · l’écoute · le dernier plat",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "listening",
-    "street-food"
-   ]
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -474,6 +469,13 @@ window.TERROIR_DATA = (function () {
     "ce-soir",
     "money-sits"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: the bridge after ten, a garden behind a plain door, the river, dinner under the castle.",
+   "note": "Le pont la nuit · le jardin · la rivière · la terrasse",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {

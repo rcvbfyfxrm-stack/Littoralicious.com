@@ -334,7 +334,8 @@ def main():
     r.ck("lanes are non-empty", all(any(x.get("category") == c["key"] for x in D["VENUES"])
                                     for c in D.get("CATEGORIES", [])),
          "a declared lane has no venues")
-    r.ck("BRIDGE 3 doors", len(D.get("BRIDGE", {}).get("doors", [])) == 3)
+    nd = cfg.get("doors", 3)   # per-guide; Prague has a fourth door (the getaway weekend lens), 7 Oct 2026
+    r.ck(f"BRIDGE {nd} doors", len(D.get("BRIDGE", {}).get("doors", [])) == nd)
     r.ck("BRIDGE shortlist groups", len(D.get("BRIDGE", {}).get("shortlist", {}).get("groups", [])) == 3)
     r.ck("berths = 3", sum(1 for v in D["VENUES"] if v.get("tier") == "berth_top") == 3)
 
@@ -570,7 +571,7 @@ def main():
         r.ck("render: lane gemboxes", got["gemboxes"] >= rf.get("gemboxes", 4), f'{got["gemboxes"]}')
         r.ck("render: gem popups wired", got["gem popup triggers"] >= len(D.get("GEMS", [])),
              f'{got["gem popup triggers"]}')
-        r.ck("render: bridge doors", got["bridge doors"] >= 3, f'{got["bridge doors"]}')
+        r.ck("render: bridge doors", got["bridge doors"] >= cfg.get("doors", 3), f'{got["bridge doors"]}')
         r.ck("render: shortlist groups", got["shortlist groups"] >= 3, f'{got["shortlist groups"]}')
         r.ck("render: liste survives", got["liste items"] >= floors.get("liste", 14),
              f'{got["liste items"]}')
