@@ -518,8 +518,26 @@
   "Prague-Cechy",
   "Siracusa-Sicilia"
  ],
- "gold6_note": "6 Oct 2026, Arnaud: 'every night update all the guides to put them to the level of Prague'. One guide per night, REVIEW FIRST: work lands on branch terroir-uplift/<slug>-<date>; Arnaud says push. Before picking, read the remote terroir-uplift/* branches: a slug with a branch in status review is skipped; a branch in status partial is resumed.",
+ "gold6_note": "6 Oct 2026, Arnaud: 'every night update all the guides to put them to the level of Prague'. One guide per night, REVIEW FIRST: work lands on branch terroir-uplift/<slug>-<date>; Arnaud says push. Before picking, read the remote terroir-uplift/* branches: a slug with a branch in status review is skipped; a branch in status partial is resumed. 7 Oct 2026: §8 the four readings joined GOLD6 (Prague live, commit 9af3064); readings-only items first, up to three a night.",
  "gold6_queue": [
+  {
+   "slug": "Siracusa-Sicilia",
+   "status": "pending",
+   "pass": "readings",
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+  },
+  {
+   "slug": "Catania-Sicilia",
+   "status": "pending",
+   "pass": "readings",
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+  },
+  {
+   "slug": "Taormina-Sicilia",
+   "status": "pending",
+   "pass": "readings",
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+  },
   {
    "slug": "Kendwa-Unguja",
    "status": "partial",
@@ -535,7 +553,8 @@
     "checklinks.py: NOT RUNNABLE — sandbox egress proxy refuses every external host (0 of 252 reachable)",
     "screenshots: review/Kendwa-Unguja/kendwa-card-desktop.png, kendwa-card-phone.png"
    ],
-   "notes": "Places 73 -> 52 (lane venues 52 -> 34, 14 -> 12 lanes, every lane <=3, no 4s); fold cards 127 -> 99, all rewritten and labelled; reading layer on the live Siracusa/Prague chrome; doors, guest list, events, hi-fi sub-tag, dated hot board (as of 7 Oct, review 25 Nov). PARTIAL because the sandbox could not load any external site: checklinks not run, own-site liveness read only via search indexes (17 re-confirmed 7 Oct, 27 keep 22 Aug confirmation, 8 unverified). Remaining: run checklinks from a normal network; re-read own sites + the last-minute venues' hours (Sexy Fish, Maisha Beach, Langi Langi); confirm the Full Moon rule/dates on kendwarocks.com; confirm craft sites resolve. Then set status review. Details: terroir/_rollout/review/Kendwa-Unguja/README.md Also remaining: the desk link-probe reproducibility issue above."
+   "notes": "Places 73 -> 52 (lane venues 52 -> 34, 14 -> 12 lanes, every lane <=3, no 4s); fold cards 127 -> 99, all rewritten and labelled; reading layer on the live Siracusa/Prague chrome; doors, guest list, events, hi-fi sub-tag, dated hot board (as of 7 Oct, review 25 Nov). PARTIAL because the sandbox could not load any external site: checklinks not run, own-site liveness read only via search indexes (17 re-confirmed 7 Oct, 27 keep 22 Aug confirmation, 8 unverified). Remaining: run checklinks from a normal network; re-read own sites + the last-minute venues' hours (Sexy Fish, Maisha Beach, Langi Langi); confirm the Full Moon rule/dates on kendwarocks.com; confirm craft sites resolve. Then set status review. Details: terroir/_rollout/review/Kendwa-Unguja/README.md Also remaining: the desk link-probe reproducibility issue above.",
+   "readings": "owed — add §8 on this branch"
   },
   {
    "slug": "Diani-Kwale",
@@ -610,7 +629,11 @@
   {
    "slug": "Prague-Cechy",
    "date": "2026-10-05",
-   "commit": "39bb1a7"
+   "commit": "39bb1a7",
+   "readings": {
+    "date": "2026-10-07",
+    "commit": "9af3064"
+   }
   },
   {
    "slug": "Siracusa-Sicilia",

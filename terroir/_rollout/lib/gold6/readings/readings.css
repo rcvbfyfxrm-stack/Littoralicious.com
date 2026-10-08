@@ -1,0 +1,60 @@
+/* GOLD6 §8 — the four readings (7 Oct 2026). Sea #2d4a5e = One Night / navigation; brick #8b3a2a (house
+   secondary) = the getaway weekend. Literal tokens so it works under any guide's scope class. */
+.gx-bridge{grid-template-columns:repeat(4,1fr)!important;max-width:1060px!important}
+@media(max-width:980px){.gx-bridge{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:700px){.gx-bridge{grid-template-columns:1fr!important}}
+.gx-bridge__door[href^="#t=g"]{border-top-color:#8b3a2a;background:#faf7f2}
+.gx-bridge__door[href^="#t=g"] i{color:#8b3a2a}
+.gx-bridge--foot{margin-top:60px!important;padding-top:22px!important;border-top:2px solid #2d4a5e}
+.is-lens .gx-band__title{font-style:italic}
+.is-lens .gx-chapter[data-chapter="getaway"] .gx-band{border-top-color:#8b3a2a}
+.gx-rd__kicker{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.62rem;letter-spacing:1.6px;text-transform:uppercase;color:#2d4a5e;margin:14px 0 10px}
+.gx-rd__kicker--brick{color:#8b3a2a}
+.gx-rd__foot{margin:34px 0 0;text-align:center;font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase}
+.gx-rd__pin{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.62rem;letter-spacing:1px;text-transform:uppercase;color:#2d4a5e;text-decoration:none;white-space:nowrap;margin-left:4px}
+/* One Night */
+.gx-nights{max-width:860px;margin:0 auto 40px}
+.gx-nights__lede{font-family:Georgia,serif;font-size:1.06em;line-height:1.75;max-width:700px;margin:0 0 16px}
+.gx-nights__index{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
+.gx-nights__index a{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.6rem;letter-spacing:1.2px;text-transform:uppercase;color:#2d4a5e;border:1px solid #d4d4d4;padding:5px 9px;text-decoration:none;background:#fff}
+.gx-nights__index a:hover{border-color:#2d4a5e}
+.gx-night{border:1px solid #d4d4d4;border-top:3px solid #2d4a5e;background:#fff;padding:14px 16px 12px;margin:0 0 14px;scroll-margin-top:110px}
+.gx-night h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25em;margin:0 0 2px;color:#0a0a0a}
+.gx-night__line{font-style:italic;color:#6b7280;margin:0 0 10px}
+.gx-night ol{list-style:none;margin:0;padding:0}
+.gx-night li{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:8px 0;border-top:1px solid #f5f5f5;line-height:1.55}
+.gx-night time{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.72rem;color:#2d4a5e;padding-top:2px}
+.gx-night b{display:block;margin-bottom:1px}
+.gx-night b a{color:#0a0a0a;text-decoration:none;border-bottom:1px solid #d4d4d4}
+.gx-night b a:hover{border-color:#2d4a5e}
+.gx-night__after{margin:8px 0 0;padding-top:8px;border-top:1px dashed #d4d4d4;font-size:.92em;color:#6b7280}
+.gx-night__after a,.gx-nights__lede a{color:#2d4a5e}
+/* The getaway weekend */
+.gx-weekend{max-width:700px;margin:0 auto 40px}
+.gx-weekend__lede{font-family:Georgia,serif;font-size:1.12em;line-height:1.8;color:#0a0a0a;margin:0 0 22px}
+.gx-weekend__book{background:#faf7f2;border-left:3px solid #8b3a2a;padding:12px 16px;margin:0 0 30px}
+.gx-weekend h4{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.62rem;letter-spacing:1.6px;text-transform:uppercase;color:#8b3a2a;font-weight:400;margin:0 0 8px}
+.gx-weekend__book ul,.gx-weekend__more ul{margin:0;padding-left:18px}
+.gx-weekend__book li,.gx-weekend__more li{margin:0 0 5px;font-size:.92em;line-height:1.5}
+.gx-weekend a{color:#2d4a5e;text-decoration:none;border-bottom:1px solid #d4d4d4}
+.gx-weekend a:hover{border-color:#2d4a5e}
+.gx-weekend__day{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:1.55em;color:#0a0a0a;margin:38px 0 12px;display:flex;align-items:baseline;gap:12px}
+.gx-weekend__day span{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-style:normal;font-size:.4em;letter-spacing:1.8px;text-transform:uppercase;color:#fff;background:#8b3a2a;padding:4px 8px}
+.gx-weekend__line{list-style:none;margin:0;padding:0 0 0 14px;border-left:1px solid #e3cfc9}
+.gx-weekend__line li{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:12px 0 14px;position:relative;border-bottom:1px solid #f5f5f5}
+.gx-weekend__line li::before{content:"";position:absolute;left:-19px;top:19px;width:9px;height:9px;border-radius:50%;background:#8b3a2a}
+.gx-weekend__line time{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.74rem;color:#8b3a2a;padding-top:3px}
+.gx-weekend__line b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.08em;color:#0a0a0a;margin-bottom:4px}
+.gx-weekend__line p{margin:0 0 6px;line-height:1.6}
+.gx-weekend__meta{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.64rem!important;letter-spacing:.6px;color:#6b7280}
+.gx-weekend__go{display:flex;gap:16px;font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.64rem;letter-spacing:1px;text-transform:uppercase}
+.gx-weekend__more{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;margin:40px 0 0;padding-top:22px;border-top:2px solid #8b3a2a}
+.gx-weekend__more p{margin:0;line-height:1.6;font-size:.95em}
+.gx-weekend__dated{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:.6rem!important;letter-spacing:1px;text-transform:uppercase;color:#94a3b8;margin:0 0 6px!important}
+@media(max-width:560px){.gx-weekend__more{grid-template-columns:1fr}.gx-weekend__line li{grid-template-columns:44px 1fr;gap:10px}}
+/* the Maps link on a CLOSED card: bottom-left of a tile, under the hook of a table card; never toggles the card */
+.fcard__pin{font-family:'JetBrains Mono','SF Mono',Menlo,monospace;font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:#2d4a5e;text-decoration:none;border-bottom:1px solid #d4d4d4;line-height:1.3;width:max-content}
+.fcard__pin:hover{border-color:#2d4a5e}
+.fcard:not([open])>summary .fcard__pin{position:absolute;left:12px;bottom:8px;order:3}
+.fcard[open]>summary .fcard__pin{order:3;margin-top:4px}
+.terroir-card--fold>summary .fcard__pin{display:inline-block;margin-top:6px}

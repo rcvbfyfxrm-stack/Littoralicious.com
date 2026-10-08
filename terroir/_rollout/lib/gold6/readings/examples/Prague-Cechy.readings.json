@@ -1,0 +1,396 @@
+{
+ "_about": "Prague-Cechy, 7 Oct 2026 — the reference readings (live). Every fact comes from the guide's own cards.",
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · walking order",
+  "lede": "Eat at seven like a Praguer, drink afterwards: kitchens close early and pubs stop cooking around ten. Each quarter below is one evening, in the order you walk it. Every name opens its full card; hours were checked in September and October 2026.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the pub, the table, the bar, the late plate, in walking order.",
+  "door_note": "La petite table · le bar · l’écoute · le dernier plat",
+  "quarters": [
+   {
+    "id": "stare-mesto",
+    "name": "Staré Město · Dlouhá",
+    "line": "The whole night on one street, then a cellar under the square.",
+    "steps": [
+     {
+      "time": "18:30",
+      "name": "Lokál Dlouhááá",
+      "ref": "venue:lokal-dlouhaaa",
+      "text": "A hladinka, then a mlíko, and dinner: tatarák 365 Kč, svíčková 325 Kč. Book for the evening."
+     },
+     {
+      "time": "20:30",
+      "name": "Bokovka",
+      "ref": "card:Bokovka",
+      "text": "Two doors along at Dlouhá 37: a candlelit cellar, a bottle off the shelf, a cheese counter. Until midnight."
+     },
+     {
+      "time": "22:30",
+      "name": "Black Angel's",
+      "ref": "card:Black Angel's",
+      "text": "A Gothic cellar under Old Town Square with a live piano. Daily until 03:00; over-18s only."
+     },
+     {
+      "time": "23:30",
+      "name": "Lokál, last hour",
+      "ref": "venue:lokal-dlouhaaa",
+      "text": "Back up Dlouhá: at eleven the long room is still full and the tanks still pouring. Until midnight, Sundays 22:00."
+     }
+    ],
+    "after": "Spend more: the counter at [[venue:marie-b|Marie B]], Dlouhá 37 — carte blanche for 2,150 CZK, daily from 17:30."
+   },
+   {
+    "id": "nove-mesto",
+    "name": "Nové Město · Národní and the square",
+    "line": "History in a glass, meat from the counter, jazz, and the sausage home.",
+    "steps": [
+     {
+      "time": "18:00",
+      "name": "U Pinkasů",
+      "ref": "venue:u-pinkasu",
+      "text": "The first Pilsner on draught in Prague was poured on this corner in 1843. Take it in the Gothic garden."
+     },
+     {
+      "time": "19:30",
+      "name": "Kantýna",
+      "ref": "venue:kantyna",
+      "text": "A butcher's counter in an old bank hall: point at the cut, they grill it. No bookings; food until 22:00."
+     },
+     {
+      "time": "21:15",
+      "name": "Reduta",
+      "ref": "card:Reduta",
+      "text": "The second show on Národní, in the club where Clinton played saxophone for Havel in 1994."
+     },
+     {
+      "time": "23:00",
+      "name": "Hemingway Bar",
+      "ref": "card:Hemingway Bar",
+      "text": "The Becher Butter Sour. Until 01:00, Fridays and Saturdays 02:00; book online."
+     },
+     {
+      "time": "late",
+      "name": "A klobása on Wenceslas Square",
+      "ref": "card:The Wenceslas Square klobása",
+      "text": "Sausage, mustard and rye, eaten standing — then the night trams, which all meet in the New Town."
+     }
+    ],
+    "after": "Spend more: the kitchen bar at [[venue:taro|TARO]], Národní 10, Tuesday to Saturday from 17:30."
+   },
+   {
+    "id": "mala-strana",
+    "name": "Hradčany and Malá Strana · down from the castle",
+    "line": "Start high, walk down, cross the river when the bridge is empty.",
+    "steps": [
+     {
+      "time": "16:30",
+      "name": "U Černého vola",
+      "ref": "venue:u-cerneho-vola",
+      "text": "A Kozel twelve at the oak benches opposite the Loreta: the one pub worth your time on the castle hill. Hours vary; share a table."
+     },
+     {
+      "time": "19:00",
+      "name": "Café Savoy",
+      "ref": "venue:cafe-savoy",
+      "text": "Tram 22 down, then supper under the 1893 ceiling at the Legion Bridge end of Vítězná. Until 22:00."
+     },
+     {
+      "time": "21:30",
+      "name": "Monastiq",
+      "ref": "card:Monastiq Bar & Lounge, Mandarin Oriental",
+      "text": "A drink in a former monastery on Nebovidská, five minutes from the bridge. Until 23:00."
+     },
+     {
+      "time": "22:30",
+      "name": "Charles Bridge",
+      "ref": "card:Charles Bridge",
+      "text": "After ten the crowds are gone. Cross to the Old Town on foot."
+     }
+    ]
+   },
+   {
+    "id": "vinohrady",
+    "name": "Vinohrady and Vršovice · Korunní to Krymská",
+    "line": "Moravian fire, then Prague's liveliest small street.",
+    "steps": [
+     {
+      "time": "19:00",
+      "name": "Výčep",
+      "ref": "venue:vycep-korunni",
+      "text": "A modern Wallachian pub that smokes, cures and distils everything itself: the langoš with sheep's cheese and cracklings. Loud; book."
+     },
+     {
+      "time": "21:30",
+      "name": "Café V lese",
+      "ref": "card:Café V lese",
+      "text": "Krymská 12: a bar upstairs and a concert basement 'in the forest'. Until 02:00, Sundays midnight."
+     }
+    ],
+    "after": "Cheaper: a phở bò at [[venue:pho-vietnam-anglicka|Pho Vietnam Tuan & Lan]] by Náměstí Míru, daily to 22:00. Spend more: [[venue:benjamin|Benjamin]], ten seats round a counter in Vršovice, Tuesday to Saturday at 18:45 — book weeks ahead."
+   },
+   {
+    "id": "karlin",
+    "name": "Karlín · wine, then beer from the tank",
+    "line": "The courtyard end of the guide's own three-pub route.",
+    "steps": [
+     {
+      "time": "18:30",
+      "name": "Veltlin",
+      "ref": "card:Veltlin",
+      "text": "Křižíkova 115: only wines from inside the old Habsburg borders, no list. Tell them what you like."
+     },
+     {
+      "time": "20:00",
+      "name": "Dva kohouti",
+      "ref": "venue:dva-kohouti",
+      "text": "The house twelve drunk metres from the brewhouse, in a courtyard off Sokolovská. No bookings; until 01:00."
+     }
+    ],
+    "after": "Eat first: the tables we list in Karlín close by evening, so dinner is at Lokál and the tram is part of the night — [[card:If you have one evening, do this one|the three-pub route]], castle hill to Karlín in five hours."
+   },
+   {
+    "id": "zizkov",
+    "name": "Žižkov · the pub republic",
+    "line": "A hill, a grill, a pub with ironic staff, and a music hall.",
+    "steps": [
+     {
+      "time": "17:30",
+      "name": "Parukářka",
+      "ref": "venue:parukarka",
+      "text": "A pub cut into the hill above Žižkov: buy a klobása and cook it on their grill. The outdoor stand closes in late October."
+     },
+     {
+      "time": "20:00",
+      "name": "U Vystřelenýho oka",
+      "ref": "venue:u-vystreleneho-oka",
+      "text": "The pub to understand the district: smoky, noisy, cash only. The food is not the point."
+     },
+     {
+      "time": "21:00",
+      "name": "Palác Akropolis",
+      "ref": "card:Palác Akropolis",
+      "text": "Žižkov's music hall: check the programme and drink downstairs before the gig."
+     }
+    ]
+   },
+   {
+    "id": "letna",
+    "name": "Letná and Holešovice · Prague 7",
+    "line": "A whole vinyl evening on one street, and a club made of scrap machinery.",
+    "steps": [
+     {
+      "time": "19:00",
+      "name": "Tendance",
+      "ref": "card:Tendance",
+      "text": "Šmeralova 130/5: cocktails, the kitchen of chef Lukáš Bauer, DJs most nights. Eat here. Tuesday to Saturday from 18:00."
+     },
+     {
+      "time": "21:00",
+      "name": "Cult Hifi Bar",
+      "ref": "card:Cult Hifi Bar",
+      "text": "A few doors along: Klipsch horns, vinyl only, six tables. Thursday to Saturday. Message @cult.hifi first — we found no dated sign of trading after May 2026."
+     },
+     {
+      "time": "22:30",
+      "name": "LUFT",
+      "ref": "card:LUFT",
+      "text": "Kamenická 56: a bar and a record shop in one room. Until midnight, Thursday to Saturday 01:00."
+     },
+     {
+      "time": "late",
+      "name": "Cross Club",
+      "ref": "card:Cross Club",
+      "text": "Plynární 23: welded pipes, cogs and moving machinery, the club open until five. Usually free on weekdays."
+     }
+    ],
+    "after": "Before dark, in season: a cup of lager in the [[venue:letna-beer-garden|Letná beer garden]], every bridge lined up below. It may be closed by late October."
+   },
+   {
+    "id": "river",
+    "name": "The river · Podskalí and Smíchov",
+    "line": "The fish house at water level, then jazz on the far bank.",
+    "steps": [
+     {
+      "time": "18:30",
+      "name": "Restaurace Vltava",
+      "ref": "venue:restaurace-vltava",
+      "text": "A wooden fish house on the quay since 1945, same family: carp, mains 269–349 CZK. Daily until 22:00."
+     },
+     {
+      "time": "21:00",
+      "name": "Jazz Dock",
+      "ref": "card:Jazz Dock",
+      "text": "Cross the Jirásek Bridge to the Smíchov embankment: bands from about nine, the river past the windows. Book the river side."
+     }
+    ],
+    "after": "Instead of the fish: the hot chicken sandwich at [[venue:centraal|Centraal]], further along the same embankment — Tuesday to Sunday, until it sells out. Or climb to [[venue:u-kroka|U Kroka]] under Vyšehrad, daily to 23:00 (book)."
+   }
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the bridge after ten, a garden behind a plain door, the river, dinner under the castle.",
+  "door_note": "Le pont la nuit · le jardin · la rivière · la terrasse",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Prague sells itself on the bridge at noon, shoulder to shoulder. The real thing is quieter and costs less: <strong>the bridge after ten, when it is empty</strong>; a baroque garden behind a door you would walk past; a rowing boat with the castle in front of you; a terrace under the castle for the dinner of the trip; a second castle upriver, where the composers are buried. Every stop below is already in this guide and was checked in September 2026. This reading puts them in order, and tells you what to book before you fly.",
+  "book": [
+   "[[venue:terasa-u-zlate-studne|Terasa U Zlaté studně]] — 2–3 weeks ahead, by phone; ask for the terrace.",
+   "[[venue:mlynec|Mlýnec]] — 1–2 weeks ahead online; a window table, confirmed in writing.",
+   "[[card:Hemingway Bar|Hemingway Bar]] — online, for Friday night.",
+   "[[venue:cafe-savoy|Café Savoy]] — for Saturday breakfast: weekends need a booking.",
+   "[[venue:u-kroka|U Kroka]] — for Sunday lunch."
+  ],
+  "days": [
+   {
+    "label": "Friday",
+    "title": "The bridge at night",
+    "stops": [
+     {
+      "time": "19:30",
+      "name": "Dinner at Mlýnec, at the window",
+      "ref": "venue:mlynec",
+      "text": "A little mill on a spur in the river, floor-to-ceiling windows and a balcony on Charles Bridge and the weir. The window table is the whole point: ask for one when you book and get it confirmed in writing.",
+      "meta": "Novotného lávka 9 · set menus, MICHELIN €€€ band · book 1–2 weeks ahead online"
+     },
+     {
+      "time": "22:00",
+      "name": "Charles Bridge, after ten",
+      "ref": "card:Charles Bridge",
+      "text": "Walk out of the restaurant onto the bridge. After ten the crowds have gone and the statues are black against the sky; cross to Malá Strana and come back along Kampa, beside the Čertovka millstream, the channel that made Kampa an island.",
+      "meta": "516 metres, finished in 1402 · free, always open"
+     },
+     {
+      "time": "23:00",
+      "name": "A nightcap at Hemingway Bar",
+      "ref": "card:Hemingway Bar",
+      "text": "Fifteen minutes' walk south, towards Národní. Order the Becher Butter Sour, Becherovka washed with ghee, or the house absinthe the old way: iced water dripped over sugar, no fire.",
+      "meta": "Opatovická 3 · Fri–Sat until 02:00 · book online, walk-ins wait"
+     }
+    ]
+   },
+   {
+    "label": "Saturday",
+    "title": "A garden, the river, the terrace",
+    "stops": [
+     {
+      "time": "09:00",
+      "name": "Breakfast at Café Savoy",
+      "ref": "venue:cafe-savoy",
+      "text": "Breakfast under a ceiling of 1893, with a cake cabinet from Myšák, the confectioner of 1911. Have the Savoy cake for the table.",
+      "meta": "Vítězná 5 · Sat–Sun from 9:00 · reservation required at weekends"
+     },
+     {
+      "time": "10:00",
+      "name": "Vrtba Garden, behind a plain door",
+      "ref": "card:Vrtba Garden",
+      "text": "A few minutes up Karmelitská, an unremarkable door opens on a baroque garden of about 1720 climbing Petřín in terraces, with statues by Braun. Twenty minutes, and from the top balustrade the green dome of St Nicholas and every red roof below it.",
+      "meta": "Karmelitská · daily from 10:00, April–October · 150 CZK · closes for winter at the end of October"
+     },
+     {
+      "time": "11:30",
+      "name": "The Saturday river: Náplavka market",
+      "ref": "card:The náplavka embankment",
+      "text": "Cross the Legion Bridge and walk south along the river past the Dancing House to the old landing quay, where ninety stalls stand under the embankment wall. In autumn buy a bottle of burčák, the half-fermented young wine, and drink it the same day, with the castle across the water.",
+      "meta": "Rašínovo nábřeží · Sat 8:00–14:00 · burčák on sale only until 30 November"
+     },
+     {
+      "time": "13:00",
+      "name": "On the water: the lock, or the ferry",
+      "ref": "card:The one-afternoon river loop",
+      "text": "From the same quay, the 55-minute Paroplavba run goes up through the Mánes lock and round Střelecký ostrov: the only regular way to feel a Prague lock fill under the hull. Or take the city ferry P5 from Výtoň across to Císařská louka for the price of a tram ticket, with people carrying their shopping.",
+      "meta": "Cruises hourly at weekends 11:00–17:00 · ferry 36 CZK in the PID app"
+     },
+     {
+      "time": "15:00",
+      "name": "Row yourselves out to the bridge",
+      "ref": "card:Row yourself: Slovanka on Žofín",
+      "text": "Slovanka, on the island by the National Theatre, rents rowing boats. Row upstream first, along the island, and let the current carry you back with the bridge and the castle in front of you. The only way to be alone with that view. It stays shut in rain, in high water and under 18 degrees: if it is closed, go up to the Glass Bar on the roof of the Dancing House instead.",
+      "meta": "Slovanský ostrov · 300 CZK an hour (Sept 2026) · weather decides"
+     },
+     {
+      "time": "17:00",
+      "name": "A glass in St Wenceslas's vineyard",
+      "ref": "venue:villa-richter",
+      "text": "Climb the Old Castle Steps to Villa Richter, in the vineyard said to have been planted by St Wenceslas, and take a glass of its own wine at the terrace rail before the sun goes. Come for the vines and the view, not the kitchen.",
+      "meta": "Staré zámecké schody 6 · hours not published, call · check it is not booked out for a wedding"
+     },
+     {
+      "time": "19:00",
+      "name": "Dinner under the castle: Terasa U Zlaté studně",
+      "ref": "venue:terasa-u-zlate-studne",
+      "text": "Then to the roof of the Golden Well. The terrace hangs below the castle over the red roofs of Malá Strana: the most beautiful dinner view in the city, with a serious seasonal tasting menu. Ask for the terrace when you book; in rain or cold you get the indoor room.",
+      "meta": "U Zlaté studně 4 · +420 257 533 322 · book 2–3 weeks ahead · price on request"
+     },
+     {
+      "time": "22:00",
+      "name": "The last drink in a monastery",
+      "ref": "card:Monastiq Bar & Lounge, Mandarin Oriental",
+      "text": "Walk down through Malá Strana to Monastiq, the bar of the Mandarin Oriental, which lives in a former monastery on a quiet lane five minutes from Charles Bridge and a world away from it.",
+      "meta": "Nebovidská 1 · daily until 23:00"
+     }
+    ]
+   },
+   {
+    "label": "Sunday",
+    "title": "The other castle, and a slow lunch",
+    "stops": [
+     {
+      "time": "10:00",
+      "name": "Vyšehrad: the other castle",
+      "ref": "card:Vyšehrad and the national cemetery",
+      "text": "Start at Výtoň and climb past Josef Chochol's Cubist houses, their fronts folded like crystals, to the fortress gates. Inside the walls, Dvořák, Smetana, Mucha and Čapek lie in a cemetery of less than a hectare. Finish on the western walls with the river running towards the castle you dined under last night.",
+      "meta": "Tram Výtoň · about 2.5 km, 1.5 hours · grounds free"
+     },
+     {
+      "time": "12:30",
+      "name": "Sunday lunch at U Kroka",
+      "ref": "venue:u-kroka",
+      "text": "A family pub under the fortress walls, in an inn tradition that goes back to 1895. Order the svíčková: beef in a root-vegetable cream sauce, the Sunday dish. Book it: the room is small and the regulars come first.",
+      "meta": "Vratislavova 12 · daily 11:30–23:00, kitchen break 16:00–17:00 · booking strongly recommended"
+     },
+     {
+      "time": "15:00",
+      "name": "Cake in the Cubist café",
+      "ref": "venue:grand-cafe-orient",
+      "text": "Take the tram back to the Old Town and climb to Grand Café Orient, the world's only Cubist café, rebuilt from old photographs. Share a square věneček and a vídeňská káva under whipped cream, then go home.",
+      "meta": "Ovocný trh 19 · Sat–Sun 10:00–21:00 · věneček 95 CZK, coffee 100 CZK (menu seen Sept 2026)"
+     }
+    ]
+   }
+  ],
+  "more": [
+   {
+    "title": "If you have only one evening",
+    "text": "A glass at [[venue:villa-richter|Villa Richter]] before sunset, dinner on the [[venue:terasa-u-zlate-studne|terrace at the Golden Well]], then walk down through Malá Strana and over [[card:Charles Bridge|Charles Bridge]] after ten. That is the weekend in three hours."
+   },
+   {
+    "title": "The grand night instead",
+    "text": "Swap Saturday's terrace for a tasting menu. [[venue:la-degustation|La Degustation]] is the most Czech of the stars (3,500 CZK, book 1–3 weeks ahead). [[venue:field|Field]] is the safest to book blind (six courses 3,200 CZK; they hold a late table only 15 minutes). [[venue:papilio|Papilio]], the country's only two-star, is a chef's counter in a village about twenty minutes' drive out: a night out of the city, not in it."
+   },
+   {
+    "title": "Or a night of music",
+    "text": "Mozart conducted the premiere of Don Giovanni at the [[card:Estates Theatre|Estates Theatre]] in 1787, and it still plays there (4 and 24 October 2026, 19:00, English surtitles). At the [[card:Rudolfinum, Dvořák Hall|Rudolfinum]], sit in the gallery for a 19:30 concert with the river on the other side of the wall."
+   },
+   {
+    "title": "This October",
+    "dated": "Checked 27 September 2026",
+    "items": [
+     "Vrtba Garden closes for winter at the end of October; after that, ride the [[card:Petřín: funicular, tower, Hunger Wall, Strahov|Petřín funicular]] up from Újezd, a few minutes from Café Savoy, and walk the ridge down to Strahov.",
+     "The weekend river cruises run until 1 November; the P5 ferry stops for winter after October.",
+     "The clocks go back on Sunday 25 October: sunset is 17:56 on the 24th and 16:54 the next evening. Move the vineyard glass an hour earlier.",
+     "[[card:Signal Festival, 15–18 October|Signal Festival]], 15–18 October: light art in the streets, mostly free. Go late.",
+     "[[card:Dušičky, 2 November|Dušičky]], the last days of October to 2 November: the Vyšehrad cemetery lit with candles after dark. A family ritual; walk it quietly."
+    ]
+   },
+   {
+    "title": "Where to sleep",
+    "text": "We have judged these places for a drink or a dinner, not for a night: we have not priced or stayed in the rooms. Three hotels are already in this guide: the Golden Well, whose roof is the terrace; the [[card:Monastiq Bar & Lounge, Mandarin Oriental|Mandarin Oriental]], a former monastery in Malá Strana; and [[card:Tony's Café & Bar, Hotel Paris|Hotel Paris]], Art Nouveau of 1904 behind the Municipal House, owned by the same family for three generations."
+   },
+   {
+    "title": "What we would leave out",
+    "text": "[[venue:kampa-park|Kampa Park]] has the most famous view table in Prague: book it for the bridge, not the kitchen. The flaming absinthe is a 1990s invention. Český Krumlov is not a day trip: about three hours each way by bus. And change money at a bank, never at a booth on the bridge approaches."
+   }
+  ]
+ }
+}
