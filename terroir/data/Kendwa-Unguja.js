@@ -71,14 +71,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening on the north tip: a table in the village, the grills at the landing, a sundowner facing west.",
-   "note": "La table · la braise · le coucher",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "street-food"
-   ]
+   "en": "Crew ashore for one evening: a plan for each quarter of the cape — the sunset, the table, the last drink, in walking order.",
+   "note": "Le coucher · la table · la braise · le dernier verre",
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -99,6 +95,13 @@ window.TERROIR_DATA = (function () {
    "open": [
     "ce-soir"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: sunset standing in the sea, the dhow yards at dawn, the lighthouse, Stone Town on the way out.",
+   "note": "Le coucher · le chantier · le phare · la vieille ville",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {

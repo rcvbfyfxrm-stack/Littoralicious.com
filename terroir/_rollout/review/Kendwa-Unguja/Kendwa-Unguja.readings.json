@@ -1,0 +1,169 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the stretch of the cape you are moored off · walking order",
+  "lede": "This coast eats early and closes early: the sun goes into the channel between about 18:15 and 18:45, kitchens stop between 22:00 and 23:00, and the beach between the villages is no walk after dark. Each quarter below is one evening, in the order you walk it; every name opens its full card.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter of the cape — the sunset, the table, the last drink, in walking order.",
+  "door_note": "Le coucher · la table · la braise · le dernier verre",
+  "quarters": [
+   {
+    "id": "kendwa",
+    "name": "Kendwa sand",
+    "line": "One beach, faced west: stand in the sea for the sunset, eat on the sand, finish at the old bar.",
+    "steps": [
+     {"time": "18:00", "name": "The last hour on Kendwa sand", "ref": "card:The last hour on Kendwa sand",
+      "text": "Walk north from the Kendwa Rocks cluster toward the Kilindi headland and be in the water when the sun goes down past Tumbatu. Free, about twenty minutes each way."},
+     {"time": "19:15", "name": "Gold Zanzibar, on the sand", "ref": "venue:gold-zanzibar",
+      "text": "Back along the beach to the south end: the grilled catch of the day or the coconut-and-spice curry at a table on the sand. Resort prices; booking advisable if you are not staying."},
+     {"time": "21:30", "name": "Kendwa Rocks", "ref": "venue:kendwa-rocks",
+      "text": "A cold Kilimanjaro at the bar where the Full Moon Party began in 1996. On Tuesday, Thursday and Saturday The Rocks Lounge opens at 22:00, after every kitchen on the beach has shut: eat first."}
+    ],
+    "after": "Cheaper: [[venue:fisherman-local|The Fisherman Local]] on the road behind the beach, grilled lobster at about half the beach-front rate; cash, and go early, the kitchen runs out. Spend more: the last of the light at [[venue:zuri-zanzibar|Bahari Grill at Zuri]], booked."
+   },
+   {
+    "id": "nungwi-strip",
+    "name": "Nungwi west · the strip",
+    "line": "A roof for the sunset, the deck below it for dinner, burgers by the beach entrance before eleven.",
+    "steps": [
+     {"time": "17:00", "name": "The Z rooftop", "ref": "venue:z-rooftop",
+      "text": "Happy hour runs 17:00 to 20:00 and the roof fills before the sun goes: arrive early or stand. US$15 minimum spend for non-residents, 2% on cards (reviews, 2026)."},
+     {"time": "19:00", "name": "Sexy Fish", "ref": "venue:sexy-fish",
+      "text": "Downstairs at The Z, on the west deck: tuna ceviche, lobster tempura, crab curry. Book the table; reviewers find service slow, so order early."},
+     {"time": "21:30", "name": "CHE Rock", "ref": "venue:che-rock",
+      "text": "Along the sand to the main beach entrance beside Pasha Nungwi: a cocktail with the rock playing. It shuts at 23:00, last order about 22:30; one listing gives other hours, so call ahead."}
+    ],
+    "after": "If Sexy Fish is full: [[venue:langi-langi|Langi Langi]]'s Marhaba terrace on the water, or [[venue:maisha-beach|Maisha Beach]], grilled seafood on the sand (Fri and Sat music from 20:00). Settle the taxi home before the first drink: [[card:This coast closes early|this coast closes early]]."
+   },
+   {
+    "id": "nungwi-village",
+    "name": "Nungwi village · the point",
+    "line": "The lighthouse at dusk, then a village kitchen: no alcohol, shoulders and knees covered.",
+    "steps": [
+     {"time": "18:00", "name": "Ras Nungwi Lighthouse", "ref": "card:Ras Nungwi Lighthouse",
+      "text": "Stand at the island's northern tip with your back to the 1926 tower: both coasts at once, then the light comes on. Exterior only, free."},
+     {"time": "19:00", "name": "Combo 1990", "ref": "venue:combo-1990",
+      "text": "Back through the lanes into the village for the Swahili tapas: five local dishes with rice or ugali and chapati. Cash, no alcohol. Closed Mondays by one listing (Aug 2026): check."},
+     {"time": "21:00", "name": "Chipsi mayai, from a cart", "ref": "card:Chipsi mayai, from a cart",
+      "text": "Chips set in an omelette, the egg just set, from a cart at the market end of the beach, on the nights the carts are out. Cash, small notes."}
+    ],
+    "after": "On a Monday, or if Combo is full: [[venue:machnoo|Machnoo]] by the Sharp football ground, pweza wa nazi, until 22:30. Avoid Friday around midday, when the village is at prayers."
+   },
+   {
+    "id": "nungwi-landing",
+    "name": "Nungwi north · the working beach",
+    "line": "The quiet end of the sand, then the cheapest good meal on this coast, off the coals at the landing.",
+    "steps": [
+     {"time": "17:45", "name": "Mahi Mahi", "ref": "venue:mahi-mahi",
+      "text": "A drink on the quiet northern stretch of Nungwi sand, a walk from the bar strip. Listed 07:30 to 23:30; not re-confirmed, so treat the hours as a guide."},
+     {"time": "19:00", "name": "Nungwi fish market, the evening grills", "ref": "venue:nungwi-fish-market",
+      "text": "The charcoal fires up from about 18:00 until the fish runs out: a whole nguru weighed off the ice and grilled, with rice and kachumbari. Agree the price per kilo before it goes on the coals. Cash."},
+     {"time": "21:00", "name": "Highland Bungalows", "ref": "venue:highland",
+      "text": "Inland to the guest-house bar: a cheap beer, football on the screens, at about a third of the beach price. The way is unlit: bring a torch and walk back with somebody."}
+    ]
+   },
+   {
+    "id": "stone-town",
+    "name": "Stone Town · the seafront",
+    "line": "A night that needs a bed in town: the fort, the grills, a roof with taarab. You cannot drive back after it.",
+    "steps": [
+     {"time": "17:00", "name": "The Old Fort", "ref": "card:The Old Fort",
+      "text": "Twenty minutes in the free courtyard of an Omani fort on a Portuguese footprint; it orients the whole seafront."},
+     {"time": "18:00", "name": "Forodhani Gardens", "ref": "venue:forodhani",
+      "text": "Out of the gate and the stalls are lighting: a sugar-cane juice with lime and ginger, a cup of urojo. Eat only what is cooked in front of you and agree the price first."},
+     {"time": "19:00", "name": "Emerson on Hurumzi, the roof", "ref": "venue:emerson-hurumzi",
+      "text": "One seating at 19:00, guests from 18:00: three Swahili courses on rugs, US$45 before drinks, taarab most evenings. Booked with a deposit."}
+    ],
+    "after": "Cheaper: stay at [[venue:forodhani|Forodhani]] until the stalls pack up around 21:00. The taarab, honestly: [[card:No listening bar — hear taarab instead|there is no listening bar here]]."
+   }
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: sunset standing in the sea, the dhow yards at dawn, the lighthouse, Stone Town on the way out.",
+  "door_note": "Le coucher · le chantier · le phare · la vieille ville",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "The north tip sells itself as sunbeds and a party under the full moon. The real thing is quieter and costs less: <strong>the sun going down into open water while you stand in it</strong>; hulls shaped by hand on the sand at Nungwi before nine; the village behind the bars and the lighthouse at the point; and, on the road back, the half of the spice story the tours leave out. Every stop below is already in this guide, checked in August and October 2026; where a venue's own site could not be read, the step says call ahead. This reading puts them in order, and tells you what to book before you fly.",
+  "book": [
+   "[[card:Two full moons, two party Saturdays|The moon]] — check it before you book the room: the Saturday after the full moon is the party, loud and dear (by the venue's rule, 31 October and 28 November; unconfirmed).",
+   "[[venue:gold-zanzibar|Gold Zanzibar]] — Friday dinner on the sand: booking advisable for non-residents.",
+   "[[venue:sexy-fish|Sexy Fish]] — Saturday, a sunset table on the deck: essential, they go well ahead in high season.",
+   "[[card:Stone Town, done in one day|A car for Sunday]] — Kendwa to Stone Town, about 1 h 15; roughly US$50–70 (seen Aug 2026), arranged the day before."
+  ],
+  "days": [
+   {"label": "Friday", "title": "The sun into the channel",
+    "stops": [
+     {"time": "18:00", "name": "The last hour on Kendwa sand", "ref": "card:The last hour on Kendwa sand",
+      "text": "Drop the bags and walk straight into the sea. North toward the Kilindi headland the hotels stop and the beach is only beach; the sun goes down past Tumbatu, and nobody sells a ticket.",
+      "meta": "Kendwa beach · sunset about 18:15–18:45 all year · free"},
+     {"time": "19:30", "name": "Dinner on the sand at Gold Zanzibar", "ref": "venue:gold-zanzibar",
+      "text": "The grilled catch of the day at a table on the sand at the south end of the beach, with the beach bar a few steps along.",
+      "meta": "Kendwa beach, south end · upper resort band · booking advisable for non-residents"},
+     {"time": "21:30", "name": "A Kilimanjaro at Kendwa Rocks", "ref": "venue:kendwa-rocks",
+      "text": "Back up the sand to the bar where a beach fire among friends in 1996 became the Full Moon Party. Friday is not a club night: the bar, the sand, an early bed.",
+      "meta": "Kendwa beach, centre · low to mid (Aug 2026) · no booking for the bar"}
+    ]},
+   {"label": "Saturday", "title": "The yards, the village, the point",
+    "stops": [
+     {"time": "07:30", "name": "The Nungwi dhow yards, just watching", "ref": "card:The Nungwi dhow yards, just watching",
+      "text": "A taxi up the coast, or the sand at low water if the tide table allows it. Four hundred metres past the last bar, hulls stand in frame and an adze takes a curve out of the wood. Ask before you photograph anyone.",
+      "meta": "North end of Nungwi beach · free to watch · before 09:00 · taxi Kendwa–Nungwi about 20,000 TZS (Aug 2026)"},
+     {"time": "08:45", "name": "Coffee at JF Kili", "ref": "venue:jf-kili",
+      "text": "A flat white from the owners' own Kilimanjaro beans, at the truck by the square, the better of their two rooms.",
+      "meta": "Nungwi main road · 08:00–21:00 · low"},
+     {"time": "09:30", "name": "Nungwi village to the lighthouse", "ref": "card:Nungwi village to the lighthouse",
+      "text": "Inland, through the dukas, the fruit sellers and the mosques, out along the lanes to the 1926 tower on the northern point. Buy something small on the way. Cover shoulders and knees.",
+      "meta": "About 40 minutes with stops · village lanes, then coral"},
+     {"time": "10:30", "name": "Mnarani turtle pond", "ref": "card:Mnarani turtle pond",
+      "text": "Beside the lighthouse: a tidal pool in the coral, village-run since 1993, releasing rehabilitated turtles every February. Know what it is: a captive pond where the animals are handled.",
+      "meta": "Ras Nungwi · daytime, daily"},
+     {"time": "12:30", "name": "Lunch at Machnoo", "ref": "venue:machnoo",
+      "text": "Back in the village, by the Sharp football ground: pweza wa nazi, octopus in coconut, or the crisp coconut fish. Cash, no alcohol.",
+      "meta": "Nungwi village · Mon–Sat 11:00–22:30 · low"},
+     {"time": "15:00", "name": "A gelato at Mama Mia", "ref": "venue:mama-mia-nungwi",
+      "text": "The hottest hours belong in the shade: an espresso, then a gelato from the cabinet before the flavours run out.",
+      "meta": "Nungwi beach · mid to upper (reviews, Oct 2026) · no booking"},
+     {"time": "17:00", "name": "Sunset on The Z rooftop", "ref": "venue:z-rooftop",
+      "text": "Arrive at the start of happy hour or you will be standing: the roof faces due west over the channel.",
+      "meta": "The Z Hotel, Nungwi · happy hour 17:00–20:00 · US$15 minimum for non-residents, 2% on cards (2026)"},
+     {"time": "19:00", "name": "Dinner at Sexy Fish", "ref": "venue:sexy-fish",
+      "text": "Down to the deck: tuna ceviche, lobster tempura, crab curry. Order early; reviewers find the service slow. Then the booked taxi home: Saturday is a club night at The Rocks Lounge from 22:00 if you want it.",
+      "meta": "The Z Hotel, Nungwi · upper mid · essential for a sunset table"}
+    ]},
+   {"label": "Sunday", "title": "Stone Town, on the way out",
+    "stops": [
+     {"time": "08:00", "name": "Mangapwani, on the drive", "ref": "card:Mangapwani",
+      "text": "Leave Kendwa by eight and stop on the west-coast road: a coral cave with a freshwater spring, and a chamber cut around 1880 that held people until about 1905. Take a guide who tells it properly.",
+      "meta": "About an hour for both · about US$5 a foreign adult (guides, Oct 2026)"},
+     {"time": "10:30", "name": "Darajani market", "ref": "venue:darajani",
+      "text": "The fish hall will be finishing; the spice is the point. Cloves loose by weight, oily enough to mark the paper, never in a printed gift box.",
+      "meta": "Market Street, Stone Town · from dawn · cash, TZS"},
+     {"time": "11:30", "name": "Christ Church & the slave-market memorial", "ref": "card:Christ Church & the slave-market memorial",
+      "text": "The cathedral raised on the island's last open slave market; stoop into the holding chambers beneath, even for a minute. The card gives no Sunday hours: ask your driver or call before you count on it.",
+      "meta": "Mkunazini · small entry fee (Aug 2026)"},
+     {"time": "13:00", "name": "Lunch at Lukmaan", "ref": "venue:lukmaan",
+      "text": "A few minutes' walk: point at four or five trays on the counter, with urojo alongside. Then the car to the airport.",
+      "meta": "New Mkunazini Road · through the day from breakfast · low, cash, no alcohol"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening",
+    "text": "Happy hour on [[venue:z-rooftop|The Z rooftop]] from 17:00, dinner on the deck at [[venue:sexy-fish|Sexy Fish]], and a taxi booked home before the first drink. Or, cheaper and better: a whole fish off the coals at the [[venue:nungwi-fish-market|Nungwi landing]] from about 18:00."},
+   {"title": "The grand night instead",
+    "text": "Move Sunday's Stone Town to Saturday night and sleep there: one seating at 19:00 on the roof at [[venue:emerson-hurumzi|Emerson on Hurumzi]], US$45 before drinks, booked with a deposit. On the cape, [[venue:essque-zalu|The Jetty at Essque Zalu]] is a lunch and moonlight address on the east side: it loses the sunset, and closed Monday to Wednesday in low season (2026 notice). [[venue:kilindi|Kilindi]] dines its residents only: ask by email before you count on a table."},
+   {"title": "This October and November",
+    "dated": "Checked 7–8 October 2026",
+    "items": [
+     "[[card:Two full moons, two party Saturdays|Full moons]] on Monday 26 October and Tuesday 24 November; by the venue's rule the parties fall on Saturday 31 October and Saturday 28 November. One listing says the nearest Saturday instead: confirm with Kendwa Rocks.",
+     "[[card:The humpbacks are leaving|The humpbacks are leaving]]: a fair chance in early October, falling week by week; by November a sighting is luck.",
+     "[[card:Between the two winds|Between the two winds]]: the calmest sea of the year off the north tip, the window for Leven Bank (advanced divers) and Mnemba.",
+     "[[card:The short rains, wetter than usual|The short rains]] are forecast wetter than usual from October into January: check warnings before a long boat day.",
+     "[[card:Nyerere Day, Wednesday 14 October|Nyerere Day]], Wednesday 14 October: withdraw cash the day before."
+    ]},
+   {"title": "Where to sleep",
+    "text": "We have judged these places for a meal or a drink, not for a night: we have not priced or stayed in the rooms. Hotels already in this guide: [[venue:kilindi|Kilindi]], fifteen domed pavilions at the quiet north end of Kendwa; [[venue:zuri-zanzibar|Zuri]] and [[venue:gold-zanzibar|Gold Zanzibar]] on Kendwa sand; [[venue:kendwa-rocks|Kendwa Rocks]], loud on club and party nights; on Nungwi's west beach [[venue:langi-langi|Langi Langi]]; and in Stone Town, for the roof, [[venue:emerson-hurumzi|Emerson on Hurumzi]]."},
+   {"title": "What we would leave out",
+    "text": "The turtle aquarium that charges to feed and swim with captive animals: see them wild at [[card:Mnemba Atoll|Mnemba]] ([[card:The turtles, honestly|the turtles, honestly]]). Anyone selling a tour inside the [[card:House of Wonders|House of Wonders]], closed since its 2020 collapse. Any boatman promising a landing on Mnemba. Spice in a printed gift box. And the beach between Kendwa and Nungwi after dark, in either direction."}
+  ]
+ }
+}

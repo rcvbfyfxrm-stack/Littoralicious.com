@@ -1,4 +1,4 @@
-# Kendwa-Unguja → GOLD6 (the Prague standard) · nightly run 7 Oct 2026 · status PARTIAL
+# Kendwa-Unguja → GOLD6 (the Prague standard) · nightly run 7 Oct 2026 · status PARTIAL (§8 readings added 8 Oct)
 
 Route B: the reading layer is assembled on the LIVE Siracusa-Sicilia chrome (itself cloned from live Prague).
 The locked kit `terroir/_assets/guide/*` is untouched. Rebuild from scratch, repeatably:
@@ -57,3 +57,24 @@ Then flip state to `review`.
 - Fixed: map popups no longer link 'Read full entry' to the 18 map-only places; Leaflet's '#close' anchor neutralised (page-local).
 - repetition audit: 0 exact repeats, 0 shingle pairs ≥12 (232 units).
 - checklinks.py: NOT RUNNABLE here (see above).
+
+## 8 Oct 2026 — §8 the four readings (resumed run)
+`origin/rebuild/publishing-system` merged in for the §8 tooling (merge commit; state.json conflict resolved to this branch's entry).
+`Kendwa-Unguja.readings.json` → `apply_readings.py … --check-config …` (applied once, last):
+- **One Night**, 5 quarters in walking order: Kendwa sand (the last hour in the sea → Gold Zanzibar on the sand → Kendwa Rocks) ·
+  Nungwi west strip (Z rooftop happy hour → Sexy Fish → CHE Rock before 23:00) · Nungwi village & the point (lighthouse at dusk →
+  Combo 1990 → chipsi mayai) · Nungwi north, the working beach (Mahi Mahi → the evening grills → Highland) · Stone Town seafront
+  (Old Fort → Forodhani → Emerson's roof; a night that needs a bed in town).
+- **The Getaway Weekend**, 15 stops: Fri sunset standing in the sea, Gold Zanzibar, Kendwa Rocks · Sat dhow yards before nine, JF Kili,
+  village to the lighthouse, Mnarani (with its honesty line), Machnoo, Mama Mia, Z rooftop, Sexy Fish · Sun Mangapwani on the drive,
+  Darajani, Christ Church (no Sunday hours on the card: confirm), Lukmaan, then the airport. Book-before-you-fly: the moon, Gold, Sexy Fish, the Sunday car.
+- Every stop is a ref to a card or venue; hours as on the card; unverified venues (Mahi Mahi, Highland) and disputed hours (CHE Rock,
+  Combo 1990's Monday) carry their warnings. No "romantic" family, no banned words (gate caught one "charming", fixed before apply).
+
+Probes, 8 Oct: the stock `probe-guide.cjs` and `probe-links.cjs` predate §8 — they expect a lens chip (now forbidden) and treat the
+foot doors `#t=onenight|getaway` as element ids; live Prague fails both identically. `probes/` here holds the two adjusted copies
+used (lens-aware chapter list; a real reload between clicks — this was the cause of the 7 Oct desk "not reproducible" crash — and
+`#t=` doors left to `probe-readings.cjs`). Results: probe-readings ALL PASS · probe-guide-lens 32/33 (the shared stale
+"restaurants opened" expectation; Prague 31/33) · links desk 159/0, phone 159/0 · gate ALL GREEN 201 · repetition 0/0.
+
+Still blocked (unchanged): no external host reachable from this sandbox (proxy 403; WebFetch has no DNS), so items 1–4 above remain.
