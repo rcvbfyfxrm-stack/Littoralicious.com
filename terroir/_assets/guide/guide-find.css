@@ -1,0 +1,26 @@
+/* TERROIR KIT — FIND A TABLE (guide-find.js). Sea, mono labels, no emoji. */
+.gx-find{ margin:18px 0 10px; font-family:var(--font-sans, Inter, system-ui, sans-serif); }
+.gx-find__label{ display:block; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--color-sea, #2d4a5e); margin:0 0 6px; }
+.gx-find__bar{ position:relative; display:flex; align-items:center; border:1px solid var(--color-border, #d4cfc5); background:#fff; border-radius:2px; transition:border-color .15s ease, box-shadow .15s ease; }
+.gx-find__bar:focus-within{ border-color:var(--color-sea, #2d4a5e); box-shadow:0 0 0 3px rgba(45,74,94,.12); }
+.gx-find__input{ flex:1; min-width:0; border:0; background:transparent; font:inherit; font-size:16px; color:var(--color-ink, #0a0a0a); padding:11px 40px 11px 14px; outline:none; -webkit-appearance:none; appearance:none; }
+.gx-find__input::-webkit-search-cancel-button{ -webkit-appearance:none; }
+.gx-find__input::-webkit-calendar-picker-indicator{ display:none !important; }
+.gx-find__input::placeholder{ color:var(--color-muted, #6b7280); }
+.gx-find__clear{ position:absolute; right:4px; top:50%; transform:translateY(-50%); width:34px; height:34px; border:0; background:none; font-size:20px; line-height:1; color:var(--color-muted, #6b7280); cursor:pointer; display:none; border-radius:50%; }
+.gx-find__clear:hover{ color:var(--color-sea, #2d4a5e); background:rgba(45,74,94,.08); }
+.gx-find.has-query .gx-find__clear{ display:block; }
+.gx-find__types{ display:flex; gap:6px; overflow-x:auto; padding:8px 0 2px; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.gx-find__types::-webkit-scrollbar{ display:none; }
+.gx-find__type{ flex:0 0 auto; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:11px; letter-spacing:.4px; padding:6px 10px; border:1px solid var(--color-border, #d4cfc5); background:transparent; color:var(--color-ink, #0a0a0a); border-radius:2px; cursor:pointer; white-space:nowrap; }
+.gx-find__type:hover{ border-color:var(--color-sea, #2d4a5e); color:var(--color-sea, #2d4a5e); }
+.gx-find__type.is-on{ background:var(--color-sea, #2d4a5e); border-color:var(--color-sea, #2d4a5e); color:#fff; }
+.gx-find__out{ margin:6px 0 0; font-size:12.5px; color:var(--color-muted, #6b7280); }
+.gx-find.has-query .gx-find__out{ color:var(--color-sea, #2d4a5e); }
+#tables .gx-find-off{ display:none !important; }
+/* the lane grid draws its hairlines with a grey background: with cards hidden it would show as a slab */
+#tables.gx-find-on .terroir-tier__list{ background:transparent; gap:12px; }
+/* while a search is on, the lane stories step aside so the matches sit together */
+#tables.gx-find-on .terroir-cat > .gembox,
+#tables.gx-find-on .terroir-group__lead{ display:none; }
+@media print{ .gx-find{ display:none; } #tables .gx-find-off{ display:revert !important; } }
