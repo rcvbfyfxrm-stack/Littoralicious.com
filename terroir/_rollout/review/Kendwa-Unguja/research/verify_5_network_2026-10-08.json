@@ -1,0 +1,209 @@
+{
+ "_about": "8 Oct 2026, run from a normal network (Arnaud's Mac) for the items the sandbox could not reach. Every finding has its source and the date it was seen. Apply through make_inputs.py / build_gold6.py / apply_readings.py — never by hand on the built page.",
+ "checklinks_2026_10_08": {
+  "result": "252 links: 10 DEAD on the first pass, re-checked twice; MOVED 6-7 all legitimate (m.booking.com->booking.com, elewanacollection.com->kilindizanzibar.com rebrand, padi.com->travel.padi.com, cms.int->iosea-turtles.cms.int, wikipedia.com->en.wikipedia.org, au.trip.com->verify.trip.com bot check); 65 bot-walled on 34 hosts (leave them).",
+  "unlink_keep_name": [
+   "https://activities.marriott.com/africa/united-republic-of-tanzania/zanzibar/activities/tumbatu_island_cultural_village_tour-X7ABTE",
+   "https://magpie.travel/things-to-do/4-hours-spice-tour-in-tanzania/bd6bc850-5038-43d2-894d-38769e637fa5",
+   "https://magpie.travel/things-to-do/mangapwani-coral-cave-tour/394063e7-e32e-4731-810b-fbf952e82d87",
+   "https://www.espanol.skyscanner.com/hoteles/tanzania/mwombali-hoteles/elewana-kilindi-zanzibar-adults-only/ht-158830953",
+   "https://www.novacircle.com/zh-cn/spots/africa/tanzania/unguja-north-region/kaskazini-a-district/zanzibar/machnoo-local-restaurant-c1dd10",
+   "https://www.tourcompass.co.uk/tanzania/accomodation/langi-langi-beach-bungalows.htm",
+   "https://yellowzebrasafaris.com/tanzania/zanzibar/essque-zalu-zanzibar/"
+  ],
+  "unlink_note": "404 twice, no Wayback snapshot: keep the source name, unlinked, '(page gone, no archive — Oct 2026)'. All seven are in #sources only.",
+  "fix_url": {
+   "https://www.omanobserver.om/article/6410/Front Stories/oman-zanzibar-sign-foundation-document-for-museum": "https://www.omanobserver.om/article/6410/Front%20Stories/oman-zanzibar-sign-foundation-document-for-museum (200 once the space is encoded)"
+  },
+  "leave_linked": {
+   "aramcoworld.com": "whole host fails (HTTP/2 protocol error, homepage too) in curl AND a real browser: host-level, not a gone page",
+   "zanzibartourism.go.tz": "whole host times out, homepage too: host-level"
+  }
+ },
+ "full_moon_party": {
+  "CORRECTION": "The guide's dates are WRONG. Kendwa Rocks' own 2026 calendar lists 24 Oct and 21 Nov 2026 (not 31 Oct / 28 Nov). Full moons: Mon 26 Oct 2026 04:12 UTC, Tue 24 Nov 2026 14:53 UTC (US Naval Observatory). Both party Saturdays fall BEFORE the full moon, so 'the first Saturday after the full moon' is disproved; the calendar matches 'the Saturday nearest the full moon'. The venue never writes the rule in words: print 'the Saturday nearest the full moon — check the venue's published calendar', and drop the dispute.",
+  "calendar_2026": [
+   "2026-01-31",
+   "2026-04-04",
+   "2026-05-02",
+   "2026-05-30",
+   "2026-06-27",
+   "2026-07-25",
+   "2026-08-29",
+   "2026-09-26",
+   "2026-10-24",
+   "2026-11-21",
+   "2026-12-25 (Christmas, Fri)",
+   "2026-12-31 (NYE)"
+  ],
+  "sources": [
+   {
+    "label": "Kendwa Rocks, Full Moon Party 2026 calendar (PDF, created 26 May 2026)",
+    "url": "https://www.kendwarocks.com/media/pdfs/full_moon_party_calendars_2026_2027_zanzibar_compressed.pdf"
+   },
+   {
+    "label": "Kendwa Rocks, Full Moon Party",
+    "url": "https://www.kendwarocks.com/full-moon-party"
+   },
+   {
+    "label": "US Naval Observatory, moon phases 2026",
+    "url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2026"
+   }
+  ],
+  "vip": "+255 733 342 312 (on the calendar)",
+  "touch": "Every place the dates or the rule appear: the hot board, the Full Moon card, the readings.json 'book before you fly' line and anything in the week/events."
+ },
+ "CUT": {
+  "cholos": {
+   "status": "closed",
+   "why": "Google Places businessStatus CLOSED_PERMANENTLY (seen 8 Oct 2026 via wanderlog.com/place/details/1062208); HappyCow lists 'CLOSED: Cholos'; Instagram @cholosbeach dormant since 2019. Not to be confused with Cholo's Banda in Jambiani."
+  },
+  "bistro-del-mar": {
+   "status": "closed (probable)",
+   "why": "TripAdvisor listing d14866727 is flagged closed in two independent search-index summaries (page itself 403); no review newer than ~2018; nothing dated 2025-26. It is on the GUEST SHORTLIST: rebuild that slot from the venues kept (the cap-and-guest-list rule).",
+   "sources": [
+    "https://www.tripadvisor.com/Restaurant_Review-g1631939-d14866727-Reviews-Bistro_del_Mar-Kendwa_Zanzibar_Island_Zanzibar_Archipelago.html"
+   ]
+  }
+ },
+ "LOCATION": {
+  "che-rock": "In NUNGWI (Nungwi Beach Street, behind the main beach at Pasha Hotel), not Kendwa — divinginzanzibar.com/guide-nungwi-zanzibar (Apr 2026), TripAdvisor d23727452. Hours 16:30–00:00 (TripAdvisor); no source for 'Daily 12:00–23:00' — drop it.",
+  "highland": "In NUNGWI (Baobab Way), not Kendwa — TripAdvisor d7590680 (stays Jul–Aug 2026), Google Places. Trading as a guesthouse; NO source for bar hours ('Into the night' unsourced — drop). highlandzanzibar.com did not respond. Recent reviews: construction noise next door.",
+  "zanzibar-watersports": "Not '@ Kendwa Rocks': its own about page names a Kendwa Main Road dive centre and a beach office next to Gold Resort, behind the Splash Adventure Park office (zanzibarwatersports.com/about-us/, seen 8 Oct 2026)."
+ },
+ "venues": {
+  "machnoo": {
+   "status": "unverified",
+   "note": "No closure flag, but nothing dated 2026, no own site. Hours conflict: Wanderlog/Google 'daily 10:00–22:30' vs Novacircle 'Sun 07:00–22:30, weekdays 11:00–22:30'. Print only 'closes 22:30' or confirm by phone +255 776 007 954. It is on the guest list (last minute): if it cannot be confirmed, rebuild the slot.",
+   "sources": [
+    "https://wanderlog.com/place/details/7466197/machnoo-local-restaurant"
+   ]
+  },
+  "maisha-beach": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 08:00–23:30 (Google via Wanderlog)",
+   "note": "Own site live (maishanungwi.com/restaurant; WhatsApp +255 773079125) and warns 'During low season and Ramadan the events can be altered or cancelled' — add that caveat."
+  },
+  "langi-langi": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Breakfast buffet 07:00–10:00 (Trip.com); no source gives lunch/dinner hours — keep 'breakfast through dinner' only",
+   "note": "Trip.com reviews Feb–Jul 2026; own site live, +255 773 911000. A booking snippet calls the restaurant 'Marhaba' — unconfirmed, do not print."
+  },
+  "sexy-fish": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 12:00–15:00 and 18:30–22:30; last food orders 21:45 (own page)",
+   "note": "Reservations strongly recommended; the Z's restaurants closed 1 Apr–31 May 2026 (long rains) — seasonal closure, say so. For a last-minute table the 21:45 cutoff is the line.",
+   "sources": [
+    "https://www.thezhotel.com/facilities/restaurants/sexy-fish"
+   ]
+  },
+  "essque-zalu": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "web": "https://www.essquehotels.com/",
+   "note": "essque.com is now a domain FOR SALE — never link it. The Jetty Restaurant & Bar closes Mon–Wed in low season from 16 Mar 2026 'until further notice' (safari.com, ~May 2026); high-season week unconfirmed: 'closed Mon–Wed in low season; call ahead +255 778683960'."
+  },
+  "passion-thyme": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 09:00–21:00 (TripAdvisor + Google agree)",
+   "note": "Opens 09:00 — 'breakfast through dinner' fits but not early. +255 679 739 691."
+  },
+  "mahi-mahi": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "About 07:30–23:00 (TripAdvisor 07:30–23:30 daily; Google closes 23:00 Tue/Fri/Sat)",
+   "web": "https://mahi-mahi.thebriteweb.com/",
+   "note": "Reviews to 19 Sep 2026. Full name Mahi Mahi Beach Bar & Restaurant."
+  },
+  "fisherman-local": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "note": "Review 24 Sep 2026. Name 'Fisherman Local Restaurant' (no 'The'). Hours CONFLICT (TripAdvisor 07:30–22:00 daily vs Google Mon–Fri 09:00–17:00): print no hours, 'call ahead +255 777 871 130'. Off the beach, on the road behind Eden Villa."
+  },
+  "sunset-kendwa": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "web": "https://sunsetkendwa.com/",
+   "note": "A hotel: 'Sunset Restaurant' and 'The Mnazi Bar' on the beachfront; stays Sep 2026. No source for hours — drop 'Day into evening' as a time."
+  },
+  "dhow-course": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "note": "World Unite page live in a real browser (© 2026, Book now): 1–12 weeks, all year, 18+, from 350 EUR first week (300 pp for 2+), 220 EUR each extra week, room in Nungwi 110 EUR/week, deposit 100 EUR; teacher Mr Mponda, at least 2 h private lessons Mon–Fri. Page is behind a JS bot check (curl 403)."
+  },
+  "yasa": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 07:00–23:00 (own site + Google)"
+  },
+  "combo-1990": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "note": "Review 26 Aug 2026. Hours CONFLICT: owner-claimed TripAdvisor 11:00–23:00 every day incl. Monday vs Spanish Dancer guide (Apr 2026) 12:00–23:00 closed Mondays. Print 'lunch and dinner to 23:00; Monday opening unconfirmed — call +255 769 720 873'. Fix the Monday line in 'The week'."
+  },
+  "mama-mia-nungwi": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily: bar 10:30–00:00, kitchen 12:00–22:30, DJ 16:00–19:30 (own site)"
+  },
+  "hanoi-house": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "11:00–23:00 daily",
+   "note": "Travellers' Choice 2026; review 8 Oct 2026; 2026 reviews mention power cuts."
+  },
+  "jf-kili": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "07:30–21:00 (owner-claimed TripAdvisor; Spanish Dancer guide says 08:00)",
+   "note": "Cash only. Two locations: café on the main road opposite Hanoi House, coffee truck at the big square."
+  },
+  "baraka-beach-rest": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "07:30–22:30 daily (TripAdvisor)"
+  },
+  "makofi": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "web": "https://makofizanzibar.com/",
+   "note": "Brands itself 'Makofi Zanzibar'. Pizza Gourmet by Makofi 12:00–22:00 daily, reviews 2–7 Oct 2026. BBQ night exists (own food page) but 'weekly' is unverified: the one source says 1–2 times a week, book before 13:00 via FB/IG or in person."
+  },
+  "z-rooftop": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "note": "Bar is called 'Rooftops'; adults only (16+); no reservations; sunset DJ Wed and Sat 17:00–20:00; happy hour 17:00–20:00; food 12:00–21:45."
+  },
+  "kendwa-rocks": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Restaurant 11:00–23:00, Sat to 00:00 (TripAdvisor)"
+  },
+  "kuza-cave": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 08:30–18:30",
+   "note": "Cooking class US$30 (own site, Oct 2026)."
+  },
+  "mwani-zanzibar": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "note": "Tour US$15, 90 minutes, bookable (own site). Older blogs say $10 — do not print $10. Reviews Sep 2026."
+  },
+  "spanish-dancer": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 08:00–18:00 (own site)"
+  },
+  "baraka-aquarium": {
+   "status": "confirmed",
+   "checked": "2026-10-08",
+   "hours": "Daily 08:00–18:00",
+   "note": "EDITORIAL: TripAdvisor 3.2/5 (196 reviews, 60 'Terrible') with repeated animal-welfare complaints; it now calls itself 'Aquarium & Zoo'; about US$10 entry (Jan 2026 review). Say so honestly next to Mnarani, or reconsider listing it."
+  }
+ }
+}
