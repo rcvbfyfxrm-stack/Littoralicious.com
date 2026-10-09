@@ -1,4 +1,4 @@
-const { chromium } = require('/opt/homebrew/lib/node_modules/playwright');
+const { chromium } = require((() => { try { return require.resolve('playwright'); } catch (e) { return require('child_process').execSync('npm root -g').toString().trim() + '/playwright'; } })());
 const U=process.argv[3];
 (async () => { const b = await chromium.launch();
  const [w,h,phone] = process.argv[2]==='phone'?[390,844,true]:[1280,900,false];
@@ -10,10 +10,10 @@ const U=process.argv[3];
   await p.goto(U+'#t='+t,{waitUntil:'load'}); await p.waitForTimeout(1500);
   // open every visible fold so links inside are reachable, then list visible links
   await p.evaluate(()=>document.querySelectorAll('.container details').forEach(d=>{ if(!d.closest('[hidden]')) d.open=true; }));
-  const links = await p.evaluate(()=>[...document.querySelectorAll('.container a[href^="#"]')].filter(a=>a.getAttribute('href').length>1 && !a.closest('[hidden],.band-nav,.gx-subtags') && a.getClientRects().length).map(a=>a.getAttribute('href')));
+  const links = await p.evaluate(()=>[...document.querySelectorAll('.container a[href^="#"]')].filter(a=>a.getAttribute('href').length>1 && !a.getAttribute('href').startsWith('#t=') && !a.closest('[hidden],.band-nav,.gx-subtags') && a.getClientRects().length).map(a=>a.getAttribute('href')));
   for (const href of [...new Set(links)]) {
     const key=t+href; if (seen.has(key)) continue; seen.add(key); n++;
-    await p.goto(U+'#t='+t,{waitUntil:'load'}); await p.waitForTimeout(1200);
+    await p.goto('about:blank'); await p.goto(U+'#t='+t,{waitUntil:'load'}); await p.waitForTimeout(1500);
     await p.evaluate(()=>document.querySelectorAll('.container details').forEach(d=>{ if(!d.closest('[hidden]')) d.open=true; }));
     const el = await p.evaluateHandle((href)=>[...document.querySelectorAll('.container a[href="'+href+'"]')].find(a=>!a.closest('[hidden],.band-nav,.gx-subtags') && a.getClientRects().length), href);
     await el.asElement().scrollIntoViewIfNeeded(); await el.asElement().click(); await p.waitForTimeout(700);
