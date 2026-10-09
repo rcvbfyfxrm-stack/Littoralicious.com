@@ -78,3 +78,9 @@ used (lens-aware chapter list; a real reload between clicks — this was the cau
 "restaurants opened" expectation; Prague 31/33) · links desk 159/0, phone 159/0 · gate ALL GREEN 201 · repetition 0/0.
 
 Still blocked (unchanged): no external host reachable from this sandbox (proxy 403; WebFetch has no DNS), so items 1–4 above remain.
+
+## 9 Oct 2026 — resumed, still blocked
+Same sandbox limit: proxy 403 on every external host, WebFetch has no DNS. WebSearch reaches only aggregators: no own-site
+hours for the three last-minute venues, no dated party listing on kendwarocks.com. WeAreTanzania repeats "Saturday after the
+full moon" (agrees with the printed rule; Oct full moon Mon 26 Oct → Sat 31 Oct, as printed). Gate --no-render ALL GREEN;
+guide files unchanged, so the 8 Oct render and probe results stand. Items 1–4 above still need normal egress.
