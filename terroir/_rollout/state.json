@@ -528,9 +528,22 @@
   },
   {
    "slug": "Catania-Sicilia",
-   "status": "pending",
+   "status": "review",
    "pass": "readings",
-   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026).",
+   "readings": "done 2026-10-10",
+   "branch": "terroir-uplift/Catania-Sicilia-readings-2026-10-10",
+   "date": "2026-10-10",
+   "checks": [
+    "gate checks_gold4.py WITH render: ALL CHECKS GREEN (doors 4; staleAllow added for the one 'Prague' hit, a code comment in the shared readings.js — 'runs on any page cloned from Prague's chrome'; floors unchanged)",
+    "probe-guide: 29/29 PASS, 0 page errors",
+    "probe-links desk: 88 visible links clicked, 0 failures",
+    "probe-links phone: 88 visible links clicked, 0 failures",
+    "probe-readings: ALL PASS, exit 0 (4+4 doors, One Night 21 links and Getaway 31 links land on desk and phone, Maps on 45/45 closed cards and 24/24 table cards, no lens chip, no sideways scroll); lens screenshots in review/Catania-Sicilia/",
+    "screenshots: opened card 'Via Plebiscito: arrusti e mancia' desktop + phone (review/Catania-Sicilia/catania-sicilia-card-*.png), checked by eye",
+    "checklinks.py NOT RUN: sandbox has no external network; the readings add no external links (every link is an internal #venue-/#card- ref; Maps links reuse the cards' existing ones)"
+   ],
+   "notes": "One Night, 4 quarters: Teatro Massimo · Gemmellaro to Via Umberto (Vermut, Materia, Oliva.co, Chiosco Giammona); Via Crociferi · down to Piazza Duomo (Via Crociferi after dark, Nelson Sicily, Coria, 'u Liotru); Castello Ursino · Via Plebiscito (the 1669 lava, the horse grills — said to be thin); Aci Trezza by taxi or bus (the Faraglioni, Faraglioni Restaurant). The Getaway Weekend, 14 stops: Friday 4 (Vermut, Materia, Oliva.co, Giammona), Saturday 7 (Savia, Pescheria via Piazza Duomo, Via Crociferi and the Benedettini, Osteria Antica Marina, Benanti, Me Cumpari Turiddu, the Monk if a set is on), Sunday 3 (Ottobrata in Zafferana, Valle del Bove rim, lunch at Da Rinuccio); book list of 6; This October dated 'Checked 5 October 2026' from the hot board; Where to sleep = the guide's own 'around Piazza Duomo or Via Etnea' + Grand Hotel Faraglioni, rooms not judged. Not verifiable offline and said in the steps: hours of Coria, Me Cumpari Turiddu, Da Rinuccio, Faraglioni Restaurant, Savia (not on their records); Vermut, Oliva.co, Nelson Sicily, Chiosco Giammona are unverified on own sites; Monk autumn dates after the 9–10 Oct opening not read; Benanti afternoon slots not confirmed (step says ask). Bohème (named in the night-walk card) has no card, so it is not linked. Also committed terroir/data/Catania-Sicilia.js, which apply_readings.py rewrites alongside the guide's data.js."
   },
   {
    "slug": "Taormina-Sicilia",

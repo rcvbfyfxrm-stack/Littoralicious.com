@@ -1,103 +1,108 @@
 {
- "slug": "Catania-Sicilia",
- "city": "Catania",
- "listeSlug": "catania",
- "groups": 3,
- "mapsTokens": [
-  "Catania",
-  "Acireale",
-  "Aci Trezza",
-  "Aci Sant'Antonio",
-  "Milo",
-  "Viagrande",
-  "Zafferana",
-  "Nicolosi",
-  "Bronte",
-  "Gravina",
-  "Caltagirone",
-  "Augusta",
-  "Etna",
-  "Sicilia"
- ],
- "staleTokens": [
-  "Prague",
-  "Praha",
-  "Vltava",
-  "Czech",
-  "Kendwa",
-  "Zanzibar",
-  "Istanbul"
- ],
- "staleAllow": {},
- "bannedExtra": [
-  "paradise",
-  "unspoilt",
-  "off the beaten"
- ],
- "sectionsRequired": [
-  "soul",
-  "quartiers",
-  "why-now",
-  "eat",
-  "tables",
-  "provisioning",
-  "granita",
-  "etna",
-  "sea-stories",
-  "twentyfour",
-  "landmarks",
-  "culture",
-  "craft",
-  "calas",
-  "vino",
-  "bars",
-  "around",
-  "street-food",
-  "avoid",
-  "follow",
-  "events",
-  "seasonal",
-  "hot-foot",
-  "la-liste",
-  "sources",
-  "dish"
- ],
- "sectionsForbidden": [
-  "verify",
-  "markets",
-  "producers",
-  "hifi-bars",
-  "map-section",
-  "three-tables",
-  "tables-extended",
-  "history",
-  "band-eat",
-  "coffee-gardens",
-  "linger",
-  "rooftops"
- ],
- "floors": {
-  "venues": 24,
-  "gems": 1,
-  "neighborhoods": 3,
-  "walks": 0,
-  "categories": 9,
-  "laneStories": 9,
-  "fcards": 65,
-  "fsubs": 28,
-  "liste": 9,
-  "mapsLinks": 60,
-  "pins": 15
- },
- "renderFloors": {
+  "slug": "Catania-Sicilia",
+  "city": "Catania",
+  "listeSlug": "catania",
   "groups": 3,
-  "cards": 24,
-  "gemboxes": 9
- },
- "listePointer": true,
- "hot": {
-  "maxAgeDays": 70,
-  "minVenues": 3,
-  "mode": "pointer"
- }
+  "mapsTokens": [
+    "Catania",
+    "Acireale",
+    "Aci Trezza",
+    "Aci Sant'Antonio",
+    "Milo",
+    "Viagrande",
+    "Zafferana",
+    "Nicolosi",
+    "Bronte",
+    "Gravina",
+    "Caltagirone",
+    "Augusta",
+    "Etna",
+    "Sicilia"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Istanbul"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "quartiers",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "granita",
+    "etna",
+    "sea-stories",
+    "twentyfour",
+    "landmarks",
+    "culture",
+    "craft",
+    "calas",
+    "vino",
+    "bars",
+    "around",
+    "street-food",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "coffee-gardens",
+    "linger",
+    "rooftops"
+  ],
+  "floors": {
+    "venues": 24,
+    "gems": 1,
+    "neighborhoods": 3,
+    "walks": 0,
+    "categories": 9,
+    "laneStories": 9,
+    "fcards": 65,
+    "fsubs": 28,
+    "liste": 9,
+    "mapsLinks": 60,
+    "pins": 15
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 24,
+    "gemboxes": 9
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 3,
+    "mode": "pointer"
+  },
+  "doors": 4
 }

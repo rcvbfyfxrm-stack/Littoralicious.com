@@ -249,14 +249,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening in Catania: the market osteria, the Gemmellaro aperitivo, the jazz club, the late arancino.",
-   "note": "La table · le bar · la musique · le dernier plat",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "street-food"
-   ]
+   "en": "Crew ashore for one evening: a plan for each quarter — the vermouth, the table, the cocktail, the kiosk, in walking order.",
+   "note": "La petite table · le vermouth · le jazz · le seltz",
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -278,6 +274,13 @@ window.TERROIR_DATA = (function () {
    "open": [
     "ce-soir"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: granita at the counter, the Pescheria on Saturday, a baroque street, the honey town under the volcano.",
+   "note": "La granita · la Pescheria · le baroque · la montagne",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {
