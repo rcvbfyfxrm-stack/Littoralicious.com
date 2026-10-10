@@ -1,12 +1,13 @@
-# Kendwa-Unguja → GOLD6 (the Prague standard) · nightly run 7 Oct 2026 · status PARTIAL (§8 readings added 8 Oct)
+# Kendwa-Unguja → GOLD6 (the Prague standard) · nightly run 7 Oct 2026 · status REVIEW (10 Oct: 8 Oct network pack applied; §8 readings 8 Oct, re-authored 10 Oct)
 
 Route B: the reading layer is assembled on the LIVE Siracusa-Sicilia chrome (itself cloned from live Prague).
 The locked kit `terroir/_assets/guide/*` is untouched. Rebuild from scratch, repeatably:
 
-    python3 terroir/_rollout/review/Kendwa-Unguja/make_inputs.py   # research/ + editor fixes -> cards.json, venues.json, hot_events.json
+    python3 terroir/_rollout/review/Kendwa-Unguja/make_inputs.py   # research/ + editor fixes + network_pack.py (8 Oct pack) -> cards.json, venues.json, hot_events.json
     python3 terroir/_rollout/review/Kendwa-Unguja/build_gold6.py   # reads the old guide + chrome from origin/rebuild/publishing-system
     python3 terroir/_rollout/lib/gold6/facts_tidy.py terroir/Kendwa-Unguja/index.html
     python3 terroir/_rollout/review/Kendwa-Unguja/repetition_audit.py
+    python3 terroir/_rollout/lib/gold6/readings/apply_readings.py terroir/Kendwa-Unguja terroir/_rollout/review/Kendwa-Unguja/Kendwa-Unguja.readings.json --check-config terroir/_rollout/lib/guides/Kendwa-Unguja.check.json
 
 ## Files
 - `picks.json` — the cut: 12 lanes, every one ≤3 (no 4s needed); 21 venues cut, each with its reason; berths; the guest list.
@@ -84,3 +85,42 @@ Same sandbox limit: proxy 403 on every external host, WebFetch has no DNS. WebSe
 hours for the three last-minute venues, no dated party listing on kendwarocks.com. WeAreTanzania repeats "Saturday after the
 full moon" (agrees with the printed rule; Oct full moon Mon 26 Oct → Sat 31 Oct, as printed). Gate --no-render ALL GREEN;
 guide files unchanged, so the 8 Oct render and probe results stand. Items 1–4 above still need normal egress.
+
+## 10 Oct 2026 — UNBLOCKED: the 8 Oct network pack applied through the build → status REVIEW
+`research/verify_5_network_2026-10-08.json` (Arnaud's Mac, normal network) is applied by `network_pack.py`, called at the end of
+`make_inputs.py`; `prose.py` and `picks.json` carry the matching prose edits and the cut; `build_gold6.py` unlinks the pack's 7 dead
+pages (name kept, "(page gone, no archive — Oct 2026)") and encodes the Oman Observer URL. Nothing the pack verified was re-verified.
+`origin/rebuild/publishing-system` merged in first (the "Find a table" search bar, §8-aware probes); the rebuild reproduced the
+8 Oct page byte for byte apart from that search bar before any change was made.
+
+What changed:
+- **Full Moon Party dates were WRONG.** The venue's own 2026 calendar: Sat 24 Oct and Sat 21 Nov (not 31 Oct / 28 Nov); the rule
+  is the Saturday NEAREST the full moon (both fall before it). The dispute is dropped everywhere (hot board, the moon cards, the week,
+  the traps, the method note, venue signature/signal chip/best_time, CSV, readings). VIP line from the calendar.
+- **Cut, closed:** Cholo's (permanently closed) and Bistro' del M@r (closed, probable). Places 52 → 50, lane venues 34 → 32,
+  fold cards 99 → 98 (the Cholo's bar card). The Konyagi "best place" in La liste and the .ics now point to Rooftops at The Z.
+- **Guest list rebuilt from venues kept** — "Plan ahead — this week": Zuri, **Gold Zanzibar**, **Makofi** (its BBQ night is booked
+  before 13:00 on the day), replacing Bistro' del M@r (closed) and Machnoo (unverified on 8 Oct: nothing dated 2026, hours in conflict).
+  Charters built from their own fields. Last-minute line now carries the hours read on 8 Oct.
+- **Locations:** CHE Rock is on Nungwi Beach Street behind the main beach at Pasha (hours 16:30–00:00, TripAdvisor; the unsourced
+  "12:00–23:00" dropped); Highland is inland on Baobab Way, Nungwi, no bar hours published, building noise next door (2026);
+  Zanzibar Watersports is on the Kendwa main road with a beach office next to Gold Resort, not "@ Kendwa Rocks".
+- **Hours/facts from own sites and listings (8 Oct):** Sexy Fish (12:00–15:00, 18:30–22:30, last food 21:45; closed 1 Apr–31 May),
+  Maisha (08:00–23:30; events can be cancelled in low season/Ramadan), Langi Langi (breakfast buffet 07:00–10:00; "Marhaba" no
+  longer printed — unconfirmed), Essque (essquehotels.com; essque.com is for sale; Jetty closes Mon–Wed in low season from 16 Mar 2026),
+  Passion & Thyme 09:00–21:00, Mahi Mahi ~07:30–23:00, Fisherman Local Restaurant (no hours printed: conflict; call), Sunset Kendwa
+  (no hours: "day into evening" dropped; the Mnazi Bar), Combo 1990 (Monday unconfirmed — the week's Monday line and readings fixed),
+  Machnoo (unverified, closes 22:30), Mama Mia, Hanoi House, JF Kili (cash only, two locations), Baraka Beach, Makofi (BBQ once or
+  twice a week, not weekly), Rooftops at The Z (16+, no reservations, DJ Wed/Sat), Kendwa Rocks, Kuza Cave (class US$30),
+  Mwani (US$15, 90 min), Spanish Dancer, the dhow course (World Unite fees, 8 Oct), Baraka Aquarium (TripAdvisor 3.2/5, welfare
+  complaints, "Aquarium & Zoo"). Statuses: 25 confirmed 8 Oct, 15 confirmed 7 Oct, 9 keep 22 Aug, 1 unverified (Machnoo).
+- **Readings re-authored** (`Kendwa-Unguja.readings.json`, applied last): CHE Rock and Highland steps carry their Nungwi addresses and
+  hours; Saturday lunch moves from Machnoo (unverified) to Combo 1990; Machnoo stays only as an "if Combo is full — call first";
+  Mahi Mahi/Combo/Sexy Fish/Rooftops/JF Kili/Mama Mia lines updated; the moon line and "This October" carry 24 Oct / 21 Nov.
+
+Checks (10 Oct, final page): gate WITH render ALL CHECKS GREEN (201 OK; floors refreshed to the curated counts: venues 50, fcards 98,
+pins 38, rendered cards 32) · probe-guide 29/29 PASS · probe-readings ALL PASS (desk + phone; 62/62 placed cards and 32/32 venues
+with Maps on the closed card; One Night 27 links, Getaway 30) · probe-links desk/phone: see state.json · repetition audit 0/0 (230 units) ·
+checklinks.py not runnable here, covered by the 8 Oct pack (252 links; its 7 dead pages unlinked, 1 URL fixed; every new link tonight
+comes from that pack) · screenshots kendwa-card-desktop.png / kendwa-card-phone.png ("When it happens", the corrected party rule).
+Render and probes use the test-only `pw-shim.cjs` (identical leaflet@1.9.4 from the npm registry; unpkg.com is blocked here).

@@ -178,23 +178,26 @@ SOUL = P.soul_fold(OLDB["soul"])
 
 # sources: the method rewritten for this pass, cut venues' own sites out, the 7 Oct checks in
 def sources_block(s):
-    n_conf_now = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "confirmed" and VUP[i]["set"].get("statusChecked") == "2026-10-07")
-    n_conf_old = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "confirmed" and VUP[i]["set"].get("statusChecked") != "2026-10-07")
+    NOW = ("2026-10-07", "2026-10-08")
+    n_conf_8 = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "confirmed" and VUP[i]["set"].get("statusChecked") == "2026-10-08")
+    n_conf_now = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "confirmed" and VUP[i]["set"].get("statusChecked") in NOW)
+    n_conf_old = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "confirmed" and VUP[i]["set"].get("statusChecked") not in NOW)
     n_unv = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "unverified")
     n_closed = sum(1 for i in KEEP if VUP[i]["set"].get("status") == "closed")
     Pp = lambda x: f'<p style="font-family:Inter,system-ui,sans-serif;font-size:0.85em;color:var(--ink-2)">{x}</p>'
-    method = (Pp(f"<strong>Every place in this guide was checked on 22 August 2026 and re-checked on 7 October 2026.</strong> Of {len(KEEP)} places, "
-                 f"<strong>{n_conf_now} were re-confirmed on 7 October</strong> against a 2026-dated source; <strong>{n_conf_old} stay confirmed from 22 August</strong> — "
-                 "nothing found contradicts them, but on 7 October their own sites could not be loaded from where we checked, only read through search indexes, so they carry the August date; "
+    method = (Pp(f"<strong>Every place in this guide was checked on 22 August 2026 and re-checked on 7 and 8 October 2026.</strong> Of {len(KEEP)} places, "
+                 f"<strong>{n_conf_now} were re-confirmed in October</strong> against a 2026-dated source — {n_conf_8} of them on 8 October from their own sites, listings and the venue calendars, "
+                 "which is also when every link on this page was tested; "
+                 f"<strong>{n_conf_old} stay confirmed from 22 August</strong> — nothing found contradicts them, so they carry the August date; "
                  f"<strong>{n_unv} are marked unverified</strong> on their cards, and <strong>{n_closed} is closed</strong> (the House of Wonders, under restoration). "
                  "Unverified means we did not confirm it, not that it is closed: treat those as leads to call, not bookings to rely on. Prices carry the date they were seen. "
-                 "Where sources disagree — the lighthouse's first date, the origin of the name \"Kendwa\", the size of Leven Bank, the Full Moon Party's exact Saturday, how long the 1896 war lasted — "
+                 "Where sources disagree — the lighthouse's first date, the origin of the name \"Kendwa\", the size of Leven Bank, how long the 1896 war lasted, a few opening hours — "
                  "the disagreement is printed rather than resolved by guesswork.")
               + Pp("<strong>Fewer places, on purpose.</strong> This guide keeps at most three places in each kind of table, picked for what you should not miss on the north tip and what is most particular to it. "
-                   "Twenty places researched for the August edition are left out, not forgotten."))
+                   f"{NUMW[len(CUT)]} places researched for the August edition are left out, not forgotten; two of them, Cholo's and Bistro' del M@r, because they have closed."))
     s = re.sub(r'<p style="[^"]*"><strong>Every venue in this guide was checked on 22 August 2026\.</strong>.*?</p>', lambda m: method, s, count=1, flags=re.S)
     s = re.sub(r"<strong>Coordinates:</strong> \d+ of \d+ venues carry a map pin", lambda m: f"<strong>Coordinates:</strong> {sum(1 for v in OLDV.values() if v['id'] in KEEP and v.get('lat') is not None)} of {len(KEEP)} places carry a map pin", s, count=1)
-    s = s.replace("by <strong>February 2027</strong> at the latest — sooner for the two unresolved addresses.", "by <strong>February 2027</strong> at the latest — and sooner from a connection that can load the venues' own sites.")
+    s = s.replace("by <strong>February 2027</strong> at the latest — sooner for the two unresolved addresses.", "by <strong>February 2027</strong> at the latest.")
     for vid in CUT:
         u = OLDV[vid].get("web")
         if u: s = re.sub(r"<li><a href=\"" + re.escape(u) + r"\"[^>]*>.*?</a></li>\n?", "", s)
@@ -202,14 +205,21 @@ def sources_block(s):
     def add(src):
         for x in src or []:
             u = (x.get("url") or "").strip()
+            u = FIXURL.get(u, u)
             if u.startswith("https://") and u not in seen: seen.add(u); items.append((x.get("label") or u, u))
     for k in USED_CARDS: add(CARDS[k].get("sources"))
     for i in KEEP: add(VUP[i].get("sources"))
-    grp = ('<h4 class="fsub__title">Checked again for this guide, 7 October 2026</h4><ul class=\'gx-list\'>'
-           + "".join(f'<li><a href="{a(u)}" target="_blank" rel="noopener">{t(l)}</a></li>' for l, u in items) + "</ul>")
+    grp = ('<h4 class="fsub__title">Checked again for this guide, 7–8 October 2026</h4><ul class=\'gx-list\'>'
+           + "".join((f'<li>{t(l)} (page gone, no archive — Oct 2026)</li>' if u in GONE else f'<li><a href="{a(u)}" target="_blank" rel="noopener">{t(l)}</a></li>') for l, u in items) + "</ul>")
     i = s.rindex("</div>\n</details>"); s = s[:i] + grp + "\n" + s[i:]
     s = re.sub(r'<span class="sfold__count">\d+ sources</span>', lambda m: f'<span class="sfold__count">{len(re.findall("<li><a ", s))} sources</span>', s, count=1)
     return s
+# the 8 Oct network pack's link check: 7 dead pages unlinked (name kept), 1 URL encoded
+_LK = json.load(open(RV / "research" / "verify_5_network_2026-10-08.json"))["checklinks_2026_10_08"]
+GONE = set(_LK["unlink_keep_name"]); FIXURL = {k: v.split(" ")[0] for k, v in _LK["fix_url"].items()}
+NUMW = {n: w for n, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split())}
+NUMW.update({20 + n: "Twenty-" + w for n, w in enumerate("x one two three four five six seven eight nine".split()) if n}); NUMW[20] = "Twenty"
+NUMW = {k: v[:1].upper() + v[1:] for k, v in NUMW.items()}
 OLDB["money-sits"] = re.sub(r' data-bridge-after="[^"]*"', "", OLDB["money-sits"])
 TABLES = re.sub(r'<span class="sfold__count">[^<]*</span>', f'<span class="sfold__count">{len(LANE_IDS)} tables</span>', OLDB["tables"], 1)
 TABLES = re.sub(r'(<div class="sfold__desc">)[^<]*(</div>)', lambda m: m.group(1) + t(P.TABLES_DESC) + m.group(2), TABLES, 1)
@@ -345,8 +355,9 @@ for v in V:
     r = list(RO[v["id"]])
     r[ix["name"]] = v["name"]; r[ix["still_open"]] = v.get("status", ""); r[ix["last_verified"]] = v.get("statusChecked", "")
     r[ix["hot_this_month"]] = v.get("hot_this_month", "")
-    for col, fld in (("verdict", "verdict"), ("caveat", "caveat"), ("price_range", "price_range"), ("reservation", "reservation"), ("phone", "phone"), ("address", "address")):
+    for col, fld in (("verdict", "verdict"), ("caveat", "caveat"), ("price_range", "price_range"), ("reservation", "reservation"), ("phone", "phone"), ("address", "address"), ("neighborhood", "neighborhood"), ("best_time", "best_time")):
         if fld in v: r[ix[col]] = v[fld] or ("—" if col == "phone" else "")
+    if (v.get("signal_chip") or {}).get("full"): r[ix["recognition"]] = v["signal_chip"]["full"]
     if v["id"] in LANE_LBL: r[ix["tier"]] = LANE_LBL[v["id"]]
     if v["id"] in PICKS["berths"]: r[ix["tier"]] = "THE BERTHS · " + r[ix["tier"]]
     out.append(r)

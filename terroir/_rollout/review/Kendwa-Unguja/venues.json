@@ -151,12 +151,12 @@
  "sexy-fish": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-10-07",
+   "statusChecked": "2026-10-08",
    "hook": "The Z Hotel's beachfront restaurant in Nungwi: lobster tempura, crab curry and tuna ceviche, served al fresco.",
    "why": "Sexy Fish is the beachfront restaurant of The Z Hotel on Nungwi's west beach. It is an open-air room with white tablecloths, and one reviewer described it as sitting above the ocean. The kitchen mixes African and European cooking around seafood: lobster tempura, crab curry, tuna ceviche, tandoori octopus with a mint dip. One guide records a format of one main course or three starters for US$36, which is the way to try more of the menu.",
    "signature": "Tuna ceviche or lobster tempura on the west deck at the golden hour",
    "verdict": "The best cooking on the north tip outside the five-star resorts.",
-   "caveat": "Book. Small deck, and the sunset tables go well ahead in high season. Some reviewers find the service slow: order early.",
+   "caveat": "Book: the sunset tables go well ahead in high season. Last food orders 21:45. Closed for the long rains, 1 April to 31 May in 2026. Some reviewers find the service slow: order early.",
    "tags": [
     "West-facing deck",
     "African-European seafood",
@@ -175,7 +175,8 @@
     {
      "name": "Cocktails on the deck"
     }
-   ]
+   ],
+   "hours": "Daily 12:00–15:00 and 18:30–22:30; last food orders 21:45 (own page, Oct 2026)"
   },
   "evidence": "The Z Hotel's own rates page (search-indexed) offers half and full board at Sexy Fish and Cinnamon for current seasons; guide descriptions confirm Sexy Fish as the hotel's beachfront restaurant. Direct WebFetch of the venue's own site was blocked by the network egress proxy on 7 Oct 2026, so the own site could not be loaded; evidence is from search-indexed pages.",
   "corrections": [
@@ -202,16 +203,20 @@
    {
     "label": "TripAdvisor: The Z Hotel Zanzibar",
     "url": "https://www.tripadvisor.com/Hotel_Review-g616016-d1148051-Reviews-The_Z_Hotel_Zanzibar-Nungwi_Zanzibar_Island_Zanzibar_Archipelago.html"
+   },
+   {
+    "label": "The Z Hotel: Sexy Fish (hours, seen 8 Oct 2026)",
+    "url": "https://www.thezhotel.com/facilities/restaurants/sexy-fish"
    }
   ]
  },
  "maisha-beach": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "The beach restaurant of the Maisha Nungwi hotel, on the sand at the north tip of the island.",
    "why": "The hotel behind this beach kitchen used to trade as Aluna Nungwi, which is why the lane down to it is still called the Aluna road and why the booking sites still carry the old name in their links. The restaurant sits about 70 metres from the hotel, directly on the sand and facing west for the sunset. Visitor reviews single out a fish coconut curry and a tuna tartare; check the current menu and the weekly music nights before you go.",
-   "hours": "Day into night; music nights vary with the season — ask before you plan around one",
+   "hours": "Daily 08:00–23:30 (Oct 2026); music nights vary — low season and Ramadan can alter or cancel them",
    "signature": "Grilled seafood on the sand as the light goes",
    "reservation": "Call or WhatsApp for a weekend table",
    "neighborhood": "Nungwi · on the sand in front of Maisha Nungwi (formerly Aluna)",
@@ -231,7 +236,8 @@
     {
      "name": "Fresh juices and smoothies"
     }
-   ]
+   ],
+   "caveat": "During low season and Ramadan the events can be altered or cancelled (its own site): ask before you plan a night around one."
   },
   "evidence": "Own site blocked to this session. Booking.com/Hotels.com/Expedia list the parent hotel as 'Maisha Nungwi' (URL slugs still 'aluna-beach-lodge'/'aluna-nungwi'), with a beach restaurant about 70 m from the hotel; no dated 2026 source seen for the restaurant or its event nights.",
   "corrections": [
@@ -248,15 +254,20 @@
    {
     "label": "Wanderlog place listing",
     "url": "https://wanderlog.com/place/details/2800653"
+   },
+   {
+    "label": "Maisha Nungwi: restaurant (seen 8 Oct 2026)",
+    "url": "https://www.maishanungwi.com/restaurant"
    }
   ]
  },
  "yasa": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A fusion kitchen in a Nungwi boutique hotel: laksa, Arusha steak, rosti Benedict, free pick-up.",
-   "why": "Yasa is the restaurant of a boutique hotel a short walk from Nungwi beach, cooking across Asia and East Africa on one menu: a Malaysian laksa with seafood and house-made tofu at US$17, Arusha beef steak with butternut veloute at US$17.50, nasi goreng with organic vegetables, and a potato rosti eggs Benedict at US$11.50. It will send a car to collect you from anywhere in Nungwi."
+   "why": "Yasa is the restaurant of a boutique hotel a short walk from Nungwi beach, cooking across Asia and East Africa on one menu: a Malaysian laksa with seafood and house-made tofu at US$17, Arusha beef steak with butternut veloute at US$17.50, nasi goreng with organic vegetables, and a potato rosti eggs Benedict at US$11.50. It will send a car to collect you from anywhere in Nungwi.",
+   "hours": "Daily 07:00–23:00 (Oct 2026)"
   },
   "evidence": "The own restaurant page (yasazanzibar.com/restaurant/) is indexed with the laksa US$17, Arusha steak US$17.50 and rosti Benedict US$11.50 and a complimentary Nungwi shuttle; TripAdvisor hotel page is titled 'Updated 2026 Prices'. Page could not be loaded to confirm hours or a 2026 date. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -319,10 +330,12 @@
  "essque-zalu": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-10-07",
+   "statusChecked": "2026-10-08",
    "hook": "A seafood restaurant at the end of a long jetty, in a cove on the quiet northeast side of the Nungwi cape.",
    "why": "Essque Zalu is in a natural cove on the northeast side of the cape, facing away from Nungwi's west-beach bars. The resort's seafood restaurant is at the far end of its long jetty, so you eat over open water with the shore behind you. It serves light lunches and fuller dinners built around fresh fish. Since March 2026 the Jetty has closed Monday to Wednesday in low season, so check the day before you go.",
-   "caveat": "The east side loses the sunset — a lunch and moonlight address. The Jetty closes Monday to Wednesday in low season (2026 notice)."
+   "caveat": "The east side loses the sunset — a lunch and moonlight address. The Jetty closes Monday to Wednesday in low season (from 16 March 2026, until further notice): call ahead.",
+   "web": "https://www.essquehotels.com/",
+   "phone": "+255 778 683 960"
   },
   "evidence": "Booking listings carry a 2026 operating notice: The Jetty Restaurant and Bar closes Monday-Wednesday in low season from 16 March 2026 until further notice, so the resort and the Jetty were trading in 2026. Whether that weekday closure still applies in October is not confirmed.",
   "corrections": [
@@ -347,6 +360,10 @@
    {
     "label": "Yellow Zebra Safaris",
     "url": "https://yellowzebrasafaris.com/tanzania/zanzibar/essque-zalu-zanzibar/"
+   },
+   {
+    "label": "Essque Hotels (seen 8 Oct 2026)",
+    "url": "https://www.essquehotels.com/"
    }
   ]
  },
@@ -439,11 +456,12 @@
  "combo-1990": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A small Nungwi village restaurant serving Swahili dishes as a spread of small plates.",
    "why": "Combo 1990 sits in the middle of Nungwi village rather than on the beach, and its format is the lesson: a spread of small plates from the day's pots, so you taste several Swahili dishes in one sitting rather than committing to one. A French writer on Nungwi singled it out for exactly this, noting the plates cost a few euros. Ugali, rice and chapati come alongside.",
-   "hours": "12:00–23:00, closed Mondays (Aug 2026); one listing gives 11:00–23:00 daily — check",
-   "caveat": "Cash. No alcohol — a village kitchen in a Muslim village. Dress covered walking here. Check whether it is open on a Monday."
+   "hours": "Lunch and dinner to 23:00; Monday opening unconfirmed (Oct 2026)",
+   "caveat": "Cash. No alcohol — a village kitchen in a Muslim village. Dress covered walking here. Sources disagree on Mondays: call before you go.",
+   "phone": "+255 769 720 873"
   },
   "evidence": "A TripAdvisor listing exists (recent listing ID) and a French article on Nungwi describes Tanzanian-style small plates there; no dated 2026 source or own site/social account was found. TripAdvisor hours conflict with the record.",
   "corrections": [
@@ -464,10 +482,12 @@
  },
  "machnoo": {
   "set": {
-   "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "status": "unverified",
+   "statusChecked": "",
    "hook": "A village kitchen by the Sharp football ground in Nungwi, serving octopus curry and pilau for shillings.",
-   "why": "Machnoo is in Nungwi village by the Sharp football ground, a few streets back from the beach, and is one of the few places here that opens for breakfast on a Sunday, at 07:00. The menu is village food: octopus in coconut curry, crisp coconut-crusted fish, chicken pilau, chicken chapati wraps and beef samosas, with more vegetarian dishes than most local kitchens. Bring Tanzanian shillings, as most people pay in cash."
+   "why": "Machnoo is in Nungwi village by the Sharp football ground, a few streets back from the beach, and is one of the few places here that opens for breakfast on a Sunday, at 07:00. The menu is village food: octopus in coconut curry, crisp coconut-crusted fish, chicken pilau, chicken chapati wraps and beef samosas, with more vegetarian dishes than most local kitchens. Bring Tanzanian shillings, as most people pay in cash.",
+   "hours": "Closes 22:30; listings disagree on the opening hour (Oct 2026)",
+   "phone": "+255 776 007 954"
   },
   "evidence": "Aggregator pages (Wanderlog, Novacircle) match the old record on location, hours and dishes, but none is dated 2026, so trading this autumn cannot be confirmed.",
   "corrections": [
@@ -518,7 +538,7 @@
  "mama-mia-nungwi": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A beachfront Italian on Nungwi sand known for its gelato and brick-oven pizza.",
    "why": "Mama Mia is an Italian restaurant on Nungwi beach. The thing reviewers mention most is the gelato, which one compared favourably with the Venchi chain; the pizzas come from a brick oven. The menu also covers lobster, pasta, octopus salad and a homemade tiramisu. It faces the water, so a cone at sunset is the obvious order. Reviewers say it is pricey by Zanzibar standards, which suits a treat more than a nightly dinner.",
    "price_range": "Mid to upper — reviewers call it expensive for Zanzibar (Oct 2026)",
@@ -540,7 +560,8 @@
     {
      "name": "Homemade tiramisu"
     }
-   ]
+   ],
+   "hours": "Daily: bar 10:30–00:00, kitchen 12:00–22:30, DJ 16:00–19:30 (own site, Oct 2026)"
   },
   "evidence": "Review aggregators (Wanderlog, Foursquare) describe it as a beachfront Italian restaurant with brick-oven pizza and gelato, but no 2026-dated source was found. Direct WebFetch of the venue's own site was blocked by the network egress proxy on 7 Oct 2026, so the own site could not be loaded; evidence is from search-indexed pages.",
   "corrections": [
@@ -562,40 +583,15 @@
    }
   ]
  },
- "bistro-del-mar": {
-  "set": {
-   "status": "unverified",
-   "statusChecked": "",
-   "hook": "The Italian restaurant at Kendwa Garden's B&B, open from breakfast through dinner.",
-   "why": "Bistro del M@r is the restaurant inside Kendwa Garden's, a small B&B in Kendwa, and serves Italian food from breakfast through dinner, with tables in the garden or facing the sea. Kendwa has a sizeable Italian visitor trade, and kitchens like this one cook for it at guesthouse prices, a step below the beach resorts. We could not confirm it is trading this season, so call ahead."
-  },
-  "evidence": "Only booking-aggregator listings found (Hotels.com/Expedia), with no dated 2026 evidence. They place BISTRO DEL M@R inside Kendwa Garden's B&B, serving Italian food at breakfast, lunch and dinner with ocean views.",
-  "corrections": [
-   "old says road-side, 'no view'; the Kendwa Garden's listing says the bistro has ocean views and garden seating. Re-check before printing 'no view'",
-   "old hours 'Lunch and dinner'; listing says breakfast, lunch and dinner",
-   "add: it is the on-site restaurant of Kendwa Garden's, a 3.5-star B&B in Kendwa (Hotels.com)",
-   "old claims of Italian ownership, a wood-fired oven and the espresso are not confirmed by any source found",
-   "phone +255 777 108 466 not confirmed"
-  ],
-  "sources": [
-   {
-    "label": "Hotels.com: Kendwa Garden's",
-    "url": "https://hoteles.com/ho1629971040/kendwa-garden-s-kendwa-tanzania"
-   },
-   {
-    "label": "Expedia: Kendwa Garden's",
-    "url": "https://www.expedia.com/Kendwa-Hotels-Royal-Kendwa.h50905345.Hotel-Information"
-   }
-  ]
- },
  "hanoi-house": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A Vietnamese kitchen on Nungwi's main road: 24-hour pho broth, dumplings, phin coffee.",
    "why": "Hanoi House began as a Vietnamese cafe in Paje on the east coast in 2021, and the Nungwi branch was its first franchise, followed by one in a 1950s building in Stone Town. The pho broth simmers for twenty-four hours with five-spice before it meets flat rice noodles and herbs. Reviewers come back for the dumplings, bao, homemade sodas and coconut coffee.",
    "productTags": [],
-   "caveat": "A franchise of the Paje café (opened 2021): judge it on the broth, which holds up. Pork is on the menu."
+   "caveat": "A franchise of the Paje café (opened 2021): judge it on the broth, which holds up. Pork is on the menu. 2026 reviews mention power cuts.",
+   "hours": "Daily 11:00–23:00 (Oct 2026)"
   },
   "evidence": "The operator's group site (kimdiningconcept.com) and TripAdvisor describe Hanoi House Nungwi as the first franchised branch of Hanoi House Cafe Paje, open 11:00-23:00, with a 24-hour pho broth; an Instagram account @hanoihousenungwi exists. No dated 2026 post seen. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -623,9 +619,11 @@
  "jf-kili": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A Nungwi coffee house and coffee truck pouring beans from the owners' farm below Kilimanjaro.",
-   "why": "The owners are Tanzanian and grow the coffee themselves on a farm under Kilimanjaro, then sell it at the other end of the country on a beach where most coffee arrives in a tin. There are two places to drink it in Nungwi: the coffee house on the main road opposite Hanoi House, and a truck with a few tables on the big square next to MJ's. Waffles and cakes as well."
+   "why": "The owners are Tanzanian and grow the coffee themselves on a farm under Kilimanjaro, then sell it at the other end of the country on a beach where most coffee arrives in a tin. There are two places to drink it in Nungwi: the coffee house on the main road opposite Hanoi House, and a truck with a few tables on the big square next to MJ's. Waffles and cakes as well.",
+   "hours": "07:30–21:00 (its own listing; one guide says from 08:00)",
+   "caveat": "Cash only. Two locations: the café on the main road opposite Hanoi House, and the coffee truck at the big square."
   },
   "evidence": "TripAdvisor has two listings (JF Kili Coffee House and JF Kili Coffee Truck, Nungwi) and the Diving in Zanzibar Nungwi guide describes both sites and 08:00-21:00 hours; no 2026-dated post or own site found.",
   "corrections": [
@@ -650,8 +648,8 @@
  },
  "passion-thyme": {
   "set": {
-   "status": "unverified",
-   "statusChecked": "",
+   "status": "confirmed",
+   "statusChecked": "2026-10-08",
    "hook": "A French cafe, bakery and deli in Nungwi village: bread, quiche, build-your-own salad, juices.",
    "why": "Passion & Thyme is a French-run cafe and bakery set back from the beach, next to Nungwi House, that bakes its own bread and pastries and lets you build your own salad. It also runs as a deli for Zanzibari and Tanzanian food products, makes kombucha and plant milks, and takes orders for cakes. Vegan and gluten-free options are on the menu, which is rare on this strip.",
    "tags": [
@@ -660,7 +658,7 @@
     "Breakfast to dinner"
    ],
    "badge": "BAKERY",
-   "hours": "Breakfast through dinner",
+   "hours": "Daily 09:00–21:00 (Oct 2026)",
    "verdict": "The bread is the reason: a French bakery and deli on a coast with very little of either.",
    "caveat": "Off the beach, next to Nungwi House.",
    "neighborhood": "Nungwi · next to Nungwi House, off the beach",
@@ -674,7 +672,8 @@
     {
      "name": "Deli plates"
     }
-   ]
+   ],
+   "phone": "+255 679 739 691"
   },
   "evidence": "TripAdvisor lists Passion & Thyme as a French cafe-bakery in Nungwi (4.9/5, #20 of 569), next to Nungwi House opposite Casa Carlotta; individual reviews seen date from 2021-2022 and the co.uk page is titled 'Updated 2024'. No 2026-dated source found. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -697,10 +696,12 @@
  },
  "mahi-mahi": {
   "set": {
-   "status": "unverified",
-   "statusChecked": "",
+   "status": "confirmed",
+   "statusChecked": "2026-10-08",
    "hook": "A small beach bar and restaurant on the quiet northern stretch of Nungwi sand, serving from 07:30.",
-   "why": "Mahi Mahi keeps a short menu of fresh seafood and international plates at the quiet north end of Nungwi beach, and its listed hours start at half past seven, so breakfast happens on the sand rather than in a hotel dining room. Reviewers single out the fish curry, babaganoush and hummus. There are sunbeds and shisha, and kite-surfing lessons run off the beach in front."
+   "why": "Mahi Mahi keeps a short menu of fresh seafood and international plates at the quiet north end of Nungwi beach, and its listed hours start at half past seven, so breakfast happens on the sand rather than in a hotel dining room. Reviewers single out the fish curry, babaganoush and hummus. There are sunbeds and shisha, and kite-surfing lessons run off the beach in front.",
+   "hours": "About 07:30–23:00 daily (listings differ by half an hour, Oct 2026)",
+   "web": "https://mahi-mahi.thebriteweb.com/"
   },
   "evidence": "TripAdvisor lists 'Mahi Mahi Beach bar & Restaurant' in Nungwi (4.8/5) with a page titled '2026 Reviews' and stated hours 07:30-23:30; no own-site load or dated social post was possible. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -717,15 +718,20 @@
    {
     "label": "Wanderlog: Mahi Mahi Restaurant",
     "url": "https://wanderlog.com/place/details/10002999/mahi-mahi-restaurant"
+   },
+   {
+    "label": "Mahi Mahi Beach Bar & Restaurant (seen 8 Oct 2026)",
+    "url": "https://mahi-mahi.thebriteweb.com/"
    }
   ]
  },
  "baraka-beach-rest": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "Seafood on Nungwi sand in front of a 17-room bungalow hotel, with the day's catch laid out by the grill.",
-   "why": "Baraka is the beach restaurant of a 17-room bungalow hotel on Nungwi sand, and it works the way the better beach grills here do: in the evening the day's catch is laid out on a table beside the grill, you choose a fish or a lobster, and it is cooked for you. It is plain and good value, and the table is on the beach itself."
+   "why": "Baraka is the beach restaurant of a 17-room bungalow hotel on Nungwi sand, and it works the way the better beach grills here do: in the evening the day's catch is laid out on a table beside the grill, you choose a fish or a lobster, and it is cooked for you. It is plain and good value, and the table is on the beach itself.",
+   "hours": "Daily 07:30–22:30 (Oct 2026)"
   },
   "evidence": "Booking listings show Baraka Beach Bungalows (17 rooms) still sold, and a trip.com guide notes the catch displayed by the grill, but no 2026-dated source confirms the restaurant trading. The own site could not be loaded (egress blocked).",
   "corrections": [
@@ -777,17 +783,17 @@
  "makofi": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
-   "hook": "A Nungwi guest house with a weekly BBQ buffet and fire show, and crisp Roman pizza the other nights.",
-   "why": "Makofi is a guest house about a minute's walk from Nungwi beach whose kitchen does two jobs. Its restaurant, Pizza Gourmet By Makofi, makes Roman-style scrocchiarella, the thin, crisp pizza of Rome rather than the soft Neapolitan kind. Once a week it lays on a BBQ buffet with a fire show, at US$25 a head, US$20 for vegetarians and children, with limited places that must be reserved.",
-   "hours": "BBQ night weekly; Pizza Gourmet by Makofi the rest of the week",
-   "signature": "The weekly BBQ night",
+   "statusChecked": "2026-10-08",
+   "hook": "A Nungwi guest house with a BBQ buffet and fire show once or twice a week, and crisp Roman pizza the other nights.",
+   "why": "Makofi is a guest house about a minute's walk from Nungwi beach whose kitchen does two jobs. Its restaurant, Pizza Gourmet By Makofi, makes Roman-style scrocchiarella, the thin, crisp pizza of Rome rather than the soft Neapolitan kind. Once or twice a week it lays on a BBQ buffet with a fire show, at US$25 a head, US$20 for vegetarians and children, with limited places that must be reserved.",
+   "hours": "Pizza Gourmet by Makofi daily 12:00–22:00; a BBQ night once or twice a week (Oct 2026)",
+   "signature": "The BBQ night, booked before 13:00 on the day",
    "verdict": "The best-value set-piece evening in Nungwi.",
-   "caveat": "BBQ night is weekly and the night can move: ask which one the day you arrive, and book it.",
+   "caveat": "The BBQ night has no fixed weekly day: ask which night when you arrive, and book before 13:00 that day, through its Facebook or Instagram or in person.",
    "price_range": "BBQ US$25 adults, US$20 children and vegetarians (seen Oct 2026)",
    "reservation": "Essential for BBQ night",
    "tags": [
-    "Weekly BBQ night",
+    "BBQ night",
     "Roman pizza",
     "Guest house"
    ],
@@ -798,7 +804,8 @@
     {
      "name": "Roman scrocchiarella pizza"
     }
-   ]
+   ],
+   "web": "https://makofizanzibar.com/"
   },
   "evidence": "The guest house's own site (makofizanzibar.com, food-and-drink page) is indexed describing the weekly BBQ buffet with fire show and the in-house 'Pizza Gourmet By Makofi'; TripAdvisor page titled 'Updated 2026'. No dated 2026 post seen. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -821,22 +828,29 @@
    {
     "label": "Hostelworld: Makofi Zanzibar",
     "url": "https://www.hostelworld.com/hostels/p/313748/makofi-zanzibar/"
+   },
+   {
+    "label": "Makofi Zanzibar (seen 8 Oct 2026)",
+    "url": "https://makofizanzibar.com/"
    }
   ]
  },
  "che-rock": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A rock-music bar at the main entrance to Nungwi beach, beside Pasha Nungwi, with tacos and burgers.",
    "why": "CHE calls itself Zanzibar's first and only rock bar, and it sits at the main entrance to Nungwi beach next to the Pasha Nungwi hotel. The playlist is rock rather than the Afro house heard elsewhere on the strip. The kitchen does tacos, burgers and pub classics with some fresh seafood, the bar pours local and imported spirits, and there is karaoke and football on the screens.",
-   "hours": "Daily 12:00–23:00 (Aug 2026); one listing gives 16:30–00:00 — call ahead",
+   "hours": "16:30–00:00 (TripAdvisor, seen 8 Oct 2026); call ahead for the last hour",
    "tags": [
     "Tacos and burgers",
     "Cocktails",
     "Beach entrance"
    ],
-   "signature": "A burger and a cocktail late in the evening"
+   "signature": "A burger and a cocktail late in the evening",
+   "neighborhood": "Nungwi · Nungwi Beach Street, behind the main beach at Pasha Hotel",
+   "address": "Nungwi Beach Street, behind the main beach at Pasha Hotel, Nungwi, Kaskazini A",
+   "caveat": "Hours from one listing only: call ahead before you count on a plate at midnight."
   },
   "evidence": "TripAdvisor attraction page (titled 2026) and an Instagram account @chebarzanzibar exist; aggregators repeat the 'first and only rock bar' description. No dated 2026 post or own site seen. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -862,10 +876,14 @@
  },
  "fisherman-local": {
   "set": {
-   "status": "unverified",
-   "statusChecked": "",
+   "status": "confirmed",
+   "statusChecked": "2026-10-08",
    "hook": "A local seafood kitchen on the road behind Eden Villa in Kendwa: grilled lobster, octopus and prawn masala.",
-   "why": "Fisherman Local is a plain room on the road behind Eden Villa Resort, set back from Kendwa's beach bars, and it cooks seafood at local prices. Reviewers keep coming back to the octopus, which they describe as properly tender, and to the grilled lobster, Indian-style prawn masala, tuna salad and the kitchen's own chilli sauce. It is not on the sand, which is a large part of why the prices are lower."
+   "why": "Fisherman Local is a plain room on the road behind Eden Villa Resort, set back from Kendwa's beach bars, and it cooks seafood at local prices. Reviewers keep coming back to the octopus, which they describe as properly tender, and to the grilled lobster, Indian-style prawn masala, tuna salad and the kitchen's own chilli sauce. It is not on the sand, which is a large part of why the prices are lower.",
+   "name": "Fisherman Local Restaurant",
+   "hours": "Not printed: listings conflict — call ahead",
+   "neighborhood": "Kendwa · on the road behind Eden Villa, off the beach",
+   "caveat": "Cash, no view, and the kitchen runs out. Listings disagree on the hours: call +255 777 871 130 before you walk over."
   },
   "evidence": "Aggregator pages (trip.com as 'Fisherman lokal restaurant', Wanderlog) describe it, but no 2026-dated source was found.",
   "corrections": [
@@ -888,12 +906,15 @@
  },
  "highland": {
   "set": {
-   "status": "unverified",
-   "statusChecked": "",
+   "status": "confirmed",
+   "statusChecked": "2026-10-08",
    "hook": "A guest-house bar a short walk inland from Nungwi beach, with a pool table and football on the screens.",
    "why": "Highland Bungalows is a small guest house a short walk back from Nungwi beach, built around a garden and a swimming pool, with an open-plan bar that has a pool table and flat screens showing international football. It is a place to play a frame and watch a match away from the sand. Guests who stay mention the breakfast and the cocktails.",
    "verdict": "Good company at a fraction of the beach price, and the last room awake.",
-   "caveat": "A guest house with a pool as well as a bar; basic. Inland and unlit — walk back with someone."
+   "caveat": "A guest house with a pool as well as a bar; basic. Recent guests mention building work next door (2026). Inland and unlit — walk back with someone.",
+   "hours": "No bar hours published (Oct 2026): ask at the guest house",
+   "neighborhood": "Nungwi · inland on Baobab Way",
+   "address": "Baobab Way, Nungwi, Kaskazini A"
   },
   "evidence": "Booking platforms (Expedia, Hotels.com, TripAdvisor) list Highland Bungalows as a guest house with restaurant, open-plan bar with pool table and football on flat screens, and an outdoor pool. No dated 2026 source seen. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -916,10 +937,12 @@
  },
  "sunset-kendwa": {
   "set": {
-   "status": "unverified",
-   "statusChecked": "",
+   "status": "confirmed",
+   "statusChecked": "2026-10-08",
    "hook": "A Kendwa beach lodge with a sand-side bar and restaurant, next along the beach from Kendwa Rocks.",
-   "why": "A plain beach lodge of about fifty rooms, with a bar on the sand and a restaurant named for the reason it is here: the beach faces west, so the sun goes down straight in front of it. It sits next along the sand from Kendwa Rocks, so on a Full Moon Saturday it is the nearby place to sit with a drink and watch the sun set. Booking listings say it closes over Christmas and New Year."
+   "why": "A plain beach lodge of about fifty rooms, with a bar on the sand and a restaurant named for the reason it is here: the beach faces west, so the sun goes down straight in front of it. It sits next along the sand from Kendwa Rocks, so on a Full Moon Saturday it is the nearby place to sit with a drink and watch the sun set. Booking listings say it closes over Christmas and New Year.",
+   "hours": "No hours published; the Sunset Restaurant and the Mnazi Bar on the beachfront",
+   "web": "https://sunsetkendwa.com/"
   },
   "evidence": "Only OTA listings (Hotels.com, Expedia, Travelocity) found: a lodge with 'Sunset Restaurant' and a beach bar. No own site, social account or dated 2026 source seen.",
   "corrections": [
@@ -935,22 +958,28 @@
    {
     "label": "Hotels.com: Sunset Kendwa",
     "url": "https://sg.hotels.com/ho456263/sunset-kendwa-kendwa-tanzania"
+   },
+   {
+    "label": "Sunset Kendwa (seen 8 Oct 2026)",
+    "url": "https://sunsetkendwa.com/"
    }
   ]
  },
  "z-rooftop": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "The Z Hotel's west-facing rooftop bar in Nungwi: happy hour 17:00-20:00, US$15 sunset minimum.",
    "why": "The rooftop of the Z Hotel looks straight west over the channel from the Nungwi beachfront, and it is small, which is why reviewers in early 2026 still tell people to arrive early for sunset. Non-residents pay a US$15 per-person minimum at sunset, cocktails are cheaper during happy hour from five to eight, and some evenings a DJ plays electronic music.",
-   "caveat": "⚠ US$15 per person minimum for non-residents at sunset, and a 2% fee on cards (reviews, 2026). Arrive well before sunset or you will be standing.",
+   "caveat": "⚠ Adults only (16+). US$15 per person minimum for non-residents at sunset, and a 2% fee on cards (reviews, 2026). No reservations: arrive well before sunset or you will be standing.",
    "price_range": "US$15 minimum spend per non-resident (2026)",
    "tags": [
     "Happy hour 17:00–20:00",
     "US$15 minimum",
     "Arrive early"
-   ]
+   ],
+   "name": "Rooftops at The Z Hotel",
+   "hours": "Food 12:00–21:45 · happy hour 17:00–20:00 · sunset DJ Wed and Sat 17:00–20:00 (Oct 2026)"
   },
   "evidence": "TripAdvisor has a separate 'Rooftop Bar Z Hotel' listing (5.0/5) and reviews dated January and March 2026 describing the sunset rooftop and a US$15 sunset minimum; only aggregator evidence, so not upgraded to confirmed. Hotel now markets as 'Z Hotel & Z2 Hotel'. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -979,10 +1008,17 @@
  "kendwa-rocks": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "The Kendwa beach hotel whose monthly Full Moon Party grew from a beach fire among friends in 1996.",
    "why": "The hotel's own story puts the first Full Moon Party in 1996: a few friends and guests, a beach fire, drums and acrobats on a clear night. It is now a ticketed event with gates at 19:00, a main stage until about four and a club afterparty until six, run on a Saturday near each full moon. On the other nights it is a 47-room beach hotel with a bar on the sand and a club three nights a week.",
-   "signature": "The Full Moon Party — the Saturday after each full moon by the venue's account; check its calendar"
+   "signature": "The Full Moon Party — the Saturday nearest each full moon, on the venue's published calendar",
+   "hours": "Restaurant 11:00–23:00, Sat to 00:00 (Oct 2026) · The Rocks Lounge Club Tue, Thu, Sat from 22:00",
+   "best_time": "Sunset any night · the party Saturday, nearest the full moon, for the event (venue calendar)",
+   "signal_chip": {
+    "label": "Since 1996",
+    "full": "Full Moon Party running since 1996 by the venue's own account; monthly, on the Saturday nearest the full moon (its 2026 calendar)",
+    "cosign": "Venue's own site and 2026 calendar, checked 8 Oct 2026"
+   }
   },
   "evidence": "Own site blocked. Third-party event pages surfaced in search (Techno Airlines club listing, a We Are Zanzibar page, a '2026 guide') describe the monthly Full Moon Party with ticket prices, and the hotel is listed on Booking.com/Kayak; none could be opened to see a date.",
   "corrections": [
@@ -1009,18 +1045,22 @@
    {
     "label": "Booking.com: Kendwa Rocks Hotel",
     "url": "https://m.booking.com/hotel/tz/kendwa-rocks.html"
+   },
+   {
+    "label": "Kendwa Rocks: Full Moon Party calendar 2026–2027 (PDF, seen 8 Oct 2026)",
+    "url": "https://www.kendwarocks.com/media/pdfs/full_moon_party_calendars_2026_2027_zanzibar_compressed.pdf"
    }
   ],
-  "hot": "Full moons Mon 26 Oct and Tue 24 Nov: by the venue's rule the parties are Sat 31 Oct and Sat 28 Nov (derived; confirm on its calendar)."
+  "hot": "Full Moon Parties on Sat 24 Oct and Sat 21 Nov, on the venue's 2026 calendar (seen 8 Oct); the full moons follow on 26 Oct and 24 Nov."
  },
  "langi-langi": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
-   "hook": "Langi Langi's Marhaba restaurant, a covered terrace at the water's edge on Nungwi's west beach.",
-   "why": "Langi Langi is a 32-unit beach hotel on Nungwi's west-facing beach, and its restaurant, Marhaba, is a covered open-air room at the water's edge. Reviewers mention an owner known as Rasta who helps in the kitchen. Beyond the seafood and international dishes, Marhaba is known for a Traditional Zanzibari Dinner, and a separate Marhaba Café serves African coffee. Sunset tables face straight out over the channel.",
+   "statusChecked": "2026-10-08",
+   "hook": "Langi Langi's restaurant, a covered terrace at the water's edge on Nungwi's west beach.",
+   "why": "Langi Langi is a 32-unit beach hotel on Nungwi's west-facing beach, and its restaurant is a covered open-air room at the water's edge. Reviewers mention an owner known as Rasta who helps in the kitchen. Beyond the seafood and international dishes, the house is known for a Traditional Zanzibari Dinner, and breakfast is a buffet from seven to ten. Sunset tables face straight out over the channel.",
    "tags": [
-    "Marhaba restaurant",
+    "Beach bungalows",
     "At the water's edge",
     "Traditional Zanzibari dinner"
    ],
@@ -1032,10 +1072,11 @@
      "name": "Seafood"
     },
     {
-     "name": "Coffee at Marhaba Café"
+     "name": "The breakfast buffet, 07:00–10:00"
     }
    ],
-   "signature": "A seafood dinner at Marhaba as the sun goes into the channel"
+   "signature": "A seafood dinner on the water's-edge terrace as the sun goes into the channel",
+   "hours": "Breakfast (buffet 07:00–10:00) through dinner"
   },
   "evidence": "Booking listings (TripAdvisor, lastminute, trip.com) show the hotel and its Marhaba restaurant, but no 2026-dated source was found. The own site could not be loaded (egress blocked).",
   "corrections": [
@@ -1060,35 +1101,6 @@
    {
     "label": "Easy Travel: Langi Langi Beach Bungalows",
     "url": "https://www.easytravel.co.tz/accommodation/langi-langi-beach-bungalows/"
-   }
-  ]
- },
- "cholos": {
-  "set": {
-   "status": "unverified",
-   "statusChecked": "",
-   "hook": "A driftwood beach bar in Nungwi with benches cut from halved dhow hulls and hammocks over the bar.",
-   "why": "Travel writers have described it the same way for years: hammocks slung above the bar, benches made from dhow hulls sawn in half, a bathtub doing duty as a urinal, and a few basic shacks to sleep in. The boats came from the yards a short walk up the same beach, which is the most specific thing about the place. It has no website, and no source confirms it is open this season, so walk past and check first.",
-   "tags": [
-    "Long-running",
-    "Live music",
-    "Halved dhows as furniture"
-   ]
-  },
-  "evidence": "Only older undated guide text and aggregator mentions found (hammocks above the bar, benches from halved dhows, bathtub urinal, cheap shacks). No 2026 source.",
-  "corrections": [
-   "'Oldest bar in the village' not confirmed by any source found; soften or attribute.",
-   "Halved-dhow benches and hammocks are confirmed by older travel writing, which also records basic shacks for rent (about US$10 at the time); current lodging not confirmed.",
-   "Also listed as 'Cholo Disco Bar' in one source."
-  ],
-  "sources": [
-   {
-    "label": "Upper Crust India travel piece (older)",
-    "url": "https://www.uppercrustindia.com/oldsite/19crust/nineteen/travel1.htm"
-   },
-   {
-    "label": "Lametayel POI",
-    "url": "https://www.lametayel.co.il/pois/6jdmo"
    }
   ]
  },
@@ -1185,9 +1197,12 @@
  "zanzibar-watersports": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "PADI dive and water-sports centre on the north coast, running trips to Leven Bank and Mnemba.",
-   "why": "A PADI centre that runs courses, double dives for certified divers, full-day trips to the Mnemba atoll and trips to Leven Bank, a deep bank in the Pemba Channel with strong currents that only experienced divers should do. It works from the Kendwa Rocks beach, which makes it the nearest dive desk if you are staying there. Mnemba carries a separate conservation fee of about US$25 per foreign adult, paid on top of the dive."
+   "why": "A PADI centre that runs courses, double dives for certified divers, full-day trips to the Mnemba atoll and trips to Leven Bank, a deep bank in the Pemba Channel with strong currents that only experienced divers should do. It works from the Kendwa Rocks beach, which makes it the nearest dive desk if you are staying there. Mnemba carries a separate conservation fee of about US$25 per foreign adult, paid on top of the dive.",
+   "name": "Zanzibar Watersports, Kendwa",
+   "neighborhood": "Kendwa · dive centre on the Kendwa main road; beach office next to Gold Resort",
+   "address": "Kendwa Main Road, Kendwa, Kaskazini A"
   },
   "evidence": "Own site blocked. A Holafly diving guide (undated) describes Zanzibar Watersports as running PADI courses, Leven Bank and Mnemba trips from a centre at Kendwa Rocks; no dated 2026 source seen.",
   "corrections": [
@@ -1213,15 +1228,20 @@
    {
     "label": "ATTA: Zanzibar revises entry fees for marine conservation areas (3 Sep 2025)",
     "url": "https://atta.travel/resource/zanzibar-revises-entry-fees-for-marine-conservation-areas.html"
+   },
+   {
+    "label": "Zanzibar Watersports: about us (seen 8 Oct 2026)",
+    "url": "https://zanzibarwatersports.com/about-us/"
    }
   ]
  },
  "spanish-dancer": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A PADI 5 Star dive resort in Nungwi, teaching in English, Spanish, French and German.",
-   "why": "PADI's directory calls it one of the first dive centres on Zanzibar, with a twenty-year safety record, and rates it a 5 Star Dive Resort. Courses run in English, Spanish, French and German. That length of time in the same water is the useful thing: a desk that has dived these sites for two decades can tell you which day and tide suits the site you have in mind, and which sites to skip."
+   "why": "PADI's directory calls it one of the first dive centres on Zanzibar, with a twenty-year safety record, and rates it a 5 Star Dive Resort. Courses run in English, Spanish, French and German. That length of time in the same water is the useful thing: a desk that has dived these sites for two decades can tell you which day and tide suits the site you have in mind, and which sites to skip.",
+   "hours": "Daily 08:00–18:00 (own site, Oct 2026)"
   },
   "evidence": "PADI's dive-centre directory lists Spanish Dancer Divers, Nungwi, as a PADI 5 Star Dive Resort, 'one of the first dive centres on Zanzibar' with 'a 20 years record'; languages English, Spanish, French, German. Listing text undated; own site blocked.",
   "corrections": [
@@ -1311,9 +1331,11 @@
  "baraka-aquarium": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A turtle lagoon in Nungwi that sells swims and feeding; its welfare claims are disputed by visitors.",
-   "why": "Its own pages say it exists to rescue and rehabilitate turtles and return them to the sea, and tour sellers market it as a chance to feed and swim with them in a natural lagoon pool near Mnarani Cottages. Visitor accounts dispute this: small crowded pools, animals handled, and no evidence of releases when asked. We could not settle the argument, so read the accounts before you buy a ticket from a beach seller."
+   "why": "Its own pages say it exists to rescue and rehabilitate turtles and return them to the sea, and tour sellers market it as a chance to feed and swim with them in a natural lagoon pool near Mnarani Cottages. Visitor accounts dispute this: small crowded pools, animals handled, and no evidence of releases when asked. We could not settle the argument, so read the accounts before you buy a ticket from a beach seller.",
+   "name": "Baraka Natural Aquarium & Zoo",
+   "caveat": "⚠ Animal-welfare complaints are substantial and repeated: TripAdvisor rates it 3.2 of 5 over 196 reviews, 60 of them 'Terrible' (seen 8 Oct 2026). Read them before you buy a ticket; see turtles wild at Mnemba."
   },
   "evidence": "Own site blocked. Multiple bookable Expedia/Wotif activity listings sell Baraka Aquarium turtle swims (e.g. 'Swim with Turtles' from US$12), suggesting it is operating, but no listing could be opened to confirm dates.",
   "corrections": [
@@ -1631,10 +1653,11 @@
  },
  "dhow-course": {
   "set": {
-   "status": "unverified",
-   "statusChecked": "",
+   "status": "confirmed",
+   "statusChecked": "2026-10-08",
    "hook": "A 1-12 week course in Nungwi's boatyards, taught by a dhow builder, booked through World Unite!.",
-   "why": "The one place on the island where an outsider can learn a living craft from the people who practise it: placements in a working Nungwi boatyard, arranged through World Unite!, with instruction in English every day and the rest of the day spent on hulls that will go to sea."
+   "why": "The one place on the island where an outsider can learn a living craft from the people who practise it: placements in a working Nungwi boatyard, arranged through World Unite!, with instruction in English every day and the rest of the day spent on hulls that will go to sea.",
+   "hours": "1 to 12 weeks, all year; at least two hours of private lessons Mon–Fri, then the yard's own working day"
   },
   "evidence": "World Unite!'s own course page (English and German) is indexed naming Mr. Mponda, two hours' daily instruction in English, 1-12 weeks, from 350 EUR; the page could not be loaded to check current start dates or a 2026 date. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -1661,9 +1684,10 @@
  "mwani-zanzibar": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A seaweed skincare maker in Paje, formerly the Seaweed Center; 90-minute tours of the farm and workshop.",
-   "why": "Mwani Zanzibar, once called the Seaweed Center, turns the spiny red seaweed Eucheuma denticulatum that women farm in the Paje shallows into soaps, scrubs and oils, wrapping the soap in banana leaf. A visit of about ninety minutes, around US$10, starts on the beach farm, which is only reachable at low tide, and ends in the centre where the bars are cut and packed."
+   "why": "Mwani Zanzibar, once called the Seaweed Center, turns the spiny red seaweed Eucheuma denticulatum that women farm in the Paje shallows into soaps, scrubs and oils, wrapping the soap in banana leaf. A visit of about ninety minutes, around US$10, starts on the beach farm, which is only reachable at low tide, and ends in the centre where the bars are cut and packed.",
+   "hours": "Tours of 90 minutes, US$15, bookable on its own site (Oct 2026)"
   },
   "evidence": "Own site mwanizanzibar.com is indexed; TripAdvisor (Paje listing titled 2026) and GetYourGuide list visits, and GetYourGuide sells a 2026 'Seaweed Farming Experience and Kuza Cave' tour that includes Mwani. No own-site load or dated own post seen. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [
@@ -1695,9 +1719,10 @@
  "kuza-cave": {
   "set": {
    "status": "confirmed",
-   "statusChecked": "2026-08-22",
+   "statusChecked": "2026-10-08",
    "hook": "A culture centre around a cenote-like cave in Jambiani, with a daily 11:30 Swahili cooking lesson.",
-   "why": "Kuza Cave is a collapsed limestone chamber in Jambiani with a pool of clear groundwater at the bottom, closer to a Yucatan cenote than a show cave, and it is managed with the traditional owners in Kibigija Village. Around it runs a culture centre: a Swahili cooking lesson every day at 11:30 for US$30, two hours that end with eating what you cooked."
+   "why": "Kuza Cave is a collapsed limestone chamber in Jambiani with a pool of clear groundwater at the bottom, closer to a Yucatan cenote than a show cave, and it is managed with the traditional owners in Kibigija Village. Around it runs a culture centre: a Swahili cooking lesson every day at 11:30 for US$30, two hours that end with eating what you cooked.",
+   "hours": "Daily 08:30–18:30; the cooking class US$30 (own site, Oct 2026)"
   },
   "evidence": "The own site's FAQ is indexed stating daily 08:30-18:30 opening and an 11:30 Swahili cooking lesson for US$30; GetYourGuide/TripAdvisor sell tours including Kuza Cave (one titled 2026). The cooking-lesson product URL did not surface and no page could be loaded or dated. Own-site fetches were blocked by the network egress proxy on 7 Oct 2026, so evidence is from search-engine results only.",
   "corrections": [

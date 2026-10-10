@@ -1,5 +1,5 @@
 {
- "_doc": "GOLD6 picks for Kendwa-Unguja, 7 Oct 2026. Lanes hold <=3; no 4s were needed. Criteria in order: can't-miss for the north tip · authentic over touristic · teaches something · confirmed over unverified. Fewer places is the point. Cut venues leave data.js, both CSVs and every #venue- link.",
+ "_doc": "GOLD6 picks for Kendwa-Unguja, 7 Oct 2026. Lanes hold <=3; no 4s were needed. Criteria in order: can't-miss for the north tip · authentic over touristic · teaches something · confirmed over unverified. Fewer places is the point. Cut venues leave data.js, both CSVs and every #venue- link. 10 Oct 2026, from the 8 Oct network pack: Cholo's and Bistro' del M@r cut (closed); the 'this week' guest slots rebuilt from venues kept: Gold Zanzibar (book ahead, confirmed 7 Oct) and Makofi (its BBQ night is booked before 13:00 the same day) replace Bistro' del M@r and Machnoo (unverified on 8 Oct: no 2026 evidence, hours in conflict).",
  "lanes": {
   "creme": {
    "label": "La crème — the destination rooms",
@@ -68,12 +68,10 @@
    "label": "The other kitchens — Italian ovens and a Hanoi broth",
    "ids": [
     "mama-mia-nungwi",
-    "bistro-del-mar",
     "hanoi-house"
    ],
    "why": {
     "mama-mia-nungwi": "the Italian room on the strip",
-    "bistro-del-mar": "the Kendwa Italians' own table",
     "hanoi-house": "a 24-hour pho broth; merged in from the one-venue 'other kitchens' lane"
    }
   },
@@ -131,13 +129,11 @@
    "label": "The old houses",
    "ids": [
     "kendwa-rocks",
-    "langi-langi",
-    "cholos"
+    "langi-langi"
    ],
    "why": {
     "kendwa-rocks": "where the Full Moon Party began in 1996",
-    "langi-langi": "the long-standing deck above the water",
-    "cholos": "halved dhows for furniture"
+    "langi-langi": "the long-standing deck above the water"
    }
   },
   "street": {
@@ -171,8 +167,8 @@
   ],
   "Plan ahead — this week": [
    "zuri-zanzibar",
-   "bistro-del-mar",
-   "machnoo"
+   "gold-zanzibar",
+   "makofi"
   ],
   "Plan ahead — the grand night": [
    "kilindi",
@@ -221,7 +217,9 @@
   "coccobello": "a halfway landmark only; nothing to go for",
   "diving-poseidon": "third dive desk; two are enough",
   "freddie-mercury": "no card points to it any more",
-  "house-of-wonders": "closed to visitors since the December 2020 collapse (re-checked 7 Oct 2026); the culture card keeps it as an exterior on the Forodhani walk, the map pin goes"
+  "house-of-wonders": "closed to visitors since the December 2020 collapse (re-checked 7 Oct 2026); the culture card keeps it as an exterior on the Forodhani walk, the map pin goes",
+  "cholos": "permanently closed (Google Places CLOSED_PERMANENTLY, HappyCow 'CLOSED', Instagram dormant since 2019; network pack 8 Oct 2026)",
+  "bistro-del-mar": "closed, probable (TripAdvisor listing flagged closed in two independent indexes, no review newer than about 2018; network pack 8 Oct 2026); its guest-list slot rebuilt from venues kept"
  },
  "cards_cut": "127 fold cards -> see card_plan.json: merges are listed per card ('from'); dropped outright: sea-stories|Königsberg comes into the harbour (fourth 'hard water' story), sea-stories|The boats are still being built (told in craft), bars|Mangi's, bars|Kajibange, coffee-gardens|Kivulini garden, coffee-gardens|Maisha Beach daytime, quartiers|Mnarani & the point (in landmarks), quartiers|Nungwi east (Essque Zalu has its own card), quartiers|Off the cape x3 (in Autour), culture|Baraka (in the turtles card), the old hot board (replaced, dated 7 Oct 2026)"
 }

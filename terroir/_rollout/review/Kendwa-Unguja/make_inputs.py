@@ -217,3 +217,6 @@ for vid in KEEP:
 json.dump(OUT, open(RV / "venues.json", "w"), ensure_ascii=False, indent=1)
 from collections import Counter
 print("cards", len(CARDS), "venues", len(OUT), Counter((x["set"]["status"], x["set"]["statusChecked"]) for x in OUT.values()))
+
+# ── 10 Oct 2026: the 8 Oct network pack (research/verify_5_network_2026-10-08.json), applied on top ──
+import sys; sys.path.insert(0, str(RV)); import network_pack; network_pack.run()

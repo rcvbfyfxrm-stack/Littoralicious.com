@@ -89,7 +89,7 @@ LANE_LEAD = {
  "houses": "The two resort kitchens worth booking as a non-resident — choose by which way the room faces.",
  "italian": "Italian-run kitchens and a Vietnamese broth: the arrivals that stayed and became part of the north tip.",
  "breakfast": "The three rooms open before nine — Kilimanjaro coffee, a French bakery, and a table on the empty end of the beach.",
- "grills": "Charcoal on the sand, a small hotel kitchen, and the weekly BBQ night.",
+ "grills": "Charcoal on the sand, a small hotel kitchen, and a BBQ night to book on the day.",
  "chefs-eat": "After the sunset rush: the kitchen that runs latest, lobster at a working wage, and the last room awake.",
  "beach-rooms": "The sundowner belt — the quiet bar on Kendwa sand and the roof in Nungwi.",
 }
@@ -107,11 +107,11 @@ GROUP_DESC = {"grande": "The rooms worth planning a day around — the domes, th
 
 CHARTER = {
  "sexy-fish": {"price": "Upper mid", "book": "Through The Z Hotel · essential for a sunset table in season", "dress": "Smart beach — no swimwear",
-               "warn": "Small west-facing deck: the sunset tables go days ahead in high season; some reviewers find the service slow", "fit": "Tuna ceviche and lobster tempura on a west-facing deck over the water."},
+               "warn": "Last food orders 21:45; closed 1 April to 31 May for the long rains (2026); the sunset tables go days ahead in high season", "fit": "Tuna ceviche and lobster tempura on a west-facing deck over the water."},
  "maisha-beach": {"price": "Mid", "book": "Call or WhatsApp · same day is usually fine", "dress": "Beach casual",
                   "warn": "Music nights change with the season and Ramadan — ask before you plan around one", "fit": "A beach restaurant with a real kitchen and a proper cocktail list."},
  "langi-langi": {"price": "Mid", "book": "Call for a sunset table", "dress": "Casual", "warn": "Front tables go by 17:30 in season",
-                 "fit": "The long-standing independent house, its Marhaba terrace at the water's edge."},
+                 "fit": "The long-standing independent house, its terrace at the water's edge."},
  "zuri-zanzibar": {"price": "Resort band — half board in most rates; non-residents pay à la carte", "book": "Book ahead if you are not staying", "dress": "Smart resort",
                    "warn": "A long walk in from the village road — take a car after dark", "fit": "Three kitchens, a spice garden and the first gold EarthCheck for design."},
  "bistro-del-mar": {"price": "Mid — below beach-front rates", "book": "Call at weekends, otherwise walk in", "dress": "Anything",
@@ -129,8 +129,8 @@ DOORS = [
  {"fr": "The Gastronomic Dig-In", "en": "For the chef: the clove economy, the dawn landing and the larder, the coconut, and the canon at the foot.",
   "note": "L’histoire · la marée · le marché · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute on the north tip: bookable, priced.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
-SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: call in this order. Their own sites could not be read on 7 Oct 2026 — call before you walk guests over.",
-             "Plan ahead — this week": "Book a day or two ahead; Zuri wants non-residents to book.",
+SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: call in this order. Read on 8 Oct 2026: Sexy Fish takes last food orders at 21:45, Maisha Beach runs to 23:30, Langi Langi serves breakfast through dinner.",
+             "Plan ahead — this week": "Book a day or two ahead: Zuri and Gold want non-residents to book; Makofi's BBQ night is booked before 13:00 on the day.",
              "Plan ahead — the grand night": "The domes, a Stone Town roof with taarab, the jetty on the quiet side: book as soon as the dates are fixed."}
 
 EDITS = {
@@ -181,3 +181,37 @@ GEM_STORY = {
  "gem-karafuu": "The clove: a flower bud, dried until it rattles. Why nine-tenths of the world's came from here is the opening of the food history; how to buy it is in La liste.",
  "gem-mkate": "'The bread that is poured': rice, coconut and time, with no wheat and no oven. A household bread, so you have to be lucky; its story is in La liste.",
 }
+
+# ── 10 Oct 2026: the 8 Oct network pack (research/verify_5_network_2026-10-08.json) ──────────────
+CHARTER.pop("bistro-del-mar", None); CHARTER.pop("machnoo", None)
+CHARTER["gold-zanzibar"] = {"price": "Upper resort band", "book": "Advisable for non-residents: +255 779 700 005", "dress": "Smart resort",
+                            "warn": "Closed for its annual break 9 May–10 June (2026); the beach in front is public", "fit": "Kendwa's five-star house, dinner at a table on the sand."}
+CHARTER["makofi"] = {"price": "BBQ US$25 adults, US$20 children and vegetarians (seen Oct 2026)", "book": "Before 13:00 on the day, through Facebook, Instagram or in person",
+                     "dress": "Casual", "warn": "The BBQ night is once or twice a week, not a fixed day: ask which night when you arrive",
+                     "fit": "The best-value set-piece evening in Nungwi, with Roman pizza on the other nights."}
+EDITS["money-sits"] = [e for e in EDITS["money-sits"] if not e[0].startswith("The village reset")] + [
+ ("The village reset — <strong>Machnoo is closed</strong>, and the strip is at its quietest.",
+  'The village reset, and the strip at its quietest — <a href="#venue-combo-1990">Combo 1990</a> may be shut (its Monday is unconfirmed: call).'),
+ ('walk inland to <a href="#venue-machnoo">Machnoo</a> for the five-dish Swahili tasting.',
+  'walk inland to <a href="#venue-combo-1990">Combo 1990</a> for the five-dish Swahili tasting.'),
+ ("The long-stayers' night; <strong>Cholo's</strong> traditionally runs a party.", "The long-stayers' night, and a club night at Kendwa."),
+ ('then down the sand to <a href="#venue-cholos">Cholo\'s</a> and the halved dhow hulls. The Rocks Lounge also opens tonight.',
+  'then a taxi to Kendwa for The Rocks Lounge from 22:00, with the ride back fixed first.'),
+ ("The first Saturday after each full moon is the", "The Saturday nearest each full moon (take the date from the venue's calendar) is the")]
+EDITS["avoid"] += [("runs the first Saturday <em>after</em> each full moon", "runs on the Saturday <em>nearest</em> each full moon (the date is on the venue's calendar)")]
+EDITS["follow"] += [("— the Kendwa desk, at Kendwa Rocks, running the same northern sites.",
+                     "— a dive centre on the Kendwa main road with a beach office next to Gold Resort, running the same northern sites.")]
+EDITS["sources"] += [(">Zanzibar Watersports @ Kendwa Rocks<", ">Zanzibar Watersports, Kendwa<")]
+EDITS["la-liste"] += [
+ ('<b>Best place</b> — Cholo\'s Bar, Nungwi · <a href="https://www.google.com/maps/search/?api=1&query=Cholo%27s+Bar+Nungwi+Zanzibar"',
+  '<b>Best place</b> — Rooftops at The Z Hotel, Nungwi, at happy hour · <a href="https://www.google.com/maps/search/?api=1&query=The+Z+Hotel+Nungwi+Zanzibar"'),
+ ('<a href="#venue-cholos">Cholo\'s</a> and the Nungwi sand bars', 'The Nungwi sand bars and the hotel roofs'),
+ ('<a href="#venue-fisherman-local">The Fisherman Local</a>', '<a href="#venue-fisherman-local">Fisherman Local Restaurant</a>')]
+ICS_EDITS += [("Best: Cholo's Bar\\, Nungwi\nLOCATION:Cholo's Bar\\, Nungwi\nURL:https://www.google.com/maps/search/?api=1&query=Cholo%27s+Bar+Nungwi+Zanzibar",
+               "Best: Rooftops at The Z Hotel\\, Nungwi\nLOCATION:The Z Hotel\\, Nungwi\nURL:https://www.google.com/maps/search/?api=1&query=The+Z+Hotel+Nungwi+Zanzibar")]
+LANE_LEAD["story"] = "The two addresses that were here before the strip was: the bar where the party began, and the long-standing house at the water's edge."
+LANE_STORY["story"] = {"title": "Thirty years is old here", "story": "This is a young strip on an ancient coast. Nungwi has been building boats and reading this water for centuries, but the bar-and-hotel ribbon along its western edge is barely three decades deep — which makes a bar that opened in the nineties an institution and a house that has traded thirty years the elder statesman of the beach. Hold both timescales at once: the dhow yard four hundred metres north is doing something two thousand years old, and the bar you are drinking in is younger than most of its customers.",
+                       "where": "Kendwa Rocks, where the party began in 1996; Langi Langi on the Nungwi sand"}
+LANE_STORY["italian"] = dict(LANE_STORY["italian"], story=LANE_STORY["italian"]["story"].replace("the ovens on the Kendwa road and the Nungwi strip are where they eat", "the ovens on the Nungwi strip are where they eat"),
+                             where="Nungwi beach and the main road")
+assert "Kendwa road" not in LANE_STORY["italian"]["story"]
