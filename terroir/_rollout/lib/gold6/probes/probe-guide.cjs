@@ -1,4 +1,4 @@
-const { chromium } = require('/opt/homebrew/lib/node_modules/playwright');
+const { chromium } = require((() => { try { return require.resolve('playwright'); } catch (e) { return require('child_process').execSync('npm root -g').toString().trim() + '/playwright'; } })());
 const U = process.argv[2];
 const ok=(n,c,d='')=>console.log((c?'PASS ':'FAIL ')+n+(d?'  ('+d+')':''));
 (async () => {
@@ -6,10 +6,11 @@ const ok=(n,c,d='')=>console.log((c?'PASS ':'FAIL ')+n+(d?'  ('+d+')':''));
   const errs=[]; p.on('pageerror',e=>errs.push(e.message));
   await p.goto(U,{waitUntil:'load'}); await p.waitForTimeout(4500);
   const vis = () => p.evaluate(()=>[...document.querySelectorAll('.container[class*="gx-"] details.sfold')].filter(d=>!d.closest('[hidden]')&&!d.hidden).map(d=>d.id+(d.open?'*':'')));
-  const nch = await p.$$eval('.gx-chapter', x=>x.length), chips = await p.$$eval('.gx-tags .band-nav__chip', a=>a.length);
+  const nch = await p.$$eval('.gx-chapter:not([data-lens])', x=>x.length), chips = await p.$$eval('.gx-tags .band-nav__chip', a=>a.length);
   ok('chapter chips = All + chapters', chips===nch+1, chips+' vs '+(nch+1));
   const all0 = await vis(); ok('landing: all folds closed', all0.every(x=>!x.endsWith('*')), all0.filter(x=>x.endsWith('*')).join(','));
-  const chapters = await p.$$eval('.gx-chapter', x=>x.map(c=>c.dataset.chapter));
+  /* §8 lens chapters (data-lens) are reached from the doors, never from the chapter bar */
+  const lenses = await p.$$eval('.gx-chapter[data-lens]', x=>x.map(c=>c.dataset.chapter)); const navch = await p.$$eval('.gx-chapter:not([data-lens])', x=>x.map(c=>c.dataset.chapter)); const chapters = navch;
   for (const ch of chapters) {
     await p.goto(U+'#t='+ch,{waitUntil:'load'}); await p.waitForTimeout(1200);
     const v = await vis();
@@ -18,7 +19,8 @@ const ok=(n,c,d='')=>console.log((c?'PASS ':'FAIL ')+n+(d?'  ('+d+')':''));
     const ro = await p.$eval('.gx-readout', r=>!r.hidden && r.textContent).catch(()=>false); ok(`chapter ${ch}: readout shows`, !!ro, String(ro).slice(0,60));
     const sub = await p.$$eval('.gx-chapter[data-chapter="'+ch+'"] .gx-subtag', a=>a.map(x=>x.dataset.tag));
     if (sub.length) { await p.goto(U+'#t='+sub[0],{waitUntil:'load'}); await p.waitForTimeout(1200); const s=await vis();
-      ok(`sub-tag ${sub[0]}: its folds only${s.length<=3?', opened':''}`, s.length>0 && (s.length>3 || s.every(x=>x.endsWith('*'))), s.join(',')); }
+      /* #tables never auto-opens (the organiser renders inside it): exempt it from 'opened' */
+      ok(`sub-tag ${sub[0]}: its folds only${s.length<=3?', opened':''}`, s.length>0 && (s.length>3 || s.filter(x=>x.replace('*','')!=='tables').every(x=>x.endsWith('*'))), s.join(',')); }
   }
   // pointer card → table card while filtered
   const ref = await p.$$eval('.fcard__ref a', a=>a.map(x=>[x.getAttribute('href'), x.closest('details.sfold').id, x.closest('details.sfold').dataset.tags.split(' ')[1]]));

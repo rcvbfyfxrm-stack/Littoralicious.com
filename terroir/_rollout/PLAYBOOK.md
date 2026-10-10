@@ -80,6 +80,11 @@ dead host with no archive → cite by name, unlinked) · screenshots of one open
 that only needs §8. These are small: do up to THREE readings-only items in one night (each on its own
 `terroir-uplift/<slug>-readings-<date>` branch), or one full GOLD6 guide. A guide whose full GOLD6 pass is
 already on a review branch without §8 gets §8 added on that SAME branch (status stays `review`, note it).
+**Network-blocked work never takes a night (9 Oct 2026).** The cloud sandbox reaches no external host, so link checks and
+own-site liveness cannot run there. When the ONLY thing left on a `partial` guide needs the network, set its status
+`needs-network` with an exact list, push the branch, and go on to the next work the same night. Verification from a normal
+network is committed to the branch as `review/<slug>/research/verify_*_network_*.json`; when such a pack is newer than the
+`needs-network` note, the guide is unblocked: apply the pack through the build, then flip to `review`.
 Never push to `rebuild/publishing-system` (that push IS the live deploy). Commit the finished guide to a
 branch `terroir-uplift/<slug>-<YYYY-MM-DD>` cut from `origin/rebuild/publishing-system`, push THAT branch,
 and in `state.json` (committed on the same branch) set the item `status:"review"` with `branch`,
