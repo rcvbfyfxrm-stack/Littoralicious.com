@@ -224,14 +224,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening: a small room on the coast, a terrace apéritif, a granita on the way back.",
-   "note": "La table · la terrasse · la granita",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "street-food"
-   ]
+   "en": "Ashore for one evening: a plan for each quarter — the terrace, the table, the Corso, the cocktail bar, in walking order.",
+   "note": "La terrasse · la table · le Corso · le dernier verre",
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -252,6 +248,13 @@ window.TERROIR_DATA = (function () {
    "open": [
     "ce-soir"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: the theatre at opening, a cellar on the north slope in harvest, dinner in a palmento, the island at Mazzarò.",
+   "note": "Le théâtre · la vigne · le palmento · l’île",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {

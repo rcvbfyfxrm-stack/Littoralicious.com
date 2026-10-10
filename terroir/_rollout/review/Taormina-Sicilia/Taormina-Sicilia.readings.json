@@ -1,0 +1,308 @@
+{
+ "_about": "Taormina-Sicilia, 10 Oct 2026 — GOLD6 §8 readings. Every fact comes from the guide's own cards and venue records (checked 4–5 Oct 2026); nothing new was verified for this pass.",
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are nearest · walking order",
+  "lede": "Dinner in Taormina starts between seven and half past, and most of the kitchens we list close between ten and eleven; the drink goes on at Morgana until two, three at weekends. Each quarter below is one evening, in the order you walk it, or drive it when we say so. Every name opens its full card; hours were checked on 4 and 5 October 2026.",
+  "door_en": "Ashore for one evening: a plan for each quarter — the terrace, the table, the Corso, the cocktail bar, in walking order.",
+  "door_note": "La terrasse · la table · le Corso · le dernier verre",
+  "quarters": [
+   {
+    "id": "corso",
+    "name": "Taormina · the theatre end to the Duomo",
+    "line": "A glass beside the theatre, dinner behind the Duomo, the Corso when the day visitors have gone, a cocktail down a stairway.",
+    "steps": [
+     {
+      "time": "18:30",
+      "name": "Bar Timeo",
+      "ref": "venue:bar-timeo",
+      "text": "A Negroni or a Martini at sunset on the terrace of the 1850 guesthouse beside the Greek theatre. Call ahead: non-guest access is not stated, and it is a seasonal hotel, so confirm it has not closed for the year."
+     },
+     {
+      "time": "20:00",
+      "name": "Kisté",
+      "ref": "venue:kiste",
+      "text": "Along the Corso to the house behind the Duomo: tagliolini al cacao with red prawn. Tuesday to Friday 19:00–22:30; weekends 19:30–22:00 on its own site, which MICHELIN does not show, so confirm. Closed Monday; book on OpenTable or by phone."
+     },
+     {
+      "time": "22:00",
+      "name": "Corso Umberto",
+      "ref": "card:Corso Umberto, Taormina",
+      "text": "Walk it back from Porta Catania through the Porta di Mezzo to Piazza IX Aprile, Etna beyond the rail. After nine the town is its own again."
+     },
+     {
+      "time": "22:30",
+      "name": "Morgana",
+      "ref": "venue:morgana",
+      "text": "Down a stairway off the Corso: Christian Sciglio's Sicilian list, or his own Grand Tour Gin. Sunday to Thursday until 02:00, Friday and Saturday until 03:00. Book by email."
+     }
+    ],
+    "after": "Spend more: two stars at [[venue:st-george-by-heinz-beck|St. George by Heinz Beck]], Viale San Pancrazio, the terrace over the Strait at sunset — booking essential, very expensive. Or one glass in the friars' refectory at the [[venue:san-domenico-palace|San Domenico Palace]]: unverified, call first. On a Monday Kisté is shut: book [[venue:a-putia|À Putia]] in Giardini Naxos instead."
+   },
+   {
+    "id": "mazzaro",
+    "name": "Mazzarò and Spisone · down at sea level",
+    "line": "The cable car down, a cocktail at the waterline, then a taxi along the coast road to the one-star.",
+    "steps": [
+     {
+      "time": "17:00",
+      "name": "Isola Bella, from the beach",
+      "ref": "card:Isola Bella",
+      "text": "Cable car from Via Pirandello down to Mazzarò (EUR 8 one way, reported), then along the pebbles to look at the island and its bar of stones. The island itself sells its last tickets at 17:30, 17:00 after 15 October: go in the morning for the rooms in the rock."
+     },
+     {
+      "time": "18:30",
+      "name": "Bar Sant'Andrea and Gwendoline's",
+      "ref": "venue:bar-sant-andrea-and-gwendoline-s",
+      "text": "Belmond's sea-level hotel: Bar Sant'Andrea for a cocktail at the water, Gwendoline's indoors for the nightcap. Call ahead: non-guest access is not stated, and the hotel is seasonal."
+     },
+     {
+      "time": "20:00",
+      "name": "La Capinera",
+      "ref": "venue:la-capinera",
+      "text": "A taxi along Via Nazionale to Spisone: Pietro D'Agostino's one-star, menus called Sea & Air and Earth & Fire, the 'Cacao Meravigliao' tagliolini with raw Mazara red prawns. Closed Monday. Book, and confirm the evening sitting: its hours are not on our card."
+     }
+    ],
+    "after": "Back up by taxi to the Corso and [[venue:morgana|Morgana]], until 02:00 (03:00 Friday and Saturday). We have not read the cable car's evening hours: do not count on it for the ride up."
+   },
+   {
+    "id": "castelmola",
+    "name": "Castelmola · up the old path before dark",
+    "line": "A thin quarter: the climb at the end of the afternoon, one glass on the square, then down to eat.",
+    "steps": [
+     {
+      "time": "16:30",
+      "name": "The old path",
+      "ref": "card:Taormina to Castelmola on the old path",
+      "text": "Steps off Via Circonvallazione, signed Madonna della Rocca: the 16th-century chapel cut into the cliff, then the stairway to the castle, open daily 10:00–20:00 in October (ticketed). 45–60 minutes up, no shade, fenced on the drops."
+     },
+     {
+      "time": "18:00",
+      "name": "Antico Caffè San Giorgio",
+      "ref": "venue:antico-caffe-san-giorgio",
+      "text": "A glass of vino alla mandorla on the square, the coast below. Unverified: we could not confirm it is trading in 2026, nor its hours, and its 1907 stories are the bar's own."
+     },
+     {
+      "time": "19:30",
+      "name": "Kisté, back in Taormina",
+      "ref": "venue:kiste",
+      "text": "We list no table in Castelmola. Come down on the ASM Linea Verde bus (EUR 2, reported) or by taxi, and eat behind the Duomo. Closed Monday; book."
+     }
+    ]
+   },
+   {
+    "id": "giardini",
+    "name": "Giardini Naxos · the 1946 grocery",
+    "line": "A thin quarter: one table, the day's fish, then a taxi back up the hill.",
+    "steps": [
+     {
+      "time": "19:30",
+      "name": "À Putia",
+      "ref": "venue:a-putia",
+      "text": "A neighbourhood grocery of 1946 turned trattoria-wine bar: the day's fish and market vegetables at a handful of tables. Monday to Saturday 19:30–22:30, closed Sunday; MICHELIN warns the hours shift with the seasons, so phone, and book — it is essential. Parking is hard: come by taxi."
+     },
+     {
+      "time": "22:30",
+      "name": "Morgana",
+      "ref": "venue:morgana",
+      "text": "We list nothing else in Giardini: a taxi back up to the stairway off Corso Umberto. Until 02:00, Friday and Saturday 03:00."
+     }
+    ],
+    "after": "Further down the coast, by car, for a crew at Riposto marina: [[venue:vico-astemio|Vico Astemio]], tables in a stone-arched lane, dinner Tuesday to Saturday 19:00–23:00; or [[venue:casu-osteria-contemporanea|Casu]] on Giarre's Corso Italia, Tuesday to Sunday (its site says 19:00–22:30, MICHELIN 18:00–22:00)."
+   },
+   {
+    "id": "north-slope",
+    "name": "The north slope · Passopisciaro to Linguaglossa, by car",
+    "line": "Not walkable: a cellar at three, a granita in the lava town, the mountain's star for dinner. Somebody stays sober to drive.",
+    "steps": [
+     {
+      "time": "15:00",
+      "name": "Graci",
+      "ref": "venue:graci",
+      "text": "The tasting starts inside the 19th-century palmento and ends with the Arcurìa wines: Classic, EUR 55, four wines, about two hours (seen October 2026). By appointment only, online on graci.eu; October is harvest month."
+     },
+     {
+      "time": "17:30",
+      "name": "Santo Musumeci",
+      "ref": "venue:pasticceria-gelateria-santo-musumeci",
+      "text": "On to Randazzo, Piazza Santa Maria: the lemon granita infused with the peel, at Gambero Rosso's Gelateria of the Year. Its hours are not on our card."
+     },
+     {
+      "time": "20:00",
+      "name": "Shalai",
+      "ref": "venue:shalai",
+      "text": "Back to Linguaglossa, Via Marconi 25: Giovanni Santoro's one-star since 2015, the provola risotto with lemon, wild herbs and black Etna truffle. Book, and confirm the sitting: no hours on our card."
+     }
+    ],
+    "after": "Cheaper: the Anzalone family's [[venue:san-giorgio-e-il-drago|San Giorgio e il Drago]] in Randazzo, 400 labels and baked lamb (closed Tuesdays), or the autumn mushrooms at [[venue:veneziano|Veneziano]] on the SS120. Or drive back towards the coast for [[venue:zash|Zash]], dinner inside a palmento at Archi."
+   }
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the theatre at opening, a cellar on the north slope in harvest, dinner in a palmento, the island at Mazzarò.",
+  "door_note": "Le théâtre · la vigne · le palmento · l’île",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Taormina sells itself on Corso Umberto at noon, among the cruise and coach crowds. The real thing is the same town at another hour, and the mountain behind it: <strong>the theatre at nine, before the coaches</strong>; a Negroni beside it at sunset; the Corso after dark; a cellar on Etna's north slope in harvest month and dinner inside an old palmento; the island at Mazzarò on Sunday morning. Every stop below is already in this guide and was checked in October 2026. This reading puts them in order and tells you what to book before you fly. Saturday needs a car.",
+  "book": [
+   "[[venue:zash|Zash]] — Saturday dinner; booking recommended, and you need a car to reach it.",
+   "[[venue:graci|Graci]] — the Saturday 15:00 tasting, online on graci.eu; October is harvest, so book well ahead.",
+   "[[venue:kiste|Kisté]] — Friday dinner, on OpenTable, by phone or at info@kiste.it.",
+   "[[venue:morgana|Morgana]] — Friday late, at booking@morganabar.it.",
+   "[[venue:vico-astemio|Vico Astemio]] — Sunday lunch, on its site or by phone; confirm it is serving lunch, not dinner.",
+   "[[venue:bar-timeo|Bar Timeo]] and [[venue:bar-sant-andrea-and-gwendoline-s|Bar Sant'Andrea]] — call ahead as non-guests, and check both hotels are still open for the season.",
+   "A car for Saturday and Sunday, parked outside the centre at Lumbi or Porta Catania: [[card:Driving into Ortigia and Taormina|the camera at the gate]] fines you months later."
+  ],
+  "days": [
+   {
+    "label": "Friday",
+    "title": "The theatre end at sunset, the Corso at night",
+    "stops": [
+     {
+      "time": "18:30",
+      "name": "A Negroni at Bar Timeo, beside the theatre",
+      "ref": "venue:bar-timeo",
+      "text": "Belmond dates the Timeo to 1850, a guesthouse for artists; the painter Otto Geleng stayed to paint the Greek Theatre from this terrace. Take a classic at sunset with the bay and Etna in front of you.",
+      "meta": "Via Teatro Greco · €€€€ · call ahead as a non-guest · seasonal hotel: confirm it is still open"
+     },
+     {
+      "time": "20:00",
+      "name": "Dinner behind the Duomo: Kisté",
+      "ref": "venue:kiste",
+      "text": "Pietro D'Agostino's second table, in a 15th-century house behind the Duomo: red prawn with tagliolini al cacao, grouper braciole, raviolini di mare. The school of his starred La Capinera, at a lower register.",
+      "meta": "Via Santa Maria de' Greci 2 · Fri 19:00–22:30 (own site, read 5 Oct 2026) · €€ · OpenTable, phone or info@kiste.it"
+     },
+     {
+      "time": "22:00",
+      "name": "The Corso, given back",
+      "ref": "card:Corso Umberto, Taormina",
+      "text": "Walk Corso Umberto from Porta Catania through the Porta di Mezzo to Piazza IX Aprile, the square that opens like a balcony: the clock tower, San Giuseppe on its double stair. After nine the day visitors have gone.",
+      "meta": "Porta Catania to Porta Messina · always open · free"
+     },
+     {
+      "time": "22:30",
+      "name": "A cocktail down the stairway: Morgana",
+      "ref": "venue:morgana",
+      "text": "Down Scesa Morgana to a bar that tears up its own interior every year. Christian Sciglio's list is written around Sicilian ingredients; the gin is his own, the Grand Tour, named for the travellers who made Taormina.",
+      "meta": "Scesa Morgana 4 · Fri–Sat 19:00–03:00, April to December · €€ · booking@morganabar.it"
+     }
+    ]
+   },
+   {
+    "label": "Saturday",
+    "title": "The theatre at opening, then the north slope in harvest",
+    "stops": [
+     {
+      "time": "07:30",
+      "name": "Granita at Bam Bar, at opening",
+      "ref": "venue:bam-bar",
+      "text": "Be in the queue when it opens and sit down for almond granita with a warm brioche; in October the fruit of the day is fig or pomegranate. Table service only, after the queue.",
+      "meta": "Via di Giovanni 45 · from 07:30 · € · no bookings"
+     },
+     {
+      "time": "09:00",
+      "name": "The Teatro Antico, before the coaches",
+      "ref": "card:Teatro Antico, Taormina",
+      "text": "Round the corner, the theatre at opening. Climb to the top rim on the north side: the fallen central doorway frames Etna, and the other way lie the Calabrian coast and the Strait. Goethe sat up here on 7 May 1787.",
+      "meta": "Via del Teatro Greco · 09:00–18:15 to 15 Oct, 09:00–17:45 from 16 Oct · EUR 14 · no luggage (seen Oct 2026)"
+     },
+     {
+      "time": "12:30",
+      "name": "Lunch at the butcher's counter: In Cucina dai Pennisi",
+      "ref": "venue:in-cucina-dai-pennisi",
+      "text": "Drive to Linguaglossa, about 40 minutes. The Pennisi family started in this butcher's shop and the counter is still the room: choose meat, salumi and cheese and eat facing it.",
+      "meta": "Via Umberto I 9, Linguaglossa · €€ · MICHELIN Bib Gourmand 2026 · hours not on our card: +39 095 643160"
+     },
+     {
+      "time": "15:00",
+      "name": "A palmento and the Arcurìa wines: Graci",
+      "ref": "venue:graci",
+      "text": "At Passopisciaro every visit starts in the 19th-century palmento, walks the vines at 600–1,000 m and ends with a technical tasting, bread and the estate's own oil. In harvest month expect the winemaker in the vines. Somebody has to drive.",
+      "meta": "Contrada Feudo di Mezzo, Passopisciaro · Classic Tasting EUR 55, 4 wines, about 2 hours (seen Oct 2026) · book on graci.eu"
+     },
+     {
+      "time": "17:30",
+      "name": "Lemon granita in the lava town",
+      "ref": "venue:pasticceria-gelateria-santo-musumeci",
+      "text": "On to Randazzo, built of black lava: three sisters run the shop their father founded, Gambero Rosso's Gelateria of the Year, trading again after thieves took a key machine in June 2026. The lemon granita is infused with the peel.",
+      "meta": "Piazza Santa Maria 5, Randazzo · € · hours not on our card"
+     },
+     {
+      "time": "20:00",
+      "name": "Dinner inside a palmento: Zash",
+      "ref": "venue:zash",
+      "text": "Back towards the coast, through a citrus orchard to a 19th-century press-house where Giuseppe Raciti serves dinner inside the old stone structure: the charcoal-grilled tuna belly with smoked aubergine, grapefruit and teriyaki.",
+      "meta": "SP 2 I/II 60, Archi, Riposto · dinner only, by car · €€€€ · booking recommended · MICHELIN ★ 2026"
+     }
+    ]
+   },
+   {
+    "label": "Sunday",
+    "title": "The garden, the island, a long lunch",
+    "stops": [
+     {
+      "time": "09:00",
+      "name": "Lady Trevelyan's terraces",
+      "ref": "card:Villa Comunale and Lady Florence Trevelyan",
+      "text": "The quietest hour in Taormina, in the cliff garden of an exiled Englishwoman: the brick-and-lava follies she built to watch birds, and from the lower terrace the coast running down to Giardini Naxos.",
+      "meta": "Via Bagnoli Croci · 08:00–20:00 under the 2024 ordinance (reported Aug 2026) · free · 30–45 minutes"
+     },
+     {
+      "time": "10:00",
+      "name": "Isola Bella, across the pebble bar",
+      "ref": "card:Isola Bella",
+      "text": "Cable car down to Mazzarò, along the beach and across the bar to the rock: a Bourbon king's gift of 1806, Florence Trevelyan's garden of 1890, small rooms the Bosurgi family cut into the stone. Go for the house in the rock, not the sunbed.",
+      "meta": "Cable car EUR 8 one way (reported) · island from 09:00, EUR 6 (seen Oct 2026) · about 2 hours · water shoes"
+     },
+     {
+      "time": "12:15",
+      "name": "A glass at the waterline",
+      "ref": "venue:bar-sant-andrea-and-gwendoline-s",
+      "text": "Back on the beach, Belmond's Villa Sant'Andrea sits on the sand at Mazzarò: one drink at Bar Sant'Andrea before the road.",
+      "meta": "Mazzarò · €€€€ · call ahead: non-guest access not stated · seasonal"
+     },
+     {
+      "time": "13:15",
+      "name": "Sunday lunch in a stone-arched lane: Vico Astemio",
+      "ref": "venue:vico-astemio",
+      "text": "Twenty-five minutes down the coast to Riposto: Massimiliano Vasta's tables in a narrow lane of the old centre. The beef antipasto under grated salted egg yolk, the day's fish, and a list poured by the glass. Then go home.",
+      "meta": "Via Cavour 34, Riposto · Sun lunch 12:15–15:15 on its own site (read 5 Oct 2026); MICHELIN lists Sunday dinner instead — confirm · €€€ · +39 095 092 6713"
+     }
+    ]
+   }
+  ],
+  "more": [
+   {
+    "title": "If you have only one evening",
+    "text": "A Negroni at [[venue:bar-timeo|Bar Timeo]] at sunset, dinner at [[venue:kiste|Kisté]] behind the Duomo, the [[card:Corso Umberto, Taormina|Corso]] after nine, and [[venue:morgana|Morgana]] until two. Friday is the town in four hours."
+   },
+   {
+    "title": "The grand night instead",
+    "text": "Trade Saturday's palmento up: two stars at [[venue:st-george-by-heinz-beck|St. George by Heinz Beck]], the Ashbee's terrace over the Strait at sunset — booking essential, very expensive. Or [[venue:la-capinera|La Capinera]], Pietro D'Agostino's one-star at sea level on the coast road, closed Monday. Staying on the mountain: [[venue:shalai|Shalai]] in Linguaglossa, the north slope's star since 2015."
+   },
+   {
+    "title": "Or the old path instead of the island",
+    "text": "On Sunday morning, climb [[card:Taormina to Castelmola on the old path|the old path to Castelmola]] instead: the chapel cut into the cliff, the castle (daily 10:00–20:00 in October, ticketed), 45–60 minutes up, then a glass of almond wine at [[venue:antico-caffe-san-giorgio|Antico Caffè San Giorgio]] — unverified for 2026. The ASM Linea Verde bus down is EUR 2 (reported)."
+   },
+   {
+    "title": "This October",
+    "dated": "Checked 5 October 2026",
+    "items": [
+     "[[card:The Etna harvest|The Etna harvest]]: the north-slope cellars are working. Book tastings well ahead and bring boots — the terraces are loose scoria.",
+     "[[card:Etna's summit is closed to walkers|Etna's summit is closed to walkers]] since 14 August, except with licensed guides; the volcano erupted again on 24 September, and no revocation was found on 4 October. Read the INGV bulletin before any plan.",
+     "[[card:Bam Bar — the autumn granita|At Bam Bar]], fig or pomegranate granita, depending on the day.",
+     "From 16 October the theatre and Isola Bella close at 17:45, last tickets at 17:00 (seen October 2026)."
+    ]
+   },
+   {
+    "title": "Where to sleep",
+    "text": "We have judged these places for a drink or a dinner, not for a night: we have not priced or stayed in the rooms. The hotels already in this guide are the Belmond Grand Hotel Timeo beside the theatre ([[venue:bar-timeo|its bar]]); the Belmond Villa Sant'Andrea on the beach at Mazzarò ([[venue:bar-sant-andrea-and-gwendoline-s|its bars]]); the [[venue:san-domenico-palace|San Domenico Palace]], a 14th-century convent, now a Four Seasons; the Ashbee, home of [[venue:st-george-by-heinz-beck|St. George]]; and on the mountain the Shalai hotel in Linguaglossa, home of [[venue:shalai|its starred restaurant]]. The coastal ones are seasonal: check they are open. The guide's own advice is to sleep in the centre or at Mazzarò."
+   },
+   {
+    "title": "What we would leave out",
+    "text": "[[card:Corso Umberto at midday, and Isola Bella sunbeds in August|The Corso between 10:00 and 18:00]] in season: thousands of day visitors and terraces that charge for the view. [[card:Etna 'summit' tours sold from Taormina|'Summit' tours]] sold on the Corso: usually the Silvestri craters at 1,900 m, and the inner zone is shut. Driving into the centre: [[card:Driving into Ortigia and Taormina|the ZTL camera]] finds you months later. And [[venue:casamatta|Casamatta]], the natural-wine bar, until someone confirms its address and that it is pouring in 2026."
+   }
+  ]
+ }
+}

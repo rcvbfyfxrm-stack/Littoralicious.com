@@ -534,9 +534,22 @@
   },
   {
    "slug": "Taormina-Sicilia",
-   "status": "pending",
+   "status": "review",
    "pass": "readings",
-   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026).",
+   "readings": "done 2026-10-10",
+   "branch": "terroir-uplift/Taormina-Sicilia-readings-2026-10-10",
+   "date": "2026-10-10",
+   "checks": [
+    "gate checks_gold4.py WITH render: ALL CHECKS GREEN (180 OK); staleAllow added for the one 'Prague' in the shared readings.js header comment (\"runs on any page cloned from Prague's chrome\"); doors 4 set by apply_readings; no floor changed",
+    "probe-guide.cjs: all PASS (exit 0)",
+    "probe-links.cjs desk: 73 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 73 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS (exit 0) — 4 doors top and foot, no lens chip, 37/37 placed cards with Maps, 22/22 venues; One Night 25 links, Getaway 27 links, desk + phone; lens screenshots in review/Taormina-Sicilia/",
+    "screenshots: opened card 'Teatro Antico, Taormina' desktop + phone (taormina-sicilia-card-*.png), checked by eye; lens shots desk/phone onenight + getaway",
+    "checklinks.py: NOT RUN (sandbox has no external network); the readings add no external links — every link is an internal #venue-/#card- anchor or an existing Google Maps link already on the card"
+   ],
+   "notes": "One Night, 5 quarters: Taormina (Bar Timeo, Kisté, the Corso, Morgana) · Mazzarò and Spisone (Isola Bella from the beach, Bar Sant'Andrea, taxi to La Capinera) · Castelmola (thin: the old path, Antico Caffè San Giorgio unverified, down by bus/taxi to Kisté) · Giardini Naxos (thin: À Putia, taxi back to Morgana; Riposto/Giarre as an 'after') · the north slope by car (Graci 15:00, Santo Musumeci, Shalai). The Getaway Weekend, 14 stops: Friday 4 (Bar Timeo, Kisté, the Corso, Morgana), Saturday 6 (Bam Bar 07:30, Teatro Antico 09:00, In Cucina dai Pennisi, Graci, Santo Musumeci, Zash), Sunday 4 (Villa Comunale, Isola Bella, Bar Sant'Andrea, Vico Astemio Sunday lunch); This October dated 'Checked 5 October 2026' from the hot board plus the theatre's 16 Oct hours (seen Oct 2026). Not verifiable offline and said so in the text: no published hours on the cards for La Capinera, Shalai, Zash, In Cucina dai Pennisi, Santo Musumeci, Bam Bar beyond its 07:30 opening, nor the cable car's evening hours; Bar Timeo, Bar Sant'Andrea and San Domenico Palace are seasonal with non-guest access unstated (call ahead); Antico Caffè San Giorgio and Casamatta stay unverified (Casamatta left out); Kisté weekend dinner and Vico Astemio Sunday lunch are disputed between own site and MICHELIN (carried as 'confirm'). Also commits the central terroir/data/Taormina-Sicilia.js, which apply_readings rewrites alongside the guide's data.js."
   },
   {
    "slug": "Kendwa-Unguja",
