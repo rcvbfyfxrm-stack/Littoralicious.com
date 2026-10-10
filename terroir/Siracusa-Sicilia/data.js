@@ -244,14 +244,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening in Ortigia: a table on the piazza, the market counter, a drink on the roof.",
-   "note": "La table · le comptoir · l’apéritif",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "street-food"
-   ]
+   "en": "Crew ashore for one evening: a plan for each quarter — Ortigia on foot, or one baroque town by car; the glass, the table, the bar, the late granita.",
+   "note": "Le coucher du soleil · la petite table · le bar · la granita",
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -274,6 +270,13 @@ window.TERROIR_DATA = (function () {
    "open": [
     "ce-soir"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: the spring at sunset, the market before nine, the Greek theatre in the last light, almond granita in Noto and a cove you walk to.",
+   "note": "La source · le marché · le théâtre · la granita",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {

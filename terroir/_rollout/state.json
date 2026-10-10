@@ -522,9 +522,22 @@
  "gold6_queue": [
   {
    "slug": "Siracusa-Sicilia",
-   "status": "pending",
+   "status": "review",
    "pass": "readings",
-   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026)."
+   "note": "GOLD6 already live; add §8 the four readings only (7 Oct 2026).",
+   "readings": "done 2026-10-10",
+   "branch": "terroir-uplift/Siracusa-Sicilia-readings-2026-10-10",
+   "date": "2026-10-10",
+   "checks": [
+    "gate checks_gold4.py WITH render: ALL CHECKS GREEN (185 OK; doors 4; staleAllow added for the one 'Prague' token, which is the code comment apply_readings injects from readings.js, not reader text; one earlier run showed 0/17 map pins while both link probes loaded the server, clean re-run 17/17)",
+    "probe-guide: ALL PASS (exit 0)",
+    "probe-links desk: 90 visible links clicked, 0 failures",
+    "probe-links phone: 90 visible links clicked, 0 failures",
+    "probe-readings: ALL PASS (exit 0; onenight 31 links, getaway 36 links, desk and phone; 4 doors top and foot, no lens chip, Maps on 56/56 placed cards and 23/23 venues); screenshots in review/Siracusa-Sicilia/",
+    "screenshots: Teatro Greco, Siracusa card opened, desktop and phone (review/Siracusa-Sicilia/siracusa-card-*.png), looked at: labels, story, Map link render",
+    "checklinks.py NOT RUN: the sandbox has no external network; the readings add no external links (every link is an internal #venue-/#card- ref or a Maps link already on the card)"
+   ],
+   "notes": "One Night, 6 quarters: Ortigia north (Grand Hotel roof, Don Camillo, Barcollo), Ortigia west (Fonte Aretusa, Regina Lucia, Piazza Duomo), Noto by car (Palazzo Nicolaci, Crocifisso, Caffè Sicilia), Marzamemi by car (the tonnara square, Taverna La Cialoma), Ragusa Ibla by car (the steps, Duomo), Modica by car (San Giorgio stairs, Radici). The Getaway Weekend, 15 stops: Friday 3 (Fonte Aretusa at sunset, Don Camillo, Barcollo), Saturday 8 (market, Duomo, Miqwe, Fratelli Burgio, Teatro Greco and the Ear, Grand Hotel roof, Cortile Spirito Santo, Piazza Duomo), Sunday 4 (Caffè Sicilia, Palazzo Nicolaci, Vendicari/Calamosche, Taverna La Cialoma). Not verifiable here (no network) and said so in the steps: the guide has no hours for Don Camillo, Taverna La Cialoma, Radici, Duomo, Crocifisso (only 'dinner, closed Wednesdays') or the Grand Hotel aperitivo; Barcollo last confirmed 2025; Enoteca Solaria and Borderi unverified for 2026; Grand Hotel non-guest access not stated; Caffè Sicilia's closing hour disputed on its own site. The guide itself disagrees on the INDA 2027 end date (card 28 June, hot board 26 June); the readings say only 'from 7 May 2027'. The only hotel in the guide is the Grand Hotel Ortigia (plus rooms at Arianna Occhipinti's farm); rooms not judged."
   },
   {
    "slug": "Catania-Sicilia",
