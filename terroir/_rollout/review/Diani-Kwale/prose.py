@@ -87,7 +87,7 @@ GDESC = {
  ("coffee-gardens", "The cafés"): "Two places to sit with a coffee and something baked.",
  ("coffee-gardens", "Where the laptop actually works"): "One real workspace and two beautiful compromises.",
  ("bars", "The sundowner circuit"): "Three places on the sand for the last hour of light.",
- ("bars", "After dark — the clubs, with asterisks"): "The cocktail bar that earned its ranking, and the two clubs we could name.",
+ ("bars", "After dark — the clubs, with asterisks"): "The cocktail bar that earned its ranking, and the one club we could still name.",
  ("bars", "The mangwe — mnazi, introduced"): "Palm wine where it is drunk, with someone who knows the door.",
  ("around", "Inland & south"): "The forest on the hill and the island in the estuary, a day each.",
  ("around", "North — half a day in Mombasa"): "Over the bridge for the cloth and the carving.",
@@ -144,7 +144,7 @@ SHORT_SUB = {"Last minute — save the night": "The booking fell through at seve
 
 EDITS = {
  "money-sits": [("then the club circuit — confirm Full Moon/Tandoori on Instagram the same day; nothing moves before midnight.",
-                 "then the club circuit — confirm Shakatak or Manyatta the same day; nothing moves before midnight.")],
+                 "then, if you want a club, Manyatta — confirm it is open the same day; nothing moves before midnight.")],
  "la-liste": [("<b>Best place</b> — Ukunda&#x27;s Swahili kitchens; Coast Dishes when open · <a href=\"https://www.google.com/maps/search/?api=1&query=Coast+Dishes+Diani\"",
                "<b>Best place</b> — Ukunda&#x27;s Swahili kitchens: ask for it by name · <a href=\"https://www.google.com/maps/search/?api=1&query=Ukunda+town+Kenya\""),
               ("<b>Best place</b> — Ukunda&#x27;s dawn mama stalls; Coast Dishes for the seated version ·",

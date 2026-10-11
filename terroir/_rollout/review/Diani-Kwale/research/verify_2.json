@@ -1,0 +1,758 @@
+{
+ "_notes": [
+  "Network: only WebSearch worked; every finding is from search extracts, not loaded pages. No own sites, Google reviews or socials could be opened directly.",
+  "KWS 2026 tariff: no 2026 revision exists in search results. The October 2025 schedule (Legal Notice 160 of 2025) is the one in force: Kisite-Mpunguti non-resident USD 25/15, Shimba Hills USD 50/25. KWS payments moved from eCitizen to KWSPay on 1 Nov 2025 (5% gateway fee).",
+  "shakatak set to closed on TripAdvisor's Closed flag plus two May 2026 reviews; the own site still claims nightly opening but has been stale since 2023. No first-party closure notice.",
+  "manyatta-club kept unverified: rebranded as Manyatta Resort & Disco Lounge with live-looking Facebook/TikTok, but no post or review could be dated to 2026.",
+  "statusChecked moved to 2026-10-11 only for skippers-coliving, h2o-extreme, kite254, colobus-conservation, mikoko-pamoja (2026-dated evidence) and shakatak (closure). The rest keep 2026-08-20 because no 2026-dated item was found, and nothing found contradicts them.",
+  "Removed or disputed figures: Kentaste founding year (2007/2008 vs 2014), farmer count and '30,000 nuts/day'; Colobus bridge count (now 'more than 40', May 2026); Mikoko Pamoja launch year (2010 vs 2013).",
+  "Skydive context: a skydiving aircraft (Sentient Sky Ltd, 5Y-MSN) crash-landed on a Diani beach on 2 May 2026 with all six safe (The Star). The operator is not named in the reports, so it is not attached to any venue.",
+  "Diani Fishing Club, Diani Art Club and Chandarana Diani: no search hits under those names; old records kept because nothing contradicts them."
+ ],
+ "_needs_network": [
+  "skippers-coliving: WhatsApp/own site for current monthly rate (EUR 500-700/4 wk vs coliving.com USD 1,600/mo) and whether short stays are sold",
+  "pilli-pipa: own site pilli-pipa.com for 2026 adult price (old USD 137) and office hours",
+  "h2o-extreme: confirm base (Kenyaways Kite Village vs Blue Marlin), hours and phone +254 712 121 974 (Reserveport)",
+  "kite254: kite254.com hours and whether the Diani Sea Lodge base still runs",
+  "ocean-tribe: own-site 2026 price-list PDF and phone (+254 700 934 854 vs +254 773 403 706)",
+  "skydive-swahili: skydiveswahili.com for Thu-Mon schedule and 2026 tandem price",
+  "diani-fishing-club: own site liveness and 2026 charter rates",
+  "whale-shark-adventures: own site/WhatsApp for 2026 humpback and whale-shark trip dates",
+  "coral-spirit: coralspirit.com product page live price (USD 35 vs 43) and whether the store shows sold out",
+  "kaaribu-tour: kaaribu.com tour page liveness and USD 25 price",
+  "kaya-kinondo: kayakinondotrails.com liveness and current non-resident fee (KES 2,000 per listing)",
+  "colobus-conservation: colobusconservation.org for official eco-tour fee and Sunday hours",
+  "kisite-mpunguti / shimba-hills: kws.go.ke park pages and fee PDF to confirm no post-Oct-2025 change; label of the '10' figure on the dhow line",
+  "shimoni-caves: current fee and hours from the management committee",
+  "wasini-boardwalk: current fee",
+  "diani-art-club: diani-artclub.com liveness and hours",
+  "carrefour-diani / chandarana-diani / naivas-ukunda: Google Maps first-party hours",
+  "shakatak: Google Maps status and own site liveness to confirm closure",
+  "manyatta-club: Facebook @manyattadiscolounge latest post date and opening nights"
+ ],
+ "skippers-coliving": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-11",
+   "hook": "A container-built coworking compound off Airstrip Road, on Starlink and fibre, for people who stay a month.",
+   "why": "Duncan and Camilla spent six years living on a boat before building this, and it shows in the obsession with redundancy: Starlink and fibre load-balanced, triple power backup, so a video call survives a Kwale power cut. Six en-suite, air-conditioned rooms sit around a plunge pool, gym and wood-fired pizza oven on a plot off Airstrip Road. The Thursday live-music night is when residents and the rest of Diani's remote workers actually meet.",
+   "tags": [
+    "Rates differ by platform (EUR 500–700/4 wk obs. 2026-08; coliving.com from USD 1,600/mo)",
+    "WhatsApp bookings only",
+    "Thursday live music"
+   ]
+  },
+  "evidence": "Search extracts only. Coliving.com listing shows the host joined the platform in 2026, one review dated Sept 2025, six en-suite air-conditioned rooms, from USD 1,600/month, 1-month minimum. Hostelworld lists it on Airstrip Road with nightly booking terms (check-in 15:00-23:00), so short stays may be bookable there. No own-site check possible.",
+  "corrections": [
+   "old tag 'EUR 500–700 / 4 weeks (obs. 2026-08)'; coliving.com (2026 listing) shows rooms from USD 1,600/month. Kept as a dispute in the tag rather than picking one",
+   "old caveat implies four-week minimum; Hostelworld lists Skippers with nightly cancellation/check-in rules, coliving.com says 1-month minimum. Not changed; flagged for a WhatsApp check"
+  ],
+  "sources": [
+   {
+    "label": "Coliving.com: Diani Beach listing",
+    "url": "https://newdesign.coliving.com/spaces/diani-beach"
+   },
+   {
+    "label": "Hostelworld: Skippers Coliving",
+    "url": "https://www.hostelworld.com/de/jugendherbergen/p/325558/skippers-coliving/"
+   }
+  ]
+ },
+ "pilli-pipa": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "The long-standing all-in Kisite dhow day: Shimoni jetty, two reef stops, crab lunch on Wasini.",
+   "why": "Pilli Pipa began sailing out of Shimoni in 1989 and its owners are marine biologists and dive instructors, which is why the briefing on the boat sounds like a reef lecture rather than a sales pitch. The day runs on converted jahazi named Almasi and Monsoon. Lunch is served at the company's own spot on Wasini: crab claws, coconut vegetable soup, cassava and rice spiced with cardamom and clove. The slave caves at Shimoni come after lunch, before the drive home."
+  },
+  "evidence": "Search extracts only; no 2026-dated first-party page or review surfaced. Trip.com lists 'PILLI PIPA DHOW, the genuine product' snorkel tour from EUR 116.65 (4.4/5, 37 reviews, undated). AfricanMecca confirms the all-inclusive scope (equipment, guide, park fees, snacks, drinks, Swahili seafood lunch on Wasini). Trip.com notes it is not offered for North Coast pickups. Own-site price could not be loaded.",
+  "corrections": [
+   "price: old USD 137 adult (obs. 2026-08); Trip.com reseller shows from EUR 116.65 (undated). Not a contradiction of the direct price (reseller, different currency); left as is, flagged for own-site check",
+   "add: per Trip.com, pickups are South Coast only, not North Coast Mombasa hotels"
+  ],
+  "sources": [
+   {
+    "label": "Trip.com: Pilli Pipa Dhow snorkel tour to Kisite",
+    "url": "https://us.trip.com/things-to-do/detail/64444495"
+   },
+   {
+    "label": "AfricanMecca: Pilli Pipa dhow tour",
+    "url": "https://www.africanmeccasafaris.com/travel-guide/kenya/towns-city/mombasa/tours-activities/pilli-pipa-dhow"
+   }
+  ]
+ },
+ "h2o-extreme": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-11",
+   "hook": "The kite school Boris Polo started as a Diani surf shack in 2003, now teaching on the flat Galu lagoon.",
+   "why": "Boris Polo, born and raised in Kenya, opened H2O in 2003 as a surf shack on central Diani, then moved south to Galu because the mid-beach tides and boat traffic made teaching unsafe. That move is the whole argument for the place: on Galu the reef holds a wide, waist-deep lagoon flat at most states of tide. The IKO register lists its 2026 windows as 15 June to 14 September and 20 December to 20 March.",
+   "neighborhood": "Galu Beach (listings name Kenyaways Kite Village; earlier note says Blue Marlin — confirm on WhatsApp)"
+  },
+  "drop": [
+   "hours"
+  ],
+  "evidence": "Search extracts only. IKO school listing gives 2026 opening windows (15 Jun-14 Sep 2026 and 20 Dec 2026-20 Mar 2027; another IKO page shows 1 Jun 2026-1 Jun 2027), 4.85 from 481 reviews. IKO and Reserveport listings say founder Boris Polo moved the school from central Diani to Kenyaways Kite Village on Galu Beach. Reserveport shows taster 3 h EUR 210, IKO Level 1-3 EUR 900, hourly EUR 75 (undated) and phone +254 712 121 974 (not added: booking-site figure, unverified). No source found for the 09:00-18:00 hours.",
+  "corrections": [
+   "location: old says Blue Marlin Beach Hotel; IKO and Reserveport listings say Kenyaways Kite Village on Galu Beach. Both are Galu; kept as a dispute in neighborhood",
+   "add: founder Boris Polo (IKO listing)",
+   "hours 'Daily 09:00–18:00' not found in any source; dropped",
+   "add: 2026 season windows per IKO: 15 Jun-14 Sep and 20 Dec-20 Mar"
+  ],
+  "sources": [
+   {
+    "label": "IKO: H2O Extreme school page",
+    "url": "https://www.ikointl.com/school/kenya/diani-beach/h2o-extreme"
+   },
+   {
+    "label": "Reserveport: H2O Extreme products",
+    "url": "https://activity.reserveport.com/site/product/ke7"
+   }
+  ]
+ },
+ "kite254": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-11",
+   "hook": "A small IKO kite and wingfoil school at Pallet Cafe, where the instructor talks to you through a radio helmet.",
+   "why": "Kite254 teaches with radio helmets, so a beginner hears the instructor's corrections while the kite is in the air instead of reading hand signals from the beach. The school works from Pallet Cafe on the quiet southern end, on Ozone, Prolimit and Starboard kit, and on light-wind days it switches to wingfoil or hands out paddleboards. Its own season guide is blunt: kaskazi from mid-December to mid-March, kusi from mid-June to mid-September, and little in between.",
+   "neighborhood": "Galu (Pallet Cafe)"
+  },
+  "drop": [
+   "hours"
+  ],
+  "evidence": "Search extracts only. IKO profile places Kite254 at Pallet Cafe, Diani; lists Ozone, Prolimit and Starboard equipment, kite and wingfoil lessons, SUP rentals on light-wind days; seasons Kaskazi mid-Dec-mid-Mar and Kusi mid-Jun-mid-Sep; ~4.9 from 18-20 reviews including early-2026 reviews of named instructors. Diani Sea Lodge base not mentioned in IKO listing. No source for 10:00-18:00 hours.",
+  "corrections": [
+   "old neighborhood includes Diani Sea Lodge; IKO 2026 profile lists only Pallet Cafe. Narrowed to Pallet Cafe",
+   "hours 'Daily 10:00–18:00' not found in any source; dropped",
+   "add: wingfoil lessons and Prolimit/Starboard kit alongside Ozone (IKO)"
+  ],
+  "sources": [
+   {
+    "label": "IKO: Kite254 school page",
+    "url": "https://www.ikointl.com/school/kenya/diani-beach/kite254"
+   }
+  ]
+ },
+ "diving-the-crab": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Diani's oldest dive shop, running since 1985 from The Sands at Nomad, with its own artificial-reef wreck.",
+   "why": "The Funguo wreck that most Diani divers log was put there on purpose: Diving the Crab re-sank the MV Alpha Funguo off the beach as an artificial reef, and it is now the shop's signature dive. Running since 1985 and trading as Blue Wave Ltd, it holds PADI 5 Star IDC status, teaches tec and freediving, and recently earned a 'Pure Air' rating for its tank fills. Pickup is free within Diani, Kinondo and Galu.",
+   "address": "The Sands at Nomad, Diani Beach Road"
+  },
+  "evidence": "Search extracts only; PADI listing (Diving the Crab by Blue Wave Ltd) confirms PADI 5 Star, since 1985, Funguo house-reef wreck, whale sharks Nov-Feb, 'Pure Air' certification, tec and freediving, hours 07:00-17:00 daily, free pickup Diani/Kinondo/Galu, 24 h cancellation, address The Sands at Nomad. DivePlannerPro shows 3-day package ~USD 375, 4-day ~USD 490, Nitrox ~USD 270. No 2026-dated item specific to the centre.",
+  "corrections": [
+   "add: address The Sands at Nomad, Diani Beach Road (PADI listing)",
+   "add: trading name Blue Wave Ltd; free pickup within Diani/Kinondo/Galu; 'Pure Air' tank-fill certification (PADI listing)"
+  ],
+  "sources": [
+   {
+    "label": "PADI: Diving the Crab by Blue Wave Ltd",
+    "url": "https://www.padi.com/dive-center/kenya/diving-the-crab-by-blue-wave-ltd/"
+   },
+   {
+    "label": "DivePlannerPro: Diving the Crab",
+    "url": "https://www.diveplannerpro.com/dive-centers/ke/ke-diving-the-crab-by-blue-wave-ltd"
+   }
+  ]
+ },
+ "ocean-tribe": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "An SSI dive centre at The 41 Beach Club, with trips to Tiwi Wall, Galu and the Funguo wreck.",
+   "why": "Ocean Tribe is one of the few SSI shops on a coast where PADI dominates, and it is an SSI instructor-training centre, so the people taking you down are often training the next instructors. It also runs SSI Explorers for children from six. Its trips cover ten local sites within about thirty minutes, from Tiwi Wall to the Alpha Funguo wreck, and it adds full-day dhow runs to Kisite for divers who want the marine park."
+  },
+  "evidence": "Search extracts only. Dive-centre listings place Ocean Tribe at The 41 Beach Club, 80401 Diani; SSI lists it as a certified/Diamond Instructor Training Centre; another page says Alliance Safari Beach Hotel (older). WeTravel lists 1-day trip USD 100, 2-day/4 dives USD 180, 4-day/8 dives USD 360; Reserveport 1-day/2 dives USD 120; SSI Scuba Diver USD 370, Open Water USD 489 (undated). A listing gives phone +254 773 403 706, differs from old +254 700 934 854 (not changed: unverified). The 2026 price-list PDF on its own site could not be loaded.",
+  "corrections": [
+   "phone: old +254 700 934 854; one reseller listing gives +254 773 403 706. Not changed, flagged for own-site check",
+   "one older listing places the base at Alliance Safari Beach Hotel; most current listings say The 41 Beach Club. Kept"
+  ],
+  "sources": [
+   {
+    "label": "SSI: Ocean Tribe Diani",
+    "url": "https://www.divessi.com/br/divecenter/ocean-tribe-diani-kenya-772107"
+   },
+   {
+    "label": "Cursosdebuceo: Ocean Tribe",
+    "url": "https://cursosdebuceo.com/en/dive-centers/diani/ocean-tribe/5376"
+   },
+   {
+    "label": "WeTravel: Ocean Tribe 2-day dive trips",
+    "url": "https://www.wetravel.com/trips/2-days-diani-scuba-diving-trips-4-dives-ocean-tribe-72164416"
+   }
+  ]
+ },
+ "skydive-swahili": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Tandem jumps from 10,000 feet over the Galu lagoon, landing on the sand at Blue Marlin Beach Hotel.",
+   "why": "The aircraft climbs out of Ukunda airstrip, a few minutes inland, and from 10,000 feet the reef line shows as a white seam holding the turquoise lagoon off Galu. Skydive Swahili flies tandems and an AFF programme for people who want to learn solo, and lands on the beach in front of Blue Marlin. The jump itself takes five to seven minutes; its own FAQ says to plan two to three hours in total, briefing included."
+  },
+  "evidence": "Search extracts only. Own site (skydiveswahili.com, blog post 10 Aug 2025) and Reserveport booking page: base Blue Marlin Beach Hotel, aircraft from Ukunda Airstrip (HKUK), 10,000 ft, tandem USD 350, media USD 100, AFF and scenic flights; FAQ 5-7 min jump, 2-3 h total. Separate operator Skydive Diani (12,000 ft) exists; do not confuse. The Star (4 May 2026) reports a skydiving aircraft (Sentient Sky Ltd, 5Y-MSN) crash-landed on Diani's Colobus beach on 2 May 2026, all six safe; the reports do not name the skydive operator, so not attributed here. No 2026 evidence specific to Skydive Swahili trading.",
+  "corrections": [
+   "add: jumps from 10,000 ft out of Ukunda Airstrip (own site); old text gave no altitude",
+   "add: AFF training and scenic flights also offered (Reserveport/own site)"
+  ],
+  "sources": [
+   {
+    "label": "Skydive Swahili: Skydiving in Kenya (blog, Aug 2025)",
+    "url": "https://skydiveswahili.com/2025/08/10/skydiving-in-kenya/"
+   },
+   {
+    "label": "Reserveport: Skydive Swahili booking",
+    "url": "https://activity.reserveport.com/booking/skydive_swahili"
+   },
+   {
+    "label": "The Star, 4 May 2026: skydiving aircraft crash-lands at Diani",
+    "url": "https://www.the-star.co.ke/news/2026-05-04-skydiving-aircraft-crash-lands-at-diani-beach"
+   }
+  ]
+ },
+ "diani-fishing-club": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Big-game charters out to the Pemba Channel drop-offs, releasing every billfish they hook.",
+   "why": "Off Diani the continental shelf falls away fast into the Pemba Channel, so marlin water is a short run from the beach rather than half a day out. The club's boats, Princess Layla, Shuwari and White Dove, work those drop-offs and the Shimoni banks for blue, black and striped marlin, sailfish, wahoo and dorado. Billfish go back under a tag-and-release rule. In December 2024 its feed reported a Kenya-record 785 lb blue marlin."
+  },
+  "evidence": "Search extracts only; nothing found under the exact name 'Diani Fishing Club'. A getmyboat listing shows a 33' Bertram 'Shuwari' at Diani Beach, USD 875/day, KMA-licensed (operator name not shown). Braeburn school news reports the Diani Samaki Classic held 10-11 Jan 2026 with billfish released (shows the Diani billfish scene is active; not the club itself). No 2026 evidence specific to the club; old status kept.",
+  "corrections": [
+   "add: a 33' Bertram 'Shuwari' is listed on getmyboat at USD 875/day (2026 status of listing unknown); above the old USD 400–600 full-day tag range. Not changed: cannot confirm it is the same operator"
+  ],
+  "sources": [
+   {
+    "label": "Getmyboat: Shuwari 33' Bertram, Diani",
+    "url": "https://getmyboat.com/trips/rYDgwXna"
+   },
+   {
+    "label": "Braeburn Mombasa: Diani Samaki Classic 2026",
+    "url": "https://mombasa.braeburn.com/news/adam-shines-at-the-diani-samaki-classic-2026/"
+   }
+  ]
+ },
+ "whale-shark-adventures": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Seasonal humpback and whale-shark searches led by the founder of the East African Whale Shark Trust.",
+   "why": "Volker Bassen founded the East African Whale Shark Trust and spent years running spotter-plane research expeditions off Diani before selling seats on the boats. The humpback trips drop a hydrophone over the side, so the whales are often heard before they are seen. He has also pushed publicly for stronger whale-shark protection, and in 2013 drew criticism from ecologists for a proposed netted enclosure, which he defended as a rescue centre."
+  },
+  "evidence": "Search extracts only; no 2026-dated item found for the operator. Older press (Capital FM 2013, Standard, ATC News 2018) confirms Volker Bassen, the East African Whale Shark Trust, research expeditions and a Feb-mid-March whale-shark window; 2013 netted-enclosure controversy reported by Capital FM. Nothing new on humpback trips.",
+  "corrections": [
+   "ATC News (2018) gives the whale-shark window as 1 Feb-15 Mar; consistent with old 'Feb–Mar' operator window. No change"
+  ],
+  "sources": [
+   {
+    "label": "Capital FM: Ecologists oppose Kenya whale shark plan (2013)",
+    "url": "https://capitalfm.africa/ecologists-oppose-kenya-whale-shark-plan/"
+   },
+   {
+    "label": "ATC News: Diani a prime spot for whale-shark migration",
+    "url": "https://atcnews.org/diani-kenya-a-prime-spot-to-see-the-whale-shark-migration/"
+   }
+  ]
+ },
+ "coral-spirit": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A two-hour dugout-canoe paddle up the Kongo river mangroves at dusk, from Diani's northern tip.",
+   "why": "The Kongo river, also called Mwachema, comes down off the Shimba Hills and meets the sea at Diani's northern end, beside the coral-stone Kongo Mosque. Coral Spirit takes small groups upstream in traditional dugouts at the end of the day, paddling through the mangroves while herons and kingfishers settle, then back to the beach for drinks. It also runs paddleboarding on the same flat water and a beach bonfire barbecue as an add-on.",
+   "tags": [
+    "Sunset canoe USD 35–45 (own site USD 35; resellers 45–50) — confirm",
+    "Phone/WhatsApp a day ahead",
+    "Last two hours of light"
+   ]
+  },
+  "evidence": "Search extracts only. Coral Spirit's own product page lists the Kongo River Sunset Tour at USD 35 per person, about 2 hours, 30 min drive, dugout canoe, 4.7 from 50 reviews, free cancellation to 48 h. Travelocity USD 45, TourRadar from USD 50, Civitatis pairs it with the mosque visit. Not dated 2026.",
+  "corrections": [
+   "price: old tag USD 43 (obs. 2026-08); own product page (search extract, undated) shows USD 35, resellers USD 45-50. Kept as a range, confirm direct",
+   "old caveat says the web store shows 'sold out'; search extract of the product page shows a bookable listing with free cancellation. Removed 'web store shows sold out' from the tag; flagged for live check"
+  ],
+  "sources": [
+   {
+    "label": "Coral Spirit: Kongo River Sunset Tour",
+    "url": "https://coralspirit.com/diani-beach-tours/kongo-river-sunset-tour"
+   },
+   {
+    "label": "Travelocity: Kongo River Sunset Tour",
+    "url": "https://www.travelocity.com/things-to-do/kongo-river-sunset-tour.a51266050.activity-details"
+   }
+  ]
+ },
+ "kaaribu-tour": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A ninety-minute walk through Ukunda's Ibiza market and street kitchens, ending with palm wine.",
+   "why": "Most visitors to Diani never cross the main road into Ukunda, where the town actually eats. This walk starts at Tsunami Garden Cafe and goes into the Ibiza market cluster, then to a kibandaski for cardamom-coconut porridge, viazi karai and chapati with beans. It ends at a mangwe, the unsigned palm-wine den where mnazi is poured; without an introduction an outsider would not get past the door. Kaaribu Experiences is a registered company with an office in Nairobi."
+  },
+  "evidence": "Search extracts only. Civitatis lists 'Diani Food Tour + Ibiza Market Visit' operated by Kaaribu Experiences (registered office Nairobi), meeting at Tsunami Garden Cafe. No 2026-dated review surfaced. Own-site price USD 25 not re-checked.",
+  "corrections": [],
+  "sources": [
+   {
+    "label": "Civitatis: Diani Food Tour + Ibiza Market Visit",
+    "url": "https://www.civitatis.com/en/diani/food-tour-ibiza-market"
+   },
+   {
+    "label": "Civitatis (PT): operator Kaaribu Experiences",
+    "url": "https://www.civitatis.com/pt/diani/tour-gastronomico-diani-mercado-ibiza/"
+   }
+  ]
+ },
+ "kaya-kinondo": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A sacred Digo forest you may enter only wrapped in a black kaniki cloth and led by a village guide.",
+   "why": "Kaya Kinondo was closed to outsiders until 2001, when the Digo elders offered a sacrifice to the ancestors and opened it to guided visits: Kenya's first kaya ecotourism project. You remove any hat, tie on a black kaniki and promise not to kiss inside. The guide names medicinal trees, among them a 'pimple tree' used for acne, and stops short of the main shrine, which only elders may enter. Proceeds go to the village, schools and the forest.",
+   "tags": [
+    "Non-resident KES 2,000 incl. guide (listing; older sources KES 800) — agree before starting",
+    "Phone ahead; M-Pesa preferred",
+    "Morning or from 15:00; last entry ~16:00"
+   ]
+  },
+  "evidence": "Search extracts only; no 2026-dated review. Discover Kenya listing: citizens KES 500, residents KES 800, non-residents KES 2,000, guided tour mandatory and included, pre-booking by phone essential, M-Pesa preferred, last entry 16:00. Older blogs (traveltheworldpages, malindikenya.net) give KES 400 resident / 800 non-resident incl. kaniki and guide. Coral Spirit blog and Lonely Planet-linked review describe head-wear removal, no kissing, main shrine elders-only, pimple tree.",
+  "corrections": [
+   "fee: old tag 'KES 1,000–2,000 reported (obs. 2025-10)'; Discover Kenya listing gives non-resident KES 2,000 (citizen 500, resident 800) incl. mandatory guide; older blogs KES 800. Tag updated, still flagged to agree before starting",
+   "add: last entry around 16:00 and M-Pesa preferred (Discover Kenya listing)"
+  ],
+  "sources": [
+   {
+    "label": "Discover Kenya: Kaya Kinondo Sacred Forest",
+    "url": "https://discoverkenya.co.ke/listing/kaya-kinondo-sacred-forest"
+   },
+   {
+    "label": "Travel the World Pages: Kaya Kinondo",
+    "url": "https://traveltheworldpages.com/kaya-kinondo-sacred-forest/"
+   },
+   {
+    "label": "Coral Spirit blog: Kaya Kinondo forest visit",
+    "url": "https://coralspirit.com/blog/kaya-kinondo-forest-visit"
+   }
+  ]
+ },
+ "colobus-conservation": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-11",
+   "hook": "The Diani charity behind the rope 'colobridges' over Beach Road, with a rescue centre you can walk round.",
+   "why": "Diani Beach Road was cut through coral-rag forest in 1971, and the Angolan colobus that live on either side kept trying to cross it. Colobus Conservation started in 1997 in response and began stringing rope bridges over the tarmac; it now counts more than forty across the region, and surveys from 2004 to 2020 credit them with a 70 percent rise in safe crossings. Vehicles still injure or kill around 55 primates a year on the strip.",
+   "hours": "Mon–Sat ~08:30–16:00; Sunday hours reported differently (mornings only vs closed) — call ahead",
+   "tags": [
+    "Eco-tour ~1 h; non-resident KES 750–1,000 reported (unofficial) — cashless",
+    "Walk-in in hours; groups pre-arrange",
+    "Morning, when troops move"
+   ]
+  },
+  "evidence": "Search extracts only. Drusillas Park news (May 2026): two keepers spent two weeks with Colobus Conservation in Diani building and maintaining colobridges; 'more than 40 bridges across the region', ~55 primates hit a year. UNDP SGP story (18 Mar 2026): 9 km of Diani Beach Road, surveys 2004/2011/2020 show bridges raised safe crossings by 70%. Hours: Natural World Kenya Safaris Mon-Sat 08:30-16:30; TripAdvisor shows Sunday mornings (one page 08:00-13:00); Trodly says daily. Fees from unofficial pages: resident ~KES 250, non-citizen KES 750-1,000 (Trodly KES 1,500 outlier). Phone +254 711 479 453 matches TripAdvisor.",
+  "corrections": [
+   "bridge count: old '29 rope bridges over Diani Beach Road plus four more'; Drusillas (May 2026) says more than 40 bridges installed across the region. Why updated to 'more than forty across the region'",
+   "hours: old 'Mon–Sat 08:30–16:00'; sources conflict on Sunday (mornings only per TripAdvisor vs daily vs closed) and closing time (16:00-16:30). Hours now say call ahead for Sunday",
+   "fee: old tag 'fee unpublished'; unofficial pages report non-resident KES 750-1,000, resident ~KES 250. Tag updated as reported, not official"
+  ],
+  "sources": [
+   {
+    "label": "Drusillas Park: keeper conservation trip to Kenya (May 2026)",
+    "url": "https://www.drusillas.co.uk/keeper-conservation-trip-to-kenya-to-save-monkeys"
+   },
+   {
+    "label": "UNDP SGP: Guardians of the wild (18 Mar 2026)",
+    "url": "https://sgp.undp.org/resources-155/our-stories/822-guardians-of-the-wild-how-local-roots-protect-our-natural-heritage.html"
+   },
+   {
+    "label": "TripAdvisor: Colobus Conservation",
+    "url": "https://www.tripadvisor.com/Attraction_Review-g775870-d2547408-Reviews-Colobus_Conservation-Diani_Beach_Ukunda_Coast_Province.html"
+   },
+   {
+    "label": "Nyakundi Report: Colobus Conservation entrance fees",
+    "url": "https://nyakundireport.com/understanding-colobus-conservation-diani-entrance-fees/"
+   }
+  ]
+ },
+ "kisite-mpunguti": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A no-take marine park of coral islets off Shimoni, where bottlenose, humpback and spinner dolphins feed.",
+   "why": "Kisite-Mpunguti was gazetted in 1978 and covers 39 square kilometres of coral islets eleven kilometres off Shimoni, against the Tanzanian border. Three dolphin species use it: Indo-Pacific bottlenose on the reefs year-round, humpback dolphins in the channels, and spinners in pods of fifty to two hundred. From July to October humpback whales pass on their way north from Antarctic waters, and researchers have tracked them here since 2011. Single-use plastics are banned inside.",
+   "tags": [
+    "Non-resident USD 25 adult / 15 child + KES 1,000 dhow levy (KWS Oct 2025 schedule, still current)",
+    "Via operator (fees folded in) or KWSPay — cashless",
+    "Oct–Mar seas"
+   ]
+  },
+  "evidence": "Search extracts only. KWS Conservation Fee schedule (Oct 2025, Legal Notice 160 of 2025) and KWS park page: Kisite-Mpunguti non-resident adult USD 25, child USD 15; East African KES 500/250; Kenya resident KES 675/350; 'Dhow excursion within Marine Protected Areas' KES 1,000 (second column 10, probably USD for non-residents). No 2026 revision of the tariff found: the October 2025 schedule is the one in force in October 2026 as far as search shows. Payment moved from eCitizen to KWSPay on 1 Nov 2025 (M-Pesa, cards, transfer, e-wallet; 5% gateway fee).",
+  "corrections": [
+   "no fee change: there is no separate 2026 KWS tariff; the Oct 2025 schedule figures in the old text (USD 25/15, KES 500/250, KES 675/350, KES 1,000 dhow) match KWS",
+   "dhow levy: KWS table shows a second figure '10' next to KES 1,000, likely USD 10 for non-residents; unlabelled in the extract, so not printed",
+   "add: KWSPay replaced eCitizen for KWS payments on 1 Nov 2025; 5% gateway fee approved, card surcharges up to 3.5% (Kenyans.co.ke, Eastleigh Voice)"
+  ],
+  "sources": [
+   {
+    "label": "KWS Conservation Fee schedule, October 2025 (PDF)",
+    "url": "https://www.kws.go.ke/sites/default/files/2025-09/KWS%20Conservation%20Fee%20October%20%202025.pdf"
+   },
+   {
+    "label": "KWS: Fees Regulations 2025, Legal Notice No. 160 of 2025",
+    "url": "https://kws.go.ke/sites/default/files/2025-09/The%20Wildlife%20Conservation%20and%20Management%20%28Access%2C%20Entry%20and%20Conservation%29%20%28Fees%29%20Regulations%202025%20%28Legal%20Notice%20No.%20160%20of%202025%29.pdf"
+   },
+   {
+    "label": "KWS: Kisite Mpunguti Marine National Park",
+    "url": "https://kws.go.ke/park/kisite-mpunguti-marine-national-park-reserve/"
+   },
+   {
+    "label": "Tourism Update: Kenya increased entry fees come into effect",
+    "url": "https://www.tourismupdate.com/article/kenya-increased-entry-fees-come-into-effect"
+   },
+   {
+    "label": "Kenyans.co.ke: KWS transition to new payment portal (KWSPay, live 1 Nov 2025)",
+    "url": "https://www.kenyans.co.ke/news/117636-kws-announces-transition-new-e-citizen-payment-portal"
+   }
+  ]
+ },
+ "shimoni-caves": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Coral caves by the Shimoni jetty where enslaved people were held for the dhows to Zanzibar and Pemba.",
+   "why": "Shimoni means 'the place of the hole'. Before the slave trade the caves were a kaya shrine and a shelter for herders; in the eighteenth and nineteenth centuries they held people waiting for the dhows to Zanzibar and Pemba, and the iron fixings for chains are still in the rock. One chamber is still used for offerings of cloth, rosewater and incense. A community committee runs the site with help from National Museums of Kenya and spends the takings on village teachers and medicine.",
+   "hours": "Daytime; sources differ (two sessions vs 08:30–18:00) — call ahead",
+   "tags": [
+    "Small cash fee — KES 100–500 reported, unverified",
+    "Walk-in with the community guide",
+    "After the Wasini lunch"
+   ]
+  },
+  "evidence": "Search extracts only. Kenya News Agency feature (date unclear, late 2025): run by the Shimoni Slave Cave Management Committee with NMK technical assistance; NMK curator on coral geology; earlier uses as kaya shrine and herders' shelter. Showcaves.com (2023 data): adults KES 400, children 200, residents 200, citizens 100; hours 08:30-18:00 (another line says daily 8-17). The Star (Apr 2023): visitor paid KES 100. Airial: ~KES 500 foreigners. No 2026 item.",
+  "corrections": [
+   "hours: old 'two daily sessions (~08:30–10:30, 13:30–18:00; unverified)'; Showcaves lists 08:30-18:00 (and elsewhere 08:00-17:00). Conflicting, so 'call ahead'",
+   "fee: old 'amount unverified'; reported KES 100 (Star 2023) to KES 400-500 (Showcaves 2023, Airial). Range added, still unverified",
+   "add: before the slave trade the caves were a kaya shrine and herders' shelter (KNA)"
+  ],
+  "sources": [
+   {
+    "label": "Kenya News Agency: Shimoni caves feature",
+    "url": "https://www.kenyanews.go.ke/?p=15519"
+   },
+   {
+    "label": "Showcaves.com: Shimoni Caves",
+    "url": "https://www.showcaves.com/english/ke/showcaves/Shimoni.html"
+   },
+   {
+    "label": "The Star (24 Apr 2023): Shimoni slave caves carry rich dark history",
+    "url": "https://www.the-star.co.ke/news/2023-04-24-shimoni-slave-caves-carry-rich-dark-history"
+   }
+  ]
+ },
+ "wasini-boardwalk": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A raised wooden walkway over fossil coral and mangrove at the edge of Wasini village, run by its women.",
+   "why": "At high tide the sea pushes in under the planks and floods the dead coral heads, so the same walk looks completely different depending on when the dhow lands. KWS staff and villagers built the boardwalk with Kenyan and European biodiversity money, and the Wasini Women Group, around seventy members, runs it and keeps the fees for village welfare. The group's enterprise goes back to 1978. A small curio shop sits at the exit."
+  },
+  "evidence": "Search extracts only; nothing current found for the Wasini boardwalk or its fee. A EurekAlert image caption confirms a 'Wasini Women's Group'. Gazi Women Boardwalk group fees found are for Gazi, not Wasini. No change to old record.",
+  "corrections": [],
+  "sources": [
+   {
+    "label": "EurekAlert: Wasini Women's Group image",
+    "url": "https://www.eurekalert.org/multimedia/926325"
+   }
+  ]
+ },
+ "shimba-hills": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A misty coastal rainforest reserve inland of Diani, home to Kenya's only sable antelope and a 25 m waterfall.",
+   "why": "Shimba Hills was first protected as forest in 1903 and gazetted as a reserve in 1968; at 192.5 square kilometres it is the largest block of coastal rainforest left in Kenya. KWS describes its sable as the country's last breeding herd, best seen early around Giriama Point as they move down to drink. The ranger-escorted path to Sheldrick Falls takes up to an hour each way and ends at a drop of about 25 metres.",
+   "tags": [
+    "Non-resident USD 50 / child 25 (KWS Oct 2025 schedule, still current)",
+    "Pay via KWSPay — cashless",
+    "Be at the gate at 06:00"
+   ]
+  },
+  "evidence": "Search extracts only. KWS park page lists Non-Resident Adult USD 50, Child USD 25; Hapakenya (30 Sep 2025) on the Oct 2025 schedule: Shimba Hills and Kakamega non-resident USD 50, African citizens USD 20, residents KES 675. No 2026 revision found. Older KWS node page (USD 22/13) and Discover Kenya (USD 25) are stale. Travel guides: Sheldrick Falls ~25 m, 2 km path up to an hour each way, sable near Giriama Point; hours 06:00-18:00. Payment via KWSPay since 1 Nov 2025.",
+  "corrections": [
+   "no fee change: no separate 2026 KWS tariff found; USD 50/25 from the Oct 2025 schedule is current per the KWS park page",
+   "old caveat says old blogs quote KES 300; also stale: a KWS node page (USD 22/13) and Discover Kenya (USD 25). Not printed",
+   "payment: 'KWSpay' confirmed; KWS moved from eCitizen to KWSPay on 1 Nov 2025 (5% gateway fee)"
+  ],
+  "sources": [
+   {
+    "label": "KWS: About Shimba Hills National Reserve",
+    "url": "https://kws.go.ke/park/shimba-hills-national-reserve/"
+   },
+   {
+    "label": "Hapakenya: KWS new park fees from 1 Oct 2025",
+    "url": "https://hapakenya.com/2025/09/30/kws-announces-new-park-fees-from-october-1-2025"
+   },
+   {
+    "label": "KWS: Fees Regulations 2025, Legal Notice No. 160 of 2025",
+    "url": "https://kws.go.ke/sites/default/files/2025-09/The%20Wildlife%20Conservation%20and%20Management%20%28Access%2C%20Entry%20and%20Conservation%29%20%28Fees%29%20Regulations%202025%20%28Legal%20Notice%20No.%20160%20of%202025%29.pdf"
+   },
+   {
+    "label": "Kenyans.co.ke: KWS transition to new payment portal (KWSPay, live 1 Nov 2025)",
+    "url": "https://www.kenyans.co.ke/news/117636-kws-announces-transition-new-e-citizen-payment-portal"
+   }
+  ]
+ },
+ "mikoko-pamoja": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-11",
+   "hook": "The Gazi Bay village project that pays for wells and schoolbooks by selling mangrove carbon credits.",
+   "why": "Mikoko pamoja means 'mangroves together'. The village at Gazi Bay protects 117 hectares of mangrove and replants several thousand trees a year, and was the first community anywhere to fund that work by selling blue-carbon credits. The money has gone into wells, school supplies and repairs. In July 2026 a German state secretary's delegation went out on the bay to see the plots. Visits mean an hour with the project team among the replanted rows.",
+   "productTags": [
+    "Equator Prize",
+    "Plan Vivo"
+   ]
+  },
+  "evidence": "Search extracts only. International Climate Initiative (IKI) news, July 2026: German environment ministry delegation led by State Secretary Jochen Flasbarth visited Gazi Bay; describes Mikoko Pamoja as the world's first project funding mangrove conservation through carbon credits, protecting 117 ha within a 615 ha system, >22,000 t CO2 saved or sequestered. SSIR: officially launched 2013 on the voluntary market. Revenue uses (wells, cookstoves, schools) per several sources.",
+  "corrections": [
+   "launch year: old says 'Launched 2010'; SSIR says it officially launched in 2013 as a carbon project (preparation began earlier). Why avoids a single year; flagged",
+   "add: 117 ha sit inside a 615 ha mangrove system; >22,000 t CO2 to date (IKI, July 2026)"
+  ],
+  "sources": [
+   {
+    "label": "IKI: Funding the conservation of mangrove forests with CO2 credits (Jul 2026)",
+    "url": "https://www.international-climate-initiative.com/en/iki-media/news/funding-the-conservation-of-mangrove-forests-with-co2-credits/"
+   },
+   {
+    "label": "SSIR: Blue carbon credits, Kenya mangrove forests",
+    "url": "https://ssir.org/articles/entry/blue-carbon-credits-kenya-mangrove-forests"
+   }
+  ]
+ },
+ "diani-turtle-watch": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A volunteer turtle patrol that moves threatened nests to hotel hatcheries and calls releases at short notice.",
+   "why": "Diani Turtle Watch started in 2012 as an offshoot of Local Ocean Trust in Watamu. Its monitors walk the beach each morning looking for tracks, move nests at risk from tides or people into hatcheries on hotel frontages, and wait 55 to 75 days for them to hatch. They also answer stranding calls and do post-mortems, which keep turning up plastic. One hotel hatchery alone reported nearly 1,300 hatchlings in its second season."
+  },
+  "evidence": "Search extracts only; no 2026-dated item specific to the programme (a 2026 LinkedIn post mentions its work, no detail). Elewana AfroChic pages report the hotel hatchery with Diani Turtle Watch; season-two total 1,299 hatchlings (2019-era). SWOT grantee page confirms Local Ocean Trust - Diani Turtle Watch.",
+  "corrections": [
+   "add: Elewana AfroChic hatchery reported 1,299 hatchlings in its second season (c. 2019); older than the 441 bank-sponsored figure (Jan 2025) in the old text, different scope"
+  ],
+  "sources": [
+   {
+    "label": "Elewana: over a thousand eggs hatched at AfroChic Diani",
+    "url": "https://elewanacollection.com/news-information/latest-news/over-a-thousand-eggs-hatched-at-elewana-afrochic-diani"
+   },
+   {
+    "label": "SWOT: Local Ocean Trust - Diani Turtle Watch",
+    "url": "https://www.seaturtlestatus.org/swot-grantees/2018/10/8/local-ocean-trustdiani-turtle-watch-kenya-2014"
+   }
+  ]
+ },
+ "diani-art-club": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A small roadside gallery of Kenyan painting near the GPS petrol station, with a portraitist on site.",
+   "why": "Jimmy, the resident portrait painter, works from the gallery and takes commissions, so you can sit for a likeness or leave a photo and collect the canvas later in the trip. The walls run from large abstracts by Kenyan painters to Maasai beadwork and handcraft. It keeps published hours, including Sundays from September to February, which is unusual on this road, and it books safaris on the side."
+  },
+  "evidence": "Search found nothing under 'Diani Art Club' or diani-artclub.com; search index returned only Diani Beach Art Gallery and Almasi Art Agency (different venues). Nothing contradicts the old record; status kept. Own site needs a live check.",
+  "corrections": [],
+  "sources": [
+   {
+    "label": "Diani Art Club (own site, not re-loaded)",
+    "url": "https://diani-artclub.com/"
+   }
+  ]
+ },
+ "carrefour-diani": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "A Carrefour Market at Centre Point, Ukunda junction: fish counter, butchery, bakery and cold stores.",
+   "why": "Majid Al Futtaim opened Kwale County's first Carrefour at Diani Centre Point Plaza in February 2021, a Carrefour Market format with 1,000 square metres of selling floor in its first phase. For a galley the useful parts are the chilled ones: a fresh fish counter, butchery, dairy and bakery, plus dry stores. Kentaste's coconut milk and cream, made a short drive inland, sit on its shelves."
+  },
+  "evidence": "Search extracts only. Hapakenya (17 Feb 2021): opening at Diani Centre Point Plaza, Carrefour Market format, 1,000 m2 first phase, operated by Majid Al Futtaim. No hours found; no 2026 item.",
+  "corrections": [
+   "add: store is the 'Carrefour Market' format, operated by Majid Al Futtaim (Hapakenya 2021)"
+  ],
+  "sources": [
+   {
+    "label": "Hapakenya: Carrefour Kenya opens new store in Diani (Feb 2021)",
+    "url": "https://hapakenya.com/2021/02/17/carrefour-kenya-opens-new-store-in-diani/"
+   }
+  ]
+ },
+ "chandarana-diani": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Chandarana's mid-strip branch at Baharini Plaza: spices, ghee, atta, wine and imported lines.",
+   "why": "Chandarana is a Kenyan family chain, and its Diani branch at Baharini Plaza carries what the coast's own kitchens use: whole spices and masalas, ghee, atta and lentils from the Indian-Kenyan pantry, alongside imported goods, wine and spirits, fresh meat and produce. If a recipe calls for cardamom pods by the hundred gram rather than a jar, this is where to find them on the strip."
+  },
+  "evidence": "Search returned nothing for Chandarana Foodplus Diani / Baharini Plaza (results were unrelated). Nothing contradicts the old record; status kept. Hours remain directory-sourced.",
+  "corrections": [],
+  "sources": []
+ },
+ "naivas-ukunda": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Naivas at The Gate Mall in Ukunda, the supermarket where residents shop at town prices.",
+   "why": "Naivas opened in Ukunda's Gate Mall in November 2015, taking a unit first booked for the now-failed Uchumi chain. Kenya's largest homegrown supermarket group prices for residents rather than beach visitors, and the store has a bakery, butchery and liquor section. It sits on the inland side of the junction, so it fits naturally into a run that starts at the Ukunda produce market."
+  },
+  "evidence": "Search extracts only. Wikipedia (Ukunda) citing 2015 press: Naivas opened at Gate Mall in Nov 2015. Business Daily: unit originally booked for Uchumi. Unofficial naivas.info lists hours 08:00-21:00 and phone +254 740 467 238 (not added; unofficial) with bakery, butchery, liquor. Hours still conflict across directories.",
+  "corrections": [
+   "hours: unofficial naivas.info adds a third version (08:00-21:00) to the existing 08:30-21:00 vs 07:00-22:00 conflict; kept 'call first'",
+   "add: opened Nov 2015 in a unit first booked for Uchumi (Wikipedia/Business Daily)"
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: Ukunda",
+    "url": "https://en.wikipedia.org/wiki/Ukunda"
+   },
+   {
+    "label": "naivas.info (unofficial): Naivas Supermarket Ukunda",
+    "url": "https://naivas.info/?p=3438"
+   }
+  ]
+ },
+ "kentaste": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "The coconut processor behind Kenya's supermarket coconut milk, with a factory at Kwale.",
+   "why": "Kentaste was set up to give coast smallholders a steady price for nuts that mostly fell unused under millions of palms. It now buys from about 2,700 to 3,500 farmers, most of them certified organic and Fair for Life, and turns their coconuts into milk, cream, virgin oil, flour, desiccated coconut and baked coconut chips, which won New Product of the Year at the 2023 Africa Food Awards. Its factories are at Kwale and Malindi.",
+   "productTags": [
+    "Organic",
+    "Fair for Life"
+   ]
+  },
+  "evidence": "Search extracts only. Food Business MEA: EDFI AgriFI USD 1.5m investment; chips won New Products of the Year, Africa Food Awards 2023; factories in Malindi and Kwale; 2,700 smallholders, most organic/fair trade certified. ADA report (2022): ~3,500 farmers, ~2,000 organic and Fair for Life certified. Nutrada supplier profile: established 2007 (another source summary says 2008). No 2026 item; still trading per 2023-2024 coverage.",
+  "corrections": [
+   "founding: old 'Founded 2014' / productTag 'Est. 2014'; Nutrada supplier profile says established 2007 (another summary 2008). Disputed, so the year is removed from productTags and why",
+   "farmers: old 'over 4,000 smallholders'; sources give ~2,700 (Food Business MEA) to ~3,500 (ADA 2022)",
+   "certification: old productTag 'Fairtrade'; ADA says Fair for Life (a different scheme). productTag changed",
+   "old '30,000 coconuts a day' not found in any source; removed from why",
+   "add: factories in Kwale and Malindi; Africa Food Awards 2023 for coconut chips"
+  ],
+  "sources": [
+   {
+    "label": "Food Business MEA: Kentaste receives USD 1.5m from EDFI AgriFI",
+    "url": "https://www.foodbusinessmea.com/?p=1860406"
+   },
+   {
+    "label": "Food Business MEA: Kentaste coconut chips, Africa Food Awards 2023",
+    "url": "https://www.foodbusinessmea.com/kentaste-coconut-chips-earns-new-products-category-crown-at-africa-food-awards-2023/"
+   },
+   {
+    "label": "ADA: Kentaste Kenya (2022)",
+    "url": "https://ada-microfinance.org/sites/default/files/2024-07/45-ALT-2022-Kentaste-Kenya.pdf"
+   },
+   {
+    "label": "Nutrada: Kentaste supplier profile",
+    "url": "https://nutrada.com/suppliers/kentaste"
+   }
+  ]
+ },
+ "akamba-handicraft": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Kenya's largest woodcarving co-operative, in Mombasa's Changamwe: open sheds where carvers work by hand.",
+   "why": "About a hundred Kamba carvers from Wamunyu founded the co-operative in Mombasa in 1963, bringing their village tradition to the port. It now spreads over more than nine acres off Port Reitz Road, with around 2,800 members and thousands more non-member artisans shaping rosewood, ebony and neem with hand tools. You can walk the open sheds, then buy in the co-op store, where most of each price goes to the carver who made the piece."
+  },
+  "evidence": "Search extracts only (retailer pages reusing the co-op's own blurb): Akamba Handcraft Industry Co-operative Society, est. 1963, largest wood-carving co-op in Kenya, 2,800 active members, 7,000+ non-member artisans, Mombasa site over nine acres. No 2026 item.",
+  "corrections": [
+   "add: site spans over nine acres; 7,000+ non-member artisans also supply (co-op blurb via Syncee)"
+  ],
+  "sources": [
+   {
+    "label": "Syncee: Akamba co-op 'Meet the Creators' blurb",
+    "url": "https://syncee.com/product/546954_81046_13563/hakuna-matata-board"
+   }
+  ]
+ },
+ "biashara-street": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-08-20",
+   "hook": "Mombasa's wholesale kanga and kikoi street, where tailors hem your cloth while you wait.",
+   "why": "Nearly every kikoi and kanga sold on Diani's beach stalls is a factory print bought by the bale here, on Biashara Street in Mombasa's old commercial core. Mali ya Abdulla, the house of Kaderdina Hajee Essak, has traded on this street since 1907, and its name turns up printed into kanga borders. Each kanga carries a Swahili proverb along its edge, which is why buyers read the cloth before they look at the colour."
+  },
+  "evidence": "Search extracts only; nothing new on Mali ya Abdulla or 2026. Travellers Beach blog lists Biashara Street (Mombasa) for crafts, clothing and textiles. People Daily covers Mombasa pre-Eid shopping. Nothing contradicts the old record.",
+  "corrections": [],
+  "sources": [
+   {
+    "label": "Travellers Beach Hotel blog: 10 best shopping places in Mombasa",
+    "url": "https://travellersbeachhotelspa.wa.profitroom.com/blog/10-best-shopping-places-to-go-in-mombasa-where-to-stay"
+   }
+  ]
+ },
+ "shakatak": {
+  "set": {
+   "status": "closed",
+   "statusChecked": "2026-10-11",
+   "hook": "Diani's old freestanding disco on Beach Road, reported closed for several years by 2026 visitors.",
+   "why": "For decades Shakatak was the one Diani nightclub not attached to a hotel, run by German operator Lutz Augenreich, with two air-conditioned rooms, a garden bar and an annual Miss Southcoast night. It shut in the pandemic and announced a reopening in August 2022, but its own site has not been updated since early 2023, and two visitors writing in May 2026 found it shut. Treat it as part of the strip's history.",
+   "hours": "Closed (TripAdvisor listing and May 2026 reviews); own site still claims nightly from 21:00",
+   "caveat": "Reported closed: TripAdvisor marks it Closed and two May 2026 reviewers say it has been shut for years. The own site (last updated 2023) still says open nightly. Do not send guests."
+  },
+  "drop": [
+   "best_time",
+   "tags"
+  ],
+  "evidence": "Search extracts only. TripAdvisor listing for Shakatak disco (d5503775) shows status Closed; a May 2026 review says 'Closed for a few years! No nightlife opportunity', and a second May 2026 review in Dutch says the same. Own site shakatak-kenya.com (copyright Lutz Augenreich) still states open every evening from 21:00 all year, but the site trail ends 2023. Lonely Planet (undated) called it the only Diani nightclub not attached to a hotel. Directory phones conflict (+254 708 498 177 Petit Fute; +254 748 754 828 Evendo/Klarna). No first-party closure notice.",
+  "corrections": [
+   "status: old 'unverified'; TripAdvisor listing marked Closed and two May 2026 reviews report it shut for years. Set to closed",
+   "hours/tags/best_time describe a trading club; dropped tags and best_time, hours now states the closure"
+  ],
+  "sources": [
+   {
+    "label": "TripAdvisor: Shakatak disco (listing marked closed, May 2026 reviews)",
+    "url": "https://www.tripadvisor.com/Attraction_Review-g775870-d5503775-Reviews-Shakatak_disco-Diani_Beach_Ukunda_Coast_Province.html"
+   },
+   {
+    "label": "Shakatak own site (stale)",
+    "url": "https://www.shakatak-kenya.com/"
+   }
+  ]
+ },
+ "manyatta-club": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-08-20",
+   "hook": "A makuti-roofed bar and disco on Diani Beach Road, now selling itself as Manyatta Resort & Disco Lounge.",
+   "why": "Manyatta's pull is that it fills early: one Business Daily reviewer found it busy by 20:30 on a weekend, on a strip where clubs usually start after eleven. It is an open-plan makuti bar with DJs, nyama choma and a mostly Kenyan crowd, and buying spirits by the bottle works out cheaper for a group. The place has rebranded as Manyatta Resort & Disco Lounge, adding rooms from KSh 4,000 and a rooftop lounge.",
+   "name": "Manyatta Resort & Disco Lounge",
+   "address": "Diani Beach Road, near Msitu Kwetu Cottages",
+   "caveat": "No dated 2026 first-party post or review confirmed; active social channels exist but aggregator '2026' titles are automatic. Go with a local driver who knows the door, and confirm the night first."
+  },
+  "evidence": "Search extracts only. Facebook page @manyattadiscolounge ('Best Disco Lounge in Diani... Accommodation Ranging From KSh 4,000') and TikTok clips (rooftop 'Mandharini' lounge, Cultural Sunday, DJ nights) exist but could not be dated. TripAdvisor has a new listing 'Manyatta Resort and Disco Lounge' (d34002407); Trip.com page titled [2026] has no reviews; Smart Nomad Kenya '4 Best Clubs in Diani (2026)' ranks it first (title year may be auto-updated). Listings give address near Msitu Kwetu Cottages, Diani Beach Road, ticket phone +254 725 215682 (not added; aggregator). Business Daily review (undated): makuti open plan, busy by 20:30, bottle buying cheaper for groups. No dated 2026 post confirmed, so status kept unverified.",
+  "corrections": [
+   "old why says 'Zero current channels'; it has a Facebook page (@manyattadiscolounge) and TikTok presence, and a TripAdvisor listing under 'Manyatta Resort and Disco Lounge'",
+   "name: now trades as Manyatta Resort & Disco Lounge, with rooms from KSh 4,000 (own Facebook)",
+   "add: address Diani Beach Road near Msitu Kwetu Cottages (listings)"
+  ],
+  "sources": [
+   {
+    "label": "Facebook: Manyatta Resort & Disco Lounge",
+    "url": "https://www.facebook.com/manyattadiscolounge/"
+   },
+   {
+    "label": "TripAdvisor: Manyatta Resort and Disco Lounge",
+    "url": "https://www.tripadvisor.in/Hotel_Review-g775870-d34002407-Reviews-Manyatta_Resort_and_Disco_Lounge-Diani_Beach_Ukunda_Coast_Province.html"
+   },
+   {
+    "label": "Smart Nomad Kenya: Best clubs in Diani (2026)",
+    "url": "https://smartnomadkenya.com/blog/best-night-clubs-in-diani-beach/"
+   },
+   {
+    "label": "Business Daily: Upbeat Diani pub with diverse clientele",
+    "url": "https://www.businessdailyafrica.com/bd/lifestyle/food-drinks/upbeat-diani-pub-with-diverse-clientele-2268896"
+   }
+  ]
+ }
+}

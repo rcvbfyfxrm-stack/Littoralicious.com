@@ -53,7 +53,7 @@ KEEP_PINS = ["skippers-coliving", "pilli-pipa", "h2o-extreme", "kite254", "divin
              "diani-fishing-club", "whale-shark-adventures", "coral-spirit", "kaaribu-tour", "kaya-kinondo", "colobus-conservation",
              "kisite-mpunguti", "shimoni-caves", "wasini-boardwalk", "shimba-hills", "mikoko-pamoja", "diani-turtle-watch",
              "diani-art-club", "carrefour-diani", "chandarana-diani", "naivas-ukunda", "kentaste", "akamba-handicraft",
-             "biashara-street", "shakatak", "manyatta-club"]
+             "biashara-street", "manyatta-club"]
 CUT = {
  "waterlovers-tides": "fourth in the famous rooms; a resident-first dining room by its own account, not a destination",
  "non-solo-gelato": "a gelato chain three months open; authentic over new, and the new-wave lane keeps two",
@@ -69,6 +69,7 @@ CUT = {
  "gazi-boardwalk": "no card points to it; condition unverified since 2020",
  "chale-boardwalk": "no card points to it; no published hours or contact three months after opening",
  "camel-rides": "no card points to it; an unregulated beach trade, not a place",
+ "shakatak": "closed: TripAdvisor marks the listing closed and two May 2026 reviews say it has been shut for years; its own site is frozen at 2023 (re-checked 11 Oct 2026)",
 }
 SHORT = {"Last minute — save the night": ["nomad-beach-bar", "leonardos", "tiki-bar"],
          "Plan ahead — this week": ["sails-almanara", "salty-squid", "shashin-ka"],
@@ -151,7 +152,7 @@ plan = {"_doc": "GOLD6 card plan for Diani-Kwale (11 Oct 2026). Each fold -> gro
  "bars": {"chapter": "sortir", "sub": "bars", "groups": [
    G("The sundowner circuit", C("b-41", "bars|The 41 Beach Club"), C("b-sails", "bars|Sails at Almanara"), C("b-salty", "bars|Salty Squid at kite-o'clock")),
    G("After dark — the clubs, with asterisks", C("b-funky", "bars|Funky Monkey"), C("b-manyatta", "bars|Manyatta", "bars|Full Moon", "bars|Tandoori International", note="cut clubs: Full Moon, Tandoori — name them only as 'others listed in 2024, nothing verifiable'"),
-     C("b-shakatak", "bars|Shakatak")),
+     ),
    G("The mangwe — mnazi, introduced", C("b-mangwe", "bars|The palm-wine dens"))]},
  "around": {"chapter": "around", "sub": "trips", "groups": [
    G("Inland & south", C("o-shimba", "around|Shimba Hills", "kaya|Shimba Hills & Sheldrick Falls", "landmarks|Sheldrick Falls", note="one home for Shimba and the falls"),
@@ -179,7 +180,8 @@ picks["cards_cut"] = {"_": "old cards not carried (merges are listed per card in
  "culture|The verified events": "moved to the calendar (Pratique), dated",
  "coffee-gardens|Non Solo Gelato": "venue cut", "coffee-gardens|Java House, Centre Point": "venue cut",
  "provisioning|Ibiza Market cluster": "venue cut", "craft|Kaya Kinondo": "told once: the green section", 
- "the old hot board": "replaced, dated 11 Oct 2026"}}
+ "the old hot board": "replaced, dated 11 Oct 2026",
+ "bars|Shakatak": "venue closed (re-checked 11 Oct 2026)"}}
 for d in dropped: assert d in picks["cards_cut"]["dropped"], d
 json.dump(picks, open(RV / "picks.json", "w"), ensure_ascii=False, indent=1)
 json.dump(plan, open(RV / "card_plan.json", "w"), ensure_ascii=False, indent=1)
