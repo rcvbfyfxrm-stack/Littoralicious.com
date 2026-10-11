@@ -200,7 +200,11 @@ def sources_block(s):
     for vid in CUT:
         u = OLDV[vid].get("web")
         if u: s = re.sub(r"<li><a href=\"" + re.escape(u) + r"\"[^>]*>.*?</a></li>\n?", "", s)
-    for nm in CUT_NAMES: s = re.sub(r"<li><a [^>]*>Liveness — " + re.escape(nm) + r".*?</a></li>\n?", "", s)
+    for kw in ("Waterlovers", "Bidi Badu", "Soul Breeze", "Java House", "Tiki Bar", "Coast Dishes", "Shan-e", "Shakatak", "Tandoori", "Full Moon", "Non Solo", "Msambweni Beach House", "Go Jump", "Ibiza"):
+        s = re.sub(r"<li><a [^>]*>Liveness — [^<]*" + re.escape(kw) + r"[^<]*</a></li>\n?", "", s)
+    for nm in CUT_NAMES:
+        for form in {nm, H.escape(nm, quote=True), H.escape(nm, quote=False)}:
+            s = re.sub(r"<li><a [^>]*>Liveness — " + re.escape(form) + r".*?</a></li>\n?", "", s)
     seen = set(re.findall(r'href="([^"]+)"', s)); items = []
     def add(src):
         for x in src or []:
@@ -308,7 +312,8 @@ CATS, GOF = [], {}
 for k, l in PICKS["lanes"].items():
     c = json.loads(json.dumps(OLDCAT[k])); c["label"] = l["label"]
     if k in P.LANE_LEAD: c["lead"] = P.LANE_LEAD[k]
-    if k in P.LANE_STORY: c["story"] = P.LANE_STORY[k]
+    if P.LANE_STORY.get(k): c["story"] = P.LANE_STORY[k]
+    if k in P.LANE_WHERE: c["story"] = dict(c["story"], where=P.LANE_WHERE[k])
     CATS.append(c); GOF[k] = D["GROUP_OF"][k]
 TABS = {}
 for g in ("grande", "petite", "street"):

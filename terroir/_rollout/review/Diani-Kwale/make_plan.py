@@ -34,9 +34,8 @@ LANES = {
            {"mwaepe-fishermen": "the fishing community's own table",
             "colobus-shade": "charcoal at the landing",
             "ukunda-junction-vendors": "the evening grills at the matatu junction"}),
- "chefs-eat": ("Where the residents eat", ["tiki-bar", "havana-diani", "funky-monkey"],
-           {"tiki-bar": "the Belgian bistro; the last-minute table",
-            "havana-diani": "fed and watered until 01:00 every day",
+ "chefs-eat": ("Where the residents eat", ["havana-diani", "funky-monkey"],
+           {"havana-diani": "fed and watered until 01:00 every day",
             "funky-monkey": "the bar team ranked in Africa's lists; moved in from the cut fast-food lane"}),
  "beach-rooms": ("The beach rooms", ["the-41-beach-club", "salty-squid"],
            {"the-41-beach-club": "the bar round a baobab, the Forty Thieves lineage",
@@ -69,9 +68,10 @@ CUT = {
  "gazi-boardwalk": "no card points to it; condition unverified since 2020",
  "chale-boardwalk": "no card points to it; no published hours or contact three months after opening",
  "camel-rides": "no card points to it; an unregulated beach trade, not a place",
+ "tiki-bar": "Tripadvisor marks the listing closed and the newest reviews found are from 2024 (re-checked 11 Oct 2026); not safe to send a guest, so its last-minute slot goes to Havana",
  "shakatak": "closed: TripAdvisor marks the listing closed and two May 2026 reviews say it has been shut for years; its own site is frozen at 2023 (re-checked 11 Oct 2026)",
 }
-SHORT = {"Last minute — save the night": ["nomad-beach-bar", "leonardos", "tiki-bar"],
+SHORT = {"Last minute — save the night": ["nomad-beach-bar", "leonardos", "havana-diani"],
          "Plan ahead — this week": ["sails-almanara", "salty-squid", "shashin-ka"],
          "Plan ahead — the grand night": ["ali-barbours-cave", "kinondo-kwetu", "the-maji"]}
 picks = {"_doc": "GOLD6 picks for Diani-Kwale, 11 Oct 2026. Lanes hold <=3; no 4s were needed. Criteria in order: can't-miss for the south coast · authentic over touristic · teaches something · confirmed over unverified. Fewer places is the point. Cut venues leave data.js, both CSVs and every #venue- link. Berths and the guest list rebuilt from venues kept.",

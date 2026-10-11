@@ -3,8 +3,8 @@
 units — fold cards, lane stories, gem popups, dish stories, venue why/hook, prose folds' paragraphs."""
 import re, json, subprocess, html as H, itertools, pathlib, sys
 R = pathlib.Path(__file__).resolve().parents[4]
-doc = open(R / "terroir/Kendwa-Unguja/index.html").read()
-D = json.loads(subprocess.run(["node", "-e", "global.window={};require('./terroir/data/Kendwa-Unguja.js');process.stdout.write(JSON.stringify(window.TERROIR_DATA))"], cwd=R, capture_output=True, text=True).stdout)
+doc = open(R / "terroir/Diani-Kwale/index.html").read()
+D = json.loads(subprocess.run(["node", "-e", "global.window={};require('./terroir/data/Diani-Kwale.js');process.stdout.write(JSON.stringify(window.TERROIR_DATA))"], cwd=R, capture_output=True, text=True).stdout)
 clean = lambda s: re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", " ", s))).strip()
 U = {}
 for m in re.finditer(r'<details class="fcard">(.*?)</details>', doc, re.S):

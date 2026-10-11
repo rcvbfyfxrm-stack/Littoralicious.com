@@ -45,33 +45,36 @@
     "off the beaten"
   ],
   "sectionsRequired": [
-    "hot",
     "soul",
     "bougie",
+    "quartiers",
+    "why-now",
     "money-sits",
     "eat",
     "tables",
-    "dish",
-    "bars",
-    "quartiers",
+    "provisioning",
     "walks",
-    "kaya",
     "dhow",
     "reef",
     "sea-stories",
+    "kaya",
     "culture",
-    "coffee-gardens",
-    "art",
-    "craft",
-    "around",
-    "provisioning",
-    "street-food",
-    "la-liste",
     "landmarks",
+    "craft",
+    "art",
+    "coffee-gardens",
+    "bars",
+    "around",
+    "street-food",
     "avoid",
     "follow",
+    "events",
     "seasonal",
-    "sources"
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
   ],
   "sectionsForbidden": [
     "verify",
@@ -85,31 +88,35 @@
     "rooftops",
     "hammam",
     "rituals",
-    "listening"
+    "band-eat",
+    "fast-food",
+    "fullmoon",
+    "tide"
   ],
   "floors": {
-    "venues": 60,
-    "gems": 5,
-    "neighborhoods": 8,
+    "venues": 58,
+    "gems": 6,
+    "neighborhoods": 9,
     "walks": 6,
-    "categories": 13,
+    "categories": 12,
     "laneStories": 12,
-    "fcards": 125,
-    "fsubs": 22,
-    "liste": 14,
-    "mapsLinks": 40,
-    "pins": 40
+    "fcards": 111,
+    "fsubs": 46,
+    "liste": 18,
+    "mapsLinks": 149,
+    "pins": 51
   },
   "renderFloors": {
     "groups": 3,
-    "cards": 40,
+    "cards": 31,
     "gemboxes": 12
   },
   "groups": 3,
   "listePointer": true,
   "hot": {
     "maxAgeDays": 70,
-    "minVenues": 5,
+    "minVenues": 7,
     "mode": "pointer"
-  }
+  },
+  "staleAllow": {}
 }

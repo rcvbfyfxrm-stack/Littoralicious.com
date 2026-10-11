@@ -109,6 +109,9 @@ CHAPTER_SUB = {"place": "the essay, the land ledger, the coast, the week", "tabl
                "sortir": "the sundowner, the clubs, the palm wine", "around": "Shimba Hills, Funzi, Mombasa", "fast": "what still feeds you after the beach kitchens close",
                "practical": "the traps, who to follow, the calendar, the months, the checklist, the sources"}
 
+LANE_WHERE = {"houses": "Kinondo Kwetu, The Maji, Chale Island — always by arrangement",
+              "chefs-eat": "Havana on the strip until late; Funky Monkey once the beach bars wind down"}
+
 LANE_LEAD = {
  "creme": "Three rooms worth a booking and a taxi: the coral cave, the canvas tent on the sand at Galu, and the strip's most complete kitchen.",
  "rising": "Two kitchens trying something on the beach road: a Japanese family's sushi house and a palm-shaded bistro.",
@@ -123,7 +126,24 @@ LANE_LEAD = {
  "story": "Two old addresses with their own history: the crab house on Wasini since 1978, and Tiwi's camp.",
  "street": "No tables at all: a green coconut opened with a panga, the dawn triangles, and palm wine poured in a living room.",
 }
-LANE_STORY = {}
+LANE_STORY = {
+ "rising": {"title": "New, on an old road",
+   "story": ("New on this strip rarely means a concept with a launch. It means a family, or a small hotel, that found a corner of the beach road and "
+             "decided to cook one thing properly: raw fish from the local landings cut the Japanese way, or a beachfront menu that changes its mood on a "
+             "Friday night. Neither is a secret, both are booked by residents, and both reward a call ahead, because on this coast the listings disagree "
+             "about opening days more often than the kitchens change."),
+   "where": "Shashin-Ka on the beach road; Asha's bistro on the sand"},
+ "breakfast": {"title": "Three breakfasts, three histories",
+   "story": ("The first meal on this strip tells you who settled it. One café has poured the coast's espresso since the turn of the century; one bakes "
+             "the seed loaves and Berliners of the European families who built the early hotels; one is a Nairobi idea about who gets to work in a café, "
+             "moved onto the sand at Galu. For the Swahili breakfast itself, the triangles and the pigeon peas, cross the road to Ukunda before eight."),
+   "where": "Kokkos on the strip; Diani Bakehouse beside Apero; Pallet Cafe at Galu"},
+ "houses": None, "chefs-eat": None,
+ "swahili": {"title": "The staff canteen of the coast",
+   "story": ("Ukunda is where the people who run the strip eat, and its kitchens cook for them: coast biryani with a sour, tangy mchuzi on the side, "
+             "pilau at Friday lunch when the mosques empty, pweza soup at the grills. Prices are the town's, the rooms are plain, and the first plate "
+             "of the day is the best one. The dish to judge a kitchen by, and how to say it, is in La liste at the foot."),
+   "where": "Ukunda: Moiz on Hospital Road, Karafuu, Swahili Pot"}}
 
 GROUP_DESC = {"grande": "The rooms worth planning a day around: the coral cave, the canvas on the sand, the new wave, the house tables, and the landings that feed them all.",
               "petite": "Ukunda's kitchens, the Italian residency, the breakfast rooms, the fire, where the residents eat, the beach rooms and the old houses — character over ceremony, most of it inland of the sand."}
@@ -139,11 +159,12 @@ DOORS = [
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute on the south coast: bookable, priced.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
 SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: these three take a call the same evening. Hours as read on 11 Oct 2026 are on each card.",
-             "Plan ahead — this week": "Book a day or two ahead: the canvas room at Galu, the kite crowd's table before its kitchen shuts at 20:30, and the sushi house that closes Mondays.",
+             "Plan ahead — this week": "Book a day or two ahead: the canvas room at Galu, the kite crowd's table before its kitchen shuts at 20:30, and the sushi house (its listings disagree on Monday closing: call).",
              "Plan ahead — the grand night": "The cave, the house beside the sacred forest, the adults-only house: book as soon as the dates are fixed."}
 
 EDITS = {
- "money-sits": [("then the club circuit — confirm Full Moon/Tandoori on Instagram the same day; nothing moves before midnight.",
+ "money-sits": [("The reset. Shashin-Ka and some kitchens close; the beach is at its emptiest.", "The reset. Some kitchens close (Shashin-Ka may: its listings disagree, so call); the beach is at its emptiest."),
+                (" Shashin-Ka reopens today.", ""),("then the club circuit — confirm Full Moon/Tandoori on Instagram the same day; nothing moves before midnight.",
                  "then, if you want a club, Manyatta — confirm it is open the same day; nothing moves before midnight.")],
  "la-liste": [("<b>Best place</b> — Ukunda&#x27;s Swahili kitchens; Coast Dishes when open · <a href=\"https://www.google.com/maps/search/?api=1&query=Coast+Dishes+Diani\"",
                "<b>Best place</b> — Ukunda&#x27;s Swahili kitchens: ask for it by name · <a href=\"https://www.google.com/maps/search/?api=1&query=Ukunda+town+Kenya\""),
@@ -157,4 +178,7 @@ ICS_EDITS = [("Best: Ukunda's Swahili kitchens\\; Coast Dishes when open\nLOCATI
              ("Best: Ukunda's dawn mama stalls\\; Coast Dishes for the seated version\nLOCATION:Ukunda's dawn mama stalls\\; Coast Dishes for the seated version",
               "Best: Ukunda's dawn mama stalls\\, before eight\nLOCATION:Ukunda's dawn mama stalls")]
 
-GEM_STORY = {}
+GEM_STORY = {
+ "gem-madafu": "The green drinking coconut, topped with a panga and drunk from the husk. Where it comes from, and what to ask for once it is empty, is in La liste at the foot of this guide.",
+ "gem-mnazi": "Palm wine, tapped from the coconut palm and drunk the same day. How it is made, and how to drink it with the people who make it, is in La liste at the foot.",
+ "gem-kupaka": "Kupaka means 'to smear': grilled fish, then spiced coconut cream, then the coals again. The whole story, and how to tell a real one, is in La liste at the foot."}
