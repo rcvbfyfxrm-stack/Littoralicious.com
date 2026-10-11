@@ -25,6 +25,10 @@ package in `lf/` with `npm pack leaflet@1.9.4`. The page itself is unchanged.)
 - `Diani-Kwale.readings.json` — §8, applied last.
 - `diani-card-desktop.png`, `diani-card-phone.png` — one opened card (Kaya Kinondo); `desk-*.png`, `phone-*.png` — the two lenses.
 
+## Checks (11 Oct 2026, local http.server on an ephemeral port)
+gate WITH render ALL CHECKS GREEN (189 OK) · probe-guide 29/29 PASS · probe-links desk 112/0, phone 112/0 · probe-readings ALL PASS
+(73/73 placed cards, 31/31 venues with Maps closed; One Night 19 links, Getaway 21) · repetition 0/0 over 247 units · checklinks.py not runnable here.
+
 ## Numbers
 Places 74 → 58 (lane venues 41 → 31 in 14 → 12 lanes; map-only places 33 → 27). Fold cards 135 → 111, every one labelled
 (91 fold cards + 11 on the dated hot board + 8 calendar dates + the listening finding).

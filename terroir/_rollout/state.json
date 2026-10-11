@@ -545,7 +545,22 @@
   },
   {
    "slug": "Diani-Kwale",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Diani-Kwale-2026-10-11",
+   "date": "2026-10-11",
+   "readings": "done 2026-10-11",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (189 OK; floors refreshed to the curated counts: venues 58, fcards 111, fsubs 46, pins 51, categories 12, rendered cards 31; doors 4; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: 29/29 PASS, exit 0 (phone 390 no sideways scroll even with every card open; no page errors)",
+    "probe-links.cjs desk: 112 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 112 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 73/73 placed cards and 31/31 venues with Maps on the closed card, no sideways scroll; One Night 19 links, Getaway 21); lens screenshots in review/Diani-Kwale/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 247 units",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Diani-Kwale/diani-card-desktop.png, diani-card-phone.png (Kaya Kinondo, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "notes": "11 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome. Places 74 -> 58 (lane venues 41 -> 31 in 14 -> 12 lanes, no 4s; map-only 33 -> 27); fold cards 135 -> 111, every card labelled; 16 places cut with reasons in picks.json, incl. Shakatak (closed: Tripadvisor + May 2026 reviews) and Tiki Bar (Tripadvisor CLOSED, nothing newer than 2024; its last-minute guest slot rebuilt with Havana). Guest list rebuilt from venues kept: last minute Nomad · Leonardo's · Havana; this week Sails · Salty Squid · Shashin-Ka; grand night Ali Barbour's · Kinondo Kwetu · The Maji. Berths Ali Barbour's · Nomad · Sails. Hot board replaced (was stale since 1 Oct) and dated 11 Oct 2026, review by 1 Dec. Re-check via WebSearch extracts only: 21 places re-confirmed 11 Oct, 30 keep their earlier date, 6 unverified, Shimoni port time-limited. Corrections incl.: marlin 'Kenya record' and 'Mathews to Wete' now disputes; Kentaste year/volume dropped, Fair for Life; Mikoko carbon 2013; runway extended; Two Fishes to the 1990s; Kaya Kinondo KES 2,000; Coral Spirit USD 35; Kisite dhow levy not printed (packs disagree); Shashin-Ka/Kokkos/The 41 hours conflicts printed as 'call'. Readings: One Night 4 quarters (Diani central · Galu · Ukunda · Diani north); Getaway 13 stops Fri 3 / Sat 6 / Sun 4. NEEDS NETWORK (exact list): (1) checklinks.py . Diani-Kwale; (2) own-site hours, dated, for the last-minute three: Nomad (22:00 vs 22:30), Leonardo's (23:00 vs 23:30), Havana (own site stale; 01:00 per Glovo Aug); (3) own-site liveness for the 30 places still on their earlier date (research/verify_1.json + verify_2.json _needs_network) and Tiki Bar's real status; (4) DanSafari 11-18 Nov on an official page, the 2026 Sea Turtle Festival and Colobus golf editions. Commit results as review/Diani-Kwale/research/verify_*_network_*.json; apply through fixes.py, rebuild, flip to review. Details: terroir/_rollout/review/Diani-Kwale/README.md."
   },
   {
    "slug": "Istanbul-Bogazici",
