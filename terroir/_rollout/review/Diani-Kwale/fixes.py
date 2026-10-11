@@ -27,6 +27,7 @@ def _fact(c, label, value=None, after=None):
 def cards(C):
     C["b-funky"]["story"] = ("Come once the sun has gone and the beach bars wind down: this roadside courtyard has no sea view and needs none. "
                              "The ranking that put it on the map is told on its full card; here, order from the house list of Kenyan-ingredient classics.")
+    _fact(C["b-41"], "When", "Late afternoon into sunset; from 11:00 daily to 22:00, to 23:00 on weekend nights (own site, Oct 2026; listings disagree: call)")
     C.pop("b-shakatak", None)  # Shakatak closed (11 Oct): its card goes
     # Kaya Kinondo: the fee as re-read on 11 Oct (verify_2), one figure set, still to agree before starting
     c = C["k-kinondo"]
@@ -88,6 +89,7 @@ def venues(V):
                     "one price. Book it days ahead in season, and on a day when the kusi chop is down."),
     }
     for k, w in W.items(): V[k]["set"]["why"] = w
+    V["coral-spirit"]["set"]["caveat"] = "Book by phone or WhatsApp a day ahead and confirm the price direct (own page USD 35, resellers more, Oct 2026); after rains the river runs murky."
     V["mahamri-stalls"]["set"]["why"] = V["mahamri-stalls"]["set"]["why"].replace(" For the seated version of this breakfast, go to Coast Dishes.", " There is no seated version worth naming: go early and point.")
     V["kaaribu-tour"]["set"]["hook"] = "A ninety-minute walk through Ukunda's market lanes and street kitchens, ending with palm wine."
     V["kaaribu-tour"]["set"]["why"] = V["kaaribu-tour"]["set"]["why"].replace("goes into the Ibiza market cluster", "goes into Ukunda's trading lanes")

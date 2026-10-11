@@ -1,0 +1,140 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the stretch of coast you are nearest · walking order",
+  "lede": "This coast eats early and closes early: the light goes around half past six, most beach kitchens stop between 20:30 and 22:30, and the beach road is a tuk-tuk ride after dark, not a walk. Each quarter below is one evening, in the order you do it; every name opens its full card.",
+  "door_en": "Crew ashore for one evening: a plan for each stretch of the coast — the sundowner, the table, the late plate, in order.",
+  "door_note": "Le coucher · la table · la braise · le dernier verre",
+  "quarters": [
+   {
+    "id": "central",
+    "name": "Diani central · the strip",
+    "line": "A drink at the baobab bar, dinner in the coral cave, and the one kitchen still open at midnight.",
+    "steps": [
+     {"time": "17:30", "name": "The 41 Beach Club", "ref": "venue:the-41-beach-club",
+      "text": "A sundowner at the bar built round the baobab, with bao on the counter. Open from 11:00 to 22:00, later on weekend nights by its own site; reserve a weekend table on WhatsApp."},
+     {"time": "20:30", "name": "Ali Barbour's Cave", "ref": "venue:ali-barbours-cave",
+      "text": "The late seating, 20:30 to 23:00, in a coral cave open to the sky. Book days ahead in season; smart casual is enforced and no one under twelve at this seating. Ask about the courtesy transfer from your hotel."},
+     {"time": "23:00", "name": "Havana's late kitchen", "ref": "card:Havana's late kitchen",
+      "text": "A tuk-tuk up the beach road for grilled calamari or a last drink: the kitchen that still feeds people until 01:00, every night. Walk in; cash or M-Pesa."}
+    ],
+    "after": "Cheaper: [[venue:nomad-beach-bar|Nomad]] on the sand, pizza or the Swahili corner; last orders 21:00, so go first and go early. Wednesday to Saturday, finish at [[venue:funky-monkey|Funky Monkey]] instead, open to midnight (its kitchen stops at 21:30)."
+   },
+   {
+    "id": "galu",
+    "name": "Galu · the southern sand",
+    "line": "The tree that ends the beach, the kite crowd's table before its kitchen shuts, then back up the road.",
+    "steps": [
+     {"time": "17:00", "name": "The Galu baobab", "ref": "card:The Galu baobab",
+      "text": "Walk the Galu sand to the old baobab that marks the traditional southern end of Diani Beach. Free, and the light is best now."},
+     {"time": "18:00", "name": "The Salty Squid", "ref": "venue:salty-squid",
+      "text": "A chilli-mango margarita while the instructors land the kites, then garlic king prawns or the yellowfin. The kitchen takes last orders at 20:30, always, and the bar closes at 21:30: book, it is often full."},
+     {"time": "21:00", "name": "Funky Monkey", "ref": "venue:funky-monkey",
+      "text": "A tuk-tuk north to the roadside courtyard bar for one of the house cocktails. Open to midnight Wednesday to Saturday, to 23:00 the other nights; no food after 21:30."}
+    ],
+    "after": "Spend more: [[venue:sails-almanara|Sails at Almanara]], the canvas room on the sand, booked ahead. Its hours are unpublished and the menu carries no prices: call +254 711 852 026 and ask both."
+   },
+   {
+    "id": "ukunda",
+    "name": "Ukunda · the town behind the strip",
+    "line": "Where the people who run the beach eat: a choma room, then the junction grills. No view, Kenyan prices.",
+    "steps": [
+     {"time": "18:00", "name": "Karafuu", "ref": "venue:karafuu",
+      "text": "Pweza soup and whatever is coming off the grill, in Ukunda town. Walk in; prices around KES 120 to 1,430 on its delivery listing (Aug 2026), a little less at the counter."},
+     {"time": "19:30", "name": "The Ukunda junction, just after sunset", "ref": "card:The Ukunda junction, just after sunset",
+      "text": "To the matatu junction for viazi karai with chilli-tamarind, mishkaki off the coals and grilled corn. Cash or M-Pesa; it is dark and busy, so keep your phone in a pocket."}
+    ],
+    "after": "Eat earlier: [[venue:moiz-swahili|Moiz]] on Hospital Road for coast biryani, but it is a lunch room that lists closing at 19:30: call. Palm wine only with an introduction: [[card:The palm-wine dens|the mangwe]] is guided or not at all."
+   },
+   {
+    "id": "north",
+    "name": "Diani north · the river end",
+    "line": "A dugout up the mangrove river at dusk, then the wood oven of the Italian residency.",
+    "steps": [
+     {"time": "16:30", "name": "The Kongo River dugout", "ref": "card:The Kongo River dugout",
+      "text": "Up the Mwachema through the mangroves in the last two hours of light, back down to the river mouth by the Kongo Mosque. Book by phone or WhatsApp a day ahead and confirm the price direct."},
+     {"time": "19:30", "name": "Leonardo's", "ref": "venue:leonardos",
+      "text": "Roman thin-crust from the wood oven in a roadside garden. Daily to 23:00, last food orders 22:15 by its own site; book dinner in season."}
+    ],
+    "after": "If Leonardo's is full: [[venue:aniellos|Aniello's]], a few doors along; no published hours, so call before you walk over."
+   }
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon on the south coast: the sand, the dawn landing, the sacred forest, a dinner in a cave.",
+  "door_note": "Le pont la nuit · la marée · la forêt · la grotte",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Diani sells a white beach and a pool. The real thing is the tide that empties the lagoon, the fish that lands at Mwaepe before nine, a forest you enter wrapped in black cloth, and the kitchens of Ukunda across the road. Two nights is enough to see all of it if you go to bed early on Saturday and get up for the boats. Every stop below is in this guide, checked in October 2026; where its hours are disputed, the stop says so.",
+  "book": [
+   "[[venue:ali-barbours-cave|Ali Barbour's]] — Saturday's late seating, by email or phone, days ahead in season",
+   "[[card:Kaya Kinondo|Kaya Kinondo]] — the 10:00 visit, on WhatsApp +254 745 797 653; agree the fee before you start",
+   "[[venue:nomad-beach-bar|Nomad]] — Friday dinner; it is walk-in at lunch but book a weekend dinner",
+   "[[venue:salty-squid|The Salty Squid]] — Saturday lunch, by phone or WhatsApp; it is often full"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The sand at dusk",
+    "stops": [
+     {"time": "17:30", "name": "A sundowner at The 41", "ref": "venue:the-41-beach-club",
+      "text": "Straight off the plane or the road, to the bar built round a baobab on the central strip. Watch the colour go off the water: the beach faces east, so the show is the light on the reef, not a sun in the sea.",
+      "meta": "Diani central · 11:00 to 22:00, later on weekend nights (own site, Oct 2026) · sunbed KES 1,500 (Aug 2026) · reserve weekends +254 758 423 283"},
+     {"time": "19:30", "name": "Dinner at Nomad, on the sand", "ref": "venue:nomad-beach-bar",
+      "text": "The strip's most complete kitchen: sushi, wood-fired pizza and a Swahili corner. Big and busy at weekends, so order early.",
+      "meta": "Diani central-south · daily from 08:00, last orders 21:00 by its own Instagram · mains KES 1,800–4,300 (menu Jun 2026) · book weekend dinners"},
+     {"time": "21:30", "name": "Funky Monkey", "ref": "venue:funky-monkey",
+      "text": "One cocktail in the roadside courtyard whose bar team put the Kenyan coast on 50 Best Discovery. Then bed: Saturday starts before six.",
+      "meta": "Diani central · Fri to 24:00, kitchen to 21:30 (Oct 2026)"}
+    ]},
+   {"label": "Saturday", "title": "The landing, the forest, the cave",
+    "stops": [
+     {"time": "06:00", "name": "Mahamri at the Ukunda stalls", "ref": "venue:mahamri-stalls",
+      "text": "Cardamom-coconut triangles from the mama stalls by the matatu stage, with mbaazi and spiced chai. The first batches are gone before eight; no stall has a name, so go early and point.",
+      "meta": "Ukunda backstreets & the stage · from about 05:30, over by 09:00 · KES 30–50 a piece · unverified as named stalls; the category is solid"},
+     {"time": "07:00", "name": "Mwaepe landing", "ref": "venue:mwaepe-landing",
+      "text": "The landing you can walk to from the Galu hotels: whole changu, snapper and pweza off the sand on the incoming tide. Some mornings nothing comes in; that is the sea, not a failure.",
+      "meta": "Galu / Kinondo · dawn landings 06:00–09:00, tide-dependent · cash · expect works from the 2025 upgrade"},
+     {"time": "10:00", "name": "Kaya Kinondo", "ref": "card:Kaya Kinondo",
+      "text": "The only sacred Mijikenda forest open to visitors, walked with a Digo guide, wrapped in a black kaniki. Treat it as a church: stay on the path, take nothing, ask before any photo.",
+      "meta": "Kinondo · departures around 10:00 and 15:00 · non-resident KES 2,000 with the guide (2026 listing) · reserve on WhatsApp"},
+     {"time": "12:30", "name": "Lunch at The Salty Squid", "ref": "venue:salty-squid",
+      "text": "Yellowfin or king prawns on the sand at Galu, a few minutes from the forest. Its kitchen runs from noon.",
+      "meta": "Galu / Kinondo · kitchen 12:00–20:30 · mid-range · book, often full"},
+     {"time": "14:30", "name": "Colobus Conservation", "ref": "card:Colobus Conservation & the colobridges",
+      "text": "The rescue centre on the beach road that strung rope ladders over the traffic for the monkeys. A working facility, not a petting zoo: no handling.",
+      "meta": "Diani Beach Road, southern strip · Mon–Sat 08:30–16:00, so go by 15:00 · tour fee unpublished, cashless"},
+     {"time": "20:30", "name": "Ali Barbour's Cave, the late seating", "ref": "venue:ali-barbours-cave",
+      "text": "Dinner ten metres down in a coral cave open to the stars: the night to dress for. The courtesy transfer from Diani hotels saves the drive.",
+      "meta": "Diani central · seatings 17:30–20:00 and 20:30–23:00 · mains KES 2,950–6,000 (Aug 2026) · booking required; smart casual; none under 12 at the late seating"}
+    ]},
+   {"label": "Sunday", "title": "The seabed, then the sand",
+    "stops": [
+     {"time": "07:00", "name": "The reef-flat walk", "ref": "card:The reef-flat walk",
+      "text": "If the tide table gives a low in the morning, walk out on the falling tide over seagrass and tide pools toward the fishers' traps. If it does not, take the sunrise walk on the upper beach instead.",
+      "meta": "From central Diani · 1.5–2.5 h · best at spring low (new and full moon) · reef shoes"},
+     {"time": "10:00", "name": "Breakfast at Kokkos", "ref": "venue:kokkos",
+      "text": "The strip's café since 2000: a kokkoccino and the bistro breakfast. Its listings disagree about Sunday hours, so call before you walk over.",
+      "meta": "Diani central · own site gives Sun 09:00–16:30; other listings later (Oct 2026): call"},
+     {"time": "12:30", "name": "Nomad's Sunday on the sand", "ref": "venue:nomad-beach-bar",
+      "text": "The strip's whole week in one afternoon, on the beach in front of Nomad: lunch, a swim at high water, and the last look at the reef.",
+      "meta": "Diani central-south · daily from 08:00 · walk-in at lunch"},
+     {"time": "15:00", "name": "Ukunda airstrip", "ref": "card:Ukunda airstrip",
+      "text": "The coast's side door, between the beach and the highway: a short ride from the strip to the afternoon flight to Nairobi.",
+      "meta": "Ukunda · daily flights to Nairobi; check your airline's times"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Do the central strip in [[venue:the-41-beach-club|a sundowner at The 41]] and [[venue:ali-barbours-cave|the cave]], booked, and nothing else. If the cave is full, [[venue:leonardos|Leonardo's]] wood oven takes a call the same evening."},
+   {"title": "The grand night instead", "text": "Two houses cook for people who are not staying, if you ask first: [[venue:kinondo-kwetu|Kinondo Kwetu]], beside the sacred forest, by prior arrangement only, and [[venue:the-maji|The Maji]], adults only, by phone. Neither is a walk-in."},
+   {"title": "If you have a third day", "text": "Give it whole to the dhow crossing at Shimoni: [[card:Pilli Pipa Dhow Safari|the Kisite day]], with crab on Wasini at [[venue:charlie-claws|Charlie Claw's]]. Pickup is around 07:00 and you are back late afternoon."},
+   {"title": "This October and November", "dated": "Checked 11 October 2026", "items": [
+     "Whale sharks are possible from October, at their best January to March; the humpback trips ended on 30 September.",
+     "No kite wind until about mid-December: the schools say there is nothing to teach now.",
+     "Full moons on Monday 26 October and Tuesday 24 November: the spring lows either side are the reef-walk days.",
+     "The short rains are forecast above average from the second half of October: carry a layer and expect a wet hour.",
+     "Mashujaa Day, Tuesday 20 October, is a public holiday."]},
+   {"title": "Where to sleep", "text": "We have not judged rooms. The places in this guide that are also hotels: [[venue:the-maji|The Maji]] (adults only), [[venue:kinondo-kwetu|Kinondo Kwetu]], [[venue:asha-bistro|Asha]] on the beach, and [[venue:chale-island|Chale Island]], reached by the resort's boat."},
+   {"title": "What we would leave out", "text": "The famous names that are gone: promise no one Forty Thieves (closed in 2018) or a club night without confirming it the same day; [[card:Nothing moves before eleven|the clubs have thinned]]. And do not plan dinner after nine: [[card:Kitchens close earlier than you think|kitchens close earlier than you think]]."}
+  ]
+ }
+}
