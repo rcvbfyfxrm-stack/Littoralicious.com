@@ -1,0 +1,989 @@
+{
+ "_doc": "GOLD6 card plan for Diani-Kwale (11 Oct 2026). Each fold -> groups (<=3 cards) -> cards. 'from' lists the OLD card keys (section|name, research/cards_old.json) the new card is built from; several keys = a merge (told once). 'note' = the angle. Old cards not listed are CUT (see picks.json cards_cut).",
+ "quartiers": {
+  "chapter": "place",
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The strip",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-north",
+      "from": [
+       "quartiers|Diani North — the river end"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-central",
+      "from": [
+       "quartiers|Diani Central"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-galu",
+      "from": [
+       "quartiers|Galu",
+       "quartiers|Diani South & the forest patches"
+      ],
+      "note": "Galu + the southern strip; the forest patches are told in the green section: one clause"
+     }
+    ]
+   },
+   {
+    "title": "Behind the sand",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-ukunda",
+      "from": [
+       "quartiers|Ukunda town"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-tiwi",
+      "from": [
+       "quartiers|Tiwi",
+       "around|Tiwi, over the river"
+      ],
+      "note": "one home for Tiwi"
+     },
+     {
+      "key": "q-likoni",
+      "from": [
+       "quartiers|Likoni & Dongo Kundu — the arrival"
+      ],
+      "note": "the arrival: ferry vs the bypass; the Mteza bridge fact lives in landmarks, one clause here"
+     }
+    ]
+   },
+   {
+    "title": "South, into Digo country",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-kinondo",
+      "from": [
+       "quartiers|Kinondo",
+       "quartiers|Chale point & island"
+      ],
+      "note": "Chale Island resort has its own venue card and a dhow card: one clause"
+     },
+     {
+      "key": "q-gazi-msambweni",
+      "from": [
+       "quartiers|Gazi",
+       "quartiers|Msambweni"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-shimoni-wasini",
+      "from": [
+       "quartiers|Shimoni & Wasini",
+       "quartiers|Wasini Island"
+      ],
+      "note": "the place; the boat day lives in the dhow fold"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "chapter": "flaner",
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The sand & the seabed",
+    "desc": "",
+    "cards": [
+     {
+      "key": "w-sunrise",
+      "from": [
+       "walks|Sunrise on the strip"
+      ],
+      "note": ""
+     },
+     {
+      "key": "w-river-mouth",
+      "from": [
+       "walks|Kongo Mosque & the river mouth"
+      ],
+      "note": "the walk; the mosque's story lives in culture (one clause)"
+     },
+     {
+      "key": "w-reef-flat",
+      "from": [
+       "walks|The reef-flat walk",
+       "reef|The reef-flat walk",
+       "walks|Chale point flats at spring low"
+      ],
+      "note": "one home for the reef-flat walk; Chale flats as the spring-low variant"
+     }
+    ]
+   },
+   {
+    "title": "The town & the villages",
+    "desc": "",
+    "cards": [
+     {
+      "key": "w-ukunda",
+      "from": [
+       "walks|Ukunda market & town walk"
+      ],
+      "note": "do not name Ibiza Market as a pick (cut); the new covered market has its own card"
+     },
+     {
+      "key": "w-gazi",
+      "from": [
+       "walks|Gazi Bay mangrove edge"
+      ],
+      "note": "the walk; Mikoko Pamoja's carbon story lives in the green section"
+     },
+     {
+      "key": "w-shimoni",
+      "from": [
+       "walks|Shimoni history walk"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "dhow": {
+  "chapter": "flaner",
+  "sub": "dhow",
+  "groups": [
+   {
+    "title": "The crossing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "d-pilli-pipa",
+      "from": [
+       "dhow|Pilli Pipa Dhow Safari"
+      ],
+      "note": ""
+     },
+     {
+      "key": "d-charlie",
+      "from": [
+       "dhow|Charlie Claw's dhows"
+      ],
+      "note": "the boat day; the crab lunch is in the venue card"
+     },
+     {
+      "key": "d-diy",
+      "from": [
+       "dhow|Shimoni jetty, DIY"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The park & the island hour",
+    "desc": "",
+    "cards": [
+     {
+      "key": "d-kisite",
+      "from": [
+       "dhow|Kisite-Mpunguti Marine Park"
+      ],
+      "note": ""
+     },
+     {
+      "key": "d-wasini-walk",
+      "from": [
+       "dhow|Wasini women's coral boardwalk",
+       "walks|Wasini island paths"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The quieter waters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "d-robinson",
+      "from": [
+       "dhow|Robinson Island sandbank"
+      ],
+      "note": ""
+     },
+     {
+      "key": "d-chale",
+      "from": [
+       "dhow|Chale Island"
+      ],
+      "note": ""
+     },
+     {
+      "key": "d-kongo-dugout",
+      "from": [
+       "reef|The Kongo River dugout"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "kaya": {
+  "chapter": "flaner",
+  "sub": "forest",
+  "groups": [
+   {
+    "title": "The kaya",
+    "desc": "",
+    "cards": [
+     {
+      "key": "k-kinondo",
+      "from": [
+       "kaya|Kaya Kinondo"
+      ],
+      "note": ""
+     },
+     {
+      "key": "k-system",
+      "from": [
+       "kaya|The kaya system, honestly"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The colobus & the turtles",
+    "desc": "",
+    "cards": [
+     {
+      "key": "k-colobus",
+      "from": [
+       "kaya|Colobus Conservation",
+       "landmarks|The colobridges"
+      ],
+      "note": "one home for the colobridges"
+     },
+     {
+      "key": "k-jadini",
+      "from": [
+       "kaya|The Jadini forest patches"
+      ],
+      "note": ""
+     },
+     {
+      "key": "k-turtle",
+      "from": [
+       "kaya|Diani Turtle Watch"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The mangroves",
+    "desc": "",
+    "cards": [
+     {
+      "key": "k-mikoko",
+      "from": [
+       "kaya|Mikoko Pamoja, Gazi Bay",
+       "around|Gazi & the mangrove science"
+      ],
+      "note": "one home for the mangrove carbon story"
+     }
+    ]
+   }
+  ]
+ },
+ "reef": {
+  "chapter": "flaner",
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The wind — kaskazi & kusi",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-h2o",
+      "from": [
+       "reef|H2O Extreme"
+      ],
+      "note": ""
+     },
+     {
+      "key": "r-kite254",
+      "from": [
+       "reef|Kite254"
+      ],
+      "note": "the wind and the radio helmets; the course-and-what's-missing angle is in craft"
+     }
+    ]
+   },
+   {
+    "title": "Under — the reef & the wreck",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-crab",
+      "from": [
+       "reef|Diving the Crab"
+      ],
+      "note": "the sites and the wreck; the course angle is in craft"
+     },
+     {
+      "key": "r-ocean-tribe",
+      "from": [
+       "reef|Ocean Tribe Scuba"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Above & beyond",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-skydive",
+      "from": [
+       "reef|Skydive Swahili"
+      ],
+      "note": ""
+     },
+     {
+      "key": "r-fishing",
+      "from": [
+       "reef|Diani Fishing Club"
+      ],
+      "note": ""
+     },
+     {
+      "key": "r-whales",
+      "from": [
+       "reef|Whale Shark Adventures"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "sea-stories": {
+  "chapter": "flaner",
+  "sub": "stories",
+  "groups": [
+   {
+    "title": "The boats",
+    "desc": "",
+    "cards": [
+     {
+      "key": "s-no-nails",
+      "from": [
+       "sea-stories|The ship with no nails",
+       "sea-stories|How the jahazi killed the mtepe"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-ngalawa",
+      "from": [
+       "sea-stories|The ngalawa's outriggers"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-wearing",
+      "from": [
+       "sea-stories|Wearing round"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The navigators",
+    "desc": "",
+    "cards": [
+     {
+      "key": "s-pilot",
+      "from": [
+       "sea-stories|The Pilot of Malindi",
+       "sea-stories|Stars to find the coast, marks to live through it"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-round-trip",
+      "from": [
+       "sea-stories|One round trip a year"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-1331",
+      "from": [
+       "sea-stories|One night in Mombasa, 1331"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The hard water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "s-galleot",
+      "from": [
+       "sea-stories|One galleot against a coast"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-siege",
+      "from": [
+       "sea-stories|Thirty-three months",
+       "sea-stories|The Santo António de Tanná"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-chasers",
+      "from": [
+       "sea-stories|The dhow chasers"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The sea that still works",
+    "desc": "",
+    "cards": [
+     {
+      "key": "s-bamvua",
+      "from": [
+       "sea-stories|Bamvua and msindizo"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-kuchukua",
+      "from": [
+       "sea-stories|Kuchukua — the women's fishery",
+       "sea-stories|Munje's octopus gamble"
+      ],
+      "note": ""
+     },
+     {
+      "key": "s-said-no",
+      "from": [
+       "sea-stories|The landings that said no"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "chapter": "flaner",
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The living monuments",
+    "desc": "",
+    "cards": [
+     {
+      "key": "c-kongo",
+      "from": [
+       "culture|Kongo Mosque",
+       "landmarks|Kongo Mosque"
+      ],
+      "note": "one home for the mosque"
+     },
+     {
+      "key": "c-shimoni-caves",
+      "from": [
+       "culture|The Shimoni caves & the shrine",
+       "dhow|Shimoni slave caves"
+      ],
+      "note": "one home for the caves: the visit and the shrine"
+     },
+     {
+      "key": "c-pillar-tomb",
+      "from": [
+       "landmarks|The Wasini pillar tomb"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "landmarks": {
+  "chapter": "flaner",
+  "sub": "sights",
+  "groups": [
+   {
+    "title": "Along the strip",
+    "desc": "",
+    "cards": [
+     {
+      "key": "l-baobab",
+      "from": [
+       "landmarks|The Galu baobab"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-airstrip",
+      "from": [
+       "landmarks|Ukunda airstrip"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-two-fishes",
+      "from": [
+       "landmarks|The Two Fishes ruin"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "At the edge",
+    "desc": "",
+    "cards": [
+     {
+      "key": "l-mteza",
+      "from": [
+       "landmarks|The Mteza bridge"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "chapter": "flaner",
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "x-crab-course",
+      "from": [
+       "craft|★ Diving the Crab"
+      ],
+      "note": "the course: open enrolment, named instructors; the sites are in the sea fold"
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "x-kite254",
+      "from": [
+       "craft|Kite254",
+       "craft|H2O Extreme"
+      ],
+      "note": "the kite course; missing line"
+     },
+     {
+      "key": "x-akamba",
+      "from": [
+       "craft|Akamba Handicraft Co-operative",
+       "art|Akamba Handicraft Co-operative"
+      ],
+      "note": "one home for Akamba: the carving, buying at source, what is missing"
+     },
+     {
+      "key": "x-art-club",
+      "from": [
+       "craft|Diani Art Club",
+       "art|Diani Art Club"
+      ],
+      "note": "one home for the Art Club"
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "x-kaaribu",
+      "from": [
+       "craft|The Kaaribu street-food walk"
+      ],
+      "note": ""
+     },
+     {
+      "key": "x-not-craft",
+      "from": [
+       "craft|What is sold as craft and is not"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "art": {
+  "chapter": "flaner",
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "The cloth — buy at source",
+    "desc": "",
+    "cards": [
+     {
+      "key": "a-biashara",
+      "from": [
+       "art|Biashara Street, Mombasa"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The industrial terroir",
+    "desc": "",
+    "cards": [
+     {
+      "key": "a-kentaste",
+      "from": [
+       "art|Kentaste, Ukunda"
+      ],
+      "note": ""
+     },
+     {
+      "key": "a-bixa",
+      "from": [
+       "art|Kenya Bixa, Tiwi"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "chapter": "flaner",
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "The cafés",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-kokkos",
+      "from": [
+       "coffee-gardens|Kokkos Cafe Bistro"
+      ],
+      "note": "pointer to the Kokkos venue card: linger angle"
+     },
+     {
+      "key": "g-bakehouse",
+      "from": [
+       "coffee-gardens|Diani Bakehouse"
+      ],
+      "note": "pointer: linger angle"
+     }
+    ]
+   },
+   {
+    "title": "Where the laptop actually works",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-skippers",
+      "from": [
+       "coffee-gardens|Skippers Coliving"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-pallet",
+      "from": [
+       "coffee-gardens|Pallet Cafe, Galu"
+      ],
+      "note": "pointer: work angle"
+     },
+     {
+      "key": "g-asha",
+      "from": [
+       "coffee-gardens|Asha Boutique Bistro"
+      ],
+      "note": "pointer: work angle"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "chapter": "sortir",
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "The sundowner circuit",
+    "desc": "",
+    "cards": [
+     {
+      "key": "b-41",
+      "from": [
+       "bars|The 41 Beach Club"
+      ],
+      "note": ""
+     },
+     {
+      "key": "b-sails",
+      "from": [
+       "bars|Sails at Almanara"
+      ],
+      "note": ""
+     },
+     {
+      "key": "b-salty",
+      "from": [
+       "bars|Salty Squid at kite-o'clock"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "After dark — the clubs, with asterisks",
+    "desc": "",
+    "cards": [
+     {
+      "key": "b-funky",
+      "from": [
+       "bars|Funky Monkey"
+      ],
+      "note": ""
+     },
+     {
+      "key": "b-manyatta",
+      "from": [
+       "bars|Manyatta",
+       "bars|Full Moon",
+       "bars|Tandoori International"
+      ],
+      "note": "cut clubs: Full Moon, Tandoori — name them only as 'others listed in 2024, nothing verifiable'"
+     },
+     {
+      "key": "b-shakatak",
+      "from": [
+       "bars|Shakatak"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The mangwe — mnazi, introduced",
+    "desc": "",
+    "cards": [
+     {
+      "key": "b-mangwe",
+      "from": [
+       "bars|The palm-wine dens"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "chapter": "around",
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "Inland & south",
+    "desc": "",
+    "cards": [
+     {
+      "key": "o-shimba",
+      "from": [
+       "around|Shimba Hills",
+       "kaya|Shimba Hills & Sheldrick Falls",
+       "landmarks|Sheldrick Falls"
+      ],
+      "note": "one home for Shimba and the falls"
+     },
+     {
+      "key": "o-funzi",
+      "from": [
+       "around|Funzi & the Ramisi estuary",
+       "dhow|Funzi Island day"
+      ],
+      "note": "one home for Funzi"
+     }
+    ]
+   },
+   {
+    "title": "North — half a day in Mombasa",
+    "desc": "",
+    "cards": [
+     {
+      "key": "o-mombasa",
+      "from": [
+       "around|The Biashara Street & Akamba run"
+      ],
+      "note": "the route and timing; the street and the co-op have their own cards: point, do not retell"
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "chapter": "tables",
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The fish — two landings and the names",
+    "desc": "",
+    "cards": [
+     {
+      "key": "p-mwaepe",
+      "from": [
+       "provisioning|Mwaepe landing (BMU)"
+      ],
+      "note": "pointer-ish: the buying angle; the venue card holds the place"
+     },
+     {
+      "key": "p-shimoni",
+      "from": [
+       "provisioning|Shimoni landing & the new port"
+      ],
+      "note": ""
+     },
+     {
+      "key": "p-names",
+      "from": [
+       "provisioning|Changu, pweza, tafi — the name ladder"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The market & the coconut",
+    "desc": "",
+    "cards": [
+     {
+      "key": "p-market",
+      "from": [
+       "provisioning|Diani Modern Market, Mvindeni"
+      ],
+      "note": "Ibiza Market is cut: say trade is moving here, do not recommend Ibiza"
+     },
+     {
+      "key": "p-coconut",
+      "from": [
+       "provisioning|Madafu · mnazi · mbata · makuti"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The cold chain — three supermarkets, three jobs",
+    "desc": "",
+    "cards": [
+     {
+      "key": "p-carrefour",
+      "from": [
+       "provisioning|Carrefour, Centre Point"
+      ],
+      "note": ""
+     },
+     {
+      "key": "p-chandarana",
+      "from": [
+       "provisioning|Chandarana Foodplus"
+      ],
+      "note": ""
+     },
+     {
+      "key": "p-naivas",
+      "from": [
+       "provisioning|Naivas, The Gate Mall"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "street-food": {
+  "chapter": "fast",
+  "sub": "late",
+  "groups": [
+   {
+    "title": "The gap, and how to plan around it",
+    "desc": "",
+    "cards": [
+     {
+      "key": "f-early",
+      "from": [
+       "street-food|Kitchens close earlier than you think"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-midnight",
+      "from": [
+       "street-food|Nothing moves before midnight"
+      ],
+      "note": "name only the kept clubs: Shakatak, Manyatta"
+     }
+    ]
+   },
+   {
+    "title": "What is actually still cooking",
+    "desc": "",
+    "cards": [
+     {
+      "key": "f-junction",
+      "from": [
+       "street-food|The Ukunda junction, just after sunset"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-havana",
+      "from": [
+       "street-food|Havana's late kitchen"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-funky",
+      "from": [
+       "street-food|Funky Monkey, to midnight"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ }
+}

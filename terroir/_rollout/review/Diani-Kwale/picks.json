@@ -1,0 +1,240 @@
+{
+ "_doc": "GOLD6 picks for Diani-Kwale, 11 Oct 2026. Lanes hold <=3; no 4s were needed. Criteria in order: can't-miss for the south coast · authentic over touristic · teaches something · confirmed over unverified. Fewer places is the point. Cut venues leave data.js, both CSVs and every #venue- link. Berths and the guest list rebuilt from venues kept.",
+ "lanes": {
+  "creme": {
+   "label": "The famous rooms",
+   "ids": [
+    "ali-barbours-cave",
+    "sails-almanara",
+    "nomad-beach-bar"
+   ],
+   "why": {
+    "ali-barbours-cave": "dinner in the coral cave: the one room on this coast nobody can copy",
+    "sails-almanara": "the canvas room on the sand at Galu, fed by the reef",
+    "nomad-beach-bar": "the strip's most complete kitchen, and the last-minute table that holds"
+   }
+  },
+  "rising": {
+   "label": "The new wave",
+   "ids": [
+    "shashin-ka",
+    "asha-bistro"
+   ],
+   "why": {
+    "shashin-ka": "a Japanese family's sushi house on the beach road",
+    "asha-bistro": "the palm-shaded beachfront bistro; Friday's BBQ"
+   }
+  },
+  "houses": {
+   "label": "The house tables",
+   "ids": [
+    "kinondo-kwetu",
+    "the-maji",
+    "chale-island"
+   ],
+   "why": {
+    "kinondo-kwetu": "a family beach house beside the sacred forest; the grand night",
+    "the-maji": "the adults-only house with no meal times",
+    "chale-island": "the private island beside a kaya grove"
+   }
+  },
+  "landings": {
+   "label": "Where the boats land",
+   "ids": [
+    "mwaepe-landing",
+    "shimoni-landing",
+    "diani-modern-market"
+   ],
+   "why": {
+    "mwaepe-landing": "the landing you can walk to at dawn",
+    "shimoni-landing": "the channel fish, and Kenya's first fish port beside it",
+    "diani-modern-market": "the new covered market (May 2026) that replaced the old Ukunda one"
+   }
+  },
+  "swahili": {
+   "label": "The Swahili kitchens",
+   "ids": [
+    "moiz-swahili",
+    "karafuu",
+    "swahili-pot"
+   ],
+   "why": {
+    "moiz-swahili": "the workers' biryani on Hospital Road",
+    "karafuu": "Ukunda's nyama choma and pweza soup",
+    "swahili-pot": "the makuti canteen at resident prices"
+   }
+  },
+  "italian": {
+   "label": "The Italian residency",
+   "ids": [
+    "leonardos",
+    "aniellos"
+   ],
+   "why": {
+    "leonardos": "the anchor of the Italian residency; the last-minute table",
+    "aniellos": "the neighbourhood Italian a few doors along (unverified: call)"
+   }
+  },
+  "breakfast": {
+   "label": "The breakfast tables",
+   "ids": [
+    "kokkos",
+    "pallet-cafe-diani",
+    "diani-bakehouse"
+   ],
+   "why": {
+    "kokkos": "the strip's café since 2000",
+    "pallet-cafe-diani": "the deaf-staffed café on Galu sand; moved in from the cut fast-food lane",
+    "diani-bakehouse": "German breads, the trace of the families who built the first hotels"
+   }
+  },
+  "grills": {
+   "label": "The fire",
+   "ids": [
+    "mwaepe-fishermen",
+    "colobus-shade",
+    "ukunda-junction-vendors"
+   ],
+   "why": {
+    "mwaepe-fishermen": "the fishing community's own table",
+    "colobus-shade": "charcoal at the landing",
+    "ukunda-junction-vendors": "the evening grills at the matatu junction"
+   }
+  },
+  "chefs-eat": {
+   "label": "Where the residents eat",
+   "ids": [
+    "tiki-bar",
+    "havana-diani",
+    "funky-monkey"
+   ],
+   "why": {
+    "tiki-bar": "the Belgian bistro; the last-minute table",
+    "havana-diani": "fed and watered until 01:00 every day",
+    "funky-monkey": "the bar team ranked in Africa's lists; moved in from the cut fast-food lane"
+   }
+  },
+  "beach-rooms": {
+   "label": "The beach rooms",
+   "ids": [
+    "the-41-beach-club",
+    "salty-squid"
+   ],
+   "why": {
+    "the-41-beach-club": "the bar round a baobab, the Forty Thieves lineage",
+    "salty-squid": "the kite crowd's table at sunset"
+   }
+  },
+  "story": {
+   "label": "The old houses",
+   "ids": [
+    "charlie-claws",
+    "twiga-lodge"
+   ],
+   "why": {
+    "charlie-claws": "crab off the dugouts on Wasini since 1978",
+    "twiga-lodge": "Tiwi's everyday address (mixed signals: called out)"
+   }
+  },
+  "street": {
+   "label": "The street",
+   "ids": [
+    "madafu-vendors",
+    "mahamri-stalls",
+    "mangwe-dens"
+   ],
+   "why": {
+    "madafu-vendors": "the coast's original soft drink",
+    "mahamri-stalls": "the Swahili breakfast at dawn",
+    "mangwe-dens": "palm wine, introduced"
+   }
+  }
+ },
+ "lanes_dropped": {
+  "fast-food": "a two-venue lane of a café and a cocktail bar, both miscast as 'fast': Pallet Cafe moves to breakfast, Funky Monkey to where the residents eat; the late plate lives in Sur le pouce"
+ },
+ "berths": [
+  "ali-barbours-cave",
+  "nomad-beach-bar",
+  "sails-almanara"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "nomad-beach-bar",
+   "leonardos",
+   "tiki-bar"
+  ],
+  "Plan ahead — this week": [
+   "sails-almanara",
+   "salty-squid",
+   "shashin-ka"
+  ],
+  "Plan ahead — the grand night": [
+   "ali-barbours-cave",
+   "kinondo-kwetu",
+   "the-maji"
+  ]
+ },
+ "keep_pins": [
+  "skippers-coliving",
+  "pilli-pipa",
+  "h2o-extreme",
+  "kite254",
+  "diving-the-crab",
+  "ocean-tribe",
+  "skydive-swahili",
+  "diani-fishing-club",
+  "whale-shark-adventures",
+  "coral-spirit",
+  "kaaribu-tour",
+  "kaya-kinondo",
+  "colobus-conservation",
+  "kisite-mpunguti",
+  "shimoni-caves",
+  "wasini-boardwalk",
+  "shimba-hills",
+  "mikoko-pamoja",
+  "diani-turtle-watch",
+  "diani-art-club",
+  "carrefour-diani",
+  "chandarana-diani",
+  "naivas-ukunda",
+  "kentaste",
+  "akamba-handicraft",
+  "biashara-street",
+  "shakatak",
+  "manyatta-club"
+ ],
+ "cut": {
+  "waterlovers-tides": "fourth in the famous rooms; a resident-first dining room by its own account, not a destination",
+  "non-solo-gelato": "a gelato chain three months open; authentic over new, and the new-wave lane keeps two",
+  "msambweni-beach-house": "fourth house table; guests-only in practice and 45+ minutes south",
+  "ibiza-market": "fourth landing/market; the new covered market (May 2026) is where Ukunda's trade is moving, and the town walk covers the old cluster",
+  "coast-dishes": "fourth Swahili kitchen and unverified as trading; three confirmed kitchens carry the lane",
+  "java-house-diani": "a Nairobi chain; the breakfast lane keeps the three that only exist here",
+  "soul-breeze-beach-club": "unverified and brand-confused (the resort dropped the Bidi Badu name); two beach rooms are enough",
+  "shan-e-punjab": "unverified as trading, with uneven-service reports",
+  "tandoori-club": "fourth club; nothing verifiable beyond 2024 press",
+  "full-moon-club": "fourth club; every detail aggregator-grade",
+  "go-jump-kenya": "no card points to it; one skydive operator is enough",
+  "gazi-boardwalk": "no card points to it; condition unverified since 2020",
+  "chale-boardwalk": "no card points to it; no published hours or contact three months after opening",
+  "camel-rides": "no card points to it; an unregulated beach trade, not a place"
+ },
+ "cards_cut": {
+  "_": "old cards not carried (merges are listed per card in card_plan.json 'from')",
+  "dropped": {
+   "sea-stories|Nineteen up, nineteen back": "fourth story in its group; the monsoon-safety point is in the seasonal block",
+   "sea-stories|The pilot boards at the reef mouth": "fourth story in its group; Kilindini is Mombasa's, not this coast's",
+   "bars|Havana": "told once: Havana is the late plate in Sur le pouce and has a venue card",
+   "bars|Kinondo Kwetu, by arrangement": "told once: the venue card and the guest list carry it",
+   "around|Shimoni, Wasini & Kisite": "told once: the dhow fold is the home of the Shimoni day",
+   "culture|The verified events": "moved to the calendar (Pratique), dated",
+   "coffee-gardens|Non Solo Gelato": "venue cut",
+   "coffee-gardens|Java House, Centre Point": "venue cut",
+   "provisioning|Ibiza Market cluster": "venue cut",
+   "craft|Kaya Kinondo": "told once: the green section",
+   "the old hot board": "replaced, dated 11 Oct 2026"
+  }
+ }
+}
