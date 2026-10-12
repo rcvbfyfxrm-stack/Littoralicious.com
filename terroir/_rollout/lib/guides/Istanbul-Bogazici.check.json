@@ -1,0 +1,101 @@
+{
+  "slug": "Istanbul-Bogazici",
+  "city": "Istanbul",
+  "listeSlug": "istanbul",
+  "groups": 3,
+  "mapsTokens": [
+    "Istanbul",
+    "İstanbul"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "why-now",
+    "money-sits",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "culture",
+    "landmarks",
+    "hammam",
+    "rituals",
+    "craft",
+    "art",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "street-food",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "rooftops",
+    "linger"
+  ],
+  "floors": {
+    "venues": 45,
+    "gems": 2,
+    "neighborhoods": 13,
+    "walks": 9,
+    "categories": 10,
+    "laneStories": 10,
+    "fcards": 164,
+    "fsubs": 62,
+    "liste": 22,
+    "mapsLinks": 217,
+    "pins": 19
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 31,
+    "gemboxes": 10
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 8,
+    "mode": "pointer"
+  },
+  "doors": 4
+}

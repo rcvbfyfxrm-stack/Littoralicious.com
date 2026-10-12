@@ -1,0 +1,283 @@
+{
+ "_doc": "GOLD6 picks for Istanbul-Bogazici, 12 Oct 2026. Lanes hold <=3; one 4 (ethnic, reason in 'fours'). Criteria in order: can't-miss for Istanbul · authentic over touristic · teaches something · confirmed over unverified. Fewer places is the point. Cut venues leave data.js, both CSVs and every #venue- link. Berths and the guest list rebuilt from venues kept.",
+ "lanes": {
+  "creme": {
+   "label": "La Crème de la Crème",
+   "ids": [
+    "turk-fatih-tutak",
+    "mikla",
+    "neolokal"
+   ],
+   "why": {
+    "turk-fatih-tutak": "the city's only two-star, and its Green Star: the one tasting menu to clear an evening for",
+    "mikla": "the Pera roof and the ingredient argument that made it last",
+    "neolokal": "the classics taken apart and rebuilt in Karaköy, the guide's sustainability case"
+   }
+  },
+  "rising": {
+   "label": "The 2026 wave",
+   "ids": [
+    "kontuar",
+    "todos-los-dias",
+    "basta-neo-bistro"
+   ],
+   "why": {
+    "kontuar": "the open fire inside a 19th-century Pera passage",
+    "todos-los-dias": "a starred chef's comfort food in Asmalımescit: the new wave at its least solemn",
+    "basta-neo-bistro": "the Asian side's neo-bistro on the MICHELIN list, so the wave is not only a Beyoğlu story"
+   }
+  },
+  "chefs-eat": {
+   "label": "Where the chefs eat",
+   "ids": [
+    "nazende-cadde",
+    "asmali-cavit",
+    "balikci-kahraman"
+   ],
+   "why": {
+    "nazende-cadde": "the two-star chef's favourite table in Turkey, on the Asian side",
+    "asmali-cavit": "the after-service rakı table the record keeps agreeing on",
+    "balikci-kahraman": "the village grill at the last quay before the Black Sea"
+   }
+  },
+  "ocakbasi": {
+   "label": "The fire counters — Ocakbaşı",
+   "ids": [
+    "tam-ocakbasi",
+    "mesai",
+    "ahmet-ustam-ocakbasi"
+   ],
+   "why": {
+    "tam-ocakbasi": "the chef's ocakbaşı on the Arnavutköy shore",
+    "mesai": "the Karaköy fixture that came back on İnönü Caddesi",
+    "ahmet-ustam-ocakbasi": "an ocakbaşı first and a day-off address second: moved here from where-the-chefs-eat, which keeps three"
+   }
+  },
+  "esnaf": {
+   "label": "Esnaf lokantası — the tradesman's table",
+   "ids": [
+    "araf-istanbul",
+    "ciya-sofrasi",
+    "casius-antioch-kitchen"
+   ],
+   "why": {
+    "araf-istanbul": "the defining meal of the decade, if you get in",
+    "ciya-sofrasi": "the Anatolian field-recording kitchen by the Kadıköy market",
+    "casius-antioch-kitchen": "Antakya in exile, a 2026 Bib Gourmand"
+   }
+  },
+  "kahvalti": {
+   "label": "Kahvaltı — the breakfast tables",
+   "ids": [
+    "van-kahvalti-evi",
+    "cakmak-kahvalti-salonu",
+    "emirgan-sutis-emirgan"
+   ],
+   "why": {
+    "van-kahvalti-evi": "the Van serpme house of Cihangir, herb cheese first",
+    "cakmak-kahvalti-salonu": "the honest end of the serpme market, in the Beşiktaş çarşı",
+    "emirgan-sutis-emirgan": "kaymak by the Bosphorus, built à la carte"
+   }
+  },
+  "ethnic": {
+   "label": "The other kitchens — Anatolia & beyond",
+   "ids": [
+    "siirt-seref-buryan",
+    "giritli",
+    "hayvore",
+    "saruja"
+   ],
+   "why": {
+    "siirt-seref-buryan": "the büryan pit of the Siirt quarter under the aqueduct",
+    "giritli": "the Cretan table the 1923 exchange carried across the Aegean",
+    "hayvore": "the Black Sea, one street off İstiklal",
+    "saruja": "Damascene home cooking on the Syrian high street"
+   }
+  },
+  "late-night": {
+   "label": "Late night — after service",
+   "ids": [
+    "lale-iskembecisi",
+    "tarihi-mimoza-corbacisi",
+    "tarihi-degustasyon-ocakbasi"
+   ],
+   "why": {
+    "lale-iskembecisi": "the soup that closes a rakı night, since 1965",
+    "tarihi-mimoza-corbacisi": "the cure at its purest, in Samatya",
+    "tarihi-degustasyon-ocakbasi": "the midnight kitchen of the Balık Pazarı drinking lanes"
+   }
+  },
+  "quick-bites": {
+   "label": "Sur le pouce — the honest fast plate",
+   "ids": [
+    "midyeci-ahmet-besiktas",
+    "ozzies-1968-kokorec",
+    "kizilkayalar-taksim"
+   ],
+   "why": {
+    "midyeci-ahmet-besiktas": "midye dolma by the piece in the Beşiktaş çarşı",
+    "ozzies-1968-kokorec": "kokoreç with a named usta and named sourcing",
+    "kizilkayalar-taksim": "the wet burger: the city's agreed end of a night"
+   }
+  },
+  "story": {
+   "label": "The old houses",
+   "ids": [
+    "agora-meyhanesi",
+    "yanyali-fehmi-lokantasi",
+    "develi-samatya"
+   ],
+   "why": {
+    "agora-meyhanesi": "1890: the Greek captain's tavern in Balat",
+    "yanyali-fehmi-lokantasi": "1919: the lokanta that came the other way, now a Bib Gourmand",
+    "develi-samatya": "1912: Gaziantep by one family, behind the Marmara walls"
+   }
+  }
+ },
+ "fours": {
+  "ethnic": "The one 4 in the guide, kept because the four are four different migrations and none stands in for another: Siirt (the south-east, the büryan pit), Crete (the 1923 population exchange), the Laz Black Sea (internal migration), Damascus (the Syrian war after 2011). Istanbul eats in every direction it once ruled; cutting one erases a whole route."
+ },
+ "groups": {
+  "grande": [
+   "creme",
+   "rising"
+  ],
+  "petite": [
+   "chefs-eat",
+   "ocakbasi",
+   "esnaf",
+   "kahvalti",
+   "ethnic",
+   "story"
+  ],
+  "street": [
+   "quick-bites",
+   "late-night"
+  ]
+ },
+ "berths": [
+  "mikla",
+  "ciya-sofrasi",
+  "agora-meyhanesi"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "asmali-cavit",
+   "agora-meyhanesi",
+   "ciya-sofrasi"
+  ],
+  "Plan ahead — this week": [
+   "mikla",
+   "neolokal",
+   "giritli"
+  ],
+  "Plan ahead — the grand night": [
+   "turk-fatih-tutak",
+   "araf-istanbul",
+   "nazende-cadde"
+  ]
+ },
+ "keep_pins": [
+  "wayana-wine-bar-tapas",
+  "arkaoda",
+  "sahika",
+  "nardis-jazz-club",
+  "montag",
+  "kuzguncuk",
+  "arnavutkoy-to-bebek",
+  "buyukada-princes-islands",
+  "kadikoy",
+  "namli-gurme",
+  "kurukahveci-mehmet-efendi",
+  "karakoy-gulluoglu",
+  "kadikoy-market",
+  "vefa-bozacisi"
+ ],
+ "cut": {
+  "nicole": "fourth in the crème; the three kept are the two-star, the roof and the rebuilt classics — Nicole's case is service, the hardest thing to send a guest on",
+  "araka": "fourth in the crème, time-limited (a seasonal residency) and a drive up the strait",
+  "arkestra": "fifth in the crème; one Etiler star among several, and its hi-fi room is not reason enough to keep a fifth tasting menu",
+  "sankai-by-nagaya": "unverified as trading (Aug 2026) and a Japanese room: authentic to Japan, not to this city",
+  "hodan": "fourth in the wave; its case is a weekend brunch",
+  "lina-anatolian": "a hotel terrace with a view, honest about itself: the least particular of the wave",
+  "koroglu-et-lokantasi": "unverified as trading; the chefs-eat lane keeps three confirmed",
+  "cira-ocakbasi": "unverified as trading, in a shopping mall at Skyland",
+  "tarihi-van-kahvalti-evi": "a second Van serpme house; one is the point",
+  "hasan-fehmi-ozsut": "a kaymak counter on İstiklal; the Bosphorus kaymak table carries that register",
+  "sur-ocakbasi": "fourth late-night; the Kadınlar Pazarı block is already told through Siirt Şeref Büryan and the market card",
+  "eminonu-balik-ekmek-tekneleri": "the guide contradicted itself: the traps and The Dish call the painted boats a tourist operation, the lane recommended them. The traps win; the boats are named there, not recommended",
+  "bezirgan-cig-kofte": "unverified as trading",
+  "arogan": "a six-month-old Tarabya room outside every lane: fewer places is the point",
+  "indochine-istanbul": "unverified: nothing dated after October 2025",
+  "seoul-kitchen": "unverified: nothing dated 2026 confirms it",
+  "ostre": "a listing with no footprint beyond city-guide copy",
+  "ruya-istanbul": "an international sharing-plates brand: not particular to this city",
+  "burger-and-lobster": "an international chain inside a hotel, unverified",
+  "bag-pera": "unverified (Aug 2026); the wine group keeps three confirmed rooms",
+  "federal-galata": "unverified (Aug 2026); the coffee group keeps three",
+  "coffee-manifesto": "unverified, and no card points to it",
+  "june": "unverified, a year old; the listening group keeps the two anchors and the café that turns hi-fi",
+  "ritim-istanbul": "a club-night series, not a place",
+  "karga": "re-checked 12 Oct 2026: its own August notice said closing soon and Tripadvisor lists it closed; no 2026 source settles it, so it is not safe to send anyone",
+  "lokanta-stambouli": "re-checked 12 Oct 2026: it opened in November 2025 (Gazete Oksijen), not August 2026, and nothing dated since confirms it is trading; its two published phone numbers disagree"
+ },
+ "cards_cut": {
+  "_": "old cards not carried (merges are listed per card in card_plan.json 'from')",
+  "dropped": {
+   "rooftops|The Bank Roof Bar": "the roofs keep three: the starred bar, the one every guide puts on the wrong shore, and the honest card on price and season",
+   "rooftops|Roof106": "roofs capped at three",
+   "rooftops|Sky Karaköy": "roofs capped at three; seasonal",
+   "rooftops|Manifest Roof": "roofs capped at three",
+   "rooftops|Hood": "roofs capped at three",
+   "bars|Bağ Pera": "venue cut (unverified)",
+   "bars|Lips Wine Bar": "wine rooms capped at three",
+   "listening|Viktor Levi Şarap Evi": "wine rooms capped at three",
+   "bars|Nayah": "listening bars capped at three",
+   "bars|June": "venue cut (unverified)",
+   "bars|Frankhan": "clubs capped at three",
+   "bars|NOH Radio Bar / NOH Extended": "clubs capped at three",
+   "bars|POPSTEL — Stay Local": "a party series, not a place",
+   "quartiers|Fener": "merged into Balat & Fener",
+   "walks|Büyükada by ferry": "told once: the islands live in Autour",
+   "walks|The Monastery of St George": "told once: Autour",
+   "walks|The Prinkipo Orphanage": "told once: Autour",
+   "walks|Heybeliada and the closed seminary": "told once: Autour",
+   "walks|The long ferry to Anadolu Kavağı": "told once: Autour",
+   "walks|Belgrad Forest": "told once: Autour",
+   "culture|Prinkipo Greek Orthodox Orphanage": "told once: Autour",
+   "coffee-gardens|Kahvaltı — the word": "told once: the etymology is in La liste",
+   "coffee-gardens|Neroli Daylight Kitchen": "a daylight kitchen; the breakfast lane carries the first meal",
+   "coffee-gardens|Mornings in Pera": "the breakfast lane carries the first meal",
+   "coffee-gardens|Federal Galata": "venue cut (unverified)",
+   "art|Kalpakçılar Caddesi — the gold": "merged into the Grand Bazaar card",
+   "around|Yalova Termal": "Autour capped at three per group; a ferry day out of the city's orbit",
+   "around|Bandırma": "a transport route, not a day trip",
+   "provisioning|The ocakbaşı": "told once: the fire-counter lane story",
+   "provisioning|Simit": "told once: La liste and The Dish",
+   "provisioning|Balık ekmek": "told once: The Dish and the traps",
+   "provisioning|Midye dolma": "told once: The Dish and the midye table card",
+   "provisioning|Kokoreç": "told once: The Dish and the kokoreç table card",
+   "street-food|Hafız Mustafa 1864": "sugar counters capped at three per group; a chain now",
+   "street-food|Şekerci Cafer Erol": "capped at three per group",
+   "street-food|Meşhur Dondurmacı Ali Usta": "unverified as trading",
+   "listening|The Listening Room at Arkestra": "the restaurant is cut from the tables",
+   "listening|Kadıköy Plak Kulübü": "records capped at three",
+   "listening|Fiba Salon İKSV": "live rooms capped at three",
+   "listening|KOLI Art Space": "a thin card, no verifiable programme",
+   "listening|NOKS (formerly TOZ)": "a thin card",
+   "listening|BAS · AVTO": "a thin card",
+   "listening|Nublu Istanbul / Nublu Records": "a thin card",
+   "listening|Ritim Istanbul": "a series, not a place",
+   "listening|Sazzou": "a thin card",
+   "hammam|Ayasofya Hürrem Sultan Hamamı": "imperial houses capped at three; the priciest door",
+   "hammam|Çemberlitaş Hamamı": "imperial houses capped at three",
+   "hammam|Tarihi Galatasaray Hamamı": "publishes no prices; capped at three",
+   "rituals|Tavla — and whether you can get a game": "the long sit capped at three",
+   "landmarks|Büyük Çamlıca": "gardens capped at three",
+   "landmarks|Şakirin Camii": "little beauties capped at three",
+   "follow|Oggusto and Gazete Oksijen": "follow capped at three per group",
+   "follow|Argonotlar": "capped",
+   "follow|Bant Mag.": "capped"
+  }
+ }
+}

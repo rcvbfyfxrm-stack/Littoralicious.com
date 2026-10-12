@@ -1,0 +1,1501 @@
+{
+ "_doc": "GOLD6 card plan for Istanbul-Bogazici (12 Oct 2026). Each fold -> groups (<=3 cards) -> cards. 'from' lists the OLD card keys (section|name, research/cards_old.json) the new card is built from; several keys = a merge (told once). 'note' = the angle; 'ref' = a lane venue the card points to. Old cards not listed are CUT (picks.json cards_cut).",
+ "quartiers": {
+  "chapter": "place",
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "Kadıköy and its three faces",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-kadikoy",
+      "from": [
+       "quartiers|Kadıköy"
+      ],
+      "note": "the place and Chalcedon; the market streets have their own card in the larder"
+     },
+     {
+      "key": "q-moda",
+      "from": [
+       "quartiers|Moda"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-yeldegirmeni",
+      "from": [
+       "quartiers|Yeldeğirmeni"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The older Asian shore",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-uskudar",
+      "from": [
+       "quartiers|Üsküdar"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-kuzguncuk",
+      "from": [
+       "quartiers|Kuzguncuk"
+      ],
+      "note": "the place and its three houses of prayer; the street walk is in Walks: one clause"
+     }
+    ]
+   },
+   {
+    "title": "Pera and the hill above it",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-pera",
+      "from": [
+       "quartiers|Beyoğlu / Pera"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-cihangir",
+      "from": [
+       "quartiers|Cihangir"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-nisantasi",
+      "from": [
+       "quartiers|Nişantaşı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The Golden Horn",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-karakoy",
+      "from": [
+       "quartiers|Karaköy and Galata"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-balat-fener",
+      "from": [
+       "quartiers|Balat",
+       "quartiers|Fener"
+      ],
+      "note": "one card for the two neighbouring quarters; the walks hold the routes"
+     }
+    ]
+   },
+   {
+    "title": "Up the strait — the Bosphorus villages",
+    "desc": "",
+    "cards": [
+     {
+      "key": "q-arnavutkoy",
+      "from": [
+       "quartiers|Arnavutköy"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-bebek",
+      "from": [
+       "quartiers|Bebek"
+      ],
+      "note": ""
+     },
+     {
+      "key": "q-tarabya",
+      "from": [
+       "quartiers|Tarabya"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "chapter": "flaner",
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The vapur — the city's spine",
+    "desc": "",
+    "cards": [
+     {
+      "key": "w-kadikoy-ferry",
+      "from": [
+       "walks|Eminönü to Kadıköy",
+       "coffee-gardens|The vapur — Şehir Hatları ferry"
+      ],
+      "note": "one home for the ferry as the best room in the city"
+     },
+     {
+      "key": "w-uskudar-ferry",
+      "from": [
+       "walks|Karaköy or Eminönü to Üsküdar"
+      ],
+      "note": ""
+     },
+     {
+      "key": "w-golden-horn-line",
+      "from": [
+       "walks|The Golden Horn line — Üsküdar to Eyüpsultan"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The Bosphorus shore on foot",
+    "desc": "",
+    "cards": [
+     {
+      "key": "w-arnavutkoy-bebek",
+      "from": [
+       "walks|Arnavutköy to Bebek"
+      ],
+      "note": ""
+     },
+     {
+      "key": "w-kuzguncuk",
+      "from": [
+       "walks|Kuzguncuk's one street"
+      ],
+      "note": ""
+     },
+     {
+      "key": "w-moda",
+      "from": [
+       "walks|Moda and the Kadıköy sea walk"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The Golden Horn, pier by pier",
+    "desc": "",
+    "cards": [
+     {
+      "key": "w-fener",
+      "from": [
+       "walks|Fener — the Patriarchate and the Red Castle",
+       "walks|The iron church of St Stephen"
+      ],
+      "note": "the iron church is on the Fener shore: one walk"
+     },
+     {
+      "key": "w-balat",
+      "from": [
+       "walks|Balat — Ahrida and the Jewish quarter"
+      ],
+      "note": ""
+     },
+     {
+      "key": "w-eyup",
+      "from": [
+       "walks|Eyüpsultan and the hill above it"
+      ],
+      "note": "Pierre Loti's tea garden has its own card in the rooms to linger: one clause"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "chapter": "flaner",
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "Byzantine — the domes and the cistern",
+    "desc": "",
+    "cards": [
+     {
+      "key": "c-hagia-sophia",
+      "from": [
+       "culture|Hagia Sophia",
+       "culture|Halfdan's runes"
+      ],
+      "note": "the runes are in the upper gallery: one home"
+     },
+     {
+      "key": "c-chora",
+      "from": [
+       "culture|Chora — Kariye Mosque"
+      ],
+      "note": ""
+     },
+     {
+      "key": "c-cistern",
+      "from": [
+       "culture|Basilica Cistern"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Ottoman — the mosque and the palace",
+    "desc": "",
+    "cards": [
+     {
+      "key": "c-suleymaniye",
+      "from": [
+       "culture|Süleymaniye Mosque"
+      ],
+      "note": ""
+     },
+     {
+      "key": "c-topkapi",
+      "from": [
+       "culture|Topkapı Palace",
+       "provisioning|Matbah-ı Âmire — the imperial kitchens"
+      ],
+      "note": "the imperial kitchens are inside Topkapı: one home"
+     }
+    ]
+   },
+   {
+    "title": "The collections",
+    "desc": "",
+    "cards": [
+     {
+      "key": "c-archaeology",
+      "from": [
+       "culture|Istanbul Archaeological Museums"
+      ],
+      "note": ""
+     },
+     {
+      "key": "c-modern",
+      "from": [
+       "culture|Istanbul Modern",
+       "coffee-gardens|Istanbul Modern"
+      ],
+      "note": ""
+     },
+     {
+      "key": "c-pera-museum",
+      "from": [
+       "culture|Pera Museum"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Beyoğlu's inheritance",
+    "desc": "",
+    "cards": [
+     {
+      "key": "c-cicek",
+      "from": [
+       "culture|Çiçek Pasajı",
+       "bars|Çiçek Pasajı"
+      ],
+      "note": "the building and what it tells; 'read, don't eat' is the advice. The 1942–64 story is told in the food-history fold: one clause"
+     },
+     {
+      "key": "c-zeki-muren",
+      "from": [
+       "culture|Zeki Müren"
+      ],
+      "note": ""
+     },
+     {
+      "key": "c-black-russian",
+      "from": [
+       "culture|The Black Russian"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Curiosities that survive checking",
+    "desc": "",
+    "cards": [
+     {
+      "key": "c-yenikapi",
+      "from": [
+       "culture|Yenikapı — the dig that held up the railway"
+      ],
+      "note": ""
+     },
+     {
+      "key": "c-tunel",
+      "from": [
+       "culture|Tünel"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "landmarks": {
+  "chapter": "flaner",
+  "sub": "sights",
+  "groups": [
+   {
+    "title": "The squares — meydan",
+    "desc": "",
+    "cards": [
+     {
+      "key": "l-hippodrome",
+      "from": [
+       "landmarks|Sultanahmet Meydanı — the Hippodrome",
+       "culture|The Obelisk of Theodosius"
+      ],
+      "note": "one home for the obelisk"
+     },
+     {
+      "key": "l-beyazit",
+      "from": [
+       "landmarks|Beyazıt Meydanı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-ortakoy",
+      "from": [
+       "landmarks|Ortaköy Meydanı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The gardens & groves",
+    "desc": "",
+    "cards": [
+     {
+      "key": "l-gulhane",
+      "from": [
+       "landmarks|Gülhane Parkı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-emirgan",
+      "from": [
+       "landmarks|Emirgan Korusu"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-fethi-pasa",
+      "from": [
+       "landmarks|Fethi Paşa Korusu"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The little beauties",
+    "desc": "",
+    "cards": [
+     {
+      "key": "l-valide-han",
+      "from": [
+       "landmarks|Büyük Valide Han"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-rustem-pasa",
+      "from": [
+       "landmarks|Rüstem Paşa Camii"
+      ],
+      "note": ""
+     },
+     {
+      "key": "l-kucuk-ayasofya",
+      "from": [
+       "landmarks|Küçük Ayasofya Camii"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "hammam": {
+  "chapter": "flaner",
+  "sub": "hammam",
+  "groups": [
+   {
+    "title": "Read this before you undress",
+    "desc": "",
+    "cards": [
+     {
+      "key": "h-sequence",
+      "from": [
+       "hammam|The sequence, start to finish",
+       "hammam|What you wear, and the nudity rule",
+       "rituals|The hamam, and the clock on the door"
+      ],
+      "note": "the sequence and what you wear; the rituals card's sequence content folds in here (told once)"
+     },
+     {
+      "key": "h-gender",
+      "from": [
+       "hammam|Gendered hours — the way this trip actually fails"
+      ],
+      "note": "the core honesty card: keep every house's system in the facts"
+     },
+     {
+      "key": "h-money",
+      "from": [
+       "hammam|The money, the extras and the hard sell",
+       "hammam|Who should not go in"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The imperial houses — the architecture you are paying for",
+    "desc": "",
+    "cards": [
+     {
+      "key": "h-kilic-ali",
+      "from": [
+       "hammam|Kılıç Ali Paşa Hamamı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "h-zeyrek",
+      "from": [
+       "hammam|Zeyrek Çinili Hamam"
+      ],
+      "note": ""
+     },
+     {
+      "key": "h-cagaloglu",
+      "from": [
+       "hammam|Cağaloğlu Hamamı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Plainer domes, stranger rules, and one that is still just a bath",
+    "desc": "",
+    "cards": [
+     {
+      "key": "h-suleymaniye",
+      "from": [
+       "hammam|Süleymaniye Hamamı"
+      ],
+      "note": "the mixed bath: say 'mixed, for any party of men and women together' — never 'couples'"
+     },
+     {
+      "key": "h-aga",
+      "from": [
+       "hammam|Ağa Hamamı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "h-uskudar",
+      "from": [
+       "hammam|Tarihi Üsküdar Çinili Hamamı"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "rituals": {
+  "chapter": "flaner",
+  "sub": "rituals",
+  "groups": [
+   {
+    "title": "The chair and the razor",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-tiras",
+      "from": [
+       "rituals|Tıraş — the full berber",
+       "rituals|Rimedzo Barber Shop"
+      ],
+      "note": "the trade, the tariff, and Rimedzo as the named walk-in"
+     },
+     {
+      "key": "r-2a-berber",
+      "from": [
+       "rituals|2.a Berber Barbershop"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The turn — sema, and which one is prayer",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-sema",
+      "from": [
+       "rituals|Sema — ceremony or show"
+      ],
+      "note": ""
+     },
+     {
+      "key": "r-emav",
+      "from": [
+       "rituals|Silivrikapı Mevlana Kültür Merkezi (EMAV)"
+      ],
+      "note": ""
+     },
+     {
+      "key": "r-galata-mevlevi",
+      "from": [
+       "rituals|Galata Mevlevihanesi"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The long sit",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-cay",
+      "from": [
+       "rituals|Çay bahçesi — the price of a chair",
+       "coffee-gardens|Çay, and the tulip glass"
+      ],
+      "note": "the contract of the chair and the 1924 tea law; the gardens themselves are in the rooms to linger"
+     },
+     {
+      "key": "r-nargile",
+      "from": [
+       "rituals|Nargile — the Tophane strip",
+       "coffee-gardens|Çorlulu Ali Paşa Medresesi"
+      ],
+      "note": "Tophane and the medrese courtyard"
+     },
+     {
+      "key": "r-kahve",
+      "from": [
+       "rituals|Türk kahvesi — Fazıl Bey, and the cup turned over",
+       "coffee-gardens|Türk kahvesi",
+       "rituals|Katina Fal Cafe"
+      ],
+      "note": "the cup, UNESCO 2013, 1554, and the fal reading at Katina"
+     }
+    ]
+   },
+   {
+    "title": "The long table",
+    "desc": "",
+    "cards": [
+     {
+      "key": "r-serpme",
+      "from": [
+       "rituals|Serpme kahvaltı — the Sunday"
+      ],
+      "note": "the ritual; the three breakfast houses are table cards: name them, do not retell"
+     },
+     {
+      "key": "r-raki-balik",
+      "from": [
+       "rituals|Rakı-balık — choosing the fish off the ice"
+      ],
+      "note": "choosing the fish by the kilo; the pacing of the sofra is in the bars fold"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "chapter": "flaner",
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "x-ebristan",
+      "from": [
+       "art|Ebristan — Hikmet Barutçugil",
+       "art|Ebru — marbling"
+      ],
+      "note": "the craft (UNESCO 2014) and the master; verify how to enrol: if no open enrolment can be confirmed, say 'by arrangement' honestly"
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "x-caferaga",
+      "from": [
+       "art|Caferağa Medresesi"
+      ],
+      "note": "courses in Sinan's medrese: what is missing (e.g. no master named publicly)"
+     },
+     {
+      "key": "x-cini",
+      "from": [
+       "art|Çini — the İznik blue"
+      ],
+      "note": "the craft; where to see and what is missing for a visitor who wants to learn"
+     },
+     {
+      "key": "x-hat",
+      "from": [
+       "art|Hüsn-i hat — calligraphy",
+       "art|Sakıp Sabancı Museum — the book arts"
+      ],
+      "note": "the craft, and the Sabancı collection as where to see it"
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "x-carpets",
+      "from": [
+       "art|Carpets and \"antiques\" — the honest note"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "art": {
+  "chapter": "flaner",
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "The Bazaar, told straight",
+    "desc": "",
+    "cards": [
+     {
+      "key": "a-grand-bazaar",
+      "from": [
+       "art|Kapalıçarşı — the Grand Bazaar",
+       "art|Kalpakçılar Caddesi — the gold"
+      ],
+      "note": "the bazaar and its gold street in one card"
+     },
+     {
+      "key": "a-zincirli",
+      "from": [
+       "art|Zincirli Han"
+      ],
+      "note": ""
+     },
+     {
+      "key": "a-sahaflar",
+      "from": [
+       "art|Sahaflar Çarşısı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The music street — instruments and vinyl",
+    "desc": "",
+    "cards": [
+     {
+      "key": "a-galip-dede",
+      "from": [
+       "art|Galip Dede Caddesi — the music street",
+       "art|Saz, bağlama, kanun, ud — what the names admit"
+      ],
+      "note": ""
+     },
+     {
+      "key": "a-manol",
+      "from": [
+       "art|Manol, and who actually built the oud"
+      ],
+      "note": ""
+     },
+     {
+      "key": "a-lale-plak",
+      "from": [
+       "art|Lale Plak"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "chapter": "flaner",
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Çay bahçesi — the tea gardens",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-cinaralti",
+      "from": [
+       "coffee-gardens|Çınaraltı, Çengelköy"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-pierre-loti",
+      "from": [
+       "coffee-gardens|Pierre Loti Kahvesi",
+       "coffee-gardens|Pierre Loti Hill"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-moda-aile",
+      "from": [
+       "coffee-gardens|Moda Aile Çay Bahçesi"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The old pastry houses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-inci",
+      "from": [
+       "coffee-gardens|İnci Pastanesi"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-markiz",
+      "from": [
+       "coffee-gardens|Markiz (ex-Lebon)"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Coffee, and a working day",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-kronotrop",
+      "from": [
+       "coffee-gardens|Kronotrop, Cihangir"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-montag",
+      "from": [
+       "coffee-gardens|Montag Coffee Roasters"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-petra",
+      "from": [
+       "coffee-gardens|Petra Roasting Co., Bebek"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The free desks",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-ataturk",
+      "from": [
+       "coffee-gardens|Atatürk Kitaplığı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "g-salt",
+      "from": [
+       "coffee-gardens|SALT Research, SALT Galata",
+       "culture|SALT Galata",
+       "follow|Salt Research"
+      ],
+      "note": "one home for SALT: the bank, the free building, the library and the open archive"
+     }
+    ]
+   },
+   {
+    "title": "Beautiful. Close the laptop.",
+    "desc": "",
+    "cards": [
+     {
+      "key": "g-yildiz",
+      "from": [
+       "coffee-gardens|Çadır Köşkü, Yıldız Park"
+      ],
+      "note": "the honest work-truth line"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "chapter": "sortir",
+  "sub": "bars",
+  "merges": [
+   {
+    "title": "The rakı table & the Turkish glass",
+    "desc": "",
+    "groups": [
+     {
+      "title": "The rakı table",
+      "desc": "",
+      "cards": [
+       {
+        "key": "b-agora",
+        "from": [
+         "bars|Agora Meyhanesi 1890"
+        ],
+        "note": "pointer: the meyhane night at Agora — the drink, the hour",
+        "ref": "agora-meyhanesi"
+       },
+       {
+        "key": "b-sofra",
+        "from": [
+         "bars|The rakı sofrası",
+         "provisioning|The meyhane table"
+        ],
+        "note": "the pacing of the meyhane table, told once"
+       },
+       {
+        "key": "b-stambouli",
+        "from": [
+         "bars|Lokanta Stambouli"
+        ],
+        "note": "opened Aug 2026 per old card; status per venue re-check"
+       }
+      ]
+     },
+     {
+      "title": "The wine rooms",
+      "desc": "",
+      "cards": [
+       {
+        "key": "b-wayana",
+        "from": [
+         "bars|WAYANA Wine Bar & Tapas"
+        ],
+        "note": ""
+       },
+       {
+        "key": "b-solera",
+        "from": [
+         "listening|Solera Winery"
+        ],
+        "note": ""
+       },
+       {
+        "key": "b-sensus",
+        "from": [
+         "listening|Sensus Wine Boutique"
+        ],
+        "note": ""
+       }
+      ]
+     },
+     {
+      "title": "Ask for the native grape",
+      "desc": "",
+      "cards": [
+       {
+        "key": "b-okuzgozu",
+        "from": [
+         "bars|Öküzgözü & Boğazkere"
+        ],
+        "note": ""
+       },
+       {
+        "key": "b-light-reds",
+        "from": [
+         "bars|Kalecik Karası",
+         "bars|Papazkarası & Çalkarası"
+        ],
+        "note": "the light reds and rosés in one card"
+       },
+       {
+        "key": "b-whites",
+        "from": [
+         "bars|Narince & Emir"
+        ],
+        "note": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "The roofs & the palace bars",
+    "desc": "",
+    "groups": [
+     {
+      "title": "Up on the roof",
+      "desc": "",
+      "cards": [
+       {
+        "key": "b-mikla-bar",
+        "from": [
+         "rooftops|Mikla Bar"
+        ],
+        "note": "pointer: the bar terrace without the tasting menu",
+        "ref": "mikla"
+       },
+       {
+        "key": "b-mezzepotamia",
+        "from": [
+         "rooftops|Roof Mezzepotamia"
+        ],
+        "note": ""
+       },
+       {
+        "key": "b-before-roof",
+        "from": [
+         "rooftops|What a drink costs up there",
+         "rooftops|The hour",
+         "rooftops|The season"
+        ],
+        "note": "no place: the price, the hour (never a perishable sunset time), the season"
+       }
+      ]
+     },
+     {
+      "title": "The palace bars",
+      "desc": "",
+      "cards": [
+       {
+        "key": "b-pera-palace",
+        "from": [
+         "listening|Orient Bar, Pera Palace",
+         "listening|Kubbeli Lounge, Pera Palace",
+         "coffee-gardens|Kubbeli Saloon, Pera Palace"
+        ],
+        "note": "one home for the Pera Palace: the bar and the domed saloon's tea"
+       },
+       {
+        "key": "b-ciragan",
+        "from": [
+         "listening|Le Fumoir and C Lounge, Çırağan Palace Kempinski"
+        ],
+        "note": ""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "title": "After midnight",
+    "desc": "",
+    "groups": [
+     {
+      "title": "The clubs",
+      "desc": "",
+      "cards": [
+       {
+        "key": "b-flux",
+        "from": [
+         "bars|FLUX"
+        ],
+        "note": ""
+       },
+       {
+        "key": "b-sahika",
+        "from": [
+         "bars|Şahika"
+        ],
+        "note": ""
+       },
+       {
+        "key": "b-suma-han",
+        "from": [
+         "bars|Suma Han"
+        ],
+        "note": ""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "chapter": "sortir",
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening bars",
+    "desc": "",
+    "cards": [
+     {
+      "key": "n-arkaoda",
+      "from": [
+       "bars|Arkaoda"
+      ],
+      "note": ""
+     },
+     {
+      "key": "n-karga",
+      "from": [
+       "bars|Karga"
+      ],
+      "note": "status: closing_soon in Aug — say what the re-check found"
+     },
+     {
+      "key": "n-dama",
+      "from": [
+       "bars|Dama",
+       "coffee-gardens|Dama"
+      ],
+      "note": "one home for Dama: coffee by day, hi-fi at night"
+     }
+    ]
+   },
+   {
+    "title": "Records",
+    "desc": "",
+    "cards": [
+     {
+      "key": "n-kontra",
+      "from": [
+       "listening|Kontra Plak"
+      ],
+      "note": ""
+     },
+     {
+      "key": "n-analog",
+      "from": [
+       "listening|Analog Kültür"
+      ],
+      "note": ""
+     },
+     {
+      "key": "n-akmar",
+      "from": [
+       "listening|Akmar Pasajı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Live rooms and fasıl",
+    "desc": "",
+    "cards": [
+     {
+      "key": "n-nardis",
+      "from": [
+       "listening|Nardis Jazz Club"
+      ],
+      "note": ""
+     },
+     {
+      "key": "n-cumhuriyet",
+      "from": [
+       "listening|Tarihi Cumhuriyet Meyhanesi"
+      ],
+      "note": ""
+     },
+     {
+      "key": "n-babylon",
+      "from": [
+       "listening|Babylon"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "chapter": "around",
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The Princes' Islands",
+    "desc": "",
+    "cards": [
+     {
+      "key": "o-buyukada",
+      "from": [
+       "around|Büyükada",
+       "walks|Büyükada by ferry"
+      ],
+      "note": ""
+     },
+     {
+      "key": "o-st-george",
+      "from": [
+       "walks|The Monastery of St George",
+       "walks|The Prinkipo Orphanage",
+       "culture|Prinkipo Greek Orthodox Orphanage"
+      ],
+      "note": "the climb and the orphanage on the way: one home for the orphanage"
+     },
+     {
+      "key": "o-heybeliada",
+      "from": [
+       "around|Heybeliada",
+       "walks|Heybeliada and the closed seminary"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Up the Bosphorus",
+    "desc": "",
+    "cards": [
+     {
+      "key": "o-anadolu-kavagi",
+      "from": [
+       "around|Anadolu Kavağı & Yoros Kalesi",
+       "walks|The long ferry to Anadolu Kavağı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "o-rumeli-kavagi",
+      "from": [
+       "around|Rumeli Kavağı"
+      ],
+      "note": "Balıkçı Kahraman is a table card: name it, do not retell"
+     },
+     {
+      "key": "o-hidiv",
+      "from": [
+       "around|Hıdiv Kasrı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Forest and the Black Sea",
+    "desc": "",
+    "cards": [
+     {
+      "key": "o-belgrad",
+      "from": [
+       "around|Belgrad Ormanı",
+       "walks|Belgrad Forest"
+      ],
+      "note": ""
+     },
+     {
+      "key": "o-polonezkoy",
+      "from": [
+       "around|Polonezköy"
+      ],
+      "note": ""
+     },
+     {
+      "key": "o-sile",
+      "from": [
+       "around|Şile & Ağva"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "chapter": "tables",
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets",
+    "desc": "",
+    "cards": [
+     {
+      "key": "p-kadikoy",
+      "from": [
+       "provisioning|Tarihi Kadıköy Çarşısı — Güneşlibahçe Sokağı",
+       "provisioning|Kadıköy market streets",
+       "provisioning|Salı Pazarı and the weekly pazar circuit"
+      ],
+      "note": "one home for the Kadıköy market and the Tuesday pazar"
+     },
+     {
+      "key": "p-spice",
+      "from": [
+       "provisioning|Mısır Çarşısı — the Spice Bazaar, and what it is now",
+       "provisioning|Mısır Çarşısı — the Spice Bazaar",
+       "provisioning|Hasırcılar Caddesi — the working street"
+      ],
+      "note": "the bazaar and the working street behind it"
+     },
+     {
+      "key": "p-kadinlar",
+      "from": [
+       "provisioning|Kadınlar Pazarı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The fish, and the Saturday market",
+    "desc": "",
+    "cards": [
+     {
+      "key": "p-besiktas-fish",
+      "from": [
+       "provisioning|Beşiktaş Balık Çarşısı"
+      ],
+      "note": ""
+     },
+     {
+      "key": "p-resat",
+      "from": [
+       "provisioning|Reşat Balık"
+      ],
+      "note": ""
+     },
+     {
+      "key": "p-ferikoy",
+      "from": [
+       "provisioning|Feriköy %100 Ekolojik Pazar"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The counters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "p-kurukahveci",
+      "from": [
+       "provisioning|Kurukahveci Mehmet Efendi"
+      ],
+      "note": ""
+     },
+     {
+      "key": "p-namli",
+      "from": [
+       "provisioning|Namlı Gurme",
+       "provisioning|Pastırma and sucuk"
+      ],
+      "note": "the deli and what pastırma is"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "chapter": "practical",
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The Turkish-language food press",
+    "desc": "",
+    "cards": [
+     {
+      "key": "v-yemek",
+      "from": [
+       "follow|Yemek ve Kültür"
+      ],
+      "note": ""
+     },
+     {
+      "key": "v-milor",
+      "from": [
+       "follow|Vedat Milor"
+      ],
+      "note": ""
+     },
+     {
+      "key": "v-oney",
+      "from": [
+       "follow|Aylin Öney Tan"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Written in English, reported on the ground",
+    "desc": "",
+    "cards": [
+     {
+      "key": "v-cb",
+      "from": [
+       "follow|Culinary Backstreets"
+      ],
+      "note": ""
+     },
+     {
+      "key": "v-cornucopia",
+      "from": [
+       "follow|Cornucopia"
+      ],
+      "note": ""
+     },
+     {
+      "key": "v-recap",
+      "from": [
+       "follow|Turkey recap"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "The history, and what is on the week you land",
+    "desc": "",
+    "cards": [
+     {
+      "key": "v-ohp",
+      "from": [
+       "follow|Ottoman History Podcast"
+      ],
+      "note": ""
+     },
+     {
+      "key": "v-iksv",
+      "from": [
+       "follow|İKSV — Istanbul Foundation for Culture and Arts"
+      ],
+      "note": ""
+     },
+     {
+      "key": "v-timeout",
+      "from": [
+       "follow|Time Out Istanbul"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ },
+ "street-food": {
+  "chapter": "fast",
+  "sub": "late",
+  "groups": [
+   {
+    "title": "After the bar shuts",
+    "desc": "",
+    "cards": [
+     {
+      "key": "f-lale",
+      "from": [],
+      "note": "pointer, late angle: işkembe against the rakı; the hour it shuts",
+      "ref": "lale-iskembecisi"
+     },
+     {
+      "key": "f-kizilkayalar",
+      "from": [],
+      "note": "pointer, late angle: the 03:00 wet burger",
+      "ref": "kizilkayalar-taksim"
+     },
+     {
+      "key": "f-gulluoglu",
+      "from": [
+       "street-food|Karaköy Güllüoğlu",
+       "street-food|Faruk Güllü",
+       "provisioning|Baklava"
+      ],
+      "note": "baklava past midnight; the Güllüoğlu split and the PGI told once here"
+     }
+    ]
+   },
+   {
+    "title": "Lokum, muhallebi, boza",
+    "desc": "",
+    "cards": [
+     {
+      "key": "f-haci-bekir",
+      "from": [
+       "street-food|Ali Muhiddin Hacı Bekir",
+       "provisioning|Lokum"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-saray",
+      "from": [
+       "street-food|Saray Muhallebicisi"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-vefa",
+      "from": [
+       "street-food|Vefa Bozacısı"
+      ],
+      "note": ""
+     }
+    ]
+   },
+   {
+    "title": "Hot and cold",
+    "desc": "",
+    "cards": [
+     {
+      "key": "f-kunefe",
+      "from": [
+       "street-food|Hatay Medeniyetler Sofrası"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-mado",
+      "from": [
+       "street-food|Mado"
+      ],
+      "note": ""
+     },
+     {
+      "key": "f-baylan",
+      "from": [
+       "street-food|Baylan Pastanesi"
+      ],
+      "note": ""
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "_about": "Istanbul-Bogazici, 12 Oct 2026 — §8, the four readings. Every stop is one of this guide's own cards or table venues, with the hours those cards carry (re-checked 12 Oct 2026; where listings disagree the card says call, and so does the step).",
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · walking order",
+  "lede": "Istanbul eats late and drinks slowly: the meyhane table runs from eight for three or four hours, and the soup counters keep the night going after it. Each quarter below is one evening, in the order you walk it. Every name opens its full card; hours were re-checked on 12 October 2026, and where the listings disagree the card says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — a glass, the table, the music, and the late plate, in walking order.",
+  "door_note": "Le verre · la table · la musique · la soupe",
+  "quarters": [
+   {"id": "pera", "name": "Pera · Tepebaşı and Asmalımescit", "line": "A drink above the Golden Horn, the meyhane lane, then the soup that ends it.",
+    "steps": [
+     {"time": "18:00", "name": "Mikla Bar", "ref": "card:Mikla Bar", "text": "The terrace bar on the roof of The Marmara Pera pours without the tasting menu, from 18:00. Come before the light goes."},
+     {"time": "20:00", "name": "Asmalı Cavit", "ref": "venue:asmali-cavit", "text": "The small family meyhane the city's cooks use after service: cold meze, hamsi, rakı. Evenings only and closed Sunday on most listings; phone the same afternoon."},
+     {"time": "23:30", "name": "Saray Muhallebicisi", "ref": "card:Saray Muhallebicisi", "text": "Down İstiklal for tavuk göğsü, the milk pudding made with chicken. Daily to 02:00 per Time Out; the house publishes no hours."},
+     {"time": "late", "name": "Lale İşkembecisi", "ref": "venue:lale-iskembecisi", "text": "Into Tarlabaşı for tripe soup with garlic vinegar against the rakı. The house says it never closes."}],
+    "after": "Cheaper: the Black Sea pots at [[venue:hayvore|Hayvore]] off İstiklal, which can run out before evening. Spend more: the open fire at [[venue:kontuar|Kontuar]] in the Pera passage (book; days disagree, call)."},
+   {"id": "galata", "name": "Galata and Karaköy", "line": "The old bank, the jazz club under the tower, and baklava on the way home.",
+    "steps": [
+     {"time": "19:30", "name": "Neolokal", "ref": "venue:neolokal", "text": "Maksut Aşkar's rebuilt classics behind the windows of SALT Galata, the old Ottoman Bank. Book; opening days are not published, so confirm when you do."},
+     {"time": "22:00", "name": "Nardis Jazz Club", "ref": "card:Nardis Jazz Club", "text": "Up the hill to the foot of the Galata Tower for the first set: weekdays from 21:30, weekends from 22:30 (seen Aug 2026). Book by phone or email."},
+     {"time": "00:30", "name": "Karaköy Güllüoğlu", "ref": "card:Karaköy Güllüoğlu and the Güllü split", "text": "Back down to Kemankeş Caddesi for pistachio baklava by the portion. Listings say 01:00, one guide 23:00: phone before a late walk."}],
+    "after": "Cheaper: skip the tasting menu and eat the meze at [[venue:asmali-cavit|Asmalı Cavit]], up the hill in Asmalımescit."},
+   {"id": "kadikoy", "name": "Kadıköy and Moda · the Asian shore", "line": "A sunset walk, the Anatolian counter, a glass of native grape and the listening bar.",
+    "steps": [
+     {"time": "17:30", "name": "Moda and the Kadıköy sea walk", "ref": "card:Moda and the Kadıköy sea walk", "text": "From the Kadıköy pier south along the shore to the grass at Moda Burnu, facing the old city at sunset. About 2 km, flat."},
+     {"time": "19:00", "name": "Çiya Sofrası", "ref": "venue:ciya-sofrasi", "text": "Back up to the market street and point at the trays: dishes from villages across Anatolia. Walk in; it closes around 22:00, opening times disagree (call)."},
+     {"time": "21:00", "name": "WAYANA Wine Bar & Tapas", "ref": "card:WAYANA Wine Bar & Tapas", "text": "A flight of rare native grapes on a Moda side street, the list built to pour by the glass. To midnight (seen Aug 2026)."},
+     {"time": "23:00", "name": "Arkaoda", "ref": "card:Arkaoda", "text": "Kadife Sokak's anchor since 1999: the garden, then the room. To 02:00 on a July 2026 listing."}],
+    "after": "The last ferry back: check Şehir Hatları for tonight's last Kadıköy–Karaköy and Kadıköy–Eminönü boats before the second glass."},
+   {"id": "balat", "name": "Balat · up the Golden Horn", "line": "A thin quarter at night, said honestly: one great old room, reached by boat.",
+    "steps": [
+     {"time": "18:00", "name": "The Golden Horn line", "ref": "card:The Golden Horn line: Üsküdar to Eyüpsultan", "text": "The Haliç ferry from Karaköy up the Horn to the Balat pier, with the light going on the water."},
+     {"time": "19:00", "name": "Agora Meyhanesi", "ref": "venue:agora-meyhanesi", "text": "The 1890 meyhane a Rum sea captain opened: some sixty mezes, then the rakı sets the pace. Open daily; listings disagree on the close, so book and confirm."}],
+    "after": "Balat's lanes are a morning walk, not a night one: come back for [[card:Balat: Ahrida and the Jewish quarter|the synagogues]] on a weekday."},
+   {"id": "samatya", "name": "Samatya · behind the Marmara walls", "line": "Antep kebab on the terrace, then the cure at the soup counter.",
+    "steps": [
+     {"time": "20:00", "name": "Develi Samatya", "ref": "venue:develi-samatya", "text": "The 1912 Gaziantep family's Samatya house: order the fıstıklı kebap, lamb threaded with pistachio. Daily to midnight per the house."},
+     {"time": "23:30", "name": "Tarihi Mimoza Çorbacısı", "ref": "venue:tarihi-mimoza-corbacisi", "text": "In Samatya still: kelle paça or the four-soups Mimoza, with a free salad. The pots run until 03:00. Walk in."}]},
+   {"id": "arnavutkoy", "name": "Arnavutköy and Bebek · the Bosphorus shore", "line": "The best hour on the European shore, then the fire.",
+    "steps": [
+     {"time": "16:30", "name": "Arnavutköy to Bebek", "ref": "card:Arnavutköy to Bebek", "text": "The yalı fronts standing in the water, then the bay of boats. About an hour; start by mid-afternoon in autumn, when the light goes by six."},
+     {"time": "19:00", "name": "Tam Ocakbaşı", "ref": "venue:tam-ocakbasi", "text": "Back along the shore to Arnavutköy, or a short taxi, and a seat at the coals: liver first, then the skewers, a lahmacun to close. Phone ahead, essential on Friday and Saturday."}]},
+   {"id": "rumeli-kavagi", "name": "Rumeli Kavağı · the last quay before the Black Sea", "line": "A long evening out of the city, by car, for one fish.",
+    "steps": [
+     {"time": "17:30", "name": "The quay at Rumeli Kavağı", "ref": "card:Rumeli Kavağı", "text": "The northernmost village on the European shore, settled by families from the eastern Black Sea: mussels on the quay and the strait narrowing towards the open sea while the light goes."},
+     {"time": "18:30", "name": "Balıkçı Kahraman", "ref": "venue:balikci-kahraman", "text": "The village grill a two-star chef compares to Elkano: kalkan, Black Sea turbot, grilled slowly. Daily to 23:30 (Sunday 23:00) per listings; call ahead. Ask what came in tonight and what it weighed."}],
+    "after": "Getting back is the plan: book the car or taxi for the return down the European shore before you sit down."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the Pera roof, the ferry to Asia, a meyhane night, the bath, and Sinan's mosque.",
+  "door_note": "Le toit · le vapur · la meyhane · le hammam",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Istanbul sells itself as Sultanahmet: the domes, the bazaar, a terrace with a view of both. The real weekend is on the water and across it: <strong>a commuter ferry to Asia for the price of a bus fare</strong>, a market lunch in Kadıköy at a counter that collects village recipes, a four-hour rakı table in the lanes the minorities built, a bath on the clock, and the mosque Sinan built on the third hill. Every stop below is already in this guide and was re-checked on 12 October 2026. This reading puts them in order, and tells you what to book before you fly.",
+  "book": [
+   "[[venue:mikla|Mikla]] — online for Friday dinner; a card guarantee of €35 a head, and the table is released 30 minutes after your slot.",
+   "[[venue:asmali-cavit|Asmalı Cavit]] — by phone for Saturday night; it is small and closed on Sunday.",
+   "[[card:Kılıç Ali Paşa Hamamı|Kılıç Ali Paşa Hamamı]] — online or by phone for Sunday; women 08:00–16:00, men from 16:30. A mixed party books [[card:Ağa Hamamı|Ağa Hamamı]] instead.",
+   "[[card:Nardis Jazz Club|Nardis Jazz Club]] — by phone or email for Friday's late set."
+  ],
+  "days": [
+   {"label": "Friday", "title": "The Pera roof and the tower",
+    "stops": [
+     {"time": "19:00", "name": "Dinner at Mikla", "ref": "venue:mikla", "text": "The roof of The Marmara Pera and the kitchen that coined the phrase New Anatolian. Take the six-course tasting and come early for the terrace bar while the light is on the Golden Horn.", "meta": "The Marmara Pera, Tepebaşı · six-course tasting ₺10,500 (house menu, Aug 2026) · book online · smart chic"},
+     {"time": "22:30", "name": "Nardis Jazz Club", "ref": "card:Nardis Jazz Club", "text": "Walk down from Tepebaşı to the foot of the Galata Tower, to the city's oldest dedicated jazz club, in a Genoese building.", "meta": "Galata · weekends 22:30–01:30 (seen Aug 2026) · book by phone or email"},
+     {"time": "00:30", "name": "Baklava at Karaköy Güllüoğlu", "ref": "card:Karaköy Güllüoğlu and the Güllü split", "text": "Down the hill to Karaköy for fıstıklı kuru baklava by the portion, the drier, crisper build.", "meta": "Kemankeş Cad. 67 · to 01:00 per listings, 23:00 per one guide: phone"}]},
+   {"label": "Saturday", "title": "Across to Asia, and the meyhane night",
+    "stops": [
+     {"time": "09:00", "name": "Serpme breakfast at Van Kahvaltı Evi", "ref": "venue:van-kahvalti-evi", "text": "Cihangir's Van house: the herb cheese first, then the spread. No bookings, and the weekend queue is real, so go early.", "meta": "Cihangir · daily from breakfast; listings disagree on the times · walk in"},
+     {"time": "11:00", "name": "The vapur from Karaköy to Kadıköy", "ref": "card:The vapur: Eminönü to Kadıköy", "text": "The best room in the city costs a commuter fare: twenty minutes on deck, tea from the tray, Europe behind you and Asia ahead.", "meta": "Karaköy or Eminönü pier · about 20–25 minutes · an İstanbulkart"},
+     {"time": "11:30", "name": "Kadıköy market", "ref": "card:Kadıköy market and the Tuesday pazar", "text": "Five minutes up from the pier: the fish row, the greengrocers, palamut whole on the ice in autumn. Fullest in the late morning.", "meta": "Güneşlibahçe Sokağı and the streets round it · daily"},
+     {"time": "13:00", "name": "Lunch at Çiya Sofrası", "ref": "venue:ciya-sofrasi", "text": "Musa Dağdeviren's counter of recipes collected village by village. Point at what you cannot name; the zeytinyağlı trays and the mantı rotate.", "meta": "Güneşlibahçe Sok. 43 · daily, lunch and dinner · walk in · about $10 a head (50 Best Discovery)"},
+     {"time": "15:30", "name": "Moda and the sea walk", "ref": "card:Moda and the Kadıköy sea walk", "text": "South along the shore to Moda's point and the grass facing the old city. In autumn the light goes by six, so this is the late-afternoon hour.", "meta": "From Kadıköy pier · about 2 km, flat"},
+     {"time": "17:30", "name": "The ferry back at dusk", "ref": "card:Karaköy or Eminönü to Üsküdar", "text": "Back across westward with the sun going down behind the domes: the crossing to take in this direction.", "meta": "Kadıköy or Üsküdar to Karaköy/Eminönü · about 15–25 minutes"},
+     {"time": "20:00", "name": "The rakı table at Asmalı Cavit", "ref": "venue:asmali-cavit", "text": "Cold meze, then hamsi, then whatever the kitchen says; rakı with water and ice, slowly. A meyhane evening is three or four hours, not two.", "meta": "Asmalı Mescit Cad. 16/D · evenings, closed Sunday · book by phone; opening times disagree"},
+     {"time": "late", "name": "Tripe soup at Lale İşkembecisi", "ref": "venue:lale-iskembecisi", "text": "The Beyoğlu night's last chapter: işkembe with garlic vinegar, in Tarlabaşı.", "meta": "Tarlabaşı · open 24 hours per the house · walk in"}]},
+   {"label": "Sunday", "title": "The bath and the third hill",
+    "stops": [
+     {"time": "09:00", "name": "Kılıç Ali Paşa Hamamı", "ref": "card:Kılıç Ali Paşa Hamamı", "text": "Sinan's bath for the crews of the Ottoman fleet, one dome and the clock on the door: women in the day, men from 16:30. A mixed party goes to Ağa Hamamı in Çukurcuma, mixed throughout. Do not plan anything for the hour after.", "meta": "Tophane · women 08:00–16:00, men 16:30–23:30 · traditional ritual ₺4,300 (seen Aug 2026) · book"},
+     {"time": "11:30", "name": "Süleymaniye Mosque", "ref": "card:Süleymaniye Mosque", "text": "Sinan's mosque on the third hill, and his own small tomb at the corner of the precinct wall. Time it between prayers; cover shoulders and knees.", "meta": "Süleymaniye, Fatih · free · closed to visitors around the five daily prayers"},
+     {"time": "13:00", "name": "A glass of boza at Vefa Bozacısı", "ref": "card:Vefa Bozacısı", "text": "Down the hill to Vefa: thick, faintly sour fermented millet with cinnamon and roasted chickpeas, in the room it has been poured in since 1876. Boza is the cold-season drink; check the counter is pouring.", "meta": "Vefa Cad. 66 · hours not published by the house"},
+     {"time": "13:30", "name": "Büryan at Siirt Şeref", "ref": "venue:siirt-seref-buryan", "text": "Under the Valens aqueduct, lamb from the pit cubed hot onto flatbread with nothing but salt. The best of the pit is gone by mid-afternoon: this is the last stop, and the right one.", "meta": "Kadınlar Pazarı, Fatih · lunch; posted hours unverified · walk in"}]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "A drink on the [[card:Mikla Bar|Mikla terrace]] at six, the meyhane table at [[venue:asmali-cavit|Asmalı Cavit]] at eight, and tripe soup at [[venue:lale-iskembecisi|Lale]] after midnight. That is the city in one night."},
+   {"title": "The grand night instead", "text": "Swap Friday's roof for [[venue:turk-fatih-tutak|TURK Fatih Tutak]], Istanbul's only two-star, with a Green Star: one long tasting menu, Tuesday to Saturday, booked direct weeks ahead, collar and long trousers for men. Or cross to Kadıköy for the twelve seats at [[venue:araf-istanbul|Araf]], one open fire and a star; midweek is the least impossible night."},
+   {"title": "Or the Bosphorus instead of the bath", "text": "Take Sunday up the strait: kaymak at [[venue:emirgan-sutis-emirgan|Emirgan Sütiş]], the shore walk from [[card:Arnavutköy to Bebek|Arnavutköy to Bebek]], and lunch at the coals at [[venue:tam-ocakbasi|Tam Ocakbaşı]] (phone ahead)."},
+   {"title": "This October and November", "dated": "Checked 12 October 2026", "items": [
+     "Republic Day is Thursday 29 October: flags everywhere and ceremonies round Taksim; 10 November stops the city at 09:05.",
+     "The Istanbul Marathon is Sunday 1 November: the bridge and the shore roads close for the morning; move any transfer to the afternoon.",
+     "The fishing season is open: palamut is in glut, the lüfer run is thin this autumn, and the first hamsi have arrived. Ask at the [[card:Kadıköy market and the Tuesday pazar|Kadıköy fish row]].",
+     "The light goes early: sunset is about 18:23 in mid-October and 17:45 by mid-November, and Turkey does not change its clocks.",
+     "Lodos and poyraz can cancel ferries in autumn: check Şehir Hatları the same morning before an island or strait day."]},
+   {"title": "Where to sleep", "text": "This guide does not judge hotels. The weekend is built to be walked from Pera, Galata or Karaköy, where the Friday and Saturday nights end; the only hotels in it are rooms we send you to for a drink, like the [[card:Pera Palace: Orient Bar & Kubbeli Saloon|Pera Palace]], whose rooms we have not judged."},
+   {"title": "What we would leave out", "text": "Dinner in Sultanahmet: the monuments are there, the cooking is not. The painted fish-bread boats at Eminönü. Any door with a man outside inviting you in. And the hour before sunset in Ramadan, when the old-city rooms fill in a single minute."}
+  ]
+ }
+}
