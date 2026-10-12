@@ -549,7 +549,22 @@
   },
   {
    "slug": "Istanbul-Bogazici",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Istanbul-Bogazici-2026-10-12",
+   "date": "2026-10-12",
+   "readings": "done 2026-10-12",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (187 OK, 12 Oct; floors = curated counts: venues 45, fcards 164, fsubs 62, neighborhoods 13, walks 9, categories 10, lane stories 10, liste 22, maps links 217, pins 19; groups 3; doors 4; hot minVenues 8; staleAllow only the 'Prague' code comment in the shared readings.js, as on the Sicily branches; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: ALL PASS, exit 0 (7 chapters + sub-tags, readout, pointer lands on its table card, back button, 164 facts/164 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 88 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 88 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 122/122 placed cards and 31/31 venues with Maps on the closed card, no sideways scroll; One Night 29 links, Getaway 23); lens screenshots in review/Istanbul-Bogazici/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 272 units",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Istanbul-Bogazici/istanbul-card-desktop.png, istanbul-card-phone.png (Kılıç Ali Paşa Hamamı, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "notes": "12 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome; the old page was GOLD4, so the GOLD5 floor came too (#eat jump line, The Dish inside La liste, dated hot board + #why-now pointer, calendar, craft section, third table group La Rue, .ics with X-WR-CALNAME, .txt removed). Places 71 -> 45 (lane venues 44 -> 31 in 10 lanes; map-only 27 -> 14); fold cards 233 -> 164 (143 + 12 hot board + 9 calendar), every card labelled; 62 groups none over 3. One 4: the other kitchens (Siirt, Crete, Laz, Damascus = four migrations), reason in picks.json. 26 places cut with reasons, incl. Lokanta Stambouli (opened Nov 2025, nothing since confirms it trading), Karga (own closing notice + closed listing, unresolved), and the Eminönü balık-ekmek boats (the guide recommended them in a lane while its traps said skip them). Guest list rebuilt from venues kept: last minute Asmalı Cavit · Agora · Çiya; this week Mikla · Neolokal · Giritli; grand night TURK · Araf · Nazende Cadde. Berths Mikla · Çiya · Agora. Re-check via WebSearch extracts only: 24 places re-confirmed 12 Oct, 19 keep their August date, 2 unverified (Kuzguncuk, Arnavutköy-Bebek walk, no 2026 evidence). Corrections incl.: 'Turkey's only two-star' -> Istanbul's (Vino Locale, İzmir, two stars in 2026); Tütak -> Tutak; Giritli's Bib not confirmed (now 'in the selection'); Ahmet Ustam Bib Gourmand, Balıkçı Kahraman in MICHELIN, Agora and Hayvore Gault&Millau toques added; WAYANA is in Moda (la liste said Karaköy); Midyeci Ahmet is Beşiktaş (la liste said Karaköy); Atatürk Kitaplığı researchers-only since 2022; Basilica Cistern's June 2026 handover; Ramazan Bayramı 2027 = 9-11 Mar; the '28 cm lüfer' claim and 'lights both bridges' removed; a draft slip printed live in the ethnic lane story fixed. Readings: One Night 7 quarters (Pera · Galata/Karaköy · Kadıköy/Moda · Balat · Samatya · Arnavutköy/Bebek · Rumeli Kavağı); Getaway 15 stops Fri 3 / Sat 8 / Sun 4. NEEDS NETWORK (exact list): (1) checklinks.py . Istanbul-Bogazici; (2) own-site hours, dated, for the last-minute three: Asmalı Cavit (+90 212 292 49 50: opening 16/18/12h, close 24-02h, Sunday), Agora (agora1890.com: 12-01 vs 13-24 vs to 22), Çiya (ciya.com.tr: 11 vs 12, 22:00 vs 22:30); (3) MICHELIN pages: Giritli Bib or Selected, the Istanbul Bib list (Casius, Ahmet Ustam, Yanyalı Fehmi, Nazende), TURK's live per-guest price (14,500/19,900/23,900 TL extracts conflict); (4) the rest of research/verify_1.json + verify_2.json _needs_network (Araf's day off, Kontuar's days, Ozzie's address, Emirgan Sütiş number, Nardis October programme, Vefa hours, October Adalar ferry timetable, Kuzguncuk/Arnavutköy 2026 evidence). Commit results as review/Istanbul-Bogazici/research/verify_*_network_*.json; apply through fixes.py, rebuild, re-apply §8, flip to review. Details: terroir/_rollout/review/Istanbul-Bogazici/README.md."
   },
   {
    "slug": "Athens-Attiki",
