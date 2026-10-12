@@ -639,5 +639,15 @@
   }
  ],
  "hot_weekly_note": "9 Oct 2026, Arnaud: every week refresh one guide's What's hot board (oldest data-hot-asof first), review first. Spec: terroir/_rollout/HOT-WEEKLY.md.",
- "hot_weekly": []
+ "hot_weekly": [
+  {
+   "slug": "Prague-Cechy",
+   "date": "2026-10-12",
+   "branch": "terroir-hot/Prague-Cechy-2026-10-12",
+   "status": "needs-network",
+   "asof": "2026-09-27",
+   "review": "2026-11-15",
+   "notes": "Picked Prague-Cechy: the only board-carrying guide without an open terroir-uplift/* or terroir-hot/* branch (Kendwa-Unguja 2026-08-23 and Diani-Kwale 2026-08-24 are older but have open uplift branches; the three Sicilian guides too). Network check failed: curl https://www.wikipedia.org/ -> 000 (agent proxy answered 403 to CONNECT, policy denial); timeanddate.com, prague.eu, google.com also 000. No research done, board untouched. Fix: widen the cloud environment's Network access (or allow the source domains), then re-run."
+  }
+ ]
 }
