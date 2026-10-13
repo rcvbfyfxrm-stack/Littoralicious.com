@@ -1,0 +1,598 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The historic core",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Plaka",
+      "from": "quartiers:Plaka"
+     },
+     {
+      "key": "quartiers:Monastiraki",
+      "from": "quartiers:Monastiraki"
+     }
+    ]
+   },
+   {
+    "title": "The creative quarters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Psyrri",
+      "from": "quartiers:Psyrri"
+     },
+     {
+      "key": "quartiers:Exarcheia",
+      "from": "quartiers:Exarcheia"
+     },
+     {
+      "key": "quartiers:Metaxourgeio / Kerameikos",
+      "from": "quartiers:Metaxourgeio / Kerameikos"
+     }
+    ]
+   },
+   {
+    "title": "The salon & the tables",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Kolonaki",
+      "from": "quartiers:Kolonaki"
+     },
+     {
+      "key": "quartiers:Pangrati",
+      "from": "quartiers:Pangrati"
+     }
+    ]
+   },
+   {
+    "title": "The changing grids",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Koukaki",
+      "from": "quartiers:Koukaki"
+     },
+     {
+      "key": "quartiers:Ano Petralona",
+      "from": "quartiers:Ano Petralona"
+     },
+     {
+      "key": "quartiers:Kypseli",
+      "from": "quartiers:Kypseli"
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Varvakios Central Market",
+      "from": "gastronomy:Varvakios Central Market"
+     },
+     {
+      "key": "gastronomy:Kallidromiou Saturday Laiki",
+      "from": "gastronomy:Kallidromiou Saturday Laiki"
+     }
+    ]
+   },
+   {
+    "title": "The coffee, the resin and the cured meat",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Mokka Specialty Coffee",
+      "from": "gastronomy:Mokka Specialty Coffee"
+     },
+     {
+      "key": "gastronomy:Mastihashop",
+      "from": "gastronomy:Mastihashop"
+     },
+     {
+      "key": "gastronomy:Miran",
+      "from": "gastronomy:Miran"
+     }
+    ]
+   },
+   {
+    "title": "The spice row & the sweet houses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Bahar",
+      "from": "gastronomy:Bahar"
+     },
+     {
+      "key": "gastronomy:Aristokratikon",
+      "from": "gastronomy:Aristokratikon"
+     },
+     {
+      "key": "gastronomy:Krinos",
+      "from": "gastronomy:Krinos"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The marble climbs",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Pikionis Paths of Philopappou",
+      "from": "walks:The Pikionis Paths of Philopappou"
+     },
+     {
+      "key": "walks:Dionysiou Areopagitou — the Grand Promenade",
+      "from": "walks:Dionysiou Areopagitou — the Grand Promenade"
+     }
+    ]
+   },
+   {
+    "title": "The old-town wanders",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Anafiotika at Dawn",
+      "from": "walks:Anafiotika at Dawn"
+     },
+     {
+      "key": "walks:Kerameikos to Gazi",
+      "from": "walks:Kerameikos to Gazi"
+     }
+    ]
+   },
+   {
+    "title": "Out to the pines and the sea",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Kaisariani Monastery & the Hymettus Pines",
+      "from": "walks:Kaisariani Monastery & the Hymettus Pines"
+     },
+     {
+      "key": "walks:Athens Riviera: Flisvos to Edem",
+      "from": "walks:Athens Riviera: Flisvos to Edem"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The free sand",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Edem Beach",
+      "from": "calas:Edem Beach"
+     },
+     {
+      "key": "calas:Megalo Kavouri",
+      "from": "calas:Megalo Kavouri"
+     }
+    ]
+   },
+   {
+    "title": "Paid for — and what you get",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Akti Vouliagmenis",
+      "from": "calas:Akti Vouliagmenis"
+     },
+     {
+      "key": "calas:Astir Beach",
+      "from": "calas:Astir Beach"
+     }
+    ]
+   },
+   {
+    "title": "Wild water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Limanakia (Cove B)",
+      "from": "calas:Limanakia (Cove B)"
+     },
+     {
+      "key": "calas:Lake Vouliagmeni",
+      "from": "calas:Lake Vouliagmeni"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The ancient collections",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Acropolis Museum",
+      "from": "culture:Acropolis Museum"
+     },
+     {
+      "key": "culture:National Archaeological Museum",
+      "from": "culture:National Archaeological Museum"
+     }
+    ]
+   },
+   {
+    "title": "The collectors' houses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Benaki Museum of Greek Culture",
+      "from": "culture:Benaki Museum of Greek Culture"
+     },
+     {
+      "key": "culture:Museum of Cycladic Art",
+      "from": "culture:Museum of Cycladic Art"
+     },
+     {
+      "key": "culture:Numismatic Museum (Iliou Melathron)",
+      "from": "culture:Numismatic Museum (Iliou Melathron)"
+     }
+    ]
+   },
+   {
+    "title": "The middle centuries & the contemporary",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Byzantine & Christian Museum",
+      "from": "culture:Byzantine & Christian Museum"
+     },
+     {
+      "key": "culture:EMST — National Museum of Contemporary Art",
+      "from": "culture:EMST — National Museum of Contemporary Art"
+     },
+     {
+      "key": "culture:Stavros Niarchos Foundation Cultural Center (SNFCC)",
+      "from": "culture:Stavros Niarchos Foundation Cultural Center (SNFCC)"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Melissinos Art",
+      "from": "crafts:Melissinos Art — The Poet Sandal Maker"
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Tsakirian Lutherie",
+      "from": "crafts:Tsakirian Lutherie"
+     },
+     {
+      "key": "craft:Mentis–Antonopoulos Passementerie",
+      "from": "crafts:Mentis–Antonopoulos Passementerie (NHMA)"
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:No class to enrol in",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Grand rooms & hotel salons",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Athénée (ex-Zonars)",
+      "from": "coffee-gardens:Athénée (ex-Zonars)"
+     },
+     {
+      "key": "coffee-gardens:Winter Garden — Hotel Grande Bretagne",
+      "from": "coffee-gardens:Winter Garden — Hotel Grande Bretagne"
+     }
+    ]
+   },
+   {
+    "title": "Gardens & museum courtyards",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Nummus — Numismatic Museum garden café",
+      "from": "coffee-gardens:Nummus — Numismatic Museum garden café"
+     },
+     {
+      "key": "coffee-gardens:Black Duck Garden — Athens City Museum bistrot",
+      "from": "coffee-gardens:Black Duck Garden — Athens City Museum bistrot"
+     }
+    ]
+   },
+   {
+    "title": "Where you can actually work",
+    "desc": "",
+    "cards": [
+     {
+      "key": "work:National Library reading rooms",
+      "from": "work:National Library reading rooms"
+     },
+     {
+      "key": "work:Okupa",
+      "from": "work:Okupa"
+     },
+     {
+      "key": "work:Kick",
+      "from": "work:Kick"
+     }
+    ]
+   },
+   {
+    "title": "Beautiful. Close the laptop.",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Dexameni",
+      "from": "coffee-gardens:Dexameni"
+     },
+     {
+      "key": "work:Taf Coffee",
+      "from": "work:Taf Coffee"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "The list-makers",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Line",
+      "from": "bars:Line"
+     },
+     {
+      "key": "bars:The Bar in Front of the Bar",
+      "from": "bars:The Bar in Front of the Bar"
+     },
+     {
+      "key": "bars:Baba au Rum",
+      "from": "bars:Baba au Rum"
+     }
+    ]
+   },
+   {
+    "title": "Where it started, and the agave room",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:The Clumsies",
+      "from": "bars:The Clumsies"
+     },
+     {
+      "key": "bars:Barro Negro",
+      "from": "bars:Barro Negro"
+     }
+    ]
+   },
+   {
+    "title": "The natural-wine caves",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Heteroclito",
+      "from": "bars:Heteroclito"
+     },
+     {
+      "key": "bars:Tanini Agapi Mou",
+      "from": "bars:Tanini Agapi Mou"
+     }
+    ]
+   },
+   {
+    "title": "The grand hotels and the one roof",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Alexander's Bar",
+      "from": "bars:Alexander's Bar"
+     },
+     {
+      "key": "bars:The Line bars at the Athenaeum InterContinental",
+      "from": "bars:The Line bars at the Athenaeum InterContinental"
+     },
+     {
+      "key": "bars:A for Athens",
+      "from": "bars:A for Athens"
+     }
+    ]
+   },
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Retsina — the revival bottle",
+      "from": null
+     },
+     {
+      "key": "bars:Ouzo, tsipouro, tsikoudia",
+      "from": null
+     },
+     {
+      "key": "bars:The grapes nobody else grows",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The songs to know first",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Markos Vamvakaris",
+      "from": "music:Markos Vamvakaris — the Patriarch of the bouzouki"
+     },
+     {
+      "key": "listening:Cloudy Sunday — Tsitsanis and Bellou",
+      "from": "music:Tsitsanis — 'Synnefiasmeni Kyriaki,' the occupation's song"
+     },
+     {
+      "key": "listening:1960 — the bouzouki at the Academy Awards",
+      "from": "music:1960: the entechno bridge — a bouzouki at the Academy Awards"
+     }
+    ]
+   },
+   {
+    "title": "The rooms that still play",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Kapnikarea",
+      "from": "music:The rooms — and when they go dark"
+     },
+     {
+      "key": "listening:Klimataria",
+      "from": null
+     },
+     {
+      "key": "listening:The winter rooms",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Jazz, vinyl and the listening room",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Half Note Jazz Club",
+      "from": "music:The modern clock — a Mets jazz cellar and an analog prophet"
+     },
+     {
+      "key": "listening:Lena Platonos — Gallop",
+      "from": null
+     },
+     {
+      "key": "listening:Hi-fi — the one listening room",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The wine country",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Domaine Papagiannakos",
+      "from": "gastronomy:Domaine Papagiannakos"
+     }
+    ]
+   },
+   {
+    "title": "The cape",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Cape Sounion",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The islands",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:The islands are another guide",
+      "from": "gastronomy:Aegina Pistachio Growers' Co-op"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The programme and the selection",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Athens Epidaurus Festival",
+      "from": null
+     },
+     {
+      "key": "follow:The MICHELIN Guide, Greece",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The street and the listings",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:laikesagores.gr",
+      "from": null
+     },
+     {
+      "key": "follow:Athinorama",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "gastronomy:Miran": "miran",
+  "gastronomy:Krinos": "krinos",
+  "listening:Klimataria": "klimataria"
+ }
+}

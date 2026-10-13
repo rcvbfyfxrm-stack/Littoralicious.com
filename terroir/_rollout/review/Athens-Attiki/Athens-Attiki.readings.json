@@ -1,0 +1,338 @@
+{
+ "_about": "Athens-Attiki, 13 Oct 2026 — §8, the four readings. Every stop is one of this guide's own cards or table venues, with the hours those cards carry (re-checked 13 Oct 2026; where listings disagree the card says call, and so does the step).",
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · walking order",
+  "lede": "Athens eats late: tables fill from nine, the music starts after ten, and the souvlaki and bougatsa counters keep going after the bars. Each quarter below is one evening, in the order you walk it. Every name opens its full card; hours were re-checked on 13 October 2026, and where the listings disagree the card says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — a glass, the table, the music and the late plate, in walking order.",
+  "door_note": "Le verre · la table · la musique · la bougatsa",
+  "quarters": [
+   {
+    "id": "psyrri",
+    "name": "Psyrri and the market quarter",
+    "line": "Lahmajun on the corner, rebetiko under the vine, bougatsa on the square.",
+    "steps": [
+     {
+      "time": "19:30",
+      "name": "Feyrouz",
+      "ref": "venue:feyrouz",
+      "text": "The corner of Karori and Agathonos: lahmajun rolled hot with greens, sumac and lemon, from the family counter. The hours disagree between listings, so phone before you build the night on it."
+     },
+     {
+      "time": "22:30",
+      "name": "Klimataria",
+      "ref": "venue:klimataria",
+      "text": "Five minutes to Plateia Theatrou and the 1927 taverna under the vine, where the musicians play from memory late in the evening. Its trading and its music nights were not re-confirmed this autumn: phone and book."
+     },
+     {
+      "time": "late",
+      "name": "Bougatsadiko I Thessaloniki",
+      "ref": "venue:bougatsadiko-thessaloniki",
+      "text": "Across to Plateia Iroon for bougatsa me krema, the phyllo opened by hand in the window. To about 02:00 in the week and round the clock on Friday and Saturday, by older listings: not re-confirmed this autumn."
+     }
+    ],
+    "after": "Spend more: the pastourma pie at [[venue:karamanlidika-tou-fani|Ta Karamanlidika tou Fani]] on Evripidou (closed Sunday; not re-confirmed this autumn, call)."
+   },
+   {
+    "id": "syntagma",
+    "name": "Syntagma and the Petraki lanes",
+    "line": "Europe's number two on the pavement, a two-language kitchen, then the rum room.",
+    "steps": [
+     {
+      "time": "19:00",
+      "name": "The Bar in Front of the Bar",
+      "ref": "card:The Bar in Front of the Bar",
+      "text": "Stools on Petraki lane and today's eight drinks. Only on a dry, still evening: there is no indoor seat."
+     },
+     {
+      "time": "20:30",
+      "name": "Nolan",
+      "ref": "venue:nolan",
+      "text": "Up to Voulis for Greek fish and meat through Japanese, Vietnamese, Korean and Chinese technique, in two fast sittings. Monday to Saturday; book."
+     },
+     {
+      "time": "22:30",
+      "name": "Baba au Rum",
+      "ref": "card:Baba au Rum",
+      "text": "Round the corner to Klitiou 6, the rum society that opened in 2009, before the Athens bar wave had a name."
+     }
+    ],
+    "after": "Wine instead of rum: [[card:Heteroclito|Heteroclito]], behind the cathedral, pours Greek natural wine by the glass, standing in the lane."
+   },
+   {
+    "id": "pangrati",
+    "name": "Pangrati and Mets",
+    "line": "The market fire behind the marble stadium, then jazz down the hill.",
+    "steps": [
+     {
+      "time": "20:00",
+      "name": "Akra",
+      "ref": "venue:akra",
+      "text": "Near Proskopon Square: whatever the morning market gave, cooked over a fire that never goes out, and the bakery counter at the door. Closed Monday by one listing; walk-ins wait at peak."
+     },
+     {
+      "time": "22:00",
+      "name": "Half Note Jazz Club",
+      "ref": "card:Half Note Jazz Club",
+      "text": "Down through Mets to Trivonianou 17, if a set is on: the club plays autumn to late spring, and this season's programme was not yet confirmed on 13 October. Check its listings before you go."
+     }
+    ],
+    "after": "Spend more: the French-school tasting at [[venue:spondi|Spondi]] behind Varnava Square (book). Cheaper: lamb chops in the half-basement at [[venue:mavros-gatos|Mavros Gatos]] (not re-confirmed this autumn, call)."
+   },
+   {
+    "id": "petralona",
+    "name": "Thissio and Petralona",
+    "line": "The rock at dusk, the butcher's pots on Troon, Europe's best bar by taxi.",
+    "steps": [
+     {
+      "time": "18:00",
+      "name": "Dionysiou Areopagitou at dusk",
+      "ref": "card:Dionysiou Areopagitou, the grand promenade",
+      "text": "From the Acropolis Museum west along the pedestrian marble, as the walls light. About an hour, flat."
+     },
+     {
+      "time": "20:00",
+      "name": "Taverna tou Oikonomou",
+      "ref": "venue:taverna-tou-oikonomou",
+      "text": "On along Apostolou Pavlou into Ano Petralona, to Troon: rooster with hilopites from the pots. Its trading was not re-confirmed this autumn, so phone; the pots run out, so do not come late."
+     },
+     {
+      "time": "22:30",
+      "name": "Line",
+      "ref": "card:Line",
+      "text": "A short taxi to Kato Petralona for a Why-in, the house fruit wine, in a former gallery: Europe's best bar of 2026."
+     }
+    ],
+    "after": "Lamb chops instead of pots: [[venue:steki-tou-ilia|To Steki tou Ilia]] by the Thissio rail line (closed Monday; not re-confirmed this autumn, call)."
+   },
+   {
+    "id": "kerameikos",
+    "name": "Kerameikos and Metaxourgeio",
+    "line": "The chefs' corner taverna, then the skewer after midnight.",
+    "steps": [
+     {
+      "time": "20:30",
+      "name": "Seychelles",
+      "ref": "venue:seychelles",
+      "text": "The corner of Kerameikou and Akadimou: pappardelle with crab, the plate the house will not change. Evenings; the hours were not re-confirmed this autumn, so phone."
+     },
+     {
+      "time": "23:30",
+      "name": "Elvis",
+      "ref": "venue:elvis",
+      "text": "Ten minutes to Plataion 29 for bare pork kalamaki by the pair and a beer. Late every night by the venue record; the late hours were not re-confirmed this autumn."
+     }
+    ]
+   },
+   {
+    "id": "exarcheia",
+    "name": "Exarcheia and Neapoli",
+    "line": "A kitchen with no gas, then ninety wines by the glass.",
+    "steps": [
+     {
+      "time": "20:00",
+      "name": "Pharaoh",
+      "ref": "venue:pharaoh",
+      "text": "Solomou 54: the blackboard of regional Greek dishes cooked on wood and charcoal, and a wall of natural wine. Dinner; book."
+     },
+     {
+      "time": "22:30",
+      "name": "Tanini Agapi Mou",
+      "ref": "card:Tanini Agapi Mou",
+      "text": "Up to Ippokratous 91 at Methonis for an Attica orange wine by the glass, from an all-Greek list."
+     }
+    ]
+   },
+   {
+    "id": "kolonaki",
+    "name": "Kolonaki and Ilisia",
+    "line": "Ouzo on the poets' square, then the wood fire behind the Hilton.",
+    "steps": [
+     {
+      "time": "19:00",
+      "name": "Dexameni",
+      "ref": "card:Dexameni",
+      "text": "Ouzo and a meze at the plane-tree tables on Plateia Dexamenis. Warm months only, and the weather decides in October."
+     },
+     {
+      "time": "20:30",
+      "name": "Vezené",
+      "ref": "venue:vezene",
+      "text": "Down the hill and across Vasilissis Sofias to Vrasida 11: dry-aged beef and whole fish off the wood fire. Book."
+     }
+    ],
+    "after": "Cheaper: the 1967 grill at [[venue:skalakia|Skalakia]], in the hospital district, for sweetbreads and liver."
+   }
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the rock at dawn, the market cook-house, the marble at dusk, the kitchen with no gas, and Europe's best bar.",
+  "door_note": "Le toit · le rocher · le marché · le bar",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Athens sells itself as the Acropolis and a Plaka terrace. The real weekend is the rock at first light, before the heat and the coaches, and <strong>a working neighbourhood after dark</strong>: the market cook-house where the porters eat, the marble promenade at dusk, a wood-and-charcoal kitchen in Exarcheia, rebetiko in an alley at lunch, and the bars that now lead Europe. Every stop below is already in this guide and was re-checked on 13 October 2026. This reading puts them in order, and tells you what to book before you fly.",
+  "book": [
+   "[[venue:nolan|Nolan]] — for Friday dinner; two fast sittings, Monday to Saturday.",
+   "[[venue:pharaoh|Pharaoh]] — for Saturday dinner; the blackboard changes nightly."
+  ],
+  "days": [
+   {
+    "label": "Friday",
+    "title": "The roof, Voulis and the gallery bar",
+    "stops": [
+     {
+      "time": "19:00",
+      "name": "A drink on the A for Athens roof",
+      "ref": "card:A for Athens",
+      "text": "One drink at blue hour, when the floodlights come up on the Parthenon straight ahead. Then go and drink where the bartenders are.",
+      "meta": "Miaouli 2–4, Monastiraki · about EUR 14–18 a cocktail (seen Jul 2026) · skip on a hazy or windy evening"
+     },
+     {
+      "time": "20:30",
+      "name": "Dinner at Nolan",
+      "ref": "venue:nolan",
+      "text": "Ten minutes' walk to Voulis: sea-bream tartare and breaded beef cheeks, Greek produce through Asian technique, in a small fast room.",
+      "meta": "Voulis 31–33, Syntagma · lunch and dinner, Monday to Saturday · book"
+     },
+     {
+      "time": "22:30",
+      "name": "Line",
+      "ref": "card:Line",
+      "text": "A short taxi to Kato Petralona for a Why-in, the house fruit wine, in the former gallery that is Europe's best bar of 2026.",
+      "meta": "Kato Petralona · about EUR 12–16 a cocktail (seen Jul 2026)"
+     }
+    ]
+   },
+   {
+    "label": "Saturday",
+    "title": "The rock, the market, the marble at dusk",
+    "stops": [
+     {
+      "time": "07:00",
+      "name": "Anafiotika at first light",
+      "ref": "card:Anafiotika at dawn",
+      "text": "Up the stepped lanes under the north face of the rock before the city wakes. It is lived in: walk quietly.",
+      "meta": "Start above Stratonos street, by Agios Georgios tou Vrachou · about an hour · free"
+     },
+     {
+      "time": "09:00",
+      "name": "Loukoumades at Krinos",
+      "ref": "venue:krinos",
+      "text": "Down through Monastiraki to Aiolou for honey-syruped rings under the old pharmacy's name, fried to order.",
+      "meta": "Aiolou 87 · daytime · pocket change"
+     },
+     {
+      "time": "09:45",
+      "name": "The Varvakios market",
+      "ref": "card:Varvakios Central Market",
+      "text": "Across Athinas into the iron-roofed hall: the fish row at full voice, then the meat market. Closed shoes, cash.",
+      "meta": "Athinas, central market · Monday to Saturday from early morning; closing hours disagree between listings"
+     },
+     {
+      "time": "10:30",
+      "name": "Coffee and beans at Mokka",
+      "ref": "card:Mokka",
+      "text": "Opposite the market: a Greek coffee, and beans ground to your method for the galley.",
+      "meta": "Athinas 44 · Monday to Saturday, market hours (seen Jul 2026)"
+     },
+     {
+      "time": "12:30",
+      "name": "Lunch at Oinomageireio I Ipeiros",
+      "ref": "venue:oinomageireio-ipeiros",
+      "text": "Back into the meat market to the last cook-house among the hooks: white patsas with garlic vinegar, or the Easter magiritsa on an ordinary Saturday.",
+      "meta": "Filopoimenos 4, Varvakios · market hours by day; listings disagree on the late hours: call"
+     },
+     {
+      "time": "17:00",
+      "name": "The Acropolis Museum",
+      "ref": "card:Acropolis Museum",
+      "text": "The frieze on the top floor, turned to face its temple, and the Caryatids. Go in the late afternoon, when the groups have gone.",
+      "meta": "Dionysiou Areopagitou 15 · Saturday 09:00–20:00 · €20 (Oct 2026)"
+     },
+     {
+      "time": "19:00",
+      "name": "Dionysiou Areopagitou at dusk",
+      "ref": "card:Dionysiou Areopagitou, the grand promenade",
+      "text": "Out of the museum and west along the pedestrian marble under the south slope as the walls light, towards Thissio.",
+      "meta": "1.5 km, flat · about an hour"
+     },
+     {
+      "time": "20:30",
+      "name": "Dinner at Pharaoh",
+      "ref": "venue:pharaoh",
+      "text": "A short taxi to Solomou 54 at the edge of Exarcheia: the blackboard of regional Greek dishes cooked on wood and charcoal, with no gas in the kitchen.",
+      "meta": "Solomou 54 · dinner · book"
+     },
+     {
+      "time": "22:30",
+      "name": "Tanini Agapi Mou",
+      "ref": "card:Tanini Agapi Mou",
+      "text": "Up to Ippokratous 91 for an Attica orange wine by the glass from an all-Greek list.",
+      "meta": "Ippokratous 91 · about EUR 15–25 a head (seen Jul 2026)"
+     }
+    ]
+   },
+   {
+    "label": "Sunday",
+    "title": "The geared bronze and the alley music",
+    "stops": [
+     {
+      "time": "09:30",
+      "name": "Coffee at The Underdog",
+      "ref": "venue:the-underdog",
+      "text": "Back in Thissio, the competition baristas' room: a flat white and the brunch the others copy. Weekend mornings fill; go early.",
+      "meta": "Irakleidon 8 · daytime; listings disagree on the hours: call"
+     },
+     {
+      "time": "11:30",
+      "name": "The National Archaeological Museum",
+      "ref": "card:National Archaeological Museum",
+      "text": "A taxi north to Patission and Room 38, where the Antikythera mechanism is: the oldest known geared machine.",
+      "meta": "Patission 44 · Sunday 08:00–20:00 to mid-November, then winter hours · €20 (Oct 2026)"
+     },
+     {
+      "time": "14:30",
+      "name": "Rebetiko at Kapnikarea",
+      "ref": "card:Kapnikarea",
+      "text": "Back down to Ermou for a late lunch while the musicians play unamplified at table height beside the Byzantine church.",
+      "meta": "Christopoulou 2 & Ermou 57 · music most afternoons from about 14:30 (seen Jul 2026) · a small music charge"
+     }
+    ]
+   }
+  ],
+  "more": [
+   {
+    "title": "If you have only one evening",
+    "text": "A drink at [[card:The Bar in Front of the Bar|The Bar in Front of the Bar]] at seven, lahmajun at [[venue:feyrouz|Feyrouz]] at eight, and the late plate at [[venue:bougatsadiko-thessaloniki|Bougatsadiko I Thessaloniki]] on Plateia Iroon. That is the city in one night."
+   },
+   {
+    "title": "The grand night instead",
+    "text": "Swap Saturday's dinner for [[venue:delta|Delta]], the two-star glass box on the roof of the opera house at the SNFCC: a long tasting menu, Wednesday to Sunday, booked ahead against a deposit. Or [[venue:spondi|Spondi]] in Pangrati for the French-school tasting and the cheese trolley; or the roof of the Grande Bretagne at [[venue:gb-roof-garden|GB Roof Garden]], where the bar spares you the dinner. The MICHELIN Greece selection is due on 20 October 2026: the stars on these cards are the 2024 ones until then."
+   },
+   {
+    "title": "Or the sea instead of the museum",
+    "text": "Take Sunday down the coast: the warm lake in the fallen cave at [[card:Lake Vouliagmeni|Lake Vouliagmeni]], open all year, or the rocks at [[card:Limanakia (Cove B)|Limanakia]] on a still morning. Or drive out to [[card:Cape Sounion|Cape Sounion]] for the temple at sunset."
+   },
+   {
+    "title": "This October and November",
+    "dated": "Checked 13 October 2026",
+    "items": [
+     "The trawlers are back since 1 October: hake, sole and shrimp are on the ice again at the [[card:Varvakios Central Market|Varvakios]], beside the last palamida.",
+     "Clocks go back an hour in the early hours of Sunday 25 October.",
+     "Ohi Day is Wednesday 28 October: school and neighbourhood parades in the morning.",
+     "The Athens Authentic Marathon is Sunday 8 November, finishing in the Panathenaic Stadium: the coast road and the centre close for the morning, so move any transfer to the afternoon.",
+     "Barbara Kruger's outdoor works are at the [[card:Stavros Niarchos Foundation Cultural Center (SNFCC)|SNFCC]] park until Sunday 1 November."
+    ]
+   },
+   {
+    "title": "Where to sleep",
+    "text": "This guide does not judge hotels. The weekend is built to be walked from Monastiraki, Psyrri or Syntagma, where the Friday night ends. The only hotel in it is a room we send you to for a drink, the Grande Bretagne on Syntagma, home of [[card:Alexander's Bar|Alexander's Bar]] and the roof: we have not judged its rooms."
+   },
+   {
+    "title": "What we would leave out",
+    "text": "Dinner on Plaka's Adrianou, where a man waves a photo-menu at you. The retsina in the tourist jug. A concert at the Herodeon: it closed after the 2026 season for about three years of restoration. And any plan that assumes a family taverna is open in mid-August."
+   }
+  ]
+ }
+}

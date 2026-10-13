@@ -1,0 +1,152 @@
+{
+ "lanes": {
+  "creme": {
+   "label": "The stars",
+   "group": "grande",
+   "ids": [
+    "delta",
+    "spondi",
+    "soil"
+   ]
+  },
+  "destination": {
+   "label": "Destination rooms",
+   "group": "grande",
+   "ids": [
+    "gb-roof-garden",
+    "vezene",
+    "sushimou"
+   ]
+  },
+  "chefs-eat": {
+   "label": "Where the chefs eat",
+   "group": "petite",
+   "ids": [
+    "seychelles",
+    "mavros-gatos",
+    "steki-tou-ilia"
+   ]
+  },
+  "asia-minor": {
+   "label": "The Asia Minor kitchens",
+   "group": "petite",
+   "ids": [
+    "karamanlidika-tou-fani",
+    "miran",
+    "peran-kafe-aman"
+   ]
+  },
+  "story": {
+   "label": "The old houses & koutoukia",
+   "group": "petite",
+   "ids": [
+    "diporto",
+    "klimataria",
+    "taverna-tou-oikonomou"
+   ]
+  },
+  "gems": {
+   "label": "Neighbourhood rooms",
+   "group": "petite",
+   "ids": [
+    "akra",
+    "pharaoh",
+    "skalakia"
+   ]
+  },
+  "ethnic": {
+   "label": "The other kitchens",
+   "group": "petite",
+   "ids": [
+    "feyrouz",
+    "nolan",
+    "marili"
+   ]
+  },
+  "breakfast": {
+   "label": "Breakfast & the milk-shop",
+   "group": "petite",
+   "ids": [
+    "stani",
+    "krinos",
+    "the-underdog"
+   ]
+  },
+  "souvlaki": {
+   "label": "The souvlaki canon",
+   "group": "street",
+   "ids": [
+    "kostas-agia-irini",
+    "hoocut",
+    "o-thanasis"
+   ]
+  },
+  "bargain": {
+   "label": "The bakers and the pots",
+   "group": "street",
+   "ids": [
+    "ariston",
+    "koulouri-tou-psirri",
+    "olympion"
+   ]
+  },
+  "late-night": {
+   "label": "Late night — after service",
+   "group": "street",
+   "ids": [
+    "oinomageireio-ipeiros",
+    "bougatsadiko-thessaloniki",
+    "elvis"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "creme",
+   "destination"
+  ],
+  "petite": [
+   "chefs-eat",
+   "asia-minor",
+   "story",
+   "gems",
+   "ethnic",
+   "breakfast"
+  ],
+  "street": [
+   "souvlaki",
+   "bargain",
+   "late-night"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "ctc-urban-gastronomy": "The stars lane holds three: Delta (the two-star), Spondi (the oldest star in the city) and Soil (the farm and the Green Star) teach the most; CTC's tasting menu is the fourth of its kind.",
+  "makris-athens": "Same lane cap: a tasting menu with an Acropolis frame, the view already sold by GB Roof Garden and A for Athens in this guide.",
+  "o-makis": "Late-night lane cap: Peristeri is a long taxi from every quarter this guide sends you to after dinner; Epirus, the Psyrri bougatsa and Elvis are on the walk home."
+ },
+ "berths": [
+  "delta",
+  "oinomageireio-ipeiros",
+  "akra"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "akra",
+   "skalakia",
+   "feyrouz"
+  ],
+  "Plan ahead — this week": [
+   "vezene",
+   "pharaoh",
+   "nolan"
+  ],
+  "Plan ahead — the grand night": [
+   "delta",
+   "spondi",
+   "gb-roof-garden"
+  ]
+ },
+ "fours": {},
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}
