@@ -553,10 +553,29 @@
   },
   {
    "slug": "Athens-Attiki",
-   "status": "partial",
+   "status": "needs-network",
    "branch": "terroir-uplift/Athens-Attiki-2026-10-13",
    "date": "2026-10-13",
-   "notes": "13 Oct WIP: GOLD6 built and §8 applied; gate green with render and probe-guide pass; link/readings probes and screenshots still running when this was committed."
+   "readings": "done 2026-10-13",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (187 OK, 13 Oct; floors = curated counts: venues 33, fcards 100, fsubs 43, neighborhoods 10, walks 6, categories 11, lane stories 11, liste 21, maps links 86, pins 33; groups 3; doors 4; hot minVenues 10; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: ALL PASS, 28/28, exit 0 (7 chapter chips, sub-tags, readout, pointer lands on #venue-miran, back button, 100 facts/100 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 99 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 99 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 69/69 placed cards and 33/33 venues with Maps on the closed card, no sideways scroll; One Night 30 links, Getaway 26); lens screenshots in review/Athens-Attiki/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 219 units",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Athens-Attiki/athens-card-desktop.png, athens-card-phone.png (Kerameikos to Gazi, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Athens-Attiki",
+    "MICHELIN Greece selection on/after 20 Oct 2026 (Delta, Spondi, Soil, Akra, Pharaoh, Nolan, GB Roof Garden, Vezené + any new entry)",
+    "2026 trading evidence for the 12 unverified tables (Peran first: barely findable; Marili: address disputed three ways; Ariston; Diporto; Sushimou; Seychelles; Mavros Gatos; Steki tou Ilia; Karamanlidika; Miran; Klimataria; Oikonomou) — confirm or cut",
+    "own-site hours for the guest list: Akra, Skalakia, Feyrouz, Vezené (Sunday), Delta (18:30 vs 19:00), Nolan, Pharaoh",
+    "the rest of research/verify_1.json + verify_2.json _needs_network and the rewrite packs' _notes (Sounion 2026 fee, Kaisariani day off, Taf 2026, Benaki closing day, Byzantine Museum hours, laikesagores.gr official status)"
+   ],
+   "notes": "13 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome; the old page was GOLD3, so the GOLD4/5 floor came too (11 lanes in 3 groups with food stories, guest list with charters, #eat jump + La liste 21 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, craft, listening, Autour). Places 36 -> 33 (all in lanes, none over 3, no 4s); cut CTC Urban Gastronomy, Makris Athens (stars lane holds Delta, Spondi, Soil), O Makis (Peristeri too far for the late lane). Cards 68 -> 100 (80 fold + 11 hot + 9 calendar), every one labelled; 43 groups none over 3. Guest list rebuilt from venues confirmed 13 Oct: last minute Akra · Skalakia · Feyrouz; this week Vezené · Pharaoh · Nolan; grand night Delta · Spondi · GB Roof Garden. Berths Delta · Oinomageireio I Ipeiros · Akra. Statuses: 21 confirmed 13 Oct, 12 unverified (search extracts only). Corrections: no MICHELIN Greece selection since Athens 2024 (next 20 Oct 2026) so 'held into 2026' chips now say 2024; World's 50 Best Bars 2026 added (Line 5, Bar in Front 19, Barro Negro 40), Baba au Rum not in the world top 50; Kerameikos reopened 15 Sept 2026 and the combined ticket is gone; Herodeon closed ~3 years; Karamanlides printed Turkish in Greek letters (was backwards); Mokka 1923; Koons show ended; Akti Vouliagmenis fee is entry; GB Roof breakfast guests-only; Klimataria/Epirus hour disputes printed as call. Readings: One Night 7 quarters (Psyrri · Syntagma/Petraki · Pangrati/Mets · Thissio/Petralona · Kerameikos · Exarcheia · Kolonaki/Ilisia), Getaway 15 stops Fri 3 / Sat 9 / Sun 3. Hub card csv:false -> csv:true (gate flag; the guide always shipped a CSV). Details: terroir/_rollout/review/Athens-Attiki/README.md."
   },
   {
    "slug": "Piraeus-Saronic",
