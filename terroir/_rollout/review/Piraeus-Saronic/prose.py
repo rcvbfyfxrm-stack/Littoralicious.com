@@ -181,8 +181,8 @@ LANE_STORY = {
  "koutoukia": {"title": "Barrels under the floor",
    "story": ("Before bottled wine, a Piraeus wine-shop pressed its own and drew it from the cellar, and three rooms still work that way. In "
              "Agios Dionysios a family from Gardiki has drawn barrel retsina under the floor since 1920; in the Occupation the cellar was the "
-             "quarter's air-raid shelter. A few streets off, shipwrights from Perama built a stone wine-house that first poured in 1896, and "
-             "before the war the four founding rebetes of Piraeus played inside it. Up in Palaia Kokkinia, in the quarter the refugees built, a "
+             "quarter's air-raid shelter. A few streets off, shipwrights from Perama built a stone wine-house that first poured in 1896, "
+             "and its cellar barrels still hold wine made on the spot. Up in Palaia Kokkinia, in the quarter the refugees built, a "
              "koutouki has cooked round a whitewashed fig tree since 1958. Order the wine by the karafa."),
    "where": "To Eidikon and Propolemikon in Agios Dionysios; To Koutouki tou Antoni in Palaia Kokkinia"},
  "refugee": {"title": "1922, behind the cranes",
@@ -213,11 +213,11 @@ LANE_STORY = {
              "the dough at three in the morning, and the fried pockets of cheese and mince are gone by midday."),
    "where": "Mastronikolas on Karaoli & Dimitriou; Euxeinon on Navarchou Notara"},
  "late-night": {"title": "After the boat",
-   "story": ("A port that works all night eats all night. In residential Nikaia, a baker who learned to pull phyllo from a Pomak master in "
-             "Rhodope opened on an unpaved street in 1974, and through the seventies and eighties the artists came at three in the morning for "
-             "sweet bougatsa instead of tripe soup; it still bakes before dawn, a taxi from the harbour. On the Drapetsona quay, among trucks and "
-             "the derelict conveyor of the fertiliser works, a canteen papered with photographs of General Plastiras grills pork skewers early and "
-             "long after the night out."),
+   "story": ("A port that works all night eats all night, and its late canon is phyllo and pork. Deep in residential Nikaia, a workshop "
+             "founded in 1974 keeps the ovens going round the clock, and To Vima wrote this March that it still does: sweet custard or feta, cut "
+             "from the tray, a taxi ride from the harbour. On the Drapetsona quay, among trucks and the derelict conveyor of the fertiliser works, "
+             "a canteen papered with photographs of General Plastiras grills pork skewers for the port's shifts; its hours are whatever the "
+             "port needs, so check before you go."),
    "where": "Bougatsa Pavlidi on Petrou Ralli, Nikaia; Kantina o Plastiras at Gate E1/E2, Drapetsona"},
 }
 
@@ -230,8 +230,8 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: these three take people the same evening. Hours as read on 14 Oct 2026 are on each card — call ahead.",
-             "Plan ahead — this week": "Book a few days ahead: a captain's eight tables, the producer-built meze house, and the fig-tree yard in Kokkinia.",
+SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: the Constantinople room on the quay, open every day to one in the morning by its own site, the 1930 taverna in Drapetsona, and the Nikaia meze house. Hours as read on 14 Oct 2026 are on each card — call ahead.",
+             "Plan ahead — this week": "Book a few days ahead: a captain's eight tables, the producer-built meze house, and the fig-tree yard in Kokkinia. The last two were not re-confirmed this autumn: ring.",
              "Plan ahead — the grand night": "The three named houses of Mikrolimano: book as soon as the dates are fixed, and ask for a table at the water."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
@@ -292,10 +292,10 @@ LISTE_TITLE = "La liste — what to eat, what to drink, and where it comes from"
 
 # The Dish (inside La liste): exact edits to the eight old dish articles (cut venues out, no recommendation of an unchecked room)
 DISH_EDITS = [
- (' Eat it on the quay where it was invented, at tables like <a href="#venue-jimmys-fish" data-pin="jimmys-fish">Jimmy\'s Fish</a>.',
+ (" Eat it on the quay where it was invented, at tables like Jimmy's Fish.",
   ' Eat it on the quay where it was invented: <a href="#venue-dourabeis">Dourabeis</a> keeps it on the list.'),
- (' data-pin="jimmys-fish"', ''),
  ('; for the ouzeri urchin, Achinos out on Akti Themistokleous.', '.'),
+ (' data-pin="n-freattyda"', ''),
 ]
 
 # gem popups: the old seven, kept where their pattern still occurs in the prose

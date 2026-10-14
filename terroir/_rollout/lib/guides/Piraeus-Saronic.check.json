@@ -1,0 +1,112 @@
+{
+  "slug": "Piraeus-Saronic",
+  "city": "Piraeus",
+  "listeSlug": "piraeus",
+  "groups": 3,
+  "mapsTokens": [
+    "Piraeus",
+    "Peiraias",
+    "Keratsini",
+    "Drapetsona",
+    "Nikaia",
+    "Kokkinia",
+    "Perama",
+    "Faliro",
+    "Attica",
+    "Aegina",
+    "Salamina",
+    "Salamis",
+    "Hydra"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "calas",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink",
+    "rooftops",
+    "linger"
+  ],
+  "floors": {
+    "venues": 25,
+    "gems": 7,
+    "neighborhoods": 9,
+    "walks": 6,
+    "categories": 10,
+    "laneStories": 10,
+    "fcards": 85,
+    "fsubs": 37,
+    "liste": 19,
+    "mapsLinks": 83,
+    "pins": 25
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 25,
+    "gemboxes": 10
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 7,
+    "mode": "pointer"
+  },
+  "doors": 4
+}

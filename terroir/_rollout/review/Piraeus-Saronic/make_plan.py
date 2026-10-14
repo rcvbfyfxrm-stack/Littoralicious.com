@@ -24,9 +24,9 @@ CUT = {
  "polyvios": "Not recommended on 14 Oct 2026: Greek press (in.gr, iefimerida, Athens Voice, Documento, 26 Jan 2026) reported the owner's arrest on 22 Jan 2026 on drug-trafficking charges, the shop allegedly used as a front. These are allegations with no court outcome found, but nothing since shows the shop trading, so it leaves the guide rather than send anyone there. Avraam, the row's other survivor, was not re-checked and stays out.",
  "pancho": "The other kitchens hold three: Vosporos (the Constantinople table), Toukta (Kokkinia's Thai room) and Sushi Rolls (the shipping canteen) each say something about the port; a Mexican cantina on the marina kept on one chef's word does not.",
 }
-BERTHS = ["dourabeis", "margaro", "oinomageireio-o-vasilis"]   # rebuilt after the 14 Oct re-check (see make_inputs/fixes)
+BERTHS = ["dourabeis", "to-yperokeaneion", "o-giorgos"]   # rebuilt 14 Oct from venues confirmed trading, one per group (the old Varoulko/Margaro/Vasilis berths: Varoulko holds no star now; Margaro and Vasilis unconfirmed for 2026, they stay in their lanes)
 SHORTLIST = {
- "Last minute — save the night": ["vosporos", "ikariotiko-kafeneio", "panorama"],
+ "Last minute — save the night": ["vosporos", "taverna-tou-katsogiannou", "alargino"],
  "Plan ahead — this week": ["to-yperokeaneion", "dyosmos", "to-koutouki-tou-antoni"],
  "Plan ahead — the grand night": ["varoulko-seaside", "dourabeis", "papaioannou"],
 }

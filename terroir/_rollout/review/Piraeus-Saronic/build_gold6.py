@@ -358,11 +358,12 @@ def geo(f): return [{"name": CARDS[c["key"]]["name"], "desc": CARDS[c["key"]]["t
                     for c in plan_cards(f) if CARDS[c["key"]].get("maps_query")]
 for l_ in D["LANDMARKS"]:   # the gate's local-token rule, on the old landmark links too
     if l_.get("maps_url") and not re.search(LOCAL, l_["maps_url"]): l_["maps_url"] += "+Piraeus"
+# PHOTOS: the old data pointed the plates at the Athens folder, so they were broken live; repointed to this guide's img/
 prose_all = re.sub(r"<[^>]+>", " ", H.unescape(doc)).lower()
 GEMS = [dict(g, story=P.GEM_STORY[g["id"]][0], where=P.GEM_STORY[g["id"]][1]) if g["id"] in P.GEM_STORY else g for g in D["GEMS"] if g["pattern"].replace("\\ ", " ").lower() in prose_all]
 DATA = dict(VENUES=V, COLORS=D["COLORS"], CAT_LABELS=D["CAT_LABELS"], PRODUCT_COLORS=D["PRODUCT_COLORS"], NEIGHBORHOODS=geo("quartiers") or D["NEIGHBORHOODS"],
             WALKS=geo("walks"), WORK_SPOTS=geo("coffee-gardens"), LANDMARKS=D["LANDMARKS"],
-            PHOTOS=D["PHOTOS"][:3], GEMS=GEMS, TABLES=TABS, CATEGORIES=CATS, GROUPS=GROUPS, GROUP_OF=GOF, BRIDGE=BRIDGE)
+            PHOTOS=[dict(ph, src=ph["src"].replace("/terroir/Athens-Attiki/img/", f"/terroir/{SLUG}/img/")) for ph in D["PHOTOS"][:3]], GEMS=GEMS, TABLES=TABS, CATEGORIES=CATS, GROUPS=GROUPS, GROUP_OF=GOF, BRIDGE=BRIDGE)
 js = "window.TERROIR_DATA = (function () {\n"
 for k_, val in DATA.items():
     if k_ == "VENUES":

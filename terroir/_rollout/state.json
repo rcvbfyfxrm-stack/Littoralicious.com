@@ -557,7 +557,30 @@
   },
   {
    "slug": "Piraeus-Saronic",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Piraeus-Saronic-2026-10-14",
+   "date": "2026-10-14",
+   "readings": "done 2026-10-14",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (187 OK, 14 Oct; floors = curated counts: venues 25, fcards 85, fsubs 37, neighborhoods 9, walks 6, categories 10, lane stories 10, liste 19, maps links 83, pins 25; groups 3; doors 4; hot minVenues 7; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: ALL PASS, 28/28, exit 0 (7 chapter chips, sub-tags, readout, pointer lands on #venue-mastronikolas, back button, 85 facts/85 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 74 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 74 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 65/65 placed cards and 25/25 venues with Maps on the closed card, no sideways scroll; One Night 28 links, Getaway 24); lens screenshots in review/Piraeus-Saronic/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 189 units",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Piraeus-Saronic/piraeus-card-desktop.png, piraeus-card-phone.png (The Piraiki coast walk, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Piraeus-Saronic",
+    "MICHELIN Greece selection on/after 20 Oct 2026 (Varoulko Seaside, Dourabeis, Papaioannou + every kept venue)",
+    "2026 trading evidence for the 16 unverified tables (Margaro, Panorama, Oinomageireio o Vasilis, To Limanaki tou Giorgou, Dyosmos, Ikariotiko Kafeneio, To Eidikon, Propolemikon, To Koutouki tou Antoni, Taverna tou Katsogiannou, Vosporos, Toukta, Sushi Rolls, Mastronikolas, Euxeinon, Kantina o Plastiras) — confirm or cut",
+    "own-site hours, dated, for the guest list (Vosporos, Katsogiannou, Alargino, Yperokeaneion, Dyosmos, Koutouki, Varoulko daily vs Tue-Sun and no. 52 vs 54, Dourabeis, Papaioannou) and disputed addresses (Panorama, Ikariotiko, Karabelas)",
+    "Polyvios: trading after the Jan 2026 arrest? (cut until cleared)",
+    "the rest of research/verify_1.json + verify_2.json _needs_network and the rewrite packs' _notes (Maritime Museum 2026 price/hours, Archaeological Museum winter hours, Cine Melina 2026, cafés and craft benches, Aegina/Hydra boats on olp.gr)"
+   ],
+   "notes": "14 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Athens 13 Oct pipeline); the old page was GOLD3, so the GOLD4/5 floor came too (lanes with stories, guest list, #eat jump + La liste with The Dish, dated hot board + #why-now, calendar, craft, listening room, Autour). Places 30 -> 25 (10 lanes, none over 3, no 4s); fold cards 47 -> 85, every card labelled. Cut: Piscis, Jimmy's Fish, Avraam, Pancho (caps / told once) and Polyvios (Jan 2026 arrest reports). Guest list: last minute Vosporos, Katsogiannou, Alargino; this week Yperokeaneion, Dyosmos, Koutouki tou Antoni; grand night Varoulko, Dourabeis, Papaioannou. Berths Dourabeis, Yperokeaneion, O Giorgos. Corrected: Varoulko has no MICHELIN star (lost 2024); the three plates were broken live (Athens img path); Batis/Edem tram lines; Riviera EUR 25m; the Freattyda court; UNESCO/rebetiko claims; Propolemikon quartet claim dropped; Katsogiannou, Vosporos, Euxeinon facts. Statuses: 9 confirmed 14 Oct, 16 unverified. Readings: One Night 6 quarters, Getaway 13 stops. Hub card csv:true. Details: terroir/_rollout/review/Piraeus-Saronic/README.md."
   },
   {
    "slug": "Barcelona-Catalunya",
