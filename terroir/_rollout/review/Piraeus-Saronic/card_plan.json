@@ -1,0 +1,520 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The three harbours & the hill",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Kastella / Profitis Ilias",
+      "from": "quartiers:Kastella / Profitis Ilias"
+     },
+     {
+      "key": "quartiers:Mikrolimano / Munichia",
+      "from": "quartiers:Mikrolimano / Munichia"
+     },
+     {
+      "key": "quartiers:Pasalimani / Zea",
+      "from": "quartiers:Pasalimani / Zea"
+     }
+    ]
+   },
+   {
+    "title": "The shore & the local squares",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Piraiki / Akti Themistokleous",
+      "from": "quartiers:Piraiki / Akti Themistokleous"
+     },
+     {
+      "key": "quartiers:Freattyda",
+      "from": "quartiers:Freattyda"
+     },
+     {
+      "key": "quartiers:Terpsithea",
+      "from": "quartiers:Terpsithea"
+     }
+    ]
+   },
+   {
+    "title": "The working port & the refugee city",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Kentro & the Central Port / Tinaneios",
+      "from": "quartiers:Kentro & the Central Port / Tinaneios"
+     },
+     {
+      "key": "quartiers:Nikaia / Kokkinia",
+      "from": "quartiers:Nikaia / Kokkinia"
+     },
+     {
+      "key": "quartiers:Drapetsona",
+      "from": "quartiers:Drapetsona"
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Ichthyoskala Keratsiniou",
+      "from": "gastronomy:Ichthyoskala Keratsiniou"
+     },
+     {
+      "key": "gastronomy:Central Market of Piraeus",
+      "from": "gastronomy:Central Market of Piraeus"
+     }
+    ]
+   },
+   {
+    "title": "The curer, the phyllo and the sweet",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Avakian",
+      "from": "gastronomy:Avakian"
+     },
+     {
+      "key": "gastronomy:Vourloglou",
+      "from": "gastronomy:Vourloglou"
+     },
+     {
+      "key": "provisioning:Mastronikolas",
+      "from": "gastronomy:Mastronikolas"
+     }
+    ]
+   },
+   {
+    "title": "The spice sacks, the roaster and the ship's store",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Mandragoras",
+      "from": "gastronomy:Mandragoras"
+     },
+     {
+      "key": "gastronomy:Assos Xiroi Karpoi",
+      "from": "gastronomy:Assos Xiroi Karpoi"
+     },
+     {
+      "key": "gastronomy:Dakoutros Marine",
+      "from": "gastronomy:Dakoutros Marine"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The harbours' round",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Kastella–Mikrolimano loop",
+      "from": "walks:The Kastella–Mikrolimano loop"
+     },
+     {
+      "key": "walks:The Zea (Pasalimani) marina round",
+      "from": "walks:The Zea (Pasalimani) marina round"
+     },
+     {
+      "key": "walks:Up Profitis Ilias to the Veakeio",
+      "from": "walks:Up Profitis Ilias to the Veakeio"
+     }
+    ]
+   },
+   {
+    "title": "The coast and the ancient trace",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Piraiki coast walk to the lighthouse",
+      "from": "walks:The Piraiki coast walk to the lighthouse"
+     },
+     {
+      "key": "walks:The Hippodamian grid & the Eetioneia Gate walls",
+      "from": "walks:The Hippodamian grid & the Eetioneia Gate walls"
+     },
+     {
+      "key": "walks:The central-port arcades & the Municipal Theatre",
+      "from": "walks:The central-port arcades & the Municipal Theatre"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "In town: the pebble and the rock",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Votsalakia Municipal Beach",
+      "from": "calas:Votsalakia Municipal Beach"
+     },
+     {
+      "key": "calas:Freattyda Municipal Beach",
+      "from": "calas:Freattyda Municipal Beach"
+     },
+     {
+      "key": "calas:Ormos Afroditis (Aphrodite Cove) rocks",
+      "from": "calas:Ormos Afroditis (Aphrodite Cove) rocks"
+     }
+    ]
+   },
+   {
+    "title": "The nearest sand",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Batis Beach",
+      "from": "calas:Batis Beach"
+     },
+     {
+      "key": "calas:Edem Beach",
+      "from": "calas:Edem Beach"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The bronze, the slipway, the sea-wall",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Archaeological Museum of Piraeus",
+      "from": "culture:Archaeological Museum of Piraeus"
+     },
+     {
+      "key": "culture:Zea Shipsheds (ancient neosoikoi)",
+      "from": "culture:Zea Shipsheds (ancient neosoikoi)"
+     },
+     {
+      "key": "culture:Hellenic Maritime Museum",
+      "from": "culture:Hellenic Maritime Museum"
+     }
+    ]
+   },
+   {
+    "title": "The stage, indoors and open to the gulf",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Municipal Theatre of Piraeus",
+      "from": "culture:Municipal Theatre of Piraeus"
+     },
+     {
+      "key": "culture:Veakeio Municipal Theatre",
+      "from": "culture:Veakeio Municipal Theatre"
+     }
+    ]
+   },
+   {
+    "title": "Painters and the summer screen",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Municipal Gallery of Piraeus",
+      "from": "culture:Municipal Gallery of Piraeus"
+     },
+     {
+      "key": "culture:Cine Melina",
+      "from": "culture:Cine Melina"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:I Anemi — the rope-house",
+      "from": "crafts:I Anemi (Zacharoula N. Kordoni)"
+     }
+    ]
+   },
+   {
+    "title": "The other, and what it is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Banks Sails Greece",
+      "from": "crafts:Banks Sails Greece"
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:No class to enrol in",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "The old market kafeneia",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:O Stavros",
+      "from": "coffee-gardens:O Stavros"
+     },
+     {
+      "key": "coffee-gardens:O Stamatis",
+      "from": "coffee-gardens:O Stamatis"
+     }
+    ]
+   },
+   {
+    "title": "Where you can actually work",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Möte",
+      "from": "coffee-gardens:Möte"
+     },
+     {
+      "key": "work:Eighteenscreen Micro Roastery",
+      "from": "work:Eighteenscreen Micro Roastery"
+     },
+     {
+      "key": "work:Oven Roastery",
+      "from": "work:Oven Roastery"
+     }
+    ]
+   },
+   {
+    "title": "Beautiful. Close the laptop.",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Belle Amie",
+      "from": "coffee-gardens:Belle Amie"
+     },
+     {
+      "key": "work:East Coast Concept Store",
+      "from": "work:East Coast Concept Store"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "At the water and above it",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Istioploikos",
+      "from": "bars:Istioploikos"
+     },
+     {
+      "key": "bars:Horizon Rooftop of Senses",
+      "from": "bars:Horizon Rooftop of Senses"
+     },
+     {
+      "key": "bars:801 Rooftop Bar",
+      "from": "bars:801 Rooftop Bar"
+     }
+    ]
+   },
+   {
+    "title": "The wine rooms",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Hams & Clams",
+      "from": "bars:Hams & Clams"
+     },
+     {
+      "key": "bars:Paléo",
+      "from": "bars:Paléo"
+     },
+     {
+      "key": "bars:Méthe",
+      "from": "bars:Méthe"
+     }
+    ]
+   },
+   {
+    "title": "The late rooms",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Amsterdam Bar",
+      "from": "bars:Amsterdam Bar"
+     },
+     {
+      "key": "bars:The Art of Bragi",
+      "from": "bars:The Art of Bragi"
+     }
+    ]
+   },
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Retsina — the port's wine",
+      "from": null
+     },
+     {
+      "key": "bars:Ouzo with the fried fish",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "Where the music was born",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Rebetiko was born here",
+      "from": "music:Rebetiko was born here"
+     },
+     {
+      "key": "listening:The Famous Quartet of Piraeus — 1934",
+      "from": "music:The Famous Quartet of Piraeus — 1934"
+     },
+     {
+      "key": "listening:Bayanteras — the one rebetis born in Piraeus",
+      "from": "music:Bayanteras — the one rebetis born in Piraeus"
+     }
+    ]
+   },
+   {
+    "title": "The rooms that still play",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Revaizi",
+      "from": "music:Revaizi — live in the birthplace quarter"
+     },
+     {
+      "key": "listening:Stou Thoma & To Palio Roloi",
+      "from": "music:The central rebetadika — Stou Thoma & To Palio Roloi"
+     },
+     {
+      "key": "listening:Kafeniote",
+      "from": "coffee-gardens:Kafeniote"
+     }
+    ]
+   },
+   {
+    "title": "The song the world knows, and the listening room",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Ta Paidia tou Pirea — 1960",
+      "from": "music:'Ta Paidia tou Pirea' — 1960"
+     },
+     {
+      "key": "listening:Hi-fi — honestly",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The near islands",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Aegina",
+      "from": null
+     },
+     {
+      "key": "around:Salamina",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Further down the gulf",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Hydra",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The boats",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Port of Piraeus (OLP)",
+      "from": null
+     },
+     {
+      "key": "follow:Hellenic Coast Guard",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The town's calendar",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Municipality of Piraeus",
+      "from": null
+     },
+     {
+      "key": "follow:Posidonia",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "provisioning:Mastronikolas": "mastronikolas"
+ }
+}

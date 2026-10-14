@@ -1,0 +1,144 @@
+{
+ "lanes": {
+  "mikrolimano": {
+   "label": "Mikrolimano — the named houses",
+   "group": "grande",
+   "ids": [
+    "varoulko-seaside",
+    "dourabeis",
+    "papaioannou"
+   ]
+  },
+  "fry-hill": {
+   "label": "The fry and the hill",
+   "group": "petite",
+   "ids": [
+    "margaro",
+    "panorama"
+   ]
+  },
+  "working-port": {
+   "label": "The working port — the auction & Keratsini",
+   "group": "petite",
+   "ids": [
+    "oinomageireio-o-vasilis",
+    "to-limanaki-tou-giorgou"
+   ]
+  },
+  "ouzeri": {
+   "label": "The ouzeri & the meze",
+   "group": "petite",
+   "ids": [
+    "to-yperokeaneion",
+    "dyosmos",
+    "ikariotiko-kafeneio"
+   ]
+  },
+  "koutoukia": {
+   "label": "The barrel rooms & koutoukia",
+   "group": "petite",
+   "ids": [
+    "to-eidikon",
+    "propolemikon",
+    "to-koutouki-tou-antoni"
+   ]
+  },
+  "refugee": {
+   "label": "The refugee kitchens — Kokkinia, Nikaia & Drapetsona",
+   "group": "petite",
+   "ids": [
+    "alargino",
+    "taverna-tou-katsogiannou"
+   ]
+  },
+  "other": {
+   "label": "The other kitchens",
+   "group": "petite",
+   "ids": [
+    "vosporos",
+    "toukta-thai-food",
+    "sushi-rolls"
+   ]
+  },
+  "souvlaki": {
+   "label": "The grill and the wrap",
+   "group": "street",
+   "ids": [
+    "o-giorgos",
+    "souvlakia-o-serkos",
+    "o-karabelas"
+   ]
+  },
+  "breakfast": {
+   "label": "Breakfast & the dawn pies",
+   "group": "street",
+   "ids": [
+    "mastronikolas",
+    "euxeinon"
+   ]
+  },
+  "late-night": {
+   "label": "Late night — after the boat",
+   "group": "street",
+   "ids": [
+    "bougatsa-pavlidi",
+    "kantina-o-plastiras"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "mikrolimano"
+  ],
+  "petite": [
+   "fry-hill",
+   "working-port",
+   "ouzeri",
+   "koutoukia",
+   "refugee",
+   "other"
+  ],
+  "street": [
+   "souvlaki",
+   "breakfast",
+   "late-night"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "piscis": "Mikrolimano holds three: Varoulko (Lazarou's cooking), Dourabeis (the 1932 benchmark) and Papaioannou (the plainest fish on the quay) teach the most; Piscis is a fourth seafood room on the same crescent, its pitch value rather than anything only it does.",
+  "jimmys-fish": "Same lane cap: the showiest corner of the crescent, by its own record polished, pricey and touristy, with complaints about cover charges; the chef's-night-off angle is single-source.",
+  "avraam": "Told once: Drapetsona's kebab row is told by Polyvios, its oldest house (1935); Avraam is the row's second survivor, the same plate and the same walk past the port gates.",
+  "polyvios": "Not recommended on 14 Oct 2026: Greek press (in.gr, iefimerida, Athens Voice, Documento, 26 Jan 2026) reported the owner's arrest on 22 Jan 2026 on drug-trafficking charges, the shop allegedly used as a front. These are allegations with no court outcome found, but nothing since shows the shop trading, so it leaves the guide rather than send anyone there. Avraam, the row's other survivor, was not re-checked and stays out.",
+  "pancho": "The other kitchens hold three: Vosporos (the Constantinople table), Toukta (Kokkinia's Thai room) and Sushi Rolls (the shipping canteen) each say something about the port; a Mexican cantina on the marina kept on one chef's word does not."
+ },
+ "berths": [
+  "dourabeis",
+  "margaro",
+  "oinomageireio-o-vasilis"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "vosporos",
+   "ikariotiko-kafeneio",
+   "panorama"
+  ],
+  "Plan ahead — this week": [
+   "to-yperokeaneion",
+   "dyosmos",
+   "to-koutouki-tou-antoni"
+  ],
+  "Plan ahead — the grand night": [
+   "varoulko-seaside",
+   "dourabeis",
+   "papaioannou"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "quartiers:Hatzikyriakeio": "a residential seam between the port-city and the Piraiki; what it has (the coastal fish strip) is told under the Piraiki card and To Yperokeaneion's table card",
+  "walks:The Freattyda–Votsalakia shore": "told once: the same shore is the two town-beach cards under the sea fold",
+  "music:The living port — 1983 revival to UNESCO": "folded into 'Rebetiko was born here' (the 1983 film and the 2017 UNESCO listing)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}
