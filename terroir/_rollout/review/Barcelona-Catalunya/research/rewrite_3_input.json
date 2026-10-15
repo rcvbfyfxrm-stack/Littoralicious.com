@@ -1,0 +1,379 @@
+{
+ "gastronomy:Mercat de la Boqueria": {
+  "fold": "provisioning",
+  "group": "The markets",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-market-boqueria",
+   "name": "Mercat de la Boqueria",
+   "type": "MARKET",
+   "label": "MARKET",
+   "hook": "Founded 1840 · Tue–Sat morning 08:00–11:00 (avoid lunchtime crush)",
+   "chips": [],
+   "text": "Founded 1840 · Tue–Sat morning 08:00–11:00 (avoid lunchtime crush) On the site of the former Convent of Sant Josep, since 1840. The front rows on La Rambla are tourist-stalls; the real market lives at the back. Local breakfast counters: Pinotxo Bar (Juanito's, since 1940), Bar Central . Buy: Catalan goat cheeses (Garrotxa, Serrat Gros), Iberian ham bellota, fresh figs and tomatoes in season, salt-cured anchovies from L'Escala. Closed Sundays. Where El Raval — La Rambla 91",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Mercat%20de%20la%20Boqueria%20La%20Rambla",
+   "links": []
+  }
+ },
+ "gastronomy:Mercat de Sant Antoni": {
+  "fold": "provisioning",
+  "group": "The markets",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-market-sant-antoni",
+   "name": "Mercat de Sant Antoni",
+   "type": "MARKET",
+   "label": "MARKET",
+   "hook": "1882 iron market by Rovira i Trias · reopened 2018 after 8 years",
+   "chips": [],
+   "text": "1882 iron market by Rovira i Trias · reopened 2018 after 8 years Antoni Rovira i Trias's 1882 cast-iron market (architect of the original Eixample plan that lost to Cerdà). Reopened in 2018 after eight years of restoration. The Sunday morning perimeter book and collectibles market is the canonical Barcelona Sunday before vermut. Produce inside Tue–Sat. Where Sant Antoni — Carrer del Comte d'Urgell 1",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Mercat%20de%20Sant%20Antoni%20Barcelona",
+   "links": []
+  }
+ },
+ "gastronomy:Mercat de Santa Caterina": {
+  "fold": "provisioning",
+  "group": "The markets",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-market-santa-caterina",
+   "name": "Mercat de Santa Caterina",
+   "type": "MARKET",
+   "label": "MARKET",
+   "hook": "Enric Miralles + Benedetta Tagliabue · the rainbow mosaic roof",
+   "chips": [],
+   "text": "Enric Miralles + Benedetta Tagliabue · the rainbow mosaic roof On the site of the medieval Convent of Santa Caterina (founded 1243, demolished 1837). Refurbished 1997–2005 by Enric Miralles + Benedetta Tagliabue with the iconic undulating rainbow-tile roof — 325,000 ceramic tiles in 67 colours representing the fruits and vegetables sold below. Smaller, less touristy than Boqueria. Roman ruins of the convent visible at the back. Where El Born — Av. de Francesc Cambó 16",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Mercat%20de%20Santa%20Caterina%20Barcelona",
+   "links": []
+  }
+ },
+ "provisioning:Casa Gispert": {
+  "fold": "provisioning",
+  "group": "The shops that weigh by hand",
+  "brief": "NEW larder card built from the old venue record (old_venue): the 1851 nut roastery in the Born with its wood-fired oven. Shop labels Where · Open · Buy · Price. Verify it trades in 2026 and its hours (one WebSearch). site = its own domain only if confident.",
+  "old_venue": {
+   "id": "vc-casa-gispert",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 20,
+   "badge": "SINCE 1851",
+   "name": "Casa Gispert",
+   "short": "Casa Gispert",
+   "lat": 41.384093,
+   "lng": 2.181889,
+   "tags": [
+    "Roasting nuts over oak since 1851 in a back-shop oven it calls Europe's oldest of its kind still working."
+   ],
+   "productTags": [
+    "Nuts & dried fruit"
+   ],
+   "why": "The nuts roasted over oak in a back-of-shop wood oven the shop dates to its 1851 founding and calls the oldest of its kind still working in Europe, bought by weight over the counter in El Born. Roasting nuts over oak since 1851 in a back-shop oven it calls Europe's oldest of its kind still working.",
+   "address": "Carrer dels Sombrerers, 23, El Born (La Ribera), Ciutat Vella, 08003 Barcelona",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Gispert+Barcelona",
+   "category": "cult",
+   "subcat": "Nuts & dried fruit",
+   "money_eats": true,
+   "verdict": "A working wood-fired nut roastery rather than a souvenir shop: the nuts are roasted on the premises and weighed by hand at the counter, not pre-bagged.",
+   "signature": "Nuts roasted whole over oak in the wood oven, almonds and hazelnuts the house classics, warm and smoky, weighed by hand.",
+   "caveat": "A merchant, not a cafe: no seats and nothing to drink, you buy nuts by weight to take away, and it shuts Sundays; expect tight quarters and often a queue at the counter.",
+   "person": "Run since 2013 by Enric Comelles and Gemma Marín; the shop passed from the Gispert family (E & A Gispert, from 1911) to the Margenat brothers in 1993.",
+   "signal_chip": {
+    "label": "Since 1851",
+    "full": "Roasting nuts over oak since its 1851 founding, in what the shop calls the oldest wood oven of its kind still working in Europe; awarded Le Coq d'Or in 1999 by Les Gourmands Associés de la France for the best roasted nuts in Europe.",
+    "cosign": "Le Coq d'Or 1999, Les Gourmands Associés de la France"
+   }
+  }
+ },
+ "gastronomy:Formatgeria La Seu": {
+  "fold": "provisioning",
+  "group": "The shops that weigh by hand",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-shop-formatgeria-llamber",
+   "name": "Formatgeria La Seu",
+   "type": "PRODUCER",
+   "label": "FROMAGER",
+   "hook": "Catalan and Spanish artisan cheese — the destination fromager of central Barcelona",
+   "chips": [],
+   "text": "Catalan and Spanish artisan cheese — the destination fromager of central Barcelona Scottish owner Katherine McLaughlin's tiny shop deep in the Barri Gòtic. Catalan goats (Garrotxa, Garrotxa Negra), Pyrenean Tupí, Mahón, Manchego from raw milk, plus seasonal Mont d'Or and a rotating international selection. Tastings on request. Where Barri Gòtic · Carrer de Dagueria 16 Address Carrer de la Dagueria 16, 08002 Barcelona",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Formatgeria%20La%20Seu%20Barcelona",
+   "links": []
+  }
+ },
+ "gastronomy:Entre Latas · Conservas Gourmet": {
+  "fold": "provisioning",
+  "group": "The shops that weigh by hand",
+  "old": {
+   "fold": "gastronomy",
+   "id": "x-entre-latas-conservas-gour",
+   "name": "Entre Latas · Conservas Gourmet",
+   "type": "ONE-OF-A-KIND",
+   "label": "Gràcia (Torrijos 16)",
+   "hook": "A shop given over entirely to tinned food, from Cantabrian anchovies to Galician shellfish and obscure imports, with a handful of stools and toasts so you can crack a tin on the spot with bread and a glass of bulk vermut poured from the barrel.",
+   "chips": [],
+   "text": "A shop given over entirely to tinned food, from Cantabrian anchovies to Galician shellfish and obscure imports, with a handful of stools and toasts so you can crack a tin on the spot with bread and a glass of bulk vermut poured from the barrel. Billed as Barcelona's first store dedicated exclusively to gourmet conservas, it draws the tinned-fish obsessives who treat aged tins the way others treat wine, stocking 500-plus references from a dozen-odd countries. ★ Order — A tin of Cantabrian anchovies or Galician zamburiñas, toasted bread, and a glass of vermouth. Anchor Opened late 2023 in a former wine cellar, run by Paola Fornasaro; described by femGràcia as 'el primer comercio especializado en latas gourmet de Barcelona' and listed by Time Out Barcelona. Verified open, July 2026.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Entre+Latas+%C2%B7+Conservas+Gourmet+Barcelona",
+   "links": []
+  }
+ },
+ "gastronomy:Recaredo — biodynamic Corpinnat": {
+  "fold": "provisioning",
+  "group": "Bottles at the source",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-recaredo",
+   "name": "Recaredo — biodynamic Corpinnat",
+   "type": "PRODUCER",
+   "label": "CAVA",
+   "hook": "Demeter-certified biodynamic 2010 · zero added sulphites · Turó d'en Mota Paraje Calificado",
+   "chips": [],
+   "text": "Demeter-certified biodynamic 2010 · zero added sulphites · Turó d'en Mota Paraje Calificado Family estate in Sant Sadurní d'Anoia. The first Demeter-certified biodynamic cava producer in 2010; all wines manually disgorged, natural cork during ageing, no added sulphites. Their Turó d'en Mota Paraje Calificado (1 ha of old-vine Xarel·lo, 36+ months on lees) is widely considered the finest expression of the variety. Left DO Cava in 2019 and now bottles under the small-producer Corpinnat brand. Visits by appointment. Where Sant Sadurní d'Anoia · 45 min south Address Carrer Tamarit 10, 08770 Sant Sadurní d'Anoia",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Recaredo%20Sant%20Sadurni%20d%20Anoia",
+   "links": []
+  }
+ },
+ "gastronomy:Gramona — Corpinnat": {
+  "fold": "provisioning",
+  "group": "Bottles at the source",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-gramona",
+   "name": "Gramona — Corpinnat",
+   "type": "PRODUCER",
+   "label": "CAVA",
+   "hook": "Founded 1881 · Demeter biodynamic 2014 · 100% geothermal energy",
+   "chips": [],
+   "text": "Founded 1881 · Demeter biodynamic 2014 · 100% geothermal energy Since 1881, fifth-generation family. Demeter biodynamic 2014, Biodyvin 2018. 100% geothermal energy, collected rainwater. Long-aged wines including Tres Lustros (180+ months on lees). Now Corpinnat. Visits by appointment. Where Sant Sadurní d'Anoia Address Carrer Indústria 36, 08770 Sant Sadurní d'Anoia",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Gramona%20Sant%20Sadurni",
+   "links": []
+  }
+ },
+ "gastronomy:Bodegas Yzaguirre — Reus 1884": {
+  "fold": "provisioning",
+  "group": "Bottles at the source",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-yzaguirre",
+   "name": "Bodegas Yzaguirre — Reus 1884",
+   "type": "PRODUCER",
+   "label": "VERMUT",
+   "hook": "First commercial Spanish vermut · ~80 herbs, formula unchanged for 140 years",
+   "chips": [],
+   "text": "First commercial Spanish vermut · ~80 herbs, formula unchanged for 140 years Enrique de Yzaguirre y de Basterreche founded the house in Reus, 1884 — Spain's first commercial vermut. The formula (~80 herbs and spices) is a trade secret and unchanged for 140 years. The Reus headquarters offer guided tours including the historic 1884 cellar. The most-poured vermut in Barcelona's serious bars. Where El Morell (Reus area) · 1h south Address Carretera de Valls C-14 km 9.5, 43760 El Morell, Tarragona",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Bodegas%20Yzaguirre%20Reus",
+   "links": []
+  }
+ },
+ "around:Montserrat": {
+  "fold": "around",
+  "group": "An hour by train",
+  "old": {
+   "fold": "around",
+   "id": "v-montserrat",
+   "name": "Montserrat",
+   "type": "NATURE",
+   "label": "~1h20 NW (~50 km); FGC train from Plaça Espanya + rack railway or cable car",
+   "hook": "A serrated massif of eroded conglomerate rising to ~1,236 m, with a Benedictine abbey wedged on a ledge at 720 m and 'La Moreneta', the black-Madonna patron of Catalonia.",
+   "chips": [],
+   "text": "A serrated massif of eroded conglomerate rising to ~1,236 m, with a Benedictine abbey wedged on a ledge at 720 m and 'La Moreneta', the black-Madonna patron of Catalonia. The mountain's name literally means 'serrated mountain', and the reason to time your visit is the Escolania — one of Europe's oldest boys' choirs, singing for centuries, usually around 13:00 on weekdays. Honest caveat: the choir is away through the summer school holidays (roughly mid-June to the end of August) and around Christmas.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Montserrat+Barcelona",
+   "links": []
+  }
+ },
+ "around:Sitges": {
+  "fold": "around",
+  "group": "An hour by train",
+  "old": {
+   "fold": "around",
+   "id": "v-sitges",
+   "name": "Sitges",
+   "type": "VILLAGE",
+   "label": "40 min SW by Rodalies train",
+   "hook": "A whitewashed, bohemian seaside town — church-on-the-sea, art-nouveau villas, easy beaches — that was Catalan modernism's summer studio.",
+   "chips": [],
+   "text": "A whitewashed, bohemian seaside town — church-on-the-sea, art-nouveau villas, easy beaches — that was Catalan modernism's summer studio. It holds two terroir stories at once: Santiago Rusiñol's house-museum Cau Ferrat (with two El Grecos and three Picassos on the walls), and Malvasia de Sitges, a sweet golden white grown here since the Middle Ages, its sales funding the local hospital and now kept alive by a dedicated interpretation centre.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Sitges+Barcelona",
+   "links": []
+  }
+ },
+ "around:Colònia Güell": {
+  "fold": "around",
+  "group": "An hour by train",
+  "old": {
+   "fold": "around",
+   "id": "v-colonia-guell",
+   "name": "Colònia Güell",
+   "type": "VILLAGE",
+   "label": "22 min by FGC train from Plaça Espanya (Santa Coloma de Cervelló)",
+   "hook": "A late-19th-century modernist workers' colony around a textile mill, with Antoni Gaudí's unfinished crypt as its jewel — and far fewer crowds than anything in central Barcelona.",
+   "chips": [],
+   "text": "A late-19th-century modernist workers' colony around a textile mill, with Antoni Gaudí's unfinished crypt as its jewel — and far fewer crowds than anything in central Barcelona. This crypt is where the Sagrada Família was truly engineered: Gaudí spent roughly a decade (from 1898) modelling the structure upside-down here with strings and hanging weights — the poly-funicular model — before scaling it up in the city. UNESCO-listed, and the quietest Gaudí you'll get.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Col%C3%B2nia+G%C3%BCell+Barcelona",
+   "links": []
+  }
+ },
+ "around:Penedès — Sant Sadurní and the cava cellars": {
+  "fold": "around",
+  "group": "The wine country and the mountain",
+  "old": {
+   "fold": "around",
+   "id": "v-penedes-wine-country",
+   "name": "Penedès wine country",
+   "type": "NATURE",
+   "label": "~45 min SW by R4 Rodalies train",
+   "hook": "Catalonia's sparkling heartland: Sant Sadurní d'Anoia, plus Vilafranca del Penedès, the still-wine capital — an hour of vines, chalky soils and cellars from the city.",
+   "chips": [],
+   "text": "Catalonia's sparkling heartland: Sant Sadurní d'Anoia, plus Vilafranca del Penedès, the still-wine capital — an hour of vines, chalky soils and cellars from the city. Around 95% of all cava is made in this small patch of Penedès, the traditional-method sparkling born here in the 19th century. The newer story worth chasing is the wave of Penedès growers now working those same soils low-intervention and natural.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Pened%C3%A8s+wine+country+Barcelona",
+   "links": []
+  }
+ },
+ "around:Montseny": {
+  "fold": "around",
+  "group": "The wine country and the mountain",
+  "old": {
+   "fold": "around",
+   "id": "v-montseny",
+   "name": "Montseny",
+   "type": "NATURE",
+   "label": "~1h N (45-55 km); train to Sant Celoni then local transport, or drive",
+   "hook": "A UNESCO biosphere reserve topping out at Turó de l'Home (1,706 m) — beech, oak and Europe's southernmost fir forest, where on a clear day you can see from Tibidabo to the sea.",
+   "chips": [],
+   "text": "A UNESCO biosphere reserve topping out at Turó de l'Home (1,706 m) — beech, oak and Europe's southernmost fir forest, where on a clear day you can see from Tibidabo to the sea. Autumn is the whole point: the village restaurants fill with wild-mushroom and chestnut cooking. UNESCO declared it a biosphere reserve in 1978 (largely for that southernmost fir forest) — protected terroir, not a theme park.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Montseny+Barcelona",
+   "links": []
+  }
+ },
+ "around:Girona": {
+  "fold": "around",
+  "group": "Up the coast — each has its own guide",
+  "old": {
+   "fold": "around",
+   "id": "v-girona",
+   "name": "Girona",
+   "type": "VILLAGE",
+   "label": "38-40 min by high-speed Avant/AVE train",
+   "hook": "A medieval river-city: painted houses stacked over the Onyar, one of Europe's best-preserved Jewish quarters (the Call), and a soaring Gothic cathedral.",
+   "chips": [],
+   "text": "A medieval river-city: painted houses stacked over the Onyar, one of Europe's best-preserved Jewish quarters (the Call), and a soaring Gothic cathedral. El Celler de Can Roca — the Roca brothers' three-Michelin restaurant (holding three stars in the 2026 guide) with a near-year waitlist — sits on the edge of town; but the honest move is to skip the queue and drink the surrounding Empordà terroir through Girona's own tapas bars, no booking required.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Girona+Barcelona",
+   "links": []
+  }
+ },
+ "around:Costa Brava — Camí de Ronda": {
+  "fold": "around",
+  "group": "Up the coast — each has its own guide",
+  "old": {
+   "fold": "around",
+   "id": "v-costa-brava-cami-de-ronda",
+   "name": "Costa Brava — Camí de Ronda",
+   "type": "NATURE",
+   "label": "~1h30-2h N (~100+ km); train to the Girona coast then local bus",
+   "hook": "The Baix Empordà coast — Begur, Aiguablava, Calella de Palafrugell — stitched together by the Camí de Ronda, a cliff path threading pine, coves and hard-blue water.",
+   "chips": [],
+   "text": "The Baix Empordà coast — Begur, Aiguablava, Calella de Palafrugell — stitched together by the Camí de Ronda, a cliff path threading pine, coves and hard-blue water. 'Ronda' means patrol: the trail was walked by carabineros watching for smugglers running contraband ashore. The Palamós-to-Begur stretch is the classic two-day walk, but a single cove-to-cove section (say Calella de Palafrugell to Aiguablava) makes a perfect honest day out.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Costa+Brava+%E2%80%94+Cam%C3%AD+de+Ronda+Barcelona",
+   "links": []
+  }
+ },
+ "around:Cadaqués & Cap de Creus": {
+  "fold": "around",
+  "group": "Up the coast — each has its own guide",
+  "old": {
+   "fold": "around",
+   "id": "v-cadaques-cap-de-creus",
+   "name": "Cadaqués & Cap de Creus",
+   "type": "NATURE",
+   "label": "~2h15 drive N — long for a single day, better as an overnight",
+   "hook": "The easternmost point of mainland Spain: a wind-scoured cape of twisted schist and a whitewashed fishing village the tramuntana keeps honest.",
+   "chips": [],
+   "text": "The easternmost point of mainland Spain: a wind-scoured cape of twisted schist and a whitewashed fishing village the tramuntana keeps honest. Dalí summered here as a boy and kept his house at Portlligat next door — the melting geology of his paintings is literally this coast. The tramuntana ('from beyond the mountains') can blow for days, which is exactly why the light and the sea look the way they do.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Cadaqu%C3%A9s+%26+Cap+de+Creus+Barcelona",
+   "links": []
+  }
+ },
+ "follow:Visit Barcelona": {
+  "fold": "follow",
+  "group": "Tickets and hours",
+  "brief": "Follow card: barcelonaturisme.com — the official tourist office (verify the domain). Labels What it is · Language · Read. site only if official. No Maps."
+ },
+ "follow:Sagrada Família tickets": {
+  "fold": "follow",
+  "group": "Tickets and hours",
+  "brief": "Follow card: sagradafamilia.org — the only official ticket seller, no on-site box office (verify). No Maps."
+ },
+ "follow:MICHELIN Guide Spain": {
+  "fold": "follow",
+  "group": "What to eat, and when it is on",
+  "brief": "Follow card: guide.michelin.com — the Spain & Portugal selection; the 2027 gala date if announced (verify; the 2026 gala was 25 Nov 2025 in Málaga). No Maps."
+ },
+ "follow:Barcelona city agenda": {
+  "fold": "follow",
+  "group": "What to eat, and when it is on",
+  "brief": "Follow card: the Ajuntament's agenda (barcelona.cat / bcn.cat — verify the right domain for the city agenda / La Mercè) for the festes majors and free museum days. No Maps."
+ },
+ "avoid-traps:Restaurants on La Rambla": {
+  "fold": "avoid",
+  "group": "Three to skip",
+  "old": {
+   "fold": "avoid-traps",
+   "id": "p-avoid-rambla-restaurants",
+   "name": "Restaurants on La Rambla",
+   "type": "AVOID",
+   "label": "AVOID",
+   "hook": "Industrial sangria, frozen paella, €28 in 25 minutes",
+   "chips": [],
+   "text": "Industrial sangria, frozen paella, €28 in 25 minutes Every restaurant directly on La Rambla — the touristic spine — serves industrial sangría and frozen paella reheated. Real Catalan food is one street back: Bar Cañete on Carrer de la Unió 17 (Raval), Can Culleretes on Carrer de Quintana 5 (Gòtic), Quimet & Quimet in Poble Sec. If you're hungry on La Rambla, walk two blocks east or west and the food becomes real.",
+   "maps": "",
+   "links": []
+  }
+ },
+ "avoid-traps:The €15 'paella' with sangría": {
+  "fold": "avoid",
+  "group": "Three to skip",
+  "old": {
+   "fold": "avoid-traps",
+   "id": "p-avoid-paella-sangria-photos",
+   "name": "The €15 'paella' with sangría",
+   "type": "AVOID",
+   "label": "AVOID",
+   "hook": "Photo menus, multi-language, never paella",
+   "chips": [],
+   "text": "Photo menus, multi-language, never paella Real paella takes 25–35 minutes to make from raw — order it, wait. The pre-cooked, microwave-reheated version on photo menus in tourist zones is rice in tomato sauce, not paella. If you want paella, book 7 Portes or eat the original at a Costa Brava village restaurant. Catalans rarely eat paella in Barcelona itself — it's a Valencian dish; we eat fideuà and arròs caldós .",
+   "maps": "",
+   "links": []
+  }
+ },
+ "avoid-traps:Showing up at Park Güell without a ticket": {
+  "fold": "avoid",
+  "group": "Three to skip",
+  "old": {
+   "fold": "avoid-traps",
+   "id": "p-avoid-park-guell-walkup",
+   "name": "Showing up at Park Güell without a ticket",
+   "type": "AVOID",
+   "label": "AVOID",
+   "hook": "Monumental Zone is timed and books out",
+   "chips": [],
+   "text": "Monumental Zone is timed and books out Park Güell's Monumental Zone (1,400 visitors per hour) needs a timed ticket booked online — €18, often booked out for the day by 11:00 in summer. Walk-up = walk away. The free upper zones don't need a ticket but they don't include the trencadís terrace and the Hypostyle Hall. Book the slot weeks ahead.",
+   "maps": "",
+   "links": []
+  }
+ },
+ "avoid-traps:Visiting in August": {
+  "fold": "avoid",
+  "group": "When not to come",
+  "old": {
+   "fold": "avoid-traps",
+   "id": "p-avoid-august-heat",
+   "name": "Visiting in August",
+   "type": "AVOID",
+   "label": "AVOID",
+   "hook": "Heat + tourist density at maximum + half the bars closed",
+   "chips": [],
+   "text": "Heat + tourist density at maximum + half the bars closed Many of Barcelona's best small restaurants — the family-run Catalan kitchens — close for two to three weeks in August (Bar Tomás de Sarrià, plenty of small bodegas). The heat is at its peak; tourist numbers at their absolute maximum. Festes de Gràcia (15–21 Aug) and Sants (22–30 Aug) are real reasons to come, but the rest of August is to be avoided. April–June and September–October are the windows.",
+   "maps": "",
+   "links": []
+  }
+ }
+}
