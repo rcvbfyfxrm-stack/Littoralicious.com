@@ -37,7 +37,7 @@ LISTE = [
  ("Suizo", "SWEE-tho", False, "Spoon-thick hot chocolate under a cap of whipped cream.",
   "Poured in the room that says it invented Cacaolat, open since 1870.", "Granja M. Viader, El Raval", "Granja M Viader Xucla 4 Barcelona"),
  ("Panellets", "pa-ne-LYETS", False, "Almond-paste sweets rolled in pine nuts, for All Saints.",
-  "Per Tots Sants, castanyes i panellets: 1 November, with chestnuts and sweet wine.", "Escribà, La Rambla — the 1902 shop", "Escriba Rambla 83 Barcelona"),
+  "Per Tots Sants, castanyes i panellets: 1 November, with chestnuts and sweet wine.", "Escribà, La Rambla — the 1902 shop, shut for the Rambla works from January 2026: check first, or any pastisseria in late October", "Escriba Rambla 83 Barcelona"),
  ("Convent sweets", "dool-SES de con-VENT", False, "Marzipan, yemas and biscuits made by enclosed nuns across Spain.",
   "Eaten in a candlelit basement over the remains of a medieval bathhouse.", "Caelum, Barri Gòtic", "Caelum Palla 8 Barcelona"),
  ("Calçots amb romesco", "kal-SOTS am ro-MES-ko", False, "Long sweet onions charred black, peeled by hand and dipped in romesco.",

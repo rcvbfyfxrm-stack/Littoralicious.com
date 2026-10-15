@@ -47,7 +47,7 @@ CUT = {
  "v17-mercat-de-sant-antoni": "Not a table: the market is a card in the larder (told once).",
  "v18-codorn-u": "Not in the city: Codorníu's cellars are told in the Penedès day-trip card under Autour.",
 }
-BERTHS = ["v01-disfrutar", "v07-bar-ca-ete", "vc-bar-la-plata"]   # one per group; re-confirmed 15 Oct before the build
+BERTHS = ["v01-disfrutar", "v07-bar-ca-ete", "vc-flash-flash"]   # one per group, each confirmed trading 15 Oct (Bar La Plata, the first street pick, found only undated listings: it stays in its lane)
 SHORTLIST = {
  "Last minute — save the night": ["v10-7-portes-set-portes", "vn-cal-pep", "v14-els-pescadors"],
  "Plan ahead — this week": ["v07-bar-ca-ete", "v15-suculent", "vr-oniric"],

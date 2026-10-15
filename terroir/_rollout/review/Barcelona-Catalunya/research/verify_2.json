@@ -191,18 +191,18 @@
      "kind": "dish"
     },
     {
-     "name": "Sardines a la plancha",
-     "note": "Griddled at the front-door stove",
+     "name": "Sardines on the grill",
+     "note": "Guides name them a staple of the daily stove",
      "kind": "dish"
     },
     {
-     "name": "Carxofes a la planxa",
-     "note": "Griddled artichokes, a regulars' order",
+     "name": "Carxofes",
+     "note": "Charred artichoke hearts, the gentler order",
      "kind": "dish"
     },
     {
-     "name": "Chipirones",
-     "note": "Small fried squid off the same stove",
+     "name": "Chocitos and calamari",
+     "note": "Small fried cuttlefish and squid rings off the same stove",
      "kind": "dish"
     }
    ],
@@ -210,10 +210,7 @@
    "neighborhood": "Barceloneta",
    "reservation": "No reservations; queue before opening"
   },
-  "drop": [
-   "dishes not in record: sardines, artichokes, chipirones are from general knowledge; if the pipeline requires record-only, keep only the bomba"
-  ],
-  "evidence": "Mes Prestiges page reviewed May 2026 lists it trading with hours; Atlas Obscura, Moostips and Barcelona Navigator (undated) confirm the 1944 opening and bomba origin; a food blog says original bombas often sell out around 13:30. No 2026 press found. Search extracts only.",
+  "evidence": "Mes Prestiges page reviewed May 2026 lists it trading with hours; Atlas Obscura, Moostips and Barcelona Navigator (undated) confirm the 1944 opening and bomba origin; a food blog says original bombas often sell out around 13:30. Dishes beyond the bomba (grilled sardines, artichokes, chocitos, calamari) from Barcelona Navigator / Do Eat Better / Wanderlog guide extracts. No 2026 press found. Search extracts only.",
   "corrections": [
    "Old hours 'Mon-Fri 09:00-15:30, Sat 09:00-14:30' differ from Mes Prestiges May 2026 (Sat to 13:00, weekday to 15:00); set as call ahead",
    "Bomba origin: one source names the inventor Maria Pla c.1955, Moostips credits the grandmother without a date; old record says grandmother María in the 1950s, consistent"
@@ -234,6 +231,10 @@
    {
     "label": "Barcelona Navigator: La Cova Fumada",
     "url": "https://barcelonanavigator.com/?p=6449"
+   },
+   {
+    "label": "Do Eat Better: Barceloneta food guide",
+    "url": "https://doeatbetterexperience.com/blog/barceloneta-food-guide/"
    }
   ]
  },
@@ -967,16 +968,22 @@
      "kind": "dish"
     },
     {
-     "name": "Caña",
-     "note": "A draught beer at the bar alongside",
-     "kind": "drink"
+     "name": "Tuna empanadillas",
+     "note": "The house tuna pasties, per the city commerce listing",
+     "kind": "dish"
+    },
+    {
+     "name": "Cantabrian anchovies",
+     "note": "Brought from the Cantabrian Sea, per the same listing",
+     "kind": "dish"
     }
    ],
    "neighborhood": "Sarrià",
    "price_range": "Bravas about EUR 4 (Barcelona Urbana)"
   },
-  "evidence": "No 2026-dated evidence found. Time Out Barcelona (undated) ranks the bravas among the city's best and describes the allioli; Barcelona city commerce page names Antonio Betorz and his son and a 2018 award; Barcelona Urbana gives since 1929, about EUR 4. Directo al Paladar feature on its bravas. Nothing points to closure. Search extracts only.",
+  "evidence": "No 2026-dated evidence found. Time Out Barcelona (undated) ranks the bravas among the city's best and describes the allioli; Barcelona city commerce page names Antonio Betorz and his son and a 2018 award; Barcelona Urbana gives since 1929, about EUR 4. Directo al Paladar feature on its bravas. Closing day conflicts: one listing says Wednesdays, another Sundays (old caveat says Sundays). Nothing points to closure. Search extracts only.",
   "corrections": [
+   "Closing day: old says closed Sundays; one listing says closed Wednesdays; unresolved",
    "Person added: Antonio Betorz and his son (Barcelona city commerce page)",
    "Old chip 'verified Jul 2026' Time Out claim stands, but Time Out says 'among the city's best', not 'the best'"
   ],
@@ -1012,8 +1019,13 @@
      "kind": "dish"
     },
     {
-     "name": "Fries",
-     "note": "The standard side at the counter",
+     "name": "Asturiana",
+     "note": "Cabrales blue cheese and onion caramelised over five hours",
+     "kind": "dish"
+    },
+    {
+     "name": "Hand-cut chips",
+     "note": "Cut daily, never frozen, per Time Out",
      "kind": "dish"
     }
    ],
@@ -1022,7 +1034,7 @@
   "evidence": "No 2026-dated evidence that the Kiosko trades; asest.es (26 May 2026) only repeats the 2018 AmRest deal. Alimarket (2018): AmRest bought 100% of Bacoa for ~EUR 3.7m, network of 6 (2 own in Barcelona: Marquès de l'Argentera 1 and Colomines 2; franchises incl. Ferran 10, Ronda Universitat 31). Foursquare lists Bacoa Kiosko at Marquès de l'Argentera 1 bis (undated). Search extracts only.",
   "corrections": [
    "Address: Foursquare gives Av. Marquès de l'Argentera 1 bis; Alimarket gives 1",
-   "Dish 'Fries' is generic, not verified as a signature; keep only if two-dish minimum needs it"
+   "Time Out still lists Bacoa Burger Kiosko, Universitat, Barceloneta and Ferran branch pages (undated) and marks Little Bacoa closed"
   ],
   "sources": [
    {
@@ -1036,6 +1048,10 @@
    {
     "label": "asest.es: Bacoa grupo empresarial (May 2026)",
     "url": "https://asest.es/story/bacoa-grupo-empresarial/"
+   },
+   {
+    "label": "Time Out Barcelona: Bacoa Burger Kiosko",
+    "url": "https://www.timeout.com/barcelona/restaurants/bacoa-burger-kiosko"
    }
   ]
  },
@@ -1122,7 +1138,7 @@
    "where": "Flash Flash on Carrer de la Granada del Penedès; Bacoa Kiosko on Avinguda del Marquès de l'Argentera"
   }
  },
- "_notes": "All 20 venues checked from WebSearch extracts only (no page reads; WebFetch not used). Confirmed (8): Bar Cañete, Cal Pep, La Cova Fumada, Els Pescadors, Morro Fi, Caelum (all on Mes Prestiges pages marked reviewed May 2026, the weakest form of 2026 evidence), Granja M. Viader (Ara 7 May 2026; Barcelona Urbana 31 Aug 2026), Flash Flash (TripAdvisor review dated 20 Apr 2026). Unverified (12): Quimet & Quimet, El Vaso de Oro, El Xampanyet, Bar Bodega Quimet, Bar Mut (latest Ara Oct 2025), Can Cisa/Bar Brutal, Els Sortidors, Escribà Rambla, Bar La Plata (latest Ara Aug 2025), Can Paixano, Bar Tomás, Bacoa Kiosko. 2026-titled SEO round-ups (isitfunky, eurovistatrips, artvisitguide) were not counted as evidence. No closures found. Highest risk: Escribà Rambla (announced closure from 15 Jan 2026 for Rambla works, no reopening found) and Bacoa Kiosko (AmRest-run, no 2026 trace). MICHELIN: Bar Cañete is in the selection without Star or Bib (guide extract); no other venue in this file checked against MICHELIN. Guest-list/berth hours: no single authoritative current hours for Bar Cañete, Cal Pep, Els Pescadors or Bar La Plata; all set as Call ahead. Bar Cañete's old 'Lunch Thu-Sat' is wrong. Dishes: La Cova Fumada sardines/artichokes/chipirones and Bacoa fries and Bar Tomás caña are not record- or source-verified signatures; trim if record-only dishes are required. Disputes kept: Cañete tortillita flour (rice per Time Out vs chickpea), Bodega Quimet founding year (1950 vs 1954), Can Cisa wine count (300 vs 700+), Sortidors corkage (EUR 4 vs 5) and number (51 vs 53), Bar Mut number (189 vs 192), La Plata number (24 vs 28) and phone, Els Pescadors handover year (2019 vs 2020) and fish source (Arenys vs Vilanova). Web fields set from search extracts (barcanete.com, calpep.com, elspescadors.com, barbrutal.com, barlaplata.com) need a liveness check.",
+ "_notes": "All 20 venues checked from WebSearch extracts only (no page reads; WebFetch not used). Confirmed (8): Bar Cañete, Cal Pep, La Cova Fumada, Els Pescadors, Morro Fi, Caelum (all on Mes Prestiges pages marked reviewed May 2026, the weakest form of 2026 evidence), Granja M. Viader (Ara 7 May 2026; Barcelona Urbana 31 Aug 2026), Flash Flash (TripAdvisor review dated 20 Apr 2026). Unverified (12): Quimet & Quimet, El Vaso de Oro, El Xampanyet, Bar Bodega Quimet, Bar Mut (latest Ara Oct 2025), Can Cisa/Bar Brutal, Els Sortidors, Escribà Rambla, Bar La Plata (latest Ara Aug 2025), Can Paixano, Bar Tomás, Bacoa Kiosko. 2026-titled SEO round-ups (isitfunky, eurovistatrips, artvisitguide) were not counted as evidence. No closures found. Highest risk: Escribà Rambla (announced closure from 15 Jan 2026 for Rambla works, no reopening found) and Bacoa Kiosko (AmRest-run, no 2026 trace). MICHELIN: Bar Cañete is in the selection without Star or Bib (guide extract); no other venue in this file checked against MICHELIN. Guest-list/berth hours: no single authoritative current hours for Bar Cañete, Cal Pep, Els Pescadors or Bar La Plata; all set as Call ahead. Bar Cañete's old 'Lunch Thu-Sat' is wrong. Dishes beyond the old records come from search extracts (Cova Fumada sardines/artichokes/chocitos, Bar Tomás empanadillas/anchovies, Bacoa Asturiana/chips, Bar Mut lobster/steak/croquettes, Quimet pork-cheek/foie montaditos). Disputes kept: Cañete tortillita flour (rice per Time Out vs chickpea), Bodega Quimet founding year (1950 vs 1954), Can Cisa wine count (300 vs 700+), Sortidors corkage (EUR 4 vs 5) and number (51 vs 53), Bar Mut number (189 vs 192), La Plata number (24 vs 28) and phone, Els Pescadors handover year (2019 vs 2020) and fish source (Arenys vs Vilanova). Web fields set from search extracts (barcanete.com, calpep.com, elspescadors.com, barbrutal.com, barlaplata.com) need a liveness check.",
  "_needs_network": [
   "barcanete.com: link liveness and current hours (MICHELIN 13:00-24:00 vs split service per Mes Prestiges)",
   "guide.michelin.com/en/catalunya/barcelona/restaurant/canete: read the distinction line on the page itself",
