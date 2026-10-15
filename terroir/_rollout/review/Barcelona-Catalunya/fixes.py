@@ -6,7 +6,12 @@ CARD_SET = {       # key -> {field: value} overrides
  # the source label named a blog with a banned word; same URL, neutral label
  "gastronomy:Formatgeria La Seu": {"sources": [{"label": "La Seu cheese shop, Barri Gòtic (a Barcelona food blog)", "url": "https://foodieinbarcelona.com/la-seu-cheese-shop-barri-gotic/"}]},
 }
-VENUE_SET = {}      # id -> {field: value} overrides
+VENUE_SET = {      # id -> {field: value} overrides
+ # the old verdict had the order wrong: the third star came at the November 2023 gala (2024 guide), before the June 2024 No. 1
+ "v01-disfrutar": {"verdict": "The rare kitchen that holds both titles at once: three MICHELIN stars from the November 2023 gala, then the World's 50 Best No. 1 in June 2024."},
+ # Time Out marks Little Bacoa closed; the kiosk is the address that stands
+ "vq-bacoa-kiosko-little-bacoa": {"name": "Bacoa Kiosko", "short": "Bacoa Kiosko"},
+}
 LANE_STORY_SET = {} # lane -> {field: value}
 
 def cards(C):
