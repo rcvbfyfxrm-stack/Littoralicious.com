@@ -1,0 +1,706 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The walled town",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Barri Gòtic",
+      "from": null
+     },
+     {
+      "key": "quartiers:El Born / La Ribera",
+      "from": null
+     },
+     {
+      "key": "quartiers:El Raval",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The grid and the town it swallowed",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:L'Eixample",
+      "from": null
+     },
+     {
+      "key": "quartiers:Gràcia",
+      "from": null
+     },
+     {
+      "key": "quartiers:Sant Antoni",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The sea and the hill",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Barceloneta",
+      "from": null
+     },
+     {
+      "key": "quartiers:Poblenou",
+      "from": null
+     },
+     {
+      "key": "quartiers:Poble Sec & Montjuïc",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "history",
+  "groups": [
+   {
+    "title": "The old town is younger than it looks",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The Bishop's Bridge is from 1928",
+      "from": null
+     },
+     {
+      "key": "curiosities:The Boqueria is older than its iron",
+      "from": null
+     },
+     {
+      "key": "curiosities:The street behind Les Demoiselles",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The grid, the beach, the name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Why every Eixample corner is cut",
+      "from": null
+     },
+     {
+      "key": "curiosities:Where the beach sand came from",
+      "from": null
+     },
+     {
+      "key": "curiosities:Costa Brava, a newspaper word of 1908",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Three Barcelona endings",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:How Gaudí died",
+      "from": null
+     },
+     {
+      "key": "curiosities:The song Freddie Mercury never heard played",
+      "from": null
+     },
+     {
+      "key": "curiosities:Dalí's lollipop",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Mercat de la Boqueria",
+      "from": "gastronomy:Mercat de la Boqueria"
+     },
+     {
+      "key": "gastronomy:Mercat de Sant Antoni",
+      "from": "gastronomy:Mercat de Sant Antoni"
+     },
+     {
+      "key": "gastronomy:Mercat de Santa Caterina",
+      "from": "gastronomy:Mercat de Santa Caterina"
+     }
+    ]
+   },
+   {
+    "title": "The shops that weigh by hand",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Casa Gispert",
+      "from": null
+     },
+     {
+      "key": "gastronomy:Formatgeria La Seu",
+      "from": "gastronomy:Formatgeria La Seu"
+     },
+     {
+      "key": "gastronomy:Entre Latas · Conservas Gourmet",
+      "from": "gastronomy:Entre Latas · Conservas Gourmet"
+     }
+    ]
+   },
+   {
+    "title": "Bottles at the source",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Recaredo — biodynamic Corpinnat",
+      "from": "gastronomy:Recaredo — biodynamic Corpinnat"
+     },
+     {
+      "key": "gastronomy:Gramona — Corpinnat",
+      "from": "gastronomy:Gramona — Corpinnat"
+     },
+     {
+      "key": "gastronomy:Bodegas Yzaguirre — Reus 1884",
+      "from": "gastronomy:Bodegas Yzaguirre — Reus 1884"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The old town on foot",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Gothic Quarter at dawn",
+      "from": "walks:Gothic Quarter at dawn"
+     },
+     {
+      "key": "walks:Sant Antoni → Raval → Boqueria",
+      "from": "walks:Sant Antoni → Raval → Boqueria"
+     },
+     {
+      "key": "walks:Passeig de Gràcia Modernisme strip",
+      "from": "walks:Passeig de Gràcia Modernisme strip"
+     }
+    ]
+   },
+   {
+    "title": "The hills and the pintxo street",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Park Güell from the back entrance",
+      "from": "walks:Park Güell from the back entrance"
+     },
+     {
+      "key": "walks:Montjuïc heritage loop",
+      "from": "walks:Montjuïc heritage loop"
+     },
+     {
+      "key": "walks:Carrer de Blai pintxos crawl",
+      "from": "walks:Carrer de Blai pintxos crawl"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The city sand, south to north",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Sant Sebastià",
+      "from": "calas:Sant Sebastià"
+     },
+     {
+      "key": "calas:Barceloneta",
+      "from": "calas:Barceloneta"
+     },
+     {
+      "key": "calas:Bogatell",
+      "from": "calas:Bogatell"
+     }
+    ]
+   },
+   {
+    "title": "The quieter end",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Nova Icària",
+      "from": "calas:Nova Icària"
+     },
+     {
+      "key": "calas:Mar Bella",
+      "from": "calas:Mar Bella"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "Gaudí, three ways",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Sagrada Família — the tallest church in the world from 2026",
+      "from": "culture:Sagrada Família — the tallest church in the world from 2026"
+     },
+     {
+      "key": "culture:Casa Batlló & La Pedrera — the Passeig de Gràcia pair",
+      "from": "culture:Casa Batlló & La Pedrera — the Passeig de Gràcia pair"
+     },
+     {
+      "key": "art:Casa Vicens",
+      "from": "art:Casa Vicens"
+     }
+    ]
+   },
+   {
+    "title": "The Roman floor and the glass hall",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:MUHBA Plaça del Rei — Roman Barcino underground",
+      "from": "culture:MUHBA Plaça del Rei — Roman Barcino underground"
+     },
+     {
+      "key": "culture:Palau de la Música Catalana",
+      "from": "culture:Palau de la Música Catalana"
+     }
+    ]
+   },
+   {
+    "title": "The painters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Museu Picasso",
+      "from": "culture:Museu Picasso"
+     },
+     {
+      "key": "art:Fundacio Joan Miro",
+      "from": "art:Fundacio Joan Miro"
+     },
+     {
+      "key": "art:MNAC (Museu Nacional d'Art de Catalunya)",
+      "from": "art:MNAC (Museu Nacional d'Art de Catalunya)"
+     }
+    ]
+   },
+   {
+    "title": "The new and the designed",
+    "desc": "",
+    "cards": [
+     {
+      "key": "art:MACBA (Museu d'Art Contemporani de Barcelona)",
+      "from": "art:MACBA (Museu d'Art Contemporani de Barcelona)"
+     },
+     {
+      "key": "art:CCCB (Centre de Cultura Contemporania de Barcelona)",
+      "from": "art:CCCB (Centre de Cultura Contemporania de Barcelona)"
+     },
+     {
+      "key": "art:Disseny Hub Barcelona (DHUB)",
+      "from": "art:Disseny Hub Barcelona (DHUB)"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Barcelona craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "The cup itself",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-scene:Cafes El Magnifico",
+      "from": "coffee-scene:Cafes El Magnifico"
+     },
+     {
+      "key": "coffee-scene:Nomad Coffee (Coffee Bar, ex Coffee Lab)",
+      "from": "coffee-scene:Nomad Coffee (Coffee Bar, ex Coffee Lab)"
+     },
+     {
+      "key": "coffee-scene:SlowMov",
+      "from": "coffee-scene:SlowMov"
+     }
+    ]
+   },
+   {
+    "title": "Where you can actually work",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Federal Cafe (Sant Antoni)",
+      "from": "coffee-gardens:Federal Cafe (Sant Antoni)"
+     },
+     {
+      "key": "coffee-gardens:Skye Coffee Co",
+      "from": "coffee-gardens:Skye Coffee Co"
+     },
+     {
+      "key": "coffee-gardens:Biblioteca de Catalunya",
+      "from": "coffee-gardens:Biblioteca de Catalunya"
+     }
+    ]
+   },
+   {
+    "title": "Beautiful. Close the laptop.",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-gardens:Hotel Casa Fuster — Café Vienès",
+      "from": "coffee-gardens:Hotel Casa Fuster — Café Vienès"
+     },
+     {
+      "key": "coffee-gardens:Casa Bonay",
+      "from": "coffee-gardens:Casa Bonay"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Cava — invented Penedès 1872",
+      "from": "bars:Cava — invented Penedès 1872"
+     },
+     {
+      "key": "bars:Vermut — Yzaguirre Reus 1884",
+      "from": "bars:Vermut — Yzaguirre Reus 1884"
+     },
+     {
+      "key": "bars:Priorat — DOQ since 2000",
+      "from": "bars:Priorat — DOQ since 2000"
+     }
+    ]
+   },
+   {
+    "title": "The other bottles",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Xarel·lo — Penedès still white",
+      "from": "bars:Xarel·lo — Penedès still white"
+     },
+     {
+      "key": "bars:Ratafia — the Catalan herbal",
+      "from": "bars:Ratafia — the Catalan herbal"
+     }
+    ]
+   },
+   {
+    "title": "Natural wine, three rooms",
+    "desc": "",
+    "cards": [
+     {
+      "key": "natural-wine:Bar Salvatge",
+      "from": "natural-wine:Bar Salvatge"
+     },
+     {
+      "key": "natural-wine:Bar Zim",
+      "from": "natural-wine:Bar Zim"
+     },
+     {
+      "key": "natural-wine:Amateur Bar",
+      "from": "natural-wine:Amateur Bar"
+     }
+    ]
+   },
+   {
+    "title": "Above the roofs",
+    "desc": "",
+    "cards": [
+     {
+      "key": "rooftops:La Caseta del Migdia",
+      "from": "rooftops:La Caseta del Migdia"
+     },
+     {
+      "key": "rooftops:The Roof (The Barcelona EDITION)",
+      "from": "rooftops:The Roof (The Barcelona EDITION)"
+     },
+     {
+      "key": "rooftops:The Rooftop at Sir Victor",
+      "from": "rooftops:The Rooftop at Sir Victor"
+     }
+    ]
+   },
+   {
+    "title": "The old rooms",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Bar Marsella",
+      "from": null
+     },
+     {
+      "key": "bars:London Bar",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening rooms",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Oblicuo Hi-Fi Bar",
+      "from": "listening:Oblicuo Hi-Fi Bar"
+     },
+     {
+      "key": "listening:Jaç Hi-Fi Café",
+      "from": "listening:Jaç Hi-Fi Café"
+     },
+     {
+      "key": "underground:Discos Paradiso",
+      "from": "underground:Discos Paradiso"
+     }
+    ]
+   },
+   {
+    "title": "Small, live and late",
+    "desc": "",
+    "cards": [
+     {
+      "key": "underground:Jamboree",
+      "from": "underground:Jamboree"
+     },
+     {
+      "key": "underground:23 Robadors",
+      "from": "underground:23 Robadors"
+     },
+     {
+      "key": "underground:JazzSí Club (Taller de Músics)",
+      "from": "underground:JazzSí Club (Taller de Músics)"
+     }
+    ]
+   },
+   {
+    "title": "The clubs",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Sala Apolo / Nitsa",
+      "from": "listening:Sala Apolo / Nitsa"
+     },
+     {
+      "key": "underground:Razzmatazz",
+      "from": "underground:Razzmatazz"
+     },
+     {
+      "key": "underground:Moog",
+      "from": "underground:Moog"
+     }
+    ]
+   },
+   {
+    "title": "The city's own sound",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Rumba catalana",
+      "from": "underground:Sabor de Gràcia (rumba catalana)"
+     },
+     {
+      "key": "underground:Heliogàbal",
+      "from": "underground:Heliogàbal"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "An hour by train",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Montserrat",
+      "from": "around:Montserrat"
+     },
+     {
+      "key": "around:Sitges",
+      "from": "around:Sitges"
+     },
+     {
+      "key": "around:Colònia Güell",
+      "from": "around:Colònia Güell"
+     }
+    ]
+   },
+   {
+    "title": "The wine country and the mountain",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Penedès — Sant Sadurní and the cava cellars",
+      "from": "around:Penedès wine country"
+     },
+     {
+      "key": "around:Montseny",
+      "from": "around:Montseny"
+     }
+    ]
+   },
+   {
+    "title": "Up the coast — each has its own guide",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Girona",
+      "from": "around:Girona"
+     },
+     {
+      "key": "around:Costa Brava — Camí de Ronda",
+      "from": "around:Costa Brava — Camí de Ronda"
+     },
+     {
+      "key": "around:Cadaqués & Cap de Creus",
+      "from": "around:Cadaqués & Cap de Creus"
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "Three to skip",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid-traps:Restaurants on La Rambla",
+      "from": "avoid-traps:Restaurants on La Rambla"
+     },
+     {
+      "key": "avoid-traps:The €15 'paella' with sangría",
+      "from": "avoid-traps:The €15 'paella' with sangría"
+     },
+     {
+      "key": "avoid-traps:Showing up at Park Güell without a ticket",
+      "from": "avoid-traps:Showing up at Park Güell without a ticket"
+     }
+    ]
+   },
+   {
+    "title": "When not to come",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid-traps:Visiting in August",
+      "from": "avoid-traps:Visiting in August"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "Tickets and hours",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Visit Barcelona",
+      "from": null
+     },
+     {
+      "key": "follow:Sagrada Família tickets",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "What to eat, and when it is on",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:MICHELIN Guide Spain",
+      "from": null
+     },
+     {
+      "key": "follow:Barcelona city agenda",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {}
+}
