@@ -1,0 +1,113 @@
+{
+  "slug": "Barcelona-Catalunya",
+  "city": "Barcelona",
+  "listeSlug": "barcelona",
+  "groups": 3,
+  "mapsTokens": [
+    "Barcelona",
+    "Catalonia",
+    "Catalunya"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia",
+    "Piraeus",
+    "Sicily"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "curiosities",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "calas",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink-place",
+    "rooftops",
+    "linger",
+    "money-sits",
+    "underground",
+    "art",
+    "coffee-scene",
+    "natural-wine",
+    "avoid-traps",
+    "twentyfour",
+    "walk"
+  ],
+  "floors": {
+    "venues": 35,
+    "gems": 7,
+    "neighborhoods": 9,
+    "walks": 6,
+    "categories": 12,
+    "laneStories": 12,
+    "fcards": 120,
+    "fsubs": 46,
+    "liste": 20,
+    "mapsLinks": 111,
+    "pins": 35
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 35,
+    "gemboxes": 12
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 7,
+    "mode": "pointer"
+  },
+  "doors": 4
+}

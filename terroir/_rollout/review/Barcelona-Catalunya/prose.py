@@ -227,6 +227,7 @@ DISH_IDS = ["o-pa-amb-tomaquet", "o-la-bomba-barceloneta", "o-calcots-i-la-calco
 DISH_DESC = "Eleven plates and rituals and their honest, often contested, origins: the one detail that separates the real version from the tourist copy."
 DISH_TEXT_EDITS = [
  ("The romantic story that its shape and colours evoke", "The popular story that its shape and colours evoke"),
+ ("is charming folklore, not established fact.", "is folklore, not established fact."),
 ]
 DISH_WHERE = {   # one 'Eat it' line per article, kept venues only (refs resolve in the build)
  "o-pa-amb-tomaquet": '<a href="#venue-v11-quimet-quimet">Quimet &amp; Quimet</a>, under the conservas.',
@@ -272,8 +273,8 @@ GEMS = [
            "Barceloneta tavern open since 1944, and the plate is usually dated to the 1950s: cheap fuel for the dock. Every bar in the city copies it now.",
   "where": "La Cova Fumada, Carrer del Baluard, Barceloneta."},
  {"id": "gem-crema-catalana", "pattern": "crema catalana", "tag": "Barcelona gem · the oldest custard", "name": "Burnt cream, or not",
-  "story": "Catalans say they got there first, and the books half agree: a cooked custard is in the Sent Soví of the fourteenth century, long before the first French brûlée recipe of "
-           "1691. The caramel crust is the open question — the early Catalan versions were not burnt on top. It is also crema de Sant Josep, eaten on 19 March.",
+  "story": "Set with cornstarch and milk rather than cream, scented with cinnamon stick and lemon peel, then struck with a hot iron until the sugar cracks: that is the "
+           "Catalan method, and the iron is the test of a kitchen that still makes it by hand. Whether the burnt top is older here than in France is the city's favourite food quarrel; The Dish, at the foot, has both sides.",
   "where": "Can Culleretes, the city's oldest dining room."},
  {"id": "gem-parellada", "pattern": "arròs Parellada", "tag": "Barcelona gem · born here", "name": "The rice for a man who would not peel",
   "story": "Every prawn shelled, every bone lifted, so the diner touches nothing: the 'lazy man's rice' is said to have been made around 1902 for the Barcelona dandy Juli Maria Parellada. "

@@ -269,6 +269,9 @@ mid = (P.HERO + "\n" + P.ETYMON + "\n" + '<div class="container gx-barcelona">\n
 S = CHROME
 h0 = S.find('<div class="hero">'); k0 = S.find('<div class="gx-appendix" hidden></div>'); assert 0 < h0 < k0
 doc = S[:h0] + mid + S[k0:]
+# guide-extras.js (locked kit) inserts the 'Neighbouring ports' row before appendix.firstChild.nextSibling; Barcelona has neighbours
+# and the chrome's appendix is empty, which threw on load. A comment node gives it a first child; nothing visible changes.
+doc = doc.replace('<div class="gx-appendix" hidden></div>', '<div class="gx-appendix" hidden><!-- neighbouring ports --></div>', 1)
 _seen = (re.sub(r"<[^>]+>", " ", H.unescape(mid)) + " " + json.dumps(VUP, ensure_ascii=False)).lower()
 GLOSS = [g for g in P.GLOSS if re.search(r"(?<![\w])" + re.escape(g[0].lower()) + r"(?![\w])", _seen)]
 json.dump(GLOSS, open(RV / "glossary.json", "w"), ensure_ascii=False, indent=0)
@@ -309,6 +312,11 @@ for vid in KEEP:
         rs = [x for x in tg if re.search(r"(?i)book|reserv|walk-in|queue", x)]
         if rs: v["reservation"] = rs[0]
     for k_ in ("section", "sectionRank", "subcat", "money_eats"): v.pop(k_, None)
+    for k_, val in (u.get("set") or {}).items(): v[k_] = val
+    # the old tag rows carried July claims the re-check overturned (a Green Star no 2026 source shows, 'Dinner Tue–Sat', a one-star tag
+    # on a two-star house): the chips are rebuilt from the verified record only — the quarter and the honest status line
+    v["tags"] = [x for x in (v.get("neighborhood", ""), "Confirmed trading 15 Oct 2026" if v.get("status") == "confirmed"
+                             else "Not confirmed for 2026 — call ahead") if x]
     for k_, val in (u.get("set") or {}).items(): v[k_] = val
     for k_ in u.get("drop", []): v.pop(k_, None)
     if vid in LANE_OF: v["category"] = LANE_OF[vid]
