@@ -561,7 +561,30 @@
   },
   {
    "slug": "Barcelona-Catalunya",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Barcelona-Catalunya-2026-10-15",
+   "date": "2026-10-15",
+   "readings": "done 2026-10-15",
+   "needs_network": [
+    "checklinks.py . Barcelona-Catalunya",
+    "own-site hours, dated, for the guest list and berths: Disfrutar (Tue-Fri vs Tue-Sat; EUR 315 vs 345), Cocina Hermanos Torres (days, price), Lasarte (Tuesday), 7 Portes (24:00 vs 01:00), Cal Pep (Sat dinner, Mon), Els Pescadors, Bar Cañete, Suculent (weekdays vs Wed-Sun; no. 43 vs 45), Oníric (Sunday), Flash Flash",
+    "2026 trading evidence for the 12 unverified tables (Quimet & Quimet, El Vaso de Oro, El Xampanyet, Bar Bodega Quimet, Bar Mut, Can Cisa / Bar Brutal, Els Sortidors del Parlament, Escribà Rambla shop after its 15 Jan 2026 closure, Bar La Plata, Can Paixano, Bar Tomás, Bacoa Kiosko) — confirm or cut",
+    "MICHELIN Spain 2027 gala, 24 Nov 2026 (Huesca): every starred/Bib table, the Green Star list, Dos Palillos' star on the official page",
+    "cards marked 'check': Formatgeria La Seu (no 2026 trace), Casa Gispert hours, Skye Coffee days, Mosaiccos times/prices, Gramona/Yzaguirre/Colònia Güell visits, museum prices from guides (Batlló, Pedrera, Miró, MNAC, Palau), Montjuïc fountain November dates; hot-board single-source dates (Open House 24-25 Oct, Sónar 2027, Santa Llúcia start)",
+    "the rest of research/verify_1.json + verify_2.json _needs_network (37 lines) and research/hot_events.json _needs_network"
+   ],
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (198 OK, 15 Oct, after apply_readings; floors = curated counts: venues 35, fcards 120, fsubs 46, neighborhoods 9, walks 6, categories 12, lane stories 12, gems 7, liste 20, maps links 111, pins 35; groups 3; doors 4; hot minVenues 7; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: ALL PASS, 28/28, exit 0 (7 chapter chips, sub-tags, readout, pointer lands on its table card, back button, 120 facts/120 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors after the page-side fix for the kit's neighbours row)",
+    "probe-links.cjs desk: 84 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 84 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 92/92 placed cards and 35/35 venues with Maps on the closed card, no sideways scroll; One Night 42 links, Getaway 26); lens screenshots in review/Barcelona-Catalunya/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 208 units (one gem/dish crema catalana overlap found and rewritten)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Barcelona-Catalunya/barcelona-card-desktop.png, barcelona-card-phone.png (Gothic Quarter at dawn, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "notes": "15 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Athens/Piraeus pipeline). The old page was a pre-GOLD3 tier inventory (60 venues, no lanes, no dishes, no gems, no terroir/data copy, an 18-row CSV), so the GOLD3/4/5 floor came too: 12 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 20 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, craft, curiosities, listening, Autour, 7 gems, 58-term glossary. Places 60 -> 35 (all in lanes, none over 3, no 4s); cut 25 with reasons in picks.json. Fold cards 123 old articles -> 101 (+10 hot, +9 calendar = 120), every card labelled. Guest list: last minute 7 Portes, Cal Pep, Els Pescadors; this week Bar Cañete, Suculent, Oníric; grand night Disfrutar, Cocina Hermanos Torres, Lasarte. Berths Disfrutar, Bar Cañete, Flash Flash (all confirmed 15 Oct). Corrected: Disfrutar's third star (Nov 2023, before the 2024 No. 1), the contradictory Green Star claims dropped, Cinc Sentits two stars not one, Bar Cañete Mon-Sat not lunch Thu-Sat, Enigma EUR 260, El Xampanyet's family, Granja Viader's new owner, Escribà Rambla closed again 15 Jan 2026, Park Güell EUR 18 + Carretera del Carmel, Boqueria Mon-Sat, Gaudí's tram on the Gran Via at Bailèn, Sagrada tower blessing past tense, beach sand 'from Egypt' a dispute, two banned words in old dish texts. Statuses: 23 confirmed 15 Oct, 12 unverified. Readings: One Night 8 quarters, Getaway 14 stops. Kit bug noted (guide-extras.js neighbours row throws on an empty .gx-appendix; fixed page-side). Details: terroir/_rollout/review/Barcelona-Catalunya/README.md."
   },
   {
    "slug": "Paris",
