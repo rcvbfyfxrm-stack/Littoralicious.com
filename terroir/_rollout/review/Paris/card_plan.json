@@ -1,0 +1,719 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The Right Bank villages",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Le Marais",
+      "from": "quartiers:Le Marais"
+     },
+     {
+      "key": "quartiers:Canal Saint-Martin",
+      "from": "quartiers:Canal Saint-Martin"
+     },
+     {
+      "key": "quartiers:Belleville",
+      "from": "quartiers:Belleville"
+     }
+    ]
+   },
+   {
+    "title": "The hill and the Left Bank",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Montmartre & the Butte",
+      "from": "quartiers:Montmartre & the Butte"
+     },
+     {
+      "key": "quartiers:Saint-Germain-des-Prés",
+      "from": "quartiers:Saint-Germain-des-Prés"
+     }
+    ]
+   },
+   {
+    "title": "Three royal squares",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Place des Vosges",
+      "from": "quartiers:Place des Vosges"
+     },
+     {
+      "key": "quartiers:Place Dauphine",
+      "from": "quartiers:Place Dauphine"
+     },
+     {
+      "key": "quartiers:Place des Victoires",
+      "from": "quartiers:Place des Victoires"
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "Under the street, and on it",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The empire of the dead",
+      "from": null
+     },
+     {
+      "key": "curiosities:Guimard's metro, 1900",
+      "from": null
+     },
+     {
+      "key": "curiosities:The Wallace fountains",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The counter and the café",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Why the bar is called le zinc",
+      "from": null
+     },
+     {
+      "key": "curiosities:Voltaire's forty cups",
+      "from": null
+     },
+     {
+      "key": "curiosities:Bistro is not Russian",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The city's belly and its vineyard",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Les Halles left in one night",
+      "from": null
+     },
+     {
+      "key": "curiosities:The Paris vineyard",
+      "from": null
+     },
+     {
+      "key": "curiosities:150 arcades, about 25 left",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Marché d'Aligre",
+      "from": null
+     },
+     {
+      "key": "provisioning:Marché des Enfants Rouges",
+      "from": "landmarks:Marché des Enfants Rouges"
+     },
+     {
+      "key": "provisioning:Marché Raspail",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The bread",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Poilane",
+      "from": "gastronomy:Poilane"
+     },
+     {
+      "key": "gastronomy:Du Pain et des Idees",
+      "from": "gastronomy:Du Pain et des Idees"
+     },
+     {
+      "key": "gastronomy:Mori Yoshida",
+      "from": "gastronomy:Mori Yoshida"
+     }
+    ]
+   },
+   {
+    "title": "The pastry houses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "gastronomy:Pierre Herme",
+      "from": "gastronomy:Pierre Herme"
+     },
+     {
+      "key": "gastronomy:Cedric Grolet",
+      "from": "gastronomy:Cedric Grolet"
+     }
+    ]
+   },
+   {
+    "title": "The shops a cook goes to",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:E. Dehillerin",
+      "from": null
+     },
+     {
+      "key": "provisioning:Fromagerie Barthélémy",
+      "from": null
+     },
+     {
+      "key": "provisioning:La Grande Épicerie de Paris",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "Along the water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Parc Rives de Seine (the car-free quais)",
+      "from": "walks:Parc Rives de Seine (the car-free quais)"
+     },
+     {
+      "key": "secret-gems:Square du Vert-Galant",
+      "from": "secret-gems:Square du Vert-Galant"
+     }
+    ]
+   },
+   {
+    "title": "On the old railways",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Coulée verte René-Dumont (Promenade Plantée)",
+      "from": "walks:Coulée verte René-Dumont (Promenade Plantée)"
+     },
+     {
+      "key": "secret-gems:La Petite Ceinture",
+      "from": "secret-gems:La Petite Ceinture"
+     }
+    ]
+   },
+   {
+    "title": "Parks, a garden and the dead",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Parc des Buttes-Chaumont",
+      "from": "walks:Parc des Buttes-Chaumont"
+     },
+     {
+      "key": "walks:Cimetière du Père-Lachaise",
+      "from": "walks:Cimetière du Père-Lachaise"
+     },
+     {
+      "key": "walks:Jardin du Palais-Royal",
+      "from": "walks:Jardin du Palais-Royal"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The jewel box, the opera, the rotunda",
+    "desc": "",
+    "cards": [
+     {
+      "key": "landmarks:Sainte-Chapelle",
+      "from": "landmarks:Sainte-Chapelle"
+     },
+     {
+      "key": "landmarks:Palais Garnier",
+      "from": "landmarks:Palais Garnier"
+     },
+     {
+      "key": "landmarks:Bourse de Commerce — Pinault Collection",
+      "from": "landmarks:Bourse de Commerce — Pinault Collection"
+     }
+    ]
+   },
+   {
+    "title": "Museums with gardens",
+    "desc": "",
+    "cards": [
+     {
+      "key": "art:Musee Rodin",
+      "from": "art:Musee Rodin"
+     },
+     {
+      "key": "art:Musee de la Vie Romantique",
+      "from": "art:Musee de la Vie Romantique"
+     },
+     {
+      "key": "art:Musee de Montmartre - Jardins Renoir",
+      "from": "art:Musee de Montmartre - Jardins Renoir"
+     }
+    ]
+   },
+   {
+    "title": "The collectors' houses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Musée Nissim de Camondo",
+      "from": "culture:Musée Nissim de Camondo"
+     },
+     {
+      "key": "culture:Musée Jacquemart-André",
+      "from": "culture:Musée Jacquemart-André"
+     },
+     {
+      "key": "culture:Musée Gustave Moreau",
+      "from": "culture:Musée Gustave Moreau"
+     }
+    ]
+   },
+   {
+    "title": "Odd and particular",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Galerie Vivienne & Passage des Panoramas",
+      "from": "culture:Galerie Vivienne & Passage des Panoramas"
+     },
+     {
+      "key": "culture:Musée de la Chasse et de la Nature",
+      "from": "culture:Musée de la Chasse et de la Nature"
+     },
+     {
+      "key": "art:Grande Mosquee de Paris - tea garden",
+      "from": "art:Grande Mosquee de Paris - tea garden"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Paris craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "The cup itself",
+    "desc": "",
+    "cards": [
+     {
+      "key": "coffee-scene:La Cafeotheque",
+      "from": "coffee-scene:La Cafeotheque"
+     },
+     {
+      "key": "coffee-scene:Belleville Brulerie",
+      "from": "coffee-scene:Belleville Brulerie"
+     },
+     {
+      "key": "coffee-scene:Telescope",
+      "from": "coffee-scene:Telescope"
+     }
+    ]
+   },
+   {
+    "title": "Where you can actually work",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Salle Ovale, BnF Richelieu",
+      "from": "linger:Salle Ovale, BnF Richelieu"
+     },
+     {
+      "key": "linger:Bibliothèque Mazarine",
+      "from": "linger:Bibliothèque Mazarine"
+     },
+     {
+      "key": "linger:Anticafé",
+      "from": "linger:Anticafé"
+     }
+    ]
+   },
+   {
+    "title": "The terrace as an institution",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Café de Flore",
+      "from": "linger:Café de Flore"
+     },
+     {
+      "key": "linger:Les Deux Magots",
+      "from": "linger:Les Deux Magots"
+     },
+     {
+      "key": "linger:Le Select",
+      "from": "linger:Le Select"
+     }
+    ]
+   },
+   {
+    "title": "By the canal",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Le Pavillon des Canaux",
+      "from": "linger:Le Pavillon des Canaux"
+     },
+     {
+      "key": "linger:Ten Belles",
+      "from": "linger:Ten Belles"
+     },
+     {
+      "key": "linger:Café Craft",
+      "from": "linger:Café Craft"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Champagne — grower fizz (the closest real vineyard to Paris)",
+      "from": "drink:Champagne — grower fizz (the closest real vineyard to Paris)"
+     },
+     {
+      "key": "drink:Chablis & Sancerre — the two bistro whites by the glass",
+      "from": "drink:Chablis & Sancerre — the two bistro whites by the glass"
+     },
+     {
+      "key": "drink:Beaujolais — the natural, chilled red",
+      "from": "drink:Beaujolais — the natural, chilled red"
+     }
+    ]
+   },
+   {
+    "title": "The other glasses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Cidre & Poiré — the honest outsider",
+      "from": "drink:Cidre & Poiré — the honest outsider"
+     },
+     {
+      "key": "drink:Pastis — the Marseille drink Paris pours out of habit",
+      "from": "drink:Pastis — the Marseille drink Paris pours out of habit"
+     },
+     {
+      "key": "drink:Café crème — the breakfast-only milk coffee",
+      "from": "drink:Café crème — the breakfast-only milk coffee"
+     }
+    ]
+   },
+   {
+    "title": "Natural wine, three counters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "natural-wine:Le Verre Vole",
+      "from": "natural-wine:Le Verre Vole"
+     },
+     {
+      "key": "natural-wine:La Buvette",
+      "from": "natural-wine:La Buvette"
+     },
+     {
+      "key": "natural-wine:Septime La Cave",
+      "from": "natural-wine:Septime La Cave"
+     }
+    ]
+   },
+   {
+    "title": "Above the roofs",
+    "desc": "",
+    "cards": [
+     {
+      "key": "rooftops:The rooftop terrace, Galeries Lafayette",
+      "from": "rooftops:The rooftop terrace, Galeries Lafayette"
+     },
+     {
+      "key": "rooftops:Le Perchoir Ménilmontant",
+      "from": "rooftops:Le Perchoir Ménilmontant"
+     },
+     {
+      "key": "rooftops:Le Tout-Paris",
+      "from": "rooftops:Le Tout-Paris"
+     }
+    ]
+   },
+   {
+    "title": "One drink in a grand hotel",
+    "desc": "",
+    "cards": [
+     {
+      "key": "hotel-bars:Bar Hemingway, Ritz Paris",
+      "from": "hotel-bars:Bar Hemingway, Ritz Paris"
+     },
+     {
+      "key": "hotel-bars:Le Bar du Bristol",
+      "from": "hotel-bars:Le Bar du Bristol"
+     },
+     {
+      "key": "hotel-bars:Bar Joséphine, Hôtel Lutetia",
+      "from": "hotel-bars:Bar Joséphine, Hôtel Lutetia"
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening rooms",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Bambino",
+      "from": "listening:Bambino"
+     },
+     {
+      "key": "listening:Notre Dame Music Bar",
+      "from": "listening:Notre Dame Music Bar"
+     }
+    ]
+   },
+   {
+    "title": "Small, live and late",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Caveau de la Huchette",
+      "from": null
+     },
+     {
+      "key": "listening:Duc des Lombards",
+      "from": null
+     },
+     {
+      "key": "listening:New Morning",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The collectives",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:La Recyclerie",
+      "from": "listening:La Recyclerie"
+     },
+     {
+      "key": "listening:Ground Control",
+      "from": "listening:Ground Control"
+     },
+     {
+      "key": "listening:La Station - Gare des Mines",
+      "from": "listening:La Station - Gare des Mines"
+     }
+    ]
+   },
+   {
+    "title": "The city's own sound",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Chanson, the caves and the French touch",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The painters and the forest",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Giverny",
+      "from": "around:Giverny"
+     },
+     {
+      "key": "around:Auvers-sur-Oise",
+      "from": "around:Auvers-sur-Oise"
+     },
+     {
+      "key": "around:Fontainebleau & Barbizon",
+      "from": "around:Foret de Fontainebleau & Trois Pignons"
+     }
+    ]
+   },
+   {
+    "title": "The châteaux",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Versailles",
+      "from": null
+     },
+     {
+      "key": "around:Vaux-le-Vicomte",
+      "from": "around:Vaux-le-Vicomte"
+     },
+     {
+      "key": "around:Chantilly",
+      "from": "around:Chantilly"
+     }
+    ]
+   },
+   {
+    "title": "A walled town and a river dance",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Provins",
+      "from": "around:Provins"
+     },
+     {
+      "key": "around:Guinguette de l'Ile du Martin-Pecheur",
+      "from": "around:Guinguette de l'Ile du Martin-Pecheur"
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "Three to skip",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Champs-Élysées terraces",
+      "from": null
+     },
+     {
+      "key": "avoid:A table with the Eiffel Tower view",
+      "from": null
+     },
+     {
+      "key": "avoid:The hawker and the photo menu",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Read the bill",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Things you never ordered",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "What to eat, from people who live here",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Le Fooding",
+      "from": null
+     },
+     {
+      "key": "follow:Paris by Mouth",
+      "from": null
+     },
+     {
+      "key": "follow:David Lebovitz",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Tickets and the red guide",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Paris je t'aime",
+      "from": null
+     },
+     {
+      "key": "follow:MICHELIN Guide France",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {}
+}
