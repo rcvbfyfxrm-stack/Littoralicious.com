@@ -163,7 +163,8 @@ SOUL = P.soul_fold(OLDB["soul"], OLDB["history"], OLDB["money-sits"])
 BOUGIE = fix_links(P.bougie(OLDB["story-box"], P.GV_LINE))
 SEASONAL = OLDB["seasonal"]
 # the five-column month table scrolls inside its own box on a phone, never the page
-SEASONAL = SEASONAL.replace('<table class="calendar">', '<div style="overflow-x:auto;max-width:100%"><table class="calendar">', 1).replace("</table>", "</table></div>", 1)
+SEASONAL = re.sub(r'(<table\b[^>]*>)', r'<div style="overflow-x:auto;max-width:100%">\1', SEASONAL, count=1).replace("</table>", "</table></div>", 1)
+assert SEASONAL.count('overflow-x:auto;max-width:100%') == 1
 for old, new in HOT.get("seasonal_edits", []):
     assert old in SEASONAL, old; SEASONAL = SEASONAL.replace(old, new)
 
@@ -298,7 +299,7 @@ assert "48.8566, 2.3522 · Paris" in doc
 # the page-local CSS styles a 'fast' chapter this guide does not have; the gate reads its selector as an anchor
 doc = doc.replace('.gx-paris .band-nav__chip[href="#band-fast"],', '')
 # chrome leftovers that name the other city (og tags, canonical, comments)
-doc = doc.replace("Siracusa-Sicilia", SLUG)
+doc = doc.replace("Siracusa-Sicilia", SLUG).replace("gem boxes (Barcelona device)", "gem boxes (the kit's device)")
 left = sorted(set(re.findall(r"(?i)sicil\w*|siracusa|ortigia|\bnoto\b|czech|diani|kendwa|istanbul|barcelon\w*|catalun\w*", doc)))
 if left: print("  !! other-city tokens left in the page:", left)
 
@@ -328,6 +329,7 @@ for vid in KEEP:
         v["tier"] = "several"
         if v.get("cat") == "berth": v["cat"] = "shop"
     v.pop("charter", None)
+    if v.get("maps"): v["maps"] = v["maps"].replace("'", "%27")   # an apostrophe ends the link for every parser that reads quoted attributes
     if v.get("maps") and not re.search(LOCAL, urllib.parse.unquote_plus(v["maps"])): v["maps"] += "+Paris"   # the gate's local-token rule
     V.append(v)
 BY = {v["id"]: v for v in V}

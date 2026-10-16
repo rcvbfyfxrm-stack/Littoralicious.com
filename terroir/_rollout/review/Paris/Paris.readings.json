@@ -1,0 +1,103 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · walking order",
+  "lede": "Paris dines at eight or later, and most bistro kitchens stop taking orders between ten and half past; the brasseries and the bouillons run to midnight. Each quarter below is one evening, in the order you walk it: the apéro, the table, the late room. Every name opens its full card; hours were re-checked on 16 October 2026, and where the listings disagree the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the apéro, the bistro, the counter and the late room, in walking order.",
+  "door_note": "L’apéro · le bistrot · la table · la nuit",
+  "quarters": [
+   {"id": "onzieme", "name": "The 11th · Charonne to Oberkampf", "line": "The neo-bistro's own wine bar, the raw bar that never books, and a dance floor after eleven.",
+    "steps": [
+     {"time": "18:00", "name": "Septime La Cave", "ref": "card:Septime La Cave", "text": "A glass on rue Basfroi before the pavement crowd arrives. No bookings; listed daily 16:00–23:00, but listings vary."},
+     {"time": "19:00", "name": "Clamato", "ref": "venue:v-clamato", "text": "Round the corner on rue de Charonne, be there at the opening for a stool: oysters, the razor clams in herb butter, whatever the morning brought. It never takes bookings; a 2026 listing gives Tuesday to Saturday, others differ, so call."},
+     {"time": "23:00", "name": "Bambino", "ref": "card:Bambino", "text": "Fifteen minutes north to rue Saint-Sébastien, where the listening bar's dining room turns into a dance floor late in the evening."}],
+    "after": "Spend more: [[venue:v-septime|Septime]] next door to Clamato, booked online about three weeks out, in its first season since Bertrand Grébaut's death. Quieter: [[card:Notre Dame Music Bar|Notre Dame Music Bar]], early on a weekday."},
+   {"id": "canal", "name": "Canal Saint-Martin · the 10th", "line": "Where the cave à manger began, then jazz in the room of 1981.",
+    "steps": [
+     {"time": "19:30", "name": "Le Verre Volé", "ref": "card:Le Verre Volé", "text": "Dinner among the bottles on rue de Lancry, a minute from the canal. Book for dinner; listings disagree on its hours, so check when you reserve."},
+     {"time": "21:30", "name": "New Morning", "ref": "card:New Morning", "text": "Fifteen minutes west to rue des Petites-Écuries for the night's concert; doors open around 20:00–20:30, so check the programme and buy ahead."}],
+    "after": "Earlier and cheaper: the canal itself at dusk ([[card:Canal Saint-Martin|its card]]), or a drink on the basin at [[card:Le Pavillon des Canaux|Le Pavillon des Canaux]], open to midnight midweek."},
+   {"id": "belleville", "name": "Belleville", "line": "The view from the top of the park, then the blackboard Raquel Carena has cooked since 1987.",
+    "steps": [
+     {"time": "18:30", "name": "Belleville at dusk", "ref": "card:Belleville", "text": "Climb to the terrace of the Parc de Belleville for the city spread out below you at the end of the afternoon."},
+     {"time": "19:30", "name": "Le Baratin", "ref": "venue:v-le-baratin", "text": "Down to rue Jouye-Rouve for the offal-forward blackboard and the natural cellar. Book by phone a day or two ahead; dinner Tuesday to Saturday by an undated Time Out listing, closed Sunday and Monday."}],
+    "after": "After dinner: the roof at [[card:Le Perchoir Ménilmontant|Le Perchoir]], down the hill in Ménilmontant; its open roof is seasonal, so check before you climb."},
+   {"id": "saint-germain", "name": "Saint-Germain and the Latin Quarter", "line": "The terrace facing the oldest church, the crémerie of 1845, and swing in a medieval cellar.",
+    "steps": [
+     {"time": "18:30", "name": "Les Deux Magots", "ref": "card:Les Deux Magots", "text": "A glass on the terrace facing Saint-Germain-des-Prés; open daily to about 1:00."},
+     {"time": "20:00", "name": "Polidor", "ref": "venue:v-polidor", "text": "Ten minutes to rue Monsieur-le-Prince for the boeuf bourguignon and the chocolate mousse at shared tables. Hours differ between listings, so call."},
+     {"time": "22:00", "name": "Caveau de la Huchette", "ref": "card:Caveau de la Huchette", "text": "Across the boulevard Saint-Michel to the jazz cellar: music from 21:30, the floor fullest after 23:00 on a Friday or Saturday."}],
+    "after": "Spend more: [[venue:v-brasserie-lipp|Brasserie Lipp]] for the choucroute; book for a weekend evening. Grander for one drink: [[card:Bar Joséphine|Bar Joséphine]] at the Lutetia."},
+   {"id": "marais", "name": "The Marais", "line": "The royal square at dusk, a galette done properly, jazz at Châtelet.",
+    "steps": [
+     {"time": "18:30", "name": "Place des Vosges", "ref": "card:Place des Vosges", "text": "Walk the arcades of the square of 1612 as the lamps come on; it is free and always open."},
+     {"time": "19:30", "name": "Breizh Café", "ref": "venue:v-breizh-cafe", "text": "Ten minutes to rue Vieille du Temple for the galette complète and a bowl of cider. Reserve; listings disagree on the days, so check."},
+     {"time": "22:00", "name": "Duc des Lombards", "ref": "card:Duc des Lombards", "text": "Fifteen minutes west to rue des Lombards for the late set, or the jam after it."}],
+    "after": "Cheaper: [[venue:v-l-as-du-fallafel|L'As du Fallafel]] on rue des Rosiers, but not on a Friday evening or a Saturday (closed for the Sabbath). Spend more: [[venue:v-datil|Datil]] in the 3rd, booked ahead."},
+   {"id": "grands-boulevards", "name": "Opéra and the Grands Boulevards", "line": "A free roof over the opera's dome, then the bouillon of 1896.",
+    "steps": [
+     {"time": "18:30", "name": "Galeries Lafayette terrace", "ref": "card:Galeries Lafayette terrace", "text": "Up to the eighth-floor terrace for the Palais Garnier's roof at eye level. It keeps the store's hours: in winter, go an hour before the 19:30 close."},
+     {"time": "19:45", "name": "Bouillon Chartier", "ref": "venue:v-bouillon-chartier", "text": "Fifteen minutes east to the faubourg Montmartre: no reservations, so queue for the oeuf mayonnaise and the bourguignon. Open daily to midnight."}],
+    "after": "The same idea at the top of the hill: [[venue:v-bouillon-pigalle|Bouillon Pigalle]] on the boulevard de Clichy, open daily to midnight."},
+   {"id": "montparnasse", "name": "Montparnasse", "line": "The painters' café that stays up late, then the Art Deco hall and its curry.",
+    "steps": [
+     {"time": "18:30", "name": "Le Sélect", "ref": "card:Le Sélect", "text": "A glass at a marble table on the boulevard du Montparnasse; open daily from early morning to about 2:00."},
+     {"time": "20:00", "name": "La Coupole", "ref": "venue:v-la-coupole", "text": "Across the boulevard to the hall of 1927, its pillars painted by artists, for the lamb curry served since opening. Book: it gets very busy."}],
+    "after": "Cheaper: the galette at [[venue:v-la-creperie-de-josselin|La Crêperie de Josselin]] on rue du Montparnasse, not re-confirmed this autumn: call."},
+   {"id": "invalides", "name": "The 7th · by the Invalides", "line": "The river at dusk, then the Basque canteen and its basin of rice pudding.",
+    "steps": [
+     {"time": "18:30", "name": "Parc Rives de Seine", "ref": "card:Parc Rives de Seine", "text": "Walk the car-free quay below the Musée d'Orsay as the light goes."},
+     {"time": "20:00", "name": "Chez L'Ami Jean", "ref": "venue:v-chez-l-ami-jean", "text": "Twenty minutes west to rue Malar: game in season, and the riz au lait for the table. Book well ahead; Tuesday to Saturday by a May 2026 listing."}],
+    "after": "The grand version, for lunch on a weekday: [[venue:v-l-arpege|L'Arpège]] on rue de Varenne, booked well ahead."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the island at dusk and a Left Bank brasserie, the market and the railway garden, the jewel box, a Belleville blackboard, and a Sunday of organic stalls, Rodin's roses and a café terrace.",
+  "door_note": "L’île · le marché · la Sainte-Chapelle · le bistrot",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Paris sells itself as a terrace on the Champs-Élysées, a table with the tower in view and a queue at the museum. The real weekend is <strong>the market, the bistro and the walk between them</strong>: the tip of the island at dusk on Friday, the Marché d'Aligre before noon on Saturday, a railway viaduct turned garden, the Sainte-Chapelle's glass in the afternoon, dinner at a blackboard in Belleville, and a Sunday of organic stalls, roses and a long lunch on the boulevard. Every stop below is already in this guide and was re-checked on 16 October 2026; where a place could not be re-confirmed, the stop says so. This reading puts them in order, and tells you what to book before you fly.",
+  "book": [
+   "[[venue:v-brasserie-lipp|Brasserie Lipp]] — a table for Friday night; walk-ins are risky on busy evenings.",
+   "[[venue:v-le-baratin|Le Baratin]] — Saturday dinner, by phone, a day or two ahead.",
+   "[[card:Sainte-Chapelle|The Sainte-Chapelle]] — a ticket for Saturday afternoon: EUR 22 for visitors from outside the EEA (Oct 2026); allow time for the law-courts security gate.",
+   "[[venue:v-chez-l-ami-jean|Chez L'Ami Jean]] — if you stay on into Tuesday, the dinner people book weeks out."
+  ],
+  "days": [
+   {"label": "Friday", "title": "The island at dusk, the Left Bank at night",
+    "stops": [
+     {"time": "18:00", "name": "The willow at the tip of the island", "ref": "card:Square du Vert-Galant", "text": "Down the steps behind Henri IV's statue on the Pont Neuf to the point of the Île de la Cité, with the river splitting round you.", "meta": "Île de la Cité, steps from the Pont Neuf · free · it can flood when the Seine runs high"},
+     {"time": "20:00", "name": "Choucroute at Brasserie Lipp", "ref": "venue:v-brasserie-lipp", "text": "Fifteen minutes across the Pont Neuf and up the rue de Seine to the boulevard: the choucroute garnie, the house dish since 1880, in the listed 1900 room.", "meta": "151 boulevard Saint-Germain · listings give daily to about 00:45 or later · book for weekend evenings"},
+     {"time": "22:30", "name": "Swing at the Caveau de la Huchette", "ref": "card:Caveau de la Huchette", "text": "Ten minutes east to the medieval cellar on rue de la Huchette, where the dancers come late.", "meta": "Rue de la Huchette, 5th · music from 21:30 · fullest after 23:00 at the weekend"}]},
+   {"label": "Saturday", "title": "The market, the viaduct, the glass and the blackboard",
+    "stops": [
+     {"time": "09:00", "name": "The Marché d'Aligre", "ref": "card:Marché d'Aligre", "text": "The least touristy market in central Paris: the street stalls, the covered Beauvau hall and the flea market on one square.", "meta": "Place d'Aligre, 12th · stalls Sat 7:30–14:30 · closed Monday"},
+     {"time": "10:30", "name": "The Coulée verte", "ref": "card:Coulée verte René-Dumont", "text": "Climb onto the old railway viaduct by the avenue Daumesnil and walk the garden along its top, above the street.", "meta": "Behind the Opéra Bastille · from 09:00 at weekends · closes earlier in winter"},
+     {"time": "12:30", "name": "Lunch under the glass dome at Bofinger", "ref": "venue:v-bofinger", "text": "Back to the Bastille for the Alsatian brasserie of 1864: the choucroute de la mer under the Art Nouveau dome.", "meta": "5–7 rue de la Bastille · daily lunch 12:00–15:00 (May 2026 listing) · confirm"},
+     {"time": "15:00", "name": "The Sainte-Chapelle", "ref": "card:Sainte-Chapelle", "text": "Metro to the Cité for Louis IX's chapel of 1248, its windows some fifteen metres tall, leaving almost no wall.", "meta": "Boulevard du Palais · daily from 09:00, to 17:00 October to March · EUR 22 outside the EEA (Oct 2026)"},
+     {"time": "17:00", "name": "The arcades of the Place des Vosges", "ref": "card:Place des Vosges", "text": "Twenty minutes east through the Marais to the square of 1612, walking its arcades as the day goes.", "meta": "Marais, 3rd–4th · free, always open"},
+     {"time": "18:30", "name": "A glass at Septime La Cave", "ref": "card:Septime La Cave", "text": "Fifteen minutes to rue Basfroi for a natural glass before dinner, standing if the room is full.", "meta": "3 rue Basfroi, 11th · no bookings · listed daily 16:00–23:00 (listings vary)"},
+     {"time": "20:00", "name": "Dinner at Le Baratin", "ref": "venue:v-le-baratin", "text": "Metro up to Belleville for Raquel Carena's blackboard: the calf's brain in lemon butter if it is on, and the cellar's pick by the glass.", "meta": "3 rue Jouye-Rouve, 20th · Sat 19:30–23:00 by an undated Time Out listing · book by phone"}]},
+   {"label": "Sunday", "title": "The organic market, the food hall, the roses and the terrace",
+    "stops": [
+     {"time": "09:30", "name": "The Sunday organic market on the boulevard Raspail", "ref": "card:Marché Raspail", "text": "The best-known organic market in Paris, under the plane trees of the boulevard.", "meta": "Boulevard Raspail, 6th · Sunday 9:00–15:00 by Paris je t'aime (one city page says 7:00–14:30)"},
+     {"time": "10:30", "name": "La Grande Épicerie", "ref": "card:La Grande Épicerie de Paris", "text": "Two minutes away, Le Bon Marché's food hall for what the market did not have: the cheese, the butter, a bottle for the galley.", "meta": "38 rue de Sèvres, 7th · Sunday 10:00–20:00 (Oct 2026)"},
+     {"time": "11:30", "name": "Rodin's roses", "ref": "card:Musée Rodin", "text": "Fifteen minutes west to rue de Varenne: The Thinker among the clipped box and the rose beds, the dome of the Invalides over the wall.", "meta": "77 rue de Varenne · Tuesday to Sunday from 10:00 · closing times differ between listings"},
+     {"time": "13:30", "name": "Lunch on the terrace of the Café de Flore", "ref": "card:Café de Flore", "text": "Back to the boulevard Saint-Germain for a croque-monsieur and the long Sunday watch from the terrace.", "meta": "172 boulevard Saint-Germain · daily, about 7:30 to 1:30 (Oct 2026)"},
+     {"time": "15:00", "name": "The car-free quay", "ref": "card:Parc Rives de Seine", "text": "Down to the river below the Musée d'Orsay and walk the quay east until it is time to go.", "meta": "Left bank below the Musée d'Orsay · free"}]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the Saint-Germain plan in One Night: a glass at [[card:Les Deux Magots|Les Deux Magots]], the bourguignon at [[venue:v-polidor|Polidor]], and the cellar at [[card:Caveau de la Huchette|the Caveau de la Huchette]], all inside twenty minutes' walk."},
+   {"title": "The grand night instead", "text": "Swap a dinner for one of the three-star houses, booked as soon as the dates are fixed: [[venue:v-plenitude-cheval-blanc-paris|Plénitude]] on the Seine, [[venue:v-kei|Kei]] by the Louvre, or [[venue:v-l-arpege|L'Arpège]] at a weekday lunch (it is closed at the weekend). [[venue:v-table-by-bruno-verjus|Table]] serves its last dinner on 22 December 2026."},
+   {"title": "This October and November", "dated": "Checked 16 October 2026", "items": [
+     "[[card:Art Basel Paris, 23–25 October|Art Basel Paris]] at the Grand Palais, public days Friday 23 to Sunday 25 October.",
+     "[[card:The clocks go back, Sunday 25 October|The clocks go back]] on Sunday 25 October: the evening walks get dark an hour earlier.",
+     "[[card:Salon du Chocolat, 28 October–1 November|The Salon du Chocolat]], Wednesday 28 October to Sunday 1 November, Porte de Versailles.",
+     "[[card:Giverny|Giverny]] closes for the winter after 1 November.",
+     "[[card:Beaujolais Nouveau, Thursday 19 November|Beaujolais Nouveau]] on Thursday 19 November."]},
+   {"title": "Where to sleep", "text": "This guide does not review hotels. The four it names are there for a drink, not a room: the Ritz ([[card:Bar Hemingway|Bar Hemingway]]), [[card:Le Bar du Bristol|Le Bristol]], the Lutetia ([[card:Bar Joséphine|Bar Joséphine]]) and Cheval Blanc ([[card:Le Tout-Paris|Le Tout-Paris]]). We have not judged their rooms."},
+   {"title": "What we would leave out", "text": "The terraces of the Champs-Élysées, any table sold on its Eiffel Tower view, and the man on the pavement with a photo menu: the guide's own warnings are under [[card:Champs-Élysées terraces|What to skip]]. And the Marché des Enfants Rouges, which burned on the night of 11 to 12 October 2026: [[card:Marché des Enfants Rouges|its card]] has the news."}
+  ]
+ }
+}

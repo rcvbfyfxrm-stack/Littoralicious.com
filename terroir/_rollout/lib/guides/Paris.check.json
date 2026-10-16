@@ -1,0 +1,115 @@
+{
+  "slug": "Paris",
+  "city": "Paris",
+  "listeSlug": "paris",
+  "groups": 3,
+  "mapsTokens": [
+    "Paris",
+    "France"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia",
+    "Piraeus",
+    "Sicily",
+    "Barcelona",
+    "Catalunya",
+    "Istanbul"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome",
+      "rue de prague"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "curiosities",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink-place",
+    "rooftops",
+    "linger",
+    "money-sits",
+    "underground",
+    "art",
+    "coffee-scene",
+    "natural-wine",
+    "avoid-traps",
+    "twentyfour",
+    "walk"
+  ],
+  "floors": {
+    "venues": 32,
+    "gems": 6,
+    "neighborhoods": 8,
+    "walks": 7,
+    "categories": 11,
+    "laneStories": 11,
+    "fcards": 122,
+    "fsubs": 47,
+    "liste": 18,
+    "mapsLinks": 108,
+    "pins": 28
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 32,
+    "gemboxes": 11
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 8,
+    "mode": "pointer"
+  },
+  "doors": 4
+}

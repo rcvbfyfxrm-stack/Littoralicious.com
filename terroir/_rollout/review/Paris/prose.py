@@ -84,7 +84,9 @@ EDITS = {
   ("Underneath sits the plumbing. Rungis, opened in 1969 to replace Les Halles, is the second-largest wholesale food market on earth after Mexico City's Central de Abasto, and it provisions the whole region before dawn (Wikipedia; france.fr). And the shift in the glass is the natural-wine wave: the caves a manger that began around 2000 with Le Verre Vole are now the default of a whole generation of Paris tables.",
    "Underneath sits the plumbing — Rungis, south of the city, provisions the whole region before dawn — and the shift in the glass: the caves à manger, wine shops you eat in, that began around 2000 on the Canal Saint-Martin are now the default of a whole generation of Paris tables."),
  ],
- "seasonal": [], "sources": [], "tables": [],
+ "seasonal": [], "tables": [],
+ # the old sources body carried the kit's gx-appendix class (a second appendix on the page); normalised before the method is inserted
+ "sources": [('<div class="sfold__body gx-appendix">', '<div class="sfold__body">')],
 }
 
 # The food-history callout (#bougie): the old one-story fold (1782), edited — the Grand Véfour paragraph becomes a pointer to its table card.
@@ -95,6 +97,8 @@ BOUGIE_BODY_EDITS = [
  ("making a walled pleasure-quarter that -- as royal private property -- the police could barely enter.", "making a walled pleasure-quarter that, as royal private property, the police could barely enter."),
  ("Antoine Beauvilliers -- former chef to the future Louis XVIII -- opened", "Antoine Beauvilliers, former chef to the future Louis XVIII, opened"),
 ]
+GV_LINE = ('<a href="#venue-v-le-grand-vefour">Le Grand Véfour</a> opened as the Café de Chartres in 1784 and took its present name when Jean Véfour '
+           'bought it in 1820; Colette, who lived upstairs on the square, and Cocteau had their own tables. It reopened on 12 May 2026 under a new owner, and its card in the tables has the rest.')
 def bougie(old_story_box, grand_vefour_line):
     paras = re.findall(r'<p class="(?:gx-lede|tcard__body)"[^>]*>(.*?)</p>', old_story_box, re.S)
     lede, p1, p2 = paras[0], paras[1], paras[2]
@@ -226,7 +230,7 @@ DOORS = [
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
 SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: the two bouillons that take no reservations and turn tables fast, and the raw bar that never takes bookings. Hours as read on 16 Oct 2026 are on each card — expect a queue.",
-             "Plan ahead — this week": "Book a few days ahead: the steak au poivre on rue Paul Bert, the Basque canteen by the Invalides, and the neo-bistro on rue Saint-Maur.",
+             "Plan ahead — this week": "Book a few days ahead: the Basque canteen by the Invalides, the Sentier bistro of 1964 (weekdays only), and the wine bistro of the Haut-Marais.",
              "Plan ahead — the grand night": "The three-star houses: book as soon as the dates are fixed — weeks ahead, not days — and confirm the days they close."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
@@ -241,7 +245,7 @@ LISTE_TITLE = "La liste — what to eat, what to drink, and where it comes from"
 
 # The Dish (inside La liste): the eleven old dish articles, rebuilt clean (the old ones carried misplaced gem boxes)
 DISH_DESC = "Eleven plates and habits and their honest, often contested, origins: the one detail that separates the real version from the tourist copy."
-DISH_TEXT_EDITS = [(" -- ", " — "), ("--", "—")]
+DISH_TEXT_EDITS = [(" -- ", " — "), ("--", "—"), ("origin tale is charming and doubtful", "origin tale is popular and doubtful")]
 DISH_WHERE = {}   # name -> '<a href="#venue-...">..</a>' — filled in liste.py from the verified venues (refs resolve in the build)
 
 
@@ -294,11 +298,8 @@ GEMS = [
   "story": "In 1910 the journalist Pierre Giffard, who had created the Paris–Brest–Paris cycle race in 1891, asked the pâtissier Louis Durand of Maisons-Laffitte, on the route, "
            "for a cake to mark it. Durand piped a ring of choux like a bicycle wheel, filled it with praline cream and scattered it with almonds. His family still bakes it there.",
   "where": "Pâtisserie Durand, avenue de Longueil, Maisons-Laffitte."},
- {"id": "gem-saint-honore", "pattern": "Saint-Honoré", "tag": "Paris gem · born here", "name": "The baker's saint",
-  "story": "Created in 1847 at the Chiboust bakery on the rue Saint-Honoré and named for the street, which honours the patron saint of bakers; the house's pastry chef Auguste Julien "
-           "is usually credited. The first version was a brioche, rebuilt on puff pastry ringed with caramel-dipped choux. Some sources push it back to about 1840.",
-  "where": "The great pastry houses of the city, each with its own version."},
- {"id": "gem-opera", "pattern": "the Opéra", "tag": "Paris gem · born here", "name": "A cake for the opera house",
+ # (the Saint-Honoré gem is left out: its pattern fires on the rue du Faubourg Saint-Honoré and other street names, not the cake)
+ {"id": "gem-opera", "pattern": "Dalloyau", "tag": "Paris gem · born here", "name": "A cake for the opera house",
   "story": "Generally credited to 1955 at Dalloyau, where Cyriaque Gavillon layered almond sponge soaked in coffee syrup with coffee buttercream and ganache so that one bite carried "
            "everything; his wife Andrée named it for the Palais Garnier. Lenôtre (1960) and the chef Louis Clichy are rival claimants; Le Monde credited Gavillon in 1988.",
   "where": "Dalloyau, 101 rue du Faubourg Saint-Honoré, the house of origin."},

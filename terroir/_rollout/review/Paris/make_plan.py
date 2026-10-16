@@ -28,10 +28,10 @@ CUT = {
  "v-le-chateaubriand": "Cut: its own old record says 'winding down', it had no coordinates, and the neo-bistro story it started is told by Septime, Le Servan and Clown Bar.",
  "v-allard": "Bistro cap: Paul Bert, Chez L'Ami Jean and Chez Georges tell the canon; Allard's 1932 Left Bank room is the one cut a duck-with-olives lover may regret.",
 }
-BERTHS = ["v-l-arpege", "v-bistrot-paul-bert", "v-l-as-du-fallafel"]   # one per group; each must be confirmed trading 16 Oct (make_inputs warns if not)
+BERTHS = ["v-l-arpege", "v-chez-l-ami-jean", "v-l-as-du-fallafel"]   # one per group, each confirmed trading 16 Oct (Bistrot Paul Bert, the first petite pick, found no 2026-dated evidence: it stays in its lane)
 SHORTLIST = {
  "Last minute — save the night": ["v-bouillon-chartier", "v-bouillon-pigalle", "v-clamato"],
- "Plan ahead — this week": ["v-bistrot-paul-bert", "v-chez-l-ami-jean", "v-le-servan"],
+ "Plan ahead — this week": ["v-chez-l-ami-jean", "v-chez-georges", "v-parcelles"],   # all confirmed 16 Oct; Paul Bert and Le Servan found only undated listings
  "Plan ahead — the grand night": ["v-l-arpege", "v-plenitude-cheval-blanc-paris", "v-kei"],
 }
 FOURS = {}
