@@ -144,10 +144,10 @@ FOLDS = {
 GDESC = {
  ("quartiers", "The Right Bank villages"): "The old Jewish quarter and its galleries, the canal of the caves à manger, and the hill of the neo-bistros.",
  ("quartiers", "The hill and the Left Bank"): "The village on the Butte, and the café quarter of the Left Bank.",
- ("quartiers", "Three royal squares"): "A square of brick from 1612, a triangle on the island, and a circle round a king.",
+ ("quartiers", "Three royal squares"): "A square of brick and stone from 1612, a triangle on the island, and a circle round a king.",
  ("curiosities", "Under the street, and on it"): "Six million under the pavement, the iron of 1900, and the water that is still free.",
  ("curiosities", "The counter and the café"): "A bar named for a metal, a philosopher's cups, and a word everybody gets wrong.",
- ("curiosities", "The city's belly and its vineyard"): "The market that left in one night, the vineyard on the hill, and the arcades that survived.",
+ ("curiosities", "The city's belly and its vineyard"): "The market that moved out in 1969, the vineyard on the hill, and the arcades that survived.",
  ("provisioning", "The markets"): "The cheapest and least touristy, the oldest covered hall, and the Sunday organic market.",
  ("provisioning", "The bread"): "The two-kilo miche, the escargot pastry, and a Japanese baker's Paris.",
  ("provisioning", "The pastry houses"): "The Ispahan, and the fruit that is not fruit.",
