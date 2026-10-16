@@ -565,7 +565,32 @@
   },
   {
    "slug": "Paris",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Paris-2026-10-16",
+   "date": "2026-10-16",
+   "readings": "done 2026-10-16",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (200 OK, 16 Oct, after apply_readings; floors = curated counts: venues 32, fcards 122, fsubs 47, neighborhoods 8, walks 7, categories 11, lane stories 11, gems 6, liste 18, maps links 108, pins 28; groups 3; doors 4; hot minVenues 8; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: ALL PASS, 28/28, exit 0 (7 chapter chips, sub-tags, readout, pointer lands on its table card, back button, 122 facts/122 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open after the seasonal table was boxed, no page errors)",
+    "probe-links.cjs desk: 74 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 74 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 92/92 placed cards and 32/32 venues with Maps on the closed card, no sideways scroll; One Night 39 links, Getaway 33); lens screenshots in review/Paris/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 244 units (one hot-board/calendar Seine overlap found and rewritten)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Paris/paris-card-desktop.png, paris-card-phone.png (Coulée verte René-Dumont, opened), checked by eye (a wrong Opéra-cake gem trigger on 'the Opéra Bastille' was found this way and fixed)",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Paris",
+    "own-site hours, dated, for the guest list and berths: L'Arpège, Plénitude (days, 2026 prices), Kei, Bouillon Chartier, Bouillon Pigalle (booking policy), Clamato (days), Chez L'Ami Jean, Chez Georges (evening close), Parcelles (days), L'As du Fallafel (winter Friday close)",
+    "2026 trading evidence for the 8 unverified tables (Le Rigmarole, Le Train Bleu, Le Servan, Clown Bar, Bistrot Paul Bert, La Crêperie de Josselin, Le Relais de l'Entrecôte incl. Marbeuf reopening, Chez Alain Miam Miam after the 11-12 Oct market fire) — confirm or cut",
+    "guide.michelin.com: Guy Savoy (two stars), Datil (star year, Green Star), Bib or plate for Le Servan, Paul Bert, L'Ami Jean, Clamato, Mokonuts; Wine Spectator 2026 for Vantre; theworlds50best.com after 4 Nov 2026 (Plénitude, Table, Septime, L'Arpège)",
+    "Septime: who leads the kitchen since Bertrand Grébaut's death (July 2026), service days, booking window",
+    "cards marked 'check': Poilâne Sunday, Mori Yoshida, Pierre Hermé, Cédric Grolet, E. Dehillerin, Le Verre Volé, Septime La Cave, Bambino, Bar Hemingway, Le Bar du Bristol, Ten Belles (one directory shows closed), Mazarine, listing-only museum prices (Rodin, Montmartre, Jacquemart-André, Garnier closing hour), École Lesage price and dates, Auvers house season, Provins UNESCO year, Vaux season end",
+    "hot board single-source dates: Champs-Élysées lights 22 Nov (reported), Beaujolais cruise days, Paris Photo prices",
+    "the rest of research/verify_1.json + verify_2.json + hot_events.json _needs_network (42 lines) and the card packs' _notes"
+   ],
+   "notes": "16 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome; the old page was a pre-GOLD3 tier inventory, so the GOLD3/4/5 floor came too (11 lanes with food stories and dishes, guest list with charters, #eat jump line + La liste with The Dish and .ics, dated hot board + #why-now pointer, calendar, craft, listening, Autour, terroir/data/ copy and 24-column CSV). Places 39 records -> 32 in 11 lanes, no 4s; cut 7 with reasons in picks.json (2 duplicate records, Le Cinq, Épicure, Pierre Gagnaire, Le Chateaubriand, Allard). Fold cards 111 -> 102 (+11 hot board, 9 calendar = 122, every one labelled); Camondo (closed since Aug 2024) and La Station – Gare des Mines (closes 31 Oct 2026 for ~3 years) cut. Guest list from venues kept, all confirmed 16 Oct: last minute Chartier · Bouillon Pigalle · Clamato; this week Chez L'Ami Jean · Chez Georges · Parcelles; grand night L'Arpège · Plénitude · Kei. Berths L'Arpège · Chez L'Ami Jean · L'As du Fallafel (Paul Bert found no 2026-dated evidence). Corrections: the Marché des Enfants Rouges burned on 11-12 Oct 2026 (closure card, nobody sent there); Grébaut died July 2026 (Septime, Clamato); Table closes 22 Dec 2026 (time_limited); Le Rigmarole lost its star in 2023; Grand Véfour reopened 12 May 2026, G&M 14/20; Guy Savoy ~EUR 740; 50 Best 2026 not out until 4 Nov (ranks labelled 2025); Colin Field left Bar Hemingway 2023; Buttes-Chaumont temple/island closed; two Guimard pavilions, not one; Les Halles move took days; Catacombs reopened Apr 2026; TERROIR_CONFIG portName 'Barcelona' -> 'Paris'; apostrophes encoded in venue Maps links; hub card csv:false -> csv:true (one-flag hand edit, hub builder not run); the Saint-Honoré gem (fired on street names) left out. Statuses: 23 confirmed 16 Oct, 8 unverified, 1 time-limited. Readings: One Night 8 quarters (the 11th · Canal Saint-Martin · Belleville · Saint-Germain and the Latin Quarter · the Marais · Opéra and the Grands Boulevards · Montparnasse · the 7th by the Invalides); Getaway 15 stops Fri 3 / Sat 7 / Sun 5. Flag: terroir/Paris/_prose_dump.txt and _venue_compare.txt are old working files served live (left untouched). Details: terroir/_rollout/review/Paris/README.md."
   },
   {
    "slug": "Var-Provence",
