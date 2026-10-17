@@ -1,0 +1,2 @@
+LISTE = []
+DISH_WHERE = {}
