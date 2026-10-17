@@ -1,0 +1,952 @@
+{
+ "v-hotel-la-ponche": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Five-star hotel table on the old fishermen's quay of Saint-Tropez; Simon Pinault cooks the day's catch.",
+   "why": "The hotel began as a 1930s fishermen's bar on the Ponche cove below the citadel and now counts 21 rooms and three apartments, restored by the designer Fabrizio Casiraghi. Its restaurant seats about 20 inside and 50 on a terrace that runs out to the sea. The MICHELIN Guide lists it without a star, for Mediterranean cooking built on the day's fish, regional vegetables and good meat; Gault&Millau gave it one toque in 2025.",
+   "dishes": [
+    {
+     "name": "Soupe de poisson de roche",
+     "note": "Rock-fish soup, named on the house menu",
+     "kind": "dish"
+    },
+    {
+     "name": "Grilled catch of the day",
+     "note": "Whatever came off the boats, the backbone of the Michelin write-up",
+     "kind": "dish"
+    },
+    {
+     "name": "Warm chocolate mousse, Fior di Latte ice cream",
+     "note": "The dessert the house bills as its own",
+     "kind": "sweet"
+    }
+   ],
+   "season": "Tourism listings (updated 31 Mar 2026): open daily 26 Mar 2026 to 3 Jan 2027, so open now; a June 2026 job notice says the hotel opens nine months a year. Restaurant winter dates not confirmed.",
+   "phone": "+33 4 94 97 02 53",
+   "price_range": "Lunch menu about EUR 60, dinner menu about EUR 120, plat du jour EUR 48 (tourism listing, seen Oct 2026)",
+   "reservation": "Book ahead; 20 covers inside, 50 on the terrace",
+   "neighborhood": "Saint-Tropez · La Ponche",
+   "badge": "MICHELIN-LISTED",
+   "signal_chip": {
+    "label": "MICHELIN 2026",
+    "full": "Listed in the MICHELIN Guide France 2026 without a star (modern cuisine, €€€); one Gault&Millau toque 2025 per the Saint-Tropez tourism listing.",
+    "cosign": "MICHELIN Guide; Gault&Millau 2025"
+   }
+  },
+  "evidence": "Search extracts only. Saint-Tropez Tourisme / Golfe de Saint-Tropez listings updated 31 March 2026 (season 26 Mar 2026 to 3 Jan 2027, 20+50 covers, prices, chef Simon Pinault, Gault&Millau 1 toque 2025). Journal des Palaces job ads May/June 2026 recruiting for the 2026 season ('ouvert 9 mois par an'). MICHELIN restaurant page (no star; day's catch, regional vegetables, quality meat) and MICHELIN hotel page (21 rooms and suites, 3 apartments, Casiraghi renovation).",
+  "corrections": [
+   "Old truncated chip 'MICHELIN 2026 · LI' replaced with a clean chip",
+   "Added Gault&Millau one toque (2025) per tourism listing",
+   "Old record implies a warm-season table; 2026 listings give an opening run to 3 Jan 2027, though a June 2026 job ad says nine months a year: winter dates to confirm"
+  ],
+  "sources": [
+   {
+    "label": "Saint-Tropez Tourisme: La Ponche (restaurant)",
+    "url": "https://www.sainttropeztourisme.com/fr/fiche/la-ponche-3951447/"
+   },
+   {
+    "label": "Golfe de Saint-Tropez information: La Ponche hotel-restaurant",
+    "url": "https://www.golfe-saint-tropez-information.com/fr/hebergement/hotel-restaurant/saint-tropez/la-ponche-4168722"
+   },
+   {
+    "label": "MICHELIN Guide: La Ponche",
+    "url": "https://guide.michelin.com/ch/fr/provence-alpes-cote-dazur/saint-tropez/restaurant/la-ponche"
+   },
+   {
+    "label": "MICHELIN Guide: Hotel La Ponche",
+    "url": "https://guide.michelin.com/en/hotels-stays/saint-tropez/hotel-la-ponche-14011"
+   },
+   {
+    "label": "Journal des Palaces: sous-chef La Ponche 2026",
+    "url": "https://www.journaldespalaces.com/carriere/offre-305773-Sous-chef-La-Ponche-Saint-Tropez.html"
+   }
+  ]
+ },
+ "v-auberge-de-la-mole": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Family-run Southwest auberge by the church in La Môle, cash only, terrines brought in tubs to share.",
+   "why": "La Môle is a village of a few hundred people on the road between Hyères and Saint-Tropez, and its auberge has fed the coast since 1962, according to the tourism office, with three generations of the same family in charge. The business registry still lists a Raynal family partnership at the address, active since 1996. The cooking is Southwest France, not Provence: foie gras, crayfish, frogs' legs, potatoes with truffle, served to 60 inside and 60 more on the terrace.",
+   "dishes": [
+    {
+     "name": "The terrine spread",
+     "note": "Duck pâté, goose rillettes, pâté de campagne and head-cheese set down to help yourself (per earlier record and older press)",
+     "kind": "dish"
+    },
+    {
+     "name": "Foie gras",
+     "note": "Listed first among the house specialities; charged as a supplement",
+     "kind": "dish"
+    },
+    {
+     "name": "Frogs' legs",
+     "note": "A Southwest staple on the 2026 tourism listing",
+     "kind": "dish"
+    },
+    {
+     "name": "Crayfish (écrevisses)",
+     "note": "Named among the specialities in the 2026 listing",
+     "kind": "dish"
+    },
+    {
+     "name": "Potatoes with truffle",
+     "note": "The side the regulars order alongside the roast duck",
+     "kind": "dish"
+    }
+   ],
+   "season": "Call ahead: Golfe de Saint-Tropez tourism office gives 27 Mar to 11 Oct 2026 (closed now for the winter, reopening spring 2027, date not announced); another regional listing seen earlier gave 24 Mar to 21 Oct",
+   "hours": "Tue-Sat, Sunday lunch; closed Sunday evening and Monday (tourism listings, 2026)",
+   "address": "2 place de l'Église, 83310 La Môle",
+   "phone": "+33 4 94 49 57 01",
+   "price_range": "Menus EUR 40-70, the EUR 40 menu at lunch only (tourism listing, seen Oct 2026)",
+   "reservation": "Book ahead; cash or French cheque only",
+   "caveat": "No cards: cash or French cheque. Probably shut for the winter since 11 October 2026; one listing ran the season to 21 October, so call before driving. One user-edited guide claims a 2024 founding and a single EUR 70 menu; the registry and tourism office contradict the founding date.",
+   "neighborhood": "La Môle",
+   "badge": "SINCE 1962",
+   "signal_chip": {
+    "label": "Since 1962",
+    "full": "Same family for three generations since 1962 (tourism office); Raynal partnership active at the address since 1996 (INSEE SIRENE)",
+    "cosign": "Golfe de Saint-Tropez tourism office; INSEE SIRENE"
+   }
+  },
+  "evidence": "Search extracts only. Golfe de Saint-Tropez / Côte d'Azur France tourism listings for the 2026 season (27/03-11/10/2026, hours, EUR 40-70, specialities, 60+60 covers, cash/cheque). INSEE SIRENE extract dated 21 Feb 2026: establishment active since 19 Aug 1996, company RAYNAL CLOTILDE ET PHILIPPE. Mapstr (user-edited) claims a 2024 founding by 'Mathy en Joris' - apparently a diner's note, not reliable.",
+  "corrections": [
+   "Old badge 'CUISINE DU SUD-OUE' was truncated; replaced",
+   "Old person names Clément Raynal as company head since 2016; the SIRENE extract (Feb 2026) gives the company as RAYNAL CLOTILDE ET PHILIPPE: kept as an open question, not resolved",
+   "Season: as of 17 Oct 2026 it is past the tourism office's 11 Oct closing date"
+  ],
+  "sources": [
+   {
+    "label": "Golfe de Saint-Tropez information: Auberge de la Môle",
+    "url": "https://www.golfe-saint-tropez-information.com/fr/sorties/restaurant/la-mole/auberge-de-la-mole-4993832"
+   },
+   {
+    "label": "Côte d'Azur France: Auberge de la Mole",
+    "url": "https://cotedazurfrance.fr/offres/auberge-de-la-mole-la-mole-fr-2913551/"
+   },
+   {
+    "label": "INSEE SIRENE extract",
+    "url": "https://api-avis-situation-sirene.insee.fr/identification/pdf/32585561700024"
+   }
+  ]
+ },
+ "v-le-pont-d-or": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Former coaching inn in Barjols, four generations of one family, regional cooking and a Friday aïoli.",
+   "why": "Barjols, in the Provence Verte, is a town of fountains, and the oldest known of them shares this inn's name: the Fontaine du Pont d'Or, which local guides say may take its name from the arms of the Pontevès family. The inn itself was a relais de poste, kept by the same family over four generations, and serves traditional terroir cooking from fresh produce. The tourism office gives it a 2026 opening run from mid-January to the end of November.",
+   "dishes": [
+    {
+     "name": "Grand aïoli (Friday)",
+     "note": "Salt cod, mussels, egg and boiled vegetables around garlic mayonnaise, per the earlier record; not confirmed in 2026 listings",
+     "kind": "dish"
+    },
+    {
+     "name": "Morue (salt cod)",
+     "note": "The fish at the centre of the aïoli plate",
+     "kind": "dish"
+    },
+    {
+     "name": "Boiled garden vegetables",
+     "note": "Green beans, cauliflower, potato and carrot, the aïoli's ring",
+     "kind": "dish"
+    }
+   ],
+   "season": "Open 14 Jan to 30 Nov 2026, closed one week in early July (tourism listing); open now",
+   "hours": "Closed Monday (tourism listing 2026); a 2025 Logis listing gives Friday lunch 12:00-13:30",
+   "address": "Rue Eugène Payan, 83670 Barjols",
+   "phone": "+33 4 94 77 05 23",
+   "reservation": "Book, especially for Friday",
+   "caveat": "No 2026 source mentions the Friday aïoli by name: call to confirm it is on before making the drive. Closed Mondays and from December to mid-January.",
+   "neighborhood": "Barjols",
+   "badge": "FAMILY INN",
+   "signal_chip": {
+    "label": "Four gens",
+    "full": "Former relais de poste run by the same family for four generations (Provence Verte tourism office)",
+    "cosign": "Office de Tourisme Provence Verte"
+   }
+  },
+  "evidence": "Search extracts only. Provence-Alpes-Côte d'Azur / Provence Verte tourism listing for 2026 (open 14 Jan-30 Nov, closed Monday, one week shut early July; four-generation family, former relais de poste, phone). Logis Hôtels listing (2025 dates) gives Friday lunch service. No 2026 source found for the Friday aïoli or the Gros names.",
+  "corrections": [
+   "Old caveat 'closes for a spell in early January'; 2026 listing gives closure from 1 Dec to 13 Jan plus a week in early July, and closed Mondays only (old said Tue-Sat and Sunday lunch)",
+   "Old address '2 Avenue Eugene Payan'; listings give 'Rue Eugène Payan' (number not confirmed)",
+   "Old chip 'PROVENCAL INSTITUT' truncated; replaced",
+   "Nelly and Joel Gros and the 'carte 25-39 euros' not confirmed by any 2026 extract; left in old record but unverified"
+  ],
+  "sources": [
+   {
+    "label": "Provence-Alpes-Côte d'Azur: Hôtel restaurant le Pont d'Or",
+    "url": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/hotel-restaurant-le-pont-dor-barjols-en-2857257/"
+   },
+   {
+    "label": "La Provence Verte: Hôtel restaurant le Pont d'Or",
+    "url": "https://la-provence-verte.net/activites/restaurant-barjols-hotel-restaurant-le-pont-d-or_454.html"
+   },
+   {
+    "label": "Logis Hôtels: Logis Hôtel du Pont d'Or",
+    "url": "https://logishotels.com/en/restaurant/logis-hotel-du-pont-dor-2056"
+   }
+  ]
+ },
+ "v-l-auberge-des-braconniers": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-10-17",
+   "hook": "Bistrot de Pays in Ampus, 600 m up: daube, wood-fired pizza and dishes that follow the market.",
+   "why": "Ampus is a small Village de Caractère above the Nartuby gorges, and the Braconniers is one of its last tables. Bertrand and Lisa Urtado, who had cooked in Tourtour, took it over, and in 2021 it joined the Bistrot de Pays network, whose charter asks for local producers and a café-restaurant kept alive for the village. Gilles Pudlowski found wood-fired pizzas next to a market card of daube de joue de boeuf and brandade.",
+   "dishes": [
+    {
+     "name": "Daube de joue de boeuf",
+     "note": "Beef-cheek daube, named by Pudlowski",
+     "kind": "dish"
+    },
+    {
+     "name": "Daube de sanglier",
+     "note": "Wild-boar stew, per the earlier record",
+     "kind": "dish"
+    },
+    {
+     "name": "Brandade",
+     "note": "Salt-cod brandade on the market card (Pudlowski)",
+     "kind": "dish"
+    },
+    {
+     "name": "Tête de veau",
+     "note": "Calf's head, cited by reviewers among the traditional dishes",
+     "kind": "dish"
+    },
+    {
+     "name": "Wood-fired pizza",
+     "note": "The everyday order the village comes in for",
+     "kind": "dish"
+    }
+   ],
+   "address": "4 Boulevard Clemenceau, 83111 Ampus",
+   "phone": "+33 4 94 68 34 85",
+   "price_range": "Carte EUR 25-35 (Pudlowski, 2022; not re-seen in 2026)",
+   "caveat": "No 2026-dated evidence found that it trades. A 2022 write-up gives closed Monday, Tuesday and Wednesday, so call before climbing.",
+   "neighborhood": "Ampus",
+   "badge": "BISTROT DE PAYS",
+   "signal_chip": {
+    "label": "Bistrot Pays",
+    "full": "Bistrot de Pays label since 2021; noted by Gilles Pudlowski",
+    "cosign": "Fédération Bistrot de Pays; Gilles Pudlowski"
+   }
+  },
+  "evidence": "Search extracts only. Gilles Pudlowski (write-up, 2022 extract): Bertrand and Lisa Urtado, formerly in Tourtour, Bistrot de Pays 2021, pizzas plus daube de joue de boeuf and brandade, carte EUR 25-35, closed Mon-Wed. Provence-Alpes-Côte d'Azur tourism listing (undated extract) and Booking (9.4/117 reviews, undated). No 2026-dated item.",
+  "corrections": [
+   "Old badge/chip 'BISTROT DE PAYS (2' truncated; replaced",
+   "Old address 'Boulevard Georges Clemenceau'; listing gives 4 Boulevard Clemenceau",
+   "Old caveat 'closed at least Mondays'; 2022 Pudlowski extract says closed Monday to Wednesday",
+   "Surname Urtado added from Pudlowski; the old 'grandmother ran it in the 1960s' story not found now"
+  ],
+  "sources": [
+   {
+    "label": "Gilles Pudlowski: Auberge des Braconniers",
+    "url": "https://www.gillespudlowski.com/?p=313727"
+   },
+   {
+    "label": "Provence-Alpes-Côte d'Azur: Auberge des Braconniers",
+    "url": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/auberge-des-braconniers-ampus-fr-2887064/"
+   }
+  ]
+ },
+ "v-solea": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Two young cooks from the Castellet's kitchen running a modern table in Aups, truffle menus in winter.",
+   "why": "Valentine Lorcher, not yet thirty when MICHELIN wrote her up, opened Solea in a house in the centre of Aups in 2024 with her partner Adrien Antelme, who makes the pastry and runs the room. Gault&Millau scores it 12.5/20 and gave her a Jeune Talent trophy in 2025; MICHELIN lists it as an inspector's favourite. Aups holds its black truffle market every January, and the winter menu uses the local tubers.",
+   "dishes": [
+    {
+     "name": "Winter truffle menu",
+     "note": "Built on Aups black truffle (melanosporum) in season",
+     "kind": "dish"
+    },
+    {
+     "name": "Summer produce menu",
+     "note": "Lighter vegetable-led plates when the truffle is out of season",
+     "kind": "dish"
+    },
+    {
+     "name": "Adrien Antelme's desserts",
+     "note": "The pastry half of the four-handed kitchen",
+     "kind": "sweet"
+    }
+   ],
+   "season": "2026 listing gives 1 Jan to 31 May 2026, Wed-Sat dinner 19:00-21:30; autumn 2026 days not found: call ahead",
+   "address": "12 rue Maréchal Foch, 83630 Aups",
+   "phone": "+33 4 94 67 02 41",
+   "web": "https://solea-restaurant.com",
+   "reservation": "Book",
+   "neighborhood": "Aups",
+   "badge": "G&M 12.5/20",
+   "signal_chip": {
+    "label": "G&M 12.5/20",
+    "full": "Gault&Millau 12.5/20 and one toque 2025; Jeune Talent 2025 for Valentine Lorcher; MICHELIN inspector's favourite (no star)",
+    "cosign": "Gault&Millau; MICHELIN Guide"
+   }
+  },
+  "evidence": "Search extracts only. Gault&Millau restaurant and people pages (12.5/20, Jeune Talent 2025, opened 2024; pages dated 2025). MICHELIN listing (inspector's favourite, chef under 30). Lacs et Gorges du Verdon tourism listing: Gault&Millau 1 toque 2025, schedule 1 Jan-31 May 2026 Wed-Sat 19:00-21:30, phone, website. No Gault&Millau 2026 score found.",
+  "corrections": [
+   "Old chip/badge 'GAULT&MILLAU 12.5/' truncated; replaced",
+   "Adrien Antelme handles pastry and the room per Gault&Millau; Lorcher is the chef",
+   "MICHELIN status is a listing (inspector's favourite), no star"
+  ],
+  "sources": [
+   {
+    "label": "Gault&Millau: Solea",
+    "url": "https://fr.gaultmillau.com/en/restaurant/solea"
+   },
+   {
+    "label": "Gault&Millau: Valentine Lorcher",
+    "url": "https://fr.gaultmillau.com/fr/people/valentine-lorcher"
+   },
+   {
+    "label": "MICHELIN Guide: Solea",
+    "url": "https://guide.michelin.com/be/nl/provence-alpes-cote-dazur/aups/restaurant/solea"
+   },
+   {
+    "label": "Lacs et Gorges du Verdon tourism: Solea",
+    "url": "https://www.lacs-gorges-verdon.fr/sortir/restaurant/6666-solea.html?en=1"
+   }
+  ]
+ },
+ "v-picotte-provence": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-10-17",
+   "hook": "The Cotignac outpost of a Paris bistro, cooking southern French regional dishes on rue Saint-Jean.",
+   "why": "Picotte started near Place de la République in Paris in 2018 as a tour of French regional cooking. Its owners, Catherine Wade and Matthias Maboungou, opened a second Picotte in Cotignac in 2020, turned toward the dishes of the south. Gilles Pudlowski, writing about two years ago, found the Cotignac kitchen run by Samuele Poggi, a 26-year-old from Prato who had opened Massimo Bottura's Osteria Gucci in Florence.",
+   "dishes": [
+    {
+     "name": "Revisited southern classic of the day",
+     "note": "The card moves with the producers; ask what came in",
+     "kind": "dish"
+    },
+    {
+     "name": "Soupe au pistou",
+     "note": "Provençal vegetable soup with basil; listed by a menu aggregator, not the house",
+     "kind": "dish"
+    },
+    {
+     "name": "Poulpe persillé, vanilla purée",
+     "note": "Parsleyed octopus; same aggregator listing, may be dated",
+     "kind": "dish"
+    }
+   ],
+   "season": "Undated listing: 14-22 Feb, then 17 Mar to 15 Nov; open now if those dates hold for 2026",
+   "hours": "Call ahead: listing gives Tue-Sat 12:00-14:00 and 19:00-21:30 plus Sunday lunch (17 Mar-15 Nov); mirror pages disagree on Monday",
+   "address": "8 rue Saint-Jean, 83570 Cotignac",
+   "phone": "+33 9 85 06 09 21",
+   "caveat": "No 2026-dated evidence found; the chef named most recently (Samuele Poggi) comes from a review about two years old. The old TheFork 9.5/10 was not re-seen.",
+   "neighborhood": "Cotignac",
+   "badge": "RESTAURANT ENGAGÉ",
+   "signal_chip": {
+    "label": "Resto engagé",
+    "full": "Restaurant engagé label per the earlier record (not re-seen in 2026); reviewed by Gilles Pudlowski",
+    "cosign": "Gilles Pudlowski"
+   }
+  },
+  "evidence": "Search extracts only. Gilles Pudlowski review (about two years old): Cotignac Picotte led by chef Samuele Poggi; Paris Picotte run by Matthias Maboungou and Catherine Wade. Sortir à Paris on the Paris original (opened 2018). La Provence Verte tourism listing (undated): opening periods and hours, phone, contact@picotte.fr. No 2026-dated item.",
+  "corrections": [
+   "Old record names Catherine Wade as the chef; she co-owns Picotte with Matthias Maboungou, and Pudlowski names Samuele Poggi as the Cotignac chef",
+   "Old chip 'RESTAURANT ENGAGE;' truncated; replaced",
+   "Dishes beyond the daily special come from an auto-generated menu aggregator (lacarte.menu) and are not confirmed by the house"
+  ],
+  "sources": [
+   {
+    "label": "Gilles Pudlowski: Picotte",
+    "url": "https://www.gillespudlowski.com/critiques/picotte"
+   },
+   {
+    "label": "La Provence Verte: Picotte Provence à Cotignac",
+    "url": "https://la-provence-verte.net/ot_cotignac/restaurant-cotignac-picotte-provence_2671.html"
+   },
+   {
+    "label": "lacarte.menu: Picotte Provence menu",
+    "url": "https://lacarte.menu/restaurants/cotignac/picotte-provence/menu"
+   },
+   {
+    "label": "Sortir à Paris: Picotte",
+    "url": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/308407-picotte-a-bistronomic-tour-of-france-s-regional-specialities"
+   }
+  ]
+ },
+ "v-la-petite-fontaine": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-10-17",
+   "hook": "Provençal cooking on the fountain square of Collobrières, the chestnut village of the Maures.",
+   "why": "Collobrières sits in a chestnut forest in the middle of the Maures and fêtes its harvest on three October Sundays, in 2026 from 11 to 25 October. La Petite Fontaine, on the Place de la République, cooks a three-course Provençal menu for about 34 euros: daube, petits farcis, magret with cep sauce, supions, anchoïade and garlic chicken are the dishes the tourism office lists. Evenings out of season open only by arrangement.",
+   "dishes": [
+    {
+     "name": "Daube provençale",
+     "note": "The slow beef braise that leads the tourism listing",
+     "kind": "dish"
+    },
+    {
+     "name": "Daube de sanglier aux marrons et cèpes",
+     "note": "Wild boar with local chestnuts and ceps, per the earlier record; not re-seen in 2026",
+     "kind": "dish"
+    },
+    {
+     "name": "Petits farcis",
+     "note": "Stuffed Provençal vegetables",
+     "kind": "dish"
+    },
+    {
+     "name": "Magret, cep sauce",
+     "note": "Duck breast with a sauce of the forest's ceps",
+     "kind": "dish"
+    },
+    {
+     "name": "Supions",
+     "note": "Small squid, pan-fried",
+     "kind": "dish"
+    },
+    {
+     "name": "Anchoïade",
+     "note": "Anchovy and garlic dip with raw vegetables",
+     "kind": "dish"
+    }
+   ],
+   "hours": "Call ahead: tourism listing gives lunch Tue-Sun and dinner Tue-Sat, evenings out of season by arrangement; Foodle gives Sunday lunch only; closed Monday",
+   "phone": "+33 4 94 48 00 12",
+   "price_range": "Starter, main and dessert EUR 34 (tourism listing, seen Oct 2026)",
+   "caveat": "No 2026-dated evidence found. Address given as 6 place de la République (tourism listing) or 1 place de la République (Foodle). During the chestnut Sundays the village fills: book.",
+   "neighborhood": "Collobrières",
+   "badge": "TERROIR TABLE",
+   "signal_chip": {
+    "label": "Chestnut town",
+    "full": "Village table in Collobrières; Gault&Millau 1 toque 2021 per Foodle (dated); Petit Futé listed",
+    "cosign": "Provence-Alpes-Côte d'Azur tourism; Foodle"
+   }
+  },
+  "evidence": "Search extracts only. Provence-Alpes-Côte d'Azur tourism listing (undated extract): dishes, EUR 34 menu, hours. Foodle: hours, Gault&Millau 1 toque 2021, phone, site lapetitefontaine.restaurant (not confirmed as live). Festival en France: chestnut festival 11-25 Oct 2026. No 2026-dated review found.",
+  "corrections": [
+   "Old chip 'RESTAURANT DU TERR' truncated; replaced",
+   "Old record says simply closed Mondays and Sunday evenings; the tourism listing adds that evenings out of season open only by arrangement",
+   "Address number disputed (6 vs 1 place de la République)"
+  ],
+  "sources": [
+   {
+    "label": "Provence-Alpes-Côte d'Azur: The Little Fountain",
+    "url": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/the-little-fountain-collobrieres-en-3693041"
+   },
+   {
+    "label": "Foodle: La Petite Fontaine",
+    "url": "https://foodle.pro/restaurants/collobrieres/la-petite-fontaine"
+   },
+   {
+    "label": "Festival en France: Fêtes de la Châtaigne de Collobrières",
+    "url": "https://www.festivalenfrance.com/festival/fetes-de-la-chataigne-de-collobrieres"
+   }
+  ]
+ },
+ "v-lou-portaou": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Provençal table in a vaulted street-passage of old Bormes, held by the Cavatores since 1986.",
+   "why": "The portaou, Provençal for gate, is the covered passage of the ruelle des Sarrasins in the medieval village of Bormes, and the restaurant is built into it. Philippe Cavatore has held it since 1986 and has since become a sculptor too, with a studio, the Atelier de la Cueva, a few doors along the same lane. A 2011 visit by Gilles Pudlowski found roast sea bass and a lamb shoulder cooked for three hours.",
+   "dishes": [
+    {
+     "name": "Lamb shoulder cooked three hours",
+     "note": "Named in Pudlowski's 2011 write-up; dated",
+     "kind": "dish"
+    },
+    {
+     "name": "Roast sea bass",
+     "note": "Also from the 2011 visit; dated",
+     "kind": "dish"
+    },
+    {
+     "name": "Provençal special of the day",
+     "note": "Off the market; ask what came in",
+     "kind": "dish"
+    }
+   ],
+   "season": "Seasonal: 6 Feb to 31 Aug 2026 per Bormes tourism office (updated 29 May 2026); closed now, 2027 reopening not announced",
+   "hours": "12:00-14:00 and 19:00-23:00 daily in season (tourism office, 2026)",
+   "address": "Ruelle des Sarrasins, 83230 Bormes-les-Mimosas (number given as 1 or nearby)",
+   "reservation": "Call ahead: one tourism listing says no reservations; the earlier record advised booking",
+   "caveat": "Per the tourism office the 2026 season ended on 31 August, so it should be shut now; confirm before going. The chef named in 2011 (Robert Chiu) is not confirmed for 2026.",
+   "neighborhood": "Bormes-les-Mimosas · Vieux village",
+   "badge": "SINCE 1986",
+   "signal_chip": {
+    "label": "Since 1986",
+    "full": "Held by Philippe Cavatore since 1986; written up by Gilles Pudlowski",
+    "cosign": "Gilles Pudlowski; Bormes tourism office"
+   }
+  },
+  "evidence": "Search extracts only. Bormes-les-Mimosas tourism office listing updated 29 May 2026 (season 6 Feb-31 Aug 2026, hours, 'pas de réservation'). Gilles Pudlowski 2011 (Philippe Cavatore, chef Robert Chiu, dishes). Bormes tourism 'the artisans' page and Côte d'Azur France on Cavatore's Atelier de la Cueva, 3 ruelle des Sarrasins.",
+  "corrections": [
+   "Old chip 'TRIPADVISOR #5 OF ' truncated; replaced",
+   "Season: 2026 run ended 31 Aug per tourism office; old record gave no season",
+   "Old caveat 'Book'; one 2026 listing says no reservations: set as call ahead"
+  ],
+  "sources": [
+   {
+    "label": "Côte d'Azur France: Lou Portaou",
+    "url": "https://cotedazurfrance.fr/offres/lou-portaou-bormes-les-mimosas-fr-2912524/"
+   },
+   {
+    "label": "Provence-Alpes-Côte d'Azur: Lou Portaou",
+    "url": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/lou-portaou-bormes-les-mimosas-fr-2878992/"
+   },
+   {
+    "label": "Gilles Pudlowski: Lou Portaou",
+    "url": "https://www.gillespudlowski.com/?p=27663"
+   },
+   {
+    "label": "Bormes-les-Mimosas: the artisans",
+    "url": "https://en.bormeslesmimosas.com/activities/crafts-and-shopping/the-artisans/"
+   }
+  ]
+ },
+ "v-la-colombe": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Pascal and Nadège Bonamy's Provençal table on the Toulon road out of Hyères, open since 1987.",
+   "why": "Pascal Bonamy cooks and Nadège runs the room, at the foot of the Maurettes on the old road to Toulon, an address they opened in 1987. He holds the Maître Restaurateur title and belongs to the Collège Culinaire de France. MICHELIN files it under traditional cuisine and names a sesame salmon tataki and turbot with black garlic jus; the menus run from 45 to 75 euros.",
+   "dishes": [
+    {
+     "name": "Filet de rouget grondin, bouillon d'étrilles",
+     "note": "Gurnard in swimming-crab broth with rouille croutons, from the house menu (seasonal)",
+     "kind": "dish"
+    },
+    {
+     "name": "Sesame salmon tataki",
+     "note": "Named in the MICHELIN write-up",
+     "kind": "dish"
+    },
+    {
+     "name": "Turbot fillet, black garlic jus",
+     "note": "Also named by MICHELIN",
+     "kind": "dish"
+    }
+   ],
+   "season": "Year-round (tourism listing updated 30 Apr 2026); open now",
+   "hours": "Wed-Sun; closed Monday and Tuesday (tourism listing 2026, MICHELIN)",
+   "phone": "+33 4 94 35 35 16",
+   "price_range": "Menus and carte EUR 45-75 (tourism listing 2026, seen Oct 2026)",
+   "reservation": "Book; small family house",
+   "neighborhood": "Hyères · La Bayorre",
+   "badge": "MICHELIN-LISTED",
+   "signal_chip": {
+    "label": "MICHELIN",
+    "full": "Listed in the MICHELIN Guide (traditional cuisine). Bib Gourmand cited by tourism listings and older sources (awarded 2015 per Le Var des Gastronomes) but not confirmed in any 2026 MICHELIN extract found.",
+    "cosign": "MICHELIN Guide; Gilles Pudlowski (July 2024)"
+   }
+  },
+  "evidence": "Search extracts only. MICHELIN Guide pages (traditional cuisine, Bonamys, dishes, closed Mon-Tue, phone; extracts show no distinction). Provence-Alpes-Côte d'Azur / Côte d'Azur France listings updated 30 April 2026 (year-round, closed Mon-Tue, EUR 45-75, Bib Gourmand mention undated). Gilles Pudlowski, July 2024. PagesJaunes/TheFork 4.5/5 on 340 reviews (latest seen May 2025). 2026 Bib Gourmand coverage found names Le Pastel in Toulon as a new Var Bib; La Colombe not mentioned.",
+  "corrections": [
+   "Old chip claims the Bib Gourmand is current in the 2026 guide; no 2026 MICHELIN extract confirms it: chip changed to MICHELIN-listed, Bib flagged unconfirmed",
+   "Old badge 'MICHELIN BIB GOURM' truncated; replaced",
+   "Old 'lunch from about EUR 45, tasting to about EUR 75' matches 2026 listing EUR 45-75"
+  ],
+  "sources": [
+   {
+    "label": "MICHELIN Guide: La Colombe",
+    "url": "https://guide.michelin.com/gb/en/provence-alpes-cote-dazur/hyres/restaurant/la-colombe"
+   },
+   {
+    "label": "Côte d'Azur France: La Colombe",
+    "url": "https://cotedazurfrance.fr/offres/la-colombe-hyeres-fr-2912114/"
+   },
+   {
+    "label": "Gilles Pudlowski: Hyères, douce Colombe",
+    "url": "https://www.gillespudlowski.com/380579/restaurants/hyeres-douce-colombe"
+   },
+   {
+    "label": "Gault&Millau: Pascal Bonamy",
+    "url": "https://fr.gaultmillau.com/fr/people/pascal-bonamy"
+   },
+   {
+    "label": "Riviera Radio: Riviera restaurants awarded Bib Gourmand 2026",
+    "url": "https://www.rivieraradio.mc/article/three-riviera-restaurants-awarded-michelin-bib-gourmand-honours-5HjdS8W_2"
+   }
+  ]
+ },
+ "v-chateau-de-pibarnon": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-10-17",
+   "hook": "Bandol's high amphitheatre of Mourvèdre on blue marl above La Cadière, owned by Éric de Saint-Victor.",
+   "why": "Pibarnon farms about 52 hectares organically on terraces cut into a natural bowl under the Colline du Télégraphe, around 300 metres up, looking down to the bay of La Ciotat. The soil is blue marl, rare in Bandol. The red is mostly Mourvèdre with a little Grenache: the Guide Hachette 2025 gave the 2021 two stars and counted 99,000 bottles of it, with a drinking window of 2027 to 2034.",
+   "dishes": [
+    {
+     "name": "Bandol rouge",
+     "note": "About 90% Mourvèdre; 2020 rated 93/100 and 2019 91/100 by Gault&Millau; built to age",
+     "kind": "drink"
+    },
+    {
+     "name": "Les Restanques de Pibarnon rouge",
+     "note": "Younger-vine red, 70% Mourvèdre, for earlier drinking",
+     "kind": "drink"
+    },
+    {
+     "name": "Bandol rosé",
+     "note": "The estate rosé, the easier bottle for lunch",
+     "kind": "drink"
+    },
+    {
+     "name": "Bandol blanc",
+     "note": "The estate white, sold by Swiss merchant Cavesa (2021 vintage)",
+     "kind": "drink"
+    }
+   ],
+   "phone": "+33 4 94 90 12 73",
+   "caveat": "Tasting and sales at the property (Guide Hachette); no 2026 cellar-door hours found, so call ahead. The earlier record's Mon-Sat hours are not re-confirmed. Young vintages of the red are tight and want years.",
+   "neighborhood": "La Cadière-d'Azur · Bandol",
+   "badge": "G&M 93/100",
+   "signal_chip": {
+    "label": "G&M 93/100",
+    "full": "Gault&Millau rates the Château de Pibarnon 2020 Bandol rouge 93/100 (2019: 91/100); Guide Hachette 2025 gives the 2021 rouge two stars",
+    "cosign": "Gault&Millau; Guide Hachette des Vins 2025"
+   }
+  },
+  "evidence": "Search extracts only. Gault&Millau winery pages (2020 rouge 93/100, 2019 91/100, 52 ha organic, owner Éric de Saint-Victor; reviews dated 2024). Guide Hachette 2025 (2021 rouge two stars, 99,000 bottles, drink 2027-2034); Guide Hachette producer page (address, phone, tasting and sales on site). Cavesa listings for rosé 2023/2024, blanc 2021, Restanques rouge 2021. Nothing dated 2026 found.",
+  "corrections": [
+   "Old chip 'Decanter · Gabay MW' (89 pts for the 2014) replaced with the more recent Gault&Millau 93/100 for the 2020; old badge 'DECANTER · GABAY M' truncated"
+  ],
+  "sources": [
+   {
+    "label": "Gault&Millau: Château de Pibarnon",
+    "url": "https://fr.gaultmillau.com/fr/wineries/chateau-de-pibarnon"
+   },
+   {
+    "label": "Gault&Millau: Château de Pibarnon 2020",
+    "url": "https://fr.gaultmillau.com/fr/wineries/chateau-de-pibarnon/chateau-de-pibarnon-2020"
+   },
+   {
+    "label": "Guide Hachette 2025: Château de Pibarnon 2021 rouge",
+    "url": "https://www.hachette-vins.com/guide-vins/les-vins/ch-de-pibarnon-2021-2025/202578081/"
+   },
+   {
+    "label": "Guide Hachette: Ch. de Pibarnon producer",
+    "url": "https://www.hachette-vins.com/guide-vins/producteurs/3364/ch-de-pibarnon"
+   }
+  ]
+ },
+ "v-domaine-de-terrebrune": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Organic Bandol estate in Ollioules, Mourvèdre on Triassic soils, aged in galleries cut into the rock.",
+   "why": "Georges Delille, a Paris sommelier, bought the land at Ollioules in 1963 and dug the ageing cellars into the Triassic rock of the hillside; his son Reynald bottled the first Terrebrune in 1980. Today about 35 hectares are farmed organically, with Mourvèdre the main grape, and Jean d'Arthuys has co-owned the estate since 2020. A guided cellar visit and tasting costs 15 euros, deducted from what you buy.",
+   "dishes": [
+    {
+     "name": "Bandol rouge Terroir du Trias",
+     "note": "About 85% Mourvèdre, 18 months in large foudres; the 2020 scored 90/100 with Gault&Millau",
+     "kind": "drink"
+    },
+    {
+     "name": "Bandol blanc",
+     "note": "The 2024 vintage is reviewed in the Guide Hachette 2026",
+     "kind": "drink"
+    }
+   ],
+   "address": "724 chemin de la Tourelle, 83190 Ollioules",
+   "phone": "+33 4 94 74 01 30",
+   "web": "https://www.terrebrune.fr",
+   "price_range": "Guided cellar visit and tasting EUR 15 per person, deducted from purchases (regional tourism listing, seen Oct 2026)",
+   "reservation": "Guided visits by appointment via the estate site",
+   "hours": "Cellar door and shop Monday to Saturday (online guide; times not given)",
+   "neighborhood": "Ollioules · Bandol",
+   "badge": "G&M 90/100",
+   "signal_chip": {
+    "label": "G&M 90/100",
+    "full": "Gault&Millau rates the 2020 Bandol rouge 90/100; Guide Hachette 2026 reviews the 2024 Bandol blanc",
+    "cosign": "Gault&Millau; Guide Hachette des Vins 2026"
+   }
+  },
+  "evidence": "Search extracts only. Guide Hachette des Vins 2026 entry for Domaine de Terrebrune 2024 blanc (2026-dated evidence the estate is selling). Provence-Alpes-Côte d'Azur tourism listing (EUR 15 visit-tasting deductible, by appointment, terrebrune.fr, accessibility). Online guide: cellar Mon-Sat, ~35 ha organic, an independent restaurant on site, phone. Gault&Millau winery page.",
+  "corrections": [
+   "Old badge 'GAULT&MILLAU 90/10' truncated; replaced",
+   "Added Guide Hachette 2026 citation for the 2024 blanc"
+  ],
+  "sources": [
+   {
+    "label": "Guide Hachette 2026: Domaine de Terrebrune 2024 blanc",
+    "url": "https://www.hachette-vins.com/guide-vins/les-vins/dom-de-terrebrune-2024-2026-1/202684489/"
+   },
+   {
+    "label": "Provence-Alpes-Côte d'Azur: Domaine de Terrebrune",
+    "url": "https://provence-alpes-cotedazur.com/que-faire/vin-et-gastronomie/toutes-les-activites-vin-et-gastronomie/domaine-de-terrebrune-ollioules-fr-2865756/"
+   },
+   {
+    "label": "Gault&Millau: Domaine de Terrebrune",
+    "url": "https://fr.gaultmillau.com/fr/wineries/domaine-de-terrebrune"
+   }
+  ]
+ },
+ "v-la-commanderie-de-peyrassol": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Templar-era wine estate off the RN7 with a sculpture park and Chez Jeannette, one MICHELIN star.",
+   "why": "Peyrassol was a commandery of the Knights Templar from the 13th century. Philippe Austruy bought it in 2001 and has set some sixty monumental sculptures among the vines. Its restaurant, Chez Jeannette, took a MICHELIN star in March 2025 under Benjamin Le Balch, who came from L'Aparté in Geneva, and kept it in 2026; his menu follows the estate kitchen garden rather than a fixed carte.",
+   "dishes": [
+    {
+     "name": "Cuvée des Commandeurs rosé",
+     "note": "Grenache-led Côtes de Provence from the best parcels; 2023 rated 90 by Vinous",
+     "kind": "drink"
+    },
+    {
+     "name": "Courgette, burnt, raw and cooked",
+     "note": "With black lemon, basil, olive oil and bergamot; a summer plate from Le Balch's garden menu",
+     "kind": "dish"
+    }
+   ],
+   "season": "Chez Jeannette open 14 Feb to 21 Dec 2026 (Coeur du Var tourism office, updated 17 Jun 2026); open now; winter closure from 22 Dec, reopening expected early Feb 2027 (not announced)",
+   "hours": "Closed Tuesday and Wednesday (tourism office 2026, MICHELIN)",
+   "phone": "+33 4 94 69 71 02",
+   "web": "https://www.peyrassol.com",
+   "reservation": "Book Chez Jeannette; tastings and the sculpture park are ticketed",
+   "neighborhood": "Flassans-sur-Issole",
+   "badge": "MICHELIN 1 STAR",
+   "signal_chip": {
+    "label": "1 star 2026",
+    "full": "Chez Jeannette, chef Benjamin Le Balch: one MICHELIN star, first awarded March 2025 and retained in the MICHELIN Guide France 2026 (per the estate and Do It In Paris); Gault&Millau 2 toques 2024",
+    "cosign": "MICHELIN Guide 2026"
+   }
+  },
+  "evidence": "Search extracts only. Peyrassol own site (Chez Jeannette pages and 2025 menus marked 'Etoile Michelin'; 2026 materials on the star and the guide's committed-gastronomy recognition). Do It In Paris: first star 2025, retained 2026. Coeur du Var tourism office listing updated 17 June 2026: open 14 Feb-21 Dec 2026, closed Tue-Wed. MICHELIN Guide page (closed Tue-Wed). Star retention not seen directly on guide.michelin.com.",
+  "corrections": [
+   "Old badge 'MICHELIN ★ (2025)' updated: the star was retained in the 2026 guide",
+   "Old caveat 'lunch Thursday to Monday' consistent with 2026 'closed Tue-Wed'; season added (14 Feb-21 Dec 2026)",
+   "Le Balch previously at L'Aparté, Geneva (estate/press)"
+  ],
+  "sources": [
+   {
+    "label": "Peyrassol: Chez Jeannette",
+    "url": "https://www.peyrassol.com/en/restaurants-and-accommodation/gastronomy/menu-french-gastronomic-restaurant-chez-jeannette/"
+   },
+   {
+    "label": "Do It In Paris: Peyrassol",
+    "url": "https://www.doitinparis.com/en/peyrassol-hotel-var-27571"
+   },
+   {
+    "label": "Provence-Alpes-Côte d'Azur: Le restaurant Chez Jeannette",
+    "url": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/le-restaurant-chez-jeannette-flassans-sur-issole-fr-2859399/"
+   },
+   {
+    "label": "MICHELIN Guide: Chez Jeannette",
+    "url": "https://guide.michelin.com/ch/fr/provence-alpes-cote-dazur/flassans-sur-issole_1505557/restaurant/chez-jeannette"
+   },
+   {
+    "label": "Gilles Pudlowski: la sage étoile de Peyrassol",
+    "url": "https://www.gillespudlowski.com/397193/restaurants/flassans-sur-issole-la-sage-etoile-de-peyrassol"
+   }
+  ]
+ },
+ "v-la-cade-a-dede": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-10-17",
+   "hook": "Cade cart with a wood-fired oven on a trailer, at the Cours Lafayette market in Toulon.",
+   "why": "Cade is the chickpea-flour galette of Toulon, thicker and softer than the socca of Nice, and tied by local tradition to Genoese workers who settled near the arsenal. At La Cade à Dédé the oven is a wood-fired one built onto a trailer, parked at the Cours Lafayette market; a Toulon food-tour blog names the cook as Alain, gives 2.50 euros a portion and says you can pick your piece from the sheet.",
+   "dishes": [
+    {
+     "name": "Cade",
+     "note": "A portion cut from the sheet, peppered, eaten hot in paper; about EUR 2.50 per the blog",
+     "kind": "dish"
+    },
+    {
+     "name": "Edge piece",
+     "note": "Ask for the border of the tray for a crisper bite",
+     "kind": "dish"
+    }
+   ],
+   "season": "Year-round with the market (per blog)",
+   "hours": "Tuesday to Sunday mornings until 12:30 (Do Eat Better blog, undated); closed Monday",
+   "address": "Cours Lafayette (about no. 20), 83000 Toulon",
+   "price_range": "About EUR 2.50 a portion (Do Eat Better blog, seen Oct 2026)",
+   "caveat": "Only one source (a food-tour company's blog) found; the second cart at Le Mourillon in the earlier record was not confirmed. Morning only.",
+   "neighborhood": "Toulon · Cours Lafayette",
+   "badge": "SINCE 1989",
+   "signal_chip": {
+    "label": "Since 1989",
+    "full": "Cade cart at the Cours Lafayette market, running since 1989 per the earlier record and tourism copy; cook named Alain by Do Eat Better",
+    "cosign": "Do Eat Better Experience; Provence Méditerranée tourism"
+   }
+  },
+  "evidence": "Search extracts only. Do Eat Better Experience blog (cade toulonnaise and Cours Lafayette market guides, undated): La Cade à Dédé, cook Alain, 20 Cours Lafayette, wood oven on a trailer, EUR 2.50, Tue-Sun to 12:30. No 2026-dated item, no Google or tourism-office listing found in extracts.",
+  "corrections": [
+   "Old person '\"Dede\"'; the blog names the current cook as Alain",
+   "Old hours '8:00 to 12:45'; blog says mornings until 12:30",
+   "Le Mourillon (Place Émile Claude) cart not confirmed by any 2026 source"
+  ],
+  "sources": [
+   {
+    "label": "Do Eat Better: cade toulonnaise",
+    "url": "https://doeatbetterexperience.com/de/blog/cade-toulonnaise-kichererbsen-fladenbrot/"
+   },
+   {
+    "label": "Do Eat Better: marché du cours Lafayette guide",
+    "url": "https://doeatbetterexperience.com/fr/blog/marche-cours-lafayette-toulon-guide/"
+   }
+  ]
+ },
+ "v-marche-du-cours-lafayette": {
+  "set": {
+   "status": "confirmed",
+   "statusChecked": "2026-10-17",
+   "hook": "Toulon's morning food market along the Cours Lafayette, Tuesday to Sunday, 7:30 to 12:30.",
+   "why": "Every morning but Monday the Cours Lafayette, on the edge of Toulon's old town, is lined for about a kilometre with stalls of Provençal growers, fishmongers, cheese and charcuterie, spilling into Place Louis Blanc. Gilbert Bécaud, born in Toulon in 1927, sang it in 1957 in Les marchés de Provence. In the afternoon a separate non-food market takes the same pavement, from 2:30 to 6:30.",
+   "dishes": [
+    {
+     "name": "Cade from La Cade à Dédé",
+     "note": "Hot chickpea galette from the wood-fired cart",
+     "kind": "dish"
+    },
+    {
+     "name": "Provençal fruit and vegetables",
+     "note": "From the growers' stalls",
+     "kind": "dish"
+    },
+    {
+     "name": "Fish of the morning",
+     "note": "From the market's fishmongers",
+     "kind": "dish"
+    },
+    {
+     "name": "Cheese and charcuterie",
+     "note": "From the market's cheese and pork stalls",
+     "kind": "dish"
+    }
+   ],
+   "season": "Year-round",
+   "hours": "Food market Tue-Sun 07:30-12:30 (Le Lavandou/Var tourism listing for 1 Jan-31 Dec 2026); non-food forain market Tue-Sun 14:30-18:30; closed Monday (the regional listing's Monday note is ambiguous)",
+   "neighborhood": "Toulon · Cours Lafayette",
+   "badge": "MORNING MARKET",
+   "signal_chip": {
+    "label": "Tue-Sun AM",
+    "full": "Food market open Tuesday to Sunday 7:30-12:30 all 2026; TF1 'Votre plus beau marché' regional title 2021",
+    "cosign": "Var tourism offices"
+   }
+  },
+  "evidence": "Search extracts only. Office de tourisme listing (ot-lelavandou.fr) gives the food and non-food market open Tue-Sun 07:30-12:30 from 1 Jan to 31 Dec 2026; regional Provence-Alpes-Côte d'Azur listing same hours, Monday closed (with an unclear low-season note); afternoon forain market 14:30-18:30.",
+  "corrections": [
+   "Old badge 'LOCAL & EV' truncated; replaced",
+   "Hours confirmed for 2026; no change"
+  ],
+  "sources": [
+   {
+    "label": "Office de tourisme: Marché de Provence du cours Lafayette",
+    "url": "https://www.ot-lelavandou.fr/agenda-fetes-animations-lelavandou/marche-de-provence-du-cours-lafayette-alimentaire-non-alimentaire"
+   },
+   {
+    "label": "Provence-Alpes-Côte d'Azur: Le marché de Provence du cours Lafayette",
+    "url": "https://provence-alpes-cotedazur.com/que-faire/sortir/toutes-les-sorties/le-marche-de-provence-du-cours-lafayette-a-toulon-alimentaire-non-alimentaire-toulon-fr-2873378/"
+   }
+  ]
+ },
+ "v-confiserie-azureenne": {
+  "set": {
+   "status": "unverified",
+   "statusChecked": "2026-10-17",
+   "hook": "Collobrières chestnut confectioner since 1948, with a free museum of the old candying machines.",
+   "why": "The Maures chestnut has been candied in Collobrières since 1948 at this house on the Boulevard Koenig, which makes marrons glacés, chestnut cream, chestnut ice cream and candied fruit. Alongside the shop, the Musée de la fabrique du marron glacé shows the tools and machines once used to sort, peel and candy the nuts, and entry is free. The village's chestnut festival runs on three Sundays, 11 to 25 October 2026.",
+   "dishes": [
+    {
+     "name": "Marrons glacés",
+     "note": "The candied whole chestnut, the house's founding product",
+     "kind": "sweet"
+    },
+    {
+     "name": "Crème de marrons",
+     "note": "Chestnut spread, the jar most people carry home",
+     "kind": "sweet"
+    },
+    {
+     "name": "Chestnut ice cream",
+     "note": "Made by the house",
+     "kind": "sweet"
+    },
+    {
+     "name": "Candied fruit",
+     "note": "Fruits confits from the same kitchen",
+     "kind": "sweet"
+    }
+   ],
+   "address": "Boulevard Koenig, 83610 Collobrières",
+   "caveat": "Not a restaurant. No 2026-dated item specific to the house found; the chestnut festival (Sundays 11, 18, 25 Oct 2026) is running now and the village is busy on those days.",
+   "neighborhood": "Collobrières",
+   "badge": "SINCE 1948",
+   "signal_chip": {
+    "label": "Since 1948",
+    "full": "Candying Maures chestnuts since 1948; free Musée de la fabrique du marron glacé",
+    "cosign": "Provence-Alpes-Côte d'Azur Tourisme; Le Lavandou tourism office"
+   }
+  },
+  "evidence": "Search extracts only. Provence-Alpes-Côte d'Azur tourism listing (Boulevard Koenig; products; free museum). Le Lavandou tourism office page for the Musée de la fabrique du marron glacé. Festival en France: chestnut festival 2026 on 11-25 October. Nothing dated 2026 about the confiserie itself.",
+  "corrections": [
+   "Address made precise: Boulevard Koenig (old record gave only the postcode)"
+  ],
+  "sources": [
+   {
+    "label": "Provence-Alpes-Côte d'Azur: La Confiserie Azuréenne",
+    "url": "https://provence-alpes-cotedazur.com/que-faire/vin-et-gastronomie/toutes-les-activites-vin-et-gastronomie/la-confiserie-azureenne-collobrieres-fr-2882166/"
+   },
+   {
+    "label": "Le Lavandou tourism: Musée de la fabrique du marron glacé",
+    "url": "https://www.ot-lelavandou.fr/uk/visites-patrimoine-culture-lelavandou/musee-de-la-fabrique-du-marron-glace/"
+   },
+   {
+    "label": "Festival en France: Fêtes de la Châtaigne de Collobrières",
+    "url": "https://www.festivalenfrance.com/festival/fetes-de-la-chataigne-de-collobrieres"
+   }
+  ]
+ },
+ "_lane_stories": {
+  "houses": {
+   "title": "Three old houses, three kitchens",
+   "story": "The Var's old houses are inns and hotels that outlived the trade they were built for. Hôtel La Ponche began as a 1930s fishermen's bar on the Saint-Tropez cove of the same name; MICHELIN now lists its restaurant without a star, with Simon Pinault cooking the day's catch. The Auberge de la Môle has served Southwest France, foie gras and frogs' legs, to the coast since 1962, cash only, with its 2026 season listed as ending on 11 October. Le Pont d'Or in Barjols was a coaching inn and has been kept by one family for four generations; it opens from mid-January to the end of November and is known locally for a Friday aïoli.",
+   "where": "Hôtel La Ponche, Saint-Tropez; Auberge de la Môle, La Môle; Le Pont d'Or, Barjols"
+  },
+  "hautvar": {
+   "title": "Village tables of the Haut-Var",
+   "story": "Up in the Haut-Var the hill villages keep few tables, and each one counts for the village. In Ampus, at about 600 metres above the Nartuby gorges, the Auberge des Braconniers joined the Bistrot de Pays network in 2021, a label that asks for local producers; it serves daube next to wood-fired pizza. In Aups, which holds a black truffle market every January, Valentine Lorcher and Adrien Antelme opened Solea in 2024; Gault&Millau scores it 12.5/20. In Cotignac, Picotte, the southern branch of a Paris bistro opened in 2020, cooks southern regional dishes on rue Saint-Jean.",
+   "where": "L'Auberge des Braconniers, Ampus; Solea, Aups; Picotte Provence, Cotignac"
+  },
+  "maures": {
+   "title": "Forest villages and the Hyères road",
+   "story": "The Massif des Maures is chestnut and cork-oak country behind the coast, and its tables cook from it. In Collobrières, whose chestnut festival runs on three October Sundays in 2026, La Petite Fontaine serves daube, petits farcis and supions on a 34-euro menu. In the old village of Bormes, Lou Portaou is built into the vaulted passage of the ruelle des Sarrasins, held by Philippe Cavatore since 1986; the tourism office gives its 2026 season as February to August. On the Toulon road out of Hyères, Pascal and Nadège Bonamy have run La Colombe since 1987, year-round, with menus from 45 to 75 euros.",
+   "where": "La Petite Fontaine, Collobrières; Lou Portaou, Bormes-les-Mimosas; La Colombe, Hyères"
+  },
+  "domaines": {
+   "title": "Mourvèdre, marl and a Templar estate",
+   "story": "Bandol's reds are built on Mourvèdre, a late-ripening grape that needs the sun and the sea air of this coast, and the Côtes de Provence inland make mostly rosé. Château de Pibarnon farms about 52 hectares organically on blue marl in a bowl of terraces above La Cadière; Gault&Millau gives its 2020 red 93/100. Domaine de Terrebrune in Ollioules ages its wine in galleries Georges Delille cut into Triassic rock after 1963, and offers a 15-euro visit. La Commanderie de Peyrassol, a Templar commandery from the 13th century, adds a sculpture park and Chez Jeannette, which kept its MICHELIN star in 2026.",
+   "where": "Château de Pibarnon, La Cadière-d'Azur; Domaine de Terrebrune, Ollioules; La Commanderie de Peyrassol, Flassans-sur-Issole"
+  },
+  "street": {
+   "title": "Cade, market stalls, candied chestnuts",
+   "story": "The Var's street food is cheap, made in the morning and sold standing up. Cade, a chickpea-flour galette thicker and softer than the socca of Nice, is Toulon's own, and La Cade à Dédé bakes it in a wood-fired oven on a trailer at the Cours Lafayette for about 2.50 euros a portion. The Cours Lafayette market itself, which Gilbert Bécaud sang in 1957, runs Tuesday to Sunday from 7:30 to 12:30 all year. Inland in Collobrières, the Confiserie Azuréenne has candied Maures chestnuts since 1948 and keeps a free museum of its old machines.",
+   "where": "La Cade à Dédé, Toulon; Marché du Cours Lafayette, Toulon; Confiserie Azuréenne, Collobrières"
+  }
+ },
+ "_notes": "All 15 venues checked from WebSearch extracts only (about 30 searches, no page reads). Status: 9 confirmed (Hôtel La Ponche, Auberge de la Môle, Le Pont d'Or, Solea, Lou Portaou, La Colombe, Domaine de Terrebrune, La Commanderie de Peyrassol, Marché du Cours Lafayette), mostly on 2026-dated tourism-office listings, a 2026 job ad (La Ponche), Guide Hachette 2026 (Terrebrune) and the estate's 2026 star claim (Peyrassol); 6 unverified (Auberge des Braconniers, Picotte Provence, La Petite Fontaine, Château de Pibarnon, La Cade à Dédé, Confiserie Azuréenne): nothing dated 2026 found, nothing found that says they closed. No closures for good found. Open now (17 Oct 2026): La Ponche (listing to 3 Jan 2027, but a job ad says nine months a year), Pont d'Or, La Colombe, Peyrassol (to 21 Dec), Cours Lafayette market, Picotte (if the undated 17 Mar-15 Nov run holds). Closed for the winter: Auberge de la Môle (season to 11 Oct per tourism office; another listing said 21 Oct) and Lou Portaou (season ended 31 Aug per tourism office). Solea's autumn days unknown. Key disputes: La Colombe's Bib Gourmand is NOT confirmed for 2026 (MICHELIN extracts show it listed with no distinction visible; 2026 Bib press names Le Pastel, Toulon, as the Var's new Bib) - the berth/last-minute list should not cite a 2026 Bib until checked. La Cade à Dédé rests on one food-tour blog; the Mourillon cart is unconfirmed. Picotte Cotignac's chef is Samuele Poggi per Pudlowski (about two years old), not Catherine Wade (co-owner). Auberge de la Môle ownership: SIRENE (Feb 2026) gives RAYNAL CLOTILDE ET PHILIPPE vs old record's Clément Raynal. Pont d'Or's Friday aïoli and the Gros names not found in 2026 sources. The brief's MICHELIN watch list (La Vague d'Or, Table du Castellet, La Voile, Colette, Récif, Shanaël, Chez Bruno, Le Faventia, Abbaye de la Celle) and the La Voile duplicate merge are not in this input file, so nothing was done on them here. No coordinates were added for the records that lack them (records without lat/lng still have none; existing coordinates left untouched).",
+ "_needs_network": [
+  "guide.michelin.com La Colombe (Hyères) page: is the Bib Gourmand in the France 2026 selection?",
+  "guide.michelin.com Chez Jeannette page: one star in the 2026 selection, and whether a Green Star was added",
+  "guide.michelin.com La Ponche and Solea pages: confirm 2026 listing without star",
+  "laponche.com: restaurant winter closing dates 2026-27 and dinner days",
+  "Auberge de la Môle by phone (+33 4 94 49 57 01): is it already shut for 2026 (11 Oct vs 21 Oct)?",
+  "Lou Portaou: confirm 2026 season ended 31 Aug and whether bookings are taken",
+  "solea-restaurant.com: autumn/winter 2026 opening days and truffle-menu dates",
+  "Le Pont d'Or (+33 4 94 77 05 23): Friday aïoli still served, current owners",
+  "Picotte Provence (picotte.fr / +33 9 85 06 09 21): current chef, 2026 season end, Monday service",
+  "Auberge des Braconniers: trading in 2026, opening days",
+  "La Petite Fontaine: own site lapetitefontaine.restaurant liveness, address number (1 vs 6 place de la République), 2026 chestnut menu",
+  "La Cade à Dédé: confirm both carts (Cours Lafayette and Le Mourillon) and morning hours in 2026",
+  "chateau-pibarnon / Terrebrune / Peyrassol own sites: 2026 cellar-door hours and tasting prices",
+  "Confiserie Azuréenne own site: shop and museum hours 2026"
+ ]
+}

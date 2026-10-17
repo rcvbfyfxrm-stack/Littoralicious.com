@@ -1,2 +1,46 @@
-LISTE = []
-DISH_WHERE = {}
+"""La liste for the Var (17 Oct 2026): what to eat and drink before you leave, each with its best place.
+(name, say, fav, what, why, where-text, maps query). Facts from the guide's dish articles, gem stories, drink cards and the
+verified venue packs; every 'where' is a venue kept in the tables or a card kept in the larder or the bars."""
+LISTE = [
+ ("Cade", "KAHD", True, "Toulon’s thick chickpea-flour galette, baked over wood in a copper pan and eaten hot from paper.",
+  "The one dish Toulon calls wholly its own; it is gone by lunch.", "La Cade à Dédé’s carts at the Place Louis Blanc end of the Cours Lafayette, Toulon — mornings, not Monday", "Place Louis Blanc Toulon Var France"),
+ ("Chichi frégi", "shee-SHEE fray-ZHEE", False, "A sugared ring of chickpea-and-wheat dough, fried to order.",
+  "Beach and fairground food that Toulon and Marseille both claim.", "The kiosks of Toulon’s seafront and fairgrounds — no single stall re-confirmed this autumn", "Plages du Mourillon Toulon Var France"),
+ ("Tarte tropézienne", "tart tro-pay-ZYEN", True, "A sugar-crusted brioche filled with two creams.",
+  "Named, the story goes, by Bardot on a film set in 1955.", "La Tarte Tropézienne, the house Alexandre Micka founded, Saint-Tropez", "La Tarte Tropézienne Saint-Tropez Var France"),
+ ("Grand aïoli", "grahn eye-OH-lee", True, "Garlic emulsion with salt cod, boiled vegetables and eggs, shared on a Friday.",
+  "Provence stops mid-week for it; eat it once the old way.", "Le Pont d’Or, Barjols — Friday lunch, book ahead", "Le Pont d'Or Barjols Var France"),
+ ("Daube provençale", "dohb pro-vahn-SAL", False, "Beef or boar braised for hours in red wine with orange peel.",
+  "Carters’ food of the hills, best in the chestnut months.", "La Petite Fontaine, Collobrières — the boar daube with chestnuts and ceps; not re-confirmed this autumn, so call", "La Petite Fontaine Collobrieres Var France"),
+ ("Soupe de poissons de roche", "soop de pwa-SON de rosh", False, "Rockfish simmered and strained into a rust-coloured broth, with rouille and croutons.",
+  "What the coast actually eats when it is not eating bouillabaisse.", "Hôtel La Ponche, Saint-Tropez — on the terrace over the gulf", "Hotel La Ponche Saint-Tropez Var France"),
+ ("Rouget poached in seawater", "roo-ZHAY", False, "Red mullet cooked in seawater, with crushed tomato and citrus.",
+  "Two stars’ worth of the sea without butter: Éric Canino’s signature.", "La Voile, La Réserve Ramatuelle — seasonal, May to October; book ahead", "La Reserve Ramatuelle Var France"),
+ ("Panier de crudités", "pan-YAY de krew-dee-TAY", False, "A whole basket of raw garden vegetables with eggs and a dip.",
+  "The plate that has fed Pampelonne since 1955, from the family’s own farm.", "Club 55, Pampelonne — seasonal, March to 1 November 2026", "Club 55 Ramatuelle Var France"),
+ ("Grilled langouste", "lahn-GOOST", False, "Spiny lobster split and grilled, brought to the table to share.",
+  "The island’s great plate, eaten under the pines after a ferry and a shuttle.", "Le Mas du Langoustier, Porquerolles — seasonal, late April to late September", "Le Mas du Langoustier Porquerolles Var France"),
+ ("Black truffle", "truff NWAHR", True, "Tuber melanosporum, the winter truffle of the Haut-Var oak woods.",
+  "Sold by the gram on Thursday mornings in winter, checked under the nose.", "The Aups truffle market, Place Mistral — Thursday mornings from late November", "Place Mistral Aups Var France"),
+ ("Marrons glacés", "ma-RON gla-SAY", False, "Whole chestnuts candied slowly in syrup; and the crème de marrons, the jar you carry home.",
+  "The Maures’ chestnut, turned into sugar in the village that grows it.", "Confiserie Azuréenne, Collobrières", "Confiserie Azureenne Collobrieres Var France"),
+ ("Figue de Solliès", "feeg de sol-YES", False, "The near-black Bourjassotte fig, the only fig in France with an AOP.",
+  "Sold dead-ripe from late August into October, and never travels well.", "The growers of Solliès-Pont and the Gapeau valley — in the larder", "Sollies-Pont Var France"),
+ ("Tapenade", "ta-pe-NAD", False, "Olives, capers and anchovy pounded with oil, on bread at the apéro.",
+  "The name comes from the Provençal for the caper.", "The olive stalls of the Cours Lafayette, Toulon — mornings, not Monday", "Cours Lafayette Toulon Var France"),
+ ("Bandol rouge", "ban-DOL roozh", True, "At least half Mourvèdre, long in wood, built to age for decades.",
+  "The Var’s great wine, and still a fraction of a comparable Burgundy.", "Domaine de Terrebrune, Ollioules — at the cellar door, Monday to Saturday", "Domaine de Terrebrune Ollioules Var France"),
+ ("Bandol rosé", "ban-DOL ro-ZAY", False, "A darker, structured rosé with Mourvèdre in it, made for fish soup and aïoli.",
+  "The one Provence pink worth keeping a year.", "Maison des Vins de Bandol, chemin de la Ferrage, Le Castellet — the appellation’s own counter", "Maison des Vins de Bandol Le Castellet Var France"),
+ ("Côtes de Provence rosé", "koht de pro-VAHNS ro-ZAY", False, "Pale, dry Grenache-Cinsault pink, drunk young and cold.",
+  "The apéro of the whole coast; buy it at estate prices, not beach-club ones.", "Maison des Vins Côtes de Provence, Les Arcs-sur-Argens", "Maison des Vins Cotes de Provence Les Arcs Var France"),
+ ("Pastis", "pas-TEESS", False, "Anise spirit with five parts cold water, poured at six.",
+  "Marseille’s drink, and the hour the whole coast keeps.", "Sénéquier, on the quay at Saint-Tropez — or any port café at six", "Senequier Saint-Tropez Var France"),
+]
+DISH_WHERE = {
+ "Cade toulonnaise": '<a href="#venue-v-la-cade-a-dede">La Cade à Dédé</a>, on the Cours Lafayette',
+ "Grand aïoli": '<a href="#venue-v-le-pont-d-or">Le Pont d’Or</a>, Barjols, on Fridays',
+ "Daube provençale": '<a href="#venue-v-la-petite-fontaine">La Petite Fontaine</a>, Collobrières',
+ "Soupe de poissons": '<a href="#venue-v-hotel-la-ponche">La Ponche</a>, Saint-Tropez',
+ "Thon à la provençale": '<a href="#venue-v-la-voile-la-reserve-de-ramatue">La Voile</a>, its spice-rubbed bluefin, in season',
+}

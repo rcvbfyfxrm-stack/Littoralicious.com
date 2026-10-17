@@ -1,0 +1,116 @@
+{
+  "slug": "Var-Provence",
+  "city": "The Var",
+  "listeSlug": "var",
+  "groups": 3,
+  "mapsTokens": [
+    "Var",
+    "France",
+    "Provence"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia",
+    "Piraeus",
+    "Sicily",
+    "Barcelona",
+    "Catalunya",
+    "Istanbul"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "curiosities",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "calas",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink-place",
+    "rooftops",
+    "linger",
+    "money-sits",
+    "underground",
+    "art",
+    "coffee-scene",
+    "natural-wine",
+    "avoid-traps",
+    "twentyfour",
+    "walk"
+  ],
+  "floors": {
+    "venues": 27,
+    "gems": 3,
+    "neighborhoods": 8,
+    "walks": 5,
+    "categories": 9,
+    "laneStories": 9,
+    "fcards": 106,
+    "fsubs": 43,
+    "liste": 17,
+    "mapsLinks": 89,
+    "pins": 18
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 27,
+    "gemboxes": 9
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 10,
+    "mode": "pointer"
+  },
+  "doors": 3
+}

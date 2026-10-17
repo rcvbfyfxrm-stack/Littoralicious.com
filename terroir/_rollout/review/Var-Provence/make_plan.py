@@ -27,11 +27,11 @@ CUT = {
  "v-la-table-du-marche": "Cut: its own record says the Leroy bistrot was liquidated and struck off on 22 July 2019; nothing confirms what trades under the name now.",
  "v-marche-de-sanary-sur-mer": "Not a table: the Wednesday market is a larder card (provisioning), with its days and hours.",
 }
-BERTHS = ["v-la-table-du-castellet", "v-la-colombe", "v-la-cade-a-dede"]   # provisional, one per group; finalised after the 17 Oct re-check (make_inputs prints any not confirmed)
+BERTHS = ["v-la-table-du-castellet", "v-la-colombe", "v-marche-du-cours-lafayette"]   # one per group, each confirmed trading on the 17 Oct re-check and open year-round or into winter (La Cade à Dédé found no 2026-dated evidence: it stays in its lane)
 SHORTLIST = {
- "Last minute — save the night": ["v-shanael", "v-la-colombe", "v-hotel-la-ponche"],
- "Plan ahead — this week": ["v-chez-bruno", "v-auberge-de-la-mole", "v-recif-hotel-les-roches-rouges"],
- "Plan ahead — the grand night": ["v-la-vague-d-or-cheval-blanc-st-", "v-la-table-du-castellet", "v-la-voile-la-reserve-de-ramatue"],
+ "Last minute — save the night": ["v-shanael", "v-la-colombe", "v-hotel-la-ponche"],                         # all confirmed and trading in October 2026
+ "Plan ahead — this week": ["v-hostellerie-de-l-abbaye-de-la-", "v-la-commanderie-de-peyrassol", "v-le-pont-d-or"],   # confirmed; Chez Bruno and Récif found nothing 2026-dated for the room itself, and La Môle has closed for the winter
+ "Plan ahead — the grand night": ["v-la-vague-d-or-cheval-blanc-st-", "v-la-table-du-castellet", "v-la-voile-la-reserve-de-ramatue"],   # confirmed; two of the three are seasonal and closed now: said on the list
 }
 FOURS = {}
 

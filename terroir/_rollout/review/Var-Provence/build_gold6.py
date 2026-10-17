@@ -323,6 +323,10 @@ for vid in KEEP:
                              else "Not confirmed for 2026 — call ahead") if x]
     for k_, val in (u.get("set") or {}).items(): v[k_] = val
     for k_ in u.get("drop", []): v.pop(k_, None)
+    # the kit renders hours, not a season field: a seasonal house shows its 2026 season first, then its hours
+    if v.get("season"):
+        se = v.pop("season")
+        v["hours"] = se + (" · " + v["hours"] if v.get("hours") else "")
     if vid in LANE_OF: v["category"] = LANE_OF[vid]
     if vid in PICKS["berths"]:
         v["cat"], v["tier"], v["priority"] = "berth", "berth_top", PICKS["berths"].index(vid) + 1

@@ -208,7 +208,9 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {}   # set in fixes.py once the 17 Oct seasons are known
+SHORT_SUB = {"Last minute — save the night": "The booking fell through at seven: Toulon’s own star by the opera, the Hyères family house below the Maurettes (closed Monday and Tuesday), and the fishermen’s inn of the old quarter in Saint-Tropez. All three were trading in October 2026; call first.",
+             "Plan ahead — this week": "Book a few days ahead and drive inland: Ducasse’s abbey inn at La Celle, the Templars’ estate on the RN7 (closed Tuesday and Wednesday), and the Barjols post house, whose aïoli is a Friday.",
+             "Plan ahead — the grand night": "The three-star and two-star houses: book as soon as the dates are fixed. La Table du Castellet is open into December; La Vague d’Or and La Voile are summer houses, closed from mid-October until spring."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
             'the fact that makes it matter and the exact best place for it — is one section at the foot of this guide, with the stories behind it. '
