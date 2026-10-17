@@ -569,7 +569,31 @@
   },
   {
    "slug": "Var-Provence",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Var-Provence-2026-10-17",
+   "date": "2026-10-17",
+   "readings": "done 2026-10-17",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (17 Oct, after apply_readings; floors = curated counts: venues 27, fcards 106, fsubs 43, neighborhoods 8, walks 5, categories 9, lane stories 9, gems 3, liste 17, pins 18; groups 3; doors 4; hot minVenues 10; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here)",
+    "probe-guide.cjs: ALL PASS, exit 0 (7 chapter chips, sub-tags, readout, pointer lands on its table card, back button, 106 facts/106 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 93 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 93 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 81/81 placed cards and 27/27 venues with Maps on the closed card, no sideways scroll; One Night 27 links, Getaway 22); lens screenshots in review/Var-Provence/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 (three overlaps found and rewritten: Sanary town vs the essay, the two chestnut-Sunday cards, the chestnut-menu card vs La Petite Fontaine)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Var-Provence/var-card-desktop.png, var-card-phone.png (Sentier Blanc-Martel, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Var-Provence",
+    "own-site hours, dated, for the guest list and berths: Shanael (two conflicting weekly patterns), La Colombe, La Ponche (restaurant winter dates), Abbaye de la Celle (annual closure), Chez Jeannette/Peyrassol, Le Pont d'Or (Friday aïoli still served), La Table du Castellet (days, winter dates), La Vague d'Or, La Voile (2026 closing day), the Cours Lafayette market",
+    "2026 trading evidence for the 8 unverified tables (Récif, Chez Bruno, L'Auberge des Braconniers, Picotte, La Petite Fontaine, Château de Pibarnon, La Cade à Dédé, Confiserie Azuréenne) — confirm or cut",
+    "guide.michelin.com: one star 2026 for Colette, Récif, Chez Bruno, Le Faventia; La Colombe's Bib (no 2026 source found); Chez Jeannette star/Green Star; La Ponche, Soléa, La Pinède listings",
+    "cards marked 'check': Cafés Magali, Le Jardin du Café, Cafés Maurice, Lorgues Coffee Roasters, Village des Tortues hours; the Annonciade autumn hours and works; the Citadelle reopening; Faron cable-car and Blanc-Martel shuttle fares; La Dégust' Nature address (two given); Superbuvette days; Fleur de Figue still made",
+    "hot board: TLV-TVM winter timetable, the Aups truffle market 2026 opening Thursday, Club 55 and Cheval Blanc closing days, Fête des Vins de Bandol organiser page, Villa Noailles exhibition end date",
+    "the rest of research/verify_1.json + verify_2.json + hot_events.json _needs_network (36 lines) and the card packs' _notes"
+   ],
+   "notes": "17 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Paris pipeline); the old page was a pre-GOLD2 tier inventory written without accents, so the GOLD3/4/5 floor came too (9 lanes in 3 groups with food stories and dishes, guest list with charters, #eat jump + La liste 17 items with The Dish and .ics, dated hot board + #why-now pointer, calendar, craft, listening, coves, Autour, terroir/data/ copy and 24-column CSV). Places 34 records -> 27 in 9 lanes, no 4s; cut 7 with reasons in picks.json (duplicate La Voile, Beauvallon, Le Belrose, Hostellerie Bérard (star ended 2023), La Table de Nans (Bouches-du-Rhône), La Table du Marché (struck off 2019), the Sanary market -> larder card). Fold cards 79 old -> 87 (+11 hot board, 8 calendar = 106, every one labelled). Guest list from venues kept, all confirmed 17 Oct: last minute Shanael · La Colombe · La Ponche; this week Abbaye de la Celle · Peyrassol · Le Pont d'Or; grand night La Vague d'Or · La Table du Castellet · La Voile (two summer houses, closed now, said). Berths La Table du Castellet · La Colombe · Cours Lafayette market. Corrections: every seasonal house carries its 2026 season (the old text was written for high summer; Pampelonne clubs and palace terraces closed for 2026); Clément Bruno died Jan 2025; Castellet's third star March 2024 not 2022; Vague d'Or from EUR 480 and closed 10 Oct; La Colombe Bib unconfirmed in 2026; Dragoon ~350,000 troops not half a million; Le Brusc is Six-Fours; fig share a dispute; Maison des Vins de Bandol is at Le Castellet; Blanc-Martel shuttle; Verdon 1973/1974; Oméga Live is the Zénith's small hall; Hyères festival is October; TERROIR_CONFIG portName 'Barcelona' -> 'Var', zoom 13 -> 9; all 35 old source links had their label in the href (dead live) — rebuilt; hub card csv:false -> csv:true (one-flag hand edit, hub builder not run). Statuses: 19 confirmed 17 Oct, 8 unverified. Readings: One Night 6 ports (Saint-Tropez · Toulon · Hyères · Ramatuelle · the Bandol hills · Collobrières, thin ones said thin); Getaway 11 stops Fri 2 / Sat 6 / Sun 3 (Toulon, the market and Faron, Terrebrune and the Maison des Vins, La Table du Castellet; the Maures on Sunday). Details: terroir/_rollout/review/Var-Provence/README.md."
   },
   {
    "slug": "Cadaques-CapdeCreus",
