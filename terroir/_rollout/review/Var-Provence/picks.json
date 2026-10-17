@@ -1,0 +1,155 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The summit — three stars and two",
+   "group": "grande",
+   "ids": [
+    "v-la-vague-d-or-cheval-blanc-st-",
+    "v-la-table-du-castellet",
+    "v-la-voile-la-reserve-de-ramatue"
+   ]
+  },
+  "seastar": {
+   "label": "One star by the sea",
+   "group": "grande",
+   "ids": [
+    "v-colette-hotel-sezz",
+    "v-recif-hotel-les-roches-rouges",
+    "v-shanael"
+   ]
+  },
+  "inland": {
+   "label": "The hinterland houses — the truffle, the garden, the abbey",
+   "group": "grande",
+   "ids": [
+    "v-chez-bruno",
+    "v-le-faventia-terre-blanche",
+    "v-hostellerie-de-l-abbaye-de-la-"
+   ]
+  },
+  "sand": {
+   "label": "On the sand — Pampelonne and the islands",
+   "group": "petite",
+   "ids": [
+    "v-club-55",
+    "v-la-plage-d-argent",
+    "v-le-mas-du-langoustier"
+   ]
+  },
+  "houses": {
+   "label": "The old houses — dated",
+   "group": "petite",
+   "ids": [
+    "v-hotel-la-ponche",
+    "v-auberge-de-la-mole",
+    "v-le-pont-d-or"
+   ]
+  },
+  "hautvar": {
+   "label": "The Haut-Var village tables",
+   "group": "petite",
+   "ids": [
+    "v-l-auberge-des-braconniers",
+    "v-solea",
+    "v-picotte-provence"
+   ]
+  },
+  "maures": {
+   "label": "The Maures and the palm coast",
+   "group": "petite",
+   "ids": [
+    "v-la-petite-fontaine",
+    "v-lou-portaou",
+    "v-la-colombe"
+   ]
+  },
+  "domaines": {
+   "label": "The cellar doors — Bandol and the Côtes",
+   "group": "petite",
+   "ids": [
+    "v-chateau-de-pibarnon",
+    "v-domaine-de-terrebrune",
+    "v-la-commanderie-de-peyrassol"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the cade, the market street, the chestnut",
+   "group": "street",
+   "ids": [
+    "v-la-cade-a-dede",
+    "v-marche-du-cours-lafayette",
+    "v-confiserie-azureenne"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit",
+   "seastar",
+   "inland"
+  ],
+  "petite": [
+   "sand",
+   "houses",
+   "hautvar",
+   "maures",
+   "domaines"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v-la-voile-la-reserve-ramatuelle": "Duplicate record of La Voile (v-la-voile-la-reserve-de-ramatue): merged; its vegetable-menu detail goes to the kept record.",
+  "v-beauvallon-sur-mer-by-yannick-": "Cap: the sand lane keeps Club 55 (the founding beach of 1955) and the two island tables; Beauvallon opened in April 2026 as a beach club with no star and nothing yet eaten to judge.",
+  "v-le-belrose-althoff-villa-belro": "Cap: no star (its own record says so), and the hill-and-view register is told by the Belrose terrace bar card under Boire & sortir.",
+  "v-hostellerie-berard-rene-sens": "Cut: its own record says the one-star René'Sens no longer exists (chef left Nov 2023; the room is now Riva, unstarred). The Bandol hills are told by the cellar doors and La Table du Castellet.",
+  "v-la-table-de-nans": "Cut: 126 Corniche du Liouquet is in La Ciotat, Bouches-du-Rhône — outside the Var, as its own record says.",
+  "v-la-table-du-marche": "Cut: its own record says the Leroy bistrot was liquidated and struck off on 22 July 2019; nothing confirms what trades under the name now.",
+  "v-marche-de-sanary-sur-mer": "Not a table: the Wednesday market is a larder card (provisioning), with its days and hours."
+ },
+ "berths": [
+  "v-la-table-du-castellet",
+  "v-la-colombe",
+  "v-la-cade-a-dede"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v-shanael",
+   "v-la-colombe",
+   "v-hotel-la-ponche"
+  ],
+  "Plan ahead — this week": [
+   "v-chez-bruno",
+   "v-auberge-de-la-mole",
+   "v-recif-hotel-les-roches-rouges"
+  ],
+  "Plan ahead — the grand night": [
+   "v-la-vague-d-or-cheval-blanc-st-",
+   "v-la-table-du-castellet",
+   "v-la-voile-la-reserve-de-ramatue"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "st-tropez:Le Club 55": "told once: Club 55 is a table (the sand lane); its 1955 story lives on its venue card",
+  "st-tropez:Verde Beach / Indie Beach / Bagatelle": "cap: three Pampelonne clubs, one per register (quiet luxury, old Pampelonne, the party blueprint)",
+  "st-tropez:Les Caves du Roy": "told once: merged with the hotel-bar card of the same club",
+  "st-tropez:Le VIP Room (now Lilly's Club)": "the VIP Room closed after 3-5 April 2026 (the old card's own text); the successor is unjudged: cut",
+  "hotel-bars:Bar de La Ponche": "told once: La Ponche is a table (the old houses lane); the Vian-and-Bardot story lives on its venue card",
+  "hotel-bars:Sénéquier": "told once: merged into the Sénéquier card under rooms to linger",
+  "gastronomy:Bandol / Cotes de Provence / Provence rose (the machine)": "told once: merged into the three 'ask for it by name' drink cards",
+  "gastronomy:Cassis / drink:Bellet": "not in the Var (Bouches-du-Rhône; Nice): cut, as their own cards conceded",
+  "coffee-scene:Torréfaction La Cigale": "cap: three cups; La Cigale is a bean shop, said so by its own card",
+  "natural-wine:L'Épicerie Simple": "cap: three Toulon counters; its own card says opening days are limited",
+  "listening:Villa Noailles / landmarks:Villa Noailles (Hyères)": "told once: one Villa Noailles card, under culture",
+  "landmarks:Chartreuse de la Verne": "told once: merged into the walk up to La Verne",
+  "secret-gems:Domaine du Rayol": "told once: merged into the culture card",
+  "culture:Domaine Tempier": "told once: the Tempier story is the food-history fold (1941); the estate is named in Bandol wine country",
+  "culture:La Tarte Tropézienne (Alexandre Micka)": "told once: the tropézienne is a gem popup and an item in La liste",
+  "around:Massif des Maures — Collobrières & Chartreuse de la Verne": "told once: Collobrières is a town card, La Verne a walk",
+  "around:Domaine du Rayol": "told once: the culture card"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

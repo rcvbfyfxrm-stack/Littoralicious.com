@@ -1,0 +1,635 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The gulf of Saint-Tropez",
+    "desc": "",
+    "cards": [
+     {
+      "key": "towns:Saint-Tropez",
+      "from": null
+     },
+     {
+      "key": "towns:Ramatuelle & Gassin",
+      "from": null
+     },
+     {
+      "key": "towns:Bormes-les-Mimosas",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The working ports",
+    "desc": "",
+    "cards": [
+     {
+      "key": "towns:Toulon",
+      "from": null
+     },
+     {
+      "key": "towns:Sanary-sur-Mer & Le Brusc",
+      "from": null
+     },
+     {
+      "key": "towns:Bandol",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The palm town and the chestnut village",
+    "desc": "",
+    "cards": [
+     {
+      "key": "towns:Hyères",
+      "from": null
+     },
+     {
+      "key": "towns:Collobrières",
+      "from": "walks:Collobrieres"
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "What grows here",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The fig with its own appellation",
+      "from": null
+     },
+     {
+      "key": "curiosities:The cork oak that survives the fire",
+      "from": null
+     },
+     {
+      "key": "curiosities:The mimosa is Australian",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The sea and the navy",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Why the islands are golden",
+      "from": null
+     },
+     {
+      "key": "curiosities:Most of the French fleet sleeps in Toulon",
+      "from": null
+     },
+     {
+      "key": "curiosities:The river the Var lost in 1860",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The other D-Day, and the exiles",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:15 August 1944",
+      "from": null
+     },
+     {
+      "key": "curiosities:Sanary, capital of German letters",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Cours Lafayette",
+      "from": null
+     },
+     {
+      "key": "provisioning:Sanary's Wednesday market",
+      "from": null
+     },
+     {
+      "key": "provisioning:The Aups truffle market",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Oil, figs and chestnuts",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Vieux Moulin du Partégal",
+      "from": null
+     },
+     {
+      "key": "provisioning:The Solliès fig growers",
+      "from": null
+     },
+     {
+      "key": "provisioning:Confiserie Azuréenne",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Where to buy the wine",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Maison des Vins de Bandol",
+      "from": null
+     },
+     {
+      "key": "provisioning:Maison des Vins Côtes de Provence",
+      "from": null
+     },
+     {
+      "key": "provisioning:Cave de la Capte",
+      "from": "natural-wine:Cave de la Capte / Vert d'Olive (Hyères)"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "Along the sea",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Presqu'île de Giens & the salt pans",
+      "from": "walks:Presqu'ile de Giens, double tombolo & Salins des Pesquiers"
+     },
+     {
+      "key": "walks:The customs path, Gigaro to L'Escalet",
+      "from": null
+     },
+     {
+      "key": "walks:Mont Faron",
+      "from": "landmarks:Rade de Toulon (from Mont Faron)"
+     }
+    ]
+   },
+   {
+    "title": "The canyon and the forest",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Sentier Blanc-Martel",
+      "from": "walks:Sentier Blanc-Martel"
+     },
+     {
+      "key": "walks:Up to the Chartreuse de la Verne",
+      "from": "secret-gems:Chartreuse de la Verne"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The island water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Plage Notre-Dame",
+      "from": "calas:Plage Notre-Dame, Porquerolles"
+     },
+     {
+      "key": "calas:The underwater trail at La Palud",
+      "from": "secret-gems:Sentier sous-marin de la Palud, Port-Cros"
+     }
+    ]
+   },
+   {
+    "title": "The mainland sand",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Cap Taillat",
+      "from": "calas:Cap Taillat"
+     },
+     {
+      "key": "calas:Pampelonne, the public end",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The patrons and the gardener",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Villa Noailles",
+      "from": "culture:Villa Noailles"
+     },
+     {
+      "key": "culture:Fondation Carmignac",
+      "from": "culture:Fondation Carmignac (Villa Carmignac)"
+     },
+     {
+      "key": "culture:Domaine du Rayol",
+      "from": "around:Domaine du Rayol — Le Jardin des Méditerranées"
+     }
+    ]
+   },
+   {
+    "title": "Saint-Tropez under the glamour",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:The Citadelle",
+      "from": "landmarks:Citadelle de Saint-Tropez"
+     },
+     {
+      "key": "culture:Notre-Dame-de-l'Assomption",
+      "from": "landmarks:Église Notre-Dame-de-l'Assomption (Saint-Tropez)"
+     },
+     {
+      "key": "culture:Musée de l'Annonciade",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "A president's rock and the tortoises",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Fort de Brégançon",
+      "from": "landmarks:Fort de Brégançon"
+     },
+     {
+      "key": "culture:Village des Tortues",
+      "from": "secret-gems:Village des Tortues, Carnoules"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Provençal craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "The cup itself",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Cafés Magali",
+      "from": "coffee-scene:Cafés Magali"
+     },
+     {
+      "key": "linger:Le Jardin du Café",
+      "from": "coffee-scene:Le Jardin du Café"
+     },
+     {
+      "key": "linger:Lorgues Coffee Roasters",
+      "from": "coffee-scene:Lorgues Coffee Roasters (La Grange)"
+     }
+    ]
+   },
+   {
+    "title": "The terrace as an institution",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Sénéquier",
+      "from": "st-tropez:Sénéquier"
+     },
+     {
+      "key": "linger:Cafés Maurice",
+      "from": "coffee-scene:Cafés Maurice"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Bandol rouge",
+      "from": "drink:Bandol Rouge (Mourvèdre)"
+     },
+     {
+      "key": "drink:Bandol rosé",
+      "from": "drink:Bandol Rosé"
+     },
+     {
+      "key": "drink:Côtes de Provence rosé",
+      "from": "drink:Côtes de Provence Rosé"
+     }
+    ]
+   },
+   {
+    "title": "The other glasses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Pastis",
+      "from": "drink:Pastis"
+     },
+     {
+      "key": "drink:Fleur de Figue",
+      "from": "drink:Fleur de Figue (fig liqueur)"
+     },
+     {
+      "key": "drink:Chestnut liqueur",
+      "from": "drink:Liqueur de châtaigne / Crème de marrons (Collobrières)"
+     }
+    ]
+   },
+   {
+    "title": "Natural wine, three counters in Toulon",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Superbuvette",
+      "from": "natural-wine:Superbuvette"
+     },
+     {
+      "key": "bars:Les Quilles",
+      "from": "natural-wine:Les Quilles"
+     },
+     {
+      "key": "bars:La Dégust' Nature",
+      "from": "natural-wine:La Dégust' Nature"
+     }
+    ]
+   },
+   {
+    "title": "A glass above the gulf",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Bar du Sube",
+      "from": "hotel-bars:Bar du Sube"
+     },
+     {
+      "key": "bars:The Belrose terrace",
+      "from": "hotel-bars:Terrasse de la Villa Belrose"
+     },
+     {
+      "key": "bars:Le Soleil d'Eau, La Messardière",
+      "from": "hotel-bars:Bar Le Soleil d'Eau — Château de la Messardière"
+     }
+    ]
+   },
+   {
+    "title": "Pampelonne's clubs, three registers",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:La Réserve à la Plage",
+      "from": "st-tropez:La Réserve à la Plage"
+     },
+     {
+      "key": "bars:Moorea and Loulou",
+      "from": "st-tropez:Loulou / Moorea"
+     },
+     {
+      "key": "bars:Nikki Beach",
+      "from": "st-tropez:Nikki Beach"
+     }
+    ]
+   },
+   {
+    "title": "The night",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Les Caves du Roy",
+      "from": "hotel-bars:Les Caves du Roy — Hôtel Byblos"
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:La Cellule Records",
+      "from": "listening:La Cellule Records"
+     }
+    ]
+   },
+   {
+    "title": "Live on the coast",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Oméga Live",
+      "from": "listening:Oméga Live (Tandem)"
+     },
+     {
+      "key": "listening:Châteauvallon",
+      "from": "listening:Châteauvallon-Liberté, scène nationale"
+     },
+     {
+      "key": "listening:Le Port des Créateurs",
+      "from": "listening:Le Port des Créateurs"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The canyon and the faïence village",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Gorges du Verdon & Lac de Sainte-Croix",
+      "from": "around:Gorges du Verdon & Lac de Sainte-Croix"
+     },
+     {
+      "key": "around:Moustiers-Sainte-Marie",
+      "from": "around:Moustiers-Sainte-Marie"
+     }
+    ]
+   },
+   {
+    "title": "The golden islands",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Porquerolles & Port-Cros",
+      "from": "around:Porquerolles & Port-Cros (Îles d'Or)"
+     }
+    ]
+   },
+   {
+    "title": "The hill villages and the wine",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Cotignac",
+      "from": "around:Cotignac"
+     },
+     {
+      "key": "around:Tourtour & Aups",
+      "from": "around:Tourtour & Aups (Haut Var)"
+     },
+     {
+      "key": "around:Bandol wine country",
+      "from": "around:Bandol wine country — La Cadière-d'Azur & Domaine Tempier"
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "Four to skip",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Saint-Tropez in August",
+      "from": null
+     },
+     {
+      "key": "avoid:Eating on the photogenic quay",
+      "from": null
+     },
+     {
+      "key": "avoid:Thinking the Var stops at the beach",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Read the glass",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Pale pink, and calling it terroir",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The territory",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Var Tourisme",
+      "from": null
+     },
+     {
+      "key": "follow:Saint-Tropez Tourisme",
+      "from": null
+     },
+     {
+      "key": "follow:Parc national de Port-Cros",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wine, the art and the red guide",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Vins de Bandol",
+      "from": null
+     },
+     {
+      "key": "follow:Villa Noailles",
+      "from": null
+     },
+     {
+      "key": "follow:MICHELIN Guide France",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "provisioning:Cours Lafayette": "v-marche-du-cours-lafayette",
+  "provisioning:Confiserie Azuréenne": "v-confiserie-azureenne"
+ }
+}
