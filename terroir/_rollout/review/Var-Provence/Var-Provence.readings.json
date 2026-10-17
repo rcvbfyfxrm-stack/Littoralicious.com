@@ -1,0 +1,90 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the port you are berthed nearest · in the order you go",
+  "lede": "The Var dines at eight, and village kitchens stop taking orders by half past nine; only Saint-Tropez in summer runs late. The coast is seasonal: from mid-October to spring many terraces are shut, and each step below says so. Each port is one evening, in the order you go — the glass, the table, the late room — on foot unless it says car or taxi. Hours were re-checked on 17 October 2026; where listings disagree, the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each port — the apéro, the table, the late glass, in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "saint-tropez", "name": "Saint-Tropez · the port and La Ponche", "line": "A balcony over the boats, dinner in the fishermen’s quarter, and the cellar under the Byblos in season.",
+    "steps": [
+     {"time": "18:30", "name": "Bar du Sube", "ref": "card:Bar du Sube", "text": "Up to the first-floor balcony on the quai de Suffren for a glass while the boats come back in; cocktails about EUR 20 (Oct 2026), and the hotel is listed open to the end of December."},
+     {"time": "20:00", "name": "Hôtel La Ponche", "ref": "venue:v-hotel-la-ponche", "text": "Five minutes through the old quarter to the terrace over the gulf: the rockfish soup, then the catch of the day. Book; listings give it open to 3 January 2027, but its winter dates are not confirmed, so call."},
+     {"time": "23:30", "name": "Les Caves du Roy", "ref": "card:Les Caves du Roy", "text": "Ten minutes up to the Byblos for the cellar club, nightly in July and August and at weekends in spring and September; closed in the off-season, so this step is a summer one."}],
+    "after": "Spend more, in season (May to October): [[venue:v-la-vague-d-or-cheval-blanc-st-|La Vague d’Or]] on the Bouillabaisse beach, by taxi. Earlier: the red chairs of [[card:Sénéquier|Sénéquier]] on the quay."},
+   {"id": "toulon", "name": "Toulon · the Opéra and the old town", "line": "A natural-wine counter, the city’s own star by the opera, and a concert if there is one.",
+    "steps": [
+     {"time": "18:30", "name": "Superbuvette", "ref": "card:Superbuvette", "text": "A glass of something natural on rue Nicolas Laugier, from about EUR 5 (Le Fooding, seen Oct 2026); listed 17:00–23:00, its days not confirmed, so check."},
+     {"time": "20:00", "name": "Shanael", "ref": "venue:v-shanael", "text": "Five minutes to rue Molière by the Opéra for the dinner menu, from EUR 95 (seen Oct 2026), in a room of about thirty seats. Book; the listings disagree on which days it closes, so call."},
+     {"time": "22:30", "name": "Oméga Live", "ref": "card:Oméga Live", "text": "If there is a show, a taxi to the Zénith Oméga hall on boulevard Commandant Nicolas; check the programme first."}],
+    "after": "Cheaper: the glass at [[card:Les Quilles|Les Quilles]] on the place d’Armes, then the next morning’s cade at [[venue:v-la-cade-a-dede|La Cade à Dédé]], which works mornings only."},
+   {"id": "hyeres", "name": "Hyères · the villa and the house below the Maurettes", "line": "The Noailles’ white villa before it closes, then a family house by car.",
+    "steps": [
+     {"time": "17:00", "name": "Villa Noailles", "ref": "card:Villa Noailles", "text": "Up the Montée Noailles for the gardens and the rooms; open Wednesday to Sunday 13:00–18:00 from 21 October, with a guided visit at 15:00 (Oct 2026)."},
+     {"time": "19:30", "name": "La Colombe", "ref": "venue:v-la-colombe", "text": "Ten minutes by car or taxi to La Bayorre for the gurnard in swimming-crab bouillon; menus EUR 45–75 (seen Oct 2026). Book; closed Monday and Tuesday."}],
+    "after": "Thin by night, honestly: the old town’s evening is quiet out of season. Earlier in the day, [[card:Le Jardin du Café|Le Jardin du Café]] roasts in the medieval centre."},
+   {"id": "ramatuelle", "name": "Ramatuelle · Pampelonne and La Quessine", "line": "The perched village at dusk, then two stars on the hill — a summer evening.",
+    "steps": [
+     {"time": "18:30", "name": "Ramatuelle at dusk", "ref": "card:Ramatuelle & Gassin", "text": "Walk the circle of the old village once the beach traffic has gone."},
+     {"time": "20:00", "name": "La Voile", "ref": "venue:v-la-voile-la-reserve-de-ramatue", "text": "Five minutes by car to La Réserve for the rouget poached in seawater or the all-vegetable menu. Seasonal, May to about mid-October; its 2026 closing date was not found, so call. Book months ahead in summer."}],
+    "after": "By day instead: lunch at [[venue:v-club-55|Club 55]], daily 10:00–17:00 until 1 November 2026, then closed for the winter."},
+   {"id": "castellet", "name": "Bandol hills · Le Castellet", "line": "The appellation’s own counter, then a three-star table by car.",
+    "steps": [
+     {"time": "17:00", "name": "Maison des Vins de Bandol", "ref": "card:Maison des Vins de Bandol", "text": "At the entrance to Le Castellet, taste the reds and rosés side by side; open Tuesday to Saturday to 18:00 (Oct 2026), closed Sunday and Monday."},
+     {"time": "19:30", "name": "La Table du Castellet", "ref": "venue:v-la-table-du-castellet", "text": "Up the road by car to the Hôtel du Castellet: the marine or the plant tasting menu, EUR 180–360 a head before drinks (Gault&Millau, seen Oct 2026). Book ahead; the hotel is open to 1 December 2026."}],
+    "after": "Cheaper: drink the same hills at the cellar door of [[venue:v-domaine-de-terrebrune|Domaine de Terrebrune]] at Ollioules, Monday to Saturday, and eat in Toulon."},
+   {"id": "collobrieres", "name": "Collobrières · the Maures", "line": "The chestnut village at the end of the afternoon, and its table.",
+    "steps": [
+     {"time": "17:00", "name": "Collobrières", "ref": "card:Collobrières", "text": "Walk the old bridge and the plane-tree square; the Confiserie’s shop is on the boulevard by the bridge."},
+     {"time": "19:30", "name": "La Petite Fontaine", "ref": "venue:v-la-petite-fontaine", "text": "The three-course menu at about EUR 34 (seen Oct 2026), the boar daube with chestnuts in autumn. Call first: one listing gives dinner Tuesday to Saturday, out-of-season evenings by arrangement, another Sunday lunch only."}],
+    "after": "A thin evening, said plainly: the village has one table we list and it may not serve dinner. Lunch is the surer meal."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: natural wine and a star in Toulon, the market at dawn, the Bandol hills and a three-star dinner, then a Sunday in the chestnut forest of the Maures.",
+  "door_note": "Le marché · la cave · la table · la forêt",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "The Var sells itself as a weekend on the sand at Pampelonne. The real one runs west and inland: <strong>a working port, a black wine and a forest</strong>. Friday in Toulon, the city that eats honestly; Saturday at the market before eight, up the mountain over the roadstead, then the Bandol hills and dinner at three stars; Sunday in the Maures, a monastery of green stone and lunch in the chestnut village. It works from spring to the end of November, when the coast has shut. Every stop below is already in this guide and was re-checked on 17 October 2026; where a place could not be re-confirmed, the stop says so. You need a car from Saturday noon.",
+  "book": [
+   "[[venue:v-la-table-du-castellet|La Table du Castellet]] — Saturday dinner, as soon as the dates are fixed; the hotel is open to 1 December 2026.",
+   "[[venue:v-shanael|Shanael]] — Friday dinner; a room of about thirty, and the listings disagree on its days, so book by phone.",
+   "[[venue:v-domaine-de-terrebrune|Domaine de Terrebrune]] — a guided cellar visit for Saturday afternoon, by appointment through the estate, EUR 15 deducted from purchases (seen Oct 2026).",
+   "[[venue:v-la-petite-fontaine|La Petite Fontaine]] — Sunday lunch, by phone; not re-confirmed this autumn, so the call is also the check."
+  ],
+  "days": [
+   {"label": "Friday", "title": "Toulon after work",
+    "stops": [
+     {"time": "18:30", "name": "A glass at Superbuvette", "ref": "card:Superbuvette", "text": "Start where Toulon drinks natural wine, on rue Nicolas Laugier.", "meta": "1 rue Nicolas Laugier · listed 17:00–23:00, days not confirmed · a glass from about EUR 5 (seen Oct 2026)"},
+     {"time": "20:00", "name": "Dinner at Shanael", "ref": "venue:v-shanael", "text": "Five minutes on foot to the Opéra: the city’s own MICHELIN star, in a small room. Take the tasting menu and let the kitchen talk.", "meta": "10 rue Molière · menus from EUR 95 (seen Oct 2026) · book; call on the days"}
+    ]},
+   {"label": "Saturday", "title": "The market, the mountain and the black wine",
+    "stops": [
+     {"time": "08:00", "name": "The Cours Lafayette market", "ref": "venue:v-marche-du-cours-lafayette", "text": "A kilometre of stalls under the trees: fish of the morning, olives and tapenade, figs in season. Buy the picnic for lunch here.", "meta": "Cours Lafayette · food stalls Tuesday to Sunday 07:30–12:30 (2026 listing) · closed Monday"},
+     {"time": "09:00", "name": "Cade from the cart", "ref": "venue:v-la-cade-a-dede", "text": "At the Place Louis Blanc end, a hot slab of cade in paper, eaten standing. The carts found no 2026-dated source; the market itself is confirmed.", "meta": "About EUR 2.50 a portion (seen Oct 2026) · mornings to about 12:30 · not Monday"},
+     {"time": "10:30", "name": "Up Mont Faron", "ref": "card:Mont Faron", "text": "The cable car from boulevard Amiral Vence to the top, for the whole roadstead and the navy below.", "meta": "Lower station, boulevard Amiral Vence · clear, calm mornings are best · 2026 fare not confirmed, check"},
+     {"time": "15:00", "name": "The cellar at Terrebrune", "ref": "venue:v-domaine-de-terrebrune", "text": "By car to Ollioules, twenty minutes west, for the organic Bandol reds and their salt edge, tasted in the cellar.", "meta": "724 chemin de la Tourelle, Ollioules · Monday to Saturday · guided visit EUR 15, by appointment (seen Oct 2026)"},
+     {"time": "17:00", "name": "Side by side at the Maison des Vins", "ref": "card:Maison des Vins de Bandol", "text": "On to Le Castellet: the appellation’s own counter, to taste the reds and rosés of other estates next to Terrebrune’s.", "meta": "238 chemin de la Ferrage, Le Castellet · Tuesday to Saturday to 18:00 (Oct 2026) · free entry"},
+     {"time": "19:30", "name": "Three stars at La Table du Castellet", "ref": "venue:v-la-table-du-castellet", "text": "Up the hill to the hotel: the marine or the plant menu, with a Bandol from the hills you drove through.", "meta": "Hôtel du Castellet, 3001 route des Hauts du Camp · EUR 180–360 before drinks (Gault&Millau, seen Oct 2026) · book ahead"}
+    ]},
+   {"label": "Sunday", "title": "Into the Maures",
+    "stops": [
+     {"time": "11:00", "name": "The Chartreuse de la Verne", "ref": "card:Chartreuse de la Verne", "text": "About an hour by car east to Collobrières, then the forest road to the monastery of green serpentine on its ridge; it opens at 11:00.", "meta": "Forest road from Collobrières, then 10 minutes on a track · closed in January, on religious holidays, and on Tuesdays in the off-season (Oct 2026)"},
+     {"time": "13:00", "name": "Lunch at La Petite Fontaine", "ref": "venue:v-la-petite-fontaine", "text": "Down to the village square for the daube, with chestnuts and ceps in autumn.", "meta": "6 place de la République · three courses about EUR 34 (seen Oct 2026) · closed Monday; call, not re-confirmed this autumn"},
+     {"time": "15:00", "name": "Chestnuts to carry home", "ref": "venue:v-confiserie-azureenne", "text": "Across the village to the confectioner by the old bridge: a jar of crème de marrons and a few marrons glacés. Its hours were not re-confirmed, so check.", "meta": "Boulevard Kœnig, Collobrières · hours not confirmed"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the Toulon plan in One Night: a glass at [[card:Superbuvette|Superbuvette]], then dinner at [[venue:v-shanael|Shanael]], five minutes apart on foot."},
+   {"title": "The grand night instead", "text": "From May to October, swap Saturday’s dinner for [[venue:v-la-vague-d-or-cheval-blanc-st-|La Vague d’Or]] on the Bouillabaisse beach or [[venue:v-la-voile-la-reserve-de-ramatue|La Voile]] at Ramatuelle, both booked weeks ahead and both closed from mid-October to spring."},
+   {"title": "This October and November", "dated": "Checked 17 October 2026", "items": [
+     "Sunday 18 or 25 October: the plan’s Sunday lands on [[card:Fêtes de la Châtaigne, Collobrières: 18 and 25 October|the chestnut Sundays]] — arrive before 9:00 by the shuttle, and expect La Petite Fontaine to be full.",
+     "[[card:Hyères fashion and photography festival, 15–18 October|The Hyères festival]] runs to Sunday 18 October; its exhibitions stay up into the winter.",
+     "From late November, [[card:The Aups truffle market reopens in late November|the Aups truffle market]] on Thursday mornings; the 2026 opening day was not yet announced.",
+     "Saturday 5 and Sunday 6 December: [[card:Fête des Vins de Bandol, 5–6 December 2026|the Fête des Vins de Bandol]], just after La Table du Castellet closes for the winter."]},
+   {"title": "Where to sleep", "text": "We have not judged any rooms. The guide’s tables that are also hotels are the Hôtel du Castellet, above [[venue:v-la-table-du-castellet|La Table du Castellet]], the [[venue:v-hostellerie-de-l-abbaye-de-la-|Hostellerie de l’Abbaye de la Celle]], with ten rooms, and [[venue:v-hotel-la-ponche|La Ponche]] in Saint-Tropez."},
+   {"title": "What we would leave out", "text": "[[card:Saint-Tropez in August|Saint-Tropez in August]], the [[card:Eating on the photogenic quay|photo-menu on the quay]], and a weekend spent only on the sand: [[card:Thinking the Var stops at the beach|the Var does not stop at the beach]]."}
+  ]
+ }
+}

@@ -8,7 +8,12 @@ CARD_SET = {       # key -> {field: value} overrides
  # told once: the essay's quintessence owns the rosé-and-tapenade apéro on the quay; the town card keeps the boats and Le Brusc
  "towns:Sanary-sur-Mer & Le Brusc": {"story": "Sanary still works for a living: the pointus, the painted wooden fishing boats of Provence, rock at their moorings along the quay, and the fishermen sell from them in the morning. Just west along the coast, Le Brusc is the fishing harbour of Six-Fours-les-Plages, not of Sanary. From its Quai Saint-Pierre a boat crosses in about ten to twelve minutes to the Île des Embiez, where Paul Ricard, the pastis maker, lies on the island's highest point, looking back at the coast he sold his drink to."},
 }
-VENUE_SET = {}      # id -> {field: value} overrides, each one a correction from the 17 Oct re-check
+VENUE_SET = {      # id -> {field: value} overrides, each one a correction from the 17 Oct re-check
+ # the old records were written without accents
+ "v-la-cade-a-dede": {"name": "La Cade à Dédé", "short": "La Cade à Dédé"},
+ "v-confiserie-azureenne": {"name": "Confiserie Azuréenne", "short": "Confiserie Azuréenne", "address": "Boulevard Kœnig, 83610 Collobrières"},
+ "v-la-petite-fontaine": {"address": "6 Place de la République, 83610 Collobrières"},
+}
 LANE_STORY_SET = {} # lane -> {field: value}
 HOT_SET = {   # told once: the hot-board card owns the 2026 chestnut Sundays; La Petite Fontaine's own card owns its menu
  "Fêtes de la Châtaigne, Collobrières": {
