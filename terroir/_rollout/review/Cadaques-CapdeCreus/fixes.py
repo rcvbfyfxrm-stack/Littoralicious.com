@@ -66,6 +66,11 @@ VENUE_DROP = {     # id -> fields removed
 
 def venues(V):
     for i, d in VENUE_SET.items(): V[i]["set"].update(d)
+    for i, x in V.items():   # the season line reads first on every card: say it plainly
+        se = x["set"].get("season") or ""
+        se = re.sub(r"^Call ahead: no 2026 season dates found\. Traded (.*)$", lambda m: "2026 season not published: traded " + m.group(1) + "; call ahead", se)
+        se = re.sub(r"^Call ahead: no 2026 season (?:dates )?found$", "2026 season not published; call ahead", se)
+        if se: x["set"]["season"] = se
     for i, d in VENUE_DROP.items(): V[i]["drop"] = sorted(set(V[i].get("drop", []) + d))
 
 def lane_stories(L):

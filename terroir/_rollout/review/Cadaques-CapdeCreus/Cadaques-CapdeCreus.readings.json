@@ -1,0 +1,76 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · in the order you walk it",
+  "lede": "Cadaqués eats late in summer and early out of it: from mid-October many kitchens keep short weeks, and none of the tables below published its autumn hours, so every step says call. The village is small enough that every quarter is a few minutes' walk from the front; only the cape needs a car. Each quarter is one evening — the glass, the table, the late drink — re-checked on 18 October 2026.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the glass, the table, the late drink, in the order you walk it.",
+  "door_note": "Le verre · la table · le dernier verre",
+  "quarters": [
+   {"id": "front", "name": "The front · the Passeig and Es Portitxó", "line": "A cremat on the sand, rice on the Passeig, and the bar Dalí drew the logo for.",
+    "steps": [
+     {"time": "19:00", "name": "Marítim Bar", "ref": "venue:v14-maritim-bar", "text": "A drink on the beach where the bar has stood since 1935; order the cremat for the table and watch it burn. Come for the position, not the service, and note its autumn hours are not published."},
+     {"time": "20:30", "name": "Can Rafa", "ref": "venue:v06-can-rafa", "text": "Two minutes along the Passeig for the lobster rice, made for two or more, with the family's own Martín Faixó wine. Book; its 2026 season dates were not found, so call."},
+     {"time": "22:30", "name": "L'Hostal", "ref": "venue:v13-l-hostal", "text": "Next door on the Passeig, a last drink under the Dalí memorabilia; it is a restaurant now, not the late club of his years, so check it is still serving."}],
+    "after": "Cheaper: the set lunch or a fideuà at [[venue:v10-s-estrop|S'Estrop]] on the same square. Earlier: the cone of [[card:Es Cucurucú|Es Cucurucú]] from the front at dusk."},
+   {"id": "old-town", "name": "The old town · up to Santa Maria", "line": "The church at dusk, then dinner one street back from the view.",
+    "steps": [
+     {"time": "19:00", "name": "Santa Maria at dusk", "ref": "card:Santa Maria", "text": "Climb the slate lanes to the church at the top of the village for the last light on the bay; it is usually open by day outside services, and the hours are not published."},
+     {"time": "20:00", "name": "Casa Anita", "ref": "venue:v02-casa-anita", "text": "Down Carrer Miquel Rosset to the shared tables and the recited menu: the house-salted anchovies, then the fish of the day — ask its price before you order. Phone first: the listings disagree on its opening days."}],
+    "after": "Instead: [[venue:v07-la-sirena|La Sirena]] on Carrer des Call (listed 20:00–23:00, closing day disputed; not re-confirmed for 2026), or the black paella at [[venue:v09-es-balconet|Es Balconet]]. Spend the rice on [[venue:v08-casa-nun|Casa Nun]] on the Portitxó square."},
+   {"id": "riera", "name": "The Riera and Riba Pitxot", "line": "Oysters at the waterline, then the elBulli alumni's sharing table on the dry riverbed.",
+    "steps": [
+     {"time": "19:00", "name": "Talla", "ref": "venue:v05-talla", "text": "A glass and the flame-grilled oysters on the terrace at Riba Pitxot, looking back at the white town. It shuts for the winter, roughly November to March, and no 2026 closing date was found: phone before you walk round."},
+     {"time": "20:30", "name": "Compartir", "ref": "venue:v01-compartir-cadaques", "text": "Up the Riera for the chef's sharing menu, about EUR 80 (seen Oct 2026), served to the whole table. Book; its opening days vary through the year."}],
+    "after": "Thin if both are shut, honestly: then eat on the front at [[venue:v04-es-baluard|Es Baluard]], in the sea wall since 1967, and ask for a window table when you book."},
+   {"id": "cape", "name": "Out at the cape · the lighthouse", "line": "Dusk at the easternmost point of Spain, then curry in the old barracks — by car.",
+    "steps": [
+     {"time": "18:30", "name": "Far de Cap de Creus", "ref": "card:Far de Cap de Creus", "text": "Eight kilometres of switchbacks east of the village to the lighthouse, lit since 1853; the headland is open access. On a hard tramuntana day, stay in town."},
+     {"time": "20:00", "name": "Restaurant Cap de Creus", "ref": "venue:v03-restaurant-cap-de-creus", "text": "Beside the tower, the curries and vindaloo served here since 1991. Reserve through its website before driving up: in season, car access is for diners with a booking. Its autumn hours were not confirmed, so check."}],
+    "after": "On the way back, a late plate up the hill at [[venue:v12-es-bar-de-dalt|Es Bar de Dalt]], the locals' bar; its hours differ between listings."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the cremat on the sand, the camí de ronda, Dalí's house, the elBulli line, and the lighthouse at the edge of Spain.",
+  "door_note": "La plage la nuit · Portlligat · le phare",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Cadaqués sells itself as Dalí's village, and it is — but the weekend worth having is the fishing port underneath: rice on the front, a walk on the old guard path, the house at Portlligat in a small timed group, a table from elBulli's own chefs, and the wind at the cape. Every stop is in this guide, checked in October 2026. Out of high season many tables keep short weeks and none published autumn hours, so book and phone everything; the plan works from Easter to the end of October.",
+  "book": [
+   "[[card:Casa-Museu Dalí, Portlligat|The Casa-Museu Dalí]] — a dated, timed slot on salvador-dali.org, days or weeks ahead; collect it 30 minutes before the hour",
+   "[[venue:v01-compartir-cadaques|Compartir]] — by phone or its website, as soon as the dates are fixed",
+   "[[venue:v03-restaurant-cap-de-creus|Restaurant Cap de Creus]] — through its website; in season the booking is also your car pass to the lighthouse",
+   "[[card:Martín Faixó|Martín Faixó]] — the winery visit is by appointment only",
+   "[[venue:v02-casa-anita|Casa Anita]] and [[venue:v08-casa-nun|Casa Nun]] — phone the day before: their opening days differ between listings"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The front at night",
+    "stops": [
+     {"time": "19:30", "name": "A cremat at the Marítim", "ref": "venue:v14-maritim-bar", "text": "Start on the sand, at the bar of 1935, with rum set alight at the table. Come for the place and the ritual; the service is famously slow.", "meta": "Passeig Marítim · walk in · autumn hours not published"},
+     {"time": "21:00", "name": "Lobster rice at Casa Nun", "ref": "venue:v08-casa-nun", "text": "Two minutes to the little Portitxó square for the soupy lobster rice the village queues for, from family recipes, since 1979.", "meta": "Plaça des Portitxó · EUR 30–45 pp (seen Jun 2026) · OpenTable or walk in · opening days differ: call"}]},
+   {"label": "Saturday", "title": "The guard path, the house, the grand table",
+    "stops": [
+     {"time": "09:30", "name": "The camí de ronda to Cala Nans", "ref": "card:Camí de Ronda to Cala Nans", "text": "Along the south shore of the bay to the little lighthouse of 1874, then back the same way; swim off the rocks on a calm day.", "meta": "About 3.5 km each way · easy · turn back in a hard tramuntana"},
+     {"time": "13:30", "name": "Lunch at Casa Anita", "ref": "venue:v02-casa-anita", "text": "The shared tables and the recited menu: the house-salted anchovies, the grilled prawns from Roses, the fish of the day — ask the price first.", "meta": "Carrer Miquel Rosset 16 · about EUR 40 pp (seen Oct 2026) · phone ahead"},
+     {"time": "16:00", "name": "Dalí's house at Portlligat", "ref": "card:Casa-Museu Dalí, Portlligat", "text": "A short walk over the hill to the house he built from fishermen's huts, in a small timed group; the olive grove and pool are behind it.", "meta": "Booked slot only · from EUR 15.50 online (Oct 2026) · closed 7 Jan–10 Feb"},
+     {"time": "17:30", "name": "The boats of Portlligat", "ref": "card:Portlligat beach", "text": "Stay on the shingle below the house while the light goes, among the moored fishing boats; then walk back over the rise.", "meta": "Portlligat · free"},
+     {"time": "20:30", "name": "Dinner at Compartir", "ref": "venue:v01-compartir-cadaques", "text": "The sharing menu of elBulli's three head chefs, on the Riera: plates to the middle of the table, the whole table eating the same menu.", "meta": "Riera de Sant Vicenç s/n · about EUR 80 pp (seen Oct 2026) · book ahead · days vary through the year"}]},
+   {"label": "Sunday", "title": "The cape and the slate",
+    "stops": [
+     {"time": "09:30", "name": "The lighthouse and Cala Culip", "ref": "card:The lighthouse and Cala Culip", "text": "Drive out to the cape, walk down to the sheltered cove over a Roman wreck site and back up to the light.", "meta": "About 4 km loop · 1.5–2 h with a swim · check the wind"},
+     {"time": "12:30", "name": "Lunch at the lighthouse", "ref": "venue:v03-restaurant-cap-de-creus", "text": "Curry and a seafood rice beside the tower, at the easternmost point of mainland Spain, cooked here since 1991.", "meta": "Far de Cap de Creus · EUR 25–40 pp (seen Jun 2026) · book through the website · autumn hours not confirmed"},
+     {"time": "16:00", "name": "The slate vineyards at Martín Faixó", "ref": "card:Martín Faixó", "text": "On the road back into the village, the family estate inside the natural park: a walk in the vines and a tasting of the wine grown on the cape's slate.", "meta": "Mas Sa Perafita · visits 11:00, 12:30, 16:00 by appointment · EUR 15 with tasting (Oct 2026)"}]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the front: a cremat at the [[venue:v14-maritim-bar|Marítim]], rice at [[venue:v06-can-rafa|Can Rafa]], a last drink at [[venue:v13-l-hostal|L'Hostal]] — all within two minutes of each other."},
+   {"title": "The grand night instead", "text": "Oysters at [[venue:v05-talla|Talla]] at the waterline before it shuts for the winter, then the window table at [[venue:v04-es-baluard|Es Baluard]] in the sea wall — book it, there is a waiting list for the window."},
+   {"title": "This October", "dated": "Checked 18 October 2026", "items": [
+     "[[card:Suquet de Peix days in Roses: 16-25 October|The Suquet de Peix days in Roses]] run to Sunday 25 October in 13 restaurants.",
+     "[[card:elBulli1846, Cala Montjoi|elBulli1846]] closed for the season on 12 October; it reopens in May.",
+     "The clocks go back on Sunday 25 October; the castanyada, with chestnuts and panellets, is on 1 November.",
+     "[[card:The sea-urchin season is coming|The sea urchin]] comes back from about December; until then, do not order it."]},
+   {"title": "Where to sleep", "text": "This guide lists no hotels and we have not judged any rooms. Stay in the village rather than at Roses: the GI-614 over the Pení is the only road in, and you want to walk home from dinner."},
+   {"title": "What we would leave out", "text": "[[card:August|August]], when the one road queues for kilometres; [[card:Driving to the lighthouse in summer|driving to the lighthouse on a restricted summer day]]; [[card:A boat day without the forecast|a boat day without the wind forecast]]; and [[card:Portlligat without a slot|Portlligat without a booked slot]]."}
+  ]
+ }
+}
