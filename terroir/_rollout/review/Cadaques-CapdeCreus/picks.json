@@ -1,0 +1,105 @@
+{
+ "lanes": {
+  "elbulli": {
+   "label": "The elBulli line and the sea wall",
+   "group": "grande",
+   "ids": [
+    "v01-compartir-cadaques",
+    "v05-talla",
+    "v04-es-baluard"
+   ]
+  },
+  "houses": {
+   "label": "The old houses — dated",
+   "group": "petite",
+   "ids": [
+    "v02-casa-anita",
+    "v06-can-rafa",
+    "v08-casa-nun"
+   ]
+  },
+  "back": {
+   "label": "One street back — the catch without the view",
+   "group": "petite",
+   "ids": [
+    "v07-la-sirena",
+    "v09-es-balconet",
+    "v11-es-trull"
+   ]
+  },
+  "edge": {
+   "label": "The beach, the hill and the cape",
+   "group": "petite",
+   "ids": [
+    "v10-s-estrop",
+    "v12-es-bar-de-dalt",
+    "v03-restaurant-cap-de-creus"
+   ]
+  },
+  "bars": {
+   "label": "Le Bar — the rooms with a story",
+   "group": "street",
+   "ids": [
+    "v14-maritim-bar",
+    "v13-l-hostal",
+    "v15-cafe-tropical"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "elbulli"
+  ],
+  "petite": [
+   "houses",
+   "back",
+   "edge"
+  ],
+  "street": [
+   "bars"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v16-elbulli-cala-montjoi-roses": "Not a table: elBulli served its last dinner on 30 July 2011 and reopened in 2023 as the elBulli1846 museum. Its story is the food-history fold; the visit is a day-trip card under Autour."
+ },
+ "berths": [
+  "v01-compartir-cadaques",
+  "v02-casa-anita",
+  "v14-maritim-bar"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v14-maritim-bar",
+   "v13-l-hostal",
+   "v06-can-rafa"
+  ],
+  "Plan ahead — this week": [
+   "v02-casa-anita",
+   "v08-casa-nun",
+   "v04-es-baluard"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-compartir-cadaques",
+   "v05-talla",
+   "v03-restaurant-cap-de-creus"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "calas:Cala Nans (Far de Cala Nans)": "told once: the Camí de Ronda walk card ends there and owns it",
+  "calas:Cala Culip": "told once: the lighthouse-and-Cala-Culip walk card owns the cove and its Roman wreck",
+  "walks:The olive-terrace path (Cami Antic through the abandoned vinyes)": "merged into the Camí Antic walk (it is that path's middle section)",
+  "walks:Far de Cala Nans short out-and-back": "merged into the Camí de Ronda walk (the same path, there and back)",
+  "coffee-gardens:Es Baluard": "told once: Es Baluard is a table (the sea-wall lane); cap of three in the group",
+  "quartiers:Es Poal": "merged with the culture card on the cove Dalí painted: one quarter card",
+  "quartiers:Sa Conca": "told once: Sa Conca is a swim card",
+  "quartiers:Es Portitxó / Es Portal": "merged into the Sa Riba quarter card",
+  "bars:Carinyena / Samsó (Empordà)": "merged into the Garnatxa negra card: the two reds are blended and asked for together",
+  "bars:Cap de Creus slate wine — Martín Faixó (Perafita / Cadac)": "told once: the estate is a larder card",
+  "music:Church concerts in Santa Maria": "merged into the music-festival card",
+  "music:The village's musical clan — the Pitxots": "told once: the Pichots are in the essay and the colony card",
+  "dish:*": "the seven dish articles are rewritten inside La liste (The Dish)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

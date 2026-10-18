@@ -1,0 +1,509 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The white town",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quarters:Santa Maria and the upper town",
+      "from": "quartiers:Es Baluard / Old Town around Santa Maria"
+     },
+     {
+      "key": "quarters:Sa Riba and Es Portitxó",
+      "from": "quartiers:Sa Riba / Riba des Poal"
+     },
+     {
+      "key": "quarters:La Riera",
+      "from": "quartiers:La Riera (Riera de Sant Vicenç)"
+     }
+    ]
+   },
+   {
+    "title": "Along the bay",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quarters:Es Poal",
+      "from": "culture:Es Poal — the cove Dalí painted at fifteen"
+     },
+     {
+      "key": "quarters:Es Llané",
+      "from": "quartiers:Es Llané (Gran i Petit)"
+     }
+    ]
+   },
+   {
+    "title": "Over the hill",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quarters:Portlligat",
+      "from": "quartiers:Portlligat"
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "The rock, the wind, the tongue",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The rock older than shells",
+      "from": null
+     },
+     {
+      "key": "curiosities:The tramuntana",
+      "from": null
+     },
+     {
+      "key": "curiosities:Parlar salat",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Monks, corsairs and contraband",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The monks bought the fish",
+      "from": null
+     },
+     {
+      "key": "curiosities:Burned in 1444, sacked by Barbarossa",
+      "from": null
+     },
+     {
+      "key": "curiosities:A smugglers' village",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The market and the salt",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:The Monday market on the Riera",
+      "from": null
+     },
+     {
+      "key": "provisioning:The anchovy salters of L'Escala",
+      "from": "gastronomy:Anxoves de l'Escala — Solés (1888) & Callol i Serrats (1847)"
+     },
+     {
+      "key": "provisioning:Empordàlia",
+      "from": "gastronomy:Empordàlia (Oli de Pau + DO Empordà wines)"
+     }
+    ]
+   },
+   {
+    "title": "The wine on the slate",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Martín Faixó",
+      "from": "gastronomy:Celler Martín Faixó (Perafita / Cadac)"
+     },
+     {
+      "key": "provisioning:Mas Estela",
+      "from": "gastronomy:Mas Estela"
+     },
+     {
+      "key": "provisioning:Espelt",
+      "from": "gastronomy:Espelt Viticultors"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "Round the bay",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Camí de Ronda to Cala Nans",
+      "from": "walks:Cami de Ronda: Platja de Cadaques to Far de Cala Nans"
+     },
+     {
+      "key": "walks:Up to Sant Sebastià",
+      "from": "walks:Cadaques to the Ermita de Sant Sebastia (Peni viewpoint)"
+     }
+    ]
+   },
+   {
+    "title": "To the cape",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Camí Antic to Cap de Creus",
+      "from": "walks:Cami Antic: Portlligat to the Far de Cap de Creus"
+     },
+     {
+      "key": "walks:The lighthouse and Cala Culip",
+      "from": "walks:Cap de Creus lighthouse + Cala Culip loop"
+     },
+     {
+      "key": "walks:GR-92 to El Port de la Selva",
+      "from": "walks:GR-92 Cami de Ronda stretch: Cadaques to El Port de la Selva"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The village water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Platja Gran",
+      "from": "calas:Platja Gran de Cadaques"
+     },
+     {
+      "key": "calas:Es Sortell",
+      "from": "calas:Es Sortell"
+     },
+     {
+      "key": "calas:Sa Conca",
+      "from": "calas:Platja de Sa Conca"
+     }
+    ]
+   },
+   {
+    "title": "Out towards the cape",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Portlligat beach",
+      "from": "calas:Platja de Portlligat"
+     },
+     {
+      "key": "calas:S'Alqueria Gran",
+      "from": "calas:S'Alqueria Gran"
+     },
+     {
+      "key": "calas:Cala Jugadora",
+      "from": "calas:Cala Jugadora"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "Dalí and the colony",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Casa-Museu Dalí, Portlligat",
+      "from": "culture:Casa-Museu Salvador Dalí — Portlligat"
+     },
+     {
+      "key": "culture:Museu de Cadaqués",
+      "from": "culture:Museu de Cadaqués — the town's own gallery"
+     },
+     {
+      "key": "culture:The colony",
+      "from": "culture:The artist colony — why everyone came"
+     }
+    ]
+   },
+   {
+    "title": "The church and the dead",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Santa Maria",
+      "from": "culture:Església de Santa Maria — the fishermen's altarpiece"
+     },
+     {
+      "key": "culture:The cemetery",
+      "from": "culture:Cementiri de Cadaqués — graves above the water"
+     }
+    ]
+   },
+   {
+    "title": "The cape",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Far de Cap de Creus",
+      "from": "culture:Far de Cap de Creus — the lighthouse at Iberia's edge"
+     },
+     {
+      "key": "culture:Espai Cap de Creus",
+      "from": "culture:Espai Cap de Creus — reading the rock"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as local craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Coffee and a view",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Marítim at breakfast",
+      "from": "coffee-gardens:Bar Marítim"
+     },
+     {
+      "key": "linger:L'Hostal by day",
+      "from": "coffee-gardens:L'Hostal"
+     },
+     {
+      "key": "linger:Es Cucurucú",
+      "from": "coffee-gardens:Es Cucurucú viewpoint (mirador)"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Garnatxa negra and Carinyena",
+      "from": "bars:Garnatxa Negra (Empordà red)"
+     },
+     {
+      "key": "drink:The white and grey Garnatxas",
+      "from": "bars:Lledoner / Garnatxa Blanca & Roig (white & grey)"
+     },
+     {
+      "key": "drink:Garnatxa de l'Empordà",
+      "from": "bars:Garnatxa de l'Empordà (vi dolç)"
+     }
+    ]
+   },
+   {
+    "title": "After dinner",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Cremat",
+      "from": "bars:Cremat (rom cremat)"
+     },
+     {
+      "key": "drink:Ratafia",
+      "from": "bars:Ratafia (IGP Ratafia Catalana)"
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi bar, and the Boia gone",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Live",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:The music festival",
+      "from": "music:Festival Internacional de Música de Cadaqués"
+     },
+     {
+      "key": "listening:Havaneres",
+      "from": "music:Havaneres & cremat"
+     },
+     {
+      "key": "listening:Cap Roig",
+      "from": "music:Cap Roig Festival (nearby)"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The Dalí triangle",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Figueres — the Teatre-Museu",
+      "from": null
+     },
+     {
+      "key": "around:Púbol — Gala's castle",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Over the headland",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:elBulli1846, Cala Montjoi",
+      "from": null
+     },
+     {
+      "key": "around:Sant Pere de Rodes",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Down the gulf",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Empúries and L'Escala",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "The road and the season",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:August",
+      "from": "avoid:Coming in August expecting an easy day-trip"
+     },
+     {
+      "key": "avoid:Driving to the lighthouse in summer",
+      "from": "avoid:Driving out to the Cap de Creus lighthouse in high summer"
+     }
+    ]
+   },
+   {
+    "title": "The wind and the house",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:A boat day without the forecast",
+      "from": "avoid:Booking a boat or cape excursion without checking the tramuntana"
+     },
+     {
+      "key": "avoid:Portlligat without a slot",
+      "from": "avoid:Turning up at Casa Salvador Dalí without a timed reservation"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The wind and the road",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Meteocat",
+      "from": "follow:Meteocat / Ports de la Generalitat — tramuntana & marine forecast"
+     },
+     {
+      "key": "follow:Parc Natural de Cap de Creus",
+      "from": "follow:Parc Natural de Cap de Creus (gencat / parcsnaturals.gencat.cat)"
+     },
+     {
+      "key": "follow:Ajuntament de Cadaqués",
+      "from": "follow:Ajuntament de Cadaqués (cadaques.cat)"
+     }
+    ]
+   },
+   {
+    "title": "The house and the music",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Fundació Gala-Salvador Dalí",
+      "from": "follow:Fundació Gala-Salvador Dalí (salvador-dali.org)"
+     },
+     {
+      "key": "follow:Festival de Música de Cadaqués",
+      "from": "follow:Festival Internacional de Música de Cadaqués (festivalcadaques.cat)"
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "linger:Marítim at breakfast": "v14-maritim-bar",
+  "linger:L'Hostal by day": "v13-l-hostal"
+ }
+}
