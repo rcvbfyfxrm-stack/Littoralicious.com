@@ -363,13 +363,14 @@ def plan_cards(f): return [c for g in PLAN[f]["groups"] for c in g["cards"]]
 def geo(f): return [{"name": CARDS[c["key"]]["name"], "desc": CARDS[c["key"]]["teaser"], "maps": maps(CARDS[c["key"]]["maps_query"])}
                     for c in plan_cards(f) if CARDS[c["key"]].get("maps_query")]
 for l_ in D["LANDMARKS"]:   # the gate's local-token rule, on the old landmark links too
+    if l_.get("maps_url"): l_["maps_url"] = l_["maps_url"].replace("'", "%27")   # an apostrophe (S'Alqueria) ends the link for quoted-attribute parsers
     if l_.get("maps_url") and not re.search(LOCAL, urllib.parse.unquote_plus(l_["maps_url"])): l_["maps_url"] += "+Cadaqu%C3%A9s+Girona+Spain"
 prose_all = re.sub(r"<[^>]+>", " ", H.unescape(doc)).lower()
 GEMS = [g for g in P.GEMS if g["pattern"].lower() in prose_all]
 assert len(GEMS) == len(P.GEMS), [g["pattern"] for g in P.GEMS if g["pattern"].lower() not in prose_all]
 DATA = dict(VENUES=V, COLORS=D["COLORS"], CAT_LABELS=D["CAT_LABELS"], PRODUCT_COLORS=D["PRODUCT_COLORS"], NEIGHBORHOODS=geo("quartiers") or D["NEIGHBORHOODS"],
             WALKS=geo("walks"), WORK_SPOTS=geo("coffee-gardens"), LANDMARKS=D["LANDMARKS"],
-            PHOTOS=D["PHOTOS"][:3], GEMS=GEMS, TABLES=TABS, CATEGORIES=CATS, GROUPS=GROUPS, GROUP_OF=GOF, BRIDGE=BRIDGE)
+            PHOTOS=P.PHOTOS, GEMS=GEMS, TABLES=TABS, CATEGORIES=CATS, GROUPS=GROUPS, GROUP_OF=GOF, BRIDGE=BRIDGE)
 js = "window.TERROIR_DATA = (function () {\n"
 for k_, val in DATA.items():
     if k_ == "VENUES":

@@ -1,0 +1,43 @@
+"""La liste for Cadaqués (18 Oct 2026): what to eat and drink before you leave, each with its best place.
+(name, say, fav, what, why, where-text, maps query). Facts from the guide's dish articles, gem stories, drink cards and the
+verified venue pack; every 'where' is a venue kept in the tables or a card kept in the larder or the bars."""
+LISTE = [
+ ("Garotes", "gah-ROH-tess", True, "The violet sea urchin of the schist rocks, opened and eaten raw with bread and a spoon.",
+  "The cold-month harvest the whole coast waits for; out of season, do not order it.", "La Sirena, Carrer des Call — January to March only; not re-confirmed for 2026, so call", "La Sirena Carrer des Call Cadaqués Girona Spain"),
+ ("Anxoves de l'Escala", "an-SHOH-vess de les-KAH-la", True, "Anchovy cured for months in salt and filleted by hand, on toast with Empordà oil.",
+  "A salting trade the coast traces to the Greeks; never cooked.", "Casa Anita, Carrer Miquel Rosset — the house-salted anchovies; or the salters' shops in L'Escala", "Casa Anita Cadaqués Girona Spain"),
+ ("Suquet de peix", "soo-KET de PESH", True, "Rockfish and potatoes in a sofregit, bound at the end with a picada of almonds and saffron.",
+  "The fishermen's pot; the Empordà and Tarragona both claim it.", "Es Baluard, in the sea wall — the monkfish suquet; phone for the season", "Es Baluard Cadaqués Girona Spain"),
+ ("Arròs caldós de llamàntol", "ah-ROSS kal-DOSS de lya-MAN-tol", False, "Soupy rice with lobster, cooked to order.",
+  "The rice the village queues for on a small square.", "Casa Nun, Plaça des Portitxó — book, or walk in early", "Casa Nun Cadaqués Girona Spain"),
+ ("Fideuà", "fee-deh-WAH", False, "Short noodles cooked in a wide pan like a paella, with fish stock and allioli.",
+  "The everyday rice-house plate of the coast, ordered for the table.", "S'Estrop, Plaça del Passeig — facing the beach; made for two or more", "S'Estrop Cadaqués Girona Spain"),
+ ("Arròs negre", "ah-ROSS NEG-ruh", False, "Rice blackened with cuttlefish ink and a dark onion sofregit, with allioli.",
+  "The Empordà's flagship rice.", "Es Balconet, Carrer de Sant Antoni — the black paella, in a room without a view", "Es Balconet Cadaqués Girona Spain"),
+ ("Peix de roca a la brasa", "PESH de ROH-ka", False, "The day's rockfish, grilled whole with oil, garlic and parsley.",
+  "Line-caught fish from the slate; ask the price by weight first.", "Es Baluard — the grilled fish of the day, at the window if you booked", "Es Baluard Cadaqués Girona Spain"),
+ ("Ostres a la flama", "OSS-truss a la FLAH-ma", False, "Oysters flame-grilled and dressed with ponzu.",
+  "The waterline kitchen's signature, eaten looking back at the white town.", "Talla, Riba Pitxot — seasonal, shuts for the winter (roughly November to March): phone", "Talla Riba Pitxot Cadaqués Girona Spain"),
+ ("The sharing menu", "com-par-TEER", False, "Ten plates and desserts to the middle of the table, from elBulli's three head chefs.",
+  "elBulli's afterlife, half an hour from its cove; about EUR 80 (seen Oct 2026).", "Compartir, Riera de Sant Vicenç — book; days vary through the year", "Compartir Cadaqués Girona Spain"),
+ ("Vindaloo at the lighthouse", "vin-da-LOO", False, "A hot curry, served at the easternmost point of mainland Spain.",
+  "The strangest table of the cape, cooking curry there since 1991.", "Restaurant Cap de Creus, by the lighthouse — book through its site before driving up", "Restaurant Cap de Creus Cadaqués Girona Spain"),
+ ("Ous Dalí", "OHS dah-LEE", False, "Dalí eggs, the house plate of the bar whose logo he drew.",
+  "Eat a plate under the walls of his memorabilia.", "L'Hostal, Passeig — confirm it is still on the menu", "L'Hostal Cadaqués Girona Spain"),
+ ("Cremat", "kruh-MAT", False, "Dark rum set alight with sugar, cinnamon, lemon peel and coffee beans, then doused with coffee.",
+  "The Cuba run's drink, and the havaneres' glass.", "Marítim Bar, on the sand — order it for the table at dusk", "Maritim Bar Cadaqués Girona Spain"),
+ ("Un negre de l'Empordà", "NEG-ruh de lem-por-DAH", False, "Garnatxa and Carinyena grown on slate, alone or blended.",
+  "The red you will be poured all week; the peninsula grows its own.", "Can Rafa, Passeig — the family's Martín Faixó wines with the rice", "Can Rafa Cadaqués Girona Spain"),
+ ("Garnatxa de l'Empordà", "gar-NAT-sha", True, "The sweet Garnatxa, raisined in sun and wind and stopped with spirit.",
+  "The farmhouse dessert wine of the Empordà; have it with cheese.", "Mas Estela, La Selva de Mar — its Estela Dolç, by appointment; or ask any table", "Mas Estela La Selva de Mar Girona Spain"),
+ ("Ratafia", "ra-ta-FEE-a", False, "Green-walnut and herb liqueur, sweet and bitter, drunk cool after lunch.",
+  "No two family bottles taste alike.", "Ask for the house ratafia at the end of any meal in the tables", "Cadaqués Girona Spain"),
+]
+DISH_WHERE = {
+ "Garotes": '<a href="#venue-v07-la-sirena">La Sirena</a>, January to March',
+ "Anxoves de l'Escala": '<a href="#venue-v02-casa-anita">Casa Anita</a>, salted in the house',
+ "Suquet de peix": '<a href="#venue-v04-es-baluard">Es Baluard</a>, with monkfish',
+ "Arròs negre": '<a href="#venue-v09-es-balconet">Es Balconet</a>, the black paella',
+ "Peix de roca": '<a href="#venue-v04-es-baluard">Es Baluard</a> or <a href="#venue-v02-casa-anita">Casa Anita</a>, by weight',
+ "Cremat": '<a href="#venue-v14-maritim-bar">the Marítim</a>, at the table',
+}

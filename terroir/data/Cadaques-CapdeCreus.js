@@ -1,768 +1,100 @@
-/* Terroir — Cadaqués · Cap de Creus — hand-built on the upgraded template */
 window.TERROIR_DATA = (function () {
+  const VENUES = [
+    {"id": "v01-compartir-cadaques", "cat": "berth", "tier": "berth_top", "priority": 1, "badge": "Michelin", "name": "Compartir Cadaqués", "short": "Compartir Cadaqués", "neighborhood": "Old town · Riera de Sant Vicenç", "tags": ["Old town · Riera de Sant Vicenç", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["sharing plates", "Empordà rice", "oysters"], "why": "Mateu Casañas, Oriol Castro and Eduard Xatruch opened this room in 2012, after elBulli closed and before they started Disfrutar in Barcelona. Disfrutar went on to win its third MICHELIN star in November 2023 and to top the World's 50 Best list in June 2024. Here the idea is older and simpler: every plate goes to the middle of the table. The fixed chef's menu runs to about ten savoury courses and three desserts, served in a slate-and-stone house on the dry riverbed.", "address": "Riera de Sant Vicenç s/n, 17488 Cadaqués, Girona", "phone": "+34 972 258 482", "hours": "Call ahead: no 2026 season dates found. Traded in May 2026 (dated reviews); Time Out says opening days vary through the year and past records say it closes in deep winter · Call ahead: ma.to lists Tuesday to Saturday; Time Out says days vary through the year", "maps": "https://www.google.com/maps/search/?api=1&query=Compartir+Cadaqués+Cadaqués", "verdict": "elBulli-trained refinement on the harbour — book it for the rice, not for a casual lunch.", "signature": "The whole-table tasting menu, anchored by an Empordà seafood rice.", "person": "The Disfrutar trio — Casañas, Castro & Xatruch; elBulli alumni.", "signal_chip": {"label": "Michelin", "full": "MICHELIN Guide selection, no star (listed on guide.michelin.com; Mapstr cites the 2026 selection) · 2 Soles Guía Repsol", "cosign": "the elBulli line on the water — the one we'd book first"}, "caveat": "Seasonal and changeable: opening days vary through the year and no 2026 closing date was found, so phone before planning an autumn or winter dinner. Some 2026 diners found the menu expensive for what arrives. It is a sharing format, so the whole table eats the same menu.", "price_range": "Chef's menu about EUR 80 per person (Macarfi); Time Out range EUR 30-100 (seen Oct 2026)", "reservation": "Book ahead by phone or through the website; the tasting menu is served to the whole table", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "The Disfrutar chefs' first restaurant: a shared tasting menu in a stone house on the Riera de Sant Vicenç.", "dishes": [{"name": "Chef's sharing menu", "note": "About ten courses and three desserts, served to the whole table; around EUR 80 per Macarfi", "kind": "dish"}, {"name": "Empordà seafood rice", "note": "The rice that anchors the tasting, from the house record", "kind": "dish"}, {"name": "Gazpacho with pesto", "note": "The cold starter the house is known for", "kind": "dish"}, {"name": "Tuna roll", "note": "Singled out by diners in May 2026", "kind": "dish"}, {"name": "Duck", "note": "Another plate named in May 2026 reviews", "kind": "dish"}, {"name": "Sea bass", "note": "The fish course diners praised in May 2026", "kind": "dish"}], "category": "elbulli", "hot_this_month": "The MICHELIN Spain 2027 stars are announced on 24 November; the house closes in deep winter, so confirm its autumn dates before booking (checked 18 Oct 2026).", "charter": {"price": "Chef's menu about EUR 80 per person (Macarfi); Time Out range EUR 30-100 (seen Oct 2026)", "book": "Book ahead by phone or through the website; the tasting menu is served to the whole table", "warn": "Seasonal and changeable: opening days vary through the year and no 2026 closing date was found, so phone before planning an autumn or winter dinner. Some 2026 diners found the menu expensive for what arrives. It is a sharing format, so the whole table eats the same menu.", "fit": "The Disfrutar chefs' first restaurant: a shared tasting menu in a stone house on the Riera de Sant Vicenç."}},
+    {"id": "v05-talla", "cat": "shop", "tier": "several", "priority": 5, "badge": "Seafood", "name": "Talla", "short": "Talla", "lat": 42.2872, "lng": 3.2761, "neighborhood": "Harbour west side · Riba Pitxot", "tags": ["Harbour west side · Riba Pitxot", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["flamed oysters", "barnacles", "sea terrace"], "why": "Talla sits on Riba Pitxot, the west side of the bay, so its terrace faces the church and the white houses rather than the open sea; Frommers calls it perhaps the best-placed table in Cadaqués. Time Out says it began as a cultural bar started by the Catalan actor and musician Bruno Oro, and turned into a restaurant after neighbours complained about the noise. The kitchen now works from the market: oysters finished over flame, tartares, rice.", "address": "Riba Pitxot 18, 17488 Cadaqués, Girona", "phone": "+34 972 258 739", "maps": "https://www.google.com/maps/search/?api=1&query=Talla+Cadaqués", "price_range": "EUR 25-50 per person (Time Out, seen Oct 2026)", "reservation": "Book ahead, especially for the terrace; diners in 2026 report it is hard to get a table", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "Market tapas and flamed oysters on a water's-edge terrace looking back across the harbour at the white town.", "dishes": [{"name": "Flame-grilled oysters with ponzu", "note": "The house oyster, named by Macarfi", "kind": "dish"}, {"name": "Seaweed salad with goose barnacles and razor clams", "note": "Percebes and navajas over seaweed, from the house record", "kind": "dish"}, {"name": "Bloody Mary gazpacho", "note": "A cold tomato soup with a cocktail's kick, picked out by Time Out", "kind": "dish"}, {"name": "Steak tartare", "note": "Time Out's other pick", "kind": "dish"}, {"name": "Tuna tataki", "note": "Seared tuna mentioned in recent reviews", "kind": "dish"}, {"name": "Scallops with Ibérico ham and artichokes", "note": "A surf-and-turf plate cited by Frommers", "kind": "dish"}], "caveat": "Shuts for the winter (roughly November to March per Macarfi) and no 2026 closing date was found, so phone before an end-of-October visit. The terrace is small and fills fast in July and August; one 2025 reviewer found it as crowded as a city promenade.", "hours": "Seasonal: Macarfi says closed roughly November to March; traded through September 2026 (dated reviews); probably still open now in late October, but no 2026 closing date found: call ahead", "category": "elbulli", "hot_this_month": "Last weeks before its winter break (closed roughly November to March): the terrace is easier to book than in summer; phone +34 972 258 739 first (checked 18 Oct 2026).", "charter": {"price": "EUR 25-50 per person (Time Out, seen Oct 2026)", "book": "Book ahead, especially for the terrace; diners in 2026 report it is hard to get a table", "warn": "Shuts for the winter (roughly November to March per Macarfi) and no 2026 closing date was found, so phone before an end-of-October visit. The terrace is small and fills fast in July and August; one 2025 reviewer found it as crowded as a city promenade.", "fit": "Market tapas and flamed oysters on a water's-edge terrace looking back across the harbour at the white town."}},
+    {"id": "v04-es-baluard", "cat": "shop", "tier": "several", "priority": 4, "badge": "Seafood", "name": "Es Baluard", "short": "Es Baluard", "lat": 42.2884, "lng": 3.2792, "neighborhood": "Old-town sea wall · Riba Nemesi Llorens", "tags": ["Old-town sea wall · Riba Nemesi Llorens", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["monkfish suquet", "fish rice", "bay view"], "why": "Quimet Seriñana and Maria Torrents opened it in 1967 inside the bastion that once guarded the town from pirates. Today Adrià Seriñana cooks and his sister Aina runs the wine. In an August 2026 interview with Ara she explained two habits: she adds only about 13 or 14 euros to a bottle over its shop price, and the list prints the distance in kilometres from the restaurant to each winery, so foreign guests can see how close the Empordà vines are.", "address": "Riba Nemesi Llorens 2, 17488 Cadaqués, Girona", "phone": "+34 972 258 183", "maps": "https://www.google.com/maps/search/?api=1&query=Es+Baluard+Cadaqués", "price_range": "EUR 35-55 pp (seen Jun 2026)", "reservation": "Book by phone; the two window tables and the balcony table carry a waiting list", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "The Seriñana family's fish house in the old sea wall since 1967, now run by the third generation.", "dishes": [{"name": "Monkfish suquet", "note": "Rap simmered with potatoes in the Empordà fish stew the house is known for", "kind": "dish"}, {"name": "Grilled fish of the day", "note": "The catch praised in April 2026 reviews", "kind": "dish"}, {"name": "Seafood rice", "note": "One of the rice dishes listings point to", "kind": "dish"}, {"name": "House-cured anchovies", "note": "Anchovies prepared in-house", "kind": "dish"}, {"name": "Empordà wine by the bottle", "note": "Listed with each winery's distance in kilometres and a modest markup", "kind": "drink"}], "caveat": "Season dates were not found for 2026; it traded in April and August, but phone before an autumn or winter visit. Ask for one of the window or balcony tables when you book: Ara reports a waiting list for them.", "hours": "Call ahead: no 2026 season dates found. Traded in April and August 2026 (dated reviews, Ara interview)", "category": "elbulli", "charter": {"price": "EUR 35-55 pp (seen Jun 2026)", "book": "Book by phone; the two window tables and the balcony table carry a waiting list", "warn": "Season dates were not found for 2026; it traded in April and August, but phone before an autumn or winter visit. Ask for one of the window or balcony tables when you book: Ara reports a waiting list for them.", "fit": "The Seriñana family's fish house in the old sea wall since 1967, now run by the third generation."}},
+    {"id": "v02-casa-anita", "cat": "berth", "tier": "berth_top", "priority": 2, "badge": "Seafood", "name": "Casa Anita", "short": "Casa Anita", "lat": 42.2891, "lng": 3.2779, "neighborhood": "Old town · Carrer Miquel Rosset", "tags": ["Old town · Carrer Miquel Rosset", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["salt anchovies", "Roses prawns", "shared tables"], "why": "Ana Mota learned to cook from Cadaqués neighbours she worked for as a babysitter, then opened her own room in 1960; success later let the family buy a house a little further down the street, where Casa Anita still stands. She died in June 2025, three days short of her ninetieth birthday, and Ara gave her an obituary. Her son Juanito and daughter Ana Mari now cook. Ara's best story: Kirk Douglas once settled an unpaid bill with a thick stack of banknotes.", "address": "Carrer Miquel Rosset 16, 17488 Cadaqués, Girona", "phone": "+34 972 258 471", "hours": "Call ahead: no 2026 season dates found. Traded April to July 2026 (dated Tripadvisor reviews) · Call ahead: Tripadvisor shows lunch and dinner Thursday, Friday and Sunday and closed Monday to Wednesday; Yelp gives different days", "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Anita+Cadaqués", "verdict": "The village institution Dalí drank at — you order what they recite, not what you planned.", "signature": "House-salted Cadaqués anchovies, grilled Roses prawns, then the ice cream churned on site.", "person": "Run by the Mota family since the 1960s — founder Ana Mota.", "caveat": "No written menu: dishes and prices are recited, and several 2026 reviewers were surprised by the bill, so ask the fish price before you order. Tables are shared with strangers. Opening days differ between listings. Payment method not confirmed.", "price_range": "About EUR 40 per person, about EUR 50 with wine and dessert (Mapstr diners); four anchovy toasts about EUR 17 per person (Tripadvisor, 2026) (seen Oct 2026)", "reservation": "Reservations accepted by phone (listings, 2026); otherwise turn up and wait for a place at a shared table", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "No menu card, shared tables: the Mota family's kitchen since 1960, where the day's dishes are recited aloud.", "dishes": [{"name": "House-salted Cadaqués anchovies", "note": "On toast; the dish 2026 diners keep naming", "kind": "dish"}, {"name": "Grilled Roses prawns", "note": "From the house record; ask the price first", "kind": "dish"}, {"name": "Whole fish of the day", "note": "Grilled from the day's catch; confirm whether the quoted price is per person or for the plate", "kind": "dish"}, {"name": "Sardines", "note": "Salted in-house like the anchovies", "kind": "dish"}, {"name": "House ice cream", "note": "The sweet the house record says is churned on site", "kind": "sweet"}], "category": "houses", "charter": {"price": "About EUR 40 per person, about EUR 50 with wine and dessert (Mapstr diners); four anchovy toasts about EUR 17 per person (Tripadvisor, 2026) (seen Oct 2026)", "book": "Reservations accepted by phone (listings, 2026); otherwise turn up and wait for a place at a shared table", "warn": "No written menu: dishes and prices are recited, and several 2026 reviewers were surprised by the bill, so ask the fish price before you order. Tables are shared with strangers. Opening days differ between listings. Payment method not confirmed.", "fit": "No menu card, shared tables: the Mota family's kitchen since 1960, where the day's dishes are recited aloud."}},
+    {"id": "v06-can-rafa", "cat": "shop", "tier": "several", "priority": 6, "badge": "Seafood", "name": "Can Rafa", "short": "Can Rafa", "lat": 42.2882, "lng": 3.2785, "neighborhood": "Passeig · central seafront", "tags": ["Passeig · central seafront", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["lobster rice", "fideuà", "boat-to-plate fish"], "why": "Rafa Martín Mota, son of Casa Anita's founder, opened Can Rafa on the Passeig in 1982 with his wife Carmen Faixó, who still makes the desserts. In 2000 the family planted vines on the cape and built Celler Martín Faixó, a winery with a guesthouse at Mas Perafita, so the bottles on the table come from a few kilometres away. Ara reported in October 2025 that, after some twenty years of permit battles, work on a new underground cellar was due to start in 2026.", "address": "Passeig 7, 17488 Cadaqués, Girona", "maps": "https://www.google.com/maps/search/?api=1&query=Can+Rafa+Cadaqués", "price_range": "EUR 35-55 pp (seen Jun 2026)", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "A seafront fish-and-rice house opened in 1982 by the family that now also makes Cap de Creus wine.", "dishes": [{"name": "Lobster rice (arròs de llamàntol)", "note": "The shared rice the house is known for; ordered for the table", "kind": "dish"}, {"name": "Prawn rice", "note": "The langostino version of the house rice", "kind": "dish"}, {"name": "Fideuà", "note": "Short noodles cooked like a paella; for the table", "kind": "dish"}, {"name": "Salt cod carpaccio", "note": "Bacalao sliced thin, named by Velvet Escape", "kind": "dish"}, {"name": "Carmen Faixó's desserts", "note": "Made by the co-founder", "kind": "sweet"}, {"name": "Martín Faixó wines", "note": "From the family's own Cap de Creus estate", "kind": "drink"}], "web": "https://www.martinfaixo.com", "reservation": "Book ahead in summer", "caveat": "Rice and fideuà are made for at least two diners, so order them as a table. Reviewers in 2026 find prices on the high side. Phone not confirmed from a primary source; season dates for 2026 not found.", "hours": "Call ahead: no 2026 season dates found. Traded July-August 2026 (dated Tripadvisor reviews)", "category": "houses", "charter": {"price": "EUR 35-55 pp (seen Jun 2026)", "book": "Book ahead in summer", "warn": "Rice and fideuà are made for at least two diners, so order them as a table. Reviewers in 2026 find prices on the high side. Phone not confirmed from a primary source; season dates for 2026 not found.", "fit": "A seafront fish-and-rice house opened in 1982 by the family that now also makes Cap de Creus wine."}},
+    {"id": "v08-casa-nun", "cat": "shop", "tier": "several", "priority": 8, "badge": "Seafood", "name": "Casa Nun", "short": "Casa Nun", "lat": 42.2886, "lng": 3.2787, "neighborhood": "Old town · Plaça des Portitxó", "tags": ["Old town · Plaça des Portitxó", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["lobster caldoso", "gratin sardines", "village square"], "why": "Casa Nun has traded on Plaça des Portitxó, the small square just above the fishing beach, since 1979, and the family still cooks dishes passed down through the generations. Rice is the reason people come: the soupy lobster rice, black rice and seafood paella. The tables sit outside on the square, a few steps above the harbour.", "address": "Plaça des Portitxó 6, 17488 Cadaqués, Girona", "phone": "+34 676 31 23 00", "hours": "Call ahead: no 2026 season dates found. Traded April 2026 (dated reviews) · Call ahead: one listing says open daily except Tuesday; another shows evenings only Monday to Wednesday, lunch and dinner Thursday to Sunday", "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Nun+Cadaqués", "price_range": "EUR 30-45 pp (seen Jun 2026)", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "A family rice house on the little Portitxó square since 1979, recipes handed down the generations.", "dishes": [{"name": "Arròs caldós de llamàntol", "note": "Soupy lobster rice, the house's best-known plate", "kind": "dish"}, {"name": "Gratinated sardine", "note": "The house recipe in the old record; not confirmed in 2026 sources", "kind": "dish"}, {"name": "Black rice", "note": "Squid-ink rice praised by reviewers", "kind": "dish"}, {"name": "Seafood paella", "note": "On the 2026 menu listings", "kind": "dish"}, {"name": "Turbot", "note": "One of the fish reviewers name", "kind": "dish"}], "web": "https://casanun.com", "reservation": "Book through OpenTable (Restaurant CasaNun) or walk in", "caveat": "Small and family-run; opening days differ between listings, so call ahead. Some reviewers report slow or brusque service in high season. The street number differs between listings (6 or 9).", "category": "houses", "charter": {"price": "EUR 30-45 pp (seen Jun 2026)", "book": "Book through OpenTable (Restaurant CasaNun) or walk in", "warn": "Small and family-run; opening days differ between listings, so call ahead. Some reviewers report slow or brusque service in high season. The street number differs between listings (6 or 9).", "fit": "A family rice house on the little Portitxó square since 1979, recipes handed down the generations."}},
+    {"id": "v07-la-sirena", "cat": "shop", "tier": "several", "priority": 7, "badge": "Seafood", "name": "La Sirena", "short": "La Sirena", "lat": 42.2889, "lng": 3.2774, "neighborhood": "Old town · Carrer des Call", "tags": ["Old town · Carrer des Call", "Not confirmed for 2026 — call ahead"], "productTags": ["scorpionfish", "sea urchins", "rock mussels"], "why": "La Sirena works from a narrow lane, Carrer des Call, a block up from the front, in a room decorated with mermaids. It is a family house that cooks the local catch the old way: scorpionfish with its sauce and potatoes, suquet and zarzuela fish stews, paella. In the cold months it serves garoines, the sea urchins Cadaqués eats from January to March, which makes it one of the few tables here worth seeking out in winter.", "address": "Carrer des Call s/n, 17488 Cadaqués, Girona", "phone": "+34 972 258 974", "hours": "Call ahead: no 2026 season dates found · Call ahead: Tripadvisor lists 13:00-15:15 and 20:00-23:00, closed Tuesday; Littleweekends says closed Wednesday", "maps": "https://www.google.com/maps/search/?api=1&query=La+Sirena+Cadaqués", "price_range": "EUR 30-40 per person (Restaurant Guru, seen Oct 2026)", "reservation": "Book ahead; small room", "status": "unverified", "statusChecked": "2026-10-18", "hook": "A small family kitchen one lane back from the water, cooking scorpionfish, suquet and urchins in season.", "dishes": [{"name": "Scorpionfish (escórpora)", "note": "With sauce and potatoes, the old house recipe", "kind": "dish"}, {"name": "Garoines", "note": "Local sea urchins, January to March only", "kind": "dish"}, {"name": "Suquet", "note": "The Catalan fish-and-potato stew", "kind": "dish"}, {"name": "Zarzuela", "note": "Mixed fish and shellfish stew", "kind": "dish"}, {"name": "Paella", "note": "Reviewers praise the generous portions", "kind": "dish"}], "caveat": "Easy to walk past on a side street with no sea view. Closing day differs between listings. Sea urchins are a January-to-March dish only. No 2026-dated review was found in this check.", "category": "back", "hot_this_month": "Before the urchins: the house's urchins are a January-March thing, so this month order the escórpora (scorpionfish) with sauce and potatoes; it takes reservations (checked 18 Oct 2026)."},
+    {"id": "v09-es-balconet", "cat": "shop", "tier": "several", "priority": 9, "badge": "Seafood", "name": "Es Balconet", "short": "Es Balconet", "lat": 42.2893, "lng": 3.2782, "neighborhood": "Old town · Carrer de Sant Antoni", "tags": ["Old town · Carrer de Sant Antoni", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["paella", "fresh fish", "fishermen's room"], "why": "Es Balconet takes its name from a small balcony on Carrer de Sant Antoni, deep in the old quarter, and has no sea view at all. Its reputation rests on rice: guides call paella its speciality, and reviewers single out the squid-ink version and the chef's allioli. When the boats bring in the right fish the kitchen makes suquet, the slow fish stew of the coast. The room is small and fills in summer.", "address": "Carrer de Sant Antoni 2, 17488 Cadaqués, Girona", "phone": "—", "maps": "https://www.google.com/maps/search/?api=1&query=Es+Balconet+Cadaqués", "price_range": "Set menu about EUR 22 reported by one guide (undated, seen Oct 2026)", "reservation": "Book ahead in high season; small room", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "A small old-quarter room for paella and the day's fish, with no view to distract from the rice.", "dishes": [{"name": "Paella", "note": "The house speciality, per guides and reviewers", "kind": "dish"}, {"name": "Black paella", "note": "Squid-ink rice reviewers praise", "kind": "dish"}, {"name": "Suquet de peix", "note": "Made when the day's catch allows", "kind": "dish"}, {"name": "Grilled catch of the day", "note": "From the house record", "kind": "dish"}, {"name": "Allioli", "note": "The chef's garlic sauce, named in April 2026 reviews", "kind": "dish"}], "caveat": "No sea view and a small room: book in summer. One April 2026 reviewer found the rice under-seasoned. Phone not confirmed.", "hours": "Call ahead: no 2026 season dates found. Traded April 2026 (dated reviews)", "category": "back"},
+    {"id": "v10-s-estrop", "cat": "shop", "tier": "several", "priority": 10, "badge": "Seafood", "name": "S'Estrop", "short": "S'Estrop", "lat": 42.288, "lng": 3.2783, "neighborhood": "Passeig · beachfront", "tags": ["Passeig · beachfront", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["fideuà", "paella", "sea view"], "why": "S'Estrop takes its name from the rope loop that holds an oar to a fishing boat's thole pin, and it sits on the Plaça del Passeig with tables looking across the beach. Its own pages list what it cooks: paellas and other rice, fideuà, meat a la brasa and fresh fish baked in a charcoal oven. A set lunch lets you take a rice or fideuà as the main course, which makes it one of the cheaper ways to eat rice on the front.", "address": "Plaça del Passeig 9, 17488 Cadaqués, Girona", "phone": "+34 972 259 073", "maps": "https://www.google.com/maps/search/?api=1&query=S%27Estrop+Cadaqués", "price_range": "Set lunch EUR 22.50 (listing, undated, seen Oct 2026)", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "Paella, fideuà and fish from a charcoal oven, on the Passeig facing the beach.", "dishes": [{"name": "Fideuà", "note": "Short noodles cooked paella-style; reviewers rate it highly, with allioli", "kind": "dish"}, {"name": "Paella", "note": "A house speciality on its own pages", "kind": "dish"}, {"name": "Black rice", "note": "Praised in an April 2026 review", "kind": "dish"}, {"name": "Fresh fish from the charcoal oven", "note": "Peix fresc al forn de carbó, per the restaurant's site", "kind": "dish"}, {"name": "Fish soup", "note": "Singled out in an April 2026 review", "kind": "dish"}], "web": "https://sestroprestaurant.com/", "reservation": "Book for terrace tables in summer", "caveat": "Reviews are mixed on the rice: some praise the fideuà, others found the paella disappointing. Season dates for 2026 not found.", "hours": "Call ahead: no 2026 season dates found. Traded April 2026 (dated reviews); its Instagram says open every day in August", "category": "edge"},
+    {"id": "v12-es-bar-de-dalt", "cat": "shop", "tier": "plenty", "priority": 12, "badge": "Catalan", "name": "Es Bar de Dalt", "short": "Es Bar de Dalt", "lat": 42.2896, "lng": 3.2761, "neighborhood": "Upper village · road to Cap de Creus", "tags": ["Upper village · road to Cap de Creus", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["traditional plates", "olive-tree terrace", "quality produce"], "why": "Es Bar de Dalt means the bar up top, and it is where Cadaqués goes when it wants to avoid the front: a bar-restaurant at the top of the village on the road out to Cap de Creus, with a terrace shaded by olive trees in front of the municipal football ground. The cooking is regional and reasonably priced, from artichokes and calamari to homemade croquettes, and on Thursdays there is live music.", "address": "Call ahead: listings give Carretera de Cap de Creus 2 and Carrer de Carles Rahola 2, Cadaqués", "phone": "—", "hours": "Call ahead: no 2026 season dates found. Traded March-April 2026 (dated reviews) · Call ahead: one listing gives 08:00 to about 01:00 on several weekdays; another gives 08:00-23:00, closed Monday", "maps": "https://www.google.com/maps/search/?api=1&query=Es+Bar+de+Dalt+Cadaqués", "price_range": "EUR 25-40 pp (seen Jun 2026)", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "The upper-village local's bar: tapas and plain plates under olive trees, away from the harbour.", "dishes": [{"name": "Artichokes", "note": "The plate reviewers mention first", "kind": "dish"}, {"name": "Bloc de foie gras", "note": "A local-bar classic here", "kind": "dish"}, {"name": "Calamari", "note": "Fried squid; reviews vary", "kind": "dish"}, {"name": "Homemade croquettes", "note": "Singled out by reviewers", "kind": "dish"}, {"name": "Hamburger", "note": "The other reviewer favourite", "kind": "dish"}], "reservation": "Arrive early in high season or phone ahead at midday", "caveat": "Fills quickly in high season. Parking on the road is tight; walk up. Address and hours differ between listings.", "category": "edge"},
+    {"id": "v03-restaurant-cap-de-creus", "cat": "shop", "tier": "several", "priority": 3, "badge": "Seafood", "name": "Restaurant Cap de Creus", "short": "Restaurant Cap de Creus", "lat": 42.3193, "lng": 3.3192, "neighborhood": "Cap de Creus lighthouse", "tags": ["Cap de Creus lighthouse", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["curry", "tapas", "easternmost terrace"], "why": "In 1991 Christopher Little, a British chef, took over the former Guardia Civil barracks beside the Cap de Creus lighthouse and turned it into a restaurant. He still runs it, and the menu reflects him: samosas, chutneys, seven curries (meat, fish or vegetable) and a vindaloo, alongside Catalan seafood. The terrace looks over Cala Culip and the open sea; in winter the tramuntana wind can make lunch a battle.", "address": "Carretera Cap de Creus s/n (Far de Cap de Creus), 17488 Cadaqués, Girona", "hours": "Call ahead: no 2026 season dates found. Traded June-August 2026 (dated reviews) · Call ahead: Time Out (listing about a year old) gives Sun-Thu 10:00-23:00, Fri-Sat 10:00-24:00", "maps": "https://www.google.com/maps/search/?api=1&query=Restaurant+Cap+de+Creus+Cadaqués", "verdict": "Seven curries above a Catalan cove at the edge of the mainland — the unlikely one that works.", "signature": "One of the seven curries (the vindaloo) with samosas and chutney.", "person": "Opened 1991 by British biologist Chris Little, in a former Civil Guard barracks.", "caveat": "The lighthouse road is a natural-park access zone: book through the website before driving up, or take the shuttle. Service is slow at busy times, by 2026 reviewers' accounts. Hours not confirmed for this autumn.", "price_range": "EUR 25-40 pp (seen Jun 2026)", "reservation": "Reserve through the website: Time Out says access by car is restricted to diners with a booking (others risk a fine), and a booking also gets a EUR 3.50 return shuttle fare", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "Curries by the lighthouse at mainland Spain's easternmost point, served since 1991 in an old Civil Guard post.", "dishes": [{"name": "Vindaloo", "note": "The hottest of the curries and the one people drive up for", "kind": "dish"}, {"name": "Lamb karahi", "note": "One of the seven curries on the house menu", "kind": "dish"}, {"name": "Fish curry", "note": "The seafood curry on the menu", "kind": "dish"}, {"name": "Samosas with chutney", "note": "The starter that goes with the curries", "kind": "dish"}, {"name": "Seafood rice", "note": "The local choice, from the house record", "kind": "dish"}], "web": "https://restaurantcapdecreus.com", "category": "edge", "hot_this_month": "The cape is outside the summer car controls in October, so the lighthouse terrace is reachable without the summer shuttle; hours are seasonal, so email reserves@restaurantcapdecreus.com before the drive (checked 18 Oct 2026).", "charter": {"price": "EUR 25-40 pp (seen Jun 2026)", "book": "Reserve through the website: Time Out says access by car is restricted to diners with a booking (others risk a fine), and a booking also gets a EUR 3.50 return shuttle fare", "warn": "The lighthouse road is a natural-park access zone: book through the website before driving up, or take the shuttle. Service is slow at busy times, by 2026 reviewers' accounts. Hours not confirmed for this autumn.", "fit": "Curries by the lighthouse at mainland Spain's easternmost point, served since 1991 in an old Civil Guard post."}},
+    {"id": "v14-maritim-bar", "cat": "berth", "tier": "berth_top", "priority": 3, "badge": "Bar", "name": "Marítim Bar", "short": "Marítim Bar", "lat": 42.2879, "lng": 3.2787, "neighborhood": "Beachfront · Passeig Marítim", "tags": ["Beachfront · Passeig Marítim", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["cremat", "beachfront", "Dalí by boat"], "why": "The Marítim opened on Sant Jaume's day, 25 July 1935, and turned ninety in 2025, which makes it one of the oldest bars on the bay. In 2018 the Alt Empordà county council listed it as a Bé Cultural d'Interès Local, a protected local heritage site. Dalí, Duchamp and García Márquez are among the patrons the press names, and Dalí is said to have arrived by boat. Today it serves breakfasts by the water, tapas and the fishermen's cremat.", "address": "Passeig Marítim s/n, 17488 Cadaqués, Girona", "phone": "+34 636 198 475", "maps": "https://www.google.com/maps/search/?api=1&query=Marítim+Bar+Cadaqués", "price_range": "Croissants called expensive by a 2026 reviewer; no price list found (seen Oct 2026)", "reservation": "Walk in", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "The beach bar on the sand since 1935: breakfast, tapas and a flaming cremat at dusk.", "dishes": [{"name": "Cremat", "note": "Rum, coffee, sugar and lemon peel set alight at the table", "kind": "drink"}, {"name": "Breakfast on the beach", "note": "The morning trade 2026 reviewers recommend", "kind": "dish"}, {"name": "Patatas bravas", "note": "Named by National Geographic via Crónica Global", "kind": "dish"}, {"name": "Tuna tataki", "note": "The other tapa National Geographic highlights", "kind": "dish"}], "caveat": "Come for the position and the history: Tripadvisor scores it low (2.8/5) with recurring service complaints. Seasonal hours are not published; the mobile phone may go unanswered out of season.", "hours": "Call ahead: no 2026 season dates found. Traded May 2026 (dated reviews)", "category": "bars", "charter": {"price": "Croissants called expensive by a 2026 reviewer; no price list found (seen Oct 2026)", "book": "Walk in", "warn": "Come for the position and the history: Tripadvisor scores it low (2.8/5) with recurring service complaints. Seasonal hours are not published; the mobile phone may go unanswered out of season.", "fit": "The beach bar on the sand since 1935: breakfast, tapas and a flaming cremat at dusk."}},
+    {"id": "v13-l-hostal", "cat": "shop", "tier": "plenty", "priority": 13, "badge": "Bar", "name": "L'Hostal", "short": "L'Hostal", "lat": 42.2881, "lng": 3.2784, "neighborhood": "Passeig · central seafront", "tags": ["Passeig · central seafront", "Confirmed trading 2026 (checked 18 Oct)"], "productTags": ["Dalí eggs", "tapas", "drinks"], "why": "L'Hostal was founded by an Italian, Marci Pogany, and accounts call it the only bar Dalí frequented in Cadaqués; out of friendship he drew and signed its logo for free, dated 1975 by two listings. In the 1960s and 70s it was a late-night club where Mick Jagger, Keith Richards and García Márquez turned up. The club has gone: today it is a seafront restaurant with a terrace, the walls still covered in Dalí material.", "address": "Passeig 8, 17488 Cadaqués, Girona", "phone": "+34 972 258 000", "maps": "https://www.google.com/maps/search/?api=1&query=L%27Hostal+Cadaqués", "price_range": "EUR 10-25 (drinks/tapas) (seen Jun 2026)", "reservation": "Book through TheFork or by phone if eating; walk in for a drink", "status": "confirmed", "statusChecked": "2026-10-18", "hook": "The seafront bar whose logo Dalí drew in 1975, now a restaurant with a terrace and memorabilia walls.", "dishes": [{"name": "Dalí eggs", "note": "The house tapa named for the painter, from the record; not seen in 2026 sources", "kind": "dish"}, {"name": "Calamari", "note": "Praised in April 2026 reviews", "kind": "dish"}, {"name": "Fish croquettes", "note": "Another April 2026 favourite", "kind": "dish"}, {"name": "Baked fish", "note": "A main course reviewers name", "kind": "dish"}, {"name": "Crema catalana", "note": "Homemade dessert", "kind": "sweet"}], "caveat": "The nightclub of the Dalí years is gone; this is now a restaurant and bar living on its history. The logo date and founding story come from blogs and listings, not an archive.", "hours": "Call ahead: no 2026 season dates found. Traded April 2026 (dated reviews)", "category": "bars", "hot_this_month": "A quiet autumn aperitif in the bar whose logo Dalí designed; walk in for a drink, book if eating (checked 18 Oct 2026).", "charter": {"price": "EUR 10-25 (drinks/tapas) (seen Jun 2026)", "book": "Book through TheFork or by phone if eating; walk in for a drink", "warn": "The nightclub of the Dalí years is gone; this is now a restaurant and bar living on its history. The logo date and founding story come from blogs and listings, not an archive.", "fit": "The seafront bar whose logo Dalí drew in 1975, now a restaurant with a terrace and memorabilia walls."}}
+  ];
   const COLORS = {"berth": "#c4a35a", "market": "#d97706", "shop": "#059669", "mainland": "#7c3aed", "logistics": "#2d4a5e"};
   const CAT_LABELS = {"berth": "Signature", "market": "Market / Direct", "shop": "Restaurant / Bar", "mainland": "Out of town", "logistics": "Logistics"};
   const PRODUCT_COLORS = {"Michelin": "#7f1d1d", "Seafood": "#3b82f6", "sharing plates": "#1f2937", "Rice": "#a16207", "Wine": "#7c2d12", "Cafe": "#92400e", "Bar": "#7c3aed", "oysters": "#0ea5e9", "Tapas": "#dc2626", "Lighthouse": "#2d4a5e"};
-  const VENUES = [
- {
-  "id": "v01-compartir-cadaques",
-  "cat": "shop",
-  "tier": "berth_top",
-  "priority": 1,
-  "badge": "Michelin",
-  "name": "Compartir Cadaqués",
-  "short": "Compartir Cadaqués",
-  "lat": 42.2887,
-  "lng": 3.2766,
-  "neighborhood": "Old town, Riera de Sant Vicenç (the dry riverbed running down to the bay)",
-  "tags": [
-   "EUR 60-90 pp à la carte",
-   "Essential, book days/weeks ahead online or by phone; whole-table tasting served to all diners",
-   "Dinner, in the 18th-century courtyard"
-  ],
-  "productTags": [
-   "sharing plates",
-   "Empordà rice",
-   "oysters"
-  ],
-  "why": "Opened 2012 by Mateu Casañas, Oriol Castro and Eduard Xatruch — the trio whose Disfrutar (Barcelona) took a third Michelin star and World's 50 Best No.1 in 2024; Michelin Guide listed, two Soles Repsol To order: The whole-table tasting menu anchored by an Empordà seafood rice; the gazpacho-and-pesto starter is the house signature carried from elBulli days Seasonal — closes in deep winter; this is elBulli-trained refinement, not a casual harbourside lunch. Confirm opening dates before a winter trip.",
-  "address": "Riera de Sant Vicenç s/n, 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 482",
-  "hours": "Dinner, in the 18th-century courtyard",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Compartir+Cadaqués+Cadaqués"
- },
- {
-  "id": "v02-casa-anita",
-  "cat": "shop",
-  "tier": "berth_top",
-  "priority": 2,
-  "badge": "Seafood",
-  "name": "Casa Anita",
-  "short": "Casa Anita",
-  "lat": 42.2891,
-  "lng": 3.2779,
-  "neighborhood": "Old town, Carrer Miquel Rosset (uphill from the waterfront, near the church)",
-  "tags": [
-   "EUR 30-45 pp",
-   "No printed menu and no normal booking — it is a 'sung' menu recited at communal tables; turn up and wait",
-   "Lunch or early dinner, summer"
-  ],
-  "productTags": [
-   "salt anchovies",
-   "Roses prawns",
-   "shared tables"
-  ],
-  "why": "Open since the 1960s; a Dalí haunt run by the Mota family — founder Ana Mota's death was reported by Catalan press as the loss of a village institution To order: House-salted Cadaqués anchovies and grilled Roses prawns, then the ice cream churned on site Cash culture, shared tables, no à la carte card — the order is recited aloud. Idiosyncratic by design.",
-  "address": "Carrer Miquel Rosset 16, 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 471",
-  "hours": "Lunch or early dinner, summer",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Anita+Cadaqués"
- },
- {
-  "id": "v03-restaurant-cap-de-creus",
-  "cat": "shop",
-  "tier": "berth_top",
-  "priority": 3,
-  "badge": "Seafood",
-  "name": "Restaurant Cap de Creus",
-  "short": "Restaurant Cap de Creus",
-  "lat": 42.3193,
-  "lng": 3.3192,
-  "neighborhood": "Cap de Creus headland, beside the lighthouse (~8 km / 20 min on the narrow road from Cadaqués), above Cala Culip",
-  "tags": [
-   "EUR 25-40 pp",
-   "Book ahead if driving up (a reservation lets you take a car up the single-track road); via reserves@restaurantcapdecreus.com",
-   "Lunch for the view; sunrise here is the first on the Iberian mainland"
-  ],
-  "productTags": [
-   "curry",
-   "tapas",
-   "easternmost terrace"
-  ],
-  "why": "Opened 1991 by British biologist Christopher (Chris) Little in a former Civil Guard barracks at the easternmost point of mainland Spain — seven curries and vindaloo above a Catalan cove To order: One of the seven curries (the vindaloo) with samosas and chutney — the unlikely house specialty — or seafood rice if you want local Road is single-track and shared with buses — slow. Seasonal hours; confirm before the drive. Phone not verified — use email.",
-  "address": "Carretera Cap de Creus s/n (Far de Cap de Creus), 17488 Cadaqués, Girona",
-  "phone": "—",
-  "hours": "Lunch for the view; sunrise here is the first on the Iberian mainland",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Restaurant+Cap+de+Creus+Cadaqués"
- },
- {
-  "id": "v04-es-baluard",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 4,
-  "badge": "Seafood",
-  "name": "Es Baluard",
-  "short": "Es Baluard",
-  "lat": 42.2884,
-  "lng": 3.2792,
-  "neighborhood": "Waterfront, built into the old-town sea wall on Riba Nemesi Llorens",
-  "tags": [
-   "EUR 35-55 pp",
-   "Recommended in season; book by phone",
-   "Lunch on the first-floor terrace over the bay"
-  ],
-  "productTags": [
-   "monkfish suquet",
-   "fish rice",
-   "bay view"
-  ],
-  "why": "Opened 1967 by Quimet Seriñana and Maria Torrents; now third-generation, run by son Josep Seriñana with Fanni Puig and children Aina and Adrià To order: Monkfish (rap) suquet — the slow-simmered Empordà fish-and-potato stew the house is known for High-season opening only — largely shut outside summer. Built into the literal sea wall; book the window tables.",
-  "address": "Riba Nemesi Llorens 2, 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 183",
-  "hours": "Lunch on the first-floor terrace over the bay",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Es+Baluard+Cadaqués"
- },
- {
-  "id": "v05-talla",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 5,
-  "badge": "Seafood",
-  "name": "Talla",
-  "short": "Talla",
-  "lat": 42.2872,
-  "lng": 3.2761,
-  "neighborhood": "West side of the harbour, Riba Pitxot (water's edge, looking back at the white town)",
-  "tags": [
-   "EUR 40-60 pp",
-   "Book ahead — reliably full; reservations online or by phone",
-   "Sunset on the west-facing terrace"
-  ],
-  "productTags": [
-   "flamed oysters",
-   "barnacles",
-   "sea terrace"
-  ],
-  "why": "Waterfront kitchen pairing traditional Catalan base with avant-garde technique; runs an adjoining Oli Bar; consistently top-ranked among Cadaqués tables To order: Flame-grilled oysters with ponzu, or the seaweed salad with goose barnacles (percebes) and razor clams Closed roughly November to March. Small terrace, books out fast in July-August.",
-  "address": "Riba Pitxot 18, 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 739",
-  "hours": "Sunset on the west-facing terrace",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Talla+Cadaqués"
- },
- {
-  "id": "v06-can-rafa",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 6,
-  "badge": "Seafood",
-  "name": "Can Rafa",
-  "short": "Can Rafa",
-  "lat": 42.2882,
-  "lng": 3.2785,
-  "neighborhood": "Seafront promenade (Passeig), central",
-  "tags": [
-   "EUR 35-55 pp",
-   "Recommended in summer",
-   "Lunch, seafront terrace"
-  ],
-  "productTags": [
-   "lobster rice",
-   "fideuà",
-   "boat-to-plate fish"
-  ],
-  "why": "Family-run since 1982 by the Martín Faixó family; proximity cooking off the Cadaqués fishing boats and Cap de Creus dives To order: Arròs de bogavante (lobster rice) or langostino rice, sized for sharing; desserts handmade by Carmen Rice and fideuà are made for two-plus — don't order solo. Phone not independently verified.",
-  "address": "Passeig 7, 17488 Cadaqués, Girona",
-  "phone": "—",
-  "hours": "Lunch, seafront terrace",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Can+Rafa+Cadaqués"
- },
- {
-  "id": "v07-la-sirena",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 7,
-  "badge": "Seafood",
-  "name": "La Sirena",
-  "short": "La Sirena",
-  "lat": 42.2889,
-  "lng": 3.2774,
-  "neighborhood": "Old town, Carrer d'es Call (one block up from the waterfront)",
-  "tags": [
-   "EUR 30-45 pp",
-   "Takes reservations; cards accepted",
-   "Winter for the urchins (Jan-Mar), otherwise dinner"
-  ],
-  "productTags": [
-   "scorpionfish",
-   "sea urchins",
-   "rock mussels"
-  ],
-  "why": "Long-running family kitchen on a back lane; mermaid-themed dining room and a terrace, cooking the local catch to old recipes To order: Scorpionfish (escórpora) with sauce and potatoes, or garoines (sea urchins) when in season Tucked off the front on a side street — easy to walk past. Urchins are a Jan-Mar thing only.",
-  "address": "Carrer d'es Call s/n, 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 974",
-  "hours": "Winter for the urchins (Jan-Mar), otherwise dinner",
-  "maps": "https://www.google.com/maps/search/?api=1&query=La+Sirena+Cadaqués"
- },
- {
-  "id": "v08-casa-nun",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 8,
-  "badge": "Seafood",
-  "name": "Casa Nun",
-  "short": "Casa Nun",
-  "lat": 42.2886,
-  "lng": 3.2787,
-  "neighborhood": "Old town, Plaça des Portitxó (small square just up from the bay)",
-  "tags": [
-   "EUR 30-45 pp",
-   "Recommended in season",
-   "Lunch on the square"
-  ],
-  "productTags": [
-   "lobster caldoso",
-   "gratin sardines",
-   "village square"
-  ],
-  "why": "Over 40 years on the same square; the gratinated sardine is a house recipe carried across generations To order: Arròs caldós de bogavante (soupy lobster rice) — repeatedly called the best in town — and the sardina gratinada Family-run and small; phone not independently verified — walk in or use a booking platform.",
-  "address": "Plaça des Portitxó 6, 17488 Cadaqués, Girona",
-  "phone": "—",
-  "hours": "Lunch on the square",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Casa+Nun+Cadaqués"
- },
- {
-  "id": "v09-es-balconet",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 9,
-  "badge": "Seafood",
-  "name": "Es Balconet",
-  "short": "Es Balconet",
-  "lat": 42.2893,
-  "lng": 3.2782,
-  "neighborhood": "Old town, Carrer Sant Antoni (narrow lane in the historic core)",
-  "tags": [
-   "EUR 25-40 pp",
-   "Walk-in friendly; small",
-   "Lunch"
-  ],
-  "productTags": [
-   "paella",
-   "fresh fish",
-   "fishermen's room"
-  ],
-  "why": "Small fishermen's-style restaurant in the old quarter — paella and the day's catch, a locals' room rather than a view table To order: Paella or the grilled catch of the day No sea view — an inland-lane room valued for cooking over scenery. Phone unverified.",
-  "address": "Carrer Sant Antoni 2, 17488 Cadaqués, Girona",
-  "phone": "—",
-  "hours": "Lunch",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Es+Balconet+Cadaqués"
- },
- {
-  "id": "v10-s-estrop",
-  "cat": "shop",
-  "tier": "several",
-  "priority": 10,
-  "badge": "Seafood",
-  "name": "S'Estrop",
-  "short": "S'Estrop",
-  "lat": 42.288,
-  "lng": 3.2783,
-  "neighborhood": "Beachfront, central Cadaqués",
-  "tags": [
-   "EUR 30-50 pp",
-   "Recommended for terrace tables in summer",
-   "Lunch, waterside"
-  ],
-  "productTags": [
-   "fideuà",
-   "paella",
-   "sea view"
-  ],
-  "why": "Beachfront kitchen for fideuà, paellas and seafood with a view across the bay To order: Fideuà (the short-noodle answer to paella) with the local catch Exact street number not pinned from a primary source — address given to street level only. Phone unverified.",
-  "address": "Cadaqués seafront (Riba), 17488 Cadaqués, Girona",
-  "phone": "—",
-  "hours": "Lunch, waterside",
-  "maps": "https://www.google.com/maps/search/?api=1&query=S'Estrop+Cadaqués"
- },
- {
-  "id": "v11-es-trull",
-  "cat": "shop",
-  "tier": "plenty",
-  "priority": 11,
-  "badge": "Catalan",
-  "name": "Es Trull",
-  "short": "Es Trull",
-  "lat": 42.2885,
-  "lng": 3.2789,
-  "neighborhood": "Old town, Carrer Portitxó (near the Portitxó square)",
-  "tags": [
-   "EUR 25-40 pp",
-   "Walk-in or phone",
-   "Dinner"
-  ],
-  "productTags": [
-   "Catalan grills",
-   "rice",
-   "old-town room"
-  ],
-  "why": "Long-standing old-town Catalan kitchen on Portitxó To order: Catalan grills and rice dishes; ask the day's fish Often tagged a pizza spot online, but its listing is plain Catalan cuisine — the wood-oven/pizza claim could NOT be confirmed, so order the Catalan plates.",
-  "address": "Carrer Portitxó 5, 17488 Cadaqués, Girona",
-  "phone": "+34 972 159 332",
-  "hours": "Dinner",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Es+Trull+Cadaqués"
- },
- {
-  "id": "v12-es-bar-de-dalt",
-  "cat": "shop",
-  "tier": "plenty",
-  "priority": 12,
-  "badge": "Catalan",
-  "name": "Es Bar de Dalt",
-  "short": "Es Bar de Dalt",
-  "lat": 42.2896,
-  "lng": 3.2761,
-  "neighborhood": "Upper village, terrace under olive trees (above the old town)",
-  "tags": [
-   "EUR 25-40 pp",
-   "Recommended for the terrace",
-   "Evening, for the shade and the view down to the bay"
-  ],
-  "productTags": [
-   "traditional plates",
-   "olive-tree terrace",
-   "quality produce"
-  ],
-  "why": "Upper-village kitchen serving traditional cuisine on a terrace shaded by olive trees, away from the harbour crush To order: Whatever's traditional and in season — the draw is the olive-grove terrace as much as the plate Up the hill, away from the front — exact street address not pinned from a primary source. Phone unverified.",
-  "address": "Upper Cadaqués (upper-village carrer), 17488 Cadaqués, Girona",
-  "phone": "—",
-  "hours": "Evening, for the shade and the view down to the bay",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Es+Bar+de+Dalt+Cadaqués"
- },
- {
-  "id": "v13-l-hostal",
-  "cat": "shop",
-  "tier": "plenty",
-  "priority": 13,
-  "badge": "Bar",
-  "name": "L'Hostal",
-  "short": "L'Hostal",
-  "lat": 42.2881,
-  "lng": 3.2784,
-  "neighborhood": "Old town, on the Passeig / central waterfront square",
-  "tags": [
-   "EUR 10-25 (drinks/tapas)",
-   "Walk-in for a drink; book if eating",
-   "Evening aperitif"
-  ],
-  "productTags": [
-   "Dalí eggs",
-   "tapas",
-   "drinks"
-  ],
-  "why": "Founded by Italian Marci Pogany; the only bar Dalí frequented in Cadaqués — Dalí designed and signed its logo for free. Later drew Mick Jagger, García Márquez, Keith Richards, George Harrison To order: The 'Dalí eggs' tapa (a nod to the surrealist) with a drink No longer the nightclub of the Dalí era — now a drinks-and-tapas room trading on its history. Come for the legend, not a full dinner.",
-  "address": "Passeig 8 (Plaça), 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 000",
-  "hours": "Evening aperitif",
-  "maps": "https://www.google.com/maps/search/?api=1&query=L'Hostal+Cadaqués"
- },
- {
-  "id": "v14-maritim-bar",
-  "cat": "shop",
-  "tier": "plenty",
-  "priority": 14,
-  "badge": "Bar",
-  "name": "Marítim Bar",
-  "short": "Marítim Bar",
-  "lat": 42.2879,
-  "lng": 3.2787,
-  "neighborhood": "Beachfront, Passeig Marítim (directly on the Cadaqués beach)",
-  "tags": [
-   "EUR 8-20 (drinks)",
-   "Walk-in",
-   "Sundown on the beach terrace"
-  ],
-  "productTags": [
-   "cremat",
-   "beachfront",
-   "Dalí by boat"
-  ],
-  "why": "Opened on Sant Jaume's day (25 July) 1935; Dalí reportedly arrived by boat — arguably the best bar position on the bay To order: Cremat — the fishermen's flamed cane-rum, coffee and sugar, set alight at the table A chiringuito-style beach bar, seasonal hours; phone is a mobile and may go unanswered out of season.",
-  "address": "Passeig Marítim s/n, 17488 Cadaqués, Girona",
-  "phone": "+34 636 198 475",
-  "hours": "Sundown on the beach terrace",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Marítim+Bar+Cadaqués"
- },
- {
-  "id": "v15-cafe-tropical",
-  "cat": "shop",
-  "tier": "plenty",
-  "priority": 15,
-  "badge": "Bar",
-  "name": "Cafe Tropical",
-  "short": "Cafe Tropical",
-  "lat": 42.2884,
-  "lng": 3.278,
-  "neighborhood": "Old town, central (off the front)",
-  "tags": [
-   "EUR 8-15 (drinks)",
-   "Walk-in",
-   "Late — opens ~22:00, runs to ~03:30"
-  ],
-  "productTags": [
-   "cocktails",
-   "gin",
-   "music bar"
-  ],
-  "why": "A near-40-year fixture of Cadaqués nightlife; a 'bar musical' for cocktails and late dancing To order: A gin and tonic or a house cocktail; this is a late bar, not a kitchen Night spot only; exact street address not pinned from a primary source. Loud and late in summer.",
-  "address": "Cadaqués old town (central), 17488 Cadaqués, Girona",
-  "phone": "+34 972 258 801",
-  "hours": "Late — opens ~22:00, runs to ~03:30",
-  "maps": "https://www.google.com/maps/search/?api=1&query=Cafe+Tropical+Cadaqués"
- },
- {
-  "id": "v16-elbulli-cala-montjoi-roses",
-  "cat": "mainland",
-  "tier": "plenty",
-  "priority": 16,
-  "badge": "Museum",
-  "name": "elBulli (Cala Montjoi, Roses)",
-  "short": "elBulli (Cala Montjoi, Roses)",
-  "lat": 42.2483,
-  "lng": 3.2256,
-  "neighborhood": "Cala Montjoi cove, Roses (~30 min by road along the coast from Cadaqués)",
-  "tags": [
-   "Museum ticket (not a restaurant)",
-   "Timed museum tickets via the elBulli Foundation; the road into Cala Montjoi is rough",
-   "Day visit, by car"
-  ],
-  "productTags": [
-   "elBulli1846",
-   "culinary museum",
-   "spherification"
-  ],
-  "why": "Ferran Adrià's restaurant — three Michelin stars (third in 1997), World's Best multiple times — closed 30 July 2011; reopened 2023 as elBulli1846, a museum/archive of culinary creativity To order: Nothing to eat — it is now a museum (elBulli1846); the local link is that Compartir's chefs trained here NOT a restaurant any more — included only as the gravitational context for Cadaqués cooking. Do not send anyone expecting dinner.",
-  "address": "Cala Montjoi s/n, 17480 Roses, Girona",
-  "phone": "—",
-  "hours": "Day visit, by car",
-  "maps": "https://www.google.com/maps/search/?api=1&query=elBulli+(Cala+Montjoi,+Roses)+Cadaqués"
- }
-];
-  const NEIGHBORHOODS = [
- {
-  "id": "n-es-baluard-old-town-around-santa-m",
-  "name": "Es Baluard / Old Town around Santa Maria",
-  "center": [
-   42.2886,
-   3.2758
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Baluard+/+Old+Town+around+Santa+Maria+Cadaqués"
- },
- {
-  "id": "n-sa-riba-riba-des-poal",
-  "name": "Sa Riba / Riba des Poal",
-  "center": [
-   42.2884,
-   3.2787
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Sa+Riba+/+Riba+des+Poal+Cadaqués"
- },
- {
-  "id": "n-es-poal",
-  "name": "Es Poal",
-  "center": [
-   42.2879,
-   3.28
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Poal+Cadaqués"
- },
- {
-  "id": "n-portlligat",
-  "name": "Portlligat",
-  "center": [
-   42.2893,
-   3.285
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Portlligat+Cadaqués"
- },
- {
-  "id": "n-la-riera-riera-de-sant-vicenc",
-  "name": "La Riera (Riera de Sant Vicenç)",
-  "center": [
-   42.289,
-   3.274
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=La+Riera+(Riera+de+Sant+Vicenç)+Cadaqués"
- },
- {
-  "id": "n-es-llane-gran-i-petit",
-  "name": "Es Llané (Gran i Petit)",
-  "center": [
-   42.2855,
-   3.282
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Llané+(Gran+i+Petit)+Cadaqués"
- },
- {
-  "id": "n-sa-conca",
-  "name": "Sa Conca",
-  "center": [
-   42.282,
-   3.284
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Sa+Conca+Cadaqués"
- },
- {
-  "id": "n-es-portitxo-es-portal",
-  "name": "Es Portitxó / Es Portal",
-  "center": [
-   42.2882,
-   3.2783
-  ],
-  "radius": 150,
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Portitxó+/+Es+Portal+Cadaqués"
- }
-];
-  const WALKS = [
- {
-  "id": "w-cami-de-ronda-platja-de-cadaques-t",
-  "name": "Cami de Ronda: Platja de Cadaques to Far de Cala Nans",
-  "start": [
-   42.2709,
-   3.2864
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cami+de+Ronda:+Platja+de+Cadaques+to+Far+de+Cala+Nans+Cap+de+Creus"
- },
- {
-  "id": "w-cami-antic-portlligat-to-the-far-d",
-  "name": "Cami Antic: Portlligat to the Far de Cap de Creus",
-  "start": [
-   42.3167,
-   3.315
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cami+Antic:+Portlligat+to+the+Far+de+Cap+de+Creus+Cap+de+Creus"
- },
- {
-  "id": "w-cap-de-creus-lighthouse-cala-culip",
-  "name": "Cap de Creus lighthouse + Cala Culip loop",
-  "start": [
-   42.3212,
-   3.3109
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cap+de+Creus+lighthouse+++Cala+Culip+loop+Cap+de+Creus"
- },
- {
-  "id": "w-cadaques-to-the-ermita-de-sant-seb",
-  "name": "Cadaques to the Ermita de Sant Sebastia (Peni viewpoint)",
-  "start": [
-   42.2789,
-   3.2611
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cadaques+to+the+Ermita+de+Sant+Sebastia+(Peni+viewpoint)+Cap+de+Creus"
- },
- {
-  "id": "w-gr-92-cami-de-ronda-stretch-cadaqu",
-  "name": "GR-92 Cami de Ronda stretch: Cadaques to El Port de la Selva",
-  "start": [
-   42.2893,
-   3.2752
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=GR-92+Cami+de+Ronda+stretch:+Cadaques+to+El+Port+de+la+Selva+Cap+de+Creus"
- },
- {
-  "id": "w-the-olive-terrace-path-cami-antic-",
-  "name": "The olive-terrace path (Cami Antic through the abandoned vinyes)",
-  "start": [
-   42.31,
-   3.305
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+olive-terrace+path+(Cami+Antic+through+the+abandoned+vinyes)+Cap+de+Creus"
- },
- {
-  "id": "w-far-de-cala-nans-short-out-and-bac",
-  "name": "Far de Cala Nans short out-and-back",
-  "start": [
-   42.2709,
-   3.2864
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Far+de+Cala+Nans+short+out-and-back+Cap+de+Creus"
- }
-];
-  const WORK_SPOTS = [
- {
-  "id": "p-work-bar-maritim",
-  "name": "Bar Marítim",
-  "start": [
-   42.2885,
-   3.2785
-  ]
- },
- {
-  "id": "p-work-es-baluard",
-  "name": "Es Baluard",
-  "start": [
-   42.2882,
-   3.279
-  ]
- },
- {
-  "id": "p-work-l-hostal",
-  "name": "L'Hostal",
-  "start": [
-   42.2887,
-   3.2772
-  ]
- },
- {
-  "id": "p-work-es-cucurucu-viewpoint-mirador",
-  "name": "Es Cucurucú viewpoint (mirador)",
-  "start": [
-   42.29,
-   3.28
+  const NEIGHBORHOODS = [{"name": "Santa Maria and the upper town", "desc": "Lanes paved with slate stood on edge, climbing to a white church that watches the whole bay", "maps": "https://www.google.com/maps/search/?api=1&query=Esgl%C3%A9sia+de+Santa+Maria%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "Sa Riba and Es Portitxó", "desc": "The one house in town that refused the whitewash, and the little square where the sardana is danced", "maps": "https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+des+Portitx%C3%B3%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "La Riera", "desc": "A riverbed with no river: it floods only in storms and carries the cars and the Monday market instead", "maps": "https://www.google.com/maps/search/?api=1&query=Riera+de+Sant+Vicen%C3%A7%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "Es Poal", "desc": "Stand on the pebbles where a teenage Dalí set his easel, and line the bay up with his 1920 canvas", "maps": "https://www.google.com/maps/search/?api=1&query=Platja+des+Poal%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "Es Llané", "desc": "Two flat-rock beaches five minutes south, where the Dalí family spent its summers before Portlligat", "maps": "https://www.google.com/maps/search/?api=1&query=Platja+Es+Llaner%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "Portlligat", "desc": "Over the hill from town, a closed cove of moored boats, a few white houses and a very still evening", "maps": "https://www.google.com/maps/search/?api=1&query=Portlligat%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}];
+  const WALKS = [{"name": "Camí de Ronda to Cala Nans", "desc": "Round the bay's south shore, past the last white house, to an 1874 lighthouse and its swimming ledges", "maps": "https://www.google.com/maps/search/?api=1&query=Punta+des+Baluard%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "Up to Sant Sebastià", "desc": "A thyme-and-rosemary climb to a hermitage that hangs over the whole bay", "maps": "https://www.google.com/maps/search/?api=1&query=Ermita+de+Sant+Sebasti%C3%A0%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "The Camí Antic to Cap de Creus", "desc": "Cove to cove from Portlligat to the cape, through dead vineyard terraces, the lighthouse ahead all the way", "maps": "https://www.google.com/maps/search/?api=1&query=Platja+de+Portlligat%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "The lighthouse and Cala Culip", "desc": "From the cape car park down to a shingle cove where a Roman oil ship sank in the 70s AD", "maps": "https://www.google.com/maps/search/?api=1&query=Far+de+Cap+de+Creus%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}, {"name": "GR-92 to El Port de la Selva", "desc": "The coast path leaves the sea and crosses the bare spine of the peninsula to the next bay north", "maps": "https://www.google.com/maps/search/?api=1&query=Cadaqu%C3%A9s%2C+Girona%2C+Spain"}];
+  const WORK_SPOTS = [{"name": "Es Cucurucú", "desc": "A lone rocky islet at the mouth of the bay, the shape every Cadaqués view seems to arrange itself around", "maps": "https://www.google.com/maps/search/?api=1&query=Esgl%C3%A9sia+de+Santa+Maria%2C+Cadaqu%C3%A9s%2C+Girona%2C+Spain"}];
+  const LANDMARKS = [{"id": "l-cala-platja-de-portlligat", "name": "Platja de Portlligat", "coords": [42.2939, 3.2861], "maps_url": "https://www.google.com/maps/search/?api=1&query=Platja+de+Portlligat+Cadaqués"}, {"id": "l-cala-platja-gran-de-cadaques", "name": "Platja Gran de Cadaques", "coords": [42.2886, 3.2784], "maps_url": "https://www.google.com/maps/search/?api=1&query=Platja+Gran+de+Cadaques+Cadaqués"}, {"id": "l-cala-platja-de-sa-conca", "name": "Platja de Sa Conca", "coords": [42.2806, 3.2767], "maps_url": "https://www.google.com/maps/search/?api=1&query=Platja+de+Sa+Conca+Cadaqués"}, {"id": "l-cala-es-sortell", "name": "Es Sortell", "coords": [42.282, 3.2785], "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Sortell+Cadaqués"}, {"id": "l-cala-s-alqueria-gran", "name": "S'Alqueria Gran", "coords": [42.299, 3.2889], "maps_url": "https://www.google.com/maps/search/?api=1&query=S%27Alqueria+Gran+Cadaqués"}, {"id": "l-cala-cala-nans-far-de-cala-nans", "name": "Cala Nans (Far de Cala Nans)", "coords": [42.2709, 3.2864], "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Nans+(Far+de+Cala+Nans)+Cadaqués"}, {"id": "l-cala-cala-culip", "name": "Cala Culip", "coords": [42.3212, 3.3109], "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Culip+Cadaqués"}, {"id": "l-cala-cala-jugadora", "name": "Cala Jugadora", "coords": [42.3171, 3.3109], "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Jugadora+Cadaqués"}, {"id": "l-cult-casa-museu-salvador-dali-portlliga", "name": "Casa-Museu Salvador Dalí — Portlligat", "coords": [42.2933, 3.2889], "maps_url": "https://www.google.com/maps/search/?api=1&query=Casa-Museu+Salvador+Dalí+Portlligat+Cadaqués"}, {"id": "l-cult-esglesia-de-santa-maria-the-fisher", "name": "Església de Santa Maria — the fishermen's altarpiece", "coords": [42.2886, 3.2758], "maps_url": "https://www.google.com/maps/search/?api=1&query=Església+de+Santa+Maria+Cadaqués"}, {"id": "l-cult-far-de-cap-de-creus-the-lighthouse", "name": "Far de Cap de Creus — the lighthouse at Iberia's edge", "coords": [42.319, 3.3199], "maps_url": "https://www.google.com/maps/search/?api=1&query=Far+de+Cap+de+Creus+Cadaqués"}, {"id": "l-cult-espai-cap-de-creus-reading-the-roc", "name": "Espai Cap de Creus — reading the rock", "coords": [42.3187, 3.3193], "maps_url": "https://www.google.com/maps/search/?api=1&query=Espai+Cap+de+Creus+Cadaqués"}, {"id": "l-cult-museu-de-cadaques-the-town-s-own-g", "name": "Museu de Cadaqués — the town's own gallery", "coords": [42.2889, 3.2772], "maps_url": "https://www.google.com/maps/search/?api=1&query=Museu+de+Cadaqués"}, {"id": "l-cult-the-artist-colony-why-everyone-cam", "name": "The artist colony — why everyone came", "coords": [42.2885, 3.278], "maps_url": "https://www.google.com/maps/search/?api=1&query=Cadaqués+old+town+waterfront"}, {"id": "l-cult-cementiri-de-cadaques-graves-above", "name": "Cementiri de Cadaqués — graves above the water", "coords": [42.2862, 3.274], "maps_url": "https://www.google.com/maps/search/?api=1&query=Cementiri+de+Cadaqués"}, {"id": "l-cult-es-poal-the-cove-dali-painted-at-f", "name": "Es Poal — the cove Dalí painted at fifteen", "coords": [42.2872, 3.2812], "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Poal+Cadaqués"}];
+  const PHOTOS = [{"src": "/terroir/Cadaques-CapdeCreus/img/cadaques-bay.jpg", "caption": "The white houses of Cadaqués climbing from the bay to the church of Santa Maria, whose gilded altarpiece has its own card under Culture.", "credit": "Ylliab Photo · CC BY 2.0 · Wikimedia Commons"}, {"src": "/terroir/Cadaques-CapdeCreus/img/portlligat.jpg", "caption": "Fishing boats on the shore at Portlligat, the cove over the hill where Dalí made his house out of fishermen’s huts.", "credit": "Olga Gairin · CC BY-SA 3.0 · Wikimedia Commons"}, {"src": "/terroir/Cadaques-CapdeCreus/img/cap-de-creus.jpg", "caption": "The Cap de Creus lighthouse on the wind-scoured schist at the easternmost point of mainland Spain, lit since 1853.", "credit": "Maria Planas Aulet · CC BY-SA 3.0 · Wikimedia Commons"}];
+  const GEMS = [{"id": "gem-anxova", "pattern": "anchovy", "tag": "Empordà gem · born here", "name": "Salt since the Greeks", "story": "The Greeks who landed at Empúries in the sixth century BC salted fish on this shore, and L’Escala never stopped: the town’s salt warehouse, the Alfolí de la Sal, was finished in 1697, and two family houses — Callol i Serrats, founded 1847, and Solés, 1888 — still pack the anchovy in salt for months and fillet it by hand.", "where": "The salters’ own shops in L’Escala; on the larder card."}, {"id": "gem-cremat", "pattern": "cremat", "tag": "Coast gem · born here", "name": "Rum from the Cuba run", "story": "Catalan traders working the Cuba run in the nineteenth century brought home dark rum and the songs of the havana, the havaneres. Set alight in a clay pot with coffee and cinnamon, the rum became the coast’s own drink, and the songs its own music; the two still travel together on summer nights.", "where": "Summer havaneres nights on the front; the beach bar of 1935 pours it."}, {"id": "gem-suquet", "pattern": "suquet", "tag": "Coast gem · disputed", "name": "The fishermen’s pot", "story": "Suquet comes from suc, juice: the fishermen cooked what they could not sell with potatoes in a little water and oil, and the picada of almonds and saffron came later. Both the Empordà and Tarragona claim it, and neither can prove it.", "where": "The family houses and the sea-wall house, in the tables."}];
+  const TABLES = {"grande": {"title": "Les Grandes Tables", "desc": "The tables you clear an evening for, and book ahead: the elBulli alumni on the Riera, the oysters at the water’s edge, and the house in the sea wall.", "sections": [{"label": "The elBulli line and the sea wall", "desc": "elBulli’s three head chefs on the Riera, flamed oysters at the waterline, and the house built into the sea wall in 1967.", "ids": ["v01-compartir-cadaques", "v05-talla", "v04-es-baluard"]}]}, "petite": {"title": "Les Petites Tables", "desc": "Where this guide actually lives: the family houses with a date over the door, the fish kitchens one street back, and the tables on the beach, up the hill and out at the cape.", "sections": [{"label": "The old houses — dated", "desc": "The sung menu at shared tables, the boat-to-pot rice of the Passeig, and the lobster rice of the Portitxó square.", "ids": ["v02-casa-anita", "v06-can-rafa", "v08-casa-nun"]}, {"label": "One street back — the catch without the view", "desc": "Scorpionfish and winter urchins in a back lane, paella without the view, and grills in an old-town room.", "ids": ["v07-la-sirena", "v09-es-balconet"]}, {"label": "The beach, the hill and the cape", "desc": "Rice on the beach, a terrace under olive trees above the harbour, and curry at the easternmost point of Spain.", "ids": ["v10-s-estrop", "v12-es-bar-de-dalt", "v03-restaurant-cap-de-creus"]}]}, "street": {"title": "Le Bar — the rooms with a story", "desc": "A drink, a plate and a story: the beach bar of 1935, the bar Dalí drew the logo for, and the late glass on the front.", "sections": [{"label": "Le Bar — the rooms with a story", "desc": "The beach bar where Dalí landed for a cremat, the bar whose logo he drew, and the late gin on the front.", "ids": ["v14-maritim-bar", "v13-l-hostal"]}]}};
+  const CATEGORIES = [{"key": "elbulli", "label": "The elBulli line and the sea wall", "lead": "elBulli’s three head chefs on the Riera, flamed oysters at the waterline, and the house built into the sea wall in 1967.", "story": {"title": "The elBulli line, the wall", "story": "Cadaqués is a short drive over the hill from Cala Montjoi, where elBulli cooked until 2011, and its best-known modern table comes from that kitchen. Compartir opened on the Riera de Sant Vicenç in 2012, run by the three chefs who later made Disfrutar in Barcelona the world's No.1 in 2024; every plate goes to the middle of the table. Across the harbour, Talla serves flame-grilled oysters with ponzu on a terrace facing the white town and shuts from about November to March. Es Baluard, in the old sea wall since 1967, is run by the founders' grandchildren, and its wine list prints the distance in kilometres to each winery.", "where": "Compartir, Cadaqués; Talla, Cadaqués; Es Baluard, Cadaqués"}}, {"key": "houses", "label": "The old houses — dated", "lead": "The sung menu at shared tables, the boat-to-pot rice of the Passeig, and the lobster rice of the Portitxó square.", "story": {"title": "One family, three tables", "story": "Cadaqués's oldest dining rooms are family businesses, and two of them belong to the same family. Ana Mota opened Casa Anita in 1960, with no written menu and shared tables; she died in June 2025, three days short of ninety, and her children Juanito and Ana Mari now cook. Her son Rafa Martín Mota opened Can Rafa on the Passeig in 1982 with Carmen Faixó, and the family's Celler Martín Faixó on the cape supplies the wine for its lobster rice. Casa Nun has served soupy lobster rice on the little Plaça des Portitxó since 1979, from recipes passed down the family.", "where": "Casa Anita, Cadaqués; Can Rafa, Cadaqués; Casa Nun, Cadaqués"}}, {"key": "back", "label": "One street back — the catch without the view", "lead": "Scorpionfish and winter urchins in a back lane, paella without the view, and grills in an old-town room.", "story": {"title": "One lane back from the sea", "story": "Step one street back from the harbour and the prices drop and the view goes, but the fish is the same catch. La Sirena, on Carrer des Call, cooks scorpionfish with sauce and potatoes, suquet and zarzuela, and serves garoines, the local sea urchins, from January to March. Es Balconet, a small room on Carrer de Sant Antoni, is known for its paella, the black one with squid ink among them, and makes suquet when the boats allow. Neither has a sea view to charge for, and neither needs one.", "where": "La Sirena, Cadaqués; Es Balconet, Cadaqués"}}, {"key": "edge", "label": "The beach, the hill and the cape", "lead": "Rice on the beach, a terrace under olive trees above the harbour, and curry at the easternmost point of Spain.", "story": {"title": "Beach, hill and cape", "story": "The edges of Cadaqués eat differently from the harbour. S'Estrop, on the Plaça del Passeig facing the beach, cooks paella, fideuà and fish in a charcoal oven, with a set lunch that includes a rice. Es Bar de Dalt, at the top of the village on the road out, is the locals' bar: artichokes, croquettes and calamari under olive trees beside the football ground, with live music on Thursdays. At the end of the road, beside the lighthouse on mainland Spain's easternmost point, Christopher Little has served curries since 1991 at Restaurant Cap de Creus, in a former Civil Guard barracks; driving up needs a booking.", "where": "S'Estrop, Cadaqués; Es Bar de Dalt, Cadaqués; Restaurant Cap de Creus, Cadaqués"}}, {"key": "bars", "label": "Le Bar — the rooms with a story", "lead": "The beach bar where Dalí landed for a cremat, the bar whose logo he drew, and the late gin on the front.", "story": {"title": "Bars with a past", "story": "Cadaqués drank with painters long before it fed yachts. The Marítim has stood on the beach since 1935, turned ninety in 2025 and is listed as protected local heritage; its cremat, rum and coffee set alight at the table, is the fishermen's drink of the bay. L'Hostal, on the Passeig, was founded by Marci Pogany and is the bar Dalí favoured; listings date the logo he drew for it to 1975, and its walls still carry his memorabilia, though the nightclub years are over and it cooks full meals now.", "where": "Marítim Bar, Cadaqués; L'Hostal, Cadaqués"}}];
+  const GROUPS = [{"key": "grande", "label": "Les Grandes Tables", "lead": "The tables you clear an evening for, and book ahead: the elBulli alumni on the Riera, the oysters at the water’s edge, and the house in the sea wall."}, {"key": "petite", "label": "Les Petites Tables", "lead": "Where this guide actually lives: the family houses with a date over the door, the fish kitchens one street back, and the tables on the beach, up the hill and out at the cape."}, {"key": "street", "label": "Le Bar — the rooms with a story", "lead": "A drink, a plate and a story: the beach bar of 1935, the bar Dalí drew the logo for, and the late glass on the front."}];
+  const GROUP_OF = {"elbulli": "grande", "houses": "petite", "back": "petite", "edge": "petite", "bars": "street"};
+  const BRIDGE = {
+ "_rule": "SINGLE-EDITOR RULE: charter{} on a venue deliberately duplicates booking truth held in its reservation/price_range/caveat prose. Any commit editing those fields on a shortlist venue MUST update its charter block in the same commit, and lead-time grouping below must be re-verified at write time.",
+ "doors": [
+  {
+   "fr": "One Night",
+   "en": "Crew ashore for one evening: a plan for each quarter — the drink, the table, the late glass.",
+   "note": "Le verre · la table · le dernier verre",
+   "href": "#tables",
+   "open": [
+    "tables",
+    "bars",
+    "listening"
+   ]
+  },
+  {
+   "fr": "The Gastronomic Dig-In",
+   "en": "For the chef: the cove that changed cooking, the market and the salters, the dishes of the rock, and the canon at the foot.",
+   "note": "L’histoire · le marché · le plat · la liste",
+   "href": "#bougie",
+   "open": [
+    "bougie",
+    "provisioning",
+    "la-liste"
+   ]
+  },
+  {
+   "fr": "For Guests",
+   "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.",
+   "note": "auto",
+   "href": "#ce-soir",
+   "open": [
+    "ce-soir"
+   ]
+  }
+ ],
+ "shortlist": {
+  "title": "For guests — plan ahead, or save the night",
+  "desc": "Book ahead for guests, or rescue the evening when the booking falls through. Every name links to its full entry above.",
+  "groups": [
+   {
+    "label": "Last minute — save the night",
+    "sub": "The booking fell through: the beach bar of 1935 for a plate and a cremat, Dalí’s bar on the Passeig (a full restaurant now), and the family rice house of 1982 on the front. All three traded in 2026; none published autumn hours, so call first.",
+    "ids": [
+     "v14-maritim-bar",
+     "v13-l-hostal",
+     "v06-can-rafa"
+    ]
+   },
+   {
+    "label": "Plan ahead — this week",
+    "sub": "Book a few days ahead: the recited menu at shared tables (opening days differ between listings), the soupy lobster rice of the Portitxó square, and a window table in the sea wall, which keeps a waiting list.",
+    "ids": [
+     "v02-casa-anita",
+     "v08-casa-nun",
+     "v04-es-baluard"
+    ]
+   },
+   {
+    "label": "Plan ahead — the grand night",
+    "sub": "The elBulli alumni’s sharing menu on the Riera (its days vary through the year), flamed oysters at the waterline before it shuts for the winter, and curry at the lighthouse, where the booking is also your pass to drive up. Phone all three in late October.",
+    "ids": [
+     "v01-compartir-cadaques",
+     "v05-talla",
+     "v03-restaurant-cap-de-creus"
+    ]
+   }
   ]
  }
-];
-  const LANDMARKS = [
- {
-  "id": "l-cala-platja-de-portlligat",
-  "name": "Platja de Portlligat",
-  "coords": [
-   42.2939,
-   3.2861
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Platja+de+Portlligat+Cadaqués"
- },
- {
-  "id": "l-cala-platja-gran-de-cadaques",
-  "name": "Platja Gran de Cadaques",
-  "coords": [
-   42.2886,
-   3.2784
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Platja+Gran+de+Cadaques+Cadaqués"
- },
- {
-  "id": "l-cala-platja-de-sa-conca",
-  "name": "Platja de Sa Conca",
-  "coords": [
-   42.2806,
-   3.2767
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Platja+de+Sa+Conca+Cadaqués"
- },
- {
-  "id": "l-cala-es-sortell",
-  "name": "Es Sortell",
-  "coords": [
-   42.282,
-   3.2785
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Sortell+Cadaqués"
- },
- {
-  "id": "l-cala-s-alqueria-gran",
-  "name": "S'Alqueria Gran",
-  "coords": [
-   42.299,
-   3.2889
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=S'Alqueria+Gran+Cadaqués"
- },
- {
-  "id": "l-cala-cala-nans-far-de-cala-nans",
-  "name": "Cala Nans (Far de Cala Nans)",
-  "coords": [
-   42.2709,
-   3.2864
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Nans+(Far+de+Cala+Nans)+Cadaqués"
- },
- {
-  "id": "l-cala-cala-culip",
-  "name": "Cala Culip",
-  "coords": [
-   42.3212,
-   3.3109
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Culip+Cadaqués"
- },
- {
-  "id": "l-cala-cala-jugadora",
-  "name": "Cala Jugadora",
-  "coords": [
-   42.3171,
-   3.3109
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cala+Jugadora+Cadaqués"
- },
- {
-  "id": "l-cult-casa-museu-salvador-dali-portlliga",
-  "name": "Casa-Museu Salvador Dalí — Portlligat",
-  "coords": [
-   42.2933,
-   3.2889
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Casa-Museu+Salvador+Dalí+Portlligat+Cadaqués"
- },
- {
-  "id": "l-cult-esglesia-de-santa-maria-the-fisher",
-  "name": "Església de Santa Maria — the fishermen's altarpiece",
-  "coords": [
-   42.2886,
-   3.2758
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Església+de+Santa+Maria+Cadaqués"
- },
- {
-  "id": "l-cult-far-de-cap-de-creus-the-lighthouse",
-  "name": "Far de Cap de Creus — the lighthouse at Iberia's edge",
-  "coords": [
-   42.319,
-   3.3199
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Far+de+Cap+de+Creus+Cadaqués"
- },
- {
-  "id": "l-cult-espai-cap-de-creus-reading-the-roc",
-  "name": "Espai Cap de Creus — reading the rock",
-  "coords": [
-   42.3187,
-   3.3193
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Espai+Cap+de+Creus+Cadaqués"
- },
- {
-  "id": "l-cult-museu-de-cadaques-the-town-s-own-g",
-  "name": "Museu de Cadaqués — the town's own gallery",
-  "coords": [
-   42.2889,
-   3.2772
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Museu+de+Cadaqués"
- },
- {
-  "id": "l-cult-the-artist-colony-why-everyone-cam",
-  "name": "The artist colony — why everyone came",
-  "coords": [
-   42.2885,
-   3.278
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cadaqués+old+town+waterfront"
- },
- {
-  "id": "l-cult-cementiri-de-cadaques-graves-above",
-  "name": "Cementiri de Cadaqués — graves above the water",
-  "coords": [
-   42.2862,
-   3.274
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cementiri+de+Cadaqués"
- },
- {
-  "id": "l-cult-es-poal-the-cove-dali-painted-at-f",
-  "name": "Es Poal — the cove Dalí painted at fifteen",
-  "coords": [
-   42.2872,
-   3.2812
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Es+Poal+Cadaqués"
- }
-];
-  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
+};
+  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, GEMS, TABLES, CATEGORIES, GROUPS, GROUP_OF, BRIDGE };
 })();

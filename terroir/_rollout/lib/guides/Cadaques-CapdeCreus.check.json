@@ -1,0 +1,119 @@
+{
+  "slug": "Cadaques-CapdeCreus",
+  "city": "Cadaqués",
+  "listeSlug": "cadaques",
+  "groups": 3,
+  "mapsTokens": [
+    "Cadaqu",
+    "Spain",
+    "Girona",
+    "Catalunya",
+    "Catalonia"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia",
+    "Piraeus",
+    "Sicily",
+    "Istanbul",
+    "Toulon",
+    "Saint-Tropez",
+    "Provence"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "curiosities",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "calas",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink-place",
+    "rooftops",
+    "linger",
+    "money-sits",
+    "underground",
+    "art",
+    "coffee-scene",
+    "natural-wine",
+    "avoid-traps",
+    "twentyfour",
+    "walk"
+  ],
+  "floors": {
+    "venues": 13,
+    "gems": 3,
+    "neighborhoods": 6,
+    "walks": 5,
+    "categories": 5,
+    "laneStories": 5,
+    "fcards": 86,
+    "fsubs": 36,
+    "liste": 15,
+    "mapsLinks": 64,
+    "pins": 12
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 13,
+    "gemboxes": 5
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 5,
+    "mode": "pointer"
+  },
+  "doors": 3
+}

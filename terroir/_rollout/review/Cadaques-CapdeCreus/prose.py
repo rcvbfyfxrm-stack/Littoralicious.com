@@ -194,9 +194,9 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {"Last minute — save the night": "@@",
-             "Plan ahead — this week": "@@",
-             "Plan ahead — the grand night": "@@"}   # written in fixes.py from what the 18 Oct re-check found
+SHORT_SUB = {"Last minute — save the night": "The booking fell through: the beach bar of 1935 for a plate and a cremat, Dalí’s bar on the Passeig (a full restaurant now), and the family rice house of 1982 on the front. All three traded in 2026; none published autumn hours, so call first.",
+             "Plan ahead — this week": "Book a few days ahead: the recited menu at shared tables (opening days differ between listings), the soupy lobster rice of the Portitxó square, and a window table in the sea wall, which keeps a waiting list.",
+             "Plan ahead — the grand night": "The elBulli alumni’s sharing menu on the Riera (its days vary through the year), flamed oysters at the waterline before it shuts for the winter, and curry at the lighthouse, where the booking is also your pass to drive up. Phone all three in late October."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
             'the fact that makes it matter and the exact best place for it — is one section at the foot of this guide, with the stories behind it. '
@@ -311,4 +311,11 @@ GLOSS = [
  ["Soles", "the suns of the Repsol guide, one to three"],
  ["castanyada", "the All Saints’ chestnut feast"],
  ["panellets", "almond-and-pine-nut sweets of All Saints"],
+]
+
+# the guide's own three CC photos (committed 9 Jun 2026 with their credits; the old page placed them by script), now in TERROIR_DATA.PHOTOS
+PHOTOS = [
+ {"src": "/terroir/Cadaques-CapdeCreus/img/cadaques-bay.jpg", "caption": "The white houses of Cadaqués climbing from the bay to the church of Santa Maria, whose gilded altarpiece has its own card under Culture.", "credit": "Ylliab Photo · CC BY 2.0 · Wikimedia Commons"},
+ {"src": "/terroir/Cadaques-CapdeCreus/img/portlligat.jpg", "caption": "Fishing boats on the shore at Portlligat, the cove over the hill where Dalí made his house out of fishermen’s huts.", "credit": "Olga Gairin · CC BY-SA 3.0 · Wikimedia Commons"},
+ {"src": "/terroir/Cadaques-CapdeCreus/img/cap-de-creus.jpg", "caption": "The Cap de Creus lighthouse on the wind-scoured schist at the easternmost point of mainland Spain, lit since 1853.", "credit": "Maria Planas Aulet · CC BY-SA 3.0 · Wikimedia Commons"},
 ]

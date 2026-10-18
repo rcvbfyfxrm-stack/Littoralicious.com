@@ -10,11 +10,13 @@ RV = pathlib.Path(__file__).resolve().parent
 LANES = {
  "elbulli": {"label": "The elBulli line and the sea wall", "group": "grande", "ids": ["v01-compartir-cadaques", "v05-talla", "v04-es-baluard"]},
  "houses":  {"label": "The old houses — dated", "group": "petite", "ids": ["v02-casa-anita", "v06-can-rafa", "v08-casa-nun"]},
- "back":    {"label": "One street back — the catch without the view", "group": "petite", "ids": ["v07-la-sirena", "v09-es-balconet", "v11-es-trull"]},
+ "back":    {"label": "One street back — the catch without the view", "group": "petite", "ids": ["v07-la-sirena", "v09-es-balconet"]},
  "edge":    {"label": "The beach, the hill and the cape", "group": "petite", "ids": ["v10-s-estrop", "v12-es-bar-de-dalt", "v03-restaurant-cap-de-creus"]},
- "bars":    {"label": "Le Bar — the rooms with a story", "group": "street", "ids": ["v14-maritim-bar", "v13-l-hostal", "v15-cafe-tropical"]},
+ "bars":    {"label": "Le Bar — the rooms with a story", "group": "street", "ids": ["v14-maritim-bar", "v13-l-hostal"]},
 }
 CUT = {
+ "v11-es-trull": "Cut: the 18 Oct re-check found nothing dated 2026 for it (one undated listing, no reviews), and the back-lane register is told by La Sirena and Es Balconet.",
+ "v15-cafe-tropical": "Cut: nothing dated 2026 found; summer-night business only (nightly 24 June-15 September, weekends otherwise), and the late glass is told by the Marítim and L'Hostal.",
  "v16-elbulli-cala-montjoi-roses": "Not a table: elBulli served its last dinner on 30 July 2011 and reopened in 2023 as the elBulli1846 museum. Its story is the food-history fold; the visit is a day-trip card under Autour.",
 }
 BERTHS = ["v01-compartir-cadaques", "v02-casa-anita", "v14-maritim-bar"]   # one per group; revisited after the 18 Oct re-check (make_inputs prints any berth not confirmed)
