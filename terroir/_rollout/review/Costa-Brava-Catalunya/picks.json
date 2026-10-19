@@ -1,0 +1,115 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The starred line — Girona and the Empordà",
+   "group": "grande",
+   "ids": [
+    "v01-el-celler-de-can-roca",
+    "v02-bo-tic",
+    "v06-els-tinars"
+   ]
+  },
+  "port": {
+   "label": "The port and the catch",
+   "group": "petite",
+   "ids": [
+    "v08-la-gamba",
+    "v10-rafa-s",
+    "v09-cal-tet"
+   ]
+  },
+  "village": {
+   "label": "The cove, the village and the cape",
+   "group": "petite",
+   "ids": [
+    "v04-casamar",
+    "v07-can-bonay",
+    "v03-compartir-cadaqu-s"
+   ]
+  },
+  "larder": {
+   "label": "The market, the auction, the salt",
+   "group": "street",
+   "ids": [
+    "v12-espai-del-peix-llotja-de-palam-s",
+    "v13-anxoves-sol-s",
+    "v11-mercat-del-lle"
+   ]
+  },
+  "bars": {
+   "label": "Le Bar — Girona's old town by the glass, the cup and the cone",
+   "group": "street",
+   "ids": [
+    "v14-la-tabarra",
+    "v15-la-f-brica",
+    "v16-rocambolesc"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit"
+  ],
+  "petite": [
+   "port",
+   "village"
+  ],
+  "street": [
+   "larder",
+   "bars"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v05-restaurant-massana": "Cut: the starred lane holds three and keeps the two tables that define the Empordà (Can Roca, Bo.TiC) and the masia on the coast road (Els Tinars); Massana is a Girona city table, the sister Girona guide's ground."
+ },
+ "berths": [
+  "v01-el-celler-de-can-roca",
+  "v08-la-gamba",
+  "v14-la-tabarra"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v14-la-tabarra",
+   "v09-cal-tet",
+   "v07-can-bonay"
+  ],
+  "Plan ahead — this week": [
+   "v08-la-gamba",
+   "v04-casamar",
+   "v10-rafa-s"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-el-celler-de-can-roca",
+   "v02-bo-tic",
+   "v06-els-tinars"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "gastronomy:Mercat del Lleó, Girona": "told once: the market is a table venue (the larder lane); the larder fold points to it",
+  "gastronomy:Llotja de Palamós (fish auction)": "told once: merged into the Espai del Peix venue; the larder fold points to it",
+  "gastronomy:Anxoves Solés": "told once: merged into the Anxoves Solés venue",
+  "gastronomy:Anxoves Solés shop, L'Escala": "told once: the same house as the venue",
+  "gastronomy:Rocambolesc, Girona": "told once: Rocambolesc is a venue (Le Bar lane)",
+  "street-food:Panet (gelato in brioche) at Rocambolesc": "told once: a dish of the Rocambolesc venue",
+  "street-food:Pa amb tomàquet": "rewritten inside La liste",
+  "street-food:Coca de recapte / coca d'anxoves": "rewritten inside La liste",
+  "ethnic-restaurants:North African and Latin American shops, around the Mercat del Lleó": "cut: unnamed shops, nothing to verify; not this coast's larder",
+  "burger-kebab": "cut: the old fold was an honest 'none' note with no place in it",
+  "bougie:El Celler de Can Roca — the cellar": "told once: the cellar pairing is told on the Can Roca venue",
+  "drink:Lledoner Roig (grey Grenache)": "merged into the three-Garnatxas card",
+  "drink:Mas Estela — biodynamic": "told once: the estate is a larder card",
+  "drink:Martín Faixó — Cadaqués": "told once: the estate is a larder card",
+  "culture:Besalú": "moved to Autour (a day trip, not a stop on the coast)",
+  "secret-gems:The sculpted schist of the Paratge de Tudela": "merged into the Tudela walk (the same rock, the same path)",
+  "secret-gems:The terrace of Sant Pere de Rodes": "merged into the Sant Pere de Rodes culture card",
+  "work:La Fábrica, Girona": "told once: La Fábrica is a venue; the linger card is a pointer",
+  "work:Riva of Cadaqués at dusk": "cut: Cadaqués has its own guide; the town card points there",
+  "walks:Cadaqués lanes at dawn": "cut: Cadaqués has its own guide, with its own walks",
+  "events:*": "rebuilt in the calendar (hot_events.json); the three summer music dates are the listening cards, told once",
+  "avoid:Unverified phone bookings": "cut: not a trap but a note on the old guide's method; the venues now carry their own booking lines",
+  "dish:*": "the seven dish articles are rewritten inside La liste (The Dish)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

@@ -1,0 +1,496 @@
+{
+ "quartiers": {
+  "sub": "towns",
+  "groups": [
+   {
+    "title": "The coves of the Baix Empordà",
+    "desc": "",
+    "cards": [
+     {
+      "key": "towns:Calella de Palafrugell and Llafranc",
+      "from": "quartiers:Calella de Palafrugell & Llafranc"
+     },
+     {
+      "key": "towns:Palamós",
+      "from": "quartiers:Palamós"
+     },
+     {
+      "key": "towns:Pals and Peratallada",
+      "from": "quartiers:Pals & Peratallada"
+     }
+    ]
+   },
+   {
+    "title": "The Gulf of Roses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "towns:L'Escala and Empúries",
+      "from": "quartiers:L'Escala & Empúries"
+     },
+     {
+      "key": "towns:Roses",
+      "from": "quartiers:Roses"
+     },
+     {
+      "key": "towns:Cadaqués and Portlligat",
+      "from": "quartiers:Cadaqués & Portlligat"
+     }
+    ]
+   },
+   {
+    "title": "Inland",
+    "desc": "",
+    "cards": [
+     {
+      "key": "towns:Girona",
+      "from": "quartiers:Girona"
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "The name, the wind, the rock",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Named on 12 September 1908",
+      "from": null
+     },
+     {
+      "key": "curiosities:The wind that plants the vines low",
+      "from": null
+     },
+     {
+      "key": "curiosities:The oldest rock in Catalonia",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Who came ashore",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Did the vine land at Empúries?",
+      "from": null
+     },
+     {
+      "key": "curiosities:The Indianos of Begur",
+      "from": null
+     },
+     {
+      "key": "curiosities:The smugglers' path",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "On the tables — go early",
+    "desc": "",
+    "cards": [
+     {
+      "key": "larder:The auction at Palamós",
+      "from": null
+     },
+     {
+      "key": "larder:The anchovy shop at L'Escala",
+      "from": null
+     },
+     {
+      "key": "larder:The Lleó market at Girona",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wine estates",
+    "desc": "",
+    "cards": [
+     {
+      "key": "larder:Espelt",
+      "from": "gastronomy:Espelt Viticultors"
+     },
+     {
+      "key": "larder:Mas Estela",
+      "from": "gastronomy:Celler Mas Estela"
+     },
+     {
+      "key": "larder:Martín Faixó",
+      "from": "gastronomy:Celler Martín Faixó"
+     }
+    ]
+   },
+   {
+    "title": "The oil, the castle cellar and the natural wine",
+    "desc": "",
+    "cards": [
+     {
+      "key": "larder:Empordàlia",
+      "from": "gastronomy:Empordàlia (Oli de Pau)"
+     },
+     {
+      "key": "larder:Castell de Peralada",
+      "from": "bougie:Castell de Perelada"
+     },
+     {
+      "key": "larder:La Vinyeta",
+      "from": "drink:La Vinyeta — natural"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The coast path",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Camí de ronda, Calella to Llafranc",
+      "from": "walks:Camí de ronda: Calella → Llafranc"
+     },
+     {
+      "key": "walks:Sant Martí d'Empúries to L'Escala",
+      "from": "walks:Empúries shore path"
+     }
+    ]
+   },
+   {
+    "title": "The cape and the plain",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Paratge de Tudela to the cape lighthouse",
+      "from": "walks:Cap de Creus to the lighthouse"
+     },
+     {
+      "key": "walks:Pals to the rice fields",
+      "from": "walks:Pals to the rice paddies"
+     }
+    ]
+   }
+  ]
+ },
+ "linger": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "First and last light on the coast",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Les Voltes at Port Bo",
+      "from": "secret-gems:The Les Voltes arches at Port Bo, at dawn"
+     },
+     {
+      "key": "linger:Sa Tuna",
+      "from": "secret-gems:The pebble cove of Sa Tuna"
+     },
+     {
+      "key": "linger:The square of Sant Martí d'Empúries",
+      "from": "secret-gems:The square of Sant Martí d'Empúries"
+     }
+    ]
+   },
+   {
+    "title": "A bench above the sea",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Jardins de Cap Roig",
+      "from": "work:Jardins de Cap Roig, Calella de Palafrugell"
+     }
+    ]
+   },
+   {
+    "title": "Girona — the cup and the river",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:La Fábrica with a laptop",
+      "from": null
+     },
+     {
+      "key": "linger:Plaça de la Independència",
+      "from": "work:Plaça de la Independència terraces, Girona"
+     },
+     {
+      "key": "linger:The Onyar bridges",
+      "from": "secret-gems:The Onyar footbridges, Girona"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "Dalí's triangle",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Teatre-Museu Dalí, Figueres",
+      "from": "culture:Teatre-Museu Dalí, Figueres"
+     },
+     {
+      "key": "culture:Casa-Museu Dalí, Portlligat",
+      "from": "culture:Salvador Dalí House-Museum, Portlligat"
+     },
+     {
+      "key": "culture:Castell Gala Dalí, Púbol",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Greeks, monks and counts",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Empúries",
+      "from": "culture:Ruïnes d'Empúries"
+     },
+     {
+      "key": "culture:Sant Pere de Rodes",
+      "from": "culture:Sant Pere de Rodes"
+     },
+     {
+      "key": "culture:Santa Maria, Castelló d'Empúries",
+      "from": "culture:Santa Maria de Castelló d'Empúries"
+     }
+    ]
+   },
+   {
+    "title": "The cape and the cove",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Cap de Creus",
+      "from": "culture:Cap de Creus Natural Park"
+     },
+     {
+      "key": "culture:elBulli1846, Cala Montjoi",
+      "from": "culture:elBulli1846, Cala Montjoi (Roses)"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as local craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:The three Garnatxas",
+      "from": "drink:Garnatxa (Lledoner) — the three colours"
+     },
+     {
+      "key": "drink:Carinyena",
+      "from": "drink:Carinyena (Samsó)"
+     },
+     {
+      "key": "drink:Garnatxa de l'Empordà",
+      "from": "drink:Garnatxa de l'Empordà (sweet)"
+     }
+    ]
+   },
+   {
+    "title": "After dinner",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Cremat",
+      "from": null
+     },
+     {
+      "key": "drink:Ratafia",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi bar on this coast",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Live, in summer",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Festival Castell de Peralada",
+      "from": "music:Festival Castell de Peralada"
+     },
+     {
+      "key": "listening:Cap Roig Festival",
+      "from": "music:Cap Roig Festival"
+     },
+     {
+      "key": "listening:The Cantada d'Havaneres",
+      "from": "music:Cantada d'Havaneres, Calella de Palafrugell"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "Into the volcanoes",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Besalú",
+      "from": "culture:Besalú"
+     },
+     {
+      "key": "around:Olot and the Garrotxa volcanoes",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "The strip and the photo board",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:The Lloret seafront",
+      "from": "avoid:Lloret de Mar beachfront strip"
+     },
+     {
+      "key": "avoid:The photo-board paella",
+      "from": "avoid:Front-line \"tourist menú\" paella"
+     }
+    ]
+   },
+   {
+    "title": "The season",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:The front line in August",
+      "from": "avoid:High-August front-line dining"
+     },
+     {
+      "key": "avoid:Urchins out of season",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The coast and the wine",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Costa Brava Girona",
+      "from": "follow:costabrava.org"
+     },
+     {
+      "key": "follow:Visit Palafrugell",
+      "from": "follow:visitpalafrugell.cat"
+     },
+     {
+      "key": "follow:DO Empordà",
+      "from": "follow:doemporda.cat"
+     }
+    ]
+   },
+   {
+    "title": "The kitchen and the larder",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:El Celler de Can Roca",
+      "from": "follow:@cellercanroca"
+     },
+     {
+      "key": "follow:Njoy Costa Brava",
+      "from": "follow:njoycostabrava.com"
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "larder:The auction at Palamós": "v12-espai-del-peix-llotja-de-palam-s",
+  "larder:The anchovy shop at L'Escala": "v13-anxoves-sol-s",
+  "larder:The Lleó market at Girona": "v11-mercat-del-lle",
+  "linger:La Fábrica with a laptop": "v15-la-f-brica"
+ }
+}

@@ -1,0 +1,386 @@
+{
+ "larder:The auction at Palamós": {
+  "fold": "provisioning",
+  "group": "On the tables — go early",
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v12-espai-del-peix-llotja-de-palam-s). Set \"ref\": \"v12-espai-del-peix-llotja-de-palam-s\". Write it in THIS section's angle (the larder: what a galley buys and when to be on the quay); story 40-70 words that does NOT retell the venue's own story; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "larder:The anchovy shop at L'Escala": {
+  "fold": "provisioning",
+  "group": "On the tables — go early",
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v13-anxoves-sol-s). Set \"ref\": \"v13-anxoves-sol-s\". Write it in THIS section's angle (the larder: what to buy, how to carry it); story 40-70 words that does NOT retell the venue's own story; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "larder:The Lleó market at Girona": {
+  "fold": "provisioning",
+  "group": "On the tables — go early",
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v11-mercat-del-lle). Set \"ref\": \"v11-mercat-del-lle\". Write it in THIS section's angle (the larder: which stalls, what to buy); story 40-70 words that does NOT retell the venue's own story; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "larder:Espelt": {
+  "fold": "provisioning",
+  "group": "The wine estates",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Espelt Viticultors",
+   "type": "PRODUCER",
+   "hook": "Vilajuïga (Alt Empordà) — visits by appointment",
+   "chips": [],
+   "details": [
+    [
+     "Address",
+     "Mas Espelt, Vilajuïga"
+    ]
+   ],
+   "text": "The largest of the named DO Empordà growers, around two hundred hectares, organic for over twenty years and focused on native varieties — now led by Anna Espelt, with a modern winery beside the family farmhouse and a second estate, Mas Marès, above Cala Montjoi.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch)."
+ },
+ "larder:Mas Estela": {
+  "fold": "provisioning",
+  "group": "The wine estates",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Celler Mas Estela",
+   "type": "PRODUCER",
+   "hook": "Selva de Mar (Cap de Creus) — biodynamic since 1999",
+   "chips": [],
+   "details": [
+    [
+     "Address",
+     "Selva de Mar"
+    ]
+   ],
+   "text": "Sixteen hectares of estate fruit farmed biodynamically since 1999 to lunar and planetary cycles — Grenache, Muscat, Syrah and Samsó, hand-harvested. The cult names are Vinya Selva de Mar and Quindals, plus the sweet Moscatell Estela.",
+   "maps": "",
+   "links": []
+  },
+  "old_also": {
+   "fold": "drink",
+   "name": "Mas Estela — biodynamic",
+   "type": "DRINK",
+   "hook": "Sixteen hectares at Selva de Mar, biodynamic since 1999.",
+   "chips": [],
+   "details": [],
+   "text": "Organic from 1989 and biodynamic since 1999, hand-harvested estate fruit farmed to lunar and planetary cycles with no synthetic inputs — Grenache (noir and gris), Muscat, Syrah and Samsó. The cult names are Vinya Selva de Mar (red and white) and Quindals. The Cap de Creus terroir in a glass.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch)."
+ },
+ "larder:Martín Faixó": {
+  "fold": "provisioning",
+  "group": "The wine estates",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Celler Martín Faixó",
+   "type": "PRODUCER",
+   "hook": "Cadaqués — 300 m inside the Cap de Creus park",
+   "chips": [],
+   "details": [
+    [
+     "Address",
+     "Cadaqués"
+    ]
+   ],
+   "text": "A family winery of about eleven hectares on the Cadaqués pass at three hundred metres, surrounded by the sea inside the natural park — Picapoll, Muscat and Grenache under the Cadaqués brand.",
+   "maps": "",
+   "links": []
+  },
+  "old_also": {
+   "fold": "drink",
+   "name": "Martín Faixó — Cadaqués",
+   "type": "DRINK",
+   "hook": "A family winery at 300 m on the Cadaqués pass, inside the Cap de Creus park.",
+   "chips": [],
+   "details": [],
+   "text": "About eleven hectares at three hundred metres on the Cadaqués pass, \"surrounded by the sea\" inside the natural park — Picapoll, Muscat and Grenache under the Cadaqués brand. The dramatic coastal-mountain setting, schist underfoot and tramuntana overhead, is the signature.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch)."
+ },
+ "larder:Empordàlia": {
+  "fold": "provisioning",
+  "group": "The oil, the castle cellar and the natural wine",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Empordàlia (Oli de Pau)",
+   "type": "PRODUCER",
+   "hook": "Pau — the DOP olive-oil and wine cooperative",
+   "chips": [],
+   "details": [
+    [
+     "Address",
+     "Pau (Alt Empordà)"
+    ]
+   ],
+   "text": "Formed in 1995 from the old Pau, Roses and Vilajuïga oil cooperatives, Empordàlia presses DOP Oli de l'Empordà from the native Argudell olive under the Oli de Pau and ADN Argudell brands — clean, fruity, balanced bitter-pungent oil — alongside its wines.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch)."
+ },
+ "larder:Castell de Peralada": {
+  "fold": "provisioning",
+  "group": "The oil, the castle cellar and the natural wine",
+  "old": {
+   "fold": "bougie",
+   "name": "Castell de Perelada",
+   "type": "RESTAURANT",
+   "hook": "The DO's historic castle-estate, with a casino, gardens and the largest cellars in the appellation.",
+   "chips": [
+    "Estate tour + tasting; the prestige reds and the cava",
+    "Book ahead, especially in festival season",
+    "EUR 20-60 visit",
+    "Daytime tours; festival nights in summer"
+   ],
+   "details": [
+    [
+     "Where",
+     "Peralada (Alt Empordà)"
+    ]
+   ],
+   "text": "The most important and largest winery of DO Empordà occupies a restored medieval castle at Peralada, with a full range from cava to prestige reds, a library, a casino and formal gardens. Estate tours and tastings turn the wine into an afternoon; the summer Festival Castell de Peralada brings opera and dance to the grounds.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Castell%20de%20Perelada%20Peralada",
+   "links": []
+  },
+  "brief": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch)."
+ },
+ "larder:La Vinyeta": {
+  "fold": "provisioning",
+  "group": "The oil, the castle cellar and the natural wine",
+  "old": {
+   "fold": "drink",
+   "name": "La Vinyeta — natural",
+   "type": "DRINK",
+   "hook": "A young mixed farm at Mollet de Peralada reviving the old masia model.",
+   "chips": [],
+   "details": [],
+   "text": "A small, sustainability-minded estate combining vines, olives and cattle, making natural wines without added sulphites alongside its own olive oil and honey — the new-generation Empordà spirit. Drink it by the glass at La Tabarra in Girona.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch)."
+ },
+ "walks:Camí de ronda, Calella to Llafranc": {
+  "fold": "walks",
+  "group": "The coast path",
+  "old": {
+   "fold": "walks",
+   "name": "Camí de ronda: Calella → Llafranc",
+   "type": "WALK",
+   "hook": "Dawn at Port Bo · 5.5 km · ~1.5–2 hrs · 164 m climb",
+   "chips": [],
+   "details": [],
+   "text": "The signature coastal walk: from the Les Voltes arches at Calella, the cliff-cut camí de ronda through pine, El Canadell, rock tunnels and the door of Casamar to Llafranc's bay and the Sant Sebastià lighthouse.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length/climb if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:Sant Martí d'Empúries to L'Escala": {
+  "fold": "walks",
+  "group": "The coast path",
+  "old": {
+   "fold": "walks",
+   "name": "Empúries shore path",
+   "type": "WALK",
+   "hook": "Sant Martí d'Empúries → L'Escala · seafront · ~30 min",
+   "chips": [],
+   "details": [],
+   "text": "Along the ancient harbour from the medieval hamlet of Sant Martí d'Empúries past the Greek and Roman ruins to L'Escala, the Mediterranean on one side and two thousand five hundred years of trade on the other.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length/climb if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:The Paratge de Tudela to the cape lighthouse": {
+  "fold": "walks",
+  "group": "The cape and the plain",
+  "old": {
+   "fold": "walks",
+   "name": "Cap de Creus to the lighthouse",
+   "type": "WALK",
+   "hook": "Paratge de Tudela · sculpted schist · 1–2 hrs",
+   "chips": [],
+   "details": [],
+   "text": "From the Palau de Tudela across the surreal wind- and sea-carved rock formations of the Paratge de Tudela to the lighthouse at the easternmost point of Iberia — the Dalí landscape in three dimensions.",
+   "maps": "",
+   "links": []
+  },
+  "old_also": {
+   "fold": "secret-gems",
+   "name": "The sculpted schist of the Paratge de Tudela",
+   "type": "GEM",
+   "hook": "",
+   "chips": [],
+   "details": [
+    [
+     "Where",
+     "Cap de Creus"
+    ],
+    [
+     "When",
+     "Late afternoon, raking light"
+    ]
+   ],
+   "text": "Rock folded and polished by wind and sea, one outcrop nicknamed \"the Eagle\" — the precise landscape behind Dalí's melting forms, free and almost always empty.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length/climb if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:Pals to the rice fields": {
+  "fold": "walks",
+  "group": "The cape and the plain",
+  "old": {
+   "fold": "walks",
+   "name": "Pals to the rice paddies",
+   "type": "WALK",
+   "hook": "Gothic hilltop core · the Baix Ter plain · flat",
+   "chips": [],
+   "details": [],
+   "text": "From the stone lanes of medieval Pals out across the rice fields of the Baix Ter — the paddies worked since 1452, flat and green under the Montgrí massif.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length/climb if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "linger:Les Voltes at Port Bo": {
+  "fold": "linger",
+  "group": "First and last light on the coast",
+  "old": {
+   "fold": "secret-gems",
+   "name": "The Les Voltes arches at Port Bo, at dawn",
+   "type": "GEM",
+   "hook": "",
+   "chips": [],
+   "details": [
+    [
+     "Where",
+     "Calella de Palafrugell"
+    ],
+    [
+     "When",
+     "First light, before 8am"
+    ]
+   ],
+   "text": "Boats drawn up on the sand, the smell of brine, pine and tar, under the whitewashed arches — before the camí de ronda wakes for the day.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free."
+ },
+ "linger:Sa Tuna": {
+  "fold": "linger",
+  "group": "First and last light on the coast",
+  "old": {
+   "fold": "secret-gems",
+   "name": "The pebble cove of Sa Tuna",
+   "type": "GEM",
+   "hook": "",
+   "chips": [],
+   "details": [
+    [
+     "Where",
+     "Begur"
+    ],
+    [
+     "When",
+     "Morning"
+    ]
+   ],
+   "text": "A handful of fishermen's houses and boats hauled up on the shingle below Begur — the Costa Brava before tourism, out of season.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free."
+ },
+ "linger:The square of Sant Martí d'Empúries": {
+  "fold": "linger",
+  "group": "First and last light on the coast",
+  "old": {
+   "fold": "secret-gems",
+   "name": "The square of Sant Martí d'Empúries",
+   "type": "GEM",
+   "hook": "",
+   "chips": [],
+   "details": [
+    [
+     "Where",
+     "L'Escala"
+    ],
+    [
+     "When",
+     "Late afternoon"
+    ]
+   ],
+   "text": "The medieval hamlet where the Greek Palaiapolis stood, a shaded square at the sea's edge a few steps from the ruins — a coffee and two and a half thousand years of history.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free."
+ },
+ "linger:Jardins de Cap Roig": {
+  "fold": "linger",
+  "group": "A bench above the sea",
+  "old": {
+   "fold": "work",
+   "name": "Jardins de Cap Roig, Calella de Palafrugell",
+   "type": "LIBRARY",
+   "hook": "Cliff-top botanical gardens hanging over the sea.",
+   "chips": [],
+   "details": [],
+   "text": "Terraced gardens of Mediterranean plants on the headland between Calella and Palamós — benches with the sea below, a quiet place to read away from the coves' crowds. A small entry fee.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free."
+ },
+ "linger:La Fábrica with a laptop": {
+  "fold": "linger",
+  "group": "Girona — the cup and the river",
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v15-la-f-brica). Set \"ref\": \"v15-la-f-brica\". Write it in THIS section's angle (rooms to linger: the hour to sit, laptop or not); story 40-70 words that does NOT retell the venue's own story; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "linger:Plaça de la Independència": {
+  "fold": "linger",
+  "group": "Girona — the cup and the river",
+  "old": {
+   "fold": "work",
+   "name": "Plaça de la Independència terraces, Girona",
+   "type": "LIBRARY",
+   "hook": "Arcaded neoclassical square on the Onyar's west bank.",
+   "chips": [],
+   "details": [],
+   "text": "The porticoed square in the Mercadal is lined with cafés under the arcades — sit out of the sun with a coffee and the river a block away, between market runs and museum visits.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free."
+ },
+ "linger:The Onyar bridges": {
+  "fold": "linger",
+  "group": "Girona — the cup and the river",
+  "old": {
+   "fold": "secret-gems",
+   "name": "The Onyar footbridges, Girona",
+   "type": "GEM",
+   "hook": "",
+   "chips": [],
+   "details": [
+    [
+     "Where",
+     "Girona — Barri Vell"
+    ],
+    [
+     "When",
+     "Early morning or dusk"
+    ]
+   ],
+   "text": "The ochre and terracotta houses restored in 1983–84 reflected in the river; from the bridge, the Jewish quarter rising behind — a quarter-hour of free contemplation.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free."
+ }
+}
