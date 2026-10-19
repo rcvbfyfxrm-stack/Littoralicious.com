@@ -5,12 +5,19 @@ EDITS = [          # (old, new) exact replacements in card text fields
  # La Tabarra is cut (19 Oct re-check): its line leaves the Girona town card
  ("; La Tabarra for Empordà wine on the Força", ""),
  ("; then drink the wine again by the glass at La Tabarra in Girona.", "."),
+ # the walk card's corrected time (20-30 minutes) wins over the town card's old 'two hours'
+ ("A cliff path joins them in well under two hours.", "A cliff path joins them in under half an hour."),
+ # the town card has the corrected rice history (grown since at least the 15th century; 1452 is a mill's date)
+ ("Rice has been grown around Pals since 1452.", "Rice has been grown around Pals since at least the fifteenth century."),
+ ("About 1.5 km to Llafranc; the old guide's 5.5 km must have included the lighthouse and return", "About 1.5 km to Llafranc; the old figure of 5.5 km is not supported"),
  # the Solés shop, museum and terrace are at Carrer Closa d'en Llop 40 (the venue re-check), not on the Plaça de la Sardana
  ("Anxoves Solés, on the Plaça de la Sardana, for tins and jars to take away", "Anxoves Solés, Carrer Closa d'en Llop 40, for tins and jars to take away (its own card is in the tables)"),
  # the Fundació's calendar (read for the Cadaqués guide, 18 Oct): closed 7 January to 10 February, reopening on the 11th
  ("closed 7 January to 11 February (Oct 2026)", "closed 7 January to 10 February, reopening on the 11th (the foundation's 2026 calendar; 2027 dates not yet published)"),
 ]
 CARD_SET = {       # key -> {field: value} overrides
+ # the venue re-check: no source backs 'auction Mon-Fri 4-8pm' or 'visits sell out'; visits run on set dates
+ "larder:The auction at Palamós": {"facts": [["Order", "The guided visit over the auction floor, then the day's prawn and rock fish in town"], ["When", "Guided visits on set weekday dates, at 4.30pm and 5pm in the 2024-25 listings; autumn 2026 dates not found"], ["Book", "Through the Museu de la Pesca, which runs the visits"], ["Price", "Guided visit €3.50, under-4s free (2025 listings, checked Oct 2026)"]]},
 }
 VENUE_SET = {      # id -> {field: value} overrides, each one a correction from the 19 Oct re-check
  # the address dispute stays a dispute, but out of the address line: most listings give the original 2012 shop

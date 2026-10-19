@@ -1,0 +1,81 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the town you are berthed nearest · in the order you walk it",
+  "lede": "This coast is a row of towns, not one city: pick the one nearest the berth and stay in it. Kitchens serve dinner from about 20:00 and wind down by 22:30 out of season, and from late October some houses shorten their weeks, so every table below says call. Each town is one evening — the walk or the glass, the table, the last stop — re-checked on 19 October 2026.",
+  "door_en": "Crew ashore for one evening: a plan for each town — the walk, the table, the last stop, in the order you take them.",
+  "door_note": "Le verre · la table · le dernier verre",
+  "quarters": [
+   {"id": "palamos", "name": "Palamós · the fishing port", "line": "The catch sold on the quay, then the prawn grilled two minutes away.",
+    "steps": [
+     {"time": "16:30", "name": "The auction at Palamós", "ref": "card:The auction at Palamós", "text": "On a weekday with a visit scheduled, the half-hour guided visit over the auction floor starts at 16:30 or 17:00; the dates are set in advance, so check them with the Museu de la Pesca before you plan around it."},
+     {"time": "18:00", "name": "Palamós", "ref": "card:Palamós", "text": "Stay on the Moll Pesquer while the trawlers unload, then walk the port as the town goes back to its own pace."},
+     {"time": "20:00", "name": "La Gamba", "ref": "venue:v08-la-gamba", "text": "On Plaça de Sant Pere, the red prawn a la planxa, priced by weight; winter dinner is listed from 20:00 to 22:45. Book for a weekend, and call first in late October: one listing says it closes in November."}],
+    "after": "For the boats rather than the plate: the fishing museum and the auction have their own card, [[venue:v12-espai-del-peix-llotja-de-palam-s|Espai del Peix]]."},
+   {"id": "calella", "name": "Calella and Llafranc · the coves", "line": "The arches at Port Bo, the cliff path over the point, and dinner above the bay.",
+    "steps": [
+     {"time": "18:00", "name": "Les Voltes at Port Bo", "ref": "card:Les Voltes at Port Bo", "text": "Start under the white arches on the sand at Calella, the boats drawn up in front; in October the terraces are stacked away."},
+     {"time": "18:30", "name": "Camí de ronda, Calella to Llafranc", "ref": "card:Camí de ronda, Calella to Llafranc", "text": "Twenty to thirty minutes of cliff path, steps and a short rock tunnel to Llafranc; go while there is light, and carry a torch for the way back."},
+     {"time": "20:30", "name": "Casamar", "ref": "venue:v04-casamar", "text": "Up the steps above Llafranc bay, the dining room reopened in March 2026 after the hotel was rebuilt. No 2026 closing date or autumn days were found: phone before you walk over."}],
+    "after": "Instead, by car: the suquet and the Medes catch at [[venue:v09-cal-tet|Cal Tet]] in L'Estartit, walk-in most of the year."},
+   {"id": "roses", "name": "Roses · the bay", "line": "The long front at dusk, then the counter Ferran Adrià came back to.",
+    "steps": [
+     {"time": "19:00", "name": "Roses", "ref": "card:Roses", "text": "Walk the bay front towards the port as the light goes; the Ciutadella shuts at 17:00 out of season, so leave it for a morning."},
+     {"time": "20:00", "name": "Rafa's", "ref": "venue:v10-rafa-s", "text": "A few tables on Carrer de Sant Sebastià, the morning's shellfish on the planxa, no menu and the bill by weight. Listings give dinner from about 20:00 to 22:30, Tuesday to Saturday; the days are not settled, so phone, and book."}],
+    "after": "Earlier in the day: elBulli's cove at Cala Montjoi is a museum now, and [[card:elBulli1846, Cala Montjoi|elBulli1846]] is shut until its 2027 season."},
+   {"id": "girona", "name": "Girona · the old town and Taialà", "line": "Jordi Roca's gelato, the river at dusk, and the three brothers' table — a taxi away.",
+    "steps": [
+     {"time": "18:00", "name": "Rocambolesc", "ref": "venue:v16-rocambolesc", "text": "A panet, gelato in warm brioche, on Carrer de Santa Clara; the listings disagree on its closing hour and one gives another street, so check it first."},
+     {"time": "18:45", "name": "The Onyar bridges", "ref": "card:The Onyar bridges", "text": "Stop halfway across a footbridge as the windows of the river houses light up; it is free and takes a quarter of an hour."},
+     {"time": "20:30", "name": "El Celler de Can Roca", "ref": "venue:v01-el-celler-de-can-roca", "text": "Only if you hold the booking: dates open online up to eleven months ahead and fill when each month is released. It is in Taialà, a taxi from the old town; no 2026 price was found."}],
+    "after": "No booking: the city's own guide has the old town's tables. From late October to 1 November the Fires de Sant Narcís fill the city — see [[card:Fires de Sant Narcís, Girona: 23 Oct-1 Nov|the hot board]]."},
+   {"id": "lescala", "name": "L'Escala and Sant Martí · the anchovy shore", "line": "The salter's counter, the shore path, and a shaded square on the first Greek settlement — thin for dinner.",
+    "steps": [
+     {"time": "17:30", "name": "Anxoves Solés", "ref": "venue:v13-anxoves-sol-s", "text": "On a weekday, the shop at Carrer Closa d'en Llop 40 for anchovy fillets in oil and salted tins; a ticket listing gives weekday hours to about 19:00 and weekend mornings only, so check."},
+     {"time": "18:15", "name": "Sant Martí d'Empúries to L'Escala", "ref": "card:Sant Martí d'Empúries to L'Escala", "text": "Walk the shore path the other way, about thirty minutes, past the fenced ruins and the pines, with the sun going down over the gulf."},
+     {"time": "19:00", "name": "The square of Sant Martí d'Empúries", "ref": "card:The square of Sant Martí d'Empúries", "text": "A glass under the trees of the walled hamlet. Honestly: this guide lists no table here, and the terraces thin out in late autumn, so eat first in Palamós or Roses."}],
+    "after": "By day instead: [[card:Ruïnes d'Empúries|the Greek and Roman city]], open to 18:00 until mid-November."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the cliff path at dusk, Dalí's theatre, five tables in Roses, the Greek city, three stars in Girona and a Sunday lunch in a masia.",
+  "door_note": "Le sentier · Dalí · les Roca",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "The Costa Brava sells itself as beaches. The weekend worth having is the food under them: a cliff path between two coves, the prawn and the shellfish of the ports, the Greek city where the anchovy town begins, and inland the most decorated table on the coast and a farmhouse Sunday lunch. It needs a car: the stops are spread from Calella to Figueres and Girona, never more than about an hour apart. Every stop is in this guide, checked in October 2026. Out of season many houses keep short weeks and few published autumn hours, so book and phone everything.",
+  "book": [
+   "[[venue:v01-el-celler-de-can-roca|El Celler de Can Roca]] — online only; dates open up to eleven months ahead, at midnight CET on the 1st of each month, and fill fast: book the table first, then the flights",
+   "[[venue:v04-casamar|Casamar]] — phone ahead; no 2026 closing date was found",
+   "[[venue:v10-rafa-s|Rafa's]] — by phone, a few days ahead; very few tables",
+   "[[venue:v06-els-tinars|Els Tinars]] — ahead for Sunday lunch; its opening days differ between listings",
+   "[[card:Teatre-Museu Dalí, Figueres|The Teatre-Museu Dalí]] — a timed online ticket; weekend slots sell out"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The coves at dusk",
+    "stops": [
+     {"time": "18:00", "name": "The camí de ronda from Port Bo", "ref": "card:Camí de ronda, Calella to Llafranc", "text": "Start under the arches at Calella and take the cliff path to Llafranc, twenty to thirty minutes of steps and rock; if there is light left, climb on to the Sant Sebastià lighthouse.", "meta": "Port Bo, Calella de Palafrugell · about 1.5 km · free"},
+     {"time": "20:30", "name": "Dinner at Casamar", "ref": "venue:v04-casamar", "text": "On the steps above Llafranc bay, a family house of seventy years, its kitchen reopened in March 2026. Ask for the rice.", "meta": "Carrer del Nero 3, Llafranc · menus EUR 75-120 (seen Jun 2026) · book; opening days not published"}]},
+   {"label": "Saturday", "title": "Dalí, the bay and the Rocas",
+    "stops": [
+     {"time": "10:30", "name": "The Teatre-Museu Dalí", "ref": "card:Teatre-Museu Dalí, Figueres", "text": "The theatre Dalí built on a ruin and is buried under: the Mae West room, the rainy taxi, and Dalí·Joies on the same ticket. Two to three hours.", "meta": "Figueres · 10:30–18:00 in winter, closed Mondays (2025 timetable) · EUR 18.50 online (Oct 2026)"},
+     {"time": "13:30", "name": "Lunch at Rafa's", "ref": "venue:v10-rafa-s", "text": "Twenty-five minutes to Roses for the counter where the shellfish goes straight onto the planxa; no menu, the bill by weight.", "meta": "Carrer de Sant Sebastià 56, Roses · lunch about 13:00–15:30 per listings · EUR 60-100+ (seen Jun 2026) · phone ahead"},
+     {"time": "16:00", "name": "Empúries", "ref": "card:Ruïnes d'Empúries", "text": "The Greek town by the beach and the Roman forum above it, under the umbrella pines; walk up to the forum and look back over the gulf.", "meta": "Just north of L'Escala · daily 10:00–18:00 to mid-November · EUR 7 (Oct 2026)"},
+     {"time": "17:45", "name": "The square of Sant Martí d'Empúries", "ref": "card:The square of Sant Martí d'Empúries", "text": "A coffee under the trees of the walled hamlet where the Greeks first landed, as the day-trippers leave.", "meta": "Sant Martí d'Empúries · free · terraces thin out in late autumn"},
+     {"time": "20:30", "name": "Dinner at El Celler de Can Roca", "ref": "venue:v01-el-celler-de-can-roca", "text": "Forty-five minutes inland to Taialà for the three brothers' table, forty years old in 2026; the menu is served to the whole table, and the cellar pairing is the house's other half.", "meta": "Carrer de Can Sunyer 48, Girona · booking online only · no 2026 price found · a driver, or stay in Girona"}]},
+   {"label": "Sunday", "title": "Girona in the morning, the masia at lunch",
+    "stops": [
+     {"time": "09:30", "name": "Coffee at La Fábrica", "ref": "venue:v15-la-f-brica", "text": "The cyclists' café in the Barri Vell, its beans roasted by the owners; a flat white before the riders' queue builds.", "meta": "Carrer de la Llebre 3, Girona · daily 9:00–15:00 (Time Out, undated) · walk-in"},
+     {"time": "10:30", "name": "The Onyar bridges", "ref": "card:The Onyar bridges", "text": "Cross the river on a footbridge in the still morning, when the houses are doubled sharpest in the water.", "meta": "Girona · free"},
+     {"time": "11:30", "name": "A panet at Rocambolesc", "ref": "venue:v16-rocambolesc", "text": "Jordi Roca's gelato in a warm brioche, the cheapest way into the brothers' house.", "meta": "Carrer de Santa Clara 50, Girona · hours differ between listings, check · EUR 4-8 (seen Jun 2026)"},
+     {"time": "13:30", "name": "Sunday lunch at Els Tinars", "ref": "venue:v06-els-tinars", "text": "Half an hour south-east to the starred masia on the Sant Feliu road, run by the Gascons siblings; the Palamós prawn tartare, then the rice, and the afternoon is gone.", "meta": "C-65 km 7.2, Llagostera · lunch listed 13:00–15:30 · seasonal menu EUR 59.50 (Ara, Oct 2024) · book; plan a driver"}]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take Palamós: the auction on a weekday with a visit, the port at unloading time, and the prawn at [[venue:v08-la-gamba|La Gamba]] — the whole coast on one quay."},
+   {"title": "The grand night instead", "text": "If the Girona table will not come, [[venue:v02-bo-tic|Bo.TiC]] at Corçà holds two stars in an old carriage works; book ahead and read its cancellation terms — one diner lost a deposit in 2026."},
+   {"title": "This October", "dated": "Checked 19 October 2026", "items": ["The Fires de Sant Narcís fill Girona from 23 October to 1 November — book Saturday's taxi and Sunday's coffee early, see [[card:Fires de Sant Narcís, Girona: 23 Oct-1 Nov|the hot board]]", "The Suquet de Peix days in Roses run to Sunday 25 October: [[card:Suquet de Peix days in Roses: 16-25 October|the card]]", "The clocks go back on Sunday 25 October: the cliff path loses an hour of evening light", "[[card:elBulli1846, Cala Montjoi|elBulli1846]] closed for the season on 12 October", "[[venue:v08-la-gamba|La Gamba]] may close in November: phone"]},
+   {"title": "Where to sleep", "text": "This guide judges tables, not rooms. The only houses in it that let rooms are [[venue:v04-casamar|Casamar]] above Llafranc, rebuilt over the 2025-26 winter, and [[venue:v09-cal-tet|Cal Tet]] in L'Estartit; we have not judged either as a hotel. For the Saturday night, sleeping in Girona saves the drive back after dinner."},
+   {"title": "What we would leave out", "text": "The resort front at Lloret and the [[card:The photo-board paella|photo-board paella]]; sea urchins ordered out of season — [[card:Urchins out of season|the card]] says why; and the coves in high August."}
+  ]
+ }
+}

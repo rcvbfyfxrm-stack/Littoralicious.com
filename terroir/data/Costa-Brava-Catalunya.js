@@ -33,14 +33,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening: a plan for each town — the drink, the table, the late glass.",
+   "en": "Crew ashore for one evening: a plan for each town — the walk, the table, the last stop, in the order you take them.",
    "note": "Le verre · la table · le dernier verre",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "listening"
-   ]
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -61,6 +57,13 @@ window.TERROIR_DATA = (function () {
    "open": [
     "ce-soir"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: the cliff path at dusk, Dalí's theatre, five tables in Roses, the Greek city, three stars in Girona and a Sunday lunch in a masia.",
+   "note": "Le sentier · Dalí · les Roca",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {
