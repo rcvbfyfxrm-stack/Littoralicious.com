@@ -37,10 +37,9 @@
    ]
   },
   "bars": {
-   "label": "Le Bar — Girona's old town by the glass, the cup and the cone",
+   "label": "Le Bar — Girona's cup and cone",
    "group": "street",
    "ids": [
-    "v14-la-tabarra",
     "v15-la-f-brica",
     "v16-rocambolesc"
    ]
@@ -61,23 +60,23 @@
  },
  "keep_pins": [],
  "cut": {
+  "v14-la-tabarra": "Cut after the 19 Oct re-check: the old record called it a wine bar with a strong DO Empordà list and a terrace; every listing found describes a rock-and-roll tapas and cocktail bar, nothing dated 2026 was found (last dated review October 2025), and no source mentions the list or the terrace.",
   "v05-restaurant-massana": "Cut: the starred lane holds three and keeps the two tables that define the Empordà (Can Roca, Bo.TiC) and the masia on the coast road (Els Tinars); Massana is a Girona city table, the sister Girona guide's ground."
  },
  "berths": [
   "v01-el-celler-de-can-roca",
   "v08-la-gamba",
-  "v14-la-tabarra"
+  "v13-anxoves-sol-s"
  ],
  "shortlist": {
   "Last minute — save the night": [
-   "v14-la-tabarra",
    "v09-cal-tet",
-   "v07-can-bonay"
+   "v08-la-gamba",
+   "v10-rafa-s"
   ],
   "Plan ahead — this week": [
-   "v08-la-gamba",
    "v04-casamar",
-   "v10-rafa-s"
+   "v03-compartir-cadaqu-s"
   ],
   "Plan ahead — the grand night": [
    "v01-el-celler-de-can-roca",
@@ -109,6 +108,7 @@
   "walks:Cadaqués lanes at dawn": "cut: Cadaqués has its own guide, with its own walks",
   "events:*": "rebuilt in the calendar (hot_events.json); the three summer music dates are the listening cards, told once",
   "avoid:Unverified phone bookings": "cut: not a trap but a note on the old guide's method; the venues now carry their own booking lines",
+  "follow:njoycostabrava.com": "cut: the blog could not be found on 19 Oct 2026",
   "dish:*": "the seven dish articles are rewritten inside La liste (The Dish)"
  },
  "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."

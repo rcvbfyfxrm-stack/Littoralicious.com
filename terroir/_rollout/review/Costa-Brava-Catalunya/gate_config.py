@@ -2,14 +2,14 @@
 """Write terroir/_rollout/lib/guides/<slug>.check.json from what the build actually contains (17 Oct 2026).
 Floors are the curated counts (<=3 per subcategory), never padded."""
 import json, re, subprocess, pathlib
-REPO = pathlib.Path(__file__).resolve().parents[4]; SLUG = "Cadaques-CapdeCreus"
+REPO = pathlib.Path(__file__).resolve().parents[4]; SLUG = "Costa-Brava-Catalunya"
 doc = (REPO / f"terroir/{SLUG}/index.html").read_text()
 D = json.loads(subprocess.run(["node", "-e", f"global.window={{}};require('./terroir/data/{SLUG}.js');process.stdout.write(JSON.stringify(window.TERROIR_DATA))"],
                               cwd=REPO, capture_output=True, text=True, check=True).stdout)
 ids = re.findall(r'<(?:details|section) class="(?:sfold|gx-jump)" id="([^"]+)"', doc)
 lane_ids = {i for c in D["TABLES"].values() for s in c["sections"] for i in s["ids"]}
-cfg = {"slug": SLUG, "city": "Cadaqués", "listeSlug": "cadaques", "groups": len(D["GROUPS"]),
-       "mapsTokens": ["Cadaqu", "Spain", "Girona", "Catalunya", "Catalonia"],
+cfg = {"slug": SLUG, "city": "Costa Brava", "listeSlug": "costa-brava", "groups": len(D["GROUPS"]),
+       "mapsTokens": ["Spain", "Girona", "Catalunya", "Catalonia", "Costa Brava"],
        "staleTokens": ["Prague", "Praha", "Vltava", "Czech", "Kendwa", "Zanzibar", "Diani", "Kwale", "Siracusa", "Ortigia", "Piraeus", "Sicily", "Istanbul", "Toulon", "Saint-Tropez", "Provence"],
        "staleAllow": {"Prague": ["runs on any page cloned from Prague's chrome"]},
        "bannedExtra": ["paradise", "unspoilt", "off the beaten"],

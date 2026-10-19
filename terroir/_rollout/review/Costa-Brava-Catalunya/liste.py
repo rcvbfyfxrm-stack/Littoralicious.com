@@ -1,0 +1,42 @@
+"""La liste for the Costa Brava (19 Oct 2026): what to eat and drink before you leave, each with its best place.
+(name, say, fav, what, why, where-text, maps query). Facts from the guide's dish articles, drink cards and the verified venue packs;
+every 'where' is a venue kept in the tables or a card kept in the larder or the bars."""
+LISTE = [
+ ("Gamba de Palamós", "GAM-ba de pa-la-MOSS", True, "The deep-water red prawn, seared a minute with coarse salt; suck the head.",
+  "Landed and auctioned the same afternoon on the quay; the town's name is on the label.", "La Gamba, Plaça de Sant Pere, on the Palamós port — priced by weight", "La Gamba Placa de Sant Pere Palamos Girona Spain"),
+ ("Garoines", "ga-roo-EE-ness", True, "The violet sea urchin, opened and eaten raw on toasted bread.",
+  "A cold-month food: the roe is fullest in late winter; out of season, do not order it.", "The Palafrugell coves during the winter garoinada — the calendar card has the dates", "Calella de Palafrugell Girona Spain"),
+ ("Anxoves de l'Escala", "an-SHOH-vess de les-KAH-la", True, "Anchovy cured for months in salt, filleted by hand, laid in oil.",
+  "Never cooked: on bread with tomato, the coast's oldest preserved food.", "Anxoves Solés, L'Escala — buy the tins at the salter's own counter", "Anxoves Soles L'Escala Girona Spain"),
+ ("Suquet de peix", "soo-KET de PESH", False, "Monkfish, scorpionfish and potatoes in a sofregit, bound with a picada.",
+  "The boat stew made from the fish that would not sell.", "Cal Tet, L'Estartit — the catch off the Medes islands", "Cal Tet L'Estartit Girona Spain"),
+ ("Arròs a la cassola", "ah-ROSS a la ka-SSOH-la", False, "Seafood rice in an earthenware pan, made with the rice of Pals.",
+  "The grain of the lower Ter holds its shape in the pot.", "La Gamba, Palamós — the rice of the port house, for the table", "La Gamba Palamos Girona Spain"),
+ ("Peix i marisc a la planxa", "PESH ee ma-RISK a la PLAN-sha", True, "The day's fish and shellfish, raw or seared on the griddle, with nothing else.",
+  "The counter Ferran Adrià came back to; ask the price by weight first.", "Rafa's, Carrer de Sant Sebastià, Roses — five tables, call ahead", "Rafa's Roses Girona Spain"),
+ ("Guisats", "gee-ZATS", False, "Slow village stews of meat or game, the plain's own cooking.",
+  "The Empordà eats inland as much as it eats fish.", "Can Bonay, under the arcades of Peratallada", "Can Bonay Peratallada Girona Spain"),
+ ("Pa amb tomàquet", "PAM tu-MAH-ket", False, "Bread rubbed with ripe tomato, Empordà oil and salt.",
+  "The base every anchovy and every slice of ham is laid on.", "Any table in this guide; at its best under an anchovy in L'Escala", "L'Escala Girona Spain"),
+ ("Coca d'anxoves", "KOH-ka dan-SHOH-vess", False, "A flat oven bake under roasted vegetables or L'Escala anchovies.",
+  "The village bakery's lunch, eaten standing.", "The bakeries of L'Escala, round the salters' streets", "L'Escala Girona Spain"),
+ ("Recuit de drap", "re-KWEET de DRAP", False, "Fresh curd drained in its cloth, with honey.",
+  "Keeps only a few days: eat it where it is made.", "Mercat del Lleó, Girona — the dairy stalls, mornings", "Mercat del Lleo Girona Spain"),
+ ("Panet", "pa-NET", False, "Artisan gelato slid into a warm brioche.",
+  "The way into the Roca universe without a booking.", "Rocambolesc, Carrer de Santa Clara, Girona", "Rocambolesc Girona Spain"),
+ ("Un negre de l'Empordà", "NEG-ruh de lem-por-DAH", False, "Garnatxa and Carinyena from old bush vines, alone or blended.",
+  "The red of the tramuntana country.", "Espelt, Vilajuïga — the estate's own reds, by appointment; or any table in this guide", "Espelt Viticultors Vilajuiga Girona Spain"),
+ ("Garnatxa de l'Empordà", "gar-NAT-sha", True, "The sweet, oxidative Garnatxa, the coast's dessert wine.",
+  "The old farmhouse wine of the appellation; have it with cheese or with recuit.", "Mas Estela, La Selva de Mar — by appointment; or ask any table", "Mas Estela La Selva de Mar Girona Spain"),
+ ("Cremat", "kruh-MAT", False, "Dark rum burned with sugar, cinnamon and coffee, served hot.",
+  "The havaneres' glass on the beach at Calella.", "Calella de Palafrugell on the July havaneres night; its card is in the glasses", "Calella de Palafrugell Girona Spain"),
+ ("Ratafia", "ra-ta-FEE-a", False, "Green-walnut and herb liqueur, sweet and bitter, after lunch.",
+  "No two family bottles taste alike.", "Ask for the house ratafia at the end of a meal in the tables", "Girona Catalunya Spain"),
+]
+DISH_WHERE = {
+ "Gamba de Palamós": '<a href="#venue-v08-la-gamba">La Gamba</a> on the port, or bought at the <a href="#venue-v12-espai-del-peix-llotja-de-palam-s">auction</a>',
+ "Anxoves de l'Escala": '<a href="#venue-v13-anxoves-sol-s">Anxoves Solés</a>, at the source',
+ "Suquet de peix": '<a href="#venue-v09-cal-tet">Cal Tet</a>, L’Estartit',
+ "Recuit de drap": '<a href="#venue-v11-mercat-del-lle">Mercat del Lleó</a>, the dairy stalls',
+ "Botifarra": '<a href="#venue-v11-mercat-del-lle">Mercat del Lleó</a>, the charcuterie stalls',
+}

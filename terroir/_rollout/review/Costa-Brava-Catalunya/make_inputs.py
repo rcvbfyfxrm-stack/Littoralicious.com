@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Assemble cards.json, venues.json, lane_stories.json and hot_events.json for build_gold6.py from the research and rewrite
-packs (research/), plus the editor's reconciliations in fixes.py. 18 Oct 2026.
-STATUS RULE (honest): the 18 Oct re-check could not load any venue's own site (the sandbox egress proxy refuses every external
-host), only search results. 2026-dated evidence -> confirmed, checked 2026-10-18; otherwise unverified, or as found."""
+packs (research/), plus the editor's reconciliations in fixes.py. 19 Oct 2026.
+STATUS RULE (honest): the 19 Oct re-check could not load any venue's own site (the sandbox egress proxy refuses every external
+host), only search results. 2026-dated evidence -> confirmed, checked 2026-10-19; otherwise unverified, or as found."""
 import json, pathlib, sys
 RV = pathlib.Path(__file__).resolve().parent; R = RV / "research"; sys.path.insert(0, str(RV))
 J = lambda p: json.load(open(p))
@@ -18,7 +18,7 @@ HOT = J(R / "hot_events.json")
 fixes.hot(HOT)
 json.dump(HOT, open(RV / "hot_events.json", "w"), ensure_ascii=False, indent=1)
 VER, LS = {}, {}
-for n in (1,):
+for n in (1, 2):
     p = J(R / f"verify_{n}.json")
     VER.update({k: v for k, v in p.items() if not k.startswith("_")})
     LS.update(p.get("_lane_stories", {}))

@@ -12,15 +12,16 @@ LANES = {
  "port":   {"label": "The port and the catch", "group": "petite", "ids": ["v08-la-gamba", "v10-rafa-s", "v09-cal-tet"]},
  "village":{"label": "The cove, the village and the cape", "group": "petite", "ids": ["v04-casamar", "v07-can-bonay", "v03-compartir-cadaqu-s"]},
  "larder": {"label": "The market, the auction, the salt", "group": "street", "ids": ["v12-espai-del-peix-llotja-de-palam-s", "v13-anxoves-sol-s", "v11-mercat-del-lle"]},
- "bars":   {"label": "Le Bar — Girona's old town by the glass, the cup and the cone", "group": "street", "ids": ["v14-la-tabarra", "v15-la-f-brica", "v16-rocambolesc"]},
+ "bars":   {"label": "Le Bar — Girona's cup and cone", "group": "street", "ids": ["v15-la-f-brica", "v16-rocambolesc"]},
 }
 CUT = {
+ "v14-la-tabarra": "Cut after the 19 Oct re-check: the old record called it a wine bar with a strong DO Empordà list and a terrace; every listing found describes a rock-and-roll tapas and cocktail bar, nothing dated 2026 was found (last dated review October 2025), and no source mentions the list or the terrace.",
  "v05-restaurant-massana": "Cut: the starred lane holds three and keeps the two tables that define the Empordà (Can Roca, Bo.TiC) and the masia on the coast road (Els Tinars); Massana is a Girona city table, the sister Girona guide's ground.",
 }
-BERTHS = ["v01-el-celler-de-can-roca", "v08-la-gamba", "v14-la-tabarra"]   # one per group; revisited after the 19 Oct re-check
+BERTHS = ["v01-el-celler-de-can-roca", "v08-la-gamba", "v13-anxoves-sol-s"]   # one per group, each confirmed trading on 19 Oct
 SHORTLIST = {
- "Last minute — save the night": ["v14-la-tabarra", "v09-cal-tet", "v07-can-bonay"],
- "Plan ahead — this week": ["v08-la-gamba", "v04-casamar", "v10-rafa-s"],
+ "Last minute — save the night": ["v09-cal-tet", "v08-la-gamba", "v10-rafa-s"],
+ "Plan ahead — this week": ["v04-casamar", "v03-compartir-cadaqu-s"],
  "Plan ahead — the grand night": ["v01-el-celler-de-can-roca", "v02-bo-tic", "v06-els-tinars"],
 }
 FOURS = {}
@@ -42,7 +43,7 @@ PLAN = {
  "walks": {"sub": "walks", "groups": [
    g("The coast path", ("walks:Camí de ronda, Calella to Llafranc", "walks:Camí de ronda: Calella → Llafranc"), ("walks:Sant Martí d'Empúries to L'Escala", "walks:Empúries shore path")),
    g("The cape and the plain", ("walks:The Paratge de Tudela to the cape lighthouse", "walks:Cap de Creus to the lighthouse"), ("walks:Pals to the rice fields", "walks:Pals to the rice paddies"))]},
- "linger": {"sub": "linger", "groups": [
+ "coffee-gardens": {"sub": "linger", "groups": [
    g("First and last light on the coast", ("linger:Les Voltes at Port Bo", "secret-gems:The Les Voltes arches at Port Bo, at dawn"), ("linger:Sa Tuna", "secret-gems:The pebble cove of Sa Tuna"), ("linger:The square of Sant Martí d'Empúries", "secret-gems:The square of Sant Martí d'Empúries")),
    g("A bench above the sea", ("linger:Jardins de Cap Roig", "work:Jardins de Cap Roig, Calella de Palafrugell")),
    g("Girona — the cup and the river", N("linger:La Fábrica with a laptop"), ("linger:Plaça de la Independència", "work:Plaça de la Independència terraces, Girona"), ("linger:The Onyar bridges", "secret-gems:The Onyar footbridges, Girona"))]},
@@ -67,7 +68,7 @@ PLAN = {
    g("The season", ("avoid:The front line in August", "avoid:High-August front-line dining"), N("avoid:Urchins out of season"))]},
  "follow": {"sub": "follow", "groups": [
    g("The coast and the wine", ("follow:Costa Brava Girona", "follow:costabrava.org"), ("follow:Visit Palafrugell", "follow:visitpalafrugell.cat"), ("follow:DO Empordà", "follow:doemporda.cat")),
-   g("The kitchen and the larder", ("follow:El Celler de Can Roca", "follow:@cellercanroca"), ("follow:Njoy Costa Brava", "follow:njoycostabrava.com"))]},
+   g("The kitchen", ("follow:El Celler de Can Roca", "follow:@cellercanroca"))]},
 }
 POINTERS = {"larder:The auction at Palamós": "v12-espai-del-peix-llotja-de-palam-s", "larder:The anchovy shop at L'Escala": "v13-anxoves-sol-s",
             "larder:The Lleó market at Girona": "v11-mercat-del-lle", "linger:La Fábrica with a laptop": "v15-la-f-brica"}
@@ -99,6 +100,7 @@ json.dump({"lanes": LANES, "groups": {g_: [k for k, l in LANES.items() if l["gro
              "walks:Cadaqués lanes at dawn": "cut: Cadaqués has its own guide, with its own walks",
              "events:*": "rebuilt in the calendar (hot_events.json); the three summer music dates are the listening cards, told once",
              "avoid:Unverified phone bookings": "cut: not a trap but a note on the old guide's method; the venues now carry their own booking lines",
+             "follow:njoycostabrava.com": "cut: the blog could not be found on 19 Oct 2026",
              "dish:*": "the seven dish articles are rewritten inside La liste (The Dish)",
            },
            "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."},

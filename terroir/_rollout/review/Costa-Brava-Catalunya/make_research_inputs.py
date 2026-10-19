@@ -56,12 +56,12 @@ EXTRA_OLD = {"walks:The Paratge de Tudela to the cape lighthouse": "secret-gems:
 GEN = {"walks": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length/climb if you can; keep the old figures otherwise, marked 'about'.",
        "culture": "Sight card: labels Where · Open · Cost · Best hour · Time needed · Don't miss. VERIFY 2026 hours and prices now (official sites through WebSearch) and date them '(Oct 2026)'; the old chips are June 2026 guesses ('EUR ~17').",
        "provisioning": "Producer/estate card: labels Where · Open · Buy · Price · Book. Verify the estate trades and receives visitors in 2026 (one WebSearch).",
-       "linger": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free.",
+       "coffee-gardens": "Room/corner card: labels Where · Open · Order · Work? (for a café) or Getting there · Best hour · Bring · Don't miss (for a cove/corner). Free corners: say free.",
        "bars": "Drink how-to: labels In the glass · On the label · Ask for. No Maps.",
        "listening": "Live music card: labels Where · On · Price · Best hour; verify the 2026 edition's dates and say when the 2027 edition is expected (if announced). maps_query = the venue + ', Girona, Spain'.",
        "follow": FO, "avoid": AV, "around": TR, "quartiers": QU}
 for k, vid in PLAN["_pointers"].items(): assert k in NEW_BRIEF
-batches = {1: ["quartiers", "curiosities"], 2: ["provisioning", "walks", "linger"], 3: ["culture", "craft"], 4: ["bars", "listening", "around", "avoid", "follow"]}
+batches = {1: ["quartiers", "curiosities"], 2: ["provisioning", "walks", "coffee-gardens"], 3: ["culture", "craft"], 4: ["bars", "listening", "around", "avoid", "follow"]}
 for n, folds in batches.items():
     cards = {}
     for f in folds:

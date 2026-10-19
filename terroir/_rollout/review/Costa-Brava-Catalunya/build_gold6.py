@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Cadaques-CapdeCreus -> GOLD6 (the Prague standard), 18 Oct 2026. Route B: the reading layer is assembled on the LIVE chrome of
-Siracusa-Sicilia (itself cloned from the live Prague page); the locked kit terroir/_assets/guide/* is untouched.
-The old guide was a GOLD2 tier inventory (16 venue records in flat tiers, elBulli filed as a table, no lanes, no dishes), so this build also brings the GOLD3/4/5 floor it never had:
+"""Costa-Brava-Catalunya -> GOLD6 (the Prague standard), 19 Oct 2026. Route B: the reading layer is assembled on the LIVE chrome of
+Siracusa-Sicilia (itself cloned from the live Prague page); the locked kit terroir/_assets/guide/* is untouched. Same pipeline as Cadaqués (18 Oct).
+The old guide was a GOLD2 tier inventory (16 venue records in flat tiers, a Three Tables block, a 24-hours block, no lanes, no dishes), so this build also brings the GOLD3/4/5 floor it never had:
 table lanes with food stories and three groups, dishes on every table, the guest list (BRIDGE) with charters, the #eat jump line and La liste (with The Dish inside it) at the foot,
-the dated hot board with its #why-now pointer, the calendar, the craft section, the listening room, the coves, Autour.
+the dated hot board with its #why-now pointer, the calendar, the craft section, the listening room, rooms to linger, Autour.
 Inputs, all in this folder:
   picks.json      the editorial cut (lanes <=3, berths, the guest list, cut venues with reasons)   <- make_plan.py
   card_plan.json  every fold, its groups and cards, and the old card each is built from              <- make_plan.py
@@ -12,16 +12,17 @@ Inputs, all in this folder:
   hot_events.json the dated hot board and the events calendar                                        <- make_inputs.py
   prose.py        the hand-written prose (lead, essay, fold heads, lane stories, doors, La liste, glossary, exact edits)
 The old guide and the chrome are read from origin/rebuild/publishing-system, so the build is repeatable.
-Run from the repo root:  python3 terroir/_rollout/review/Cadaques-CapdeCreus/build_gold6.py"""
+Run from the repo root:  python3 terroir/_rollout/review/Costa-Brava-Catalunya/build_gold6.py"""
 import json, re, subprocess, pathlib, html as H, urllib.parse, csv, io, sys
 REPO = pathlib.Path(__file__).resolve().parents[4]
 RV = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(RV))
 import prose as P
 
-SLUG, CITY, LSLUG = "Cadaques-CapdeCreus", "Cadaqués", "cadaques"
-NOW = "2026-10-18"
-LOCAL = r"(?i)cadaqu|\b(Spain|Girona|Catalunya|Catalonia)\b"
+SLUG, CITY, LSLUG = "Costa-Brava-Catalunya", "Costa Brava", "costa-brava"
+NOW = "2026-10-19"
+LOCAL = r"(?i)\b(Spain|Girona|Catalunya|Catalonia|Costa Brava)\b"
+LOCAL_ADD = "+Girona+Spain"
 BASE = "origin/rebuild/publishing-system"
 def show(p): return subprocess.run(["git", "show", f"{BASE}:{p}"], cwd=REPO, capture_output=True, text=True, check=True).stdout
 OLD = show(f"terroir/{SLUG}/index.html")
@@ -107,8 +108,8 @@ def sfold(fid, title, desc, count, body, extra=""):
                       f'<div class="sfold__desc">{t(desc)}</div>', "</div>", f'<span class="sfold__count">{t(count)}</span>',
                       '<span class="sfold__chev"></span>', "</summary>", '<div class="sfold__body">', body, "</div>", "</details>"])
 
-COUNT_WORD = {"quartiers": "towns", "calas": "swims", "provisioning": "addresses", "walks": "routes", "culture": "stops", "craft": "to know",
-              "coffee-gardens": "rooms", "bars": "to know", "listening": "to know", "around": "to know", "follow": "sources"}
+COUNT_WORD = {"quartiers": "towns", "provisioning": "addresses", "walks": "routes", "culture": "stops", "craft": "to know",
+              "coffee-gardens": "corners", "bars": "to know", "listening": "to know", "around": "to know", "follow": "sources"}
 FOLDS = {}
 DROP_CARDS = set(getattr(P, "DROP_CARDS", []))
 for fid, p in PLAN.items():
@@ -132,7 +133,7 @@ def human(iso):
 FOLDS["hot-foot"] = sfold("hot-foot", "What's hot this month",
     f"Checked {human(asof)}. This is the one section that goes stale: review by {human(review)}", HOT["hot"].get("count", "Oct–Nov 2026"),
     '<p class="gx-hot-jump">This is the board the line at the top points to — <a href="#why-now">back up to where you saw it</a></p>\n'
-    f'<p class="gx-lede">The rest of this guide is written to last. This part is not — it is a dated snapshot of what is on from mid-October into November 2026, as the terraces thin out and the tramuntana returns, checked on {human(asof)}.</p>\n'
+    f'<p class="gx-lede">The rest of this guide is written to last. This part is not — it is a dated snapshot of what is on from mid-October into November 2026, as the coves empty and the tramuntana returns, checked on {human(asof)}.</p>\n'
     + "\n".join(group_html(g) for g in hot_groups), f' data-hot-asof="{asof}" data-hot-review="{review}"')
 WHY_NOW = ('<section class="gx-jump" id="why-now"><span id="hot"></span>\n'
            f'<p><span class="gx-jump__t">What&#x27;s hot this month.</span> Checked {human(asof)} — {t(HOT["hot"]["pointer_line"])} The dated board is at the foot. '
@@ -152,15 +153,15 @@ def element(doc, anchor):
         if depth == 0:
             e = st + m.end(); return doc[st:doc.find(">", e) + 1]
     raise ValueError(anchor)
-OLDB = {i: element(OLD, f'id="{i}"') for i in ("seasonal", "sources", "soul", "history", "money-sits", "why-now", "bougie")}
+OLDB = {i: element(OLD, f'id="{i}"') for i in ("seasonal", "sources")}
 OLDB["tables"] = element(CHROME, 'id="tables"')   # the kit's empty table container, from the chrome (the old page had the tier lists)
 for k in list(OLDB):
     s = OLDB[k]
     for old, new in P.EDITS.get(k, []):
         assert old in s, (k, old[:80]); s = s.replace(old, new)
     OLDB[k] = fix_links(s)
-SOUL = P.soul_fold(OLDB["soul"], OLDB["history"], OLDB["money-sits"])
-BOUGIE = fix_links(P.bougie(OLDB["bougie"], P.GV_LINE))
+SOUL = P.soul_fold()
+BOUGIE = fix_links(P.bougie())
 SEASONAL = OLDB["seasonal"]
 # the five-column month table scrolls inside its own box on a phone, never the page
 SEASONAL = re.sub(r'(<table\b[^>]*>)', r'<div style="overflow-x:auto;max-width:100%">\1', SEASONAL, count=1).replace("</table>", "</table></div>", 1)
@@ -204,14 +205,14 @@ def sources_block(s):
     n_conf = sum(1 for i in KEEP if st(i).get("status") == "confirmed")
     n_other = len(KEEP) - n_conf
     Pp = lambda x: f'<p style="font-family:Inter,system-ui,sans-serif;font-size:0.85em;color:var(--ink-2)">{x}</p>'
-    method = (Pp(f"<strong>Every place in this guide was researched in June 2026 and re-checked on 18 October 2026.</strong> Of {len(KEEP)} tables, "
-                 f"<strong>{n_conf} were confirmed trading in 2026</strong> against a 2026-dated source (the MICHELIN Guide, the Repsol guide, La Vanguardia, Empordà.info, the Ajuntament, "
+    method = (Pp(f"<strong>Every place in this guide was researched in June 2026 and re-checked on 19 October 2026.</strong> Of {len(KEEP)} tables, "
+                 f"<strong>{n_conf} were confirmed trading in 2026</strong> against a 2026-dated source (the MICHELIN Guide, the Repsol guide, La Vanguardia, Diari de Girona, Empordà.info, the town halls, "
                  "reviews, posts, listings and the press, read through search: own sites could not be loaded from where this pass was made, so those and every link on this page "
                  f"wait for a check from a normal network); <strong>{n_other} carry another status</strong> on their cards. Unverified means we did not confirm it, not that it is closed: "
-                 "treat those as leads to call, not bookings to rely on. Many of the village's tables are seasonal: each card gives its 2026 season. Prices carry the date they were seen. Where sources disagree — the origin of a dish, a founding date, "
+                 "treat those as leads to call, not bookings to rely on. Some of the coast's tables are seasonal: each card gives its 2026 season. Prices carry the date they were seen. Where sources disagree — the origin of a dish, a founding date, "
                  "a few opening hours — the disagreement is printed rather than resolved by guesswork.")
               + Pp("<strong>Fewer places, on purpose.</strong> This guide keeps at most three places in each kind of table and in each group of cards, "
-                   f"picked for what you should not miss in Cadaqués and what is most particular to it. {NUMW[len(CUT)].capitalize()} places from the earlier edition are left out, not forgotten.")
+                   f"picked for what you should not miss on this coast and what is most particular to it. {NUMW[len(CUT)].capitalize()} places from the earlier edition are left out, not forgotten.")
               + Pp(f"<strong>Map pins.</strong> Only places geocoded to street level carry a pin — {sum(1 for i in KEEP if OLDV[i].get('lat') is not None)} of {len(KEEP)}. "
                    "No coordinate was invented."))
     s = s.replace('<div class="sfold__body">', '<div class="sfold__body">' + method, 1)
@@ -223,7 +224,7 @@ def sources_block(s):
             if u.startswith("https://") and u not in seen: seen.add(u); items.append((x.get("label") or u, u))
     for k in USED_CARDS: add(CARDS[k].get("sources"))
     for i in KEEP: add(VUP.get(i, {}).get("sources"))
-    grp = ('<h4 class="fsub__title">Checked again for this guide, 18 October 2026</h4><ul class=\'gx-list\'>'
+    grp = ('<h4 class="fsub__title">Checked again for this guide, 19 October 2026</h4><ul class=\'gx-list\'>'
            + "".join(f'<li><a href="{a(u)}" target="_blank" rel="noopener">{t(l)}</a></li>' for l, u in items) + "</ul>")
     i = s.rindex("</div></details>"); s = s[:i] + grp + "\n" + s[i:]
     s = re.sub(r'<span class="sfold__count">[^<]*</span>', lambda m: f'<span class="sfold__count">{len(re.findall("<li><a ", s))} sources</span>', s, count=1)
@@ -246,7 +247,7 @@ SUB = lambda f: PLAN[f]["sub"]
 blocks = {
  "place": [tag(SOUL, "place essay"), tag(BOUGIE, "place history"), tag(FOLDS["quartiers"], "place towns"), tag(FOLDS["curiosities"], "place curious"), tag(WHY_NOW, "place when")],
  "tables": [tag(EAT, "tables restaurants"), TG, tag(TABLES, "tables restaurants"), tag(FOLDS["provisioning"], "tables markets")],
- "flaner": [tag(FOLDS[f], f"flaner {SUB(f)}") for f in ("walks", "calas", "culture", "craft", "coffee-gardens")],
+ "flaner": [tag(FOLDS[f], f"flaner {SUB(f)}") for f in ("walks", "culture", "craft", "coffee-gardens")],
  "sortir": [tag(FOLDS["bars"], "sortir bars"), tag(FOLDS["listening"], "sortir listening")],
  "around": [tag(FOLDS["around"], "around trips")],
  "practical": [tag(FOLDS["avoid"], "practical skip"), tag(FOLDS["follow"], "practical follow"), tag(FOLDS["events"], "practical when"), tag(SEASONAL, "practical when")],
@@ -265,7 +266,7 @@ for k, bid, title in CH:
 nav = ('<nav class="band-nav gx-tags" aria-label="Chapters"><a class="band-nav__chip is-on" href="#" data-tag="">All</a>'
        + "".join(f'<a class="band-nav__chip" href="#{bid}" data-tag="{k}">{tt}</a>' for k, bid, tt in CH) + "</nav>")
 TAIL = [tag(FOLDS["hot-foot"], "practical when"), tag(LL, "practical restaurants"), tag(sources_block(OLDB["sources"]), "practical")]
-mid = (P.HERO + "\n" + P.ETYMON + "\n" + '<div class="container gx-cadaques">\n' + nav + "\n" + P.LEAD + "\n"
+mid = (P.HERO + "\n" + P.ETYMON + "\n" + '<div class="container gx-costabrava">\n' + nav + "\n" + P.LEAD + "\n"
        + "\n".join(chapters) + "\n" + '<div class="gx-tail">\n' + "\n".join(TAIL) + "\n</div>\n")
 S = CHROME
 h0 = S.find('<div class="hero">'); k0 = S.find('<div class="gx-appendix" hidden></div>'); assert 0 < h0 < k0
@@ -278,8 +279,8 @@ GLOSS = [g for g in P.GLOSS if re.search(r"(?<![\w])" + re.escape(g[0].lower()) 
 json.dump(GLOSS, open(RV / "glossary.json", "w"), ensure_ascii=False, indent=0)
 g0 = doc.index("  var G = [", doc.index('<script id="sicily-glossary">')); g1 = doc.index("  ];\n", g0) + len("  ];\n")
 doc = doc[:g0] + "  var G = [\n" + ",\n".join("    " + json.dumps(x, ensure_ascii=False) for x in GLOSS) + "\n  ];\n" + doc[g1:]
-for x_, y_ in [("gx-sicily", "gx-cadaques"), ('id="sicily-', 'id="cadaques-'), ("Sicilian and Italian words", "Catalan and Spanish words"),
-               ("/* Siracusa: the top-3", "/* Cadaqués: the top-3"), ("/* Siracusa — scoped:", "/* Cadaqués — scoped:")]:
+for x_, y_ in [("gx-sicily", "gx-costabrava"), ('id="sicily-', 'id="costabrava-'), ("Sicilian and Italian words", "Catalan and Spanish words"),
+               ("/* Siracusa: the top-3", "/* Costa Brava: the top-3"), ("/* Siracusa — scoped:", "/* Costa Brava — scoped:")]:
     doc = doc.replace(x_, y_)
 _pop = "'<a href=\"#venue-'+v.id+'\" onclick="
 if doc.count(_pop) == 1:
@@ -291,13 +292,15 @@ doc = re.sub(r"<title>[^<]*</title>", f"<title>{t(P.TITLE)}</title>", doc, count
 doc = re.sub(r'(<meta name="description" content=")[^"]*(")', lambda m: m.group(1) + a(P.DESC) + m.group(2), doc, count=1)
 doc = doc.replace("/terroir/data/Siracusa-Sicilia.js", f"/terroir/data/{SLUG}.js")
 cfg = re.search(r"window\.TERROIR_CONFIG = \{[^}]*\};", OLD).group(0)
-# the old config is sound (portName 'Cadaqués', zoom 14 on the bay); the cape and Cala Montjoi sit inside cityRadiusKm 40
-assert "portName:'Cadaqués'" in cfg
+# the old config: portName 'Costa Brava', radius 80 km holds Girona, Peratallada, Palamós and Cadaqués; zoom 13 framed one cove of a
+# 100-km coast, so the map opens at zoom 9 on the same centre
+assert "portName:'Costa Brava'" in cfg
+cfg = cfg.replace("zoom:13", "zoom:9"); assert "zoom:9" in cfg
 doc = re.sub(r"window\.TERROIR_CONFIG = \{[^}]*\};", lambda m: cfg, doc, count=1)
-doc = doc.replace("  37.0597, 15.2933 · Ortigia\n</footer>", "  42.2887, 3.2766 · Cadaqués · Cap de Creus\n</footer>")
-assert "42.2887, 3.2766 · Cadaqués" in doc
+doc = doc.replace("  37.0597, 15.2933 · Ortigia\n</footer>", "  41.9203, 3.1612 · Costa Brava · Empordà\n</footer>")
+assert "41.9203, 3.1612 · Costa Brava" in doc
 # the page-local CSS styles a 'fast' chapter this guide does not have; the gate reads its selector as an anchor
-doc = doc.replace('.gx-cadaques .band-nav__chip[href="#band-fast"],', '')
+doc = doc.replace('.gx-costabrava .band-nav__chip[href="#band-fast"],', '')
 # chrome leftovers that name the other city (og tags, canonical, comments)
 doc = doc.replace("Siracusa-Sicilia", SLUG).replace("gem boxes (Barcelona device)", "gem boxes (the kit's device)")
 left = sorted(set(re.findall(r"(?i)sicil\w*|siracusa|ortigia|\bnoto\b|czech|diani|kendwa|istanbul|\bparis\b|toulon|tropez", doc)))
@@ -318,7 +321,7 @@ for vid in KEEP:
     for k_, val in (u.get("set") or {}).items(): v[k_] = val
     # the old tag rows carried July claims the re-check overturned (a Green Star no 2026 source shows, 'Dinner Tue–Sat', a one-star tag
     # on a two-star house): the chips are rebuilt from the verified record only — the quarter and the honest status line
-    v["tags"] = [x for x in (v.get("neighborhood", ""), "Confirmed trading 2026 (checked 18 Oct)" if v.get("status") == "confirmed"
+    v["tags"] = [x for x in (v.get("neighborhood", ""), "Confirmed trading 2026 (checked 19 Oct)" if v.get("status") == "confirmed"
                              else "Not confirmed for 2026 — call ahead") if x]
     for k_, val in (u.get("set") or {}).items(): v[k_] = val
     for k_ in u.get("drop", []): v.pop(k_, None)
@@ -334,7 +337,7 @@ for vid in KEEP:
         if v.get("cat") == "berth": v["cat"] = "shop"
     v.pop("charter", None)
     if v.get("maps"): v["maps"] = v["maps"].replace("'", "%27")   # an apostrophe ends the link for every parser that reads quoted attributes
-    if v.get("maps") and not re.search(LOCAL, urllib.parse.unquote_plus(v["maps"])): v["maps"] += "+Cadaqu%C3%A9s+Girona+Spain"   # the gate's local-token rule
+    if v.get("maps") and not re.search(LOCAL, urllib.parse.unquote_plus(v["maps"])): v["maps"] += LOCAL_ADD   # the gate's local-token rule
     V.append(v)
 BY = {v["id"]: v for v in V}
 for v in V:
@@ -364,7 +367,7 @@ def geo(f): return [{"name": CARDS[c["key"]]["name"], "desc": CARDS[c["key"]]["t
                     for c in plan_cards(f) if CARDS[c["key"]].get("maps_query")]
 for l_ in D["LANDMARKS"]:   # the gate's local-token rule, on the old landmark links too
     if l_.get("maps_url"): l_["maps_url"] = l_["maps_url"].replace("'", "%27")   # an apostrophe (S'Alqueria) ends the link for quoted-attribute parsers
-    if l_.get("maps_url") and not re.search(LOCAL, urllib.parse.unquote_plus(l_["maps_url"])): l_["maps_url"] += "+Cadaqu%C3%A9s+Girona+Spain"
+    if l_.get("maps_url") and not re.search(LOCAL, urllib.parse.unquote_plus(l_["maps_url"])): l_["maps_url"] += LOCAL_ADD
 prose_all = re.sub(r"<[^>]+>", " ", H.unescape(doc)).lower()
 GEMS = [g for g in P.GEMS if g["pattern"].lower() in prose_all]
 assert len(GEMS) == len(P.GEMS), [g["pattern"] for g in P.GEMS if g["pattern"].lower() not in prose_all]
