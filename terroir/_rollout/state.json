@@ -577,7 +577,30 @@
   },
   {
    "slug": "Costa-Brava-Catalunya",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Costa-Brava-Catalunya-2026-10-19",
+   "date": "2026-10-19",
+   "readings": "done 2026-10-19",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (19 Oct, after apply_readings; 201 OK lines; floors = curated counts: venues 14, fcards 84, fsubs 35, neighborhoods 7, walks 4, categories 5, lane stories 5, gems 3, liste 15, pins 14, mapsLinks 63; groups 3; doors 4; hot minVenues 6; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here; /usr/bin/chromium symlinked to the sandbox's Playwright Chromium)",
+    "probe-guide.cjs: ALL PASS, exit 0 (chapters, sub-tags, readout, pointer lands on its table card, back button, 84 facts/84 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 88 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 88 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 59/59 placed cards and 14/14 venues with Maps on the closed card, no sideways scroll; One Night 24 links, Getaway 19); lens screenshots in review/Costa-Brava-Catalunya/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 (two overlaps found and rewritten: the anchovy feast and Sant Narcís calendar cards vs their hot-board cards)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Costa-Brava-Catalunya/costa-brava-card-desktop.png, costa-brava-card-phone.png (Camí de ronda, Calella to Llafranc, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Costa-Brava-Catalunya",
+    "own-site hours and autumn days, dated, for the guest list and berths: El Celler de Can Roca (2026 menu price, closing weeks), Bo.TiC (days, prices, deposit terms), Els Tinars (MICHELIN daily vs Time Out closed Monday), Casamar (2026 closing date), Compartir Cadaqués (closing date, service days), La Gamba (November closure?), Rafa's (service days; is 'Rambutan' in Roses a rename?), Cal Tet (winter days), Anxoves Solés (shop and museum hours)",
+    "2026 trading evidence for the 4 unverified places: Can Bonay, Mercat del Lleó (and its hours), La Fábrica, Rocambolesc (Santa Clara 50 vs Hortes 6; hours) — confirm or cut",
+    "guide.michelin.com: Bo.TiC 2 stars and Els Tinars 1 star by name in the 2026 list; guiarepsol.com 2026 Soles; MICHELIN Spain 2027 gala 24 Nov 2026: every starred table",
+    "card gaps on own sites: Museu de la Pesca auction-visit autumn dates and 2026 price, Museu de l'Anxova i de la Sal hours, Ciutadella de Roses price, Teatre-Museu and Púbol 2026 timetables, Sant Pere de Rodes adult price, Santa Maria de Castelló hours, Cap Roig 2026 hours/price, Espelt (EUR 27 vs 22), La Vinyeta 2026 season, Perelada visit price, Annick Galimont 2026 prices (2019 sheet), the urchin legal window (Ordre ARP/105/2020), the 2026-27 trawl stop",
+    "the rest of research/verify_1.json + verify_2.json _needs_network (17 lines), research/hot_events.json _needs_network (7 lines) and the card packs' _notes"
+   ],
+   "notes": "19 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Cadaqués 18 Oct pipeline). The old page was a GOLD2 tier inventory (16 venues in flat tiers, Three Tables + 24 hours + five-tier prose, no lanes, no dishes, no CSV), so the GOLD3/4/5 floor came too (5 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 15 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, craft, listening room, rooms to linger, Autour, a new elBulli-and-the-Rocas food-history fold). Places 16 -> 14 (all in lanes, none over 3, no 4s); cut Restaurant Massana (cap of three; Girona city table, the sister Girona guide's ground) and La Tabarra (not the wine bar the record said; nothing dated 2026). Fold cards: 78 old cards + 7 dish articles -> 64 written + 11 hot + 9 calendar = 84 .fcard, every one labelled; 35 groups none over 3. Guest list rebuilt from venues confirmed 19 Oct: last minute Cal Tet · La Gamba · Rafa's; this week Casamar · Compartir Cadaqués; grand night El Celler de Can Roca · Bo.TiC · Els Tinars. Berths Can Roca · La Gamba · Anxoves Solés. Statuses: 10 confirmed 19 Oct, 4 unverified (Can Bonay, Mercat del Lleó, La Fábrica, Rocambolesc). Corrections: Bo.TiC's second star 2021 guide (not 2018); Casamar star 2012 to ~2021 (dispute), reopened 27 Mar 2026; Els Tinars 1978, star since 2008 (dispute); Can Roca booking rule and the unsupported EUR 250-365 dropped; Anxoves Solés at Closa d'en Llop 40 (not Plaça de la Sardana); La Gamba's 1967/Cuadrat claim unsourced, dropped; auction visits on set dates via the Museu de la Pesca, not Mon-Fri 4-8pm; Calella-Llafranc path 1.5 km/20-30 min (not 5.5 km); Pals rice 1452 is a mill's date; tramuntana 218 km/h Portbou 2001; Cap de Creus 560-540 Ma (dispute); vine-at-Empúries and smugglers' dates kept as disputes; 'Costa Brava' 12 Sep 1908 confirmed; museum prices dated; 2026 Cantada cancelled (wildfire); 9 seasonal-calendar fixes. Readings: One Night 5 towns (Palamós · Calella/Llafranc · Roses · Girona · L'Escala/Sant Martí, thin said thin), Getaway 11 stops Fri 2 / Sat 5 / Sun 4. Hub card csv:false -> csv:true. Map zoom 13 -> 9. Details: terroir/_rollout/review/Costa-Brava-Catalunya/README.md."
   },
   {
    "slug": "Girona-Catalunya",
