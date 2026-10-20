@@ -13,6 +13,15 @@ EDITS = [          # (old, new) exact replacements in card text fields
   "Ask before you assume: an Empordà vermouth is a small-cellar rarity, and we could not confirm a named one in October 2026. "),
 ]
 CARD_SET = {       # key -> {field: value} overrides
+ # the follow cards shared their visible names with calendar cards and table venues; a card's name must be unique (readings refs)
+ "follow:Fires de Sant Narcís": {"name": "The Fires' own programme"},
+ "quarters:Sant Pere de Galligants": {"name": "Sant Pere — the abbey quarter"},
+ "quarters:Vall de Sant Daniel": {"name": "Sant Daniel — the valley quarter"},
+ # told once: the calendar card owns what the festival is and the 2026 edition; the follow card says only what the channel gives you
+ "follow:Temps de Flors": {"name": "The Temps de Flors site", "story": "The flower festival's organisers announce each edition's dates in the spring, then publish the map of installations and the list of private courtyards that will open, usually only weeks before. That map is the thing to have: it tells you which patios are worth the queue and which streets to skip. Read it to plan around the festival, or to plan around avoiding it. What the festival is, and when it usually falls, is on its own card in the calendar."},
+ "follow:Mercat del Lleó": {"name": "The market's own notices"},
+ "follow:DO Empordà": {"name": "The DO Empordà council"},
+ "follow:El Celler de Can Roca": {"name": "The Rocas' own site"},
  # told once: the Call walk owns the lanes; the quarter card says where it sits and how the quarter lives today. 'Spain's first centre of
  # Kabbalah' was softened by the culture pack (one of the first); the quarter card follows it.
  "quarters:El Call": {"teaser": "The Jewish quarter inside the Barri Vell: a dozen steep lanes off one street, quiet after six",
@@ -25,6 +34,8 @@ CARD_SET = {       # key -> {field: value} overrides
 }
 VENUE_SET = {      # id -> {field: value} overrides, each one a correction from the 20 Oct re-check
  # the gate's link parser stops at a closing parenthesis: the Maps query drops the '(urb. Melianta)' aside
+ # the address line carried the dispute; the address is the original shop, the dispute stays in the caveat
+ "v06-rocambolesc": {"address": "Carrer de Santa Clara 50, 17001 Girona (the original shop; some listings give Carrer de les Hortes)"},
  "v40-ca-l-angel": {"maps": "https://www.google.com/maps/search/?api=1&query=Ca+l%27%C3%80ngel+Fontcoberta+Girona+Spain"},
 }
 LANE_STORY_SET = {

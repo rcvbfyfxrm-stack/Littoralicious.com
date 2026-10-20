@@ -295,7 +295,7 @@ GEMS = [
 
 GLOSS = [
  ["Barri Vell", "Girona’s old town, on the east bank"],
- ["Call", "the medieval Jewish quarter"],
+ ["El Call", "the medieval Jewish quarter"],
  ["Onyar", "the river that splits the city in two"],
  ["cases de l’Onyar", "the painted houses that hang over the river"],
  ["xuixo", "Girona’s fried, sugar-crusted, cream-filled pastry"],

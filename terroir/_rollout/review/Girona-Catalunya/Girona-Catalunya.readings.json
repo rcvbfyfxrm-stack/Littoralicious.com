@@ -1,0 +1,85 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter nearest your hotel or your car · in the order you walk it",
+  "lede": "Girona eats early for Spain and shuts early: most kitchens take the last order between 22:00 and 22:30, and after 23:00 only a pintxo counter and a jazz cellar are left. Each quarter below is one evening on foot — the walk or the drink, the table, the last stop — every one from this guide, re-checked on 20 October 2026. Few houses publish autumn hours: call before you go.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the walk, the table, the last stop, in the order you take them.",
+  "door_note": "Le verre · la table · le dernier verre",
+  "quarters": [
+   {"id": "cort-reial", "name": "Barri Vell · Cort Reial", "line": "The xuixo's street at dusk, the old inn under its vaults, pintxos to midnight and jazz after.",
+    "steps": [
+     {"time": "19:00", "name": "Cathedral to Sant Feliu", "ref": "card:Cathedral to Sant Feliu", "text": "Climb the stone spine while the light goes off the cathedral steps, then drop down the lanes towards Cort Reial."},
+     {"time": "20:30", "name": "Fonda Cal Ros", "ref": "venue:v09-fonda-cal-ros", "text": "The Gascons family's fonda under the vaults: the rice baked in its tin, the roast-meat canelons, Empordà wine from the porró. Book; no current hours were found, and the old record says it shuts Tuesday and Wednesday."},
+     {"time": "22:30", "name": "Zanpanzar", "ref": "venue:v36-zanpanzar", "text": "Three doors down, the Basque counter keeps its trays moving until midnight; walk in, take what passes, pay by the toothpick."},
+     {"time": "23:30", "name": "Sunset Jazz Club", "ref": "venue:v42-sunset-jazz-club", "text": "Five minutes away, the vaulted cellar stays open past one (no Wednesday in its posted hours). No kitchen: eat before you go."}],
+    "after": "Cheaper: make the whole night [[venue:v36-zanpanzar|Zanpanzar]]. Spend more: book [[venue:v03-divinum|Divinum]] across the river instead of the fonda."},
+   {"id": "call", "name": "The Call · Calderers and Sant Feliu", "line": "The Jewish quarter at the quiet hour, an ex-Celler bistro, and the late braves under the basilica.",
+    "steps": [
+     {"time": "19:00", "name": "The Call, lane by lane", "ref": "card:The Call, lane by lane", "text": "Turn off Carrer de la Força once the day's groups have gone; forty-five minutes of steps and passages, slippery after rain."},
+     {"time": "20:00", "name": "Dit i Fet", "ref": "venue:v31-dit-i-fet", "text": "Old Catalan cooking by a cook and a host from El Celler: the veal-tail croquettes, cap i pota. About thirty-five seats; book. Closed Tuesday and Wednesday, kitchen to 22:30."},
+     {"time": "22:30", "name": "König, Calderers", "ref": "venue:v43-konig-sandwiches", "text": "A plate of braves on the terrace under Sant Feliu's steps; it closes at 23:00 (23:30 Friday and Saturday) by its own site in July."}],
+    "after": "Instead of Dit i Fet: the Japanese kitchen round the 1900 garden at [[venue:v33-nomo-girona|Nomo]], on the Pujada de la Mercè, books online and serves until late."},
+   {"id": "placa-del-vi", "name": "Plaça del Vi · Plaça de l'Oli", "line": "Thick chocolate under the arcades, natural wine by the town hall, the brothers' plain bistro as the other choice.",
+    "steps": [
+     {"time": "18:30", "name": "Xocolateria l'Antiga", "ref": "venue:v39-xocolateria-l-antiga", "text": "A suïssa at a marble table under the arcades, open to 21:00 most days; its Sunday hours are unreliable."},
+     {"time": "20:30", "name": "SAFO", "ref": "venue:v32-safo", "text": "Share plates that cross Catalonia with Mexico, and Víctor Martín's natural wines; dinner Tuesday to Saturday out of summer, kitchen to 22:00."},
+     {"time": "22:30", "name": "Sunset Jazz Club", "ref": "venue:v42-sunset-jazz-club", "text": "Down the hill towards the Barca, the jazz cellar for the last glass."}],
+    "after": "The other table: [[venue:v04-normal|Normal]] on Plaça de l'Oli, the Rocas' mother's dishes; it books ninety days out, so plan it."},
+   {"id": "mercadal", "name": "Mercadal · across the river", "line": "The bridges at golden hour, a vermouth on the big square, and the 1892 house that still cooks like it.",
+    "steps": [
+     {"time": "19:00", "name": "The Onyar bridges", "ref": "card:The Onyar bridges", "text": "Start at the Pont de les Peixateries Velles and zig-zag the footbridges while the river houses take the last light: about forty minutes."},
+     {"time": "20:00", "name": "A vermouth under the arcades", "ref": "card:Dinner on the Plaça de la Independència", "text": "Have the drink on the Plaça de la Independència, not the dinner: the terraces are priced for the view."},
+     {"time": "20:30", "name": "Casa Marieta", "ref": "venue:v08-casa-marieta", "text": "On the same square since 1892: duck with pears, the canelons. Open daily on fixed hours, dinner to 22:30; book the arcade tables."}],
+    "after": "Spend more: [[venue:v02-restaurant-massana|Massana]] in the next street, the 1986 duck, booked days ahead; or the sommelier's vault at [[venue:v03-divinum|Divinum]]."},
+   {"id": "beyond", "name": "Beyond the walls · by taxi", "line": "Not a quarter you walk: the fort above the city, or the three stars in Taialà.",
+    "steps": [
+     {"time": "19:30", "name": "Esperit Roca", "ref": "venue:v21-esperit-roca", "text": "Ten kilometres north, by taxi up the hill: El Celler's back catalogue in an 1893 fort. Dinner Thursday to Saturday, 19:30 to 21:30; the old record gives a closure from 3 to 11 November 2026. Book about ninety days ahead."},
+     {"time": "20:00", "name": "El Celler de Can Roca", "ref": "venue:v01-el-celler-de-can-roca", "text": "Or the mothership in Taialà, dinner Tuesday to Saturday by the MICHELIN listing, booked online up to eleven months ahead. A taxi each way."}],
+    "after": "There is nothing to walk to afterwards out here: take the taxi back to [[venue:v42-sunset-jazz-club|Sunset Jazz Club]] if the night is not over."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the bridges at dusk, a sommelier's vault, the market and the stone, three stars in Taialà, and Sunday lunch in a fort.",
+  "door_note": "Le pont · la pierre · les Roca",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Girona sells itself as a day trip from Barcelona: the cathedral steps, the coloured houses, an hour in the Call. The weekend worth having is the city after the day-trippers' train has gone — the bridges at dusk, the market at nine, the walls in late light — and the one family that cooks at every rung of it, from a cone in the street to the three stars in Taialà. It is all on foot except two taxis. Every stop is in this guide, checked in October 2026; few houses publish autumn hours, so book and phone everything.",
+  "book": [
+   "[[venue:v01-el-celler-de-can-roca|El Celler de Can Roca]] — online only; dates open up to eleven months ahead at midnight on the 1st of each month and fill fast: book the table first, then the flights",
+   "[[venue:v21-esperit-roca|Esperit Roca]] — about ninety days ahead, for Sunday lunch",
+   "[[venue:v03-divinum|Divinum]] — a few days ahead, for the Friday",
+   "[[venue:v07-can-marques|Can Marquès]] — advisable for a Saturday lunch"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The river at dusk", "stops": [
+     {"time": "19:00", "name": "The Onyar bridges", "ref": "card:The Onyar bridges", "text": "Walk the footbridges from the old fish bridge as the river houses light up, with the cathedral rising behind them.", "meta": "Pont de les Peixateries Velles · about 40 minutes · free"},
+     {"time": "20:30", "name": "Dinner at Divinum", "ref": "venue:v03-divinum", "text": "Below street level in the old Casino, a star won from the dining room: the tartare finished at the table and the sommelier's pairing. Easy to walk past the door.", "meta": "Carrer de l'Albareda 7 · closed Sunday and Monday · book a few days ahead; no 2026 menu price found"},
+     {"time": "23:00", "name": "Sunset Jazz Club", "ref": "venue:v42-sunset-jazz-club", "text": "Back across the river, the vaulted cellar on a DownBeat list; on Fridays it stays open to 03:00 by its posted spring hours.", "meta": "Carrer de Jaume Pons i Martí 12 · walk-in · drinks only"}]},
+   {"label": "Saturday", "title": "The market, the stone, the three stars", "stops": [
+     {"time": "09:00", "name": "Mercat del Lleó", "ref": "venue:v19-mercat-del-lleo", "text": "The 1944 covered market at its best: the day-boat fish, the sweet botifarra on the charcuterie stalls, the Girona apples.", "meta": "Plaça Calvet i Rubalcaba · mornings to about 14:00 · closed Sunday"},
+     {"time": "10:15", "name": "Girona Cathedral", "ref": "card:Girona Cathedral (Santa Maria)", "text": "Up the ninety steps at opening and into the one-span nave before the groups arrive.", "meta": "Opens 10:00 · €7.50 with Sant Feliu (Oct 2026)"},
+     {"time": "11:30", "name": "The Call and its museum", "ref": "card:Museu d'Història dels Jueus", "text": "Walk the lanes of the Call down from the cathedral, and end in the museum of Jewish Girona at the Centre Bonastruc ça Porta.", "meta": "Carrer de la Força 8 · Tue-Sat 10:00-18:00 · €4 (Oct 2026)"},
+     {"time": "13:30", "name": "Lunch at Can Marquès", "ref": "venue:v07-can-marques", "text": "Opposite the market it shops from, the 1920 house: the salt cod with samfaina, the botifarra torn open under brie, whatever the stalls sold.", "meta": "Plaça Calvet i Rubalcaba 3 · lunch Monday to Saturday · set lunch about €14.50 (Time Out, undated)"},
+     {"time": "16:30", "name": "Passeig de la Muralla", "ref": "card:Passeig de la Muralla", "text": "The rampart walk from the Jardins dels Alemanys, up the towers for the roofs, as the stone warms.", "meta": "About 3 km · steep stairs · free"},
+     {"time": "18:00", "name": "A panet at Rocambolesc", "ref": "venue:v06-rocambolesc", "text": "Jordi Roca's gelato in a hot brioche, the walk-in rung of the family ladder; its hours and even its address differ between listings.", "meta": "Carrer de Santa Clara · walk-in · about €4-8 (seen Jul 2026)"},
+     {"time": "20:00", "name": "Dinner at El Celler de Can Roca", "ref": "venue:v01-el-celler-de-can-roca", "text": "The table you booked eleven months ago, in Taialà, forty years old this October. Take a taxi both ways.", "meta": "Carrer de Can Sunyer 48 · dinner Tuesday to Saturday (MICHELIN listing) · no 2026 price found"}]},
+   {"label": "Sunday", "title": "The xuixo, the abbey, the fort", "stops": [
+     {"time": "10:30", "name": "A xuixo at Can Castelló", "ref": "venue:v17-can-castello", "text": "The shop that fries nothing else: the crema xuixo, warm, sugar on your fingers in Argenteria. Not re-confirmed for 2026; check it is open.", "meta": "Carrer de l'Argenteria 7 · open Sunday by the old record · about €3-4"},
+     {"time": "11:15", "name": "Sant Pere de Galligants", "ref": "card:Sant Pere de Galligants", "text": "The Romanesque abbey at the north gate, open on Sunday mornings, with the archaeology of the city in its nave and cloister.", "meta": "Carrer de Santa Llúcia · Sunday mornings · about €6 (unconfirmed)"},
+     {"time": "12:15", "name": "Into the Vall de Sant Daniel", "ref": "card:Vall de Sant Daniel", "text": "From the abbey's square, walk the quiet lane into the valley for half an hour and back, the way the city spends its Sundays.", "meta": "Plaça de Sant Pere de Galligants · gentle · free"},
+     {"time": "13:30", "name": "Lunch at Esperit Roca", "ref": "venue:v21-esperit-roca", "text": "A taxi up to the fort at Sant Julià de Ramis for El Celler's back catalogue, Toda la gamba among it, under its own star; the view back over the plain is the last thing you take home.", "meta": "Sant Julià de Ramis · lunch Friday to Monday 13:00-14:30 · closed 3-11 Nov 2026 by the old record · book ~90 days out"}]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take Cort Reial: the old inn's rice at [[venue:v09-fonda-cal-ros|Fonda Cal Ros]], pintxos at [[venue:v36-zanpanzar|Zanpanzar]] until midnight, and the jazz cellar after — three stops within five minutes' walk."},
+   {"title": "The grand night instead", "text": "If the Taialà table will not come, [[venue:v21-esperit-roca|Esperit Roca]] serves the same family's back catalogue for Saturday dinner (Thursday to Saturday), booked a season ahead, not a year; or [[venue:v02-restaurant-massana|Massana]]'s 1986 duck in town."},
+   {"title": "This October", "dated": "Checked 20 October 2026", "items": [
+     "The Fires de Sant Narcís fill the city from 23 October to 1 November — the correfoc in the Plaça del Vi on Saturday 24, the saint's day on Thursday 29, fireworks on 1 November: see [[card:The fair and the fire: Fires de Sant Narcís|the hot board]]; book every table",
+     "The clocks go back on Sunday 25 October: the bridges at dusk come an hour earlier",
+     "Tots Sants on 1 November is a holiday: [[card:Panellets and moscatell for Tots Sants|panellets]] in the pastry shops, and some kitchens close",
+     "[[venue:v21-esperit-roca|Esperit Roca]] closes from 3 to 11 November by the old record: phone"]},
+   {"title": "Where to sleep", "text": "This guide judges tables, not rooms. The only houses in it that let rooms are [[venue:v05-casa-cacao|Casa Cacao]], fifteen rooms over the chocolate house on Plaça de Catalunya, and [[card:Palau Fugit|Palau Fugit]], a restored Baroque palace in the Barri Vell; we have not judged either as a hotel. Sleep inside or beside the old town and the whole weekend is on foot."},
+   {"title": "What we would leave out", "text": "Dinner on the big square — [[card:Dinner on the Plaça de la Independència|have the vermouth there, eat elsewhere]]; [[card:The paella boards by the bridges|the photo-board paella]]; and [[card:Driving into the Barri Vell|the car in the old town]], where cameras fine the unpermitted."}
+  ]
+ }
+}
