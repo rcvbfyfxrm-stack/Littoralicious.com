@@ -581,7 +581,30 @@
   },
   {
    "slug": "Girona-Catalunya",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Girona-Catalunya-2026-10-20",
+   "date": "2026-10-20",
+   "readings": "done 2026-10-20",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (20 Oct, after apply_readings; 201 OK lines; floors = curated counts: venues 26, fcards 92, fsubs 38, neighborhoods 9, walks 7, categories 9, lane stories 9, gems 5, liste 18, pins 26, mapsLinks 70; groups 3; doors 4; hot minVenues 7; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here; /usr/bin/chromium symlinked to the sandbox's Playwright Chromium)",
+    "probe-guide.cjs: ALL PASS, exit 0 (28 checks: chapters, sub-tags, readout, pointer lands on its table card, back button, 92 facts/92 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 88 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 88 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 59/59 placed cards and 26/26 venues with Maps on the closed card, no sideways scroll; One Night 23 links, Getaway 24); lens screenshots in review/Girona-Catalunya/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 (six overlaps found and rewritten: El Call and La Devesa quarter cards vs their walks, the larder and chefs lane stories vs the Cal Formatger and Dit i Fet venues, the Temps de Flors follow card vs its calendar card, the cathedral card's Game of Thrones sentence vs its curiosity)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "screenshots: review/Girona-Catalunya/girona-card-desktop.png, girona-card-phone.png (Passeig de la Muralla, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Girona-Catalunya",
+    "guide.michelin.com: Massana, Divinum, Esperit Roca one star each in the 2026 list by name (seen via press only); MICHELIN Spain 2027 gala 24 Nov 2026: every starred table",
+    "own-site hours and 2026 prices, dated, for the guest list and berths: cellercanroca.com (Festival/anniversary menu prices, closing weeks), restaurantmassana.com, Divinum, esperitroca.com (hours, the 3-11 Nov closure, EUR 139 vs 140), Fonda Cal Ros (days, phone), casamarieta.com, ditifetrestaurant.com, Nomo (days, Menú Naoyuki 2026), Zanpanzar (hours; the 2025 handover), Can Marquès (dinner nights), tornes.cat (menú, dessert, phone)",
+    "2026 trading evidence for the 8 unverified places: La Fàbrica (15:00 vs 17:00), Can Castelló, Casa Cacao, Rocambolesc (Santa Clara 50 vs Hortes; hours), Mercat del Lleó (hours), Cal Formatger, König Calderers, Can Roca Taialà (menú price) — confirm or cut",
+    "card gaps: cathedral mid-Sept-Oct hours, Banys Àrabs and Sant Pere de Galligants 2026 prices/hours, Bisbal school 2026 courses, La Sobirana dates, Museu del Suro costs, the organic producers' market day, Le Bistrot vs 'Cafe le Bistro' at the same address, Es Niu / Llagostera bolet fair / Besalú ratafia fair 2026 dates, new-oil presentation date, the Fires' official programme",
+    "the rest of research/verify_1.json + verify_2.json _needs_network (30 lines), research/hot_events.json _needs_network (7 lines) and the card packs' _notes"
+   ],
+   "notes": "20 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Costa Brava 19 Oct pipeline). The old page was GOLD3-era (31 venues in 13 table sections incl. a one-venue rice lane, tcard folds, #tables-extended still present, no lane stories, no guest list, no hot board, no La liste), so the GOLD4/5 floor came too (9 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 18 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, craft as do-this-one, listening room, rooms to linger, Autour, 5 gems). Places 31 -> 26 (all in lanes, none over 3, no 4s); cut Arròs 9 (one-venue lane), König Independència (same house as König Calderers), Federal Café (Barcelona group outpost, conflicting hours), Nexe ex-Nu (no 2026 evidence, 'temporarily closed' listing, claims unconfirmed), El Cul de la Lleona (Nepali rebrand unfound, reviews describe tapas). Fold cards: 71 old cards + 8 dish articles -> 72 written + 11 hot + 9 calendar = 92 .fcard, every one labelled; 38 groups none over 3. Guest list rebuilt from venues confirmed 20 Oct: last minute Zanpanzar · Casa Marieta · Nomo; this week Dit i Fet · Fonda Cal Ros · Massana; grand night El Celler de Can Roca · Esperit Roca · Divinum. Berths Can Roca · Can Marquès · Tornés. Statuses: 18 confirmed 20 Oct, 8 unverified (none on the guest list or a berth). Corrections: Massana opened 1986 (not fourth-generation), son Pere now cooks; Casa Cacao is Anna Payet's hotel (Joan Roca's wife) with Jordi's chocolate, opened Feb 2020; Fonda Cal Ros opened Apr 2025 (Gascons); L'Antiga ~36 years under the Comas family; Cal Formatger 1,000+ cheeses; 8de7 has no Repsol Solete (chip replaced), three other unsourced chips replaced; Tornés 2026 world xuixo champion; El Celler in Taialà not Pedret; flies legend 1285 not 1286; 1809 dates a dispute; cathedral EUR 7.50/5; Call 'yeshiva' dropped, Kabbalah 'one of the first'; Sant Miquel 385 m / 9.6 km; Devesa ~2,600 trees, 'largest park' dropped; Garrotxa IGP zone all Catalonia; Fuji not a Poma de Girona variety; Banyoles loop 7-8 km; Garnatxa de l'Empordà technique rewritten; El meu avi 2025-26 story; Nits de Clàssica last seen 2019; Es Niu runs Oct-Dec (seasonal table fixed + 5 more calendar fixes); Gerisena vermouth unfound, name dropped; seven unsourced phones dropped; a new Barri Vell driving warning (cameras, LEZ since 15 Sep 2025). Readings: One Night 5 quarters (Cort Reial · the Call and Sant Feliu · Plaça del Vi and Plaça de l'Oli · the Mercadal · beyond the walls by taxi, said so), Getaway 14 stops Fri 3 / Sat 7 / Sun 4. Map zoom 15 -> 14. Hub not touched. Details: terroir/_rollout/review/Girona-Catalunya/README.md."
   },
   {
    "slug": "Cavalaire-sur-Mer",
