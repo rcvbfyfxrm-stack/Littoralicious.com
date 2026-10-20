@@ -1,0 +1,542 @@
+{
+ "quartiers": {
+  "sub": "quarters",
+  "groups": [
+   {
+    "title": "The east bank — the stone city",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quarters:Barri Vell",
+      "from": "quartiers:Barri Vell"
+     },
+     {
+      "key": "quarters:El Call",
+      "from": "quartiers:El Call"
+     },
+     {
+      "key": "quarters:Sant Pere de Galligants",
+      "from": "quartiers:Sant Pere de Galligants"
+     }
+    ]
+   },
+   {
+    "title": "The river and the west bank",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quarters:The Onyar riverfront",
+      "from": "quartiers:Onyar riverfront"
+     },
+     {
+      "key": "quarters:Mercadal",
+      "from": "quartiers:Mercadal"
+     },
+     {
+      "key": "quarters:Pedret",
+      "from": "quartiers:Pedret"
+     }
+    ]
+   },
+   {
+    "title": "The green edges",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quarters:La Devesa",
+      "from": "quartiers:Devesa / Parc"
+     },
+     {
+      "key": "quarters:Montjuïc",
+      "from": "quartiers:Montjuïc de Girona"
+     },
+     {
+      "key": "quarters:Vall de Sant Daniel",
+      "from": "quartiers:Vall de Sant Daniel"
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "The city that would not fall",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The Immortal City",
+      "from": null
+     },
+     {
+      "key": "curiosities:The flies of Sant Narcís",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Who lives here now",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The cycling capital",
+      "from": null
+     },
+     {
+      "key": "curiosities:A season of dragons on the steps",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The markets — go early",
+    "desc": "",
+    "cards": [
+     {
+      "key": "larder:The Lleó market, for the galley",
+      "from": null
+     },
+     {
+      "key": "larder:Mercat de la Devesa",
+      "from": "gastronomy:Mercat de la Devesa"
+     },
+     {
+      "key": "larder:The organic producers' market",
+      "from": "gastronomy:Organic producers' market"
+     }
+    ]
+   },
+   {
+    "title": "Born in the province",
+    "desc": "",
+    "cards": [
+     {
+      "key": "larder:Fesols de Santa Pau",
+      "from": "gastronomy:Fesols de Santa Pau (DOP)"
+     },
+     {
+      "key": "larder:Poma de Girona",
+      "from": "gastronomy:Poma de Girona (IGP)"
+     },
+     {
+      "key": "larder:Formatge Garrotxa",
+      "from": "gastronomy:Formatge Garrotxa (IGP)"
+     }
+    ]
+   },
+   {
+    "title": "At the source",
+    "desc": "",
+    "cards": [
+     {
+      "key": "larder:The Empordà estates",
+      "from": "gastronomy:DO Empordà cellars"
+     },
+     {
+      "key": "larder:Oli de l'Empordà",
+      "from": "bars:Oli de l'Empordà"
+     },
+     {
+      "key": "larder:Cal Formatger's board",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The walls and the stone",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Passeig de la Muralla",
+      "from": "walks:Passeig de la Muralla"
+     },
+     {
+      "key": "walks:Cathedral to Sant Feliu",
+      "from": "walks:The Cathedral-to-Sant Feliu spine"
+     },
+     {
+      "key": "walks:The Call, lane by lane",
+      "from": "walks:The Call labyrinth"
+     }
+    ]
+   },
+   {
+    "title": "The river and the green",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Onyar bridges",
+      "from": "walks:The Onyar bridges"
+     },
+     {
+      "key": "walks:Parc de la Devesa",
+      "from": "walks:Parc de la Devesa"
+     },
+     {
+      "key": "walks:Vall de Sant Daniel",
+      "from": "walks:Vall de Sant Daniel"
+     }
+    ]
+   },
+   {
+    "title": "Up the hill",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Castell de Sant Miquel",
+      "from": "walks:Castell de Sant Miquel"
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Rooms for a cup",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Espresso Mafia",
+      "from": "coffee-gardens:Espresso Mafia"
+     },
+     {
+      "key": "linger:Cafè Le Bistrot",
+      "from": "coffee-gardens:Cafè Le Bistrot"
+     },
+     {
+      "key": "linger:Palau Fugit",
+      "from": "coffee-gardens:Palau Fugit — Gipsy bar & El Terrat"
+     }
+    ]
+   },
+   {
+    "title": "A laptop, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:La Fàbrica with a laptop",
+      "from": null
+     },
+     {
+      "key": "linger:Idle Hands",
+      "from": "coffee-gardens:Idle Hands"
+     }
+    ]
+   },
+   {
+    "title": "A garden inside the walls",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Jardins dels Alemanys",
+      "from": "work:Jardins dels Alemanys"
+     },
+     {
+      "key": "linger:Jardí de la Francesa",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The hill of churches",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Girona Cathedral",
+      "from": "culture:Girona Cathedral (Santa Maria)"
+     },
+     {
+      "key": "culture:Basílica de Sant Feliu",
+      "from": "culture:Basílica de Sant Feliu"
+     },
+     {
+      "key": "culture:Sant Pere de Galligants",
+      "from": "culture:Sant Pere de Galligants"
+     }
+    ]
+   },
+   {
+    "title": "The Call and the baths",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Museu d'Història dels Jueus",
+      "from": "culture:Museu d'Història dels Jueus (Call)"
+     },
+     {
+      "key": "culture:Banys Àrabs",
+      "from": "culture:Banys Àrabs"
+     }
+    ]
+   },
+   {
+    "title": "A house on the river",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Casa Masó",
+      "from": "culture:Casa Masó"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Escola de Ceràmica de la Bisbal",
+      "from": "crafts:Ceramics — La Bisbal d'Empordà"
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:La Sobirana, Santa Coloma de Farners",
+      "from": "crafts:Ratafia — Santa Coloma de Farners"
+     },
+     {
+      "key": "craft:Other one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as local craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:DO Empordà reds",
+      "from": "bars:DO Empordà reds"
+     },
+     {
+      "key": "drink:Garnatxa de l'Empordà",
+      "from": "bars:Garnatxa de l'Empordà"
+     },
+     {
+      "key": "drink:Vi novell",
+      "from": "bars:Vi novell"
+     }
+    ]
+   },
+   {
+    "title": "Before and after",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Vermut",
+      "from": "bars:Vermut de l'Empordà"
+     },
+     {
+      "key": "drink:Ratafia",
+      "from": "bars:Ratafia catalana"
+     },
+     {
+      "key": "drink:Cremat",
+      "from": "bars:Cremat"
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi bar in Girona",
+      "from": null
+     },
+     {
+      "key": "listening:Sunset Jazz Club, for the record",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The sardana",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:La Santa Espina",
+      "from": "music:'La Santa Espina' — Enric Morera"
+     },
+     {
+      "key": "listening:Cobla La Principal de la Bisbal",
+      "from": "music:Cobla La Principal de la Bisbal"
+     }
+    ]
+   },
+   {
+    "title": "Under the nave and by the sea",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Nits de Clàssica",
+      "from": "music:Nits de Clàssica in the nave"
+     },
+     {
+      "key": "listening:El meu avi and the havaneres",
+      "from": "music:'El meu avi' — the havanera"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "Within forty minutes",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Besalú",
+      "from": null
+     },
+     {
+      "key": "around:Banyoles and its lake",
+      "from": null
+     },
+     {
+      "key": "around:Olot and the Garrotxa volcanoes",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Down to the sea",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:The Costa Brava",
+      "from": null
+     },
+     {
+      "key": "around:Cadaqués",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "The square and the board",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Dinner on the Plaça de la Independència",
+      "from": null
+     },
+     {
+      "key": "avoid:The paella boards by the bridges",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The booking and the car",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Turning up at El Celler unbooked",
+      "from": null
+     },
+     {
+      "key": "avoid:Driving into the Barri Vell",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The city's calendar",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Fires de Sant Narcís",
+      "from": null
+     },
+     {
+      "key": "follow:Temps de Flors",
+      "from": null
+     },
+     {
+      "key": "follow:Mercat del Lleó",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wine and the kitchen",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:DO Empordà",
+      "from": null
+     },
+     {
+      "key": "follow:El Celler de Can Roca",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "larder:The Lleó market, for the galley": "v19-mercat-del-lleo",
+  "larder:Cal Formatger's board": "v11-cal-formatger",
+  "linger:La Fàbrica with a laptop": "v18-la-fabrica",
+  "listening:Sunset Jazz Club, for the record": "v42-sunset-jazz-club"
+ }
+}

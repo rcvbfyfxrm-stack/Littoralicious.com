@@ -1,0 +1,160 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The stars",
+   "group": "grande",
+   "ids": [
+    "v01-el-celler-de-can-roca",
+    "v02-restaurant-massana",
+    "v03-divinum"
+   ]
+  },
+  "roca": {
+   "label": "The Roca ladder — fort, bistro, the parents' bar",
+   "group": "grande",
+   "ids": [
+    "v21-esperit-roca",
+    "v04-normal",
+    "v30-can-roca-taiala"
+   ]
+  },
+  "houses": {
+   "label": "The old houses",
+   "group": "petite",
+   "ids": [
+    "v07-can-marques",
+    "v08-casa-marieta",
+    "v09-fonda-cal-ros"
+   ]
+  },
+  "chefs": {
+   "label": "Where the chefs eat",
+   "group": "petite",
+   "ids": [
+    "v31-dit-i-fet",
+    "v32-safo",
+    "v10-nu"
+   ]
+  },
+  "menu": {
+   "label": "The menú del dia",
+   "group": "petite",
+   "ids": [
+    "v37-restaurant-8de7",
+    "v38-tornes"
+   ]
+  },
+  "morning": {
+   "label": "The morning — the granja and the fork",
+   "group": "petite",
+   "ids": [
+    "v39-xocolateria-l-antiga",
+    "v40-ca-l-angel",
+    "v18-la-fabrica"
+   ]
+  },
+  "other": {
+   "label": "The other kitchens",
+   "group": "petite",
+   "ids": [
+    "v33-nomo-girona",
+    "v34-cul-de-la-lleona"
+   ]
+  },
+  "sweet": {
+   "label": "Xuixo, chocolate and a cone",
+   "group": "street",
+   "ids": [
+    "v17-can-castello",
+    "v05-casa-cacao",
+    "v06-rocambolesc"
+   ]
+  },
+  "larder": {
+   "label": "The market, the cheese, the cellar",
+   "group": "street",
+   "ids": [
+    "v19-mercat-del-lleo",
+    "v11-cal-formatger",
+    "v20-espelt-viticultors"
+   ]
+  },
+  "late": {
+   "label": "Late — after service",
+   "group": "street",
+   "ids": [
+    "v36-zanpanzar",
+    "v43-konig-sandwiches",
+    "v42-sunset-jazz-club"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit",
+   "roca"
+  ],
+  "petite": [
+   "houses",
+   "chefs",
+   "menu",
+   "morning",
+   "other"
+  ],
+  "street": [
+   "sweet",
+   "larder",
+   "late"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v14-arros-9-by-terram": "Cut: it was a one-venue rice lane ('Bistro & rice'), and tiny lanes are merged or cut; the city's rice is told by the old houses' daily arròs and by the chefs' lane. Nothing against it.",
+  "v35-konig-2": "Cut, told once: the same house as König on Carrer dels Calderers (kept in the late lane, the branch under Sant Feliu's steps with the later hours); two cards for one fast-food group was one too many.",
+  "v41-federal-cafe": "Cut: the morning lane holds three and keeps the two that belong to Girona (the 1916 granja, the roadside fork breakfast) and the café the city's cycling scene grew out of; Federal is the Girona outpost of a Barcelona-born brunch group, and its own record carries three conflicting sets of hours."
+ },
+ "berths": [
+  "v01-el-celler-de-can-roca",
+  "v07-can-marques",
+  "v19-mercat-del-lleo"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v36-zanpanzar",
+   "v08-casa-marieta",
+   "v37-restaurant-8de7"
+  ],
+  "Plan ahead — this week": [
+   "v31-dit-i-fet",
+   "v09-fonda-cal-ros",
+   "v02-restaurant-massana"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-el-celler-de-can-roca",
+   "v21-esperit-roca",
+   "v03-divinum"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "quartiers:Sant Feliu": "merged: the lanes below the cathedral are the Barri Vell card; the basilica is its own culture card",
+  "quartiers:Santa Eugènia": "cut: a residential district annexed in 1963, nothing a visitor goes for that another card does not carry",
+  "coffee-gardens:Casa Cacao — Bar Cacao & the obrador": "told once: Casa Cacao is a venue (the sweet lane)",
+  "coffee-gardens:La Fàbrica": "told once: La Fàbrica is a venue; the linger card is a pointer",
+  "work:La Fàbrica": "told once: merged into the La Fàbrica pointer",
+  "work:Casa Cacao terrace": "told once: Casa Cacao is a venue",
+  "work:Cafès on the Rambla de la Llibertat": "cut: the Rambla terraces are what the skip fold warns about for a meal; a vermut there is said once, in the warning",
+  "work:Parc de la Devesa benches": "merged into the Devesa walk",
+  "culture:Cases de l'Onyar & the Eiffel bridge": "merged into the Onyar bridges walk (the houses are what that walk is for); Casa Masó is the one you enter",
+  "culture:Passeig de la Muralla": "told once: the walls are the walk card",
+  "gastronomy:Mercat del Lleó": "told once: the market is a venue (the larder lane); the provisioning fold points to it",
+  "gastronomy:Anxova de l'Escala": "told once: the anchovy is a dish of La liste (The Dish) and a gem popup; the coast's salters are the Costa Brava guide's ground",
+  "gastronomy:Gamba de Palamós": "told once: a dish of La liste (The Dish)",
+  "gastronomy:Cal Formatger": "told once: Cal Formatger is a venue; the provisioning card is a pointer",
+  "gastronomy:Casa Cacao boutique": "told once: Casa Cacao is a venue",
+  "gastronomy:L'Escala anchovy houses": "cut: L'Escala is the Costa Brava guide's ground; the anchovy lives in La liste",
+  "music:Havaneres & cremat": "merged into the El meu avi card (the song) and the Cremat drink card (the bowl), told once",
+  "dish:*": "the eight dish articles are rewritten inside La liste (The Dish)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

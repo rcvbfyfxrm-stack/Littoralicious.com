@@ -1,0 +1,337 @@
+{
+ "larder:The Lleó market, for the galley": {
+  "fold": "provisioning",
+  "group": "The markets — go early",
+  "old_also": {
+   "fold": "gastronomy",
+   "name": "Mercat del Lleó",
+   "type": "MARKET",
+   "hook": "~60 stalls: 9 fish, 11 butchers/charcuterie, fruit & veg, plus the outer ring of pagès farm stalls · esmorzar de forquilla territory by 9am",
+   "chips": [
+    "07:00–10:00, Mon–Sat"
+   ],
+   "details": [
+    [
+     "Where",
+     "Plaça Calvet i Rubalcaba 15"
+    ]
+   ],
+   "text": "The working municipal market, in a 1944 hall of ~1,712 m². Mon–Fri 07:00–14:00, Sat to 14:30, closed Sun. A locals' market — go early, the fish counters thin out by mid-morning.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v19-mercat-del-lleo). Set \"ref\": \"v19-mercat-del-lleo\". Write it in THIS section's angle (the larder: what a galley buys and the hour to be there); story 40-70 words that does NOT retell the venue's own story; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty."
+ },
+ "larder:Mercat de la Devesa": {
+  "fold": "provisioning",
+  "group": "The markets — go early",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Mercat de la Devesa",
+   "type": "MARKET",
+   "hook": "Produce, dried fruit, cured meats — plus clothes and household goods",
+   "chips": [
+    "Tue & Sat, ~09:00–13:30"
+   ],
+   "details": [
+    [
+     "Where",
+     "Passeig de la Devesa / Ribes del Ter"
+    ]
+   ],
+   "text": "Girona's big open-air street market, run with the merchant guilds; the pitch shifts seasonally between the Devesa park and the Ter riverbank, so check before you go.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:The organic producers' market": {
+  "fold": "provisioning",
+  "group": "The markets — go early",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Organic producers' market",
+   "type": "MARKET",
+   "hook": "CCPAE-certified fruit, veg, eggs, sheep's-milk dairy, oil, cheese",
+   "chips": [
+    "Thursdays"
+   ],
+   "details": [
+    [
+     "Where",
+     "Around Mercat del Lleó"
+    ]
+   ],
+   "text": "A certification-gated farmers' market — vendors must carry the Catalan organic seal — the closest thing to a true direct-from-producer market in the city. Verify the day locally; it is a small, growing stand.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:Fesols de Santa Pau": {
+  "fold": "provisioning",
+  "group": "Born in the province",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Fesols de Santa Pau (DOP)",
+   "type": "PRODUCER",
+   "hook": "Volcanic-soil beans, PDO since 2015",
+   "chips": [],
+   "details": [],
+   "text": "Small beans of the Tavella Brisa, Setsetmanera and Gra Petit varieties, grown only on the volcanic soils of Santa Pau and six Garrotxa villages — EU-protected (Reg. 2015/1312). The reason a plate of botifarra amb seques tastes of the Garrotxa and not just of beans.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:Poma de Girona": {
+  "fold": "provisioning",
+  "group": "Born in the province",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Poma de Girona (IGP)",
+   "type": "PRODUCER",
+   "hook": "The plain's PGI apples",
+   "chips": [],
+   "details": [],
+   "text": "Five varieties (Golden, Gala, Granny Smith, Fuji among them) grown on the Gironès–Empordà plain, PGI-protected since 2003 (Reg. 1491/2003). The Ter's water and cold nights give a firm, high-acid apple — the everyday fruit of the province.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:Formatge Garrotxa": {
+  "fold": "provisioning",
+  "group": "Born in the province",
+  "old": {
+   "fold": "gastronomy",
+   "name": "Formatge Garrotxa (IGP)",
+   "type": "PRODUCER",
+   "hook": "Bloomy-rind goat's cheese",
+   "chips": [],
+   "details": [],
+   "text": "A grey-moulded goat's cheese from the Garrotxa, matured at least 21 days — EU-registered as a PGI only in December 2023 (Reg. 2023/2872), so recent. Nutty, faintly mushroomy from the rind; the backbone of any Girona cheese board.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:The Empordà estates": {
+  "fold": "provisioning",
+  "group": "At the source",
+  "old": {
+   "fold": "gastronomy",
+   "name": "DO Empordà cellars",
+   "type": "PRODUCER",
+   "hook": "Slate-grown garnatxa & carinyena",
+   "chips": [],
+   "details": [],
+   "text": "The Alt/Baix Empordà DO, founded 1975, ~1,768 ha of low bush vines held down by the tramuntana. Visit Espelt (Vilajuïga), La Vinyeta (Mollet de Peralada), Masia Serra (Cantallops) or Terra Remota (Sant Climent Sescebes) — most take booked tastings.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:Oli de l'Empordà": {
+  "fold": "provisioning",
+  "group": "At the source",
+  "old": {
+   "fold": "bars",
+   "name": "Oli de l'Empordà",
+   "type": "DRINK",
+   "hook": "A PDO oil pressed mainly from the local Argudell olive — the plain's other liquid.",
+   "chips": [
+    "EUR 12–25"
+   ],
+   "details": [],
+   "text": "Protected as a PDO by EU Implementing Regulation 2015/385. The zone covers the Alt and Baix Empordà with parts of the Pla de l'Estany and the Gironès; the oil is at least 51% Argudell, with Curivell, Llei de Cadaqués and Arbequina alongside. Green, faintly bitter, cut for pa amb tomàquet and for finishing suquet.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Market/product card: market labels Days · Hours · Go at · Look for; product (DOP/IGP) labels What it is · Season · Where to buy · Taste it; estate labels Where · Open · Buy · Price · Book. Verify 2026 days/hours."
+ },
+ "larder:Cal Formatger's board": {
+  "fold": "provisioning",
+  "group": "At the source",
+  "old_also": {
+   "fold": "gastronomy",
+   "name": "Cal Formatger",
+   "type": "SHOP",
+   "hook": "200+ Catalan cheeses",
+   "chips": [],
+   "details": [],
+   "text": "A Cort Reial cheese room built on Girona-province makers, Garrotxa goat's cheese to the fore, with boards to eat in and a glass of Empordà. Opens 10:30; closed Sun/Mon.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v11-cal-formatger). Set \"ref\": \"v11-cal-formatger\". Write it in THIS section's angle (buying the province's cheese to take aboard); story 40-70 words that does NOT retell the venue's own story; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty."
+ },
+ "walks:Passeig de la Muralla": {
+  "fold": "walks",
+  "group": "The walls and the stone",
+  "old": {
+   "fold": "walks",
+   "name": "Passeig de la Muralla",
+   "type": "WALK",
+   "hook": "The wall-top walk on a Carolingian circuit over Roman foundations.",
+   "chips": [
+    "~3 km · 1.5 h",
+    "Late afternoon light"
+   ],
+   "details": [],
+   "text": "One of the longest early-medieval wall circuits in Europe, 9th–10th c., rebuilt over 1st-c. BCE Roman lines because Girona sat on the Carolingian–al-Andalus frontier. Free; open 8:00–21:00 (to 23:00 Jun–Aug). The towers give the best rooftop views of the Cathedral and the plain.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Passeig+de+la+Muralla+Girona",
+   "links": []
+  },
+  "old_also": {
+   "fold": "culture",
+   "name": "Passeig de la Muralla",
+   "type": "CULTURE",
+   "hook": "The wall-top circuit — the city's high edge.",
+   "chips": [],
+   "details": [],
+   "text": "A walkable rampart on one of Europe's longest Carolingian wall circuits (9th–10th c.), laid over Roman fortifications because Girona guarded the frontier. Free, open dawn to night; the towers are the best free viewpoint over the Cathedral, the Barri Vell roofs and the plain of the Ter.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Passeig+de+la+Muralla+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:Cathedral to Sant Feliu": {
+  "fold": "walks",
+  "group": "The walls and the stone",
+  "old": {
+   "fold": "walks",
+   "name": "The Cathedral-to-Sant Feliu spine",
+   "type": "WALK",
+   "hook": "The stone heart, from the widest nave to the eight Roman tombs.",
+   "chips": [
+    "~30 min",
+    "First thing"
+   ],
+   "details": [],
+   "text": "From the Cathedral's Baroque staircase down Pujada de Sant Domènec to the Basílica de Sant Feliu, where eight 3rd–4th-c. Roman and early-Christian sarcophagi are set into the presbytery walls — the densest run of history in the city, walkable before breakfast.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Basilica+Sant+Feliu+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:The Call, lane by lane": {
+  "fold": "walks",
+  "group": "The walls and the stone",
+  "old": {
+   "fold": "walks",
+   "name": "The Call labyrinth",
+   "type": "WALK",
+   "hook": "The steep black-stone lanes of the medieval Jewish quarter.",
+   "chips": [
+    "~45 min",
+    "Mid-morning, before groups"
+   ],
+   "details": [],
+   "text": "Off Carrer de la Força, the Call folds into stepped alleys, cisterns and dead-ends — one of Europe's best-preserved Jewish quarters. End at the Museu d'Història dels Jueus in the Centre Bonastruc ça Porta. Wear grippy soles; the stone polishes to glass in the rain.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Carrer+de+la+Forca+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:The Onyar bridges": {
+  "fold": "walks",
+  "group": "The river and the green",
+  "old": {
+   "fold": "walks",
+   "name": "The Onyar bridges",
+   "type": "WALK",
+   "hook": "Seven bridges, one row of reflected houses.",
+   "chips": [
+    "~40 min",
+    "Golden hour"
+   ],
+   "details": [],
+   "text": "Walk bank to bank across the Onyar's footbridges — the Eiffel-company Pont de les Peixateries Velles (1877) is the one to stand on — watching the cases de l'Onyar double themselves in the water. The colours were fixed by a 1980s restoration led by the painter Enric Ansesa and architects, not chosen at random.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Pont+de+les+Peixateries+Velles+Girona",
+   "links": []
+  },
+  "old_also": {
+   "fold": "culture",
+   "name": "Cases de l'Onyar & the Eiffel bridge",
+   "type": "CULTURE",
+   "hook": "The reflected houses and the iron bridge that frames them.",
+   "chips": [],
+   "details": [],
+   "text": "The ochre-to-rust river façades are the city's signature; their palette was fixed by a 1980s restoration led by the painter Enric Ansesa. The Pont de les Peixateries Velles that crosses between them was built in 1877 by Gustave Eiffel's company — two years before he built Girona nothing else, and two decades before Paris got its tower. The personal-design credit is disputed; the firm and the year are documented.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Cases+de+l'Onyar+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:Parc de la Devesa": {
+  "fold": "walks",
+  "group": "The river and the green",
+  "old": {
+   "fold": "walks",
+   "name": "Parc de la Devesa",
+   "type": "WALK",
+   "hook": "The largest urban park in Catalonia, under 2,500 plane trees.",
+   "chips": [
+    "~40 min",
+    "Hot afternoons"
+   ],
+   "details": [],
+   "text": "On the Mercadal side, a grid of plane trees planted in the 19th century throws deep shade over gravel avenues; it doubles as the fairground for the Fires de Sant Narcís each autumn. Bring a book and disappear.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Parc+de+la+Devesa+Girona",
+   "links": []
+  },
+  "old_also": {
+   "fold": "work",
+   "name": "Parc de la Devesa benches",
+   "type": "LINGER",
+   "hook": "Open in Google Maps →",
+   "chips": [
+    "Mercadal"
+   ],
+   "details": [],
+   "text": "Under the tallest plane trees in Catalonia the temperature drops several degrees; the gravel avenues are where locals sit out the worst of the afternoon heat.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Parc+de+la+Devesa+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:Vall de Sant Daniel": {
+  "fold": "walks",
+  "group": "The river and the green",
+  "old": {
+   "fold": "walks",
+   "name": "Vall de Sant Daniel",
+   "type": "WALK",
+   "hook": "A green valley of springs and plane trees ten minutes past the walls.",
+   "chips": [
+    "~1.5 h",
+    "Morning"
+   ],
+   "details": [],
+   "text": "Behind Montjuïc the city stops and a wooded valley of natural springs (the Font del Ferro among them) runs up to the Romanesque monastery of Sant Daniel. A cool, shaded escape in August and the quiet counterweight to the Barri Vell.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Vall+de+Sant+Daniel+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ },
+ "walks:Castell de Sant Miquel": {
+  "fold": "walks",
+  "group": "Up the hill",
+  "old": {
+   "fold": "walks",
+   "name": "Castell de Sant Miquel",
+   "type": "WALK",
+   "hook": "A hill climb to the ruined castle above the city, for the whole valley.",
+   "chips": [
+    "~2.5 h return",
+    "Early, for the haze to lift"
+   ],
+   "details": [],
+   "text": "A signed path leaves the Vall de Sant Daniel and climbs through holm oak to the ruined Castell de Sant Miquel (~380 m), with the four-river plain, the Pyrenees to the north and, on a clear day, a glint of the Costa Brava. Take water.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Castell+de+Sant+Miquel+Girona",
+   "links": []
+  },
+  "brief": "Walk card: labels Start · Length · Time · Terrain · Best hour · Don't miss · Bring. maps_query = the START point + ', Girona, Spain'. Verify length if you can; keep the old figures otherwise, marked 'about'."
+ }
+}

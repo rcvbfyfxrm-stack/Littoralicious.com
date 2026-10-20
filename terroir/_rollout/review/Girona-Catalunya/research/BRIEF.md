@@ -1,0 +1,31 @@
+# Girona-Catalunya GOLD6 card rewrite brief (20 Oct 2026) — read fully before writing
+
+Guide: Girona (Littoralicious terroir guide, for superyacht crews, chefs and their guests): the walled city on the Onyar, its Barri Vell, the Call, the Roca family's tables, the Empordà and Garrotxa behind it. Today is 20 October 2026 (autumn: the Fires de Sant Narcís run late October to 1 November; Temps de Flors is May; say so when a card's place is seasonal). Sister guides exist at /terroir/Costa-Brava-Catalunya/ and /terroir/Cadaques-CapdeCreus/: for the coast point to them, do not retell.
+Spec: /home/user/Littoralicious.com/terroir/_rollout/lib/gold6/SPEC.md (read it). Model of finished output from the same pipeline (Costa Brava, 19 Oct): /tmp/claude-0/cb/research/rewrite_2.json and /tmp/claude-0/cb/research/rewrite_4.json — match that quality, format and tone (read two or three cards, not the whole file). Facts the Costa Brava pass verified yesterday are reusable, re-dated '(Oct 2026)': Cremat, Ratafia (IGP rule), Garnatxa cards, Espelt, the Garrotxa/Olot and Besalú day trips (in /tmp/claude-0/cb/research/rewrite_2.json, /tmp/claude-0/cb/research/rewrite_3.json, /tmp/claude-0/cb/research/rewrite_4.json) — but WRITE FRESH TEXT: no sentence may be copied.
+The whole old guide as text (for context, grep it): research/guide_text_old.txt. Kept table venues and their records: research/venues_input_1.json + research/venues_input_2.json (ids, names, lanes). Paths are relative to /home/user/Littoralicious.com/terroir/_rollout/review/Girona-Catalunya/.
+
+Your input file: research/rewrite_N_input.json = {key: {fold, group, old: {old card: name, type, hook, chips, details, text, maps, links} | absent for a NEW card, old_also: {a second old card to merge in} (optional), brief: "what this card must be" (read it)}}.
+
+## Card output format (one JSON object keyed by the card key you were given)
+{ "<key>": { "name": "visible card title (reuse the card key's name after the colon, tidied, with correct Catalan accents; unique; no emoji)",
+  "tag": "1-3 word kicker, lowercase",
+  "teaser": "ONE hook line, <=110 chars",
+  "story": "60-110 words, TRUE, vivid and specific — a date, a person, a sound, a taste, what you will actually see. Plain text, no HTML",
+  "why": "one line: why go / the one thing not to miss (distinct from the story; no repeated sentence)",
+  "facts": [["Label","Value"], ...],   // labelled facts by card type, see SPEC and the brief. Values start with a capital and never repeat the label. Omit a label rather than guess.
+  "maps_query": "Google Maps search text for the place you GO to (a walk's START point), ending with ', Girona, Spain'. EMPTY for stories, curiosities without a place, warnings, drink how-tos, follow cards and pointer cards",
+  "site": "the place's OWN https website only if you are confident it is the official one (never an aggregator/Wikipedia/TripAdvisor/Facebook/Instagram); else empty",
+  "ref": "",   // a kept venue id ONLY for a pointer card (the brief says so)
+  "sources": [{"label":"...","url":"https://..."}]  // only sources you actually relied on
+} }
+Also top-level "_verified": {"key": "what you checked now, source, date"} and "_notes": "honest gaps" in the same JSON.
+
+## Rules (hard)
+- Facts ONLY from the old card, the old guide text, the venue records, the Costa Brava research packs named above, or what you verify NOW with WebSearch (trusted: official/venue/museum sites, Ajuntament de Girona (girona.cat), Costa Brava Girona tourism, the Generalitat, Patronat Call de Girona, Museu d'Arqueologia de Catalunya, the DO Empordà, MICHELIN, Repsol, quality press: La Vanguardia, El País, Ara, El Periódico, Diari de Girona, El Punt Avui, The Guardian, NYT, Condé Nast Traveller). WebFetch and every network call except WebSearch FAIL in this sandbox: use WebSearch only. Budget ~10-14 WebSearch calls, spent where a fact is perishable (2026 hours and prices, a closure, a 2026 edition's dates) or looks wrong. Expect errors in the old text and correct them, listing each correction in _verified.
+- Never invent hours, prices, distances, phone numbers, names, dates. Date every price: "(seen Jun 2026)" if only from the old card, "(Oct 2026)" if verified now.
+- No perishable clock facts in evergreen cards. Disputes stay disputes ("Where the sources argue"). Never upgrade a legend to fact.
+- Told once: do not retell a fact another card owns. Owners: the Roca brothers' story belongs to the El Celler de Can Roca venue (cards may name them); the xuixo's origin to La liste (The Dish) — name the pastry, never retell Emili Puig; the botifarra dolça, Garrotxa cheese, anchovy, ratafia and esmorzar de forquilla each have a hover popup (do not define them at length); the cathedral, the Call museum, the Arab baths, Sant Pere de Galligants, Sant Feliu and Casa Masó each own their culture card; the walls, the Onyar bridges (and the Onyar houses / Eiffel bridge), the Devesa, Sant Daniel and Sant Miquel own their walk cards; the Fires de Sant Narcís and Temps de Flors are calendar cards; the flies legend belongs to its curiosity; the 1809 siege to its curiosity; the cyclists to their curiosity; the lioness's backside to the Cul de la Lleona venue. Point instead ("its own card is under Culture").
+- Venues CUT from this guide: Arròs 9 by Terram, König on the Plaça de la Independència (König 2), Federal Café — do not mention them. Lane venues (venues_input_*.json) have their own table cards: name them freely but do not retell their story.
+- Plain specific English. No emoji, no ⚠ or ★ in any field. Banned words anywhere: hidden gem, paradise, must-see, nestled, vibrant, bustling, breathtaking, stunning, off the beaten track, unspoilt, charming, romantic, couple, couples, "for two", à deux, honeymoon, gloriously, iconic, legendary, glittering, curated. Do not use the words Prague, Sicily, Siracusa, Piraeus, Athens, Istanbul, Paris, Var, Provence, Kenya, Zanzibar; "Barcelona" only in a plain fact.
+- Avoid copying the same 4-word runs between cards; keep story and why distinct; do not paste the old text verbatim — transform it (keep its good facts).
+- Write valid UTF-8 JSON ONLY to the output path you were given. Do not touch git or any other file.
