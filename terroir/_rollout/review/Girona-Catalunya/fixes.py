@@ -2,6 +2,12 @@
 import re
 TOK = re.compile(r"(?i)\b(Spain|Girona|Catalunya|Catalonia)\b")
 EDITS = [          # (old, new) exact replacements in card text fields
+ # told once: the 'season of dragons' curiosity owns the Game of Thrones filming; the cathedral card keeps its steps
+ ("Outside, 90 Baroque steps laid in 1607 climb from the square; in September 2015 a Game of Thrones crew filmed Jaime Lannister riding his horse up them to the Great Sept of Baelor.",
+  "Outside, 90 Baroque steps laid in 1607 climb from the square; the television story they starred in is under the curiosities."),
+ # the vermouth the old guide named (Gerisena's Obreboques) could not be found on 20 Oct: the name leaves the card rather than stand unconfirmed
+ ("The old guide names Celler Gerisena at Garriguella, which works with the native Garnatxa roja, and a two-year oak-aged bottling called Obreboques; Gerisena's Garnatxa roja wines are well documented, but we could not reconfirm the vermouth in October 2026. ",
+  "Ask before you assume: an Empordà vermouth is a small-cellar rarity, and we could not confirm a named one in October 2026. "),
 ]
 CARD_SET = {       # key -> {field: value} overrides
 }

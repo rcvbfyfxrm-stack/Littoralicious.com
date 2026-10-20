@@ -89,15 +89,15 @@ EDITS = {"seasonal": [], "sources": []}
 BOUGIE_P = [
  ("lede", "Girona’s gravity is a family that never left. Three brothers grew up in their parents’ workers’ restaurant in Taialà, on the "
           "edge of town, and built the most decorated table in Spain a few hundred metres away. Around it sits a ladder anyone can climb."),
- ("", "The bottom rung is the original: Can Roca, the bar their parents opened in 1967, which still serves a daily menú to the neighbourhood "
-      "and to the Celler’s own brigade. Then Normal, on Plaça de l’Oli, where the brothers cook their mother’s Catalan stews straight on "
+ ("", "The bottom rung is the original: Can Roca, the bar their parents opened in 1967, a weekday menú house for the neighbourhood and, by the "
+      "family’s own account, the Celler’s staff canteen. Then Normal, on Plaça de l’Oli, where the brothers cook their mother’s Catalan stews straight on "
       "purpose; Jordi’s gelateria on Carrer de Santa Clara, the three-star dessert language at pocket money; his chocolate house over the "
       "Onyar, where the beans are roasted and conched on the premises."),
  ("", "Higher up, in the fort above the city at Sant Julià de Ramis, Esperit Roca serves the Celler’s back catalogue under its own MICHELIN "
       "star, bookable a season ahead rather than a year. At the top is the Celler itself. All of them have a card in the tables."),
  ("", "The point is the ladder. The same intelligence reaches you in a cone on the walk home, a stew at lunch, or the one dinner you plan "
-      "a year around — the whole city graded by one family’s hand. And the Rocas send you onward: their former cooks run two of the "
-      "bistros in ‘Where the chefs eat’."),
+      "a year around — the whole city graded by one family’s hand. And the Rocas send you onward: two of their former cooks run "
+      "one of the bistros in ‘Where the chefs eat’."),
 ]
 def bougie():
     paras = [f'<p class="gx-lede">{t}</p>' if k == "lede" else f"<p>{t}</p>" for k, t in BOUGIE_P]
@@ -188,10 +188,10 @@ GROUP_DESC = {"grande": "The tables you clear an evening for: three stars and tw
               "street": "Walk in: the xuixo, the chocolate and the cone; the market, the cheese counter and the estate; and what is still open after the kitchens shut."}
 
 LANE_LEAD = {
- "summit": "The Roca brothers’ three stars in Taialà, the duck of a fourth-generation family house, and a sommelier’s star in the vaults of the old Casino.",
+ "summit": "The Roca brothers’ three stars in Taialà, the duck Pere Massana put on the card in 1986, now cooked by his son, and a sommelier’s star in the vaults of the old Casino.",
  "roca": "The Celler’s back catalogue in a fort above the city, the brothers’ plain Catalan bistro, and the 1967 bar where it all began.",
  "houses": "The market house of 1920, the arcaded dining room of 1892, and an old inn under stone vaults cooked by a starred team.",
- "chefs": "Two rooms run by people who came out of El Celler, and the natural-wine bar the brothers vouch for.",
+ "chefs": "A bistro run by two who came out of El Celler, and the natural-wine bar Joan Roca vouches for.",
  "menu": "A Repsol Solete menú near the old fish bridge, and a 1965 pastry shop that serves lunch behind the cake counter.",
  "morning": "Thick chocolate under the arcades since 1916, the fork breakfast on the Banyoles road from six, and the cyclists’ café.",
  "other": "A Japanese kitchen in a protected 1900 garden, and momos beside the stone lioness.",
