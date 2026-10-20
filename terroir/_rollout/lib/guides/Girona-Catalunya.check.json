@@ -1,0 +1,117 @@
+{
+  "slug": "Girona-Catalunya",
+  "city": "Girona",
+  "listeSlug": "girona",
+  "groups": 3,
+  "mapsTokens": [
+    "Spain",
+    "Girona",
+    "Catalunya",
+    "Catalonia"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia",
+    "Piraeus",
+    "Sicily",
+    "Istanbul",
+    "Toulon",
+    "Saint-Tropez",
+    "Provence"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "curiosities",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink-place",
+    "rooftops",
+    "linger",
+    "money-sits",
+    "underground",
+    "art",
+    "coffee-scene",
+    "natural-wine",
+    "avoid-traps",
+    "twentyfour",
+    "walk"
+  ],
+  "floors": {
+    "venues": 26,
+    "gems": 5,
+    "neighborhoods": 9,
+    "walks": 7,
+    "categories": 9,
+    "laneStories": 9,
+    "fcards": 92,
+    "fsubs": 38,
+    "liste": 18,
+    "mapsLinks": 70,
+    "pins": 26
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 26,
+    "gemboxes": 9
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 7,
+    "mode": "pointer"
+  },
+  "doors": 3
+}

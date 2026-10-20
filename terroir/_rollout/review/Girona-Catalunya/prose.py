@@ -184,17 +184,16 @@ CHAPTER_SUB = {"place": "the essay, the Roca ladder, the quarters, the record co
 
 GROUP_LBL = {"grande": "Les Grandes Tables", "petite": "Les Petites Tables", "street": "Le Comptoir — the counter, the market and the late plate"}
 GROUP_DESC = {"grande": "The tables you clear an evening for: three stars and two singles in the city, and the rest of the Roca family’s ladder, from the fort down to the parents’ bar.",
-              "petite": "Where this guide actually lives: the old houses, the chefs’ night-off rooms, the menú del dia, the morning, and two kitchens from far away.",
+              "petite": "Where this guide actually lives: the old houses, the new rooms the chefs eat in, the menú del dia, and the morning.",
               "street": "Walk in: the xuixo, the chocolate and the cone; the market, the cheese counter and the estate; and what is still open after the kitchens shut."}
 
 LANE_LEAD = {
  "summit": "The Roca brothers’ three stars in Taialà, the duck Pere Massana put on the card in 1986, now cooked by his son, and a sommelier’s star in the vaults of the old Casino.",
  "roca": "The Celler’s back catalogue in a fort above the city, the brothers’ plain Catalan bistro, and the 1967 bar where it all began.",
  "houses": "The market house of 1920, the arcaded dining room of 1892, and an old inn under stone vaults cooked by a starred team.",
- "chefs": "A bistro run by two who came out of El Celler, and the natural-wine bar Joan Roca vouches for.",
+ "chefs": "A bistro run by two who came out of El Celler, the natural-wine bar Joan Roca vouches for, and a Japanese kitchen round a protected 1900 garden.",
  "menu": "A Repsol Solete menú near the old fish bridge, and a 1965 pastry shop that serves lunch behind the cake counter.",
  "morning": "Thick chocolate under the arcades since 1916, the fork breakfast on the Banyoles road from six, and the cyclists’ café.",
- "other": "A Japanese kitchen in a protected 1900 garden, and momos beside the stone lioness.",
  "sweet": "The shop that fries nothing but xuixos, Jordi Roca’s chocolate house, and his gelateria.",
  "larder": "The 1944 covered market, the province’s cheeses on one counter, and an organic Empordà estate an hour north.",
  "late": "Pintxo trays until midnight, the braves that outsell water, and a jazz cave on a DownBeat list.",
@@ -210,7 +209,9 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {}   # written in fixes.py once the 20 Oct re-check is in (the lines must agree with what was confirmed)
+SHORT_SUB = {"Last minute — save the night": "The booking fell through: the pintxo counter on Cort Reial is walk-in with trays until midnight; the 1892 house on the square serves lunch and dinner every day, on fixed hours; the Japanese garden house takes bookings online and has four rooms. All three were confirmed trading in 2026; none published autumn hours we could read, so call first.",
+             "Plan ahead — this week": "Book a few days ahead: the ex-Celler bistro on Calderers has about thirty-five seats and shuts Tuesday and Wednesday; the Gascons family's fonda under the vaults takes bookings for lunch; Massana's duck house fills three to four weeks ahead for a weekend dinner, days ahead midweek.",
+             "Plan ahead — the grand night": "Three stars in Taialà open online up to eleven months ahead, at midnight on the first of each month; the fort at Sant Julià de Ramis books about ninety days out; the sommelier's starred vault at Divinum a few days ahead. All three were trading in October 2026; none published a 2026 menu price that we could read."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
             'the fact that makes it matter and the exact best place for it — is one section at the foot of this guide, with the stories behind it. '

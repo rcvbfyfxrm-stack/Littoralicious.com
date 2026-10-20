@@ -11,10 +11,9 @@ LANES = {
  "summit":   {"label": "The stars", "group": "grande", "ids": ["v01-el-celler-de-can-roca", "v02-restaurant-massana", "v03-divinum"]},
  "roca":     {"label": "The Roca ladder — fort, bistro, the parents' bar", "group": "grande", "ids": ["v21-esperit-roca", "v04-normal", "v30-can-roca-taiala"]},
  "houses":   {"label": "The old houses", "group": "petite", "ids": ["v07-can-marques", "v08-casa-marieta", "v09-fonda-cal-ros"]},
- "chefs":    {"label": "Where the chefs eat", "group": "petite", "ids": ["v31-dit-i-fet", "v32-safo"]},
+ "chefs":    {"label": "The new rooms — where the chefs eat, and a garden", "group": "petite", "ids": ["v31-dit-i-fet", "v32-safo", "v33-nomo-girona"]},
  "menu":     {"label": "The menú del dia", "group": "petite", "ids": ["v37-restaurant-8de7", "v38-tornes"]},
  "morning":  {"label": "The morning — the granja and the fork", "group": "petite", "ids": ["v39-xocolateria-l-antiga", "v40-ca-l-angel", "v18-la-fabrica"]},
- "other":    {"label": "The other kitchens", "group": "petite", "ids": ["v33-nomo-girona", "v34-cul-de-la-lleona"]},
  "sweet":    {"label": "Xuixo, chocolate and a cone", "group": "street", "ids": ["v17-can-castello", "v05-casa-cacao", "v06-rocambolesc"]},
  "larder":   {"label": "The market, the cheese, the cellar", "group": "street", "ids": ["v19-mercat-del-lleo", "v11-cal-formatger", "v20-espelt-viticultors"]},
  "late":     {"label": "Late — after service", "group": "street", "ids": ["v36-zanpanzar", "v43-konig-sandwiches", "v42-sunset-jazz-club"]},
@@ -23,11 +22,12 @@ CUT = {
  "v14-arros-9-by-terram": "Cut: it was a one-venue rice lane ('Bistro & rice'), and tiny lanes are merged or cut; the city's rice is told by the old houses' daily arròs and by the chefs' lane. Nothing against it.",
  "v35-konig-2": "Cut, told once: the same house as König on Carrer dels Calderers (kept in the late lane, the branch under Sant Feliu's steps with the later hours); two cards for one fast-food group was one too many.",
  "v10-nu": "Cut after the 20 Oct re-check: the old record's Nu became Nexe in 2022, but no 2026 evidence of trading was found, one listing shows it 'temporarily closed', and neither its MICHELIN-selection claim, its Repsol 2026 mention nor its named chefs could be confirmed. A chefs' lane of two confirmed rooms beats three with a doubt.",
+ "v34-cul-de-la-lleona": "Cut after the 20 Oct re-check: the old record called it a Nepali kitchen rebadged 'x Catmandu', but the rebrand was found nowhere outside the old record, review sites still describe a tapas menu, nothing dated 2026 was found, and the record itself had no bylined review. Its lane ('the other kitchens') would have held one venue; Nomo, the confirmed one, joins the new rooms.",
  "v41-federal-cafe": "Cut: the morning lane holds three and keeps the two that belong to Girona (the 1916 granja, the roadside fork breakfast) and the café the city's cycling scene grew out of; Federal is the Girona outpost of a Barcelona-born brunch group, and its own record carries three conflicting sets of hours.",
 }
-BERTHS = ["v01-el-celler-de-can-roca", "v07-can-marques", "v19-mercat-del-lleo"]   # one per group
+BERTHS = ["v01-el-celler-de-can-roca", "v07-can-marques", "v38-tornes"]   # each confirmed trading on 20 Oct
 SHORTLIST = {
- "Last minute — save the night": ["v36-zanpanzar", "v08-casa-marieta", "v37-restaurant-8de7"],
+ "Last minute — save the night": ["v36-zanpanzar", "v08-casa-marieta", "v33-nomo-girona"],
  "Plan ahead — this week": ["v31-dit-i-fet", "v09-fonda-cal-ros", "v02-restaurant-massana"],
  "Plan ahead — the grand night": ["v01-el-celler-de-can-roca", "v21-esperit-roca", "v03-divinum"],
 }

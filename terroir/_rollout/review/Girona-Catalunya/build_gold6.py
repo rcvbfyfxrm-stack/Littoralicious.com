@@ -336,6 +336,7 @@ for vid in KEEP:
         v["tier"] = "several"
         if v.get("cat") == "berth": v["cat"] = "shop"
     v.pop("charter", None)
+    if v.get("maps"): v.pop("maps_url", None)   # the old records carried a second, redundant Maps field; the kit reads "maps"
     if v.get("maps"): v["maps"] = v["maps"].replace("'", "%27")   # an apostrophe ends the link for every parser that reads quoted attributes
     if v.get("maps") and not re.search(LOCAL, urllib.parse.unquote_plus(v["maps"])): v["maps"] += LOCAL_ADD   # the gate's local-token rule
     V.append(v)
@@ -365,6 +366,8 @@ BRIDGE = {"_rule": "SINGLE-EDITOR RULE: charter{} on a venue deliberately duplic
 def plan_cards(f): return [c for g in PLAN[f]["groups"] for c in g["cards"]]
 def geo(f): return [{"name": CARDS[c["key"]]["name"], "desc": CARDS[c["key"]]["teaser"], "maps": maps(CARDS[c["key"]]["maps_query"])}
                     for c in plan_cards(f) if CARDS[c["key"]].get("maps_query")]
+_ln = set()   # the old LANDMARKS list held every sight twice (two research passes): keep the first of each name
+D["LANDMARKS"] = [l_ for l_ in D["LANDMARKS"] if not (re.sub(r"\s*\(.*", "", l_["name"]).split(" & ")[0] in _ln or _ln.add(re.sub(r"\s*\(.*", "", l_["name"]).split(" & ")[0]))]
 for l_ in D["LANDMARKS"]:   # the gate's local-token rule, on the old landmark links too
     if l_.get("maps_url"): l_["maps_url"] = l_["maps_url"].replace("'", "%27")   # an apostrophe (S'Alqueria) ends the link for quoted-attribute parsers
     if l_.get("maps_url") and not re.search(LOCAL, urllib.parse.unquote_plus(l_["maps_url"])): l_["maps_url"] += LOCAL_ADD

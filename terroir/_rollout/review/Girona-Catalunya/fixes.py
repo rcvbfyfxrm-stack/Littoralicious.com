@@ -2,6 +2,9 @@
 import re
 TOK = re.compile(r"(?i)\b(Spain|Girona|Catalunya|Catalonia)\b")
 EDITS = [          # (old, new) exact replacements in card text fields
+ # banned-word list: an apple's trade name and a word the gate refuses
+ ("Golden, Gala, Granny Smith and Red Delicious", "Golden, Gala, Granny Smith and a red American variety"),
+ ("on a recording the tenora sounds quaint, in a stone square", "on a recording the tenora sounds thin, in a stone square"),
  # told once: the 'season of dragons' curiosity owns the Game of Thrones filming; the cathedral card keeps its steps
  ("Outside, 90 Baroque steps laid in 1607 climb from the square; in September 2015 a Game of Thrones crew filmed Jaime Lannister riding his horse up them to the Great Sept of Baelor.",
   "Outside, 90 Baroque steps laid in 1607 climb from the square; the television story they starred in is under the curiosities."),
@@ -10,10 +13,27 @@ EDITS = [          # (old, new) exact replacements in card text fields
   "Ask before you assume: an Empordà vermouth is a small-cellar rarity, and we could not confirm a named one in October 2026. "),
 ]
 CARD_SET = {       # key -> {field: value} overrides
+ # told once: the Call walk owns the lanes; the quarter card says where it sits and how the quarter lives today. 'Spain's first centre of
+ # Kabbalah' was softened by the culture pack (one of the first); the quarter card follows it.
+ "quarters:El Call": {"teaser": "The Jewish quarter inside the Barri Vell: a dozen steep lanes off one street, quiet after six",
+   "story": "The Call is not a separate district but a knot of lanes inside the old town, hung off Carrer de la Força on the slope below the cathedral. Girona's Jewish community lived here until the expulsion of 1492; Nachmanides, Bonastruc ça Porta, was born here in 1194 and made the town one of the first centres of Kabbalah in Europe. Today the houses are homes, small hotels and a museum, and the tour groups thin out by late afternoon, when the lanes go quiet and the stone holds the day's warmth. The walk through it and the museum each have their own card.",
+   "why": "Come back after six, when the groups have gone and the lanes are the neighbours' again."},
+ # told once: the Devesa walk owns the trees and the shade; 'the largest urban park in Catalonia' and '2,500' were dropped by the walk pack as unsupported / superseded (about 2,600)
+ "quarters:La Devesa": {"teaser": "The west-bank park quarter: the plane-tree avenues, the Tuesday and Saturday market, the autumn fair",
+   "story": "West of the Mercadal the grid stops at the Devesa, the park the city has used as its common ground since the nineteenth century, with the Ter and the Güell running past its edges. On Tuesday and Saturday mornings the open-air Mercat de la Devesa sets up nearby; at the end of October the avenues are given over to the rides, stalls and concert stages of the Fires de Sant Narcís, 23 October to 1 November in 2026. The rest of the year it is where Girona runs, walks its dogs and plays petanca. The walk under the trees, the market and the fair each have their own card.",
+   "why": "This fortnight it is the fairground; come in the evening for the lights, by day for the market."},
 }
 VENUE_SET = {      # id -> {field: value} overrides, each one a correction from the 20 Oct re-check
+ # the gate's link parser stops at a closing parenthesis: the Maps query drops the '(urb. Melianta)' aside
+ "v40-ca-l-angel": {"maps": "https://www.google.com/maps/search/?api=1&query=Ca+l%27%C3%80ngel+Fontcoberta+Girona+Spain"},
 }
-LANE_STORY_SET = {}
+LANE_STORY_SET = {
+ # Nexe is cut (no 2026 evidence) and Nomo joins this lane from the dropped 'other kitchens': the story is rewritten on the two packs' facts
+ "chefs": {"title": "The new rooms", "story": "Girona's cooks eat in small rooms run by people they trained with. Dit i Fet, below Sant Feliu, is a cook and a host who came out of El Celler cooking old Catalan dishes for about thirty-five covers; its card says who sends you there. SAFO, by Plaça del Vi, pairs Marietta Richter's Mexican and Catalan share plates with Víctor Martín's natural wines, and won the emerging-chef Cuiner award in 2024. The third room comes from further east: Nomo, a Barcelona group with a Tokyo-trained chef-partner, Naoyuki Haginoya, opened in 2021 round the protected garden of the Jardins de la Mercè, a 1900 manor."},
+ # Can Roca (Taialà) is unverified for 2026: the lane story says so instead of 'still serves'
+ "larder": {"story": "Provisioning in Girona starts at the Mercat del Lleó, the covered market opened on 3 November 1944; in 2024 the Salvador family, Tossa de Mar fishmongers since 1966, took over the fish stall Peixos Pol had kept for eighty years. Across the river in the Barri Vell, Cal Formatger puts the province's small dairies and a good part of Spain's on one counter; its card has who runs it and who shops there. For wine, the drive is fifty minutes north-east to Vilajuïga, where Anna Espelt farms about 200 organic hectares of DO Empordà, including a Carinyena Blanca vineyard planted in 1919."},
+ "roca": {"story": "The Roca family feeds Girona at three price points. Can Roca, the bar Josep Roca and Montserrat Fontané opened in Taialà in 1967, has long served a cheap weekday menú that El Celler's own brigade eats at lunch; we found nothing dated 2026 for it, so call before crossing town. Normal, on Plaça de l'Oli, has Elisabet Nolla cooking the dishes of the Roca grandmother and mother and holds a Repsol Sol. Up the hill at Sant Julià de Ramis, Esperit Roca serves El Celler's back catalogue inside an 1893 fort: one MICHELIN star since the 2025 guide, menus that turn with the seasons, and eighth place among Europe's new restaurants on the 2026 Opinionated About Dining list."},
+}
 HOT_SET = {}
 HOT_DROP = []
 VENUE_DROP = {}
