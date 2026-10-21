@@ -65,7 +65,7 @@ const fails = []; const bad = (tag, m) => { fails.push(tag + ': ' + m); console.
       }
       console.log(tag, lens, 'links', links.length);
       await go(URL + '#t=' + lens, 2600);
-      await p.click(`#${lens} .gx-rd__foot a`); await p.waitForTimeout(700);
+      await p.locator(`#${lens} .gx-rd__foot a, #${lens} .gx-romance__foot a`).first().click();  // shared kit or the Prague chrome await p.waitForTimeout(700);
       const back = await p.evaluate(() => ({ hash: location.hash, lens: [...document.querySelectorAll('.gx-chapter[data-lens]')].filter(c => !c.hidden).length, hidden: [...document.querySelectorAll('.gx-chapter:not([data-lens])')].filter(c => c.hidden).length }));
       if (back.hash || back.lens || back.hidden) bad(tag, `${lens} way out ${JSON.stringify(back)}`);
     }

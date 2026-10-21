@@ -21,6 +21,26 @@ could visit; add labels even in things like walks"* · *"every night update all 
 the level of Prague"*. **References (live, read them before you start):** `terroir/Prague-Cechy/` (the
 original) and `terroir/Siracusa-Sicilia/` (the same layer built from scratch). Toolkit: `lib/gold6/`.
 
+**§0 · THE VOICE OF THE WHOLE ARTICLE (Arnaud, 21 Oct 2026) — every guide, every night, every touch.**
+*"always focus the guide on food stories along the article dont make it repetitive add them to the article along
+as you read and also cultural history have a focus on esthetic, ambiance, taste for all the guides"* ·
+*"cross check everything … make it the most interesting place to visit but staying true. all the read should be
+like that"* · *"dont forget the craft that are unique to this place too"*.
+- **Food stories and cultural history run through the WHOLE article**, met as you read: a museum card carries
+  the dish or drink tied to it, a walk passes the bakery with its story, a mine or sea story ends on what the
+  workers ate. Never parked in one section. Sourced, or it does not go in.
+- **Every card answers three sensory questions**: what it LOOKS like (the room, the materials, the light, the
+  architect), how it FEELS (who is there, the noise, the hour, the ritual), what it TASTES or smells like.
+  Concrete and sourced; never adjective soup.
+- **Told once**: one home per story; elsewhere a few words of pointer. Run the fuzzy told-once audit (4-word
+  shingles, flag ≥12 shared) with a positive control (count the units it read).
+- **Cross-check everything**, with a per-claim ledger (confirmed · corrected · removed · not-confirmed, with the
+  URL). The most interesting angle that is still true. The readings (One Night, Getaway Weekend) obey the same law.
+- **The crafts proper to the place**: a craft section of things made only or mainly there that you can watch
+  being made or try with your hands, verified live (What you do · Time · Cost · Book), honest when no hands-on
+  class exists. Never generic souvenirs.
+Worked example: `terroir/Ostrava-Moravskoslezsko/` (pass 2, 21 Oct 2026).
+
 **The seven things a GOLD6 guide has** (on top of everything GOLD5 requires — the gate still applies):
 1. **≤3 places per subcategory.** Every table lane (TABLES/CATEGORIES) and every `.fsub` group (and the hot
    board's groups) holds at most 3; a 4 only when genuinely torn, and the reason is written down in the
