@@ -1,5 +1,10 @@
-/* TERROIR KIT — FIND A TABLE (guide-find.js). Sea, mono labels, no emoji. */
+/* TERROIR KIT — SEARCH THIS GUIDE (guide-find.js). Sea, mono labels, no emoji. */
 .gx-find{ margin:18px 0 10px; font-family:var(--font-sans, Inter, system-ui, sans-serif); }
+/* pinned under the chapter nav while the tables are read; compact once stuck */
+.gx-find.is-pinned{ position:sticky; top:var(--gx-find-top, 0px); z-index:30; background:var(--color-bg, #fafafa); }
+.gx-find.is-stuck{ margin:0; padding:6px 0 4px; border-bottom:1px solid var(--color-border, #d4cfc5); box-shadow:0 6px 10px -8px rgba(10,10,10,.25); }
+.gx-find.is-stuck .gx-find__label, .gx-find.is-stuck .gx-find__out, .gx-find.is-stuck .gx-find__hits{ display:none; }
+.gx-find.is-stuck .gx-find__input{ padding-top:7px; padding-bottom:7px; }
 .gx-find__label{ display:block; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--color-sea, #2d4a5e); margin:0 0 6px; }
 .gx-find__bar{ position:relative; display:flex; align-items:center; border:1px solid var(--color-border, #d4cfc5); background:#fff; border-radius:2px; transition:border-color .15s ease, box-shadow .15s ease; }
 .gx-find__bar:focus-within{ border-color:var(--color-sea, #2d4a5e); box-shadow:0 0 0 3px rgba(45,74,94,.12); }
@@ -14,7 +19,25 @@
 .gx-find__types::-webkit-scrollbar{ display:none; }
 .gx-find__type{ flex:0 0 auto; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:11px; letter-spacing:.4px; padding:6px 10px; border:1px solid var(--color-border, #d4cfc5); background:transparent; color:var(--color-ink, #0a0a0a); border-radius:2px; cursor:pointer; white-space:nowrap; }
 .gx-find__type:hover{ border-color:var(--color-sea, #2d4a5e); color:var(--color-sea, #2d4a5e); }
-.gx-find__type.is-on{ background:var(--color-sea, #2d4a5e); border-color:var(--color-sea, #2d4a5e); color:#fff; }
+.gx-find__type.is-here{ background:var(--color-sea, #2d4a5e); border-color:var(--color-sea, #2d4a5e); color:#fff; }
+.gx-find__type:disabled{ opacity:.35; cursor:default; border-color:var(--color-border, #d4cfc5); color:var(--color-ink, #0a0a0a); }
+.gx-find__n{ margin-left:6px; opacity:.6; }
+.gx-find__type.is-here .gx-find__n{ opacity:.85; }
+.gx-find__grp{ flex:0 0 auto; align-self:center; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:9.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--color-muted, #6b7280); padding:0 2px 0 8px; white-space:nowrap; }
+.gx-find__grp:first-child{ padding-left:0; }
+/* the rest of the guide: results listed under the bar */
+.gx-find__hits{ margin:8px 0 2px; border:1px solid var(--color-border, #d4cfc5); background:#fff; border-radius:2px; max-height:min(52vh, 420px); overflow-y:auto; }
+.gx-find__list{ list-style:none; margin:0; padding:0; }
+.gx-find__list li + li{ border-top:1px solid var(--color-border, #e7e2d8); }
+.gx-find__hit{ display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; width:100%; text-align:left; border:0; background:none; font:inherit; padding:9px 12px; cursor:pointer; color:var(--color-ink, #0a0a0a); }
+.gx-find__hit:hover, .gx-find__hit:focus-visible{ background:rgba(45,74,94,.06); outline:none; }
+.gx-find__kind{ flex:0 0 64px; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--color-sea, #2d4a5e); }
+.gx-find__name{ flex:1 1 0; min-width:0; font-size:14.5px; overflow-wrap:anywhere; }
+.gx-find__where{ flex:1 0 100%; padding-left:74px; font-size:12px; color:var(--color-muted, #6b7280); }
+.gx-find__hit--tables .gx-find__name{ font-weight:600; }
+.gx-find__more{ display:block; width:100%; border:0; border-top:1px solid var(--color-border, #e7e2d8); background:none; font-family:var(--font-mono, 'JetBrains Mono', monospace); font-size:11px; letter-spacing:.6px; padding:9px 12px; text-align:left; color:var(--color-sea, #2d4a5e); cursor:pointer; }
+.gx-find-hit{ outline:2px solid var(--color-sea, #2d4a5e); outline-offset:4px; transition:outline-color 1.6s ease; }
+@media (max-width:640px){ .gx-find__where{ padding-left:0; } .gx-find__kind{ flex-basis:auto; } }
 .gx-find__out{ margin:6px 0 0; font-size:12.5px; color:var(--color-muted, #6b7280); }
 .gx-find.has-query .gx-find__out{ color:var(--color-sea, #2d4a5e); }
 #tables .gx-find-off{ display:none !important; }
