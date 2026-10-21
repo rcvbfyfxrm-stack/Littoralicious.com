@@ -1,0 +1,96 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · in the order you go",
+  "lede": "The bay dines early: most kitchens take their last orders between nine and half past, and only the rum bar on the quay runs late. From mid-October the beach tables are shut and the season thins week by week, and each step says when its place closes. Each quarter is one evening, in the order you go — the glass, the table, the late room — on foot unless it says car or taxi. Hours were re-checked on 21 October 2026; where listings disagree, the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter of the bay — the apéro, the table, the late glass, in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "port", "name": "Cavalaire · the old port and the Nouveau Port",
+    "line": "A mojito over the masts, the Provençal canon on the quay, and the one bar in town that keeps going.",
+    "steps": [
+     {"time": "18:30", "name": "Ô Petit Bar", "ref": "venue:v-o-petit-bar", "text": "A mojito looking over the marina from Rue du Port. Listed open all year from about 17:00 or 18:00, but the listings disagree on its closing day and nothing 2026-dated confirmed it: look in on the way."},
+     {"time": "19:30", "name": "Le Comptoir des Saveurs", "ref": "venue:v-le-comptoir-des-saveurs", "text": "Two minutes along the Nouveau Port for the aïoli, the beef-cheek daube or a pissaladière. Its season runs March to October and it was not re-confirmed this autumn, so phone before you walk over."},
+     {"time": "22:30", "name": "La Rhumerie", "ref": "card:La Rhumerie", "text": "Back along the quay for a rum cocktail over the moored boats; its season ran to about 10 November, not reconfirmed in October, so look before you count on it."}
+    ],
+    "after": "Earlier, by daylight: the boats unload at the [[venue:v-pecheurs-du-port|fishermen’s stand]] on the Quai Marc Pajot from about 10:00. The quarter itself: [[card:Port Héraclea|Port Héraclea]]."},
+   {"id": "calanque", "name": "Cavalaire · the harbour mouth and the Cron cove",
+    "line": "The landing monument at dusk, then fish on the cliff — a short evening, honestly.",
+    "steps": [
+     {"time": "18:00", "name": "Alpha, the landing beach", "ref": "card:Alpha, the landing beach", "text": "The twin granite columns at the harbour entrance, always open and free, where de Lattre’s army came ashore on the evening of 16 August 1944."},
+     {"time": "19:30", "name": "Le Grand Bleu", "ref": "venue:v-le-grand-bleu-hotel-de-la-cala", "text": "Ten minutes east on foot, up to the Hôtel de la Calanque’s terrace over the cove. Ask what fish is on; the hotel is listed open to 6 November 2026, but the dinner days differ by source, so call."}
+    ],
+    "after": "This is the thin quarter: no late bar out here. For a last glass, walk back to [[card:La Rhumerie|La Rhumerie]] on the Nouveau Port."},
+   {"id": "croix-valmer", "name": "La Croix-Valmer · the village",
+    "line": "Thirty wines by the glass, then the village room of two Vague d’Or chefs — by car or taxi, ten minutes over the cape.",
+    "steps": [
+     {"time": "18:30", "name": "La Grange à Vins", "ref": "card:La Grange à Vins", "text": "A glass from about thirty by the glass, classic to natural, with a board of charcuterie, on the rue du 8 Mai 1945. Listed open all year, closed Monday; listings differ, so check."},
+     {"time": "19:45", "name": "Les Saisonniers", "ref": "venue:v-les-saisonniers", "text": "A few minutes up to the room above the municipal pool for the short market carte — the pumpkin tartlet with goat-cheese ice cream if it is on. Open all year, dinner Wednesday to Saturday (one listing adds Tuesday); book by phone."}
+    ],
+    "after": "In season the grand alternative is [[venue:v-la-palmeraie-chateau-de-valmer|La Palmeraie]] at Château de Valmer, closed since 4 October."},
+   {"id": "gigaro", "name": "La Croix-Valmer · Gigaro",
+    "line": "The last light on the sand where the coast path starts, then the catch under the pines.",
+    "steps": [
+     {"time": "18:00", "name": "La Croix-Valmer and Gigaro", "ref": "card:La Croix-Valmer and Gigaro", "text": "Walk the empty beach at Gigaro towards the eastern end, where the path to the capes begins; the beach tables are closed now and the sand is yours."},
+     {"time": "19:00", "name": "Le Refuge", "ref": "venue:v-le-refuge", "text": "Dinner on the terrace under the parasol pines, the fisherman’s plate or the confit Sisteron lamb. Open to 31 October 2026, dinner 19:00–21:30, closed Tuesday and Wednesday; book."}
+    ],
+    "after": "In season (spring to early October): [[venue:v-la-pinede-plage|La Pinède Plage]] for the octopus, or [[venue:v-marius-a-la-plage|Marius à la plage]] on the same sand."},
+   {"id": "rayol", "name": "Le Rayol-Canadel · the corniche",
+    "line": "The coast road west at dusk, and Dédé’s bouillabaisse, ordered the day before — by car or taxi.",
+    "steps": [
+     {"time": "18:30", "name": "Le Rayol-Canadel", "ref": "card:Le Rayol-Canadel", "text": "Fifteen minutes west along the Corniche des Maures; stop above the bay of Rayol for the islands of Levant and Port-Cros going blue."},
+     {"time": "19:30", "name": "Maurin des Maures", "ref": "venue:v-maurin-des-maures", "text": "The bouillabaisse du pêcheur, phoned in the day before, two people minimum, or the soupe de roche if you did not. Open all year, dinner to about 21:00; one listing says no dinners 11 November to 20 December, so call."}
+    ]},
+   {"id": "ramatuelle", "name": "Ramatuelle · the village",
+    "line": "The ringed lanes of the hill village at dusk, then Italy cooked straight in the old forge — by car, half an hour.",
+    "steps": [
+     {"time": "18:30", "name": "Ramatuelle", "ref": "card:Ramatuelle", "text": "Park at the foot and walk up through the vaulted passages to the top of the village, for the vines going down to the sea."},
+     {"time": "19:30", "name": "La Forge", "ref": "venue:v-la-forge", "text": "Fresh pasta and bread made in the house, vitello tonnato, osso buco, in the old village forge on rue Victor Léon. Open daily to 1 November 2026; book."}
+    ],
+    "after": "In summer the grand night is down the hill at [[venue:v-la-voile-la-reserve-ramatuelle|La Voile]], two stars, closed since 11 October."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: fish on the cliff, the three capes on foot, a classified rosé at the cellar door, the bouillabaisse ordered the day before, and a Sunday in the garden of the Rayol.",
+  "door_note": "Le cap · la cave · la table · le jardin",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "The peninsula sells itself as a weekend at the Pampelonne clubs. The real one is on this side of the capes and costs a fraction: <strong>a wild coast path, a rosé bought where it grows, and a fish soup ordered a day ahead</strong>. Friday on the cliff over the Cron cove; Saturday out to Cap Lardier on foot, lunch with two Vague d’Or chefs, the cellar and the glass in La Croix-Valmer, then Dédé’s bouillabaisse on the corniche; Sunday the market, the garden of the Mediterraneans and lunch inside it. It is built for late October and early November, when the beach tables have shut. Every stop below is already in this guide and was re-checked on 21 October 2026; where a place could not be re-confirmed, the stop says so. You need a car, or taxis, from Saturday.",
+  "book": [
+   "[[venue:v-maurin-des-maures|Maurin des Maures]] — Saturday dinner, and phone on Friday to order the bouillabaisse (two people minimum); one listing says no dinners from 11 November to 20 December.",
+   "[[venue:v-les-saisonniers|Les Saisonniers]] — Saturday lunch, by phone; a small room open Wednesday to Saturday.",
+   "[[venue:v-le-grand-bleu-hotel-de-la-cala|Le Grand Bleu]] — Friday dinner; the hotel is listed open to 6 November 2026 and the dinner days differ by source, so book by phone."
+  ],
+  "days": [
+   {"label": "Friday", "title": "The port and the cliff",
+    "stops": [
+     {"time": "18:30", "name": "A mojito at Ô Petit Bar", "ref": "venue:v-o-petit-bar", "text": "Start on the port with the masts in front of you. Nothing 2026-dated confirmed it this autumn: if it is shut, the quay itself is the apéro.", "meta": "24 Résidence du Port, Rue du Port · listed from about 17:00 or 18:00, closing day disputed · not re-confirmed Oct 2026"},
+     {"time": "20:00", "name": "Dinner at Le Grand Bleu", "ref": "venue:v-le-grand-bleu-hotel-de-la-cala", "text": "Ten minutes east along the shore to the Hôtel de la Calanque and its terrace pinned over the Cron cove. Ask what came in; the cuttlefish linguine is the dish reviews name now.", "meta": "Rue de la Calanque · hotel open to 6 Nov 2026 · book by phone, days differ by source"}
+    ]},
+   {"label": "Saturday", "title": "The capes, the cellar and the bouillabaisse",
+    "stops": [
+     {"time": "08:30", "name": "Out to Cap Lardier’s crest", "ref": "card:Cap Lardier's crest", "text": "Ten minutes by car to the eastern end of Gigaro beach, then about an hour on the yellow-marked coast path to the cape’s high point, for the sea from the Camarat lighthouse to the islands. Back the same way, or on to the coves.", "meta": "Start Plage de Gigaro, La Croix-Valmer · rocky, steep in places · water, there is nothing on the path"},
+     {"time": "10:30", "name": "The douaniers’ coves", "ref": "card:The douaniers' coves", "text": "On the way back, drop to one of the small coves below the path; the sea is cooling from about 19°C now (the hot board at the foot has it), so swim only on a warm, calm day.", "meta": "Below the coast path between Gigaro and Cap Lardier · no facilities"},
+     {"time": "12:30", "name": "Lunch at Les Saisonniers", "ref": "venue:v-les-saisonniers", "text": "Up to La Croix-Valmer village for the short market carte of two chefs who left La Vague d’Or; whatever the season puts on it, end on the pastry.", "meta": "Boulevard de Tahiti, La Croix-Valmer · lunch Wed–Sat 12:00–14:00 (MICHELIN) · MICHELIN €€ · book by phone"},
+     {"time": "15:30", "name": "The cellar at Domaine de la Croix", "ref": "card:Domaine de la Croix", "text": "A few minutes down the road to the classified growth of La Croix-Valmer, for the Irrésistible rosé and the organic Bastide Blanche, bought where they grow.", "meta": "816 boulevard de Tabarin · listed open daily in 2026; call ahead in winter"},
+     {"time": "18:00", "name": "A glass at La Grange à Vins", "ref": "card:La Grange à Vins", "text": "Back in the village, ask the counter for the living bottles among the thirty by the glass, and a board.", "meta": "248 rue du 8 Mai 1945 · listed all year, closed Monday · listings differ, check"},
+     {"time": "19:30", "name": "Bouillabaisse at Maurin des Maures", "ref": "venue:v-maurin-des-maures", "text": "About fifteen minutes west by car or taxi along the Corniche des Maures, to the old bar-tabac of 1920s Rayol, for the cauldron you ordered on Friday.", "meta": "29 avenue Étienne Gola, Le Rayol-Canadel · bouillabaisse about EUR 85.50 a person, two minimum (seen 2026) · dinner to about 21:00"}
+    ]},
+   {"label": "Sunday", "title": "The market and the garden",
+    "stops": [
+     {"time": "09:00", "name": "La Croix-Valmer Sunday market", "ref": "card:La Croix-Valmer Sunday market", "text": "Olives, herbs and the wine of the peninsula on the Place des Palmiers; buy the jar of tapenade to take home here.", "meta": "Place des Palmiers · Sunday mornings, year-round · do not count on it after about 13:00"},
+     {"time": "10:30", "name": "The Domaine du Rayol", "ref": "card:Domaine du Rayol", "text": "West along the corniche to the garden of the world’s Mediterranean climates, running down to the sea. Take the path to the 1910 pergola first.", "meta": "Avenue Jacques Chirac, Le Rayol-Canadel · daily, 9:30–18:30 in October, 9:30–17:30 in winter · adult EUR 14.50 (Oct 2026)"},
+     {"time": "12:30", "name": "Lunch at the Café des Jardiniers", "ref": "venue:v-le-cafe-des-jardiniers-domaine", "text": "Inside the garden, the short chalkboard of the day, with a vegetarian plate. No reservations; your garden ticket is the way in.", "meta": "In the Domaine du Rayol · lunch 12:00–14:30, every day but 25 December · garden ticket required"},
+     {"time": "15:00", "name": "Bonporteau, on the way back", "ref": "card:Bonporteau", "text": "Down the steep path to Cavalaire’s own wild cove for a last look at the water before the road home.", "meta": "On foot from Avenue de Bonporteau · no lifeguard, no kiosk"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the corniche: [[venue:v-maurin-des-maures|Maurin des Maures]], with the bouillabaisse ordered the day before. If you did not order it, the soupe de roche is the same sea in a bowl."},
+   {"title": "The grand night instead", "text": "Not this season: the starred rooms of the peninsula are summer houses. [[venue:v-la-voile-la-reserve-ramatuelle|La Voile]] closed on 11 October and [[venue:v-la-palmeraie-chateau-de-valmer|La Palmeraie]] on 4 October; book them as soon as the 2027 season opens."},
+   {"title": "This October and November", "dated": "Checked 21 October 2026", "items": ["The last chestnut Sunday at Collobrières is 25 October; the clocks go back the same night.", "Le Refuge closes on 31 October, La Forge on 1 November, the Hôtel de la Calanque on 6 November; after that, take Friday dinner at [[venue:v-les-saisonniers|Les Saisonniers]] instead.", "The Domaine du Rayol moves to winter hours, 9:30–17:30, in November."]},
+   {"title": "Where to sleep", "text": "Only hotels already in this guide, and we have not judged their rooms: the Hôtel de la Calanque above the Cron cove (listed open to 6 November 2026); in season, Château de Valmer and Lily of the Valley above Gigaro, and La Réserve at Ramatuelle."},
+   {"title": "What we would leave out", "text": "The car into Saint-Tropez on a summer weekend, the paid mattress at Pampelonne, and ‘fresh fish’ on a seafront menu that cannot say which boat it came off. The cards under What to skip say why."}
+  ]
+ }
+}
