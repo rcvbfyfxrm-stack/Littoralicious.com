@@ -585,7 +585,30 @@
   },
   {
    "slug": "Cavalaire-sur-Mer",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Cavalaire-sur-Mer-2026-10-21",
+   "date": "2026-10-21",
+   "readings": "done 2026-10-21",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (21 Oct, after apply_readings; 201 OK lines; floors = curated counts: venues 19, fcards 89, fsubs 37, neighborhoods 5, walks 3, categories 7, lane stories 7, gems 3, liste 14, pins 13, mapsLinks 73; groups 3; doors 4; hot minVenues 5; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here; /usr/bin/chromium symlinked to the sandbox's Playwright Chromium)",
+    "probe-guide.cjs: ALL PASS, exit 0 (28 checks: chapters, sub-tags, readout, pointer lands on its table card, back button, 89 facts/89 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 88 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 88 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 64/64 placed cards and 19/19 venues with Maps on the closed card, no sideways scroll; One Night 25 links, Getaway 14); lens screenshots in review/Cavalaire-sur-Mer/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 (two overlaps found and rewritten: the two chestnut-Sunday cards and the Collobrières trip card; the Saint-Tropez-by-car warning vs the Bateaux Verts follow card)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "banned-word scan incl. the readings rulings (romantic, couple, for two, à deux, curated): 0 after fixes (old venue text edited: 'the couple's own story', '€76.50 for two', 'pour deux', 'curated')",
+    "screenshots: review/Cavalaire-sur-Mer/cavalaire-card-desktop.png, cavalaire-card-phone.png (Le Sentier des Trois Caps, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Cavalaire-sur-Mer",
+    "guide.michelin.com: La Voile (2 stars), La Palmeraie (1 star), Les Saisonniers, Vista, Bello Visto (no Bib Gourmand?), La Verdoyante — the 2026 entries",
+    "own-site hours and 2026-27 dates, dated, for the guest list and berths: chateauvalmer.com / relaischateaux.com (who is chef at La Palmeraie: Pezeril vs Fabris), lareserve-ramatuelle.com, lily-of-the-valley.com (Vista season), Les Saisonniers (Tuesday dinner, brunch, November closure), hoteldelacalanque.com (Le Grand Bleu days, 6 Nov vs 20 Sep, menu), lerefugegigaro.fr (31 Oct, chef), La Forge (1 Nov), maurin-des-maures.com (hours, 11 Nov-20 Dec dinner closure, price), domainedurayol.org (café hours in November, fares)",
+    "2026 trading evidence for the 3 unverified places: Le Comptoir des Saveurs, the fishermen's stand (winter days, end time), Ô Petit Bar (winter days) — confirm or cut; plus Le Parc's address, pinedeplage.com closing date, Tamaris 30 Oct vs 5 Nov",
+    "the rest of research/verify_1.json + verify_2.json _needs_network (20 lines), research/hot_events.json _needs_network (9 lines) and the card packs' _notes"
+   ],
+   "notes": "21 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Var/Girona pipeline). The old page was a GOLD2-era tier inventory (20 venue records in four flat categories, one duplicate, no lanes, no dishes, portName 'Barcelona'), so the GOLD4/5 floor came too (7 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 14 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, craft, listening room, coves, Autour, the #bougie food-history fold, 3 gems, terroir/data copy, 24-column CSV, the hub card's csv flag set true by a one-word data edit, hub builder not run). Places 20 -> 19 (all in lanes, none over 3, no 4s): cut La Brigantine x2 (duplicate record; cap — the Lily of the Valley beach club, the house in through Vista) and L'Auberge de l'Oumède (its own record: good not transcendent); added from the old text the fishermen's stand (Quai Marc Pajot) and the Wednesday market (Place Jean Moulin), no coordinates invented. Fold cards: 68 old tcards -> 71 written + 11 hot + 7 calendar = 89 .fcard, every one labelled; 37 groups, none over 3; La Cave de Mon Village dropped on the re-check (no 2026 trace, its address now a furniture shop). Guest list rebuilt from venues confirmed 21 Oct: last minute Le Refuge · La Forge · Le Grand Bleu (open to 31 Oct / 1 Nov / 6 Nov); this week Les Saisonniers · Maurin des Maures (year-round); grand night La Voile · La Palmeraie · Vista (summer houses, closed now, said). Berths Les Saisonniers · Maurin des Maures · the Wednesday market. Statuses: 16 confirmed 21 Oct, 3 unverified (Comptoir des Saveurs, fishermen, Ô Petit Bar; none on the list or a berth). Corrections: Colbert's '1652 ordinance' does not exist (1681, no direct-sale article) — the quay story is now the prud'homies (1431/1477/1859); La Palmeraie's chef disputed (Pezeril vs Fabris), verdict names neither; Vista no MICHELIN selection confirmed, chef disputed; Bello Visto no Bib Gourmand, G&M 13/20 not two toques; La Verdoyante MICHELIN unconfirmed; Le Parc seasonal (closed 3 Oct), two addresses; Maurin's address (29 av. Étienne Gola) and price; Le Grand Bleu's bouillabaisse not on 2026 menus; the Togo wreck is in the bay off Pointe Dubreuil, not Cap Lardier; the railway was the Sud-France line (1890-1949), 'train des Pignes' a dispute; Pardigon villa softened; Montjean height disputed; no Bateaux Verts shuttle from Cavalaire in 2026; Playa Mezcala is at Pardigon, not 'near Saint-Raphaël'; HERA's Contreras is front of house; Jazz à Ramatuelle had no 2026 edition; Le Lavandou boats year-round only to Port-Cros/Le Levant; the Rayol is west, not east; map zoom 13 -> 12. Readings: One Night 6 quarters (the port · the harbour mouth and Cron cove, said thin · La Croix-Valmer village · Gigaro · Le Rayol by car · Ramatuelle by car), Getaway 12 stops Fri 2 / Sat 6 / Sun 4, built for late Oct-early Nov. Details: terroir/_rollout/review/Cavalaire-sur-Mer/README.md."
   },
   {
    "slug": "Dubrovnik-Dalmatie",
