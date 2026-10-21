@@ -1,0 +1,545 @@
+{
+ "quartiers": {
+  "sub": "quarters",
+  "groups": [
+   {
+    "title": "The town on the bay",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Port Héraclea",
+      "from": "landmarks:Port de Cavalaire — the ancient Heraclea anchorage"
+     },
+     {
+      "key": "quartiers:Pardigon",
+      "from": "secret-gems:Pardigon"
+     },
+     {
+      "key": "quartiers:The young town",
+      "from": "landmarks:Église Saint-Laurent"
+     }
+    ]
+   },
+   {
+    "title": "Over the capes",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:La Croix-Valmer and Gigaro",
+      "from": null
+     },
+     {
+      "key": "quartiers:Le Rayol-Canadel",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "Older than it looks",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The hill fort over the bay",
+      "from": null
+     },
+     {
+      "key": "curiosities:The train that made the town",
+      "from": null
+     },
+     {
+      "key": "curiosities:The seafarers' chapel of 1639",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Under and on the water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:A drowned fleet under the swimmers",
+      "from": null
+     },
+     {
+      "key": "curiosities:The tuna traps of the gulf",
+      "from": null
+     },
+     {
+      "key": "curiosities:The pointu",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The morning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:The fishermen's stand",
+      "from": null
+     },
+     {
+      "key": "provisioning:Wednesday market",
+      "from": null
+     },
+     {
+      "key": "provisioning:La Croix-Valmer's Sunday market",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Wine from the hill to the water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Domaine de la Croix",
+      "from": null
+     },
+     {
+      "key": "provisioning:Domaine La Tourraque",
+      "from": null
+     },
+     {
+      "key": "provisioning:Château Minuty",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The caviste in town",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:La Cave de Mon Village",
+      "from": "natural-wine:La Cave de Mon Village"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The three capes",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Le Sentier des Trois Caps",
+      "from": "walks:Le Sentier du Littoral — Les Trois Caps (Gigaro → Cap Lardier → Cap Taillat)"
+     },
+     {
+      "key": "walks:Cap Lardier's crest",
+      "from": "walks:Pointe / high point of Cap Lardier"
+     }
+    ]
+   },
+   {
+    "title": "Cavalaire's own",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Sentier du Fenouillet",
+      "from": "walks:Sentier du Fenouillet (Domaine Foncin)"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The wild end of the peninsula",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Cap Taillat",
+      "from": "calas:Cap Taillat"
+     },
+     {
+      "key": "calas:Plage de la Briande",
+      "from": "calas:Plage de la Briande"
+     },
+     {
+      "key": "calas:The douaniers' coves",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Cavalaire's side and the corniche",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Bonporteau",
+      "from": "calas:Plage & Sentier Sous-Marin de Bonporteau"
+     },
+     {
+      "key": "calas:The Rayol coves",
+      "from": "calas:Plage du Figuier (the wild coves of the Rayol coast)"
+     },
+     {
+      "key": "calas:Le Sentier Marin du Rayol",
+      "from": "culture:Le Sentier Marin du Rayol (underwater snorkel trail)"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The gardener and the painters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Domaine du Rayol",
+      "from": "culture:Domaine du Rayol — Le Jardin des Méditerranées"
+     },
+     {
+      "key": "culture:Musée de l'Annonciade",
+      "from": "listening:Musée de l'Annonciade"
+     },
+     {
+      "key": "culture:Espace Archéologique Aristide Fabre",
+      "from": "landmarks:Espace Archéologique Municipal Aristide Fabre"
+     }
+    ]
+   },
+   {
+    "title": "15 August 1944",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Alpha — the landing beach",
+      "from": "landmarks:Monument du Débarquement de Provence"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Provençal craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "The cup itself",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:RAWr Torréfaction",
+      "from": "coffee-scene:RAWr Torréfaction"
+     },
+     {
+      "key": "linger:Injir Coffee Shop",
+      "from": "coffee-scene:Injir Coffee Shop"
+     },
+     {
+      "key": "linger:Soeurs Coffee & Bakery",
+      "from": "coffee-scene:Soeurs Coffee & Bakery"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Côtes de Provence rosé",
+      "from": "drink:Côtes de Provence Rosé — the pale, bone-dry archetype"
+     },
+     {
+      "key": "drink:Cru Classé rosé",
+      "from": "drink:Cru Classé Rosé — Provence's own 1955 ranking"
+     },
+     {
+      "key": "drink:Tibouren",
+      "from": "drink:Seaside sand-terroir Rosé with Tibouren"
+     }
+    ]
+   },
+   {
+    "title": "The other glasses",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Rolle, the white",
+      "from": "drink:Côtes de Provence Blanc — Rolle by the water"
+     },
+     {
+      "key": "drink:The red for a cool evening",
+      "from": "drink:Côtes de Provence Rouge — Mourvèdre for the cool evening"
+     },
+     {
+      "key": "drink:Pastis",
+      "from": "drink:Pastis — the shore aperitif ritual"
+     }
+    ]
+   },
+   {
+    "title": "Living wine, three counters",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:La Grange à Vins",
+      "from": "natural-wine:La Grange à Vins"
+     },
+     {
+      "key": "bars:HERA",
+      "from": "natural-wine:HERA Bistrot • Bar à vin"
+     },
+     {
+      "key": "bars:Fondugues-Pradugues",
+      "from": "natural-wine:Fondugues-Pradugues"
+     }
+    ]
+   },
+   {
+    "title": "A glass with a view",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Bar 1904, La Messardière",
+      "from": "hotel-bars:Bar 1904, Château de la Messardière (Airelles)"
+     },
+     {
+      "key": "bars:Bar de La Ménado",
+      "from": "nightlife:Bar de La Ménado"
+     }
+    ]
+   },
+   {
+    "title": "After dark, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:La Rhumerie",
+      "from": "nightlife:La Rhumerie"
+     },
+     {
+      "key": "bars:Marina Viva Plage",
+      "from": "nightlife:Marina Viva Plage"
+     },
+     {
+      "key": "bars:Playa Mezcala",
+      "from": "nightlife:Playa Mezcala"
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room, honestly",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi bar on this bay",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Music by the water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Festival Face à la Mer",
+      "from": "listening:Festival Face à la Mer"
+     },
+     {
+      "key": "listening:Les Escales Musicales",
+      "from": "nightlife:Les Escales Musicales"
+     },
+     {
+      "key": "listening:Jazz à Ramatuelle",
+      "from": "listening:Jazz à Ramatuelle"
+     }
+    ]
+   },
+   {
+    "title": "Under the stars",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Festival de Ramatuelle",
+      "from": "listening:Festival de Ramatuelle"
+     },
+     {
+      "key": "listening:Les Nuits du Château de la Moutte",
+      "from": "listening:Les Nuits du Château de la Moutte"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "The hill villages",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Gassin",
+      "from": "around:Gassin"
+     },
+     {
+      "key": "around:Ramatuelle",
+      "from": "around:Ramatuelle"
+     },
+     {
+      "key": "around:Bormes-les-Mimosas",
+      "from": "around:Bormes-les-Mimosas"
+     }
+    ]
+   },
+   {
+    "title": "Into the Maures, and out to the islands",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Collobrières and La Verne",
+      "from": "around:Collobrières & the Chartreuse de la Verne"
+     },
+     {
+      "key": "around:Porquerolles and Port-Cros",
+      "from": "around:Îles d'Hyères — Porquerolles & Port-Cros"
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "Four to skip",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Saint-Tropez by car in August",
+      "from": null
+     },
+     {
+      "key": "avoid:The Pampelonne fantasy",
+      "from": null
+     },
+     {
+      "key": "avoid:Reading the winter seafront as empty",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Read the plate",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:'Fresh fish' without asking",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The town and the gulf",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Cavalaire Tourisme",
+      "from": null
+     },
+     {
+      "key": "follow:Golfe de Saint-Tropez Tourisme",
+      "from": null
+     },
+     {
+      "key": "follow:Les Bateaux Verts",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wild coast",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Parc national de Port-Cros",
+      "from": null
+     },
+     {
+      "key": "follow:Domaine du Rayol",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "provisioning:The fishermen's stand": "v-pecheurs-du-port",
+  "provisioning:Wednesday market": "v-marche-place-jean-moulin"
+ }
+}

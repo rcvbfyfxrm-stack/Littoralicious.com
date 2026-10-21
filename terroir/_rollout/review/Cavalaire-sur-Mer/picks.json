@@ -1,0 +1,174 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The stars of the peninsula",
+   "group": "grande",
+   "ids": [
+    "v-la-voile-la-reserve-ramatuelle",
+    "v-la-palmeraie-chateau-de-valmer",
+    "v-vista-lily-of-the-valley"
+   ]
+  },
+  "chefs": {
+   "label": "Out of the palace kitchens — two chefs' rooms",
+   "group": "grande",
+   "ids": [
+    "v-les-saisonniers",
+    "v-le-parc-l-hotel-du-parc"
+   ]
+  },
+  "sand": {
+   "label": "On the sand — Gigaro and the Grande Plage",
+   "group": "petite",
+   "ids": [
+    "v-la-pinede-plage",
+    "v-marius-a-la-plage",
+    "v-tamaris-beach"
+   ]
+  },
+  "fish": {
+   "label": "Fish by the water — the port, the cliff, the pines",
+   "group": "petite",
+   "ids": [
+    "v-le-comptoir-des-saveurs",
+    "v-le-grand-bleu-hotel-de-la-cala",
+    "v-le-refuge"
+   ]
+  },
+  "corniche": {
+   "label": "Along the Corniche des Maures",
+   "group": "petite",
+   "ids": [
+    "v-maurin-des-maures",
+    "v-le-cafe-des-jardiniers-domaine"
+   ]
+  },
+  "villages": {
+   "label": "The hill villages — Gassin and Ramatuelle",
+   "group": "petite",
+   "ids": [
+    "v-bello-visto",
+    "v-la-verdoyante",
+    "v-la-forge"
+   ]
+  },
+  "street": {
+   "label": "La Rue — off the boat, the Wednesday market, the port glass",
+   "group": "street",
+   "ids": [
+    "v-pecheurs-du-port",
+    "v-marche-place-jean-moulin",
+    "v-o-petit-bar"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit",
+   "chefs"
+  ],
+  "petite": [
+   "sand",
+   "fish",
+   "corniche",
+   "villages"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v-la-brigantine": "Duplicate record of La Brigantine, the Lily of the Valley beach club (v-la-brigantine-lily-of-the-vall): merged, then cut with it.",
+  "v-la-brigantine-lily-of-the-vall": "Cap: the sand lane keeps the one-toque Pinède, the family beach of Marius and Tamaris on Cavalaire's own sand; La Brigantine is the Lily of the Valley's 600–800-cover beach club, and the house is already in the guide through Vista.",
+  "v-l-auberge-de-l-oumede": "Cut: its own record says 'good rather than transcendent', TripAdvisor its only signal; a small hotel among the vines, closed since 4 October. The villages lane keeps three with a stronger reason to drive."
+ },
+ "new_venues": {
+  "v-pecheurs-du-port": {
+   "id": "v-pecheurs-du-port",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "The fishermen's stand, Quai Marc Pajot",
+   "short": "The fishermen's stand",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Direct sale off the boats"
+   ],
+   "address": "Quai Marc Pajot (Rue du Port), Port de Cavalaire, 83240 Cavalaire-sur-Mer",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Quai+Marc+Pajot+Cavalaire-sur-Mer+Var+France",
+   "why": "",
+   "verdict": "Cavalaire keeps a small working fleet, and the boats sell straight off the quay most mornings from about 10:00, catch and weather permitting: girelle, rascasse and chapon for the soupe de roche, sea bream and sea bass, sometimes a spider crab or a langouste.",
+   "signature": "Rockfish for soup; the day's bream, bass and red mullet.",
+   "caveat": "Weather and catch decide: some mornings there is nothing.",
+   "person": "",
+   "_source": "old #eat gem, #history, #provisioning, #avoid"
+  },
+  "v-marche-place-jean-moulin": {
+   "id": "v-marche-place-jean-moulin",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Wednesday market, Place Jean Moulin",
+   "short": "Wednesday market",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Provençal market"
+   ],
+   "address": "Place Jean Moulin, 83240 Cavalaire-sur-Mer",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Place+Jean+Moulin+Cavalaire-sur-Mer+Var+France",
+   "why": "",
+   "verdict": "Around a hundred stalls every Wednesday morning, year-round, roughly 08:30–13:00: tapenade and anchoïade, olives, honey and olive oil, cheese and charcuterie, fish and seasonal fruit, and the rosé of the gulf.",
+   "signature": "Tapenade, anchoïade, honey of the Maures, the gulf's rosé.",
+   "caveat": "Morning only: it folds by one.",
+   "person": "",
+   "_source": "old #money-sits gem, #soul, #provisioning"
+  }
+ },
+ "berths": [
+  "v-les-saisonniers",
+  "v-maurin-des-maures",
+  "v-marche-place-jean-moulin"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v-le-refuge",
+   "v-la-forge",
+   "v-le-grand-bleu-hotel-de-la-cala"
+  ],
+  "Plan ahead — this week": [
+   "v-les-saisonniers",
+   "v-maurin-des-maures"
+  ],
+  "Plan ahead — the grand night": [
+   "v-la-voile-la-reserve-ramatuelle",
+   "v-la-palmeraie-chateau-de-valmer",
+   "v-vista-lily-of-the-valley"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "landmarks:Domaine du Rayol / around:Domaine du Rayol / secret-gems:Domaine du Rayol": "told once: four cards of the same garden merged into one, under culture; its lunch is the Café des Jardiniers table",
+  "culture:Cap Lardier & Cap Taillat coastal path / around:Cap Lardier & Cap Taillat coastal path": "told once: merged into the Trois Caps walk",
+  "landmarks:Cap Lardier": "told once: merged into the Cap Lardier crest walk (the Conservatoire's 1978 purchase lives there)",
+  "culture:Monument du Débarquement, Plage de Cavalaire (Alpha Beach)": "told once: merged with the landmarks card and the old 1944 story fold into one culture card",
+  "culture:Sentier du Fenouillet, Corniche des Maures": "told once: merged into the Fenouillet walk",
+  "culture:Gassin": "told once: merged into the Gassin village card under Autour",
+  "around:Corniche des Maures pocket coves": "told once: merged into the Rayol coves card",
+  "hotel-bars:Le Vista, Lily of the Valley": "told once: Vista is a table (the stars lane); its sunset terrace is on its venue card",
+  "hotel-bars:La Brigantine — Lily of the Valley beach club, Gigaro": "the venue is cut (cap on the sand lane)",
+  "nightlife:Festival Face à la Mer": "told once: merged into the listening card of the same festival",
+  "coffee-scene:Le Jardin du Café": "cap: three cups; Hyères is an hour west, and the gulf has two roasters nearer",
+  "natural-wine:Le Clos des B": "cap: three counters; its own card says it is a grower to look for on lists, not a place to visit",
+  "drink:Bière du Golfe": "cap: three other glasses; brewed in Sainte-Maxime, across the gulf",
+  "dish:Rosé de Provence (Côtes de Provence & Bandol)": "told once: the rosé is the drink card; the dish fold keeps plates",
+  "dish:* (8 plates)": "rewritten as The Dish inside La liste",
+  "provisioning:La Cave de Mon Village": "cut on the 21 Oct re-check: no 2026 trace of the shop, and 329 avenue des Alliés is now listed for a furniture shop",
+  "curiosities: twin town (New Port Richey) / catch / Saint-Tropez 1470": "too thin to carry a card; the 1944 note is the culture card"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

@@ -1,0 +1,278 @@
+{
+ "provisioning:The fishermen's stand": {
+  "fold": "provisioning",
+  "group": "The morning",
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_2.json, id v-pecheurs-du-port). Set \"ref\": \"v-pecheurs-du-port\". Write it in THIS section's angle (the larder: what a cook buys here and how to shop it), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports; Order = what to buy); maps_query empty (the table card carries the Maps link)."
+ },
+ "provisioning:Wednesday market": {
+  "fold": "provisioning",
+  "group": "The morning",
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_2.json, id v-marche-place-jean-moulin). Set \"ref\": \"v-marche-place-jean-moulin\". Write it in THIS section's angle (the larder: what a cook buys here and how to shop it), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports; Order = what to buy); maps_query empty (the table card carries the Maps link)."
+ },
+ "provisioning:La Croix-Valmer's Sunday market": {
+  "fold": "provisioning",
+  "group": "The morning",
+  "brief": "NEW larder card from the old [provisioning] / [drink-place] prose in research/guide_text_old.txt (the paragraph naming this place). Verify it trades in 2026 and its days/hours (one or two WebSearch). Market labels Days · Hours · Go at · Look for; shop/producer/estate labels Where · Open · Buy · Price. site = its own domain only if confident. Sunday mornings, year-round, Place des Palmiers (verify the square and season), olives, peaches, herbs, local wine. maps_query 'Place des Palmiers, La Croix-Valmer, Var, France' if verified."
+ },
+ "provisioning:Domaine de la Croix": {
+  "fold": "provisioning",
+  "group": "Wine from the hill to the water",
+  "brief": "NEW larder card from the old [provisioning] / [drink-place] prose in research/guide_text_old.txt (the paragraph naming this place). Verify it trades in 2026 and its days/hours (one or two WebSearch). Market labels Days · Hours · Go at · Look for; shop/producer/estate labels Where · Open · Buy · Price. site = its own domain only if confident. Cru Classé (1955) estate of La Croix-Valmer, founded 1882, its Bastide Blanche organic site by the sea; cellar 816 Boulevard de Tabarin; old text: Mon–Sat 10:00–13:00 and 15:00–19:30 (winter hours? verify); the 'Irrésistible' rosé. Do not retell the 1955 classification (the drink card 'Cru Classé rosé' owns it): name it."
+ },
+ "provisioning:Domaine La Tourraque": {
+  "fold": "provisioning",
+  "group": "Wine from the hill to the water",
+  "brief": "NEW larder card from the old [provisioning] / [drink-place] prose in research/guide_text_old.txt (the paragraph naming this place). Verify it trades in 2026 and its days/hours (one or two WebSearch). Market labels Days · Hours · Go at · Look for; shop/producer/estate labels Where · Open · Buy · Price. site = its own domain only if confident. Ramatuelle, inside the protected Trois Caps site; family estate (Brun-Craveris), organic since 2013 (verify); tasting cellar and season."
+ },
+ "provisioning:Château Minuty": {
+  "fold": "provisioning",
+  "group": "Wine from the hill to the water",
+  "brief": "NEW larder card from the old [provisioning] / [drink-place] prose in research/guide_text_old.txt (the paragraph naming this place). Verify it trades in 2026 and its days/hours (one or two WebSearch). Market labels Days · Hours · Go at · Look for; shop/producer/estate labels Where · Open · Buy · Price. site = its own domain only if confident. Gassin; one of the 1955 Crus Classés; the Matton/Farnet family; tasting room open season (verify 2026 hours)."
+ },
+ "provisioning:La Cave de Mon Village": {
+  "fold": "provisioning",
+  "group": "The caviste in town",
+  "old": {
+   "fold": "natural-wine",
+   "id": "v-la-cave-de-mon-village",
+   "name": "La Cave de Mon Village",
+   "type": "NATURAL WINE",
+   "label": "Cavalaire-sur-Mer (329 avenue des Alliés",
+   "hook": "The honest in-town stand-by: more caviste-with-a-counter than a natural-wine specialist, strong on Provençal rosés and small local estates, with aged cheeses and made-in-house nibbles. Good for a glass after the beach; go to La Grange when you want the real living-wine list.",
+   "chips": [],
+   "text": "The honest in-town stand-by: more caviste-with-a-counter than a natural-wine specialist, strong on Provençal rosés and small local estates, with aged cheeses and made-in-house nibbles. Good for a glass after the beach; go to La Grange when you want the real living-wine list. Signal Wine bar / caviste open 7 days (9–13 / 15:30–19:30); fresh Provençal rosés and lesser-known local domaines, cheeses and in-house nibbles, with occasional producer tastings.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=La+Cave+de+Mon+Village+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "brief": "Rebuild the old natural-wine card as a wine-shop card (labels Where · Open · Buy · Price): 329 avenue des Alliés, Cavalaire; the in-town caviste with a counter; verify it trades in 2026."
+ },
+ "walks:Le Sentier des Trois Caps": {
+  "fold": "walks",
+  "group": "The three capes",
+  "old": {
+   "fold": "walks",
+   "id": "v-le-sentier-du-littoral-les",
+   "name": "Le Sentier du Littoral — Les Trois Caps (Gigaro → Cap Lardier → Cap Taillat)",
+   "type": "HIKE",
+   "label": "",
+   "hook": "The signature coastal walk of this coast: from Gigaro beach the yellow-marked sentier hugs the sea to Cap Lardier, drops along the Briande bay to the sand isthmus of Cap Taillat, and loops back inland through cork oak and maquis. The full Gigaro loop is roughly 14 km / about 4 hours; you can also just walk out-and-back to a beach.",
+   "chips": [],
+   "text": "The signature coastal walk of this coast: from Gigaro beach the yellow-marked sentier hugs the sea to Cap Lardier, drops along the Briande bay to the sand isthmus of Cap Taillat, and loops back inland through cork oak and maquis. The full Gigaro loop is roughly 14 km / about 4 hours; you can also just walk out-and-back to a beach. This is the last long undeveloped stretch of coast between Cavalaire and Saint-Tropez, and the reason is public money, not luck. Cap Lardier was classified under the 1930 landscape law (a site classé) back in 1966, then bought parcel by parcel by the Conservatoire du littoral from 1978 onward — it holds the longest protected coastal fringe of the three caps, some 6 km. It is managed with the Port-Cros National Park and the commune and has been a Natura 2000 zone since 2006. The lesson the walk teaches: villas stop exactly where the Conservatoire's boundary begins. Signal Cap Lardier classified under the 1930 law in 1966; acquired by the Conservatoire du littoral from 1978; Natura 2000 since 2006",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Sentier+du+Littoral+%E2%80%94+Les+Trois+Caps+(Gigaro+%E2%86%92+Cap+Lardier+%E2%86%92+Cap+Taillat)+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "old_also": {
+   "fold": "culture",
+   "id": "v-cap-lardier-cap-taillat-co",
+   "name": "Cap Lardier & Cap Taillat coastal path",
+   "type": "HIKE",
+   "label": "",
+   "hook": "The sentier du littoral rounding two of the peninsula's three wild capes — a coastal out along the bays of Cavalaire and Briande to the sand isthmus of Cap Taillat, with an inland wooded return. The full loop is ~14 km / 4 hours; you can turn back early at Cap Lardier.",
+   "chips": [],
+   "text": "The sentier du littoral rounding two of the peninsula's three wild capes — a coastal out along the bays of Cavalaire and Briande to the sand isthmus of Cap Taillat, with an inland wooded return. The full loop is ~14 km / 4 hours; you can turn back early at Cap Lardier. These are the last undeveloped headlands on the whole Saint-Tropez peninsula — and the reason is the point of the walk. The Conservatoire du Littoral bought and protects the three sibling capes (Camarat, Taillat, Lardier), which is why there are pines and cistus here instead of villas. From the high point of Cap Lardier a 180° sweep takes in the Camarat lighthouse, Cap Taillat's tombolo of sand, the Îles du Levant and back across the Cavalaire bay. One real thing: on this coast, 'wild' means publicly bought, not accidentally spared. Signal Verified: capes protected by the Conservatoire du Littoral, loop ~14 km / ~4 hrs from Gigaro, 180° summit panorama (Camarat lighthouse, Cap Taillat, Îles du Levant) — AllTrails / Visorando / Provence-Alpes-Côte d'Azur Tourism",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Cap+Lardier+%26+Cap+Taillat+coastal+path+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "brief": "Merge the three old cards of this walk into ONE walk card (Start · Length · Time · Terrain · Best hour · Don't miss · Bring); the douaniers' coves and Cap Lardier's crest have their own cards: name them, do not retell."
+ },
+ "walks:Cap Lardier's crest": {
+  "fold": "walks",
+  "group": "The three capes",
+  "old": {
+   "fold": "walks",
+   "id": "v-pointe-high-point-of-cap-l",
+   "name": "Pointe / high point of Cap Lardier",
+   "type": "VIEWPOINT",
+   "label": "",
+   "hook": "The panoramic crest of the cape reached mid-walk, giving a roughly 180° sweep over the Cap Camarat lighthouse, Cap Taillat, the Îles d'Hyères and du Levant, and back across the whole bay of Cavalaire.",
+   "chips": [],
+   "text": "The panoramic crest of the cape reached mid-walk, giving a roughly 180° sweep over the Cap Camarat lighthouse, Cap Taillat, the Îles d'Hyères and du Levant, and back across the whole bay of Cavalaire. This is the payoff of the Trois-Caps hike and the clearest possible read of why the Conservatoire du littoral fought so hard for this land: from the top you see one green, empty cape holding out against a coast built up on every side. It is the longest protected coastal fringe of the three caps — about 6 km — laid out in front of you in a single glance. Honest note: on high fire-risk 'red' days in summer the Maures massif and these cape trails can be closed to walkers, so check the local prefectural access map before you set out. Signal 180° panorama over Cap Camarat, Cap Taillat and the Îles d'Hyères; the caps' longest protected fringe (~6 km)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Pointe+%2F+high+point+of+Cap+Lardier+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "old_also": {
+   "fold": "landmarks",
+   "id": "v-cap-lardier",
+   "name": "Cap Lardier",
+   "type": "LANDMARK",
+   "label": "",
+   "hook": "The wild southern headland of the Saint-Tropez peninsula, its ~300-hectare pine massif bought by the Conservatoire du littoral in 1978 to save it from development — a coast path from Gigaro beach threads pines, cistus and rock-rose to empty sand coves, with the Bastide Blanche and La Croix vines running almost to the cliff edge. It ties the wine, the walk and the 1944 'Alpha' beaches into one afternoon. A natural site, not a building: there is no road to the point.",
+   "chips": [],
+   "text": "The wild southern headland of the Saint-Tropez peninsula, its ~300-hectare pine massif bought by the Conservatoire du littoral in 1978 to save it from development — a coast path from Gigaro beach threads pines, cistus and rock-rose to empty sand coves, with the Bastide Blanche and La Croix vines running almost to the cliff edge. It ties the wine, the walk and the 1944 'Alpha' beaches into one afternoon. A natural site, not a building: there is no road to the point. Signal Trailhead at Gigaro beach, La Croix-Valmer (~9 km east). Free; walk only — roughly an hour on foot to the cape. Bring water; no facilities on the path. Note: in high summer (about 21 June–30 September) the wooded massif is under fire-risk access rules — check the day's authorisation/colour code before setting out.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Cap+Lardier+Cavalaire-sur-Mer+Var",
+   "links": []
+  }
+ },
+ "walks:Sentier du Fenouillet": {
+  "fold": "walks",
+  "group": "Cavalaire's own",
+  "old": {
+   "fold": "walks",
+   "id": "v-sentier-du-fenouillet-doma",
+   "name": "Sentier du Fenouillet (Domaine Foncin)",
+   "type": "HIKE",
+   "label": "",
+   "hook": "A roughly 4.5 km land-and-sea loop over the Fenouillet headland just behind Cavalaire, threading cork oaks and arbousiers (strawberry trees), dropping to wild coves and opening onto long views of the Îles d'Or. Some scrambly, narrow sea-edge sections — proper shoes.",
+   "chips": [],
+   "text": "A roughly 4.5 km land-and-sea loop over the Fenouillet headland just behind Cavalaire, threading cork oaks and arbousiers (strawberry trees), dropping to wild coves and opening onto long views of the Îles d'Or. Some scrambly, narrow sea-edge sections — proper shoes. The headland is the Domaine Foncin, given to the nation early: Mireille Foncin — daughter of geographer and Alliance Française co-founder Pierre Foncin — bequeathed the land to the Conservatoire du littoral in 1977, one of the very first gifts it ever received, keeping this run of the Corniche des Maures from being villa'd over. It teaches one real thing — the arbousier flowers and ripens its fruit at the same time in autumn, which is why the maquis smells of honey then. Nearby Cap Nègre carries its own memory: French Commandos d'Afrique came ashore here on the night of 14–15 August 1944 as the US 3rd Infantry Division landed on the Cavalaire beaches during the Provence landings. Signal Land bequeathed to the Conservatoire du littoral by Mireille Foncin in 1977 (one of its first-ever donations)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Sentier+du+Fenouillet+(Domaine+Foncin)+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "old_also": {
+   "fold": "culture",
+   "id": "v-sentier-du-fenouillet-corn",
+   "name": "Sentier du Fenouillet, Corniche des Maures",
+   "type": "HIKE",
+   "label": "",
+   "hook": "Cavalaire's own home walk: a signposted coastal stretch from Plage de Bonporteau toward Pointe du Dattier, looping back through a shaded valley. Shorten to ~3 km or push the full ~8 km — moderate, with a few steep sections, not a scramble.",
+   "chips": [],
+   "text": "Cavalaire's own home walk: a signposted coastal stretch from Plage de Bonporteau toward Pointe du Dattier, looping back through a shaded valley. Shorten to ~3 km or push the full ~8 km — moderate, with a few steep sections, not a scramble. No car needed — this is the maquis on the town's doorstep. The path threads fragrant scrubland (cistus, pine, strawberry-tree) and coastal cliff, opening onto high views over the Îles d'Hyères and across to Cap Lardier; the damp valley on the return is a surprise in this sun-baked corner. The name to learn: the Massif des Maures, whose dark schist and cork-oak give the range its brooding look — a different, older geology from the pale limestone of the eastern Riviera (the name is usually traced to a Provençal word for 'dark,' though a link to the Moors is also cited). Signal Verified: Sentier du Fenouillet / Corniche des Maures from Plage de Bonporteau to Le Dattier, ~3 km short / ~8 km full (3 hrs, ~360 m gain) — Ville de Cavalaire / Côte d'Azur France / Provence-Guide",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Sentier+du+Fenouillet%2C+Corniche+des+Maures+Cavalaire-sur-Mer+Var",
+   "links": []
+  }
+ },
+ "calas:Cap Taillat": {
+  "fold": "calas",
+  "group": "The wild end of the peninsula",
+  "old": {
+   "fold": "calas",
+   "id": "v-cap-taillat",
+   "name": "Cap Taillat",
+   "type": "CALA",
+   "label": "",
+   "hook": "A former island tethered to the mainland by a thread-thin sand tombolo, with a turquoise swim beach on each side — the wild Baie de Briande to the west, and the l'Escalet-facing beach on the Ramatuelle side to the east. About 142 hectares of protected headland, no road, only the coast path.",
+   "chips": [],
+   "text": "A former island tethered to the mainland by a thread-thin sand tombolo, with a turquoise swim beach on each side — the wild Baie de Briande to the west, and the l'Escalet-facing beach on the Ramatuelle side to the east. About 142 hectares of protected headland, no road, only the coast path. A Cavalaire gem · Ritual The Saint-Pierre fishermen's fête and the burning boat At the end of June the fishing community keeps the feast of their patron, Saint-Pierre: a procession through the streets, then a second procession out to sea from the Esplanade Sainte-Estelle, gathering fishermen, the old wooden pointus, divers and the SNSM lifeboats. A great sardinade is grilled on the beach at dusk, there is dancing, and the night ends — the oldest, strangest, most beautiful part — with an old boat set alight on the sand and left to burn against the dark water, a gesture that once meant solidarity with the poorest fisherman. Where — Cavalaire beach and port; late June (the Saint-Jean/Saint-Pierre weekend), run by the town's traditions association — exact dates vary yearly The isthmus is a living thing: east and west winds and the currents constantly redistribute its sand, and winter storms chew at it, so it is fenced with ganivelles to hold the dune together. The Conservatoire du littoral bought Cap Taillat in 1987 to head off a Club Med development, and it lies in the Port-Cros National Park adhesion zone. On 24 July 2017 a fire ran from Gigaro to l'Escalet, burning more than 500 hectares and reducing Cap Taillat to ash; the trail reopened only eight months later, after some 2,000 charred trees were felled and the path was rerouted to stop walkers trampling the recovering ground. The maquis greened back fast — but the umbrella pines will need decades to return. Signal Conservatoire du littoral property since 1987 (bought to block a Club Med); ~142.5 ha; devastated by the 24 July 2017 fire, trail reopened 2018",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Cap+Taillat+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "brief": "Merge the [money-sits] gem on the Cap Taillat tombolo (142 ha, Conservatoire 1987) into this card; verify the hectares/dates (the Club Med project story if any)."
+ },
+ "calas:Plage de la Briande": {
+  "fold": "calas",
+  "group": "The wild end of the peninsula",
+  "old": {
+   "fold": "calas",
+   "id": "v-plage-de-la-briande",
+   "name": "Plage de la Briande",
+   "type": "CALA",
+   "label": "",
+   "hook": "The last and wildest beach of La Croix-Valmer, on the Briande side of the Cap Taillat tombolo — a long curve of sand backed by dense maquis and parasol pines, with clear turquoise water and almost nothing built behind it.",
+   "chips": [],
+   "text": "The last and wildest beach of La Croix-Valmer, on the Briande side of the Cap Taillat tombolo — a long curve of sand backed by dense maquis and parasol pines, with clear turquoise water and almost nothing built behind it. Its famous 'alone in the world' feeling is a direct product of protection: no road reaches it, so the only way in is the sentier du littoral from the southernmost l'Escalet car park, about 45 minutes on foot. Because it sits inside the Conservatoire-protected Cap Lardier–Cap Taillat corridor, it will never be built on or serviced. Honest note: naturists frequent the wild coves you pass along the walk, but Briande itself is not an official naturist beach — read the signage. Signal Accessible only on foot via the sentier du littoral; inside the protected Lardier–Taillat corridor",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Plage+de+la+Briande+Cavalaire-sur-Mer+Var",
+   "links": []
+  }
+ },
+ "calas:The douaniers' coves": {
+  "fold": "calas",
+  "group": "The wild end of the peninsula",
+  "brief": "NEW beach card from the old [money-sits] gem 'The douaniers' coves below Cap Lardier' (research/guide_text_old.txt): crique de la Douane, Jovat with its fishing-cabin ruin, Brouis; from the eastern corner of Gigaro. Beach labels Getting there · Best hour · Bring · Don't miss. The Trois Caps walk owns the path itself: name it. maps_query 'Plage de Gigaro, La Croix-Valmer, Var, France'."
+ },
+ "calas:Bonporteau": {
+  "fold": "calas",
+  "group": "Cavalaire's side and the corniche",
+  "old": {
+   "fold": "calas",
+   "id": "v-plage-sentier-sous-marin-d",
+   "name": "Plage & Sentier Sous-Marin de Bonporteau",
+   "type": "CALA",
+   "label": "",
+   "hook": "Cavalaire's own wild cove — fine sand ringed by rock, eucalyptus, tamarisk and wild palms, with picnic tables in the pine shade. Just offshore runs a free underwater snorkel trail marked by buoys and submerged information panels, in the town's Marine Protected Area.",
+   "chips": [],
+   "text": "Cavalaire's own wild cove — fine sand ringed by rock, eucalyptus, tamarisk and wild palms, with picnic tables in the pine shade. Just offshore runs a free underwater snorkel trail marked by buoys and submerged information panels, in the town's Marine Protected Area. The cove lies inside the marine adhesion zone of the Port-Cros National Park, and the sentier sous-marin is open to any independent swimmer with a mask and snorkel — no ticket, no guide — following seven buoys over Posidonia seagrass, the meadow that is the nursery of the whole coast and the reason the water is so clear. Swimming here is unsupervised, which is exactly why it stays quiet while the town beaches fill (guided 'Esprit parc national' visits run Tuesday mornings in season). Signal Free marked underwater trail (7 buoys) in Cavalaire's Port-Cros National Park marine protected area (open in season)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Plage+%26+Sentier+Sous-Marin+de+Bonporteau+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "brief": "Rebuild the old Bonporteau calas card merged with the [why-now] gem (the seven-buoy underwater trail, guided Tuesday mornings in July–August by the Port-Cros park, ~1h30, ~8/11 EUR in the old text: verify 2026). Beach labels."
+ },
+ "calas:The Rayol coves": {
+  "fold": "calas",
+  "group": "Cavalaire's side and the corniche",
+  "old": {
+   "fold": "calas",
+   "id": "v-plage-du-figuier-the-wild-",
+   "name": "Plage du Figuier (the wild coves of the Rayol coast)",
+   "type": "CALA",
+   "label": "",
+   "hook": "A small, wild, white-sand cove tucked under the Corniche — one of a string of coves between the Rayol and Canadel beaches, loved by snorkelers for clear water over rock and Posidonia. Access is deliberately rough: steep, sometimes unmarked paths, described locally as 'sportif'.",
+   "chips": [],
+   "text": "A small, wild, white-sand cove tucked under the Corniche — one of a string of coves between the Rayol and Canadel beaches, loved by snorkelers for clear water over rock and Posidonia. Access is deliberately rough: steep, sometimes unmarked paths, described locally as 'sportif'. These coves stay wild precisely because the slope is too steep and the trails are left rugged — the friction is the protection. Figuier sits just along from the Domaine du Rayol's Baie du Figuier, where the estate runs its guided sentier marin (the 'Jardin Marin', its marine landscape). It teaches one thing about this shore: the same Posidonia meadow that keeps the water so clear is what throws up the 'banquettes' of dead leaves on the sand each winter — a sign of a healthy sea, not a dirty one. Signal Wild snorkelling cove adjoining the Domaine du Rayol's Baie du Figuier marine trail; steep unmarked access",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Plage+du+Figuier+(the+wild+coves+of+the+Rayol+coast)+Cavalaire-sur-Mer+Var",
+   "links": []
+  },
+  "old_also": {
+   "fold": "around",
+   "id": "v-corniche-des-maures-pocket",
+   "name": "Corniche des Maures pocket coves",
+   "type": "NATURE",
+   "label": "The coast road itself, 5–25 min between Cavalaire and Le Lavandou",
+   "hook": "The scenic corniche linking Cavalaire to Le Lavandou, strung with small pine-backed beaches — Le Rayol, Le Canadel, Cavalière, Pramousquier.",
+   "chips": [],
+   "text": "The scenic corniche linking Cavalaire to Le Lavandou, strung with small pine-backed beaches — Le Rayol, Le Canadel, Cavalière, Pramousquier. Quieter, greener and less built-up than Pampelonne's club-beaches; the Massif des Maures drops almost straight into the sea here, so the coves stay wild and pine-shaded.",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Corniche+des+Maures+pocket+coves+Cavalaire-sur-Mer+Var",
+   "links": []
+  }
+ },
+ "calas:Le Sentier Marin du Rayol": {
+  "fold": "calas",
+  "group": "Cavalaire's side and the corniche",
+  "old": {
+   "fold": "culture",
+   "id": "v-le-sentier-marin-du-rayol-",
+   "name": "Le Sentier Marin du Rayol (underwater snorkel trail)",
+   "type": "SECRET GEM",
+   "label": "",
+   "hook": "A guided snorkel — wetsuit, mask, fins — over the protected seagrass meadows of the Baie du Figuier, led by a state-certified guide. About 2 hours, 45 minutes in the water, from €37 (garden entry included). Summer only, book ahead, age 8+ and must be able to swim.",
+   "chips": [],
+   "text": "A guided snorkel — wetsuit, mask, fins — over the protected seagrass meadows of the Baie du Figuier, led by a state-certified guide. About 2 hours, 45 minutes in the water, from €37 (garden entry included). Summer only, book ahead, age 8+ and must be able to swim. The garden's story continued below the waterline. The same Conservatoire-protected bay hides prairies of Posidonia, urchins, damselfish and, if you're lucky, an octopus — the identical seabed as the Îles d'Hyères offshore. The one real thing you'll carry away: Posidonia is not seaweed but a flowering plant that beds down underwater, one of the Mediterranean's great oxygen engines and a nursery for everything else. A quiet, low-ego alternative to the peninsula's show-off beaches. Signal Verified: guided sentier marin, ~2 hrs / 45 min in water, adult €37 (garden entry included), from age 8 — Domaine du Rayol official site / Golfe de Saint-Tropez Tourisme",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Le+Sentier+Marin+du+Rayol+(underwater+snorkel+trail)+Cavalaire-sur-Mer+Var",
+   "links": []
+  }
+ },
+ "avoid:Saint-Tropez by car in August": {
+  "fold": "avoid",
+  "group": "Four to skip",
+  "brief": "NEW warning card from the old [avoid] prose (research/guide_text_old.txt), tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep it to the claims the old text makes, verified where dated (the Bateaux Verts Cavalaire–Saint-Tropez shuttle season 2026, if it runs from Cavalaire at all — verify); no invented numbers."
+ },
+ "avoid:The Pampelonne fantasy": {
+  "fold": "avoid",
+  "group": "Four to skip",
+  "brief": "NEW warning card from the old [avoid] prose (research/guide_text_old.txt), tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep it to the claims the old text makes, verified where dated (the Bateaux Verts Cavalaire–Saint-Tropez shuttle season 2026, if it runs from Cavalaire at all — verify); no invented numbers."
+ },
+ "avoid:Reading the winter seafront as empty": {
+  "fold": "avoid",
+  "group": "Four to skip",
+  "brief": "NEW warning card from the old [avoid] prose (research/guide_text_old.txt), tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep it to the claims the old text makes, verified where dated (the Bateaux Verts Cavalaire–Saint-Tropez shuttle season 2026, if it runs from Cavalaire at all — verify); no invented numbers."
+ },
+ "avoid:'Fresh fish' without asking": {
+  "fold": "avoid",
+  "group": "Read the plate",
+  "brief": "NEW warning card from the old [avoid] prose (research/guide_text_old.txt), tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep it to the claims the old text makes, verified where dated (the Bateaux Verts Cavalaire–Saint-Tropez shuttle season 2026, if it runs from Cavalaire at all — verify); no invented numbers."
+ },
+ "follow:Cavalaire Tourisme": {
+  "fold": "follow",
+  "group": "The town and the gulf",
+  "brief": "Follow card from the old [follow] prose. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. Cavalaire's tourist office (old: @cavalairetourisme; verify the site, e.g. cavalaire.fr or cavalairesurmer.fr)."
+ },
+ "follow:Golfe de Saint-Tropez Tourisme": {
+  "fold": "follow",
+  "group": "The town and the gulf",
+  "brief": "Follow card from the old [follow] prose. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. The gulf's community tourist office (old: @otc_golfedesainttropez; verify site)."
+ },
+ "follow:Les Bateaux Verts": {
+  "fold": "follow",
+  "group": "The town and the gulf",
+  "brief": "Follow card from the old [follow] prose. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. The gulf shuttle-boat operator, Sainte-Maxime (verify site, e.g. bateauxverts.com, and whether it serves Cavalaire in 2026)."
+ },
+ "follow:Parc national de Port-Cros": {
+  "fold": "follow",
+  "group": "The wild coast",
+  "brief": "Follow card from the old [follow] prose. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. portcros-parcnational.fr (verify)."
+ },
+ "follow:Domaine du Rayol": {
+  "fold": "follow",
+  "group": "The wild coast",
+  "brief": "Follow card from the old [follow] prose. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. domainedurayol.org (verify). Do not retell the garden (its culture card owns it)."
+ }
+}

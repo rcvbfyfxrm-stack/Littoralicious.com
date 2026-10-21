@@ -1,0 +1,117 @@
+{
+  "slug": "Cavalaire-sur-Mer",
+  "city": "Cavalaire-sur-Mer",
+  "listeSlug": "cavalaire",
+  "groups": 3,
+  "mapsTokens": [
+    "Var",
+    "France",
+    "Provence",
+    "Cavalaire"
+  ],
+  "staleTokens": [
+    "Prague",
+    "Praha",
+    "Vltava",
+    "Czech",
+    "Kendwa",
+    "Zanzibar",
+    "Diani",
+    "Kwale",
+    "Siracusa",
+    "Ortigia",
+    "Piraeus",
+    "Sicily",
+    "Barcelona",
+    "Catalunya",
+    "Istanbul"
+  ],
+  "staleAllow": {
+    "Prague": [
+      "runs on any page cloned from Prague's chrome"
+    ]
+  },
+  "bannedExtra": [
+    "paradise",
+    "unspoilt",
+    "off the beaten"
+  ],
+  "sectionsRequired": [
+    "soul",
+    "bougie",
+    "quartiers",
+    "curiosities",
+    "why-now",
+    "eat",
+    "tables",
+    "provisioning",
+    "walks",
+    "calas",
+    "culture",
+    "craft",
+    "coffee-gardens",
+    "bars",
+    "listening",
+    "around",
+    "avoid",
+    "follow",
+    "events",
+    "seasonal",
+    "hot-foot",
+    "la-liste",
+    "sources",
+    "dish",
+    "hot"
+  ],
+  "sectionsForbidden": [
+    "verify",
+    "markets",
+    "producers",
+    "hifi-bars",
+    "map-section",
+    "three-tables",
+    "tables-extended",
+    "history",
+    "band-eat",
+    "work",
+    "crafts",
+    "gastronomy",
+    "music",
+    "drink-place",
+    "rooftops",
+    "linger",
+    "money-sits",
+    "underground",
+    "art",
+    "coffee-scene",
+    "natural-wine",
+    "avoid-traps",
+    "twentyfour",
+    "walk"
+  ],
+  "floors": {
+    "venues": 19,
+    "gems": 3,
+    "neighborhoods": 5,
+    "walks": 3,
+    "categories": 7,
+    "laneStories": 7,
+    "fcards": 89,
+    "fsubs": 37,
+    "liste": 14,
+    "mapsLinks": 73,
+    "pins": 13
+  },
+  "renderFloors": {
+    "groups": 3,
+    "cards": 19,
+    "gemboxes": 7
+  },
+  "listePointer": true,
+  "hot": {
+    "maxAgeDays": 70,
+    "minVenues": 5,
+    "mode": "pointer"
+  },
+  "doors": 3
+}
