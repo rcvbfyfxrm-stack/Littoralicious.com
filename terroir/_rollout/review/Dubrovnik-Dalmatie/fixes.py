@@ -2,6 +2,8 @@
 import re
 TOK = re.compile(r"\b(Dubrovnik|Croatia|Dalmatia|Konavle|Pelješac|Ston|Cavtat|Lokrum|Mljet|Lopud|Trsteno)\b")
 EDITS = [          # (old, new) exact replacements in card text fields
+ # the hot pack could not confirm Hamlet in the 2026 festival programme: the walls card does not promise it
+ ("Your ticket covers it; Hamlet plays there in summer.", "Your ticket covers it; in summer the Festival uses it as a stage."),
 ]
 CARD_SET = {       # key -> {field: value} overrides
  # Konoba Atlantic Kitchen is cut (trading disputed on the 22 Oct re-check) and the Asia Shop could not be found: the Lapad card names neither

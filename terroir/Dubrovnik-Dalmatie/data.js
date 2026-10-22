@@ -37,14 +37,10 @@ window.TERROIR_DATA = (function () {
  "doors": [
   {
    "fr": "One Night",
-   "en": "Crew ashore for one evening: a plan for each quarter — the glass, the table, the late walk.",
+   "en": "Crew ashore for one evening: a plan for each quarter — the glass, the table, the walls lit at night, in the order you go.",
    "note": "L’apéro · la table · le dernier verre",
-   "href": "#tables",
-   "open": [
-    "tables",
-    "bars",
-    "listening"
-   ]
+   "href": "#t=onenight",
+   "open": []
   },
   {
    "fr": "The Gastronomic Dig-In",
@@ -65,6 +61,13 @@ window.TERROIR_DATA = (function () {
    "open": [
     "ce-soir"
    ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: a roof on Prijeko, the walls at opening, lamb under the bell, Gruž at dawn, the oysters of Mali Ston and a cellar door on Pelješac.",
+   "note": "Les remparts · la peka · les huîtres · la cave",
+   "href": "#t=getaway",
+   "open": []
   }
  ],
  "shortlist": {
