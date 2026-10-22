@@ -1,0 +1,189 @@
+{
+ "quartiers:The Old Town": {
+  "fold": "quartiers",
+  "group": "Inside and at the gates",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [avoid], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Dubrovnik, Croatia'. Do not retell another card's story: name it and move on. The walled town: Stradun from Pile to Ploče, the squares (Luža, Gundulić, Poljana Boškovića, Bunić), the side lanes where the honest konobas are (Antuninska, Boškovićeva, Palmotićeva), the walls (their own walk card), timing against the cruise ships. maps_query 'Stradun, Dubrovnik, Croatia'."
+ },
+ "quartiers:Pile": {
+  "fold": "quartiers",
+  "group": "Inside and at the gates",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [avoid], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Dubrovnik, Croatia'. Do not retell another card's story: name it and move on. The western gate: Pile Gate, the drawbridge, Onofrio's fountain (the five-squares walk owns it: name only), Nautika in the old Nautical School, the path to Lovrijenac, the Konzum (its larder card), the bus stop for Gruž."
+ },
+ "quartiers:Ploče": {
+  "fold": "quartiers",
+  "group": "Inside and at the gates",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [avoid], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Dubrovnik, Croatia'. Do not retell another card's story: name it and move on. East outside Ploče Gate: Lazareti (its culture card: name only), Banje beach (its swim card: name), the cable car base, Pizzeria Tabasco up Hvarska, the hotels looking back at the walls."
+ },
+ "quartiers:Gruž": {
+  "fold": "quartiers",
+  "group": "West, where the boats are",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [avoid], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Dubrovnik, Croatia'. Do not retell another card's story: name it and move on. The working harbour: ACI Marina (in Komolac, up the Rijeka Dubrovačka — verify where ACI Marina Dubrovnik actually is; the old text puts it 'in the bay' of Gruž), the cruise and ferry terminal, the Gruž market (a table card), Cogito Coffee (a linger card). The bus into the Old Town."
+ },
+ "quartiers:Lapad": {
+  "fold": "quartiers",
+  "group": "West, where the boats are",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [avoid], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Dubrovnik, Croatia'. Do not retell another card's story: name it and move on. The western peninsula: the Uvala Lapad bay and the pedestrian strip (Šetalište kralja Zvonimira), Konoba Atlantic Kitchen (a table card), the Asia Shop (a larder card), the hotels and the evening walk to Petka hill or Babin Kuk."
+ },
+ "curiosities:A ruler for one month": {
+  "fold": "curiosities",
+  "group": "How the Republic ran",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-republic-ragusa",
+   "name": "Republic of Ragusa — the one-month Rector",
+   "type": "CULTURE",
+   "label": "REPUBLIC 1358–1808",
+   "hook": "Senate of 45, Rector for one month — a constitution against personal power",
+   "chips": [
+    "EUR 15 (Rector's Palace + Cultural Museum)",
+    "OPEN ALL YEAR",
+    "Late morning"
+   ],
+   "text": "Senate of 45, Rector for one month — a constitution against personal power EUR 15 (Rector's Palace + Cultural Museum) OPEN ALL YEAR Late morning Released from Venice by the Treaty of Zadar in 1358 and abolished by Napoleon's Marshal Marmont in 1808 — four and a half centuries of de facto independence. The Senate had 45 patricians over 40 years old, elected for one year by the Major Council (~300 nobles aged 18+); daily government by the seven-member Minor Council; a Rector who served exactly one month and lived locked inside the Rector's Palace during his term, allowed out only on state business. Visit the Rector's Palace (Gothic-Renaissance, rebuilt after gunpowder explosions in 1435 and 1463) and the Sponza Palace (1516–22) — the customs house, mint and intellectual club of the Republic. Where Old Town · Rector's Palace, Sponza Palace",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Rector%27s%20Palace%20Dubrovnik",
+   "links": []
+  },
+  "brief": "The constitution only (the one-month Rector, Senate of 45, Major and Minor Councils, 1358-1808). The building itself is the culture card 'The Rector's Palace': point to it."
+ },
+ "curiosities:The wind that excused a crime": {
+  "fold": "curiosities",
+  "group": "How the Republic ran",
+  "brief": "Curiosity card from the old card text / [history] prose: one verified fact most guides get wrong or never tell. Verify it now (one or two WebSearch) and keep any dispute as a dispute. Labels: Touch it today · Where the sources argue (only if they do). tag 'curiosity'. maps_query ONLY if there is one place to go and see it (ending ', Dubrovnik, Croatia'), else empty. From the old culture gem: during the Republic no Senate session sat when the jugo blew hard, and crimes committed under a strong jugo were judged more leniently. VERIFY (this is a much-repeated claim; if it is only folklore with no documented source, say so in 'Where the sources argue')."
+ },
+ "curiosities:Why every façade matches": {
+  "fold": "curiosities",
+  "group": "How the Republic ran",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-quake-1667",
+   "name": "1667 earthquake · the Gradić rebuild",
+   "type": "CULTURE",
+   "label": "6 APRIL 1667",
+   "hook": "Why every Stradun façade matches: regulation, not aesthetic accident",
+   "chips": [
+    "Free (Stradun + Sponza)",
+    "WALK",
+    "Any"
+   ],
+   "text": "Why every Stradun façade matches: regulation, not aesthetic accident Free (Stradun + Sponza) WALK Any 6 April 1667, ~08:45. An 8–15 second earthquake estimated at magnitude ~7 (intensity X EMS) flattened most of the medieval city. ~2,000 died inside the walls per Robin Harris's count (older sources cite up to 5,000), including the sitting Rector and half the Major Council. The rebuild was directed from Rome by Stjepan Gradić (1613–1683) , the Ragusan Vatican librarian and diplomat who raised funds across Europe and enforced a uniform Baroque rhythm along the Stradun. Every facade rises to the same cornice, every window aligns across 300 metres — this is regulation. The Sponza Palace, finished in 1522, survived the quake and is now also the war memorial. Where Old Town · Stradun · Sponza Palace",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Sponza%20Palace%20Dubrovnik",
+   "links": []
+  },
+  "brief": "The 1667 earthquake and the Baroque rebuild (Stjepan Gradić). The Sponza survived: its card tells the building."
+ },
+ "curiosities:Marin Držić": {
+  "fold": "curiosities",
+  "group": "Two citizens",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-marin-drzic",
+   "name": "Marin Držić · Dundo Maroje 1551",
+   "type": "CULTURE",
+   "label": "PLAYWRIGHT 1508–1567",
+   "hook": "Capon-with-oranges recipe still served at Kopun (Poljana Boškovića)",
+   "chips": [
+    "EUR 8 (House Museum)",
+    "OPEN ALL YEAR",
+    "Late morning"
+   ],
+   "text": "Capon-with-oranges recipe still served at Kopun (Poljana Boškovića) EUR 8 (House Museum) OPEN ALL YEAR Late morning Marin Držić (1508–1567) is the Renaissance playwright Croatia names before any other. His comedy Dundo Maroje (1551) premiered in the Rector's Palace and is still staged at the Summer Festival. The House Museum at Široka 7 in the Old Town reconstructs his working life through period interiors and manuscript facsimiles. The Držić recipe for capon with oranges, salt and honey is the dish on the menu at Kopun — the same lane, same square as the playwright walked four and a half centuries ago. Where Old Town · Široka 7 (House Museum)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Marin%20Drzic%20House%20Dubrovnik",
+   "links": []
+  }
+ },
+ "curiosities:Ruđer Bošković": {
+  "fold": "curiosities",
+  "group": "Two citizens",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-boskovic",
+   "name": "Ruđer Bošković · the 1758 atomic-precursor theory",
+   "type": "CULTURE",
+   "label": "POLYMATH 1711–1787",
+   "hook": "Boškovićeva Stairs = Game of Thrones Walk of Shame; physics history under the same flagstones",
+   "chips": [
+    "Free",
+    "WALK",
+    "Any"
+   ],
+   "text": "Boškovićeva Stairs = Game of Thrones Walk of Shame; physics history under the same flagstones Free WALK Any Ruđer Josip Bošković (1711–1787) , born in the Old Town, Jesuit polymath: astronomer, mathematician, physicist, diplomat. His Theoria Philosophiae Naturalis (Vienna 1758; Venice 1763) proposed matter as point-particles bound by mutual forces of attraction and repulsion — a precursor of atomic and field theory that Werner Heisenberg called \"the Croatian Leibniz.\" Member of the Royal Society, the Académie Royale and the Russian Academy. Buried in Milan. The square at the foot of the Jesuit Stairs — Poljana Ruđera Boškovića — carries his name; the same stairs serve as the Game of Thrones Walk of Shame and as physics history under the same flagstones. Where Old Town · Poljana Ruđera Boškovića (Jesuit Stairs)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Poljana%20Rudera%20Boskovica%20Dubrovnik",
+   "links": []
+  }
+ },
+ "culture:The Rector's Palace": {
+  "fold": "culture",
+  "group": "The Republic in stone",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-republic-ragusa",
+   "name": "Republic of Ragusa — the one-month Rector",
+   "type": "CULTURE",
+   "label": "REPUBLIC 1358–1808",
+   "hook": "Senate of 45, Rector for one month — a constitution against personal power",
+   "chips": [
+    "EUR 15 (Rector's Palace + Cultural Museum)",
+    "OPEN ALL YEAR",
+    "Late morning"
+   ],
+   "text": "Senate of 45, Rector for one month — a constitution against personal power EUR 15 (Rector's Palace + Cultural Museum) OPEN ALL YEAR Late morning Released from Venice by the Treaty of Zadar in 1358 and abolished by Napoleon's Marshal Marmont in 1808 — four and a half centuries of de facto independence. The Senate had 45 patricians over 40 years old, elected for one year by the Major Council (~300 nobles aged 18+); daily government by the seven-member Minor Council; a Rector who served exactly one month and lived locked inside the Rector's Palace during his term, allowed out only on state business. Visit the Rector's Palace (Gothic-Renaissance, rebuilt after gunpowder explosions in 1435 and 1463) and the Sponza Palace (1516–22) — the customs house, mint and intellectual club of the Republic. Where Old Town · Rector's Palace, Sponza Palace",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Rector%27s%20Palace%20Dubrovnik",
+   "links": []
+  },
+  "brief": "The BUILDING and its museum (Gothic-Renaissance, the explosions of 1435 and 1463, the atrium, the Cultural History Museum), 2026 ticket and winter hours (verify; a combined museum pass?). The constitution is the curiosity 'A ruler for one month': point to it."
+ },
+ "culture:Sponza and the Memorial Room": {
+  "fold": "culture",
+  "group": "The Republic in stone",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-siege-memorial",
+   "name": "Memorial Room of the Defenders · Sponza Palace",
+   "type": "CULTURE",
+   "label": "1991–92",
+   "hook": "Photographs of the dead · the quietest room in the city",
+   "chips": [
+    "Free",
+    "WALK-IN",
+    "Late afternoon"
+   ],
+   "text": "Photographs of the dead · the quietest room in the city Free WALK-IN Late afternoon The Yugoslav People's Army siege ran 1 October 1991 to late May 1992 . The defining bombardment was 6 December 1991 : 19 civilians killed in a single day, 60 wounded, ~68% of Old Town buildings damaged. Total siege civilian deaths ~116; 194 Croatian defenders + 165 JNA fatalities. UNESCO placed Dubrovnik on the List of World Heritage in Danger and led the post-war restoration mission. The Memorial Room of the Defenders inside the Sponza Palace courtyard wing is the city's archive — photographs of the dead defenders, their ages and units, in two rooms of silence. Walk through after the cathedral; leave a moment of attention. Where Old Town · Sponza Palace",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Memorial%20Room%20Defenders%20Dubrovnik%20Sponza",
+   "links": []
+  },
+  "old_also": {
+   "fold": "culture",
+   "id": "p-culture-quake-1667",
+   "name": "1667 earthquake · the Gradić rebuild",
+   "type": "CULTURE",
+   "label": "6 APRIL 1667",
+   "hook": "Why every Stradun façade matches: regulation, not aesthetic accident",
+   "chips": [
+    "Free (Stradun + Sponza)",
+    "WALK",
+    "Any"
+   ],
+   "text": "Why every Stradun façade matches: regulation, not aesthetic accident Free (Stradun + Sponza) WALK Any 6 April 1667, ~08:45. An 8–15 second earthquake estimated at magnitude ~7 (intensity X EMS) flattened most of the medieval city. ~2,000 died inside the walls per Robin Harris's count (older sources cite up to 5,000), including the sitting Rector and half the Major Council. The rebuild was directed from Rome by Stjepan Gradić (1613–1683) , the Ragusan Vatican librarian and diplomat who raised funds across Europe and enforced a uniform Baroque rhythm along the Stradun. Every facade rises to the same cornice, every window aligns across 300 metres — this is regulation. The Sponza Palace, finished in 1522, survived the quake and is now also the war memorial. Where Old Town · Stradun · Sponza Palace",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Sponza%20Palace%20Dubrovnik",
+   "links": []
+  },
+  "brief": "The Sponza Palace (1516-22, customs house, mint, the State Archives, the LIBERTAS-era inscription) and the Memorial Room of the Defenders in it; the 1991-92 siege numbers: verify each one you keep. 2026 opening hours."
+ },
+ "culture:Lazareti": {
+  "fold": "culture",
+  "group": "The Republic in stone",
+  "old": {
+   "fold": "secret-gems",
+   "id": "p-gem-lazareti",
+   "name": "Lazareti — the 1627 quarantine, now culture",
+   "type": "GEM",
+   "label": "GEM",
+   "hook": "",
+   "chips": [],
+   "text": "The Lazareti were the city's 17th-c. plague quarantine — 10 stone halls along the shore , completed 1627, where merchants and goods waited 40 days before entering the city. Now they house the Linđo Folklore Ensemble 's summer performances, an art-house cinema and a programme of small concerts. The Stari Mlin restaurant occupies one hall in season. Walk through after the cable-car descent. Where Ploče · just outside the gate When Linđo summer Mon/Tue/Sat 21:30",
+   "maps": "",
+   "links": []
+  },
+  "brief": "VERIFY the date (the old texts say 1627 here and '16th-c.' elsewhere; the quarantine itself dates to 1377): keep the dispute honest. What is there now (Linđo in summer, a club/cultural centre)."
+ }
+}

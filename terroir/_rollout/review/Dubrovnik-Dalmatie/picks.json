@@ -1,0 +1,152 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The grand tables — on the walls, the roof and the sea",
+   "group": "grande",
+   "ids": [
+    "v01-restaurant-360",
+    "v02-stara-lo-a-prijeko-palace",
+    "v04-nautika"
+   ]
+  },
+  "houses": {
+   "label": "The old houses inside the walls",
+   "group": "petite",
+   "ids": [
+    "v03-proto-fish-restaurant",
+    "v05-kopun",
+    "v11-lady-pi-pi"
+   ]
+  },
+  "konoba": {
+   "label": "Under the bell — the country konobas",
+   "group": "petite",
+   "ids": [
+    "v06-konoba-dubrava",
+    "v09-konoba-konavoski-dvori"
+   ]
+  },
+  "oysters": {
+   "label": "Mali Ston — the oysters at the source",
+   "group": "petite",
+   "ids": [
+    "v07-bota-are-mali-ston",
+    "v08-vila-koruna"
+   ]
+  },
+  "locals": {
+   "label": "Where the city eats when the Old Town is full",
+   "group": "petite",
+   "ids": [
+    "v10-konoba-atlantic-kitchen",
+    "v13-pizzeria-tabasco",
+    "v-taj-mahal"
+   ]
+  },
+  "glass": {
+   "label": "The glass — a wine bar and two Pelješac cellars",
+   "group": "petite",
+   "ids": [
+    "v14-d-vino-wine-bar",
+    "v17-grgi-vina-cellar-door",
+    "v18-milo-stagnum"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the market, the sandwich, the octopus burger",
+   "group": "street",
+   "ids": [
+    "v16-gru-market-tr-nica-gru",
+    "v12-buffet-kola",
+    "v-barba"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit"
+  ],
+  "petite": [
+   "houses",
+   "konoba",
+   "oysters",
+   "locals",
+   "glass"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v15-glam-caf-beer-therapy": "Cut: a late craft-beer bar in an Old Town lane — fine, but nothing this coast does that a bar elsewhere does not; the glass lane keeps the Croatian-only wine bar and the two Pelješac cellars."
+ },
+ "new_venues": {
+  "v-taj-mahal": {
+   "id": "v-taj-mahal",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Taj Mahal (Bosnian grill)",
+   "short": "Taj Mahal",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Bosnian grill"
+   ],
+   "address": "Nikole Gučetića, Old Town, 20000 Dubrovnik",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Taj+Mahal+Nikole+Gucetica+Dubrovnik+Croatia",
+   "why": "",
+   "verdict": "Despite the name, a Bosnian grill: ćevapi, minced-meat fingers grilled over charcoal and served in lepinja flatbread with raw onion and ajvar, plus klepe, sogan dolma and burek. Honest Balkan cooking, not a theme park.",
+   "signature": "Ćevapi in lepinja with onion and ajvar.",
+   "caveat": "",
+   "person": "",
+   "_source": "old street-food card"
+  },
+  "v-barba": {
+   "id": "v-barba",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Barba",
+   "short": "Barba",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Seafood street food"
+   ],
+   "address": "Boškovićeva 5, Old Town, 20000 Dubrovnik",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Barba+Boskoviceva+5+Dubrovnik+Croatia",
+   "why": "",
+   "verdict": "Slow Dalmatian fast food: Adriatic fish in fast-food formats — an octopus burger, a fish taco, salted-cod croquettes. A counter and a handful of tables, walk-in.",
+   "signature": "The octopus burger.",
+   "caveat": "",
+   "person": "",
+   "_source": "old burger-kebab card"
+  }
+ },
+ "berths": [],
+ "shortlist": {},
+ "fours": {},
+ "dropped_cards": {
+  "bougie:* (360, Nautika, Stara Loža)": "told once: the three 'where the money sits' cards repeated the three grand tables; each is its table card",
+  "culture:City Walls — Minčeta, Bokar, Lovrijenac": "told once: merged into the walls walk",
+  "culture:Festa Sv. Vlaha / events:Festa Sv. Vlaha": "told once: one calendar card (the dates), the šporki makaruli in The Dish",
+  "culture:Dubrovnik Summer Festival / events:Dubrovnik Summer Festival": "told once: one calendar card",
+  "dish:* (7 plates)": "rewritten as The Dish inside La liste",
+  "drink:Maraschino — Dominican friars, 16th c.": "cap: three other glasses; a Zadar liqueur, four hours up the coast, poured everywhere but not made here",
+  "music:Doris Dragović": "cap: three voices to queue; Oliver, Gibonni and Klapa Cambi carry the playlist",
+  "work:Mlinar Lapad / work:Rixos Libertas lobby": "cap: three rooms; a bakery chain and a hotel lobby you must buy your way into",
+  "street-food:Burek": "told once: the burek is on La liste and the hot board's bakery line, not a card of its own",
+  "street-food:Ćevapi at Taj Mahal / burger-kebab:Barba": "now table venues (the locals and street lanes)",
+  "burger-kebab:Mirakul Burger — Lapad": "cap: an American smash burger is not what anyone crosses the Adriatic for; Barba keeps the street lane's fast plate",
+  "gastronomy:Gruž Market / Grgić Vina / Miloš Stagnum": "now table venues; Gruž Market and Grgić keep a pointer card in the larder",
+  "gastronomy:Mali Ston Bay oyster farms (collective)": "told once: the PDO and the farms are the oyster lane's story and the quay card",
+  "gastronomy:Maraska d.d. — Zadar": "cut with the maraschino card: in Zadar",
+  "gastronomy:Dežo Art (Konavle textiles)": "moved to the craft brief (the Konavle embroidery candidates)",
+  "events:* (8)": "rewritten as the calendar (and the hot board for this month)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

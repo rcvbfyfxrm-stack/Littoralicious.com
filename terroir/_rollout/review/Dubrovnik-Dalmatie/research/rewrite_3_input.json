@@ -1,0 +1,133 @@
+{
+ "calas:Banje": {
+  "fold": "calas",
+  "group": "In sight of the walls",
+  "brief": "NEW swim card. Beach labels Getting there · Best hour · Bring · Don't miss. Late October: say honestly how warm the sea is now and what is shut for the winter (verify). maps_query = the beach + ', Dubrovnik, Croatia'. The city beach just outside Ploče Gate, under the walls (part is a beach club; the public part is free)."
+ },
+ "calas:The rocks under the south wall": {
+  "fold": "calas",
+  "group": "In sight of the walls",
+  "brief": "NEW swim card. Beach labels Getting there · Best hour · Bring · Don't miss. Late October: say honestly how warm the sea is now and what is shut for the winter (verify). maps_query = the beach + ', Dubrovnik, Croatia'. Swimming off the flat rocks below the south sea wall, reached through the openings by the Buža bars (the bars have their own card under Boire: name only); ladders into deep water; no sand."
+ },
+ "calas:Sveti Jakov": {
+  "fold": "calas",
+  "group": "In sight of the walls",
+  "brief": "NEW swim card. Beach labels Getting there · Best hour · Bring · Don't miss. Late October: say honestly how warm the sea is now and what is shut for the winter (verify). maps_query = the beach + ', Dubrovnik, Croatia'. The pebble beach below the church of Sveti Jakov, east of Ploče, down a long flight of steps; the view back to the walls."
+ },
+ "calas:Lokrum": {
+  "fold": "calas",
+  "group": "A boat away",
+  "old": {
+   "fold": "walks",
+   "id": "w-lokrum-trail",
+   "name": "Lokrum island circuit",
+   "type": "WALK",
+   "label": "",
+   "hook": "",
+   "chips": [],
+   "text": "Ferries leave the Old Port every 30 min from 09:00 (Easter to November, 12-min crossing, ~EUR 27 return incl. island entry). Walk: Benedictine monastery ruin → Maximilian's villa + Botanical Garden → Mrtvo More (small salt lake, swimmable) → southern cliffs. Picnic — no restaurants on the island. The Game of Thrones Iron Throne replica sits in the monastery cloister.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Rebuild the old Lokrum walk as an island card (beach labels): the ferry from the Old Port (2026 season: the boat usually stops in November — verify), the Dead Sea lake, the botanical garden, the peacocks, no overnight stays; price 2026."
+ },
+ "calas:Lopud and Šunj": {
+  "fold": "calas",
+  "group": "A boat away",
+  "brief": "NEW swim card. Beach labels Getting there · Best hour · Bring · Don't miss. Late October: say honestly how warm the sea is now and what is shut for the winter (verify). maps_query = the beach + ', Dubrovnik, Croatia'. The Elaphiti island of Lopud by ferry from Gruž (Jadrolinija / G&V Line: verify the winter timetable 2026), no cars, the sand bay of Šunj across the island. maps_query 'Šunj beach, Lopud, Croatia'."
+ },
+ "avoid:The cruise-day crush": {
+  "fold": "avoid",
+  "group": "The crowd and the street",
+  "brief": "Warning card, tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep to the claims the old text makes ([avoid] in research/guide_text_old.txt), verified where dated; no invented numbers. From the old [avoid] text: when several ships dock at Gruž the Old Town absorbs thousands of day visitors in a few hours; the city's cap on ships and passengers (verify the 2026 rule: two ships / 4,000 passengers a day?), check the port's schedule, go before 09:00 or after 18:30."
+ },
+ "avoid:Prijeko Street": {
+  "fold": "avoid",
+  "group": "The crowd and the street",
+  "old": {
+   "fold": "avoid",
+   "id": "p-avoid-prijeko",
+   "name": "Prijeko Street tourist traps",
+   "type": "AVOID",
+   "label": "",
+   "hook": "",
+   "chips": [],
+   "text": "Menus in 8–10 languages · touts on the street · frozen fish under \"fresh\" signs",
+   "maps": "",
+   "links": []
+  }
+ },
+ "avoid:Pizza by the slice on Stradun": {
+  "fold": "avoid",
+  "group": "The crowd and the street",
+  "old": {
+   "fold": "avoid",
+   "id": "p-avoid-stradun-pizza",
+   "name": "Reheated pizza on Stradun",
+   "type": "AVOID",
+   "label": "",
+   "hook": "",
+   "chips": [],
+   "text": "Frozen base, microwaved, EUR 18–22 a slice in the touristed mid-Stradun cafés",
+   "maps": "",
+   "links": []
+  }
+ },
+ "avoid:Oysters inside the walls": {
+  "fold": "avoid",
+  "group": "Read the plate",
+  "old": {
+   "fold": "avoid",
+   "id": "p-avoid-oyster-old-town",
+   "name": "\"Fresh\" oyster claims inside the walls",
+   "type": "AVOID",
+   "label": "",
+   "hook": "",
+   "chips": [],
+   "text": "Oysters travel 1 h 30 from Mali Ston by road; in shoulder season they may be 3–4 days old",
+   "maps": "",
+   "links": []
+  }
+ },
+ "avoid:Truffle on the menu": {
+  "fold": "avoid",
+  "group": "Read the plate",
+  "old": {
+   "fold": "avoid",
+   "id": "p-avoid-truffle",
+   "name": "Truffle products in Dubrovnik",
+   "type": "AVOID",
+   "label": "",
+   "hook": "",
+   "chips": [],
+   "text": "Truffle is an Istrian product, not a Dubrovnik one — what you find here is imported or oil-flavoured",
+   "maps": "",
+   "links": []
+  }
+ },
+ "follow:Dubrovnik Tourist Board": {
+  "fold": "follow",
+  "group": "The city",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. tzdubrovnik.hr (verify)."
+ },
+ "follow:Dubrovnik Summer Festival": {
+  "fold": "follow",
+  "group": "The city",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. dubrovnik-festival.hr (verify); its 2027 dates if announced, else 'usually 10 July – 25 August'."
+ },
+ "follow:The Dubrovnik Times": {
+  "fold": "follow",
+  "group": "The city",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. thedubrovniktimes.com (verify) — the English-language local paper."
+ },
+ "follow:Jadrolinija": {
+  "fold": "follow",
+  "group": "Getting about",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. jadrolinija.hr, the state ferry line (Elaphiti, Mljet, Korčula) — the winter timetable matters."
+ },
+ "follow:Dubrovnik Port Authority": {
+  "fold": "follow",
+  "group": "Getting about",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. the port's ship schedule (portdubrovnik.hr — verify the domain and that it publishes the cruise calendar)."
+ }
+}
