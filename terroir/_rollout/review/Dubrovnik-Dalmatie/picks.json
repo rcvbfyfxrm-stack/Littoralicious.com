@@ -38,9 +38,8 @@
    "label": "Where the city eats when the Old Town is full",
    "group": "petite",
    "ids": [
-    "v10-konoba-atlantic-kitchen",
-    "v13-pizzeria-tabasco",
-    "v-taj-mahal"
+    "v-taj-mahal",
+    "v13-pizzeria-tabasco"
    ]
   },
   "glass": {
@@ -79,6 +78,7 @@
  },
  "keep_pins": [],
  "cut": {
+  "v10-konoba-atlantic-kitchen": "Cut on the 22 Oct re-check: its trading is disputed (one listing marks it closed, another updated June 2026 still gives daily hours), and its old dishes and award could not be found; the locals lane keeps the MICHELIN Bib Gourmand Bosnian grill and the pizza outside Ploče Gate.",
   "v15-glam-caf-beer-therapy": "Cut: a late craft-beer bar in an Old Town lane — fine, but nothing this coast does that a bar elsewhere does not; the glass lane keeps the Croatian-only wine bar and the two Pelješac cellars."
  },
  "new_venues": {
@@ -127,8 +127,25 @@
    "_source": "old burger-kebab card"
   }
  },
- "berths": [],
- "shortlist": {},
+ "berths": [
+  "v02-stara-lo-a-prijeko-palace",
+  "v03-proto-fish-restaurant",
+  "v12-buffet-kola"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v03-proto-fish-restaurant",
+   "v-taj-mahal"
+  ],
+  "Plan ahead — this week": [
+   "v02-stara-lo-a-prijeko-palace",
+   "v07-bota-are-mali-ston"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-restaurant-360",
+   "v04-nautika"
+  ]
+ },
  "fours": {},
  "dropped_cards": {
   "bougie:* (360, Nautika, Stara Loža)": "told once: the three 'where the money sits' cards repeated the three grand tables; each is its table card",
@@ -138,7 +155,9 @@
   "dish:* (7 plates)": "rewritten as The Dish inside La liste",
   "drink:Maraschino — Dominican friars, 16th c.": "cap: three other glasses; a Zadar liqueur, four hours up the coast, poured everywhere but not made here",
   "music:Doris Dragović": "cap: three voices to queue; Oliver, Gibonni and Klapa Cambi carry the playlist",
-  "work:Mlinar Lapad / work:Rixos Libertas lobby": "cap: three rooms; a bakery chain and a hotel lobby you must buy your way into",
+  "work:Mlinar Lapad / work:Rixos Libertas lobby": "cap: a bakery chain and a hotel lobby you must buy your way into",
+  "work:Mara's Bar": "dropped on the 22 Oct re-check: no trace of the café on Iza Roka in any 2026 listing",
+  "ethnic-restaurants:Asia Shop Dubrovnik": "dropped on the 22 Oct re-check: the shop could not be found in any listing",
   "street-food:Burek": "told once: the burek is on La liste and the hot board's bakery line, not a card of its own",
   "street-food:Ćevapi at Taj Mahal / burger-kebab:Barba": "now table venues (the locals and street lanes)",
   "burger-kebab:Mirakul Burger — Lapad": "cap: an American smash burger is not what anyone crosses the Adriatic for; Barba keeps the street lane's fast plate",

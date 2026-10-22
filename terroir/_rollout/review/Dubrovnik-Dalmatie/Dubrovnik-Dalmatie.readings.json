@@ -1,0 +1,95 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · in the order you go",
+  "lede": "Dubrovnik eats late by northern standards and early by southern ones: most kitchens take last orders between ten and eleven, and from November several shut for the winter. Each quarter is one evening, in the order you go — the glass or the walk, the table, the last look at the walls — on foot unless it says taxi or car. Hours were re-checked on 22 October 2026; where listings disagree, the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the glass, the table, the walls lit at night, in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "old-town-east", "name": "Old Town · Poljana Boškovića and the Stradun",
+    "line": "A Croatian glass in a side lane, a Renaissance playwright’s capon, and the Stradun empty at night.",
+    "steps": [
+     {"time": "18:00", "name": "D'vino Wine Bar", "ref": "venue:v14-d-vino-wine-bar", "text": "A flight of Croatian reds or a glass of Pošip in Palmotićeva. Its season runs roughly April to late October and the listed hours differ, so look in first; if it is shut, go straight on."},
+     {"time": "19:30", "name": "Kopun", "ref": "venue:v05-kopun", "text": "Up to the square below the Jesuit stairs for the capon and the šporki makaruli, with candied arancini to finish. No 2026 season dates were found: phone before you walk over."},
+     {"time": "21:30", "name": "Stradun and the five squares", "ref": "card:Stradun and the five squares", "text": "Down the stairs and along the Stradun from Luža to Pile, the limestone lit and the day crowds gone."}
+    ],
+    "after": "Cheaper: the ćevapi at [[venue:v-taj-mahal|Taj Mahal]] on Nikole Gučetića, a MICHELIN Bib Gourmand. The quarter itself: [[card:The Old Town|The Old Town]]."},
+   {"id": "prijeko", "name": "Old Town · Prijeko and Ploče Gate",
+    "line": "The one honest table on the tourist row, then out through the east gate to see the walls lit.",
+    "steps": [
+     {"time": "19:00", "name": "Stara Loža", "ref": "venue:v02-stara-lo-a-prijeko-palace", "text": "Dinner at the Prijeko Palace — the chef’s market menu, the sea bass in salt crust, Ston oysters when there are any. Open most of the year (the hotel shut from 2 January to 28 February in 2026); book the roof."},
+     {"time": "21:30", "name": "Ploče", "ref": "card:Ploče", "text": "Five minutes east through Ploče Gate, past the old quarantine halls, for the walls and the Old Port lit up behind you."}
+    ],
+    "after": "Skip the rest of [[card:Prijeko Street|Prijeko]]: the menus in eight languages are the guide’s first warning."},
+   {"id": "pile", "name": "Pile · the west gate",
+    "line": "The last light from Brsalje, then the fish house of 1886 — open all year.",
+    "steps": [
+     {"time": "18:00", "name": "Pile", "ref": "card:Pile", "text": "Out through Pile Gate to the Brsalje terrace for the sun going down behind Lovrijenac."},
+     {"time": "19:30", "name": "Proto", "ref": "venue:v03-proto-fish-restaurant", "text": "Back inside to Široka for the sea bass on the bone, the prawns na buzaru or the black risotto. Open all year on a winter schedule (its own site gives 11:00–22:00 daily; another listing differs), so book."}
+    ],
+    "after": "In season the grand alternative is [[venue:v04-nautika|Nautika]], on Brsalje itself; it is at or past the end of its season now."},
+   {"id": "ploce-tabasco", "name": "Ploče · Banje and Hvarska",
+    "line": "A swim or a walk on the city beach at dusk, then pizza with the walls in view.",
+    "steps": [
+     {"time": "17:30", "name": "Banje", "ref": "card:Banje", "text": "The pebble beach two minutes beyond Ploče Gate; in late October the sea is cool but swimmable on a still day, and the beach club has packed up."},
+     {"time": "19:30", "name": "Pizzeria Tabasco", "ref": "venue:v13-pizzeria-tabasco", "text": "Up Hvarska for a wood-fired pizza or panzerotti. Listed open year-round with shorter winter hours, but nothing 2026-dated confirmed it: look before you count on it."}
+    ]},
+   {"id": "bosanka", "name": "Bosanka · above the city, by taxi",
+    "line": "The whole walled town from the hill, then lamb from under the bell — ordered hours ahead.",
+    "steps": [
+     {"time": "18:00", "name": "Mount Srđ and Fort Imperial", "ref": "card:Mount Srđ and Fort Imperial", "text": "Up to the summit for the last light over the walls and the Elaphiti; in winter the museum shuts about 16:00, so this is for the view."},
+     {"time": "19:30", "name": "Konoba Dubrava", "ref": "venue:v06-konoba-dubrava", "text": "Ten minutes by taxi to Bosanka for lamb, veal or octopus under the peka, phoned in three or four hours ahead. Nothing 2026-dated was found and its phone numbers differ by listing: confirm it is open when you order."}
+    ]},
+   {"id": "mali-ston", "name": "Mali Ston · the oyster bay, by car",
+    "line": "The waterfront where the oysters are lifted, and dinner at the bay — an hour north.",
+    "steps": [
+     {"time": "17:30", "name": "The oyster quay at Mali Ston", "ref": "card:The oyster quay at Mali Ston", "text": "Walk the Mali Ston waterfront below the walls as the bay goes dark; no source shows quay sales this late in the year, so arrange any oysters to take away a day ahead."},
+     {"time": "18:30", "name": "Bota Šare", "ref": "venue:v07-bota-are-mali-ston", "text": "The flat oysters raw, then mussels na buzaru or the prawn pasta, with a glass of Pošip. Listed open all year; the listed hours differ, so call."}
+    ],
+    "after": "Next door on the same water: [[venue:v08-vila-koruna|Vila Koruna]], not re-confirmed for 2026 — call first."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: a roof on Prijeko, the walls at opening, lamb under the bell, Gruž at dawn, the oysters of Mali Ston and a cellar door on Pelješac.",
+  "door_note": "Les remparts · la peka · les huîtres · la cave",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Dubrovnik sells itself as the walls and a film set. The real weekend is <strong>the walls at opening, before anyone else, and the coast behind them</strong>: lamb from under the bell on the hill, the market where the boats land, the flat oyster at the bay where it grows, and the red wine on the slope that makes it. Friday on the roof of the Prijeko Palace; Saturday the walls, the Republic’s palace, the fish house of 1886 and the peka at Bosanka; Sunday Gruž, Ston and Pelješac by car. It is built for late October and November, when the ships thin out and some kitchens close. Every stop below is already in this guide and was re-checked on 22 October 2026; where a place could not be re-confirmed, the stop says so. You need a car or a driver on Sunday.",
+  "book": [
+   "[[venue:v02-stara-lo-a-prijeko-palace|Stara Loža]] — the 16-seat roof was booked three weeks or more ahead in the May 2026 record; book by phone or through the hotel.",
+   "[[venue:v06-konoba-dubrava|Konoba Dubrava]] — the peka is ordered three to four hours ahead by phone; confirm it is open when you call.",
+   "[[venue:v17-grgi-vina-cellar-door|Grgić Vina]] — call ahead; listed open April to November.",
+   "[[venue:v07-bota-are-mali-ston|Bota Šare]] — call for Sunday hours; the listings differ."
+  ],
+  "days": [
+   {"label": "Friday", "title": "A roof on Prijeko",
+    "stops": [
+     {"time": "18:30", "name": "The Old Town at dusk", "ref": "card:The Old Town", "text": "Walk in through Pile Gate as the light goes and the day visitors leave; take a side lane rather than the Stradun.", "meta": "Old Town · free"},
+     {"time": "20:00", "name": "Dinner at Stara Loža", "ref": "venue:v02-stara-lo-a-prijeko-palace", "text": "The chef’s market menu on the roof of the Prijeko Palace, the sea bass in salt crust, oysters from Ston when the bay is giving them.", "meta": "Prijeko 22 · open most of the year · book the roof (checked 22 Oct 2026)"}
+    ]},
+   {"label": "Saturday", "title": "The walls, the palace and the bell",
+    "stops": [
+     {"time": "09:00", "name": "The city walls at opening", "ref": "card:The city walls", "text": "The full ring before the crowd, Minčeta and the sea wall to yourself. From November to March the walls keep shorter hours, about 09:00 to 15:00.", "meta": "Entry at Pile · one ticket with Lovrijenac; the price differs by listing (€20–40, Oct 2026): check at the booth"},
+     {"time": "11:00", "name": "A pršut sandwich at Buffet Škola", "ref": "venue:v12-buffet-kola", "text": "Down off the walls to Antuninska for Dalmatian ham and cheese in the house bread, eaten standing.", "meta": "Antuninska 1 · year-round; winter hours not confirmed"},
+     {"time": "12:00", "name": "The Rector's Palace", "ref": "card:The Rector's Palace", "text": "The palace where a ruler served one month, and its museum; closed Mondays in winter.", "meta": "Pred Dvorom · about 09:00–16:00 November to March (Oct 2026, reseller listing)"},
+     {"time": "13:30", "name": "Lunch at Proto", "ref": "venue:v03-proto-fish-restaurant", "text": "The fish house of 1886 on Široka: the day’s fish on the bone or the black risotto.", "meta": "Široka 1 · open all year on a winter schedule · book"},
+     {"time": "19:30", "name": "Lamb under the bell at Konoba Dubrava", "ref": "venue:v06-konoba-dubrava", "text": "Taxi up to Bosanka for the peka you ordered at lunch, the walled town lit below.", "meta": "Bosanka · order three to four hours ahead · not re-confirmed for 2026: call"}
+    ]},
+   {"label": "Sunday", "title": "Gruž, Ston and Pelješac",
+    "stops": [
+     {"time": "07:30", "name": "Gruž Market", "ref": "venue:v16-gru-market-tr-nica-gru", "text": "The fish hall and the greens where the boats land; Sunday hours are shorter, so go early.", "meta": "Obala Stjepana Radića, Gruž · year-round, mornings · cash"},
+     {"time": "10:00", "name": "The walls of Ston", "ref": "card:The walls of Ston", "text": "An hour north by car; climb the long walls above the salt pans while the winter hours allow.", "meta": "Ston · about 09:00–15:00 November to March (check)"},
+     {"time": "12:30", "name": "Oysters at Bota Šare", "ref": "venue:v07-bota-are-mali-ston", "text": "Five minutes round the bay to Mali Ston for the flat oysters raw, then mussels, with Pošip.", "meta": "Mali Ston · listed open all year · call for Sunday hours"},
+     {"time": "15:00", "name": "Grgić Vina", "ref": "venue:v17-grgi-vina-cellar-door", "text": "Over the peninsula to Trstenik for the Plavac Mali and the Pošip of a Napa winemaker’s homecoming, then the drive back.", "meta": "Trstenik 78, Pelješac · listed April–November 09:00–17:00 · call ahead"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the walls at opening the next morning, and spend the evening at [[venue:v03-proto-fish-restaurant|Proto]], open all year — or see [[card:Pile|Pile]] at sunset first."},
+   {"title": "The grand night instead", "text": "In season, the tasting menu of [[venue:v01-restaurant-360|Restaurant 360]], one MICHELIN star, in the arches over the Old Port, or [[venue:v04-nautika|Nautika]] between the two fortresses. Both are seasonal and at or past the end of their 2026 season: book as soon as spring opens."},
+   {"title": "This October and November", "dated": "Checked 22 October 2026", "items": ["The cruise season is thinning out; Dubrovnik caps cruise calls at two ships a day, but those days still crowd the middle hours — [[card:The cruise-day crush|check the port’s calendar]].", "The walls move to winter hours, about 09:00–15:00, from November.", "[[venue:v-taj-mahal|Taj Mahal]] and [[venue:v03-proto-fish-restaurant|Proto]] keep serving through the winter by their listings; several seasonal houses close."]},
+   {"title": "Where to sleep", "text": "This guide judges tables, not rooms. The one hotel it touches is the Prijeko Palace, above [[venue:v02-stara-lo-a-prijeko-palace|Stara Loža]]; we have not judged its rooms."},
+   {"title": "What we would leave out", "text": "[[card:Prijeko Street|Prijeko]] at dinner, [[card:Oysters inside the walls|oysters inside the walls]], and the Old Town between ten and two on a two-ship day."}
+  ]
+ }
+}

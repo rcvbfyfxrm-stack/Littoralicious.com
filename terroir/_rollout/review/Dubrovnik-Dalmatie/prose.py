@@ -107,7 +107,7 @@ FOLDS = {
                "lede": "Dubrovnik is a walled town of a few streets, two gates and a harbour two kilometres west. Time the Old Town against the cruise ships, not the clock; eat at least once where the city lives."},
  "curiosities": {"title": "The record, corrected — what most guides never tell", "desc": "A ruler for one month, a wind that excused a crime, a street rebuilt to one rule, and two citizens who outgrew the walls",
                  "lede": "Five things the city’s own story tells slightly wrong or not at all, checked again in October 2026. Where the sources still argue, the card says so."},
- "provisioning": {"title": "The larder — the market, the cellars and what to carry home", "desc": "Where a galley provisions: Gruž and Gundulić at dawn, the oyster quay, two cellars of Pelješac, oil and a friars’ pharmacy, and the pantry for a foreign guest",
+ "provisioning": {"title": "The larder — the market, the cellars and what to carry home", "desc": "Where a galley provisions: Gruž and Gundulić in the morning, the oyster quay, two cellars of Pelješac, oil, a friars’ pharmacy and the supermarket the Old Town uses",
                   "lede": "Shop early: Gruž is at its best before nine and Gundulić folds by early afternoon. Buy wine at the cellar door, oysters at the bay, and bring cash."},
  "walks": {"title": "Walks — the walls, the street, the mountain, and Ston", "desc": "The ring of the walls, the Stradun and its squares, the cable car to Srđ; then the walls of Ston and the mills of the Ljuta",
            "lede": "Walk at the edges of the day: the walls at opening, the Stradun before nine, Srđ for the last light. In summer the stone holds the heat; in winter the hours shorten."},
@@ -117,8 +117,8 @@ FOLDS = {
              "lede": "Few rooms, all inside or beside the walls. Buy the museum pass for the palace; the Memorial Room is free; Lazareti is a summer stage."},
  "craft": {"title": "The hand — craftsmanship", "desc": "The one craft of Konavle and the city where a named hand teaches, the others and what each is missing, and the honest word on what Stradun sells",
            "lede": "The coast’s crafts are older than its tourism — silk embroidery, gold filigree, stone — but most of the hands sell rather than teach. The card at the top is the one that does both."},
- "coffee-gardens": {"title": "Rooms to linger & work", "desc": "Three rooms where a laptop is welcome: a roaster’s bar in Gruž, a café inside the walls, and the marina lounge",
-                    "lede": "The honest truth first: the Old Town’s cafés are for the terrace, not the laptop. Work in Gruž or at the marina; linger inside the walls."},
+ "coffee-gardens": {"title": "Rooms to linger & work", "desc": "Two rooms where a laptop is welcome: a specialty coffee bar by the walls, and the marina lounge up the river",
+                    "lede": "The honest truth first: most Old Town cafés are for the terrace, not the laptop. For an hour of work, the coffee bar or the marina; to linger, the terrace."},
  "bars": {"title": "Boire & sortir — at the glass", "desc": "Three wines to ask for by name, the other glasses, and a drink on the rocks under the walls",
           "lede": "This is red-wine country with two great whites an island away. Learn three names; then drink them at the wall, or in a bar that pours nothing but Croatian."},
  "listening": {"title": "Hi-fi & listening — the honest answer and the live thing", "desc": "No hi-fi bar inside the walls, said plainly; then the Linđo and the klapa live, and three voices to queue before service",
@@ -136,8 +136,7 @@ GDESC = {
  ("curiosities", "Two citizens"): "The playwright and the physicist the town still claims first.",
  ("provisioning", "The morning"): "The fish and greens of Gruž, the Old Town’s small market, and the oyster quay an hour north.",
  ("provisioning", "The cellars of Pelješac"): "A Napa winemaker’s homecoming, and an estate with a famous consultant.",
- ("provisioning", "To carry home"): "Croatian oils by the bottle, and creams from a pharmacy older than most countries.",
- ("provisioning", "The galley pantry"): "The Asian shelf for a guest’s request, and the supermarket the Old Town actually uses.",
+ ("provisioning", "To carry home, and the pantry"): "Croatian oils by the bottle, creams from a pharmacy older than most countries, and the supermarket the Old Town actually uses.",
  ("walks", "The city on foot"): "The ring of the walls, the street and its squares, and the mountain the city was shelled from.",
  ("walks", "Out of town"): "The long walls of Ston above the salt pans, and a cold river with its mills.",
  ("calas", "In sight of the walls"): "The city beach, the rocks under the sea wall, and a cove down a long stair.",
@@ -146,7 +145,7 @@ GDESC = {
  ("craft", "Do this one"): "The one bench where you can enrol and learn from a named hand.",
  ("craft", "The others, and what each is missing"): "Real crafts, real workshops: each lacks one thing.",
  ("craft", "The honest warning"): "What is sold as Dubrovnik-made, and is not.",
- ("coffee-gardens", "Three rooms with a plug"): "A specialty bar in Gruž, a small room inside the walls, and the marina’s own lounge.",
+ ("coffee-gardens", "Two rooms with a plug"): "A specialty coffee bar by the walls, and the marina’s own lounge at Komolac.",
  ("bars", "Ask for it by name"): "The native red, its great slope, and the white of Korčula.",
  ("bars", "The other glasses"): "The one-village white, the sun-dried sweet wine, and the herb rakija that opens a meal.",
  ("bars", "A glass on the rocks"): "The bars cut into the sea wall, and the Croatian-only wine bar.",
@@ -199,7 +198,9 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {}   # filled from picks_lists.json notes (the 22 Oct re-check)
+SHORT_SUB = {"Last minute — save the night": "The booking fell through and it is late October: the fish house of 1886 on Široka (open all year on a winter schedule; book), or the MICHELIN Bib Gourmand Bosnian grill on Nikole Gučetića (no seasonal break listed; call).",
+             "Plan ahead — this week": "Open most of the year: the roof of the Prijeko Palace (the hotel shut from 2 January to 28 February in 2026), and the oysters at Bota Šare in Mali Ston, an hour north, listed open all year — call for the hours.",
+             "Plan ahead — the grand night": "The two grand houses are seasonal: Restaurant 360 (one MICHELIN star, 2026) closes from November to spring, and Nautika runs roughly March to October. Both are at or past the end of their 2026 season: book as soon as spring opens."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
             'the fact that makes it matter and the exact best place for it — is one section at the foot of this guide, with the stories behind it. '
@@ -260,7 +261,7 @@ def sources_edit(s):
 GEMS = [
  {"id": "gem-stonska-torta", "pattern": "stonska torta", "tag": "Ston gem · born here", "name": "A pasta cake for wall-builders",
   "story": "Ston’s own cake is the strangest sweet on the coast: cooked macaroni folded with ground walnuts, dark chocolate, lemon zest, cinnamon "
-           "and sugar, baked in shortcrust. Tradition ties it to the building of the Ston walls, begun in 1333, as dense food for the labourers; "
+           "and sugar, baked in shortcrust. Tradition ties it to the building of the Ston walls in the fourteenth century, as dense food for the labourers; "
            "nobody has a document for that, and the cake has long since become a wedding and feast-day dish.",
   "where": "Ston and Mali Ston, an hour north; ask at the oyster houses."},
  {"id": "gem-arancini", "pattern": "arancini", "tag": "City gem · born here", "name": "Not a rice ball",

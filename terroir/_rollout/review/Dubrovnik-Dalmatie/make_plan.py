@@ -15,7 +15,7 @@ LANES = {
  "houses":  {"label": "The old houses inside the walls", "group": "petite", "ids": ["v03-proto-fish-restaurant", "v05-kopun", "v11-lady-pi-pi"]},
  "konoba":  {"label": "Under the bell — the country konobas", "group": "petite", "ids": ["v06-konoba-dubrava", "v09-konoba-konavoski-dvori"]},
  "oysters": {"label": "Mali Ston — the oysters at the source", "group": "petite", "ids": ["v07-bota-are-mali-ston", "v08-vila-koruna"]},
- "locals":  {"label": "Where the city eats when the Old Town is full", "group": "petite", "ids": ["v10-konoba-atlantic-kitchen", "v13-pizzeria-tabasco", "v-taj-mahal"]},
+ "locals":  {"label": "Where the city eats when the Old Town is full", "group": "petite", "ids": ["v-taj-mahal", "v13-pizzeria-tabasco"]},
  "glass":   {"label": "The glass — a wine bar and two Pelješac cellars", "group": "petite", "ids": ["v14-d-vino-wine-bar", "v17-grgi-vina-cellar-door", "v18-milo-stagnum"]},
  "street":  {"label": "La Rue — the market, the sandwich, the octopus burger", "group": "street", "ids": ["v16-gru-market-tr-nica-gru", "v12-buffet-kola", "v-barba"]},
 }
@@ -36,6 +36,7 @@ NEW_VENUES = {
    "signature": "The octopus burger.", "caveat": "", "person": "", "_source": "old burger-kebab card"},
 }
 CUT = {
+ "v10-konoba-atlantic-kitchen": "Cut on the 22 Oct re-check: its trading is disputed (one listing marks it closed, another updated June 2026 still gives daily hours), and its old dishes and award could not be found; the locals lane keeps the MICHELIN Bib Gourmand Bosnian grill and the pizza outside Ploče Gate.",
  "v15-glam-caf-beer-therapy": "Cut: a late craft-beer bar in an Old Town lane — fine, but nothing this coast does that a bar elsewhere does not; the glass lane keeps the Croatian-only wine bar and the two Pelješac cellars.",
 }
 BERTHS = []       # set after the 22 Oct re-check (make_inputs prints the confirmed, year-round candidates)
@@ -55,8 +56,7 @@ PLAN = {
  "provisioning": {"sub": "markets", "groups": [
    g("The morning", N("provisioning:Gruž Market"), ("provisioning:Gundulić Square market", "gastronomy:Gundulićeva Poljana — Old Town morning market"), ("provisioning:The oyster quay at Mali Ston", "gastronomy:Mali Ston quay (oysters direct)")),
    g("The cellars of Pelješac", N("provisioning:Grgić Vina"), ("provisioning:Saints Hills", "gastronomy:Saints Hills — Oskorušno, Pelješac + Komarna")),
-   g("To carry home", ("provisioning:Uje", "gastronomy:Uje — Croatian olive oils"), ("provisioning:The Franciscan pharmacy", "gastronomy:Franciscan Monastery Pharmacy (1317)")),
-   g("The galley pantry", ("provisioning:Asia Shop", "ethnic-restaurants:Asia Shop Dubrovnik"), ("provisioning:Konzum by Pile Gate", "ethnic-restaurants:Konzum on Gundulićeva Poljana"))]},
+   g("To carry home, and the pantry", ("provisioning:Uje", "gastronomy:Uje — Croatian olive oils"), ("provisioning:The Franciscan pharmacy", "gastronomy:Franciscan Monastery Pharmacy (1317)"), ("provisioning:Konzum by Pile Gate", "ethnic-restaurants:Konzum on Gundulićeva Poljana"))]},
  "walks": {"sub": "walks", "groups": [
    g("The city on foot", ("walks:The city walls", "walks:City Walls loop"), ("walks:Stradun and the five squares", "walks:Stradun five-squares walk"), ("walks:Mount Srđ and Fort Imperial", "walks:Mount Srđ cable car + Fort Imperial")),
    g("Out of town", ("walks:The walls of Ston", "walks:Ston walls walk + salt pans"), ("walks:The Ljuta and its mills", "walks:Konavle Ljuta river + watermills walk"))]},
@@ -70,7 +70,7 @@ PLAN = {
    g("The others, and what each is missing", N("craft:Other one"), N("craft:Other two")),
    g("The honest warning", N("craft:What is sold as Croatian craft"))]},
  "coffee-gardens": {"sub": "linger", "groups": [
-   g("Three rooms with a plug", ("linger:Cogito Coffee", "work:Cogito Coffee Gruž"), ("linger:Mara's Bar", "work:Mara's Bar"), ("linger:The ACI Marina lounge", "work:ACI Marina lounge"))]},
+   g("Two rooms with a plug", ("linger:Cogito Coffee", "work:Cogito Coffee Gruž"), ("linger:The ACI Marina lounge", "work:ACI Marina lounge"))]},
  "bars": {"sub": "bars", "groups": [
    g("Ask for it by name", ("drink:Plavac Mali", "drink:Plavac Mali — grandchild of Zinfandel"), ("drink:Dingač", "drink:Dingač — Croatia's first protected wine"), ("drink:Pošip", "drink:Pošip — Korčula white")),
    g("The other glasses", ("drink:Grk", "drink:Grk — only Lumbarda"), ("drink:Prošek", "drink:Prošek — the Dalmatian dessert wine"), ("drink:Travarica and the home rakija", "drink:Travarica · Loza · Orahovac · Rozalin")),
@@ -105,7 +105,9 @@ json.dump({"lanes": LANES, "groups": {g_: [k for k, l in LANES.items() if l["gro
              "dish:* (7 plates)": "rewritten as The Dish inside La liste",
              "drink:Maraschino — Dominican friars, 16th c.": "cap: three other glasses; a Zadar liqueur, four hours up the coast, poured everywhere but not made here",
              "music:Doris Dragović": "cap: three voices to queue; Oliver, Gibonni and Klapa Cambi carry the playlist",
-             "work:Mlinar Lapad / work:Rixos Libertas lobby": "cap: three rooms; a bakery chain and a hotel lobby you must buy your way into",
+             "work:Mlinar Lapad / work:Rixos Libertas lobby": "cap: a bakery chain and a hotel lobby you must buy your way into",
+             "work:Mara's Bar": "dropped on the 22 Oct re-check: no trace of the café on Iza Roka in any 2026 listing",
+             "ethnic-restaurants:Asia Shop Dubrovnik": "dropped on the 22 Oct re-check: the shop could not be found in any listing",
              "street-food:Burek": "told once: the burek is on La liste and the hot board's bakery line, not a card of its own",
              "street-food:Ćevapi at Taj Mahal / burger-kebab:Barba": "now table venues (the locals and street lanes)",
              "burger-kebab:Mirakul Burger — Lapad": "cap: an American smash burger is not what anyone crosses the Adriatic for; Barba keeps the street lane's fast plate",
