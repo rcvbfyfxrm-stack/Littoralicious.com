@@ -589,7 +589,29 @@
   },
   {
    "slug": "Dubrovnik-Dalmatie",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Dubrovnik-Dalmatie-2026-10-22",
+   "date": "2026-10-22",
+   "readings": "done 2026-10-22",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (22 Oct, after apply_readings; 208 OK lines; floors = curated counts: venues 18, fcards 85, fsubs 35, neighborhoods 5, walks 5, categories 7, lane stories 7, gems 3, liste 14, pins 16, mapsLinks 59; groups 3; doors 4; hot minVenues 8; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here; /usr/bin/chromium symlinked to the sandbox's Playwright Chromium)",
+    "probe-guide.cjs: ALL PASS, exit 0 (28 checks: chapters, sub-tags, readout, pointer lands, back button, 85 facts/85 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 89 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 89 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 55/55 placed cards and 18/18 venues with Maps on the closed card, no sideways scroll; One Night 24 links, Getaway 18); lens screenshots in review/Dubrovnik-Dalmatie/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 (two found and rewritten: the Good Food Festival hot card dropped for its calendar card; the Winter Festival hot card cut to this year's date)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "banned-word scan incl. the readings rulings: 0 (inside the gate)",
+    "screenshots: review/Dubrovnik-Dalmatie/dubrovnik-card-desktop.png, dubrovnik-card-phone.png (The city walls, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Dubrovnik-Dalmatie",
+    "own-site / MICHELIN pages for the guest list and berths: 360dubrovnik.com (2026 closing, 2027 reopening), nautikarestaurants.com (season end), prijekopalace.com (winter 2026-27 closure), esculaprestaurants.com (Proto winter hours: daily 11-22 vs Mon-Sat 16-23), guide.michelin.com Croatia 2026 (Proto, Kopun, Konavoski Dvori, Bota Šare, Vila Koruna, Taj Mahal's Bib Gourmand)",
+    "the 6 unverified places — Konoba Dubrava (phone, winter), Konavoski Dvori, Vila Koruna, Pizzeria Tabasco, Gruž Market hours, Barba: confirm or cut; plus D'vino's season end, Grgić's Nov-Dec hours, Lady Pi-Pi's address",
+    "the rest of research/verify_1.json + verify_2.json _needs_network (21 lines) and research/hot_events.json (11 lines: the walls' official winter hours and price, Lokrum's last boat, Jadrolinija winter times, November ship calls, the Winter Festival dates)"
+   ],
+   "notes": "22 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Cavalaire pipeline). The old page was a GOLD1-era tier inventory (18 venues in three flat tiers, no lanes, no dishes, no terroir/data copy, empty follow and seasonal folds), so the GOLD4/5 floor came too (7 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 14 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, filled month table, craft, listening room, swims, Autour, the #bougie salt-of-Ston fold, 3 gems, terroir/data copy, 24-column CSV; hub untouched, it already had csv:true; hub builder not run). Places 18 -> 18 (none over 3, no 4s): cut Glam Café (Beer Therapy) and Konoba Atlantic Kitchen (trading disputed on the re-check); added from the old cards Taj Mahal (it holds a MICHELIN Bib Gourmand) and Barba, no coordinates invented. Fold cards: 74 old tcards -> 65 written + 11 hot + 9 calendar = 85 .fcard, every one labelled; dropped on the re-check Mara's Bar, the Asia Shop and Dežo Art (not found). Guest list: last minute Proto · Taj Mahal; this week Stara Loža · Bota Šare; grand night Restaurant 360 · Nautika (seasonal, at or past season end — said). Berths Stara Loža · Proto · Buffet Škola. Statuses: 12 confirmed 22 Oct, 6 unverified (none a berth; Bota Šare on the list is confirmed). Corrections: ACI Marina at Komolac not Gruž; Plavac/Zinfandel DNA dates 2001/2004 not 1998; Dingač tunnel 1975; Prošek no final EU ruling; Gundulić statue by Rendić; walls one ticket, price disputed; Franciscan pharmacy Placa 2, 'oldest' disputed; Konzum inside the walls; Ston walls length/dates disputed; Libertas inscription on Lovrijenac; jugo law = folklore; Lazareti date disputed; Linđo Tue/Fri, not UNESCO; no weekly church klapa; Oliver born in Split; Gibonni 37 Porins; Klapa Cambi from Kaštel Kambelovac; Cogito in the Old Town; cruise cap two ships a day; Good Food Festival 5-18 Oct 2026; Omiš late Jun-Jul; Kopun's Michelin Plate gone, D'vino's 'ten editions' unfound; Lady Pi-Pi seasonal, closed now; map zoom 13 -> 10. Readings: One Night 6 quarters (Old Town east · Prijeko and Ploče Gate · Pile · Ploče/Banje/Hvarska · Bosanka by taxi · Mali Ston by car), Getaway 11 stops Fri 2 / Sat 5 / Sun 4, built for late Oct-Nov. Details: terroir/_rollout/review/Dubrovnik-Dalmatie/README.md."
   },
   {
    "slug": "Split-Dalmatie",
