@@ -1,0 +1,128 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The grand tables — the Riva, the palace and the sea at Firule",
+   "group": "grande",
+   "ids": [
+    "v01-zoi",
+    "v02-sug",
+    "v03-dvor"
+   ]
+  },
+  "varos": {
+   "label": "Veli Varoš — the konobas of the fishermen's quarter",
+   "group": "petite",
+   "ids": [
+    "v04-konoba-fetivi",
+    "v08-konoba-matejuska",
+    "v11-sperun"
+   ]
+  },
+  "palace": {
+   "label": "Inside the palace walls",
+   "group": "petite",
+   "ids": [
+    "v05-bokeria-kitchen-wine",
+    "v06-apetit",
+    "v12-villa-spiza"
+   ]
+  },
+  "canteen": {
+   "label": "Where the city eats at noon",
+   "group": "petite",
+   "ids": [
+    "v10-fife",
+    "v09-konoba-marjan"
+   ]
+  },
+  "glass": {
+   "label": "The glass — two Croatian wine bars",
+   "group": "petite",
+   "ids": [
+    "v16-paradox-wine-cheese-bar",
+    "v17-zinfandel-food-wine-bar"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the two markets and the ćevapi",
+   "group": "street",
+   "ids": [
+    "v13-pazar-marche-vert",
+    "v14-ribarnica-marche-aux-poiss",
+    "v-kantun-paulina"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit"
+  ],
+  "petite": [
+   "varos",
+   "palace",
+   "canteen",
+   "glass"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v07-bajamonti": "Cut: a handsome café-restaurant under the Prokurative arcades, but a room for the square, not for this coast's cooking; the palace lane keeps three kitchens that cook Dalmatia, and the Prokurative is named on the Riva card.",
+  "v15-d16-coffee": "Moved, not lost: a coffee bar is not a table. It keeps a card under Rooms to linger (its own address and map), and leaves the venue list.",
+  "v18-uje-oil-bar": "Moved, not lost: an oil shop is not a table. It keeps a card in the larder (its own address and map), and leaves the venue list.",
+  "v19-parasol": "Moved, not lost: the listening bar is the hi-fi card under Boire & sortir (its own address and map), and leaves the venue list."
+ },
+ "new_venues": {
+  "v-kantun-paulina": {
+   "id": "v-kantun-paulina",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Kantun Paulina",
+   "short": "Kantun Paulina",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Ćevapi"
+   ],
+   "address": "Matošića, Centre, 21000 Split",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Kantun+Paulina+Split+Croatia",
+   "why": "",
+   "verdict": "The reference ćevabdžinica of central Split: skinless minced-meat ćevapi off the charcoal, by five or ten, in a warm somun with kajmak, ajvar and raw onion. Eaten standing or at a few outside tables.",
+   "signature": "Ten ćevapi in somun with kajmak and onion.",
+   "caveat": "",
+   "person": "",
+   "_source": "old street-food card"
+  }
+ },
+ "berths": [],
+ "shortlist": {},
+ "fours": {},
+ "dropped_cards": {
+  "bougie:Le Méridien Lav / Vestibul Palace": "hotels, not food or place: this guide does not judge rooms",
+  "bougie:Brač / Hvar villas": "rewritten as the islands card under Autour (the villas dropped)",
+  "dish:* (8 plates)": "rewritten as The Dish inside La liste",
+  "drink:D16 Coffee": "told once: the coffee bar is its linger card",
+  "music:Splitsko ljeto / events:Splitsko ljeto": "told once: one calendar card",
+  "music:Mediterranean Film Festival / events:Mediterranean Film Festival": "told once: one calendar card (if a 2026 edition is found)",
+  "events:* (6)": "rewritten as the calendar (and the hot board for this month); the Kotor procession dropped — another country's feast",
+  "culture:Marjan / work:Marjan bench / secret-gems:Marjan south path": "told once: merged into the Marjan walk",
+  "culture:Salona": "told once: merged into the Salona and Klis walk",
+  "culture:Trogir / gastronomy:Trogir market": "told once: the Trogir card under Autour",
+  "secret-gems:campanile": "told once: merged into the cathedral card",
+  "work:Bajamonti terrace": "the venue is cut; the Prokurative is named on the Riva card",
+  "street-food:Burek (Bobis)": "a chain bakery: on La liste and the hot board's bakery line, not a card",
+  "street-food:Ćevapi at Kantun Paulina": "now a table venue (the street lane)",
+  "street-food:Fritule": "on the hot board (their season opens late November)",
+  "street-food:Bilan sandwich (Fife)": "told once: Fife is a table venue",
+  "gastronomy:Pazar / Ribarnica": "now table venues; each keeps a pointer card in the larder",
+  "gastronomy:Grgić Vina": "cap and distance: three hours south, the Dubrovnik guide's cellar",
+  "gastronomy:Sel de Pag": "merged into the Paški sir and Pag salt card",
+  "avoid:Prošek vs Prosecco": "told once: the name dispute lives on the Prošek drink card",
+  "ethnic-restaurants / burger-kebab": "honest-empty sections in the old guide: no card (Kantun Paulina carries the grill)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

@@ -1,0 +1,120 @@
+{
+ "avoid:The cruise-day midday": {
+  "fold": "avoid",
+  "group": "The street",
+  "brief": "Warning card, tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep to the claims the old text makes ([avoid] in research/guide_text_old.txt), verified where dated; no invented numbers. Instead names only kept venues/cards. When several ships are in, the palace fills mid-morning to mid-afternoon; check the port's schedule (Lučka uprava Split — verify it publishes one); go before 09:00 or after 18:00."
+ },
+ "avoid:The laminated menu in the palace": {
+  "fold": "avoid",
+  "group": "The street",
+  "brief": "Warning card, tag 'the warning', NO Maps (maps_query empty). Labels: Touch it today (what you will see) · Instead (what to do). Keep to the claims the old text makes ([avoid] in research/guide_text_old.txt), verified where dated; no invented numbers. Instead names only kept venues/cards. From [avoid]: palace restaurants with laminated photo menus in five languages, the '€28 peka in fifteen minutes' (peka needs ordering ahead — a peka served at once was not cooked for you)."
+ },
+ "avoid:The pitcher of house wine": {
+  "fold": "avoid",
+  "group": "Read the glass and the plate",
+  "old": {
+   "fold": "avoid",
+   "id": "p-avoid-peristyle-macedonian",
+   "name": "⚠ Unmarked «house wine» on the peristyle",
+   "type": "AVOID",
+   "label": "",
+   "hook": "Peristyle terraces — poured-by-the-pitcher pours that are bulk Macedonian, not Croatian",
+   "chips": [],
+   "text": "Peristyle terraces — poured-by-the-pitcher pours that are bulk Macedonian, not Croatian Several palace bars pour an «our house wine» from anonymous pitchers — almost always bulk industrial Macedonian or low-grade Vranac, marked up to Plavac Mali prices. Ask for a labelled bottle (Plavac Mali, Pošip), or walk to Paradox or Zinfandel for the real card.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "The old claim 'bulk Macedonian' is unsourced: soften to what you can source (unlabelled jug wine); Instead: Paradox, Zinfandel (pointer cards)."
+ },
+ "avoid:Pašticada in August": {
+  "fold": "avoid",
+  "group": "Read the glass and the plate",
+  "old": {
+   "fold": "avoid",
+   "id": "p-avoid-pasticada-summer",
+   "name": "⚠ Pašticada served at peak summer in tourist tavernas",
+   "type": "AVOID",
+   "label": "",
+   "hook": "Riva and palace cards in July–August — a winter Sunday dish, microwaved to order",
+   "chips": [],
+   "text": "Riva and palace cards in July–August — a winter Sunday dish, microwaved to order Pašticada is a 24-hour vinegar marinade and a four-hour braise — a winter Sunday cathedral dish. In peak summer, almost no honest kitchen actually makes it from cold; what arrives at €25 in the palace cards is reheated stock from a sous-vide bag. Order it only at houses you can name: Apetit , Fife , an inland konoba — or wait until November.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Instead: Apetit or Fife (table cards) — verify either actually serves pašticada (from their venue records/your search)."
+ },
+ "follow:Split Tourist Board": {
+  "fold": "follow",
+  "group": "The city",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. visitsplit.com (verify)."
+ },
+ "follow:Croatian National Theatre Split": {
+  "fold": "follow",
+  "group": "The city",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. HNK Split (hnk-split.hr, verify) — the theatre that runs the Split Summer Festival (Splitsko ljeto) and the opera/ballet season from autumn."
+ },
+ "follow:Slobodna Dalmacija": {
+  "fold": "follow",
+  "group": "The city",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. slobodnadalmacija.hr, the Split daily (verify)."
+ },
+ "follow:Jadrolinija": {
+  "fold": "follow",
+  "group": "Getting about",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. jadrolinija.hr, the state ferry line (Brač, Hvar, Vis, Šolta) — the winter timetable matters."
+ },
+ "follow:Split Port Authority": {
+  "fold": "follow",
+  "group": "Getting about",
+  "brief": "NEW follow card. Labels What it is · Language · Read. site = the official domain only if confident (verify with one WebSearch). No Maps. Do not print follower counts. Lučka uprava Split (portsplit.hr? verify the domain and that it publishes ship arrivals)."
+ },
+ "listening:Parasol": {
+  "fold": "listening",
+  "group": "The listening room",
+  "old": {
+   "fold": "music",
+   "id": "p-music-parasol-listening",
+   "name": "🎷 Parasol — listening bar audiophile",
+   "type": "MUSIC",
+   "label": "",
+   "hook": "Palace (Adamova 5) · New Fidelity system · vinyl — the only one on the Dalmatian coast",
+   "chips": [],
+   "text": "Palace (Adamova 5) · New Fidelity system · vinyl — the only one on the Dalmatian coast See the entry . Listening bar in the Japanese jazz-kissa lineage (bars where you listen to music on a custom hi-fi system without talking too loud). Bespoke New Fidelity (Frankfurt) system in-room. Vinyl, ASC (Animal Society Club, Split label) resident DJs at weekends. Go early — before 9pm to hear the room before it fills.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "The old card claims Parasol (Adamova 5?) is a listening bar in the jazz-kissa lineage with a bespoke New Fidelity system, vinyl, ASC label DJs. VERIFY HARD (2-3 WebSearch: 'Parasol Split bar', 'listening bar Split'): does it exist in 2026, its real address, what system. If it is real, write it (tag 'listening bar', labels Where · Pour · Price · Best hour, maps_query the bar + ', Split, Croatia'). If you cannot confirm it, REWRITE the card as an honest 'no confirmed hi-fi bar' card (rename it 'No confirmed hi-fi bar', tag 'honestly', NO Maps, labels Touch it today · Instead) — and say what you found in _verified. Never invent."
+ },
+ "listening:Klapa": {
+  "fold": "listening",
+  "group": "Live, the real thing",
+  "old": {
+   "fold": "music",
+   "id": "p-music-klapa",
+   "name": "🎼 Klapa — chant polyphonique dalmate (UNESCO)",
+   "type": "MUSIC",
+   "label": "",
+   "hook": "Summer festivals · palace concerts — UNESCO Intangible Heritage 2012",
+   "chips": [],
+   "text": "Summer festivals · palace concerts — UNESCO Intangible Heritage 2012 Klapa is a Dalmatian a-cappella polyphonic song, six to ten male voices (sometimes female), maritime, love, religious themes. A village tradition transposed to concert since the 19th century. UNESCO Intangible Heritage since 2012. The central festival is the Festival Dalmatinskih Klapa Omiš , in Omiš (25 km from Split, June–July). In Split, several informal peristyle concerts in summer — free, tourist-friendly but authentic.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "UNESCO 2012 (verify); in Split, where to hear it live now: the Peristyle's informal klapa in the Vestibule (verify a dated 2026 source), the Omiš festival is the calendar's (name only). Festival/live labels When · Where · Cost · Tip."
+ },
+ "listening:Oliver Dragojević": {
+  "fold": "listening",
+  "group": "Queue it before service",
+  "brief": "Person card (a voice to queue before service). Labels Born · Trace today · Read (Read = one song or album to start with). Verify birth place/year and one dated fact. maps_query empty unless there is a real place in Split tied to them (a statue, a plaque) that you can verify. Oliver Dragojević (1947–2018): born in Split, raised in Vela Luka on Korčula (verify), the voice of Dalmatian pop."
+ },
+ "listening:Gibonni": {
+  "fold": "listening",
+  "group": "Queue it before service",
+  "brief": "Person card (a voice to queue before service). Labels Born · Trace today · Read (Read = one song or album to start with). Verify birth place/year and one dated fact. maps_query empty unless there is a real place in Split tied to them (a statue, a plaque) that you can verify. Zlatan Stipišić Gibonni, born in Split 1968 (verify). Do not repeat a Porin count unless verified."
+ },
+ "listening:Daleka obala": {
+  "fold": "listening",
+  "group": "Queue it before service",
+  "brief": "Person card (a voice to queue before service). Labels Born · Trace today · Read (Read = one song or album to start with). Verify birth place/year and one dated fact. maps_query empty unless there is a real place in Split tied to them (a statue, a plaque) that you can verify. The Split rock band Daleka obala (founded 1987?, verify), or if you judge it better, Hajduk's Torcida songs? NO — choose a Split music act verified as from Split (Daleka obala, or Doris Dragović — born Split 1961, verify). Rename the card to the act you choose."
+ }
+}
