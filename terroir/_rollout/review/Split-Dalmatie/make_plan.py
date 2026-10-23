@@ -11,16 +11,22 @@ import json, pathlib
 RV = pathlib.Path(__file__).resolve().parent
 
 LANES = {
- "summit":  {"label": "The grand tables — the Riva, the palace and the sea at Firule", "group": "grande", "ids": ["v01-zoi", "v02-sug", "v03-dvor"]},
+ "summit":  {"label": "The grand tables — the Riva, a counter by the harbour, and the sea at Firule", "group": "grande", "ids": ["v01-zoi", "v-krug", "v03-dvor"]},
  "varos":   {"label": "Veli Varoš — the konobas of the fishermen's quarter", "group": "petite", "ids": ["v04-konoba-fetivi", "v08-konoba-matejuska", "v11-sperun"]},
- "palace":  {"label": "Inside the palace walls", "group": "petite", "ids": ["v05-bokeria-kitchen-wine", "v06-apetit", "v12-villa-spiza"]},
- "canteen": {"label": "Where the city eats at noon", "group": "petite", "ids": ["v10-fife", "v09-konoba-marjan"]},
- "glass":   {"label": "The glass — two Croatian wine bars", "group": "petite", "ids": ["v16-paradox-wine-cheese-bar", "v17-zinfandel-food-wine-bar"]},
- "street":  {"label": "La Rue — the two markets and the ćevapi", "group": "street", "ids": ["v13-pazar-marche-vert", "v14-ribarnica-marche-aux-poiss", "v-kantun-paulina"]},
+ "palace":  {"label": "In and around the palace walls", "group": "petite", "ids": ["v06-apetit", "v12-villa-spiza", "v05-bokeria-kitchen-wine"]},
+ "bistro":  {"label": "The new Split bistros — the wine list first", "group": "petite", "ids": ["v17-zinfandel-food-wine-bar", "v02-sug"]},
+ "locals":  {"label": "Where the city eats — a family konoba and the ćevapi", "group": "petite", "ids": ["v09-konoba-marjan", "v-kantun-paulina"]},
+ "street":  {"label": "La Rue — the two markets and the fishermen's buffet", "group": "street", "ids": ["v13-pazar-marche-vert", "v14-ribarnica-marche-aux-poiss", "v10-fife"]},
 }
-# one place the old guide described in its own card (street-food: Kantun Paulina) but never gave a record:
-# built from that text only, no coordinates (none was ever geocoded), re-verified by the venue pack
+# one place the old guide described in its own card (street-food: Kantun Paulina) but never gave a record, built from that
+# text only and re-verified by the venue pack; and Krug, the MICHELIN star (2025) the old guide said Split did not have,
+# found by the 23 Oct re-check and built from those sources only. No coordinates for either (none was ever geocoded).
 NEW_VENUES = {
+ "v-krug": {"id": "v-krug", "cat": "shop", "tier": "plenty", "priority": 1, "name": "Krug",
+   "short": "Krug", "lat": None, "lng": None, "tags": [], "productTags": ["Tasting menu"],
+   "address": "Obala Ante Trumbića 17, 21000 Split",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Krug+restaurant+Obala+Ante+Trumbica+17+Split+Croatia",
+   "why": "", "verdict": "", "signature": "", "caveat": "", "person": "", "_source": "23 Oct re-check (MICHELIN 2025, Gault&Millau 2026)"},
  "v-kantun-paulina": {"id": "v-kantun-paulina", "cat": "shop", "tier": "plenty", "priority": 1, "name": "Kantun Paulina",
    "short": "Kantun Paulina", "lat": None, "lng": None, "tags": [], "productTags": ["Ćevapi"],
    "address": "Matošića, Centre, 21000 Split",
@@ -32,7 +38,8 @@ CUT = {
  "v07-bajamonti": "Cut: a handsome café-restaurant under the Prokurative arcades, but a room for the square, not for this coast's cooking; the palace lane keeps three kitchens that cook Dalmatia, and the Prokurative is named on the Riva card.",
  "v15-d16-coffee": "Moved, not lost: a coffee bar is not a table. It keeps a card under Rooms to linger (its own address and map), and leaves the venue list.",
  "v18-uje-oil-bar": "Moved, not lost: an oil shop is not a table. It keeps a card in the larder (its own address and map), and leaves the venue list.",
- "v19-parasol": "Moved, not lost: the listening bar is the hi-fi card under Boire & sortir (its own address and map), and leaves the venue list.",
+ "v16-paradox-wine-cheese-bar": "Cut on the 23 Oct re-check: listed permanently closed (no closing date found, no 2025-26 trace). Its lane is gone; Zinfandel moves to the bistro lane.",
+ "v19-parasol": "Cut as a venue: the 23 Oct re-check found it trading as a natural-wine bar, with no trace of the hi-fi system the old guide described; the listening card says so honestly.",
 }
 BERTHS = []       # set after the 23 Oct re-check (picks_lists.json)
 SHORTLIST = {}
@@ -67,7 +74,7 @@ PLAN = {
  "bars": {"sub": "bars", "groups": [
    g("Ask for it by name", ("drink:Plavac Mali", "drink:🍷 Plavac Mali — le grand rouge dalmate"), ("drink:Pošip", "drink:🍷 Pošip — le grand blanc de Korčula"), ("drink:Tribidrag", "drink:🍷 Tribidrag (Crljenak Kaštelanski / Zinfandel)")),
    g("The other glasses", ("drink:Vugava", "drink:🍷 Vugava — indigenous Vis grape variety"), ("drink:Prošek", "drink:🍇 Prošek — vin de paille dalmate"), ("drink:Rakija", "drink:🌲 Rakija — eau-de-vie de fruit ou d'herbes")),
-   g("Where to pour them", ("bars:Paradox", "drink:Paradox Wine & Cheese Bar"), N("bars:Zinfandel"))]},
+   g("Where to pour them", N("bars:Zinfandel"))]},
  "listening": {"sub": "listening", "groups": [
    g("The listening room", ("listening:Parasol", "music:🎷 Parasol — listening bar audiophile")),
    g("Live, the real thing", ("listening:Klapa", "music:🎼 Klapa — chant polyphonique dalmate (UNESCO)")),
@@ -83,7 +90,7 @@ PLAN = {
    g("Getting about", N("follow:Jadrolinija"), N("follow:Split Port Authority"))]},
 }
 POINTERS = {"provisioning:Pazar": "v13-pazar-marche-vert", "provisioning:Ribarnica": "v14-ribarnica-marche-aux-poiss",
-            "bars:Paradox": "v16-paradox-wine-cheese-bar", "bars:Zinfandel": "v17-zinfandel-food-wine-bar"}
+            "bars:Zinfandel": "v17-zinfandel-food-wine-bar"}
 for k, l in LANES.items(): assert len(l["ids"]) <= 3 or k in FOURS, k
 for f, p in PLAN.items():
     for gr in p["groups"]: assert len(gr["cards"]) <= 3, (f, gr["title"])

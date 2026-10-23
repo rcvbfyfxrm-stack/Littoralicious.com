@@ -86,8 +86,8 @@ VENUE_TEXT_EDITS = [
  ("romantic", "quiet"), ("Romantic", "Quiet"), ("curated", "chosen"), (" ★ ", " "), ("★", ""),
 ]
 
-BOUGIE_GO = ('Taste what the laboratory found where the city pours it: <a href="#venue-v17-zinfandel-food-wine-bar">Zinfandel</a> '
-             'and <a href="#venue-v16-paradox-wine-cheese-bar">Paradox</a>, in the centre, both keep Dalmatian reds by the glass — ask for a Tribidrag.')
+BOUGIE_GO = ('Taste what the laboratory found where the city pours it: <a href="#venue-v17-zinfandel-food-wine-bar">Zinfandel</a>, '
+             'on Marulićeva, is named for this story and keeps Croatian reds by the glass — ask for a Tribidrag from Kaštela.')
 def bougie(b):
     return "\n".join([
      '<details class="sfold" id="bougie">', "<summary>", "<div>",
@@ -156,7 +156,7 @@ GDESC = {
  ("follow", "Getting about"): "The ferries and the port.",
 }
 
-TABLES_DESC = ("A tasting menu behind an unmarked door on the Riva at one end and ten ćevapi in a warm somun at the other: at most three "
+TABLES_DESC = ("A nine-course menu at a twelve-seat counter at one end and ćevapi in a soft lepinja at the other: at most three "
                "tables of each kind, picked for what you should not miss in Split, every card saying when it was last confirmed and when "
                "its season runs.")
 
@@ -170,17 +170,17 @@ CHAPTER_SUB = {"place": "the essay, Zinfandel’s story, the city, the record co
                "practical": "what to skip, who to follow, the calendar, the months, the checklist, the sources"}
 
 GROUP_LBL = {"grande": "Les Grandes Tables", "petite": "Les Petites Tables", "street": "La Rue — The Street"}
-GROUP_DESC = {"grande": "The tables you clear an evening for: a terrace over the Riva, a tasting menu in the palace, and the sea terrace at Firule.",
-              "petite": "Where this guide actually lives: the konobas of Varoš, the kitchens inside the palace, the canteens where the city eats at noon, and the glass.",
-              "street": "On foot and standing: the green market, the fish hall, and the ćevapi off the charcoal."}
+GROUP_DESC = {"grande": "The tables you clear an evening for: a terrace over the Riva, the city's first MICHELIN-starred counter, and the sea terrace at Firule.",
+              "petite": "Where this guide actually lives: the konobas of Varoš, the kitchens in and around the palace, the wine bistros, and where the city eats.",
+              "street": "On foot and early: the green market, the fish hall, and the fishermen's buffet."}
 
 LANE_LEAD = {
- "summit": "A roof terrace behind an unmarked door on the Riva, a tasting menu in the palace, and the sea terrace at Firule.",
+ "summit": "A terrace behind an unmarked door on the Riva, a twelve-seat counter by the harbour, and the sea terrace at Firule.",
  "varos": "Three konobas in the stone lanes of the fishermen's quarter, a few minutes west of the palace.",
- "palace": "Three kitchens inside the emperor's walls: a wine-lined bistro, an upstairs dining room, and a counter that closes when the food runs out.",
- "canteen": "The fishermen's canteen at Matejuška and a family konoba at the foot of the hill.",
- "glass": "Two wine bars in the centre that pour only Croatian.",
- "street": "The green market at the Silver Gate, the fish hall, and the ćevapi off the charcoal.",
+ "palace": "An upstairs room in a Gothic palace, a counter that closes when the food runs out, and a wine-lined bistro by the fish hall.",
+ "locals": "A family konoba at the foot of the hill, and the ćevapi window by Marmontova.",
+ "bistro": "A MICHELIN-listed wine bistro named for the Kaštela vines, and a small stone room of braised pot dishes.",
+ "street": "The green market at the Silver Gate, the fish hall, and the fishermen's buffet at Matejuška.",
 }
 LANE_STORY = {}   # drafted by the venue packs (research/verify_*.json _lane_stories), reconciled in fixes.py
 
@@ -193,7 +193,9 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {}    # set after the 23 Oct re-check (picks_lists.json "short_sub")
+SHORT_SUB = {"Last minute — save the night": "The booking fell through and it is late October: Villa Spiza in the palace lanes (no bookings, cash only, works all year on shorter winter hours, closed Sundays), or Konoba Fetivi in Varoš (MICHELIN-selected 2026; call, the closing day differs by listing).",
+             "Plan ahead — this week": "Zinfandel on Marulićeva (MICHELIN Guide 2026; book the evening, it is small) and Bokeria by the fish hall (Gault&Millau 2026; reserve even off-season).",
+             "Plan ahead — the grand night": "ZOI on the Riva (Gault&Millau 17/20, 2026) and Krug, the twelve-seat counter that won Split its first MICHELIN star in 2025. Neither publishes its winter schedule: book, and confirm the date when you do."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
             'the fact that makes it matter and the exact best place for it — is one section at the foot of this guide, with the stories behind it. '

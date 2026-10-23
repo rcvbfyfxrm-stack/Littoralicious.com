@@ -1,11 +1,11 @@
 {
  "lanes": {
   "summit": {
-   "label": "The grand tables — the Riva, the palace and the sea at Firule",
+   "label": "The grand tables — the Riva, a counter by the harbour, and the sea at Firule",
    "group": "grande",
    "ids": [
     "v01-zoi",
-    "v02-sug",
+    "v-krug",
     "v03-dvor"
    ]
   },
@@ -19,37 +19,37 @@
    ]
   },
   "palace": {
-   "label": "Inside the palace walls",
+   "label": "In and around the palace walls",
    "group": "petite",
    "ids": [
-    "v05-bokeria-kitchen-wine",
     "v06-apetit",
-    "v12-villa-spiza"
+    "v12-villa-spiza",
+    "v05-bokeria-kitchen-wine"
    ]
   },
-  "canteen": {
-   "label": "Where the city eats at noon",
+  "bistro": {
+   "label": "The new Split bistros — the wine list first",
    "group": "petite",
    "ids": [
-    "v10-fife",
-    "v09-konoba-marjan"
+    "v17-zinfandel-food-wine-bar",
+    "v02-sug"
    ]
   },
-  "glass": {
-   "label": "The glass — two Croatian wine bars",
+  "locals": {
+   "label": "Where the city eats — a family konoba and the ćevapi",
    "group": "petite",
    "ids": [
-    "v16-paradox-wine-cheese-bar",
-    "v17-zinfandel-food-wine-bar"
+    "v09-konoba-marjan",
+    "v-kantun-paulina"
    ]
   },
   "street": {
-   "label": "La Rue — the two markets and the ćevapi",
+   "label": "La Rue — the two markets and the fishermen's buffet",
    "group": "street",
    "ids": [
     "v13-pazar-marche-vert",
     "v14-ribarnica-marche-aux-poiss",
-    "v-kantun-paulina"
+    "v10-fife"
    ]
   }
  },
@@ -60,8 +60,8 @@
   "petite": [
    "varos",
    "palace",
-   "canteen",
-   "glass"
+   "bistro",
+   "locals"
   ],
   "street": [
    "street"
@@ -72,9 +72,32 @@
   "v07-bajamonti": "Cut: a handsome café-restaurant under the Prokurative arcades, but a room for the square, not for this coast's cooking; the palace lane keeps three kitchens that cook Dalmatia, and the Prokurative is named on the Riva card.",
   "v15-d16-coffee": "Moved, not lost: a coffee bar is not a table. It keeps a card under Rooms to linger (its own address and map), and leaves the venue list.",
   "v18-uje-oil-bar": "Moved, not lost: an oil shop is not a table. It keeps a card in the larder (its own address and map), and leaves the venue list.",
-  "v19-parasol": "Moved, not lost: the listening bar is the hi-fi card under Boire & sortir (its own address and map), and leaves the venue list."
+  "v16-paradox-wine-cheese-bar": "Cut on the 23 Oct re-check: listed permanently closed (no closing date found, no 2025-26 trace). Its lane is gone; Zinfandel moves to the bistro lane.",
+  "v19-parasol": "Cut as a venue: the 23 Oct re-check found it trading as a natural-wine bar, with no trace of the hi-fi system the old guide described; the listening card says so honestly."
  },
  "new_venues": {
+  "v-krug": {
+   "id": "v-krug",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Krug",
+   "short": "Krug",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Tasting menu"
+   ],
+   "address": "Obala Ante Trumbića 17, 21000 Split",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Krug+restaurant+Obala+Ante+Trumbica+17+Split+Croatia",
+   "why": "",
+   "verdict": "",
+   "signature": "",
+   "caveat": "",
+   "person": "",
+   "_source": "23 Oct re-check (MICHELIN 2025, Gault&Millau 2026)"
+  },
   "v-kantun-paulina": {
    "id": "v-kantun-paulina",
    "cat": "shop",
@@ -98,8 +121,25 @@
    "_source": "old street-food card"
   }
  },
- "berths": [],
- "shortlist": {},
+ "berths": [
+  "v01-zoi",
+  "v12-villa-spiza",
+  "v10-fife"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v12-villa-spiza",
+   "v04-konoba-fetivi"
+  ],
+  "Plan ahead — this week": [
+   "v17-zinfandel-food-wine-bar",
+   "v05-bokeria-kitchen-wine"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-zoi",
+   "v-krug"
+  ]
+ },
  "fours": {},
  "dropped_cards": {
   "bougie:Le Méridien Lav / Vestibul Palace": "hotels, not food or place: this guide does not judge rooms",

@@ -18,7 +18,7 @@ HOT = J(R / "hot_events.json")
 fixes.hot(HOT)
 json.dump(HOT, open(RV / "hot_events.json", "w"), ensure_ascii=False, indent=1)
 VER, LS = {}, {}
-for n in (1, 2):
+for n in (1, 2, "3_editor"):
     p = J(R / f"verify_{n}.json")
     VER.update({k: v for k, v in p.items() if not k.startswith("_")})
     LS.update(p.get("_lane_stories", {}))
