@@ -1,0 +1,134 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · in the order you go",
+  "lede": "Split eats at the southern hour: kitchens fill from about eight and most take last orders between ten and eleven. Each quarter below is one evening on foot — the walk or the glass, the table, the last look — and every quarter is ten minutes or less from the Riva. Hours were re-checked on 23 October 2026; where listings disagree, the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the palace, Varoš, the harbour, the centre, the sea at Firule — in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "palace", "name": "The palace · the Peristyle and its lanes",
+    "line": "The emperor's courtyard as the day visitors leave, a counter that cooks the morning's market, and the sphinx at night.",
+    "steps": [
+     {"time": "18:30", "name": "The palace at dusk", "ref": "card:The palace",
+      "text": "In by the Golden Gate and down to the Peristyle as the groups go back to the ships; take a side lane, not the main cardo."},
+     {"time": "19:30", "name": "Villa Spiza", "ref": "venue:v12-villa-spiza",
+      "text": "The small counter on Kružićeva: the fish on the board, a black risotto, the chocolate cake. No bookings and cash only; on its winter hours it serves until 22:00 and shuts on Sundays, so come early."},
+     {"time": "21:30", "name": "The sphinx on the Peristyle", "ref": "card:The sphinx on the Peristyle",
+      "text": "Back to the Peristyle when the terraces have packed up: the black granite sphinx, the columns, and the stone holding the day's warmth."}
+    ],
+    "after": "Upstairs instead: [[venue:v06-apetit|Apetit]], in a Gothic palace on Šubićeva, for pašticada with homemade pasta; listed open to midnight, call in winter."},
+   {"id": "varos", "name": "Veli Varoš · the fishermen's quarter",
+    "line": "Stone lanes climbing to the hill, the catch shown on a plate before you choose it, and a bottle at the harbour.",
+    "steps": [
+     {"time": "18:30", "name": "Veli Varoš", "ref": "card:Veli Varoš",
+      "text": "Up the steps from the west end of the Riva into the stone houses and stairs below Marjan, on the way to dinner."},
+     {"time": "19:30", "name": "Konoba Fetivi", "ref": "venue:v04-konoba-fetivi",
+      "text": "The black cuttlefish risotto, then a fish chosen from the plate, or the gregada when there is one. Listed 12:00–23:00; the closing day differs by listing (Sunday or Monday), so book and confirm."},
+     {"time": "21:30", "name": "Matejuška with a bottle", "ref": "card:Matejuška with a bottle",
+      "text": "Down to the fishermen's harbour to sit on the stone with the boats; mind the city's fine for drinking in public."}
+    ],
+    "after": "Next door instead: [[venue:v08-konoba-matejuska|Konoba Matejuška]] for its wine-marinated tuna (not re-confirmed for 2026: call), [[venue:v11-sperun|Šperun]] for grilled sardines, or [[venue:v09-konoba-marjan|Konoba Marjan]], a few tables on Senjska — book, the dishes sell out by half past seven."},
+   {"id": "harbour", "name": "The Riva and the harbour front",
+    "line": "The palace's sea face lit up, then the city's first starred counter, a few minutes west.",
+    "steps": [
+     {"time": "18:30", "name": "The Riva", "ref": "card:The Riva",
+      "text": "The waterfront below the palace's south wall, from the Prokurative east, when the city comes out to walk."},
+     {"time": "19:30", "name": "Krug", "ref": "venue:v-krug",
+      "text": "The five- or nine-course menu at the twelve-seat counter facing the open kitchen. Book well ahead; its hours and winter schedule are not published, so confirm the date when you do."}
+    ],
+    "after": "Spend it on the terrace instead: [[venue:v01-zoi|ZOI]], behind the unmarked door on the Riva, dinner only, book. Cheaper: [[venue:v10-fife|Buffet Fife]] at Matejuška, walk-in, pašticada and fried squid."},
+   {"id": "centre", "name": "The centre · Marulićeva to Marmontova",
+    "line": "A Croatian glass in a narrow street, octopus by the fish hall, and ćevapi from the window to finish.",
+    "steps": [
+     {"time": "18:30", "name": "Zinfandel", "ref": "venue:v17-zinfandel-food-wine-bar",
+      "text": "A glass of Pošip or a Tribidrag from Kaštela at the MICHELIN-listed bistro on Marulićeva; its listed hours disagree (some say closed Sunday, some Monday), so look in first."},
+     {"time": "20:00", "name": "Bokeria Kitchen & Wine", "ref": "venue:v05-bokeria-kitchen-wine",
+      "text": "Round the corner on Domaldova, by the fish hall: the octopus, with a bottle chosen from the walls. Reserve, even off-season."},
+     {"time": "22:30", "name": "Kantun Paulina", "ref": "venue:v-kantun-paulina",
+      "text": "If anyone is still hungry: ćevapi in a soft lepinja with ajvar and onion, from the window on Matošića. Listed to 23:00 by one guide and not re-confirmed for 2026; cash only."}
+    ]},
+   {"id": "firule", "name": "Bačvice and Firule · the sea to the east",
+    "line": "The city's sand beach at sunset, then the garden terrace over the open channel.",
+    "steps": [
+     {"time": "17:30", "name": "Bačvice", "ref": "card:Bačvice",
+      "text": "Ten minutes east from the Riva, past the ferry port, for the last light on the sand; the sea is cooling from about 19°C now."},
+     {"time": "19:00", "name": "Dvor", "ref": "venue:v03-dvor",
+      "text": "The ceviche of fish, scampi and scallops, then a whole grilled fish or the brodet, on the terrace facing the islands. Dvor has historically closed for a winter break: call before you walk over."}
+    ],
+    "after": "The quarter itself, and when to come: [[card:Bačvice and Firule|Bačvice and Firule]]."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: a terrace on the Riva, the palace at dawn, both markets, a twelve-seat counter, Marjan, and Meštrović's house.",
+  "door_note": "Le palais · le marché · le comptoir · la colline",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Split sells itself as a ferry port and a film set. The real weekend is <strong>the palace before anyone else is up, and the town that still shops at its gates</strong>: the green market and the fish hall in the morning, a counter that cooks the market, the hill above it all, and the city's first starred table at night. Friday on the Riva; Saturday the palace at dawn, the markets, the emperor's cellars, Marjan and Krug; Sunday Meštrović and the fishermen's buffet. It is built for late October and November, when the ships thin out. Every stop below is already in this guide and was re-checked on 23 October 2026; where a place could not be re-confirmed, the stop says so. All of it is on foot.",
+  "book": [
+   "[[venue:v-krug|Krug]] — about twelve seats: book well ahead, and confirm the date (its winter schedule is not published).",
+   "[[venue:v01-zoi|ZOI]] — booking essential, directly with the restaurant; dinner only, and it publishes no winter schedule.",
+   "[[venue:v12-villa-spiza|Villa Spiza]] takes no bookings: arrive early, with cash."
+  ],
+  "days": [
+   {"label": "Friday", "title": "The Riva and a terrace above it",
+    "stops": [
+     {"time": "18:30", "name": "The Riva at dusk", "ref": "card:The Riva",
+      "text": "Walk the waterfront below the palace's south wall as the lights come on and the island ferries leave.",
+      "meta": "Riva · free"},
+     {"time": "20:00", "name": "Dinner at ZOI", "ref": "venue:v01-zoi",
+      "text": "Through the unmarked door in the palace wall and up to the top-floor terrace for the tasting menu: the raw tuna smoked to order, the Brač lamb.",
+      "meta": "Obala hrvatskog narodnog preporoda 23 · dinner from about 18:00 on Fridays (listings) · book (checked 23 Oct 2026)"}
+    ]},
+   {"label": "Saturday", "title": "The palace, the markets, the hill and the counter",
+    "stops": [
+     {"time": "07:00", "name": "Through the palace, gate to gate", "ref": "card:Through the palace, gate to gate",
+      "text": "In at the Golden Gate, down to the Peristyle, out through the Bronze Gate to the Riva, while the lanes still belong to the people who live in them.",
+      "meta": "Golden Gate · about 1 hour 45 with stops · free"},
+     {"time": "08:30", "name": "The Pazar", "ref": "venue:v13-pazar-marche-vert",
+      "text": "The green market against the east wall: dried figs, Pag cheese, the new oil if it is in. Not re-confirmed for 2026 against a dated source, but it trades daily.",
+      "meta": "Silver Gate · daily from about 06:00 to early afternoon (listings differ) · cash"},
+     {"time": "09:15", "name": "The Ribarnica", "ref": "venue:v14-ribarnica-marche-aux-poiss",
+      "text": "A few minutes west, the night's catch sold by weight; look, or buy for the galley.",
+      "meta": "Kraj Sv. Marije, off Marmontova · mornings, closes about 13:00 · cash"},
+     {"time": "10:15", "name": "The substructures", "ref": "card:The substructures",
+      "text": "Under the palace, the vaulted cellars that kept the plan of the rooms above them.",
+      "meta": "Enter from the Riva through the Bronze Gate · paid (Oct 2026 listings)"},
+     {"time": "11:15", "name": "The cathedral and its bell tower", "ref": "card:The cathedral and its bell tower",
+      "text": "The emperor's tomb turned into the city's cathedral, then the climb for the roofs of the palace and the islands.",
+      "meta": "On the Peristyle · hours shorten from November, check at the ticket desk"},
+     {"time": "13:00", "name": "Lunch at Villa Spiza", "ref": "venue:v12-villa-spiza",
+      "text": "Whatever fish is on the board, the black risotto, the chocolate cake. Walk in, early.",
+      "meta": "Kružićeva 3 · winter Tue–Sat 13:00–22:00 (guides, undated) · no bookings, cash only"},
+     {"time": "15:30", "name": "Marjan", "ref": "card:Marjan",
+      "text": "Up the steps from Varoš to Vidilica in fifteen minutes, then on round the hill through the pines for the last hour of light over the islands.",
+      "meta": "Start at the top of Veli Varoš · about 2 hours for the loop · free"},
+     {"time": "19:30", "name": "Dinner at Krug", "ref": "venue:v-krug",
+      "text": "The nine-course menu at the counter, the kitchen in front of you: the table that won Split its first MICHELIN star, in the 2025 guide.",
+      "meta": "Obala Ante Trumbića 17 · hours not published · book well ahead (checked 23 Oct 2026)"}
+    ]},
+   {"label": "Sunday", "title": "The sculptor and the fishermen's buffet",
+    "stops": [
+     {"time": "08:30", "name": "D16 Coffee", "ref": "card:D16 Coffee",
+      "text": "A filter coffee from Split's own roaster in a dim palace lane.",
+      "meta": "Dominisova 16 · listed 07:00–19:00 (May 2026); check in winter"},
+     {"time": "10:00", "name": "Galerija Meštrović", "ref": "card:Galerija Meštrović",
+      "text": "The sculptor's house and garden at the foot of Marjan, and the chapel of his wooden reliefs on the same ticket.",
+      "meta": "Šetalište Ivana Meštrovića 46 · Tue–Sun 09:00–17:00 · about 15 minutes on foot west of the centre"},
+     {"time": "12:30", "name": "Lunch at Buffet Fife", "ref": "venue:v10-fife",
+      "text": "Back along the water to Matejuška for pašticada with gnocchi, or fried squid if the pašticada has gone.",
+      "meta": "Trumbićeva obala 11 · listed daily, all year · walk in"},
+     {"time": "14:00", "name": "Bačvice", "ref": "card:Bačvice",
+      "text": "East past the ferry port to the city's sand beach for a last walk on the water, or a cold swim for the hardy.",
+      "meta": "About 10 minutes east of the Riva · free"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Go to Varoš: [[venue:v04-konoba-fetivi|Konoba Fetivi]] for the black risotto and the fish of the day, then the harbour at [[card:Matejuška with a bottle|Matejuška]]."},
+   {"title": "The grand night instead", "text": "[[venue:v03-dvor|Dvor]], at Firule, on the terrace over the open channel — but it has historically closed for a winter break, so call before you plan round it."},
+   {"title": "This October and November", "dated": "Checked 23 October 2026", "items": ["The olive harvest and the first new oil on Brač and Šolta: [[card:The olive harvest and the new oil, Brač and Šolta|the new oil]].", "The island ferries are on low-season times until the end of the year: [[card:The island boats on low-season times|check the last boat]].", "Hajduk are listed at home on 21 and 28 November, times to confirm: [[card:Hajduk at Poljud, 21 and 28 November|Hajduk at Poljud]].", "Advent and the fritule are expected from 28 November (unofficial dates): [[card:Advent in Split, end of November to 6 January|Advent in Split]]."]},
+   {"title": "Where to sleep", "text": "This guide judges tables, not rooms, and names no hotel. Stay within walking distance of the Riva and every stop above is on foot."},
+   {"title": "What we would leave out", "text": "The [[card:The laminated menu in the palace|photograph menus in the palace]], the [[card:The pitcher of house wine|unlabelled jug wine]], and the palace at midday on [[card:The cruise-day midday|a cruise day]]."}
+  ]
+ }
+}

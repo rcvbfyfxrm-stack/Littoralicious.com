@@ -16,6 +16,8 @@ CARD_SET = {       # key -> {field: value} overrides
 }
 CARD_DROP_FACTS = {}
 VENUE_SET = {      # id -> {field: value} overrides, each one a correction from the 23 Oct re-check
+ # the old record's 'Dinner' survived the pack; the pack's own hook says it opens from the morning
+ "v05-bokeria-kitchen-wine": {"hours": "Call ahead: hours not re-checked; reviews describe it open from the morning to late"},
 }
 LANE_STORY_SET = {  # lanes re-cut after the packs: Krug (the star) joins the grand tables, Šug moves to the bistros, Paradox is closed
  "summit": {"title": "Terraces, a counter and the open sea", "where": "ZOI, Riva; Krug, Obala Ante Trumbića; Dvor, Firule",
