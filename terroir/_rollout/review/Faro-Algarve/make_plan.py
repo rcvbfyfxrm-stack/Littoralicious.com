@@ -12,7 +12,7 @@ RV = pathlib.Path(__file__).resolve().parent
 
 LANES = {
  "summit":  {"label": "The starred tables — Faro's first star and the two-star kitchens of the coast", "group": "grande", "ids": ["v01-alameda", "v16-vila-joya", "v17-ocean-restaurant"]},
- "stories": {"label": "Tables with a story — an island lunch, a chef who gave back his star, a cellar under the walls", "group": "petite", "ids": ["v03-estamin-ilha-deserta", "v02-checkin-by-leonel-pereira", "v05-faz-gostos"]},
+ "stories": {"label": "Tables with a story — a lunch on an island with no road, and a chef's small room inside the walls", "group": "petite", "ids": ["v03-estamin-ilha-deserta", "v02-checkin-by-leonel-pereira"]},
  "tascas":  {"label": "The tascas — where Faro eats", "group": "petite", "ids": ["v04-tasca-do-ricky", "v09-a-venda", "v08-adega-nova"]},
  "street":  {"label": "La Rue — the two markets and the bifana", "group": "street", "ids": ["v12-mercado-municipal-de-faro", "v11-mercado-de-olh-o", "v-snack-bar-da-xica"]},
 }
@@ -27,6 +27,7 @@ NEW_VENUES = {
    "signature": "A bifana and a small beer at the counter.", "caveat": "", "person": "", "_source": "old street-food card"},
 }
 CUT = {
+ "v05-faz-gostos": "Cut on the 24 Oct re-check: no 2026 trace of it trading, and CHECKin has occupied its rooms on Rua do Castelo since July 2022 (Postal do Algarve); the old record's 'Michelin Plate' is a distinction MICHELIN no longer awards. Its lane keeps two.",
  "v18-bon-bon": "Cut for the cap: the third starred kitchen of the coast and the furthest west (Carvoeiro, about 50 minutes); the grand lane keeps Faro's own star and the two two-star kitchens. Named on the lane story.",
  "v06-vila-adentro": "Cut for the cap: a tiled room on the cathedral square, but the walled-town lane keeps three tables with a stronger story (CHECKin, Faz Gostos, and the island lunch); Vila Adentro's square is the Cidade Velha quarter card.",
  "v07-tert-lia-algarvia": "Moved, not lost: its cataplana class is weighed in the craft section (as a card, if the re-check confirms it); as a table it duplicated the tascas lane.",
@@ -50,7 +51,7 @@ PLAN = {
    g("Birds and stone", ("curiosities:The storks of the Arco", "culture:Arco da Vila — neoclassical over Moorish"))]},
  "provisioning": {"sub": "markets", "groups": [
    g("The morning", N("provisioning:Mercado Municipal de Faro"), N("provisioning:Mercado de Olhão")),
-   g("To carry home", ("provisioning:Flor de sal de Tavira", "gastronomy:Sal de Tavira — Rui Simeão & Marisol"), ("provisioning:Krater", "gastronomy:Krater — wine shop")),
+   g("To carry home", ("provisioning:Flor de sal de Tavira", "gastronomy:Sal de Tavira — Rui Simeão & Marisol")),
    g("The cellars and the still", ("provisioning:Morgado do Quintão", "gastronomy:Morgado do Quintão (Lagoa)"), ("provisioning:Cabrita Wines", "gastronomy:Cabrita Wines (Silves)"), ("provisioning:Casa do Medronho", "gastronomy:Casa do Medronho — Marmelete (Monchique)"))]},
  "walks": {"sub": "walks", "groups": [
    g("The town on foot", ("walks:Round the walls, gate to gate", "walks:The Cidade Velha walls")),
@@ -104,6 +105,7 @@ json.dump({"lanes": LANES, "groups": {g_: [k for k, l in LANES.items() if l["gro
              "culture:Centro Ciência Viva / Galeria Municipal Trem": "cut for the cap: the culture fold keeps five stops that are Faro's own",
              "work:Biblioteca Municipal / Marina de Faro": "cut for the cap; the marina is the quarter card",
              "gastronomy:Pastelaria Gardy": "told once: Gardy is its linger card",
+             "gastronomy:Krater": "cut on the 24 Oct re-check: the wine shop could not be found trading anywhere online; Bago sells bottles too",
              "gastronomy:Quinta dos Vales / Monte da Casteleja": "cut for the cap: the cellars keep Morgado do Quintão and Cabrita (Negra Mole) and the medronho still",
              "secret-gems:* (6)": "merged: the bench into the Jardim card, the bell tower into the Sé, the cloister into the museum, the Ludo dawn into the Ludo walk, Quatro Águas into Ilha de Tavira, the Trem cut",
              "street-food:Snack Bar da Xica": "now a table venue (the street lane)",

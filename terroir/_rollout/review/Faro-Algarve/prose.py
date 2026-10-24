@@ -194,7 +194,9 @@ DOORS = [
   "note": "L’histoire · le marché · le plat · la liste", "href": "#bougie", "open": ["bougie", "provisioning", "la-liste"]},
  {"fr": "For Guests", "en": "Plan ahead, or save the night at the last minute: bookable, priced, dressed for.", "note": "auto", "href": "#ce-soir", "open": ["ce-soir"]}]
 
-SHORT_SUB = {}   # set after the 24 Oct re-check (below, from picks_lists.json's reasons)
+SHORT_SUB = {"Last minute — save the night": "The booking fell through: Tasca do Ricky on Rua do Forno (nine small tables, no bookings in summer; out of season call the same day, dinner Monday to Saturday), or Adega Nova by the station, the big tiled room that takes walk-ins.",
+             "Plan ahead — this week": "CHECKin by Leonel Pereira inside the walls (MICHELIN-listed; dinner Monday to Saturday, book by phone) and Estaminé on Ilha Deserta (by reservation outside April to September; book the table and the boat together).",
+             "Plan ahead — the grand night": "Alameda, Faro's first MICHELIN star (March 2026; no winter closure found), and Ocean at Porches, two stars, which takes a winter break: confirm the date when you book. Vila Joya, the other two-star house, gives its annual close as November to February."}
 
 EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">What to eat &amp; drink.</span> The canon — {n} things, how to say each one, '
             'the fact that makes it matter and the exact best place for it — is one section at the foot of this guide, with the stories behind it. '

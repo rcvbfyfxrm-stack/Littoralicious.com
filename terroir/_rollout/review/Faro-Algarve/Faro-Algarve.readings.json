@@ -1,0 +1,129 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are berthed nearest · in the order you go",
+  "lede": "Faro eats early for the south: the tascas fill from about half past seven and most kitchens take last orders by ten, while the town is quiet by midnight. Each quarter below is one evening on foot — the glass or the walk, the table, the last look — and none is more than fifteen minutes from the marina. Hours were re-checked on 24 October 2026; where listings disagree, the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — inside the walls, the Baixa, the marina, the streets by the station — in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "cidade-velha", "name": "Cidade Velha · inside the walls",
+    "line": "The cathedral square as the lanes empty, a chef's small room on Rua do Castelo, and the ramparts over the lagoon.",
+    "steps": [
+     {"time": "18:30", "name": "The Largo da Sé", "ref": "card:Cidade Velha",
+      "text": "In under the Arco da Vila and up to the cathedral square with its orange trees, when the day visitors have gone; look up at the storks on the way in."},
+     {"time": "19:30", "name": "CHECKin by Leonel Pereira", "ref": "venue:v02-checkin-by-leonel-pereira",
+      "text": "The pot dishes and a bottle chosen with the sommelier. Dinner Monday to Saturday, 19:00 to 22:00, closed Sunday; book by phone."},
+     {"time": "21:45", "name": "The ramparts", "ref": "card:Round the walls, gate to gate",
+      "text": "Out by the Arco do Repouso and along the walls above the marshes, then down to the water."}
+    ],
+    "after": "No table tonight? Walk ten minutes to [[venue:v04-tasca-do-ricky|Tasca do Ricky]] in the Baixa, or hear whether there is fado on the street: [[card:Fado in Faro|the fado card]] says how to check."},
+   {"id": "baixa", "name": "The Baixa · Rua de Santo António and the streets behind it",
+    "line": "A Negra Mole by the glass, the cataplana everyone names, and the garden at the water to finish.",
+    "steps": [
+     {"time": "18:30", "name": "Bago Wine Bar", "ref": "card:Bago Wine Bar",
+      "text": "A glass of Negra Mole or Crato Branco from the Algarve, Tuesday to Saturday until 23:00; closed Monday."},
+     {"time": "19:45", "name": "Tasca do Ricky", "ref": "venue:v04-tasca-do-ricky",
+      "text": "Nine small tables on Rua do Forno: the cataplana, ordered as you sit down, or the razor-clam rice. Dinner Monday to Saturday by its listings; outside summer it takes bookings, so call."},
+     {"time": "22:00", "name": "Jardim Manuel Bívar", "ref": "card:Jardim Manuel Bívar",
+      "text": "Down to the palms and the bandstand at the end of the marina, with the lagoon dark beyond it."}
+    ],
+    "after": "Petiscos instead: [[venue:v09-a-venda|A Venda]] on Rua do Compromisso, small and much-loved — it may close for the winter, so call before you walk over."},
+   {"id": "marina", "name": "The marina · the doca and Praça Dom Francisco Gomes",
+    "line": "Sunset five floors up over the boats, then Faro's first starred table, two streets back.",
+    "steps": [
+     {"time": "18:00", "name": "The Cosmopolitan rooftop", "ref": "card:Cosmopolitan, Hotel Faro rooftop",
+      "text": "A drink on the roof of Hotel Faro as the light goes over the marshes; the listed closing time varies by source and the terrace depends on the weather in winter."},
+     {"time": "19:30", "name": "Alameda", "ref": "venue:v01-alameda",
+      "text": "The tasting menu of Faro's first MICHELIN star. Listed for dinner Monday and Thursday to Sunday, closed Tuesday and Wednesday, but the listings differ: book by phone and confirm the day."},
+     {"time": "22:30", "name": "The marina at night", "ref": "card:The marina and the Jardim",
+      "text": "Back along the doca to the boats, past the old café on the square."}
+    ],
+    "after": "Cheaper: [[venue:v08-adega-nova|Adega Nova]], ten minutes north, a big tiled room that takes walk-ins."},
+   {"id": "station", "name": "By the station · Rua Francisco Barreto and Rua do Prior",
+    "line": "A big room of grilled fish and stone-cooked steak, and Faro's one late club for the nights it opens.",
+    "steps": [
+     {"time": "20:00", "name": "Adega Nova", "ref": "venue:v08-adega-nova",
+      "text": "Grilled fish, choco frito or the picanha you cook yourself on a hot stone. Walk-in; its listed days disagree, so call if it matters."},
+     {"time": "23:30", "name": "Art Haus Club", "ref": "card:Art Haus Club",
+      "text": "Electronic music on Rua do Prior on event nights only; there is no fixed weekly programme, so look at the week's listings first."}
+    ],
+    "after": "A quieter end: walk ten minutes south to the [[card:Jardim Manuel Bívar|Jardim]] and the water."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: a tasca, the fish hall of Olhão, a boat to the island lunch, Faro's first star — all of it on foot or by train and boat.",
+  "door_note": "Le marché à l’aube · l’île · la table",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Faro sells itself as the airport you leave from: a marina of menus in five languages, a car to the resorts. The real thing is smaller and closer — the market's bifana at eight, Olhão's fish hall on a Saturday, a boat across the lagoon to grilled fish on an island with no road, and Faro's first starred kitchen for Sunday lunch. No car is needed: the train goes to Olhão and the boats leave from the old town. Every stop is in this guide, checked in October 2026; this plan is built for late October and November, when the island boats run on reduced winter times.",
+  "book": [
+   "[[venue:v01-alameda|Alameda]] — book by phone before you fly; Sunday lunch is listed 13:00 to 15:00, confirm it when you book",
+   "[[venue:v03-estamin-ilha-deserta|Estaminé]] — outside April to September it opens by reservation: book the table and the Animaris boat together",
+   "[[venue:v02-checkin-by-leonel-pereira|CHECKin by Leonel Pereira]] — Saturday dinner, by phone; it is small",
+   "[[venue:v04-tasca-do-ricky|Tasca do Ricky]] — outside summer, ring for Friday; nine tables of four at most"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The garden and the tasca",
+    "stops": [
+     {"time": "18:30", "name": "The Jardim at dusk", "ref": "card:Jardim Manuel Bívar",
+      "text": "Straight from the airport bus to the palms at the end of the marina, with the lagoon going grey and the storks on the gate behind you.",
+      "meta": "Between the marina and the Arco da Vila · public garden · free"},
+     {"time": "19:45", "name": "Dinner at Tasca do Ricky", "ref": "venue:v04-tasca-do-ricky",
+      "text": "The cataplana, ordered when you sit down, because it takes half an hour; clams with garlic and coriander while you wait.",
+      "meta": "Rua do Forno 21 · dinner Mon–Sat by its listings · call ahead outside summer (checked 24 Oct 2026)"}
+    ]},
+   {"label": "Saturday", "title": "The markets, the island, the walls",
+    "stops": [
+     {"time": "08:00", "name": "A bifana at Snack Bar da Xica", "ref": "venue:v-snack-bar-da-xica",
+      "text": "Pork off the griddle into a crusty roll at the counter inside the city market, with a bica.",
+      "meta": "Mercado Municipal de Faro · listed Tue–Sun 07:00–14:00 · cash · not re-confirmed for 2026: look in"},
+     {"time": "09:00", "name": "The fish hall of Olhão", "ref": "venue:v11-mercado-de-olh-o",
+      "text": "The train ten minutes east to the two waterfront halls; on Saturday the outdoor market runs along the front too. Look at the clams, the octopus and the lagoon salt.",
+      "meta": "Av. 5 de Outubro, Olhão · mornings from about 07:00 · Saturday is the day (checked 24 Oct 2026)"},
+     {"time": "11:30", "name": "The boat to Ilha Deserta", "ref": "card:Ilha Deserta",
+      "text": "Back to Faro and across the lagoon on the Animaris boat, about forty-five minutes through the channels and the marshes, then the boardwalk over the dunes.",
+      "meta": "Animaris, from the old-town waterfront · winter sailings reduced: check the times"},
+     {"time": "13:00", "name": "Lunch at Estaminé", "ref": "venue:v03-estamin-ilha-deserta",
+      "text": "Grilled fish or the razor-clam rice in the island's only building, solar-powered since the fire of 2021.",
+      "meta": "Ilha da Barreta · lunch · by reservation outside April–September (checked 24 Oct 2026)"},
+     {"time": "16:30", "name": "The chapel of bones", "ref": "card:Capela dos Ossos",
+      "text": "Back in town, behind the Igreja do Carmo: the walls of skulls and the line over the door telling you to stop and think.",
+      "meta": "Largo do Carmo · closes for lunch, hours seasonal · about EUR 1–3, cash"},
+     {"time": "18:30", "name": "A glass at Bago", "ref": "card:Bago Wine Bar",
+      "text": "A Negra Mole, the Algarve's own pale red, before dinner.",
+      "meta": "Rua José Maria Brandeiro 10 · Tue–Sat to 23:00 · about EUR 5–12 a glass (seen May 2026)"},
+     {"time": "20:00", "name": "Dinner at CHECKin", "ref": "venue:v02-checkin-by-leonel-pereira",
+      "text": "Inside the walls on Rua do Castelo: the pot dishes and a bottle from a small producer the sommelier picks.",
+      "meta": "Rua do Castelo 7 · dinner Mon–Sat 19:00–22:00 · book by phone"}
+    ]},
+   {"label": "Sunday", "title": "The cathedral, the star, the gate",
+    "stops": [
+     {"time": "10:00", "name": "Round the walls", "ref": "card:Round the walls, gate to gate",
+      "text": "In under the Arco da Vila and round the old town from gate to gate while it is still empty.",
+      "meta": "Start at the Arco da Vila · about 45 minutes"},
+     {"time": "11:00", "name": "The Sé and its tower", "ref": "card:The Sé and its tower",
+      "text": "The nave, the organ of 1715, then the tower stair for the barrier islands spread out below.",
+      "meta": "Largo da Sé · about EUR 5 · seasonal hours, check at the door"},
+     {"time": "13:00", "name": "Sunday lunch at Alameda", "ref": "venue:v01-alameda",
+      "text": "Faro's first MICHELIN star: a tasting menu built on the lagoon's fish and shellfish and the region's old stories.",
+      "meta": "Rua da Polícia de Segurança Pública 10 · Sunday lunch listed 13:00–15:00 · book by phone (checked 24 Oct 2026)"},
+     {"time": "15:30", "name": "The storks of the Arco", "ref": "card:The storks of the Arco",
+      "text": "A last look at the gate that is two gates, and the nests on top of it, before the airport bus.",
+      "meta": "Arco da Vila · free"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the Baixa: a glass at [[card:Bago Wine Bar|Bago]], the cataplana at [[venue:v04-tasca-do-ricky|Tasca do Ricky]], and the [[card:Jardim Manuel Bívar|Jardim]] at the end."},
+   {"title": "The grand night instead", "text": "[[venue:v17-ocean-restaurant|Ocean]], two MICHELIN stars at Porches, about fifty minutes west by car: it takes a winter break, so confirm the date before you plan round it. [[venue:v16-vila-joya|Vila Joya]], the other two-star house, gives its annual close as November to February."},
+   {"title": "This autumn", "dated": "Checked 24 October 2026", "items": [
+     "The clocks go back on Sunday 25 October: dusk comes an hour earlier.",
+     "[[card:Teatro das Figuras in November|Teatro das Figuras]]: the November programme is on its card.",
+     "[[card:São Martinho, Wed 11 November|São Martinho]], Wednesday 11 November: chestnuts and the new wine.",
+     "[[card:The Christmas lights, from 13 November|The Christmas lights]] are on from 13 November.",
+     "[[card:The island boats on winter times|The island boats]] run fewer crossings: check before you count on one."]},
+   {"title": "Where to sleep", "text": "This guide does not judge rooms. The only hotel it names is Hotel Faro on the marina, for the [[card:Cosmopolitan, Hotel Faro rooftop|bar on its roof]]; we have not stayed there."},
+   {"title": "What we would leave out", "text": "The [[card:The fifteen-minute cataplana|quick cataplana]] on the marina menus, the [[card:Jet-skis in the lagoon|jet-skis in the lagoon]], and a menu offering [[card:Local fish, every species, all year|every local fish all year]]."}
+  ]
+ }
+}
