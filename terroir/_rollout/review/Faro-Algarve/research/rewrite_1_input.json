@@ -1,0 +1,163 @@
+{
+ "quartiers:Cidade Velha": {
+  "fold": "quartiers",
+  "group": "Inside and outside the walls",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [walk], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Faro, Portugal'. Do not retell another card's story: name it and move on. The walled old town: the Arco da Vila (its card is the storks curiosity: name only), the Largo da Sé with its orange trees, the Paço Episcopal, the Arco do Repouso, the Convento (the museum card: name only). Tables inside: CHECKin, Faz Gostos (table cards). maps_query 'Largo da Sé, Faro, Portugal'."
+ },
+ "quartiers:The Baixa and Rua de Santo António": {
+  "fold": "quartiers",
+  "group": "Inside and outside the walls",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [walk], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Faro, Portugal'. Do not retell another card's story: name it and move on. The pedestrian downtown north of the marina: the calçada of Rua de Santo António, the Mercado Municipal (a table venue: name only), Café Aliança and Gardy (linger cards: name only), Igreja do Carmo (the bones chapel card: name only). Tasca do Ricky, A Venda, Adega Nova are table cards: name only. maps_query 'Rua de Santo António, Faro, Portugal'."
+ },
+ "quartiers:The marina and the Jardim": {
+  "fold": "quartiers",
+  "group": "Inside and outside the walls",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [walk], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Faro, Portugal'. Do not retell another card's story: name it and move on. The little marina (doca), the Jardim Manuel Bívar (a linger card: name only), the Cais das Portas do Mar where the island boats leave, the railway line along the lagoon. maps_query 'Doca de Faro, Faro, Portugal'."
+ },
+ "quartiers:Praia de Faro": {
+  "fold": "quartiers",
+  "group": "Over the bridge",
+  "brief": "NEW quarter card. Build it from the old guide text (research/guide_text_old.txt: [quartiers], [walk], [history]) and the kept venue records, verified now where perishable. Labels: Go for · Best hour · Don't miss · Eat (Eat names only kept table venues of this guide, never a cut one). maps_query = the place + ', Faro, Portugal'. Do not retell another card's story: name it and move on. Faro's ocean beach on the Ilha de Faro sandspit, reached by the single-lane bridge near the airport (bus 14/16 — verify the route numbers), planes landing overhead, beach restaurants; winter honest. maps_query 'Praia de Faro, Portugal'."
+ },
+ "curiosities:Portugal's first printed book": {
+  "fold": "curiosities",
+  "group": "The record, corrected",
+  "brief": "Curiosity card: one verified fact most guides get wrong or never tell. Verify it now (one or two WebSearch) and keep any dispute as a dispute. Labels: Touch it today · Where the sources argue (only if they do). tag 'curiosity'. maps_query ONLY if there is one place to go and see it (ending ', Faro, Portugal'), else empty. Samuel Gacon's Hebrew Pentateuch, printed in Faro in 1487 (verify the date 30 June 1487, the British Library copy, 'first book printed in Portugal'). The Jewish expulsion decree of 1496. Is there a plaque or a Jewish heritage centre in Faro (the Jewish cemetery / Centro Judaico — verify) — if so maps_query that place."
+ },
+ "curiosities:The bishop's library at Oxford": {
+  "fold": "curiosities",
+  "group": "The record, corrected",
+  "brief": "Curiosity card: one verified fact most guides get wrong or never tell. Verify it now (one or two WebSearch) and keep any dispute as a dispute. Labels: Touch it today · Where the sources argue (only if they do). tag 'curiosity'. maps_query ONLY if there is one place to go and see it (ending ', Faro, Portugal'), else empty. 1596: the Earl of Essex sacked Faro and took Bishop Fernando Martins Mascarenhas's library; in 1600 he gave books to Thomas Bodley — founding collection of the Bodleian. Verify the numbers (old says 215 volumes, 91 identified) — keep a dispute if sources differ. Maps empty or the Paço Episcopal."
+ },
+ "curiosities:Tempura went from here": {
+  "fold": "curiosities",
+  "group": "The record, corrected",
+  "brief": "Curiosity card: one verified fact most guides get wrong or never tell. Verify it now (one or two WebSearch) and keep any dispute as a dispute. Labels: Touch it today · Where the sources argue (only if they do). tag 'curiosity'. maps_query ONLY if there is one place to go and see it (ending ', Faro, Portugal'), else empty. The claim that tempura came to Japan with 16th-century Portuguese (peixinhos da horta; the word from tempora / Ember days). Widely told; partly disputed (other etymologies: temperar, templo). Keep the dispute honest. The dish itself is The Dish's: one line only. maps_query empty."
+ },
+ "curiosities:The storks of the Arco": {
+  "fold": "curiosities",
+  "group": "Birds and stone",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-arco-da-vila",
+   "name": "Arco da Vila — neoclassical over Moorish",
+   "type": "CULTURE",
+   "label": "GATE",
+   "hook": "Two civilisations in one passageway, a stork's nest on top",
+   "chips": [
+    "free",
+    "WALK-IN",
+    "All day"
+   ],
+   "text": "Two civilisations in one passageway, a stork's nest on top free WALK-IN All day Bishop Francisco Gomes do Avelar commissioned the neoclassical arch in 1812 as part of the long post-1755 reconstruction; the Genoese architect Francisco Xavier Fabri designed it. Inside the tunnel passageway, the original 11th-century Moorish horseshoe gateway survives intact. The niche above holds a white marble statue of Saint Thomas Aquinas. White storks have nested on top for generations — the bell tower carries a single enormous nest. Where Cidade Velha — main entrance",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Arco%20da%20Vila%20Faro",
+   "links": []
+  },
+  "brief": "Curiosity card: one verified fact most guides get wrong or never tell. Verify it now (one or two WebSearch) and keep any dispute as a dispute. Labels: Touch it today · Where the sources argue (only if they do). tag 'curiosity'. maps_query ONLY if there is one place to go and see it (ending ', Faro, Portugal'), else empty. Merge the old Arco da Vila card: the 1812 neoclassical arch by Francisco Xavier Fabri for Bishop Francisco Gomes do Avelar over the older Moorish gate (verify the 11th-century claim — keep a dispute), the statue of St Thomas Aquinas, and the white storks nesting on its bell tower (Faro's storks: resident all year? verify). maps_query 'Arco da Vila, Faro, Portugal'."
+ },
+ "culture:The Sé and its tower": {
+  "fold": "culture",
+  "group": "Inside the walls",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-se",
+   "name": "Sé Cathedral de Faro",
+   "type": "CULTURE",
+   "label": "CATHEDRAL",
+   "hook": "Four religions, one site — the bell tower view over the Ria Formosa is the lesson",
+   "chips": [
+    "EUR 4-5",
+    "WALK-IN",
+    "Morning"
+   ],
+   "text": "Four religions, one site — the bell tower view over the Ria Formosa is the lesson EUR 4-5 WALK-IN Morning Afonso III took Faro in 1249; the existing mosque was immediately consecrated as the cathedral, the third building on a site that had already been a Roman temple and a Visigothic basilica. The medieval interior was destroyed by Essex in 1596; the nave was rebuilt in the 17th century in the austere Tuscan order. The 18th-c. Baroque organ and the azulejo panels on the side walls are the principal interior features. Climb the bell tower early — the view over the Ria Formosa is the best single landscape lesson in southern Portugal. Stork nests crowd the upper ledges. Where Cidade Velha",
+   "maps": "https://www.google.com/maps/search/?api=1&query=S%C3%A9%20de%20Faro%20Cathedral",
+   "links": []
+  },
+  "brief": "Merge the old Sé card and the bell-tower-at-opening gem. Verify: 2026 ticket and winter hours (old says EUR 4-5), the bell tower climb, the Baroque organ (verify), the bone chapel at the Sé (there is a small one too — verify), the 1596 burning (the Oxford library is a curiosity card: name only)."
+ },
+ "culture:Museu Municipal": {
+  "fold": "culture",
+  "group": "Inside the walls",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-museu-municipal",
+   "name": "Museu Municipal — Convento da Assunção",
+   "type": "CULTURE",
+   "label": "MUSEUM",
+   "hook": "Roman mosaic of the Ocean (3rd c.) inside a former convent",
+   "chips": [
+    "EUR 2-3",
+    "WALK-IN",
+    "Afternoon"
+   ],
+   "text": "Roman mosaic of the Ocean (3rd c.) inside a former convent EUR 2-3 WALK-IN Afternoon The municipal museum occupies a 16th-century domed Renaissance convent built on what was once the Jewish quarter. Collections span prehistory to the 20th century: a remarkable 3rd-c. Roman Mosaic of the Ocean (found 1976), 9th–13th-c. Islamic domestic artefacts, medieval Christian items, 16th–19th-c. religious paintings, work by the local painter Carlos Filipe Porfírio. The cloister, with its central well and azulejo panels, is one of the most tranquil spaces in the city at 16:00. Where Cidade Velha",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Museu%20Municipal%20de%20Faro",
+   "links": []
+  },
+  "brief": "Merge the old museum card and the cloister gem. Verify: the Roman mosaic of Oceanus (from Faro, 3rd c.), the Renaissance cloister of the Convento de Nossa Senhora da Assunção (founded 1519? verify), 2026 hours/price."
+ },
+ "culture:Capela dos Ossos": {
+  "fold": "culture",
+  "group": "Bones, a theatre and a Roman villa",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-capela-ossos",
+   "name": "Capela dos Ossos — Igreja do Carmo",
+   "type": "CULTURE",
+   "label": "MEMENTO MORI",
+   "hook": "«Pára aqui a considerar que a este estado hás-de chegar»",
+   "chips": [
+    "EUR 2",
+    "WALK-IN",
+    "All day"
+   ],
+   "text": "«Pára aqui a considerar que a este estado hás-de chegar» EUR 2 WALK-IN All day Behind the Rococo Igreja do Carmo (gilded talha dourada from Brazilian gold), a 4 × 6 m chapel built in 1816 from the bones of more than a thousand Carmelite friars excavated from the parish cemetery in the convent's rear garden. 1,245 skulls. The inscription above the entrance reads: «Pára aqui a considerar que a este estado hás-de chegar» — \"Stop here and consider that you will reach this state.\" Geometric precision; sober where Évora's is chaotic. Where Largo do Carmo",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Capela%20dos%20Ossos%20Faro",
+   "links": []
+  },
+  "brief": "Verify the bone chapel behind the Igreja do Carmo: date (old says 1816), number of skulls (old: 1,245 — keep 'about' or a dispute), the inscription, 2026 ticket/hours."
+ },
+ "culture:Teatro Lethes": {
+  "fold": "culture",
+  "group": "Bones, a theatre and a Roman villa",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-teatro-lethes",
+   "name": "Teatro Municipal de Faro (Lethes)",
+   "type": "CULTURE",
+   "label": "THEATRE",
+   "hook": "Italianate horseshoe theatre · «monet oblectando» — \"it instructs with amusement\"",
+   "chips": [
+    "EUR 5-25",
+    "BOOK",
+    "Evening"
+   ],
+   "text": "Italianate horseshoe theatre · «monet oblectando» — \"it instructs with amusement\" EUR 5-25 BOOK Evening Built 1605 as the Jesuit Colégio de Santiago Maior (under Bishop Mascarenhas — the same bishop whose library Essex took eleven years before). After the Jesuit expulsion (1759), the building passed through royal hands and survived the desecrations of Junot's troops (1807). Bought at auction in 1843 by Lázaro Doglioni , a Venetian doctor who set out to build a theatre comparable to La Scala. The Teatro Lethes opened on 4 April 1845 — Queen Maria II's birthday. Latin motto on the façade: «monet oblectando» , \"it instructs with amusement.\" Damaged in a storm and reopened 22 February 2026 with a Guitar Festival; now run by ACTA — A Companhia de Teatro do Algarve. Three horseshoe balconies, red velvet, extraordinarily intimate for a city of this size. Where Faro Centro",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Teatro%20Lethes%20Faro",
+   "links": []
+  },
+  "brief": "Verify: the 1605 Jesuit college, the Italianate theatre (1874? by Lázaro Doglioni?), the motto, whether it has a 2026 autumn programme (who runs it now: the Município / Teatro das Figuras?). Festival/sight labels."
+ },
+ "culture:Milreu": {
+  "fold": "culture",
+  "group": "Bones, a theatre and a Roman villa",
+  "old": {
+   "fold": "culture",
+   "id": "p-culture-milreu",
+   "name": "Ruínas Romanas de Milreu — Estói",
+   "type": "CULTURE",
+   "label": "ROMAN",
+   "hook": "Intact mosaic floors and a fish-cult temple",
+   "chips": [
+    "EUR 2-3",
+    "WALK-IN",
+    "Morning"
+   ],
+   "text": "Intact mosaic floors and a fish-cult temple EUR 2-3 WALK-IN Morning The Roman site of Milreu sits in the village of Estói, ten kilometres north of Faro. Once Ossonoba, the antecedent of Faro itself, it preserves a 1st-to-4th-century villa-and-temple complex with intact mosaic floors (including a remarkable fish-themed mosaic in the temple-bathhouse) and walls still standing several metres high. Combine with a visit to the Pousada Palácio de Estói next door for a long historical morning. Where Estói — 10 km north",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Ruinas%20Romanas%20de%20Milreu%20Estoi",
+   "links": []
+  },
+  "brief": "Verify: Milreu Roman villa at Estói, the fish mosaics, the temple (water sanctuary), 2026 hours and ticket, how to get there (bus to Estói). The Estói palace (Pousada) can be named in one line (hotels are not judged)."
+ }
+}

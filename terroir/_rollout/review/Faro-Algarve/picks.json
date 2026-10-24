@@ -1,0 +1,108 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The starred tables — Faro's first star and the two-star kitchens of the coast",
+   "group": "grande",
+   "ids": [
+    "v01-alameda",
+    "v16-vila-joya",
+    "v17-ocean-restaurant"
+   ]
+  },
+  "stories": {
+   "label": "Tables with a story — an island lunch, a chef who gave back his star, a cellar under the walls",
+   "group": "petite",
+   "ids": [
+    "v03-estamin-ilha-deserta",
+    "v02-checkin-by-leonel-pereira",
+    "v05-faz-gostos"
+   ]
+  },
+  "tascas": {
+   "label": "The tascas — where Faro eats",
+   "group": "petite",
+   "ids": [
+    "v04-tasca-do-ricky",
+    "v09-a-venda",
+    "v08-adega-nova"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the two markets and the bifana",
+   "group": "street",
+   "ids": [
+    "v12-mercado-municipal-de-faro",
+    "v11-mercado-de-olh-o",
+    "v-snack-bar-da-xica"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit"
+  ],
+  "petite": [
+   "stories",
+   "tascas"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v18-bon-bon": "Cut for the cap: the third starred kitchen of the coast and the furthest west (Carvoeiro, about 50 minutes); the grand lane keeps Faro's own star and the two two-star kitchens. Named on the lane story.",
+  "v06-vila-adentro": "Cut for the cap: a tiled room on the cathedral square, but the walled-town lane keeps three tables with a stronger story (CHECKin, Faz Gostos, and the island lunch); Vila Adentro's square is the Cidade Velha quarter card.",
+  "v07-tert-lia-algarvia": "Moved, not lost: its cataplana class is weighed in the craft section (as a card, if the re-check confirms it); as a table it duplicated the tascas lane.",
+  "v10-a-do-pinto": "Cut: 'a word-of-mouth address' with no fact the guide could stand on; the tascas lane keeps three with a dated record.",
+  "v13-bago-wine-bar": "Moved, not lost: a wine bar is not a table. It keeps a card at the glass (its own address and map), and leaves the venue list.",
+  "v14-hotel-faro-rooftop": "Moved, not lost: a rooftop bar is not a table. It keeps a card at the glass (its own address and map), and leaves the venue list.",
+  "v15-morgado-do-quint-o": "Moved, not lost: a wine estate is not a table. It keeps a card in the larder's cellars (its own address and map), and leaves the venue list."
+ },
+ "new_venues": {
+  "v-snack-bar-da-xica": {
+   "id": "v-snack-bar-da-xica",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Snack Bar da Xica",
+   "short": "Snack Bar da Xica",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Street Food"
+   ],
+   "address": "Mercado Municipal de Faro, Largo Dr. Francisco Sá Carneiro, 8000-151 Faro",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Snack+Bar+da+Xica+Mercado+Municipal+Faro+Portugal",
+   "why": "",
+   "verdict": "Faro's reference bifana: thin pork loin marinated in white wine, garlic and paprika, griddled to order and slid into a papo-seco roll, at a counter inside the city market.",
+   "signature": "A bifana and a small beer at the counter.",
+   "caveat": "",
+   "person": "",
+   "_source": "old street-food card"
+  }
+ },
+ "berths": [],
+ "shortlist": {},
+ "fours": {},
+ "dropped_cards": {
+  "bougie:Vila Vita Parc / Pousada Palácio de Estói / Conrad": "hotels, not food or place: this guide does not judge rooms (Ocean keeps its table card; Estói is named on the Milreu card)",
+  "dish:* (7 plates)": "rewritten as The Dish inside La liste",
+  "drink:Flor de Sal de Tavira": "told once: merged into the salt card in the larder",
+  "drink:Sparkling Negra Mole": "told once: merged into the Negra Mole card",
+  "music:* / events:* (Festival F, MED, Afro Nation, Festa da Ria Formosa)": "told once: one calendar card each (and the hot board for this month)",
+  "events:Festival da Sardinha / Sardine season / Feira do Livro / Festa do Medronho": "rewritten as the calendar",
+  "culture:Centro Ciência Viva / Galeria Municipal Trem": "cut for the cap: the culture fold keeps five stops that are Faro's own",
+  "work:Biblioteca Municipal / Marina de Faro": "cut for the cap; the marina is the quarter card",
+  "gastronomy:Pastelaria Gardy": "told once: Gardy is its linger card",
+  "gastronomy:Quinta dos Vales / Monte da Casteleja": "cut for the cap: the cellars keep Morgado do Quintão and Cabrita (Negra Mole) and the medronho still",
+  "secret-gems:* (6)": "merged: the bench into the Jardim card, the bell tower into the Sé, the cloister into the museum, the Ludo dawn into the Ludo walk, Quatro Águas into Ilha de Tavira, the Trem cut",
+  "street-food:Snack Bar da Xica": "now a table venue (the street lane)",
+  "street-food:Confraria das Bifanas": "on La liste as the second bifana, if the re-check confirms it; not a card",
+  "street-food:Grilled sardines": "told once: the sardine is The Dish's and the calendar's",
+  "walks:Ilha Deserta / Olhão / Tavira / Cabo de São Vicente": "Ilha Deserta is a swim card; the towns are Autour",
+  "ethnic-restaurants / burger-kebab": "honest-empty sections in the old guide: no card (the bifana carries the quick bite)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}

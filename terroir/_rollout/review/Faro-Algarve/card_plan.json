@@ -1,0 +1,453 @@
+{
+ "quartiers": {
+  "sub": "quarters",
+  "groups": [
+   {
+    "title": "Inside and outside the walls",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Cidade Velha",
+      "from": null
+     },
+     {
+      "key": "quartiers:The Baixa and Rua de Santo António",
+      "from": null
+     },
+     {
+      "key": "quartiers:The marina and the Jardim",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Over the bridge",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Praia de Faro",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "The record, corrected",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Portugal's first printed book",
+      "from": null
+     },
+     {
+      "key": "curiosities:The bishop's library at Oxford",
+      "from": null
+     },
+     {
+      "key": "curiosities:Tempura went from here",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Birds and stone",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The storks of the Arco",
+      "from": "culture:Arco da Vila — neoclassical over Moorish"
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The morning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Mercado Municipal de Faro",
+      "from": null
+     },
+     {
+      "key": "provisioning:Mercado de Olhão",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "To carry home",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Flor de sal de Tavira",
+      "from": "gastronomy:Sal de Tavira — Rui Simeão & Marisol"
+     },
+     {
+      "key": "provisioning:Krater",
+      "from": "gastronomy:Krater — wine shop"
+     }
+    ]
+   },
+   {
+    "title": "The cellars and the still",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Morgado do Quintão",
+      "from": "gastronomy:Morgado do Quintão (Lagoa)"
+     },
+     {
+      "key": "provisioning:Cabrita Wines",
+      "from": "gastronomy:Cabrita Wines (Silves)"
+     },
+     {
+      "key": "provisioning:Casa do Medronho",
+      "from": "gastronomy:Casa do Medronho — Marmelete (Monchique)"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The town on foot",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Round the walls, gate to gate",
+      "from": "walks:The Cidade Velha walls"
+     }
+    ]
+   },
+   {
+    "title": "The lagoon on foot",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Ludo trail and the salt pans",
+      "from": "walks:The Ludo Trail — salt pans + flamingoes"
+     }
+    ]
+   }
+  ]
+ },
+ "calas": {
+  "sub": "sea",
+  "groups": [
+   {
+    "title": "The barrier islands",
+    "desc": "",
+    "cards": [
+     {
+      "key": "calas:Ilha Deserta",
+      "from": "walks:Ilha Deserta day trip"
+     },
+     {
+      "key": "calas:Culatra and the Farol",
+      "from": null
+     },
+     {
+      "key": "calas:Ilha de Tavira",
+      "from": "secret-gems:Quatro Águas jetty, Tavira — sunset"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "Inside the walls",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:The Sé and its tower",
+      "from": "culture:Sé Cathedral de Faro"
+     },
+     {
+      "key": "culture:Museu Municipal",
+      "from": "culture:Museu Municipal — Convento da Assunção"
+     }
+    ]
+   },
+   {
+    "title": "Bones, a theatre and a Roman villa",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Capela dos Ossos",
+      "from": "culture:Capela dos Ossos — Igreja do Carmo"
+     },
+     {
+      "key": "culture:Teatro Lethes",
+      "from": "culture:Teatro Municipal de Faro (Lethes)"
+     },
+     {
+      "key": "culture:Milreu",
+      "from": "culture:Ruínas Romanas de Milreu — Estói"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Algarve craft",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Three places to sit",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Café Aliança",
+      "from": "work:Café Aliança — since 1908"
+     },
+     {
+      "key": "linger:Pastelaria Gardy",
+      "from": "work:Pastelaria Gardy — since 1953"
+     },
+     {
+      "key": "linger:Jardim Manuel Bívar",
+      "from": "work:Jardim Manuel Bívar"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Negra Mole",
+      "from": "drink:Negra Mole — Algarve's badge grape"
+     },
+     {
+      "key": "drink:Arinto",
+      "from": "drink:Arinto — the persistent acid"
+     },
+     {
+      "key": "drink:Crato Branco",
+      "from": "drink:Crato Branco (Síria)"
+     }
+    ]
+   },
+   {
+    "title": "After dinner",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Medronho",
+      "from": "drink:Medronho — the strawberry-tree spirit"
+     },
+     {
+      "key": "drink:Bagaceira",
+      "from": "drink:Bagaceira — the marc"
+     }
+    ]
+   },
+   {
+    "title": "Where to pour them",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Bago Wine Bar",
+      "from": null
+     },
+     {
+      "key": "bars:The Hotel Faro rooftop",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi listening bar",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Live, the real thing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Fado",
+      "from": null
+     },
+     {
+      "key": "listening:Art Haus",
+      "from": "music:Art Haus Club — Faro"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "East along the lagoon",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Olhão",
+      "from": "walks:Olhão — fishing port + 1916 market"
+     },
+     {
+      "key": "around:Tavira",
+      "from": "walks:Tavira — the eastern Algarve's elegance"
+     }
+    ]
+   },
+   {
+    "title": "Inland and to the edge",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Loulé",
+      "from": null
+     },
+     {
+      "key": "around:Sagres and Cabo de São Vicente",
+      "from": "walks:Cabo de São Vicente — the western edge"
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "On the plate",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:The fifteen-minute cataplana",
+      "from": "avoid:€18 \"cataplana\" on the marina-front menu"
+     },
+     {
+      "key": "avoid:Local fish, every species, all year",
+      "from": "avoid:Tourist-strip restaurants selling \"local fish\""
+     },
+     {
+      "key": "avoid:Cataplana at noon in August",
+      "from": "avoid:Cataplana at midday in August"
+     }
+    ]
+   },
+   {
+    "title": "On the water",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Jet-skis in the lagoon",
+      "from": "avoid:Jet-ski tours of the Ria Formosa"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The region",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Visit Algarve",
+      "from": null
+     },
+     {
+      "key": "follow:Município de Faro",
+      "from": null
+     },
+     {
+      "key": "follow:MICHELIN Guide Portugal",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wine and the lagoon",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Vinhos do Algarve",
+      "from": null
+     },
+     {
+      "key": "follow:Ria Formosa Natural Park",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "provisioning:Mercado Municipal de Faro": "v12-mercado-municipal-de-faro",
+  "provisioning:Mercado de Olhão": "v11-mercado-de-olh-o"
+ }
+}
