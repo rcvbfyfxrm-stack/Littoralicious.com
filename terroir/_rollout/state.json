@@ -597,7 +597,29 @@
   },
   {
    "slug": "Faro-Algarve",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Faro-Algarve-2026-10-24",
+   "date": "2026-10-24",
+   "readings": "done 2026-10-24",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (24 Oct, after apply_readings; 214 OK lines; floors = curated counts: venues 11, fcards 72, fsubs 34, neighborhoods 4, walks 2, categories 4, lane stories 4, gems 3, liste 14, pins 10, mapsLinks 65; groups 3; doors 4; hot minVenues 5; render via Playwright with the test-only leaflet@1.9.4 shim, unpkg.com blocked here; /usr/bin/chromium symlinked to the sandbox's Playwright Chromium; 17 map pins rendered)",
+    "probe-guide.cjs: ALL PASS, exit 0 (28 checks: chapters, sub-tags, readout, pointer lands, back button, 72 facts/72 cards, guest list at the foot with 3 groups, phone 390 no sideways scroll with every card open, no page errors)",
+    "probe-links.cjs desk: 76 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 76 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 53/53 placed cards and 11/11 venues with Maps on the closed card, no sideways scroll; One Night 17 links, Getaway 23); lens screenshots in review/Faro-Algarve/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 113 units (three found and fixed: the Santa Iria hot card dropped for its calendar card, the street lane story rewritten off the Olhão why, the Dom Rodrigo gem rewritten off its Dish article)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "banned-word scan incl. the readings rulings: 0 in prose (inside the gate); cut venues (Faz Gostos, Krater, Bon Bon, Vila Adentro, A Do Pinto) absent from the prose; the only hit is a source label",
+    "screenshots: review/Faro-Algarve/faro-card-desktop.png, faro-card-phone.png (the walk round the walls, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Faro-Algarve",
+    "own-site / MICHELIN pages for the guest list and berths: guide.michelin.com Portugal 2026 (Alameda's days — Mon and Thu–Sun vs other listings; CHECKin's Bib Gourmand for 2026; Bon Bon on the cut list), restaurantealamedafaro.com (days, menu prices, December dates), Ocean's 2026–27 winter break, Vila Joya's winter close and phone (591 839 vs 591 795), Animaris (Estaminé's winter days, the Ilha Deserta timetable, the pier: Porta Nova or Portas do Mar), CHECKin's phone, Tasca do Ricky's Nov–Dec days and booking policy",
+    "the unverified place and the soft records: Snack Bar da Xica (a 2026-dated trace, hours, stall), A Venda's winter closure, Adega Nova's days, the two markets' official hours and Sunday trading, Café Aliança's current opening, Gardy's hours, the Casa do Medronho's 2026 visits, Faz Gostos (closed since the 2022 handover?)",
+    "the rest of research/verify_1.json + verify_2.json _needs_network and research/hot_events.json (Olhão ferry winter times to Armona/Culatra, the Christmas lights switch-on, Teatro das Figuras prices, Monchique's medronho festival, Portimão/Aljezur hours, 2027 dates for MED, Carnaval, the Feira do Livro, the Festa da Ria Formosa)"
+   ],
+   "notes": "24 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Split pipeline). The old page was a GOLD1-era tier inventory (18 venues in flat tiers, no lanes, no dishes, no terroir/data copy), so the GOLD4/5 floor came too (4 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 14 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, month table rewritten, craft (the Loulé coppersmiths' workshop), honest listening room, island swims, Autour, the #bougie fold '1966 — the Barril tuna trap', 3 gems, terroir/data copy, 24-column CSV; hub untouched; hub builder not run). Places 18 -> 11 (none over 3, no 4s): cut Bon Bon, Vila Adentro, A Do Pinto (cap), Faz Gostos (no 2026 trace; CHECKin in its rooms since 2022), Tertúlia Algarvia (a craft card), Bago, the Hotel Faro rooftop, Morgado do Quintão (kept as cards); added Snack Bar da Xica from the old card, no coordinates invented. Fold cards: 72 old tcards -> 54 written + 9 hot + 9 calendar = 72 .fcard, every one labelled. Guest list: last minute Tasca do Ricky · Adega Nova; this week CHECKin · Estaminé; grand night Alameda · Ocean (winter break said; Vila Joya left off, closes Nov–Feb). Berths Alameda · Tasca do Ricky · Mercado de Olhão. Statuses: 10 confirmed 24 Oct, 1 unverified (Xica, not a berth or on the list). Corrections: Alameda's days and menus; Ocean's service award was 2025; CHECKin's chef left a starred kitchen, did not give back a star, Bib confirmed 2021 only; Michelin 'Plate' retired; Tasca do Ricky no bookings Jun–Sep; Olhão market one of the 7 Maravilhas (Sep 2026); Lethes 1845, suspended Dec 2025–Sep 2026; Milreu a villa near Ossonoba; Oxford books, the Arco's Moorish gate, the 1487 printer and tempura kept as disputes; flor de sal magnesium, Negra Mole 75 %, the clam DOP/90 %, Café Aliança's 'Parlamento do Povo' dropped; Dom Rodrigo IGP national Dec 2025 (EU pending); Festa da Ria Formosa 2026 30 Jul–9 Aug; Festival F 7 stages; Ilha Deserta boat ~45 min; Krater not found, cut. Readings: One Night 4 quarters (Cidade Velha · the Baixa · the marina · by the station), Getaway 13 stops Fri 2 / Sat 7 / Sun 4, built for late Oct–Nov, on foot, by train and boat. Details: terroir/_rollout/review/Faro-Algarve/README.md."
   },
   {
    "slug": "beaune-bourgogne",
