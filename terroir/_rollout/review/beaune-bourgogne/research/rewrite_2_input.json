@@ -1,0 +1,243 @@
+{
+ "provisioning:The Saturday market": {
+  "fold": "provisioning",
+  "group": "The market days",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-market-halles-saturday",
+   "name": "Marché des Halles — Saturday",
+   "type": "MARKET",
+   "label": "MARKET",
+   "hook": "Saturday 07:00-13:00 · ~180 stalls",
+   "chips": [],
+   "text": "Saturday 07:00-13:00 · ~180 stalls The big market — producers from the hill villages with Époisses and Cîteaux cheese, jambon persillé, charcuterie, honey, autumn mushrooms, flowers and wine, plus the Fallot mustard stand. Arrive before 10:00 for the producers; the covered halls themselves are worth the walk. Where Place de la Halle, Place Fleury, the covered halls",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Halles%20de%20Beaune%20Place%20de%20la%20Halle",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v15-march-des-halles-saturday). Set \"ref\": \"v15-march-des-halles-saturday\". Write it in THIS section's angle (the larder: what a cook buys here and how to shop it; merge the old 'Saturday-market traiteur' street-food card (the hot plates to eat there)), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "provisioning:The Wednesday market": {
+  "fold": "provisioning",
+  "group": "The market days",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-market-wednesday",
+   "name": "The Wednesday market",
+   "type": "MARKET",
+   "label": "MARKET",
+   "hook": "Wednesday morning · food only, ~25 stalls",
+   "chips": [],
+   "text": "Wednesday morning · food only, ~25 stalls The smaller mid-week market — food and table goods only, quieter, more local. The better option for a calm morning shop without the Saturday crowd. Where Place de la Halle",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Marche%20Beaune%20Place%20de%20la%20Halle",
+   "links": []
+  },
+  "brief": "Verify the Wednesday market (Place de la Halle? smaller) 2026. Market labels Days · Hours · Go at · Look for."
+ },
+ "provisioning:Charcuterie Raillard": {
+  "fold": "provisioning",
+  "group": "The market days",
+  "old": {
+   "fold": "street-food",
+   "id": "p-street-jambon-persille",
+   "name": "Jambon persillé by the slice — Raillard",
+   "type": "STREET FOOD",
+   "label": "STREET FOOD",
+   "hook": "",
+   "chips": [],
+   "text": "A thick slice of jambon persillé from Charcuterie Raillard or Franck Bourgeon on Place Monge, with bread from next door and a cornichon, is the most Burgundian lunch you can eat standing up. Pudlowski's benchmark for the dish. Where rue Monge / Place Monge When shop hours · Saturday market",
+   "maps": "",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v-charcuterie-raillard). Set \"ref\": \"v-charcuterie-raillard\". Write it in THIS section's angle (the larder: what a cook buys at a charcutier to take aboard — whole terrines, pâté en croûte, jambon persillé by the kilo), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "provisioning:Edmond Fallot": {
+  "fold": "provisioning",
+  "group": "Mustard and spice",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-fallot",
+   "name": "Edmond Fallot — La Moutarderie",
+   "type": "PRODUCER",
+   "label": "MUSTARD",
+   "hook": "Burgundy's last independent family mustard mill",
+   "chips": [],
+   "text": "Burgundy's last independent family mustard mill Founded in 1840 by Léon Bouley, a miller who began producing mustard from Burgundian sénevé seeds. In 1928 it was bought by Edmond Fallot (a Doubs-born papermaker and World-War-I veteran) who renamed it and committed to preserving the granite-stone-mill technique. Today the house is run by Marc Désarménien, Edmond's grandson — the last independent family moutarderie in Burgundy, milling about 2,500 tonnes a year on granite millstones near 770 kg each. The slow stone grind keeps the paste cool and the volatile aromatics intact, a method industry abandoned. The tour shows the millstones at work; the Enjoy Fallot boutique sells the full range. A Fallot stand sits at the Saturday market. Where 31 rue du Faubourg Bretonnière Address 31 rue du Faubourg Bretonnière, 21200 Beaune Phone +33 3 80 22 10 02",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Edmond%20Fallot%20Moutarderie%20Beaune",
+   "links": []
+  },
+  "brief": "Verify: Fallot founded 1840, the last independent family mustard-maker of Burgundy (keep as their claim), the stone-ground method, 2026 visit formats, prices, booking, the Moutarde de Bourgogne IGP (2009, Burgundy seed + Aligoté — verify). Shop/producer labels Where · Open · Buy · Price."
+ },
+ "provisioning:Mulot & Petitjean": {
+  "fold": "provisioning",
+  "group": "Mustard and spice",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-mulot",
+   "name": "Mulot & Petitjean",
+   "type": "PRODUCER",
+   "label": "PAIN D'ÉPICES",
+   "hook": "Burgundy pain d'épices — a house founded in Dijon in 1796",
+   "chips": [],
+   "text": "Burgundy pain d'épices — a house founded in Dijon in 1796 The Beaune boutique of the Dijon pain d'épices house Mulot & Petitjean, founded 1796 and carrying the Living Heritage Company label. Traditional spice bread, nonnettes — small glazed spice cakes filled with jam — all made by hand. The Burgundian thing to bring home, and the classic partner to foie gras or a strong cheese. Where 1 Place Carnot Address 1 Place Carnot, 21200 Beaune",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Mulot%20et%20Petitjean%20Beaune",
+   "links": []
+  },
+  "brief": "Verify: Mulot & Petitjean, pain d'épices since 1796 in Dijon (verify), the Beaune shop's address and 2026 trading (Place Carnot? verify), the nonnettes. Shop labels."
+ },
+ "provisioning:Fromagerie Alain Hess": {
+  "fold": "provisioning",
+  "group": "The cheese",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-shop-alain-hess",
+   "name": "Fromagerie Alain Hess",
+   "type": "PRODUCER",
+   "label": "FROMAGER",
+   "hook": "The town fromager and fine-grocer",
+   "chips": [],
+   "text": "The town fromager and fine-grocer On Place Carnot, Alain Hess is the destination fromagerie and fine-grocer of central Beaune — aged cheeses, the regional charcuterie including jambon persillé, and the curiosity that made the house known, the Délice de Pommard, a fresh cheese rolled in mustard seed. Where to assemble a picnic for the Parc de la Bouzaise. Where Place Carnot Address Place Carnot, 21200 Beaune",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Fromagerie%20Alain%20Hess%20Beaune",
+   "links": []
+  },
+  "brief": "Verify: Alain Hess, Place Carnot (7?), 2026, MOF? the Délice de Pommard (his invention — verify). Shop labels."
+ },
+ "provisioning:Époisses at Berthaut": {
+  "fold": "provisioning",
+  "group": "The cheese",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-berthaut",
+   "name": "Fromagerie Berthaut — Époisses",
+   "type": "PRODUCER",
+   "label": "CHEESE",
+   "hook": "The benchmark maker of AOP Époisses",
+   "chips": [],
+   "text": "The benchmark maker of AOP Époisses In the village of Époisses, two hours north-west, the Berthaut family makes the benchmark AOP Époisses — the washed-rind, marc-bathed cow's-milk cheese at the pungent edge of the law — plus Soumaintrain and Affidélice. Too far for a casual trip, but the cheese itself reaches the Beaune Saturday market direct. Closed Sundays. Where Époisses — ~86 km / 2 h from Beaune Address rue du Champ de Foire, 21460 Époisses Phone +33 3 80 96 39 19",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Fromagerie%20Berthaut%20Epoisses",
+   "links": []
+  },
+  "brief": "Verify: Fromagerie Berthaut in Époisses village, Robert Berthaut revived Époisses in 1956 (verify), AOC 1991 (verify), the marc washing; distance from Beaune (~1h15? verify), the Beaune shop if any. The Époisses dish article belongs to The Dish: tell the maker, not the cheese's legend (Napoleon, the train ban — at most one line, as a legend). Producer labels."
+ },
+ "provisioning:The cheese of Cîteaux": {
+  "fold": "provisioning",
+  "group": "The cheese",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-citeaux",
+   "name": "Fromage de Cîteaux — Abbaye de Cîteaux",
+   "type": "PRODUCER",
+   "label": "CHEESE",
+   "hook": "A washed-rind disc made by Cistercian monks",
+   "chips": [],
+   "text": "A washed-rind disc made by Cistercian monks At the mother abbey of the Cistercian order — founded 1098 — the monks still make the cheese of Cîteaux: a soft, washed-rind disc from the raw milk of their own Montbéliarde herd, sold only at the abbey shop and a few fromagers. Half an hour north of Beaune, easily folded into a Côte de Nuits day. The abbey is a working monastery — silence and respect are expected. Where Saint-Nicolas-lès-Cîteaux — ~25 km north Address Abbaye de Cîteaux, 21700 Saint-Nicolas-lès-Cîteaux Phone +33 3 80 61 11 53",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Abbaye%20de%20Citeaux",
+   "links": []
+  },
+  "brief": "Verify: the Trappist monks of the Abbaye de Cîteaux make the cheese (since 1925, Montbéliarde herd), sold at the abbey shop; visits 2026 (the abbey was founded 1098). Producer labels; maps_query 'Abbaye de Cîteaux, France'."
+ },
+ "walks:The ramparts circuit": {
+  "fold": "walks",
+  "group": "The town on foot",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-ramparts",
+   "name": "The ramparts circuit",
+   "type": "WALK",
+   "label": "CIRCUIT",
+   "hook": "2.5 km · 1-2 hours · 17 numbered towers and bastions",
+   "chips": [],
+   "text": "2.5 km · 1-2 hours · 17 numbered towers and bastions The complete medieval wall, walkable almost without a break — 2.5 kilometres past seventeen towers and bastions, much of it garden promenade. Start anywhere; the tourist office on Place de la Halle gives out the map. Walk it at first light from the Rempart des Dames and you will pass nobody. Guided tours July–October open towers normally closed.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Merge the old ramparts walk card, the old [walk] prose (research/guide_text_old.txt), the culture card 'The ramparts of Beaune', the work card 'Rempart des Dames' and the gem 'Rempart des Dames — first light' (all in cards_old.json). Verify the circuit length (old: 2.5 km), the bastions, the Rempart des Dames plane trees (1637 bastion? verify), which stretches are walkable. Walk labels."
+ },
+ "walks:The Parc de la Bouzaise loop": {
+  "fold": "walks",
+  "group": "The town on foot",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-bouzaise",
+   "name": "The Parc de la Bouzaise loop",
+   "type": "WALK",
+   "label": "SHORT",
+   "hook": "30 minutes · the English garden and the stream",
+   "chips": [],
+   "text": "30 minutes · the English garden and the stream A short, gentle loop for an off-hour — the 1883 English garden on the town's western fringe, the lake, the willows, the Bouzaise stream along the western edge. Five minutes from the shopping streets and a different soundscape entirely.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Merge the old Bouzaise walk card, the work card 'Parc de la Bouzaise' and the gem 'The lake bench, Parc de la Bouzaise'. Verify the park (the source of the Bouzaise, the lake, created 1880s? verify). Walk labels."
+ },
+ "walks:Up into the climats": {
+  "fold": "walks",
+  "group": "Into the vines",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-climats",
+   "name": "Up into the climats",
+   "type": "WALK",
+   "label": "VINEYARD",
+   "hook": "2-3 hours · from the Parc de la Bouzaise into Clos des Mouches & Les Grèves",
+   "chips": [],
+   "text": "2-3 hours · from the Parc de la Bouzaise into Clos des Mouches & Les Grèves From the Parc de la Bouzaise, take the vineyard lanes west — the Chemin de Battaut, then north — and within 200 metres you are inside the premier crus: Clos des Mouches first, then climbing to Les Grèves on the upper slope. From the top of the chemin the whole Côte de Beaune opens below. No other wine capital lets you walk from a town park into a great vineyard in five minutes.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Verify distances and the climbs (Clos des Mouches, Montagne de Beaune viewpoint). Do not retell the vineyard-slope quarter card: this is the route. Walk labels."
+ },
+ "walks:Beaune to Meursault by the vines": {
+  "fold": "walks",
+  "group": "Into the vines",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-meursault",
+   "name": "Beaune to Meursault by the vines",
+   "type": "WALK",
+   "label": "HALF-DAY",
+   "hook": "~13 km · 3-3.5 hours · Pommard, Volnay, Meursault",
+   "chips": [],
+   "text": "~13 km · 3-3.5 hours · Pommard, Volnay, Meursault The classic Route des Grands Crus walk south: out through Beaune's premier crus into Pommard — the Clos des Épeneaux, the village church — then up to Volnay, perched high and famous for finesse, and down through Monthélie to Meursault, the capital of white Burgundy. Return by bus or taxi if you do not walk back.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Verify the route (via Pommard and Volnay? ~9-10 km?), and how to get back (bus/train/taxi: Meursault station? verify the TER halt). Walk labels."
+ },
+ "walks:Corton hill from Pernand-Vergelesses": {
+  "fold": "walks",
+  "group": "Into the vines",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-corton",
+   "name": "Corton hill from Pernand-Vergelesses",
+   "type": "WALK",
+   "label": "VIEW",
+   "hook": "6.2 km · 2 hours · the Panorama de la Vierge",
+   "chips": [],
+   "text": "6.2 km · 2 hours · the Panorama de la Vierge Twelve kilometres north of Beaune, a 6-kilometre loop from the hilltop village of Pernand-Vergelesses climbs through the Corton grand cru — the great wooded dome that carries both a red grand cru and the white Corton-Charlemagne — to the Panorama de la Vierge, with the whole Côte de Beaune below.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Verify: the Corton hill grand crus (Corton, Corton-Charlemagne), Charlemagne legend (keep as legend), the start at Pernand, the Croix de Pernand viewpoint (verify). Walk labels."
+ },
+ "around:The Route des Grands Crus": {
+  "fold": "around",
+  "group": "South along the Côte",
+  "brief": "NEW day-trip card: the Route des Grands Crus (signposted since 1937? verify) from Dijon to Santenay (~60 km), through the villages of the Côte de Nuits and Côte de Beaune; the Climats as UNESCO World Heritage (4 July 2015, verify). Day-trip labels Getting there · Time needed · Don't miss · Eat (only kept venues or none). The driving-and-tasting warning is another card: name only. maps_query 'Route des Grands Crus, France'."
+ },
+ "around:Pommard and Volnay": {
+  "fold": "around",
+  "group": "South along the Côte",
+  "brief": "NEW day-trip card from the old [quartiers] 'Out of town' paragraph and the history (Château de Pommard, the 909 Benedictine planting claim — verify or dispute; Rootstock is the calendar's: name only). Volnay the hill village above it. Beaune to Meursault walk passes them: name only. Day-trip labels. maps_query 'Pommard, France'."
+ },
+ "around:Clos de Vougeot": {
+  "fold": "around",
+  "group": "North, to the monks and the dukes",
+  "brief": "NEW day-trip card: the Château du Clos de Vougeot, the Cistercian cellar and press-house (12th c. presses — verify), the clos assembled by the monks of Cîteaux (1110s onward — verify dates), the Confrérie des Chevaliers du Tastevin (1934) and its chapitres (the 14 Nov 2026 one is the hot board's: name only). Visit hours/price 2026 (verify). Day-trip labels. maps_query 'Château du Clos de Vougeot, France'."
+ },
+ "around:Dijon": {
+  "fold": "around",
+  "group": "North, to the monks and the dukes",
+  "brief": "NEW day-trip card: Dijon, ~25 min by TER train (verify), the Palais des Ducs and the Musée des Beaux-Arts (free? verify), the Cité Internationale de la Gastronomie et du Vin (opened May 2022 — verify), the Halles (Eiffel-style market, verify), the owl (la Chouette). Mulot & Petitjean is a larder card: name only. Day-trip labels. maps_query 'Les Halles de Dijon, France'."
+ }
+}

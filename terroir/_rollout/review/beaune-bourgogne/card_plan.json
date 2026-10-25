@@ -1,0 +1,467 @@
+{
+ "quartiers": {
+  "sub": "quarters",
+  "groups": [
+   {
+    "title": "Inside the ring",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Place Carnot and the Halle",
+      "from": null
+     },
+     {
+      "key": "quartiers:Rue Maufoux and the cellar streets",
+      "from": "secret-gems:Rue d'Enfer at dusk"
+     },
+     {
+      "key": "quartiers:Place Madeleine and its faubourg",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "At the gates, and over them",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Place Monge",
+      "from": null
+     },
+     {
+      "key": "quartiers:Faubourg Bretonnière",
+      "from": null
+     },
+     {
+      "key": "quartiers:The vineyard slope",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "The grapes, corrected",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The peasant grape that fathered the whites",
+      "from": null
+     },
+     {
+      "key": "curiosities:The Pinot that turned white",
+      "from": null
+     },
+     {
+      "key": "curiosities:The vine named for a child king",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Born in Beaune",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Étienne-Jules Marey",
+      "from": "culture:Musée Marey & Musée des Beaux-Arts"
+     },
+     {
+      "key": "curiosities:Gaspard Monge",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The market days",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:The Saturday market",
+      "from": "gastronomy:Marché des Halles — Saturday"
+     },
+     {
+      "key": "provisioning:The Wednesday market",
+      "from": "gastronomy:The Wednesday market"
+     },
+     {
+      "key": "provisioning:Charcuterie Raillard",
+      "from": "street-food:Jambon persillé by the slice — Raillard"
+     }
+    ]
+   },
+   {
+    "title": "Mustard and spice",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Edmond Fallot",
+      "from": "gastronomy:Edmond Fallot — La Moutarderie"
+     },
+     {
+      "key": "provisioning:Mulot & Petitjean",
+      "from": "gastronomy:Mulot & Petitjean"
+     }
+    ]
+   },
+   {
+    "title": "The cheese",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Fromagerie Alain Hess",
+      "from": "gastronomy:Fromagerie Alain Hess"
+     },
+     {
+      "key": "provisioning:Époisses at Berthaut",
+      "from": "gastronomy:Fromagerie Berthaut — Époisses"
+     },
+     {
+      "key": "provisioning:The cheese of Cîteaux",
+      "from": "gastronomy:Fromage de Cîteaux — Abbaye de Cîteaux"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "The town on foot",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The ramparts circuit",
+      "from": "walks:The ramparts circuit"
+     },
+     {
+      "key": "walks:The Parc de la Bouzaise loop",
+      "from": "walks:The Parc de la Bouzaise loop"
+     }
+    ]
+   },
+   {
+    "title": "Into the vines",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Up into the climats",
+      "from": "walks:Up into the climats"
+     },
+     {
+      "key": "walks:Beaune to Meursault by the vines",
+      "from": "walks:Beaune to Meursault by the vines"
+     },
+     {
+      "key": "walks:Corton hill from Pernand-Vergelesses",
+      "from": "walks:Corton hill from Pernand-Vergelesses"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "The hospital paid by vines",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:The Hôtel-Dieu",
+      "from": "culture:Hôtel-Dieu — Hospices de Beaune"
+     },
+     {
+      "key": "culture:The Last Judgment",
+      "from": "culture:Van der Weyden — The Last Judgment"
+     }
+    ]
+   },
+   {
+    "title": "The church and the wine's own museums",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Collégiale Notre-Dame",
+      "from": "culture:Collégiale Notre-Dame"
+     },
+     {
+      "key": "culture:Cité des Climats et Vins",
+      "from": "culture:Cité des Climats et Vins de Bourgogne"
+     },
+     {
+      "key": "culture:Musée du Vin de Bourgogne",
+      "from": "culture:Musée du Vin de Bourgogne"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Burgundy-made",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Places to sit",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:A terrace on the Place Carnot",
+      "from": "work:A Place Carnot terrace"
+     },
+     {
+      "key": "linger:Athenaeum de la Vigne et du Vin",
+      "from": "gastronomy:Athenaeum de la Vigne et du Vin"
+     },
+     {
+      "key": "linger:Pâtisserie Fabien Berteau",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Pinot Noir",
+      "from": "drink:Pinot Noir — the red of the Côte"
+     },
+     {
+      "key": "drink:Chardonnay and the Clos des Mouches",
+      "from": "drink:Chardonnay — and the Clos des Mouches"
+     },
+     {
+      "key": "drink:The climat",
+      "from": "drink:The climat — Beaune's 42 premier crus"
+     }
+    ]
+   },
+   {
+    "title": "Before and after",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Kir",
+      "from": "drink:Kir — Aligoté & crème de cassis"
+     },
+     {
+      "key": "drink:Crémant de Bourgogne",
+      "from": "drink:Crémant de Bourgogne"
+     },
+     {
+      "key": "drink:Marc and Fine de Bourgogne",
+      "from": "drink:Marc & Fine de Bourgogne"
+     }
+    ]
+   },
+   {
+    "title": "The cellars you can walk into",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Marché aux Vins",
+      "from": "secret-gems:Marché aux Vins at opening — 10:00"
+     },
+     {
+      "key": "bars:Bouchard Père & Fils",
+      "from": null
+     },
+     {
+      "key": "bars:Patriarche Père & Fils",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi listening bar",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Live, and late",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:The cellar-and-counter night",
+      "from": "music:The cellar-and-counter night"
+     },
+     {
+      "key": "listening:La Vapeur, Dijon",
+      "from": "music:Dijon — La Vapeur SMAC & Le SIRK Festival"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "South along the Côte",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:The Route des Grands Crus",
+      "from": null
+     },
+     {
+      "key": "around:Pommard and Volnay",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "North, to the monks and the dukes",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Clos de Vougeot",
+      "from": null
+     },
+     {
+      "key": "around:Dijon",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "At the glass and on the plate",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Burgundy by the glass on a terrace",
+      "from": "avoid:Burgundy by the glass on a tourist terrace"
+     },
+     {
+      "key": "avoid:The frozen-snail menu",
+      "from": "avoid:The frozen-snail tourist menu"
+     }
+    ]
+   },
+   {
+    "title": "The calendar and the car",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:A quiet day on auction Sunday",
+      "from": "avoid:Arriving for a quiet day on auction Sunday"
+     },
+     {
+      "key": "avoid:Tasting and driving the Route",
+      "from": "avoid:Driving the Route des Grands Crus and tasting"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The town",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Beaune tourist office",
+      "from": null
+     },
+     {
+      "key": "follow:Hospices de Beaune",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wine and the music",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Bourgogne Wines (BIVB)",
+      "from": null
+     },
+     {
+      "key": "follow:Raisin",
+      "from": null
+     },
+     {
+      "key": "follow:Festival d'Opéra Baroque",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "provisioning:The Saturday market": "v15-march-des-halles-saturday",
+  "provisioning:Charcuterie Raillard": "v-charcuterie-raillard",
+  "linger:Pâtisserie Fabien Berteau": "v16-p-tisserie-fabien-berteau"
+ }
+}

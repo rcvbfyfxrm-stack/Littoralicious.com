@@ -1,0 +1,129 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the quarter you are nearest · in the order you go",
+  "lede": "Beaune eats early and goes to bed early: the bouchons take their last orders around nine, the starred rooms a little later, and the town inside the ramparts is quiet by eleven. Each quarter below is one evening on foot — the glass or the walk, the table, the last look — and none is more than ten minutes from the next. Hours were re-checked on 25 October 2026; where listings disagree, the step says call. Most tables close on Sunday and Monday.",
+  "door_en": "Crew ashore for one evening: a plan for each quarter — the Place Carnot, the cellar streets, the Faubourg Madeleine, the charcutiers’ square, the boulevard — in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "carnot", "name": "Place Carnot · the Halle",
+    "line": "A tasting in a friars’ church before it shuts, a starred dinner on the square, and the glazed roof on the way home.",
+    "steps": [
+     {"time": "17:45", "name": "Marché aux Vins", "ref": "card:Marché aux Vins",
+      "text": "The five-wine route through the cellars and the chapels, one of them a Beaune premier cru; it closes at 19:00, so be in by six."},
+     {"time": "19:30", "name": "Le Carmin", "ref": "venue:v01-le-carmin",
+      "text": "Christophe Quéant’s market menu on the Place Carnot. Dinner Tuesday to Saturday, closed Sunday and Monday; book, the room is small."},
+     {"time": "21:45", "name": "Round the square", "ref": "card:Place Carnot and the Halle",
+      "text": "Back past the Halle and along the Hôtel-Dieu’s street, when the day visitors have gone."}
+    ],
+    "after": "No table tonight? [[venue:v07-le-bistrot-bourguignon|Le Bistrot Bourguignon]] is three minutes away on rue Monge — come early, it fills."},
+   {"id": "maufoux", "name": "Rue Maufoux · the cellar streets",
+    "line": "The négociants’ doors at dusk, then a ten-seat charcoal counter.",
+    "steps": [
+     {"time": "18:30", "name": "The cellar streets", "ref": "card:Rue Maufoux and the cellar streets",
+      "text": "Rue Maufoux and its side streets, the old merchant doorways and the vaults under your feet; a slow quarter of an hour."},
+     {"time": "19:15", "name": "Bissoh", "ref": "venue:v04-bissoh",
+      "text": "Limousin beef aged forty days and eel over binchotan, sake or a lesser-known Burgundy with it. Dinner Wednesday to Sunday only; about ten seats, book."}
+    ],
+    "after": "Spend more instead: [[venue:v02-clos-du-c-dre|Clos du Cèdre]], the starred room on the boulevard, five minutes’ walk."},
+   {"id": "madeleine", "name": "Place Madeleine · the faubourg",
+    "line": "The side of town that stays up: bottles on shelves, a shared table, a last glass.",
+    "steps": [
+     {"time": "18:30", "name": "Le Comptoir des Tontons", "ref": "venue:v10-le-comptoir-des-tontons",
+      "text": "The natural-wine épicerie on the faubourg: choose a bottle off the shelf. Closed Sunday and Monday; whether it still serves at table is not confirmed for 2026, so call."},
+     {"time": "19:30", "name": "Caves Madeleine", "ref": "venue:v06-caves-madeleine",
+      "text": "The long shared table among the shelves, the farm-sourced plates and a bottle pulled from the wall. Closed Wednesday and Sunday; book by phone."},
+     {"time": "21:45", "name": "The last glass", "ref": "card:The cellar-and-counter night",
+      "text": "Beaune’s night is a glass and a conversation: the card says where, and how late."}
+    ]},
+   {"id": "monge", "name": "Place Monge · the charcutiers’ square",
+    "line": "The belfry and the statue, then the canon cooked straight.",
+    "steps": [
+     {"time": "18:45", "name": "Place Monge", "ref": "card:Place Monge",
+      "text": "The fifteenth-century belfry and Monge on his plinth; the charcutiers’ windows are on the way in."},
+     {"time": "19:15", "name": "Le Bistrot Bourguignon", "ref": "venue:v07-le-bistrot-bourguignon",
+      "text": "Œufs en meurette, then the bœuf bourguignon, and a bottle from a list of some six hundred. Tuesday to Saturday; small, so book or come early."}
+    ],
+    "after": "Eat first instead: a slice of jambon persillé from [[venue:v-charcuterie-raillard|Charcuterie Raillard]] at number 4 before it shuts — its only published hours are from 2018, so check."},
+   {"id": "boulevard", "name": "The ramparts · the boulevard",
+    "line": "The plane trees of the ramparts in the last light, then the Bib Gourmand on the ring road.",
+    "steps": [
+     {"time": "18:00", "name": "The Rempart des Dames", "ref": "card:The ramparts circuit",
+      "text": "The double row of plane trees on the old walls; the circuit is broken by private stretches, so take this one and come back down."},
+     {"time": "19:15", "name": "La Table du Square", "ref": "venue:v08-la-table-du-square",
+      "text": "The fortnightly market menu, with the Clavisy lamb if it is on. Tuesday to Saturday, last orders about 20:45; a late-cancellation charge is reported, so book honestly."}
+    ],
+    "after": "The grand night on the same boulevard: [[venue:v02-clos-du-c-dre|Clos du Cèdre]], dinner Wednesday to Sunday."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: a tasting in a friars’ church, the Saturday market, a starred lunch, the mustard mill, the premier crus on foot — all of it inside the ramparts or a walk from them.",
+  "door_note": "Le marché · la cave · la table",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "Beaune sells itself as a monument and a shop: the Hôtel-Dieu, a tasting with a souvenir glass, a terrace on the square, a car on the wine road. The real thing is smaller and closer — the Saturday market under the Halle, jambon persillé by the slice, mustard ground in stone, a starred lunch on the square, and the premier crus a few hundred metres behind the last houses. No car is needed: everything here is on foot. Every stop is in this guide, checked in October 2026. Avoid the weekend of 13 to 16 November 2026 unless you have come for the auction.",
+  "book": [
+   "[[venue:v01-le-carmin|Le Carmin]] — Saturday lunch; book before you leave, the room is small",
+   "[[venue:v06-caves-madeleine|Caves Madeleine]] — Saturday dinner, by phone (no online booking on MICHELIN)",
+   "[[venue:v02-clos-du-c-dre|Clos du Cèdre]] — Sunday lunch, through the hotel; the only starred table open on a Sunday",
+   "[[venue:v07-le-bistrot-bourguignon|Le Bistrot Bourguignon]] — Friday dinner; small and it fills"
+  ],
+  "days": [
+   {"label": "Friday", "title": "A friars’ church, then the canon", "stops": [
+     {"time": "17:45", "name": "Taste at the Marché aux Vins", "ref": "card:Marché aux Vins",
+      "text": "Take the cup and walk the cellars and chapels of the old Cordeliers church at your own pace: five wines, one a premier cru.",
+      "meta": "Rue Nicolas Rolin, opposite the Hôtel-Dieu · daily 10:00–12:00 and 14:00–19:00 · Découverte 29 € (Oct 2026)"},
+     {"time": "19:30", "name": "Dinner at Le Bistrot Bourguignon", "ref": "venue:v07-le-bistrot-bourguignon",
+      "text": "Eggs poached in red wine, then the bourguignon: the two dishes the town is built on, on one table.",
+      "meta": "8 rue Monge · Tuesday to Saturday, lunch and dinner · about 45 € a head before wine (Gault&Millau 2026)"}
+   ]},
+   {"label": "Saturday", "title": "The market, the hospital, the mill and the slope", "stops": [
+     {"time": "08:30", "name": "The Saturday market", "ref": "venue:v15-march-des-halles-saturday",
+      "text": "Under the Halle and out across the Place Fleury: Époisses, Cîteaux, jambon persillé and the autumn mushrooms. Go early; it packs up by noon.",
+      "meta": "Place de la Halle · 08:00–12:00 by the tourist office (some listings say 13:00)"},
+     {"time": "10:15", "name": "The Hôtel-Dieu", "ref": "card:The Hôtel-Dieu",
+      "text": "The glazed roof from the courtyard, the great hall of the poor, and the Last Judgment in its own room; allow an hour and a half.",
+      "meta": "Rue de l’Hôtel-Dieu · from 09:00 · 12.50 € (Oct 2026, one listing)"},
+     {"time": "12:30", "name": "Lunch at Le Carmin", "ref": "venue:v01-le-carmin",
+      "text": "The three-course market lunch under a MICHELIN star, finishing on a soufflé.",
+      "meta": "4B Place Carnot · lunch Wednesday to Saturday · 50–59 € (Oct 2026) · book"},
+     {"time": "15:00", "name": "The mustard mill", "ref": "card:Edmond Fallot",
+      "text": "The tour of the last family mustard mill of Burgundy, its granite stones grinding slowly; buy the Moutarde de Bourgogne on the way out.",
+      "meta": "31 rue du Faubourg Bretonnière · tours in French through the day, in English June to September only · 12 € (Oct 2026)"},
+     {"time": "16:30", "name": "Up into the climats", "ref": "card:Up into the climats",
+      "text": "Out past the Parc de la Bouzaize and up the vineyard lanes to the walls of the Clos des Mouches, with the low sun on the slope.",
+      "meta": "From the park’s western gate · 2–3 hours there and back · stay on the tracks"},
+     {"time": "19:45", "name": "Dinner at Caves Madeleine", "ref": "venue:v06-caves-madeleine",
+      "text": "A seat at the shared table, the six-course menu from the carte, and a bottle pulled from the shelves around you.",
+      "meta": "8 rue du Faubourg Madeleine · closed Wednesday and Sunday · six courses 69 € (Gault&Millau 2026) · by phone"}
+   ]},
+   {"label": "Sunday", "title": "Pastry, the galleries, the starred lunch", "stops": [
+     {"time": "09:30", "name": "Pâtisserie Fabien Berteau", "ref": "venue:v16-p-tisserie-fabien-berteau",
+      "text": "A slice of cheesecake and a coffee, and something in a box for the journey; it is open Sunday mornings only.",
+      "meta": "18 rue Monge · Sunday 09:00–13:00, closed Wednesday (directories, Feb 2026)"},
+     {"time": "10:30", "name": "The Patriarche galleries", "ref": "card:Patriarche Père & Fils",
+      "text": "Walk the old convent’s vaults on your own, then six wines with a sommelier at the end.",
+      "meta": "5–7 rue du Collège · departures 09:30–11:00 and 14:00–17:00 · 25 € (Oct 2026)"},
+     {"time": "12:30", "name": "Lunch at Clos du Cèdre", "ref": "venue:v02-clos-du-c-dre",
+      "text": "Matured Charolais beef with bone marrow in the starred room under the cedar: the long Sunday lunch.",
+      "meta": "10–12 boulevard Maréchal-Foch · lunch Saturday and Sunday · 95–190 € (Gault&Millau 2026) · book through the hotel"},
+     {"time": "15:30", "name": "The Cité des Climats", "ref": "card:Cité des Climats et Vins",
+      "text": "The tower at the edge of town that explains the slope you walked yesterday; end on the terrace.",
+      "meta": "21 avenue Charles de Gaulle · daily 10:00–18:00 in autumn (a ticket reseller: check) · about two hours"}
+   ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Take the Place Monge: the belfry at dusk, and on the way in a slice of jambon persillé at [[venue:v-charcuterie-raillard|Charcuterie Raillard]] if it is still open; then [[venue:v07-le-bistrot-bourguignon|Le Bistrot Bourguignon]] for the meurette and the bourguignon."},
+   {"title": "The grand night instead", "text": "[[venue:v01-le-carmin|Le Carmin]] on the square or [[venue:v02-clos-du-c-dre|Clos du Cèdre]] on the boulevard, one MICHELIN star each; for something smaller and stranger, the charcoal counter at [[venue:v04-bissoh|Bissoh]]."},
+   {"title": "This November", "dated": "Checked 25 October 2026", "items": [
+     "The auction weekend fills the town from Friday 13 to Monday 16 November: [[card:The 166th Vente des Vins, Sunday 15 November|the sale]] is on Sunday 15 at 14:30, and [[card:The public weekend: the Fête des Grands Vins and the streets|the public tasting]] on the Friday and Saturday.",
+     "[[card:The Hôtel-Dieu in November|The Hôtel-Dieu]] goes on winter hours, with a lunch break, from 16 November.",
+     "Sunday 1 and Wednesday 11 November are public holidays: check the tables before you plan round them.",
+     "[[card:A quiet day on auction Sunday|Auction Sunday]] is the wrong day for a quiet visit; on the Monday after, most tables are closed."
+   ]},
+   {"title": "Where to sleep", "text": "This guide does not judge rooms. The only hotel it names is the Hostellerie Cèdre & Spa on the boulevard, because its restaurant is [[venue:v02-clos-du-c-dre|Clos du Cèdre]]; we have not stayed there."},
+   {"title": "What we would leave out", "text": "The [[card:Burgundy by the glass on a tourist terrace|glass of Burgundy on a terrace]] on the square, the [[card:The frozen-snail menu|frozen-snail menu]] by the monument, and [[card:Tasting and driving the Route|tasting your way down the wine road at the wheel]]."}
+  ]
+ }
+}

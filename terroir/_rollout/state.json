@@ -601,7 +601,29 @@
   },
   {
    "slug": "beaune-bourgogne",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/beaune-bourgogne-2026-10-25",
+   "date": "2026-10-25",
+   "readings": "done 2026-10-25",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (25 Oct, after apply_readings; 217 OK lines; floors = curated counts: venues 12, fcards 80, fsubs 33, neighborhoods 6, walks 5, categories 4, lane stories 4, gems 3, liste 14, pins 11, mapsLinks 66; groups 3; doors 4; hot minVenues 5; render via cdp.py/Playwright with the test-only pw-shim (leaflet@1.9.4 from npm, unpkg.com blocked here); 18 map pins rendered)",
+    "probe-guide.cjs: ALL PASS, exit 0 (28 checks)",
+    "probe-links.cjs desk: PENDING at commit time (see next commit)",
+    "probe-links.cjs phone: PENDING at commit time (see next commit)",
+    "probe-readings.cjs: PENDING at commit time (see next commit)",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 121 units (two found and fixed: the Last Judgment's duplicate museum-site link, the Bach à Bacchus 'dates not announced' sentence)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "banned-word scan incl. the readings rulings: 0 in prose; the only 'romantique' hits are the festival's official French name; cut venues absent from the prose",
+    "screenshots: review/beaune-bourgogne/beaune-card-desktop.png, beaune-card-phone.png (the ramparts walk, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . beaune-bourgogne",
+    "guide.michelin.com Beaune 2026 (Le Carmin and Clos du Cèdre stars, La Table du Square's Bib, Bissoh); Ma Cuisine trading in Nov 2026 (MICHELIN 'temporarily closed'); Le Carmin / cedrebeaune.com / Bissoh / Bistrot Bourguignon / Table du Square / Caves Madeleine: days, holiday closes, auction-weekend availability",
+    "the unverified and soft records: Enstase (enstase.fr, 2026 trading, kitchen nights), Le Comptoir des Tontons (2026 table service), Charcuterie Raillard (2026 hours, phone), Fabien Berteau (2026), the Saturday market on 14 Nov 2026, Bouchard Père & Fils (2026 visits/prices, domain), the Athenaeum, Mulot & Petitjean hours, the Cîteaux abbey shop",
+    "the rest of research/verify_*, rewrite_* and hot_events.json _needs_network (fetedesgrandsvins.fr 2026 prices, Festivinales programme, official Hôtel-Dieu November hours, Cité des Climats full price, Christmas market dates, 2026 vintage report, 2027 festival dates)"
+   ],
+   "notes": "25 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Faro pipeline). Old page a GOLD1-era tier inventory (16 venues in flat tiers, no lanes, no dishes, no terroir/data copy), so the GOLD4/5 floor came too (4 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 14 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, month table rewritten, craft (Art du Tonneau, Vignoles: build a barrel), honest listening room, Autour, the #bougie fold '1859 — the Hospices auction', 3 gems, terroir/data copy, 24-column CSV; hub untouched; hub builder not run). Places 16 -> 12 (none over 3, no 4s): cut Le Bistro de l'Hôtel, Loiseau des Vignes (cap), Marché aux Vins, Bouchard, Patriarche (kept as cellar cards); added Charcuterie Raillard from the old cards, no coordinates invented. Fold cards: 68 old tcards -> 61 written + 12 hot + 7 calendar = 80 .fcard, every one labelled. Guest list: last minute Bistrot Bourguignon · Caves Madeleine; this week Table du Square · Bissoh; grand night Le Carmin · Clos du Cèdre. Berths Le Carmin · Bistrot Bourguignon · Saturday market. Statuses: 8 confirmed 25 Oct, 4 unverified (Ma Cuisine, Enstase, Raillard, Berteau — none a berth or on the list). Corrections: see review/beaune-bourgogne/README.md (Ma Cuisine 'temporarily closed' on MICHELIN; prices for Bissoh, Clos du Cèdre, Bistrot Bourguignon, Table du Square; market 08:00-12:00; Salle des Pôvres ~50 m not 72; Monge Navy minister of the Republic; 1395 ban on Gamay; Drouhin ~14 of 25 ha of Clos des Mouches; Marché aux Vins 29 €; auction weekend 13-16 Nov; Rootstock 2026 dropped; tapestries close 31 Oct). Readings: One Night 5 quarters (Place Carnot · the cellar streets · Faubourg Madeleine · Place Monge · the ramparts and the boulevard), Getaway 12 stops Fri 2 / Sat 6 / Sun 4, all on foot, avoiding the auction weekend. Details: terroir/_rollout/review/beaune-bourgogne/README.md."
   },
   {
    "slug": "lons-le-saunier-jura",

@@ -1,0 +1,122 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The serious dinners — two stars inside the walls and a charcoal counter",
+   "group": "grande",
+   "ids": [
+    "v01-le-carmin",
+    "v02-clos-du-c-dre",
+    "v04-bissoh"
+   ]
+  },
+  "bouchons": {
+   "label": "The bouchons — the Burgundian canon, cooked straight",
+   "group": "petite",
+   "ids": [
+    "v03-ma-cuisine",
+    "v07-le-bistrot-bourguignon",
+    "v08-la-table-du-square"
+   ]
+  },
+  "wine": {
+   "label": "Wine rooms — the bistrots where the bottle comes first",
+   "group": "petite",
+   "ids": [
+    "v06-caves-madeleine",
+    "v10-le-comptoir-des-tontons",
+    "v11-enstase"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the Saturday market, the charcutier and the pâtissier",
+   "group": "street",
+   "ids": [
+    "v15-march-des-halles-saturday",
+    "v-charcuterie-raillard",
+    "v16-p-tisserie-fabien-berteau"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit"
+  ],
+  "petite": [
+   "bouchons",
+   "wine"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v05-le-bistro-de-l-h-tel": "Cut for the cap: the house table of the Hôtel le Cep, a good room, but the grande lane keeps the two starred kitchens and the charcoal counter, and this guide does not judge hotels.",
+  "v09-loiseau-des-vignes": "Cut for the cap: the Loiseau group's by-the-glass bistro; the wine rooms keep three that belong to Beaune's own growers and drinkers (Caves Madeleine, Le Comptoir des Tontons, Enstase).",
+  "v12-march-aux-vins": "Moved, not lost: a tasting cellar is not a table. It keeps a card in the cellars at the glass (its own address and map), and leaves the venue list.",
+  "v13-patriarche-p-re-fils": "Moved, not lost: a cellar visit is not a table. It keeps a card in the cellars at the glass, and leaves the venue list.",
+  "v14-bouchard-p-re-fils": "Moved, not lost: a cellar visit is not a table. It keeps a card in the cellars at the glass, and leaves the venue list."
+ },
+ "new_venues": {
+  "v-charcuterie-raillard": {
+   "id": "v-charcuterie-raillard",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Charcuterie Raillard",
+   "short": "Charcuterie Raillard",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Charcuterie"
+   ],
+   "address": "4 rue Monge, 21200 Beaune",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Charcuterie+Raillard+4+rue+Monge+Beaune",
+   "why": "",
+   "verdict": "Eddy Raillard's charcuterie on rue Monge: the jambon persillé the critic Gilles Pudlowski called a model of the genre, with gougères and pâté en croûte, sold by the slice to eat standing up.",
+   "signature": "A thick slice of jambon persillé, with bread and a cornichon.",
+   "caveat": "",
+   "person": "",
+   "_source": "old producer, street-food and eat cards"
+  }
+ },
+ "berths": [
+  "v01-le-carmin",
+  "v07-le-bistrot-bourguignon",
+  "v15-march-des-halles-saturday"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v07-le-bistrot-bourguignon",
+   "v06-caves-madeleine"
+  ],
+  "Plan ahead — this week": [
+   "v08-la-table-du-square",
+   "v04-bissoh"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-le-carmin",
+   "v02-clos-du-c-dre"
+  ]
+ },
+ "fours": {},
+ "dropped_cards": {
+  "bougie:Hostellerie de Levernois / Hôtel le Cep / Hostellerie Cèdre & Spa": "hotels, not food or place: this guide does not judge rooms (Clos du Cèdre keeps its table card; the Levernois star is named on the summit lane story only if the re-check confirms it)",
+  "dish:* (7 plates)": "rewritten as The Dish inside La liste",
+  "drink:Vin Jaune — 75 minutes east": "not this guide's: the Jura has its own guide (Lons-le-Saunier)",
+  "music:Festival International d'Opéra Baroque / Rootstock / Collégiale concerts": "told once: one calendar card each",
+  "events:* (8)": "rewritten as the calendar and the hot board (the auction weekend is on both: the board the dates, the food-history fold the story)",
+  "culture:The ramparts of Beaune": "told once: merged into the ramparts walk",
+  "culture:Musée Marey & Musée des Beaux-Arts": "merged into the Marey card (born in Beaune)",
+  "work:Parc de la Bouzaise / Rempart des Dames / Cité des Climats terraces": "merged into the Bouzaise walk, the ramparts walk and the Cité card",
+  "secret-gems:* (6)": "merged: the 09:00 courtyard into the Hôtel-Dieu, first light into the ramparts walk, the lake bench into the Bouzaise loop, the weekday morning into the Collégiale, Rue d'Enfer into the cellar streets, the 10:00 opening into the Marché aux Vins",
+  "street-food:Warm gougères from the boulangerie": "told once: the gougère is The Dish's and La liste's",
+  "street-food:Jambon persillé by the slice — Raillard": "now the Raillard pointer card in the larder (Raillard is a table venue, the street lane)",
+  "street-food:The Saturday-market traiteur": "merged into the Saturday market pointer card",
+  "gastronomy:Charcuterie Raillard": "now a table venue (the street lane)",
+  "ethnic-restaurants / burger-kebab": "honest-empty sections in the old guide: no card (the charcutier carries the quick bite)",
+  "twentyfour / three-tables / tables-extended": "the old 24-hour plan and tier lists: replaced by the lanes, the guest list and the two readings (One Night, The Getaway Weekend)"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}
