@@ -608,9 +608,9 @@
    "checks": [
     "checks_gold4.py WITH render: ALL CHECKS GREEN (25 Oct, after apply_readings; 217 OK lines; floors = curated counts: venues 12, fcards 80, fsubs 33, neighborhoods 6, walks 5, categories 4, lane stories 4, gems 3, liste 14, pins 11, mapsLinks 66; groups 3; doors 4; hot minVenues 5; render via cdp.py/Playwright with the test-only pw-shim (leaflet@1.9.4 from npm, unpkg.com blocked here); 18 map pins rendered)",
     "probe-guide.cjs: ALL PASS, exit 0 (28 checks)",
-    "probe-links.cjs desk: PENDING at commit time (see next commit)",
-    "probe-links.cjs phone: PENDING at commit time (see next commit)",
-    "probe-readings.cjs: PENDING at commit time (see next commit)",
+    "probe-links.cjs desk: 77 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 77 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 57/57 placed cards and 12/12 venues with Maps on the closed card, no sideways scroll; One Night 19 links, Getaway 21); lens screenshots in review/beaune-bourgogne/",
     "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 121 units (two found and fixed: the Last Judgment's duplicate museum-site link, the Bach à Bacchus 'dates not announced' sentence)",
     "facts_tidy.py: run, 0 values needed tidying",
     "banned-word scan incl. the readings rulings: 0 in prose; the only 'romantique' hits are the festival's official French name; cut venues absent from the prose",
