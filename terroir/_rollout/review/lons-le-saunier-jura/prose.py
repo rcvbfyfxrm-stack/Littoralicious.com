@@ -8,8 +8,8 @@ import re, html as H
 
 TITLE = "Lons-le-Saunier, Jura — Terroir Guide"
 DESC = ("Lons-le-Saunier and the Jura wine slope for people who cook: Comté at three ages under the arcades, Morteau from the Thursday "
-        "market, the poularde with Vin Jaune and morels, the cellars of Château-Chalon and Arbois, and two Michelin houses up the "
-        "Revermont — at most three places of each kind, every one re-checked in October 2026.")
+        "market, the poularde with Vin Jaune and morels, the cellars of Château-Chalon and Arbois, and Michelin stars at Pupillin and "
+        "Dole — at most three places of each kind, every one re-checked in October 2026.")
 
 HERO = ('<div class="hero"><h1>Lons-le-Saunier</h1><div class="region">Jura · Bourgogne-Franche-Comté · France</div><div class="philosophy">"A '
         'salt town at the foot of the Revermont: arcades of golden stone, brine rising in the park, and up the slope behind it the '
@@ -23,7 +23,7 @@ ETYMON = ('<div class="etymon"><b>The name</b> <em>Lons-le-Saunier: Lons of the 
 
 LEAD = ('<div class="lead"><p><strong>Lons-le-Saunier is the prefecture of the Jura, a salt town of about 17,000 at the foot of the '
         'wine slope:</strong> Comté cut at three ages under the arcades, Morteau and cancoillotte at the Thursday market, the poularde '
-        'with Vin Jaune and morels, and the cellars of Château-Chalon, Pupillin and Arbois within half an hour. <strong>Make or '
+        'with Vin Jaune and morels, and the cellars of Château-Chalon, Pupillin and Arbois within the hour. <strong>Make or '
         'break:</strong> taste Vin Jaune where it is made, and Comté side by side at three ages. <strong>The warning:</strong> from '
         'November many sites and some kitchens shut for the winter, and the best tables are on the slope, not in town: check the days '
         'on every card and plan a driver.</p></div>')
@@ -47,8 +47,8 @@ ESSAY = [
 ]
 HISTORY = [
  "The town is small and walkable: the Place de la Liberté and the arcades of rue du Commerce, the market squares around the "
- "theatre, the park of the salt springs. The tables that matter are partly here and partly up the slope, at Arbois, Pupillin and "
- "Port-Lesney, half an hour to the north.",
+ "theatre, the park of the salt springs. The tables that matter are partly here and partly up the slope, at Arbois and Pupillin, "
+ "about forty minutes north by road, with a star further on at Dole.",
  "Arbois is the wine town, and Pasteur’s: he grew up there and worked on wine in a laboratory you can still see. Château-Chalon "
  "makes only Vin Jaune. Pupillin calls itself the world capital of the pale red Ploussard. Each has its card.",
 ]
@@ -99,7 +99,7 @@ DROP_CARDS = []
 
 FOLDS = {
  "quartiers": {"title": "The town and the wine villages", "desc": "The square and the arcades, the market squares, the park of the salt springs; then Arbois, Pupillin and Château-Chalon up the slope",
-               "lede": "Lons itself is fifteen minutes end to end on foot. The wine villages are a short drive north and east along the Revermont: go with a driver if you mean to taste."},
+               "lede": "Lons itself is fifteen minutes end to end on foot. Château-Chalon is a short drive east; Arbois and Pupillin are about forty minutes north by road: go with a driver if you mean to taste."},
  "curiosities": {"title": "The record, corrected — what most guides get wrong", "desc": "The salt under the town, the grape that fathered half of Europe’s whites, the first gazette of appellations, and the man who wrote the anthem",
                  "lede": "Four stories the town and its wine tell about themselves, checked again in October 2026. Where the sources still argue, the card says so."},
  "provisioning": {"title": "The larder — the markets, the cheese and the poultry", "desc": "Where a galley provisions: the market days, the fromager and the jar of cancoillotte; then the fort where Comté ages, the Bresse poultry house and the chocolatier",
@@ -108,8 +108,8 @@ FOLDS = {
            "lede": "Walk the town early; walk the cliffs and the falls in daylight and in good boots. In November the paths up on the plateau can be wet or icy, and the cafés at the trailheads close for the winter."},
  "culture": {"title": "Culture — the churches, the cow, the salt and the scientist", "desc": "The crypt of Saint-Désiré, the Cordeliers, the Laughing Cow; Ledoux’s saltworks, Pasteur’s laboratory, and the lake-village finds",
              "lede": "Three stops in town, three a drive away. Check the winter hours: several close or shorten from November."},
- "craft": {"title": "The hand — craftsmanship", "desc": "The one craft of the Jura where a named hand teaches, the others and what each is missing, and the honest word on what the shops sell",
-           "lede": "The Jura made things in its long winters: pipes, toys, spectacles, cut stones, and the cheese itself. Most of the hands that practise them now sell rather than teach. The card at the top is the one that does both."},
+ "craft": {"title": "The hand — craftsmanship", "desc": "The wood courses of the Haut-Jura, the pipe-makers and the village dairy, what each is missing, and the honest word on what the shops sell",
+           "lede": "The Jura made things in its long winters: briar pipes, wooden toys, spectacles, cut stones, and the cheese itself. Honestly, nothing here clears the whole bar in October 2026: no workshop we found names a still-working master on a class anyone can join. The card at the top comes closest; the others show the craft without teaching it."},
  "coffee-gardens": {"title": "Rooms to linger & work", "desc": "A terrace on the theatre square, and the town’s library",
                     "lede": "Lons takes its coffee on the squares round the theatre. For an hour of work, the library."},
  "bars": {"title": "Boire & sortir — at the glass", "desc": "The yellow wine, the two red grapes and the appellations; the drinks before, after and with dessert; and the cellars, including the ones you will not get into",
@@ -123,7 +123,7 @@ FOLDS = {
 }
 
 GDESC = {
- ("quartiers", "Inside Lons"): "The square with the anthem’s statue, the market squares, and the park where the brine still rises.",
+ ("quartiers", "Inside Lons"): "The square and the arcades, the market squares, and the park where the brine still rises.",
  ("quartiers", "The wine villages"): "Pasteur’s wine town, the village of the pale red, and the cliff that makes only Vin Jaune.",
  ("curiosities", "Salt, grapes and a gazette"): "The brine under the town, a grape with a famous family, and the first list of appellations.",
  ("curiosities", "Born here"): "The officer who wrote the Marseillaise.",
@@ -133,7 +133,7 @@ GDESC = {
  ("walks", "Up on the lake plateau"): "The falls of the Hérisson, and the ridge above four lakes.",
  ("culture", "In Lons"): "A Merovingian crypt, the friars’ church, and the cheese that laughs.",
  ("culture", "Salt, science and the lake villages"): "Ledoux’s royal saltworks, Pasteur’s house in Arbois, and five thousand years kept in lake mud.",
- ("craft", "Do this one"): "The one bench where you can enrol and learn from a named hand.",
+ ("craft", "Do this one"): "The closest thing to a class: the wood trades of the Haut-Jura, taught to anyone who signs up.",
  ("craft", "The others, and what each is missing"): "Real crafts, real workshops: each lacks one thing.",
  ("craft", "The honest warning"): "What is sold as Jura-made, and is not.",
  ("coffee-gardens", "Places to sit"): "The terrace on the theatre square, and the library.",
@@ -150,7 +150,7 @@ GDESC = {
  ("follow", "The wine and the cheese"): "The wine board and the Comté body.",
 }
 
-TABLES_DESC = ("Two Michelin houses up the slope at one end and a slice of Morteau at the Thursday market at the other: at most three "
+TABLES_DESC = ("Two Michelin stars, at Pupillin and Dole, at one end and a slice of Morteau at the Thursday market at the other: at most three "
                "tables of each kind, picked for what you should not miss here, every card saying when it was last confirmed and which "
                "days it closes.")
 
@@ -164,7 +164,7 @@ CHAPTER_SUB = {"place": "the essay, salt and cheese, the town and the villages, 
                "practical": "what to skip, who to follow, the calendar, the months, the checklist, the sources"}
 
 GROUP_LBL = {"grande": "Les Grandes Tables", "petite": "Les Petites Tables", "street": "La Rue — The Street"}
-GROUP_DESC = {"grande": "The dinners you drive for: two Michelin houses up the slope and the Bib Gourmand on the river at Arbois.",
+GROUP_DESC = {"grande": "The dinners you drive for: a first Michelin star at Pupillin, the Bib Gourmand on the river at Arbois, and the starred house in Dole.",
               "petite": "Where this guide actually lives: the town’s own kitchens in Lons, and the tables in Arbois and Lons where the wine comes first.",
               "street": "On foot and early: the market, the fromager and the chocolatier."}
 

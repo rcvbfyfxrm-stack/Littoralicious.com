@@ -12,6 +12,8 @@ import fixes
 CARDS = {}
 for n in (1, 2, 3, 4):
     CARDS.update({k: v for k, v in J(R / f"rewrite_{n}.json").items() if not k.startswith("_")})
+FIX = J(R / "fix_1.json")   # the 26 Oct swaps (La Chaumière, Chez l'Artisan Fromager; Jeunet, Vagne and the Caveau out): cards rewritten for them
+CARDS.update(FIX["cards"])
 fixes.cards(CARDS)
 json.dump(CARDS, open(RV / "cards.json", "w"), ensure_ascii=False, indent=1)
 HOT = J(R / "hot_events.json")
@@ -22,6 +24,7 @@ for n in (1, 2):
     p = J(R / f"verify_{n}.json")
     VER.update({k: v for k, v in p.items() if not k.startswith("_")})
     LS.update(p.get("_lane_stories", {}))
+VER.update(FIX["venues"]); LS.update(FIX["lane_stories"])
 OUT = {}
 for vid in KEEP:
     v = VER[vid]

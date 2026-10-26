@@ -1,12 +1,12 @@
 {
  "lanes": {
   "summit": {
-   "label": "The stars on the slope — two Michelin houses and the Bib by the river",
+   "label": "The stars — Pupillin, the Bib by the river at Arbois, and Dole",
    "group": "grande",
    "ids": [
-    "v-maison-jeunet",
     "v01-la-table-du-grapiot",
-    "v02-le-bistron-me"
+    "v02-le-bistron-me",
+    "v-la-chaumiere"
    ]
   },
   "lons": {
@@ -19,12 +19,11 @@
    ]
   },
   "wine": {
-   "label": "Wine tables — the tavern, the cave à manger, the caveau",
+   "label": "Arbois at table — the tavern and the cave à manger",
    "group": "petite",
    "ids": [
     "v08-la-finette-taverne-d-arbois",
-    "v09-le-bistrot-des-claquets",
-    "v11-caveau-des-jacobins"
+    "v09-le-bistrot-des-claquets"
    ]
   },
   "street": {
@@ -32,7 +31,7 @@
    "group": "street",
    "ids": [
     "v12-march-de-lons-le-saunier",
-    "v-fromagerie-vagne",
+    "v-artisan-fromager",
     "v10-p-tisserie-chocolaterie-pelen"
    ]
   }
@@ -57,16 +56,17 @@
   "v14-domaine-macle": "Moved, not lost: a wine estate is not a table. It keeps a card in the cellars at the glass.",
   "v15-domaine-st-phane-tissot": "Moved, not lost: a wine estate is not a table. It keeps a card in the cellars at the glass.",
   "v16-maison-de-louis-pasteur": "Moved, not lost: a museum is not a table. It keeps its card in Culture.",
-  "v17-salines-royales-d-arc-et-senans-unes": "Moved, not lost: a monument is not a table. It keeps its card in Culture."
+  "v17-salines-royales-d-arc-et-senans-unes": "Moved, not lost: a monument is not a table. It keeps its card in Culture.",
+  "v11-caveau-des-jacobins": "Wrong town: the 26 Oct re-check found it is the Fruitière Vinicole d'Arbois shop in the former Jacobin church at Poligny (100 Grande Rue), not a Lons wine bar, and a Jura Tourisme article reported it closed for works with no reopening found."
  },
  "new_venues": {
-  "v-maison-jeunet": {
-   "id": "v-maison-jeunet",
+  "v-la-chaumiere": {
+   "id": "v-la-chaumiere",
    "cat": "shop",
    "tier": "plenty",
    "priority": 1,
-   "name": "Maison Jeunet par Steven Naessens",
-   "short": "Maison Jeunet",
+   "name": "La Chaumière",
+   "short": "La Chaumière",
    "lat": null,
    "lng": null,
    "tags": [],
@@ -74,44 +74,62 @@
     "Michelin",
     "Contemporary"
    ],
-   "address": "Château de Germigney, 31 rue Edgar Faure, 39600 Port-Lesney",
-   "maps": "https://www.google.com/maps/search/?api=1&query=Maison+Jeunet+Ch%C3%A2teau+de+Germigney+Port-Lesney",
+   "address": "Dole",
+   "maps": "https://www.google.com/maps/search/?api=1&query=La+Chaumi%C3%A8re+Dole+France",
    "why": "",
-   "verdict": "The Arbois two-star of Jean-Paul Jeunet, carried by his successor Steven Naessens to the Château de Germigney at Port-Lesney in November 2021: Morbier and Morteau cromesquis, snails in Savagnin broth, Bresse poultry with Vin Jaune and morels.",
-   "signature": "Bresse poultry with Vin Jaune and morels.",
+   "verdict": "",
+   "signature": "",
    "caveat": "",
-   "person": "Steven Naessens",
-   "_source": "old bougie and avoid cards"
+   "person": "Laurent Barberot",
+   "_source": "old bougie card; swapped in on 26 Oct after the summit lane's Maison Jeunet was found gone (record from research/fix_1.json)"
   },
-  "v-fromagerie-vagne": {
-   "id": "v-fromagerie-vagne",
+  "v-artisan-fromager": {
+   "id": "v-artisan-fromager",
    "cat": "shop",
    "tier": "plenty",
    "priority": 1,
-   "name": "Fromagerie Vagne",
-   "short": "Fromagerie Vagne",
+   "name": "Chez l'Artisan Fromager",
+   "short": "Chez l'Artisan Fromager",
    "lat": null,
    "lng": null,
    "tags": [],
    "productTags": [
     "Cheese"
    ],
-   "address": "Rue du Commerce, 39000 Lons-le-Saunier",
-   "maps": "https://www.google.com/maps/search/?api=1&query=Fromagerie+Vagne+Lons-le-Saunier",
+   "address": "39 rue du Commerce, 39000 Lons-le-Saunier",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Chez+l%27Artisan+Fromager+39+rue+du+Commerce+Lons-le-Saunier",
    "why": "",
-   "verdict": "The fromager-affineur under the arcades: Comté at several ages side by side, Bleu de Gex, Morbier, Mont d'Or in season and cancoillotte.",
-   "signature": "Comté at three ages, cut side by side.",
+   "verdict": "",
+   "signature": "",
    "caveat": "",
    "person": "",
-   "_source": "old gastronomy, dish and avoid cards"
+   "_source": "found by the 26 Oct venue pack (Jura Tourisme) when the old guide's 'Fromagerie Vagne, rue du Commerce' proved to be in Poligny"
   }
  },
- "berths": [],
- "shortlist": {},
+ "berths": [
+  "v01-la-table-du-grapiot",
+  "v03-tablier",
+  "v12-march-de-lons-le-saunier"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v08-la-finette-taverne-d-arbois",
+   "v06-le-bistrot-des-marronniers"
+  ],
+  "Plan ahead — this week": [
+   "v02-le-bistron-me",
+   "v03-tablier"
+  ],
+  "Plan ahead — the grand night": [
+   "v01-la-table-du-grapiot",
+   "v-la-chaumiere"
+  ]
+ },
  "fours": {},
  "dropped_cards": {
-  "bougie:Château du Mont Joly / La Chaumière": "cut for the cap: both near Dole, 40 km north, past the summit lane's three; Dole keeps an Autour card",
-  "bougie:Maison Jeunet": "now a table venue (the summit lane)",
+  "bougie:Château du Mont Joly": "cut for the cap (Sampans, near Dole); La Chaumière, also starred and in Dole itself, takes the summit lane's third place",
+  "bougie:La Chaumière": "now a table venue (the summit lane)",
+  "bougie:Maison Jeunet": "gone: Naessens left Germigney in July 2023 (the 26 Oct re-check); the warning card says so",
   "dish:* (7 plates)": "rewritten as The Dish inside La liste",
   "music:La Percée du Vin Jaune / Festival de Musique du Haut-Jura / natural-wine festivals": "told once: one calendar card each",
   "events:* (7)": "rewritten as the calendar and the hot board",
