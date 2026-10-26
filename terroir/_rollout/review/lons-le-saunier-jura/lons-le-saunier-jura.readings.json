@@ -1,0 +1,135 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the town you are nearest · in the order you go",
+  "lede": "The Jura dines early: most kitchens take the last orders between half past eight and half past nine, and many close on Sunday and Monday. Lons has its own tables within a few minutes’ walk of each other; Arbois and Pupillin are about forty minutes north by road, Dole further on. Each plan below is one evening in one place. Hours were re-checked on 26 October 2026; where listings disagree, the step says call.",
+  "door_en": "Crew ashore for one evening: a plan for each place — the arcades of Lons, the park and rue de Vallière, Arbois on the Cuisance, Pupillin, Dole — in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "arcades", "name": "Lons · the arcades and Place de la Liberté",
+    "line": "A coffee or a glass facing the theatre, the arcades as the shops close, and a tiny room for the morels.",
+    "steps": [
+     {"time": "18:00", "name": "Le Grand Café du Théâtre", "ref": "card:Le Grand Café du Théâtre",
+      "text": "A glass at the counter of the brasserie facing the theatre, there since 1847. The bar’s evening hours are not confirmed; the kitchen opens at 19:00."},
+     {"time": "18:45", "name": "Under the arcades", "ref": "card:Place de la Liberté and the arcades",
+      "text": "Walk the length of rue du Commerce under the 146 arches, past the plaque at number 24."},
+     {"time": "19:30", "name": "Ô Tablier", "ref": "venue:v03-tablier",
+      "text": "The croûte aux morilles au Vin Jaune in a small room below street level. Closed Wednesday and Sunday, dinner only on some nights: listings differ, so call and book."}
+    ],
+    "after": "No table? [[venue:v06-le-bistrot-des-marronniers|Le Bistrot des Marronniers]] is a few streets away on rue de Vallière (closed Sunday)."},
+   {"id": "valliere", "name": "Lons · the Parc des Bains and rue de Vallière",
+    "line": "The salt park in the last light, then meat from the wood grill.",
+    "steps": [
+     {"time": "17:45", "name": "The Parc des Bains", "ref": "card:The Parc des Bains and the Source Salée",
+      "text": "The old trees round the basin of the salt spring; in late autumn the light goes early, so come before six."},
+     {"time": "19:30", "name": "Le Bistrot des Marronniers", "ref": "venue:v06-le-bistrot-des-marronniers",
+      "text": "Tablier de sapeur or the pike quenelle, and meat from the wood stove in the room. Closed Sunday; Monday and Saturday hours differ between listings, so ring."}
+    ],
+    "after": "On a concert night, [[card:Le Bœuf sur le Toit|Le Bœuf sur le Toit]] is the town’s music hall: the month’s dates are on the hot board."},
+   {"id": "arbois", "name": "Arbois · the Cuisance",
+    "line": "A tasting on the square, the river path, then the Bib Gourmand by the water.",
+    "steps": [
+     {"time": "17:00", "name": "Domaine Stéphane Tissot", "ref": "card:Domaine Stéphane Tissot",
+      "text": "The caveau on the Place de la Liberté pours without an appointment: Trousseau, Vin Jaune, Vin de Paille. Its winter hours were not found, so check before you go."},
+     {"time": "18:00", "name": "Along the Cuisance", "ref": "card:Arbois",
+      "text": "Down from the square to the river and the bell tower of Saint-Just; a slow half hour."},
+     {"time": "19:15", "name": "Le Bistronôme", "ref": "venue:v02-le-bistron-me",
+      "text": "The Planches trout ballottine with morels in a Vin Jaune sauce. Dinner Tuesday to Saturday 19:15 to 20:30, and no Thursday dinner from November to March; book."}
+    ],
+    "after": "Cheaper, or on a Sunday: [[venue:v08-la-finette-taverne-d-arbois|La Finette]] on avenue Pasteur, open every day for fondue de Comté and poultry with Vin Jaune."},
+   {"id": "pupillin", "name": "Pupillin · the village of Ploussard",
+    "line": "The pale red at its source, then the starred table opposite the vines.",
+    "steps": [
+     {"time": "18:30", "name": "Through the village", "ref": "card:Pupillin",
+      "text": "A short walk through the village that calls itself the world capital of Ploussard; the cooperative cellar keeps daytime hours, so come earlier if you want to taste there."},
+     {"time": "19:30", "name": "La Table du Grapiot", "ref": "venue:v01-la-table-du-grapiot",
+      "text": "Bresse poultry with Vin Jaune and morels on the longer menus, Ploussard by the glass. One Michelin star since March 2026; closed Monday, and Sunday dinner differs between listings: book by phone."}
+    ],
+    "after": "Cheaper instead: [[venue:v08-la-finette-taverne-d-arbois|La Finette]] in Arbois, a few minutes down the hill."},
+   {"id": "dole", "name": "Dole · the canal and the starred house",
+    "line": "The tanners’ canal at dusk, then a starred menu at the end of the week.",
+    "steps": [
+     {"time": "18:00", "name": "The canal and the old town", "ref": "card:Dole",
+      "text": "The Canal des Tanneurs and the collegiate tower; Pasteur’s birthplace is closed for the winter after 1 November."},
+     {"time": "19:30", "name": "La Chaumière", "ref": "venue:v-la-chaumiere",
+      "text": "The gastronomic menu is served only from Friday evening to Saturday evening; on other nights the same house runs as a bistrot. Listings show it closed Sunday and Monday: book."}
+    ]}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the arcades and a small room for the morels, Château-Chalon and Arbois, a starred dinner at Pupillin, the cirque of Baume on Sunday.",
+  "door_note": "Le pont la nuit · le marché · la cave · la table",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "What the Jura sells is a bottle of Vin Jaune in a souvenir shop and a fondue on a terrace. The real thing takes a car and a little planning: a cellar where the person pouring made the wine, Comté cut at three ages, a starred kitchen in the village of Ploussard, and a walk under the cliffs. The plan stays in Lons on Friday, drives the slope on Saturday with a driver, and ends at the reculée on Sunday. Every stop is in this guide, checked in October 2026.",
+  "book": [
+   "[[venue:v01-la-table-du-grapiot|La Table du Grapiot]] — Saturday dinner, by phone, as soon as you have dates",
+   "[[venue:v02-le-bistron-me|Le Bistronôme]] — Saturday lunch; it is a small room",
+   "[[venue:v03-tablier|Ô Tablier]] — Friday dinner; call, the listings disagree on its nights",
+   "[[card:Domaine Macle|Domaine Macle]] — a Saturday-morning appointment, by phone; bring cash",
+   "A driver for Saturday: the plan tastes in three places"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The arcades at dusk",
+    "stops": [
+     {"time": "18:00", "name": "Under the arcades of rue du Commerce", "ref": "card:Place de la Liberté and the arcades",
+      "text": "The long arcaded street of golden stone, the plaque at number 24 where Rouget de Lisle was born, and the clock tower at the end.",
+      "meta": "Rue du Commerce, Lons · free · on foot"},
+     {"time": "19:30", "name": "Dinner at Ô Tablier", "ref": "venue:v03-tablier",
+      "text": "The croûte aux morilles au Vin Jaune, then the duck with Macvin, in a small room below the street.",
+      "meta": "20 rue Émile Monot · about 36–42 € a head (Oct 2026) · closed Wednesday and Sunday; book"}
+    ]},
+   {"label": "Saturday", "title": "The rock, the river and the star",
+    "stops": [
+     {"time": "08:30", "name": "The Saturday market", "ref": "venue:v12-march-de-lons-le-saunier",
+      "text": "The smaller Saturday-morning food market on the Cours Sully; the big one is Thursday. Then a Morbier from the family under the arcades, if their door is open.",
+      "meta": "Cours Sully, Saturday morning · stall prices vary"},
+     {"time": "09:15", "name": "Chocolate at Pelen", "ref": "venue:v10-p-tisserie-chocolaterie-pelen",
+      "text": "An écureuil to eat now and a box of Galet de Chalain for later.",
+      "meta": "1 rue Saint-Désiré · Saturday 09:00–12:30 by one listing; call"},
+     {"time": "10:30", "name": "Château-Chalon", "ref": "card:Château-Chalon",
+      "text": "The village on its rock above the vines that make only Vin Jaune; walk to the viewpoints over the slope.",
+      "meta": "East of Lons by car · free"},
+     {"time": "11:15", "name": "A tasting at Domaine Macle", "ref": "card:Domaine Macle",
+      "text": "Vin Jaune tasted where it is made, in a family cellar at the top of the village.",
+      "meta": "14 rue de la Roche · by appointment only; cash"},
+     {"time": "13:00", "name": "Lunch at Le Bistronôme", "ref": "venue:v02-le-bistron-me",
+      "text": "The trout ballottine with morels in Vin Jaune, by the Cuisance in Arbois.",
+      "meta": "62 rue de Faramand, Arbois · lunch 12:15–13:30 · about 35–65 € (Oct 2026)"},
+     {"time": "15:30", "name": "Arbois on foot", "ref": "card:Arbois",
+      "text": "The river path and the church of Saint-Just; Pasteur’s house on rue de Courcelles may already be closed for the winter, so call first.",
+      "meta": "Arbois · free"},
+     {"time": "16:30", "name": "The Tissot caveau", "ref": "card:Domaine Stéphane Tissot",
+      "text": "Trousseau, Crémant and Vin de Paille side by side, without an appointment.",
+      "meta": "35 Place de la Liberté, Arbois · winter hours not found; check"},
+     {"time": "19:30", "name": "Dinner at La Table du Grapiot", "ref": "venue:v01-la-table-du-grapiot",
+      "text": "The longer menu, for the Bresse poultry with Vin Jaune and morels, and Ploussard from the village.",
+      "meta": "3 rue Bagier, Pupillin · menus 60 / 80 / 94 € (Oct 2026) · closed Monday; book"}
+    ]},
+   {"label": "Sunday", "title": "Under the cliffs",
+    "stops": [
+     {"time": "10:00", "name": "The cirque of Baume-les-Messieurs", "ref": "card:The cirque of Baume-les-Messieurs",
+      "text": "The abbey under the horseshoe of cliffs, then the path along the valley floor to the cascade and the spring.",
+      "meta": "About 15 km from Lons · 2–3 hours · the show caves are closed until spring"},
+     {"time": "12:30", "name": "Lunch at La Petite Auberge", "ref": "venue:v05-la-petite-auberge",
+      "text": "Jura trout with bacon, and the soufflé glacé au Macvin.",
+      "meta": "1985 route de Besançon, Lons · Sunday lunch by most listings; call · about 22–47 € (Oct 2026)"},
+     {"time": "14:30", "name": "The salt spring", "ref": "card:The Parc des Bains and the Source Salée",
+      "text": "A last walk round the park where the brine that named the town still rises.",
+      "meta": "Parc des Bains, Lons · free"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "Stay in Lons: the arcades, then [[venue:v03-tablier|Ô Tablier]] or [[venue:v06-le-bistrot-des-marronniers|Le Bistrot des Marronniers]], a few minutes apart."},
+   {"title": "The grand night instead", "text": "On a Friday or Saturday, [[venue:v-la-chaumiere|La Chaumière]] in Dole serves its starred menu; the rest of the week it is a bistrot."},
+   {"title": "This November", "dated": "Checked 26 October 2026", "items": [
+     "Mont d’Or is in season from 10 September to 10 May: buy one at the [[venue:v12-march-de-lons-le-saunier|Thursday market]].",
+     "Le Bœuf sur le Toit has concerts on 21, 27 and 28 November: see [[card:Late November at Le Bœuf sur le Toit|the hot board]].",
+     "Wednesday 11 November is a public holiday: check every opening.",
+     "The Saline royale’s Christmas market opens on 28 November: [[card:Christmas market at the Saline royale|details]]."]},
+   {"title": "Where to sleep", "text": "This guide does not judge hotels, and none of the places in it is one. Lons is the practical base: everything on Friday and Sunday is a short walk or drive from the centre."},
+   {"title": "What we would leave out", "text": "A Vin Jaune poured on a café terrace (see [[card:Vin Jaune on a café terrace|the warning]]), pre-cut Comté in plastic, and any list that still sends you to the two-star Jeunet: [[card:The Jeunet name|the house is gone]]."}
+  ]
+ }
+}

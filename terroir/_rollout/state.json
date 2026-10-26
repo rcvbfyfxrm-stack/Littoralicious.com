@@ -605,7 +605,29 @@
   },
   {
    "slug": "lons-le-saunier-jura",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/lons-le-saunier-jura-2026-10-26",
+   "date": "2026-10-26",
+   "readings": "done 2026-10-26",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (26 Oct, after apply_readings; 220 OK lines; floors = curated counts: venues 11, fcards 72, fsubs 32, neighborhoods 6, walks 4, categories 4, lane stories 4, gems 3, liste 14, pins 7, mapsLinks 57; groups 3; doors 4; hot minVenues 3; render via cdp.py/Playwright with the test-only pw-shim (leaflet@1.9.4 from npm, unpkg.com blocked here); 14 map pins rendered)",
+    "probe-guide.cjs: ALL PASS, exit 0",
+    "probe-links.cjs desk: 77 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 77 visible links clicked, 0 failures",
+    "probe-readings.cjs: PENDING",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 112 units (one found and fixed: Le Bœuf sur le Toit's dated concerts told on its card and on the hot board; the card made evergreen)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "banned-word and cut-venue scan incl. the readings rulings: 0 in prose; Jacobins, Vagne, La Comédie (restaurant), Perraud, Mont Joly absent; Jeunet only on its warning card",
+    "screenshots: review/lons-le-saunier-jura/lons-card-desktop.png, lons-card-phone.png (the Baume-les-Messieurs walk, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . lons-le-saunier-jura",
+    "guide.michelin.com France 2026: La Table du Grapiot's star, Le Bistronôme's Bib, La Chaumière's star (and whether its weekday bistrot La Bagatelle has a Bib)",
+    "own sites / phones: Grapiot (Sunday dinner, Christmas/January), Bistronôme (holiday dates, phone, address), Ô Tablier (Fri/Sat), La Petite Auberge (Saturday dinner), Les Marronniers (Mon/Sat), La Finette (hours, Christmas), Les Claquets (2026 autumn break), La Chaumière (phone, site, bistrot hours and prices, closures), Chez l'Artisan Fromager (hours, phone, 2026 trading), Pelen (hours at 1 rue Saint-Désiré; Galet de Chalain), lons-jura.fr (market location, Wednesday market, Christmas 2026), the Tissot caveau's Nov-Dec hours",
+    "the rest of research/*.json _needs_network: Pasteur house winter close (1 or 30 Nov), Saline royale / Grande Saline November and 11 Nov hours, Le Bœuf sur le Toit dates and 47ter availability, Théâtre de Lons programme, Maison du Comté 12 Nov, UNESCO committee dates (Biou), Percée 2027 programme, 2027 festival dates"
+   ],
+   "notes": "26 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Beaune pipeline). Old page a GOLD1-era tier inventory (17 venues in flat tiers incl. two estates, a museum, a UNESCO site and the Comté centre; no lanes, no dishes, no terroir/data copy), so the GOLD4/5 floor came too (4 lanes in 3 groups with food stories, dishes on every table, guest list with charters, #eat jump + La liste 14 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, month table rewritten, craft (honest: nothing clears the whole bar; Ravilloles closest), honest listening room, Autour, the food-history fold '1264 — Salt, shared milk and a cheese built to keep', 3 gems, terroir/data copy, 24-column CSV; hub untouched; hub builder not run). Places 17 -> 11 (none over 3, no 4s). The re-check overturned three records: Maison Jeunet no longer exists (Naessens left Germigney July 2023; now a warning card) -> La Chaumière, Dole, takes the summit lane; Fromagerie Vagne has no Lons shop -> Chez l'Artisan Fromager, 39 rue du Commerce; the Caveau des Jacobins is in Poligny (reported closed for works) -> cut. Fold cards: 68 old tcards -> 53 written + 10 hot + 9 calendar = 72 .fcard, every one labelled. Guest list: last minute La Finette · Les Marronniers; this week Le Bistronôme · Ô Tablier; grand night La Table du Grapiot · La Chaumière. Berths La Table du Grapiot · Ô Tablier · the Lons markets. Statuses: 9 confirmed 26 Oct, 2 unverified (Chez l'Artisan Fromager, Pelen — neither a berth nor on the list). Readings: One Night 5 places (the arcades · the Parc des Bains and rue de Vallière · Arbois · Pupillin · Dole), Getaway 13 stops Fri 2 / Sat 8 / Sun 3. Corrections: see review/lons-le-saunier-jura/README.md."
   },
   {
    "slug": "Bozcaada-NorthAegean",
