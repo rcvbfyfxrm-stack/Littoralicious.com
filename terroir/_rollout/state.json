@@ -639,5 +639,13 @@
   }
  ],
  "hot_weekly_note": "9 Oct 2026, Arnaud: every week refresh one guide's What's hot board (oldest data-hot-asof first), review first. Spec: terroir/_rollout/HOT-WEEKLY.md.",
- "hot_weekly": []
+ "hot_weekly": [
+  {
+   "slug": "Ostrava-Moravskoslezsko",
+   "date": "2026-10-26",
+   "branch": "terroir-hot/Ostrava-Moravskoslezsko-2026-10-26",
+   "status": "needs-network",
+   "notes": "Network check failed: curl https://www.wikipedia.org/ -> 000 (agent proxy: CONNECT 403, policy denial); timeanddate.com and ostravainfo.cz also denied. No research done, board untouched (as-of 2026-10-21, review 2026-12-15). Ostrava was picked as the only board without an open terroir-uplift/* or terroir-hot/* branch (Prague, Kendwa, Diani, Catania, Siracusa, Taormina all have open branches)."
+  }
+ ]
 }
