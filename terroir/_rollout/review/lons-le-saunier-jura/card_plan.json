@@ -1,0 +1,429 @@
+{
+ "quartiers": {
+  "sub": "quarters",
+  "groups": [
+   {
+    "title": "Inside Lons",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Place de la Liberté and the arcades",
+      "from": "work:Rue du Commerce arcades"
+     },
+     {
+      "key": "quartiers:Place de la Comédie and the market squares",
+      "from": null
+     },
+     {
+      "key": "quartiers:The Parc des Bains and the Source Salée",
+      "from": "work:Parc des Bains & Source Salée"
+     }
+    ]
+   },
+   {
+    "title": "The wine villages",
+    "desc": "",
+    "cards": [
+     {
+      "key": "quartiers:Arbois",
+      "from": "walks:Arbois old town + Pasteur lab"
+     },
+     {
+      "key": "quartiers:Pupillin",
+      "from": null
+     },
+     {
+      "key": "quartiers:Château-Chalon",
+      "from": "walks:Château-Chalon vineyard walk"
+     }
+    ]
+   }
+  ]
+ },
+ "curiosities": {
+  "sub": "curious",
+  "groups": [
+   {
+    "title": "Salt, grapes and a gazette",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:The salt under the town",
+      "from": null
+     },
+     {
+      "key": "curiosities:Savagnin's family tree",
+      "from": "drink:Savagnin — the genealogical centre of European white wine"
+     },
+     {
+      "key": "curiosities:Arbois in the first gazette",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Born here",
+    "desc": "",
+    "cards": [
+     {
+      "key": "curiosities:Rouget de Lisle",
+      "from": "culture:Maison natale de Rouget de Lisle"
+     }
+    ]
+   }
+  ]
+ },
+ "provisioning": {
+  "sub": "markets",
+  "groups": [
+   {
+    "title": "The market days",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:The Lons markets",
+      "from": "gastronomy:Thursday market — the big one"
+     },
+     {
+      "key": "provisioning:Fromagerie Vagne",
+      "from": "gastronomy:Fromagerie Vagne — Lons"
+     },
+     {
+      "key": "provisioning:Cancoillotte by the jar",
+      "from": "street-food:Cancoillotte by the jar — to take home"
+     }
+    ]
+   },
+   {
+    "title": "From the source, for the galley",
+    "desc": "",
+    "cards": [
+     {
+      "key": "provisioning:Fort Saint-Antoine",
+      "from": "gastronomy:Marcel Petite — Fort Saint-Antoine affinage"
+     },
+     {
+      "key": "provisioning:Volaille Miéral",
+      "from": "gastronomy:Volaille Miéral — Bresse AOP"
+     },
+     {
+      "key": "provisioning:Pelen",
+      "from": "gastronomy:Pâtisserie Chocolaterie Pelen"
+     }
+    ]
+   }
+  ]
+ },
+ "walks": {
+  "sub": "walks",
+  "groups": [
+   {
+    "title": "Lons and its reculée",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:Lons at first light",
+      "from": "walks:Rue du Commerce arcades at dawn"
+     },
+     {
+      "key": "walks:The cirque of Baume-les-Messieurs",
+      "from": "walks:Baume-les-Messieurs cirque + abbey"
+     }
+    ]
+   },
+   {
+    "title": "Up on the lake plateau",
+    "desc": "",
+    "cards": [
+     {
+      "key": "walks:The Hérisson falls",
+      "from": "walks:Cascades du Hérisson — seven cascades"
+     },
+     {
+      "key": "walks:Belvédère des Quatre Lacs",
+      "from": "walks:Belvédère des Quatre Lacs"
+     }
+    ]
+   }
+  ]
+ },
+ "culture": {
+  "sub": "culture",
+  "groups": [
+   {
+    "title": "In Lons",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:Saint-Désiré and its crypt",
+      "from": "culture:Église Saint-Désiré + Merovingian crypt"
+     },
+     {
+      "key": "culture:Église des Cordeliers",
+      "from": "culture:Église des Cordeliers"
+     },
+     {
+      "key": "culture:La Maison de la Vache qui rit",
+      "from": "culture:Maison de la Vache qui Rit"
+     }
+    ]
+   },
+   {
+    "title": "Salt, science and the lake villages",
+    "desc": "",
+    "cards": [
+     {
+      "key": "culture:The Saline Royale",
+      "from": "culture:Saline Royale d'Arc-et-Senans"
+     },
+     {
+      "key": "culture:Maison de Louis Pasteur",
+      "from": "avoid:\"Pasteur defended his thesis on Vin Jaune\""
+     },
+     {
+      "key": "culture:Musée d'Archéologie du Jura",
+      "from": "culture:Musée d'Archéologie du Jura"
+     }
+    ]
+   }
+  ]
+ },
+ "craft": {
+  "sub": "craft",
+  "groups": [
+   {
+    "title": "Do this one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Do this one",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The others, and what each is missing",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:Other one",
+      "from": null
+     },
+     {
+      "key": "craft:Other two",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The honest warning",
+    "desc": "",
+    "cards": [
+     {
+      "key": "craft:What is sold as Jura-made",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "coffee-gardens": {
+  "sub": "linger",
+  "groups": [
+   {
+    "title": "Places to sit",
+    "desc": "",
+    "cards": [
+     {
+      "key": "linger:Café de la Comédie",
+      "from": "work:Café de la Comédie"
+     },
+     {
+      "key": "linger:The Médiathèque",
+      "from": "work:Médiathèque de Lons-le-Saunier"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "sub": "bars",
+  "groups": [
+   {
+    "title": "Ask for it by name",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Vin Jaune",
+      "from": "drink:Vin Jaune — the cathedral wine"
+     },
+     {
+      "key": "drink:Poulsard and Trousseau",
+      "from": "drink:Poulsard / Ploussard — the palest red in France"
+     },
+     {
+      "key": "drink:The appellations",
+      "from": "drink:The 7 Jura appellations"
+     }
+    ]
+   },
+   {
+    "title": "Before, after, and the sweet one",
+    "desc": "",
+    "cards": [
+     {
+      "key": "drink:Macvin, Crémant and Marc",
+      "from": "drink:Macvin · Crémant · Marc du Jura"
+     },
+     {
+      "key": "drink:Vin de Paille",
+      "from": "drink:Vin de Paille — the straw wine"
+     }
+    ]
+   },
+   {
+    "title": "The cellars, and the ones you won't get into",
+    "desc": "",
+    "cards": [
+     {
+      "key": "bars:Domaine Macle",
+      "from": "gastronomy:Domaine Macle — Château-Chalon"
+     },
+     {
+      "key": "bars:Domaine Stéphane Tissot",
+      "from": "gastronomy:Domaine Stéphane Tissot"
+     },
+     {
+      "key": "bars:Overnoy and Ganevat",
+      "from": "gastronomy:Maison Pierre Overnoy / Emmanuel Houillon — Pupillin"
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "sub": "listening",
+  "groups": [
+   {
+    "title": "The listening room",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:No hi-fi listening bar",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Live, and late",
+    "desc": "",
+    "cards": [
+     {
+      "key": "listening:Le Bœuf sur le Toit",
+      "from": null
+     },
+     {
+      "key": "listening:La Rodia, Besançon",
+      "from": "music:Besançon — La Rodia SMAC"
+     }
+    ]
+   }
+  ]
+ },
+ "around": {
+  "sub": "trips",
+  "groups": [
+   {
+    "title": "North along the slope",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Poligny and the Maison du Comté",
+      "from": null
+     },
+     {
+      "key": "around:Salins-les-Bains",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "Further north",
+    "desc": "",
+    "cards": [
+     {
+      "key": "around:Dole",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "avoid": {
+  "sub": "skip",
+  "groups": [
+   {
+    "title": "At the glass and the counter",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Vin Jaune on a café terrace",
+      "from": "avoid:\"Vin Jaune\" tasting on a Place de la Liberté terrace"
+     },
+     {
+      "key": "avoid:Comté in plastic",
+      "from": "avoid:Industrial \"Comté\" at a tourist cellar"
+     }
+    ]
+   },
+   {
+    "title": "The old address",
+    "desc": "",
+    "cards": [
+     {
+      "key": "avoid:Jeunet in Arbois",
+      "from": "avoid:Looking for Jeunet at 9 rue de l'Hôtel de Ville in Arbois"
+     }
+    ]
+   }
+  ]
+ },
+ "follow": {
+  "sub": "follow",
+  "groups": [
+   {
+    "title": "The region",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Jura tourism",
+      "from": null
+     },
+     {
+      "key": "follow:Saline Royale",
+      "from": null
+     }
+    ]
+   },
+   {
+    "title": "The wine and the cheese",
+    "desc": "",
+    "cards": [
+     {
+      "key": "follow:Vins du Jura (CIVJ)",
+      "from": null
+     },
+     {
+      "key": "follow:Comté (CIGC)",
+      "from": null
+     }
+    ]
+   }
+  ]
+ },
+ "_pointers": {
+  "provisioning:The Lons markets": "v12-march-de-lons-le-saunier",
+  "provisioning:Fromagerie Vagne": "v-fromagerie-vagne",
+  "provisioning:Pelen": "v10-p-tisserie-chocolaterie-pelen"
+ }
+}

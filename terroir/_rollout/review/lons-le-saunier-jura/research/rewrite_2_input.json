@@ -1,0 +1,212 @@
+{
+ "provisioning:The Lons markets": {
+  "fold": "provisioning",
+  "group": "The market days",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-market-thursday",
+   "name": "Thursday market — the big one",
+   "type": "MARKET",
+   "label": "MARKET",
+   "hook": "All Thursday · the biggest market in the Jura department",
+   "chips": [],
+   "text": "All Thursday · the biggest market in the Jura department Place du 11 Novembre (manufactured goods all day) + Place de Verdun (food morning). Producers from the Haut-Jura plateau and the Bresse plain. Saucisse de Morteau IGP from a tuyé producer, three ages of Comté, cancoillotte by the jar, Mont d'Or in season, miel de sapin, Bleu de Gex. Where Place du 11 Novembre + Place de Verdun",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Place%20du%2011%20Novembre%20Lons",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v12-march-de-lons-le-saunier). Set \"ref\": \"v12-march-de-lons-le-saunier\". Write it in THIS section's angle (the larder: what a cook buys here and how to shop it; merge the old Saturday market card and the Morteau-from-the-market street-food card), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "provisioning:Fromagerie Vagne": {
+  "fold": "provisioning",
+  "group": "The market days",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-shop-fromagerie-vagne",
+   "name": "Fromagerie Vagne — Lons",
+   "type": "PRODUCER",
+   "label": "FROMAGER",
+   "hook": "Fromager-affineur · three ages of Comté side by side",
+   "chips": [],
+   "text": "Fromager-affineur · three ages of Comté side by side Central Lons fromagerie-affineur: 18 / 24 / 36-month Comté side by side, Bleu de Gex, Morbier, Mont d'Or in season, cancoillotte. Ask for the comparative plate. Sous-vide for the boat possible. Where rue du Commerce (arcades) Address rue du Commerce, 39000 Lons-le-Saunier",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Fromagerie%20Vagne%20Lons",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v-fromagerie-vagne). Set \"ref\": \"v-fromagerie-vagne\". Write it in THIS section's angle (the larder: what a cook takes aboard from a fromager — whole Comté pieces, vacuum packing), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "provisioning:Cancoillotte by the jar": {
+  "fold": "provisioning",
+  "group": "The market days",
+  "old": {
+   "fold": "street-food",
+   "id": "p-street-cancoillotte",
+   "name": "Cancoillotte by the jar — to take home",
+   "type": "STREET FOOD",
+   "label": "STREET FOOD",
+   "hook": "",
+   "chips": [],
+   "text": "The Franche-Comté peasant cheese — under 15 % fat, melted from metton with garlic and Jura white wine. Sold cold in glass jars; warmed at home and poured over potatoes. The cheese that almost no one outside the region knows at its best. Where all markets + fromageries When any opening",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Product card from the old street-food card (name 'Cancoillotte by the jar'). Labels What it is · Where to buy · Taste it. The cancoillotte dish story belongs to The Dish: tell the jar and how to buy it, not the history. Verify the IGP (2019? verify). maps_query empty."
+ },
+ "provisioning:Fort Saint-Antoine": {
+  "fold": "provisioning",
+  "group": "From the source, for the galley",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-fort-saint-antoine",
+   "name": "Marcel Petite — Fort Saint-Antoine affinage",
+   "type": "PRODUCER",
+   "label": "CHEESE",
+   "hook": "100,000 Comté wheels aging in a 19th-c. military fort",
+   "chips": [],
+   "text": "100,000 Comté wheels aging in a 19th-c. military fort Built 1879–1882 as part of the Séré de Rivières defensive system. In 1966, affineur Marcel Petite began renting it to age Comté in cold, slow, mountain conditions — 6–9 °C and 94–98 % humidity. Approximately 100,000 wheels age there at any time, on spruce shelves, for 10–20 months. Since 1966, over one million wheels have passed through the fort. Visits possible during summer; cheese available at the Maison du Comté and major fromageries (look for the dark-blue \"Marcel Petite\" label). Where Fort Saint-Antoine, near Pontarlier (1,100 m altitude) Address Fort Saint-Antoine, 25160 Saint-Antoine (near Pontarlier)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Fort%20Saint-Antoine%20Marcel%20Petite%20Comte",
+   "links": []
+  },
+  "brief": "Verify: Marcel Petite's Fort Saint-Antoine (built 1879-1883? Séré de Rivières), Comté ageing since 1966, ~100,000 wheels (verify), visits (by appointment? summer only?), 1h45 from Lons. Producer labels Where · Open · Buy · Price. maps_query 'Fort Saint-Antoine, Saint-Antoine, Doubs, France'."
+ },
+ "provisioning:Volaille Miéral": {
+  "fold": "provisioning",
+  "group": "From the source, for the galley",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-prod-volaille-mieral",
+   "name": "Volaille Miéral — Bresse AOP",
+   "type": "PRODUCER",
+   "label": "POULTRY",
+   "hook": "The reference Bresse-poultry house — supplier to the starred Jura tables",
+   "chips": [],
+   "text": "The reference Bresse-poultry house — supplier to the starred Jura tables Bresse AOP poultry from the Miéral house — Bresse chickens, capons, pintades. 'Blue legs,' four-month feeding regime, supplier to Maison Jeunet, Mont Joly, and beyond. The poularde for the cathedral dish. Sous-vide for the boat possible. Order 48 h ahead in season. Where Montrevel-en-Bresse (50 min west of Lons) Address Place de la Grenette, 01340 Montrevel-en-Bresse Phone +33 4 74 25 48 36",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Volaille%20Mieral%20Bresse%20Montrevel",
+   "links": []
+  },
+  "brief": "Verify: Miéral, Montrevel-en-Bresse, Bresse AOP poultry (AOC 1957), 2026 trading, shop, whether the starred Jura houses buy from it (only if sourced). Producer labels."
+ },
+ "provisioning:Pelen": {
+  "fold": "provisioning",
+  "group": "From the source, for the galley",
+  "old": {
+   "fold": "gastronomy",
+   "id": "p-shop-pelen",
+   "name": "Pâtisserie Chocolaterie Pelen",
+   "type": "PRODUCER",
+   "label": "PASTRY",
+   "hook": "Since 1899 · Galet de Chalain (praliné-nougatine, 1984)",
+   "chips": [],
+   "text": "Since 1899 · Galet de Chalain (praliné-nougatine, 1984) Maison since 1899. Arnaud Pelen, 4th gen. Bean-to-bar chocolate roasted in-house. The Galet de Chalain — nougatine shell + almond-hazelnut praline + cocoa coating, created by Dominique Pelen in 1984 and named for the Néolithique-lacustre Lac de Chalain — is the souvenir comestible. Where 175 rue Blaise Pascal Address 175 rue Blaise Pascal, 39000 Lons-le-Saunier",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Pelen%20Lons",
+   "links": []
+  },
+  "brief": "POINTER card: this place is a kept TABLE venue of the guide (its record is in research/venues_input_*.json, id v10-p-tisserie-chocolaterie-pelen). Set \"ref\": \"v10-p-tisserie-chocolaterie-pelen\". Write it in THIS section's angle (for the galley: the chocolate and the Galet de Chalain to take aboard), story 40-70 words that does NOT retell the venue's own why/verdict; facts Order · When · Book · Price (only what the record or a source supports); maps_query empty (the table card carries the Maps link)."
+ },
+ "walks:Lons at first light": {
+  "fold": "walks",
+  "group": "Lons and its reculée",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-rue-commerce-aube",
+   "name": "Rue du Commerce arcades at dawn",
+   "type": "WALK",
+   "label": "WALLS",
+   "hook": "20 min · 146 m of medieval arcades, Franche-Comté's only such street",
+   "chips": [],
+   "text": "20 min · 146 m of medieval arcades, Franche-Comté's only such street Walk the 146 m of golden-stone arcades early. Past number 24, Rouget de Lisle's birth house. Past Pâtisserie Pelen (since 1899). Out to Place de la Liberté and Bartholdi's statue. The town at its most quiet.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Merge the old arcades walk card and the old [walk] prose (research/guide_text_old.txt). Verify the route (Place de la Liberté, rue du Commerce, Saint-Désiré, the Parc des Bains), time ~40 min. Walk labels. Do not retell Saint-Désiré's crypt (culture card) or the brine (quarter card): name them."
+ },
+ "walks:The cirque of Baume-les-Messieurs": {
+  "fold": "walks",
+  "group": "Lons and its reculée",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-baume-les-messieurs",
+   "name": "Baume-les-Messieurs cirque + abbey",
+   "type": "WALK",
+   "label": "ABBEY",
+   "hook": "2-3 h · 9th-c. abbey under a karst amphitheatre",
+   "chips": [],
+   "text": "2-3 h · 9th-c. abbey under a karst amphitheatre 15 km east of Lons. Walk the cirque trail to the source of the Dard from grottoes (~90 min). Then the village + Benedictine abbey (founded 869, Flemish polyptych). One of France's Plus Beaux Villages.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Merge the old culture card 'Baume-les-Messieurs' (in cards_old.json). Verify the abbey (founded 9th c.? 869? the 890 Cluny link: Berno of Baume founded Cluny 910 — verify), the Flemish altarpiece, the grottes (open season — closed in November? verify), the cascade of the Dard/tufa, Plus Beaux Villages. Walk labels."
+ },
+ "walks:The Hérisson falls": {
+  "fold": "walks",
+  "group": "Up on the lake plateau",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-cascades-herisson",
+   "name": "Cascades du Hérisson — seven cascades",
+   "type": "WALK",
+   "label": "WATERFALLS",
+   "hook": "3-4 h round trip · 65-m + 60-m falls",
+   "chips": [],
+   "text": "3-4 h round trip · 65-m + 60-m falls Seven waterfalls along 3.5 km of trail, rising 255 m. Park at Doucier. L'Éventail (65 m) is the first; Le Grand Saut (60 m) the climax. Best in spring after snowmelt. Hat, boots, water.",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Merge the old culture card 'Cascades du Hérisson'. Verify: number of falls (31? the old 'seven' is the main ones), L'Éventail 65 m, Grand Saut 60 m, trail length/height, the November access (paths can be icy; the Maison des Cascades closed off-season?). Walk labels."
+ },
+ "walks:Belvédère des Quatre Lacs": {
+  "fold": "walks",
+  "group": "Up on the lake plateau",
+  "old": {
+   "fold": "walks",
+   "id": "p-walk-belvedere-4-lacs",
+   "name": "Belvédère des Quatre Lacs",
+   "type": "WALK",
+   "label": "VIEW",
+   "hook": "1 h · view over four glacial lakes from a single ridge",
+   "chips": [],
+   "text": "1 h · view over four glacial lakes from a single ridge A short climb on the Frasnois plateau (35 km east of Lons) reaches the Belvédère des Quatre Lacs — a single ridge view down over Lac d'Ilay, Lac du Petit Maclu, Lac du Grand Maclu and Lac de Narlay, four glacial lakes left by the last ice age. The hike continues to the Pic de l'Aigle (60 min more).",
+   "maps": "",
+   "links": []
+  },
+  "brief": "Verify the four lakes' names and the Pic de l'Aigle. Walk labels."
+ },
+ "around:Poligny and the Maison du Comté": {
+  "fold": "around",
+  "group": "North along the slope",
+  "old_record": {
+   "id": "v13-maison-du-comt-poligny",
+   "cat": "market",
+   "tier": "plenty",
+   "priority": 13,
+   "badge": "PRODUCE",
+   "name": "Maison du Comté — Poligny",
+   "short": "Maison du Comté — Polign",
+   "lat": 46.8389,
+   "lng": 5.7064,
+   "tags": [
+    "Official Comté AOP interpretation centre — visit + tasting",
+    "EUR 8.90 adult / 6.50 child",
+    "Walk-in (groups book)",
+    "Mornings"
+   ],
+   "productTags": [
+    "Cheese"
+   ],
+   "why": "Official Comté AOP interpretation centre — visit + tasting. To order: the three-space visit (farm + dairy + cellar) with comparative tasting of three ages of Comté and Marcel Petite's Fort Saint-Antoine cuvée. Note: the Maison du Comté MOVED — new building on the site of the former municipal stadium with traditional Haut-Doubs farm architecture references. The old Avenue de la Résistance address is no longer current. Three themed spaces, tasting at the end.",
+   "address": "Site of the former municipal stadium, 39800 Poligny",
+   "phone": "+33 3 84 37 78 40",
+   "hours": "Mornings",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Maison+du+Comté+—+Poligny+Lons-le-Saunier"
+  },
+  "brief": "Day-trip card, built from the old venue record v13 (given as old_record) and the old text. Poligny, 'capitale du Comté' (verify), the Maison du Comté (verify 2026: did it reopen in a new building? the old record says 'site of the former municipal stadium' — verify address, price, November hours), the collegiate church. Day-trip labels Getting there · Time needed · Don't miss · Eat (only kept venues or none). maps_query 'Maison du Comté, Poligny, France'."
+ },
+ "around:Salins-les-Bains": {
+  "fold": "around",
+  "group": "North along the slope",
+  "brief": "NEW day-trip card: the Grande Saline of Salins-les-Bains (UNESCO 2009 with Arc-et-Senans — verify), the underground gallery and the hydraulic wheel pump, 2026 November hours/price (verify). The Saline Royale is the culture card (name only). Day-trip labels. maps_query 'Grande Saline, Salins-les-Bains, France'."
+ },
+ "around:Dole": {
+  "fold": "around",
+  "group": "Further north",
+  "brief": "NEW day-trip card: Dole, Pasteur's birthplace (Maison natale de Pasteur — verify 2026 opening), the Collégiale Notre-Dame, the canal of the tanners; distance from Lons (~50 km?). La Chaumière and Château du Mont Joly are cut from this guide: do NOT name them. Day-trip labels. maps_query 'Maison natale de Pasteur, Dole, France'."
+ }
+}

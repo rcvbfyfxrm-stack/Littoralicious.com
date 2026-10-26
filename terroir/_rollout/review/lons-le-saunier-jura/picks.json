@@ -1,0 +1,131 @@
+{
+ "lanes": {
+  "summit": {
+   "label": "The stars on the slope — two Michelin houses and the Bib by the river",
+   "group": "grande",
+   "ids": [
+    "v-maison-jeunet",
+    "v01-la-table-du-grapiot",
+    "v02-le-bistron-me"
+   ]
+  },
+  "lons": {
+   "label": "Lons at table — the town's own kitchens",
+   "group": "petite",
+   "ids": [
+    "v03-tablier",
+    "v05-la-petite-auberge",
+    "v06-le-bistrot-des-marronniers"
+   ]
+  },
+  "wine": {
+   "label": "Wine tables — the tavern, the cave à manger, the caveau",
+   "group": "petite",
+   "ids": [
+    "v08-la-finette-taverne-d-arbois",
+    "v09-le-bistrot-des-claquets",
+    "v11-caveau-des-jacobins"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the market, the fromager and the chocolatier",
+   "group": "street",
+   "ids": [
+    "v12-march-de-lons-le-saunier",
+    "v-fromagerie-vagne",
+    "v10-p-tisserie-chocolaterie-pelen"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "summit"
+  ],
+  "petite": [
+   "lons",
+   "wine"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v04-la-com-die": "Cut for the cap: a good room on the Place de la Comédie, but the Lons lane keeps the town's soul table (Ô Tablier), the poularde-au-Vin-Jaune house (La Petite Auberge) and the bouchon with the grill (Les Marronniers).",
+  "v07-la-table-de-perraud": "Cut for the cap: a reliable traditional table; its pochouse is named in The Dish, and the Lons lane keeps three tables with more to teach.",
+  "v13-maison-du-comt-poligny": "Moved, not lost: a museum is not a table. Poligny and its Maison du Comté keep a card in Autour.",
+  "v14-domaine-macle": "Moved, not lost: a wine estate is not a table. It keeps a card in the cellars at the glass.",
+  "v15-domaine-st-phane-tissot": "Moved, not lost: a wine estate is not a table. It keeps a card in the cellars at the glass.",
+  "v16-maison-de-louis-pasteur": "Moved, not lost: a museum is not a table. It keeps its card in Culture.",
+  "v17-salines-royales-d-arc-et-senans-unes": "Moved, not lost: a monument is not a table. It keeps its card in Culture."
+ },
+ "new_venues": {
+  "v-maison-jeunet": {
+   "id": "v-maison-jeunet",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Maison Jeunet par Steven Naessens",
+   "short": "Maison Jeunet",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Michelin",
+    "Contemporary"
+   ],
+   "address": "Château de Germigney, 31 rue Edgar Faure, 39600 Port-Lesney",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Maison+Jeunet+Ch%C3%A2teau+de+Germigney+Port-Lesney",
+   "why": "",
+   "verdict": "The Arbois two-star of Jean-Paul Jeunet, carried by his successor Steven Naessens to the Château de Germigney at Port-Lesney in November 2021: Morbier and Morteau cromesquis, snails in Savagnin broth, Bresse poultry with Vin Jaune and morels.",
+   "signature": "Bresse poultry with Vin Jaune and morels.",
+   "caveat": "",
+   "person": "Steven Naessens",
+   "_source": "old bougie and avoid cards"
+  },
+  "v-fromagerie-vagne": {
+   "id": "v-fromagerie-vagne",
+   "cat": "shop",
+   "tier": "plenty",
+   "priority": 1,
+   "name": "Fromagerie Vagne",
+   "short": "Fromagerie Vagne",
+   "lat": null,
+   "lng": null,
+   "tags": [],
+   "productTags": [
+    "Cheese"
+   ],
+   "address": "Rue du Commerce, 39000 Lons-le-Saunier",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Fromagerie+Vagne+Lons-le-Saunier",
+   "why": "",
+   "verdict": "The fromager-affineur under the arcades: Comté at several ages side by side, Bleu de Gex, Morbier, Mont d'Or in season and cancoillotte.",
+   "signature": "Comté at three ages, cut side by side.",
+   "caveat": "",
+   "person": "",
+   "_source": "old gastronomy, dish and avoid cards"
+  }
+ },
+ "berths": [],
+ "shortlist": {},
+ "fours": {},
+ "dropped_cards": {
+  "bougie:Château du Mont Joly / La Chaumière": "cut for the cap: both near Dole, 40 km north, past the summit lane's three; Dole keeps an Autour card",
+  "bougie:Maison Jeunet": "now a table venue (the summit lane)",
+  "dish:* (7 plates)": "rewritten as The Dish inside La liste",
+  "music:La Percée du Vin Jaune / Festival de Musique du Haut-Jura / natural-wine festivals": "told once: one calendar card each",
+  "events:* (7)": "rewritten as the calendar and the hot board",
+  "culture:Baume-les-Messieurs / Cascades du Hérisson": "told once: merged into their walk cards",
+  "walks:Château-Chalon vineyard walk / Arbois old town": "merged into the Château-Chalon and Arbois village cards",
+  "work:Rue du Commerce arcades / Parc des Bains": "merged into the Place de la Liberté and Parc des Bains quarter cards",
+  "secret-gems:* (5)": "merged: the tilleul into Rouget de Lisle, the brine at dawn into the Parc des Bains, the crypt into Saint-Désiré, the Cuisance bank into Arbois, the belvedere into Château-Chalon",
+  "street-food:Morteau from the market": "merged into the markets pointer card (the sausage itself is The Dish's)",
+  "street-food:Warm gougères": "told once: in La liste",
+  "gastronomy:Saturday market — Cours Sully": "merged into the markets pointer card",
+  "gastronomy:Domaine Ganevat": "merged into the Overnoy and Ganevat card",
+  "avoid:Pasteur thesis myth": "merged into the Maison de Louis Pasteur card",
+  "ethnic-restaurants / burger-kebab": "honest-empty sections in the old guide: no card",
+  "twentyfour / three-tables / tables-extended": "the old 24-hour plan and tier lists: replaced by the lanes, the guest list and the two readings"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}
