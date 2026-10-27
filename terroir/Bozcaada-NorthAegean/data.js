@@ -1,382 +1,97 @@
-/* Terroir — Bozcaada (Tenedos) · North Aegean — built from the verified gem-standard brief (2026-06) */
 window.TERROIR_DATA = (function () {
+  const VENUES = [
+    {"id": "v04-asmali-meyhane", "cat": "berth", "tier": "berth_top", "badge": "MEYHANE SINCE 1950", "name": "Asmalı Meyhane", "short": "Asmalı Meyhane", "lat": 39.8328, "lng": 26.0688, "neighborhood": "Çınar Çarşı, town centre", "tags": [], "productTags": ["Seafood", "Rakı", "Meze"], "why": "Niko Manalodis and his brothers opened it in 1950, and the house still cooks the island way: kalamar laid on the coals rather than battered, and raw fish dressed with basil, the two plates Daily Sabah says you find only here. Yemek.com describes the room through its details: painted stairs, a resident cat and an old record player, with a meze counter of walnut octopus, fennel cuttlefish and stuffed courgette flowers.", "verdict": "Order the grilled kalamar and the raw fish and let the counter choose the rest; that is where the kitchen is strongest. Online reviews are mixed, with praise for the meze and the staff and complaints about price and slow service at busy times. Go early in the evening, before the summer crowd fills the stairs.", "signature": "Grilled island kalamar, then raw fish with basil.", "caveat": "No 2026-dated evidence and no winter dates found; reviews mention high prices and uneven service on busy nights.", "status": "unverified", "statusChecked": "2026-10-27", "hook": "A 1950 meyhane on the bazaar street, grilling island squid and serving raw fish with basil.", "dishes": [{"name": "Grilled island kalamar", "note": "Squid cooked plain over coals, the house signature (Daily Sabah)", "kind": "dish"}, {"name": "Raw fish with basil", "note": "The quieter house plate Daily Sabah names alongside the squid", "kind": "dish"}, {"name": "Cevizli ahtapot", "note": "Octopus with walnuts, from the meze counter (Yemek.com)", "kind": "dish"}, {"name": "Rezeneli sübye", "note": "Cuttlefish with fennel (Yemek.com)", "kind": "dish"}, {"name": "Kabak çiçeği dolması", "note": "Stuffed courgette flowers (Yemek.com)", "kind": "dish"}, {"name": "Karides cızlama", "note": "Shrimp sizzled in the pan (Yemek.com)", "kind": "dish"}], "address": "Çınar Çarşı Caddesi No. 20, Cumhuriyet Mah., 17680 Bozcaada", "reservation": "Book in summer; call ahead off-season to check it is serving", "signal_chip": {"label": "Since 1950", "full": "Opened in 1950 by Niko Manalodis and his brothers (Daily Sabah)", "cosign": "Yemek.com, 8 Bozcaada mezecisi"}, "hours": "Not confirmed for winter 2026-27: no source found giving its season or closing dates. Island press (TGRT, undated; Hürriyet Daily News, Dec 2023) says very few businesses stay open in winter. Treat as likely seasonal and call before crossing in November-April", "category": "meyhane", "priority": 1, "maps": "https://www.google.com/maps/search/?api=1&query=Asmal%C4%B1+Meyhane%2C+%C3%87%C4%B1nar+%C3%87ar%C5%9F%C4%B1+Caddesi+No.+20%2C+Cumhuriyet+Mah.%2C+17680+Bozcaada%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "charter": {"book": "Book in summer; call ahead off-season to check it is serving", "warn": "No 2026-dated evidence and no winter dates found; reviews mention high prices and uneven service on busy nights.", "fit": "A 1950 meyhane on the bazaar street, grilling island squid and serving raw fish with basil."}},
+    {"id": "v12-sandal", "cat": "shop", "tier": "plenty", "badge": "MEYHANE", "name": "Sandal Restaurant", "short": "Sandal", "lat": 39.8327, "lng": 26.069, "neighborhood": "Alsancak Sokak, the old bazaar street", "productTags": ["Meze", "Seafood"], "why": "The street was the centre of the Bozcaada bazaar, and the building was the coffeehouse of Apostol Kalfa, an islander. When it became a restaurant the owners kept what was left: tall guillotine window frames no one on the island makes any more, a hand-planed ceiling and cedar floorboards. Tables spill under vines and flowers outside. The meze list runs to island herb salad, the house borani and mastic-scented artichokes.", "verdict": "Yemek.com calls it an island classic, and every guide we found sends you here for the meze and the squid rather than for a view. It is a lane, not a harbour terrace. Evenings are hard to get even in September and October, so book days ahead in season and call to confirm it is open out of season.", "signature": "Sandal borani and the island herb salad, then grilled squid.", "caveat": "Book days ahead for dinner in season; no 2026-dated evidence or winter dates found.", "status": "unverified", "statusChecked": "2026-10-27", "hook": "A meze house inside Apostol Kalfa's old coffeehouse, on the street that was once the island bazaar.", "dishes": [{"name": "Sandal borani", "note": "The house borani, named after the restaurant (Yemek.com)", "kind": "dish"}, {"name": "Ada otları salatası", "note": "Salad of island wild greens (Yemek.com)", "kind": "dish"}, {"name": "Damla sakızlı enginar", "note": "Artichoke scented with mastic (Yemek.com)", "kind": "dish"}, {"name": "Ahtapot salata", "note": "Octopus salad (Yemek.com)", "kind": "dish"}, {"name": "Midye dolma", "note": "Stuffed mussels (Yemek.com)", "kind": "dish"}, {"name": "Grilled kalamar", "note": "Diners single out how tender the squid is (Wanderlog)", "kind": "dish"}], "address": "Alsancak Sokak No. 31, Cumhuriyet Mah., 17680 Bozcaada", "reservation": "Reserve well ahead for dinner in season (Yemek.com)", "signal_chip": {"label": "Island classic", "full": "Called an island classic by Yemek.com; building was Apostol Kalfa's coffeehouse (Onedio)", "cosign": "Yemek.com; Onedio; Yabangee"}, "hours": "Not confirmed for winter 2026-27: no source found giving its season or closing dates. Island press (TGRT, undated; Hürriyet Daily News, Dec 2023) says very few businesses stay open in winter. Treat as likely seasonal and call before crossing in November-April", "category": "meyhane", "maps": "https://www.google.com/maps/search/?api=1&query=Sandal+Restaurant%2C+Alsancak+Sokak+No.+31%2C+Cumhuriyet+Mah.%2C+17680+Bozcaada%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "charter": {"book": "Reserve well ahead for dinner in season (Yemek.com)", "warn": "Book days ahead for dinner in season; no 2026-dated evidence or winter dates found.", "fit": "A meze house inside Apostol Kalfa's old coffeehouse, on the street that was once the island bazaar."}},
+    {"id": "v01-nevreste", "cat": "shop", "tier": "several", "priority": 1, "badge": "SEAFOOD AND MEZE", "name": "Nevreste", "short": "Nevreste", "neighborhood": "Alsancak Sokak, town centre", "productTags": ["Seafood", "Meze"], "why": "The table that wins the reviews eats under a yediveren, the repeat-flowering rose, trained over the courtyard. The cold meze arrive first, then the house meze the island calls the Bozcaada Bombası, served nowhere else, and then grilled fish. Diners talk about the owners working the room and about how clean the place is, which counts for a lot on an island of summer pop-ups.", "verdict": "On review volume and score it is the most-praised table on the island right now (Restaurant Guru 4.9 from about 4,660 votes; Foursquare is cooler at 7.7). Treat it as the long dinner, not a quick stop: meze first, then fish. Book a day or two ahead in summer. We found nothing dated 2026 and no winter dates, so call before you go.", "signature": "The Bozcaada Bombası, then grilled sea bass.", "signal_chip": {"label": "Rose courtyard", "full": "Dinner under the yediveren rose tree; signature Bozcaada Bombası", "cosign": "Restaurant Guru 4.9 (about 4,660 votes); Yemek.com; Oggusto"}, "caveat": "Book ahead for summer and holiday dinners; no winter or 2026 dates found, call first.", "reservation": "Book ahead for dinner in summer and on holidays", "status": "unverified", "statusChecked": "2026-10-27", "hook": "A seafood and meze house in Cumhuriyet, with dinner under a yediveren rose tree.", "dishes": [{"name": "Bozcaada Bombası", "note": "The stuffed house meze reviewers name first, found nowhere else", "kind": "dish"}, {"name": "Cold meze", "note": "The cold meze tray diners single out", "kind": "dish"}, {"name": "Grilled sea bass", "note": "Grilled whole after the meze (old record)", "kind": "dish"}], "address": "Alsancak Sokak No. 22, Cumhuriyet Mah., 17680 Bozcaada", "hours": "Not confirmed for winter 2026-27: no source found giving its season or closing dates. Island press (TGRT, undated; Hürriyet Daily News, Dec 2023) says very few businesses stay open in winter. Treat as likely seasonal and call before crossing in November-April", "category": "meyhane", "maps": "https://www.google.com/maps/search/?api=1&query=Nevreste%2C+Alsancak+Sokak+No.+22%2C+Cumhuriyet+Mah.%2C+17680+Bozcaada%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "charter": {"book": "Book ahead for dinner in summer and on holidays", "warn": "Book ahead for summer and holiday dinners; no winter or 2026 dates found, call first.", "fit": "A seafood and meze house in Cumhuriyet, with dinner under a yediveren rose tree."}},
+    {"id": "v05-dort-hanimeli", "cat": "shop", "tier": "several", "badge": "MANTI", "name": "Dört Hanımeli", "short": "Dört Hanımeli", "lat": 39.833, "lng": 26.0697, "neighborhood": "Bozcaada town", "productTags": ["Mantı", "Meze"], "why": "Retired primary-school teachers opened it more than forty years ago, and it still cooks like a house kitchen: dolma and vine-leaf sarma that diners compare with a grandmother's, stuffed courgette flowers in season, and the mantı people come back for, pinched small and served with yoghurt. The owners take their time with visitors who speak no Turkish, pointing at the pots.", "verdict": "Come for lunch and the mantı; it is the reason to cross town, and the olive-oil vegetables are the reason to stay. Do not expect a sea view or a fish grill. The evidence is reviews without dates, so treat the details as likely rather than certain, and check it is open before planning around it.", "signature": "The mantı, with garlic yoghurt.", "caveat": "Home cooking with no sea view; no 2026-dated evidence or winter dates found, call ahead.", "status": "unverified", "statusChecked": "2026-10-27", "hook": "A family home-cooking kitchen started by retired teachers, known for its mantı.", "dishes": [{"name": "Mantı", "note": "Small hand-pinched dumplings with yoghurt, the house reason to come", "kind": "dish"}, {"name": "Kabak çiçeği dolması", "note": "Stuffed courgette flowers, praised in reviews", "kind": "dish"}, {"name": "Yaprak sarma", "note": "Vine leaves rolled round rice, home style", "kind": "dish"}, {"name": "Dolma", "note": "Stuffed vegetables reviewers liken to home cooking", "kind": "dish"}], "reservation": "Walk in; call ahead off-season", "signal_chip": {"label": "40+ years", "full": "Founded more than forty years ago by retired primary-school teachers", "cosign": "Wanderlog review summary; Etstur 'Bozcaada'da ne yenir'"}, "hours": "Not confirmed for winter 2026-27: no source found giving its season or closing dates. Island press (TGRT, undated; Hürriyet Daily News, Dec 2023) says very few businesses stay open in winter. Treat as likely seasonal and call before crossing in November-April", "category": "home", "maps": "https://www.google.com/maps/search/?api=1&query=D%C3%B6rt+Han%C4%B1meli%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "charter": {"book": "Walk in; call ahead off-season", "warn": "Home cooking with no sea view; no 2026-dated evidence or winter dates found, call ahead.", "fit": "A family home-cooking kitchen started by retired teachers, known for its mantı."}},
+    {"id": "v11-adam", "cat": "shop", "tier": "plenty", "badge": "MEZE", "name": "Ada'm", "short": "Ada'm", "lat": 39.8331, "lng": 26.0692, "neighborhood": "Alsancak Sokak, town centre", "productTags": ["Meze", "Seafood"], "why": "You spot it by the red-and-white checked tablecloths on the lane. Oggusto puts it at about ten years old; Yemek.com already calls it an island classic. The plate people write about is enginarlı ahtapot, octopus and fresh artichoke in a cream sauce with a note of rosemary, the kind of thing a cook invents rather than inherits. Sea bass wrapped in vine leaves and seafood-stuffed mussels follow.", "verdict": "The cheaper, looser alternative to the set-piece meze houses, and the place for a cook's own dishes rather than the island canon. Order the octopus with artichokes. Reviews on the room are mixed, so come for the plates. Nothing found is dated 2026 and no winter dates exist online, so call before you go.", "signature": "Enginarlı ahtapot: octopus with artichokes in cream.", "caveat": "Small, plain room with mixed reviews on comfort; no 2026-dated evidence or winter dates found.", "reservation": "Book in high season; call ahead off-season", "status": "unverified", "statusChecked": "2026-10-27", "hook": "Red-and-white checked cloths on Alsancak Sokak, and octopus with artichokes in cream.", "dishes": [{"name": "Enginarlı ahtapot", "note": "Octopus and artichoke in a cream sauce with rosemary (Yabangee, Yemek.com, Oggusto)", "kind": "dish"}, {"name": "Asma yaprağında levrek", "note": "Sea bass wrapped in vine leaves (Yemek.com)", "kind": "dish"}, {"name": "Deniz mahsullü midye", "note": "Mussels with seafood (Yemek.com)", "kind": "dish"}], "address": "Alsancak Sokak No. 42, Cumhuriyet Mah., 17680 Bozcaada", "signal_chip": {"label": "Island classic", "full": "Yemek.com: 'now an island classic'; about ten years trading (Oggusto)", "cosign": "Yabangee review; Oggusto"}, "hours": "Not confirmed for winter 2026-27: no source found giving its season or closing dates. Island press (TGRT, undated; Hürriyet Daily News, Dec 2023) says very few businesses stay open in winter. Treat as likely seasonal and call before crossing in November-April", "category": "home", "maps": "https://www.google.com/maps/search/?api=1&query=Ada%27m%2C+Alsancak+Sokak+No.+42%2C+Cumhuriyet+Mah.%2C+17680+Bozcaada%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "charter": {"book": "Book in high season; call ahead off-season", "warn": "Small, plain room with mixed reviews on comfort; no 2026-dated evidence or winter dates found.", "fit": "Red-and-white checked cloths on Alsancak Sokak, and octopus with artichokes in cream."}},
+    {"id": "v08-talay", "cat": "berth", "tier": "berth_top", "badge": "WINE SHOP · 1948", "name": "Talay Şarapçılık", "short": "Talay", "neighborhood": "Town centre", "tags": [], "why": "In 1948 the brothers Necati, Hayati and Sebati Talay started making wine on the island; bottling followed in 1955, and today the firm makes about 600,000 litres a year, two-thirds of it from the family's own grapes. You do not drive out to vines here: you walk into a sales shop in town, line up bottles of Vasilaki, Karalahna and Kuntra on the counter and pay for a small flight, the way islanders buy wine for the table.", "verdict": "The plainest way to taste Bozcaada's own grapes without a car or a booking: a working family producer, not a showpiece estate. Expect a shop counter rather than a cellar tour, and modest prices against the boutique labels. Whether the counter keeps winter hours is not published anywhere we could find, so treat a November visit as a phone call first.", "signature": "A paid flight at the town shop, ending on the Cabernet Sauvignon-Kuntra red", "person": "Founded 1948 by the brothers Necati, Hayati and Sebati Talay; still family-run (no 2026 source names the current head)", "caveat": "A sales shop, not a cellar tour; no published winter hours found, call before going in November-April", "status": "unverified", "statusChecked": "2026-10-27", "hook": "Family winery since 1948, pouring native-grape wines at a paid tasting counter in the town shop.", "dishes": [{"name": "Cabernet Sauvignon-Kuntra", "note": "The house blend that pairs the island red grape with Cabernet; spice and dark fruit", "kind": "drink"}, {"name": "Talay Cabernet Sauvignon", "note": "The straight Cabernet, reviewed by The Quirky Cork", "kind": "drink"}, {"name": "Vasilaki", "note": "The island's native white grape, from the family's own vines", "kind": "drink"}, {"name": "Karalahna", "note": "The tannic native red, the grape to compare against Kuntra", "kind": "drink"}, {"name": "Çavuş white", "note": "The island's GI table grape made dry; ask if this year's bottling is on the counter", "kind": "drink"}], "address": "Shop in town: Lale Sok. 5, Bozcaada (Frommer's); Wanderlog lists it as 'Talay Şarap Satış Mağazası Meydan'", "reservation": "Walk in; tastings are paid", "signal_chip": {"label": "Since 1948", "full": "Founded 1948 by the Talay brothers; bottled wine from 1955 (Le Petit Journal Istanbul)", "cosign": "about 600,000 litres a year, 400,000 from family vines"}, "hours": "Year-round producer; town shop's winter opening not published (no 2025-26 evidence either way): call ahead for November to April", "category": "cellar", "priority": 2, "maps": "https://www.google.com/maps/search/?api=1&query=Talay+%C5%9Earap%C3%A7%C4%B1l%C4%B1k%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "hot_this_month": "The island's oldest family winery pours its own Vasilaki and Karalahna at the town counter; November hours not posted, so call first.", "charter": {"book": "Walk in; tastings are paid", "warn": "A sales shop, not a cellar tour; no published winter hours found, call before going in November-April", "fit": "Family winery since 1948, pouring native-grape wines at a paid tasting counter in the town shop."}},
+    {"id": "v02-corvus", "cat": "wine", "tier": "several", "priority": 2, "badge": "WINERY · ESTATE", "name": "Corvus Vineyards", "short": "Corvus", "neighborhood": "Among the vines at Tuzburnu, outside town", "tags": [], "productTags": ["Wine", "Çavuş"], "why": "Reşit Soley gave up architecture for vines and named his winery after the crows that crowd the island. The estate sits at Tuzburnu Bay, working Kuntra, Karalahna, Çavuş and Vasilaki beside Cabernet, Merlot and Syrah. Its flagship, Corpus, is about two-thirds Cabernet, and JancisRobinson.com has reviewed several vintages of it. On the property, the Wine and Bite shop-café pours by the glass with the vineyard in view.", "verdict": "The island's most internationally reviewed label and the bottle to open if a guest wants proof that Bozcaada can make a serious wine. It is also the dearest: one visitor found the island shop dearer than Ankara retail. Visiting has long been seasonal (a 2009 guide gave June to September for cellar tastings), and we found no current winter schedule, so do not plan an off-season visit without a reply from the winery.", "signature": "A glass of the Çavuş white, then the Corpus red, at the Wine and Bite on the estate", "person": "Reşit Soley, founder (architect turned vintner); no 2026 source found", "signal_chip": {"label": "Jancis review", "full": "JancisRobinson.com carries tasting notes for Corvus Corpus 2004, 2005 and 2006; the 17/20 score for 2004 could not be read in search", "cosign": "Corpus is about two-thirds Cabernet with island grapes behind it"}, "caveat": "Estate outside town; tastings historically summer-only (June-September in 2009); no 2026 winter hours found; island prices can exceed city retail", "status": "unverified", "statusChecked": "2026-10-27", "hook": "The architect's estate at Tuzburnu that made Bozcaada a name in serious wine; Çavuş white, Corpus red.", "dishes": [{"name": "Corpus", "note": "The flagship red, about two-thirds Cabernet; JancisRobinson.com has notes on the 2004, 2005 and 2006", "kind": "drink"}, {"name": "Çavuş white", "note": "The island's own white grape made as a dry wine", "kind": "drink"}, {"name": "Zeleia Vasilaki", "note": "The native Vasilaki white bottled alone", "kind": "drink"}, {"name": "Blend Bianco", "note": "The white blend Falstaff has rated (2008 vintage)", "kind": "drink"}, {"name": "Cru Turk red", "note": "The Bordeaux-style Bozcaada red blend", "kind": "drink"}], "reservation": "Contact the winery before going; visiting days are limited", "hours": "Seasonal visiting (a 2009 guide: cellar tastings 1 June to 1 September); no 2026 opening calendar found; assume closed to visitors November-April unless the winery confirms", "category": "cellar", "maps": "https://www.google.com/maps/search/?api=1&query=Corvus+Vineyards%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "hot_this_month": "Ask what the 2026 Çavuş, picked in August, is doing in tank; visiting days are limited, so check before you drive out."},
+    {"id": "v06-amadeus", "cat": "wine", "tier": "several", "badge": "WINERY · FAMILY", "name": "Amadeus MMX", "short": "Amadeus", "lat": 39.822, "lng": 26.052, "neighborhood": "Among the vines, outside town", "tags": [], "productTags": ["Wine", "Bar"], "why": "The Gareis family came to Turkey from Austria in the 1960s; Oliver Gareis, born on the island, began making wine as a hobby in 2010, the MMX on the label. His father brought back Grillo from the Mediterranean and Žlahtina from the island of Krk, and the blog Quirky Cork says this is the only place in Turkey growing Žlahtina. They grow beside the native Vasilaki, and the Cuvée Blanche blends all three with Sauvignon Blanc.", "verdict": "Go for the host and the oddities: grapes you will not taste anywhere else in Turkey, poured by the man who planted them, and bottles that are hard to find even in Istanbul. Lonely Planet rates the Cabernets. It is a small operation outside town with no published visiting hours, and nothing we found says it receives visitors in winter, so message ahead.", "signature": "The Cuvée Blanche, then the Grillo with the island's vegetable and fish mezes", "person": "Oliver Gareis, owner and winemaker", "signal_chip": {"label": "Lonely Planet", "full": "Lonely Planet lists Amadeus Vineyard: 'a convivial and engaging host', the Cabernets 'particularly impressive'", "cosign": "Katie Parla recommends the Grillo with meze (old record, not rechecked)"}, "caveat": "Small family cellar outside town, own transport needed; no published hours or winter opening found; message before going", "status": "unverified", "statusChecked": "2026-10-27", "hook": "A small Austrian family winery that grows Grillo and Croatian Žlahtina beside native Vasilaki.", "dishes": [{"name": "Cuvée Blanche", "note": "40% Vasilaki, 30% Sauvignon Blanc, 15% Žlahtina, 15% Grillo (2017 blend)", "kind": "drink"}, {"name": "Grillo", "note": "Mediterranean vine grown on the island; the meze white", "kind": "drink"}, {"name": "Žlahtina", "note": "From Krk in Croatia; grown nowhere else in Turkey, per The Quirky Cork", "kind": "drink"}, {"name": "Cabernet", "note": "The first wine Gareis made in 2010; Lonely Planet singles out the Cabernets", "kind": "drink"}, {"name": "Dark Rosé", "note": "A deep rosé from Zinfandel that Gareis pours for visitors", "kind": "drink"}], "reservation": "Message or call ahead", "hours": "No published season; summer visits documented, winter visiting not found: ask ahead for November to April", "category": "cellar", "maps": "https://www.google.com/maps/search/?api=1&query=Amadeus+MMX%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"},
+    {"id": "v07-wednesday-market", "cat": "berth", "tier": "berth_top", "badge": "WEEKLY MARKET", "name": "Bozcaada Wednesday Market", "short": "Wednesday Market", "neighborhood": "Castle square (site may have moved)", "tags": [], "productTags": ["Market"], "why": "Once a week the island's growers set out what the souvenir shelves resell: tomatoes, fruit and, in late summer, the Çavuş grapes the island registered as a geographical indication in 2020. Around the castle square, stalls stack jars of tomato and fig jam, garlic confit and the almond-mastic cookies of the old Greek kitchen. The castle walls are the backdrop the tourist board still photographs.", "verdict": "The one place to buy island produce from the person who grew it, and the best shopping stop for a galley. But the details are soft: most sources say Wednesday, one says Friday, and Katie Parla noted the weekly market had moved without saying where. Ask at the harbour or the municipality which day and square it uses this winter before planning around it.", "signature": "Domates reçeli (tomato jam) with a wedge of local goat cheese", "caveat": "Day and site disputed (Wednesday in most sources, Friday in one; Parla reports it moved); winter running not confirmed; bring cash", "status": "unverified", "statusChecked": "2026-10-27", "hook": "The island's weekly market day: fruit, vegetables, cheese and jars of tomato jam bought from the grower.", "dishes": [{"name": "Domates reçeli", "note": "The island's tomato jam; eat it against salty cheese", "kind": "sweet"}, {"name": "Fig jam", "note": "Sold in the square's jars beside the tomato jam", "kind": "sweet"}, {"name": "Garlic confit", "note": "Jarred at the square stalls, per Daily Sabah", "kind": "dish"}, {"name": "Local goat cheese and Ezine cheese", "note": "The cheeses the market is known for", "kind": "dish"}, {"name": "Almond-mastic cookies", "note": "The Rum-era bademli kurabiye, sold by the bag", "kind": "sweet"}, {"name": "Island tomatoes and Çavuş grapes", "note": "Buy at source in season; grapes late summer only", "kind": "dish"}], "hours": "Weekly; Wednesday in most sources (Coast Guide Turkey), Friday in one (nomad.watch). Winter running not confirmed by any source found: call ahead · Call ahead: no source gives hours", "reservation": "None", "signal_chip": {"label": "Weekly market", "full": "A weekly market with the castle as its backdrop (GoTürkiye/CNN sponsored feature, 2026); Wednesday per Coast Guide Turkey", "cosign": "Daily Sabah: jars of tomato and fig jam, garlic confit, almond-mastic cookies"}, "category": "street", "priority": 3, "maps": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Wednesday+Market%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye", "hot_this_month": "The islanders' own weekly market, for those who stay the winter; ask in town where and whether it stands this week, and bring cash."},
+    {"id": "v03-cicek-pastanesi", "cat": "shop", "tier": "several", "priority": 3, "badge": "PASTANE · DONDURMA", "name": "Çiçek Pastanesi Tahir Usta", "short": "Çiçek Pastanesi", "neighborhood": "Rum quarter", "tags": [], "productTags": ["Bakery", "Çavuş"], "why": "The pastries go into a stone oven over a wood fire, and the recipes, the shop says, come from the kitchens of the island's Rum families. The almond cookie scented with mastic is the same one baked on Gökçeada and in Kavala. Şermin Günday kept the shop going after her husband died and added Tahir Usta to the name; the ice-cream counter next door rotates flavours weekly, mastic, wild fig and lavender among them.", "verdict": "The island's breakfast-and-sweets stop, worth it for the cookie and the fig ice cream, not as a meal. It has not been touched by the chains. The catch is the calendar: one Hürriyet column describes the island shop as the family's summer branch, so in November it may be shut. Check before promising guests an ice cream.", "signature": "Damla sakızlı bademli kurabiye, plus a scoop of wild-fig or mastic ice cream", "person": "Şermin Günday (owner, per Hürriyet; undated)", "signal_chip": {"label": "Rum recipes", "full": "Gazete Vatan: pastries baked in a stone oven over wood fire, from recipes of the island's Rum kitchens", "cosign": "Katie Parla: 'still going strong'"}, "caveat": "Counter and breakfast place, not dinner; the island branch may be summer-only (Hürriyet), ice-cream flavours rotate and are seasonal", "status": "unverified", "statusChecked": "2026-10-27", "hook": "Wood-fired pastane: mastic-almond cookies, island breakfasts, fig, mastic and lavender ice cream.", "dishes": [{"name": "Damla sakızlı bademli kurabiye", "note": "Mastic-almond cookie of the Rum kitchen, also made on Gökçeada and in Kavala", "kind": "sweet"}, {"name": "Mastic ice cream", "note": "From the attached dondurma counter", "kind": "sweet"}, {"name": "Wild-fig ice cream", "note": "The flavour to chase when the island's figs are in", "kind": "sweet"}, {"name": "Lavender ice cream", "note": "Listed among the shop's distinctive flavours", "kind": "sweet"}, {"name": "Island breakfast", "note": "What the shop is known for besides sweets", "kind": "dish"}, {"name": "Wood-fired hamur işleri", "note": "Pastries baked in the stone oven", "kind": "dish"}], "reservation": "Walk in", "hours": "Call ahead: a Hürriyet column describes the Bozcaada shop as the family's summer branch; no winter hours found", "category": "street", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%87i%C3%A7ek+Pastanesi+Tahir+Usta%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}
+  ];
   const COLORS = {"berth": "#c4a35a", "market": "#d97706", "shop": "#059669", "wine": "#7c2d12", "mainland": "#7c3aed", "logistics": "#2d4a5e"};
   const CAT_LABELS = {"berth": "Signature", "market": "Market / Direct", "shop": "Restaurant / Bar", "wine": "Winery / Cellar", "mainland": "Out of town", "logistics": "Logistics"};
   const PRODUCT_COLORS = {"Seafood": "#3b82f6", "Meze": "#dc2626", "Wine": "#7c2d12", "Rakı": "#1f2937", "Bakery": "#92400e", "Coffee": "#6b4226", "Bar": "#7c3aed", "Mantı": "#a16207", "Market": "#d97706", "Çavuş": "#a16207"};
-  const VENUES = [
-    {
-      "id": "v01-nevreste", "cat": "shop", "tier": "berth_top", "priority": 1, "badge": "Seafood",
-      "name": "Nevreste", "short": "Nevreste", "lat": 39.8338, "lng": 26.0715,
-      "neighborhood": "Cumhuriyet Mah. — town centre, near the harbour",
-      "tags": ["Mid-priced; book ahead in summer", "Dinner in the rose-tree courtyard"],
-      "productTags": ["Seafood", "Meze"],
-      "why": "The island's seafood table most reviewers rank first; a sit-down meze marathon in a rose-tree courtyard rather than a harbour-stop. Guests return after two years and still call it the island's best.",
-      "verdict": "Ranked #1 of 89 Bozcaada restaurants on TripAdvisor (4.5/5) — the island's seafood table to book before any other.",
-      "signature": "The Bozcaada Bombası — a stuffed house meze found nowhere else — then grilled sea bass.",
-      "person": "Aynur, owner-cook — writes her own recipes and works the room.",
-      "signal_chip": {"label": "TripAdvisor #1", "full": "TripAdvisor 2026 — #1 of 89 Bozcaada restaurants, 4.5/5", "cosign": "and the table we'd book before any other on the island"},
-      "caveat": "Tables fill in summer; reserve a day or two ahead for the courtyard. A meze marathon, not a harbour-stop."
-    },
-    {
-      "id": "v02-corvus", "cat": "wine", "tier": "berth_top", "priority": 2, "badge": "Wine",
-      "name": "Corvus Vineyards", "short": "Corvus", "lat": 39.8420, "lng": 26.0600,
-      "neighborhood": "Alaybey — outside town, by the vines",
-      "tags": ["Cellar door — limited visiting days, check first", "Çavuş white · Corpus red"],
-      "productTags": ["Wine", "Çavuş"],
-      "why": "The winery that put Bozcaada back on the world wine map in 2002 and remains its most decorated; the bottle that argues the island's own grapes can carry a serious wine.",
-      "verdict": "Not the island's oldest cellar — the one that put Bozcaada on the world wine map, and still its most decorated.",
-      "signature": "A flight of the indigenous Çavuş white and the Corpus red blend at the Wine & Bite shop.",
-      "person": "Reşit Söley — architect-turned-vintner; founded Corvus in 2002 and now makes 20-plus wines.",
-      "signal_chip": {"label": "Jancis 17/20", "full": "Jancis Robinson scored Corvus Corpus 2004 at 17/20 — the highest Turkish score in her tasting", "cosign": "the bottle that proves the native grapes don't need Cabernet propping them up"},
-      "caveat": "The estate opens to visitors only on limited days — check first. The Istanbul Wine & Bite bar has closed; taste here, not there."
-    },
-    {
-      "id": "v03-cicek-pastanesi", "cat": "shop", "tier": "berth_top", "priority": 3, "badge": "Bakery",
-      "name": "Çiçek Pastanesi Tahir Usta", "short": "Çiçek Pastanesi", "lat": 39.8332, "lng": 26.0705,
-      "neighborhood": "Çınar Çarşı — the square by Alaybey Mosque",
-      "tags": ["Counter, not a sit-down dinner", "Seasonal island flavours"],
-      "productTags": ["Bakery", "Çavuş"],
-      "why": "The island's sweet memory — additive-free dondurma from Bozcaada milk the supermarket freezer cannot fake; baking since 1959.",
-      "verdict": "The island's sweet memory — additive-free ice cream from Bozcaada milk the supermarket freezer cannot fake; baking since 1959.",
-      "signature": "Young-fig and mastic ice cream from island milk; damla sakızlı mastic-almond cookies.",
-      "person": "Run by Tahir Usta's children, the Günday family; the mastic-almond cookie traces to the island's Greek neighbours.",
-      "signal_chip": {"label": "Katie Parla", "full": "Praised by food writer Katie Parla — 'still going strong'", "cosign": "the young-fig, lavender and almond ice cream is the one to chase"},
-      "caveat": "A pastane and ice-cream counter, not a sit-down dinner spot. The best flavours are seasonal — figs and mulberries when the island's fruit comes in."
-    },
-    {
-      "id": "v04-asmali-meyhane", "cat": "shop", "tier": "several", "badge": "Meyhane",
-      "name": "Asmalı Meyhane", "short": "Asmalı Meyhane", "lat": 39.8328, "lng": 26.0688,
-      "neighborhood": "Rum (Greek) quarter",
-      "tags": ["Meze + rakı under the vine canopy", "Founded 1950"],
-      "productTags": ["Seafood", "Rakı", "Meze"],
-      "why": "The canonical room for grilled island kalamar and raw fish with basil, eaten under the vine canopy that names the meyhane; founded 1950 by Niko Manalodis and his brothers.",
-      "verdict": "The island's table at its most honest — squid and fish straight from the strait, cooked plain, before the fried-and-sauced versions the mainland prefers.",
-      "signature": "Grilled island kalamar and raw fish with torn basil, rakı poured under the vine.",
-      "person": "Founded 1950 by Niko Manalodis and his brothers.",
-      "caveat": "A meze-and-rakı meyhane in the old Greek quarter — come for the room and the grill, not a sea view."
-    },
-    {
-      "id": "v05-dort-hanimeli", "cat": "shop", "tier": "several", "badge": "Mantı",
-      "name": "Dört Hanımeli", "short": "Dört Hanımeli", "lat": 39.8330, "lng": 26.0697,
-      "neighborhood": "Bozcaada town — the Rum quarter",
-      "tags": ["Home cooking, no sea view", "The island mantı standard"],
-      "productTags": ["Mantı", "Meze"],
-      "why": "The island's mantı standard against which the other ev yemeği kitchens are measured — not the harbour-front fish places tourists default to.",
-      "verdict": "The island's mantı standard — measured against, not the harbour-front fish places tourists default to.",
-      "signature": "Ada mantısı — tiny hand-pinched dumplings fried, then drowned in garlic yoghurt and chilli butter.",
-      "person": "Founded by retired primary-school teachers; the mother still cooks while an engineer son runs the room.",
-      "caveat": "Home cooking, no seafront view; the vegetarian mantı is the draw, so meat-and-fish hunters should look elsewhere."
-    },
-    {
-      "id": "v06-amadeus", "cat": "wine", "tier": "several", "badge": "Wine",
-      "name": "Amadeus Winery & Mozart Wine Bar", "short": "Amadeus", "lat": 39.8220, "lng": 26.0520,
-      "neighborhood": "Outside town, by the vineyards",
-      "tags": ["Cellar door — bring your own transport", "Grillo white · cellar Cabernet"],
-      "productTags": ["Wine", "Bar"],
-      "why": "The convivial cellar door where the winemaker pours for you himself — not the famous name on the island, but the warm one.",
-      "verdict": "Not the famous name on the island — the convivial cellar door where the winemaker pours for you himself.",
-      "signature": "The Grillo white, paired with the island's vegetable and fish mezes.",
-      "person": "Oliver Gareis — island-born Austrian; settled in the late 1990s and named the label for Mozart (founded 2010).",
-      "signal_chip": {"label": "Katie Parla", "full": "Katie Parla recommends the Grillo as a meze pairing; Lonely Planet lists the vineyard", "cosign": "a convivial, engaging host worth the drive out"},
-      "caveat": "A small family operation outside town — taste and buy at the cellar door or the Mozart bar; you'll want your own transport."
-    },
-    {
-      "id": "v07-wednesday-market", "cat": "market", "tier": "several", "badge": "Market",
-      "name": "Bozcaada Wednesday Producers' Market", "short": "Wednesday Market", "lat": 39.8352, "lng": 26.0762,
-      "neighborhood": "Kale Meydanı — the castle square",
-      "tags": ["Wednesdays only", "Bring cash"],
-      "productTags": ["Market"],
-      "why": "Where the island's cheese and tomato jam are actually made — a producers' market in front of the castle, not the supermarket.",
-      "verdict": "Skip the island supermarket — the Wednesday stall in the castle square is where the cheese and tomato jam are actually made.",
-      "signature": "Local goat cheese and Ezine cheese, plus the island's signature tomato jam (domates reçeli).",
-      "caveat": "Wednesdays only, in the castle square — a producers' market, not a daily one. Bring cash."
-    },
-    {
-      "id": "v08-talay", "cat": "wine", "tier": "several", "badge": "Wine",
-      "name": "Talay Şarapçılık", "short": "Talay", "lat": 39.8336, "lng": 26.0708,
-      "neighborhood": "Alaybey — Çınar Çeşme Sok., town-centre shop",
-      "tags": ["Tasting counter, not a cellar tour", "Vasilaki · Karalahna · Kuntra"],
-      "productTags": ["Wine", "Çavuş"],
-      "why": "The island's oldest continuously family-run winery, pouring its own bottles at a town shop — not a tasting-room built for visitors.",
-      "verdict": "The island's oldest family winery, pouring its own bottles at a town shop — not a tasting room built for visitors.",
-      "signature": "A glass of crisp Çavuş white at the Meydan shop.",
-      "person": "Founded 1948 by the Talay brothers — Necati, Hayati and Sebati; still a family firm.",
-      "caveat": "A wine producer and sales shop, not a restaurant; the tasting counter, not the cellar, is what you walk into."
-    },
-    {
-      "id": "v09-kahverengi", "cat": "shop", "tier": "plenty", "badge": "Coffee",
-      "name": "Kahverengi Roastery", "short": "Kahverengi", "lat": 39.8325, "lng": 26.0682,
-      "neighborhood": "Rum quarter — Sakarya Sok.",
-      "tags": ["Hand-brew, no machine", "Busiest April–October"],
-      "productTags": ["Coffee"],
-      "why": "An island-born specialty roaster that later opened in Nişantaşı — not an Istanbul brand parachuted in for the season.",
-      "verdict": "An island-born specialty roaster that later opened in Istanbul — not a city brand parachuted in for the season.",
-      "signature": "Hand-brewed filter coffee, no machine — beans the owners roast themselves.",
-      "caveat": "A coffee-and-pastry stop about a kilometre off the main square; no full menu, busiest April–October."
-    },
-    {
-      "id": "v10-bakkal-bar", "cat": "shop", "tier": "plenty", "badge": "Bar",
-      "name": "Bakkal Cocktail & Juice Bar", "short": "Bakkal", "lat": 39.8329, "lng": 26.0686,
-      "neighborhood": "Rum quarter — Lale Sok., opposite the museum",
-      "tags": ["Seasonal Apr–Oct, 11:00–03:00", "Quiet by day, loud by 2am"],
-      "productTags": ["Bar"],
-      "why": "The cobblestone-lane drink locals point to before the louder seafront bars — quiet by day, a small dancefloor by 2am.",
-      "verdict": "The cobblestone-lane bar locals name before the louder seafront ones — quiet by day, a small dancefloor by 2am.",
-      "signature": "Fresh-fruit cocktails from regional produce; ask for the Magnolia.",
-      "caveat": "Seasonal, roughly April–October; turns club-loud late, so not for a quiet nightcap."
-    },
-    {
-      "id": "v11-adam", "cat": "shop", "tier": "plenty", "badge": "Meze",
-      "name": "Ada'm", "short": "Ada'm", "lat": 39.8331, "lng": 26.0692,
-      "neighborhood": "Rum quarter — Meyhaneler Sok.",
-      "tags": ["Affordable by island standards", "Book in high season"],
-      "productTags": ["Meze", "Seafood"],
-      "why": "The casual meze table where the cook improvises rather than the polished sunset terraces — affordable by island standards.",
-      "verdict": "The casual meze table where the cook improvises — not the polished sunset terraces, and cheaper for it.",
-      "signature": "Balık tantuni — flaked fish folded hot into flatbread, with garlic potatoes.",
-      "caveat": "A tight, unfussy room with mixed reviews on ambience; book in high season and come for the food, not the décor."
-    },
-    {
-      "id": "v12-sandal", "cat": "shop", "tier": "plenty", "badge": "Meyhane",
-      "name": "Sandal Restaurant", "short": "Sandal", "lat": 39.8327, "lng": 26.0690,
-      "neighborhood": "Rum Mah. (Greek quarter) — Alsancak Sok.",
-      "tags": ["Noon–2am, pedestrian lane", "50-plus mezes"],
-      "productTags": ["Meze", "Seafood"],
-      "why": "A meyhane built inside Apostol Kalfa's hundred-year coffeehouse, where the island's old marketplace stood.",
-      "verdict": "Eat where the island's old marketplace stood — a meyhane inside a hundred-year-old coffeehouse.",
-      "signature": "Grilled squid and herbed shrimp; sandal borani among fifty-plus mezes.",
-      "person": "Ahmet Bölük runs the house.",
-      "caveat": "Open noon to 2am, but on a pedestrian lane, not a waterfront terrace — come for the room and the meze."
-    }
-  ];
-  const NEIGHBORHOODS = [
-    {"id": "n-rum-quarter", "name": "Rum (Greek) quarter", "center": [39.8330, 26.0690], "radius": 180, "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Rum+Mahallesi"},
-    {"id": "n-town-harbour", "name": "Town centre & harbour", "center": [39.8340, 26.0715], "radius": 200, "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+harbour"},
-    {"id": "n-alaybey", "name": "Alaybey quarter", "center": [39.8336, 26.0705], "radius": 160, "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Alaybey"}
-  ];
-  const WALKS = [
-    {"id": "w-ayazma-vines", "name": "Castle to Ayazma — through the vineyards", "start": [39.8355, 26.0762], "maps_url": "https://www.google.com/maps/search/?api=1&query=Ayazma+Beach+Bozcaada"}
-  ];
-  const WORK_SPOTS = [
-    {"id": "p-work-kahverengi", "name": "Kahverengi Roastery", "start": [39.8325, 26.0682]}
-  ];
-  const LANDMARKS = [
- {
-  "id": " b-ayazma",
-  "name": "Ayazma",
-  "coords": [
-   39.8129,
-   26.0076
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Ayazma+Bozcaada"
- },
- {
-  "id": "b-habbele",
-  "name": "Habbele (Poyraz Liman&#305;)",
-  "coords": [
-   39.8228,
-   25.9923
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Habbele+%28Poyraz+Liman%26%23305%3B%29+Bozcaada"
- },
- {
-  "id": "b-sulubahce",
-  "name": "Sulubah&ccedil;e",
-  "coords": [
-   39.8141,
-   25.9945
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Sulubah%26ccedil%3Be+Bozcaada"
- },
- {
-  "id": "b-akvaryum",
-  "name": "Akvaryum (Aquarium Cove)",
-  "coords": [
-   39.7914,
-   26.0603
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Akvaryum+%28Aquarium+Cove%29+Bozcaada"
- },
- {
-  "id": "b-cayir",
-  "name": "&Ccedil;ay&#305;r",
-  "coords": [
-   39.8406,
-   26.0308
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=%26Ccedil%3Bay%26%23305%3Br+Bozcaada"
- },
- {
-  "id": "b-tuzburnu",
-  "name": "Tuzburnu",
-  "coords": [
-   39.802,
-   26.0786
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Tuzburnu+Bozcaada"
- },
- {
-  "id": "l-cult-castle",
-  "name": "Bozcaada Castle (Tenedos Fortress)",
-  "coords": [
-   39.8332,
-   26.0676
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Castle+%28Tenedos+Fortress%29+Bozcaada"
- },
- {
-  "id": "l-cult-church",
-  "name": "Church of St Mary &mdash; Kimisis Theotokou",
-  "coords": [
-   39.8338,
-   26.0662
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Church+of+St+Mary+%26mdash%3B+Kimisis+Theotokou+Bozcaada"
- },
- {
-  "id": "l-cult-rum",
-  "name": "The Rum (Greek) Quarter",
-  "coords": [
-   39.8338,
-   26.0658
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Rum+%28Greek%29+Quarter+Bozcaada"
- },
- {
-  "id": "l-cult-windmills",
-  "name": "The Stone Windmills (Yel De&#287;irmenleri)",
-  "coords": [
-   39.8395,
-   26.0686
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Stone+Windmills+%28Yel+De%26%23287%3Birmenleri%29+Bozcaada"
- },
- {
-  "id": "l-cult-polente",
-  "name": "Polente Lighthouse",
-  "coords": [
-   39.8294,
-   25.9908
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Polente+Lighthouse+Bozcaada"
- },
- {
-  "id": "l-cult-monastery",
-  "name": "Ayazma Monastery &amp; Holy Spring",
-  "coords": [
-   39.8033,
-   26.0533
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Ayazma+Monastery+%26amp%3B+Holy+Spring+Bozcaada"
- },
- {
-  "id": "l-cult-museum",
-  "name": "Bozcaada Local History Museum",
-  "coords": [
-   39.8336,
-   26.0651
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Local+History+Museum+Bozcaada"
- },
- {
-  "id": "w-goztepe",
-  "name": "G&ouml;ztepe &mdash; the panorama",
-  "coords": [
-   39.834,
-   26.052
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=G%26ouml%3Bztepe+%26mdash%3B+the+panorama+Bozcaada"
- },
- {
-  "id": "w-ramparts",
-  "name": "The castle ramparts",
-  "coords": [
-   39.835,
-   26.073
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+castle+ramparts+Bozcaada"
- },
- {
-  "id": "w-vineyards",
-  "name": "The vineyard country",
-  "coords": [
-   39.8302,
-   26.0261
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+vineyard+country+Bozcaada"
- },
- {
-  "id": "w-polente",
-  "name": "Polente at sunset",
-  "coords": [
-   39.8364,
-   25.9636
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Polente+at+sunset+Bozcaada"
- },
- {
-  "id": "w-ayazma",
-  "name": "The Ayazma plane-tree walk",
-  "coords": [
-   39.8138,
-   26.0146
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Ayazma+plane-tree+walk+Bozcaada"
- },
- {
-  "id": "p-cof-cinaralti",
-  "name": "&Ccedil;&#305;naralt&#305; Caf&eacute;",
-  "coords": [
-   39.8327,
-   26.0718
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=%26Ccedil%3B%26%23305%3Bnaralt%26%23305%3B+Caf%26eacute%3B+Bozcaada"
- },
- {
-  "id": "p-cof-shelter",
-  "name": "Coffee Shelter",
-  "coords": [
-   39.8338,
-   26.0712
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee+Shelter+Bozcaada"
- },
- {
-  "id": "p-cof-vasil",
-  "name": "Vasil Coffee &amp; Bakery",
-  "coords": [
-   39.8338,
-   26.0712
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Vasil+Coffee+%26amp%3B+Bakery+Bozcaada"
- },
- {
-  "id": "p-gas-route",
-  "name": "The wine route",
-  "coords": [
-   39.8302,
-   26.0261
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+wine+route+Bozcaada"
- },
- {
-  "id": "p-gas-festival",
-  "name": "Ba&#287; Bozumu &mdash; the harvest festival",
-  "coords": [
-   39.832,
-   26.067
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=Ba%26%23287%3B+Bozumu+%26mdash%3B+the+harvest+festival+Bozcaada"
- },
- {
-  "id": "p-gas-market",
-  "name": "The Wednesday produce market",
-  "coords": [
-   39.832,
-   26.069
-  ],
-  "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Wednesday+produce+market+Bozcaada"
+  const NEIGHBORHOODS = [{"name": "The Rum quarter", "desc": "North of the dividing street, a quarter rebuilt in straight lines after the fire of 1874", "maps": "https://www.google.com/maps/search/?api=1&query=Rum+Mahallesi%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}, {"name": "The Turkish mahalle", "desc": "South of the dividing street: the lanes the fire missed, two mosques and a plane-tree fountain", "maps": "https://www.google.com/maps/search/?api=1&query=Alaybey+Camii%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}, {"name": "The harbour and the castle square", "desc": "Where the ferry ties up under the castle walls, and the town opens out from the quay", "maps": "https://www.google.com/maps/search/?api=1&query=Bozcaada+Liman%C4%B1%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}];
+  const WALKS = [{"name": "Göztepe", "desc": "The island's high point on foot: vines, pines, the windmills and the islets in one turn of the head", "maps": "https://www.google.com/maps/search/?api=1&query=G%C3%B6ztepe%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}, {"name": "Polente at sunset", "desc": "An hour out along the bare western cape to the 1861 lighthouse, as the turbines turn behind you", "maps": "https://www.google.com/maps/search/?api=1&query=Polente+Feneri%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}, {"name": "The vineyard country", "desc": "Low gobelet vines raked by the meltem, from Göztepe's flanks down to the south coast", "maps": "https://www.google.com/maps/search/?api=1&query=Bozcaada+ba%C4%9Flar%C4%B1%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}];
+  const WORK_SPOTS = [{"name": "Çınaraltı", "desc": "Tea and Turkish coffee in the shade of a big plane tree, the island's slowest table", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%87%C4%B1naralt%C4%B1+Cafe%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}, {"name": "Coffee Shelter", "desc": "The island's specialty coffee shop and roaster, for a cold brew or a flat white", "maps": "https://www.google.com/maps/search/?api=1&query=Coffee+Shelter%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}, {"name": "Vasil", "desc": "Turkish coffee and handmade Aegean bakes, a minute off Atatürk Caddesi", "maps": "https://www.google.com/maps/search/?api=1&query=Vasil+Coffee+%26+Bakery%2C+Bozcaada%2C+%C3%87anakkale%2C+T%C3%BCrkiye"}];
+  const LANDMARKS = [];
+  const PHOTOS = [{"src": "/terroir/Bozcaada-NorthAegean/img/bozcaada-town.jpg", "caption": "The harbour town under its castle, on the island the Greeks called Tenedos.", "credit": "Photo: Filanca · CC BY-SA 3.0 · Wikimedia"}, {"src": "/terroir/Bozcaada-NorthAegean/img/bozcaada-vineyard.jpg", "caption": "A vineyard road through the island’s defining crop, the vines pruned low against the wind.", "credit": "Photo: Raicem · CC BY-SA 4.0 · Wikimedia"}, {"src": "/terroir/Bozcaada-NorthAegean/img/bozcaada-castle.jpg", "caption": "The fortress Mehmet II rebuilt in 1455, guarding the harbour and the strait.", "credit": "Photo: Kadı Kadı · CC BY 2.0 · Wikimedia"}];
+  const GEMS = [{"id": "gem-domates-receli", "pattern": "tomato jam", "tag": "Bozcaada gem · born here", "name": "Jam from a vegetable", "story": "The island cooks its late-summer tomatoes down with sugar into a jam and sells it by the jar all year. It is eaten at breakfast against salty white cheese. It is not a registered product: the only one the island has is the Çavuş grape.", "where": "The weekly market; the stalls of the castle square."}, {"id": "gem-cavus", "pattern": "Çavuş", "tag": "Bozcaada gem · born here", "name": "The grape with a registration number", "story": "Bozcaada Çavuş Üzümü is a designation of origin, number 497 at the Turkish patent office, registered on 2 June 2020: a big, pale-gold table grape. The same grape is made into a dry white wine at the island’s cellars.", "where": "Fresh at the market in late summer; in the glass at Talay’s shop."}, {"id": "gem-mastic", "pattern": "mastic", "tag": "Aegean gem", "name": "The resin in the cookie", "story": "Mastic is the resin of the lentisk tree of the Aegean islands, sold as small clear tears. On Bozcaada it flavours the almond cookie of the Rum kitchen, an ice cream, and a cold artichoke meze.", "where": "Çiçek Pastanesi for the cookie and the ice cream; Sandal for the artichoke."}];
+  const TABLES = {"grande": {"title": "Les Grandes Tables", "desc": "The island has no starred room; its grand tables are the meyhanes, where you book, sit for hours and let the meze come.", "sections": [{"label": "The meyhane tables — squid on the coals, meze in waves", "desc": "The three meze houses of the old bazaar streets: the 1950 meyhane under its vine for squid off the coals, the old coffeehouse with fifty meze, and the courtyard under a rose tree.", "ids": ["v04-asmali-meyhane", "v12-sandal", "v01-nevreste"]}]}, "petite": {"title": "Les Petites Tables", "desc": "Where this guide actually lives: the home cooking of the back streets, and the cellar doors where the island’s grapes are poured.", "sections": [{"label": "Ev yemeği — the island's home cooking", "desc": "The island’s home cooking: a family kitchen for mantı and stuffed courgette flowers, and a checked-cloth room for octopus with artichokes.", "ids": ["v05-dort-hanimeli", "v11-adam"]}, {"label": "At the cellar door — the island's own grapes", "desc": "The three ways to taste the island’s grapes: the 1948 family firm’s shop in town, the architect’s estate at Tuzburnu, and the Austrian family cellar among the vines.", "ids": ["v08-talay", "v02-corvus", "v06-amadeus"]}]}, "street": {"title": "La Rue — The Street", "desc": "On foot and early: the growers’ market and the pastane of the mastic cookie.", "sections": [{"label": "La Rue — the market and the pastane", "desc": "The weekly market of the growers, and the wood-fired pastane of the mastic cookie and the fig ice cream.", "ids": ["v07-wednesday-market", "v03-cicek-pastanesi"]}]}};
+  const CATEGORIES = [{"key": "meyhane", "label": "The meyhane tables — squid on the coals, meze in waves", "lead": "The three meze houses of the old bazaar streets: the 1950 meyhane under its vine for squid off the coals, the old coffeehouse with fifty meze, and the courtyard under a rose tree.", "story": {"title": "Squid, rakı and meze lanes", "story": "Bozcaada's meyhanes sit on two short streets in the town centre, not on the harbour. On Çınar Çarşı, Asmalı Meyhane has grilled island kalamar on coals and served raw fish with basil since Niko Manalodis and his brothers opened it in 1950. Around the corner on Alsancak Sokak, the old bazaar street, Sandal fills Apostol Kalfa's former coffeehouse, keeping its cedar floors, and lists island herb salad and mastic artichoke among its meze. A few doors along, Nevreste seats dinner under a yediveren rose tree and opens with the Bozcaada Bombası, a stuffed meze no other house makes. The rhythm is the same everywhere: cold meze, hot meze, then fish, with rakı.", "where": "Asmalı Meyhane, Çınar Çarşı Caddesi; Sandal, Alsancak Sokak; Nevreste, Alsancak Sokak"}}, {"key": "home", "label": "Ev yemeği — the island's home cooking", "lead": "The island’s home cooking: a family kitchen for mantı and stuffed courgette flowers, and a checked-cloth room for octopus with artichokes.", "story": {"title": "Mantı and the cook's plates", "story": "Away from the fish grills, Bozcaada eats from pots: dumplings, olive-oil vegetables, leaves rolled round rice, the food of the Turkish and Rum households that shaped the town. Dört Hanımeli was opened more than forty years ago by retired primary-school teachers, and reviewers still come for its mantı, its vine-leaf sarma and stuffed courgette flowers. On Alsancak Sokak, Ada'm, about ten years old, shows what an island cook does with the same pantry, putting octopus with artichokes in a cream sauce and wrapping sea bass in vine leaves. Both are plain rooms where the plates are the point, and cheaper than the courtyard meze houses.", "where": "Dört Hanımeli, Bozcaada town; Ada'm, Alsancak Sokak"}}, {"key": "cellar", "label": "At the cellar door — the island's own grapes", "lead": "The three ways to taste the island’s grapes: the 1948 family firm’s shop in town, the architect’s estate at Tuzburnu, and the Austrian family cellar among the vines.", "story": {"title": "Island grapes, three ways", "story": "Bozcaada's wine rests on four native grapes, Çavuş and Vasilaki for white, Karalahna and Kuntra for red, and its cellars divide three ways. Talay is the old family firm: brothers founded it in 1948, bottling began in 1955, and today you taste a paid flight at a shop in town. Corvus is the architect's estate at Tuzburnu, where Reşit Soley makes Corpus, about two-thirds Cabernet, and a dry wine from the Çavuş table grape. Amadeus MMX is the Gareis family's small cellar, begun as a hobby in 2010, growing Grillo and Croatian Žlahtina beside native Vasilaki. Out of season, call each one first: none publishes winter hours.", "where": "Talay Şarapçılık, town centre; Corvus, Tuzburnu; Amadeus MMX, among the vines outside town"}}, {"key": "street", "label": "La Rue — the market and the pastane", "lead": "The weekly market of the growers, and the wood-fired pastane of the mastic cookie and the fig ice cream.", "story": {"title": "Jam, cookies and the market", "story": "The island's street food is mostly sweet and mostly sold from jars and counters. On market day, Wednesday in most sources, growers sell tomatoes, fruit and cheese, with tomato jam, fig jam and garlic confit in jars; the market has moved from the square older guides give, so ask in town where it stands. Çiçek Pastanesi bakes in a stone oven over wood and sells the mastic-almond cookie of the Rum kitchen, also made on Gökçeada and in Kavala, with mastic and wild-fig ice cream from the counter next door. In winter, check both: the pastane's island branch may open only in summer.", "where": "The weekly market, in town; Çiçek Pastanesi, Rum quarter"}}];
+  const GROUPS = [{"key": "grande", "label": "Les Grandes Tables", "lead": "The island has no starred room; its grand tables are the meyhanes, where you book, sit for hours and let the meze come."}, {"key": "petite", "label": "Les Petites Tables", "lead": "Where this guide actually lives: the home cooking of the back streets, and the cellar doors where the island’s grapes are poured."}, {"key": "street", "label": "La Rue — The Street", "lead": "On foot and early: the growers’ market and the pastane of the mastic cookie."}];
+  const GROUP_OF = {"meyhane": "grande", "home": "petite", "cellar": "petite", "street": "street"};
+  const BRIDGE = {
+ "_rule": "SINGLE-EDITOR RULE: charter{} on a venue deliberately duplicates booking truth held in its reservation/price_range/caveat prose. Any commit editing those fields on a shortlist venue MUST update its charter block in the same commit, and lead-time grouping below must be re-verified at write time.",
+ "doors": [
+  {
+   "fr": "One Night",
+   "en": "Crew ashore for one evening: a plan for each corner of town — the Rum quarter, the harbour under the castle, the wine shops, the western cape — in the order you go.",
+   "note": "L’apéro · la table · le dernier verre",
+   "href": "#t=onenight",
+   "open": []
+  },
+  {
+   "fr": "The Gastronomic Dig-In",
+   "en": "For the chef: the island’s wine story, the market and the jar, the four grapes, and the canon at the foot.",
+   "note": "L’histoire · le marché · le plat · la liste",
+   "href": "#bougie",
+   "open": [
+    "bougie",
+    "provisioning",
+    "la-liste"
+   ]
+  },
+  {
+   "fr": "For Guests",
+   "en": "Plan ahead, or save the night at the last minute: bookable, priced, honest about the season.",
+   "note": "auto",
+   "href": "#ce-soir",
+   "open": [
+    "ce-soir"
+   ]
+  },
+  {
+   "fr": "The Getaway Weekend",
+   "en": "Friday night to Sunday afternoon: the ferry at dusk and squid under the vine, the castle and the four grapes, the cape at sunset, the high point on Sunday morning.",
+   "note": "Le bateau · la cave · la table · le cap",
+   "href": "#t=getaway",
+   "open": []
+  }
+ ],
+ "shortlist": {
+  "title": "For guests — plan ahead, or save the night",
+  "desc": "Book ahead for guests, or rescue the evening when the booking falls through. Every name links to its full entry above.",
+  "groups": [
+   {
+    "label": "Last minute — save the night",
+    "sub": "The booking fell through: Sandal or Ada’m, on the same short street, where a table often turns. Neither has published its winter days: in the cold months, call before you cross.",
+    "ids": [
+     "v12-sandal",
+     "v11-adam"
+    ]
+   },
+   {
+    "label": "Plan ahead — this week",
+    "sub": "Dört Hanımeli for the home-cooked plates, and a tasting at Talay’s shop in town (a paid flight at the counter). Call both ahead out of season.",
+    "ids": [
+     "v05-dort-hanimeli",
+     "v08-talay"
+    ]
+   },
+   {
+    "label": "Plan ahead — the grand night",
+    "sub": "Asmalı Meyhane under its vine, or Nevreste’s courtyard under the rose tree: book a day or two ahead in summer. None of the island’s tables has published a winter calendar for 2026: from November to April, call first.",
+    "ids": [
+     "v04-asmali-meyhane",
+     "v01-nevreste"
+    ]
+   }
+  ]
  }
-];
-  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS };
+};
+  return { VENUES, COLORS, CAT_LABELS, PRODUCT_COLORS, NEIGHBORHOODS, WALKS, WORK_SPOTS, LANDMARKS, PHOTOS, GEMS, TABLES, CATEGORIES, GROUPS, GROUP_OF, BRIDGE };
 })();

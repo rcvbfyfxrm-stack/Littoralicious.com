@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Write terroir/_rollout/lib/guides/<slug>.check.json from what the build actually contains (26 Oct 2026).
+"""Write terroir/_rollout/lib/guides/<slug>.check.json from what the build actually contains (27 Oct 2026).
 Floors are the curated counts (<=3 per subcategory), never padded."""
 import json, re, subprocess, pathlib
-REPO = pathlib.Path(__file__).resolve().parents[4]; SLUG = "lons-le-saunier-jura"
+REPO = pathlib.Path(__file__).resolve().parents[4]; SLUG = "Bozcaada-NorthAegean"
 doc = (REPO / f"terroir/{SLUG}/index.html").read_text()
 D = json.loads(subprocess.run(["node", "-e", f"global.window={{}};require('./terroir/data/{SLUG}.js');process.stdout.write(JSON.stringify(window.TERROIR_DATA))"],
                               cwd=REPO, capture_output=True, text=True, check=True).stdout)
 ids = re.findall(r'<(?:details|section) class="(?:sfold|gx-jump)" id="([^"]+)"', doc)
 lane_ids = {i for c in D["TABLES"].values() for s in c["sections"] for i in s["ids"]}
-cfg = {"slug": SLUG, "city": "Lons-le-Saunier", "listeSlug": "lons-le-saunier", "groups": len(D["GROUPS"]),
-       "mapsTokens": ["Lons", "Lons-le-Saunier", "Jura", "France", "Arbois", "Pupillin", "Port-Lesney", "Poligny", "Salins", "Dole", "Château-Chalon", "Montigny", "Baume", "Besançon", "Arc-et-Senans", "Doubs", "Bresse"],
-       "staleTokens": ["Prague", "Praha", "Vltava", "Czech", "Kendwa", "Zanzibar", "Diani", "Kwale", "Siracusa", "Ortigia", "Piraeus", "Sicily", "Barcelona", "Catalunya", "Istanbul", "Cavalaire", "Gigaro", "Stradun", "Konavle", "Gruž", "Dalmatia", "Croatia", "Diocletian", "Faro", "Algarve", "Olhão", "Ria Formosa", "Beaune", "Côte-d’Or", "Hospices"],
-       "staleAllow": {"Prague": ["runs on any page cloned from Prague's chrome"]},
+cfg = {"slug": SLUG, "city": "Bozcaada", "listeSlug": "bozcaada", "groups": len(D["GROUPS"]),
+       "mapsTokens": ["Bozcaada", "Çanakkale", "Canakkale", "Türkiye", "Turkey", "Geyikli", "Ezine", "Tevfikiye", "Behramkale", "Assos", "Gökçeada", "Ayvacık", "Troy", "Truva"],
+       "staleTokens": ["Prague", "Praha", "Vltava", "Czech", "Kendwa", "Zanzibar", "Diani", "Kwale", "Siracusa", "Ortigia", "Piraeus", "Sicily", "Barcelona", "Catalunya", "Istanbul", "Cavalaire", "Gigaro", "Stradun", "Konavle", "Gruž", "Dalmatia", "Croatia", "Diocletian", "Faro", "Algarve", "Olhão", "Ria Formosa", "Beaune", "Côte-d’Or", "Hospices", "Cadaqués", "Cadaques", "Lons-le-Saunier", "Jura"],
+       "staleAllow": {"Prague": ["runs on any page cloned from Prague's chrome"], "Istanbul": ["consul general in istanbul", "lepetitjournal.com/istanbul", "le petit journal istanbul", "even in istanbul", "lepetitjournal istanbul"]},
        "bannedExtra": ["paradise", "unspoilt", "off the beaten"],
        "sectionsRequired": [i for i in ids if i != "ce-soir"] + ["dish", "hot"],
        "sectionsForbidden": ["verify", "markets", "producers", "hifi-bars", "map-section", "three-tables", "tables-extended", "history", "band-eat",

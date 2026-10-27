@@ -1,0 +1,136 @@
+{
+ "onenight": {
+  "title": "Une nuit",
+  "kicker": "One night ashore · pick the corner of town you are nearest · in the order you go",
+  "lede": "The island eats late and long in summer, at meyhanes where the meze come in waves and nobody hurries the rakı. The town is small enough to cross on foot in a quarter of an hour, so each plan below is one evening in one corner of it, plus one by taxi to the western cape. None of the island’s tables has published winter days: from November to April, call before you cross. Checked 27 October 2026.",
+  "door_en": "Crew ashore for one evening: a plan for each corner of town — the Rum quarter, the harbour under the castle, the wine shops, the western cape — in the order you go.",
+  "door_note": "L’apéro · la table · le dernier verre",
+  "quarters": [
+   {"id": "rum", "name": "The Rum quarter · Alsancak Sokak",
+    "line": "The grid of stone houses in the last light, fifty meze in an old coffeehouse, and the late bar down the lane.",
+    "steps": [
+     {"time": "18:30", "name": "Through the Rum quarter", "ref": "card:The Rum quarter",
+      "text": "Walk the straight lanes rebuilt after the 1874 fire, under the bell tower of St Mary, as the stone takes the last light."},
+     {"time": "19:30", "name": "Sandal", "ref": "venue:v12-sandal",
+      "text": "Sandal borani, the mastic artichoke and squid off the grill, in what was Apostol Kalfa’s coffeehouse. Book days ahead in season; out of season, call to check it is serving."},
+     {"time": "23:00", "name": "Bakkal", "ref": "card:Bakkal",
+      "text": "A cocktail on the cobbled side lane; it gets loud after midnight. Seasonal, roughly April to October: expect it shut in winter."}
+    ],
+    "after": "No table at Sandal? [[venue:v01-nevreste|Nevreste]] and [[venue:v11-adam|Ada’m]] are a few doors along the same street."},
+   {"id": "harbour", "name": "The harbour · under the castle",
+    "line": "The walls at the end of the afternoon, the quay at dusk, squid on the coals under the vine.",
+    "steps": [
+     {"time": "17:00", "name": "The castle", "ref": "card:The castle",
+      "text": "The rampart walk over the harbour; in summer it opens 09:00 to 18:00 by the governorship’s page, and its winter hours are not confirmed, so ask on the quay."},
+     {"time": "18:30", "name": "The harbour and the castle square", "ref": "card:The harbour and the castle square",
+      "text": "Out to the end of the quay as the floodlights come on over the walls and the masts."},
+     {"time": "19:30", "name": "Asmalı Meyhane", "ref": "venue:v04-asmali-meyhane",
+      "text": "Island squid grilled plain over coals and raw fish with basil, under the vine of the 1950 meyhane on Çınar Çarşı Caddesi. Book in summer; call ahead out of season."}
+    ],
+    "after": "Before dinner, tea or a Turkish coffee under the plane tree at [[card:Çınaraltı|Çınaraltı]], if it is open."},
+   {"id": "wine", "name": "The town centre · the wine shops",
+    "line": "The island’s grapes side by side at a counter, a case for the boat, then home cooking.",
+    "steps": [
+     {"time": "17:30", "name": "Talay", "ref": "venue:v08-talay",
+      "text": "A paid flight at the counter of the shop on Lale Sokak: Vasilaki, Karalahna, the Cabernet–Kuntra. No winter hours are published: call first from November to April."},
+     {"time": "18:30", "name": "Çamlıbağ", "ref": "card:Çamlıbağ",
+      "text": "The shop of the house that dates itself to 1925: buy the native grapes by the case for the boat. Hours not found; call ahead out of season."},
+     {"time": "19:30", "name": "Dört Hanımeli", "ref": "venue:v05-dort-hanimeli",
+      "text": "Mantı, vine-leaf sarma and stuffed courgette flowers from a family kitchen. Walk in; call ahead off-season."}
+    ],
+    "after": "For the four grapes before you taste them, read [[card:Çavuş|Çavuş]], [[card:Vasilaki|Vasilaki]] and [[card:Karalahna and Kuntra|Karalahna and Kuntra]]."},
+   {"id": "polente", "name": "The western cape · Polente, then back to town",
+    "line": "An hour out to the lighthouse for the sunset, a taxi back for octopus on Alsancak Sokak.",
+    "steps": [
+     {"time": "The last hour of light", "name": "Polente at sunset", "ref": "card:Polente at sunset",
+      "text": "About an hour each way on foot, with no shade, or a short ride by taxi or scooter. Bring water, a layer against the wind and a torch for the way back."},
+     {"time": "20:30", "name": "Ada’m", "ref": "venue:v11-adam",
+      "text": "Octopus with artichokes in a cream sauce, sea bass in vine leaves, at the checked-cloth room on Alsancak Sokak. Book in high season; call ahead off-season."}
+    ],
+    "after": "The thin part: there is no table out on the cape, so eat in town before or after."}
+  ]
+ },
+ "getaway": {
+  "title": "Le week-end",
+  "door_fr": "The Getaway Weekend",
+  "door_en": "Friday night to Sunday afternoon: the ferry at dusk and squid under the vine, the castle and the four grapes, the cape at sunset, the high point on Sunday morning.",
+  "door_note": "Le bateau · la cave · la table · le cap",
+  "kicker": "The getaway weekend · Friday night to Sunday afternoon",
+  "lede": "What the island sells in August is a crowded beach and a set menu on the harbour. The real thing is smaller: a counter where the island’s own grapes are poured side by side, squid off the coals under the vine of a meyhane founded in 1950, a family kitchen’s mantı, and the wind at the western cape at sunset. The plan arrives on the Friday ferry, stays in town, and leaves after Sunday lunch. Every stop is in this guide, checked in October 2026; out of season, every table must be called first.",
+  "book": [
+   "[[venue:v04-asmali-meyhane|Asmalı Meyhane]] — Friday dinner; book in summer, and call out of season to check it is serving",
+   "[[venue:v01-nevreste|Nevreste]] — Saturday dinner in the courtyard; book ahead for summer and holiday dinners",
+   "[[venue:v12-sandal|Sandal]] — Sunday lunch; it books up days ahead for dinner in season",
+   "[[venue:v02-corvus|Corvus]] — a Saturday visit by appointment; visiting days are limited and have been summer-only",
+   "[[card:GESTAŞ, the ferry operator|The ferry]] — check the timetable for your dates; in winter the late boats run only Friday to Sunday, and in summer the car queue at Geyikli is long"
+  ],
+  "days": [
+   {"label": "Friday", "title": "The ferry at dusk",
+    "stops": [
+     {"time": "18:00", "name": "Off the boat at the harbour", "ref": "card:The harbour and the castle square",
+      "text": "The ferry from Geyikli’s Yükyeri quay docks under the castle; walk off on foot and leave the car on the mainland if you can.",
+      "meta": "Harbour, Bozcaada town · the crossing about 35 minutes · timetable seasonal (checked Oct 2026)"},
+     {"time": "19:30", "name": "Dinner at Asmalı Meyhane", "ref": "venue:v04-asmali-meyhane",
+      "text": "Squid grilled plain over coals, raw fish with basil, octopus with walnuts from the meze counter, and rakı with water under the vine.",
+      "meta": "Çınar Çarşı Caddesi 20 · book in summer, call ahead off-season · winter days not published (Oct 2026)"},
+     {"time": "23:00", "name": "A last glass at Bakkal", "ref": "card:Bakkal",
+      "text": "A cocktail on the cobbled side lane in the Rum quarter; loud after midnight.",
+      "meta": "Rum quarter · seasonal, roughly April to October (seen May 2026)"}
+    ]},
+   {"label": "Saturday", "title": "The castle, the grapes, the cape",
+    "stops": [
+     {"time": "09:30", "name": "Breakfast at Çiçek Pastanesi", "ref": "venue:v03-cicek-pastanesi",
+      "text": "The island breakfast, then a bag of the mastic-almond cookies baked in the wood-fired oven.",
+      "meta": "Rum quarter · walk in · the island branch may open only in summer: call first (Oct 2026)"},
+     {"time": "10:30", "name": "The castle", "ref": "card:The castle",
+      "text": "The landward moat and the rampart walk over the harbour; about an hour.",
+      "meta": "₺50 adults (governorship page, undated) · summer 09:00–18:00 · winter hours not confirmed"},
+     {"time": "11:45", "name": "The church of St Mary and the Rum quarter", "ref": "card:The church of St Mary",
+      "text": "The 1869 church under its bell tower, restored and ringing again; try the door outside service times, then wander the grid.",
+      "meta": "Rum quarter · free · an active church, visiting hours not published"},
+     {"time": "13:00", "name": "Lunch at Dört Hanımeli", "ref": "venue:v05-dort-hanimeli",
+      "text": "Mantı under garlic yoghurt, vine-leaf sarma, stuffed courgette flowers.",
+      "meta": "In town · walk in · call ahead off-season"},
+     {"time": "15:00", "name": "A tasting at Talay", "ref": "venue:v08-talay",
+      "text": "The island’s grapes side by side at the family firm’s counter: Vasilaki, Karalahna, the Cabernet–Kuntra, and the dry Çavuş if this year’s bottling is out.",
+      "meta": "Lale Sokak 5 · tastings are paid · winter hours not published"},
+     {"time": "16:30", "name": "Out among the vines to Corvus", "ref": "venue:v02-corvus",
+      "text": "The architect’s estate at Tuzburnu, for Corpus and the dry Çavuş. Only by appointment; if Corvus cannot receive you, walk the vineyard tracks instead.",
+      "meta": "Tuzburnu · a car or taxi · visiting days limited, historically June to September"},
+     {"time": "The last hour of light", "name": "Polente at sunset", "ref": "card:Polente at sunset",
+      "text": "The 1861 lighthouse on the bare western cape, the turbines turning on the ridge behind it.",
+      "meta": "About an hour each way on foot, or a short ride · no shade · bring a torch"},
+     {"time": "20:30", "name": "Dinner at Nevreste", "ref": "venue:v01-nevreste",
+      "text": "The Bozcaada Bombası, the stuffed meze no other house makes, then the cold meze tray and a grilled sea bass, under the rose tree.",
+      "meta": "Alsancak Sokak 22 · book ahead · winter days not published (Oct 2026)"}
+    ]},
+   {"label": "Sunday", "title": "The high point, and the last meze",
+    "stops": [
+     {"time": "08:30", "name": "Up Göztepe", "ref": "card:Göztepe",
+      "text": "About half an hour up on foot from town to the island’s high point: vines, windmills and the islets in one turn of the head.",
+      "meta": "From the town centre · about 30 minutes up · water and a windproof layer"},
+     {"time": "10:30", "name": "The windmills", "ref": "card:The windmills",
+      "text": "The stone mills rebuilt from islanders’ old photographs, and the view back over the castle and the harbour.",
+      "meta": "A short walk up from town · free"},
+     {"time": "13:00", "name": "Lunch at Sandal", "ref": "venue:v12-sandal",
+      "text": "Island herb salad, octopus salad, stuffed mussels and the house borani, then the afternoon ferry.",
+      "meta": "Alsancak Sokak 31 · book in season · call ahead off-season"},
+     {"time": "15:30", "name": "The ferry back to Geyikli", "ref": "card:GESTAŞ, the ferry operator",
+      "text": "Check the afternoon sailings for your date; buy a jar of tomato jam on the way to the quay if you can find it.",
+      "meta": "Timetable changes with the season (checked Oct 2026)"}
+    ]}
+  ],
+  "more": [
+   {"title": "If you have only one evening", "text": "The harbour plan: the castle walls at the end of the afternoon, the quay at dusk, and dinner under the vine at [[venue:v04-asmali-meyhane|Asmalı Meyhane]]."},
+   {"title": "The grand night instead", "text": "The island has no starred room. Its grand night is the long meyhane evening: book the courtyard at [[venue:v01-nevreste|Nevreste]] or the vine at [[venue:v04-asmali-meyhane|Asmalı Meyhane]], and let the meze come."},
+   {"title": "This autumn", "dated": "Checked 27 October 2026", "items": [
+     "The ferry has run its winter timetable since 5 October: five sailings a day, four on weekdays, the late boats only Friday to Sunday — see [[card:The winter ferry: five sailings a day from 5 October|the winter ferry]].",
+     "29 October is Republic Day, a public holiday: banks and offices shut — see [[card:This Thursday: Republic Day|this Thursday]].",
+     "The island’s kitchens are closing for the winter and none has published its dates — see [[card:The island kitchens go dark|the island kitchens go dark]]: call every table before you cross.",
+     "Palamut is running down the strait; Çanakkale’s stalls are selling it at 125 to 150 lira a fish — see [[card:Palamut from the Strait: 125 to 150 lira a fish|the palamut]]."
+   ]},
+   {"title": "Where to sleep", "text": "This guide does not list hotels and we have not judged rooms. Stay in town, in the Rum quarter or near the harbour, so that every stop above is on foot; out of season, check that your guesthouse is open before you book the ferry."},
+   {"title": "What we would leave out", "text": "The set menu on the harbour front ([[card:The harbour-front set menu|why]]); a winter trip planned around the food ([[card:Coming in winter for the food|why]]); and the car ferry on a summer Friday ([[card:The car ferry on a summer Friday|why]])."}
+  ]
+ }
+}

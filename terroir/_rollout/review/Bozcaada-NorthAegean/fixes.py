@@ -1,48 +1,70 @@
-"""The editor's reconciliations on the research packs (26 Oct 2026): applied by make_inputs.py, each one stated."""
+"""The editor's reconciliations on the research packs (27 Oct 2026): applied by make_inputs.py, each one stated."""
 import re
-TOK = re.compile(r"\b(Lons|Lons-le-Saunier|Jura|France|Arbois|Pupillin|Port-Lesney|Poligny|Salins|Dole|Château-Chalon|Montigny|Baume|Besançon|Arc-et-Senans|Doubs|Bresse)\b")
+TOK = re.compile(r"\b(Bozcaada|Çanakkale|Canakkale|Türkiye|Turkey|Geyikli|Ezine|Tevfikiye|Behramkale|Assos|Gökçeada|Ayvacık|Troy|Truva)\b")
 EDITS = [          # (old, new) exact replacements in card text fields
- # Pasteur's house: Jura Tourisme's two pages disagree on the 2026 season's end (rewrite pack 1 read 30 Nov, the hot pack 1 Nov):
- # print the dispute, never pick
- ("Daily 14:00-18:00 until 30 November 2026, then closed for winter; the 2026 season opened on 7 February (Oct 2026)",
-  "Daily 14:00-18:00; the 2026 season opened on 7 February, and Jura Tourisme’s listings disagree on whether it closes for the winter after 1 or 30 November: call before you go (Oct 2026)"),
- ("The Maison de Louis Pasteur in Arbois opens every afternoon, 14:00 to 18:00, until 1 November, then closes for the winter.",
-  "The Maison de Louis Pasteur in Arbois opens every afternoon, 14:00 to 18:00, but its listings disagree on whether the winter close comes after 1 or 30 November: call."),
- ("The Pasteur house closes after 1 November; the Hérisson falls centre and Baume's caves closed on 30 September",
-  "The Pasteur house may close after 1 November; the Hérisson falls centre and Baume's caves shut on 30 September"),
- ("the Pasteur house closes after 1 November,", "the Pasteur house may close for the winter after 1 November (listings disagree: call),"),
- # Vagne has no Lons shop (venue pack 2); Mont d'Or at the fromager under the arcades is not sourced: the market only
- ("Fromagerie Vagne, rue du Commerce; Thursday market", "The Thursday market, Place de Verdun, Lons"),
- # Ganevat: the inquiry is reported by the wine press citing Le Monde and the RVF; it concerns the 2023 purchase, not the grower
- ("In March 2023 it was bought by Benoît Pontenier and Jocelyn Brancard; Le Monde then reported a money-laundering inquiry and seized assets, with work allowed to go on.",
-  "In March 2023 it changed hands again, and the wine press, citing Le Monde, later reported a judicial inquiry into that purchase and seized assets, with the vineyard work allowed to go on."),
+ # the weekly market: Wednesday in most sources, Friday in one, and Katie Parla reports it has moved (venue pack 2): never placed in a square
+ ("Wednesday, in the castle square according to the venue record; a 2026 site and whether it runs in November are not confirmed",
+  "Wednesday in most sources (one says Friday); older guides put it in the castle square, but it has moved and the new site is not confirmed, nor whether it runs in winter: ask in town"),
+ ("The Wednesday Market in the castle square; Nevreste", "The weekly market (ask where it stands now); Nevreste"),
+ ("The Wednesday market in the castle square is a market for islanders", "The weekly market is a market for islanders"),
+ ("The Wednesday market is the islanders' own; bring cash", "The weekly market is the islanders' own; bring cash"),
+ # Talay's shop is at Lale Sok. 5 (venue pack 2, Frommer's), not Çınar Çeşme Sok.
+ ("Çınar Çeşme Sok., Alaybey, Bozcaada town", "The shop on Lale Sokak, Bozcaada town"),
+ ("Çiçek Pastanesi for the mastic-almond biscuits; Talay's town shop on Çınar Çeşme Sokağı for a glass of island wine",
+  "Talay's town shop on Lale Sokak for a glass of island wine; Çiçek Pastanesi, a few lanes north in the Rum quarter, for the mastic-almond biscuits"),
+ # the 'smells of almond biscuits' line placed Çiçek in the mahalle; venue pack 2 puts the pastane in the Rum quarter
+ ("Nearby, Çınar Çeşme Sokağı, the plane-tree fountain street, smells of almond biscuits and strong tea.",
+  "Nearby runs Çınar Çeşme Sokağı, the street named for its plane tree and fountain, with tea glasses on the café tables."),
+ ("pours at a tasting counter on Çınar Çeşme Sokağı in town", "pours at a tasting counter in its shop on Lale Sokak in town"),
+ # the founder's name is Reşit Soley (hot pack, Corvus sources); one pack spelt it Söley
+ ("Söley", "Soley"),
+ # the wind farm's date was not verified (card pack 1, _needs_network)
+ ("The ridge behind it carries the wind farm, built from around 2000 and now one of the island's landmarks too.", "The ridge behind it carries the wind farm that now makes the island's power."),
+ # Tuzburnu is on the east side (card pack 2), not under the Polente light
+ (" Tuzburnu cove lies just below.", ""),
+ # Ataol could not be verified in 2026 (card pack 3): not named as a cellar door
+ ("the cellar doors of Corvus, Talay, Çamlıbağ and Ataol", "the cellar doors of Corvus, Talay and Çamlıbağ"),
 ]
 CARD_SET = {       # key -> {field: value} overrides
- # told once (audit): the late-November dates live on the hot board; this card is the hall, evergreen
- "listening:Le Bœuf sur le Toit": {
-   "teaser": "Lons's own concert hall, on the Place du Maréchal Juin: French rap, rock and stand-up most weeks in the cold months",
-   "story": "When Lons gets loud, it is here, in the town's current-music hall on the Place du Maréchal Juin. The programme runs from French rap and reggae to rock and stand-up comedy, most of it on Friday and Saturday nights through autumn and winter, and the big names book out. The crowd is local, students and families together, with beer in plastic cups at the bar, and the walk back to the arcades and the rue du Commerce takes a few minutes. The dates this month are on the hot board at the foot of the guide.",
-   "why": "A real night out in a small town: check the hot board for this month's names, and book.",
-   "facts": [["Where", "135 Place du Maréchal Juin, 39000 Lons-le-Saunier"], ["When", "Concerts and comedy most weeks in autumn and winter, usually at 20:30"],
-             ["Cost", "From about EUR 29 for a touring act (seen Oct 2026)"], ["Best hour", "Arrive for doors; the show starts around 20:30"]]},
+ # the harbour card placed the market in Kale Meydanı on Wednesdays: it has moved (venue pack 2)
+ "quartiers:The harbour and the castle square": {
+   "teaser": "Where the ferry ties up under the castle walls, and the town opens out from the quay",
+   "story": "The car ferry from Geyikli's Yükyeri quay crosses the strait and docks beneath the castle, and the town opens out from the quay: fishing boats tied up along the harbour wall, tea glasses on the café tables, the wind coming off the water. Behind the quay is Kale Meydanı, the castle square, where older guides put the weekly producers' market; it has since moved, so ask in town where the stalls stand now. After dark the castle is floodlit and the masts in the harbour stand out against it. In winter, when most of the registered population has left the island, you share the quay with a few fishermen.",
+   "why": "Step off the boat at dusk once: the floodlit walls over the masts are the island's picture of itself.",
+   "facts": [["Go for", "The ferry quay, the fishing boats and the castle square"], ["Best hour", "After dark, for the floodlit walls over the harbour"],
+             ["Don't miss", "The view of the walls and the masts together from the end of the quay"],
+             ["Eat", "Nevreste and Sandal, a few lanes back from the harbour on Alsancak Sokak, if open (book in summer)"]]},
+ # the harvest festival ran 14-23 August in 2026 (hot pack: Çanakkale Kalem), not 'four days in September'
+ "craft:Do this one": {
+   "story": "We searched for a hands-on class proper to Bozcaada with a named maker you can sign up with: ceramics, weaving, jam, cooking, boatbuilding. None turned up. The nearest thing is the harvest itself. During the grape-harvest festival, held from 14 to 23 August in 2026, visitors go out to the vineyards to cut bunches by hand, the Çavuş and Karalahna pruned low against the wind, and the grapes come back to town with music. It is real work in a real crop, open to anyone who turns up, but it is an event, not an apprenticeship: no named master teaches you, and it happens once a year.",
+   "facts": [["What you do", "Pick grapes by hand in a working vineyard and follow the harvest back into town"],
+             ["Time", "A morning in the vines during the harvest festival (14–23 Aug in 2026; 2027 dates not yet announced, Oct 2026)"],
+             ["Cost", "Not found; no fee is reported for joining the picking"],
+             ["Book", "No booking found: watch the municipality's programme, or ask Talay or Çamlıbağ whether you can join their own harvest"]]},
+ # Çamlıbağ: the hot pack found the house's own history and a Bilkent study for 1925 (card pack 3 had found none): the date is the
+ # history fold's, the card points to it and keeps 'by its own account'
+ "bars:Çamlıbağ": {
+   "teaser": "The house whose own history begins in 1925, with a workshop bought from a Greek winemaker",
+   "story": "By its own account, and a Bilkent University study of the family, Çamlıbağ began in 1925, when the Yunatçılar family bought a Greek winemaker's workshop as the island's Greek growers were leaving; the history fold tells that story. Wine writers note that it and Talay are related families. What you visit today is a working shop in town, shelves of native-grape bottles and staff who know them, not a show cellar: the place to buy Vasilaki and Karalahna by the case for the boat.",
+   "why": "Buy here for the boat: the island's grapes from one of its oldest houses, at shop prices."},
 }
 CARD_DROP_FACTS = {}
-VENUE_SET = {}      # id -> {field: value} overrides, each one a correction from the 26 Oct re-check
+VENUE_SET = {}      # id -> {field: value} overrides
 LANE_STORY_SET = {
- "summit": {"title": "Two stars and a Bib, three towns"},   # Le Bistronôme is a Bib Gourmand, not a star
- # the 2010 opening of Les Claquets and Pelen's upstairs tea room were not re-found in 2026 sources: cut
- "wine": {"story": "Jura wine is mostly drunk where it is made, and in Arbois it reaches the table with the food rather than over a tasting counter. On avenue Pasteur, La Finette has served Comté fondue and chicken in Vin Jaune at varnished log tables since 1961, from a list that holds only Jura bottles. Across town on Place Faramand, Le Bistrot des Claquets is a cave à manger: a bar from morning to about nine at night, one dish of the day at noon with a cold buffet, and the wine picked from a shelf of local natural growers. One is the old tavern, the other the growers' own canteen."},
- "street": {"story": "The Jura pantry is bought rather than eaten out, and most of it is cheese. In Lons the Thursday market, the largest in the department, runs from about seven to five across two squares, with the food stalls on Place de Verdun in the morning; a smaller organic market fills Cours Sully on Saturday mornings. Under the arcades at 39 rue du Commerce, Chez l'Artisan Fromager sells what the Poulet family make, as they have for four generations: raclette cheese, tomme du Jura and above all Morbier. In the centre at 1 rue Saint-Désiré, Pelen has made chocolate since 1899 and roasts its own beans."},
+ # Kahverengi left the guide (no Bozcaada branch found); the market's square is not confirmed since it moved
+ "street": {"title": "Jam, cookies and the market",
+            "story": "The island's street food is mostly sweet and mostly sold from jars and counters. On market day, Wednesday in most sources, growers sell tomatoes, fruit and cheese, with tomato jam, fig jam and garlic confit in jars; the market has moved from the square older guides give, so ask in town where it stands. Çiçek Pastanesi bakes in a stone oven over wood and sells the mastic-almond cookie of the Rum kitchen, also made on Gökçeada and in Kavala, with mastic and wild-fig ice cream from the counter next door. In winter, check both: the pastane's island branch may open only in summer.",
+            "where": "The weekly market, in town; Çiçek Pastanesi, Rum quarter"},
+ # 'best at lunch' had no source
+ "home": {"story": "Away from the fish grills, Bozcaada eats from pots: dumplings, olive-oil vegetables, leaves rolled round rice, the food of the Turkish and Rum households that shaped the town. Dört Hanımeli was opened more than forty years ago by retired primary-school teachers, and reviewers still come for its mantı, its vine-leaf sarma and stuffed courgette flowers. On Alsancak Sokak, Ada'm, about ten years old, shows what an island cook does with the same pantry, putting octopus with artichokes in a cream sauce and wrapping sea bass in vine leaves. Both are plain rooms where the plates are the point, and cheaper than the courtyard meze houses."},
 }
 HOT_DROP = []
-EV_DROP = []
-HOT_SET = {"Mont d'Or, back since 10 September": {"maps_query": "", "venue_ref": "v12-march-de-lons-le-saunier"}}   # Vagne left the guide; the market card carries the Maps link
-# the pack's venue_hot lines: Vagne and the Caveau left the guide; Pelen's line gave Mon-Sat where the venue pack found it open on
-# Sunday mornings too (dropped rather than pick); the rest kept as written
-VENUE_HOT = {
- "v12-march-de-lons-le-saunier": "Mont d'Or back on the cheese stalls, on sale since 10 September; four Thursday markets in November, 5 to 26.",
- "v08-la-finette-taverne-d-arbois": "Open every day by its record: fondue de Comté and poulet au Vin Jaune et morilles for a cold November evening.",
- "v02-le-bistron-me": "The Planches trout ballottine with morels in Vin Jaune sauce; from November closed Thursday evenings as well as Sunday and Monday.",
+EV_DROP = ["29 October, Republic Day"]   # told once: the hot board carries this year's Republic Day
+HOT_SET = {"29 October, Republic Day": {}}   # placeholder; the hot board's copy is renamed in hot() below
+VENUE_HOT = {       # the hot pack's lines, the market's corrected (it has moved; the square is not confirmed)
+ "v08-talay": "The island's oldest family winery pours its own Vasilaki and Karalahna at the town counter; November hours not posted, so call first.",
+ "v02-corvus": "Ask what the 2026 Çavuş, picked in August, is doing in tank; visiting days are limited, so check before you drive out.",
+ "v07-wednesday-market": "The islanders' own weekly market, for those who stay the winter; ask in town where and whether it stands this week, and bring cash.",
 }
 
 def cards(C):
@@ -58,9 +80,13 @@ def cards(C):
         c.update(CARD_SET.get(k, {}))
     for k, c in C.items():   # every Maps query carries a local token (the gate's wrong-continent check)
         q = c.get("maps_query") or ""
-        if q and not TOK.search(q): c["maps_query"] = q + ", Lons-le-Saunier, Jura, France"
+        if q and not TOK.search(q): c["maps_query"] = q + ", Bozcaada, Çanakkale, Türkiye"
 
 def hot(H):
+    # the hot board and the calendar both carried '29 October, Republic Day': two cards one name (a card ref must be unique)
+    for g in H["hot"]["groups"]:
+        for it in g["items"]:
+            if it["name"] == "29 October, Republic Day": it["name"] = "This Thursday: Republic Day"
     if VENUE_HOT is not None: H["venue_hot"] = VENUE_HOT
     for g in H["hot"]["groups"]: g["items"] = [it for it in g["items"] if it["name"] not in HOT_DROP]
     for g in H["events"]["groups"]: g["items"] = [it for it in g["items"] if it["name"] not in EV_DROP]
@@ -74,10 +100,16 @@ def hot(H):
                 for a, b in EDITS:
                     if a in fa[1]: fa[1] = fa[1].replace(a, b)
             q = it.get("maps_query") or ""
-            if q and not TOK.search(q): it["maps_query"] = q + ", Lons-le-Saunier, Jura, France"
+            if q and not TOK.search(q): it["maps_query"] = q + ", Bozcaada, Çanakkale, Türkiye"
 
 def venues(V):
+    for d in V.values():
+        for k_, v_ in d["set"].items():
+            if isinstance(v_, str): d["set"][k_] = v_.replace("Söley", "Soley")
     for i, d in VENUE_SET.items(): V[i]["set"].update(d)
 
 def lane_stories(L):
+    for d in L.values():
+        for k_ in d:
+            if isinstance(d[k_], str): d[k_] = d[k_].replace("Söley", "Soley")
     for k, d in LANE_STORY_SET.items(): L.setdefault(k, {}).update(d)

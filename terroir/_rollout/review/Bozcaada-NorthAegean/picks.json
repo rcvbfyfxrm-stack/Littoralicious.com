@@ -27,12 +27,11 @@
    ]
   },
   "street": {
-   "label": "La Rue — the market, the pastane and the roaster",
+   "label": "La Rue — the market and the pastane",
    "group": "street",
    "ids": [
     "v07-wednesday-market",
-    "v03-cicek-pastanesi",
-    "v09-kahverengi"
+    "v03-cicek-pastanesi"
    ]
   }
  },
@@ -50,11 +49,29 @@
  },
  "keep_pins": [],
  "cut": {
+  "v09-kahverengi": "Cut, not confirmed: the 27 Oct re-check found the roaster's shops in Çanakkale city and at Nişantaşı (Hacı Mansur Sk. 1/B), and no 2026 source for a Bozcaada branch. Coffee on the island is in Rooms to linger.",
   "v10-bakkal-bar": "Moved, not lost: a cocktail bar is not a table. It keeps a card in Boire & sortir, where the night is."
  },
  "new_venues": {},
- "berths": [],
- "shortlist": {},
+ "berths": [
+  "v04-asmali-meyhane",
+  "v08-talay",
+  "v07-wednesday-market"
+ ],
+ "shortlist": {
+  "Last minute — save the night": [
+   "v12-sandal",
+   "v11-adam"
+  ],
+  "Plan ahead — this week": [
+   "v05-dort-hanimeli",
+   "v08-talay"
+  ],
+  "Plan ahead — the grand night": [
+   "v04-asmali-meyhane",
+   "v01-nevreste"
+  ]
+ },
  "fours": {},
  "dropped_cards": {
   "walks:The castle ramparts": "told once: merged into the castle card (Culture)",

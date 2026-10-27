@@ -14,10 +14,11 @@ LANES = {
  "meyhane": {"label": "The meyhane tables — squid on the coals, meze in waves", "group": "grande", "ids": ["v04-asmali-meyhane", "v12-sandal", "v01-nevreste"]},
  "home":    {"label": "Ev yemeği — the island's home cooking", "group": "petite", "ids": ["v05-dort-hanimeli", "v11-adam"]},
  "cellar":  {"label": "At the cellar door — the island's own grapes", "group": "petite", "ids": ["v08-talay", "v02-corvus", "v06-amadeus"]},
- "street":  {"label": "La Rue — the market, the pastane and the roaster", "group": "street", "ids": ["v07-wednesday-market", "v03-cicek-pastanesi", "v09-kahverengi"]},
+ "street":  {"label": "La Rue — the market and the pastane", "group": "street", "ids": ["v07-wednesday-market", "v03-cicek-pastanesi"]},
 }
 NEW_VENUES = {}
 CUT = {
+ "v09-kahverengi": "Cut, not confirmed: the 27 Oct re-check found the roaster's shops in Çanakkale city and at Nişantaşı (Hacı Mansur Sk. 1/B), and no 2026 source for a Bozcaada branch. Coffee on the island is in Rooms to linger.",
  "v10-bakkal-bar": "Moved, not lost: a cocktail bar is not a table. It keeps a card in Boire & sortir, where the night is.",
 }
 BERTHS = []       # set after the 27 Oct re-check (picks_lists.json)

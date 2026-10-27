@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Assemble cards.json, venues.json, lane_stories.json and hot_events.json for build_gold6.py from the research and rewrite
-packs (research/), plus the editor's reconciliations in fixes.py. 26 Oct 2026.
-STATUS RULE (honest): the 25 Oct re-check could not load any venue's own site (the sandbox egress proxy refuses every external
-host), only search results. 2026-dated evidence -> confirmed, checked 2026-10-26; otherwise unverified, or as found."""
+packs (research/), plus the editor's reconciliations in fixes.py. 27 Oct 2026.
+STATUS RULE (honest): the 27 Oct re-check could not load any venue's own site (the sandbox egress proxy refuses every external
+host), only search results. 2026-dated evidence -> confirmed, checked 2026-10-27; otherwise unverified, or as found."""
 import json, pathlib, sys
 RV = pathlib.Path(__file__).resolve().parent; R = RV / "research"; sys.path.insert(0, str(RV))
 J = lambda p: json.load(open(p))
@@ -10,10 +10,8 @@ PICKS = J(RV / "picks.json")
 KEEP = [i for l in PICKS["lanes"].values() for i in l["ids"]] + PICKS["keep_pins"]
 import fixes
 CARDS = {}
-for n in (1, 2, 3, 4):
+for n in (1, 2, 3):
     CARDS.update({k: v for k, v in J(R / f"rewrite_{n}.json").items() if not k.startswith("_")})
-FIX = J(R / "fix_1.json")   # the 26 Oct swaps (La Chaumière, Chez l'Artisan Fromager; Jeunet, Vagne and the Caveau out): cards rewritten for them
-CARDS.update(FIX["cards"])
 fixes.cards(CARDS)
 json.dump(CARDS, open(RV / "cards.json", "w"), ensure_ascii=False, indent=1)
 HOT = J(R / "hot_events.json")
@@ -24,7 +22,6 @@ for n in (1, 2):
     p = J(R / f"verify_{n}.json")
     VER.update({k: v for k, v in p.items() if not k.startswith("_")})
     LS.update(p.get("_lane_stories", {}))
-VER.update(FIX["venues"]); LS.update(FIX["lane_stories"])
 OUT = {}
 for vid in KEEP:
     v = VER[vid]

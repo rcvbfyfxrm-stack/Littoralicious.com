@@ -9,7 +9,7 @@ import re, html as H
 
 TITLE = "Bozcaada, Çanakkale — Terroir Guide"
 DESC = ("Bozcaada, the wine island at the mouth of the Dardanelles, for people who cook: grilled squid and raw fish under the vine at a "
-        "meyhane founded in 1950, ada mantısı fried before it is sauced, tomato jam from the Wednesday market, and the island’s own "
+        "meyhane founded in 1950, hand-pinched mantı in a family kitchen, tomato jam from the weekly market, and the island’s own "
         "grapes poured at the cellar door — at most three places of each kind, every one re-checked in October 2026.")
 
 HERO = ('<div class="hero"><h1>Bozcaada</h1><div class="region">Tenedos · Çanakkale · North Aegean · Türkiye</div><div class="philosophy">"A '
@@ -24,7 +24,7 @@ ETYMON = ('<div class="etymon"><b>The name</b> <em>Bozcaada: the grey island, in
 
 LEAD = ('<div class="lead"><p><strong>Bozcaada is a small wine island off the Troad coast, a short ferry from Geyikli:</strong> one harbour '
         'town under a castle, vines over much of the rest, and a table that eats off two heritages at once, the fishing island’s grilled '
-        'squid and raw fish and the Greek community’s meze and syrup sweets. <strong>Make or break:</strong> drink the island’s own '
+        'squid and raw fish and the Rum kitchen’s olive-oil meze and mastic sweets. <strong>Make or break:</strong> drink the island’s own '
         'grapes at the cellar door, and eat squid off the coals under a vine. <strong>The warning:</strong> it is a summer island. From '
         'late autumn most of it closes and many residents leave for the mainland; every card says whether it is open in winter.</p></div>')
 
@@ -35,32 +35,32 @@ ESSAY = [
  ("", "The wind is the whole argument. It dries the dew off the grapes before mould can take hold, so the vines need little spraying and "
       "no irrigation; it makes the south-coast beaches calm when it blows and turns the north cape into a kite beach. The vines are the "
       "island’s own varieties, not the international ones: two whites and two reds whose names you will see on every list, each with "
-      "its card under Boire &amp; sortir. When phylloxera arrived is a question the sources answer differently; the curiosity card says how."),
+      "its card under Boire &amp; sortir. Guides like to call it a pre-phylloxera island; we found no source for that, and the curiosity card says why."),
  ("", "Then the people. For centuries the island’s wine was made by its Greek Orthodox families, and the treaty that ended the war in "
       "1923 left Tenedos to Turkey with its Greek inhabitants exempted from the exchange of populations. The community still shrank to "
-      "a few dozen, and Turkish families took up the presses. That story, and the cellars that came out of it, is the history fold; "
+      "a remnant, and Turkish families took up the presses. That story, and the cellars that came out of it, is the history fold; "
       "the numbers are a curiosity."),
  ("The quintessence", "The table is the meyhane’s: meze in waves, rakı with water, squid laid over the coals rather than battered, raw "
       "fish with torn basil, and a plate of the island’s tomato jam against white cheese. Add the home cooking of the back streets, "
-      "dumplings fried before they are sauced, and the Rum sweets of the pastane by the mosque, and you have eaten the island’s two "
+      "hand-pinched mantı under garlic yoghurt, and the mastic-almond cookie of the Rum kitchen at the pastane, and you have eaten the island’s two "
       "halves in one evening."),
 ]
 HISTORY = [
  "The town is one small grid, walkable in a quarter of an hour: the harbour and the castle square, the Rum quarter rebuilt in straight "
  "streets after a fire, and the older Turkish mahalle beyond the dividing street. Everything else is out among the vines and on the "
  "beaches, reached by bicycle, scooter, dolmuş or taxi.",
- "There is no airport and no bridge. The car ferry crosses from Geyikli on the mainland; Çanakkale and the Troy road are an hour beyond it.",
+ "There is no airport and no bridge. The car ferry crosses from Geyikli on the mainland; Troy, Assos and Çanakkale are all on the mainland side.",
 ]
 MONEY = [
  "Wine is the island’s engine, but tourism is its till. Much of the island is under vine, worked without irrigation; yet commercial "
  "wine fights a labour shortage, a heavy tax on alcohol and the distance to the drinking cities, so many islanders make wine in small "
  "batches for themselves. The money is in the summer visitor, and the harbour front is built for volume.",
- "That is the line you can taste. The value is at the cellar door, at the Wednesday market for the tomato jam and the GI Çavuş grape, "
+ "That is the line you can taste. The value is at the cellar door, at the weekly market for the tomato jam and the GI Çavuş grape, "
  "and at the tables where the squid comes off the coals and the meze come out in waves.",
 ]
 WHY_NOW_PARA = ("<p>And the clock is the wind and the grape. Late May and June are warm and uncrowded, the cellar doors open; August is "
-                "full, the beds booked and the beaches crowded; the first week of September brings the harvest and its festival, the one "
-                "moment the delicate Çavuş is in your hand rather than in a bottle. From late autumn to spring the island empties and much of "
+                "full, the beds booked and the beaches crowded; late summer brings the harvest and its festival (in August in 2026, though "
+                "older guides say September: the calendar has the dates), the moment the Çavuş is in your hand rather than in a bottle. From late autumn to spring the island empties and much of "
                 "the food scene shutters: whoever comes in November gets the castle and the vines to themselves, and must check every door.</p>")
 
 
@@ -101,8 +101,8 @@ FOLDS = {
                "lede": "The town is the only settlement on the island and you can cross it on foot in a quarter of an hour. The beaches and the vines are a ride away."},
  "curiosities": {"title": "The record, corrected — what most guides get wrong", "desc": "The island in Virgil, the late louse, and the island left out of the exchange",
                  "lede": "Three stories the island tells about itself, checked again in October 2026. Where the sources still argue, the card says so."},
- "provisioning": {"title": "The larder — the market, the jar and the grape", "desc": "Where a galley provisions: the Wednesday market under the castle, the tomato jam, and the island’s registered table grape",
-                  "lede": "Shop on a Wednesday morning if you can. Bring cash, and a cool bag for the cheese."},
+ "provisioning": {"title": "The larder — the market, the jar and the grape", "desc": "Where a galley provisions: the weekly market, the tomato jam, and the island’s registered table grape",
+                  "lede": "Market day is Wednesday in most sources (one says Friday), and the stalls have moved from where older guides put them: ask in town the day before. Bring cash, and a cool bag for the cheese."},
  "calas": {"title": "Beaches & coves — read the wind", "desc": "When the north wind blows, the south coast’s sand; when the south wind turns, the clear coves of the east and the rocks of the west",
            "lede": "Swimming here is organised by wind, not by postcode: on a north wind you swim the south coast (Ayazma, Sulubahçe, Habbele); when the wind turns south you cross to the other shores. Out of season the beach cafés are shut and you bring everything."},
  "walks": {"title": "Walks — up, out and through the vines", "desc": "The island’s high point, the western cape at sunset, and the vineyard country between",
@@ -110,7 +110,7 @@ FOLDS = {
  "culture": {"title": "Culture — the castle, the church, the mills and the spring", "desc": "The harbour fortress, the last Greek church, the island museum; the rebuilt windmills and the chapel under the plane trees",
              "lede": "Three stops in town, two out on the island. Check the winter hours: the island’s season is short."},
  "craft": {"title": "The hand — craftsmanship", "desc": "What the island makes, who still makes it, what each is missing, and what the shops sell as island-made",
-           "lede": "The island makes wine, jam and sweets, and little else by hand."},
+           "lede": "The island makes wine, jam and sweets, and little else by hand. Honestly, nothing here clears the whole bar in October 2026: no workshop we found names a maker on a class anyone can join. The card at the top comes closest; the others show the craft without teaching it."},
  "coffee-gardens": {"title": "Rooms to linger & work", "desc": "The plane tree, the specialty bar, and the bakery in the old quarter",
                     "lede": "The island takes its coffee under trees and on the street. For an hour of work, the specialty bar."},
  "bars": {"title": "Boire & sortir — at the glass", "desc": "The island’s four grapes by name, the rakı that goes with the meze, the late bar, and the cellars",
@@ -127,7 +127,7 @@ FOLDS = {
 GDESC = {
  ("quartiers", "One town, two grids"): "The grid rebuilt after the fire, the older streets beyond it, and the quay where the town meets the ferry.",
  ("curiosities", "The record, corrected"): "The island in the Aeneid, the louse that came late, and the treaty that left the island its Greeks.",
- ("provisioning", "The market and the jar"): "The Wednesday market, the tomato jam, and the island’s registered table grape.",
+ ("provisioning", "The market and the jar"): "The weekly market, the tomato jam, and the island’s registered table grape.",
  ("calas", "The south coast, on a north wind"): "Sand and shallow water facing away from the north wind: the busy one, the quiet one, and the bay of the campers.",
  ("calas", "East and west — clear water and the wind"): "The snorkelling cove, the kite beach on the north cape, and the rocks of the east.",
  ("walks", "Up, out and through the vines"): "The high point on foot, the cape and its light at sunset, and the vineyard roads.",
@@ -166,7 +166,7 @@ CHAPTER_SUB = {"place": "the essay, the wine story, the town, the record correct
 GROUP_LBL = {"grande": "Les Grandes Tables", "petite": "Les Petites Tables", "street": "La Rue — The Street"}
 GROUP_DESC = {"grande": "The island has no starred room; its grand tables are the meyhanes, where you book, sit for hours and let the meze come.",
               "petite": "Where this guide actually lives: the home cooking of the back streets, and the cellar doors where the island’s grapes are poured.",
-              "street": "On foot and early: the market under the castle, the pastane by the mosque, and the roaster."}
+              "street": "On foot and early: the growers’ market and the pastane of the mastic cookie."}
 
 LANE_LEAD = {}
 LANE_STORY = {}
@@ -186,7 +186,7 @@ EAT_JUMP = ('<section class="gx-jump" id="eat">\n<p><span class="gx-jump__t">Wha
             '<a class="gx-jump__go" href="#la-liste">La liste, at the end →</a></p>\n'
             '<p class="gx-jump__meta">It ends with a one-tap button that drops the list into your phone&#x27;s Reminders app.</p>\n</section>')
 
-EVENTS_DESC = "The fixed dates of the island’s year: the saint’s day at the spring in July, the music in summer, the grape harvest in September"
+EVENTS_DESC = "The fixed dates of the island’s year: the saint’s day at the spring in July, the grape harvest festival in August, the jazz in early September"
 SEASONAL_DESC = "The year in one table: the work in the vines, the sea and the table, what is on, and what is open"
 SEASONAL_LEDE = "The island has two years: a short summer when everything is open, and a long winter when much of it is shut. Read the notes column before you plan."
 
@@ -230,7 +230,6 @@ GLOSS = [
  ["rakı", "the anise spirit drunk with water and the meze"],
  ["ev yemeği", "home cooking: the stews and dumplings of a family kitchen"],
  ["mantı", "small hand-pinched dumplings, sauced with yoghurt and chilli butter"],
- ["ada mantısı", "the island’s mantı: fried before it is sauced"],
  ["pastane", "a pastry shop and café"],
  ["dondurma", "Turkish ice cream"],
  ["reçel", "a fruit preserve or jam"],
@@ -252,7 +251,6 @@ GLOSS = [
  ["Tenedos", "the island’s ancient Greek name"],
  ["Imbros", "the Greek name of Gökçeada, the other island of the treaty"],
  ["tatlı", "a sweet or dessert"],
- ["mafiş", "a fried bow-shaped pastry soaked in syrup, from the Rum kitchen"],
  ["lüfer", "bluefish, the autumn fish of the straits"],
  ["palamut", "Atlantic bonito, running through the straits in autumn"],
 ]
