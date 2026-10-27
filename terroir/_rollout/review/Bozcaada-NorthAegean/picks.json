@@ -1,0 +1,68 @@
+{
+ "lanes": {
+  "meyhane": {
+   "label": "The meyhane tables — squid on the coals, meze in waves",
+   "group": "grande",
+   "ids": [
+    "v04-asmali-meyhane",
+    "v12-sandal",
+    "v01-nevreste"
+   ]
+  },
+  "home": {
+   "label": "Ev yemeği — the island's home cooking",
+   "group": "petite",
+   "ids": [
+    "v05-dort-hanimeli",
+    "v11-adam"
+   ]
+  },
+  "cellar": {
+   "label": "At the cellar door — the island's own grapes",
+   "group": "petite",
+   "ids": [
+    "v08-talay",
+    "v02-corvus",
+    "v06-amadeus"
+   ]
+  },
+  "street": {
+   "label": "La Rue — the market, the pastane and the roaster",
+   "group": "street",
+   "ids": [
+    "v07-wednesday-market",
+    "v03-cicek-pastanesi",
+    "v09-kahverengi"
+   ]
+  }
+ },
+ "groups": {
+  "grande": [
+   "meyhane"
+  ],
+  "petite": [
+   "home",
+   "cellar"
+  ],
+  "street": [
+   "street"
+  ]
+ },
+ "keep_pins": [],
+ "cut": {
+  "v10-bakkal-bar": "Moved, not lost: a cocktail bar is not a table. It keeps a card in Boire & sortir, where the night is."
+ },
+ "new_venues": {},
+ "berths": [],
+ "shortlist": {},
+ "fours": {},
+ "dropped_cards": {
+  "walks:The castle ramparts": "told once: merged into the castle card (Culture)",
+  "culture:Polente Lighthouse": "told once: merged into the Polente sunset walk",
+  "walks:The Ayazma plane-tree walk": "told once: merged into the Ayazma chapel and spring card (Culture)",
+  "gastronomy:Bağ Bozumu — the harvest festival": "rewritten as a calendar card (Pratique)",
+  "eat / drink / history / money-sits / why-now prose": "rebuilt as the essay, the food-history fold, the drink cards, La liste with The Dish, and the dated hot board",
+  "three-tables / tier lists": "the old tier lists: replaced by the lanes, the guest list and the two readings"
+ },
+ "_note": "A venue belongs to exactly one lane. No lane holds four. Cut venues leave data.js, both CSVs and every #venue- link."
+}
