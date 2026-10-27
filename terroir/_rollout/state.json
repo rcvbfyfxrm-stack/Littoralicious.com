@@ -609,7 +609,29 @@
   },
   {
    "slug": "Bozcaada-NorthAegean",
-   "status": "pending"
+   "status": "needs-network",
+   "branch": "terroir-uplift/Bozcaada-NorthAegean-2026-10-27",
+   "date": "2026-10-27",
+   "readings": "done 2026-10-27",
+   "checks": [
+    "checks_gold4.py WITH render: ALL CHECKS GREEN (27 Oct, after apply_readings; 225 OK lines; floors = curated counts: venues 10, fcards 63, fsubs 30, neighborhoods 3, walks 3, categories 4, lane stories 4, gems 3, liste 17, pins 5, mapsLinks 52; groups 3; doors 4; hot minVenues 3; render via Playwright with the test-only pw-shim (leaflet@1.9.4 from npm, unpkg.com blocked) and /usr/bin/chromium -> the pre-installed Playwright Chromium; 5 map pins rendered)",
+    "probe-guide.cjs: ALL PASS (28), exit 0",
+    "probe-links.cjs desk: 79 visible links clicked, 0 failures",
+    "probe-links.cjs phone: 79 visible links clicked, 0 failures",
+    "probe-readings.cjs: ALL PASS, exit 0 (desk + phone: 4 doors top, 4 at the foot, no lens chip, 37/37 placed cards and 10/10 venues with Maps on the closed card, no sideways scroll; One Night 20 links, Getaway 22); lens screenshots in review/Bozcaada-NorthAegean/",
+    "repetition audit: 0 exact repeats, 0 shingle pairs >=12 over 102 units (one found and fixed: Republic Day on the hot board and in the calendar; the calendar copy dropped)",
+    "facts_tidy.py: run, 0 values needed tidying",
+    "banned-word, cut-venue and corrected-claim scan: 0 in prose; Kahverengi absent; Bakkal only as its bar card; 'pre-phylloxera' only where the curiosity card and essay say it is unsupported",
+    "screenshots: review/Bozcaada-NorthAegean/bozcaada-card-desktop.png, bozcaada-card-phone.png (the Polente sunset walk, opened), checked by eye",
+    "checklinks.py: NOT RUN — the sandbox reaches no external host (proxy 403); on the needs-network list"
+   ],
+   "needs_network": [
+    "checklinks.py . Bozcaada-NorthAegean",
+    "liveness + winter days for all 10 venues (all 'unverified' 27 Oct: listed and reviewed, nothing says closed, no readable 2026-dated source): Google Maps / Instagram / phone for Asmalı Meyhane, Sandal, Nevreste, Dört Hanımeli (+ address), Ada'm, Çiçek Pastanesi (winter branch), Talay (Lale Sk. 5 winter hours, tasting price), Corvus (corvus.com.tr visiting days), Amadeus MMX, the weekly market (bozcaada.bel.tr: day, new site, winter running); the last-minute guest list needs hours read on own pages",
+    "pins to re-geocode from addresses found: Nevreste (Alsancak Sk. 22), Ada'm (42), Sandal (31), Asmalı Meyhane (Çınar Çarşı Cd. 20, pin kept unchecked), Talay (Lale Sk. 5), Corvus (Tuzburnu), Çiçek (Rum quarter); Akvaryum and Tuzburnu positions",
+    "the rest of research/*.json _needs_network: gdu.com.tr winter timetable after 30 Nov + fares; castle and museum winter hours and 2026 prices; Troy and Assos 2026 prices/winter hours (muze.gov.tr); jancisrobinson.com/tastings/142218 (Corpus 2004 17/20?); Çamlıbağ site/hours; Bakkal address/season; the women's cooperative address; bozcaadacazfestivali.com and bozcaada.bel.tr 2027 dates; Kimisis Theotokou service times; Göztepe height; wind farm date"
+   ],
+   "notes": "27 Oct: full GOLD6 pass, route B on the live Siracusa/Prague chrome (the Lons pipeline). Old page a GOLD1/2-era tier inventory on the Cadaqués template (12 venue records in flat tiers incl. three wineries, a cocktail bar and a roaster; no lanes, dishes, gems, photos in data.js, no CSV; Cadaqués's coordinates in the footer), so the GOLD4/5 floor came too (4 lanes in 3 groups with food stories, dishes on every venue, guest list with charters, #eat jump + La liste 17 items with The Dish inside and .ics, dated hot board + #why-now pointer, calendar, a new month table, craft (honest: nothing clears the bar; the harvest picking closest), honest listening room, Autour (Troy, Gökçeada, Assos), the food-history fold '1925 — A Greek cellar becomes the first Turkish winery', 3 gems, 24-column CSV). Hub card hand-edited only: csv:true and 'pre-phylloxera' dropped from the essence; hub builder not run. Places 12 -> 10 (none over 3, no 4s); cut Bakkal (moved to a bar card) and Kahverengi (no Bozcaada branch found). Fold cards 24 old tcards -> 48 written + 9 hot + 6 calendar = 63 .fcard, every one labelled. Guest list: last minute Sandal · Ada'm; this week Dört Hanımeli · Talay; grand night Asmalı Meyhane · Nevreste (every line: call first Nov–Apr). Berths Asmalı Meyhane · Talay · the weekly market. Statuses: all 10 unverified 27 Oct. Readings: One Night 4 places (Rum quarter · harbour under the castle · the wine shops · the western cape), Getaway 15 stops Fri 3 / Sat 8 / Sun 4. Main corrections: 'pre-phylloxera island' unsupported; Bağbozumu ran 14–23 Aug 2026 (not early September); Talay at Lale Sk. 5, Corvus at Tuzburnu, Tuzburnu on the east side; unsourced people, ranks and hours removed; 'Mozart Wine Bar' not found; the market has moved. Full list: review/Bozcaada-NorthAegean/README.md."
   }
  ],
  "gold6_done": [
