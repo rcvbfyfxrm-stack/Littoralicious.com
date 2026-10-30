@@ -398,6 +398,26 @@
     pin();
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { boot(0); });
-  else boot(0);
+  /* the intro's Read-the-rest sits on the fade: the kit lays photos in after the lead, sometimes between the two.
+     Keep the pill directly under the lead for the first seconds, while the page is being laid out. */
+  function keepPill() {
+    var lead = document.querySelector('.lead');
+    if (!lead || !lead.parentNode) return;
+    function fix() {
+      if (!lead.classList.contains('gx-clamp')) return;
+      for (var n = lead.nextElementSibling; n; n = n.nextElementSibling) {
+        if (n.classList.contains('gx-more') && !n.classList.contains('gx-foldbtn')) {
+          if (n !== lead.nextElementSibling) lead.parentNode.insertBefore(n, lead.nextSibling);
+          return;
+        }
+      }
+    }
+    fix();
+    var mo = new MutationObserver(fix);
+    mo.observe(lead.parentNode, { childList: true });
+    setTimeout(function () { mo.disconnect(); fix(); }, 10000);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { boot(0); keepPill(); });
+  else { boot(0); keepPill(); }
 })();
