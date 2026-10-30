@@ -244,7 +244,10 @@
                 GRPS.forEach(function(g){
                     const inner = CATS.filter(function(c){return (GOF[c.key]||'petite')===g.key;}).map(catBlock).join('');
                     if(!inner) return;
-                    html += '<div class="terroir-group"><div class="terroir-group__title">'+escapeHTML(g.label)+'</div><div class="terroir-group__lead">'+escapeHTML(g.lead)+'</div></div>' + inner;
+                    const block = '<div class="terroir-group"><div class="terroir-group__title">'+escapeHTML(g.label)+'</div><div class="terroir-group__lead">'+escapeHTML(g.lead)+'</div></div>' + inner;
+                    /* a group may live in its own section of the page (g.home = a selector): coffee, the bars */
+                    const home = g.home && document.querySelector(g.home);
+                    if (home) home.innerHTML = block; else html += block;
                 });
             }
             box.innerHTML = html;

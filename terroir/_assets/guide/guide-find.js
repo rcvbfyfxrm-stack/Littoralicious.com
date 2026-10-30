@@ -74,7 +74,7 @@
      Read once, at the first search (the kit draws some of it after load). A reading lens
      (data-lens) is a second view of cards that are already here, so it is never searched. */
   var KINDS = [
-    { sel: '.fcard, .tcard, .follow-card', name: '.fcard__name, .tcard__name-text, .tcard__name, .handle', one: 'place', many: 'places' },
+    { sel: '.fcard, .tcard, .follow-card, .terroir-card[data-venue-id]', name: '.fcard__name, .tcard__name-text, .tcard__name, .handle, .tcm__name', one: 'place', many: 'places' },
     { sel: '.gx-liste > li', name: 'b', one: 'to try', many: 'to try' },
     { sel: '.gembox', name: '.gembox__name', one: 'story', many: 'stories' },
     { sel: 'details.sfold', name: '.sfold__title', one: 'section', many: 'sections', own: true }
