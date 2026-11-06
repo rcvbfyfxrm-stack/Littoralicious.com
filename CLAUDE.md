@@ -7,7 +7,7 @@ yacht-chef food-science **publication** (https://www.littoralicious.com). Read t
 ## Before you start
 
 1. Read **`content/DNA.md`** — mission (Nurture), the three pillars (Grandmother /
-   Scientist / Yacht Chef), the DNA test, voice, banned words, sections, and the 11 templates.
+   Scientist / Yacht Chef), the DNA test, voice, banned words, sections, and the 12 templates.
 2. **Match the design lock.** The look is sealed in `assets/css/style.css` (refined light
    journal; Georgia serif + system sans; paper `#fafafa`, ink `#0a0a0a`, sea `#2d4a5e`).
    Copy markup from the most recent equivalent file — never improvise the look.

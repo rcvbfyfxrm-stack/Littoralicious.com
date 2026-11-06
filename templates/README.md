@@ -20,7 +20,7 @@ reader's eye from drifting. Fill the placeholders; don't strip the structure.
 The `<h2>` kicker is the styled `p.kicker` beat (one-line value promise under the heading), and
 the Galley Operations (tight-ship) station-map table wraps in `.galley-plan` — both locked in `content/DESIGN-LOCK.md`.
 
-## The 11 templates (+ shell helpers)
+## The 12 templates (+ shell helpers)
 
 Consolidated 2026-09-01 (founder): the Ingredient Deep-Dive is deleted — one ingredient template; Supply
 Alert and Forecast are ONE template (`signal-fire`); The Lab is folded into Technique as The Bench slot.
@@ -39,6 +39,7 @@ Technique is not recipe — the Recipe Blueprint is the recipe.
 | `port-call` | 09 | Industry & Ports | City provisioning guide on a supplier map, three angles by dwell time, search + keep-list. Port Call's own kit, never Terroir's |
 | `the-locker` | 10 | Techniques & Recipes | Equipment review — the verdict first, then the engineering. 4–6 min |
 | `weekly-brief` | 11 | Industry & Ports | Digest |
+| `essay` | 12 | Industry & Ports | Essay (added 2026-11-06, founder: "clear, direct, concise, simple with depth, no noise") — the plain page for a piece none of the other eleven fits: a reading list, a ranking explained, an argument. The answer, one paragraph, three to six sections with one device each at most, sources folded. No chips, grids, cards, TOC or recap. Never the escape hatch from a template that fits. Reference: `the-50-best-what-the-list-measures` |
 
 Shell helpers (not article types): `standard.html` (generic fallback), `section.html`
 (builds the section index pages), `og-image.html` (the social-image source).

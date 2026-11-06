@@ -191,7 +191,9 @@ Information wants to be free.* Mark: a single **flame** in a ring (fire/air/wate
 | **Food Science** (slug `the-evidence`) | Food science proper — compounds, mechanisms, research. |
 | **Industry & Ports** (slug `the-bridge`) | Forecasts, supply signals, careers, port guides, essays — cooking at sea meets the wider world. |
 
-## The 11 templates (+ the standard fallback) — pick one, never invent
+## The 12 templates (+ the standard fallback) — pick one, never invent
+
+> 2026-11-06 (founder): **12 Essay** (`essay`) added for the piece whose subject is real but whose shape is none of the other eleven — a reading list, a ranking explained, an argument. Clear, direct, concise, with depth, no noise. It is not the escape hatch from a template that fits.
 
 > Consolidated 2026-09-01 (founder): the Ingredient Deep-Dive is deleted (one ingredient template); Supply Alert and Forecast are ONE template; The Lab is folded into Technique (a counted test is The Bench slot inside Prove). Technique is not recipe — the Recipe Blueprint is the recipe.
 
@@ -217,6 +219,7 @@ one line (e.g. *"Template fit: Technique (02)"*), and proceed.
 | 09 | Port Call | Industry & Ports | **8–12 min** | City provisioning guide on a real supplier map, read three ways by dwell time, with a search bar and a keep-list. The supplier detail lives in the cards, so the prose is shorter than the old text-table guide. Provisioning only — eating out is the Terroir guide's job |
 | 10 | Equipment Review | Techniques & Recipes | **4–6 min** | Equipment review — the verdict first, then the engineering that earns it |
 | 11 | Weekly Brief | Industry & Ports | 3–5 min | Digest |
+| 12 | Essay | Industry & Ports | 4–8 min | The plain page — the answer, then three to six sections, one device each at most. For a reading list, a ranking explained, an argument |
 
 **Length:** prefer the ruthless 8–12 minute cut. Formats listed longer (Heritage,
 Port Call) must open with the two-minute-version block so depth is opt-in.

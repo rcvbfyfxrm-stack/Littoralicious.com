@@ -33,6 +33,7 @@ const TEMPLATE_DEFAULTS = {
   "the-locker": { category: "the-locker", subtag: "Gear Review" },
   "weekly-brief": { category: "the-bridge", subtag: "Digest" },
   "recipe-blueprint": { category: "the-method", subtag: "Recipe Blueprint" },
+  "essay": { category: "the-bridge", subtag: "Essay" },
 };
 const tmplName = args.template || inferTemplate(title, args.subtag || "");
 if (!args.template) console.log(`  auto-selected template: ${tmplName}  (override with --template <name>)`);
@@ -106,6 +107,7 @@ function inferTemplate(title, subtag) {
   if (has("galley", "efficiency", "mise", "station", "operations", "rotation", "tight ship")) return "tight-ship";
   if (has("sourcing", "supply", "quota", "seasonal", "signal fire", "shortage", "window is closing", "forecast", "horizon", "future", "trend", "macro", "outlook", "is coming")) return "signal-fire";
   if (has("weekly brief", "monthly brief", "digest", "roundup", "six things")) return "weekly-brief";
+  if (has("essay", "ranking", "the truth about", "reading list", "what it means")) return "essay";
   if (has("the lab", "experiment", "trial", "measured", "tested against")) return "the-method-technique";   // The Lab folded into Technique (2026-09-01)
   console.warn("\n  ⚠ No template matched — narrow the scope or split the piece (DNA: never invent a format).");
   console.warn("    Scaffolding on 'standard' as a fallback.\n");
