@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-11-09/">
+<title>Le Grand Basculement — La semaine du 2 au 8 novembre — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 9 Novembre 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;186</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Le Grand Basculement</div>
+  <div class="masthead-version">v1.1 &mdash; hebdo</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-11-09.html">Premi&egrave;re Page</a><a class="nav-link active" href="la-semaine.html">Synth&egrave;se</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">La Semaine</div>
+  <h1 class="article-title">Le Grand Basculement &mdash; La semaine du 2 au 8 novembre</h1>
+  <div class="article-date">Lundi 9 Novembre 2026 &mdash; Edition N&deg;186</div>
+</div><div class="article-body">
+<p class="twa-deck">Mardi soir, les grandes cha&icirc;nes am&eacute;ricaines annoncent, dans la m&ecirc;me phrase, que les d&eacute;mocrates reprennent la Chambre et le S&eacute;nat. Mercredi, Wall Street salue la nouvelle par sa meilleure s&eacute;ance en plusieurs mois. Vendredi, elle en a d&eacute;j&agrave; rendu l'essentiel. Washington a chang&eacute; de mains cette semaine. Le march&eacute;, lui, n'a pas fini de d&eacute;cider ce qu'il en pense.</p>
+<p>Ce n'est pas la seule bascule de la semaine. En Espagne, un grilladin de montagne a repris la couronne du meilleur restaurant du monde &mdash; &agrave; son propre dauphin de l'ann&eacute;e derni&egrave;re. En R&eacute;publique d&eacute;mocratique du Congo, une &eacute;pid&eacute;mie vieille de huit mois est devenue, chiffre apr&egrave;s chiffre, la plus grande de son genre jamais recens&eacute;e. Dans l'&Eacute;tat de Washington, un homme est mort d'une grippe aviaire que presque personne n'a remarqu&eacute;e, tant les radars &eacute;taient tourn&eacute;s vers les urnes et l'intelligence artificielle. Et au large d'Oman, un marin indien est devenu, mardi, le quinzi&egrave;me tu&eacute; depuis le d&eacute;but de la guerre du d&eacute;troit &mdash; sans qu'aucun camp ne revendique le tir.</p>
+<p>Sept histoires, six th&eacute;&acirc;tres sans rapport apparent, un seul verbe qui les traverse toutes : basculer. Pas une seule, cette semaine, n'a bascul&eacute; pour de bon &mdash; chacune a chang&eacute; d'&eacute;tat sans se stabiliser. C'est ce qu'on appelle ici Le Grand Basculement.</p>
+<hr>
+<h2>Les Sept Jours</h2>
+
+<h3>I. Le Kansas vote d&eacute;mocrate, Wall Street h&eacute;site</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirm&eacute;</span><span class="n">projections multi-r&eacute;seaux &middot; T1 AP</span></p>
+<p>Mardi 3 novembre, les &Eacute;tats-Unis ont vot&eacute; dans 36 &Eacute;tats pour leurs gouverneurs, pour l'int&eacute;gralit&eacute; des 435 si&egrave;ges de la Chambre et pour 33 des 100 si&egrave;ges du S&eacute;nat. D&egrave;s le lendemain, l'Associated Press projetait un basculement total : 54 si&egrave;ges d&eacute;mocrates contre 44 r&eacute;publicains au S&eacute;nat (deux restant &agrave; attribuer), 225 contre 137 &agrave; la Chambre (73 restants), 26 gouvernorats d&eacute;mocrates contre 20 r&eacute;publicains (quatre restants) <a href="https://www.illawarramercury.com.au/story/9386125/democrats-take-full-control-of-congress-in-midterms/" target="_blank" rel="noopener">[T1 AP via Illawarra Mercury, 4/11]</a>. Les d&eacute;mocrates ont repris au moins sept si&egrave;ges s&eacute;natoriaux &mdash; Kansas, Iowa, Texas, Ohio, Maine, Caroline du Nord, Caroline du Sud &mdash; et le symbole porte sur le premier de la liste : le Kansas n'avait pas &eacute;lu de s&eacute;nateur d&eacute;mocrate depuis pr&egrave;s d'un si&egrave;cle.</p>
+<p>C&ocirc;t&eacute; gouverneurs, Keisha Lance Bottoms (G&eacute;orgie), Amy Acton (Ohio), Rob Sand (Iowa) et Gina Hinojosa (Texas) ont repris des postes tenus par des r&eacute;publicains. Dans le Maine, le d&eacute;mocrate Troy Jackson a battu la s&eacute;natrice sortante Susan Collins, en poste depuis pr&egrave;s de trente ans.</p>
+<p>La Bourse a mis deux jours &agrave; digérer la nouvelle. Lundi, avant le vote, les indices avaient d&eacute;j&agrave; recul&eacute; &mdash; le S&amp;P 500 a perdu 0,5 % &agrave; 7 541,40 points, le Nasdaq 1,1 % &agrave; 25 164,32, pendant que le Brent chutait de 7,6 % en une seule s&eacute;ance <a href="https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-monday-1122026-nid02112026/" target="_blank" rel="noopener">[AP via La Naci&oacute;n, 2/11]</a>. Mercredi, au lendemain du scrutin, retournement complet : le Dow Jones a bondi de 3 %, &agrave; 53 356,12 points &mdash; sa plus forte hausse en plusieurs mois &mdash;, le S&amp;P 500 a gagn&eacute; 1,6 % &agrave; 7 688,62 et le Nasdaq 1,4 % &agrave; 25 736,51, les commentateurs rappelant que les march&eacute;s montent historiquement dans les mois qui suivent un scrutin de mi-mandat, quel qu'en soit le r&eacute;sultat <a href="https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-wednesday-1142026-nid04112026/" target="_blank" rel="noopener">[AP via La Naci&oacute;n, 4/11]</a>.</p>
+<p>Vendredi, l'euphorie &eacute;tait d&eacute;j&agrave; retomb&eacute;e : le Dow a c&eacute;d&eacute; 0,5 % &agrave; 51 285,73, pendant que le S&amp;P 500 (+0,3 % &agrave; 7 376,86) et le Nasdaq (+1,1 % &agrave; 24 579,42) ne regagnaient qu'un peu de terrain sur un rapport sur l'emploi jug&eacute; solide <a href="https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-1162026-nid06112026/" target="_blank" rel="noopener">[AP via La Naci&oacute;n, 6/11]</a>. Sur l'ensemble de la semaine, le S&amp;P 500 termine en baisse de 2,7 % et le Nasdaq de 3,4 % par rapport &agrave; leur cl&ocirc;ture du vendredi pr&eacute;c&eacute;dent : la plus forte hausse intrajournali&egrave;re de l'ann&eacute;e n'a pas suffi &agrave; sauver la semaine.</p>
+<p><strong>L'autre lecture :</strong> on peut objecter que la panique de lundi et le rebond de mercredi n'ont rien &agrave; voir avec les urnes, et co&iuml;ncident plut&ocirc;t avec la pire semaine de r&eacute;sultats technologiques du trimestre (Intel, Alphabet) et une rotation classique de fin d'ann&eacute;e. C'est en partie vrai &mdash; mais la synchronisation, heure par heure, entre l'annonce des r&eacute;sultats &eacute;lectoraux mercredi matin et le d&eacute;collage du Dow en s&eacute;ance est trop nette pour &ecirc;tre ignor&eacute;e.</p>
+<p><strong>Verdict :</strong> le march&eacute; a applaudi un changement de pouvoir qu'il n'a pas eu le temps de comprendre, puis a repris ses esprits.</p>
+<p><strong>Ce qui reste opaque :</strong> 73 si&egrave;ges de la Chambre, deux du S&eacute;nat et quatre gouvernorats restaient &agrave; attribuer au moment d'&eacute;crire ces lignes ; la marge d&eacute;mocrate finale pourrait encore se resserrer ou s'&eacute;largir d'ici la certification.</p>
+<p><strong>&Agrave; dire au d&icirc;ner :</strong> le Kansas, qui n'avait pas envoy&eacute; de d&eacute;mocrate au S&eacute;nat depuis l'&egrave;re Roosevelt, en a envoy&eacute; un cette semaine &mdash; et Wall Street a mis deux jours &agrave; d&eacute;cider si c'&eacute;tait une bonne ou une mauvaise nouvelle.</p>
+
+<h3>II. Le prix d'Anthropic recule avant m&ecirc;me d'entrer en Bourse</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">&Agrave; v&eacute;rifier</span><span class="n">sources anonymes WSJ/Reuters &middot; T3</span></p>
+<p>Anthropic visait, il y a deux mois encore, une valorisation proche de 2 000 milliards de dollars pour son entr&eacute;e en Bourse. Cette semaine, le Wall Street Journal rapporte que les investisseurs institutionnels sollicit&eacute;s pour le tour de table poussent pour une fourchette de 1 500 &agrave; 1 600 milliards &mdash; pr&egrave;s d'un quart de moins <a href="https://investinglive.com/stocks/wsj-anthropic-ipo-investors-push-for-lower-1-5-trillion-valuation-after-tech-selloff/" target="_blank" rel="noopener">[T3 WSJ via InvestingLive, 2/11]</a>. Un autre titre, moins corrobor&eacute;, &eacute;voque m&ecirc;me un plancher de 1 200 milliards apr&egrave;s la d&eacute;route technologique de jeudi <a href="https://coingape.com/anthropic-ipo-valuation-talks-fall-to-1-2t-after-ai-stock-selloff/" target="_blank" rel="noopener">[Coingape, non recoup&eacute;]</a> &mdash; un chiffre que je n'ai pas pu confirmer ailleurs et que je ne retiens que comme indication d'ambiance, pas comme donn&eacute;e.</p>
+<p>La baisse n'est pas due &agrave; un trou dans les comptes : le chiffre d'affaires du troisi&egrave;me trimestre ressort &agrave; environ 16,8 milliards de dollars, en hausse de 45 %, contre 11,6 milliards au trimestre pr&eacute;c&eacute;dent <a href="https://www.devdiscourse.com/article/business/3992654-anthropics-q3-revenue-jumps-45-to-usd-168-billion-ahead-of-anticipated-ipo" target="_blank" rel="noopener">[T3 presse via Devdiscourse, oct. 2026]</a> &mdash; une acc&eacute;l&eacute;ration, pas un ralentissement. Ce sont les march&eacute;s autour d'elle qui ont dout&eacute; : une d&eacute;route technologique la semaine pr&eacute;c&eacute;dente et un nouveau recul lundi, des inqui&eacute;tudes sur la surexposition &agrave; l'IA, une r&eacute;sistance politique croissante aux nouveaux centres de donn&eacute;es, et des doutes sur le moment o&ugrave; des g&eacute;ants comme Amazon et Meta rentabiliseront leurs propres d&eacute;penses en IA. La tourn&eacute;e de pr&eacute;sentation pourrait commencer d&egrave;s la semaine prochaine, pour un d&eacute;but en Bourse vis&eacute; la semaine avant Thanksgiving.</p>
+<p><strong>Qui paie &middot; qui profite :</strong> les premiers souscripteurs institutionnels obtiennent un prix d'entr&eacute;e plus bas qu'escompt&eacute; il y a deux mois ; Anthropic, elle, l&egrave;ve moins de capital au m&ecirc;me nombre d'actions, ou dilue davantage pour lever autant.</p>
+<p><strong>Ce qui reste opaque :</strong> ni la fourchette de prix d&eacute;finitive ni le nombre d'actions offertes n'&eacute;taient fix&eacute;s &agrave; la cl&ocirc;ture de la semaine.</p>
+
+<h3>III. Un quinzi&egrave;me marin indien, et une mer que personne ne compte pareil</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirm&eacute;</span><span class="n">confirmation gouvernementale indienne &middot; T0, attribution non revendiqu&eacute;e</span></p>
+<p>Dans la soir&eacute;e du 2 novembre, le dhow indien Al Jusufi, parti du port de Hamriya aux &Eacute;mirats pour Porbandar, au Gujarat, a &eacute;t&eacute; frapp&eacute; par un objet a&eacute;rien non identifi&eacute; pr&egrave;s de Limah, en territoire omanais. Treize des quatorze marins indiens &agrave; bord ont &eacute;t&eacute; secourus par les garde-c&ocirc;tes omanais ; le quatorzi&egrave;me, Gandhar Nahim Ajij, originaire du Gujarat, est mort. Le minist&egrave;re indien des Affaires &eacute;trang&egrave;res a confirm&eacute; le d&eacute;c&egrave;s <a href="https://gulfnews.com/world/indian-national-dies-in-attack-on-vessel-near-oman-1.500733852" target="_blank" rel="noopener">[T0 MEA via Gulf News, 3/11]</a>. Selon un responsable d'un syndicat de marins cit&eacute; par la presse, Ajij est le quinzi&egrave;me ressortissant indien tu&eacute; depuis le d&eacute;but des attaques de navires autour du d&eacute;troit d'Ormuz <a href="https://www.arabnews.pk/world/india-calls-for-de-escalation-after-national-killed-in-vessel-attack-off-oman-3006024" target="_blank" rel="noopener">[Arab News, 3/11]</a>. Aucun camp &mdash; ni l'Iran, ni une autre partie &mdash; n'a revendiqu&eacute; le tir.</p>
+<p>L'attaque du 2 n'&eacute;tait pas isol&eacute;e : l'UKMTO a recens&eacute; au moins cinq incidents distincts dans la r&eacute;gion durant la premi&egrave;re semaine de novembre, dont un remorqueur offshore touch&eacute; le 1er, un p&eacute;trolier de type VLCC frapp&eacute; dans sa salle des machines le 3 pr&egrave;s de Limah, et un nouvel avertissement, le num&eacute;ro 197-26, &eacute;mis le 6 pour une explosion ayant touch&eacute; un autre p&eacute;trolier dans le m&ecirc;me corridor <a href="https://seatrade-maritime.com/security/tanker-hit-off-saudi-and-offshore-tug-struck-in-hormuz" target="_blank" rel="noopener">[Seatrade Maritime]</a>. La dispute de la semaine derni&egrave;re entre les chiffres de trafic de S&amp;P Global et ceux du traqueur officiel IMF PortWatch reste, elle, non r&eacute;solue : aucune des deux sources n'a publi&eacute; de mise &agrave; jour qui corrige l'autre.</p>
+<p><strong>Verdict :</strong> la guerre du d&eacute;troit n'a produit, cette semaine comme les pr&eacute;c&eacute;dentes, ni d&eacute;sescalade ni revendication claire &mdash; seulement un bilan humain qui continue de s'alourdir sans auteur d&eacute;sign&eacute;.</p>
+
+<h3>IV. Une intelligence artificielle franchit le seuil &laquo; critique &raquo;</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">&Agrave; v&eacute;rifier</span><span class="n">benchmarks auto-rapport&eacute;s OpenAI &middot; non recoup&eacute;s &middot; T3</span></p>
+<p>Pour la premi&egrave;re fois, un laboratoire a mis en service un mod&egrave;le qu'il classe lui-m&ecirc;me &laquo; critique &raquo; pour le risque cybers&eacute;curit&eacute; &mdash; le cran le plus haut de son propre cadre de pr&eacute;paration, un niveau au-dessus de GPT-6 Astra, class&eacute; &laquo; &eacute;lev&eacute; &raquo;. OpenAI a commenc&eacute; &agrave; d&eacute;ployer ce mod&egrave;le, GPT-6 Cyber, jeudi 5 novembre, auprès d'un groupe restreint d'utilisateurs de son programme Daybreak Red <a href="https://cybermagazine.com/news/gpt-6-cyber-openais-frontier-of-aligned-security-agents" target="_blank" rel="noopener">[Cyber Magazine, 5/11]</a>. Sur son propre banc d'essai ExploitGym, OpenAI affirme que le mod&egrave;le a trouv&eacute; 81 vuln&eacute;rabilit&eacute;s Firefox jusque-l&agrave; inconnues et a &eacute;t&eacute; utilis&eacute; pour 948 exploitations d'escalade de privil&egrave;ges sous Linux, avec un taux de comportement hors cadre tomb&eacute; sous 1 %, contre environ 5 % pour la version pr&eacute;c&eacute;dente <a href="https://www.testingcatalog.com/openai-launches-gpt-6-cyber-for-daybreak-red-customers.md" target="_blank" rel="noopener">[TestingCatalog]</a>.</p>
+<p>Aucun de ces chiffres n'a &eacute;t&eacute; v&eacute;rifi&eacute; par un tiers ind&eacute;pendant au moment de la publication &mdash; ils proviennent tous de l'&eacute;valuation interne d'OpenAI, publi&eacute;e en m&ecirc;me temps que l'annonce. L'acc&egrave;s plus large est pr&eacute;vu &laquo; dans les semaines qui viennent &raquo;.</p>
+<p><strong>Verdict :</strong> une entreprise qui construit l'outil, fixe elle-m&ecirc;me le seuil de danger et publie elle-m&ecirc;me la preuve qu'elle le franchit m&eacute;rite d'&ecirc;tre crue avec prudence, pas d'embl&eacute;e.</p>
+
+<h3>V. Le Pays Basque reprend la couronne du meilleur restaurant du monde</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirm&eacute;</span><span class="n">annonce officielle de l'organisation &middot; corrobor&eacute;e</span></p>
+<p>Mercredi 4 novembre, au Teatro Municipal de Lima &mdash; premi&egrave;re fois que la c&eacute;r&eacute;monie se tient en Am&eacute;rique du Sud &mdash; Asador Etxebarri, la grillade de montagne du chef Bittor Arguinzoniz dans le Pays basque espagnol, a &eacute;t&eacute; sacr&eacute; meilleur restaurant du monde 2026 par The World's 50 Best Restaurants, apr&egrave;s avoir termin&eacute; deuxi&egrave;me l'ann&eacute;e derni&egrave;re <a href="https://www.vinetur.com/en/20261105110461/asador-etxebarri-was-named-the-worlds-best-restaurant-in-the-2026-worlds-50-best-restaurants-ranking.html" target="_blank" rel="noopener">[Vinetur, 5/11]</a>. Maido, le restaurant p&eacute;ruvien qui tenait le titre, rejoint le &laquo; Best of the Best &raquo;, la liste des anciens vainqueurs qui ne sont plus &eacute;ligibles au classement annuel. Atomix, &agrave; New York, termine 11e et devient le meilleur restaurant d'Am&eacute;rique du Nord &mdash; le seul &eacute;tablissement am&eacute;ricain pr&eacute;sent sur la liste 2026.</p>
+<p><strong>La filiation :</strong> Etxebarri cuit tout au feu de bois depuis plus de trente ans, dans une r&eacute;gion rurale, &agrave; contre-courant de la gastronomie mol&eacute;culaire qui a longtemps domin&eacute; ce classement &mdash; son sacre couronne une id&eacute;e aussi vieille que la cuisson elle-m&ecirc;me plut&ocirc;t qu'une innovation de laboratoire.</p>
+
+<h3>VI. La plus grande &eacute;pid&eacute;mie de ce virus jamais recens&eacute;e</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirm&eacute;</span><span class="n">donn&eacute;es OMS/ECDC/UKHSA &middot; T0/T1</span></p>
+<p>En R&eacute;publique d&eacute;mocratique du Congo, l'&eacute;pid&eacute;mie de maladie &agrave; virus Bundibugyo (une souche d'Ebola) comptait, au 4 novembre, 10 668 cas confirm&eacute;s et 5 198 d&eacute;c&egrave;s &mdash; un taux de l&eacute;talit&eacute; brut proche de 49 % <a href="https://www.ecdc.europa.eu/en/public-health-events/2026-EIP-00026" target="_blank" rel="noopener">[T1 ECDC, 5/11]</a>. C'est d&eacute;sormais la plus grande &eacute;pid&eacute;mie de cette souche jamais recens&eacute;e et la deuxi&egrave;me plus grande &eacute;pid&eacute;mie d'Ebola de l'histoire, toutes souches confondues &mdash; la 17e que conna&icirc;t le pays depuis 1976 <a href="https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-44-week-ending-1-november-2026" target="_blank" rel="noopener">[T0 UKHSA, donn&eacute;es au 1/11]</a>. Soixante-sept zones de sant&eacute; dans huit provinces sont touch&eacute;es ; la plus r&eacute;cente, Yakoma, dans le Nord-Ubangi, borde directement la R&eacute;publique centrafricaine. L'OMS maintient sa classification d'urgence de sant&eacute; publique de port&eacute;e internationale, d&eacute;clar&eacute;e le 17 mai, et &eacute;value le risque comme &laquo; tr&egrave;s &eacute;lev&eacute; &raquo; en RDC, &laquo; &eacute;lev&eacute; &raquo; pour les pays frontaliers.</p>
+<p>Au Nigeria, un premier cas &mdash; une femme ayant transit&eacute; par Addis-Abeba apr&egrave;s un s&eacute;jour en Ouganda &mdash; a &eacute;t&eacute; signal&eacute; le 20 octobre &agrave; Abuja puis &eacute;vacu&eacute; vers la Suisse ; aucun cas secondaire n'&eacute;tait recens&eacute; au 29 octobre parmi ses 62 contacts identifi&eacute;s.</p>
+<p><strong>Conséquence op&eacute;rable (7-30j) :</strong> surveiller si la fronti&egrave;re centrafricaine, d&eacute;sormais directement expos&eacute;e par Yakoma, enregistre son premier cas import&eacute; &mdash; ce serait le cinqui&egrave;me pays touch&eacute; par cette flamb&eacute;e apr&egrave;s la RDC, l'Ouganda, le Kenya et le Nigeria.</p>
+
+<h3>VII. Un troisi&egrave;me mort am&eacute;ricain, loin des radars</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirm&eacute;</span><span class="n">CDC/UKHSA &middot; T0</span></p>
+<p>Le comt&eacute; de Yakima, dans l'&Eacute;tat de Washington, a signal&eacute; deux nouveaux cas humains de grippe aviaire H5N1 les 31 octobre et 1er novembre. Le premier patient, hospitalis&eacute; pour une forme s&eacute;v&egrave;re, est mort ; le second n'a pas &eacute;t&eacute; hospitalis&eacute;. Les deux sont li&eacute;s &agrave; une exposition &agrave; des vaches laiti&egrave;res infect&eacute;es, portant &agrave; trois le nombre de cas humains dans ce seul comt&eacute; depuis le d&eacute;but de l'ann&eacute;e <a href="https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-44-week-ending-1-november-2026" target="_blank" rel="noopener">[T0 UKHSA, donn&eacute;es au 1/11]</a>. Le CDC compte 72 cas humains confirm&eacute;s de grippe H5 aux &Eacute;tats-Unis depuis 2024, dont 42 li&eacute;s &agrave; des &eacute;levages laitiers ; le risque pour le grand public reste &eacute;valu&eacute; comme faible.</p>
+<p><strong>Verdict :</strong> un mort am&eacute;ricain de la grippe aviaire, la m&ecirc;me semaine que les &eacute;lections de mi-mandat et le lancement d'un mod&egrave;le d'IA class&eacute; &laquo; critique &raquo;, n'a quasiment fait l'objet d'aucune couverture &mdash; pas parce que le fait est mineur, mais parce que le calendrier &eacute;tait charg&eacute;.</p>
+
+<p class="twa-pull">&laquo; Pas une seule bascule de la semaine ne s'est stabilis&eacute;e. &raquo;</p>
+<hr>
+<h2>Chiffres de la Semaine</h2>
+<table><thead><tr><th>Indicateur</th><th>Ouverture (30/10)</th><th>Cl&ocirc;ture (06/11)</th><th>&Delta;</th><th>Source</th></tr></thead><tbody>
+<tr><td>S&amp;P 500</td><td>7 580,07</td><td>7 376,86</td><td>&minus;2,7 %</td><td><a href="https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-1162026-nid06112026/" target="_blank" rel="noopener">AP via La Naci&oacute;n</a></td></tr>
+<tr><td>Nasdaq Composite</td><td>25 437,00</td><td>24 579,42</td><td>&minus;3,4 %</td><td><a href="https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-1162026-nid06112026/" target="_blank" rel="noopener">AP via La Naci&oacute;n</a></td></tr>
+<tr><td>Bitcoin (BTC)</td><td>76 810 $ (02/11)</td><td>75 248 $ (08/11)</td><td>&minus;2,0 %</td><td><a href="https://bgeometrics.com/reports/weekly/2026-11-08.html" target="_blank" rel="noopener">BGeometrics</a></td></tr>
+<tr><td>Ethereum (ETH)</td><td>&mdash;</td><td>&asymp;2 240 $ (07/11)</td><td>&minus;1,5 % (sem.)</td><td><a href="https://bgeometrics.com/reports/weekly/2026-11-08.html" target="_blank" rel="noopener">BGeometrics</a></td></tr>
+</tbody></table>
+<p><em>Note de fabrication :</em> les lignes Dow Jones, VIX, p&eacute;trole (Brent/WTI), or, EUR/USD et taux &agrave; 10 ans ont &eacute;t&eacute; coup&eacute;es cette semaine &mdash; aucune source n'a pu ancrer de fa&ccedil;on fiable les deux bornes de la fen&ecirc;tre pour chacune. &Agrave; titre de contexte seulement, non repris dans le tableau : le Brent a chut&eacute; de 7,6 % en une seule s&eacute;ance lundi 2/11, et le Dow a gagn&eacute; 3 % en une seule s&eacute;ance mercredi 4/11 &mdash; deux mouvements journaliers extr&ecirc;mes qui ne donnent pas, mis bout &agrave; bout, un delta hebdomadaire fiable.</p>
+
+<h2>Le Fil de la Semaine</h2>
+<p>Prenez les sept r&eacute;cits ensemble et un seul geste se r&eacute;p&egrave;te : quelque chose change d'&eacute;tat sans se stabiliser. Le Congr&egrave;s am&eacute;ricain change de majorit&eacute; ; le march&eacute; applaudit, puis doute, puis regagne un peu de terrain sans effacer sa semaine. Anthropic voit sa valorisation revue &agrave; la baisse alors que son chiffre d'affaires acc&eacute;l&egrave;re. Un mod&egrave;le d'IA franchit un seuil de risque qu'aucun mod&egrave;le n'avait franchi, sur la seule foi de son propre fabricant. Un restaurant basque prend la premi&egrave;re place &agrave; son propre dauphin. Une &eacute;pid&eacute;mie devient historique en &eacute;tendant sa fronti&egrave;re &agrave; un nouveau pays voisin, sans qu'aucune des zones d&eacute;j&agrave; touch&eacute;es ne soit d&eacute;clar&eacute;e close. Et au large d'Oman, un quinzi&egrave;me marin indien meurt dans une guerre que personne ne revendique ni ne termine.</p>
+<p>Il n'y a pas de cause commune &agrave; ces sept histoires &mdash; une &eacute;lection, un prospectus boursier, un laboratoire d'IA, un classement gastronomique, une &eacute;pid&eacute;mie et une zone de guerre maritime n'ont rien en commun que le calendrier. Ce qui les relie est plus structurel : dans chaque cas, quelque chose qui semblait fix&eacute; &mdash; une majorit&eacute; parlementaire, une valorisation, un seuil de s&eacute;curit&eacute;, un titre honorifique, une fronti&egrave;re &eacute;pid&eacute;miologique, un bilan humain &mdash; s'est d&eacute;plac&eacute; cette semaine, sans qu'aucun de ces d&eacute;placements n'atteigne un nouvel &eacute;quilibre stable. Une semaine normale en montre un ou deux. Celle-ci en a montr&eacute; sept.</p>
+<p>La le&ccedil;on pour la semaine qui vient n'est pas de parier sur le sens dans lequel chaque bascule continuera &mdash; c'est de ne pas confondre un mouvement avec un atterrissage.</p>
+
+<h2>&Agrave; surveiller la semaine prochaine</h2>
+<ul>
+<li><strong>Cette semaine, date non fix&eacute;e</strong> &mdash; certification des 73 si&egrave;ges de Chambre, deux si&egrave;ges de S&eacute;nat et quatre gouvernorats encore non attribu&eacute;s apr&egrave;s le scrutin du 3 novembre.</li>
+<li><strong>Semaine du 9 novembre</strong> &mdash; d&eacute;but possible de la tourn&eacute;e de pr&eacute;sentation (roadshow) de l'introduction en Bourse d'Anthropic, premier test de march&eacute; pour la fourchette de valorisation r&eacute;vis&eacute;e.</li>
+<li><strong>Semaine du 16&ndash;22 novembre</strong> &mdash; d&eacute;but en Bourse d'Anthropic vis&eacute; la semaine avant Thanksgiving.</li>
+<li><strong>Dates non fix&eacute;es</strong> &mdash; premier cas import&eacute; &eacute;ventuel de la maladie &agrave; virus Bundibugyo en R&eacute;publique centrafricaine, dont la fronti&egrave;re touche d&eacute;sormais la zone de sant&eacute; de Yakoma.</li>
+<li><strong>Semaines &agrave; venir, date non fix&eacute;e</strong> &mdash; &eacute;largissement annonc&eacute; de l'acc&egrave;s &agrave; GPT-6 Cyber au-del&agrave; du programme Daybreak Red restreint.</li>
+</ul>
+
+<h2>L'Angle Mort de la Semaine</h2>
+<p>Toute l'attention sanitaire de la semaine est all&eacute;e au bilan congolais, qui bat chaque semaine son propre record funeste. Personne n'a racont&eacute; l'histoire invers&eacute;e qui se joue au Kenya : depuis l'arriv&eacute;e d'un unique cas import&eacute; &agrave; Nairobi le 3 octobre, le pays a confirm&eacute; neuf cas et deux d&eacute;c&egrave;s &mdash; et plus aucun cas nouveau depuis le 19 octobre. Tous les cas kenyans sont des contacts directs du patient initial, identifi&eacute;s et isol&eacute;s en quarantaine avant toute transmission communautaire <a href="https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-44-week-ending-1-november-2026" target="_blank" rel="noopener">[UKHSA]</a>. C'est la preuve, pass&eacute;e presque inaper&ccedil;ue, qu'une flamb&eacute;e import&eacute;e d'Ebola peut &ecirc;tre arr&ecirc;t&eacute;e net par le tra&ccedil;age de contacts seul, sans qu'elle ne devienne une &eacute;pid&eacute;mie locale &mdash; une bonne nouvelle v&eacute;rifi&eacute;e, noy&eacute;e sous le bilan de son voisin.</p>
+</div><div class="bottom-nav"><a href="../2026-11-09.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Premi&egrave;re page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les &eacute;ditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Edition N&deg;186 &mdash; v1.1 &mdash; hebdo</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
