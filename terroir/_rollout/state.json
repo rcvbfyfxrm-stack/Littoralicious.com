@@ -639,5 +639,16 @@
   }
  ],
  "hot_weekly_note": "9 Oct 2026, Arnaud: every week refresh one guide's What's hot board (oldest data-hot-asof first), review first. Spec: terroir/_rollout/HOT-WEEKLY.md.",
- "hot_weekly": []
+ "hot_weekly": [
+  {
+   "slug": "Prague-Cechy",
+   "date": "2026-11-09",
+   "branch": "terroir-hot/Prague-Cechy-2026-11-09",
+   "status": "needs-network",
+   "asof": "2026-09-27",
+   "review": "2026-11-15",
+   "checks": ["network: curl https://www.wikipedia.org/ -> 000 (agent proxy 403 connect_rejected, environment network policy)"],
+   "notes": "Board untouched. Selection: all 8 boarded guides have an open branch (Kendwa, Diani, Catania, Siracusa, Taormina: terroir-uplift/*; Prague, Ostrava, Wien: terroir-hot/* needs-network stubs only). Prague picked as the oldest as-of (2026-09-27) whose only open branch is an untouched needs-network stub from 2026-10-12. Fourth consecutive needs-network run (Prague 10-12, Ostrava 10-26, Wien 11-02, Prague 11-09): the cloud environment must allow web hosts before any board can be refreshed."
+  }
+ ]
 }
