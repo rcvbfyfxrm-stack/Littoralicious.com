@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- ===============================================================================
+     LOCKED 2026-06-17 — CANONICAL RECIPE BLUEPRINT (approved by Arnaud).
+     REVISED 2026-06-19 (Arnaud-approved unlock) — ADDITIVE depth layers only; the liked
+       structure + galley-card engine are unchanged. Added: optional Origin Card (designated
+       dishes), primary-paper science bar, family-tree lineage, Done-when senses cues, mandatory
+       cook-once-serve-two-tiers crew swap, and the At-the-Table nurture close. Provisioning-at-sea
+       is OPTIONAL — only when sourcing is the dish's special angle. Re-LOCKED at this revision.
+     REVISED 2026-09-05 (Arnaud-approved unlock) — ADDITIVE only: the sous-chef line opens the
+       piece (publication-wide rule), and "Now make it" gains the handover paragraph plus an
+       inline PDF preview fold above the two download buttons. Engine, cards and dual units
+       UNCHANGED. Re-LOCKED at this revision.
+     Do NOT restyle, re-scaffold, or regenerate without an explicit "unlock".
+     Invariants: recipe.js drives always-on DUAL units (metric + US inline, no toggle);
+     TWO galley-card buttons — "Metric + cups" (biltong-recipe-card.pdf) and
+     "lb/oz + cups" (biltong-recipe-card-us.pdf), with ?v=<YYYYMMDD> cache-bust;
+     the ENGINE CONTRACT further down stands. Pairs with the LOCKED galley-card
+     template (templates/recipe-card.html).
+     =============================================================================== -->
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="">
+    <title>Biltong: The Vinegar Is the Safety Step, Not the Seasoning — LITTORALICIOUS</title>
+    <link rel="canonical" href="https://www.littoralicious.com/articles/biltong.html">
+    <meta property="og:title" content="Biltong: The Vinegar Is the Safety Step, Not the Seasoning — LITTORALICIOUS">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.littoralicious.com/articles/biltong.html">
+    <meta property="og:site_name" content="Littoralicious">
+    <meta property="og:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Biltong: The Vinegar Is the Safety Step, Not the Seasoning">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://www.littoralicious.com/assets/logo/og-image.png">
+    <link rel="alternate" type="application/rss+xml" title="Littoralicious" href="https://www.littoralicious.com/feed.xml">
+    <link rel="stylesheet" href="../assets/css/style.css?v=2bd0e0b4">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Biltong: The Vinegar Is the Safety Step, Not the Seasoning",
+  "headline": "Biltong: The Vinegar Is the Safety Step, Not the Seasoning",
+  "description": "",
+  "datePublished": "2026-11-11",
+  "author": {
+    "@type": "Organization",
+    "name": "Littoralicious"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Littoralicious",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.littoralicious.com/assets/logo/logo.svg"
+    }
+  },
+  "image": "https://www.littoralicious.com/assets/logo/og-image.png",
+  "mainEntityOfPage": "https://www.littoralicious.com/articles/biltong.html"
+}
+    </script>
+</head>
+<body>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead__inner">
+                <div class="masthead__brand">
+                    <a href="/" class="masthead__logo"><img src="../assets/logo/logo.svg" alt="" style="height: 60px; display: block; margin: 0 auto;">LITTORALICIOUS</a>
+                    <span class="masthead__tagline">Modern Science &middot; Regional Recipes &middot; From the Sea</span>
+                </div>
+                <nav class="masthead__nav">
+                    <a href="../shore-larder.html">Ingredients</a>
+                    <a href="../the-method.html">Techniques &amp; Recipes</a>
+                    <a href="../littoral-heritage.html">Heritage</a>
+                    <a href="../the-evidence.html">Food Science</a>
+                    <a href="../the-bridge.html">Industry &amp; Ports</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article__header container">
+                <div class="article__meta">
+                    <span class="article__category">Recipe Blueprint</span>
+                    <time class="article__date">2026-11-11</time>
+                    <span class="article__reading-time"> min read</span>
+                </div>
+                <h1 class="article__title">Biltong: The Vinegar Is the Safety Step, Not the Seasoning</h1>
+                <p class="article__lede"></p>
+            </header>
+
+            <div class="article__content container rcp" data-recipe="biltong" style="max-width: 78ch; margin: 0 auto; padding: var(--space-8) var(--space-4);">
+
+                <!-- BODY:BEGIN — THE BLUEPRINT (05).  ONE page · ONE slug · ONE [data-recipe] root.
+                     Two movements, joined by a single labelled .divider — never a second page:
+                        I.  THE STORY  — a real read: why this dish exists, and the one idea behind it.
+                        II. THE BUILD  — the executable recipe; the read continues inside the steps.
+
+                     THE READ IS FIRST-CLASS. Someone who is NOT cooking today must still want to read
+                     it. Do not minimise the prose — earn the recipe. Hold all three pillars in every
+                     piece: Grandmother (why cook at all), Scientist (sourced mechanism), Yacht Chef
+                     (boat-proof execution).
+
+                     THREE TEACHING SLOTS, all ALWAYS VISIBLE (a skimmer who opens zero toggles still
+                     learns something new):
+                        · ONE learn-something fact   → a custom-labelled note  (verified + SOURCED, non-obvious)
+                        · ONE controlling idea        → the Key Point note       (the sentence they keep tomorrow)
+                        · ONE science-as-story line   → a Science note or science-box  (cause then effect)
+                     NO-DUPLICATE-FACT: the learn-something note, the rcp-story, and the science line
+                     must each carry a DIFFERENT fact. Deep chemistry is DEMOTED into per-step
+                     <details class="rcp-why"> with a <cite> — never a wall of prose.
+
+                     HISTORY IS LOAD-BEARING: it must explain a choice the recipe makes (this fat, this
+                     cut, this technique), opened in the Story and paid off in the close. Not decoration.
+
+                     FOCUS LAWS (the first law — never lose focus): open on the payoff, one idea per beat,
+                     no prose block past ~150 words without a re-hook, don't stack two callouts with no
+                     prose between them, close on ONE thing. British cooking spelling (flavour, colour,
+                     caramelise). Banned: delicious · elevated · curated · artisanal · superfood ·
+                     game-changer · hack. Write the headnote LAST, after you have cooked it.
+
+                     ENGINE CONTRACT — do not break (recipe.js drives all of this):
+                        · keep .rcp-ing and .rcp-step in STABLE order — ticks persist by DOM index;
+                          reordering lands saved ticks on the wrong rows.
+                        · every scalable number is <span data-qty="500" data-unit="g">500 g</span>;
+                          NEVER hand-set data-base (the engine stamps it). data-round="0" forces whole units.
+                        · .rcp-why / .rcp-ratio / .rcp-fold are native <details> — no JS, no persistence.
+                        · two .rcp-card galley PDFs (Metric + cups / lb-oz + cups) — same recipe; the cups
+                          column is identical in both. Cache-bust: append ?v=<YYYYMMDD> on every re-render.
+                     ════════════════════════════════════════════════════════════════════════════════ -->
+<!-- ── I. THE STORY ──────────────────────────────────────────────────────────── -->
+
+                <p>Snap a good stick and it breaks dark and dry at the edge, ruby at the heart: salt first, then toasted coriander, then <mark>the long sour finish of the vinegar</mark>. That sourness is not there for flavour. Biltong is never cooked, and every serious test of it turns on the same two things, the acid bath and the controlled hang. Get those right and the rest is seasoning. The settlers who added the vinegar did not know they were adding the safety step.</p>
+
+                <div class="note note--key"><p><strong>The one idea:</strong> with no heat, the vinegar bath and six days of moving air are biltong&rsquo;s <span class="highlight highlight--term">kill step</span>. <mark>Take the vinegar below about 3&nbsp;% of the batch, or hurry the hang, and you have seasoned raw beef.</mark></p></div>
+
+                <div class="rcp-story">
+                    <span class="rcp-story__kicker">Where it comes from</span>
+                    <p>The name is Dutch and blunt: <em>bil</em>, the rump or buttock, and <em>tong</em>, a tongue, for the strips it is cut into. That is why this recipe uses silverside, the big lean muscle of the back leg the word points to. Before the name, the story is told more than it is recorded. The main review of biltong processing words it carefully: <em>it has been said</em> that the peoples of southern Africa salted and dried meat before the settlers came, and the settlers <em>allegedly</em> took up the method, adding vinegar and the spices of the Cape Colony. Their vinegar, the story goes, came from the grapes of the Huguenot vineyards.</p>
+                    <p>The documented part comes later. The Voortrekkers cured and dried their meat for up to two weeks and wrapped it in cloth for the wagons before they set out. Hung in the shade in winter, when the air is cold and dry, it kept. Two weeks on a wagon was the test the old method had to pass. The lab work of the last twenty years asks whether it passes a stricter one, and the answer turns on what the settlers added, not on what they found.</p>
+                </div>
+
+                <div class="note" data-label="Did you know"><p>Hanging it longer does not make it safe. In a US trial, biltong made from beef inoculated with four pathogens was hung for 17 to 26 days, and the process cut them by only 1.2 to 3.8 log. That is a real kill, but short of the 5-log reduction of <em>Salmonella</em> that the USDA&rsquo;s jerky guidance is built around. <mark>Droëwors, the fattier sausage, did worse, &ldquo;probably because of the higher fat content&rdquo;.</mark> <cite>&mdash; Burnham, Hanson, Koshick &amp; Ingham, <em>Journal of Food Safety</em> 28 (2008) 198&ndash;209. DOI: 10.1111/j.1745-4565.2008.00114.x; drying time as summarised by Jones et al., <em>S. Afr. J. Anim. Sci.</em> 47 (2017) 743&ndash;757</cite></p></div>
+
+                <p>So time is not the lever. An Oklahoma State team changed one variable at a time to find out what is.</p>
+
+                <div class="note note--science"><p>They cut beef round into pieces 1.9&nbsp;cm thick, inoculated them with five strains of <em>Salmonella</em>, marinated them and hung them at 22&ndash;25&nbsp;&deg;C and 55&nbsp;% relative humidity with a fan running. Nearly every version passed 5 log within six to eight days. Then they tested the levers. Salt at 1.7, 2.2 or 2.7&nbsp;% made no significant difference. Vinegar did: <mark>at 2&nbsp;% of the formulation it failed to reach 5 log in eight days; at 3 and 4&nbsp;% it passed</mark>. An overnight marinade with 10&nbsp;% vinegar reached 5 log after six days on the hook. The salt seasons the meat; the acid, then the air, does the killing. <cite>&mdash; Karolenko, Bhusal, Nelson &amp; Muriana, <em>Microorganisms</em> 8 (2020) 791. DOI: 10.3390/microorganisms8050791</cite></p></div>
+
+                <!-- ── THE HINGE — read → make, same page ────────────────────────────────────── -->
+                <div class="divider" id="build"><span class="divider__text">Now make it</span></div>
+
+                <!-- ── II. THE BUILD ─────────────────────────────────────────────────────────── -->
+
+                <dl class="rcp-stats">
+                    <div><dt>Active</dt><dd>40 min</dd></div>
+                    <div><dt>Total</dt><dd>7 days <small>overnight cure + 6 days hanging</small></dd></div>
+                    <div><dt>Yield</dt><dd>&asymp;&nbsp;1.5 kg <small>12 &times; 125 g &middot; from 3 kg raw</small></dd></div>
+                    <div><dt>Make-ahead</dt><dd>the drying box needs a week; start it a week before you need it</dd></div>
+                </dl>
+
+                <p><strong>Take the card and cook.</strong> One page: the ratio, weights in both systems, the method in order, the drying conditions and how to tell when it is done. Print it, pin it to the box, and you never need this page again: <mark>the card is the whole recipe, not a summary of it</mark>. What follows is the same recipe opened up, for the reader who wants to know why.</p>
+
+                <details class="rcp-fold">
+                    <summary>See the card first &mdash; one page, before you download it</summary>
+                    <div class="rcp-fold__body">
+                        <object class="rcp-preview" data="../print/biltong-recipe-card.pdf?v=20261111" type="application/pdf">
+                            <p class="rcp-preview__fallback">Your browser will not show the card in the page. <a href="../print/biltong-recipe-card.pdf?v=20261111" target="_blank" rel="noopener">Open it in a new tab</a> instead.</p>
+                        </object>
+                        <p class="rcp-preview__fallback">Reading on a phone? <a href="../print/biltong-recipe-card.pdf?v=20261111" target="_blank" rel="noopener">Open the card in a new tab</a> &mdash; it will not print well from a small screen, but it reads.</p>
+                    </div>
+                </details>
+
+                <a class="rcp-card" href="../print/biltong-recipe-card.pdf?v=20261111" download>
+                    <span><b>Galley card &middot; Metric</b><span>Grams + cups, one line &mdash; print, pin, cook.</span></span>
+                    <span class="rcp-card__btn">Metric + cups</span>
+                </a>
+                <a class="rcp-card" href="../print/biltong-recipe-card-us.pdf?v=20261111" download>
+                    <span><b>Galley card &middot; US</b><span>Ounces + cups, one line &mdash; no scale needed.</span></span>
+                    <span class="rcp-card__btn">lb/oz + cups</span>
+                </a>
+
+                <details class="rcp-ratio" open>
+                    <summary>The ratio &mdash; memorise, rescale anything</summary>
+                    <div class="rcp-ratio__body"><code>Raw trimmed beef 100% &middot; Salt 2.2% &middot; Vinegar (5% acidity) 15% &middot; Coriander 1.5% &middot; Brown sugar 1% &middot; Pepper 0.5% &middot; Bicarb 0.1% &middot; Curing salt #1 0.19% (optional)</code> &mdash; everything is a percentage of the trimmed raw weight, so 500&nbsp;g and 10&nbsp;kg take the same arithmetic. The salt sits in the middle of the range that was tested. The vinegar sits far above the 3&nbsp;% floor, so a poor pour still clears it. The cure is capped at the EU limit (step 2).</div>
+                </details>
+
+                <div class="rcp-scaler" data-base-yield="12" data-yield-unit="portions">
+                    <span class="rcp-scaler__label">Scale</span>
+                    <button data-scale="0.5">&frac12;&times;</button>
+                    <button data-scale="1" class="active">1&times;</button>
+                    <button data-scale="2">2&times;</button>
+                    <span class="rcp-scaler__yield"><b data-yield>12</b> portions of 125 g &middot; the crew batch</span>
+                </div>
+
+                <h2>Ingredients</h2>
+                <div class="rcp-group">The meat &mdash; about 35 strips</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="3000" data-unit="g">3000 g</span></span><span class="rcp-ing__n">Beef silverside</span> <span class="rcp-ing__note">or topside; weighed after trimming</span></label></li>
+                </ul>
+                <div class="rcp-group">The dry cure</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="66" data-unit="g">66 g</span></span><span class="rcp-ing__n">Coarse sea salt</span> <span class="rcp-ing__note">2.2&nbsp;% of the meat</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="45" data-unit="g">45 g</span></span><span class="rcp-ing__n">Coriander seed</span> <span class="rcp-ing__note">whole, to toast and crack</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="30" data-unit="g">30 g</span></span><span class="rcp-ing__n">Dark brown sugar</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="15" data-unit="g">15 g</span></span><span class="rcp-ing__n">Black pepper</span> <span class="rcp-ing__note">coarsely cracked</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="3" data-unit="g">3 g</span></span><span class="rcp-ing__n">Bicarbonate of soda</span> <span class="rcp-ing__note">optional</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="5.7" data-unit="g">5.7 g</span></span><span class="rcp-ing__n">Curing salt #1 (6.25&nbsp;% sodium nitrite)</span> <span class="rcp-ing__note">optional for the crew; weigh on a 0.01&nbsp;g scale</span></label></li>
+                </ul>
+                <div class="rcp-group">The bath</div>
+                <ul class="rcp-ings">
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="450" data-unit="ml">450 ml</span></span><span class="rcp-ing__n">Malt or apple cider vinegar</span> <span class="rcp-ing__note">5&nbsp;% acidity; malt vinegar is made from barley</span></label></li>
+                    <li class="rcp-ing"><label><input type="checkbox"><span class="rcp-ing__q"><span data-qty="90" data-unit="ml">90 ml</span></span><span class="rcp-ing__n">Worcestershire sauce</span> <span class="rcp-ing__note">contains anchovy (fish)</span></label></li>
+                </ul>
+
+                <h2>Method</h2>
+                <div class="rcp-progress"><span data-progress-done>0</span>/<span data-progress-total>0</span> steps done<div class="rcp-progress__bar"><i data-progress-bar></i></div></div>
+                <ol class="rcp-steps">
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>Bil means the rump: the name tells you the cut.</em></p>
+                            <p><strong>Cut with the grain.</strong> Firm the silverside in the freezer for 30&ndash;45 min, then take off every scrap of <span class="term" data-def="The thin, pearly sheet of connective tissue on the face of a muscle. It will not soften in a cure or dry into anything you can chew; it comes off with the tip of a knife.">silverskin</span>. Slice along the grain into strips <span data-qty="2" data-unit="cm">2&ndash;2.5 cm</span> thick, 4&ndash;5&nbsp;cm wide and 20&ndash;30&nbsp;cm long. <mark>Keep every strip the same thickness</mark>: the thickest one sets the date the whole batch is done.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Cut across the grain and the dried strip crumbles; cut along it and it slices clean across the fibres when you serve it. Thickness matters more than anything else because water leaves from the surface, so the centre of a thick strip is always the last part to dry. The validated process used pieces 1.9&nbsp;cm thick; nothing thicker than about 2.5&nbsp;cm was tested. <cite>&mdash; Karolenko et al., <em>Microorganisms</em> 2020</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>Coriander is the taste of biltong, and it only comes out once the seed is toasted.</em></p>
+                            <p><strong>Toast, crack, mix.</strong> Dry-toast the coriander in a pan until it smells strongly, then crack it coarsely in a mortar; don&rsquo;t grind it to dust. Mix it with the salt, sugar, pepper and bicarb. If you use curing salt, weigh it to the hundredth of a gram: <mark>1.9&nbsp;g per kg of meat is the EU ceiling, not the 2.5&nbsp;g printed on most packets</mark>.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">Since 9 October 2025, EU law caps nitrite in non-heat-treated meat products at 80&nbsp;mg/kg going in, measured as the nitrite ion (sodium nitrite &times; 0.67). At the US dose of 2.5&nbsp;g of a 6.25&nbsp;% cure per kg, you add 156&nbsp;mg/kg of sodium nitrite, which is 105&nbsp;mg/kg as nitrite ion: over the limit. 1.9&nbsp;g per kg gives 79. Nitrite is optional here. It brings the cured colour and acts as an antioxidant, which slows fat turning rancid; the safety work is the vinegar&rsquo;s. If your cure is not 6.25&nbsp;%, recalculate to 80&nbsp;mg of nitrite per kg. <cite>&mdash; Commission Regulation (EU) 2023/2108, as tabled in FSAI Guidance Note 43 (2025); Honikel, <em>Meat Science</em> 78 (2008) 68&ndash;76. DOI: 10.1016/j.meatsci.2007.05.030</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><strong>Season and rest.</strong> Lay the strips in a tray and press the cure into every face, ends included. Cover and rest for 1 hour at 5&nbsp;&deg;C or below, until the salt has pulled a film of liquid to the surface.</p>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>This is the step the settlers added, and the one the lab says matters.</em></p>
+                            <p><strong>The vinegar bath, overnight.</strong> Pour the vinegar and Worcestershire over the strips, turn them to coat, cover and refrigerate for <mark>12&ndash;18 hours at 5&nbsp;&deg;C or below</mark>, turning them once halfway through. Malt vinegar gives the classic South African sourness; cider gives a cleaner one.</p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">The closest validated process to this one marinated the beef for 16&ndash;20 hours at 5&nbsp;&deg;C in a marinade that was 10&nbsp;% white vinegar, then reached a 5-log <em>Salmonella</em> kill after six days of drying. A 2&nbsp;% vinegar dose failed to reach it in eight days. The 450&nbsp;ml here is about 12&nbsp;% of the whole batch, comfortably past the floor. <cite>&mdash; Karolenko et al., <em>Microorganisms</em> 2020</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><strong>Drain, weigh, hang.</strong> Lift the strips out and pat them lightly; don&rsquo;t rinse them. Dust on a little more cracked coriander for the crust. Mark one strip of average thickness as the test strip and write its weight down: this is day 0. Hang the strips on stainless S-hooks, 3&ndash;4&nbsp;cm apart, touching neither each other nor the walls.</p>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><em>Biltong dries in moving air, not in heat.</em></p>
+                            <p><strong>Dry for at least six days.</strong> Keep the box at 20&ndash;26&nbsp;&deg;C and 45&ndash;60&nbsp;% relative humidity, with a small fan moving air past the strips the whole time. <mark>Never take a batch down before day 6, whatever the scale says.</mark></p>
+                            <details class="rcp-why"><summary>Why</summary><div class="rcp-why__body">The kill was measured over time on the hook, not by weight lost, so six days is the floor. Too much heat, too fast an airflow or too dry a room forms a crust before the centre can shed its water, a fault called <span class="term" data-def="A dry, hard surface that seals the moisture inside a drying food. The outside reads finished; the inside is still wet.">case-hardening</span>. Even under good conditions the gradient is steep: at the end of the validated process the outer surface read a water activity of 0.80&ndash;0.81 and the inside face 0.89&ndash;0.90. <cite>&mdash; Jones et al., <em>S. Afr. J. Anim. Sci.</em> 2017; Karolenko et al., <em>Microorganisms</em> 2020</cite></div></details>
+                        </div></li>
+                    <li class="rcp-step"><button class="rcp-step__check" aria-label="mark step done"></button>
+                        <div class="rcp-step__body">
+                            <p><strong>Read it by weight.</strong> Weigh the test strip every day and work out how much it has lost: (day-0 weight &minus; today&rsquo;s weight) &divide; day-0 weight. About 35&nbsp;% is <em>wet</em>, soft and red in the middle. About 50&nbsp;% is the classic medium stick. 60&nbsp;% or more is <em>dry</em> and snaps. The validated process finished at up to 60&nbsp;%. Wet biltong sits outside what was tested: keep it in the fridge and eat it within the week.</p>
+                        </div></li>
+                </ol>
+                <div class="rcp-meta"><button data-recipe-reset>Reset ticks</button> &middot; progress saves on this device</div>
+
+                <details class="rcp-fold"><summary>One cure, three batches &mdash; wagyu, crew, dock</summary><div class="rcp-fold__body">
+                    <p>Same ratio, three jobs. What changes is the meat and how strictly the process is held.</p>
+                    <table>
+                        <tr><td><strong>Wagyu</strong><br>500 g &rarr; &asymp; 280 g</td><td>Rump or silverside, marbling score (BMS) 4&ndash;6 &middot; salt 11 g &middot; coriander 6 g, lighter so the beef shows &middot; sugar 3 g &middot; pepper 2.5 g &middot; no bicarb &middot; cure 0.95 g, recommended &middot; 75 ml cider vinegar, 10 ml Worcestershire &middot; bath 12&ndash;18 h &middot; down at &ge; 6 days, 40&ndash;45&nbsp;% loss</td></tr>
+                        <tr><td><strong>Crew</strong><br>3 kg &rarr; &asymp; 1.5 kg</td><td>The recipe above &middot; cure 5.7 g, optional &middot; bath 12&ndash;18 h &middot; down at &ge; 6 days, 50&nbsp;% loss</td></tr>
+                        <tr><td><strong>Dock sale</strong><br>10 kg &rarr; &asymp; 5 kg</td><td>Silverside &middot; salt 220 g &middot; coriander 150 g &middot; sugar 100 g &middot; pepper 50 g &middot; bicarb 10 g &middot; cure 19 g, every batch &middot; 1.5 L vinegar, 300 ml Worcestershire &middot; bath 16 h, fixed &middot; released at &ge; 6 days <em>and</em> &ge; 50&nbsp;%, logged &middot; 50 bags of 100 g</td></tr>
+                    </table>
+                    <p><strong>Wagyu.</strong> Fat carries little water, so a marbled strip never reaches 50&nbsp;% loss; stop when the lean is firm right through. In the droëwors trial, fat probably shielded the pathogens, so the wagyu gets the full vinegar dose and the full six days, and it lives in the fridge: vacuum-pack it, eat it within two weeks, or freeze it. Above BMS 6&ndash;7 the centre stays greasy and wet. Here the cure&rsquo;s antioxidant work earns its place, holding back the rancid note in the fat.</p>
+                    <p><strong>Crew.</strong> One biltong box with a fan, or about 1.5&nbsp;m of rail. A batch every two weeks keeps a stick in the mess between services.</p>
+                    <p><strong>Dock sale.</strong> Every bag has to be the same, so nothing is adjusted to taste: fixed bath time, cure in every batch, and a batch log (lot number, day-0 weight, the test strip daily, temperature and humidity) with release only at day 6 or later <em>and</em> 50&nbsp;% loss. The label carries the name, the ingredients with <strong>fish</strong> (Worcestershire) and <strong>barley</strong> (malt vinegar) emphasised, net weight, lot, best-before, storage and your name and address. To price it, divide the meat cost plus about 10&nbsp;% for spices, vinegar and bags by the yield, because you buy 10&nbsp;kg and sell 5.</p>
+                </div></details>
+
+                <p>Selling is a different job from cooking, and the law treats it that way.</p>
+
+                <div class="note note--warning"><p><strong>Before the first bag.</strong> In the EU every food business must register with its competent authority and run a hazard-analysis plan based on HACCP principles (Regulation (EC) No 852/2004, Articles 5 and 6). Regulation (EC) No 853/2004, which adds establishment approval for products of animal origin, does not apply to retail sold direct to the final consumer except where it says so, and generally does once you supply other businesses. The finished product must also meet the nitrite limit of 45&nbsp;mg/kg residual, and drying concentrates whatever nitrite remains, so only a lab test proves a batch compliant. <mark>Whether a yacht galley can be registered at all is the first question</mark>: ask the local authority (in Barcelona, the Agència de Salut Pública de Barcelona) before you sell anything.</p></div>
+
+                <details class="rcp-fold"><summary>Take it further</summary><div class="rcp-fold__body">
+                    <div class="rcp-group">The family tree</div>
+                    <table>
+                        <tr><td><em>Droëwors</em></td><td>South Africa &middot; the same cure in a thin sausage, beef or game, with fat added; it showed less kill than biltong in the 2008 trial, so treat it as a fridge product</td></tr>
+                        <tr><td><em>Charqui</em></td><td>South America &middot; salted, dried strips at 12&ndash;15&nbsp;% salt, soaked out before eating; biltong is eaten as it comes</td></tr>
+                        <tr><td><em>Jerky</em></td><td>North America &middot; dried hot, at around 60&nbsp;&deg;C in one study, so it is a different product, not a cousin made the same way</td></tr>
+                        <tr><td><em>Bresaola</em></td><td>Northern Italy &middot; a whole salted, dried muscle served sliced, the deli-style relative</td></tr>
+                    </table>
+                    <div class="rcp-group">Modern variations</div>
+                    <table>
+                        <tr><td>Chilli</td><td>+ 3 g dried chilli flakes per kg in the dry cure</td></tr>
+                        <tr><td>Smoke</td><td>+ 5 g smoked paprika per kg; the vinegar and the drying stay the same</td></tr>
+                        <tr><td>Game</td><td>Kudu, springbok or venison loin for the beef, the way biltong was first made on the veld</td></tr>
+                    </table>
+                </div></details>
+
+                <details class="rcp-fold"><summary>Troubleshooting</summary><div class="rcp-fold__body">
+                    <table>
+                        <tr><td>Hard outside, wet centre</td><td>Case-hardening: too hot, too fast an airflow, or too dry &rarr; drop the temperature, slow the fan, let the humidity come up</td></tr>
+                        <tr><td>Weight loss stalls at 40&nbsp;%</td><td>The room is too humid &rarr; dehumidifier or air conditioning; a strip cannot dry in air wetter than itself</td></tr>
+                        <tr><td>White bloom</td><td>Dry, and wipes off with vinegar: usually salt crystal. Fuzzy, coloured or bad-smelling growth is mould &rarr; discard the batch</td></tr>
+                        <tr><td>Too salty</td><td>Salt concentrates as the water leaves; most commercial biltong ends at 4&ndash;8&nbsp;% salt &rarr; take it down at 50&nbsp;%, not 60</td></tr>
+                        <tr><td>Too sour</td><td>Cider vinegar for malt, and a better drain before hanging; never less vinegar</td></tr>
+                    </table>
+                </div></details>
+
+                <div class="note" data-label="Done when"><p>The test strip has lost half its day-0 weight and has hung for at least six days &middot; the outside is dark and dry, and the cut face is deep red and firm right through, with no wet sheen &middot; a medium stick bends before it snaps, a dry one snaps clean.</p></div>
+
+                <details class="rcp-fold"><summary>Charter prep &amp; storage</summary><div class="rcp-fold__body">
+                    <p><strong>At sea, humidity is the enemy.</strong> A drying product and the air around it trade water until they meet: air more humid than the product puts water back in. A stick near water activity 0.85 cannot finish drying in a cabin at 85&nbsp;% relative humidity. Dry it in an air-conditioned space or beside a dehumidifier, with the fan running; never in the engine room or a warm oven. <cite>&mdash; Jones et al., <em>S. Afr. J. Anim. Sci.</em> 2017</cite></p>
+                    <p><strong>Storage.</strong> Keep finished sticks whole, in paper bags rather than plastic, somewhere cool and dry, and slice to order. Vacuum-pack and freeze anything you won&rsquo;t eat within a few weeks. Wet biltong and wagyu always go in the fridge.</p>
+                </div></details>
+
+                <div class="note note--action"><p><strong>Once you own the ratio</strong> &mdash; 2.2&nbsp;% salt, vinegar well past 3&nbsp;%, six days of moving air &mdash; the rest is seasoning: chilli, smoke, game for beef. <strong>Cook once, serve two tiers:</strong> the guests get the wagyu, sliced paper-thin across the grain and laid out as charcuterie; the crew get silverside sticks from the same cure, the same bath and the same box, cut thick for the pocket. The vinegar the settlers poured in for taste is still the step that keeps it safe.</p></div>
+
+                <p>From the box to the people eating it, the only decision left is how thin to slice.</p>
+
+                <div class="note note--quote" data-label="At the Table"><p>Biltong is a hand food. The crew take a stick on watch and cut it with a pocket knife; guests take it thin, off a board, with a drink. Slice it to order, across the grain, and leave the sticks whole until then.</p></div>
+
+                <p style="font-size: var(--text-sm); color: var(--color-muted);"><strong>Sources:</strong> <cite>Karolenko, Bhusal, Nelson &amp; Muriana, &ldquo;Processing of Biltong (Dried Beef) to Achieve USDA-FSIS 5-log Reduction of <em>Salmonella</em> without a Heat Lethality Step&rdquo;, <em>Microorganisms</em> 8 (2020) 791, DOI: 10.3390/microorganisms8050791</cite> &middot; <cite>Burnham, Hanson, Koshick &amp; Ingham, <em>Journal of Food Safety</em> 28 (2008) 198&ndash;209, DOI: 10.1111/j.1745-4565.2008.00114.x</cite> &middot; <cite>Jones, Arnaud, Gouws &amp; Hoffman, &ldquo;Processing of South African biltong &ndash; A review&rdquo;, <em>S. Afr. J. Anim. Sci.</em> 47 (2017) 743&ndash;757, DOI: 10.4314/sajas.v47i6.2</cite> (history after Coetzee 1977 and Strydom &amp; Zondagh 2014) &middot; <cite>Honikel, <em>Meat Science</em> 78 (2008) 68&ndash;76, DOI: 10.1016/j.meatsci.2007.05.030</cite> &middot; <cite>Commission Regulation (EU) 2023/2108; FSAI Guidance Note 43 (2025)</cite> &middot; <cite>Regulations (EC) No 852/2004 and 853/2004</cite>. The batch sizes are our own scaling of the ratio; the drying times have not yet been counted at sea.</p>
+
+                <!-- BODY:END -->
+
+                <!-- Article Engagement -->
+                <div class="article-engagement">
+                    <div class="engagement-pulse" data-reactions="0" data-comments="0">
+                        <span class="engagement-pulse__text">Be the first to join the conversation</span>
+                    </div>
+                    <div class="article-reactions" data-article-id="biltong">
+                        <p class="reactions-prompt">Have you cooked this? Share your result or a question.</p>
+                        <div class="reactions-grid"></div>
+                        <div class="sentiment-bar"></div>
+                    </div>
+                    <div class="article-share">
+                        <span class="share-label">Share:</span>
+                        <button class="share-btn" data-share="twitter" title="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="linkedin" title="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </button>
+                        <button class="share-btn" data-share="copy" title="Copy link">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        </button>
+                    </div>
+                    <div class="article-comments">
+                        <h3 class="comments-title">Join the conversation <span class="comments-title__count"></span></h3>
+                        <div class="comments-sort">
+                            <button class="comments-sort__btn active" data-sort="newest">Newest</button>
+                            <button class="comments-sort__btn" data-sort="most-agreed">Most agreed</button>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <div class="comment-form__row">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                    <input type="email" name="email" placeholder="Email (optional)">
+                                </div>
+                                <textarea name="comment" placeholder="Share your thoughts, experience, or questions..." rows="4" maxlength="2000" required></textarea>
+                                <div class="comment-form__footer">
+                                    <label class="comment-form__subscribe">
+                                        <input type="checkbox" name="subscribe" checked>
+                                        <span>Subscribe to the newsletter</span>
+                                    </label>
+                                    <span class="comment-form__char-count"></span>
+                                    <button type="submit">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comments-list"></div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__newsletter">
+                <form class="footer-newsletter-form newsletter-form"
+                      action="https://buttondown.com/api/emails/embed-subscribe/littoralicious"
+                      method="post" target="popupwindow">
+                    <label for="footer-email">Get the monthly brief</label>
+                    <div class="footer-newsletter-form__row">
+                        <input type="email" name="email" id="footer-email" placeholder="your@email.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer__legal">
+                <p>&copy; 2026 Littoralicious. No rights reserved. Information wants to be free.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js?v=20260826-spoon"></script>
+    <script src="../assets/js/community.js"></script>
+    <script src="../assets/js/recipe.js?v=20260805a"></script>
+</body>
+</html>

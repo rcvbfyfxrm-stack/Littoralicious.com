@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- Galley card for articles/biltong.html — from templates/recipe-card.html (LOCKED design). US variant. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biltong &mdash; Littoralicious</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { box-sizing: border-box; height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 7.7pt; line-height: 1.3; color: #0a0a0a; background: #fff;
+            width: 210mm; height: 297mm; margin: 0 auto; padding: 6mm 9mm 5mm;
+            display: flex; flex-direction: column;
+        }
+        .header { border-bottom: 2px solid #0a0a0a; padding-bottom: 2.2mm; margin-bottom: 2.6mm; }
+        .brand { font-family: Georgia, serif; font-size: 7.2pt; letter-spacing: 0.15em; text-transform: uppercase; color: #2d4a5e; }
+        .brand-tagline { font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; margin-left: 3mm; font-family: -apple-system, sans-serif; }
+        h1 { font-family: Georgia, serif; font-size: 18.4pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.03; margin: 0.6mm 0; }
+        .hook { font-family: Georgia, serif; font-style: italic; font-size: 8.3pt; color: #4a5568; line-height: 1.28; }
+        .meta-bar { display: flex; gap: 4.5mm; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid #e2e2e2; font-size: 7.7pt; color: #6b7280; }
+        .meta-bar strong { color: #0a0a0a; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; }
+
+        /* Origin band (standard) — where it was born, how it's eaten authentically, how it's used now */
+        .origin { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 2.4mm 0 0; padding: 1.7mm 2.6mm; background: #f4f6f7; border-left: 3px solid #2d4a5e; }
+        .origin > div { font-size: 6.7pt; line-height: 1.3; color: #4a5568; }
+        .origin .o-label { display: block; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d4a5e; font-weight: 700; margin-bottom: 0.4mm; }
+        .origin em { color: #2d4a5e; font-style: italic; }
+
+        .main { display: grid; grid-template-columns: 36% 1fr; gap: 5mm; margin-bottom: 2.6mm; }
+        h2 { font-family: Georgia, serif; font-size: 8.9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid #0a0a0a; padding-bottom: 1.4mm; margin-bottom: 2.4mm; }
+
+        .ingredients-note { font-size: 6.5pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin: -0.9mm 0 1.4mm 0; }
+        .group-label { font-size: 7.2pt; font-weight: 700; color: #2d4a5e; text-transform: uppercase; letter-spacing: 0.05em; margin: 2.4mm 0 0.9mm; }
+        .ingredients table { width: 100%; border-collapse: collapse; font-size: 7.7pt; }
+        .ingredients td { padding: 0.6mm 1mm; vertical-align: top; line-height: 1.28; }
+        .ingredients td:nth-child(2) { font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; text-align: right; color: #2d4a5e; white-space: nowrap; width: 42px; }
+        .ingredients td.vol, .ingredients td:nth-child(3) { font-size: 6.8pt; text-align: left; color: #94a3b8; white-space: nowrap; padding-left: 2.4mm; letter-spacing: 0; }
+        .note { font-size: 6.8pt; color: #6b7280; font-style: italic; }
+        .equipment { font-size: 6.8pt; color: #6b7280; margin-top: 2.2mm; padding-top: 1.4mm; border-top: 1px solid #f0f0f0; line-height: 1.3; }
+
+        .method ol { padding-left: 5mm; list-style: none; }
+        .method > ol { counter-reset: step; }
+        .method li { margin-bottom: 1.3mm; padding-left: 0.5mm; position: relative; }
+        .method > ol > li { counter-increment: step; }
+        .method > ol > li::before { content: counter(step) "."; position: absolute; left: -5mm; font-weight: 700; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 7.2pt; }
+        .method li > strong:first-child { color: #2d4a5e; }
+        .why { display: block; margin: 0.6mm 0; padding: 0.7mm 0 0.7mm 3mm; border-left: 2px solid #5c9ead; font-size: 6.8pt; font-style: italic; color: #4a5568; line-height: 1.28; }
+        .why cite { font-style: normal; color: #2d4a5e; }
+        .done { background: #f0f7fa; border-left: 3px solid #2d4a5e; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.32; }
+        .done strong { color: #2d4a5e; }
+
+        /* Purple sub-method block — a sauce / brine / appareil, with LETTERED (a, b, c) sub-steps. */
+        .sauce-block { background: #f5f0f8; border-left: 3px solid #7c3aed; padding: 1.9mm 2.8mm; margin-top: 2.2mm; font-size: 7.7pt; line-height: 1.34; }
+        .sauce-block strong { color: #5b21b6; }
+        .sauce-block ol { padding-left: 4.2mm; margin-top: 1mm; }
+
+        /* Amber second-dish / ratio block. Use for the RATIO, or for "one base, two dishes". */
+        .subrecipe { background: #faf3eb; border-left: 3px solid #92400e; padding: 1.9mm 2.8mm; margin: 2.2mm 0; font-size: 7.7pt; line-height: 1.34; }
+        .subrecipe strong { color: #92400e; }
+        .subrecipe .sub-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #92400e; font-weight: 700; display: block; margin-bottom: 0.4mm; }
+
+        .elevation { border: 2px solid #2d4a5e; padding: 1.9mm 2.5mm; margin-bottom: 2mm; }
+        .elevation h2 { color: #2d4a5e; border-bottom-color: #2d4a5e; margin-bottom: 1.4mm; }
+        .elevation-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.8mm; }
+        .tier-label { font-weight: 700; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5mm; }
+        .t1 { color: #059669; } .t2 { color: #d97706; } .t3 { color: #7c3aed; }
+        .elevation ul { padding-left: 3.2mm; font-size: 6.8pt; line-height: 1.3; }
+        .elevation li { margin-bottom: 0.4mm; }
+        .elevation li strong { color: #0a0a0a; }
+
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; margin-bottom: 1.4mm; }
+        .bottom h2 { font-size: 7.7pt; padding-bottom: 1mm; margin-bottom: 1.6mm; }
+        .troubleshoot table, .charter table { width: 100%; font-size: 6.8pt; border-collapse: collapse; line-height: 1.3; }
+        .troubleshoot td, .charter td { padding: 0.6mm 1.3mm; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+        .troubleshoot td:first-child { font-weight: 600; white-space: nowrap; width: 32%; }
+        .charter td:first-child { font-weight: 600; white-space: nowrap; width: 28%; color: #2d4a5e; font-family: "SF Mono", SFMono-Regular, Consolas, monospace; font-size: 6.5pt; }
+        .charter tr:first-child td { border-bottom: 1px solid #2d4a5e; }
+        .charter tr:first-child td:last-child { font-weight: 600; }
+
+        .footer { padding-top: 1.2mm; border-top: 1px solid #e2e2e2; font-size: 5.5pt; color: #94a3b8; display: flex; justify-content: space-between; align-items: baseline; }
+        .contact { margin-top: 1mm; padding: 0.8mm 1.8mm; border: 1px solid #e2e2e2; display: flex; justify-content: center; align-items: center; gap: 2.6mm; font-size: 5.5pt; color: #4a5568; }
+        .contact strong { font-family: Georgia, serif; font-size: 6pt; color: #2d4a5e; letter-spacing: 0.04em; text-transform: uppercase; }
+        .contact a { color: #2d4a5e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.8mm; }
+        .contact .ig-logo { width: 6.5pt; height: 6.5pt; vertical-align: middle; }
+        .contact .sep { color: #cbd2da; }
+        .spacer { flex: 1; min-height: 0; }
+        @media print { .done, .sauce-block, .subrecipe, .origin, .elevation, .charter tr:first-child td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">Littoralicious &mdash; The Blueprint</span><span class="brand-tagline">The recipe you actually want to read</span>
+    <h1>Biltong &mdash; Salt, Vinegar, Six Days of Moving Air</h1>
+    <p class="hook">Never cooked: the overnight vinegar bath and a controlled hang are the kill step, the salt only seasons. Vinegar well past 3% of the batch, at least six days on the hook, done by weight.</p>
+    <div class="meta-bar">
+        <span>Yield: <strong>12 &times; 125g</strong> (from 3 kg raw)</span>
+        <span>Active: <strong>40 min</strong></span>
+        <span>Total: <strong>7 days</strong></span>
+        <span>Box: <strong>20&ndash;26&deg;C</strong> (68&ndash;79&deg;F) &middot; <strong>45&ndash;60% RH</strong></span>
+        <span>Done: <strong>&ge;6 days + 50% loss</strong></span>
+    </div>
+</header>
+
+<div class="origin">
+    <div><span class="o-label">Where it was born</span>Southern Africa. Dutch <em>bil</em> (rump) + <em>tong</em> (strip). Said to begin with salt-and-sun drying older than the settlers, who allegedly added vinegar and Cape spices; the Voortrekkers dried it up to two weeks for the wagons.</div>
+    <div><span class="o-label">Eaten, authentically</span>In the hand: a whole stick, cut across the grain with a pocket knife as it is eaten. Beef or game; salt, vinegar and coriander the constants.</div>
+    <div><span class="o-label">How it&rsquo;s used now</span>A boxed, fan-dried snack sold wet, medium or dry by weight lost. Lab-validated in 2020: 5-log <em>Salmonella</em> kill with no heat, in 6&ndash;8 days.</div>
+</div>
+
+<div class="main">
+    <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p class="ingredients-note">weight (lb/oz) &middot; cups / volume in right column</p>
+        <div class="group-label">The meat &mdash; about 35 strips</div>
+        <table>
+            <tr><td>Beef silverside <span class="note">(or topside, trimmed weight)</span></td><td class="data">6 lb 10 oz</td><td class="vol"></td></tr>
+        </table>
+        <div class="group-label">The dry cure</div>
+        <table>
+            <tr><td>Coarse sea salt <span class="note">(2.2%)</span></td><td class="data">2.3 oz</td><td class="vol">3&#8532; tbsp</td></tr>
+            <tr><td>Coriander seed <span class="note">(whole; toast, crack)</span></td><td class="data">1.6 oz</td><td class="vol">7 tbsp</td></tr>
+            <tr><td>Dark brown sugar <span class="note"></span></td><td class="data">1.1 oz</td><td class="vol">2 tbsp</td></tr>
+            <tr><td>Black pepper <span class="note">(coarsely cracked)</span></td><td class="data">0.5 oz</td><td class="vol">2 tbsp</td></tr>
+            <tr><td>Bicarbonate of soda <span class="note">(optional)</span></td><td class="data">0.1 oz</td><td class="vol">&#8532; tsp</td></tr>
+            <tr><td>Curing salt #1, 6.25% <span class="note">(optional; 0.01 g scale)</span></td><td class="data">5.7 g</td><td class="vol">weigh it</td></tr>
+        </table>
+        <div class="group-label">The bath</div>
+        <table>
+            <tr><td>Malt or cider vinegar <span class="note">(5% acidity)</span></td><td class="data">15 fl oz</td><td class="vol">1&#8542; cups</td></tr>
+            <tr><td>Worcestershire <span class="note">(contains fish)</span></td><td class="data">3 fl oz</td><td class="vol">6 tbsp</td></tr>
+        </table>
+
+        <div class="subrecipe">
+            <span class="sub-label">The ratio &mdash; trimmed raw beef = 100%</span>
+            <strong>Salt 2.2% &middot; Vinegar 15% &middot; Coriander 1.5% &middot; Sugar 1% &middot; Pepper 0.5% &middot; Bicarb 0.1% &middot; Cure #1 0.19%.</strong> Salt 1.7&ndash;2.7% made no difference to the kill; vinegar at 2% failed, 3&ndash;4% passed (Karolenko 2020). 0.19% cure = 79 mg/kg nitrite ion, under the EU 80.
+        </div>
+
+        <p class="equipment"><strong>Kit:</strong> 0.01 g scale for the cure &middot; non-reactive trays &middot; stainless S-hooks &middot; biltong box or cabin with a small fan &middot; hygrometer &middot; kitchen scale for the test strip &middot; marker</p>
+    </section>
+
+    <section class="method">
+        <h2>Method</h2>
+        <ol>
+            <li><strong>Cut with the grain.</strong> Firm 30&ndash;45 min in the freezer, silverskin off. Strips <strong>2&ndash;2.5 cm</strong> thick, 4&ndash;5 cm wide, 20&ndash;30 cm long. Same thickness throughout: the thickest sets the date.</li>
+            <li><strong>Toast, crack, mix.</strong> Dry-toast the coriander until fragrant, crack coarsely. Mix with salt, sugar, pepper, bicarb and the weighed cure.
+                <span class="why">EU since 9 Oct 2025: 80 mg/kg nitrite ion ingoing in non-heat-treated meat. The packet&rsquo;s 2.5 g/kg = 105 &mdash; over. 1.9 g/kg = 79. <cite>&mdash; Reg. (EU) 2023/2108</cite></span></li>
+            <li><strong>Season, rest.</strong> Press the cure into every face. Cover, <strong>1 h at &le;5&deg;C</strong>.</li>
+            <li><strong>Vinegar bath, overnight.</strong> Vinegar + Worcestershire over, turn to coat, cover. <strong>12&ndash;18 h at &le;5&deg;C</strong>, turned once.
+                <span class="why">Validated: 16&ndash;20 h at 5&deg;C in 10% vinegar &rarr; 5-log kill after 6 days&rsquo; drying. 2% vinegar failed. <cite>&mdash; Karolenko et al., <em>Microorganisms</em> 2020</cite></span></li>
+            <li><strong>Drain, weigh, hang.</strong> Pat, never rinse; re-dust coriander. Mark a test strip, write its day-0 weight. S-hooks, 3&ndash;4 cm apart, touching nothing.</li>
+            <li><strong>Dry &ge;6 days.</strong> 20&ndash;26&deg;C, 45&ndash;60% RH, fan always on. Never down before day 6, whatever the scale says.
+                <span class="why">Too hot, too fast or too dry seals a crust over a wet centre (case-hardening). At the end, surface a<sub>w</sub> 0.80, inside 0.89&ndash;0.90. <cite>&mdash; Jones 2017; Karolenko 2020</cite></span></li>
+            <li><strong>Read it by weight.</strong> Loss = (day 0 &minus; today) &divide; day 0. ~35% wet (fridge, eat in a week) &middot; <strong>~50% medium</strong> &middot; 60%+ dry.</li>
+        </ol>
+
+        <div class="done">
+            <strong>Done:</strong> test strip half its day-0 weight, at least six days hung; outside dark and dry, cut face deep red and firm right through, no wet sheen; medium bends before it snaps.<br>
+            <strong>Serve:</strong> keep sticks whole; slice to order, thin, across the grain.
+        </div>
+
+        <div class="subrecipe">
+            <span class="sub-label">One cure, three batches</span>
+            <strong>Wagyu</strong> 1 lb 2 oz, BMS 4&ndash;6: coriander light, cider vinegar, cure recommended (antioxidant for the fat); full bath, full 6 days, stop at 40&ndash;45% loss; fridge, eat within 2 weeks. <strong>Dock sale</strong> 10 kg: bath fixed at 16 h, cure every batch, release at &ge;6 days <em>and</em> &ge;50%, logged; register first (Reg. 852/2004), ask the local authority before the first bag.
+        </div>
+    </section>
+</div>
+
+<section class="elevation">
+    <h2>Elevation</h2>
+    <div class="elevation-grid">
+        <div>
+            <div class="tier-label t1">Tier 1 &mdash; No Extra Time</div>
+            <ul><li><strong>Malt vs cider</strong> &mdash; malt for the classic sour, cider for a cleaner one</li><li><strong>Chilli</strong> &mdash; +3 g flakes per kg in the cure</li></ul>
+        </div>
+        <div>
+            <div class="tier-label t2">Tier 2 &mdash; Worth It</div>
+            <ul><li><strong>Smoke</strong> &mdash; +5 g smoked paprika per kg</li><li><strong>Game</strong> &mdash; kudu, springbok or venison loin for the beef</li></ul>
+        </div>
+        <div>
+            <div class="tier-label t3">Tier 3 &mdash; Restaurant</div>
+            <ul><li><strong>Wagyu</strong> &mdash; sliced paper-thin, laid out as charcuterie</li><li><strong>Two tiers</strong> &mdash; guests the wagyu, crew the silverside, one cure</li></ul>
+        </div>
+    </div>
+</section>
+
+<div class="bottom">
+    <section class="troubleshoot">
+        <h2>Troubleshoot</h2>
+        <table>
+            <tr><td>Hard out, wet in</td><td>Case-hardening &rarr; cooler, slower fan, more humidity</td></tr>
+            <tr><td>Stalls at 40%</td><td>Room too humid &rarr; dehumidifier or A/C</td></tr>
+            <tr><td>White bloom</td><td>Dry, wipes off with vinegar: salt. Fuzzy or coloured: mould, discard</td></tr>
+            <tr><td>Too salty</td><td>Salt concentrates as water leaves &rarr; take down at 50%</td></tr>
+        </table>
+    </section>
+    <section class="charter">
+        <h2>Charter Prep &amp; Storage</h2>
+        <table>
+            <tr><td>At sea</td><td>Dry in A/C or by a dehumidifier: air wetter than the stick puts water back</td></tr>
+            <tr><td>Keep</td><td>Whole sticks, paper bags, cool and dry; vacuum-pack and freeze for longer</td></tr>
+            <tr><td>Fridge</td><td>Wet biltong and wagyu, always</td></tr>
+            <tr><td>Never</td><td>Less vinegar, a hot oven or the engine room, down before day 6</td></tr>
+        </table>
+    </section>
+</div>
+
+<div class="spacer"></div>
+
+<div class="contact">
+    <strong>Contact the Chef</strong>
+    <a href="https://www.instagram.com/arnaudcallier">
+        <svg class="ig-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @arnaudcallier
+    </a>
+    <span class="sep">&middot;</span>
+    <a href="https://www.littoralicious.com">www.littoralicious.com</a>
+</div>
+
+<footer class="footer">
+    <span>Science: Karolenko et al., Microorganisms 2020 &middot; Burnham et al., J. Food Safety 2008 &middot; Jones et al., S. Afr. J. Anim. Sci. 2017 &middot; Reg. (EU) 2023/2108</span>
+    <span>&mdash; The Blueprint</span>
+</footer>
+
+</body>
+</html>
