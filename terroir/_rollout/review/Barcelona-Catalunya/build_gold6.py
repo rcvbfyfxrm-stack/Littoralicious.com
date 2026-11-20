@@ -132,7 +132,7 @@ def human(iso):
 FOLDS["hot-foot"] = sfold("hot-foot", "What's hot this month",
     f"Checked {human(asof)}. This is the one section that goes stale: review by {human(review)}", HOT["hot"].get("count", "Oct–Nov 2026"),
     '<p class="gx-hot-jump">This is the board the line at the top points to — <a href="#why-now">back up to where you saw it</a></p>\n'
-    f'<p class="gx-lede">The rest of this guide is written to last. This part is not — it is a dated snapshot of what is on from mid-October into November 2026, checked on {human(asof)}.</p>\n'
+    f'<p class="gx-lede">The rest of this guide is written to last. This part is not — it is a dated snapshot of what is on {HOT["hot"].get("lede_span", "from mid-October into November 2026")}, checked on {human(asof)}.</p>\n'
     + "\n".join(group_html(g) for g in hot_groups), f' data-hot-asof="{asof}" data-hot-review="{review}"')
 WHY_NOW = ('<section class="gx-jump" id="why-now"><span id="hot"></span>\n'
            f'<p><span class="gx-jump__t">What&#x27;s hot this month.</span> Checked {human(asof)} — {t(HOT["hot"]["pointer_line"])} The dated board is at the foot. '
@@ -203,10 +203,9 @@ def sources_block(s):
     n_conf = sum(1 for i in KEEP if st(i).get("status") == "confirmed")
     n_other = len(KEEP) - n_conf
     Pp = lambda x: f'<p style="font-family:Inter,system-ui,sans-serif;font-size:0.85em;color:var(--ink-2)">{x}</p>'
-    method = (Pp(f"<strong>Every place in this guide was researched in July 2026 and re-checked on 15 October 2026.</strong> Of {len(KEEP)} tables, "
-                 f"<strong>{n_conf} were confirmed trading on 15 October</strong> against a 2026-dated source (the MICHELIN Guide, Time Out Barcelona, La Vanguardia, El Periódico, Culinary Backstreets, "
-                 "reviews, posts, listings and the press, read through search: own sites could not be loaded from where this pass was made, so those and every link on this page "
-                 f"wait for a check from a normal network); <strong>{n_other} carry another status</strong> on their cards. Unverified means we did not confirm it, not that it is closed: "
+    method = (Pp(f"<strong>Every place in this guide was researched in July 2026 and re-checked on 15 October 2026; the main tables again on 20 November 2026.</strong> Of {len(KEEP)} tables, "
+                 f"<strong>{n_conf} were confirmed trading</strong> against a 2026-dated source (the MICHELIN Guide, Time Out Barcelona, La Vanguardia, El Periódico, Culinary Backstreets, "
+                 "reviews, posts, listings and the press; on 20 November the guest list and berths were read on their own sites where those sites answered); <strong>{n_other} carry another status</strong> on their cards. Unverified means we did not confirm it, not that it is closed: "
                  "treat those as leads to call, not bookings to rely on. Prices carry the date they were seen. Where sources disagree — the origin of a dish, a founding date, "
                  "a few opening hours — the disagreement is printed rather than resolved by guesswork.")
               + Pp("<strong>Fewer places, on purpose.</strong> This guide keeps at most three places in each kind of table and in each group of cards, "

@@ -13,6 +13,32 @@ VENUE_SET = {      # id -> {field: value} overrides
  "vq-bacoa-kiosko-little-bacoa": {"name": "Bacoa Kiosko", "short": "Bacoa Kiosko"},
 }
 LANE_STORY_SET = {} # lane -> {field: value}
+# ── 20 Nov 2026, with network: own-site checks (the 15 Oct needs-network list) ──
+VENUE_SET.update({
+ "v01-disfrutar": {**VENUE_SET.get("v01-disfrutar", {}), "statusChecked": "2026-11-20",
+   "price_range": "Classic and Festival menus EUR 325 each, wine pairing EUR 180 (own site, valid to Aug 2027; checked 20 Nov 2026)",
+   "hours": "Call ahead: closed at weekends by every listing; MICHELIN gives Mon-Fri, Mes Prestiges (June 2026) Tue-Fri 13:00-15:00 and 19:30-22:00; the own site gives no days (checked 20 Nov 2026)"},
+ "v04-cocina-hermanos-torres": {"statusChecked": "2026-11-20",
+   "price_range": "Revolución menu EUR 330, wine pairing EUR 210 (own site, checked 20 Nov 2026)",
+   "hours": "Tue-Sat, closed Sun-Mon (MICHELIN, checked 20 Nov 2026)"},
+ "v02-lasarte": {"statusChecked": "2026-11-20",
+   "price_range": "Tasting menu EUR 345, Krug menu EUR 450 (own site, checked 20 Nov 2026)",
+   "hours": "Wed-Sat 13:00-14:30 and 20:00-21:30; closed Sun-Tue (own site, checked 20 Nov 2026)"},
+ "v10-7-portes-set-portes": {"statusChecked": "2026-11-20", "hours": "Daily 13:00-24:00 (own site, checked 20 Nov 2026)"},
+ "vn-cal-pep": {"statusChecked": "2026-11-20", "hours": "Mon 19:30-23:30; Tue-Fri 13:00-15:45 and 19:30-23:30; Sat 13:15-15:45 and 19:30-23:30; closed Sun (own site, checked 20 Nov 2026)"},
+ "v14-els-pescadors": {"statusChecked": "2026-11-20", "hours": "Daily, kitchen 13:00-15:30 and 20:00-22:15; closed 24 Dec-14 Jan (own site, checked 20 Nov 2026)",
+   "price_range": "Seasonal menu EUR 39 without wine (own site, checked 20 Nov 2026)"},
+ "v07-bar-ca-ete": {"statusChecked": "2026-11-20", "hours": "Mon-Sat 13:00-24:00, closed Sun (MICHELIN, checked 20 Nov 2026)"},
+ "v15-suculent": {"statusChecked": "2026-11-20", "hours": "Mon-Fri 13:00-15:30 and 20:00-22:30; closed Sat-Sun (own site, checked 20 Nov 2026)",
+   "address": "Rambla del Raval 45, 08001 Barcelona (own site)"},
+ "vr-oniric": {"statusChecked": "2026-11-20", "hours": "Tue-Sat 13:00-15:15 and 20:00-22:30; closed Sun-Mon (own site, checked 20 Nov 2026)",
+   "price_range": "Menus EUR 26 (Herrén), EUR 48 (Oníric), EUR 80 (Somni) (own site, checked 20 Nov 2026)"},
+ "vc-can-cisa-bar-brutal": {"status": "confirmed", "statusChecked": "2026-11-20", "hours": "Open 7 days: Mon-Thu 19:00-01:00, Fri-Sun 13:00-01:00 (own site, checked 20 Nov 2026)"},
+ "vc-bar-la-plata": {"status": "confirmed", "statusChecked": "2026-11-20", "hours": "11:00-15:00 and 18:00-23:00, closed Sun (own site, checked 20 Nov 2026)"},
+ "vc-bar-bodega-quimet": {"status": "confirmed", "statusChecked": "2026-11-20"},
+})
+EDITS.append(("Carrer de la Dagueria 20, Barri Gòtic, next to Formatgeria La Seu", "Carrer de la Dagueria 20, Barri Gòtic"))
+
 
 def cards(C):
     for k, c in C.items():

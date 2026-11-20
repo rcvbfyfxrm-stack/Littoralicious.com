@@ -361,3 +361,6 @@ GLOSS = [
  ["llotja", "an exchange or auction hall; the fish auction"],
  ["masia", "a Catalan farmhouse"],
 ]
+
+# 20 Nov 2026: Formatgeria La Seu has closed (Casa Carot trades at Dagueria 16; its domain now redirects elsewhere)
+DROP_CARDS = list(globals().get("DROP_CARDS", [])) + ["gastronomy:Formatgeria La Seu"]
