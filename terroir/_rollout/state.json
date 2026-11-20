@@ -561,7 +561,7 @@
   },
   {
    "slug": "Barcelona-Catalunya",
-   "status": "needs-network",
+   "status": "done",
    "branch": "terroir-uplift/Barcelona-Catalunya-2026-10-15",
    "date": "2026-10-15",
    "readings": "done 2026-10-15",
@@ -667,7 +667,7 @@
    "slug": "Barcelona-Catalunya",
    "date": "2026-11-20",
    "branch": "terroir-hot/Barcelona-Catalunya-2026-11-20",
-   "status": "review",
+   "status": "done",
    "asof": "2026-11-20",
    "review": "2027-01-01",
    "checks": [
@@ -679,7 +679,8 @@
     "glass local: PASS (9540 chars, 60/81 internal links, 2 viewports)",
     "screenshots: review/hot/Barcelona-Catalunya-2026-11-20/hot-desktop.png, hot-phone.png"
    ],
-   "notes": "Run by hand at Arnaud's request on top of the unmerged GOLD6 branch terroir-uplift/Barcelona-Catalunya-2026-10-15 (the live page has no board yet). Board rebuilt for 20 Nov-early Jan (12 cards, 4 groups). MICHELIN gala moved 24 Nov -> 1 Dec (general election 29 Nov). Own-site checks applied to 12 venues (Disfrutar EUR 325; Lasarte Wed-Sat; Suculent Mon-Fri, no. 45; Els Pescadors closed 24 Dec-14 Jan; Can Cisa, La Plata, Bodega Quimet now confirmed). Formatgeria La Seu dropped (closed; Casa Carot at Dagueria 16). Still owed: Disfrutar's days, Flash Flash, Skye Coffee, El Xampanyet, Bar Mut, Sortidors, Can Paixano, Bar Tomás, Bacoa, Escribà Rambla (leans open) - phone or Maps; the 17 dead old links; MICHELIN results after 1 Dec."
+   "notes": "Run by hand at Arnaud's request on top of the unmerged GOLD6 branch terroir-uplift/Barcelona-Catalunya-2026-10-15 (the live page has no board yet). Board rebuilt for 20 Nov-early Jan (12 cards, 4 groups). MICHELIN gala moved 24 Nov -> 1 Dec (general election 29 Nov). Own-site checks applied to 12 venues (Disfrutar EUR 325; Lasarte Wed-Sat; Suculent Mon-Fri, no. 45; Els Pescadors closed 24 Dec-14 Jan; Can Cisa, La Plata, Bodega Quimet now confirmed). Formatgeria La Seu dropped (closed; Casa Carot at Dagueria 16). Still owed: Disfrutar's days, Flash Flash, Skye Coffee, El Xampanyet, Bar Mut, Sortidors, Can Paixano, Bar Tomás, Bacoa, Escribà Rambla (leans open) - phone or Maps; the 17 dead old links; MICHELIN results after 1 Dec.",
+   "live": "2026-11-20 deploy run 44785689306 green; live index.html byte-identical (414666 B); glass live PASS"
   }
  ]
 }
