@@ -17,6 +17,7 @@ its `#why-now` pointer; the calendar; a craft section; the listening room; Autou
     python3 terroir/_rollout/review/Barcelona-Catalunya/repetition_audit.py
     python3 terroir/_rollout/review/Barcelona-Catalunya/gate_config.py
     python3 terroir/_rollout/lib/gold6/readings/apply_readings.py terroir/Barcelona-Catalunya terroir/_rollout/review/Barcelona-Catalunya/Barcelona-Catalunya.readings.json --check-config terroir/_rollout/lib/guides/Barcelona-Catalunya.check.json
+    python3 terroir/_rollout/review/Barcelona-Catalunya/gloss_fr.py             # LAST: English after every French section name (20 Nov 2026)
 
 Hand prose: `prose.py` (lead, essay edits, food-history fold, fold heads, lane leads, doors, gems, glossary, The Dish rebuild) and
 `liste.py` (La liste). Render and probes use the test-only `pw-shim.cjs` (`NODE_OPTIONS=--require …/pw-shim.cjs`,
@@ -75,3 +76,9 @@ the hot board and calendar, 7 gem popups, a 58-term glossary.
 6. The rest of `research/verify_1.json` / `verify_2.json` `_needs_network` (37 lines) and `research/hot_events.json` `_needs_network`.
 Commit the results as `research/verify_*_network_*.json`; the next run applies them through `fixes.py`, rebuilds, re-applies §8
 (apply_readings refuses to run twice: rebuild first), flips to review.
+
+## 20 Nov 2026 additions
+- Old guide now read from the pinned pre-GOLD6 commit `OLD_BASE` in build_gold6.py (live is the GOLD6 page itself).
+- Every section lists its own subsections at the top (`insec()` in build_gold6.py), one tap each.
+- Rooms to linger: + Work Café Santander, + hotel lobbies (Volta at MIIRO Borneta, Cotton House Batuar, Pulitzer), + El Palace tea; Skye dropped (own site down, no 2026 trace). Listening: + 303 Audiophile Bar; Discos Paradiso in its own group. All via fixes.NEW_CARDS + prose.plan_edits.
+- gloss_fr.py adds the English meaning to each French section name.

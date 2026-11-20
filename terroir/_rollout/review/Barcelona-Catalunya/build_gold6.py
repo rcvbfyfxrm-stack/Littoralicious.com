@@ -23,15 +23,17 @@ SLUG, CITY, LSLUG = "Barcelona-Catalunya", "Barcelona", "barcelona"
 NOW = "2026-10-15"
 LOCAL = r"\b(Barcelona|Catalonia|Catalunya)\b"
 BASE = "origin/rebuild/publishing-system"
-def show(p): return subprocess.run(["git", "show", f"{BASE}:{p}"], cwd=REPO, capture_output=True, text=True, check=True).stdout
-OLD = show(f"terroir/{SLUG}/index.html")
+def show(p, base=None): return subprocess.run(["git", "show", f"{base or BASE}:{p}"], cwd=REPO, capture_output=True, text=True, check=True).stdout
+OLD_BASE = "6c15f8e5f426c297854482e115d9b4992284fc69"   # the pre-GOLD6 guide: live since 20 Nov is the GOLD6 page itself
+OLD = show(f"terroir/{SLUG}/index.html", OLD_BASE)
 CHROME = show("terroir/Siracusa-Sicilia/index.html")
-OLDJS = show(f"terroir/{SLUG}/data.js")   # the old guide never had the terroir/data/ copy nor a 24-column CSV
+OLDJS = show(f"terroir/{SLUG}/data.js", OLD_BASE)   # the old guide never had the terroir/data/ copy nor a 24-column CSV
 D = json.loads(subprocess.run(["node", "-e", "global.window={};eval(require('fs').readFileSync(0,'utf8'));"
                                "process.stdout.write(JSON.stringify(window.TERROIR_DATA))"],
                               input=OLDJS, capture_output=True, text=True, check=True).stdout)
 J = lambda n: json.load(open(RV / n))
 PICKS, PLAN, CARDS, VUP, HOT = J("picks.json"), J("card_plan.json"), J("cards.json"), J("venues.json"), J("hot_events.json")
+if hasattr(P, "plan_edits"): P.plan_edits(PLAN)
 LS = J("lane_stories.json")   # the lane food stories, drafted by the venue packs, edited in fixes.py / prose.py
 
 # ── the venue set ───────────────────────────────────────────────────────────
@@ -389,6 +391,36 @@ CSVTXT = buf.getvalue()
 
 # ── write ───────────────────────────────────────────────────────────────────
 G = REPO / "terroir" / SLUG
+
+# ── 20 Nov 2026 (Arnaud): every section lists its own subsections at the top, one tap to each ──
+def insec(doc):
+    out, pos = [], 0
+    parts = re.split(r'(?=<details class="sfold" id=")', doc)
+    res = [parts[0]]
+    for part in parts[1:]:
+        fid = re.match(r'<details class="sfold" id="([^"]+)"', part).group(1)
+        end = part.find('</details>\n<details class="sfold"')
+        titles = re.findall(r'<div class="fsub">\s*<h4 class="fsub__title">(.*?)</h4>', part)
+        if len(titles) >= 2 and '<div class="sfold__body">' in part:
+            n = [0]
+            def tag(mm):
+                n[0] += 1
+                return f'<span class="gx-insec__t" id="{fid}-s{n[0]}"></span>' + mm.group(0)
+            part = re.sub(r'<div class="fsub">\s*<h4 class="fsub__title">', tag, part)
+            chips = "".join(f'<a class="gx-insec__a" href="#{fid}-s{i+1}">{t_}</a>' for i, t_ in enumerate(titles))
+            nav = f'<nav class="gx-insec" aria-label="In this section">{chips}</nav>\n'
+            body = part.index('<div class="sfold__body">') + len('<div class="sfold__body">')
+            lede = re.match(r'\s*<p class="gx-(?:lede|hot-jump)">.*?</p>\s*(?:<p class="gx-lede">.*?</p>\s*)?', part[body:], re.S)
+            at = body + (lede.end() if lede else 0)
+            part = part[:at] + "\n" + nav + part[at:]
+        res.append(part)
+    return "".join(res)
+INSEC_CSS = ('<style id="gx-insec-css">.gx-insec{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 18px}'
+             '.gx-insec__a{font-family:var(--p-mono,ui-monospace,monospace);font-size:.62rem;letter-spacing:1.1px;text-transform:uppercase;'
+             'color:var(--p-sea,#1f5f7a);background:#fff;border:1px solid var(--p-rule,#ddd);padding:5px 10px;text-decoration:none;border-radius:2px}'
+             '.gx-insec__a:hover,.gx-insec__a:focus-visible{border-color:currentColor}'
+             '.gx-insec__t{display:block;scroll-margin-top:72px}</style>')
+doc = insec(doc).replace("</head>", INSEC_CSS + "\n</head>", 1)
 (G / "index.html").write_text(doc)
 for p in (G / "data.js", REPO / "terroir/data" / f"{SLUG}.js"): p.write_text(js)
 for p in (G / "data.csv", REPO / "terroir/csv" / f"{SLUG}.csv"): p.write_text(CSVTXT)

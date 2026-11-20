@@ -108,11 +108,11 @@ FOLDS = {
              "lede": "Book everything Gaudí before you fly: the basilica and the houses sell timed tickets only. The museums keep longer hours and are quieter at opening."},
  "craft": {"title": "The hand — craftsmanship", "desc": "The one workshop where you can learn the craft from a named hand, the others and what each is missing, and the honest word on what is sold as local",
            "lede": "Barcelona's trades are the trades of a Modernista city: rope-soled shoes, tiles, wax, ceramics. Most sell rather than teach; the card at the top is the one place that does both."},
- "coffee-gardens": {"title": "Rooms to linger & work", "desc": "Three roasters for the cup itself, three rooms where a laptop is welcome, and two where it should stay shut",
-                    "lede": "The honest work truth first: the specialty bars are for the cup, not the afternoon. For a desk, take the library or the all-day rooms; for an hour of beauty, close the laptop."},
+ "coffee-gardens": {"title": "Rooms to linger & work", "desc": "Three roasters for the cup itself, three rooms where a laptop is welcome, three hotel rooms for a coffee, and three where the laptop stays shut",
+                    "lede": "The honest work truth first: the specialty bars are for the cup, not the afternoon. For a desk, take the library or the free work café; for an hour with a coffee in a good room, the hotel lobbies; for beauty, close the laptop."},
  "bars": {"title": "Boire & sortir — at the glass", "desc": "The three bottles to ask for by name, the native white and the herbal, three natural-wine rooms, three roofs and the city's two oldest bar rooms",
           "lede": "Barcelona drinks at noon and late. Learn the cava, the vermut and the Priorat by name; then the natural-wine rooms, a roof at sunset, and an absinthe where Picasso's friends drank."},
- "listening": {"title": "Hi-fi & listening — the rooms, the clubs and the city's own sound", "desc": "Two listening bars built round the system, a vinyl shop, three small live rooms, three clubs, and the gitano rumba born in Gràcia",
+ "listening": {"title": "Hi-fi & listening — the rooms, the clubs and the city's own sound", "desc": "Three listening bars built round the system, a vinyl shop, three small live rooms, three clubs, and the gitano rumba born in Gràcia",
                "lede": "The city exports electronic music and keeps a quieter tradition: jazz in basements, rumba in Gràcia, and two new rooms where the sound system is the point. Check the night's programme before you go."},
  "around": {"title": "Autour — out of the city by train", "desc": "The monastery mountain, the seaside town, Gaudí's unfinished crypt, the cava country, the beech forest, and three places up the coast with their own guides"},
  "avoid": {"title": "What to skip", "desc": "The city keeps two versions of itself: what it sells to visitors on the boulevard, and what it does instead one street back",
@@ -142,14 +142,16 @@ GDESC = {
  ("craft", "The others, and what each is missing"): "Real crafts, real shops: each lacks one thing.",
  ("craft", "The honest warning"): "What is sold as Barcelona craft, and is not.",
  ("coffee-gardens", "The cup itself"): "Three roasters that rewired the city's coffee: stand, taste, leave.",
- ("coffee-gardens", "Where you can actually work"): "Two all-day rooms and a reading room in a medieval hospital.",
- ("coffee-gardens", "Beautiful. Close the laptop."): "A Modernista café on the boulevard and a townhouse hotel lobby.",
+ ("coffee-gardens", "Where you can actually work"): "An all-day café, a bank's free work room, and a reading room in a medieval hospital.",
+ ("coffee-gardens", "Hotel lobbies, for a coffee"): "Non-guests welcome: a skylit bar in the Born, the cotton guild's house, a lobby by the Plaça.",
+ ("coffee-gardens", "Beautiful. Close the laptop."): "A Modernista café on the boulevard, a townhouse lobby, and tea in the 1919 hall.",
  ("bars", "Ask for it by name"): "The bubbles invented an hour away, the noon apéritif, and the slate-grown red.",
  ("bars", "The other bottles"): "The native white grown up, and the green-walnut digestif.",
  ("bars", "Natural wine, three rooms"): "A Gràcia room, the smallest cave in the Gothic, and a Poblenou bar with a DJ.",
  ("bars", "Above the roofs"): "A pine-wood bar on Montjuïc, a hotel roof in the Born, and the terrace over La Pedrera.",
  ("bars", "The old rooms"): "The absinthe bar and the trapeze bar: two rooms to drink in, not to eat.",
- ("listening", "The listening rooms"): "Two bars built round the sound system, and the record shop by the MACBA.",
+ ("listening", "The listening rooms"): "Three bars built round the sound system: sake in Gràcia, coffee by day, vinyl house under a brewery.",
+ ("listening", "The record shop"): "The vinyl shop by the MACBA, for the record you just heard.",
  ("listening", "Small, live and late"): "A basement on the Plaça Reial, a Raval bar, and a music school's own room.",
  ("listening", "The clubs"): "The 1940s dance hall, the five-room warehouse, and the small dark room since 1996.",
  ("listening", "The city's own sound"): "Gitano rumba from Gràcia, and the association bar that books the new.",
@@ -364,3 +366,20 @@ GLOSS = [
 
 # 20 Nov 2026: Formatgeria La Seu has closed (Casa Carot trades at Dagueria 16; its domain now redirects elsewhere)
 DROP_CARDS = list(globals().get("DROP_CARDS", [])) + ["gastronomy:Formatgeria La Seu"]
+
+# 20 Nov 2026 (Arnaud): the plan, extended in place (build_gold6.py applies it after loading card_plan.json)
+def plan_edits(PLAN):
+    g = {x["title"]: x for x in PLAN["coffee-gardens"]["groups"]}
+    w = g["Where you can actually work"]["cards"]
+    w[:] = [c for c in w if c["key"] != "coffee-gardens:Skye Coffee Co"]   # Skye: own site down, no 2026 trace (20 Nov 2026)
+    w.insert(1, {"key": "coffee-gardens:Work Café Santander", "from": None})
+    lob = {"title": "Hotel lobbies, for a coffee", "desc": "", "cards": [{"key": k, "from": None} for k in
+           ("coffee-gardens:Volta, MIIRO Borneta", "coffee-gardens:Cotton House Hotel — Batuar", "coffee-gardens:Hotel Pulitzer — the lobby")]}
+    gs = PLAN["coffee-gardens"]["groups"]; gs.insert(gs.index(g["Beautiful. Close the laptop."]), lob)
+    g["Beautiful. Close the laptop."]["cards"].append({"key": "coffee-gardens:El Palace — Grand Hall tea", "from": None})
+    lg = {x["title"]: x for x in PLAN["listening"]["groups"]}
+    lr = lg["The listening rooms"]["cards"]
+    para = [c for c in lr if "Discos Paradiso" in c["key"]]
+    lr[:] = [c for c in lr if "Discos Paradiso" not in c["key"]] + [{"key": "listening:303 Audiophile Bar", "from": None}]
+    ls = PLAN["listening"]["groups"]; ls.insert(ls.index(lg["The listening rooms"]) + 1, {"title": "The record shop", "desc": "", "cards": para})
+DROP_CARDS = list(DROP_CARDS) + ["coffee-gardens:Skye Coffee Co"]
