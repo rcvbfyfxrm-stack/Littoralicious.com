@@ -421,6 +421,52 @@ INSEC_CSS = ('<style id="gx-insec-css">.gx-insec{display:flex;flex-wrap:wrap;gap
              '.gx-insec__a:hover,.gx-insec__a:focus-visible{border-color:currentColor}'
              '.gx-insec__t{display:block;scroll-margin-top:72px}</style>')
 doc = insec(doc).replace("</head>", INSEC_CSS + "\n</head>", 1)
+
+# ── 20 Nov 2026 (Arnaud): closed cards grow to fit their words (no text under the Maps link); the Tables get a lane index ──
+CARD_FIT_CSS = ('<style id="gx-cardfit-css">'
+  '.gx-barcelona .fcard:not([open])>summary{aspect-ratio:auto!important;height:auto!important;min-height:150px;max-height:none!important;box-sizing:border-box;overflow:visible!important;padding-bottom:12px}'
+  '.gx-barcelona .fcard:not([open])>summary>*{flex-shrink:0}'
+  '.gx-barcelona .fcard:not([open])>summary .fcard__name{-webkit-line-clamp:4}'
+  '.gx-barcelona .fcard:not([open])>summary .fcard__pin{position:static;order:3;margin-top:auto;align-self:flex-start;padding-top:8px}'
+  '.gx-tblnav{margin:6px 0 22px;display:grid;gap:10px}'
+  '.gx-tblnav__row{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}'
+  '.gx-tblnav__g{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:.95em;margin-right:6px;color:var(--p-ink,#1a1a1a);flex:0 0 100%}'
+  '</style>')
+TABLES_NAV_JS = r"""<script id="gx-tblnav-js">
+/* 20 Nov 2026: a lane index at the top of the Tables, built once the kit has drawn the lanes; French names glossed */
+(function () {
+  var EN = {"Les Grandes Tables": "the grand tables", "Les Petites Tables": "the everyday tables", "La Crème": "the cream of the crop", "L'hora del": "the hour of"};
+  function gloss(el, key) { if (!el || el.querySelector('.gx-en')) return; var s = document.createElement('span'); s.className = 'gx-en';
+    s.textContent = ' (' + (key === "L'hora del" ? 'vermouth hour' : EN[key]) + ')';
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), tn;
+    while ((tn = w.nextNode())) { var i = tn.nodeValue.indexOf(' — '); if (i >= 0) { var rest = tn.splitText(i); rest.parentNode.insertBefore(s, rest); return; } }
+    el.appendChild(s); }
+  function build() {
+    var t = document.getElementById('tables'); if (!t) return false;
+    var body = t.querySelector('.sfold__body'), groups = t.querySelectorAll('.terroir-group'); if (!body || !groups.length) return false;
+    groups.forEach(function (g) { var ti = g.querySelector('.terroir-group__title'); if (!ti) return; Object.keys(EN).forEach(function (k) { if (ti.textContent.indexOf(k) === 0) gloss(ti, k); }); });
+    t.querySelectorAll('.terroir-cat__title').forEach(function (ti) { Object.keys(EN).forEach(function (k) { if (ti.textContent.indexOf(k) === 0) gloss(ti, k); }); });
+    if (body.querySelector('.gx-tblnav')) return true;
+    var nav = document.createElement('nav'); nav.className = 'gx-tblnav'; nav.setAttribute('aria-label', 'In this section');
+    var row = null;
+    Array.prototype.forEach.call(body.children, function (el) {
+      if (el.classList.contains('terroir-group')) {
+        row = document.createElement('div'); row.className = 'gx-tblnav__row';
+        var h = document.createElement('span'); h.className = 'gx-tblnav__g'; h.textContent = (el.querySelector('.terroir-group__title') || el).textContent; row.appendChild(h); nav.appendChild(row);
+      } else if (el.classList.contains('terroir-cat') && el.id && row) {
+        var a = document.createElement('a'); a.className = 'gx-insec__a'; a.href = '#' + el.id;
+        var ti = el.querySelector('.terroir-cat__title'); a.textContent = (ti ? ti.textContent : el.id).split(' — ')[0]; row.appendChild(a);
+      }
+    });
+    if (!nav.querySelector('a')) return false;
+    var first = body.querySelector('.terroir-group'); body.insertBefore(nav, first);
+    return true;
+  }
+  var n = 0, iv = setInterval(function () { build(); if (++n > 40) clearInterval(iv); }, 500);
+  window.addEventListener('hashchange', function () { setTimeout(build, 300); });
+})();
+</script>"""
+doc = doc.replace("</head>", CARD_FIT_CSS + "\n</head>", 1).replace("</body>", TABLES_NAV_JS + "\n</body>", 1)
 (G / "index.html").write_text(doc)
 for p in (G / "data.js", REPO / "terroir/data" / f"{SLUG}.js"): p.write_text(js)
 for p in (G / "data.csv", REPO / "terroir/csv" / f"{SLUG}.csv"): p.write_text(CSVTXT)
