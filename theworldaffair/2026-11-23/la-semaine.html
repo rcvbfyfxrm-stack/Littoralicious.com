@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/theworldaffair/2026-11-23/">
+<title>Sous l'Écume — La semaine du 16 au 22 novembre — The World Affair</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif; background: #f4f1eb; color: #1a1714; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: #2d4a5e; color: #f4f1eb; }
+a { color: inherit; text-decoration: none; transition: color 0.15s; }
+a:hover { color: #3a5a6a; }
+.masthead { text-align: center; padding: 40px 24px 0; border-bottom: 4px double #b5ad9f; }
+.masthead-rule-top { display: flex; align-items: center; gap: 14px; font-size: 9px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.masthead-rule-top::before, .masthead-rule-top::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.masthead-title { font-family: 'UnifrakturMaguntia', 'Playfair Display', serif; font-size: 52px; font-weight: 400; letter-spacing: 2px; color: #1a1714; line-height: 1; margin: 0; }
+.masthead-title a { text-decoration: none; color: inherit; }
+.masthead-meta { display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 11px; color: #8a847a; letter-spacing: 1px; text-transform: uppercase; margin-top: 14px; padding-bottom: 16px; }
+.masthead-dot { color: #c8c0b4; }
+.masthead-version { font-size: 10px; color: #8b3a3a; font-style: italic; letter-spacing: 1.5px; padding-bottom: 14px; }
+.cluster-tag { font-size: 11px; color: #1a1714; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.nav-bar { display: flex; justify-content: center; gap: 0; border-bottom: 1px solid #c8c0b4; background: #ede9e1; padding: 0; flex-wrap: wrap; }
+.nav-link { padding: 10px 18px; font-family: 'Libre Baskerville', serif; font-size: 11px; color: #4a4540; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border-right: 1px solid #c8c0b4; transition: all 0.15s; }
+.nav-link:first-child { border-left: 1px solid #c8c0b4; }
+.nav-link:hover { background: #e6e1d8; color: #1a1714; }
+.nav-link.active { background: #1a1714; color: #f4f1eb; }
+.page { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-divider { display: flex; align-items: center; gap: 14px; margin: 32px 0 24px; font-size: 10px; color: #8a847a; letter-spacing: 3px; text-transform: uppercase; }
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: #c8c0b4; }
+.flash-box { background: #ede9e1; border: 1px solid #c8c0b4; border-left: 4px solid #8b3a3a; padding: 20px 24px; margin: 28px 0; }
+.flash-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #8b3a3a; margin-bottom: 12px; }
+.flash-box ul { margin: 0; padding-left: 18px; }
+.flash-box li { font-size: 13px; color: #4a4540; line-height: 1.7; margin-bottom: 8px; list-style-type: '\2014 '; }
+.flash-box li strong { color: #1a1714; }
+.flash-box a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0; border-top: 2px solid #1a1714; border-bottom: 1px solid #c8c0b4; }
+.hub-card { padding: 20px 20px 18px; border-bottom: 1px solid #c8c0b4; border-right: 1px solid #c8c0b4; text-decoration: none; color: inherit; transition: background 0.15s; position: relative; }
+.hub-card:hover { background: #ede9e1; }
+.hub-card-overline { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 6px; }
+.hub-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.hub-card-excerpt { font-size: 13px; color: #4a4540; line-height: 1.6; font-style: italic; }
+.hub-card-arrow { position: absolute; top: 20px; right: 16px; font-size: 16px; color: #c8c0b4; }
+.article-header { padding: 32px 0 20px; border-bottom: 2px solid #1a1714; margin-bottom: 28px; }
+.article-overline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+.article-date { font-size: 12px; color: #8a847a; text-transform: uppercase; letter-spacing: 1px; }
+.article-body { max-width: 780px; padding-bottom: 40px; }
+.article-body h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1714; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #c8c0b4; }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.article-body p { font-size: 14px; color: #4a4540; margin-bottom: 12px; line-height: 1.75; }
+.article-body strong { color: #1a1714; }
+.article-body em { font-style: italic; }
+.article-body a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body a:hover { color: #8b3a3a; }
+.article-body ul, .article-body ol { margin: 10px 0 14px 24px; font-size: 14px; color: #4a4540; }
+.article-body li { margin-bottom: 6px; line-height: 1.65; }
+.article-body blockquote { border-left: 3px solid #b5ad9f; padding: 12px 18px; margin: 14px 0; background: #ede9e1; font-size: 13px; color: #4a4540; line-height: 1.7; font-style: italic; }
+.article-body hr { border: none; border-top: 1px solid #c8c0b4; margin: 20px 0; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body th { text-align: left; padding: 10px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #1a1714; border-bottom: 2px solid #1a1714; font-weight: 700; background: #ede9e1; font-family: 'Playfair Display', serif; }
+.article-body td { padding: 10px 12px; border-bottom: 1px solid #c8c0b4; vertical-align: top; }
+.article-body td:first-child { font-weight: 700; color: #1a1714; font-size: 12.5px; }
+.article-body td:nth-child(2) { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body tr:last-child td { border-bottom: none; }
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 16px 0; border-top: 2px solid #b5ad9f; gap: 16px; }
+.bottom-nav a { font-size: 13px; color: #4a4540; text-decoration: none; padding: 8px 0; transition: color 0.15s; flex: 1; max-width: 48%; }
+.bottom-nav a:nth-child(2) { text-align: right; }
+.bottom-nav a:hover { color: #1a1714; }
+.bottom-nav-label { display: block; font-size: 9px; color: #8a847a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+.bottom-nav-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+.site-footer { text-align: center; padding: 24px; margin-top: 24px; border-top: 4px double #b5ad9f; font-family: 'Playfair Display', serif; font-size: 10px; color: #8a847a; letter-spacing: 2px; text-transform: uppercase; }
+@media (max-width: 700px) { .masthead-title { font-size: 44px; } .masthead { padding: 24px 16px 0; } .nav-bar { flex-wrap: wrap; } .nav-link { flex: 1 0 33%; text-align: center; border-right: none; border-bottom: 1px solid #c8c0b4; } .hub-grid { grid-template-columns: 1fr; } .hub-card { border-right: none; } .article-title { font-size: 24px; } .article-body { max-width: 100%; } .page { padding: 0 16px; } .bottom-nav { flex-direction: column; } .bottom-nav a { max-width: 100%; } }
+@media print { .nav-bar, .bottom-nav, #ps-save-btn, #ps-panel, #ps-toggle { display: none !important; } body { background: white; } .masthead-title { font-size: 36px; } }
+
+.article-body .twa-emap { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0 6px; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-emap th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-emap td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: top; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-size: 12px; font-weight: 400; }
+.article-body .twa-emap td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-emap td.twa-emap-g { text-align: center; }
+.article-body .twa-emap tr:last-child td { border-bottom: none; }
+.article-body .twa-emap a { color: #3a5a6a; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.article-body .twa-grade { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+.article-body .twa-emap-key { font-size: 10.5px; color: #8a847a; line-height: 1.5; margin: 0 0 14px; font-style: normal; }
+.article-body .g-a { color: #3d6b4f; } .article-body .g-b { color: #3a5a6a; } .article-body .g-c { color: #7a6a2e; } .article-body .g-d { color: #7a5230; }
+.article-body .twa-cuibono { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #1a1714; background: #faf8f3; margin: 18px 0; }
+.article-body .twa-cuibono .c { padding: 12px 14px; border-right: 1px solid #c8c0b4; }
+.article-body .twa-cuibono .c:last-child { border-right: none; }
+.article-body .twa-cuibono .h { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 6px; }
+.article-body .twa-cuibono .v { font-size: 12.5px; color: #1a1714; line-height: 1.55; }
+.article-body .twa-wonder { border: 2px solid #1a1714; background: #f4f1eb; padding: 18px 22px; margin: 18px 0; text-align: center; }
+.article-body .twa-wonder-lab { font-family: 'Playfair Display', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8b3a3a; }
+.article-body .twa-wonder-fact { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; margin: 8px 0; color: #1a1714; }
+.article-body .twa-wonder-why { font-size: 12px; color: #4a4540; font-style: italic; }
+.article-body .twa-tape { width: 100%; border-collapse: collapse; font-size: 12px; margin: 18px 0; background: #fafaf6; border: 1px solid #c8c0b4; }
+.article-body .twa-tape th { text-align: left; padding: 8px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; color: #1a1714; border-bottom: 2px solid #1a1714; background: #ede9e1; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; }
+.article-body .twa-tape td { padding: 8px 10px; border-bottom: 1px solid #c8c0b4; vertical-align: middle; color: #4a4540; font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
+.article-body .twa-tape td:first-child { color: #1a1714; font-weight: 700; }
+.article-body .twa-tape tr:last-child td { border-bottom: none; }
+.article-body .twa-tape .twa-lvl { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: #1a1714; }
+.article-body .twa-tape .twa-up { color: #3d6b4f; font-weight: 700; }
+.article-body .twa-tape .twa-down { color: #8b3a3a; font-weight: 700; }
+.article-body .twa-tape .twa-regime { font-size: 10px; color: #4a4540; text-transform: uppercase; letter-spacing: .4px; }
+.article-body .twa-pctbar { display: inline-block; width: 70px; height: 9px; background: #e6e1d8; border: 1px solid #c8c0b4; position: relative; vertical-align: middle; }
+.article-body .twa-pctbar i { position: absolute; top: -2px; width: 2px; height: 13px; background: #1a1714; }
+.article-body .twa-pctn { font-family: 'SF Mono','Courier New',monospace; font-size: 10px; color: #8a847a; }
+
+.article-body .twa-verdict { display: inline-flex; align-items: baseline; gap: 9px; margin: 2px 0 16px; padding: 3px 11px 4px; border: 1px solid currentColor; border-left-width: 3px; border-radius: 1px; }
+.article-body .twa-verdict .v { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.article-body .twa-verdict .n { font-family: 'Libre Baskerville', Georgia, serif; font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase; color: #8a847a; }
+.article-body .twa-verdict--ok  { color: #3d6b4f; }
+.article-body .twa-verdict--chk { color: #9a6f1a; }
+.article-body .twa-verdict--no  { color: #8b3a3a; }
+.article-body .twa-deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; line-height: 1.5; color: #4a4540; border-left: 3px solid #8b3a3a; padding: 2px 0 2px 16px; margin: 0 0 22px; }
+.article-body .twa-pull { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.35; color: #1a1714; text-align: center; margin: 26px auto; padding: 14px 0; border-top: 2px solid #1a1714; border-bottom: 2px solid #1a1714; max-width: 600px; }
+</style>
+</head>
+<body><header class="masthead">
+  <div class="masthead-rule-top"><span>Rather than news that sells &mdash; give me the truth</span></div>
+  <h1 class="masthead-title"><a href="../index.html">The World Affair</a></h1>
+  <div class="masthead-meta">
+    <span>Lundi 23 Novembre 2026</span><span class="masthead-dot">&bull;</span>
+    <span>Edition N&deg;188</span><span class="masthead-dot">&bull;</span>
+    <span>NEXUS Intelligence</span>
+  </div>
+  <div class="cluster-tag">Cluster du jour &middot; Sous l'Écume</div>
+  <div class="masthead-version">v1.1 &mdash; hebdo</div>
+</header><nav class="nav-bar"><a class="nav-link" href="../2026-11-23.html">Première Page</a><a class="nav-link active" href="la-semaine.html">Synthèse</a><a class="nav-link" href="../archive.html">Archives</a></nav><div class="page"><div class="article-header">
+  <div class="article-overline" style="color:#8b3a3a">La Semaine</div>
+  <h1 class="article-title">Sous l'Écume &mdash; La semaine du 16 au 22 novembre</h1>
+  <div class="article-date">Lundi 23 Novembre 2026 &mdash; Edition N&deg;188</div>
+</div><div class="article-body">
+<p class="twa-deck">Jeudi, Anthropic entre en Bourse au prix le plus haut jamais atteint par une introduction — et clôture sa première séance au cœur d'un marché qui recule depuis quatre jours. Le même jour, au large de Khasab, un marin indien reste introuvable, projeté à la mer par la deuxième frappe en quelques heures sur son pétrolier de GPL. Entre les deux, l'Europe scelle son paquet de sanctions le plus dur contre la flotte fantôme russe, un essai pédiatrique mesure ce qu'un médicament amaigrissant change vraiment chez un enfant de six ans, et un prix littéraire couronne un auteur que les États-Unis n'ont pas laissé entrer pour le recevoir.</p>
+<p>Rien, cette semaine, ne s'est passé à la surface sans qu'un courant contraire ne travaille en dessous. Un conseil d'administration referme sur Jensen Huang une porte qu'on disait encore entrouverte il y a sept jours. Le pétrole perd un cinquième de sa valeur en un mois pendant que des tankers continuent de brûler dans le même détroit. La maladie infectieuse la plus meurtrière de la planète recule dans un essai mené presque sans écho, pendant qu'un médicament déjà vendu fait tous les titres.</p>
+<p>Huit histoires, cinq continents, un seul motif qui les traverse : l'écume brille, le fond bouge autrement. D'où le nom retenu ici : Sous l'Écume.</p>
+<hr>
+<h2>Les Sept Jours</h2>
+
+<h3>I. Wall Street vit deux vérités à la fois</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">données de marché + 3 sources indépendantes &middot; T0/T3</span></p>
+<p>Mercredi, Anthropic a fixé le prix de son introduction en Bourse à 83 $ l'action, au-dessus de la fourchette annoncée — la plus grosse levée jamais réalisée par une entrée en Bourse <a href="https://www.koreajoongangdaily.com/business/anthropic-prices-its-ipo-at-83-per-share-valuing-the-ai-giant-at-15-trillion/" target="_blank" rel="noopener">[T3 Korea JoongAng Daily, 18/11]</a>. Jeudi, le titre a ouvert à 111,50 $ sur le Nasdaq sous le symbole ANT, grimpé jusqu'à 115,10 $ en séance, puis retombé pour clôturer à 97,17 $ — tout de même +17 % sur le prix d'introduction, pour une capitalisation implicite d'environ 1 300 milliards de dollars <a href="https://valueaddvc.com/pulse/anthropic-ipo-first-day-close-97-17-up-17-percent-2026" target="_blank" rel="noopener">[valueaddvc, clôture jour 1]</a> <a href="https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo" target="_blank" rel="noopener">[T3 Al Jazeera, 19/11]</a>.</p>
+<p>Le même jeudi, le S&amp;P 500 restait engagé dans sa pire série depuis l'été : après un lundi à -1,9 %, le voilà à -1,0 % mardi (clôture 7 340,53 points) puis -0,2 % mercredi (clôture 7 323,63 points) — quatrième séance de repli consécutive, plus bas niveau depuis juillet <a href="https://www.adn.com/business-economy/2026/11/18/wall-street-wobbles-as-nvidia-other-ai-stocks-swing-sharply/" target="_blank" rel="noopener">[T3 AP via ADN, 18/11]</a>. Le Nasdaq avait ouvert la semaine en perdant 2,5 % lundi, entraîné par Nvidia et les craintes sur les dépenses d'intelligence artificielle <a href="https://www.zacks.com/stock/news/3030162/stock-market-news-for-nov-16-2026" target="_blank" rel="noopener">[Zacks, 16/11]</a>.</p>
+<p>Deux semaines plus tôt, Nvidia avait perdu plus de 570 milliards de dollars de capitalisation en une semaine — la plus forte perte hebdomadaire jamais enregistrée par une entreprise cotée <a href="https://pro.thestreet.com/market-commentary/everyone-owned-the-same-ai-stocks-and-now-its-a-stock-pickers-market-1794832006" target="_blank" rel="noopener">[TheStreet, 16/11]</a>. C'est dans ce marché-là, précisément, qu'Anthropic a choisi de faire coter son action — et y est parvenue sans trébucher, même si l'engouement d'ouverture s'est tassé de moitié avant la cloche.</p>
+<p><strong>Verdict :</strong> une levée record et un indice qui s'effondre ne sont pas contradictoires cette semaine — ce sont les deux faces d'un même pari sur l'intelligence artificielle, l'un vendu comme une promesse neuve, l'autre jugé comme une facture qui arrive à échéance.</p>
+
+<h3>II. Le conseil qui a refermé la porte derrière Jensen Huang</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 source secondaire + communiqué Nvidia &middot; T3/T0</span></p>
+<p>Il y a une semaine, cette rubrique racontait une démission « avec effet immédiat » déjà contestée par ses propres soutiens, Elon Musk en tête d'une pétition de plus de 150 000 signatures pour réintégrer Jensen Huang. Le tournant est arrivé mardi 17 novembre : le conseil d'administration de Nvidia a fait savoir qu'il n'envisageait <strong>pas</strong> de réintégrer Huang, et a mandaté le cabinet Heidrick &amp; Struggles pour une recherche de direction permanente <a href="https://www.scmp.com/tech/article/3374812/nvidia-board-says-it-has-no-plans-reinstate-jensen-huang-ceo" target="_blank" rel="noopener">[T3 SCMP, 17/11]</a>. La directrice financière Colette Kress reste directrice générale par intérim ; Harvey Jones devient président du conseil <a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" target="_blank" rel="noopener">[T0 Nvidia]</a>.</p>
+<p>Malgré la vacance à sa tête, Nvidia a publié des résultats trimestriels supérieurs aux attentes cette semaine — 2,68 $ de bénéfice par action contre 2,47 $ attendu <a href="https://www.zacks.com/stock/news/3032345/stock-market-news-for-nov-19-2026" target="_blank" rel="noopener">[Zacks, 19/11]</a> — sans empêcher le titre de continuer à osciller sèchement, entraînant l'ensemble du secteur avec lui.</p>
+<p><strong>Le tournant :</strong> la semaine avait commencé avec un fondateur qui négociait son retour en coulisses ; elle s'achève avec un conseil qui annonce publiquement le chercher ailleurs.</p>
+<p><strong>Ce qui reste opaque :</strong> l'angle « enquête sur une liaison avec une personne soupçonnée d'espionnage », avancé par des titres secondaires la semaine dernière, n'a été confirmé par aucune source de premier rang consultée cette semaine.</p>
+
+<h3>III. L'étau sur la flotte fantôme</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">texte officiel au Journal Officiel de l'UE &middot; T0</span></p>
+<p>Lundi 16 novembre, le Conseil de l'Union européenne a adopté la décision (PESC) 2026/2575 et le règlement d'exécution 2026/2574 : une cinquantaine de banques russes supplémentaires inscrites sur liste, douze personnes et cent-une entités visées, des intermédiaires d'achat de pétrole basés aux Émirats, en Chine, aux Seychelles et à Oman sanctionnés, ainsi que les gestionnaires et assureurs de navires de la flotte fantôme <a href="https://www.eeas.europa.eu/eeas/eu-extends-sanctions-nearly-all-major-russian-banks_en" target="_blank" rel="noopener">[T0 EEAS, texte officiel]</a> <a href="https://www.brusselstimes.com/2095906/eu-tightens-sanctions-on-russias-shadow-fleetenergy-trade-loopholes" target="_blank" rel="noopener">[T3 Brussels Times]</a>. Le paquet prolonge une opération navale européenne, IRINI, qui avait arraisonné en Méditerranée le pétrolier MIDAG quelques jours plus tôt et confirmé son pavillon de complaisance — un cas d'école de la pratique visée par le texte <a href="https://www.bairdmaritime.com/security/incidents/piracy/midag-tanker-false-flag-confirmed" target="_blank" rel="noopener">[Baird Maritime]</a>.</p>
+<p>Le même jour, le détroit d'Ormuz continuait de brûler. Le 16 novembre, l'UKMTO a signalé un pétrolier battant pavillon panaméen touché à environ 3 milles nautiques au large d'Oman, à 5 h 58 UTC <a href="https://gcaptain.com/new-wave-of-attacks-hits-tankers-and-lng-carrier-in-strait-of-hormuz-and-persian-gulf/" target="_blank" rel="noopener">[T3 gCaptain, 16/11]</a>. Le même jour, le <em>Tara Gas</em>, tanker de GPL panaméen, a été frappé deux fois à environ 7 milles au nord de Khasab, vers 19 h UTC, forçant ses vingt-cinq membres d'équipage à abandonner le navire : vingt-quatre ont été récupérés, un marin indien restait porté disparu au 19 novembre <a href="https://www.khaleejtimes.com/gulf/tanker-crew-unaccounted-for-second-attack-oman-khasab" target="_blank" rel="noopener">[T3 Khaleej Times]</a> <a href="https://gcaptain.com/second-strike-on-lpg-tanker-in-strait-of-hormuz-leaves-one-missing-two-injured/" target="_blank" rel="noopener">[gCaptain]</a> <a href="https://www.arabnews.pk/middle-east/jordan-coordinates-with-uae-and-oman-in-search-for-missing-sailor-3007514" target="_blank" rel="noopener">[Arab News, recherches en cours]</a>.</p>
+<p><strong>De l'autre côté du trade :</strong> l'Europe resserre le filet financier sur la flotte qui contourne ses sanctions pétrolières, pendant que les mêmes eaux où cette flotte navigue restent un terrain où aucune des parties qui y tirent n'a revendiqué ses frappes — deux pressions qui montent en parallèle sans se toucher.</p>
+<p><strong>Verdict :</strong> au moment d'écrire ces lignes, le marin manquant du <em>Tara Gas</em> n'a été ni retrouvé ni déclaré mort — la recherche reste ouverte, et le décompte des blessés diverge encore d'une source à l'autre (deux selon gCaptain, onze selon une dépêche concurrente non recoupée).</p>
+
+<h3>IV. Ce que l'armistice n'a pas réglé</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">positions officielles, aucune contre-source indépendante &middot; T3</span></p>
+<p>Le fil ouvert la semaine dernière à Abou Dabi n'a pas bougé de façon vérifiable cette semaine : Volodymyr Zelensky maintenait, le 14 novembre, sa ligne rouge — pas de cession du Donbas, des garanties américaines fermes, un cessez-le-feu avant toute discussion de garanties — en mettant en garde contre un « cadre de sécurité européen » que Washington aurait ébauché avec Moscou sans que l'Europe y soit pleinement associée <a href="https://www.bostonglobe.com/2026/11/14/world/zelenskyy-european-security-framework-us-putin/" target="_blank" rel="noopener">[T3 AP via Boston Globe]</a>. Le porte-parole du Kremlin, Dmitri Peskov, a répété que Moscou accepterait n'importe quels représentants que l'Europe choisirait d'envoyer — sans jamais l'inviter à la table trilatérale <a href="https://www.pbs.org/newshour/world/zelenskyy-says-questions-remain-in-peace-talks-over-security-guarantees-for-ukraine" target="_blank" rel="noopener">[T3 PBS/AP]</a>.</p>
+<p>Un signal plus discret est venu confirmer que la semaine n'a pas été sans accroc ailleurs sur le front de la sécurité : Ipsos, l'un des plus grands instituts d'études au monde, a annoncé le 16 novembre avoir déposé plainte après une intrusion sur l'un de ses systèmes internes, sans confirmer à ce stade si des données ont été exfiltrées <a href="https://www.esecurityplanet.com/threats/news-ipsos-internal-system-breach/" target="_blank" rel="noopener">[T3 eSecurityPlanet]</a> <a href="https://securityweek.com/market-research-giant-ipsos-investigating-breach-of-internal-system" target="_blank" rel="noopener">[SecurityWeek]</a>.</p>
+<p><strong>Ce qui reste opaque :</strong> ni le calendrier ni le format du prochain round de pourparlers n'ont été fixés publiquement durant la semaine ; l'étendue exacte de l'intrusion chez Ipsos reste, de l'aveu même de l'entreprise, à déterminer.</p>
+
+<h3>V. Le pétrole dit la vérité que personne ne veut entendre</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">rapport T0 AIE + presse de marché &middot; T0/T3</span></p>
+<p>L'Agence internationale de l'énergie a confirmé, dans son rapport de novembre, que le marché pétrolier mondial a basculé en excédent au quatrième trimestre 2026 pour la première fois depuis le début de la guerre iranienne — un excédent de 3,8 millions de barils par jour sur l'année, porté par un rebond des exportations du Golfe plus rapide que la reprise de la demande <a href="https://iea.org/reports/oil-market-report-november-2026" target="_blank" rel="noopener">[T0 AIE]</a> <a href="https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/111326-world-oil-market-set-for-q4-surplus-as-gulf-supply-rebounds-iea" target="_blank" rel="noopener">[S&amp;P Global]</a>. Sur le terrain, le 18 novembre, le WTI reculait de 3,2 % à 83,26 $ et le Brent de 1,28 % à 91,95 $, son plus bas niveau de clôture depuis fin août, alors que les stocks américains progressaient de 3,4 millions de barils <a href="https://boereport.com/2026/11/18/oil-prices-steady-as-middle-east-shipping-attacks-counter-supply-surplus-outlook/amp/" target="_blank" rel="noopener">[T3 BOE Report]</a>. Sur le mois, le pétrole perd près d'un cinquième de sa valeur.</p>
+<p><strong>Conséquence opérable (7-30j) :</strong> un pétrole durablement sous 85 $ allège la facture carburant des flottes de travail — et compresse, en retour, les marges des armateurs et producteurs du Golfe au moment même où leurs navires essuient des tirs dans le détroit qu'ils empruntent pour livrer ce même pétrole.</p>
+<p><strong>Verdict :</strong> la chute des prix n'a rien d'un apaisement géopolitique — les attaques dans le détroit se poursuivent au même rythme — c'est une mécanique d'offre pure, et elle dit que le marché a cessé de pricer le risque qui continue, pourtant, de frapper des équipages chaque semaine.</p>
+
+<h3>VI. Le ciel américain a deux visages</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">rapport interne de l'opérateur, corroboré par plusieurs titres &middot; T3</span></p>
+<p>Le 15 novembre, une fusée Vulcan Centaur de United Launch Alliance, emportant quarante satellites Amazon Leo, a été totalement perdue dix minutes après le décollage — premier échec complet de l'histoire de la société. L'enquête préliminaire, confirmée par le PDG d'ULA, pointe une alimentation en carburant insuffisante vers les moteurs BE-4 du premier étage, et non un défaut du moteur lui-même <a href="https://www.space.com/space-exploration/launches-spacecraft/ula-traces-vulcan-centaur-rocket-failure-to-inadequate-fuel-supply-to-1st-stage-engines" target="_blank" rel="noopener">[T3 Space.com, 18/11]</a>. La FAA a ouvert une enquête obligatoire, et l'US Space Force a suspendu tous les lancements Vulcan liés à la sécurité nationale, sans date de reprise fixée.</p>
+<p>À l'inverse, SpaceX a réussi les 13 et 14 novembre le premier rattrapage en vol d'un étage supérieur de Starship, même si le booster a été perdu dans une explosion au-dessus du golfe du Mexique qui a empêché le double rattrapage prévu <a href="https://www.planetary.org/articles/starships-triumph-and-vulcans-failure" target="_blank" rel="noopener">[Planetary Society, 19/11]</a>.</p>
+<p><strong>Verdict :</strong> en une semaine, la capacité américaine de lancement lourd s'est réduite à un seul fournisseur fiable — faute d'alternative immédiate à Falcon 9, selon l'analyse de la Planetary Society — ce qui n'était ni le plan du Pentagone, ni celui d'ULA.</p>
+
+<h3>VII. Un médicament, des enfants, et la prudence qui s'impose</h3>
+<p class="twa-verdict twa-verdict--chk"><span class="v">À vérifier</span><span class="n">1 étude, revue par les pairs, financée par le fabricant &middot; T1, Grade B</span></p>
+<p>L'essai STEP Young, publié le 16 novembre dans le <em>New England Journal of Medicine</em>, a suivi 167 enfants de six à onze ans en situation d'obésité sévère sous sémaglutide : à 68 semaines, leur IMC recule de 13,5 % contre une hausse de 2,7 % sous placebo — 79 % des enfants traités passent à une catégorie d'IMC inférieure, contre 23 % sous placebo <a href="https://www.healio.com/news/endocrinology/20261116/wegovy-leads-to-substantial-bmi-decrease-for-children-aged-6-to-11-years-with-obesity" target="_blank" rel="noopener">[T1 Healio, relais NEJM, 16/11]</a>. Après sept semaines sans traitement, le bénéfice se réduit mais ne disparaît pas. L'essai est financé par Novo Nordisk, qui commercialise le produit — un fait qui n'invalide pas les chiffres, mais qui doit accompagner chacun d'entre eux.</p>
+<p><strong>Verdict :</strong> les chiffres sont solides et publiés dans une revue à comité de lecture — mais un horizon de 68 semaines, un rebond partiel à l'arrêt du traitement et un financement par le fabricant interdisent de parler de guérison ; « ça marche », pas « c'est réglé ».</p>
+
+<h3>VIII. Un prix littéraire, une absence qui dit tout</h3>
+<p class="twa-verdict twa-verdict--ok"><span class="v">Confirmé</span><span class="n">résultats officiels (National Book Foundation) + 3 sources &middot; T0/T3</span></p>
+<p>Les National Book Awards ont été décernés le 18 novembre à New York. Le prix de non-fiction est allé à Abdelrahman ElGendy pour <em>Huna</em>, récit de six années passées comme prisonnier politique en Égypte — l'auteur n'était pas présent dans la salle, les États-Unis lui ayant refusé l'entrée sur leur territoire <a href="https://www.stlpr.org/npr/2026-11-19/huna-writer-wins-national-book-award-for-non-fiction-after-not-being-allowed-into-the-u-s" target="_blank" rel="noopener">[T3 NPR/St. Louis Public Radio, 19/11]</a>. Le prix de fiction a récompensé Hannah Lillith Assadi pour <em>Paradiso, 17</em>, et des prix d'honneur sont allés à Salman Rushdie et à Perri Klass <a href="https://lithub.com/here-are-the-winners-of-the-2026-national-book-awards/" target="_blank" rel="noopener">[Lit Hub]</a> <a href="https://bookriot.com/2026-national-book-awards-winners/" target="_blank" rel="noopener">[Book Riot]</a>.</p>
+<p><strong>La filiation :</strong> la chaise vide rappelle celle de Liu Xiaobo au prix Nobel de la paix en 2010 — un prix littéraire dont l'absence du lauréat devient, elle-même, la mesure la plus exacte de ce qu'il récompense.</p>
+
+<p class="twa-pull">&laquo; L'écume brille, le fond bouge autrement &mdash; et c'est toujours le fond qui décide, une semaine plus tard. &raquo;</p>
+<hr>
+<h2>Chiffres de la Semaine</h2>
+<table class="twa-tape"><thead><tr><th>Indicateur</th><th>Niveau</th><th>&Delta; sur la semaine</th><th>Source</th></tr></thead><tbody>
+<tr><td>S&amp;P 500</td><td class="twa-lvl">7 323,63 pts (mer. 18/11)</td><td class="twa-down">&minus;3,1&#160;% ▼</td><td><a href="https://www.adn.com/business-economy/2026/11/18/wall-street-wobbles-as-nvidia-other-ai-stocks-swing-sharply/" target="_blank" rel="noopener">AP / ADN</a></td></tr>
+<tr><td>Nasdaq Composite</td><td class="twa-lvl">n.d.</td><td class="twa-down">&minus;2,5&#160;% ▼ (lun. 16/11, séance)</td><td><a href="https://www.zacks.com/stock/news/3030162/stock-market-news-for-nov-16-2026" target="_blank" rel="noopener">Zacks</a></td></tr>
+<tr><td>Anthropic (ANT)</td><td class="twa-lvl">97,17 $ (clôture jour 1, jeu. 19/11)</td><td class="twa-up">+17&#160;% ▲ (vs prix d'intro. 83 $)</td><td><a href="https://valueaddvc.com/pulse/anthropic-ipo-first-day-close-97-17-up-17-percent-2026" target="_blank" rel="noopener">valueaddvc</a></td></tr>
+<tr><td>Bitcoin (BTC)</td><td class="twa-lvl">64 146 $ (jeu. 19/11)</td><td class="twa-down">&minus;2,0&#160;% ▼ (vs 65 457,02 $ le 16/11)</td><td><a href="https://fortune.com/article/price-of-bitcoin-11-19-2026/" target="_blank" rel="noopener">Fortune</a></td></tr>
+<tr><td>WTI (pétrole)</td><td class="twa-lvl">83,26 $ (mer. 18/11)</td><td class="twa-down">&minus;3,2&#160;% ▼ (séance)</td><td><a href="https://boereport.com/2026/11/18/oil-prices-steady-as-middle-east-shipping-attacks-counter-supply-surplus-outlook/amp/" target="_blank" rel="noopener">BOE Report</a></td></tr>
+<tr><td>Brent (pétrole)</td><td class="twa-lvl">91,95 $ (mer. 18/11)</td><td class="twa-down">&minus;1,28&#160;% ▼ (séance, plus bas depuis fin août)</td><td><a href="https://boereport.com/2026/11/18/oil-prices-steady-as-middle-east-shipping-attacks-counter-supply-surplus-outlook/amp/" target="_blank" rel="noopener">BOE Report</a></td></tr>
+</tbody></table>
+<p><em>Note de fabrication :</em> VIX, or, EUR/USD et le dix ans américain ont été coupés de ce tableau — aucune source consultée ne fournissait, pour cette fenêtre précise (16&ndash;22 nov.), deux bornes de comparaison fiables plutôt qu'un point isolé. Le niveau du S&amp;P 500 couvre vendredi 13 à mercredi 18 (dernière clôture confirmée) ; aucune clôture de vendredi 20 novembre n'a pu être recoupée au moment d'écrire ces lignes.</p>
+
+<h2>Le Fil de la Semaine</h2>
+<p>Prenez les huit récits ensemble et un seul geste se répète : la surface annonce une chose, le fond en prépare une autre. Anthropic fête l'introduction la plus chère de l'histoire pendant que l'indice qui l'accueille recule pour la quatrième séance de suite. Nvidia referme la porte sur son fondateur au moment même où elle publie des résultats qui dépassent les attentes. L'Europe serre la vis financière sur la flotte fantôme russe pendant que les mêmes eaux continuent de brûler, sans qu'aucun camp ne revendique le feu. Le pétrole chute d'un cinquième en un mois — non pas parce que le risque a disparu, mais parce que le marché a cessé de le compter.</p>
+<p>Deux histoires, cette semaine, ont résisté au motif. Un essai pédiatrique sur un médicament amaigrissant a livré des chiffres propres, revus par les pairs, et les a livrés avec leurs limites affichées — financement du fabricant, rebond au sevrage — plutôt que maquillés en miracle. Et à Abdelrahman ElGendy, empêché d'entrer aux États-Unis pour recevoir son propre prix, la chaise vide a dit, plus fort qu'aucun discours n'aurait pu le faire, ce que le livre racontait.</p>
+<p>La leçon pour la semaine qui vient n'est pas de deviner quelle écume retombera la première — c'est de ne jamais confondre ce qui flotte avec ce qui tient.</p>
+
+<h2>À surveiller la semaine prochaine</h2>
+<ul>
+<li><strong>Date non fixée</strong> &mdash; rapport final de la FAA sur l'échec du Vulcan Centaur et date de reprise des lancements liés à la sécurité nationale, suspendus par l'US Space Force depuis le 15 novembre.</li>
+<li><strong>Semaines à venir</strong> &mdash; issue des recherches menées à Heidrick &amp; Struggles pour un directeur général permanent chez Nvidia, Colette Kress restant en intérim.</li>
+<li><strong>17 décembre</strong> &mdash; réunion de la BCE, sous pression pour relever ses taux alors que l'inflation en zone euro atteint 4&#160;%, l'euro évoluant déjà sous 1,10 $ en fin de semaine.</li>
+<li><strong>Date non fixée</strong> &mdash; prochain round des pourparlers Russie-Ukraine-USA, et clarification du « cadre de sécurité européen » évoqué par Zelensky le 14 novembre sans l'aval explicite de Kyiv.</li>
+<li><strong>Date non fixée</strong> &mdash; conclusions de l'enquête d'Ipsos sur l'intrusion de ses systèmes internes, et confirmation ou non d'une exfiltration de données.</li>
+</ul>
+
+<h2>L'Angle Mort de la Semaine</h2>
+<p>Toute l'attention sanitaire de la semaine s'est portée sur un médicament amaigrissant déjà vendu, testé cette fois sur des enfants. Pendant ce temps, dans un essai plateforme international coordonné par l'UCL et Radboud UMC, dix régimens expérimentaux contre la tuberculose — la maladie infectieuse la plus meurtrière au monde, davantage que le VIH ou le paludisme — ont livré leurs premiers résultats de phase 2B : la combinaison associant bédaquiline, prétomanid, moxifloxacine et ganfébornavir s'est distinguée comme la plus prometteuse du lot, et deux régimens passent désormais en phase 2C, avec l'objectif de raccourcir un traitement qui dure aujourd'hui six mois <a href="https://doi.org/10.1056/NEJMoa2611913" target="_blank" rel="noopener">[T1 NEJM, DOI 10.1056/NEJMoa2611913]</a>.</p>
+<p>Ce ne sont que des marqueurs bactériologiques intermédiaires, pas une issue clinique définitive — il serait malhonnête d'écrire que la tuberculose se guérit désormais en quatre mois. Mais la maladie qui tue le plus de monde sur Terre a avancé, cette semaine, dans l'ombre presque totale d'un médicament qui, lui, fait déjà la fortune de son fabricant.</p>
+</div><div class="bottom-nav"><a href="../2026-11-23.html"><span class="bottom-nav-label">&larr; Retour</span><span class="bottom-nav-title">Première page</span></a><a href="../archive.html" style="text-align:right"><span class="bottom-nav-label">Archives &rarr;</span><span class="bottom-nav-title">Toutes les éditions</span></a></div></div><div class="site-footer">The World Affair &mdash; Edition N&deg;188 &mdash; v1.1 &mdash; hebdo</div>
+<div id="ps-save-btn" style="display:none;position:fixed;z-index:9999;padding:6px 12px;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:4px;font-family:'Libre Baskerville',Georgia,serif;font-size:12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psSave()">&#128278; Sauvegarder ce passage</div>
+<div id="ps-panel" style="display:none;position:fixed;bottom:0;right:0;width:360px;max-height:50vh;z-index:9998;background:#1a1714;color:#f4f1eb;border:1px solid #b5ad9f;border-radius:8px 0 0 0;font-family:'Libre Baskerville',Georgia,serif;font-size:11px;overflow:hidden;box-shadow:0 -2px 12px rgba(0,0,0,0.3);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333;background:#111;">
+    <span style="font-weight:bold;font-size:12px;">&#128209; Passages sauvegard&eacute;s</span>
+    <div>
+      <button onclick="psExport()" style="background:none;border:1px solid #555;color:#b5ad9f;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;margin-right:4px;">Exporter .md</button>
+      <button onclick="document.getElementById('ps-panel').style.display='none'" style="background:none;border:none;color:#888;cursor:pointer;font-size:14px;">&times;</button>
+    </div>
+  </div>
+  <div id="ps-list" style="overflow-y:auto;max-height:calc(50vh - 40px);padding:8px 12px;"></div>
+</div>
+<div id="ps-toggle" style="position:fixed;bottom:12px;right:12px;z-index:9997;padding:6px 10px;background:#1a1714;border:1px solid #b5ad9f;border-radius:50%;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);" onclick="psTogglePanel()" title="Passages sauvegard&eacute;s">&#128209;<span id="ps-count" style="font-size:9px;color:#b5ad9f;margin-left:2px;"></span></div>
+<script>
+(function(){
+  var VAULT="worldaffair",KEY="nexus-passages-"+VAULT;
+  function getAll(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return[]}}
+  function saveAll(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  var selText="";
+  document.addEventListener("mouseup",function(e){var s=window.getSelection(),t=s.toString().trim(),b=document.getElementById("ps-save-btn");if(t.length>10){selText=t;b.style.display="block";b.style.left=(e.pageX+10)+"px";b.style.top=(e.pageY-40)+"px"}else{setTimeout(function(){b.style.display="none"},200)}});
+  window.psSave=function(){if(!selText)return;var p=getAll();p.push({text:selText.substring(0,2000),source:document.title,url:location.href,date:new Date().toISOString(),vault:VAULT});saveAll(p);document.getElementById("ps-save-btn").style.display="none";psRenderList();var t=document.getElementById("ps-toggle");t.style.background="#3d6b4f";setTimeout(function(){t.style.background="#1a1714"},600);selText=""};
+  window.psTogglePanel=function(){var p=document.getElementById("ps-panel");p.style.display=p.style.display==="none"?"block":"none";psRenderList()};
+  window.psRenderList=function(){var p=getAll(),el=document.getElementById("ps-list");document.getElementById("ps-count").textContent=p.length||"";if(!p.length){el.innerHTML="<div style=\"color:#888;padding:12px;text-align:center;font-style:italic;\">S&eacute;lectionne du texte et clique Sauvegarder</div>";return}el.innerHTML=p.slice().reverse().map(function(x,ri){var i=p.length-1-ri,d=new Date(x.date),ds=d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" "+d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});return"<div style=\"padding:8px 0;border-bottom:1px solid #333;\"><div style=\"display:flex;justify-content:space-between;align-items:baseline;\"><span style=\"font-size:9px;color:#888;\">"+ds+" &mdash; "+(x.source||"").substring(0,30)+"</span><button onclick=\"psDelete("+i+")\" style=\"background:none;border:none;color:#888;cursor:pointer;font-size:10px;\">&times;</button></div><div style=\"margin-top:4px;color:#ddd;line-height:1.5;font-style:italic;\">&laquo; "+x.text.substring(0,300)+(x.text.length>300?"...":"")+" &raquo;</div></div>"}).join("")};
+  window.psDelete=function(i){var p=getAll();p.splice(i,1);saveAll(p);psRenderList()};
+  window.psExport=function(){var p=getAll();if(!p.length)return;var md="# Passages sauvegardés — "+VAULT+"\n\nExporté le "+new Date().toLocaleDateString("fr-FR")+"\n\n---\n\n";p.forEach(function(x){md+="> "+x.text.replace(/\n/g,"\n> ")+"\n\n*Source: "+(x.source||"?")+" — "+new Date(x.date).toLocaleDateString("fr-FR")+"*\n\n---\n\n"});var b=new Blob([md],{type:"text/markdown"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="passages-"+VAULT+"-"+new Date().toISOString().slice(0,10)+".md";a.click()};
+  psRenderList();
+})();
+</script>
+</body></html>
